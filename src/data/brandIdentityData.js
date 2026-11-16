@@ -17,13 +17,13 @@
     projectCategoryVi: "Nền tảng Tri thức Văn hóa và Học thuật Số Độc lập",
 
     founderName: "Lê Hưng Thịnh (黎兴盛)",
-    founderRole: "Founder · International Business Undergraduate, Thuongmai University (Hanoi)",
-    founderRoleVi: "Người sáng lập · Sinh viên ngành Kinh doanh Quốc tế, Trường Đại học Thương mại (Hà Nội)",
-    founderRoleZh: "创始人 · 越南贸易大学（河内）国际商务系",
-    founderSignature: "Lê Hưng Thịnh (黎兴盛) | Thuongmai University, Hanoi",
-    foundedByStatement: "Founded by Lê Hưng Thịnh (Thuongmai University, Hanoi)",
-    foundedByStatementVi: "Sáng lập bởi Lê Hưng Thịnh · Kinh doanh Quốc tế, ĐH Thương mại Hà Nội",
-    foundedByStatementZh: "由河内贸易大学国际商务系黎兴盛（Lê Hưng Thịnh）创立",
+    founderRole: "Founder · International Business Student (Hanoi)",
+    founderRoleVi: "Người sáng lập · Sinh viên ngành Kinh doanh Quốc tế (Hà Nội)",
+    founderRoleZh: "创始人 · 河内国际商务专业大学生",
+    founderSignature: "Lê Hưng Thịnh (黎兴盛) | Founder & Creator, Hanoi",
+    foundedByStatement: "Founded by Lê Hưng Thịnh (Founder & Creator)",
+    foundedByStatementVi: "Sáng lập bởi Lê Hưng Thịnh · Kinh doanh Quốc tế (Hà Nội)",
+    foundedByStatementZh: "由河内国际商务专业黎兴盛（Lê Hưng Thịnh）创立",
 
     founderColophon: {
       sealChars: "興盛",
@@ -194,7 +194,7 @@
         heading: "Giữa những dòng chảy giao thương, những nét mực cổ xưa và tầm nhìn vượt khỏi định kiến",
         subtitle: "Lời ngỏ từ người sáng lập Chinese Culture Explorer — Lê Hưng Thịnh (黎兴盛)",
         paragraphs: [
-          "Tôi bắt đầu xây dựng Chinese Culture Explorer (中国文化探索) không phải từ một viện nghiên cứu Hán học, mà từ bàn học của một sinh viên ngành Kinh doanh Quốc tế tại Trường Đại học Thương mại (Hà Nội).",
+          "Tôi bắt đầu xây dựng Chinese Culture Explorer (中国文化探索) không phải từ một viện nghiên cứu Hán học, mà từ bàn học của một sinh viên ngành Kinh doanh Quốc tế tại Hà Nội.",
           "Khi học về thương mại xuyên biên giới, chuỗi cung ứng và kinh tế khu vực, tôi sớm nhận ra một điều: người ta có thể ký một hợp đồng ngoại thương bằng tiếng Anh, nhưng để thực sự thấu hiểu cách người Á Đông tư duy về chữ Tín (信), cách vận hành của mạng lưới thương bang, hay lý do một vùng đất hình thành nên tính cách kinh doanh đặc trưng qua hàng thiên niên kỷ, ta buộc phải quay về với gốc rễ văn hiến, địa lý và chữ viết của họ.",
           "Thế nhưng, trong tâm thức của không ít người Việt Nam, hình ảnh về Trung Quốc đôi khi vẫn bị bao phủ bởi những thông tin tiêu cực một chiều hoặc những cái nhìn định kiến, phiến diện. Đối với cá nhân tôi, khi trực tiếp tìm hiểu sâu về kinh tế và đặt chân qua biên giới quan sát thực tế, có một sự thật khách quan cần được nhìn nhận thẳng thắn: Trung Quốc là một quốc gia phát triển đã đi trước chúng ta một khoảng cách rất dài — ít nhất từ 50 đến 100 năm về hạ tầng, quy mô chuỗi cung ứng, tích lũy khoa học công nghệ lẫn công tác quy hoạch, bảo tồn di sản. Người Việt Nam chúng ta muốn vươn lên mạnh mẽ thì không thể giữ mãi những định kiến cảm tính. Chúng ta cần mở rộng tầm nhìn thực tế để đập bỏ những góc nhìn phiến diện, thẳng thắn học hỏi những giá trị tinh hoa và luôn trong tâm thế chủ động hội nhập với thế giới.",
           "Chính từ nhận thức đó, tôi càng thấm thía vai trò sống còn của việc học ngoại ngữ. Khi chưa biết ngoại ngữ, ta chỉ có thể nhìn thế giới qua lời kể lại của người khác; khi làm chủ ngoại ngữ, ta mới thực sự cầm trên tay chiếc chìa khóa để tiếp cận tri thức nguồn. Sau những giờ làm việc với dữ liệu trên màn hình máy tính, tôi vẫn giữ thói quen lật từng trang vở giấy kẻ ba cột, chậm rãi phân tích từng bộ thủ, từng kết cấu Lục thư (六书) và lắng nghe âm Hán–Việt vang lên vừa lạ vừa quen trong chính tiếng mẹ đẻ của mình. Khi cầm chiếc máy ảnh đi dọc những mái đình làng cổ Đường Lâm, ngắm những bức hoành phi câu đối ở Hà Nội, hay khi ngồi trên chuyến tàu xuyên biên giới nhìn những dãy núi đá vôi Quế Lâm hiện ra hệt như một bức thủy mặc Tống – Nguyên, tôi hiểu rằng ngôn ngữ và văn hóa cổ điển chưa bao giờ nằm yên trong sách vở. Chúng sống động, hữu hình và là nhịp cầu trực tiếp giúp ta giải mã hiện tại.",
@@ -220,7 +220,7 @@
           text: "Dự án này không tự nhận là một bộ bách khoa toàn thư đã đóng khung, và chắc chắn sẽ không dừng lại ở những nội dung hiện có. Tôi sẽ liên tục viết và cập nhật các bài chuyên luận mới về sau, không ngừng mở rộng chiều sâu khảo cứu theo từng chặng đường học tập và trải nghiệm thực tế của mình. Tôi hy vọng cuốn sổ tay số hóa này sẽ góp một phần nhỏ giúp những người trẻ Việt Nam yêu tri thức có thêm một lăng kính khách quan, vượt qua những rào cản định kiến, trau dồi ngoại ngữ và định vị bản thân một cách tự chủ, tỉnh táo, rộng mở giữa thế giới hôm nay."
         },
         signName: "Lê Hưng Thịnh (黎兴盛)",
-        signRole: "Người sáng lập · Sinh viên ngành Kinh doanh Quốc tế, Trường Đại học Thương mại (Hà Nội)",
+        signRole: "Người sáng lập · Sinh viên ngành Kinh doanh Quốc tế (Hà Nội)",
         signProject: "CHINESE CULTURE EXPLORER – 中国文化探索"
       },
       en: {
@@ -228,7 +228,7 @@
         heading: "Between Modern Trade Flows, Ancient Brushstrokes, and a Vision Beyond Prejudice",
         subtitle: "A Note from the Founder — Lê Hưng Thịnh (黎兴盛)",
         paragraphs: [
-          "I did not start building Chinese Culture Explorer (中国文化探索) inside a traditional Sinology department, but from the study desk of an International Business student at Thuongmai University in Hanoi.",
+          "I did not start building Chinese Culture Explorer (中国文化探索) inside a traditional Sinology department, but from the study desk of an International Business student in Hanoi.",
           "Studying cross-border trade, supply chains, and regional economics taught me an early lesson: you can draft a commercial contract in English, but to truly grasp how East Asian societies think about trust (xìn 信), merchant networks, or regional commercial character across millennia, you have to return to the bedrock of their texts, geography, and script.",
           "In Vietnam, public perceptions of China are often shaped by negative headlines or one-sided, fragmented stereotypes. Yet to me, looking at reality with sober eyes reveals an undeniable truth: in terms of infrastructure, industrial scale, supply-chain depth, and systematic heritage preservation, China is a highly developed powerhouse that stands at least 50 to 100 years ahead of us. True national self-respect never comes from denial or narrow-minded prejudice. As Vietnamese youth, we need to broaden our practical vision, dismantle one-sided stereotypes, learn objectively from advanced civilizations, and stay ready to integrate deeply with the globalized world.",
           "This conviction is why I place the highest value on learning foreign languages. Without foreign languages, we are forced to view the world through second-hand filters; mastering them hands us the direct key to primary sources and independent thought. Away from screens, I still learn best with a physical three-column notebook—breaking Chinese characters down into their Six Scripts (Liùshū 六书) components and tracing how Sino-Vietnamese (Hán–Việt) readings preserve ancient layers of meaning inside my own native tongue. Walking with my camera beneath the weathered timber roofs of Đường Lâm Ancient Village, reading classical couplets in Hanoi, or watching the karst peaks of Guilin unfold outside a cross-border train window like a living Song-dynasty handscroll, I realized that language and classical culture are never static relics. They are living lenses for decoding the modern world.",
@@ -254,7 +254,7 @@
           text: "This platform is a living project, not a static archive. I am committed to continuously researching, writing, and updating new in-depth essays over time as my own academic and real-world journey evolves. My hope is that this digital notebook empowers fellow learners to look beyond stereotypes, embrace foreign languages as a bridge to global integration, and position themselves with clarity, confidence, and open-mindedness in today's world."
         },
         signName: "Lê Hưng Thịnh (黎兴盛)",
-        signRole: "Founder · International Business Undergraduate, Thuongmai University (Hanoi)",
+        signRole: "Founder · International Business Student (Hanoi)",
         signProject: "CHINESE CULTURE EXPLORER – 中国文化探索"
       },
       zh: {
@@ -274,7 +274,7 @@
           text: "这部数字笔记绝非止步于此的静态档案。在未来的求学与探索途中，我将持续撰写并更新更多深度专题论文与考据文章。愿这扇清朗、严谨而务实的窗口，能陪伴更多青年学子借外语之力破除偏见、拓宽视野，在广阔的世界格局中清醒而自信地前行。"
         },
         signName: "黎兴盛 (Lê Hưng Thịnh)",
-        signRole: "创始人 · 越南贸易大学（河内）国际商务系",
+        signRole: "创始人 · 河内国际商务专业大学生",
         signProject: "CHINESE CULTURE EXPLORER – 中国文化探索"
       }
     },
@@ -342,7 +342,7 @@
         title: "Tác giả & Bối cảnh Khởi nguồn • Founder's Background",
         titleZh: "创始人背景",
         summary:
-          "CHINESE CULTURE EXPLORER – 中国文化探索 được Lê Hưng Thịnh (黎兴盛) — sinh viên ngành Kinh doanh Quốc tế tại Trường Đại học Thương mại (Hà Nội) — khởi dựng như cuốn sổ tay khảo cứu số hóa kết nối kinh tế khu vực với văn hiến Đông Á. Dự án hoạt động độc lập, không mạo nhận chức danh học thuật hay cơ quan bảo trợ."
+          "CHINESE CULTURE EXPLORER – 中国文化探索 được Lê Hưng Thịnh (黎兴盛) — sinh viên ngành Kinh doanh Quốc tế tại Hà Nội — khởi dựng như cuốn sổ tay khảo cứu số hóa kết nối kinh tế khu vực với văn hiến Đông Á. Dự án hoạt động độc lập, không mạo nhận chức danh học thuật hay cơ quan bảo trợ."
       },
       {
         num: "08",
