@@ -28,13 +28,13 @@
     founderColophon: {
       sealChars: "興盛",
       kickerVi: "Lời người sáng lập & Cam kết học thuật",
-      kickerEn: "Founder's Note & Academic Commitment",
+      kickerEn: "A note from the founder",
       kickerZh: "创始人寄语与学术承诺",
       vi: "Khởi nguồn từ cuốn sổ tay học ngoại ngữ và khảo cứu văn hiến Đông Á của Lê Hưng Thịnh (黎兴盛) — sinh viên ngành Kinh doanh Quốc tế — Chinese Culture Explorer được xây dựng với mong muốn xóa bỏ những góc nhìn phiến diện, đề cao vai trò của việc làm chủ ngoại ngữ để nhìn thẳng vào thực tế phát triển của thế giới và chủ động hội nhập. Kho tàng các bài chuyên luận tại đây được tác giả liên tục nghiên cứu và cập nhật mới theo thời gian.",
-      en: "Born from the foreign-language notebook and East Asian cultural studies of Lê Hưng Thịnh (黎兴盛)—an International Business student—Chinese Culture Explorer is built to dismantle one-sided stereotypes and champion foreign language mastery for clear-eyed engagement with global development. Its repository of analytical monographs is continuously researched and updated over time.",
+      en: "Chinese Culture Explorer began as the language notebook of Lê Hưng Thịnh (黎兴盛), an International Business student working through the classical and modern sources of East Asia. It sets out to challenge one-sided views, to make the case for learning foreign languages as a way of seeing the world as it really is, and to help readers engage with that world on their own terms. New essays are researched and added on an ongoing basis.",
       zh: "源于国际商务专业大学生黎兴盛（Lê Hưng Thịnh）的外语学习与东亚文献研习笔记，「中国文化探索」致力于打破片面成见，倡导以外语能力直面世界发展的客观现实并主动融入世界格局。平台上的深度专题论文也将由作者持续研究与更新。",
       ctaVi: "Đọc toàn văn Thông điệp Người sáng lập →",
-      ctaEn: "Read the full Founder's Message →",
+      ctaEn: "Read the founder's full message →",
       ctaZh: "阅读创始人寄语全文 →"
     },
 
@@ -137,27 +137,28 @@
         ]
       },
       en: {
-        sectionBadge: "Founder's Updated Guidance & Academic Discipline",
-        readerCardTitle: "A Message to Readers and Young Learners in Vietnam",
-        readerHeadline: "Face reality clearly, dismantle bias, and broaden horizons through foreign languages",
+        sectionBadge: "From the Founder · An Updated Note",
+        readerCardTitle: "To readers, and to young people in Vietnam",
+        readerHeadline: "See things as they are, set prejudice aside, and widen your horizons through languages",
         readerParagraphs: [
-          "Looking soberly across infrastructure, supply-chain scale, urbanization, and systematic heritage stewardship, China stands at least 50 to 100 years ahead of Vietnam across many foundational domains. True national dignity comes not from denial, but from the courage to observe reality clearly, compare objectively, and grow.",
-          "On this path of dismantling one-sided stereotypes and integrating into the global economy, foreign language mastery—both English for global commerce and Chinese for East Asian primary sources—is the decisive key to independent judgment.",
-          "Chinese Culture Explorer will therefore never remain a closed archive: new scholarly monographs on classics, regional chronicles, Sino-Vietnamese ties, and contemporary economic thought will be researched and added continuously."
+          "In Vietnam, we often meet China through scattered fragments, or through prejudice and one-sided feeling. But once you cross the border and see it for yourself, from the transport networks and the sheer scale of the supply chains to the pace of urbanization and the care with which cultural heritage is preserved and put to use, it becomes hard to deny an objective fact: China is a developed country that, by my estimate, stands at least fifty to a hundred years ahead of us.",
+          "Real national pride does not lie in denial, or in closing our eyes to a neighbor's rise. It lies in having the nerve to look reality in the face: to learn, to compare, and to improve. We Vietnamese, and young people above all, need a wider and more practical view of the world, one that breaks with one-sided thinking, keeps a clear head, and is always ready to engage fully with the world.",
+          "On that path, learning foreign languages is the single most important key. English for global commerce, and Chinese and classical characters for the economic and cultural world of East Asia, are not just certificates or tools for conversation. Mastering a language is the only way to read the original sources for yourself and to meet the world with your own eyes, rather than through someone else's distorting lens.",
+          "That is why the collection on Chinese Culture Explorer will never be a fixed number. I will keep researching, writing, and adding new essays, on the classics, regional history, exchange between China and Vietnam, merchant thought, and the contemporary economy, so that this remains a living study for anyone who wants to understand the world on its own terms."
         ],
-        selfCardTitle: "Founder's Self-Discipline & Editorial Standards",
+        selfCardTitle: "A reminder to myself: the discipline of keeping this work going",
         selfCommitments: [
           {
-            label: "Continuous Monograph Expansion:",
-            text: "Regularly research and publish new primary-source essays with Hanzi citations, Pinyin, Sino-Vietnamese readings, and Liushu analysis rather than chasing superficial volume."
+            label: "Keep adding new essays, steadily.",
+            text: "Expand and update the in-depth essays on a regular schedule and to a proper research standard (original Chinese text, Pinyin, Sino-Vietnamese readings, Six Scripts analysis, and practical comparison), and never chase volume for its own sake."
           },
           {
-            label: "Evidence-Led Objectivity:",
-            text: "Pair classical textual heritage with modern economic and supply-chain realities so every monograph helps replace bias with grounded perspective."
+            label: "Stay grounded in evidence and fairness.",
+            text: "Always read centuries of textual tradition alongside today's economic and commercial realities, so that every new essay helps readers move past one-sided views."
           },
           {
-            label: "Daily Language Mastery:",
-            text: "Maintain daily discipline in Chinese and English study, treating each new essay published on the platform as a benchmark of personal intellectual growth."
+            label: "Make language study the root of everything.",
+            text: "Study Chinese and English every day without fail, and treat each new essay that goes live as a marker of my own progress in language and in thinking globally."
           }
         ]
       },
@@ -224,37 +225,37 @@
         signProject: "CHINESE CULTURE EXPLORER – 中国文化探索"
       },
       en: {
-        langLabel: "English · Authentic Adaptation",
-        heading: "Between Modern Trade Flows, Ancient Brushstrokes, and a Vision Beyond Prejudice",
-        subtitle: "A Note from the Founder — Lê Hưng Thịnh (黎兴盛)",
+        langLabel: "English",
+        heading: "Between Trade Routes, Ancient Ink, and a View Beyond Prejudice",
+        subtitle: "A note from the founder — Lê Hưng Thịnh (黎兴盛)",
         paragraphs: [
-          "I did not start building Chinese Culture Explorer (中国文化探索) inside a traditional Sinology department, but from the study desk of an International Business student.",
-          "Studying cross-border trade, supply chains, and regional economics taught me an early lesson: you can draft a commercial contract in English, but to truly grasp how East Asian societies think about trust (xìn 信), merchant networks, or regional commercial character across millennia, you have to return to the bedrock of their texts, geography, and script.",
-          "In Vietnam, public perceptions of China are often shaped by negative headlines or one-sided, fragmented stereotypes. Yet to me, looking at reality with sober eyes reveals an undeniable truth: in terms of infrastructure, industrial scale, supply-chain depth, and systematic heritage preservation, China is a highly developed powerhouse that stands at least 50 to 100 years ahead of us. True national self-respect never comes from denial or narrow-minded prejudice. As Vietnamese youth, we need to broaden our practical vision, dismantle one-sided stereotypes, learn objectively from advanced civilizations, and stay ready to integrate deeply with the globalized world.",
-          "This conviction is why I place the highest value on learning foreign languages. Without foreign languages, we are forced to view the world through second-hand filters; mastering them hands us the direct key to primary sources and independent thought. Away from screens, I still learn best with a physical three-column notebook—breaking Chinese characters down into their Six Scripts (Liùshū 六书) components and tracing how Sino-Vietnamese (Hán–Việt) readings preserve ancient layers of meaning inside my own native tongue. Walking with my camera beneath the weathered timber roofs of Đường Lâm Ancient Village, reading classical couplets, or watching the karst peaks of Guilin unfold outside a cross-border train window like a living Song-dynasty handscroll, I realized that language and classical culture are never static relics. They are living lenses for decoding the modern world.",
-          "Chinese Culture Explorer was built to bridge that gap around one principle: rigorous in knowledge, effortless in experience.",
-          "Rather than an intimidating database, this platform is curated as an open reading room across three dimensions:"
+          "Chinese Culture Explorer (中国文化探索) did not begin in a Sinology institute. It began at the desk of an International Business student.",
+          "Studying cross-border trade, supply chains, and regional economics, I soon realized something. You can sign an export contract in English, but if you want to understand how people in East Asia think about xìn (信, trust), how merchant networks actually work, or why a region develops its own commercial character over centuries, you have to go back to the roots: the texts, the geography, and the script.",
+          "Yet for many Vietnamese, the picture of China is still clouded by one-sided bad news, stereotype, and prejudice. Having studied its economy closely and crossed the border to see things for myself, I believe one plain fact has to be acknowledged: China is a developed country that is a long way ahead of us, by my estimate at least fifty to a hundred years, in infrastructure, in the scale of its supply chains, in accumulated science and technology, and in how it plans and conserves its heritage. If Vietnam wants to rise, we cannot hold on to prejudices born of feeling. We need a wider, more practical outlook, one that lets go of narrow views, learns honestly from the best of what others have built, and stays open to the world.",
+          "That is what brought home to me how vital it is to learn foreign languages. Without them, we see the world only through other people's retellings; with them, we hold the key to the sources themselves. After hours of working with data on a screen, I still turn the pages of a paper notebook ruled into three columns, slowly taking characters apart into their radicals and their Six Scripts (六书, Liùshū) structures, and listening to Sino-Vietnamese readings that sound at once strange and familiar in my own mother tongue. Walking with a camera beneath the old communal-house roofs of Đường Lâm village, reading carved boards and couplets, or watching the limestone peaks of Guilin slide past a cross-border train window like a Song or Yuan ink painting, I came to see that language and classical culture never stay shut inside books. They are alive, tangible, and a direct way into the present.",
+          "Chinese Culture Explorer grew out of a wish to close that gap between scholarship and everyday reality, guided by one principle: knowledge as the foundation, experience as the way in.",
+          "The site is laid out as an open study, with three layers:"
         ],
         pillars: [
           {
-            title: "A quiet digital gallery:",
-            text: "Where you can unroll horizontal handscroll masterpieces like Along the River During the Qingming Festival or inspect the brushwork of Lantingji Xu at your own pace."
+            title: "A quiet visual museum.",
+            text: "Unroll Along the River During the Qingming Festival centimeter by centimeter, or follow each stroke of the running script in the Preface to the Orchid Pavilion and the Cold Food Observance, with clear historical context and none of the clutter."
           },
           {
-            title: "A living cultural and regional atlas:",
-            text: "Connecting classical philosophy and Sino-Vietnamese exchange with practical profiles across all 34 provincial-level regions of China—linking millennia of history to contemporary economic reality."
+            title: "A deep atlas of texts and regions.",
+            text: "From the Hundred Schools of Thought and the logic of yin–yang and the Five Phases, through cultural exchange between China and Vietnam, to field profiles of all 34 of China's provincial-level regions, where geography, centuries of history, and present-day economic strength shed light on one another."
           },
           {
-            title: "A practical language and research companion:",
-            text: "Where cultural and linguistic concepts are deconstructed through radical etymology, Sino-Vietnamese bridges, Pinyin, English meanings, and one-click Anki flashcard exports for daily language mastery."
+            title: "A practical companion for language study and research.",
+            text: "Every concept and word is more than a mechanical translation. Each is taken apart at the root through the Six Scripts, set beside its Sino-Vietnamese reading, Pinyin, and English, and ready to export as an Anki card for your daily practice."
           }
         ],
         closingNote: {
-          label: "A Note from the Founder:",
-          text: "This platform is a living project, not a static archive. I am committed to continuously researching, writing, and updating new in-depth essays over time as my own academic and real-world journey evolves. My hope is that this digital notebook empowers fellow learners to look beyond stereotypes, embrace foreign languages as a bridge to global integration, and position themselves with clarity, confidence, and open-mindedness in today's world."
+          label: "A word to readers:",
+          text: "This project does not claim to be a finished encyclopedia, and it will not stop at what is here today. I will keep writing and adding new essays, deepening the research with each stage of my own study and experience. I hope this digital notebook can play a small part in helping young Vietnamese who love learning gain a more objective lens, get past the barriers of prejudice, build their language skills, and find their place in today's world with independence, clarity, and an open mind."
         },
         signName: "Lê Hưng Thịnh (黎兴盛)",
-        signRole: "Founder · International Business Student",
+        signRole: "Founder · International Business student",
         signProject: "CHINESE CULTURE EXPLORER – 中国文化探索"
       },
       zh: {
