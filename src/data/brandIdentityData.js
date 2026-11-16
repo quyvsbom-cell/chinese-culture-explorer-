@@ -27,12 +27,15 @@
 
     founderColophon: {
       sealChars: "興盛",
-      vi: "Khởi nguồn từ cuốn sổ tay học chữ Hán và khảo cứu văn hiến Đông Á của Lê Hưng Thịnh (黎兴盛) — sinh viên ngành Kinh doanh Quốc tế tại Hà Nội — Chinese Culture Explorer được xây dựng như một thư phòng mở: nơi giao thoa giữa cổ họa, địa phương chí 34 tỉnh thành, chiếc cầu văn hóa Trung – Việt và phương pháp chiết tự Lục thư thực chiến.",
-      en: "Born from the study desk and three-column calligraphy notebook of Lê Hưng Thịnh (黎兴盛) — an International Business student in Hanoi — Chinese Culture Explorer is designed as an open reading room connecting classical handscrolls, 34 provincial chronicles, Sino-Vietnamese cultural dialogue, and Liushu character study.",
-      zh: "源于河内国际商务专业大学生黎兴盛（Lê Hưng Thịnh）的三栏汉字笔记，「中国文化探索」被构筑为一间敞开的书房：汇集传世书画长卷、三十四省区市人文舆图、中越文化交流以及六书析字工具。",
-      ctaVi: "Đọc tâm thư người sáng lập →",
-      ctaEn: "Read the founder's note →",
-      ctaZh: "阅读创始人寄语 →"
+      kickerVi: "Lời người sáng lập & Cam kết học thuật",
+      kickerEn: "Founder's Note & Academic Commitment",
+      kickerZh: "创始人寄语与学术承诺",
+      vi: "Khởi nguồn từ cuốn sổ tay học ngoại ngữ và khảo cứu văn hiến Đông Á của Lê Hưng Thịnh (黎兴盛) — sinh viên ngành Kinh doanh Quốc tế tại Hà Nội — Chinese Culture Explorer được xây dựng với mong muốn xóa bỏ những góc nhìn phiến diện, đề cao vai trò của việc làm chủ ngoại ngữ để nhìn thẳng vào thực tế phát triển của thế giới và chủ động hội nhập. Kho tàng các bài chuyên luận tại đây được tác giả liên tục nghiên cứu và cập nhật mới theo thời gian.",
+      en: "Born from the foreign-language notebook and East Asian cultural studies of Lê Hưng Thịnh (黎兴盛)—an International Business student in Hanoi—Chinese Culture Explorer is built to dismantle one-sided stereotypes and champion foreign language mastery for clear-eyed engagement with global development. Its repository of analytical monographs is continuously researched and updated over time.",
+      zh: "源于河内国际商务专业大学生黎兴盛（Lê Hưng Thịnh）的外语学习与东亚文献研习笔记，「中国文化探索」致力于打破片面成见，倡导以外语能力直面世界发展的客观现实并主动融入世界格局。平台上的深度专题论文也将由作者持续研究与更新。",
+      ctaVi: "Đọc toàn văn Thông điệp Người sáng lập →",
+      ctaEn: "Read the full Founder's Message →",
+      ctaZh: "阅读创始人寄语全文 →"
     },
 
     officialTagline: "Explore Chinese Civilization. Understand Its Philosophy. Discover Its Culture.",
@@ -105,56 +108,171 @@
       ]
     },
 
-    // Section 2: Authentic Trilingual Founder's Manifesto (VI / EN / 中文)
+    // Section 2: Authentic Trilingual Founder's Manifesto (VI / EN / 中文) & Academic Counsel
+    founderGuidance: {
+      vi: {
+        sectionBadge: "Lời Nhắn Nhủ của Người Sáng Lập · Bản Cập Nhật",
+        readerCardTitle: "1.1. Lời nhắn gửi tới người đọc và những người trẻ Việt Nam",
+        readerHeadline: "Nhìn thẳng vào thực tế, bước qua định kiến và mở rộng tầm nhìn bằng ngoại ngữ",
+        readerParagraphs: [
+          "Ở Việt Nam, không ít lần chúng ta tiếp cận thông tin về Trung Quốc qua những mảnh ghép rời rạc hoặc những định kiến cảm tính, một chiều. Nhưng khi bước qua biên giới, tận mắt quan sát hạ tầng giao thông, quy mô chuỗi cung ứng, tốc độ đô thị hóa cũng như cách họ bảo tồn và vận hành di sản văn hóa, tôi nhận ra một thực tế khách quan không thể phủ nhận: Trung Quốc là một quốc gia phát triển với khoảng cách đi trước chúng ta ít nhất từ 50 đến 100 năm.",
+          "Sự tự tôn dân tộc chân chính không nằm ở việc phủ nhận hay giữ cái nhìn khép kín trước sự lớn mạnh của láng giềng, mà nằm ở bản lĩnh dám nhìn thẳng vào thực tế để học hỏi, đối sánh và vươn lên. Người Việt Nam chúng ta — đặc biệt là thế hệ trẻ — cần mở rộng tầm nhìn thực tế để đập bỏ những góc nhìn phiến diện, giữ một cái đầu tỉnh táo và một tâm thế luôn sẵn sàng hội nhập sâu rộng với thế giới.",
+          "Trên hành trình phá bỏ rào cản nhận thức đó, học ngoại ngữ chính là chiếc chìa khóa quan trọng bậc nhất. Ngoại ngữ — từ tiếng Anh trong thương mại toàn cầu cho tới chữ Hán và tiếng Trung trong không gian kinh tế – văn hiến Á Đông — không đơn thuần là một tấm chứng chỉ hay công cụ giao tiếp. Làm chủ ngoại ngữ là cách duy nhất để chúng ta tự mình đọc hiểu tài liệu gốc, trực tiếp đối thoại với thế giới bằng đôi mắt độc lập mà không bị dẫn dắt bởi những lăng kính trung gian sai lệch.",
+          "Kho tàng tri thức trên Chinese Culture Explorer vì thế sẽ không dừng lại ở một con số cố định. Tôi sẽ liên tục nghiên cứu, biên soạn và cập nhật các bài chuyên luận mới về sau — từ văn hiến cổ điển, địa phương chí, giao thoa Trung – Việt cho đến tư duy thương đạo và kinh tế đương đại — để nơi đây luôn là một thư phòng sống động, đồng hành cùng những ai khao khát tìm hiểu thế giới bằng sự hiểu biết thực chất."
+        ],
+        selfCardTitle: "1.2. Lời tự nhắc nhở dành cho Người sáng lập (Kỷ luật Cập nhật Học thuật)",
+        selfCommitments: [
+          {
+            label: "Duy trì nhịp độ bồi đắp chuyên luận mới:",
+            text: "Định kỳ mở rộng và cập nhật các bài chuyên luận chuyên sâu trên nền tảng theo đúng chuẩn khảo cứu (có nguyên điển Hán tự, Pinyin, âm Hán–Việt, phân tích Lục thư và góc nhìn đối sánh thực tiễn), tuyệt đối không chạy theo số lượng bề nổi."
+          },
+          {
+            label: "Giữ vững lăng kính thực chứng và khách quan:",
+            text: "Luôn kết hợp giữa nền tảng văn hiến ngàn năm và thực tiễn phát triển kinh tế – giao thương đương đại để mỗi bài viết mới đều góp phần xóa bỏ cái nhìn phiến diện cho người đọc."
+          },
+          {
+            label: "Lấy việc rèn luyện ngoại ngữ làm gốc rễ phát triển:",
+            text: "Kiên trì kỷ luật học tiếng Trung và tiếng Anh mỗi ngày, coi mỗi bài chuyên luận mới được cập nhật lên trang là một cột mốc tự nâng tầm năng lực ngôn ngữ và tư duy hội nhập của chính mình."
+          }
+        ]
+      },
+      en: {
+        sectionBadge: "Founder's Updated Guidance & Academic Discipline",
+        readerCardTitle: "A Message to Readers and Young Learners in Vietnam",
+        readerHeadline: "Face reality clearly, dismantle bias, and broaden horizons through foreign languages",
+        readerParagraphs: [
+          "Looking soberly across infrastructure, supply-chain scale, urbanization, and systematic heritage stewardship, China stands at least 50 to 100 years ahead of Vietnam across many foundational domains. True national dignity comes not from denial, but from the courage to observe reality clearly, compare objectively, and grow.",
+          "On this path of dismantling one-sided stereotypes and integrating into the global economy, foreign language mastery—both English for global commerce and Chinese for East Asian primary sources—is the decisive key to independent judgment.",
+          "Chinese Culture Explorer will therefore never remain a closed archive: new scholarly monographs on classics, regional chronicles, Sino-Vietnamese ties, and contemporary economic thought will be researched and added continuously."
+        ],
+        selfCardTitle: "Founder's Self-Discipline & Editorial Standards",
+        selfCommitments: [
+          {
+            label: "Continuous Monograph Expansion:",
+            text: "Regularly research and publish new primary-source essays with Hanzi citations, Pinyin, Sino-Vietnamese readings, and Liushu analysis rather than chasing superficial volume."
+          },
+          {
+            label: "Evidence-Led Objectivity:",
+            text: "Pair classical textual heritage with modern economic and supply-chain realities so every monograph helps replace bias with grounded perspective."
+          },
+          {
+            label: "Daily Language Mastery:",
+            text: "Maintain daily discipline in Chinese and English study, treating each new essay published on the platform as a benchmark of personal intellectual growth."
+          }
+        ]
+      },
+      zh: {
+        sectionBadge: "创始人寄语更新与治学自律",
+        readerCardTitle: "致读者与越南青年学子",
+        readerHeadline: "直面现实差距、破除片面成见，以外语能力拓宽世界视野",
+        readerParagraphs: [
+          "当我们越过边境，客观观察交通基础设施、产业链规模与文物保育体系时，不得不承认中国在众多维度上领先我们至少五十到一百年。真正的民族自信源于敢于正视差距、务实学习并积极融入世界。",
+          "在打破片面成见的过程中，外语是最关键的钥匙——无论是全球商贸通用的英语，还是开启东亚文献宝库的汉语，都能让我们直接阅读一手资料、独立思考。",
+          "因此，「中国文化探索」绝不是封闭的静态书库，作者将持续研究并更新更多深度专题论文，使其成为与读者共同成长的鲜活书房。"
+        ],
+        selfCardTitle: "创始人学术更新自律准则",
+        selfCommitments: [
+          {
+            label: "持续增补深度专论：",
+            text: "坚持按原文汉字、拼音、汉越音与六书解析规范定期更新专题研究，不追逐浮泛数量。"
+          },
+          {
+            label: "坚持实证与客观视角：",
+            text: "将千年文脉与当代经济商贸实践相结合，以扎实考据帮助读者消解单一偏见。"
+          },
+          {
+            label: "以外语精进为立身之本：",
+            text: "每日坚持汉语与英语研习，把每一篇新发布的专论作为自我提升的里程碑。"
+          }
+        ]
+      }
+    },
+
     foundersMessage: {
       vi: {
-        langLabel: "Tiếng Việt",
-        heading: "Giữa những dòng chảy giao thương và những nét mực cổ xưa",
+        langLabel: "Tiếng Việt · Bản Chính Thức",
+        heading: "Giữa những dòng chảy giao thương, những nét mực cổ xưa và tầm nhìn vượt khỏi định kiến",
         subtitle: "Lời ngỏ từ người sáng lập Chinese Culture Explorer — Lê Hưng Thịnh (黎兴盛)",
         paragraphs: [
           "Tôi bắt đầu xây dựng Chinese Culture Explorer (中国文化探索) không phải từ một viện nghiên cứu Hán học, mà từ bàn học của một sinh viên ngành Kinh doanh Quốc tế tại Trường Đại học Thương mại (Hà Nội).",
-          "Khi học về thương mại xuyên biên giới, chuỗi cung ứng và kinh tế khu vực, tôi sớm nhận ra một điều: người ta có thể ký một hợp đồng ngoại thương bằng tiếng Anh, nhưng để thực sự thấu hiểu cách người Á Đông tư duy về chữ Tín (信), cách vận hành của mạng lưới quan hệ, hay lý do một vùng đất hình thành nên tính cách thương nhân đặc trưng qua hàng thiên niên kỷ, ta buộc phải quay về với gốc rễ văn hiến, địa lý và chữ viết của họ.",
-          "Thế nhưng, khi tự mình tìm hiểu văn hóa và ngôn ngữ Trung Hoa, tôi luôn đứng giữa hai thái cực: một bên là những bài viết bề nổi, rời rạc trên mạng xã hội; bên kia là những tài liệu học thuật dày đặc thuật ngữ khiến người mới bước vào dễ dàng nản lòng. Bản thân tôi, sau những giờ làm việc với dữ liệu trên màn hình máy tính, vẫn giữ thói quen lật từng trang vở giấy kẻ ba cột, chậm rãi phân tích từng bộ thủ, từng kết cấu Lục thư (六书) và lắng nghe âm Hán–Việt vang lên vừa lạ vừa quen trong chính tiếng mẹ đẻ của mình. Khi cầm chiếc máy ảnh đi dọc những mái đình làng cổ Đường Lâm, ngắm những bức hoành phi câu đối ở Hà Nội, hay khi ngồi trên chuyến tàu xuyên biên giới nhìn những dãy núi đá vôi Quế Lâm hiện ra hệt như một bức thủy mặc Tống – Nguyên, tôi hiểu rằng văn hóa cổ điển chưa bao giờ nằm yên trong sách vở. Nó sống động, hữu hình và luôn kết nối trực tiếp với hiện tại.",
-          "Chinese Culture Explorer ra đời từ mong muốn nối liền khoảng trống đó — theo một nguyên tắc duy nhất: Lấy tri thức làm gốc, lấy trải nghiệm làm đầu.",
-          "Không gian này được thiết kế như một thư phòng mở gồm ba tầng trải nghiệm: (1) Một bảo tàng thị giác tĩnh lặng để bạn chậm rãi cuộn mở từng centimet của Thanh Minh Thượng Hà Đồ hay ngắm từng nét bút trong Lan Đình Tập Tự, Hàn Thực Thiếp; (2) Một bản đồ văn hiến và địa phương chí nối liền tư tưởng Bách gia chư tử, giao thoa Trung – Việt với hồ sơ thực địa của 34 tỉnh, thành phố và khu tự trị Trung Hoa; và (3) Một công cụ tự học thực chiến giải phẫu hơn 400 khái niệm và từ vựng theo Lục thư, đối chiếu Hán–Việt – Pinyin – Anh ngữ kèm xuất thẻ Anki mỗi ngày.",
-          "Dự án này không tự nhận là một bộ bách khoa toàn thư hoàn hảo. Nó là cuốn sổ tay khảo cứu được số hóa của một người trẻ Việt Nam yêu chiều sâu văn hiến Đông Á, tôn trọng sự chuẩn xác của sử liệu và tin rằng: hiểu một nền văn minh lớn là cách tốt nhất để định vị bản thân mình một cách tự chủ, tỉnh táo và rộng mở giữa thế giới hôm nay.",
-          "Nhắn nhủ thêm cùng bạn đọc: Website này sẽ được tôi liên tục cập nhật và bổ sung thêm các bài chuyên luận mới về sau, không ngừng bồi đắp như một thư phòng sống động. Tôi thấy theo góc nhìn của người Việt Nam thì hay nghe những điều chưa tốt về Trung Quốc, nhưng thực sự đối với tôi Trung Quốc là một nước phát triển luôn luôn đi trước ít nhất tầm 50 đến 100 năm so với chúng ta ở rất nhiều phương diện; bởi vậy người Việt Nam ta cần phải mở rộng tầm nhìn thực tế để đập đi những cái nhìn phiến diện và luôn sẵn sàng hội nhập với thế giới.",
-          "Qua tinh thần hội nhập thực tế ấy, tôi đặc biệt đề cao vai trò của việc học ngoại ngữ — coi ngoại ngữ (đặc biệt là tiếng Trung bên cạnh tiếng Anh) như chiếc chìa khóa thiết yếu giúp mỗi người tự mình tiếp cận tri thức nguyên bản, kiểm chứng sự thật khách quan và vững vàng bước ra thế giới."
+          "Khi học về thương mại xuyên biên giới, chuỗi cung ứng và kinh tế khu vực, tôi sớm nhận ra một điều: người ta có thể ký một hợp đồng ngoại thương bằng tiếng Anh, nhưng để thực sự thấu hiểu cách người Á Đông tư duy về chữ Tín (信), cách vận hành của mạng lưới thương bang, hay lý do một vùng đất hình thành nên tính cách kinh doanh đặc trưng qua hàng thiên niên kỷ, ta buộc phải quay về với gốc rễ văn hiến, địa lý và chữ viết của họ.",
+          "Thế nhưng, trong tâm thức của không ít người Việt Nam, hình ảnh về Trung Quốc đôi khi vẫn bị bao phủ bởi những thông tin tiêu cực một chiều hoặc những cái nhìn định kiến, phiến diện. Đối với cá nhân tôi, khi trực tiếp tìm hiểu sâu về kinh tế và đặt chân qua biên giới quan sát thực tế, có một sự thật khách quan cần được nhìn nhận thẳng thắn: Trung Quốc là một quốc gia phát triển đã đi trước chúng ta một khoảng cách rất dài — ít nhất từ 50 đến 100 năm về hạ tầng, quy mô chuỗi cung ứng, tích lũy khoa học công nghệ lẫn công tác quy hoạch, bảo tồn di sản. Người Việt Nam chúng ta muốn vươn lên mạnh mẽ thì không thể giữ mãi những định kiến cảm tính. Chúng ta cần mở rộng tầm nhìn thực tế để đập bỏ những góc nhìn phiến diện, thẳng thắn học hỏi những giá trị tinh hoa và luôn trong tâm thế chủ động hội nhập với thế giới.",
+          "Chính từ nhận thức đó, tôi càng thấm thía vai trò sống còn của việc học ngoại ngữ. Khi chưa biết ngoại ngữ, ta chỉ có thể nhìn thế giới qua lời kể lại của người khác; khi làm chủ ngoại ngữ, ta mới thực sự cầm trên tay chiếc chìa khóa để tiếp cận tri thức nguồn. Sau những giờ làm việc với dữ liệu trên màn hình máy tính, tôi vẫn giữ thói quen lật từng trang vở giấy kẻ ba cột, chậm rãi phân tích từng bộ thủ, từng kết cấu Lục thư (六书) và lắng nghe âm Hán–Việt vang lên vừa lạ vừa quen trong chính tiếng mẹ đẻ của mình. Khi cầm chiếc máy ảnh đi dọc những mái đình làng cổ Đường Lâm, ngắm những bức hoành phi câu đối ở Hà Nội, hay khi ngồi trên chuyến tàu xuyên biên giới nhìn những dãy núi đá vôi Quế Lâm hiện ra hệt như một bức thủy mặc Tống – Nguyên, tôi hiểu rằng ngôn ngữ và văn hóa cổ điển chưa bao giờ nằm yên trong sách vở. Chúng sống động, hữu hình và là nhịp cầu trực tiếp giúp ta giải mã hiện tại.",
+          "Chinese Culture Explorer ra đời từ mong muốn nối liền khoảng trống giữa học thuật và thực tiễn đó — theo một nguyên tắc duy nhất: Lấy tri thức làm gốc, lấy trải nghiệm làm đầu.",
+          "Không gian này được thiết kế như một thư phòng mở gồm ba tầng trải nghiệm:"
         ],
+        pillars: [
+          {
+            title: "Một bảo tàng thị giác tĩnh lặng:",
+            text: "Nơi bạn có thể cuộn mở từng centimet của bức Thanh Minh Thượng Hà Đồ, ngắm từng nét bút hành thư trong Lan Đình Tập Tự hay Hàn Thực Thiếp với bối cảnh lịch sử rõ ràng mà không bị làm phiền bởi những khung giao diện rối rắm."
+          },
+          {
+            title: "Một bản đồ văn hiến và địa phương chí có chiều sâu:",
+            text: "Từ tư tưởng Bách gia chư tử, quy luật Âm Dương – Ngũ Hành, nhịp cầu giao thoa văn hóa Trung – Việt, cho đến hồ sơ thực địa của 34 tỉnh, thành phố và khu tự trị Trung Hoa — nơi địa lý, lịch sử ngàn năm và thực lực kinh tế đương đại soi chiếu lẫn nhau."
+          },
+          {
+            title: "Một công cụ tự học ngoại ngữ và khảo cứu thực chiến:",
+            text: "Nơi mỗi khái niệm và từ vựng không chỉ là một nghĩa dịch máy móc, mà được giải phẫu tận gốc theo Lục thư, đối chiếu âm Hán–Việt – Pinyin – Anh ngữ và sẵn sàng xuất ra thẻ Anki để đồng hành cùng bạn trên hành trình rèn luyện ngoại ngữ mỗi ngày."
+          }
+        ],
+        closingNote: {
+          label: "Lời nhắn nhủ gửi tới bạn đọc:",
+          text: "Dự án này không tự nhận là một bộ bách khoa toàn thư đã đóng khung, và chắc chắn sẽ không dừng lại ở những nội dung hiện có. Tôi sẽ liên tục viết và cập nhật các bài chuyên luận mới về sau, không ngừng mở rộng chiều sâu khảo cứu theo từng chặng đường học tập và trải nghiệm thực tế của mình. Tôi hy vọng cuốn sổ tay số hóa này sẽ góp một phần nhỏ giúp những người trẻ Việt Nam yêu tri thức có thêm một lăng kính khách quan, vượt qua những rào cản định kiến, trau dồi ngoại ngữ và định vị bản thân một cách tự chủ, tỉnh táo, rộng mở giữa thế giới hôm nay."
+        },
         signName: "Lê Hưng Thịnh (黎兴盛)",
         signRole: "Người sáng lập · Sinh viên ngành Kinh doanh Quốc tế, Trường Đại học Thương mại (Hà Nội)",
         signProject: "CHINESE CULTURE EXPLORER – 中国文化探索"
       },
       en: {
-        langLabel: "English",
-        heading: "Between Modern Trade Flows and Ancient Brushstrokes",
+        langLabel: "English · Authentic Adaptation",
+        heading: "Between Modern Trade Flows, Ancient Brushstrokes, and a Vision Beyond Prejudice",
         subtitle: "A Note from the Founder — Lê Hưng Thịnh (黎兴盛)",
         paragraphs: [
-          "I did not start building Chinese Culture Explorer (中国文化探索) inside a traditional Sinology department, but from the study desk of an International Business student in Hanoi.",
-          "Studying cross-border trade, supply chains, and regional economics taught me an early lesson: you can draft a contract in English, but to truly grasp how East Asian societies think about trust (xìn 信), institutional continuity, or regional commercial character across millennia, you have to return to the bedrock of their texts, geography, and script.",
-          "Yet as a self-directed learner of Mandarin and Chinese civilization, I kept running into a frustrating divide. Online resources were either fragmented travel clichés or dense academic archives that buried visual beauty under walls of jargon. Away from screens, I still learn best with a physical three-column notebook—breaking characters down into their Six Scripts (Liùshū 六书) components and tracing how Sino-Vietnamese (Hán–Việt) readings preserve ancient layers of meaning inside my own native language. Walking with my camera beneath the weathered timber roofs of Đường Lâm Ancient Village, reading classical couplets in Hanoi, or watching the karst peaks of Guilin unfold outside a train window like a living Song-dynasty handscroll, I realized that classical culture is not a relic. It is a living lens for understanding the present.",
-          "Chinese Culture Explorer was built to bridge that gap around one conviction: rigorous in knowledge, effortless in experience.",
-          "Rather than an intimidating database, this platform is curated as an open reading room and gallery across three dimensions: a quiet digital gallery for unrolling classical handscrolls and calligraphy; a living cultural and regional atlas covering classical thought, Sino-Vietnamese exchange, and all 34 provincial-level regions of China; and a practical study companion deconstructing 400+ terms through Liushu radical etymology and one-click Anki flashcard exports.",
-          "This platform does not claim to be an exhaustive institutional encyclopedia. It is a carefully crafted digital notebook by a Vietnamese learner who values primary evidence, visual clarity, and the quiet joy of understanding a neighboring civilization in full depth.",
-          "Looking ahead, this platform will be continuously updated with new analytical monographs as our research evolves. In common Vietnamese discourse, people often hear negative stories about China; yet looking soberly at real-world development, China in my view stands at least 50 to 100 years ahead of us across many foundational domains. For Vietnam to move forward, we must broaden our practical horizon, shatter one-sided prejudices, and remain ready to integrate actively with the world.",
-          "Through that need for global integration, I strongly emphasize the indispensable role of learning foreign languages—treating language mastery (especially Chinese alongside English) as an essential key to accessing primary knowledge and standing on our own feet internationally."
+          "I did not start building Chinese Culture Explorer (中国文化探索) inside a traditional Sinology department, but from the study desk of an International Business student at Thuongmai University in Hanoi.",
+          "Studying cross-border trade, supply chains, and regional economics taught me an early lesson: you can draft a commercial contract in English, but to truly grasp how East Asian societies think about trust (xìn 信), merchant networks, or regional commercial character across millennia, you have to return to the bedrock of their texts, geography, and script.",
+          "In Vietnam, public perceptions of China are often shaped by negative headlines or one-sided, fragmented stereotypes. Yet to me, looking at reality with sober eyes reveals an undeniable truth: in terms of infrastructure, industrial scale, supply-chain depth, and systematic heritage preservation, China is a highly developed powerhouse that stands at least 50 to 100 years ahead of us. True national self-respect never comes from denial or narrow-minded prejudice. As Vietnamese youth, we need to broaden our practical vision, dismantle one-sided stereotypes, learn objectively from advanced civilizations, and stay ready to integrate deeply with the globalized world.",
+          "This conviction is why I place the highest value on learning foreign languages. Without foreign languages, we are forced to view the world through second-hand filters; mastering them hands us the direct key to primary sources and independent thought. Away from screens, I still learn best with a physical three-column notebook—breaking Chinese characters down into their Six Scripts (Liùshū 六书) components and tracing how Sino-Vietnamese (Hán–Việt) readings preserve ancient layers of meaning inside my own native tongue. Walking with my camera beneath the weathered timber roofs of Đường Lâm Ancient Village, reading classical couplets in Hanoi, or watching the karst peaks of Guilin unfold outside a cross-border train window like a living Song-dynasty handscroll, I realized that language and classical culture are never static relics. They are living lenses for decoding the modern world.",
+          "Chinese Culture Explorer was built to bridge that gap around one principle: rigorous in knowledge, effortless in experience.",
+          "Rather than an intimidating database, this platform is curated as an open reading room across three dimensions:"
         ],
+        pillars: [
+          {
+            title: "A quiet digital gallery:",
+            text: "Where you can unroll horizontal handscroll masterpieces like Along the River During the Qingming Festival or inspect the brushwork of Lantingji Xu at your own pace."
+          },
+          {
+            title: "A living cultural and regional atlas:",
+            text: "Connecting classical philosophy and Sino-Vietnamese exchange with practical profiles across all 34 provincial-level regions of China—linking millennia of history to contemporary economic reality."
+          },
+          {
+            title: "A practical language and research companion:",
+            text: "Where cultural and linguistic concepts are deconstructed through radical etymology, Sino-Vietnamese bridges, Pinyin, English meanings, and one-click Anki flashcard exports for daily language mastery."
+          }
+        ],
+        closingNote: {
+          label: "A Note from the Founder:",
+          text: "This platform is a living project, not a static archive. I am committed to continuously researching, writing, and updating new in-depth essays over time as my own academic and real-world journey evolves. My hope is that this digital notebook empowers fellow learners to look beyond stereotypes, embrace foreign languages as a bridge to global integration, and position themselves with clarity, confidence, and open-mindedness in today's world."
+        },
         signName: "Lê Hưng Thịnh (黎兴盛)",
         signRole: "Founder · International Business Undergraduate, Thuongmai University (Hanoi)",
         signProject: "CHINESE CULTURE EXPLORER – 中国文化探索"
       },
       zh: {
-        langLabel: "中文",
-        heading: "在现代商贸脉络与千年笔墨之间",
+        langLabel: "中文 · 创始人寄语",
+        heading: "在现代商贸脉络、千年笔墨与破除偏见的远见之间",
         subtitle: "创始人寄语 — 黎兴盛 (Lê Hưng Thịnh)",
         paragraphs: [
           "我创办「中国文化探索」(Chinese Culture Explorer)，并非始于象牙塔中的汉学研究所，而是源于河内一名国际商务专业大学生的书桌。",
-          "在研习跨境贸易、供应链与区域经济的过程中，我越来越清晰地体会到：一纸商业合同可以用英文签署，但若想真正理解东亚社会对“信”的敬畏、理解礼俗与制度的演进、理解中国三十四个省区市延续千年的风土与商帮性格，就必须回到文字、地理与历史源流之中。",
-          "然而，作为一名中文与中华文化的自学者，我常感到现有的数字资源处于两个极端：要么是碎片化的浅层介绍，要么是令初学者望而却步的枯燥文献。在屏幕之外，我习惯用三栏纸质笔记本一笔一划地拆解汉字的“六书”结构，在汉越音（Hán–Việt）与现代汉语的对照中体会千年文脉的回响；我也曾带着相机走过河内古街与唐林古村的牌匾楹联，或乘列车北上桂林，在漓江山水间亲眼印证宋元水墨长卷的意境。我深知，真正的古典文化从不枯燥，它本就具有直抵人心的视觉与思想力量。",
-          "因此，这个平台秉持一个朴素的原则：以考据为骨，以体验为先。这里既是一座可以静心展卷的数字书画馆，也是一部连接先秦诸子、中越文化交流与中国三十四省区市风貌的人文舆图，同时还是一套融合“六书”字源解析与 Anki 记忆卡片的实用研习工具。它是一位越南青年学子在求知途中的数字读书笔记，愿为每一位热爱东方文明的探索者，提供一扇清朗、严谨而温润的窗口。",
-          "在此补充几句未来寄语：本平台今后将持续更新与充实更多新的深度专题论文。在越南的常见看法中，大家容易听到不少关于中国的负面言论；但从现实发展来看，我认为中国在诸多核心领域至少领先我们五十年到一百年。因此，越南人更需要拓宽务实视野，打破片面成见，并随时做好融入世界的准备。",
-          "而正是在融入世界的过程中，外语学习的价值显得尤为关键——掌握汉语、英语等外语，能够让我们直接阅读一手知识、独立辨别事实，以更清醒而自信的姿态对话世界。"
+          "在研习跨境贸易、供应链与区域经济的过程中，我越来越清晰地体会到：一纸外贸合同可以用英文签署，但若想真正理解东亚社会对“信”的敬畏、理解千年商帮的运作逻辑，以及中国三十四个省区市延续至今的风土与经济性格，就必须回到文字、地理与历史源流之中。",
+          "在越南的日常舆论中，人们有时容易受到片面信息的影响，对中国产生刻板或单一的印象。但对我而言，当我们真正走进现实、客观审视中国的现代基础设施、产业链规模、科技积累与文化保育体系时，必须坦诚面对一个事实：中国的发展水平在许多维度上领先我们至少五十到一百年。真正的民族自信绝不是固步自封，越南年轻一代需要拓宽务实的国际视野，打破片面与偏见的藩篱，以开放、理性的心态积极融入世界。",
+          "正因如此，我无比推崇外语学习的战略价值。唯有掌握外语（无论是链接全球贸易的英语，还是承载东方文脉与现代产业的中文），我们才能跨越二手信息的阻隔，直接阅读一手文献、独立观察真实的世界。在屏幕之外，我依然习惯用三栏纸质笔记本一笔一划地拆解汉字的“六书”结构，在汉越音（Hán–Việt）与现代汉语的对照中体会千年文脉的回响；我也曾带着相机走过河内古街与唐林古村的牌匾楹联，或乘列车北上桂林，在漓江山水间亲眼印证宋元水墨长卷的意境。",
+          "本着“以考据为骨，以体验为先”的原则，这座平台被构筑为一间开放的研习书房：它既是一座可以静心展卷的数字书画馆，也是一部连接先秦诸子、中越文化交流与中国三十四省区市当代风貌的人文舆图，同时还是一套融合“六书”字源解析与 Anki 记忆卡片的外语与文化研习工具。"
         ],
+        pillars: [],
+        closingNote: {
+          label: "创始人寄语：",
+          text: "这部数字笔记绝非止步于此的静态档案。在未来的求学与探索途中，我将持续撰写并更新更多深度专题论文与考据文章。愿这扇清朗、严谨而务实的窗口，能陪伴更多青年学子借外语之力破除偏见、拓宽视野，在广阔的世界格局中清醒而自信地前行。"
+        },
         signName: "黎兴盛 (Lê Hưng Thịnh)",
         signRole: "创始人 · 越南贸易大学（河内）国际商务系",
         signProject: "CHINESE CULTURE EXPLORER – 中国文化探索"

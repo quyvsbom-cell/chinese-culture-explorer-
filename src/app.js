@@ -2363,9 +2363,8 @@
             </div>
 
             <div class="nav-utility-controls">
-              <button type="button" class="nav-util-btn" data-action="open-search" title="${escapeHtml(lp.searchPlaceholder)}">
+              <button type="button" class="nav-util-btn" data-action="open-search" aria-label="Tìm kiếm (Ctrl+K)" title="${escapeHtml(lp.searchPlaceholder)} (Ctrl+K)">
                 ${ICONS.search}
-                <span class="kbd-hint">Ctrl+K</span>
               </button>
               <select class="nav-util-select" data-action="ui-lang-select" aria-label="Chọn ngôn ngữ giao diện">
                 <option value="vi" ${state.uiLang === "vi" ? "selected" : ""}>VI</option>
@@ -2378,7 +2377,6 @@
               </button>
               <button type="button" class="nav-util-btn" data-action="toggle-theme" aria-label="Chuyển giao diện Sáng / Tối" title="${isDark ? lp.themeLight : lp.themeDark}">
                 ${isDark ? ICONS.sun : ICONS.moon}
-                <span>${isDark ? lp.themeLight : lp.themeDark}</span>
               </button>
               ${(() => {
                 const authSt = Auth.getState();
@@ -3116,6 +3114,7 @@
       <!-- QUIET HOMEPAGE EDITORIAL COLOPHON (PRE-FOOTER) -->
       ${(() => {
         const col = Brand.founderColophon || {};
+        const kicker = state.uiLang === "en" ? col.kickerEn : (state.uiLang === "zh-CN" || state.uiLang === "zh-TW") ? col.kickerZh : col.kickerVi;
         const prose = state.uiLang === "en" ? col.en : (state.uiLang === "zh-CN" || state.uiLang === "zh-TW") ? col.zh : col.vi;
         const cta = state.uiLang === "en" ? col.ctaEn : (state.uiLang === "zh-CN" || state.uiLang === "zh-TW") ? col.ctaZh : col.ctaVi;
         if (!prose) return "";
@@ -3124,8 +3123,9 @@
             <div class="container">
               <div class="ed-colophon-inner">
                 <div class="ed-colophon-seal" aria-hidden="true">${escapeHtml(col.sealChars || "興盛")}</div>
+                ${kicker ? `<div class="ed-meta-line">${escapeHtml(kicker)}</div>` : ""}
                 <p class="ed-colophon-prose">${escapeHtml(prose)}</p>
-                <button type="button" class="ed-colophon-cta" data-action="open-founder-message">${escapeHtml(cta || "Đọc tâm thư người sáng lập →")}</button>
+                <button type="button" class="ed-colophon-cta" data-action="open-founder-message">${escapeHtml(cta || "Đọc toàn văn Thông điệp Người sáng lập →")}</button>
               </div>
             </div>
           </section>
@@ -8250,6 +8250,16 @@
                       <h3 style="font-family:var(--font-editorial);font-size:1.25rem;margin-bottom:0.35rem;color:#7A1414;">${escapeHtml(block.heading)}</h3>
                       ${block.subtitle ? `<div style="font-size:0.84rem;color:var(--text-muted);font-style:italic;margin-bottom:0.9rem;">${escapeHtml(block.subtitle)}</div>` : ""}
                       ${(block.paragraphs || []).map((p) => `<p>${escapeHtml(p)}</p>`).join("")}
+                      ${Array.isArray(block.pillars) && block.pillars.length
+                        ? `<ol class="founder-pillars-list">
+                            ${block.pillars
+                              .map((pl) => `<li><strong>${escapeHtml(pl.title)}</strong> ${escapeHtml(pl.text)}</li>`)
+                              .join("")}
+                          </ol>`
+                        : ""}
+                      ${block.closingNote
+                        ? `<p class="founder-letter-closing"><strong>${escapeHtml(block.closingNote.label)}</strong> ${escapeHtml(block.closingNote.text)}</p>`
+                        : ""}
                       <div class="founder-letter-signoff">
                         <strong>${escapeHtml(block.signName)}</strong><br>
                         <span>${escapeHtml(block.signRole)}</span><br>
@@ -8260,6 +8270,32 @@
                 })
                 .join("")}
             </div>
+
+            ${(() => {
+              const fg = Brand.founderGuidance || {};
+              const guide = fmMode === "en" ? fg.en : fmMode === "zh" ? fg.zh : fg.vi;
+              if (!guide) return "";
+              return `
+                <div class="founder-guidance-wrap" id="founder-counsel-section">
+                  <div class="ed-meta-line" style="margin-bottom:0.65rem;">${escapeHtml(guide.sectionBadge)}</div>
+                  <div class="founder-guidance-grid">
+                    <article class="founder-guidance-card">
+                      <h3>${escapeHtml(guide.readerCardTitle)}</h3>
+                      <p class="founder-guidance-lead">${escapeHtml(guide.readerHeadline)}</p>
+                      ${(guide.readerParagraphs || []).map((p) => `<p>${escapeHtml(p)}</p>`).join("")}
+                    </article>
+                    <article class="founder-guidance-card founder-guidance-card--discipline">
+                      <h3>${escapeHtml(guide.selfCardTitle)}</h3>
+                      <ul class="founder-discipline-list">
+                        ${(guide.selfCommitments || [])
+                          .map((item) => `<li><strong>${escapeHtml(item.label)}</strong> ${escapeHtml(item.text)}</li>`)
+                          .join("")}
+                      </ul>
+                    </article>
+                  </div>
+                </div>
+              `;
+            })()}
           </section>
 
           <!-- Sections 04 to 09: Research, Learning, Cultural Dialogue, Founder Identity, IP, Contact -->
