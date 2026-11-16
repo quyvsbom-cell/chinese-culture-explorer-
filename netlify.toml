@@ -21,6 +21,18 @@
   force = true
 
 [[redirects]]
+  from = "/scratch/*"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/Website/*"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
   from = "/server.py"
   to = "/404"
   status = 404
