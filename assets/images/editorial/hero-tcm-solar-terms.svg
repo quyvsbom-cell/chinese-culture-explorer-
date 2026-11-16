@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <title>Hoàng Đế Nội Kinh, 24 Tiết Khí và Dưỡng sinh Tứ Thời</title>
+  <desc>Ecliptic 24 Solar Terms wheel integrated with Traditional Chinese Medicine seasonal health preservation (Yangsheng) and Five Zang organs.</desc>
+  <defs>
+    <style>
+      .serif { font-family: 'Cormorant Garamond', 'Noto Serif SC', Georgia, serif; }
+      .sans { font-family: 'Be Vietnam Pro', 'Inter', 'Noto Sans SC', sans-serif; }
+      .han { font-family: 'Noto Serif SC', 'Noto Serif TC', serif; }
+      .mono { font-family: 'JetBrains Mono', monospace; }
+      .kicker { font-family: 'Be Vietnam Pro', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 2px; fill: #9F2929; text-transform: uppercase; }
+      .h-title { font-family: 'Cormorant Garamond', 'Noto Serif SC', serif; font-size: 38px; font-weight: 700; fill: #202020; }
+      .h-sub { font-family: 'Be Vietnam Pro', sans-serif; font-size: 17px; fill: #524F49; }
+      .label-b { font-family: 'Be Vietnam Pro', sans-serif; font-size: 16px; font-weight: 700; fill: #202020; }
+      .label-s { font-family: 'Be Vietnam Pro', sans-serif; font-size: 13.5px; fill: #524F49; }
+      .han-big { font-family: 'Noto Serif SC', serif; font-weight: 700; fill: #202020; }
+    </style>
+    <pattern id="paperGrain" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="#F7F4ED"/>
+      <circle cx="14" cy="18" r="0.8" fill="#C9C0AD" opacity="0.35"/>
+      <circle cx="42" cy="46" r="0.7" fill="#B8AF9B" opacity="0.3"/>
+      <path d="M0 30 H60 M30 0 V60" stroke="#E5DEC9" stroke-width="0.4" opacity="0.4"/>
+    </pattern>
+    <pattern id="diagonalHatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#9F2929" stroke-width="1.4" opacity="0.28"/>
+    </pattern>
+    <pattern id="dotPattern" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1.5" fill="#637F72" opacity="0.35"/>
+    </pattern>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9F2929"/>
+      <stop offset="100%" stop-color="#B63D32"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#CBB078"/>
+      <stop offset="100%" stop-color="#9E8048"/>
+    </linearGradient>
+    <linearGradient id="jadeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#637F72"/>
+      <stop offset="100%" stop-color="#3F574D"/>
+    </linearGradient>
+    <marker id="arrowRed" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#9F2929"/>
+    </marker>
+    <marker id="arrowGold" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#B99A62"/>
+    </marker>
+    <marker id="arrowJade" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#637F72"/>
+    </marker>
+    <marker id="arrowInk" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#202020"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#paperGrain)"/>
+  <rect x="20" y="20" width="1560" height="860" fill="none" stroke="#DED8CA" stroke-width="2"/>
+  <rect x="28" y="28" width="1544" height="844" fill="none" stroke="#B99A62" stroke-width="0.9" opacity="0.65"/>
+  
+  <text x="72" y="84" class="kicker">CHƯƠNG 16 • THIÊN VĂN LỊCH PHÁP &amp; ĐÔNG Y DƯỠNG SINH CỔ TRUYỀN</text>
+  <text x="72" y="132" class="h-title">Vòng Xoay 24 Tiết Khí (二十四节气) &amp; Dưỡng Sinh 《Hoàng Đế Nội Kinh》</text>
+  <text x="72" y="164" class="h-sub">Từ góc kinh độ Mặt Trời mỗi 15° (Dương lịch thiên văn) tới quy luật “Xuân Hạ dưỡng Dương, Thu Đông dưỡng Âm”</text>
+  <line x1="72" y1="186" x2="1528" y2="186" stroke="#DED8CA" stroke-width="1.5"/>
+
+  <!-- Left: 24 Solar Terms Ecliptic Wheel -->
+  <g>
+    <rect x="60" y="210" width="710" height="630" rx="10" fill="#F2EFE6" stroke="#B99A62" stroke-width="1.5"/>
+    <circle cx="410" cy="520" r="258" fill="#F7F4ED" stroke="#DED8CA" stroke-width="1.5"/>
+    <circle cx="410" cy="520" r="178" fill="none" stroke="#B99A62" stroke-width="1.5" stroke-dasharray="5 3"/>
+    <circle cx="410" cy="520" r="95" fill="#9F2929" opacity="0.1" stroke="#9F2929" stroke-width="2"/>
+    <text x="410" y="510" text-anchor="middle" class="han-big" font-size="24" fill="#9F2929">二十四节气</text>
+    <text x="410" y="538" text-anchor="middle" class="label-s" font-weight="700">360° ÷ 24 = 15° / Tiết</text>
+    <text x="410" y="558" text-anchor="middle" class="label-s">UNESCO Di sản (2016)</text>
+    <line x1="410.0" y1="342.0" x2="410.0" y2="262.0" stroke="#637F72" stroke-width="2.2"/><circle cx="410.0" cy="262.0" r="4" fill="#637F72"/><text x="410.0" y="232.0" text-anchor="middle" class="sans" font-size="12.5" font-weight="600" fill="#202020">立春 Lập Xuân</text><line x1="456.1" y1="348.1" x2="476.8" y2="270.8" stroke="#637F72" stroke-width="2.2"/><circle cx="476.8" cy="270.8" r="4" fill="#637F72"/><text x="485.6" y="241.9" text-anchor="start" class="sans" font-size="12.5" font-weight="600" fill="#202020">雨水 Vũ Thủy</text><line x1="499.0" y1="365.8" x2="539.0" y2="296.6" stroke="#637F72" stroke-width="2.2"/><circle cx="539.0" cy="296.6" r="4" fill="#637F72"/><text x="556.0" y="271.1" text-anchor="start" class="sans" font-size="12.5" font-weight="600" fill="#202020">惊蛰 Kinh Trập</text><line x1="535.9" y1="394.1" x2="592.4" y2="337.6" stroke="#637F72" stroke-width="2.2"/><circle cx="592.4" cy="337.6" r="4" fill="#637F72"/><text x="616.5" y="317.5" text-anchor="start" class="sans" font-size="12.5" font-weight="600" fill="#202020">春分 Xuân Phân</text><line x1="564.2" y1="431.0" x2="633.4" y2="391.0" stroke="#637F72" stroke-width="2.2"/><circle cx="633.4" cy="391.0" r="4" fill="#637F72"/><text x="662.9" y="378.0" text-anchor="start" class="sans" font-size="12.5" font-weight="600" fill="#202020">清明 Thanh Minh</text><line x1="581.9" y1="473.9" x2="659.2" y2="453.2" stroke="#637F72" stroke-width="2.2"/><circle cx="659.2" cy="453.2" r="4" fill="#637F72"/><text x="692.1" y="448.4" text-anchor="start" class="sans" font-size="12.5" font-weight="600" fill="#202020">谷雨 Cốc Vũ</text><line x1="588.0" y1="520.0" x2="668.0" y2="520.0" stroke="#B63D32" stroke-width="2.2"/><circle cx="668.0" cy="520.0" r="4" fill="#B63D32"/><text x="702.0" y="524.0" text-anchor="start" class="sans" font-size="12.5" font-weight="600" fill="#202020">立夏 Lập Hạ</text><line x1="581.9" y1="566.1" x2="659.2" y2="586.8" stroke="#B63D32" stroke-width="2.2"/><circle cx="659.2" cy="586.8" r="4" fill="#B63D32"/><text x="692.1" y="599.6" text-anchor="start" class="sans" font-size="12.5" font-weight="600" fill="#202020">小满 Tiểu Mãn</text><line x1="564.2" y1="609.0" x2="633.4" y2="649.0" stroke="#B63D32" stroke-width="2.2"/><circle cx="633.4" cy="649.0" r="4" fill="#B63D32"/><text x="662.9" y="670.0" text-anchor="start" class="sans" font-size="12.5" font-weight="600" fill="#202020">芒种 Mang Chủng</text><line x1="535.9" y1="645.9" x2="592.4" y2="702.4" stroke="#B63D32" stroke-width="2.2"/><circle cx="592.4" cy="702.4" r="4" fill="#B63D32"/><text x="616.5" y="730.5" text-anchor="start" class="sans" font-size="12.5" font-weight="600" fill="#202020">夏至 Hạ Chí</text><line x1="499.0" y1="674.2" x2="539.0" y2="743.4" stroke="#B63D32" stroke-width="2.2"/><circle cx="539.0" cy="743.4" r="4" fill="#B63D32"/><text x="556.0" y="776.9" text-anchor="start" class="sans" font-size="12.5" font-weight="600" fill="#202020">小暑 Tiểu Thử</text><line x1="456.1" y1="691.9" x2="476.8" y2="769.2" stroke="#B63D32" stroke-width="2.2"/><circle cx="476.8" cy="769.2" r="4" fill="#B63D32"/><text x="485.6" y="806.1" text-anchor="start" class="sans" font-size="12.5" font-weight="600" fill="#202020">大暑 Đại Thử</text><line x1="410.0" y1="698.0" x2="410.0" y2="778.0" stroke="#B99A62" stroke-width="2.2"/><circle cx="410.0" cy="778.0" r="4" fill="#B99A62"/><text x="410.0" y="816.0" text-anchor="middle" class="sans" font-size="12.5" font-weight="600" fill="#202020">立秋 Lập Thu</text><line x1="363.9" y1="691.9" x2="343.2" y2="769.2" stroke="#B99A62" stroke-width="2.2"/><circle cx="343.2" cy="769.2" r="4" fill="#B99A62"/><text x="334.4" y="806.1" text-anchor="end" class="sans" font-size="12.5" font-weight="600" fill="#202020">处暑 Xử Thử</text><line x1="321.0" y1="674.2" x2="281.0" y2="743.4" stroke="#B99A62" stroke-width="2.2"/><circle cx="281.0" cy="743.4" r="4" fill="#B99A62"/><text x="264.0" y="776.9" text-anchor="end" class="sans" font-size="12.5" font-weight="600" fill="#202020">白露 Bạch Lộ</text><line x1="284.1" y1="645.9" x2="227.6" y2="702.4" stroke="#B99A62" stroke-width="2.2"/><circle cx="227.6" cy="702.4" r="4" fill="#B99A62"/><text x="203.5" y="730.5" text-anchor="end" class="sans" font-size="12.5" font-weight="600" fill="#202020">秋分 Thu Phân</text><line x1="255.8" y1="609.0" x2="186.6" y2="649.0" stroke="#B99A62" stroke-width="2.2"/><circle cx="186.6" cy="649.0" r="4" fill="#B99A62"/><text x="157.1" y="670.0" text-anchor="end" class="sans" font-size="12.5" font-weight="600" fill="#202020">寒露 Hàn Lộ</text><line x1="238.1" y1="566.1" x2="160.8" y2="586.8" stroke="#B99A62" stroke-width="2.2"/><circle cx="160.8" cy="586.8" r="4" fill="#B99A62"/><text x="127.9" y="599.6" text-anchor="end" class="sans" font-size="12.5" font-weight="600" fill="#202020">霜降 Sương Giáng</text><line x1="232.0" y1="520.0" x2="152.0" y2="520.0" stroke="#355C7D" stroke-width="2.2"/><circle cx="152.0" cy="520.0" r="4" fill="#355C7D"/><text x="118.0" y="524.0" text-anchor="end" class="sans" font-size="12.5" font-weight="600" fill="#202020">立冬 Lập Đông</text><line x1="238.1" y1="473.9" x2="160.8" y2="453.2" stroke="#355C7D" stroke-width="2.2"/><circle cx="160.8" cy="453.2" r="4" fill="#355C7D"/><text x="127.9" y="448.4" text-anchor="end" class="sans" font-size="12.5" font-weight="600" fill="#202020">小雪 Tiểu Tuyết</text><line x1="255.8" y1="431.0" x2="186.6" y2="391.0" stroke="#355C7D" stroke-width="2.2"/><circle cx="186.6" cy="391.0" r="4" fill="#355C7D"/><text x="157.1" y="378.0" text-anchor="end" class="sans" font-size="12.5" font-weight="600" fill="#202020">大雪 Đại Tuyết</text><line x1="284.1" y1="394.1" x2="227.6" y2="337.6" stroke="#355C7D" stroke-width="2.2"/><circle cx="227.6" cy="337.6" r="4" fill="#355C7D"/><text x="203.5" y="317.5" text-anchor="end" class="sans" font-size="12.5" font-weight="600" fill="#202020">冬至 Đông Chí</text><line x1="321.0" y1="365.8" x2="281.0" y2="296.6" stroke="#355C7D" stroke-width="2.2"/><circle cx="281.0" cy="296.6" r="4" fill="#355C7D"/><text x="264.0" y="271.1" text-anchor="end" class="sans" font-size="12.5" font-weight="600" fill="#202020">小寒 Tiểu Hàn</text><line x1="363.9" y1="348.1" x2="343.2" y2="270.8" stroke="#355C7D" stroke-width="2.2"/><circle cx="343.2" cy="270.8" r="4" fill="#355C7D"/><text x="334.4" y="241.9" text-anchor="end" class="sans" font-size="12.5" font-weight="600" fill="#202020">大寒 Đại Hàn</text>
+  </g>
+
+  <!-- Right: Four Seasons TCM Yangsheng Matrix -->
+  <g transform="translate(804, 210)">
+    <rect width="724" height="630" rx="10" fill="#EFECE2" stroke="#637F72" stroke-width="1.6"/>
+    <rect width="724" height="48" rx="10" fill="url(#jadeGrad)"/>
+    <text x="24" y="31" class="label-b" fill="#F7F4ED">NGUYÊN LÝ DƯỠNG SINH TỨ THỜI (《黄帝内经·四气调神大论》)</text>
+
+    <!-- 4 Seasonal Cards -->
+    <g transform="translate(24, 68)">
+      <rect width="328" height="218" rx="8" fill="#F7F4ED" stroke="#637F72" stroke-width="1.6"/>
+      <text x="18" y="32" class="label-b" fill="#2D4A3E">1. XUÂN — Phát Trần (发陈) • Hành Mộc</text>
+      <text x="18" y="58" class="label-s"><tspan font-weight="700">Tạng chủ:</tspan> Can (Gan) &amp; Đởm — Chủ Sơ tiết</text>
+      <text x="18" y="84" class="label-s"><tspan font-weight="700">Sinh hoạt:</tspan> Ngủ đêm dậy sớm, đi bộ thư giãn</text>
+      <text x="18" y="110" class="label-s"><tspan font-weight="700">Ẩm thực:</tspan> Bớt chua, thêm vị ngọt dịu nuôi Tỳ</text>
+      <text x="18" y="136" class="label-s"><tspan font-weight="700">Tiết mốc:</tspan> Lập Xuân, Xuân Phân, Thanh Minh</text>
+      <rect x="18" y="156" width="292" height="44" rx="5" fill="#EDF3F0"/>
+      <text x="30" y="182" class="label-s" fill="#2D4A3E">Dưỡng dương khí mới nhú, tránh uất giận hại Can</text>
+    </g>
+
+    <g transform="translate(372, 68)">
+      <rect width="328" height="218" rx="8" fill="#F7F4ED" stroke="#B63D32" stroke-width="1.6"/>
+      <text x="18" y="32" class="label-b" fill="#9F2929">2. HẠ — Phồn Tú (蕃秀) • Hành Hỏa</text>
+      <text x="18" y="58" class="label-s"><tspan font-weight="700">Tạng chủ:</tspan> Tâm (Tim) &amp; Tiểu trường</text>
+      <text x="18" y="84" class="label-s"><tspan font-weight="700">Sinh hoạt:</tspan> Ngủ trưa ngắn, giữ tâm tĩnh, ra mồ hôi vừa</text>
+      <text x="18" y="110" class="label-s"><tspan font-weight="700">Ẩm thực:</tspan> Thanh nhiệt giải thử, không lạm dụng đồ lạnh</text>
+      <text x="18" y="136" class="label-s"><tspan font-weight="700">Tiết mốc:</tspan> Lập Hạ, Mang Chủng, Hạ Chí, Đại Thử</text>
+      <rect x="18" y="156" width="292" height="44" rx="5" fill="#F8ECE9"/>
+      <text x="30" y="182" class="label-s" fill="#9F2929">“Đông bệnh Hạ trị” &amp; bảo vệ Dương khí Tỳ Vị</text>
+    </g>
+
+    <g transform="translate(24, 304)">
+      <rect width="328" height="218" rx="8" fill="#F7F4ED" stroke="#B99A62" stroke-width="1.6"/>
+      <text x="18" y="32" class="label-b" fill="#7B5C24">3. THU — Dung Bình (容平) • Hành Kim</text>
+      <text x="18" y="58" class="label-s"><tspan font-weight="700">Tạng chủ:</tspan> Phế (Phổi) &amp; Đại trường</text>
+      <text x="18" y="84" class="label-s"><tspan font-weight="700">Sinh hoạt:</tspan> Ngủ sớm dậy sớm cùng gà gáy, thu liễm chí</text>
+      <text x="18" y="110" class="label-s"><tspan font-weight="700">Ẩm thực:</tspan> Nhuận táo (lê, mật ong, mè đen, bạch hợp)</text>
+      <text x="18" y="136" class="label-s"><tspan font-weight="700">Tiết mốc:</tspan> Lập Thu, Bạch Lộ, Thu Phân, Sương Giáng</text>
+      <rect x="18" y="156" width="292" height="44" rx="5" fill="#F5EFE2"/>
+      <text x="30" y="182" class="label-s" fill="#7B5C24">Phòng Thu Táo hại Phế tân, giữ ẩm đường hô hấp</text>
+    </g>
+
+    <g transform="translate(372, 304)">
+      <rect width="328" height="218" rx="8" fill="#F7F4ED" stroke="#355C7D" stroke-width="1.6"/>
+      <text x="18" y="32" class="label-b" fill="#284761">4. ĐÔNG — Bế Tàng (闭藏) • Hành Thủy</text>
+      <text x="18" y="58" class="label-s"><tspan font-weight="700">Tạng chủ:</tspan> Thận (Thận) &amp; Bàng quang</text>
+      <text x="18" y="84" class="label-s"><tspan font-weight="700">Sinh hoạt:</tspan> Ngủ sớm dậy muộn đợi nắng, giữ ấm lưng chân</text>
+      <text x="18" y="110" class="label-s"><tspan font-weight="700">Ẩm thực:</tspan> Ôn bổ tàng tinh (đậu đen, gừng, hạt óc chó)</text>
+      <text x="18" y="136" class="label-s"><tspan font-weight="700">Tiết mốc:</tspan> Lập Đông, Đông Chí (Nhất Dương sinh)</text>
+      <rect x="18" y="156" width="292" height="44" rx="5" fill="#E8EEF3"/>
+      <text x="30" y="182" class="label-s" fill="#284761">Tích trữ tinh khí cho chu kỳ Mộc mùa Xuân kế tiếp</text>
+    </g>
+
+    <rect x="24" y="542" width="538" height="64" rx="6" fill="#FAF7F0" stroke="#DED8CA"/>
+    <text x="38" y="568" class="label-s"><tspan font-weight="700" fill="#202020">Ranh giới Y học Thực chứng:</tspan> 24 Tiết khí &amp; Dưỡng sinh theo mùa là tri thức văn hóa–lối sống</text>
+    <text x="38" y="590" class="label-s">bảo vệ sức khỏe phòng ngừa (治未病), bổ trợ chứ không thay thế chẩn đoán &amp; cấp cứu y khoa hiện đại.</text>
+  </g>
+
+  <g transform="translate(1455, 808)">
+    <rect width="104" height="50" rx="3" fill="#9F2929" opacity="0.92"/>
+    <rect x="4" y="4" width="96" height="42" rx="2" fill="none" stroke="#F7F4ED" stroke-width="1" opacity="0.7"/>
+    <text x="52" y="24" text-anchor="middle" class="han" font-size="14" fill="#F7F4ED" font-weight="700">中国文化探索</text>
+    <text x="52" y="40" text-anchor="middle" class="mono" font-size="10" fill="#F7F4ED" opacity="0.9">CCE ARCHIVE</text>
+  </g>
+</svg>

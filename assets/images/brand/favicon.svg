@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CHINESE CULTURE EXPLORER Seal Favicon">
+  <rect x="2" y="2" width="60" height="60" rx="10" fill="#9F2929"/>
+  <rect x="6" y="6" width="52" height="52" rx="7" fill="none" stroke="#B99A62" stroke-width="2"/>
+  <rect x="9.5" y="9.5" width="45" height="45" rx="4.5" fill="none" stroke="#F7F4ED" stroke-width="1" opacity="0.55"/>
+  <text x="32" y="29" text-anchor="middle" font-family="'Noto Serif SC', 'Songti SC', serif" font-size="18" font-weight="700" fill="#F7F4ED">中国</text>
+  <text x="32" y="48" text-anchor="middle" font-family="'Noto Serif SC', 'Songti SC', serif" font-size="18" font-weight="700" fill="#F7F4ED">探索</text>
+</svg>

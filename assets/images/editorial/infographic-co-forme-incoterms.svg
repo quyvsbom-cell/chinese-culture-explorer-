@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750">
+  <title>Thẩm định C/O Form E, Mã HS &amp; Incoterms 2020 trong Xuất Nhập khẩu Trung – Việt</title>
+  <desc>Practical customs audit infographic comparing ACFTA Certificate of Origin Form E rules (WO, RVC &gt;= 40%, CTH), HS Code matching, and Incoterms 2020 transfer points.</desc>
+  <defs>
+    <style>
+      .serif { font-family: 'Cormorant Garamond', 'Noto Serif SC', Georgia, serif; }
+      .sans { font-family: 'Be Vietnam Pro', 'Inter', 'Noto Sans SC', sans-serif; }
+      .han { font-family: 'Noto Serif SC', 'Noto Serif TC', serif; }
+      .mono { font-family: 'JetBrains Mono', monospace; }
+      .kicker { font-family: 'Be Vietnam Pro', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 2px; fill: #9F2929; text-transform: uppercase; }
+      .h-title { font-family: 'Cormorant Garamond', 'Noto Serif SC', serif; font-size: 38px; font-weight: 700; fill: #202020; }
+      .h-sub { font-family: 'Be Vietnam Pro', sans-serif; font-size: 17px; fill: #524F49; }
+      .label-b { font-family: 'Be Vietnam Pro', sans-serif; font-size: 16px; font-weight: 700; fill: #202020; }
+      .label-s { font-family: 'Be Vietnam Pro', sans-serif; font-size: 13.5px; fill: #524F49; }
+      .han-big { font-family: 'Noto Serif SC', serif; font-weight: 700; fill: #202020; }
+    </style>
+    <pattern id="paperGrain" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="#F7F4ED"/>
+      <circle cx="14" cy="18" r="0.8" fill="#C9C0AD" opacity="0.35"/>
+      <circle cx="42" cy="46" r="0.7" fill="#B8AF9B" opacity="0.3"/>
+      <path d="M0 30 H60 M30 0 V60" stroke="#E5DEC9" stroke-width="0.4" opacity="0.4"/>
+    </pattern>
+    <pattern id="diagonalHatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#9F2929" stroke-width="1.4" opacity="0.28"/>
+    </pattern>
+    <pattern id="dotPattern" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1.5" fill="#637F72" opacity="0.35"/>
+    </pattern>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9F2929"/>
+      <stop offset="100%" stop-color="#B63D32"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#CBB078"/>
+      <stop offset="100%" stop-color="#9E8048"/>
+    </linearGradient>
+    <linearGradient id="jadeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#637F72"/>
+      <stop offset="100%" stop-color="#3F574D"/>
+    </linearGradient>
+    <marker id="arrowRed" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#9F2929"/>
+    </marker>
+    <marker id="arrowGold" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#B99A62"/>
+    </marker>
+    <marker id="arrowJade" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#637F72"/>
+    </marker>
+    <marker id="arrowInk" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#202020"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="750" fill="url(#paperGrain)"/>
+  <rect x="20" y="20" width="1160" height="710" fill="none" stroke="#DED8CA" stroke-width="2"/>
+  <rect x="28" y="28" width="1144" height="694" fill="none" stroke="#B99A62" stroke-width="0.9" opacity="0.65"/>
+  
+  <text x="58" y="76" class="kicker">INFOGRAPHIC HẢI QUAN • THẨM ĐỊNH C/O FORM E (ACFTA) &amp; INCOTERMS 2020</text>
+  <text x="58" y="118" class="h-title" font-size="31">Kiểm toán Chứng từ Ngoại thương &amp; Điều kiện Giao hàng Trung Quốc – Việt Nam</text>
+  <line x1="58" y1="138" x2="1142" y2="138" stroke="#DED8CA" stroke-width="1.5"/>
+
+  <!-- Left: C/O Form E Origin Rules -->
+  <g transform="translate(58, 162)">
+    <rect width="530" height="445" rx="8" fill="#FAF7F0" stroke="#9F2929" stroke-width="1.8"/>
+    <rect width="530" height="44" rx="8" fill="url(#redGrad)"/>
+    <text x="20" y="28" class="label-b" fill="#F7F4ED">I. TIÊU CHÍ XUẤT XỨ C/O FORM E (Ô SỐ 8)</text>
+
+    <g transform="translate(20, 64)">
+      <rect width="490" height="92" rx="6" fill="#EFECE2" stroke="#DED8CA"/>
+      <rect width="74" height="92" rx="6" fill="#9F2929"/>
+      <text x="37" y="54" text-anchor="middle" class="mono" font-size="22" font-weight="700" fill="#F7F4ED">WO</text>
+      <text x="92" y="30" class="label-b">Xuất xứ Thuần túy (Wholly Obtained)</text>
+      <text x="92" y="54" class="label-s">100% nông sản, thủy sản, khoáng sản khai thác tại TQ/ASEAN.</text>
+      <text x="92" y="76" class="label-s">VD: Táo, lê, chè khô thu hoạch &amp; đóng gói hoàn toàn tại Trung Quốc.</text>
+    </g>
+
+    <g transform="translate(20, 174)">
+      <rect width="490" height="106" rx="6" fill="#EFECE2" stroke="#DED8CA"/>
+      <rect width="74" height="106" rx="6" fill="#637F72"/>
+      <text x="37" y="60" text-anchor="middle" class="mono" font-size="19" font-weight="700" fill="#F7F4ED">≥40%</text>
+      <text x="92" y="30" class="label-b">Hàm lượng Giá trị Khu vực (RVC)</text>
+      <text x="92" y="54" class="label-s">RVC = (FOB − Giá trị nguyên liệu không xuất xứ) ÷ FOB ≥ 40%.</text>
+      <text x="92" y="76" class="label-s">Ô 9 Form E ghi trị giá FOB để kiểm tra ngưỡng thuế ưu đãi đặc biệt.</text>
+    </g>
+
+    <g transform="translate(20, 298)">
+      <rect width="490" height="126" rx="6" fill="#EFECE2" stroke="#B99A62"/>
+      <rect width="74" height="126" rx="6" fill="#B99A62"/>
+      <text x="37" y="70" text-anchor="middle" class="mono" font-size="19" font-weight="700" fill="#202020">CTH</text>
+      <text x="92" y="30" class="label-b">Chuyển đổi Mã HS (4 Số) &amp; Kiểm tra Sai lệch</text>
+      <text x="92" y="54" class="label-s">Kiểm đối chiếu: Số Invoice (Ô 10) • Khối lượng Gross/Net (Ô 9)</text>
+      <text x="92" y="76" class="label-s">HS Code 6 số khớp B/L và tờ khai VNACCS • Lưu ý bên thứ 3</text>
+      <text x="92" y="98" class="label-s">(Third-party invoicing — đánh dấu tích đúng vào Ô số 13).</text>
+    </g>
+  </g>
+
+  <!-- Right: Incoterms 2020 Risk & Cost Handoff -->
+  <g transform="translate(612, 162)">
+    <rect width="530" height="445" rx="8" fill="#FAF7F0" stroke="#637F72" stroke-width="1.8"/>
+    <rect width="530" height="44" rx="8" fill="url(#jadeGrad)"/>
+    <text x="20" y="28" class="label-b" fill="#F7F4ED">II. CHUYỂN GIAO RỦI RO INCOTERMS 2020 (XNK TRUNG – VIỆT)</text>
+
+    <!-- 5 Step Bars -->
+    <g transform="translate(20, 68)">
+      <text x="0" y="20" class="label-b" fill="#9F2929">EXW (Tại xưởng Nghĩa Ô / Quảng Đông)</text>
+      <rect x="0" y="28" width="490" height="18" rx="4" fill="#EFECE2" stroke="#DED8CA"/>
+      <rect x="0" y="28" width="90" height="18" rx="4" fill="#9F2929"/>
+      <text x="102" y="42" font-size="12" fill="#524F49">Người mua chịu từ cửa xưởng TQ &amp; khai xuất khẩu</text>
+    </g>
+
+    <g transform="translate(20, 134)">
+      <text x="0" y="20" class="label-b" fill="#2D4A3E">FCA (Giao tại kho Bằng Tường / Nội địa)</text>
+      <rect x="0" y="28" width="490" height="18" rx="4" fill="#EFECE2" stroke="#DED8CA"/>
+      <rect x="0" y="28" width="190" height="18" rx="4" fill="#637F72"/>
+      <text x="202" y="42" font-size="12" fill="#524F49">Người bán làm thông quan xuất TQ tới điểm giao</text>
+    </g>
+
+    <g transform="translate(20, 200)">
+      <text x="0" y="20" class="label-b" fill="#9F2929">FOB (Lan can / Boong tàu Cảng Thâm Quyến – Thượng Hải)</text>
+      <rect x="0" y="28" width="490" height="18" rx="4" fill="#EFECE2" stroke="#DED8CA"/>
+      <rect x="0" y="28" width="265" height="18" rx="4" fill="url(#diagonalHatch)" stroke="#9F2929"/>
+      <text x="275" y="42" font-size="12" fill="#202020" font-weight="700">Khuyến nghị khi nhập biển để kiểm soát cước tàu</text>
+    </g>
+
+    <g transform="translate(20, 266)">
+      <text x="0" y="20" class="label-b" fill="#7B5C24">CIF (Cảng Hải Phòng / Cát Lái + Bảo hiểm ICC C)</text>
+      <rect x="0" y="28" width="490" height="18" rx="4" fill="#EFECE2" stroke="#DED8CA"/>
+      <rect x="0" y="28" width="350" height="18" rx="4" fill="#B99A62"/>
+      <text x="360" y="42" font-size="12" fill="#524F49">Cẩn trọng phí Local Charges (CIC/DO)</text>
+    </g>
+
+    <g transform="translate(20, 334)">
+      <rect width="490" height="90" rx="6" fill="#EDF3F0" stroke="#637F72"/>
+      <text x="16" y="28" class="label-b" fill="#2D4A3E">Công thức Trị giá Hải quan Nhập khẩu (VNACCS):</text>
+      <text x="16" y="52" class="label-s">Trị giá Tính thuế = CIF + Điều chỉnh cộng (nếu nhập FOB: Cộng I + F)</text>
+      <text x="16" y="74" class="label-s">Thuế NK ưu đãi ACFTA (khi C/O Form E hợp lệ) tính trên Trị giá, VAT sau cùng.</text>
+    </g>
+  </g>
+
+  <rect x="58" y="628" width="960" height="72" rx="6" fill="#EFECE2" stroke="#DED8CA"/>
+  <text x="78" y="658" class="label-b">3 Lỗi Sai lệch Phổ biến cần Rà soát Trước Thông quan:</text>
+  <text x="78" y="682" class="label-s">(1) Sai tên tàu/số B/L so với ngày phát hành C/O • (2) Thiếu hóa đơn bên thứ 3 trên ô 13 • (3) Sai mã HS 8 số dẫn đến áp sai thuế suất MFN thay vì Form E.</text>
+
+  <g transform="translate(1055, 658)">
+    <rect width="104" height="50" rx="3" fill="#9F2929" opacity="0.92"/>
+    <rect x="4" y="4" width="96" height="42" rx="2" fill="none" stroke="#F7F4ED" stroke-width="1" opacity="0.7"/>
+    <text x="52" y="24" text-anchor="middle" class="han" font-size="14" fill="#F7F4ED" font-weight="700">中国文化探索</text>
+    <text x="52" y="40" text-anchor="middle" class="mono" font-size="10" fill="#F7F4ED" opacity="0.9">CCE ARCHIVE</text>
+  </g>
+</svg>

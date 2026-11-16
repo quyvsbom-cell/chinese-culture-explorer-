@@ -1,0 +1,380 @@
+[
+  {
+    "id": "luoshenfu-tu",
+    "filename": "01_luoshenfu_tu.jpg",
+    "localPath": "assets/images/paintings/01_luoshenfu_tu.jpg",
+    "status": "OK",
+    "size": 267044
+  },
+  {
+    "id": "nvshi-zhentu",
+    "filename": "02_nvshi_zhentu.jpg",
+    "localPath": "assets/images/paintings/02_nvshi_zhentu.jpg",
+    "status": "OK",
+    "size": 128887
+  },
+  {
+    "id": "ershiba-xiu",
+    "filename": "03_ershiba_xiu.jpg",
+    "localPath": "assets/images/paintings/03_ershiba_xiu.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "you-chun-tu",
+    "filename": "04_youchun_tu.jpg",
+    "localPath": "assets/images/paintings/04_youchun_tu.jpg",
+    "status": "OK",
+    "size": 556178
+  },
+  {
+    "id": "bu-nian-tu",
+    "filename": "05_bunian_tu.jpg",
+    "localPath": "assets/images/paintings/05_bunian_tu.jpg",
+    "status": "OK",
+    "size": 345560
+  },
+  {
+    "id": "lidai-diwang-tu",
+    "filename": "06_lidai_diwang_tu.jpg",
+    "localPath": "assets/images/paintings/06_lidai_diwang_tu.jpg",
+    "status": "OK",
+    "size": 132715
+  },
+  {
+    "id": "tianwang-songzi-tu",
+    "filename": "07_tianwang_songzi_tu.jpg",
+    "localPath": "assets/images/paintings/07_tianwang_songzi_tu.jpg",
+    "status": "OK",
+    "size": 979348
+  },
+  {
+    "id": "guoguo-furen-youchun",
+    "filename": "08_guoguo_furen.jpg",
+    "localPath": "assets/images/paintings/08_guoguo_furen.jpg",
+    "status": "OK",
+    "size": 190317
+  },
+  {
+    "id": "daolian-tu",
+    "filename": "09_daolian_tu.jpg",
+    "localPath": "assets/images/paintings/09_daolian_tu.jpg",
+    "status": "OK",
+    "size": 19518
+  },
+  {
+    "id": "zhanhua-shinv-tu",
+    "filename": "10_zhanhua_shinv_tu.jpg",
+    "localPath": "assets/images/paintings/10_zhanhua_shinv_tu.jpg",
+    "status": "OK",
+    "size": 146603
+  },
+  {
+    "id": "huishan-shinv-tu",
+    "filename": "11_huishan_shinv_tu.jpg",
+    "localPath": "assets/images/paintings/11_huishan_shinv_tu.jpg",
+    "status": "OK",
+    "size": 509939
+  },
+  {
+    "id": "kuanglu-tu",
+    "filename": "12_kuanglu_tu.jpg",
+    "localPath": "assets/images/paintings/12_kuanglu_tu.jpg",
+    "status": "OK",
+    "size": 1205739
+  },
+  {
+    "id": "xiaoxiang-tu",
+    "filename": "13_xiaoxiang_tu.jpg",
+    "localPath": "assets/images/paintings/13_xiaoxiang_tu.jpg",
+    "status": "OK",
+    "size": 389033
+  },
+  {
+    "id": "hanlin-chongting",
+    "filename": "14_hanlin_chongting.jpg",
+    "localPath": "assets/images/paintings/14_hanlin_chongting.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "qiushan-wendao",
+    "filename": "15_qiushan_wendao.jpg",
+    "localPath": "assets/images/paintings/15_qiushan_wendao.jpg",
+    "status": "OK",
+    "size": 555604
+  },
+  {
+    "id": "hanxizai-yeyan",
+    "filename": "16_hanxizai_yeyan.jpg",
+    "localPath": "assets/images/paintings/16_hanxizai_yeyan.jpg",
+    "status": "OK",
+    "size": 125915
+  },
+  {
+    "id": "xiesheng-zhenqin",
+    "filename": "17_xiesheng_zhenqin.jpg",
+    "localPath": "assets/images/paintings/17_xiesheng_zhenqin.jpg",
+    "status": "OK",
+    "size": 1012931
+  },
+  {
+    "id": "xishan-xinglv",
+    "filename": "18_xishan_xinglv.jpg",
+    "localPath": "assets/images/paintings/18_xishan_xinglv.jpg",
+    "status": "OK",
+    "size": 2029683
+  },
+  {
+    "id": "zao-chun-tu",
+    "filename": "19_zao_chun_tu.jpg",
+    "localPath": "assets/images/paintings/19_zao_chun_tu.jpg",
+    "status": "OK",
+    "size": 488655
+  },
+  {
+    "id": "wanhe-songfeng-litang",
+    "filename": "20_wanhe_songfeng_litang.jpg",
+    "localPath": "assets/images/paintings/20_wanhe_songfeng_litang.jpg",
+    "status": "OK",
+    "size": 1038094
+  },
+  {
+    "id": "qingming-shanghe",
+    "filename": "21_qingming_shanghe.jpg",
+    "localPath": "assets/images/paintings/21_qingming_shanghe.jpg",
+    "status": "OK",
+    "size": 21039
+  },
+  {
+    "id": "qianli-jiangshan",
+    "filename": "22_qianli_jiangshan.jpg",
+    "localPath": "assets/images/paintings/22_qianli_jiangshan.jpg",
+    "status": "OK",
+    "size": 87513
+  },
+  {
+    "id": "rui-he-tu",
+    "filename": "23_rui_he_tu.jpg",
+    "localPath": "assets/images/paintings/23_rui_he_tu.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "furong-jinji",
+    "filename": "24_furong_jinji.jpg",
+    "localPath": "assets/images/paintings/24_furong_jinji.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "wuma-tu",
+    "filename": "25_wuma_tu.jpg",
+    "localPath": "assets/images/paintings/25_wuma_tu.jpg",
+    "status": "OK",
+    "size": 87192
+  },
+  {
+    "id": "chushan-ruiai",
+    "filename": "26_chushan_ruiai.jpg",
+    "localPath": "assets/images/paintings/26_chushan_ruiai.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "kumu-guaishi",
+    "filename": "27_kumu_guaishi.jpg",
+    "localPath": "assets/images/paintings/27_kumu_guaishi.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "libai-hangyin",
+    "filename": "28_libai_hangyin.jpg",
+    "localPath": "assets/images/paintings/28_libai_hangyin.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "dage-tu",
+    "filename": "29_dage_tu.jpg",
+    "localPath": "assets/images/paintings/29_dage_tu.jpg",
+    "status": "OK",
+    "size": 8142085
+  },
+  {
+    "id": "quehua-qiuse",
+    "filename": "30_quehua_qiuse.jpg",
+    "localPath": "assets/images/paintings/30_quehua_qiuse.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "xiushi-shulin",
+    "filename": "31_xiushi_shulin.jpg",
+    "localPath": "assets/images/paintings/31_xiushi_shulin.jpg",
+    "status": "OK",
+    "size": 410695
+  },
+  {
+    "id": "fuchun-shanju",
+    "filename": "32_fuchun_shanju.jpg",
+    "localPath": "assets/images/paintings/32_fuchun_shanju.jpg",
+    "status": "OK",
+    "size": 190920
+  },
+  {
+    "id": "dongting-yuyin",
+    "filename": "33_dongting_yuyin.jpg",
+    "localPath": "assets/images/paintings/33_dongting_yuyin.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "liujunzi-tu",
+    "filename": "34_liujunzi_tu.jpg",
+    "localPath": "assets/images/paintings/34_liujunzi_tu.jpg",
+    "status": "OK",
+    "size": 2236839
+  },
+  {
+    "id": "qingbian-yinju",
+    "filename": "35_qingbian_yinju.jpg",
+    "localPath": "assets/images/paintings/35_qingbian_yinju.jpg",
+    "status": "OK",
+    "size": 2283733
+  },
+  {
+    "id": "lushan-gao",
+    "filename": "36_lushan_gao.jpg",
+    "localPath": "assets/images/paintings/36_lushan_gao.jpg",
+    "status": "OK",
+    "size": 333090
+  },
+  {
+    "id": "gumu-youquan",
+    "filename": "37_gumu_youquan.jpg",
+    "localPath": "assets/images/paintings/37_gumu_youquan.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "shanlu-songsheng",
+    "filename": "38_shanlu_songsheng.jpg",
+    "localPath": "assets/images/paintings/38_shanlu_songsheng.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "hangong-chunxiao",
+    "filename": "39_hangong_chunxiao.jpg",
+    "localPath": "assets/images/paintings/39_hangong_chunxiao.jpg",
+    "status": "OK",
+    "size": 880103
+  },
+  {
+    "id": "qiuxing-bajing",
+    "filename": "40_qiuxing_bajing.jpg",
+    "localPath": "assets/images/paintings/40_qiuxing_bajing.jpg",
+    "status": "OK",
+    "size": 205009
+  },
+  {
+    "id": "mo-putao",
+    "filename": "41_mo_putao.jpg",
+    "localPath": "assets/images/paintings/41_mo_putao.jpg",
+    "status": "OK",
+    "size": 197681
+  },
+  {
+    "id": "huishan-chahui",
+    "filename": "42_huishan_chahui.jpg",
+    "localPath": "assets/images/paintings/42_huishan_chahui.jpg",
+    "status": "OK",
+    "size": 359974
+  },
+  {
+    "id": "luomu-qiuse",
+    "filename": "43_luomu_qiuse.jpg",
+    "localPath": "assets/images/paintings/43_luomu_qiuse.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "kangxi-nanxun",
+    "filename": "44_kangxi_nanxun.jpg",
+    "localPath": "assets/images/paintings/44_kangxi_nanxun.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "wanhe-songfeng-qing",
+    "filename": "45_wanhe_songfeng_qing.jpg",
+    "localPath": "assets/images/paintings/45_wanhe_songfeng_qing.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "huaiyang-jieqiu",
+    "filename": "46_huaiyang_jieqiu.jpg",
+    "localPath": "assets/images/paintings/46_huaiyang_jieqiu.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "kongque-zhushi",
+    "filename": "47_kongque_zhushi.jpg",
+    "localPath": "assets/images/paintings/47_kongque_zhushi.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "zhushi-tu",
+    "filename": "48_zhushi_tu.jpg",
+    "localPath": "assets/images/paintings/48_zhushi_tu.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "moxia-tu",
+    "filename": "49_moxia_tu.jpg",
+    "localPath": "assets/images/paintings/49_moxia_tu.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "benma-tu",
+    "filename": "50_benma_tu.jpg",
+    "localPath": "assets/images/paintings/50_benma_tu.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "lushan-tu-daqian",
+    "filename": "51_lushan_tu_daqian.jpg",
+    "localPath": "assets/images/paintings/51_lushan_tu_daqian.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "shujiang-bishitu",
+    "filename": "52_shujiang_bishitu.jpg",
+    "localPath": "assets/images/paintings/52_shujiang_bishitu.jpg",
+    "status": "FAILED",
+    "size": 0
+  },
+  {
+    "id": "jiangshan-duojiao-1959",
+    "filename": "53_jiangshan_duojiao.jpg",
+    "localPath": "assets/images/paintings/53_jiangshan_duojiao.jpg",
+    "status": "OK",
+    "size": 189061
+  },
+  {
+    "id": "wanshan-hongbian",
+    "filename": "54_wanshan_hongbian.jpg",
+    "localPath": "assets/images/paintings/54_wanshan_hongbian.jpg",
+    "status": "FAILED",
+    "size": 0
+  }
+]

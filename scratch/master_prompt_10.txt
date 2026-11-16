@@ -1,0 +1,181 @@
+<USER_REQUEST>
+chỉ sau khi kiểm thử mới chạy lệnh này
+
+MASTER PROMPT: DEPTH KNOWLEDGE EXPANSION,  FULL-SYSTEM UPGRADE FOR CHINA CULTURE EXPLORER
+
+PHẦN 1: NỘI DUNG MASTER PROMPT (SAO CHÉP NGUYÊN VĂN KHỐI DƯỚI ĐÂY)
+
+# MASTER PROMPT: MAXIMUM-DEPTH ACADEMIC KNOWLEDGE EXPANSION, 34-PROVINCE ENCYCLOPEDIC UPGRADE ---
+
+Bạn đang đóng vai trò là một **Hội đồng Học giả Hán học – Đông Á học (Sinology & East Asian Studies Editorial Board)**, **Kiến trúc sư Hệ thống Bảo tàng Số (Digital Museum Principal Architect)** và **Chuyên gia Ngôn ngữ học Hán – Việt (Sino-Vietnamese Historical Linguist)**.
+
+Khi thực hiện cập nhật mã nguồn và cơ sở dữ liệu tri thức cho **China Culture Explorer**, bạn BẮT BUỘC phải tuân thủ tuyệt đối 8 kỷ luật xuất bản sau đây:
+
+     - Mỗi mục dữ liệu (bài chuyên luận, hồ sơ 34 tỉnh/thành, danh tác quốc họa, bảo vật số, mục từ Lục thư) phải được viết với dung lượng dài nhất, sâu nhất, giàu tư liệu gốc và phân tích học thuật nhất có thể trong giới hạn cửa sổ ngữ cảnh.
+2. **ZERO LAZY TRUNCATION (CẤM CẮT CỤT DỮ LIỆU):**
+   - Nghiêm cấm tuyệt đối việc sử dụng các chú thích rút gọn trong code/JSON như: `// ... existing items`, `// ... 28 other provinces`, `// TODO: add remaining essays`, `[...]`, hoặc `etc.`.
+   - Mọi mảng dữ liệu được cập nhật phải xuất ra **100% phần tử hoàn chỉnh**. Nếu tổng dung lượng vượt quá giới hạn token của 1 lần phản hồi (single-turn output limit), hãy chia theo 3. **CHUẨN TAM NGỮ HỌC THUẬT (HÁN TỰ – PINYIN CHUẨN THANH ĐIỆU – ÂM HÁN VIỆT – TIẾNG VIỆT):**
+   - Mọi thuật ngữ lịch sử, triết học, quan chế, địa danh, danh nhân, tác phẩm, món ăn, di sản văn hóa xuất hiện trong dữ liệu PHẢI luôn đi kèm định dạng chuẩn: `Chữ Hán Giản thể / Phồn thể khi cần (Pinyin có dấu thanh điệu chuẩn – Âm Hán Việt): Giải nghĩa học thuật tiếng Việt`.
+   - Ví dụ chuẩn: `科举制度 (Kējǔ zhìdù – Khoa cử chế độ)`, `清明上河图 (Qīngmíng Shànghé Tú – Thanh Minh Thượng Hà Đồ)`, `北京烤鸭 (Běijīng kǎoyā – Vịt quay Bắc Kinh)`.
+   - Tuyệt đối KHÔNG dùng tiếng Quảng Đông hay phiên âm Jyutping; sử dụng 100% tiếng Phổ thông chuẩn (Standard Mandarin + Hanyu Pinyin) kết hợp âm Hán – Việt.
+4. **PHÂN ĐỊNH RÕ SỰ KIỆN LỊCH SỬ, TRUYỀN THUYẾT VÀ QUAN ĐIỂM HỌC THUẬT:**
+   - Mọi niên đại, triều đại, nhân vật và văn bản cổ phải chính xác theo sử liệu chính thống (*Nhị thập tứ sử*, *Tư trị thông giám*, văn khắc khảo cổ giáp cốt/kim văn, hồ sơ bảo tàng Cố Cung Bắc Kinh, Cố Cung Đài Bắc, Bảo tàng Quốc gia Trung Quốc).
+   - Phân biệt rõ giữa **Sử liệu khảo cổ đã xác chứng** (ví dụ: di chỉ Ân Khư thời Thương,三星堆 Tam Tinh Đôi), **Truyền thuyết văn hiến cổ đại** (Tam Hoàng Ngũ Đế, nhà Hạ trước khi có văn tự giáp cốt) và **Các trường phái diễn giải học thuật**.
+5. **HỆ QUY CHIẾU ĐỐI SÁNH TRUNG – VIỆT XUYÊN SUỐT (SINO-VIETNAMESE COMPARATIVE LENS):**
+   - Trong mọi chuyên mục (từ Khoa cử, Nho – Đạo – Phật, Kiến trúc, Thư pháp, Phong tục lễ tết đến Địa lý vùng miền và Thương mại RCEP), luôn bổ sung một phần phân tích chuyên sâu về **Sự tiếp biến, giao lưu, tương đồng và dị biệt độc sáng với văn hóa – lịch sử – kinh tế Việt Nam**.
+6. **XÓA SẠCH 100% LỖI DỮ LIỆU THÔ (`[object Object]`, `undefined`, NHÃN PROMPT NỘI BỘ):**
+   - Không một chuỗi lỗi biến JavaScript hay nhãn nhắc lệnh nội bộ nào được phép xuất hiện trên giao diện người dùng.
+7. **CHUẨN HÓA TÌM KIẾM ĐA NGỮ & ĐIỀU HƯỚNG SPA:**
+   - Toàn bộ các ô tìm kiếm và bộ lọc trên website phải hỗ trợ tìm kiếm không phân biệt dấu tiếng Việt, chữ Hán, Pinyin và tiếng Anh.
+8. **ĐỒNG BỘ HÌNH ẢNH – CHÚ THÍCH – NIÊN ĐẠI – BẢN QUYỀN:**
+   - Mỗi bức ảnh phải khớp tuyệt đối với nội dung chuyên mục và tác phẩm được chú thích, có tỷ lệ khung hình chuẩn và nguồn lưu trữ rõ ràng.
+
+---
+
+## 1. KHẮC PHỤC TRIỆT ĐỂ CÁC LỖI P0 & P1 ĐÃ XÁC NHẬN TRÊN WEBSITE HIỆN TẠI
+
+Trước khi mở rộng nội dung, hãy sửa ngay lập tức 10 lỗi nghiêm trọng đang tồn tại trên bản build hiện hành:
+
+## 2. MỞ RỘNG TOÀN DIỆN CHUYÊN MỤC 34 ĐƠN VỊ HÀNH CHÍNH CẤP TỈNH TRUNG QUỐC (34 PROVINCIAL-LEVEL ADMINISTRATIVE UNITS)
+
+Hiện tại hồ sơ 34 tỉnh/thành mới chỉ có 6 mục ngắn, thiếu hẳn phần **Lịch sử hình thành**, **Địa hình – Khí hậu định hình văn hóa**, và các tên món ăn/địa danh bằng chữ Hán **chưa có Pinyin**.
+
+Hãy nâng cấp toàn bộ **34 đơn vị hành chính cấp tỉnh** — bao gồm đầy đủ **23 Tỉnh (省)**, **5 Khu tự trị (自治区)**, **4 Thành phố trực thuộc Trung ương (直辖市)** và **2 Đặc khu Hành chính (特别行政区)** — theo **Khung Hồ sơ Bách khoa 12 Chiều (12-Dimension Provincial Encyclopedia Schema)** dưới đây, với dung lượng tối thiểu **800 – 1.200 từ cho mỗi tỉnh/thành**:
+
+### 2.1. Cấu trúc dữ liệu bắt buộc cho từng đơn vị trong 34 Tỉnh/Thành
+Với MỖI đơn vị trong 34 đơn vị (Bắc Kinh, Thiên Tân, Hà Bắc, Sơn Tây, Nội Mông, Liêu Ninh, Cát Lâm, Hắc Long Giang, Thượng Hải, Giang Tô, Chiết Giang, An Huy, Phúc Kiến, Giang Tây, Sơn Đông, Hà Nam, Hồ Bắc, Hồ Nam, Quảng Đông, Quảng Tây, Hải Nam, Trùng Khánh, Tứ Xuyên, Quý Châu, Vân Nam, Tây Tạng, Thiểm Tây, Cam Túc, Thanh Hải, Ninh Hạ, Tân Cương, Đài Loan, Hồng Kông, Ma Cao), phải biên soạn đầy đủ 12 trường chuyên sâu sau:
+
+1. **Định danh Hành chính & Ngôn ngữ học (`identity`):**
+   - Tên tiếng Việt, tên Hán tự (Giản thể & Phồn thể), Pinyin chuẩn thanh điệu, âm Hán – Việt.
+   - Phân loại hành chính chính xác: `Tỉnh (省 Shěng)` / `Khu tự trị (自治区 Zìzhìqū)` / `Thành phố trực thuộc TW (直辖市 Zhíxiáshì)` / `Đặc khu hành chính (特别行政区 Tèbié Xíngzhèngqū)`.
+   - Chữ viết tắt 1 chữ (`简称 Jiǎnchēng`) kèm **nguồn gốc lịch sử của chữ viết tắt đó** (ví dụ: Quảng Đông viết tắt là `粤 (Yuè – Việt)` bắt nguồn từ Bách Việt cổ đại; Tứ Xuyên là `川 (Chuān)` hoặc `蜀 (Shǔ – Thục)` từ nước Cổ Thục; Sơn Đông là `鲁 (Lǔ – Lỗ)` từ nước Lỗ quê hương Khổng Tử; Sơn Tây là `晋 (Jìn – Tấn)` từ nước Tấn thời Xuân Thu).
+   - Thủ phủ / Trung tâm hành chính (`省会 / 首府`) kèm chữ Hán, Pinyin, âm Hán – Việt.
+2. **Địa mạo Tự nhiên, Thủy văn & Khí hậu Định hình Văn hóa (`geographyAndClimate`):**
+   - Phân tích theo phương pháp của *Địa lý Quốc gia Trung Quốc (中国国家地理)*: tỉnh đó nằm ở bậc địa hình nào trong "Tam cấp giai thê" (三级阶梯) của lục địa Trung Hoa, có dãy núi, lưu vực sông lớn hay bồn địa nào (ví dụ: Bồn địa Tứ Xuyên, Cao nguyên Hoàng Thổ, Đồng bằng Hoa Bắc, Châu thổ sông Trường Giang, Châu thổ sông Châu Giang, Địa hình Karst Quý Châu – Quảng Tây, Hành lang Hà Tây).
+   - Giải thích **cơ chế nhân quả giữa Địa lý và Văn hóa**: vì sao địa hình và khí hậu đó lại sinh ra kiểu kiến trúc, ẩm thực, phương ngữ và tính cách con người đặc trưng của vùng đất ấy.
+3. **Tiến trình Lịch sử & Vị thế Địa – Chính trị qua các Triều đại (`historicalEvolution`):**
+   - Khởi nguyên từ thời Tiên Tần (thuộc tiểu quốc nào thời Xuân Thu – Chiến Quốc, thuộc quận nào thời Tần – Hán), vai trò trong các triều đại Đường – Tống – Nguyên – Minh – Thanh (kinh đô cổ, trọng trấn biên thùy, trung tâm khoa cử hay thương cảng Con đường Tơ lụa trên bộ/trên biển) cho đến cận – hiện đại.
+4. **Bản sắc Văn hóa Vùng miền & Tiểu vùng Văn hóa (`culturalIdentity`):**
+   - Định danh rõ tiểu vùng văn hóa (như Văn hóa Yên Triệu `燕赵文化`, Văn hóa Tề Lỗ `齐鲁文化`, Văn hóa Tam Tấn `三晋文化`, Văn hóa Trung Nguyên `中原文化`, Văn hóa Ngô Việt Giang Nam `吴越江南文化`, Văn hóa Kinh Sở `荆楚文化`, Văn hóa Ba Thục `巴蜀文化`, Văn hóa Lĩnh Nam `岭南文化` gồm Quảng Phủ – Triều Sán – Khách Gia, Văn hóa Quan Trung `关中文化`, Văn hóa Tây Vực `西域文化`, Văn hóa Tuyết Vực Tây Tạng `雪域藏文化`).
+5. **Di sản Thế giới UNESCO & Quần thể Kiến trúc – Danh thắng Biểu tượng (`heritageAndLandmarks`):**
+   - Liệt kê tối thiểu 4–6 di sản/danh thắng tiêu biểu nhất của tỉnh đó kèm `Chữ Hán + Pinyin + Âm Hán Việt` và phân tích giá trị kiến trúc, tôn giáo, lịch sử hoặc địa chất (không chỉ liệt kê tên suông).
+6. **Di sản Văn hóa Phi vật thể & Nghề Thủ công Truyền thống (`intangibleHeritage`):**
+   - Các loại hình hí khúc địa phương (Kinh kịch, Côn khúc, Xuyên kịch biến diện, Việt kịch, Hoàng Mai hí, Tần xoang...), nghệ thuật dân gian, lễ hội bản địa và nghề thủ công (gốm sứ, thêu Tứ đại danh tú: Tô tú, Tương tú, Việt tú, Thục tú, chạm khắc, giấy tuyên...).
+7. **Hệ thống Ẩm thực Bản địa & Danh sách Món ăn Biểu tượng (`culinaryCulture`):**
+   - Thuộc trường phái nào trong *Bát đại thái hệ (八大菜系)* hoặc phong vị vùng miền nào; đặc trưng nguyên liệu và kỹ thuật chế biến.
+   - Tối thiểu 5–6 món ăn/đặc sản/danh trà biểu tượng cho mỗi tỉnh, **BẮT BUỘC có đủ 4 thành phần**: `Chữ Hán + Pinyin có dấu thanh điệu + Âm Hán Việt/Tên tiếng Việt + Mô tả hương vị & lịch sử món ăn` (khắc phục triệt để lỗi thiếu Pinyin hiện tại).
+8. **Trụ cột Kinh tế Đương đại, Cụm Công nghiệp & Chuỗi Cung ứng (`economyAndIndustry`):**
+   - Vị thế kinh tế hiện đại (quy mô kinh tế, vai trò trong các siêu vùng như Vùng Vịnh Lớn GBA `粤港澳大湾区`, Tam giác Trường Giang `长三角`, Kinh – Tân – Ký `京津冀`, Vòng kinh tế Thành Đô – Trùng Khánh `成渝地区双城经济圈`).
+   - Các cụm công nghiệp chiến lược (bán dẫn, AI, xe điện EV, pin năng lượng, thương mại điện tử xuyên biên giới, cảng biển nước sâu, công nghiệp nặng, nông nghiệp công nghệ cao).
+9. **Kết nối Giao thương, Học thuật & Giao lưu với Việt Nam (`vietnamConnectivity`):**
+   - Phân tích mối liên hệ lịch sử, văn hóa, giao thương biên mậu/hàng hải, hành lang logistics đường sắt liên vận, hợp tác RCEP, cũng như các trường đại học trọng điểm (Dự án 985 / 211 / Song Nhất Lưu `双一流`) tại tỉnh đó thu hút lưu học sinh và nghiên cứu sinh Việt Nam.
+10. **Danh nhân Lịch sử, Tư tưởng gia & Văn nhân Tiêu biểu (`notableFigures`):**
+    - Tối thiểu 3–5 nhân vật kiệt xuất gắn liền với tỉnh đó (kèm chữ Hán, Pinyin, năm sinh – mất, đóng góp cốt lõi).
+11. **Cẩm nang Thực địa, Mùa Đẹp Nhất & Đầu mối Giao thông (`travelAndLogistics`):**
+    - Thời điểm lý tưởng nhất trong năm (theo tiết khí), các đầu mối đường sắt cao tốc (Ga tàu cao tốc chính), sân bay quốc tế và tuyến hành trình gợi ý 3–5 ngày.
+12. **Nâng cấp Bản đồ Tương tác (`interactiveMapUpgrade`):**
+    - Bổ sung dữ liệu tọa độ/vùng cho đầy đủ **34 đơn vị hành chính cấp tỉnh** trên bản đồ tương tác (thay vì chỉ dừng ở 6 khối đa giác và 16 chấm đô thị), cho phép lọc bản đồ theo: (a) *6 Đại vùng Địa lý*; (b) *4 Loại hình Hành chính*; (c) *Kinh đô các Triều đại Lịch sử*; và (d) *Các Vùng Kinh tế & Hành lang Thương mại*.
+
+---
+
+## 3. LẤP ĐẦY 8 LĨNH VỰC VĂN HÓA ĐANG SƠ SÀI HOẶC BỊ GỘP ẨN TRONG 20 LĨNH VỰC CỐT LÕI
+
+Qua kiểm toán, trong 20 lĩnh vực văn hóa Trung Hoa chuẩn mực, có **8 lĩnh vực đang bị gộp ẩn, thiếu chuyên mục rõ ràng hoặc nội dung còn mỏng**. Hãy biên soạn mới và mở rộng 8 cụm chuyên khảo học thuật toàn diện (mỗi bài chuyên khảo dài tối thiểu **2.500 – 4.000 từ**, trình bày theo chuẩn **Bố cục Học thuật 3 Cột** gồm: *Mục lục phân tích*, *Nội dung khảo cứu 7 phần có trích dẫn cổ thư*, và *Cột Từ vựng Hán – Pinyin – Hán Việt – Chiết tự Lục thư*):
+
+### 3.1. 中国文学 — Văn học Cổ điển & Hiện đại Trung Hoa (Từ Thi Kinh, Sở Từ đến Tứ Đại Danh Tác & Lỗ Tấn)
+- **Nội dung bắt buộc:**
+  - *Lịch sử thể loại theo trục triều đại:* Tiên Tần (*Thi Kinh* `诗经` với Phong – Nhã – Tụng và thủ pháp Phú – Tỷ – Hưng; *Sở Từ* `楚辞` của Khuất Nguyên với *Ly Tao*); Lưỡng Hán (*Hán Phú* `汉赋` và *Nhạc phủ*, *Sử ký* của Tư Mã Thiên – "Sử gia chi tuyệt xướng, vô vận chi Ly Tao"); Ngụy Tấn Nam Bắc triều (Thơ Điền viên Đào Uyên Minh và lý luận phê bình *Văn tâm điêu long* `文心雕龙`); Đường Thi (`唐诗` – Lý Bạch, Đỗ Phủ, Bạch Cư Dị, Vương Duy; phân biệt Cổ thể thi và Cận thể thi / Luật thi); Tống Từ (`宋词` – phái Hào phóng của Tô Thức, Tân Khí Tật và phái Uyển ước của Liễu Vĩnh, Lý Thanh Chiếu); Nguyên Khúc (`元曲` – Quan Hán Khanh, Vương Thực Phủ); Tiểu thuyết chương hồi Minh – Thanh (*Tứ đại danh tác* `四大名著`: *Tam Quốc Diễn Nghĩa*, *Thủy Hử*, *Tây Du Ký*, *Hồng Lâu Mộng*); Văn học Cận – Hiện đại (Phong trào Ngũ Tứ, Lỗ Tấn `鲁迅`).
+  - *Đối sánh Trung – Việt:* Sự tiếp nhận và sáng tạo thể thơ Đường luật thất ngôn bát cú trong thơ chữ Hán và thơ Nôm Việt Nam (Nguyễn Trãi, Nguyễn Du, Hồ Xuân Hương); sự chuyển hóa cốt truyện *Kim Vân Kiều Truyện* của Thanh Tâm Tài Nhân thành kiệt tác *Truyện Kiều* của Nguyễn Du.
+
+### 3.2. 中国饮食文化 — Văn hóa Ẩm thực, Triết lý Ngũ Vị & Lục Đại Trà Loại
+- **Nội dung bắt buộc:**
+  - *Triết lý ẩm thực cổ điển:* Tư tưởng *"Dân dĩ thực vi thiên"* (`民以食为天`), nguyên lý *Ngũ vị điều hòa* (`五味调和`: Chua – Cay – Đắng – Mặn – Ngọt ứng với Ngũ hành Mộc – Kim – Hỏa – Thủy – Thổ và Ngũ tạng), và triết lý *Dược thực đồng nguyên* (`药食同源`) kết nối ẩm thực với Đông y và 24 tiết khí (`二十四节气`).
+  - *Phân tích học thuật Bát Đại Thái Hệ (`八大菜系`):* Lỗ thái (`鲁菜`), Xuyên thái (`川菜`), Việt thái (`粤菜`), Tô thái (`苏菜`), Mân thái (`闽菜`), Chiết thái (`浙菜`), Tương thái (`湘菜`), Huy thái (`徽菜`) — nguồn gốc địa lý, kỹ thuật dùng lửa (`火候 Huǒhòu`), kỹ thuật dao (`刀工 Dāogōng`) và hương vị cốt lõi.
+  - *Văn hóa Trà đạo & Trà Kinh (`茶经`):* Tác phẩm *Trà Kinh* của Lục Vũ (`陆羽`) thời Đường; tiến trình biến đổi từ trà bánh nấu thời Đường (`煎茶`), điểm trà đánh bọt thời Tống (`点茶`), đến pha trà lá rời thời Minh (`泡茶`); hệ thống phân loại **Lục đại trà loại (`六大茶类`)** theo mức độ lên men/oxy hóa: Lục trà (`绿茶`), Bạch trà (`白茶`), Hoàng trà (`黄茶`), Thanh trà / Ô Long (`青茶/乌龙茶`), Hồng trà (`红茶`), Hắc trà / Phổ Nhĩ (`黑茶/普洱茶`).
+
+### 3.3. 中国服饰 — Lịch sử Trang phục, Quan phục Bổ tử & Mỹ học Hán Phục qua các Triều đại
+- **Nội dung bắt buộc:**
+  - *Ý nghĩa triết học của Y quan (`衣冠制度`):* Khái niệm *"Hoa Hạ"* (`华夏`) trong *Tả Truyện* (*"Có vẻ đẹp của lễ nghi gọi là Đại, có vẻ đẹp của chương phục gọi là Hoa"* – `有服章之美谓之华，有礼仪之大故称夏`).
+  - *Biến천 hình chế qua các thời kỳ:* Thâm y (`深衣`) và Miện phục (`冕服`) thời Tiên Tần – Lưỡng Hán (tượng trưng Trời tròn Đất vuông, quy củ lễ pháp); Nhu quần (`襦裙`), Bán tý (`半臂`) và Viên lĩnh bào (`圆领袍`) thời Đường (phóng khoáng, giao thoa Hồ – Hán qua Con đường Tơ lụa); Bối tử (`褙子`) thời Tống (thanh nhã, tối giản theo thẩm mỹ Tống Nho); Áo cổ đứng cài khuy kim loại, Phi phong (`披风`) và Mã diện quần (`马面裙`) thời Minh; hệ thống **Bổ tử (`补子` – Mandarin Square)** phân biệt Văn quan (9 loài chim từ Tiên hạc đến Chim cút) và Võ quan (9 loài thú từ Kỳ lân đến Hải mã) thời Minh – Thanh; Kỳ trang, Mã quái, Sườn xám (`旗袍 Qípáo`), trang phục Trung Sơn (`中山装`) và phong trào phục hưng Hán phục / Quốc triều (`国潮 Guócháo`) đương đại.
+  - *Đối sánh Trung – Việt:* So sánh hệ thống quan phục và thường phục Việt Nam qua các triều Lý – Trần – Lê Trung Hưng (Áo Giao lĩnh, Áo Viên lĩnh, Áo Đối khâm) và cuộc cải cách trang phục thời chúa Nguyễn Phúc Khoát – triều Nguyễn (Áo Nhật bình, Áo Ngũ thân lập lĩnh) để thấy rõ bản sắc riêng của trang phục truyền thống Việt Nam.
+
+### 3.4. 中国陶瓷与玉器 — Nghệ thuật Gốm sứ (Ngũ Đại Danh Diêu, Cảnh Đức Trấn) & Văn hóa Ngọc Khí
+- **Nội dung bắt buộc:**
+  - *Văn hóa Ngọc khí (`玉文化`):* Lịch sử 8.000 năm từ văn hóa Hồng Sơn (`红山文化`), Lương Chử (`良渚文化` với Ngọc Tông `玉琮` và Ngọc Bích `玉璧`) đến thuyết *"Quân tử tỷ đức vu ngọc"* (`君子比德于玉` – người quân tử sánh đức hạnh với ngọc qua Nhân, Nghĩa, Trí, Dũng, Khiết) của Khổng Tử.
+  - *Lịch sử Gốm sứ (`陶瓷史`):* Từ gốm彩陶 Ngưỡng Thiều, gốm đen Long Sơn, tượng đất nung Binh Mã Dũng nhà Tần, Đường Tam Thái (`唐三彩`), đỉnh cao thẩm mỹ đơn sắc thời Tống với **Ngũ Đại Danh Diêu (`五大名窑`)**: Nhữ diêu (`汝窑` – sắc xanh thiên thanh *"Vũ quá thiên thanh vân phá xứ"*), Quan diêu (`官窑`), Ca diêu (`哥窑` – men rạn Kim ti thiết tuyến), Quân diêu (`钧窑` – hiện tượng Hỏa biến `窑变`), Định diêu (`定窑`); đến kỷ nguyên kinh đô sứ **Cảnh Đức Trấn (`景德镇`)** thời Nguyên – Minh – Thanh với sứ Thanh hoa (`青花瓷`), Đấu thái (`斗彩`), Ngũ thái (`五彩`), Pháp lang thái (`珐琅彩`), Phấn thái (`粉彩`) và ấm Tử sa Nghi Hưng (`宜兴紫砂`).
+  - *Đối sánh Trung – Việt:* Giao lưu kỹ thuật và sự độc lập của gốm hoa lam Chu Đậu, Bát Tràng (Việt Nam) trên thương lộ hàng hải châu Á thế kỷ XV–XVII.
+
+### 3.5. 中国宗教与民间信仰 — Tam Giáo Hợp Lưu (Nho – Phật – Đạo) & Hệ thống Tín ngưỡng Dân gian
+- **Nội dung bắt buộc:**
+  - *Cấu trúc Tam giáo hợp lưu (`三教合流`):* Cơ chế dung hợp giữa Nho giáo (trị thế, luân lý xã hội), Đạo giáo (dưỡng sinh, thuận tự nhiên) và Phật giáo (tâm tính, giải thoát) trong đời sống tinh thần người Trung Hoa.
+  - *Phật giáo Trung Hoa (`中国佛教`):* Lịch sử bản địa hóa từ thời Đông Hán qua Cưu Ma La Thập, Huyền Trang; sự hình thành Bát đại tông phái thời Đường (đặc biệt là **Thiền tông `禅宗`** từ Bồ Đề Đạt Ma đến Lục tổ Huệ Năng với *Pháp Bảo Đàn Kinh* `六祖坛经` và tư tưởng *Đốn ngộ*, cùng Tịnh Độ tông, Thiên Thai tông, Hoa Nghiêm tông); hệ thống 4 quần thể hang đá Phật giáo vĩ đại (*Đôn Hoàng Mạc Cao Quật*, *Vân Cương*, *Long Môn*, *Mạch Tích Sơn*).
+  - *Đạo giáo (`道教`):* Phân biệt Đạo gia triết học (Lão – Trang) và Đạo giáo tôn giáo (Trương Đạo Lăng – Ngũ Đấu Mễ Đạo, Toàn Chân đạo của Vương Trùng Dương và Chính Nhất đạo; hệ thống Nội đan, Ngoại đan, Phù lục và Đạo Tạng).
+  - *Tín ngưỡng dân gian (`民间信仰`):* Thờ cúng tổ tiên (`祖先崇拜`), tín ngưỡng Thiên Hậu Mazu (`妈祖`) vùng duyên hải Đông Nam, Quan Thánh Đế Quân (`关帝`), Thần Tài, Thành Hoàng và Thổ Địa.
+
+### 3.6. 中国非物质文化遗产 — Hệ thống Di sản Văn hóa Phi vật thể (UNESCO ICH) & Nghệ thuật Biểu diễn
+- **Nội dung bắt buộc:**
+  - Phân tích hệ thống hơn 43 di sản văn hóa phi vật thể của Trung Quốc được UNESCO ghi danh (đứng đầu thế giới), chia theo 5 nhóm lĩnh vực của Công ước UNESCO 2003:
+    1. *Nghệ thuật biểu diễn:* Côn khúc (`昆曲` – "Bách hí chi tổ"), Kinh kịch (`京剧` – Quốc粹 với 4 hàng vai Sinh – Đán – Tịnh – Sửu `生旦净丑` và Tứ công Ngũ pháp), Việt kịch (`粤剧`), Nghệ thuật Cổ cầm (`古琴艺术`).
+    2. *Tri thức tự nhiên & Y học:* Châm cứu Đông y (`中医针灸`), 24 Tiết khí (`二十四节气`), Tằm tang và kỹ thuật dệt lụa (`中国传统桑蚕丝织技艺`).
+    3. *Kỹ năng thủ công truyền thống:* Kỹ thuật in chữ rời và khắc gỗ (`中国雕版印刷技艺`), Nghệ thuật cắt giấy (`中国剪纸`), Nghệ thuật篆刻 (Triện khắc `中国篆刻`), Kỹ thuật kiến trúc mộc cấu trúc mộng Đấu củng (`中国传统木结构建筑营造技艺`), Kỹ thuật chế biến trà truyền thống (`中国传统制茶技艺及其相关习俗`).
+    4. *Tập quán xã hội & Lễ hội:* Tết Nguyên Đán (`春节`), Tết Đoan Ngọ (`端午节`), Nghệ thuật Múa rối bóng (`中国皮影戏`).
+    5. *Võ thuật & Dưỡng sinh:* Thái Cực Quyền (`太极拳`).
+
+### 3.7. 中国科技 — Lịch sử Khoa học Kỹ thuật Cổ đại (Tứ Đại Phát Minh, Thiên Công Khai Vật) & Công nghệ Đương đại
+- **Nội dung bắt buộc:**
+  - *Khoa học kỹ thuật cổ đại và "Câu hỏi Needham" (Needham Question – 李约瑟难题):* Phân tích chuyên sâu Tứ đại phát minh (`四大发明`: Kỹ thuật làm giấy của Thái Luân `造纸术`, In ấn khắc bản và chữ rời của Tất Thăng `印刷术`, Thuốc súng `火药`, La bàn từ tính `指南针`); các công trình thủy lợi vĩ đại (*Đô Giang Yển* `都江堰` của Lý Băng, *Đại Vận Hà* `京杭大运河`); thành tựu toán học – thiên văn (*Cửu chương算术*, Tổ Xung Chi tính số Pi, Trương Hành chế tạo Địa động nghi `候风地动仪`); và 3 bộ bách khoa toàn thư khoa học kỹ thuật cổ điển: *Mộng Khê Bút Đàm* (`梦溪笔谈` của Thẩm Quát thời Tống), *Thiên Công Khai Vật* (`天工开物` của Tống Ứng Tinh thời Minh), *Bản Thảo Cương Mục* (`本草纲目` của Lý Thời Trân).
+  - *Chuyển mình sang Siêu cường Công nghệ Đương đại:* Hệ thống mạng lưới đường sắt cao tốc lớn nhất thế giới (`中国高铁`), chương trình thám hiểm không gian (Trạm vũ trụ Thiên Cung `天宫`, Thường Nga `嫦娥`), hệ sinh thái thanh toán số, năng lượng tái tạo, chuỗi cung ứng xe điện – pin bán dẫn và thương mại điện tử thông minh.
+
+### 3.8. 中国教育 — Từ Thái Học, Tứ Đại Thư Viện & 1.300 Năm Khoa Cử đến Hệ thống Đại học "Song Nhất Lưu" & Học bổng CSC
+- **Nội dung bắt buộc:**
+  - *Giáo dục cổ đại & Thư viện:* Từ tư tưởng *"Hữu giáo vô loại"* (`有教无类`) của Khổng Tử, hệ thống Thái Học (`太学`) thời Hán Vũ Đế, Quốc Tử Giám (`国子监`) thời Tùy – Đường, đến **Tứ Đại Thư Viện (`四大书院`)** thời Tống – Minh (Nhạc Lộc thư viện `岳麓书院`, Bạch Lộc Động thư viện `白鹿洞书院`, Ứng Thiên Phủ thư viện `应天府书院`, Tung Dương thư viện `嵩阳书院`).
+  - *Giải phẫu Chế độ Khoa cử (`科举制度`, 605–1905):* Quy trình thi cử 4 cấp (Đồng thí `童试` → Hương thí `乡试` đỗ Cử nhân, Giải nguyên → Hội thí `会试` đỗ Cống sĩ, Hội nguyên → Điện thí `殿试` phân Tam giáp: Trạng nguyên, Bảng nhãn, Thám hoa); cấu trúc văn Bát cổ (`八股文`) thời Minh – Thanh; tác động xã hội (tạo sự dịch chuyển giai tầng *"Triều vi điền xá lang, mộ đăng thiên tử đường"* nhưng về cuối thời Thanh làm xơ cứng tư duy khoa học thực nghiệm).
+  - *Hệ thống Đại học Đương đại & Định hướng Nghiên cứu sinh Quốc tế:* Phân biệt rõ **C9 League (`九校联盟`)**, **Dự án 985 (`985工程`)**, **Dự án 211 (`211工程`)** và chiến lược **Song Nhất Lưu (`双一流` – Double First-Class)**; hướng dẫn thực chiến về hệ thống học bổng Chính phủ Trung Quốc (**CSC – 中国政府奖学金**), học bổng Khổng Tử (CIS), học bổng thành phố/trường và quy trình liên hệ giáo sư hướng dẫn (`套磁 Tàocí`) cho bậc Thạc sĩ – Tiến sĩ.
+  - *Đối sánh Trung – Việt:* So sánh trực tiếp với lịch sử Khoa cử Nho học Việt Nam (từ khoa thi năm 1075 thời Lý Nhân Tông đến khoa thi cuối cùng năm 1919 tại Huế) và văn hóa tôn sư trọng đạo tại Văn Miếu – Quốc Tử Giám Hà Nội.
+
+---
+
+## 4. CHUẨN HÓA CHIỀU SÂU CHO 40+ BÀI CHUYÊN LUẬN, 54 QUỐC HỌA, 21+ BẢO VẬT SỐ & TỪ ĐIỂN LỤC THƯ
+
+Kiểm tra toàn bộ các bài viết hiện có trong kho dữ liệu và nâng cấp những bài đang có độ dài dưới 1.500 từ lên chuẩn **Chuyên khảo Học thuật 7 Phần (7-Section Monograph Schema)**:
+
+1. **Tóm tắt Luận điểm Cốt lõi (`abstract`):** 150–250 từ nêu rõ câu hỏi nghiên cứu, bối cảnh ra đời và giá trị lịch sử – đương đại của chủ đề.
+2. **Bối cảnh Lịch sử & Tiến trình Hình thành (`historicalContext`):** Phân tích theo từng giai đoạn triều đại với niên đại cụ thể.
+3. **Phân tích Cấu trúc Lý thuyết & Khái niệm Trọng tâm (`theoreticalFramework`):** Giải phẫu các phạm trù triết học, mỹ học hoặc thể chế cốt lõi.
+4. **Trích dẫn & Bình giải Tư liệu Gốc (`primarySources`):** Tối thiểu 3–5 đoạn trích dẫn nguyên văn từ cổ thư/văn bia/tác phẩm kinh điển, trình bày đủ 4 lớp:
+  
+5. **Đối chiếu Giao lưu Văn hiến Trung – Việt & Đông Á (`sinoVietnameseComparison`):** Phân tích sâu sự tương đồng, tiếp biến và sáng tạo bản địa của Việt Nam (tối thiểu 400–600 từ).
+6. **Hệ thống Thuật ngữ Chuyên ngành & Chiết tự Lục Thư (`terminologyAndLiushu`):** Tối thiểu 12–18 thuật ngữ cho mỗi bài chuyên luận, mỗi thuật ngữ gồm: `hanzi`, `traditional`, `pinyin`, `hanViet`, `liushuCategory` (Tượng hình `象形`, Chỉ sự `指事`, Hội ý `会意`, Hình thanh `形声`, Chuyển chú `转注`, Giả tá `假借`), `radicalAnalysis` (phân tích bộ thủ và thanh phù), `meaningVi`, `meaningEn`, và `contextExample` (câu ví dụ thực tế có Pinyin + dịch nghĩa).
+7. **Tài liệu Tham khảo & Xuất Trích dẫn Chuẩn (`references`):** Tối thiểu 5–8 nguồn tài liệu học thuật uy tín (sử liệu gốc, chuyên khảo của các học giả hàng đầu và cơ sở dữ liệu bảo tàng quốc gia), hỗ trợ xuất trích dẫn chuẩn APA 7th Edition và BibTeX không bị lỗi định dạng.
+
+---
+
+## 5. NÂNG CẤP TRẢI NGHIỆM BẢO TÀNG SỐ (21+ HIỆN VẬT) & QUỐC HỌA DANH TÁC (54 TÁC PHẨM)
+
+Với mỗi bức tranh trong `Quốc họa Danh tác` và mỗi hiện vật trong `Bảo tàng Số`, không được chỉ hiển thị 2–3 câu mô tả ngắn. Hãy mở rộng hồ sơ từng tác phẩm với đầy đủ:
+- **Metadata Bảo tàng chuẩn quốc tế:** Tên tác phẩm (`Hán tự + Pinyin + Hán Việt + Tiếng Anh`), Tác giả (`Hán tự + Pinyin + Năm sinh – mất + Quê quán`), Triều đại & Niên đại sáng tác chính xác, Chất liệu & Kích thước thực tế (`cm`, ví dụ: *Quyển trục lụa tô màu, cao 24,8 cm × dài 528,7 cm* cho *Thanh Minh Thượng Hà Đồ*), và **Nơi lưu trữ hiện tại** (ví dụ: *Bảo tàng Cố Cung Bắc Kinh*, *Bảo tàng Cố Cung Đài Bắc*, *Bảo tàng Quốc gia Trung Quốc*, *Bảo tàng Thượng Hải*, *The Metropolitan Museum of Art*).
+- **Phân tích Kỹ thuật & Bố cục Mỹ học:** Phân tích bút pháp (Công bút `工笔` hay Tả ý `写意`, phép dùng mực *Mặc phân ngũ sắc* `墨分五色`, phép皴法 `Cūnfǎ` vẽ vân đá núi, bố cục *Tam viễn pháp* `三远法`: Cao viễn, Thâm viễn, Bình viễn của Quách Hy, và nghệ thuật lưu bạch `留白`).
+- **Giải mã Đề bạt, Ấn chương & Chi tiết Đắt giá (`Hotspot Annotations`):** Liệt kê tối thiểu 3–4 điểm nhấn chi tiết trên bức tranh hoặc hiện vật (ví dụ: chiếc cầu Hồng Kiều trong *Thanh Minh Thượng Hà Đồ*, sắc xanh khoáng thạch Không Thanh và Thạch Lục trong *Thiên Lý Giang Sơn Đồ*, hay minh văn 497 chữ bên trong *Mao Công Đỉnh*).
+
+---
+
+## 6. NÂNG CẤP KIẾN TRÚC UI/UX THEO TIÊU CHUẨN BẢO TÀNG SỐ HIỆN ĐẠI
+
+1. **Tinh gọn Hero Section & Main Menu trên Trang chủ:**
+   - Giữ thanh Main Menu nằm gọn trên **1 dòng duy nhất** ở màn hình desktop bằng cách chuẩn hóa nhãn điều hướng ngắn gọn, sắc nét.
+   - Hợp nhất các khối giới thiệu trùng lặp ở đầu trang chủ (Quick Start Tour, 5 Role Journeys, 6 Learning Paths) thành một luồng định hướng trực quan, không gây ngợp thị giác trong 30 giây đầu.
+2. **Cải tiến Hộp thoại Xem ảnh Chi tiết (High-Contrast Artwork Viewer):**
+   - Đảm bảo khung xem ảnh phóng to có nền tối sang trọng (`#0F1115`), phần chú thích và nguồn bản quyền hiển thị chữ sáng rõ ràng (độ tương phản đạt chuẩn WCAG AAA ≥ 7:1), kèm thông tin kích thước, chất liệu và bảo tàng lưu trữ.
+3. **Trạng thái Rỗng Thông minh (Empty State UX):**
+   - Trong mọi trang danh bạ (`Khám phá`, `34 Tỉnh/Thành`, `Quốc họa`, `Từ điển`), nếu người dùng nhập từ khóa không khớp với mục nào, hiển thị thông báo lịch sự kèm nút `Xóa bộ lọc & Xem toàn bộ kho lưu trữ` và 5 từ khóa gợi ý thay vì để màn hình trắng trống rỗng.
+
+---
+
+
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-11-15T22:44:22+07:00.
+
+The user's current state is as follows:
+Active Document: user is viewing tab agent-tab-74 (http://127.0.0.1:8080/, "CHINESE CULTURE EXPLORER – 中国文化探索") (LANGUAGE_UNSPECIFIED)
+</ADDITIONAL_METADATA>

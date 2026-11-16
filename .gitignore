@@ -1,0 +1,25 @@
+# Python / Local environment
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+
+# Local SQLite databases
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+
+# Netlify local linking & build artifacts (never commit .netlify/state.json)
+.netlify/
+node_modules/
+dist/
+.env
+.env.*
+
+# Operating System / Editor metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

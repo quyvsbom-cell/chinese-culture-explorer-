@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750">
+  <title>Bản đồ Giao thương Con đường Tơ lụa Đường bộ &amp;amp; Hàng hải Thời Đường</title>
+  <desc>Historical map tracing Chang&#x27;an to Samarkand overland Silk Road and Guangzhou Maritime Silk Road networks.</desc>
+  <defs>
+    <style>
+      .serif { font-family: 'Cormorant Garamond', 'Noto Serif SC', Georgia, serif; }
+      .sans { font-family: 'Be Vietnam Pro', 'Inter', 'Noto Sans SC', sans-serif; }
+      .han { font-family: 'Noto Serif SC', 'Noto Serif TC', serif; }
+      .mono { font-family: 'JetBrains Mono', monospace; }
+      .kicker { font-family: 'Be Vietnam Pro', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 2.2px; fill: #9F2929; text-transform: uppercase; }
+      .h-title { font-family: 'Cormorant Garamond', 'Noto Serif SC', serif; font-size: 40px; font-weight: 700; fill: #202020; }
+      .h-sub { font-family: 'Be Vietnam Pro', sans-serif; font-size: 18px; fill: #524F49; }
+      .label-b { font-family: 'Be Vietnam Pro', sans-serif; font-size: 17px; font-weight: 700; fill: #202020; }
+      .label-s { font-family: 'Be Vietnam Pro', sans-serif; font-size: 14px; fill: #524F49; }
+      .han-big { font-family: 'Noto Serif SC', serif; font-weight: 700; fill: #202020; }
+    </style>
+    <pattern id="paperGrain" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="#F7F4ED"/>
+      <circle cx="14" cy="18" r="0.8" fill="#C9C0AD" opacity="0.35"/>
+      <circle cx="42" cy="46" r="0.7" fill="#B8AF9B" opacity="0.3"/>
+      <path d="M0 30 H60 M30 0 V60" stroke="#E5DEC9" stroke-width="0.4" opacity="0.4"/>
+    </pattern>
+    <pattern id="diagonalHatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#9F2929" stroke-width="1.4" opacity="0.28"/>
+    </pattern>
+    <pattern id="dotPattern" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1.5" fill="#637F72" opacity="0.35"/>
+    </pattern>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9F2929"/>
+      <stop offset="100%" stop-color="#B63D32"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#CBB078"/>
+      <stop offset="100%" stop-color="#9E8048"/>
+    </linearGradient>
+    <linearGradient id="jadeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#637F72"/>
+      <stop offset="100%" stop-color="#3F574D"/>
+    </linearGradient>
+    <marker id="arrowRed" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#9F2929"/>
+    </marker>
+    <marker id="arrowGold" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#B99A62"/>
+    </marker>
+    <marker id="arrowJade" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#637F72"/>
+    </marker>
+    <marker id="arrowInk" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#202020"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="750" fill="url(#paperGrain)"/>
+  <rect x="20" y="20" width="1160" height="710" fill="none" stroke="#DED8CA" stroke-width="2"/>
+  <rect x="28" y="28" width="1144" height="694" fill="none" stroke="#B99A62" stroke-width="0.9" opacity="0.65"/>
+  
+  <text x="56" y="76" class="kicker">BẢN ĐỒ LỊCH SỬ • THẾ KỶ VII–IX SCN</text>
+  <text x="56" y="118" class="h-title" style="font-size:32px;">Mạng lưới Con đường Tơ lụa Đường bộ &amp; Hàng hải Thời Đường</text>
+  <line x1="56" y1="138" x2="1144" y2="138" stroke="#DED8CA" stroke-width="1.5"/>
+  <g transform="translate(56, 165)">
+    <rect width="1088" height="525" rx="8" fill="#ECE4CE" stroke="#B99A62" stroke-width="1.8"/>
+    <!-- Routes -->
+    <path d="M770 185 Q640 165 540 135 Q410 100 280 125 Q185 140 95 165" fill="none" stroke="#9F2929" stroke-width="4" marker-end="url(#arrowRed)"/>
+    <path d="M770 185 Q785 275 760 355 Q620 435 455 445 Q290 450 130 415" fill="none" stroke="#224C8A" stroke-width="4" stroke-dasharray="10 5" marker-end="url(#arrowInk)"/>
+
+    <!-- Nodes -->
+    <circle cx="770" cy="185" r="14" fill="#9F2929"/><text x="770" y="160" text-anchor="middle" class="label-b" fill="#9F2929">TRƯỜNG AN (长安)</text>
+    <circle cx="540" cy="135" r="10" fill="#202020"/><text x="540" y="115" text-anchor="middle" class="label-s" font-weight="700">Đôn Hoàng (敦煌 • Hành lang Hà Tây)</text>
+    <circle cx="280" cy="125" r="10" fill="#202020"/><text x="280" y="105" text-anchor="middle" class="label-s" font-weight="700">Samarkand (Túc Đặc)</text>
+    <circle cx="95" cy="165" r="10" fill="#202020"/><text x="120" y="200" text-anchor="middle" class="label-s" font-weight="700">Ba Tư / Địa Trung Hải</text>
+
+    <circle cx="760" cy="355" r="11" fill="#224C8A"/><text x="860" y="355" class="label-b" fill="#224C8A">Quảng Châu (Bạc Ty Sứ)</text>
+    <circle cx="645" cy="405" r="9" fill="#637F72"/><text x="645" y="388" text-anchor="middle" class="label-s" font-weight="700">Giao Châu (An Nam Đô hộ phủ)</text>
+    <circle cx="455" cy="445" r="10" fill="#224C8A"/><text x="455" y="476" text-anchor="middle" class="label-s" font-weight="700">Malacca • Srivijaya</text>
+    <circle cx="130" cy="415" r="10" fill="#224C8A"/><text x="165" y="395" text-anchor="middle" class="label-s" font-weight="700">Vịnh Ba Tư (Siraf)</text>
+
+    <rect x="855" y="45" width="205" height="230" rx="6" fill="#F7F4ED" stroke="#DED8CA"/>
+    <text x="872" y="76" class="label-b">CHÚ GIẢI TUYẾN</text>
+    <line x1="872" y1="100" x2="915" y2="100" stroke="#9F2929" stroke-width="4"/><text x="925" y="106" font-size="13">Tơ lụa Đường bộ</text>
+    <line x1="872" y1="130" x2="915" y2="130" stroke="#224C8A" stroke-width="4" stroke-dasharray="6 3"/><text x="925" y="136" font-size="13">Hàng hải Gió mùa</text>
+    <text x="872" y="175" font-size="12" fill="#524F49">Trao đổi: Tơ lụa, gốm Trường Sa</text>
+    <text x="872" y="196" font-size="12" fill="#524F49">đi Tây; thủy tinh, gia vị, Phật</text>
+    <text x="872" y="217" font-size="12" fill="#524F49">kinh &amp; ngựa quý vào Đông Á.</text>
+  </g>
+
+  <g transform="translate(1055, 658)">
+    <rect width="104" height="50" rx="3" fill="#9F2929" opacity="0.92"/>
+    <rect x="4" y="4" width="96" height="42" rx="2" fill="none" stroke="#F7F4ED" stroke-width="1" opacity="0.7"/>
+    <text x="52" y="24" text-anchor="middle" class="han" font-size="14" fill="#F7F4ED" font-weight="700">中国文化探索</text>
+    <text x="52" y="40" text-anchor="middle" class="mono" font-size="10" fill="#F7F4ED" opacity="0.9">CCE ARCHIVE</text>
+  </g>
+</svg>

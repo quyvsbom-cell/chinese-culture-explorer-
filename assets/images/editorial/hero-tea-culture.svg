@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <title>Văn hóa Trà Trung Quốc: Trà Kinh của Lục Vũ và Ba Thời kỳ Pha trà</title>
+  <desc>Cultural illustration tracing tea brewing transformations across Tang, Song, and Ming dynasties alongside the Six Tea Oxidation Categories.</desc>
+  <defs>
+    <style>
+      .serif { font-family: 'Cormorant Garamond', 'Noto Serif SC', Georgia, serif; }
+      .sans { font-family: 'Be Vietnam Pro', 'Inter', 'Noto Sans SC', sans-serif; }
+      .han { font-family: 'Noto Serif SC', 'Noto Serif TC', serif; }
+      .mono { font-family: 'JetBrains Mono', monospace; }
+      .kicker { font-family: 'Be Vietnam Pro', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 2.2px; fill: #9F2929; text-transform: uppercase; }
+      .h-title { font-family: 'Cormorant Garamond', 'Noto Serif SC', serif; font-size: 40px; font-weight: 700; fill: #202020; }
+      .h-sub { font-family: 'Be Vietnam Pro', sans-serif; font-size: 18px; fill: #524F49; }
+      .label-b { font-family: 'Be Vietnam Pro', sans-serif; font-size: 17px; font-weight: 700; fill: #202020; }
+      .label-s { font-family: 'Be Vietnam Pro', sans-serif; font-size: 14px; fill: #524F49; }
+      .han-big { font-family: 'Noto Serif SC', serif; font-weight: 700; fill: #202020; }
+    </style>
+    <pattern id="paperGrain" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="#F7F4ED"/>
+      <circle cx="14" cy="18" r="0.8" fill="#C9C0AD" opacity="0.35"/>
+      <circle cx="42" cy="46" r="0.7" fill="#B8AF9B" opacity="0.3"/>
+      <path d="M0 30 H60 M30 0 V60" stroke="#E5DEC9" stroke-width="0.4" opacity="0.4"/>
+    </pattern>
+    <pattern id="diagonalHatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#9F2929" stroke-width="1.4" opacity="0.28"/>
+    </pattern>
+    <pattern id="dotPattern" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1.5" fill="#637F72" opacity="0.35"/>
+    </pattern>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9F2929"/>
+      <stop offset="100%" stop-color="#B63D32"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#CBB078"/>
+      <stop offset="100%" stop-color="#9E8048"/>
+    </linearGradient>
+    <linearGradient id="jadeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#637F72"/>
+      <stop offset="100%" stop-color="#3F574D"/>
+    </linearGradient>
+    <marker id="arrowRed" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#9F2929"/>
+    </marker>
+    <marker id="arrowGold" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#B99A62"/>
+    </marker>
+    <marker id="arrowJade" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#637F72"/>
+    </marker>
+    <marker id="arrowInk" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#202020"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#paperGrain)"/>
+  <rect x="20" y="20" width="1560" height="860" fill="none" stroke="#DED8CA" stroke-width="2"/>
+  <rect x="28" y="28" width="1544" height="844" fill="none" stroke="#B99A62" stroke-width="0.9" opacity="0.65"/>
+  
+  <text x="72" y="88" class="kicker">CHƯƠNG 10 • VĂN HÓA ĐỜI SỐNG &amp; KINH TẾ THƯƠNG PHẨM</text>
+  <text x="72" y="138" class="h-title">Văn hóa Trà Trung Quốc: Từ 《Trà Kinh》 (780) đến Chuỗi Toàn cầu</text>
+  <text x="72" y="172" class="h-sub">Ba cuộc cách mạng kỹ thuật pha trà (Tiễn – Điểm – Tản) &amp; Phân loại 6 đại trà hệ</text>
+  <line x1="72" y1="196" x2="1528" y2="196" stroke="#DED8CA" stroke-width="1.5"/>
+
+  <g transform="translate(72, 228)">
+    <rect width="1456" height="270" rx="8" fill="#EEE9DE" stroke="#B99A62" stroke-width="1.6"/>
+    <text x="32" y="44" class="label-b">I. BA GIAI ĐOẠN KỸ THUẬT PHA TRÀ TRONG LỊCH SỬ TRUNG HOA</text>
+    <g transform="translate(32, 72)">
+      <rect width="445" height="172" rx="6" fill="#F7F4ED" stroke="#9F2929"/>
+      <text x="22" y="34" class="label-b" fill="#9F2929">1. Triều Đường — Tiễn Trà (煎茶)</text>
+      <text x="22" y="64" class="label-s">• Hình thức: Bánh trà nén (Trà bính) nướng &amp; nghiền bột</text>
+      <text x="22" y="90" class="label-s">• Dụng cụ: Vạc nấu trà mở miệng, thêm chút muối tinh</text>
+      <text x="22" y="116" class="label-s">• Tác phẩm nền tảng: 《茶经》 Lục Vũ (~760–780 SCN)</text>
+      <text x="22" y="144" class="label-s" font-weight="700">Đưa trà thành nghệ thuật tu dưỡng (Trà đạo)</text>
+
+      <rect x="472" width="445" height="172" rx="6" fill="#F7F4ED" stroke="#202020"/>
+      <text x="494" y="34" class="label-b">2. Triều Tống — Điểm Trà (点茶)</text>
+      <text x="494" y="64" class="label-s">• Hình thức: Đánh bột trà mịn trong bát men đen Kiến Trản</text>
+      <text x="494" y="90" class="label-s">• Dụng cụ: Chổi tre đánh trà (Trà tiễn 茶筅) tạo bọt</text>
+      <text x="494" y="116" class="label-s">• Văn hóa: Thi “Đấu trà” &amp; họa bọt “Trà bách hí”</text>
+      <text x="494" y="144" class="label-s" font-weight="700">Tiền thân trực tiếp của Matcha Nhật Bản</text>
+
+      <rect x="944" width="448" height="172" rx="6" fill="#F7F4ED" stroke="#637F72"/>
+      <text x="966" y="34" class="label-b" fill="#3F574D">3. Triều Minh – Nay — Tản Trà (散茶)</text>
+      <text x="966" y="64" class="label-s">• Hình thức: Chu Nguyên Chương (1391) bãi bỏ bánh trà cống</text>
+      <text x="966" y="90" class="label-s">• Dụng cụ: Ấm Tử sa Nghi Hưng (紫砂壶) &amp; Chén Khải</text>
+      <text x="966" y="116" class="label-s">• Nghi lễ: Công phu trà Triều Sán &amp; Khấu chỉ tạ trà</text>
+      <text x="966" y="144" class="label-s" font-weight="700">Trà lá nguyên cánh phổ biến toàn thế giới</text>
+    </g>
+  </g>
+
+  <g transform="translate(72, 520)">
+    <rect width="1456" height="296" rx="8" fill="#FBF8F1" stroke="#637F72" stroke-width="1.6"/>
+    <text x="32" y="44" class="label-b">II. PHỔ OXY HÓA 6 ĐẠI TRÀ HỆ TRUNG QUỐC (TRẦN DUYỆN, 1979 • UNESCO 2022)</text>
+    <g transform="translate(32, 74)">
+      <rect width="218" height="190" rx="6" fill="#637F72" opacity="0.16" stroke="#637F72"/><text x="109" y="36" text-anchor="middle" class="label-b" fill="#3F574D">1. Lục Trà 绿茶</text><text x="109" y="68" text-anchor="middle" class="mono" font-size="18" fill="#3F574D">0–5%</text><text x="109" y="102" text-anchor="middle" class="label-s">Sao diệt men nhanh</text><text x="109" y="130" text-anchor="middle" class="label-s">Tây Hồ Long Tỉnh</text><text x="109" y="156" text-anchor="middle" class="label-s">Bích Loa Xuân</text>
+      <rect x="235" width="218" height="190" rx="6" fill="#EEE9DE" stroke="#B99A62"/><text x="344" y="36" text-anchor="middle" class="label-b">2. Bạch Trà 白茶</text><text x="344" y="68" text-anchor="middle" class="mono" font-size="18" fill="#524F49">10–20%</text><text x="344" y="102" text-anchor="middle" class="label-s">Phơi héo tự nhiên</text><text x="344" y="130" text-anchor="middle" class="label-s">Bạch Hào Ngân Châm</text><text x="344" y="156" text-anchor="middle" class="label-s">Phúc Đỉnh (Phúc Kiến)</text>
+      <rect x="470" width="218" height="190" rx="6" fill="#B99A62" opacity="0.22" stroke="#B99A62"/><text x="579" y="36" text-anchor="middle" class="label-b">3. Hoàng Trà 黄茶</text><text x="579" y="68" text-anchor="middle" class="mono" font-size="18" fill="#705827">15–25%</text><text x="579" y="102" text-anchor="middle" class="label-s">Ủ vàng (Muộn hoàng)</text><text x="579" y="130" text-anchor="middle" class="label-s">Quân Sơn Ngân Châm</text><text x="579" y="156" text-anchor="middle" class="label-s">Mông Đỉnh Hoàng Nha</text>
+      <rect x="705" width="218" height="190" rx="6" fill="#637F72" opacity="0.28" stroke="#3F574D"/><text x="814" y="36" text-anchor="middle" class="label-b">4. Thanh Trà 乌龙</text><text x="814" y="68" text-anchor="middle" class="mono" font-size="18" fill="#2B4037">20–75%</text><text x="814" y="102" text-anchor="middle" class="label-s">Bán lên men, lắc mép</text><text x="814" y="130" text-anchor="middle" class="label-s">Thiết Quan Âm</text><text x="814" y="156" text-anchor="middle" class="label-s">Vũ Di Đại Hồng Bào</text>
+      <rect x="940" width="218" height="190" rx="6" fill="#9F2929" opacity="0.14" stroke="#9F2929"/><text x="1049" y="36" text-anchor="middle" class="label-b" fill="#9F2929">5. Hồng Trà 红茶</text><text x="1049" y="68" text-anchor="middle" class="mono" font-size="18" fill="#9F2929">80–95%</text><text x="1049" y="102" text-anchor="middle" class="label-s">Lên men toàn phần</text><text x="1049" y="130" text-anchor="middle" class="label-s">Kỳ Môn Hồng trà</text><text x="1049" y="156" text-anchor="middle" class="label-s">Chính Sơn Tiểu Chủng</text>
+      <rect x="1175" width="217" height="190" rx="6" fill="#202020" opacity="0.12" stroke="#202020"/><text x="1283" y="36" text-anchor="middle" class="label-b">6. Hắc Trà 黑茶</text><text x="1283" y="68" text-anchor="middle" class="mono" font-size="18" fill="#202020">Hậu vi sinh</text><text x="1283" y="102" text-anchor="middle" class="label-s">Ủ đống lên men (Ốc đôi)</text><text x="1283" y="130" text-anchor="middle" class="label-s">Phổ Nhĩ Vân Nam</text><text x="1283" y="156" text-anchor="middle" class="label-s">Con đường Trà – Ngựa</text>
+    </g>
+  </g>
+
+  <g transform="translate(1455, 808)">
+    <rect width="104" height="50" rx="3" fill="#9F2929" opacity="0.92"/>
+    <rect x="4" y="4" width="96" height="42" rx="2" fill="none" stroke="#F7F4ED" stroke-width="1" opacity="0.7"/>
+    <text x="52" y="24" text-anchor="middle" class="han" font-size="14" fill="#F7F4ED" font-weight="700">中国文化探索</text>
+    <text x="52" y="40" text-anchor="middle" class="mono" font-size="10" fill="#F7F4ED" opacity="0.9">CCE ARCHIVE</text>
+  </g>
+</svg>

@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <title>Kiến trúc Cổ &amp; Viên lâm Trung Hoa: Hệ Mộng Đấu Củng và Mượn Cảnh</title>
+  <desc>Architectural structural cutaway of traditional Chinese Dougong earthquake-damping bracket systems contrasted with Suzhou garden Jiejing framing.</desc>
+  <defs>
+    <style>
+      .serif { font-family: 'Cormorant Garamond', 'Noto Serif SC', Georgia, serif; }
+      .sans { font-family: 'Be Vietnam Pro', 'Inter', 'Noto Sans SC', sans-serif; }
+      .han { font-family: 'Noto Serif SC', 'Noto Serif TC', serif; }
+      .mono { font-family: 'JetBrains Mono', monospace; }
+      .kicker { font-family: 'Be Vietnam Pro', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 2.2px; fill: #9F2929; text-transform: uppercase; }
+      .h-title { font-family: 'Cormorant Garamond', 'Noto Serif SC', serif; font-size: 40px; font-weight: 700; fill: #202020; }
+      .h-sub { font-family: 'Be Vietnam Pro', sans-serif; font-size: 18px; fill: #524F49; }
+      .label-b { font-family: 'Be Vietnam Pro', sans-serif; font-size: 17px; font-weight: 700; fill: #202020; }
+      .label-s { font-family: 'Be Vietnam Pro', sans-serif; font-size: 14px; fill: #524F49; }
+      .han-big { font-family: 'Noto Serif SC', serif; font-weight: 700; fill: #202020; }
+    </style>
+    <pattern id="paperGrain" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="#F7F4ED"/>
+      <circle cx="14" cy="18" r="0.8" fill="#C9C0AD" opacity="0.35"/>
+      <circle cx="42" cy="46" r="0.7" fill="#B8AF9B" opacity="0.3"/>
+      <path d="M0 30 H60 M30 0 V60" stroke="#E5DEC9" stroke-width="0.4" opacity="0.4"/>
+    </pattern>
+    <pattern id="diagonalHatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#9F2929" stroke-width="1.4" opacity="0.28"/>
+    </pattern>
+    <pattern id="dotPattern" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1.5" fill="#637F72" opacity="0.35"/>
+    </pattern>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9F2929"/>
+      <stop offset="100%" stop-color="#B63D32"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#CBB078"/>
+      <stop offset="100%" stop-color="#9E8048"/>
+    </linearGradient>
+    <linearGradient id="jadeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#637F72"/>
+      <stop offset="100%" stop-color="#3F574D"/>
+    </linearGradient>
+    <marker id="arrowRed" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#9F2929"/>
+    </marker>
+    <marker id="arrowGold" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#B99A62"/>
+    </marker>
+    <marker id="arrowJade" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#637F72"/>
+    </marker>
+    <marker id="arrowInk" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#202020"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#paperGrain)"/>
+  <rect x="20" y="20" width="1560" height="860" fill="none" stroke="#DED8CA" stroke-width="2"/>
+  <rect x="28" y="28" width="1544" height="844" fill="none" stroke="#B99A62" stroke-width="0.9" opacity="0.65"/>
+  
+  <text x="72" y="88" class="kicker">CHƯƠNG 13 • KIẾN TRÚC GỖ CỔ ĐIỂN &amp; MỸ HỌC VIÊN LÂM</text>
+  <text x="72" y="138" class="h-title">Kiến trúc Truyền thống: Cơ học Đấu Củng (斗拱) &amp; Viên lâm Tô Châu</text>
+  <text x="72" y="172" class="h-sub">Vì sao công trình gỗ không dùng đinh thép đứng vững hàng thế kỷ &amp; nghệ thuật “Tá cảnh” (借景)</text>
+  <line x1="72" y1="196" x2="1528" y2="196" stroke="#DED8CA" stroke-width="1.5"/>
+
+  <g transform="translate(72, 228)">
+    <rect width="740" height="590" rx="8" fill="#EEE9DE" stroke="#B99A62" stroke-width="1.6"/>
+    <text x="32" y="44" class="label-b">I. KẾT CẤU KHỚP MỘNG ĐẤU CỦNG CHỐNG ĐỘNG ĐẤT</text>
+    <text x="32" y="68" class="label-s">Quy chuẩn hóa mô-đun trong 《营造法式》 (Doanh Tạo Pháp Thức – Lý Giới, 1103 SCN)</text>
+    <g transform="translate(115, 110)">
+      <!-- Roof Purlins -->
+      <polygon points="0,120 255,15 510,120" fill="#B99A62" opacity="0.3" stroke="#9F2929" stroke-width="2.5"/>
+      <rect x="65" y="120" width="380" height="22" fill="#9F2929"/>
+      <!-- Dougong Bracket Stack -->
+      <rect x="155" y="142" width="200" height="22" fill="#B99A62" stroke="#202020"/>
+      <rect x="180" y="164" width="150" height="22" fill="#8C5932" stroke="#202020"/>
+      <rect x="205" y="186" width="100" height="24" fill="#9F2929" stroke="#202020"/>
+      <!-- Timber Column -->
+      <rect x="232" y="210" width="46" height="190" fill="#7D2424"/>
+      <rect x="214" y="400" width="82" height="24" rx="4" fill="#A69F92" stroke="#202020"/>
+      <!-- Annotations -->
+      <text x="390" y="160" class="label-s" font-weight="700">Củng (拱) — tay đòn đỡ mái</text>
+      <text x="390" y="195" class="label-s" font-weight="700">Đấu (斗) — khối đỡ truyền tải</text>
+      <text x="315" y="305" class="label-s">Cột Nam Mộc đặt tự do</text>
+      <text x="315" y="328" class="label-s">trên đá tảng (Trụ sở 柱础)</text>
+      <text x="315" y="416" class="label-s">Chống mục ẩm &amp; trượt giảm chấn</text>
+    </g>
+    <text x="370" y="558" text-anchor="middle" class="label-s">Trong động đất, khớp gỗ đàn hồi tiêu tán năng lượng xung lực giống bộ giảm chấn cơ khí</text>
+  </g>
+
+  <g transform="translate(848, 228)">
+    <rect width="680" height="590" rx="8" fill="#FBF8F1" stroke="#637F72" stroke-width="1.6"/>
+    <text x="30" y="44" class="label-b" fill="#3F574D">II. ĐỐI LẬP: LỄ GIÁO CUNG ĐÌNH vs VĂN NHÂN VIÊN LÂM</text>
+    <g transform="translate(30, 76)">
+      <rect width="620" height="218" rx="6" fill="#EEE9DE" stroke="#9F2929"/>
+      <text x="20" y="34" class="label-b" fill="#9F2929">A. Kiến trúc Nho gia Hoàng gia (Bắc Kinh • Cố Cung)</text>
+      <text x="20" y="66" class="label-s">• Nguyên tắc: Trục đối xứng nghiêm ngặt (Trung trục tuyến), phân cấp Tọa Bắc triều Nam</text>
+      <text x="20" y="96" class="label-s">• Quy phạm: Số gian lẻ (9 hoặc 11 gian), ngói lưu ly vàng chỉ dành cho Hoàng gia</text>
+      <text x="20" y="126" class="label-s">• Tinh thần: Tôn ti trật tự thiên tử, lễ nghi xã hội và trường tồn đế chế</text>
+      <text x="20" y="166" class="han" font-size="22" fill="#202020">中轴对称 • 天子居中 • 礼制秩序</text>
+
+      <rect y="238" width="620" height="240" rx="6" fill="#F7F4ED" stroke="#637F72"/>
+      <text x="20" y="272" class="label-b" fill="#3F574D">B. Viên lâm Cổ điển Giang Nam (Tô Châu • Chuyết Chính Viên)</text>
+      <text x="20" y="304" class="label-s">• Nguyên tắc: Phi đối xứng, hành lang quanh co (“Di bộ hoán cảnh” — mỗi bước đổi cảnh)</text>
+      <text x="20" y="334" class="label-s">• Thủ pháp: “Tá cảnh” (借景 – mượn ngọn tháp bên ngoài đưa vào khung cửa sổ hoa văn)</text>
+      <text x="20" y="364" class="label-s">• Vật liệu: Ngói xám tường trắng Phấn tường đại ngõa, đá Thái Hồ, thủy đình, trúc tùng</text>
+      <text x="20" y="404" class="han" font-size="22" fill="#3F574D">虽由人作，宛自天开（《园冶》计成）</text>
+      <text x="20" y="432" class="label-s" font-style="italic">“Tuy do tay người làm ra, mà ngỡ tự nhiên sinh thành” (Kế Thành, 1631)</text>
+    </g>
+  </g>
+
+  <g transform="translate(1455, 808)">
+    <rect width="104" height="50" rx="3" fill="#9F2929" opacity="0.92"/>
+    <rect x="4" y="4" width="96" height="42" rx="2" fill="none" stroke="#F7F4ED" stroke-width="1" opacity="0.7"/>
+    <text x="52" y="24" text-anchor="middle" class="han" font-size="14" fill="#F7F4ED" font-weight="700">中国文化探索</text>
+    <text x="52" y="40" text-anchor="middle" class="mono" font-size="10" fill="#F7F4ED" opacity="0.9">CCE ARCHIVE</text>
+  </g>
+</svg>

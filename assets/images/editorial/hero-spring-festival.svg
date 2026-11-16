@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <title>Ý nghĩa Văn hóa - Xã hội của Xuân Tiết (Tết Nguyên Đán Trung Quốc)</title>
+  <desc>Cultural infographic contrasting Northern Jiaozi and Southern Niangao Spring Festival traditions and the UNESCO 2024 inscription.</desc>
+  <defs>
+    <style>
+      .serif { font-family: 'Cormorant Garamond', 'Noto Serif SC', Georgia, serif; }
+      .sans { font-family: 'Be Vietnam Pro', 'Inter', 'Noto Sans SC', sans-serif; }
+      .han { font-family: 'Noto Serif SC', 'Noto Serif TC', serif; }
+      .mono { font-family: 'JetBrains Mono', monospace; }
+      .kicker { font-family: 'Be Vietnam Pro', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 2.2px; fill: #9F2929; text-transform: uppercase; }
+      .h-title { font-family: 'Cormorant Garamond', 'Noto Serif SC', serif; font-size: 40px; font-weight: 700; fill: #202020; }
+      .h-sub { font-family: 'Be Vietnam Pro', sans-serif; font-size: 18px; fill: #524F49; }
+      .label-b { font-family: 'Be Vietnam Pro', sans-serif; font-size: 17px; font-weight: 700; fill: #202020; }
+      .label-s { font-family: 'Be Vietnam Pro', sans-serif; font-size: 14px; fill: #524F49; }
+      .han-big { font-family: 'Noto Serif SC', serif; font-weight: 700; fill: #202020; }
+    </style>
+    <pattern id="paperGrain" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="#F7F4ED"/>
+      <circle cx="14" cy="18" r="0.8" fill="#C9C0AD" opacity="0.35"/>
+      <circle cx="42" cy="46" r="0.7" fill="#B8AF9B" opacity="0.3"/>
+      <path d="M0 30 H60 M30 0 V60" stroke="#E5DEC9" stroke-width="0.4" opacity="0.4"/>
+    </pattern>
+    <pattern id="diagonalHatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#9F2929" stroke-width="1.4" opacity="0.28"/>
+    </pattern>
+    <pattern id="dotPattern" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1.5" fill="#637F72" opacity="0.35"/>
+    </pattern>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9F2929"/>
+      <stop offset="100%" stop-color="#B63D32"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#CBB078"/>
+      <stop offset="100%" stop-color="#9E8048"/>
+    </linearGradient>
+    <linearGradient id="jadeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#637F72"/>
+      <stop offset="100%" stop-color="#3F574D"/>
+    </linearGradient>
+    <marker id="arrowRed" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#9F2929"/>
+    </marker>
+    <marker id="arrowGold" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#B99A62"/>
+    </marker>
+    <marker id="arrowJade" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#637F72"/>
+    </marker>
+    <marker id="arrowInk" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#202020"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#paperGrain)"/>
+  <rect x="20" y="20" width="1560" height="860" fill="none" stroke="#DED8CA" stroke-width="2"/>
+  <rect x="28" y="28" width="1544" height="844" fill="none" stroke="#B99A62" stroke-width="0.9" opacity="0.65"/>
+  
+  <text x="72" y="88" class="kicker">CHƯƠNG 06 • NHÂN HỌC VĂN HÓA &amp; DI SẢN UNESCO 2024</text>
+  <text x="72" y="138" class="h-title">Xuân Tiết (春节): Chu kỳ Nghi lễ Gia tộc, Lịch Thái Sơ &amp; Kinh tế Số</text>
+  <text x="72" y="172" class="h-sub">Từ ấn định tháng Dần năm 104 TCN đến Di sản Văn hóa Phi vật thể UNESCO tháng 12/2024</text>
+  <line x1="72" y1="196" x2="1528" y2="196" stroke="#DED8CA" stroke-width="1.5"/>
+
+  <g transform="translate(72, 228)">
+    <rect width="740" height="590" rx="8" fill="#9F2929" opacity="0.94"/>
+    <rect x="14" y="14" width="712" height="562" rx="6" fill="none" stroke="#B99A62" stroke-width="2"/>
+    <text x="370" y="86" text-anchor="middle" class="han" font-size="88" fill="#F7F4ED" font-weight="700">春节 • 福</text>
+    <text x="370" y="140" text-anchor="middle" class="label-b" fill="#E8D2A0">CHU KỲ 23 NGÀY NGHI LỄ NÔNG LỊCH TRUNG HOA</text>
+    <g transform="translate(46, 180)">
+      <rect width="648" height="72" rx="6" fill="#F7F4ED" opacity="0.95"/>
+      <text x="22" y="30" class="label-b" fill="#9F2929">23 tháng Chạp (Tiểu Niên • 祭灶)</text>
+      <text x="22" y="54" class="label-s">Tế Táo Quân và dọn dẹp “Tảo trần” (扫尘 đồng âm quét sạch vận cũ)</text>
+
+      <rect y="88" width="648" height="72" rx="6" fill="#F7F4ED" opacity="0.95"/>
+      <text x="22" y="118" class="label-b" fill="#9F2929">Đêm 30 / Trừ Tịch (除夕 • 年夜饭)</text>
+      <text x="22" y="142" class="label-s">Bữa cơm đoàn viên Niên dạ phạn, Thức đón giao thừa (Thủ tuế), Áp tuế tiền</text>
+
+      <rect y="176" width="648" height="72" rx="6" fill="#F7F4ED" opacity="0.95"/>
+      <text x="22" y="206" class="label-b" fill="#9F2929">Mùng 1 – Mùng 5 (Chính Nguyệt • 拜年)</text>
+      <text x="22" y="230" class="label-s">Chúc Tết họ hàng, nghênh Thần Tài mùng 5 (Phá Ngũ 破五)</text>
+
+      <rect y="264" width="648" height="72" rx="6" fill="#F7F4ED" opacity="0.95"/>
+      <text x="22" y="294" class="label-b" fill="#9F2929">Rằm tháng Giêng (Nguyên Tiêu • 元宵节)</text>
+      <text x="22" y="318" class="label-s">Rước đèn lồng, giải câu đố đèn, ăn bánh trôi Thang viên khép lại kỳ Tết</text>
+    </g>
+  </g>
+
+  <g transform="translate(848, 228)">
+    <rect width="680" height="590" rx="8" fill="#FBF8F1" stroke="#DED8CA" stroke-width="1.6"/>
+    <text x="30" y="44" class="label-b">II. PHÂN HÓA BẮC – NAM &amp; CHUYỂN HÓA HIỆN ĐẠI</text>
+    <g transform="translate(30, 72)">
+      <rect width="620" height="145" rx="6" fill="#EEE9DE" stroke="#B99A62"/>
+      <text x="20" y="34" class="label-b">Miền Bắc (Bắc Kinh, Sơn Đông, Đông Bắc)</text>
+      <text x="20" y="64" class="label-s">• Gói sủi cảo (饺子): đồng âm “Canh tuế giao tử” (giây phút chuyển giao năm)</text>
+      <text x="20" y="90" class="label-s">• Dán tranh Tết Mộc bản Dương Liễu Thanh (Thiên Tân) &amp; cắt giấy cửa sổ</text>
+      <text x="20" y="116" class="label-s">• Chùa hội (Miếu hội 庙会) tại Địa Đàn &amp; Long Đàm Hồ</text>
+
+      <rect y="164" width="620" height="145" rx="6" fill="#EEE9DE" stroke="#637F72"/>
+      <text x="20" y="198" class="label-b" fill="#3F574D">Miền Nam (Giang Nam, Phúc Kiến, Lĩnh Nam)</text>
+      <text x="20" y="228" class="label-s">• Bánh Niên Cao (年糕 – thăng tiến hàng năm), chè Thang viên &amp; cá (“Niên niên hữu dư”)</text>
+      <text x="20" y="254" class="label-s">• Chợ hoa ngày Tết Quảng Châu (Nghênh Xuân Hoa Thị 迎春花市)</text>
+      <text x="20" y="280" class="label-s">• Phong bao Lì xì (Lợi thị 利市) mừng tuổi người nhỏ</text>
+
+      <rect y="328" width="620" height="160" rx="6" fill="#F7F4ED" stroke="#9F2929"/>
+      <text x="20" y="362" class="label-b" fill="#9F2929">Biến đổi Thế kỷ XX–XXI &amp; So sánh Việt Nam</text>
+      <text x="20" y="392" class="label-s">• 1914: Đổi tên mùng 1 âm lịch thành Xuân Tiết (giữ 1/1 dương lịch là Nguyên Đán)</text>
+      <text x="20" y="418" class="label-s">• 1983–2014: Gala Xuân Vãn CCTV &amp; số hóa WeChat Hongbao thúc đẩy thanh toán QR</text>
+      <text x="20" y="444" class="label-s">• So với Tết Việt Nam: dùng chung Nông lịch nhưng Việt Nam có Bánh chưng &amp; Mâm ngũ quả</text>
+    </g>
+  </g>
+
+  <g transform="translate(1455, 808)">
+    <rect width="104" height="50" rx="3" fill="#9F2929" opacity="0.92"/>
+    <rect x="4" y="4" width="96" height="42" rx="2" fill="none" stroke="#F7F4ED" stroke-width="1" opacity="0.7"/>
+    <text x="52" y="24" text-anchor="middle" class="han" font-size="14" fill="#F7F4ED" font-weight="700">中国文化探索</text>
+    <text x="52" y="40" text-anchor="middle" class="mono" font-size="10" fill="#F7F4ED" opacity="0.9">CCE ARCHIVE</text>
+  </g>
+</svg>

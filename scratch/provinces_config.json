@@ -1,0 +1,411 @@
+[
+  {
+    "id": "prov-beijing",
+    "nameVi": "Bắc Kinh",
+    "nameZh": "北京市",
+    "landmark": "Thiên Đàn (Điện Kỳ Niên) • 北京天坛祈年殿",
+    "search": "File:Hall of Prayer for Good Harvests 2013-05.JPG",
+    "fallbacks": [
+      "File:Temple of Heaven Beijing.jpg",
+      "File:Temple of heaven.jpg"
+    ],
+    "filename": "beijing-temple-of-heaven.jpg"
+  },
+  {
+    "id": "prov-tianjin",
+    "nameVi": "Thiên Tân",
+    "nameZh": "天津市",
+    "landmark": "Vòng quay Mắt Thiên Tân • 天津之眼摩天轮",
+    "search": "File:Tianjin Eye.jpg",
+    "fallbacks": [
+      "File:Tianjin Eye in night.jpg",
+      "File:Tianjin Eye on the Haihe River.jpg"
+    ],
+    "filename": "tianjin-eye.jpg"
+  },
+  {
+    "id": "prov-shanghai",
+    "nameVi": "Thượng Hải",
+    "nameZh": "上海市",
+    "landmark": "Bến Thượng Hải & Lục Gia Chủy • 外滩与陆家嘴天际线",
+    "search": "File:The Bund Shanghai August 2019.jpg",
+    "fallbacks": [
+      "File:Shanghai skyline at night.jpg",
+      "File:The Bund, Shanghai.jpg"
+    ],
+    "filename": "shanghai-bund-skyline.jpg"
+  },
+  {
+    "id": "prov-chongqing",
+    "nameVi": "Trùng Khánh",
+    "nameZh": "重庆市",
+    "landmark": "Hồng Nhai Động về đêm • 重庆洪崖洞夜景",
+    "search": "File:Hongyadong, Chongqing.jpg",
+    "fallbacks": [
+      "File:Chongqing Hongyadong.jpg",
+      "File:Hongyadong at night.jpg"
+    ],
+    "filename": "chongqing-hongyadong.jpg"
+  },
+  {
+    "id": "prov-hebei",
+    "nameVi": "Hà Bắc",
+    "nameZh": "河北省",
+    "landmark": "Thừa Đức Tị Thử Sơn Trang • 承德避暑山庄",
+    "search": "File:Putuo Zongcheng Temple.jpg",
+    "fallbacks": [
+      "File:Chengde Mountain Resort.jpg",
+      "File:Chengde Puning Temple.jpg"
+    ],
+    "filename": "hebei-chengde-resort.jpg"
+  },
+  {
+    "id": "prov-shanxi",
+    "nameVi": "Sơn Tây",
+    "nameZh": "山西省",
+    "landmark": "Huyền Không Tự Hằng Sơn • 恒山悬空寺",
+    "search": "File:Hanging Temple 2013-09.JPG",
+    "fallbacks": [
+      "File:Hanging temple.JPG",
+      "File:Hanging Temple, Shanxi.jpg"
+    ],
+    "filename": "shanxi-hanging-temple.jpg"
+  },
+  {
+    "id": "prov-liaoning",
+    "nameVi": "Liêu Ninh",
+    "nameZh": "辽宁省",
+    "landmark": "Thẩm Dương Cố Cung (Đại Chính Điện) • 沈阳故宫大政殿",
+    "search": "File:Mukden Palace Dazheng Hall.jpg",
+    "fallbacks": [
+      "File:Shenyang Imperial Palace.jpg",
+      "File:Mukden Palace.jpg"
+    ],
+    "filename": "liaoning-mukden-palace.jpg"
+  },
+  {
+    "id": "prov-jilin",
+    "nameVi": "Cát Lâm",
+    "nameZh": "吉林省",
+    "landmark": "Thiên Trì Trường Bạch Sơn • 长白山天池",
+    "search": "File:Heaven Lake of Tianchi.jpg",
+    "fallbacks": [
+      "File:Tianchi Lake Changbai Mountain.jpg",
+      "File:Changbaishan Tianchi.jpg"
+    ],
+    "filename": "jilin-changbai-tianchi.jpg"
+  },
+  {
+    "id": "prov-heilongjiang",
+    "nameVi": "Hắc Long Giang",
+    "nameZh": "黑龙江省",
+    "landmark": "Nhà thờ Thánh Sophia Cáp Nhĩ Tân • 哈尔滨圣索菲亚教堂",
+    "search": "File:Saint Sophia Cathedral in Harbin 2014.jpg",
+    "fallbacks": [
+      "File:Saint Sophia Cathedral, Harbin.jpg",
+      "File:Saint Sophia Church Harbin.jpg"
+    ],
+    "filename": "heilongjiang-saint-sophia.jpg"
+  },
+  {
+    "id": "prov-jiangsu",
+    "nameVi": "Giang Tô",
+    "nameZh": "江苏省",
+    "landmark": "Chuyết Chính Viên Tô Châu • 苏州拙政园",
+    "search": "File:Humble Administrator's Garden, Suzhou.jpg",
+    "fallbacks": [
+      "File:Zhuozheng Yuan.jpg",
+      "File:Suzhou Garden.jpg"
+    ],
+    "filename": "jiangsu-suzhou-garden.jpg"
+  },
+  {
+    "id": "prov-zhejiang",
+    "nameVi": "Chiết Giang",
+    "nameZh": "浙江省",
+    "landmark": "Tây Hồ Hàng Châu (Tam Đàm Ấn Nguyệt) • 杭州西湖",
+    "search": "File:West Lake, Hangzhou.jpg",
+    "fallbacks": [
+      "File:West Lake Hangzhou.jpg",
+      "File:Three Pools Mirroring the Moon.jpg"
+    ],
+    "filename": "zhejiang-hangzhou-westlake.jpg"
+  },
+  {
+    "id": "prov-anhui",
+    "nameVi": "An Huy",
+    "nameZh": "安徽省",
+    "landmark": "Hoàng Sơn Vân Hải & Nghênh Khách Tùng • 黄山迎客松与云海",
+    "search": "File:Mount Huangshan 2011.jpg",
+    "fallbacks": [
+      "File:Huangshan cloud sea.jpg",
+      "File:Mount Huangshan.jpg"
+    ],
+    "filename": "anhui-huangshan-cloudsea.jpg"
+  },
+  {
+    "id": "prov-fujian",
+    "nameVi": "Phúc Kiến",
+    "nameZh": "福建省",
+    "landmark": "Thổ Lâu Phúc Kiến (Thừa Khải Lâu) • 福建土楼承启楼",
+    "search": "File:Fujian Tulou Chengqilou.jpg",
+    "fallbacks": [
+      "File:Fujian Tulou.jpg",
+      "File:Chengqilou Tulou.jpg"
+    ],
+    "filename": "fujian-tulou.jpg"
+  },
+  {
+    "id": "prov-jiangxi",
+    "nameVi": "Giang Tây",
+    "nameZh": "江西省",
+    "landmark": "Làng cổ Vụ Nguyên mùa hoa cải • 婺源梯田与徽派建筑",
+    "search": "File:Wuyuan Jiangxi village.jpg",
+    "fallbacks": [
+      "File:Wuyuan countryside.jpg",
+      "File:Wuyuan rape flowers.jpg",
+      "File:Lushan Mountain.jpg"
+    ],
+    "filename": "jiangxi-wuyuan-village.jpg"
+  },
+  {
+    "id": "prov-shandong",
+    "nameVi": "Sơn Đông",
+    "nameZh": "山东省",
+    "landmark": "Đỉnh Ngọc Hoàng – Thái Sơn • 泰山玉皇顶",
+    "search": "File:Mount Tai.jpg",
+    "fallbacks": [
+      "File:Mount Tai Sunrise.jpg",
+      "File:Taishan mountain.jpg"
+    ],
+    "filename": "shandong-taishan.jpg"
+  },
+  {
+    "id": "prov-henan",
+    "nameVi": "Hà Nam",
+    "nameZh": "河南省",
+    "landmark": "Đại Phật Lư Xá Na – Long Môn Thạch Khúc • 洛阳龙门石窟",
+    "search": "File:Longmen Grottoes Fengxian temple.jpg",
+    "fallbacks": [
+      "File:Longmen Grottoes 2011.jpg",
+      "File:Longmen Grottoes.jpg"
+    ],
+    "filename": "henan-longmen-grottoes.jpg"
+  },
+  {
+    "id": "prov-hubei",
+    "nameVi": "Hồ Bắc",
+    "nameZh": "湖北省",
+    "landmark": "Hoàng Hạc Lâu Vũ Hán • 武汉黄鹤楼",
+    "search": "File:Yellow Crane Tower, Wuhan.jpg",
+    "fallbacks": [
+      "File:Yellow Crane Tower.jpg",
+      "File:Yellow Crane Tower 2013.jpg"
+    ],
+    "filename": "hubei-yellow-crane-tower.jpg"
+  },
+  {
+    "id": "prov-hunan",
+    "nameVi": "Hồ Nam",
+    "nameZh": "湖南省",
+    "landmark": "Rừng sa thạch Trương Gia Giới Vũ Lăng Nguyên • 张家界武陵源",
+    "search": "File:Zhangjiajie National Forest Park 2013-09.JPG",
+    "fallbacks": [
+      "File:Wulingyuan Zhangjiajie.jpg",
+      "File:Zhangjiajie.jpg"
+    ],
+    "filename": "hunan-zhangjiajie.jpg"
+  },
+  {
+    "id": "prov-guangdong",
+    "nameVi": "Quảng Đông",
+    "nameZh": "广东省",
+    "landmark": "Khai Bình Điêu Lâu • 开平碉楼与村落",
+    "search": "File:Kaiping Diaolou 2010.jpg",
+    "fallbacks": [
+      "File:Kaiping Diaolou.jpg",
+      "File:Kaiping Diaolou Zili village.jpg"
+    ],
+    "filename": "guangdong-kaiping-diaolou.jpg"
+  },
+  {
+    "id": "prov-hainan",
+    "nameVi": "Hải Nam",
+    "nameZh": "海南省",
+    "landmark": "Tượng Quan Âm Nam Sơn Tam Á • 三亚南山海上观音",
+    "search": "File:Guanyin of Nanshan.jpg",
+    "fallbacks": [
+      "File:Nanshan Guanyin Statue Sanya.jpg",
+      "File:Sanya Guanyin.jpg"
+    ],
+    "filename": "hainan-sanya-guanyin.jpg"
+  },
+  {
+    "id": "prov-sichuan",
+    "nameVi": "Tứ Xuyên",
+    "nameZh": "四川省",
+    "landmark": "Ngũ Hoa Hải – Cửu Trại Câu • 九寨沟五花海",
+    "search": "File:Jiuzhaigou Five Flower Lake.jpg",
+    "fallbacks": [
+      "File:Jiuzhaigou valley.jpg",
+      "File:Jiuzhaigou lake.jpg"
+    ],
+    "filename": "sichuan-jiuzhaigou.jpg"
+  },
+  {
+    "id": "prov-guizhou",
+    "nameVi": "Quý Châu",
+    "nameZh": "贵州省",
+    "landmark": "Đại thác nước Hoàng Quả Thụ • 安顺黄果树瀑布",
+    "search": "File:Huangguoshu Waterfall 2011.jpg",
+    "fallbacks": [
+      "File:Huangguoshu waterfall.jpg",
+      "File:Huangguoshu Waterfall.jpg"
+    ],
+    "filename": "guizhou-huangguoshu.jpg"
+  },
+  {
+    "id": "prov-yunnan",
+    "nameVi": "Vân Nam",
+    "nameZh": "云南省",
+    "landmark": "Cổ trấn Lệ Giang & Ngọc Long Tuyết Sơn • 丽江古城与玉龙雪山",
+    "search": "File:Lijiang Old Town and Jade Dragon Snow Mountain.jpg",
+    "fallbacks": [
+      "File:Lijiang Old Town.jpg",
+      "File:Jade Dragon Snow Mountain.jpg"
+    ],
+    "filename": "yunnan-lijiang-old-town.jpg"
+  },
+  {
+    "id": "prov-shaanxi",
+    "nameVi": "Thiểm Tây",
+    "nameZh": "陕西省",
+    "landmark": "Đội quân Đất nung Tần Thủy Hoàng Tây An • 西安秦始皇兵马俑",
+    "search": "File:Terracotta Army Pit 1 2015.jpg",
+    "fallbacks": [
+      "File:Terracotta Warriors, Xi'an.jpg",
+      "File:Terracotta Army.jpg"
+    ],
+    "filename": "shaanxi-terracotta-army.jpg"
+  },
+  {
+    "id": "prov-gansu",
+    "nameVi": "Cam Túc",
+    "nameZh": "甘肃省",
+    "landmark": "Đôn Hoàng Mạc Cao Quật (Cửu Tằng Lâu) • 敦煌莫高窟",
+    "search": "File:Mogao Caves Dunhuang Nine-story Building.jpg",
+    "fallbacks": [
+      "File:Mogao Caves 2011.jpg",
+      "File:Mogao Caves.jpg"
+    ],
+    "filename": "gansu-dunhuang-mogao.jpg"
+  },
+  {
+    "id": "prov-qinghai",
+    "nameVi": "Thanh Hải",
+    "nameZh": "青海省",
+    "landmark": "Hồ Thanh Hải (Biển hoa cải & hồ thiêng) • 青海湖油菜花海",
+    "search": "File:Qinghai Lake rapeseed flowers.jpg",
+    "fallbacks": [
+      "File:Qinghai Lake 2012.jpg",
+      "File:Qinghai Lake.jpg"
+    ],
+    "filename": "qinghai-lake.jpg"
+  },
+  {
+    "id": "prov-taiwan",
+    "nameVi": "Đài Loan",
+    "nameZh": "台湾省",
+    "landmark": "Nhật Nguyệt Đàm (Tháp Từ Ân) • 台湾日月潭慈恩塔",
+    "search": "File:Sun Moon Lake Taiwan.jpg",
+    "fallbacks": [
+      "File:Sun Moon Lake Ci'en Pagoda.jpg",
+      "File:Sun Moon Lake.jpg"
+    ],
+    "filename": "taiwan-sun-moon-lake.jpg"
+  },
+  {
+    "id": "prov-inner-mongolia",
+    "nameVi": "Nội Mông Cổ",
+    "nameZh": "内蒙古自治区",
+    "landmark": "Thảo nguyên Hô Luân Bối Nhĩ • 呼伦贝尔大草原",
+    "search": "File:Hulunbuir Grassland Inner Mongolia.jpg",
+    "fallbacks": [
+      "File:Hulunbuir prairie.jpg",
+      "File:Hulunbuir Grassland.jpg"
+    ],
+    "filename": "inner-mongolia-hulunbuir.jpg"
+  },
+  {
+    "id": "prov-guangxi",
+    "nameVi": "Quảng Tây",
+    "nameZh": "广西壮族自治区",
+    "landmark": "Sơn thủy Ly Giang Dương Sóc • 桂林阳朔漓江山水",
+    "search": "File:Li River Guilin China.jpg",
+    "fallbacks": [
+      "File:Yangshuo Li River.jpg",
+      "File:Li River.jpg"
+    ],
+    "filename": "guangxi-guilin-li-river.jpg"
+  },
+  {
+    "id": "prov-tibet",
+    "nameVi": "Tây Tạng",
+    "nameZh": "西藏自治区",
+    "landmark": "Cung điện Potala Lhasa • 拉萨布达拉宫",
+    "search": "File:Potala Palace Lhasa Tibet.jpg",
+    "fallbacks": [
+      "File:Potala Palace 2014.jpg",
+      "File:Potala Palace.jpg"
+    ],
+    "filename": "tibet-potala-palace.jpg"
+  },
+  {
+    "id": "prov-ningxia",
+    "nameVi": "Ninh Hạ",
+    "nameZh": "宁夏回族自治区",
+    "landmark": "Tây Hạ Vương Lăng Ngân Xuyên • 银川西夏王陵",
+    "search": "File:Western Xia Tombs Yinchuan.jpg",
+    "fallbacks": [
+      "File:Western Xia imperial tombs.jpg",
+      "File:Western Xia Tombs.jpg"
+    ],
+    "filename": "ningxia-western-xia-tombs.jpg"
+  },
+  {
+    "id": "prov-xinjiang",
+    "nameVi": "Tân Cương",
+    "nameZh": "新疆维吾尔自治区",
+    "landmark": "Hồ Kanas (Nguyệt Lượng Vịnh) • 阿勒泰喀纳斯湖月亮湾",
+    "search": "File:Kanas Lake Moon Bay Xinjiang.jpg",
+    "fallbacks": [
+      "File:Kanas Lake autumn.jpg",
+      "File:Kanas Lake.jpg"
+    ],
+    "filename": "xinjiang-kanas-lake.jpg"
+  },
+  {
+    "id": "prov-hongkong",
+    "nameVi": "Hồng Kông",
+    "nameZh": "香港特别行政区",
+    "landmark": "Cảng Victoria & Đỉnh Thái Bình • 维多利亚港与太平山顶",
+    "search": "File:Victoria Harbour Hong Kong night skyline.jpg",
+    "fallbacks": [
+      "File:Hong Kong Skyline from Victoria Peak.jpg",
+      "File:Victoria Harbour.jpg"
+    ],
+    "filename": "hongkong-victoria-harbour.jpg"
+  },
+  {
+    "id": "prov-macau",
+    "nameVi": "Ma Cao",
+    "nameZh": "澳门特别行政区",
+    "landmark": "Di tích Nhà thờ Thánh Phaolô • 澳门大三巴牌坊",
+    "search": "File:Ruins of St. Paul's Macau 2018.jpg",
+    "fallbacks": [
+      "File:Ruins of St. Paul's, Macau.jpg",
+      "File:Ruins of St. Paul's.jpg"
+    ],
+    "filename": "macau-ruins-st-paul.jpg"
+  }
+]

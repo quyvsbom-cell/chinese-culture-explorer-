@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750">
+  <title>Bản đồ Lịch sử Các Trung tâm Học thuật Thời Xuân Thu - Chiến Quốc</title>
+  <desc>Historical geography map locating Jixia Academy (Qi), Qufu (Lu), Ying (Chu), and Guanzhong (Qin) along Yellow and Yangtze rivers.</desc>
+  <defs>
+    <style>
+      .serif { font-family: 'Cormorant Garamond', 'Noto Serif SC', Georgia, serif; }
+      .sans { font-family: 'Be Vietnam Pro', 'Inter', 'Noto Sans SC', sans-serif; }
+      .han { font-family: 'Noto Serif SC', 'Noto Serif TC', serif; }
+      .mono { font-family: 'JetBrains Mono', monospace; }
+      .kicker { font-family: 'Be Vietnam Pro', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 2.2px; fill: #9F2929; text-transform: uppercase; }
+      .h-title { font-family: 'Cormorant Garamond', 'Noto Serif SC', serif; font-size: 40px; font-weight: 700; fill: #202020; }
+      .h-sub { font-family: 'Be Vietnam Pro', sans-serif; font-size: 18px; fill: #524F49; }
+      .label-b { font-family: 'Be Vietnam Pro', sans-serif; font-size: 17px; font-weight: 700; fill: #202020; }
+      .label-s { font-family: 'Be Vietnam Pro', sans-serif; font-size: 14px; fill: #524F49; }
+      .han-big { font-family: 'Noto Serif SC', serif; font-weight: 700; fill: #202020; }
+    </style>
+    <pattern id="paperGrain" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="#F7F4ED"/>
+      <circle cx="14" cy="18" r="0.8" fill="#C9C0AD" opacity="0.35"/>
+      <circle cx="42" cy="46" r="0.7" fill="#B8AF9B" opacity="0.3"/>
+      <path d="M0 30 H60 M30 0 V60" stroke="#E5DEC9" stroke-width="0.4" opacity="0.4"/>
+    </pattern>
+    <pattern id="diagonalHatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#9F2929" stroke-width="1.4" opacity="0.28"/>
+    </pattern>
+    <pattern id="dotPattern" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1.5" fill="#637F72" opacity="0.35"/>
+    </pattern>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9F2929"/>
+      <stop offset="100%" stop-color="#B63D32"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#CBB078"/>
+      <stop offset="100%" stop-color="#9E8048"/>
+    </linearGradient>
+    <linearGradient id="jadeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#637F72"/>
+      <stop offset="100%" stop-color="#3F574D"/>
+    </linearGradient>
+    <marker id="arrowRed" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#9F2929"/>
+    </marker>
+    <marker id="arrowGold" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#B99A62"/>
+    </marker>
+    <marker id="arrowJade" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#637F72"/>
+    </marker>
+    <marker id="arrowInk" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#202020"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="750" fill="url(#paperGrain)"/>
+  <rect x="20" y="20" width="1160" height="710" fill="none" stroke="#DED8CA" stroke-width="2"/>
+  <rect x="28" y="28" width="1144" height="694" fill="none" stroke="#B99A62" stroke-width="0.9" opacity="0.65"/>
+  
+  <text x="56" y="76" class="kicker">BẢN ĐỒ LỊCH SỬ • XUÂN THU – CHIẾN QUỐC (770–221 TCN)</text>
+  <text x="56" y="118" class="h-title" style="font-size:32px;">Phân bố Địa – Tư tưởng Các Trung tâm Bách Gia Chư Tử</text>
+  <line x1="56" y1="138" x2="1144" y2="138" stroke="#DED8CA" stroke-width="1.5"/>
+
+  <g transform="translate(56, 160)">
+    <rect width="740" height="530" rx="8" fill="#E9E1CD" stroke="#B99A62" stroke-width="1.6"/>
+    <!-- Sea East -->
+    <path d="M560 0 H740 V530 H480 Q545 380 570 250 Q590 120 560 0 Z" fill="#C7D6D8"/>
+    <text x="645" y="135" class="label-s" fill="#3F574D">Hoàng Hải</text>
+    <text x="635" y="410" class="label-s" fill="#3F574D">Đông Hải</text>
+
+    <!-- Yellow River & Yangtze River -->
+    <path d="M40 165 Q210 115 335 160 Q455 200 575 110" fill="none" stroke="#224C8A" stroke-width="4.5" opacity="0.72"/>
+    <text x="275" y="132" class="label-s" fill="#224C8A" font-weight="700">Hoàng Hà (黄河)</text>
+    <path d="M50 380 Q240 420 390 365 Q520 340 585 375" fill="none" stroke="#224C8A" stroke-width="5" opacity="0.72"/>
+    <text x="310" y="415" class="label-s" fill="#224C8A" font-weight="700">Trường Giang (长江)</text>
+
+    <!-- Intellectual Centers -->
+    <!-- Qin / Guanzhong -->
+    <circle cx="155" cy="195" r="14" fill="#202020"/><text x="155" y="232" text-anchor="middle" class="label-b">Nước Tần (Hàm Dương)</text><text x="155" y="252" text-anchor="middle" class="label-s">Pháp gia (Thương Ưởng)</text>
+    <!-- Lu / Qufu -->
+    <circle cx="430" cy="215" r="14" fill="#9F2929"/><text x="430" y="250" text-anchor="middle" class="label-b" fill="#9F2929">Nước Lỗ (Khúc Phụ)</text><text x="430" y="270" text-anchor="middle" class="label-s">Nho gia (Khổng – Mạnh) • Mặc gia</text>
+    <!-- Qi / Jixia -->
+    <polygon points="495,120 512,150 478,150" fill="#B99A62" stroke="#202020" stroke-width="1.5"/>
+    <text x="495" y="106" text-anchor="middle" class="label-b">Học viện Tắc Hạ (Tề • Lâm Truy)</text>
+    <!-- Chu / Guodian -->
+    <rect x="292" y="308" width="22" height="22" fill="#637F72" stroke="#202020"/>
+    <text x="303" y="294" text-anchor="middle" class="label-b" fill="#3F574D">Nước Sở (Quách Điếm / Dĩnh Đô)</text>
+    <text x="303" y="352" text-anchor="middle" class="label-s">Đạo gia phương Nam (Trang Tử • Thẻ tre Sở)</text>
+
+    <!-- Compass & Scale -->
+    <g transform="translate(75, 455)">
+      <line x1="0" y1="25" x2="110" y2="25" stroke="#202020" stroke-width="2.5"/>
+      <line x1="0" y1="18" x2="0" y2="32" stroke="#202020" stroke-width="2"/>
+      <line x1="110" y1="18" x2="110" y2="32" stroke="#202020" stroke-width="2"/>
+      <text x="55" y="14" text-anchor="middle" font-size="12" fill="#202020">~300 km (tỷ lệ ước lượng Chiến Quốc)</text>
+    </g>
+    <text x="685" y="60" text-anchor="middle" class="label-b">N ↑</text>
+  </g>
+
+  <g transform="translate(822, 160)">
+    <rect width="322" height="530" rx="8" fill="#FBF8F1" stroke="#DED8CA" stroke-width="1.6"/>
+    <text x="24" y="42" class="label-b">CHÚ GIẢI BẢN ĐỒ</text>
+    <g transform="translate(24, 72)">
+      <circle cx="12" cy="12" r="9" fill="#9F2929"/><text x="34" y="18" class="label-s">Lưu vực Hoàng Hà Đông (Nho–Mặc)</text>
+      <polygon points="12,42 22,60 2,60" fill="#B99A62" stroke="#202020"/><text x="34" y="56" class="label-s">Trung tâm Liên phái (Tắc Hạ)</text>
+      <rect x="3" y="76" width="18" height="18" fill="#637F72" stroke="#202020"/><text x="34" y="90" class="label-s">Văn hóa Sở Giang Hán (Đạo gia)</text>
+      <circle cx="12" cy="122" r="9" fill="#202020"/><text x="34" y="128" class="label-s">Quan Trung Tần (Pháp trị hành chính)</text>
+    </g>
+    <rect x="24" y="236" width="274" height="256" rx="6" fill="#EEE9DE"/>
+    <text x="40" y="268" class="label-b">Lưu ý Phương pháp Sử học:</text>
+    <text x="40" y="298" class="label-s">Ranh giới các nước Chiến Quốc biến</text>
+    <text x="40" y="322" class="label-s">động liên tục (~475–221 TCN). Sơ đồ</text>
+    <text x="40" y="346" class="label-s">biểu thị vùng ảnh hưởng văn hóa –</text>
+    <text x="40" y="370" class="label-s">học thuật, KHÔNG đồng nhất đường</text>
+    <text x="40" y="394" class="label-s">biên giới hành chính hiện đại.</text>
+    <text x="40" y="434" font-size="12" fill="#524F49">Nguồn: Đàm Kỳ Tương 《Trung Quốc Lịch sử</text>
+    <text x="40" y="454" font-size="12" fill="#524F49">Địa đồ tập》 • Khai quật Quách Điếm 1993</text>
+  </g>
+
+  <g transform="translate(1055, 658)">
+    <rect width="104" height="50" rx="3" fill="#9F2929" opacity="0.92"/>
+    <rect x="4" y="4" width="96" height="42" rx="2" fill="none" stroke="#F7F4ED" stroke-width="1" opacity="0.7"/>
+    <text x="52" y="24" text-anchor="middle" class="han" font-size="14" fill="#F7F4ED" font-weight="700">中国文化探索</text>
+    <text x="52" y="40" text-anchor="middle" class="mono" font-size="10" fill="#F7F4ED" opacity="0.9">CCE ARCHIVE</text>
+  </g>
+</svg>

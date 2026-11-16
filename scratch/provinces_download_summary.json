@@ -1,0 +1,342 @@
+[
+  {
+    "id": "prov-beijing",
+    "nameVi": "Bắc Kinh",
+    "nameZh": "北京市",
+    "landmark": "Thiên Đàn (Điện Kỳ Niên) • 北京天坛祈年殿",
+    "filename": "beijing-temple-of-heaven.jpg",
+    "localPath": "assets/images/provinces/beijing-temple-of-heaven.jpg",
+    "size": 0,
+    "status": "FAILED"
+  },
+  {
+    "id": "prov-tianjin",
+    "nameVi": "Thiên Tân",
+    "nameZh": "天津市",
+    "landmark": "Vòng quay Mắt Thiên Tân • 天津之眼摩天轮",
+    "filename": "tianjin-eye.jpg",
+    "localPath": "assets/images/provinces/tianjin-eye.jpg",
+    "size": 233479,
+    "status": "OK"
+  },
+  {
+    "id": "prov-shanghai",
+    "nameVi": "Thượng Hải",
+    "nameZh": "上海市",
+    "landmark": "Bến Thượng Hải & Lục Gia Chủy • 外滩与陆家嘴天际线",
+    "filename": "shanghai-bund-skyline.jpg",
+    "localPath": "assets/images/provinces/shanghai-bund-skyline.jpg",
+    "size": 212333,
+    "status": "OK"
+  },
+  {
+    "id": "prov-chongqing",
+    "nameVi": "Trùng Khánh",
+    "nameZh": "重庆市",
+    "landmark": "Hồng Nhai Động về đêm • 重庆洪崖洞夜景",
+    "filename": "chongqing-hongyadong.jpg",
+    "localPath": "assets/images/provinces/chongqing-hongyadong.jpg",
+    "size": 0,
+    "status": "FAILED"
+  },
+  {
+    "id": "prov-hebei",
+    "nameVi": "Hà Bắc",
+    "nameZh": "河北省",
+    "landmark": "Thừa Đức Tị Thử Sơn Trang • 承德避暑山庄",
+    "filename": "hebei-chengde-resort.jpg",
+    "localPath": "assets/images/provinces/hebei-chengde-resort.jpg",
+    "size": 505556,
+    "status": "OK"
+  },
+  {
+    "id": "prov-shanxi",
+    "nameVi": "Sơn Tây",
+    "nameZh": "山西省",
+    "landmark": "Huyền Không Tự Hằng Sơn • 恒山悬空寺",
+    "filename": "shanxi-hanging-temple.jpg",
+    "localPath": "assets/images/provinces/shanxi-hanging-temple.jpg",
+    "size": 567572,
+    "status": "OK"
+  },
+  {
+    "id": "prov-liaoning",
+    "nameVi": "Liêu Ninh",
+    "nameZh": "辽宁省",
+    "landmark": "Thẩm Dương Cố Cung (Đại Chính Điện) • 沈阳故宫大政殿",
+    "filename": "liaoning-mukden-palace.jpg",
+    "localPath": "assets/images/provinces/liaoning-mukden-palace.jpg",
+    "size": 128777,
+    "status": "OK"
+  },
+  {
+    "id": "prov-jilin",
+    "nameVi": "Cát Lâm",
+    "nameZh": "吉林省",
+    "landmark": "Thiên Trì Trường Bạch Sơn • 长白山天池",
+    "filename": "jilin-changbai-tianchi.jpg",
+    "localPath": "assets/images/provinces/jilin-changbai-tianchi.jpg",
+    "size": 40294,
+    "status": "OK"
+  },
+  {
+    "id": "prov-heilongjiang",
+    "nameVi": "Hắc Long Giang",
+    "nameZh": "黑龙江省",
+    "landmark": "Nhà thờ Thánh Sophia Cáp Nhĩ Tân • 哈尔滨圣索菲亚教堂",
+    "filename": "heilongjiang-saint-sophia.jpg",
+    "localPath": "assets/images/provinces/heilongjiang-saint-sophia.jpg",
+    "size": 0,
+    "status": "FAILED"
+  },
+  {
+    "id": "prov-jiangsu",
+    "nameVi": "Giang Tô",
+    "nameZh": "江苏省",
+    "landmark": "Chuyết Chính Viên Tô Châu • 苏州拙政园",
+    "filename": "jiangsu-suzhou-garden.jpg",
+    "localPath": "assets/images/provinces/jiangsu-suzhou-garden.jpg",
+    "size": 0,
+    "status": "FAILED"
+  },
+  {
+    "id": "prov-zhejiang",
+    "nameVi": "Chiết Giang",
+    "nameZh": "浙江省",
+    "landmark": "Tây Hồ Hàng Châu (Tam Đàm Ấn Nguyệt) • 杭州西湖",
+    "filename": "zhejiang-hangzhou-westlake.jpg",
+    "localPath": "assets/images/provinces/zhejiang-hangzhou-westlake.jpg",
+    "size": 377215,
+    "status": "OK"
+  },
+  {
+    "id": "prov-anhui",
+    "nameVi": "An Huy",
+    "nameZh": "安徽省",
+    "landmark": "Hoàng Sơn Vân Hải & Nghênh Khách Tùng • 黄山迎客松与云海",
+    "filename": "anhui-huangshan-cloudsea.jpg",
+    "localPath": "assets/images/provinces/anhui-huangshan-cloudsea.jpg",
+    "size": 0,
+    "status": "FAILED"
+  },
+  {
+    "id": "prov-fujian",
+    "nameVi": "Phúc Kiến",
+    "nameZh": "福建省",
+    "landmark": "Thổ Lâu Phúc Kiến (Thừa Khải Lâu) • 福建土楼承启楼",
+    "filename": "fujian-tulou.jpg",
+    "localPath": "assets/images/provinces/fujian-tulou.jpg",
+    "size": 813087,
+    "status": "OK"
+  },
+  {
+    "id": "prov-jiangxi",
+    "nameVi": "Giang Tây",
+    "nameZh": "江西省",
+    "landmark": "Làng cổ Vụ Nguyên mùa hoa cải • 婺源梯田与徽派建筑",
+    "filename": "jiangxi-wuyuan-village.jpg",
+    "localPath": "assets/images/provinces/jiangxi-wuyuan-village.jpg",
+    "size": 0,
+    "status": "FAILED"
+  },
+  {
+    "id": "prov-shandong",
+    "nameVi": "Sơn Đông",
+    "nameZh": "山东省",
+    "landmark": "Đỉnh Ngọc Hoàng – Thái Sơn • 泰山玉皇顶",
+    "filename": "shandong-taishan.jpg",
+    "localPath": "assets/images/provinces/shandong-taishan.jpg",
+    "size": 275493,
+    "status": "OK"
+  },
+  {
+    "id": "prov-henan",
+    "nameVi": "Hà Nam",
+    "nameZh": "河南省",
+    "landmark": "Đại Phật Lư Xá Na – Long Môn Thạch Khúc • 洛阳龙门石窟",
+    "filename": "henan-longmen-grottoes.jpg",
+    "localPath": "assets/images/provinces/henan-longmen-grottoes.jpg",
+    "size": 406263,
+    "status": "OK"
+  },
+  {
+    "id": "prov-hubei",
+    "nameVi": "Hồ Bắc",
+    "nameZh": "湖北省",
+    "landmark": "Hoàng Hạc Lâu Vũ Hán • 武汉黄鹤楼",
+    "filename": "hubei-yellow-crane-tower.jpg",
+    "localPath": "assets/images/provinces/hubei-yellow-crane-tower.jpg",
+    "size": 529329,
+    "status": "OK"
+  },
+  {
+    "id": "prov-hunan",
+    "nameVi": "Hồ Nam",
+    "nameZh": "湖南省",
+    "landmark": "Rừng sa thạch Trương Gia Giới Vũ Lăng Nguyên • 张家界武陵源",
+    "filename": "hunan-zhangjiajie.jpg",
+    "localPath": "assets/images/provinces/hunan-zhangjiajie.jpg",
+    "size": 0,
+    "status": "FAILED"
+  },
+  {
+    "id": "prov-guangdong",
+    "nameVi": "Quảng Đông",
+    "nameZh": "广东省",
+    "landmark": "Khai Bình Điêu Lâu • 开平碉楼与村落",
+    "filename": "guangdong-kaiping-diaolou.jpg",
+    "localPath": "assets/images/provinces/guangdong-kaiping-diaolou.jpg",
+    "size": 0,
+    "status": "FAILED"
+  },
+  {
+    "id": "prov-hainan",
+    "nameVi": "Hải Nam",
+    "nameZh": "海南省",
+    "landmark": "Tượng Quan Âm Nam Sơn Tam Á • 三亚南山海上观音",
+    "filename": "hainan-sanya-guanyin.jpg",
+    "localPath": "assets/images/provinces/hainan-sanya-guanyin.jpg",
+    "size": 0,
+    "status": "FAILED"
+  },
+  {
+    "id": "prov-sichuan",
+    "nameVi": "Tứ Xuyên",
+    "nameZh": "四川省",
+    "landmark": "Ngũ Hoa Hải – Cửu Trại Câu • 九寨沟五花海",
+    "filename": "sichuan-jiuzhaigou.jpg",
+    "localPath": "assets/images/provinces/sichuan-jiuzhaigou.jpg",
+    "size": 286705,
+    "status": "OK"
+  },
+  {
+    "id": "prov-guizhou",
+    "nameVi": "Quý Châu",
+    "nameZh": "贵州省",
+    "landmark": "Đại thác nước Hoàng Quả Thụ • 安顺黄果树瀑布",
+    "filename": "guizhou-huangguoshu.jpg",
+    "localPath": "assets/images/provinces/guizhou-huangguoshu.jpg",
+    "size": 600058,
+    "status": "OK"
+  },
+  {
+    "id": "prov-yunnan",
+    "nameVi": "Vân Nam",
+    "nameZh": "云南省",
+    "landmark": "Cổ trấn Lệ Giang & Ngọc Long Tuyết Sơn • 丽江古城与玉龙雪山",
+    "filename": "yunnan-lijiang-old-town.jpg",
+    "localPath": "assets/images/provinces/yunnan-lijiang-old-town.jpg",
+    "size": 324411,
+    "status": "OK"
+  },
+  {
+    "id": "prov-shaanxi",
+    "nameVi": "Thiểm Tây",
+    "nameZh": "陕西省",
+    "landmark": "Đội quân Đất nung Tần Thủy Hoàng Tây An • 西安秦始皇兵马俑",
+    "filename": "shaanxi-terracotta-army.jpg",
+    "localPath": "assets/images/provinces/shaanxi-terracotta-army.jpg",
+    "size": 247683,
+    "status": "OK"
+  },
+  {
+    "id": "prov-gansu",
+    "nameVi": "Cam Túc",
+    "nameZh": "甘肃省",
+    "landmark": "Đôn Hoàng Mạc Cao Quật (Cửu Tằng Lâu) • 敦煌莫高窟",
+    "filename": "gansu-dunhuang-mogao.jpg",
+    "localPath": "assets/images/provinces/gansu-dunhuang-mogao.jpg",
+    "size": 304527,
+    "status": "OK"
+  },
+  {
+    "id": "prov-qinghai",
+    "nameVi": "Thanh Hải",
+    "nameZh": "青海省",
+    "landmark": "Hồ Thanh Hải (Biển hoa cải & hồ thiêng) • 青海湖油菜花海",
+    "filename": "qinghai-lake.jpg",
+    "localPath": "assets/images/provinces/qinghai-lake.jpg",
+    "size": 164216,
+    "status": "OK"
+  },
+  {
+    "id": "prov-taiwan",
+    "nameVi": "Đài Loan",
+    "nameZh": "台湾省",
+    "landmark": "Nhật Nguyệt Đàm (Tháp Từ Ân) • 台湾日月潭慈恩塔",
+    "filename": "taiwan-sun-moon-lake.jpg",
+    "localPath": "assets/images/provinces/taiwan-sun-moon-lake.jpg",
+    "size": 150371,
+    "status": "OK"
+  },
+  {
+    "id": "prov-inner-mongolia",
+    "nameVi": "Nội Mông Cổ",
+    "nameZh": "内蒙古自治区",
+    "landmark": "Thảo nguyên Hô Luân Bối Nhĩ • 呼伦贝尔大草原",
+    "filename": "inner-mongolia-hulunbuir.jpg",
+    "localPath": "assets/images/provinces/inner-mongolia-hulunbuir.jpg",
+    "size": 0,
+    "status": "FAILED"
+  },
+  {
+    "id": "prov-guangxi",
+    "nameVi": "Quảng Tây",
+    "nameZh": "广西壮族自治区",
+    "landmark": "Sơn thủy Ly Giang Dương Sóc • 桂林阳朔漓江山水",
+    "filename": "guangxi-guilin-li-river.jpg",
+    "localPath": "assets/images/provinces/guangxi-guilin-li-river.jpg",
+    "size": 275604,
+    "status": "OK"
+  },
+  {
+    "id": "prov-tibet",
+    "nameVi": "Tây Tạng",
+    "nameZh": "西藏自治区",
+    "landmark": "Cung điện Potala Lhasa • 拉萨布达拉宫",
+    "filename": "tibet-potala-palace.jpg",
+    "localPath": "assets/images/provinces/tibet-potala-palace.jpg",
+    "size": 21675,
+    "status": "OK"
+  },
+  {
+    "id": "prov-ningxia",
+    "nameVi": "Ninh Hạ",
+    "nameZh": "宁夏回族自治区",
+    "landmark": "Tây Hạ Vương Lăng Ngân Xuyên • 银川西夏王陵",
+    "filename": "ningxia-western-xia-tombs.jpg",
+    "localPath": "assets/images/provinces/ningxia-western-xia-tombs.jpg",
+    "size": 286705,
+    "status": "OK"
+  },
+  {
+    "id": "prov-xinjiang",
+    "nameVi": "Tân Cương",
+    "nameZh": "新疆维吾尔自治区",
+    "landmark": "Hồ Kanas (Nguyệt Lượng Vịnh) • 阿勒泰喀纳斯湖月亮湾",
+    "filename": "xinjiang-kanas-lake.jpg",
+    "localPath": "assets/images/provinces/xinjiang-kanas-lake.jpg",
+    "size": 0,
+    "status": "FAILED"
+  },
+  {
+    "id": "prov-hongkong",
+    "nameVi": "Hồng Kông",
+    "nameZh": "香港特别行政区",
+    "landmark": "Cảng Victoria & Đỉnh Thái Bình • 维多利亚港与太平山顶",
+    "filename": "hongkong-victoria-harbour.jpg",
+    "localPath": "assets/images/provinces/hongkong-victoria-harbour.jpg",
+    "size": 203875,
+    "status": "OK"
+  },
+  {
+    "id": "prov-macau",
+    "nameVi": "Ma Cao",
+    "nameZh": "澳门特别行政区",
+    "landmark": "Di tích Nhà thờ Thánh Phaolô • 澳门大三巴牌坊",
+    "filename": "macau-ruins-st-paul.jpg",
+    "localPath": "assets/images/provinces/macau-ruins-st-paul.jpg",
+    "size": 495836,
+    "status": "OK"
+  }
+]

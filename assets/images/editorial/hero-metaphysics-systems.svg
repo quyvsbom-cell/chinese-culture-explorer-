@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <title>So sánh Hệ thống Thuật số Cổ điển Trung Hoa</title>
+  <desc>Architectural comparison of four traditional Chinese cosmological systems: Zi Wei Dou Shu, Bazi Four Pillars, Feng Shui, and Qimen Dunjia.</desc>
+  <defs>
+    <style>
+      .serif { font-family: 'Cormorant Garamond', 'Noto Serif SC', Georgia, serif; }
+      .sans { font-family: 'Be Vietnam Pro', 'Inter', 'Noto Sans SC', sans-serif; }
+      .han { font-family: 'Noto Serif SC', 'Noto Serif TC', serif; }
+      .mono { font-family: 'JetBrains Mono', monospace; }
+      .kicker { font-family: 'Be Vietnam Pro', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 2px; fill: #9F2929; text-transform: uppercase; }
+      .h-title { font-family: 'Cormorant Garamond', 'Noto Serif SC', serif; font-size: 38px; font-weight: 700; fill: #202020; }
+      .h-sub { font-family: 'Be Vietnam Pro', sans-serif; font-size: 17px; fill: #524F49; }
+      .label-b { font-family: 'Be Vietnam Pro', sans-serif; font-size: 16px; font-weight: 700; fill: #202020; }
+      .label-s { font-family: 'Be Vietnam Pro', sans-serif; font-size: 13.5px; fill: #524F49; }
+      .han-big { font-family: 'Noto Serif SC', serif; font-weight: 700; fill: #202020; }
+    </style>
+    <pattern id="paperGrain" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="#F7F4ED"/>
+      <circle cx="14" cy="18" r="0.8" fill="#C9C0AD" opacity="0.35"/>
+      <circle cx="42" cy="46" r="0.7" fill="#B8AF9B" opacity="0.3"/>
+      <path d="M0 30 H60 M30 0 V60" stroke="#E5DEC9" stroke-width="0.4" opacity="0.4"/>
+    </pattern>
+    <pattern id="diagonalHatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#9F2929" stroke-width="1.4" opacity="0.28"/>
+    </pattern>
+    <pattern id="dotPattern" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1.5" fill="#637F72" opacity="0.35"/>
+    </pattern>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9F2929"/>
+      <stop offset="100%" stop-color="#B63D32"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#CBB078"/>
+      <stop offset="100%" stop-color="#9E8048"/>
+    </linearGradient>
+    <linearGradient id="jadeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#637F72"/>
+      <stop offset="100%" stop-color="#3F574D"/>
+    </linearGradient>
+    <marker id="arrowRed" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#9F2929"/>
+    </marker>
+    <marker id="arrowGold" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#B99A62"/>
+    </marker>
+    <marker id="arrowJade" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#637F72"/>
+    </marker>
+    <marker id="arrowInk" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#202020"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#paperGrain)"/>
+  <rect x="20" y="20" width="1560" height="860" fill="none" stroke="#DED8CA" stroke-width="2"/>
+  <rect x="28" y="28" width="1544" height="844" fill="none" stroke="#B99A62" stroke-width="0.9" opacity="0.65"/>
+  
+  <text x="72" y="84" class="kicker">CHƯƠNG 17 • THUẬT SỐ HỌC &amp; VŨ TRỤ LUẬN CỔ ĐẠI DƯỚI GÓC NHÌN SỬ HỌC</text>
+  <text x="72" y="132" class="h-title">Giải phẫu Tứ Đại Hệ Thống Thuật Số: Tử Vi • Bát Tự • Phong Thủy • Kỳ Môn</text>
+  <text x="72" y="164" class="h-sub">Phân biệt rõ hệ ký hiệu lịch pháp cổ đại với đo lường vật lý hiện đại (Không gian – Thời gian – Biểu tượng)</text>
+  <line x1="72" y1="186" x2="1528" y2="186" stroke="#DED8CA" stroke-width="1.5"/>
+  <g transform="translate(72, 215)"><rect width="348" height="545" rx="8" fill="#FAF7F0" stroke="#9F2929" stroke-width="2"/><rect width="348" height="74" rx="8" fill="#9F2929"/><text x="174" y="34" text-anchor="middle" class="sans" font-size="18" font-weight="700" fill="#F7F4ED">I. TỬ VI ĐẨU SỐ</text><text x="174" y="60" text-anchor="middle" class="han" font-size="20" fill="#F7F4ED">紫微斗数</text><rect x="18" y="92" width="312" height="44" rx="5" fill="#EFECE2"/><text x="174" y="119" text-anchor="middle" class="label-s" font-weight="700">Thế kỷ XV–XVI (Đời Minh)</text><text x="18" y="168" class="label-b" fill="#9F2929">Cơ chế Vận hành:</text><foreignObject x="18" y="176" width="312" height="90"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Be Vietnam Pro,sans-serif;font-size:14px;color:#3E3C37;line-height:1.45;">Lấy Giờ-Ngày-Tháng-Năm Âm lịch an 14 Chính tinh + Tứ Hóa vào 12 Cung</div></foreignObject><text x="18" y="286" class="label-b" fill="#9F2929">Phân phái Chủ chốt:</text><foreignObject x="18" y="294" width="312" height="95"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Be Vietnam Pro,sans-serif;font-size:14px;color:#3E3C37;line-height:1.45;">Nam Phái Tam Hợp (tinh tình, miếu hãm) vs Bắc Phái Khâm Thiên Tứ Hóa (phi hóa)</div></foreignObject><text x="18" y="408" class="label-b" fill="#9F2929">Giá trị Nghiên cứu:</text><foreignObject x="18" y="416" width="312" height="105"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Be Vietnam Pro,sans-serif;font-size:14px;color:#3E3C37;line-height:1.45;">Đọc cấu trúc quan hệ gia đình, sự nghiệp, di chuyển và tâm lý đời người</div></foreignObject></g><g transform="translate(444, 215)"><rect width="348" height="545" rx="8" fill="#FAF7F0" stroke="#B99A62" stroke-width="2"/><rect width="348" height="74" rx="8" fill="#B99A62"/><text x="174" y="34" text-anchor="middle" class="sans" font-size="18" font-weight="700" fill="#F7F4ED">II. BÁT TỰ TỨ TRỤ</text><text x="174" y="60" text-anchor="middle" class="han" font-size="20" fill="#F7F4ED">四柱八字 / 子平</text><rect x="18" y="92" width="312" height="44" rx="5" fill="#EFECE2"/><text x="174" y="119" text-anchor="middle" class="label-s" font-weight="700">Thời Tống (Từ Tử Bình)</text><text x="18" y="168" class="label-b" fill="#B99A62">Cơ chế Vận hành:</text><foreignObject x="18" y="176" width="312" height="90"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Be Vietnam Pro,sans-serif;font-size:14px;color:#3E3C37;line-height:1.45;">Lấy Tiết khí thực tế lập 4 cặp Can-Chi (8 chữ), lấy Nhật chủ làm trục</div></foreignObject><text x="18" y="286" class="label-b" fill="#B99A62">Phân phái Chủ chốt:</text><foreignObject x="18" y="294" width="312" height="95"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Be Vietnam Pro,sans-serif;font-size:14px;color:#3E3C37;line-height:1.45;">Tử Bình Cách cục, Điều Hầu Phái (khí hậu nóng lạnh), Manh Phái thực chiến</div></foreignObject><text x="18" y="408" class="label-b" fill="#B99A62">Giá trị Nghiên cứu:</text><foreignObject x="18" y="416" width="312" height="105"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Be Vietnam Pro,sans-serif;font-size:14px;color:#3E3C37;line-height:1.45;">Tìm Dụng thần cân bằng Ngũ Hành và phân tích Đại vận chu kỳ 10 năm</div></foreignObject></g><g transform="translate(816, 215)"><rect width="348" height="545" rx="8" fill="#FAF7F0" stroke="#637F72" stroke-width="2"/><rect width="348" height="74" rx="8" fill="#637F72"/><text x="174" y="34" text-anchor="middle" class="sans" font-size="18" font-weight="700" fill="#F7F4ED">III. PHONG THỦY CỔ</text><text x="174" y="60" text-anchor="middle" class="han" font-size="20" fill="#F7F4ED">堪舆 / 风水</text><rect x="18" y="92" width="312" height="44" rx="5" fill="#EFECE2"/><text x="174" y="119" text-anchor="middle" class="label-s" font-weight="700">Từ thời Tấn (《Táng Thư》)</text><text x="18" y="168" class="label-b" fill="#637F72">Cơ chế Vận hành:</text><foreignObject x="18" y="176" width="312" height="90"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Be Vietnam Pro,sans-serif;font-size:14px;color:#3E3C37;line-height:1.45;">Khảo sát 'Tàng phong tụ thủy' – khí hậu, địa thế, ánh sáng, dòng nước</div></foreignObject><text x="18" y="286" class="label-b" fill="#637F72">Phân phái Chủ chốt:</text><foreignObject x="18" y="294" width="312" height="95"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Be Vietnam Pro,sans-serif;font-size:14px;color:#3E3C37;line-height:1.45;">Loan Đầu Phái (Long–Huyệt–Sa–Thủy) vs Lý Khí Phái (Bát Trạch / Huyền Không)</div></foreignObject><text x="18" y="408" class="label-b" fill="#637F72">Giá trị Nghiên cứu:</text><foreignObject x="18" y="416" width="312" height="105"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Be Vietnam Pro,sans-serif;font-size:14px;color:#3E3C37;line-height:1.45;">Quy hoạch không gian sống hài hòa vi khí hậu và tâm lý môi trường</div></foreignObject></g><g transform="translate(1188, 215)"><rect width="348" height="545" rx="8" fill="#FAF7F0" stroke="#202020" stroke-width="2"/><rect width="348" height="74" rx="8" fill="#202020"/><text x="174" y="34" text-anchor="middle" class="sans" font-size="18" font-weight="700" fill="#F7F4ED">IV. KỲ MÔN ĐỘN GIÁP</text><text x="174" y="60" text-anchor="middle" class="han" font-size="20" fill="#F7F4ED">奇门遁甲</text><rect x="18" y="92" width="312" height="44" rx="5" fill="#EFECE2"/><text x="174" y="119" text-anchor="middle" class="label-s" font-weight="700">Thời Hán (Nhữ Âm Hầu Thức bàn)</text><text x="18" y="168" class="label-b" fill="#202020">Cơ chế Vận hành:</text><foreignObject x="18" y="176" width="312" height="90"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Be Vietnam Pro,sans-serif;font-size:14px;color:#3E3C37;line-height:1.45;">Ma trận 3×3 (Cửu Cung Lạc Thư) xoay 4 lớp Địa – Nhân – Thiên – Thần</div></foreignObject><text x="18" y="286" class="label-b" fill="#202020">Phân phái Chủ chốt:</text><foreignObject x="18" y="294" width="312" height="95"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Be Vietnam Pro,sans-serif;font-size:14px;color:#3E3C37;line-height:1.45;">Thời Gia Kỳ Môn (Chuyển bàn vs Phi bàn; Sách cục vs Nhuận cục)</div></foreignObject><text x="18" y="408" class="label-b" fill="#202020">Giá trị Nghiên cứu:</text><foreignObject x="18" y="416" width="312" height="105"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Be Vietnam Pro,sans-serif;font-size:14px;color:#3E3C37;line-height:1.45;">Mô hình tổ hợp không–thời gian cổ đại dùng trong quân sự &amp; lịch toán</div></foreignObject></g>
+  <rect x="72" y="782" width="1320" height="58" rx="6" fill="#EFECE2" stroke="#B99A62" stroke-width="1.2"/>
+  <text x="94" y="817" class="label-s"><tspan font-weight="700" fill="#9F2929">Chuẩn Nhận thức luận CCE:</tspan> Toàn bộ hệ thuật số cổ đại là di sản mô hình hóa triết học–lịch toán phương Đông; giá trị cốt lõi nằm ở tự chiêm nghiệm, kiến trúc sinh thái và văn học lịch sử.</text>
+
+  <g transform="translate(1455, 808)">
+    <rect width="104" height="50" rx="3" fill="#9F2929" opacity="0.92"/>
+    <rect x="4" y="4" width="96" height="42" rx="2" fill="none" stroke="#F7F4ED" stroke-width="1" opacity="0.7"/>
+    <text x="52" y="24" text-anchor="middle" class="han" font-size="14" fill="#F7F4ED" font-weight="700">中国文化探索</text>
+    <text x="52" y="40" text-anchor="middle" class="mono" font-size="10" fill="#F7F4ED" opacity="0.9">CCE ARCHIVE</text>
+  </g>
+</svg>

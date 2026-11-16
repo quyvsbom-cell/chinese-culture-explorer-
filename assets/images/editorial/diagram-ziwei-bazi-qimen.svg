@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750">
+  <title>Cấu trúc Toán học của Bàn Tử Vi 12 Cung, Bát Tự 4 Trụ và Ma trận Kỳ Môn 3x3</title>
+  <desc>Side-by-side schematic comparing the 12-Palace Zi Wei chart, 4-Pillar Bazi table, and 3x3 Qimen Luoshu grid.</desc>
+  <defs>
+    <style>
+      .serif { font-family: 'Cormorant Garamond', 'Noto Serif SC', Georgia, serif; }
+      .sans { font-family: 'Be Vietnam Pro', 'Inter', 'Noto Sans SC', sans-serif; }
+      .han { font-family: 'Noto Serif SC', 'Noto Serif TC', serif; }
+      .mono { font-family: 'JetBrains Mono', monospace; }
+      .kicker { font-family: 'Be Vietnam Pro', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 2px; fill: #9F2929; text-transform: uppercase; }
+      .h-title { font-family: 'Cormorant Garamond', 'Noto Serif SC', serif; font-size: 38px; font-weight: 700; fill: #202020; }
+      .h-sub { font-family: 'Be Vietnam Pro', sans-serif; font-size: 17px; fill: #524F49; }
+      .label-b { font-family: 'Be Vietnam Pro', sans-serif; font-size: 16px; font-weight: 700; fill: #202020; }
+      .label-s { font-family: 'Be Vietnam Pro', sans-serif; font-size: 13.5px; fill: #524F49; }
+      .han-big { font-family: 'Noto Serif SC', serif; font-weight: 700; fill: #202020; }
+    </style>
+    <pattern id="paperGrain" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="#F7F4ED"/>
+      <circle cx="14" cy="18" r="0.8" fill="#C9C0AD" opacity="0.35"/>
+      <circle cx="42" cy="46" r="0.7" fill="#B8AF9B" opacity="0.3"/>
+      <path d="M0 30 H60 M30 0 V60" stroke="#E5DEC9" stroke-width="0.4" opacity="0.4"/>
+    </pattern>
+    <pattern id="diagonalHatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#9F2929" stroke-width="1.4" opacity="0.28"/>
+    </pattern>
+    <pattern id="dotPattern" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1.5" fill="#637F72" opacity="0.35"/>
+    </pattern>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9F2929"/>
+      <stop offset="100%" stop-color="#B63D32"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#CBB078"/>
+      <stop offset="100%" stop-color="#9E8048"/>
+    </linearGradient>
+    <linearGradient id="jadeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#637F72"/>
+      <stop offset="100%" stop-color="#3F574D"/>
+    </linearGradient>
+    <marker id="arrowRed" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#9F2929"/>
+    </marker>
+    <marker id="arrowGold" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#B99A62"/>
+    </marker>
+    <marker id="arrowJade" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#637F72"/>
+    </marker>
+    <marker id="arrowInk" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#202020"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="750" fill="url(#paperGrain)"/>
+  <rect x="20" y="20" width="1160" height="710" fill="none" stroke="#DED8CA" stroke-width="2"/>
+  <rect x="28" y="28" width="1144" height="694" fill="none" stroke="#B99A62" stroke-width="0.9" opacity="0.65"/>
+  
+  <text x="58" y="76" class="kicker">SƠ ĐỒ CẤU TRÚC • MÔ HÌNH TỔ HỢP LỊCH PHÁP CỔ ĐẠI</text>
+  <text x="58" y="118" class="h-title" font-size="31">Kiến trúc Ký hiệu Học: Lá số 12 Cung • Bảng 4 Trụ • Cửu Cung Lạc Thư</text>
+  <line x1="58" y1="138" x2="1142" y2="138" stroke="#DED8CA" stroke-width="1.5"/>
+
+  <!-- Panel A: 12 Palace Zi Wei Ring -->
+  <g transform="translate(58, 165)">
+    <rect width="340" height="430" rx="8" fill="#FAF7F0" stroke="#9F2929" stroke-width="1.8"/>
+    <text x="170" y="34" text-anchor="middle" class="label-b" fill="#9F2929">A. BÀN TỬ VI (12 CUNG)</text>
+    <!-- 4x4 outer cells around empty 2x2 center -->
+    <g transform="translate(30, 56)" font-family="Be Vietnam Pro,sans-serif" font-size="11.5" text-anchor="middle">
+      <rect x="0" y="0" width="70" height="75" fill="#F2EDE1" stroke="#B99A62"/><text x="35" y="42">Tỵ (Quan)</text>
+      <rect x="70" y="0" width="70" height="75" fill="#F2EDE1" stroke="#B99A62"/><text x="105" y="42">Ngọ (Nô)</text>
+      <rect x="140" y="0" width="70" height="75" fill="#F2EDE1" stroke="#B99A62"/><text x="175" y="42">Mùi (Di)</text>
+      <rect x="210" y="0" width="70" height="75" fill="#F2EDE1" stroke="#B99A62"/><text x="245" y="42">Thân (Tật)</text>
+
+      <rect x="0" y="75" width="70" height="75" fill="#F2EDE1" stroke="#B99A62"/><text x="35" y="116">Thìn (Điền)</text>
+      <rect x="210" y="75" width="70" height="75" fill="#F2EDE1" stroke="#B99A62"/><text x="245" y="116">Dậu (Tài)</text>
+
+      <rect x="0" y="150" width="70" height="75" fill="#F2EDE1" stroke="#B99A62"/><text x="35" y="191">Mão (Phúc)</text>
+      <rect x="210" y="150" width="70" height="75" fill="#F2EDE1" stroke="#B99A62"/><text x="245" y="191">Tuất (Tử)</text>
+
+      <rect x="0" y="225" width="70" height="75" fill="#F2EDE1" stroke="#B99A62"/><text x="35" y="266">Dần (Phụ)</text>
+      <rect x="70" y="225" width="70" height="75" fill="#9F2929" opacity="0.16" stroke="#9F2929" stroke-width="2"/><text x="105" y="266" font-weight="700" fill="#9F2929">Sửu (MỆNH)</text>
+      <rect x="140" y="225" width="70" height="75" fill="#F2EDE1" stroke="#B99A62"/><text x="175" y="266">Tý (Huynh)</text>
+      <rect x="210" y="225" width="70" height="75" fill="#F2EDE1" stroke="#B99A62"/><text x="245" y="266">Hợi (Phu)</text>
+
+      <rect x="70" y="75" width="140" height="150" fill="#FAF7F0" stroke="#DED8CA"/>
+      <text x="140" y="135" font-weight="700" font-size="13" fill="#9F2929">Thiên Bàn</text>
+      <text x="140" y="155" font-size="11.5" fill="#524F49">Tam Phương Tứ Chính</text>
+      <text x="140" y="175" font-size="11.5" fill="#524F49">Phi Hóa (Lộc Quyền Khoa Kỵ)</text>
+    </g>
+    <text x="170" y="395" text-anchor="middle" class="label-s">Trọng tâm: Quan hệ xã hội &amp; Tứ Hóa</text>
+  </g>
+
+  <!-- Panel B: Bazi 4 Pillars -->
+  <g transform="translate(430, 165)">
+    <rect width="340" height="430" rx="8" fill="#FAF7F0" stroke="#B99A62" stroke-width="1.8"/>
+    <text x="170" y="34" text-anchor="middle" class="label-b" fill="#7B5C24">B. TỨ TRỤ BÁT TỰ (8 CHỮ)</text>
+    <g transform="translate(22, 62)" text-anchor="middle">
+      <rect x="0" y="0" width="74" height="36" fill="#EFECE2" stroke="#B99A62"/><text x="37" y="23" class="label-s" font-weight="700">Niên Trụ</text>
+      <rect x="74" y="0" width="74" height="36" fill="#EFECE2" stroke="#B99A62"/><text x="111" y="23" class="label-s" font-weight="700">Nguyệt Trụ</text>
+      <rect x="148" y="0" width="74" height="36" fill="#9F2929" opacity="0.16" stroke="#9F2929"/><text x="185" y="23" class="label-s" font-weight="700" fill="#9F2929">Nhật Chủ</text>
+      <rect x="222" y="0" width="74" height="36" fill="#EFECE2" stroke="#B99A62"/><text x="259" y="23" class="label-s" font-weight="700">Thời Trụ</text>
+
+      <!-- Thiên Can Row -->
+      <rect x="0" y="36" width="74" height="72" fill="#F7F4ED" stroke="#DED8CA"/><text x="37" y="78" class="han-big" font-size="24">甲</text>
+      <rect x="74" y="36" width="74" height="72" fill="#F7F4ED" stroke="#DED8CA"/><text x="111" y="78" class="han-big" font-size="24">丙</text>
+      <rect x="148" y="36" width="74" height="72" fill="#F8ECE9" stroke="#9F2929" stroke-width="2"/><text x="185" y="78" class="han-big" font-size="24" fill="#9F2929">戊</text>
+      <rect x="222" y="36" width="74" height="72" fill="#F7F4ED" stroke="#DED8CA"/><text x="259" y="78" class="han-big" font-size="24">壬</text>
+
+      <!-- Địa Chi Row -->
+      <rect x="0" y="108" width="74" height="72" fill="#F7F4ED" stroke="#DED8CA"/><text x="37" y="150" class="han-big" font-size="24">子</text>
+      <rect x="74" y="108" width="74" height="72" fill="#EDF3F0" stroke="#637F72" stroke-width="2"/><text x="111" y="150" class="han-big" font-size="24" fill="#2D4A3E">寅</text>
+      <rect x="148" y="108" width="74" height="72" fill="#F7F4ED" stroke="#DED8CA"/><text x="185" y="150" class="han-big" font-size="24">午</text>
+      <rect x="222" y="108" width="74" height="72" fill="#F7F4ED" stroke="#DED8CA"/><text x="259" y="150" class="han-big" font-size="24">戌</text>
+
+      <!-- Notes inside panel -->
+      <rect x="0" y="198" width="296" height="106" rx="6" fill="#EFECE2" stroke="#DED8CA"/>
+      <text x="148" y="226" class="label-s" font-weight="700">1. Nguyệt Lệnh = Khí hậu Mùa sinh (Tiết khí)</text>
+      <text x="148" y="252" class="label-s">2. Thân Vượng / Nhược → Tìm Dụng Thần</text>
+      <text x="148" y="278" class="label-s">3. Vận hành: Lưu niên &amp; Đại vận 10 năm</text>
+    </g>
+    <text x="170" y="395" text-anchor="middle" class="label-s">Trọng tâm: Ngũ Hành cân bằng khí hậu</text>
+  </g>
+
+  <!-- Panel C: 3x3 Qimen Grid -->
+  <g transform="translate(802, 165)">
+    <rect width="340" height="430" rx="8" fill="#FAF7F0" stroke="#637F72" stroke-width="1.8"/>
+    <text x="170" y="34" text-anchor="middle" class="label-b" fill="#2D4A3E">C. KỲ MÔN (CỬU CUNG 3×3)</text>
+    <g transform="translate(35, 62)" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-size="12">
+      <rect x="0" y="0" width="90" height="90" fill="#F2EDE1" stroke="#637F72"/><text x="45" y="34" font-weight="700">4 Tốn (ĐN)</text><text x="45" y="58" fill="#524F49">Đỗ Môn • Phụ</text>
+      <rect x="90" y="0" width="90" height="90" fill="#F2EDE1" stroke="#637F72"/><text x="135" y="34" font-weight="700">9 Ly (Nam)</text><text x="135" y="58" fill="#524F49">Cảnh Môn • Anh</text>
+      <rect x="180" y="0" width="90" height="90" fill="#F2EDE1" stroke="#637F72"/><text x="225" y="34" font-weight="700">2 Khôn (TN)</text><text x="225" y="58" fill="#524F49">Tử Môn • Nhuế</text>
+
+      <rect x="0" y="90" width="90" height="90" fill="#F2EDE1" stroke="#637F72"/><text x="45" y="124" font-weight="700">3 Chấn (Đông)</text><text x="45" y="148" fill="#524F49">Thương Môn • Xung</text>
+      <rect x="90" y="90" width="90" height="90" fill="#9F2929" opacity="0.14" stroke="#9F2929" stroke-width="2"/><text x="135" y="124" font-weight="700" fill="#9F2929">5 Trung Cung</text><text x="135" y="148" fill="#9F2929">Cầm Tinh</text>
+      <rect x="180" y="90" width="90" height="90" fill="#F2EDE1" stroke="#637F72"/><text x="225" y="124" font-weight="700">7 Đoài (Tây)</text><text x="225" y="148" fill="#524F49">Kinh Môn • Trụ</text>
+
+      <rect x="0" y="180" width="90" height="90" fill="#F2EDE1" stroke="#637F72"/><text x="45" y="214" font-weight="700">8 Cấn (ĐB)</text><text x="45" y="238" fill="#524F49">Sinh Môn • Nhậm</text>
+      <rect x="90" y="180" width="90" height="90" fill="#F2EDE1" stroke="#637F72"/><text x="135" y="214" font-weight="700">1 Khảm (Bắc)</text><text x="135" y="238" fill="#524F49">Hưu Môn • Bồng</text>
+      <rect x="180" y="180" width="90" height="90" fill="#F2EDE1" stroke="#637F72"/><text x="225" y="214" font-weight="700">6 Càn (TB)</text><text x="225" y="238" fill="#524F49">Khai Môn • Tâm</text>
+    </g>
+    <text x="170" y="395" text-anchor="middle" class="label-s">Trọng tâm: Không gian 9 cung &amp; Thời cơ</text>
+  </g>
+
+  <rect x="58" y="618" width="960" height="86" rx="6" fill="#EFECE2" stroke="#DED8CA"/>
+  <text x="78" y="652" class="label-b">Tổng hợp Văn bản Cổ học:</text>
+  <text x="78" y="678" class="label-s">Đều dùng bộ chữ số &amp; ký hiệu Thiên Can – Địa Chi cổ đại nhưng phát triển thành 3 cấu trúc toán tổ hợp độc lập qua từng triều đại.</text>
+
+  <g transform="translate(1055, 658)">
+    <rect width="104" height="50" rx="3" fill="#9F2929" opacity="0.92"/>
+    <rect x="4" y="4" width="96" height="42" rx="2" fill="none" stroke="#F7F4ED" stroke-width="1" opacity="0.7"/>
+    <text x="52" y="24" text-anchor="middle" class="han" font-size="14" fill="#F7F4ED" font-weight="700">中国文化探索</text>
+    <text x="52" y="40" text-anchor="middle" class="mono" font-size="10" fill="#F7F4ED" opacity="0.9">CCE ARCHIVE</text>
+  </g>
+</svg>

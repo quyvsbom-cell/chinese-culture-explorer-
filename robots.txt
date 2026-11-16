@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /netlify/
+Disallow: /scripts/
+Disallow: /data/
+
+Sitemap: https://chinese-culture-explorer.netlify.app/sitemap.xml

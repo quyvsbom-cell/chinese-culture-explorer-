@@ -1,0 +1,811 @@
+[
+  {
+    "id": "luoshenfu-tu",
+    "titleZh": "洛神赋图",
+    "titleVi": "Lạc Thần Phú Đồ",
+    "artistZh": "顾恺之",
+    "artistVi": "Cố Khải Chi",
+    "museum": "故宫博物院 (Bảo tàng Cố Cung Bắc Kinh) & 辽宁省博物馆 (Bảo tàng Liêu Ninh)",
+    "eraId": "weijin",
+    "search": "File:Gu Kaizhi - Nymph of the Luo River.jpg",
+    "fallbacks": [
+      "File:Nymph of the Luo River (Freer Gallery of Art).jpg",
+      "File:Luo Shen Fu Tu (Song copy) Palace Museum.jpg"
+    ],
+    "filename": "01_luoshenfu_tu.jpg"
+  },
+  {
+    "id": "nvshi-zhentu",
+    "titleZh": "女史箴图",
+    "titleVi": "Nữ Sử Châm Đồ",
+    "artistZh": "顾恺之",
+    "artistVi": "Cố Khải Chi",
+    "museum": "The British Museum (Đại Anh Bảo Tàng Viện, London)",
+    "eraId": "weijin",
+    "search": "File:Admonitions Scroll Scene 1-3.jpg",
+    "fallbacks": [
+      "File:Admonitions Scroll Scene 4-7.jpg",
+      "File:Admonitions of the Court Instructress.jpg"
+    ],
+    "filename": "02_nvshi_zhentu.jpg"
+  },
+  {
+    "id": "ershiba-xiu",
+    "titleZh": "二十八宿神形图",
+    "titleVi": "Nhị Thập Bát Tú Thần Hình Đồ",
+    "artistZh": "张僧繇",
+    "artistVi": "Trương Tăng Diêu",
+    "museum": "大阪市立美术馆 (Bảo tàng Mỹ thuật Thành phố Osaka, Nhật Bản)",
+    "eraId": "weijin",
+    "search": "File:Twenty-eight Mansions.jpg",
+    "fallbacks": [
+      "File:28 Lunar Mansions.jpg",
+      "File:Zhang Sengyou - Twenty-eight Mansions.jpg"
+    ],
+    "filename": "03_ershiba_xiu.jpg"
+  },
+  {
+    "id": "you-chun-tu",
+    "titleZh": "游春图",
+    "titleVi": "Du Xuân Đồ",
+    "artistZh": "展子虔",
+    "artistVi": "Triển Tử Kiền",
+    "museum": "故宫博物院 (Bảo tàng Cố Cung Bắc Kinh)",
+    "eraId": "suitang",
+    "search": "File:Zhan Ziqian - Strolling About In Spring.jpg",
+    "fallbacks": [
+      "File:Zhan Ziqian Strolling in Spring.jpg",
+      "File:Youchun Tu Zhan Ziqian.jpg"
+    ],
+    "filename": "04_youchun_tu.jpg"
+  },
+  {
+    "id": "bu-nian-tu",
+    "titleZh": "步辇图",
+    "titleVi": "Bộ Liễn Đồ",
+    "artistZh": "阎立本",
+    "artistVi": "Diêm Lập Bản",
+    "museum": "故宫博物院 (Bảo tàng Cố Cung Bắc Kinh)",
+    "eraId": "suitang",
+    "search": "File:Emperor Taizong receiving the Tibetan envoy.jpg",
+    "fallbacks": [
+      "File:Yan Liben - Bunian Tu.jpg",
+      "File:Bunian Tu.jpg"
+    ],
+    "filename": "05_bunian_tu.jpg"
+  },
+  {
+    "id": "lidai-diwang-tu",
+    "titleZh": "历代帝王图",
+    "titleVi": "Lịch Đại Đế Vương Đồ",
+    "artistZh": "阎立本",
+    "artistVi": "Diêm Lập Bản",
+    "museum": "Museum of Fine Arts, Boston (Bảo tàng Mỹ thuật Boston, Hoa Kỳ)",
+    "eraId": "suitang",
+    "search": "File:Thirteen Emperors Scroll.jpg",
+    "fallbacks": [
+      "File:Thirteen Emperors Scroll Boston.jpg",
+      "File:Yan Liben Thirteen Emperors.jpg"
+    ],
+    "filename": "06_lidai_diwang_tu.jpg"
+  },
+  {
+    "id": "tianwang-songzi-tu",
+    "titleZh": "天王送子图",
+    "titleVi": "Thiên Vương Tống Tử Đồ",
+    "artistZh": "吴道子",
+    "artistVi": "Ngô Đạo Tử",
+    "museum": "大阪市立美术馆 (Bảo tàng Mỹ thuật Thành phố Osaka, Nhật Bản)",
+    "eraId": "suitang",
+    "search": "File:Songzi Tianwang Tu.jpg",
+    "fallbacks": [
+      "File:Wu Daozi Songzi Tianwang Tu.jpg",
+      "File:Wu Daozi - Heavenly Kings.jpg"
+    ],
+    "filename": "07_tianwang_songzi_tu.jpg"
+  },
+  {
+    "id": "guoguo-furen-youchun",
+    "titleZh": "虢国夫人游春图",
+    "titleVi": "Quắc Quốc Phu Nhân Du Xuân Đồ",
+    "artistZh": "张萱",
+    "artistVi": "Trương Huyên",
+    "museum": "辽宁省博物馆 (Bảo tàng tỉnh Liêu Ninh)",
+    "eraId": "suitang",
+    "search": "File:Lady Guoguo on a Spring Outing.jpg",
+    "fallbacks": [
+      "File:Guoguo Furen Youchun Tu.jpg",
+      "File:Zhang Xuan - Lady Guoguo on a Spring Outing.jpg"
+    ],
+    "filename": "08_guoguo_furen.jpg"
+  },
+  {
+    "id": "daolian-tu",
+    "titleZh": "捣练图",
+    "titleVi": "Đao Luyện Đồ",
+    "artistZh": "张萱",
+    "artistVi": "Trương Huyên",
+    "museum": "Museum of Fine Arts, Boston (Bảo tàng Mỹ thuật Boston, Hoa Kỳ)",
+    "eraId": "suitang",
+    "search": "File:Court Ladies Preparing Newly-Woven Silk.jpg",
+    "fallbacks": [
+      "File:Zhang Xuan - Court Ladies Preparing Newly Woven Silk.jpg",
+      "File:Daolian Tu Boston MFA.jpg"
+    ],
+    "filename": "09_daolian_tu.jpg"
+  },
+  {
+    "id": "zhanhua-shinv-tu",
+    "titleZh": "簪花仕女图",
+    "titleVi": "Trâm Hoa Sĩ Nữ Đồ",
+    "artistZh": "周昉",
+    "artistVi": "Chu Phưởng",
+    "museum": "辽宁省博物馆 (Bảo tàng tỉnh Liêu Ninh)",
+    "eraId": "suitang",
+    "search": "File:Ladies with Head-pinned Flowers.jpg",
+    "fallbacks": [
+      "File:Zhou Fang - Court Ladies Adorning Their Hair with Flowers.jpg",
+      "File:Zhanhua Shinv Tu.jpg"
+    ],
+    "filename": "10_zhanhua_shinv_tu.jpg"
+  },
+  {
+    "id": "huishan-shinv-tu",
+    "titleZh": "挥扇仕女图",
+    "titleVi": "Huy Phiến Sĩ Nữ Đồ",
+    "artistZh": "周昉",
+    "artistVi": "Chu Phưởng",
+    "museum": "故宫博物院 (Bảo tàng Cố Cung Bắc Kinh)",
+    "eraId": "suitang",
+    "search": "File:Court Ladies Waving Round Fans.jpg",
+    "fallbacks": [
+      "File:Zhou Fang - Court Ladies Waving Round Fans.jpg",
+      "File:Huishan Shinv Tu Palace Museum.jpg"
+    ],
+    "filename": "11_huishan_shinv_tu.jpg"
+  },
+  {
+    "id": "kuanglu-tu",
+    "titleZh": "匡庐图",
+    "titleVi": "Khuông Lư Đồ",
+    "artistZh": "荆浩",
+    "artistVi": "Kinh Hạo",
+    "museum": "台北故宫博物院 (Bảo tàng Cố Cung Đài Bắc)",
+    "eraId": "song",
+    "search": "File:Jing Hao - Mount Lu.jpg",
+    "fallbacks": [
+      "File:Jing Hao - Mount Lu (Kuanglu Tu).jpg",
+      "File:Kuanglu Tu Taipei.jpg"
+    ],
+    "filename": "12_kuanglu_tu.jpg"
+  },
+  {
+    "id": "xiaoxiang-tu",
+    "titleZh": "潇湘图",
+    "titleVi": "Tiêu Tương Đồ",
+    "artistZh": "董源",
+    "artistVi": "Đổng Nguyên",
+    "museum": "故宫博物院 (Bảo tàng Cố Cung Bắc Kinh)",
+    "eraId": "song",
+    "search": "File:Dong Yuan - The Xiao and Xiang Rivers.jpg",
+    "fallbacks": [
+      "File:Dong Yuan Xiao and Xiang Rivers.jpg",
+      "File:Xiaoxiang Tu Dong Yuan.jpg"
+    ],
+    "filename": "13_xiaoxiang_tu.jpg"
+  },
+  {
+    "id": "hanlin-chongting",
+    "titleZh": "寒林重汀图",
+    "titleVi": "Hàn Lâm Trọng Đinh Đồ",
+    "artistZh": "董源",
+    "artistVi": "Đổng Nguyên",
+    "museum": "黑龙江省博物馆 (Bảo tàng tỉnh Hắc Long Giang)",
+    "eraId": "song",
+    "search": "File:Dong Yuan - Wintry Groves and Layered Banks.jpg",
+    "fallbacks": [
+      "File:Wintry Groves and Layered Banks Kurokawa.jpg",
+      "File:Dong Yuan Hanlin Chongting.jpg"
+    ],
+    "filename": "14_hanlin_chongting.jpg"
+  },
+  {
+    "id": "qiushan-wendao",
+    "titleZh": "秋山问道图",
+    "titleVi": "Thu Sơn Vấn Đạo Đồ",
+    "artistZh": "巨然",
+    "artistVi": "Cự Nhiên",
+    "museum": "台北故宫博物院 (Bảo tàng Cố Cung Đài Bắc)",
+    "eraId": "song",
+    "search": "File:Seeking the Dao in Autumn Mountains.jpg",
+    "fallbacks": [
+      "File:Ju Ran - Seeking the Dao in Autumn Mountains.jpg",
+      "File:Qiushan Wendao Tu Juran.jpg"
+    ],
+    "filename": "15_qiushan_wendao.jpg"
+  },
+  {
+    "id": "hanxizai-yeyan",
+    "titleZh": "韩熙载夜宴图",
+    "titleVi": "Hàn Hy Tái Dạ Yến Đồ",
+    "artistZh": "顾闳中",
+    "artistVi": "Cố Hoành Trung",
+    "museum": "故宫博物院 (Bảo tàng Cố Cung Bắc Kinh)",
+    "eraId": "song",
+    "search": "File:The Night Revels of Han Xizai.jpg",
+    "fallbacks": [
+      "File:Gu Hongzhong - Night Revels of Han Xizai.jpg",
+      "File:Han Xizai Night Banquet.jpg"
+    ],
+    "filename": "16_hanxizai_yeyan.jpg"
+  },
+  {
+    "id": "xiesheng-zhenqin",
+    "titleZh": "写生珍禽图",
+    "titleVi": "Tả Sinh Trân Cầm Đồ",
+    "artistZh": "黄筌",
+    "artistVi": "Hoàng Thuyên",
+    "museum": "故宫博物院 (Bảo tàng Cố Cung Bắc Kinh)",
+    "eraId": "song",
+    "search": "File:Huang Quan - Sketches of Rare Birds.jpg",
+    "fallbacks": [
+      "File:Huang Quan Sketches of Rare Birds.jpg",
+      "File:Xiesheng Zhenqin Tu.jpg"
+    ],
+    "filename": "17_xiesheng_zhenqin.jpg"
+  },
+  {
+    "id": "xishan-xinglv",
+    "titleZh": "溪山行旅图",
+    "titleVi": "Khê Sơn Hành Lữ Đồ",
+    "artistZh": "范宽",
+    "artistVi": "Phạm Khoan",
+    "museum": "台北故宫博物院 (Bảo tàng Cố Cung Đài Bắc)",
+    "eraId": "song",
+    "search": "File:Fan Kuan - Travelers among Mountains and Streams.jpg",
+    "fallbacks": [
+      "File:Travelers among Mountains and Streams.jpg",
+      "File:Fan Kuan Travelers.jpg"
+    ],
+    "filename": "18_xishan_xinglv.jpg"
+  },
+  {
+    "id": "zao-chun-tu",
+    "titleZh": "早春图",
+    "titleVi": "Tảo Xuân Đồ",
+    "artistZh": "郭熙",
+    "artistVi": "Quách Hy",
+    "museum": "台北故宫博物院 (Bảo tàng Cố Cung Đài Bắc)",
+    "eraId": "song",
+    "search": "File:Guo Xi - Early Spring.jpg",
+    "fallbacks": [
+      "File:Early Spring Guo Xi.jpg",
+      "File:Guo Xi Early Spring NPM.jpg"
+    ],
+    "filename": "19_zao_chun_tu.jpg"
+  },
+  {
+    "id": "wanhe-songfeng-litang",
+    "titleZh": "万壑松风图",
+    "titleVi": "Vạn Hác Tùng Phong Đồ",
+    "artistZh": "李唐",
+    "artistVi": "Lý Đường",
+    "museum": "台北故宫博物院 (Bảo tàng Cố Cung Đài Bắc)",
+    "eraId": "song",
+    "search": "File:Wind in Pines Among a Myriad Valleys.jpg",
+    "fallbacks": [
+      "File:Li Tang - Wind in Pines Among a Myriad Valleys.jpg",
+      "File:Li Tang Wind in Pines.jpg"
+    ],
+    "filename": "20_wanhe_songfeng_litang.jpg"
+  },
+  {
+    "id": "qingming-shanghe",
+    "titleZh": "清明上河图",
+    "titleVi": "Thanh Minh Thượng Hà Đồ",
+    "artistZh": "张择端",
+    "artistVi": "Trương Trạch Đoan",
+    "museum": "故宫博物院 (Bảo tàng Cố Cung Bắc Kinh)",
+    "eraId": "song",
+    "search": "File:Along the River During the Qingming Festival (detail).jpg",
+    "fallbacks": [
+      "File:Along the River During the Qingming Festival.jpg",
+      "File:Qingming Shanghe Tu Beijing.jpg"
+    ],
+    "filename": "21_qingming_shanghe.jpg"
+  },
+  {
+    "id": "qianli-jiangshan",
+    "titleZh": "千里江山图",
+    "titleVi": "Thiên Lý Giang Sơn Đồ",
+    "artistZh": "王希孟",
+    "artistVi": "Vương Hy Mạnh",
+    "museum": "故宫博物院 (Bảo tàng Cố Cung Bắc Kinh)",
+    "eraId": "song",
+    "search": "File:Wang Ximeng - A Thousand Li of Rivers and Mountains.jpg",
+    "fallbacks": [
+      "File:A Thousand Li of Rivers and Mountains.jpg",
+      "File:Wang Ximeng Qianli Jiangshan.jpg"
+    ],
+    "filename": "22_qianli_jiangshan.jpg"
+  },
+  {
+    "id": "rui-he-tu",
+    "titleZh": "瑞鹤图",
+    "titleVi": "Thụy Hạc Đồ",
+    "artistZh": "赵佶 (宋徽宗)",
+    "artistVi": "Triệu Cát (Tống Huy Tông)",
+    "museum": "辽宁省博物馆 (Bảo tàng tỉnh Liêu Ninh)",
+    "eraId": "song",
+    "search": "File:Auspicious Cranes by Emperor Huizong.jpg",
+    "fallbacks": [
+      "File:Emperor Huizong - Auspicious Cranes.jpg",
+      "File:Ruihe Tu Huizong.jpg"
+    ],
+    "filename": "23_rui_he_tu.jpg"
+  },
+  {
+    "id": "furong-jinji",
+    "titleZh": "芙蓉锦鸡图",
+    "titleVi": "Phù Dung Cẩm Kê Đồ",
+    "artistZh": "赵佶 (宋徽宗)",
+    "artistVi": "Triệu Cát (Tống Huy Tông)",
+    "museum": "故宫博物院 (Bảo tàng Cố Cung Bắc Kinh)",
+    "eraId": "song",
+    "search": "File:Emperor Huizong - Golden Pheasant and Cotton Rose.jpg",
+    "fallbacks": [
+      "File:Golden Pheasant and Cotton Rose Huizong.jpg",
+      "File:Furong Jinji Tu.jpg"
+    ],
+    "filename": "24_furong_jinji.jpg"
+  },
+  {
+    "id": "wuma-tu",
+    "titleZh": "五马图",
+    "titleVi": "Ngũ Mã Đồ",
+    "artistZh": "李公麟",
+    "artistVi": "Lý Công Lân",
+    "museum": "东京国立博物馆 (Bảo tàng Quốc lập Tokyo, Nhật Bản)",
+    "eraId": "song",
+    "search": "File:Five Horses by Li Gonglin.jpg",
+    "fallbacks": [
+      "File:Li Gonglin - Five Horses.jpg",
+      "File:Five Horses Li Gonglin Tokyo.jpg"
+    ],
+    "filename": "25_wuma_tu.jpg"
+  },
+  {
+    "id": "chushan-ruiai",
+    "titleZh": "春山瑞霭图",
+    "titleVi": "Xuân Sơn Thụy Ái Đồ",
+    "artistZh": "米芾 / 米友仁",
+    "artistVi": "Mễ Phất / Mễ Hữu Nhân",
+    "museum": "台北故宫博物院 (Bảo tàng Cố Cung Đài Bắc)",
+    "eraId": "song",
+    "search": "File:Mi Fu - Auspicious Pines on Spring Mountains.jpg",
+    "fallbacks": [
+      "File:Mi Fu Spring Mountains.jpg",
+      "File:Chushan Ruiai Tu Mi Fu.jpg"
+    ],
+    "filename": "26_chushan_ruiai.jpg"
+  },
+  {
+    "id": "kumu-guaishi",
+    "titleZh": "枯木怪石图",
+    "titleVi": "Khô Mộc Quái Thạch Đồ",
+    "artistZh": "苏轼 (苏东坡)",
+    "artistVi": "Tô Thức (Tô Đông Pha)",
+    "museum": "私人珍藏 / 香港佳士得 (Bộ sưu tập tư nhân quốc tế, từng triển lãm tại Hong Kong)",
+    "eraId": "song",
+    "search": "File:Su Shi - Wood and Rock.jpg",
+    "fallbacks": [
+      "File:Su Shi Withered Tree and Strange Rock.jpg",
+      "File:Su Shi Kumu Guaishi.jpg"
+    ],
+    "filename": "27_kumu_guaishi.jpg"
+  },
+  {
+    "id": "libai-hangyin",
+    "titleZh": "李白行吟图",
+    "titleVi": "Lý Bạch Hành Ngâm Đồ",
+    "artistZh": "梁楷",
+    "artistVi": "Lương Khải",
+    "museum": "东京国立博物馆 (Bảo tàng Quốc lập Tokyo, Nhật Bản)",
+    "eraId": "song",
+    "search": "File:Liang Kai - Li Bai chanting a poem.jpg",
+    "fallbacks": [
+      "File:Liang Kai - Poet Li Bai.jpg",
+      "File:Li Bai Chanting Liang Kai Tokyo.jpg"
+    ],
+    "filename": "28_libai_hangyin.jpg"
+  },
+  {
+    "id": "dage-tu",
+    "titleZh": "踏歌图",
+    "titleVi": "Đạp Ca Đồ",
+    "artistZh": "马远",
+    "artistVi": "Mã Viễn",
+    "museum": "故宫博物院 (Bảo tàng Cố Cung Bắc Kinh)",
+    "eraId": "song",
+    "search": "File:Ma Yuan - Walking on a Path in Spring.jpg",
+    "fallbacks": [
+      "File:Ma Yuan - Dancing and Singing.jpg",
+      "File:Ma Yuan Dage Tu.jpg"
+    ],
+    "filename": "29_dage_tu.jpg"
+  },
+  {
+    "id": "quehua-qiuse",
+    "titleZh": "鹊华秋色图",
+    "titleVi": "Tước Hoa Thu Sắc Đồ",
+    "artistZh": "赵孟頫",
+    "artistVi": "Triệu Mạnh Phủ",
+    "museum": "台北故宫博物院 (Bảo tàng Cố Cung Đài Bắc)",
+    "eraId": "yuan",
+    "search": "File:Autumn Colors on the Qiao and Hua Mountains.jpg",
+    "fallbacks": [
+      "File:Zhao Mengfu - Autumn Colors on the Qiao and Hua Mountains.jpg",
+      "File:Zhao Mengfu Autumn Colors.jpg"
+    ],
+    "filename": "30_quehua_qiuse.jpg"
+  },
+  {
+    "id": "xiushi-shulin",
+    "titleZh": "秀石疏林图",
+    "titleVi": "Tú Thạch Sơ Lâm Đồ",
+    "artistZh": "赵孟頫",
+    "artistVi": "Triệu Mạnh Phủ",
+    "museum": "故宫博物院 (Bảo tàng Cố Cung Bắc Kinh)",
+    "eraId": "yuan",
+    "search": "File:Zhao Mengfu - Elegant Rocks and Sparse Trees.jpg",
+    "fallbacks": [
+      "File:Zhao Mengfu Xiushi Shulin.jpg",
+      "File:Zhao Mengfu Sparse Trees.jpg"
+    ],
+    "filename": "31_xiushi_shulin.jpg"
+  },
+  {
+    "id": "fuchun-shanju",
+    "titleZh": "富春山居图",
+    "titleVi": "Phú Xuân Sơn Cư Đồ",
+    "artistZh": "黄公望",
+    "artistVi": "Hoàng Công Vọng",
+    "museum": "台北故宫博物院 (Bản Vô Dụng Sư) & 浙江省博物馆 (Bản Thặng Sơn Đồ)",
+    "eraId": "yuan",
+    "search": "File:Dwelling in the Fuchun Mountains.jpg",
+    "fallbacks": [
+      "File:Huang Gongwang - Dwelling in the Fuchun Mountains.jpg",
+      "File:Fuchun Shanju Tu.jpg"
+    ],
+    "filename": "32_fuchun_shanju.jpg"
+  },
+  {
+    "id": "dongting-yuyin",
+    "titleZh": "洞庭渔隐图",
+    "titleVi": "Động Đình Ngư Ẩn Đồ",
+    "artistZh": "吴镇",
+    "artistVi": "Ngô Trấn",
+    "museum": "台北故宫博物院 (Bảo tàng Cố Cung Đài Bắc)",
+    "eraId": "yuan",
+    "search": "File:Wu Zhen - Fishermen.jpg",
+    "fallbacks": [
+      "File:Wu Zhen - The Hermit Fisherman of Lake Dongting.jpg",
+      "File:Wu Zhen Dongting Yuyin.jpg"
+    ],
+    "filename": "33_dongting_yuyin.jpg"
+  },
+  {
+    "id": "liujunzi-tu",
+    "titleZh": "六君子图",
+    "titleVi": "Lục Quân Tử Đồ",
+    "artistZh": "倪瓒",
+    "artistVi": "Nghê Toản",
+    "museum": "上海博物馆 (Bảo tàng Thượng Hải)",
+    "eraId": "yuan",
+    "search": "File:Ni Zan - Six Gentlemen.jpg",
+    "fallbacks": [
+      "File:Ni Zan Six Gentlemen Shanghai.jpg",
+      "File:Ni Zan Liujunzi Tu.jpg"
+    ],
+    "filename": "34_liujunzi_tu.jpg"
+  },
+  {
+    "id": "qingbian-yinju",
+    "titleZh": "青卞隐居图",
+    "titleVi": "Thanh Biện Ẩn Cư Đồ",
+    "artistZh": "王蒙",
+    "artistVi": "Vương Mông",
+    "museum": "上海博物馆 (Bảo tàng Thượng Hải)",
+    "eraId": "yuan",
+    "search": "File:Wang Meng - Dwelling in the Qingbian Mountains.jpg",
+    "fallbacks": [
+      "File:Wang Meng Qingbian Mountains Shanghai.jpg",
+      "File:Wang Meng Qingbian Yinju.jpg"
+    ],
+    "filename": "35_qingbian_yinju.jpg"
+  },
+  {
+    "id": "lushan-gao",
+    "titleZh": "庐山高图",
+    "titleVi": "Lư Sơn Cao Đồ",
+    "artistZh": "沈周",
+    "artistVi": "Thẩm Chu",
+    "museum": "台北故宫博物院 (Bảo tàng Cố Cung Đài Bắc)",
+    "eraId": "ming",
+    "search": "File:Shen Zhou - Lofty Mount Lu.jpg",
+    "fallbacks": [
+      "File:Shen Zhou Lofty Mount Lu Taipei.jpg",
+      "File:Shen Zhou Lushan Gao.jpg"
+    ],
+    "filename": "36_lushan_gao.jpg"
+  },
+  {
+    "id": "gumu-youquan",
+    "titleZh": "古木幽泉图",
+    "titleVi": "Cổ Mộc U Tuyền Đồ",
+    "artistZh": "文徵明",
+    "artistVi": "Văn Trưng Minh",
+    "museum": "台北故宫博物院 (Bảo tàng Cố Cung Đài Bắc)",
+    "eraId": "ming",
+    "search": "File:Wen Zhengming - Old Trees by a Cold Waterfall.jpg",
+    "fallbacks": [
+      "File:Wen Zhengming - Ancient Trees and Cold Spring.jpg",
+      "File:Wen Zhengming Gumu Youquan.jpg"
+    ],
+    "filename": "37_gumu_youquan.jpg"
+  },
+  {
+    "id": "shanlu-songsheng",
+    "titleZh": "山路松声图",
+    "titleVi": "Sơn Lộ Tùng Thanh Đồ",
+    "artistZh": "唐寅 (唐伯虎)",
+    "artistVi": "Đường Dần (Đường Bá Hổ)",
+    "museum": "台北故宫博物院 (Bảo tàng Cố Cung Đài Bắc)",
+    "eraId": "ming",
+    "search": "File:Tang Yin - Whispering Pines on a Mountain Path.jpg",
+    "fallbacks": [
+      "File:Tang Yin Mountain Path Whispering Pines.jpg",
+      "File:Tang Yin Shanlu Songsheng.jpg"
+    ],
+    "filename": "38_shanlu_songsheng.jpg"
+  },
+  {
+    "id": "hangong-chunxiao",
+    "titleZh": "汉宫春晓图",
+    "titleVi": "Hán Cung Xuân Hiểu Đồ",
+    "artistZh": "仇英",
+    "artistVi": "Cừu Anh",
+    "museum": "台北故宫博物院 (Bảo tàng Cố Cung Đài Bắc)",
+    "eraId": "ming",
+    "search": "File:Qiu Ying - Spring Morning in the Han Palace.jpg",
+    "fallbacks": [
+      "File:Spring Morning in the Han Palace Qiu Ying.jpg",
+      "File:Hangong Chunxiao Qiu Ying.jpg"
+    ],
+    "filename": "39_hangong_chunxiao.jpg"
+  },
+  {
+    "id": "qiuxing-bajing",
+    "titleZh": "秋兴八景图",
+    "titleVi": "Thu Hưng Bát Cảnh Đồ",
+    "artistZh": "董其昌",
+    "artistVi": "Đổng Kỳ Xương",
+    "museum": "上海博物馆 (Bảo tàng Thượng Hải)",
+    "eraId": "ming",
+    "search": "File:Dong Qichang - Eight Views of Autumn Moods.jpg",
+    "fallbacks": [
+      "File:Dong Qichang Eight Views Autumn.jpg",
+      "File:Dong Qichang Autumn Moods.jpg"
+    ],
+    "filename": "40_qiuxing_bajing.jpg"
+  },
+  {
+    "id": "mo-putao",
+    "titleZh": "墨葡萄图",
+    "titleVi": "Mặc Bồ Đào Đồ",
+    "artistZh": "徐渭",
+    "artistVi": "Từ Vị",
+    "museum": "故宫博物院 (Bảo tàng Cố Cung Bắc Kinh)",
+    "eraId": "ming",
+    "search": "File:Xu Wei - Grapes.jpg",
+    "fallbacks": [
+      "File:Xu Wei Inky Grapes Palace Museum.jpg",
+      "File:Xu Wei Mo Putao.jpg"
+    ],
+    "filename": "41_mo_putao.jpg"
+  },
+  {
+    "id": "huishan-chahui",
+    "titleZh": "惠山茶会图",
+    "titleVi": "Huệ Sơn Trà Hội Đồ",
+    "artistZh": "文徵明",
+    "artistVi": "Văn Trưng Minh",
+    "museum": "故宫博物院 (Bảo tàng Cố Cung Bắc Kinh)",
+    "eraId": "ming",
+    "search": "File:Wen Zhengming - Tea Party at Huishan.jpg",
+    "fallbacks": [
+      "File:Wen Zhengming Huishan Tea Party.jpg",
+      "File:Huishan Chahui Tu.jpg"
+    ],
+    "filename": "42_huishan_chahui.jpg"
+  },
+  {
+    "id": "luomu-qiuse",
+    "titleZh": "落木秋色图",
+    "titleVi": "Lạc Mộc Thu Sắc Đồ",
+    "artistZh": "王时敏",
+    "artistVi": "Vương Thời Mẫn",
+    "museum": "上海博物馆 (Bảo tàng Thượng Hải)",
+    "eraId": "qing",
+    "search": "File:Wang Shimin - Autumn Landscape.jpg",
+    "fallbacks": [
+      "File:Wang Shimin - Falling Leaves and Autumn Colors.jpg",
+      "File:Wang Shimin Luomu Qiuse.jpg"
+    ],
+    "filename": "43_luomu_qiuse.jpg"
+  },
+  {
+    "id": "kangxi-nanxun",
+    "titleZh": "康熙南巡图",
+    "titleVi": "Khang Hy Nam Tuần Đồ",
+    "artistZh": "王翚 (领衔主笔)",
+    "artistVi": "Vương Huy (Chủ biên)",
+    "museum": "故宫博物院 (Bắc Kinh), Musée Guimet (Paris), The Met (New York)",
+    "eraId": "qing",
+    "search": "File:Wang Hui - Kangxi Southern Inspection Tour.jpg",
+    "fallbacks": [
+      "File:The Kangxi Emperor's Southern Inspection Tour, Scroll Seven.jpg",
+      "File:Kangxi Nanxun Tu Wang Hui.jpg"
+    ],
+    "filename": "44_kangxi_nanxun.jpg"
+  },
+  {
+    "id": "wanhe-songfeng-qing",
+    "titleZh": "万壑松风图",
+    "titleVi": "Vạn Hác Tùng Phong Đồ (Thanh triều)",
+    "artistZh": "王原祁",
+    "artistVi": "Vương Nguyên Kỳ",
+    "museum": "故宫博物院 (Bảo tàng Cố Cung Bắc Kinh)",
+    "eraId": "qing",
+    "search": "File:Wang Yuanqi - Pines in Autumn Mountains.jpg",
+    "fallbacks": [
+      "File:Wang Yuanqi - Wind in Pines Among Valleys.jpg",
+      "File:Wang Yuanqi Landscape.jpg"
+    ],
+    "filename": "45_wanhe_songfeng_qing.jpg"
+  },
+  {
+    "id": "huaiyang-jieqiu",
+    "titleZh": "淮扬洁秋图",
+    "titleVi": "Hoài Dương Khiết Thu Đồ",
+    "artistZh": "石涛",
+    "artistVi": "Thạch Đào",
+    "museum": "南京博物院 (Bảo tàng Nam Kinh)",
+    "eraId": "qing",
+    "search": "File:Shitao - Reminiscences of Qinhuai River.jpg",
+    "fallbacks": [
+      "File:Shitao - Landscape.jpg",
+      "File:Shitao Huaiyang Jieqiu.jpg"
+    ],
+    "filename": "46_huaiyang_jieqiu.jpg"
+  },
+  {
+    "id": "kongque-zhushi",
+    "titleZh": "孔雀竹石图",
+    "titleVi": "Khổng Tước Trúc Thạch Đồ",
+    "artistZh": "八大山人 (朱耷)",
+    "artistVi": "Bát Đại Sơn Nhân (Chu Đáp)",
+    "museum": "故宫博物院 (Bảo tàng Cố Cung Bắc Kinh)",
+    "eraId": "qing",
+    "search": "File:Bada Shanren - Peacock and Bamboo.jpg",
+    "fallbacks": [
+      "File:Bada Shanren - Two Peacocks.jpg",
+      "File:Bada Shanren Peacock Rock.jpg"
+    ],
+    "filename": "47_kongque_zhushi.jpg"
+  },
+  {
+    "id": "zhushi-tu",
+    "titleZh": "竹石图",
+    "titleVi": "Trúc Thạch Đồ",
+    "artistZh": "郑板桥 (郑燮)",
+    "artistVi": "Trịnh Bản Kiều (Trịnh Tiếp)",
+    "museum": "故宫博物院 (Bảo tàng Cố Cung Bắc Kinh)",
+    "eraId": "qing",
+    "search": "File:Zheng Xie - Bamboo and Rocks.jpg",
+    "fallbacks": [
+      "File:Zheng Banqiao - Bamboo and Stone.jpg",
+      "File:Zheng Banqiao Bamboo.jpg"
+    ],
+    "filename": "48_zhushi_tu.jpg"
+  },
+  {
+    "id": "moxia-tu",
+    "titleZh": "墨虾图",
+    "titleVi": "Mặc Hà Đồ",
+    "artistZh": "齐白石",
+    "artistVi": "Tề Bạch Thạch",
+    "museum": "中国美术馆 (Bảo tàng Mỹ thuật Trung Quốc, Bắc Kinh)",
+    "eraId": "modern",
+    "search": "File:Qi Baishi - Shrimps.jpg",
+    "fallbacks": [
+      "File:Qi Baishi Shrimps.jpg",
+      "File:Qi Baishi Moxia.jpg"
+    ],
+    "filename": "49_moxia_tu.jpg"
+  },
+  {
+    "id": "benma-tu",
+    "titleZh": "奔马图",
+    "titleVi": "Bôn Mã Đồ",
+    "artistZh": "徐悲鸿",
+    "artistVi": "Từ Bi Hồng",
+    "museum": "徐悲鸿纪念馆 (Nhà tưởng niệm Từ Bi Hồng, Bắc Kinh)",
+    "eraId": "modern",
+    "search": "File:Xu Beihong - Galloping Horse.jpg",
+    "fallbacks": [
+      "File:Xu Beihong Galloping Horse.jpg",
+      "File:Xu Beihong Benma.jpg"
+    ],
+    "filename": "50_benma_tu.jpg"
+  },
+  {
+    "id": "lushan-tu-daqian",
+    "titleZh": "庐山图",
+    "titleVi": "Lư Sơn Đồ",
+    "artistZh": "张大千",
+    "artistVi": "Trương Đại Thiên",
+    "museum": "台北故宫博物院 (Bảo tàng Cố Cung Đài Bắc)",
+    "eraId": "modern",
+    "search": "File:Zhang Daqian - Mount Lu.jpg",
+    "fallbacks": [
+      "File:Zhang Daqian Mount Lu Taipei.jpg",
+      "File:Zhang Daqian Lushan Tu.jpg"
+    ],
+    "filename": "51_lushan_tu_daqian.jpg"
+  },
+  {
+    "id": "shujiang-bishitu",
+    "titleZh": "蜀江碧石图",
+    "titleVi": "Thục Giang Bích Thạch Đồ",
+    "artistZh": "黄宾虹",
+    "artistVi": "Hoàng Tân Hồng",
+    "museum": "中国美术馆 (Bảo tàng Mỹ thuật Trung Quốc, Bắc Kinh)",
+    "eraId": "modern",
+    "search": "File:Huang Binhong - Landscape.jpg",
+    "fallbacks": [
+      "File:Huang Binhong Green River Rocks.jpg",
+      "File:Huang Binhong Shujiang.jpg"
+    ],
+    "filename": "52_shujiang_bishitu.jpg"
+  },
+  {
+    "id": "jiangshan-duojiao-1959",
+    "titleZh": "江山如此多娇",
+    "titleVi": "Giang Sơn Như Thử Đa Kiều (1959)",
+    "artistZh": "傅抱石、关山月",
+    "artistVi": "Phó Bão Thạch & Quan Sơn Nguyệt",
+    "museum": "北京人民大会堂 (Đại lễ đường Nhân dân Bắc Kinh)",
+    "eraId": "modern",
+    "search": "File:Jiangshan Ruci Duojiao.jpg",
+    "fallbacks": [
+      "assets/images/jiangshan-ruci-duojiao.jpg"
+    ],
+    "filename": "53_jiangshan_duojiao.jpg"
+  },
+  {
+    "id": "wanshan-hongbian",
+    "titleZh": "万山红遍",
+    "titleVi": "Vạn Sơn Hồng Biến",
+    "artistZh": "李可染",
+    "artistVi": "Lý Khả Nhiễm",
+    "museum": "中国美术馆 (Bảo tàng Mỹ thuật Trung Quốc) & Sưu tập tư nhân",
+    "eraId": "modern",
+    "search": "File:Li Keran - Thousands of Hills in a Crimson Blaze.jpg",
+    "fallbacks": [
+      "File:Li Keran Wanshan Hongbian.jpg",
+      "File:Li Keran Crimson Hills.jpg"
+    ],
+    "filename": "54_wanshan_hongbian.jpg"
+  }
+]

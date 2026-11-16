@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 130" role="img" aria-label="Lê Hưng Thịnh Founder and Creator Signature Seal">
+  <rect x="2" y="2" width="456" height="126" rx="8" fill="#FAF6EC" stroke="#B99A62" stroke-width="2"/>
+  <rect x="8" y="8" width="444" height="114" rx="5" fill="none" stroke="#E2D9C5" stroke-width="1"/>
+
+  <!-- Personal / Brand Seal Stamp -->
+  <rect x="24" y="24" width="82" height="82" rx="6" fill="#9F2929"/>
+  <rect x="29" y="29" width="72" height="72" rx="4" fill="none" stroke="#F7F4ED" stroke-width="1.2" opacity="0.85"/>
+  <text x="65" y="59" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="21" font-weight="700" fill="#F7F4ED">兴盛</text>
+  <line x1="38" y1="67" x2="92" y2="67" stroke="#B99A62" stroke-width="1"/>
+  <text x="65" y="90" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="20" font-weight="700" fill="#F7F4ED">探索</text>
+
+  <!-- Founder Identity Typography -->
+  <text x="128" y="45" font-family="'Cormorant Garamond', 'Libre Baskerville', Georgia, serif" font-size="26" font-weight="700" fill="#202020">Lê Hưng Thịnh</text>
+  <text x="128" y="69" font-family="'Be Vietnam Pro', 'Inter', sans-serif" font-size="12.5" font-weight="700" letter-spacing="0.4" fill="#9F2929">Founder &amp; Creator  •  创始人</text>
+  <line x1="128" y1="80" x2="430" y2="80" stroke="#D8CEBA" stroke-width="1"/>
+  <text x="128" y="99" font-family="'Be Vietnam Pro', 'Inter', sans-serif" font-size="11.5" font-weight="600" fill="#4A453B">CHINESE CULTURE EXPLORER – 中国文化探索</text>
+</svg>

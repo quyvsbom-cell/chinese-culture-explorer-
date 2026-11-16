@@ -1,0 +1,1081 @@
+Đánh Giá Độc Lập UX/UI & Kiến Trúc Tri Thức: China Culture Explorer
+Nền tảng tri thức Hán học công phu cho người Việt nhưng đang tự làm giảm độ tin cậy bởi lỗi điều hướng và hình ảnh
+Báo cáo kiểm toán độc lập toàn diện về trải nghiệm người dùng (UX), giao diện (UI), kiến trúc thông tin và độ sâu học thuật của
+China Culture Explorer
+dựa trên kiểm thử trực tiếp ngày 15/11/2026 và đối chiếu với 8 bảo tàng số hàng đầu thế giới.
+68 / 100
+Tổng điểm thực nghiệm qua 10 tiêu chí trọng số. Nổi bật ở chiều sâu 40 chuyên luận và cấu trúc chiết tự Lục thư (12/15 điểm nội dung), nhưng mất điểm nặng ở chất lượng hình ảnh (4.5/10) và lỗi tương tác tìm kiếm.
+Nhận định cốt lõi:
+China Culture Explorer
+sở hữu một tài sản nội dung hiếm có tại Việt Nam: hệ thống 40 chuyên luận khảo cứu theo cấu trúc 3 cột học thuật, 103 mục từ điển chiết tự Lục thư tích hợp xuất thẻ Anki, và góc nhìn đối chiếu giao lưu Trung – Việt xuyên suốt từ sử học, triết học đến thương mại RCEP. Tuy nhiên, dưới con mắt của một người dùng thực tế lần đầu truy cập, sản phẩm đang mang dáng dấp của một
+bản dựng kỹ thuật chưa qua khâu biên tập xuất bản (pre-release build)
+hơn là một bảo tàng số hoàn chỉnh.
+Những lỗi hiện hữu ngay trên bề mặt — thanh tìm kiếm
+Ctrl+K
+trên Header bị liệt hoàn toàn, tìm kiếm tiếng Việt có dấu trả về 0 kết quả ở danh bạ 34 tỉnh/thành, bức ảnh công nhân mặc áo bảo hộ xây gạch gắn cho mục
+Âm Dương, Ngũ Hành & Thuật số
+, chú thích nhầm
+Lan Đình Tập Tự
+thành
+Hàn Thực Thiếp
+, cùng các chuỗi lỗi lập trình như
+undefined
+,
+Biên soạn: [object Object]
+và nhãn
+MASTER PROMPT 06 & 06A
+— đang trực tiếp phá vỡ niềm tin học thuật mà nội dung văn bản dày công xây dựng.
+Part 1 — First impression: Tham vọng lớn nhưng gây ngợp thị giác trong 30 giây đầu
+Khi truy cập lần đầu vào
+China Culture Explorer
+, cảm giác đầu tiên trong 5 giây đầu là sự trang trọng và nghiêm túc nhờ bảng màu giấy tuyên (xuan paper) ấm, sắc đỏ chu sa và khung trưng bày bức đại cảnh
+《Giang Sơn Như Thử Đa Kiều》 (1959)
+ở phía phải màn hình. Người dùng nhận ra ngay đây không phải là một trang blog du lịch thương mại mà là một dự án biên khảo văn hiến có đầu tư.
+Tuy nhiên, từ giây thứ 10 đến giây thứ 30, sự hào hứng ban đầu nhanh chóng chuyển thành cảm giác
+quá tải nhận thức (cognitive overload)
+và bối rối về điểm bắt đầu vì bốn nguyên nhân trực tiếp trên màn hình đầu tiên (Above the Fold):
+Thanh điều hướng bị vỡ thành 2 tầng chồng chéo:
+Ngay dưới thanh công cụ trên cùng (vốn đã chứa ô tìm kiếm, nút
+Bảo tàng Số
+,
+Quốc họa Danh tác
+, chọn ngôn ngữ
+VI
+, nút
+简/繁
+, Dark Mode và
+About
+), thanh Main Menu chứa tới 11 mục song ngữ Việt – Hán khiến giao diện desktop bị rớt xuống 2 hàng (Hàng 1 từ
+Trang chủ 首页
+đến
+Trung – Việt 中越交流
+; Hàng 2 gồm
+Văn hóa Kinh doanh 商业文化
+,
+Nghiên cứu 学术研究
+,
+Học tập 我的学习
+).
+Thông điệp thương hiệu ôm đồm và lặp lại:
+Hero Section cố gắng định nghĩa website cùng lúc là
+bảo tàng số
+,
+bách khoa văn hiến Đông Á
+,
+phòng học Hán ngữ chủ động
+, kèm đoạn giới thiệu song ngữ Anh – Việt dài, hai câu khẩu hiệu tiếng Anh trong khung trích dẫn và dòng ghi công nhà sáng lập lặp lại ở cả Header lẫn Hero.
+Bảy điểm nhấn hành động cạnh tranh nhau:
+Trong cùng một khung nhìn Hero, người dùng đứng trước 3 nút CTA chính (
+Explore Knowledge (40 Chuyên luận)
+,
+Start a Learning Journey (6 Lộ trình)
+,
+Search the Archive
+), 1 ô tìm kiếm nhanh kèm 6 tag gợi ý, và 3 nút chuyển tranh bên phải. Khi mọi thứ đều được làm nổi bật, người dùng mới không biết đâu là lối vào chính.
+Cú sốc khi thử tương tác đầu tiên:
+Phản xạ tự nhiên của người dùng trước một trang nhiều chữ là nhấp vào thanh tìm kiếm lớn trên Header (
+Tìm sử liệu, triết học, từ vựng, hiện vật... Ctrl+K
+). Khi nhấp vào, ô tìm kiếm chỉ hiện viền đỏ nhưng
+hoàn toàn không thể gõ chữ và không mở hộp thoại tra cứu
+. Trải nghiệm bị khựng lại ngay ở thao tác đầu tiên.
+Part 2 — What works well: Năm giá trị cốt lõi thực sự tạo nên sức nặng của sản phẩm
+Bỏ qua các lời khen xã giao, kiểm thử thực tế trên
+China Culture Explorer
+cho thấy 5 điểm mạnh thực chất mà rất ít dự án cá nhân hoặc cổng thông tin tiếng Việt đạt tới:
+1. Bố cục bài chuyên luận 3 cột chuẩn nghiên cứu
+Khi mở một bài khảo cứu chuyên sâu (như
+Thư Pháp Ngũ Thể
+hoặc
+Bách Gia Chư Tử
+), giao diện đọc 3 cột phát huy hiệu quả rõ rệt: cột trái là Mục lục điều hướng theo cấu trúc học thuật (Bối cảnh lịch sử, Tư liệu gốc trích dẫn, Thuật ngữ trọng yếu, Phân tích so sánh, Tài liệu tham khảo); cột giữa trình bày lập luận mạch lạc; cột phải trích xuất
+Từ vựng chuyên đề
+kèm chữ Hán và Pinyin chuẩn xác (ví dụ:
+文房四宝 Wénfáng Sìbǎo
+,
+篆刻 Zhuànkè
+,
+兰亭集序 Lántíng Jíxù
+).
+2. Hệ quy chiếu đối sánh Trung – Việt xuyên suốt
+Thay vì dịch thuật máy móc từ nguồn tiếng Trung hay tiếng Anh, nội dung được thiết kế xoay quanh nhu cầu nhận thức của người đọc Việt Nam: đối chiếu thể chế khoa cử, tiếp biến Nho – Đạo – Phật, lịch sử bang giao và hành lang thương mại RCEP. Đây là lợi thế cạnh tranh lớn nhất giúp sản phẩm có bản sắc riêng.
+3. Tích hợp học Hán ngữ qua chiết tự Lục thư và xuất thẻ Anki
+Hệ thống 103 mục từ điển không chỉ dừng ở nghĩa từ vựng mà giải nghĩa theo cấu trúc
+Lục thư (六书)
+và cho phép người học lưu từ, theo dõi tiến độ tại mục
+Học tập 我的学习
+. Chức năng
+♡ Lưu
+(Bookmark) hoạt động ổn định qua
+localStorage
+, cập nhật tức thì số lượng mục đã lưu trên bảng điều khiển cá nhân.
+4. Công cụ đối chiếu trực tiếp 2 Tỉnh/Thành theo 7 chiều
+Trong chế độ
+Danh bạ & So sánh 34 Tỉnh/Thành
+, tính năng chọn và đặt 2 địa phương cạnh nhau (ví dụ đặt
+Bắc Kinh
+cạnh
+Quảng Đông
+) hoạt động mượt, giúp người dùng so sánh nhanh vị thế hành chính, trụ cột kinh tế, di sản văn hóa, ẩm thực và cẩm nang di chuyển mà không phải mở nhiều tab.
+Part 3 — What needs improvement: Mười vấn đề thực tế đang làm xói mòn trải nghiệm và uy tín
+Dưới góc nhìn của một nhà phê bình sản phẩm số khắt khe, các vấn đề dưới đây không phải là khác biệt về gu thẩm mỹ mà là những lỗi chức năng, dữ liệu và biên tập đã được xác nhận trực tiếp trên bản chạy thực tế:
+1. Kiến trúc Single-Page (SPA) không có URL Routing và giữ kẹt vị trí cuộn
+Toàn bộ website chạy trên một URL duy nhất (
+wonderful-clafoutis-8b4aa3.netlify.app
+). Khi chuyển giữa các chuyên mục hoặc mở bài viết, đường dẫn trình duyệt không thay đổi, khiến người dùng không thể chia sẻ link một bài chuyên luận cụ thể và không thể dùng nút
+Back
+của trình duyệt. Nghiêm trọng hơn, khi cuộn xuống cuối trang (ví dụ ở Footer) rồi bấm chuyển sang tab
+Khám phá 探索
+hoặc
+Quốc họa Danh tác
+, trang mới không tự cuộn lên đầu (
+window.scrollTo(0,0)
+) mà giữ nguyên vị trí ở lưng chừng hoặc cuối trang.
+2. Rò rỉ chuỗi lỗi lập trình và nhãn QA nội bộ ra giao diện công khai
+Người dùng dễ dàng bắt gặp dấu vết của quá trình tạo dữ liệu tự động chưa qua kiểm duyệt: bài viết
+Thư Pháp Ngũ Thể
+hiển thị tác giả là
+Biên soạn: [object Object]
+; Mega-menu
+Triết học 哲学
+hiển thị 4 dòng phụ đề là
+undefined
+dưới cột
+Tống–Minh Lý học & 15 Kinh điển gốc
+; tiêu đề trang
+Nghiên cứu
+in nguyên dòng nhắc lệnh nội bộ
+MASTER PROMPT 06 & 06A • 学术研究、九大专著与持续知识情报中心
+; thẻ bài viết hiện nhãn
+Recently Verified • v2.1 (49/50)
+.
+3. Hình ảnh minh họa sai lệch nghiêm trọng và lặp lại cẩu thả
+Tại Section 03 trên Trang chủ, thẻ chuyên mục
+Âm Dương, Ngũ Hành & Thuật số
+lại hiển thị bức ảnh
+một công nhân xây dựng đội mũ bảo hộ, mặc áo phản quang vàng đang xây tường gạch
+. Trong bài
+Thư Pháp Ngũ Thể
+, chú thích ghi
+"Kiệt tác Hành thư 《Hàn Thực Thiếp》 của Tô Đông Pha"
+nhưng hình ảnh thực tế lại là bản
+《Lan Đình Tập Tự》
+của Vương Hy Chi (nhận diện rõ qua cụm chữ
+...錄其所述，雖世殊事異...
+). Ngoài ra, cùng một bức sơ đồ không ảnh Tử Cấm Thành Bắc Kinh bị kéo giãn ngang được dùng lặp lại cho cả vùng
+Hoa Đông
+(dù Bắc Kinh thuộc Hoa Bắc),
+Trung – Việt
+,
+Văn hóa Kinh doanh
+,
+Nghiên cứu
+và
+Học tập
+.
+4. Lỗi bộ máy tìm kiếm tiếng Việt có dấu và thanh Search Header
+Bên cạnh việc ô tìm kiếm
+Ctrl+K
+trên Header bị vô hiệu hóa hoàn toàn, ô tìm kiếm tại
+Danh bạ 34 Tỉnh/Thành
+không xử lý chuẩn hóa chuỗi tiếng Việt (Unicode normalization / strip accents): khi người dùng Việt Nam gõ
+Quảng Đông
+hoặc
+Tứ Xuyên
+, hệ thống trả về
+0 kết quả
+và biến toàn bộ lưới thẻ thành khoảng trắng trống rỗng không lời giải thích; trong khi gõ tiếng Anh
+Sichuan
+hay
+Tibet
+lại tìm thấy.
+5. Mega-menu xuyên thấu gây nhiễu chữ và lỗi ký tự nút đóng Modal
+Các menu thả xuống trên thanh điều hướng (
+Khám phá v
+,
+Lịch sử v
+,
+Triết học v
+) chỉ mở khi nhấp trúng mũi tên nhỏ và có nền bán trong suốt thiếu độ mờ (backdrop-filter), làm chữ của menu đè trực tiếp lên chữ của Hero Section phía sau. Khi mở các cửa sổ Modal (Hồ sơ tỉnh, So sánh tỉnh), nút đóng ở góc phải bị lỗi font biểu tượng, hiển thị thành ký tự ô vuông rỗng
+[]
+.
+6. Tương phản màu sắc vi phạm chuẩn đọc ở Modal phóng to và Dark Mode
+Khi bấm
+Phóng to
+để xem chi tiết tranh ở trang Quốc họa hoặc Bảo tàng Số, phần chữ tiêu đề và nguồn Wikimedia Commons ở góc trên bên trái dùng màu trắng kem nằm đè lên nền sáng trắng của modal, khiến chữ gần như tàng hình. Khi bật chế độ tối (Dark Mode), chữ
+Quốc họa Danh tác
+trên thanh công cụ chuyển sang màu đỏ sẫm trên nền đen xám, rất mỏi mắt khi đọc.
+Part 4 — User persona reviews: Trải nghiệm thực tế qua lăng kính 8 nhóm người dùng
+Để đánh giá khách quan xem
+China Culture Explorer
+có thực sự giải quyết được bài toán của từng tập khách hàng mục tiêu hay không, bảng dưới đây ghi lại hành trình trải nghiệm thực tế của 8 nhóm người dùng độc lập:
+Nhóm người dùng (Persona)
+Hành trình & Trải nghiệm thực tế
+Điểm hài lòng (What delights)
+Điểm gây hụt hẫng / Rời bỏ (Frustrations)
+Cải tiến có giá trị nhất
+1. First-time Visitor
+Người mới truy cập
+Cuộn dọc trang chủ dài 8 khu vực lớn; thử bấm thanh tìm kiếm trên cùng không được; chuyển sang bấm khối
+Quick Start Tour (5 phút)
+.
+Giao diện mang màu sắc văn hiến cổ điển rõ nét; mục
+Bắt đầu từ đâu trong 5 phút?
+gợi ý được 4 cánh cửa định hướng ban đầu.
+Quá nhiều khối chữ và nút bấm cạnh tranh ở phần đầu trang; thấy ảnh công nhân xây gạch ở mục
+Âm Dương Ngũ Hành
+nên nghi ngờ chất lượng trang.
+Rút gọn Hero Section còn 1 thông điệp + 1 thanh tìm kiếm hoạt động thật; lọc bỏ 100% ảnh sai chủ đề trên trang chủ.
+2. Chinese Language Learner
+Người học tiếng Trung
+Vào đọc chuyên luận
+Thư Pháp Ngũ Thể
+, tra cột từ vựng bên phải và kiểm tra khu vực từ điển Lục thư, thử tra tên món ăn ở 34 tỉnh/thành.
+Cột phải bài viết có Hán tự + Pinyin + giải nghĩa rất sát ngữ cảnh văn hóa; bộ 103 từ chiết tự Lục thư và xuất thẻ Anki cực kỳ thiết thực.
+Trong hồ sơ 34 tỉnh/thành, các tên riêng ẩm thực và địa danh (như
+北京烤鸭
+,
+涮羊肉
+,
+炸酱面
+) chỉ có chữ Hán và tiếng Việt,
+thiếu hoàn toàn Pinyin
+và âm đọc.
+Bổ sung Pinyin và nút nghe phát âm (TTS) cho toàn bộ danh từ riêng, món ăn, địa danh trong 34 tỉnh/thành; tích hợp popup tra chữ khi bôi đen.
+3. Chinese Culture Enthusiast
+Người yêu văn hóa
+Khám phá chuyên mục
+Quốc họa Danh tác
+(54 tác phẩm),
+Bảo tàng Số
+(21 hiện vật) và các bài khảo cứu
+Bách Gia Chư Tử
+,
+Thư pháp
+.
+Sự kết hợp giữa bình giải mỹ học, bối cảnh triều đại và trích dẫn cổ thư giúp người đọc hiểu được "thần thái" tác phẩm chứ không chỉ đọc tiểu sử khô khan.
+Bắt gặp lỗi râu ông nọ cắm cằm bà kia: chú thích ghi
+Hàn Thực Thiếp
+của Tô Đông Pha nhưng ảnh lại là
+Lan Đình Tập Tự
+của Vương Hy Chi; thanh 7 kỷ nguyên hội họa bị cắt chữ.
+Kiểm toán chéo toàn bộ cặp Ảnh – Chú thích – Niên đại trong 54 bức Quốc họa và 21 hiện vật; bổ sung chế độ xem cuộn ngang toàn cảnh cho tranh cuộn dài.
+4. Academic Researcher
+Sinh viên & Nghiên cứu
+Mở tab
+Nghiên cứu 学术研究
+, kiểm tra 15 kinh điển gốc, thử trích xuất trích dẫn APA/BibTeX và bấm vào mục
+Tài liệu Tham khảo
+trên TOC.
+Bài viết có cấu trúc luận điểm rõ, phân biệt bối cảnh lịch sử với phân tích so sánh; có sẵn công cụ tạo trích dẫn học thuật APA và BibTeX.
+Dòng tác giả hiện lỗi
+Biên soạn: [object Object]
+; tiêu đề trang lộ
+MASTER PROMPT 06 & 06A
+; bấm vào
+Tài liệu Tham khảo
+trên TOC trái trang không cuộn xuống nguồn.
+Sửa lỗi hiển thị metadata tác giả/nguồn; gắn liên kết định danh đến văn bản gốc (như CText.org hoặc hồ sơ bảo tàng lưu trữ hiện vật).
+5. International / VN Tourist
+Khách du lịch
+Vào mục
+Vùng miền 地域
+, mở
+Danh bạ 34 Tỉnh/Thành
+, gõ tìm
+Tứ Xuyên
+,
+Quảng Đông
+rồi mở hồ sơ Bắc Kinh, Thượng Hải, Tây Tạng.
+Mỗi tỉnh có mục
+Mùa du lịch đẹp nhất
+,
+Di sản đặc trưng
+,
+Ẩm thực biểu tượng
+và
+Cẩm nang thực địa & di chuyển
+tóm lược gọn gàng.
+Gõ tiếng Việt có dấu
+Tứ Xuyên
+hay
+Quảng Đông
+trả về màn hình trắng (phải gõ tiếng Anh
+Sichuan
+mới ra); bản đồ tương tác chỉ có 16 chấm tròn chứ không bấm chọn được 34 tỉnh.
+Sửa bộ lọc tìm kiếm tiếng Việt có dấu/không dấu; nâng cấp bản đồ SVG thành bản đồ địa lý 34 tỉnh có thể nhấp trực tiếp kèm gợi ý tuyến hành trình.
+6. Visual Explorer
+Người khám phá thị giác
+Duyệt lưới ảnh tại
+Quốc họa Danh tác
+và
+Bảo tàng Số
+, bấm nút
+Phóng to
+để thưởng lãm chi tiết nét bút của
+Thanh Minh Thượng Hà Đồ
+.
+Ý tưởng tách riêng không gian
+Bảo tàng Số
+và
+Quốc họa Danh tác
+tạo cảm hứng thưởng lãm nghệ thuật rõ rệt.
+Nhiều thẻ tranh lúc mới mở chỉ hiện khung màu be trống trơn do tải chậm; ảnh
+Thanh Minh Thượng Hà Đồ
+độ phân giải thấp, phóng to bị nhòe vỡ hạt; chữ chú thích trên modal phóng to bị chìm trắng trên nền trắng.
+Tích hợp trình xem ảnh Deep Zoom (tương tự OpenSeadragon/IIIF) cho các bức tranh cuộn kinh điển; sửa nền tối cho phần chú thích trong hộp thoại Zoom.
+7. Professional / Business User
+Người làm kinh doanh
+Truy cập tab
+Văn hóa Kinh doanh 商业文化
+,
+Trung – Việt 中越交流
+và xem mục
+Trụ cột kinh tế & công nghiệp
+trong hồ sơ các tỉnh.
+Hiếm có website văn hóa nào tích hợp cả phân tích RCEP, văn hóa đàm phán B2B (Guanxi, Mianzi), thương mại biên mậu và trụ cột công nghiệp từng tỉnh.
+Tất cả các banner của mục Kinh doanh và Trung – Việt đều dùng chung bức ảnh sơ đồ Tử Cấm Thành kéo giãn; thiếu bản đồ cụm công nghiệp (industrial clusters) và cửa khẩu.
+Bổ sung dữ liệu cụm sản xuất – logistics trọng điểm (Châu thổ sông Châu Giang, Trường Giang, hành lang Quảng Tây – Vân Nam) và tách biệt rõ văn hóa thươngigiới đương đại với cổ sử.
+8. Returning User
+Người dùng quay lại
+Lưu thử hồ sơ
+Bắc Kinh
+vào
+♡ Lưu
+, kiểm tra mục
+Tiếp tục gần đây
+ở trang chủ và bảng điều khiển
+Học tập 我的学习
+.
+Nút
+♡ Lưu
+phản hồi tức thì (chuyển thành
+♥ Đã lưu
+) và đồng bộ chính xác số lượng vào trang cá nhân hóa
+Học tập 我的学习
+.
+Mục
+Tiếp tục gần đây
+trên trang chủ hiển thị 2 thẻ pill bị trùng lặp cùng một bài
+Bách Gia Chư Tử
+; không thể bookmark URL trình duyệt vì SPA không có route riêng.
+Khử trùng lặp lịch sử đọc (deduplicate reading history); bổ sung URL routing (ví dụ
+#/essay/thu-phap-ngu-the
+) và thông báo số bài đọc/từ vựng cần ôn tập theo ngày.
+Part 5 — Design, technical & content audit: Kiểm toán chi tiết 8 khu vực hệ thống, 34 tỉnh/thành và 20 lĩnh vực tri thức
+5.1. Kiểm toán 8 khía cạnh giao diện, điều hướng và kỹ thuật (A – H)
+A. Homepage & B. Navigation / Information Architecture
+Homepage:
+Chiều dài trang chủ quá lớn (8 đại khu vực nối tiếp nhau), trong đó Section 01 (Quick Start Tour), Section 02 (5 hành trình theo vai trò) và Section 04 (6 lộ trình học tập) có chức năng điều hướng trùng lặp nhau. Footer 5 cột được tổ chức sạch sẽ, phân tách rõ
+Explore
+,
+Learning & Research
+,
+About
+và
+Legal
+.
+Navigation & IA:
+Menu chính bị tràn thành 2 dòng trên desktop. Mega-menu yêu cầu click vào mũi tên nhỏ
+v
+mới mở, nền bán trong suốt gây đè chữ. Trong Mega-menu
+Văn hóa Truyền thống
+, tiêu đề cột ghi
+"BỐN MẢNG VĂN HÓA & BẢO TÀNG SỐ"
+nhưng bên dưới lại liệt kê 5 mục.
+C. Content & D. Visual Design
+Content:
+Chiều sâu bài chuyên luận đạt chất lượng cao nhưng khâu làm sạch dữ liệu (data sanitization) trước khi hiển thị còn lỗi (
+[object Object]
+,
+undefined
+, dư dấu ngoặc đơn
+(Wei-Jin Xuanxue (Neo-Daoism))
+và
+Tây Tạng (Tibet Autonomous Region (Xizang))
+).
+Visual Design:
+Bảng màu cổ điển hợp chủ đề nhưng bị phá hỏng bởi: (1) Ảnh công nhân xây gạch ở mục
+Âm Dương Ngũ Hành
+; (2) Bức ảnh sơ đồ Tử Cấm Thành bị kéo dãn tỷ lệ khung hình (aspect-ratio distortion) và lặp lại ở 5 chuyên mục khác nhau; (3) Sai lệch giữa ảnh và chú thích tác phẩm thư pháp.
+E. Interaction & F. Mobile / Responsive Experience
+Interaction:
+Ô tìm kiếm
+Ctrl+K
+trên Header không hoạt động; tìm kiếm ở
+Khám phá
+bị trễ nhịp cập nhật bộ đếm (gõ
+Y học
+nhấn Enter vẫn báo 40 mục cho đến khi nhấp thêm bộ lọc pill); tìm kiếm tiếng Việt có dấu ở 34 tỉnh bị lỗi. Mục lục bên trái bài viết không cuộn trang khi nhấp vào
+Tài liệu Tham khảo
+.
+Responsive & Layout:
+Ngay trên khung hình chuẩn desktop, thanh menu chính đã bị rớt dòng và thanh
+Tiến trình Lịch sử Hội họa (7 Kỷ nguyên)
+bị tràn ngang, cắt mất chữ
+Cận đại & Hiện...
+.
+(Ghi chú giới hạn kiểm thử: Quá trình kiểm tra thực tế được thực hiện trên trình duyệt desktop, chưa giả lập thao tác chạm trên thiết bị di động vật lý, nhưng hiện tượng vỡ dòng menu và tràn ngang thanh tab trên desktop cho thấy nguy cơ chồng lấp cao trên màn hình hẹp).
+G. Performance & H. Accessibility
+Performance:
+Tốc độ chuyển tab SPA nhanh do dữ liệu được đóng gói sẵn ở phía client, nhưng hình ảnh tại
+Quốc họa Danh tác
+và
+Bảo tàng Số
+tải chậm, để lại các ô màu be trống và thiếu cơ chế ảnh thu nhỏ mờ (blur-up placeholder) hoặc chuẩn nén WebP/AVIF tối ưu.
+Accessibility:
+Vi phạm độ tương phản WCAG ở 3 vị trí: chữ trắng kem trên nền trắng trong Modal phóng to ảnh; chữ trắng trên nền hồng nhạt của nút
+Khảo cứu chi tiết
+; và chữ đỏ sẫm/xám tối trên nền đen khi bật Dark Mode. Biểu tượng nút đóng modal bị lỗi thành
+[]
+làm giảm khả năng nhận diện của trình đọc màn hình.
+5.2. Đánh giá chuyên sâu khu vực 34 Đơn vị Hành chính Cấp tỉnh Trung Quốc
+Kiểm tra thực tế cả 3 chế độ trong chuyên mục
+Vùng miền 地域
+cho thấy sự chênh lệch rõ giữa phần dữ liệu danh bạ và phần bản đồ trực quan:
+Độ chính xác về phân loại hành chính (Điểm sáng):
+Chế độ 3 (
+Danh bạ & So sánh 34 Tỉnh/Thành
+) liệt kê đầy đủ 34 đơn vị chia theo 6 đại vùng (Hoa Bắc 6, Hoa Đông 5, Hoa Nam & Trung Nam 10, Tây Nam 5, Tây Bắc 5, Đông Bắc 3) và gắn nhãn phân biệt chính xác
+23 Tỉnh
+,
+5 Khu tự trị
+(Nội Mông, Quảng Tây, Tây Tạng, Ninh Hạ, Tân Cương),
+4 Thành phố trực thuộc Trung ương
+(Bắc Kinh, Thiên Tân, Thượng Hải, Trùng Khánh) và
+2 Đặc khu Hành chính SAR
+(Hồng Kông, Ma Cao), kèm tên Hán tự và chữ viết tắt chuẩn (
+京
+,
+沪
+,
+粤
+,
+川
+,
+藏
+...).
+Hạn chế của Bản đồ tương tác (Chế độ 1):
+Bản đồ hiện tại chưa phải là bản đồ ranh giới địa lý 34 tỉnh mà chỉ là một
+sơ đồ đa giác cách điệu 6 đại vùng
+với 16 chấm tròn đại diện cho 16 đô thị. Người dùng không thể nhìn thấy hình dáng địa lý của từng tỉnh hay nhấp chọn đủ 34 đơn vị trên bản đồ. Đặc biệt, khi chọn vùng
+Hoa Đông (华东地区)
+trên bản đồ, khung thông tin bên phải lại hiển thị nhầm bức ảnh và chú thích
+"Tử Cấm Thành Bắc Kinh"
+(vốn thuộc Hoa Bắc).
+Độ sâu hồ sơ từng địa phương:
+Khi mở
+Hồ sơ Tỉnh
+(đã kiểm tra thực tế Bắc Kinh, Thượng Hải, Quảng Đông, Tứ Xuyên, Tây Tạng, Hồng Kông, Ma Cao), hình ảnh đại diện trên thẻ tỉnh đều đúng địa danh thực tế (Thiên Đàn, Lục Gia Chủy, Tháp Quảng Châu, Cửu Trại Câu, Cung điện Potala, Cảng Victoria, Di tích Thánh Phaolô). Hồ sơ cung cấp tốt 6 mục (Thủ phủ, Mùa du lịch, Di sản văn hóa, Trụ cột kinh tế, Ẩm thực, Cẩm nang di chuyển), nhưng
+thiếu hẳn 2 mục nền tảng là Lịch sử hình thành và Địa hình – Khí hậu
+, đồng thời các tên món ăn bằng chữ Hán chưa có Pinyin.
+5.3. Đánh giá chiều sâu kiến thức trên 20 lĩnh vực văn hóa Trung Hoa
+Đối chiếu 20 lĩnh vực chuẩn mực của Hán học và Trung Quốc học với kho nội dung thực tế trên
+China Culture Explorer
+, website không chỉ là một trang tổng hợp tin tức bề nổi mà đã xây dựng được khung khảo cứu nghiêm túc ở các trụ cột cốt lõi, song vẫn còn sự mất cân đối về cấu trúc điều hướng:
+Mười hai lĩnh vực cốt lõi đã có chuyên mục hoặc khảo cứu sâu trong khi tám mảng chuyên biệt còn bị gộp ẩn
+0%
+Mức lồng ghép (35%)
+Có bài khảo cứu (70%)
+Trụ cột độc lập (100%)
+1. 中国历史 Lịch sử (14 triều đại)
+95%
+2. 中国哲学 Triết học (12 phái, 15 kinh)
+92%
+3. 中国国画 Quốc họa (54 danh tác)
+90%
+4. 中国书法 Thư pháp (Ngũ thể & Triện)
+85%
+5. 中国地理 Địa lý (6 vùng, 34 tỉnh)
+80%
+6. 中国经济 Kinh tế & Thương mại RCEP
+80%
+7. 中国民俗 Phong tục (20 tập quán)
+75%
+8. 中国传统节日 Lễ hội truyền thống
+75%
+9. 中国现代社会 Xã hội hiện đại (Guochao)
+72%
+10. 中国建筑 Kiến trúc cổ & Lâm viên
+70%
+11. 中国旅游 Du lịch (Mùa & Cẩm nang tỉnh)
+65%
+12. 中医药文化 Y học cổ truyền (Nội Kinh)
+60%
+13. 中国陶瓷 Gốm sứ (Bảo tàng Số)
+55%
+14. 中国饮食文化 Văn hóa ẩm thực & Trà
+50%
+15. 中国文学 Văn học (Đường thi, Tống từ)
+45%
+16. 中国宗教 Tôn giáo (Gộp trong Triết học)
+45%
+17. 中国教育 Giáo dục (Chuyên khảo Khoa cử)
+40%
+18. 中国科技 Khoa học kỹ thuật cổ – kim
+35%
+19. 中国非物质文化遗产 Di sản phi vật thể
+30%
+20. 中国服饰 Trang phục qua các triều đại
+25%
+Đơn vị: Tỷ lệ hoàn thiện về cấu trúc điều hướng và độ sâu bài viết thực tế trên
+China Culture Explorer
+(kiểm tra ngày 15/11/2026). Không khuyến nghị nhồi nhét thêm cả 20 mục lên thanh menu chính; thay vào đó nên nâng cấp 3 mảng có giá trị học thuật cao đang bị khuyết (Văn học cổ điển & Tứ đại danh tác, Bát đại trường phái Ẩm thực, và Trang phục Hán phục theo triều đại) thành các bộ sưu tập chuyên đề có bộ lọc rõ ràng.
+Part 6 — Missing features: Sáu tính năng thực sự giải quyết nhu cầu người dùng (Không chạy theo hiệu ứng thừa)
+Nguyên tắc cốt lõi khi nâng cấp
+China Culture Explorer
+là
+không biến website thành một kho tính năng nặng nề nhưng hời hợt
+. Dựa trên những đứt gãy thực tế trong hành trình của 8 nhóm người dùng, 6 tính năng dưới đây mang lại giá trị sử dụng trực tiếp cao nhất:
+1. Deep-Link Router & Auto Scroll-Reset
+Nhóm:
+Exploration & Technical UX.
+Giải quyết nhu cầu:
+Cho phép mỗi chuyên mục, bài chuyên luận và hồ sơ tỉnh có một đường dẫn định danh riêng (ví dụ
+#/province/sichuan
+hoặc
+#/monograph/calligraphy
+). Tự động đưa màn hình về đầu trang khi chuyển mục và khôi phục nút Back/Forward của trình duyệt.
+2. Bản đồ Địa lý 34 Tỉnh/Thành & Lọc theo Triều đại
+Nhóm:
+Exploration Experience.
+Giải quyết nhu cầu:
+Thay thế sơ đồ 6 khối đa giác hiện tại bằng bản đồ vector chuẩn ranh giới 34 đơn vị hành chính cấp tỉnh. Cho phép bật lớp phủ (layer) kinh đô lịch sử theo triều đại (Trường An, Lạc Dương, Khai Phong, Lâm An, Nam Kinh, Bắc Kinh) và hành lang kinh tế đương đại.
+3. Trình xem tranh cuộn độ phân giải cao (Deep-Zoom Handscroll Viewer)
+Nhóm:
+Visual Experience.
+Giải quyết nhu cầu:
+Các bức tranh cuộn ngang dài như
+Thanh Minh Thượng Hà Đồ
+hay
+Thiên Lý Giang Sơn Đồ
+bị biến dạng hoặc vỡ nét khi nhét vào khung thẻ chữ nhật thông thường. Cần một khung xem kéo ngang mượt kèm các điểm ghim thuyết minh (annotated hotspots) trên từng phân đoạn tranh.
+4. Popup Tra cứu Thuật ngữ Tam ngữ (Hán – Pinyin – Hán Việt)
+Nhóm:
+Learning Experience.
+Giải quyết nhu cầu:
+Khi người đọc nhấp vào bất kỳ thuật ngữ chuyên ngành hoặc tên địa danh/ẩm thực chữ Hán nào trong bài viết và hồ sơ 34 tỉnh, một thẻ nổi nhỏ hiển thị ngay Chữ Hán (Giản/Phồn), Pinyin, âm Hán – Việt, nghĩa tiếng Việt và nút thêm thẳng vào bộ thẻ ôn tập cá nhân.
+5. Chuẩn hóa Tìm kiếm Đa ngữ (Diacritic-Insensitive & Pinyin Search)
+Nhóm:
+Research & Exploration.
+Giải quyết nhu cầu:
+Kích hoạt lại hộp thoại tìm kiếm
+Ctrl+K
+toàn trang và chuẩn hóa bộ lọc để người dùng gõ tiếng Việt có dấu (
+Tứ Xuyên
+), không dấu (
+Tu Xuyen
+), Pinyin (
+Sichuan
+), âm Hán – Việt hay chữ Hán (
+四川
+) đều trả về đúng kết quả tức thì.
+6. Liên kết Văn bản Gốc & Kiểm chứng Học thuật
+Nhóm:
+Research Experience.
+Giải quyết nhu cầu:
+Với 15 kinh điển gốc và 21 bảo vật số, cung cấp liên kết đối chiếu trực tiếp tới kho văn bản cổ chuẩn quốc tế và hồ sơ bảo tàng lưu trữ hiện vật thực tế (như Cố Cung Bắc Kinh, Cố Cung Đài Bắc, Bảo tàng Quốc gia Trung Quốc) để phục vụ trích dẫn khoa học.
+Part 7 — Competitive benchmark: Bài học tổ chức tri thức và kể chuyện thị giác từ 8 nền tảng hàng đầu
+Để tránh sao chép máy móc giao diện mà học hỏi đúng bản chất cách các tổ chức văn hóa lớn giải quyết bài toán dữ liệu đồ sộ, dưới đây là phân tích đối sánh từ 8 nền tảng chuẩn mực đã được kiểm chứng thực tế:
+1.
+Google Arts & Culture (Wonders of China)
+Cách họ làm:
+Trong chuyên trang
+Wonders of China
+và
+Chinese Shadow Art
+, Google không đổ toàn bộ văn bản học thuật ra trang chủ mà dẫn dắt bằng các
+Triển lãm kể chuyện theo từng khung hình (Scrollytelling Online Exhibits)
+kết hợp phóng đại chi tiết cực nét (Art Camera).
+Bài học cho China Culture Explorer:
+Biến các bài khảo cứu hội họa dài thành trải nghiệm vừa cuộn vừa phóng to từng chi tiết (như nét皴法 trong tranh sơn thủy hay trang phục rối bóng) thay vì hiển thị ảnh tĩnh độ phân giải thấp bên cạnh khối chữ dài.
+2.
+The Metropolitan Museum of Art (Heilbrunn Timeline)
+Cách họ làm:
+Heilbrunn Timeline of Art History
+kết nối hơn 1.000 bài tiểu luận học thuật, 300 trục thời gian và 6.000 hiện vật trong
+The Met Collection
+bằng một tam giác liên kết chặt chẽ:
+Tiểu luận (Essays) ↔ Hiện vật (Works of Art) ↔ Niên biểu (Chronology)
+.
+Bài học cho China Culture Explorer:
+Hiện tại 40 chuyên luận và 21 bảo vật số trên trang còn khá tách rời. Hãy học The Met gắn trực tiếp dải hiện vật liên quan ngay ở đầu mỗi bài tiểu luận lịch sử/triết học và ghi rõ tên tác giả, tháng/năm biên soạn chuẩn mực.
+3.
+The Palace Museum (Bảo tàng Cố Cung – 数字故宫)
+Cách họ làm:
+Hệ sinh thái
+Digital Palace Museum (数字故宫)
+và
+Panoramic Palace Museum (全景故宫)
+tách biệt rõ cơ sở dữ liệu hơn 1 triệu hiện vật (50.000 ảnh độ phân giải cao),
+Famous Paintings in the Palace Museum (故宫名画记)
+có chức năng chú giải trực tiếp trên tranh, và trang giáo dục thanh thiếu niên
+Palace Museum Youth
+.
+Bài học cho China Culture Explorer:
+Khắc phục ngay việc dùng một bức ảnh sơ đồ Tử Cấm Thành kéo dãn cho 5 chuyên mục; học cách
+故宫名画记
+đặt chú thích màu tối có độ tương phản cao khi xem tranh toàn màn hình.
+4.
+National Museum of China (Bảo tàng Quốc gia Trung Quốc)
+Cách họ làm:
+Hệ thống
+NMC Collections
+và
+Thematic Exhibitions
+tổ chức hiện vật theo các chuyên đề xuyên thời đại rất rõ ràng (như
+Ancient Chinese Jade
+,
+Ancient Chinese Porcelain Art
+,
+Ancient Chinese Food Culture
+,
+Traditional Chinese Medicine Culture
+).
+Bài học cho China Culture Explorer:
+Các mảng đang bị ẩn như Ẩm thực, Gốm sứ, Ngọc khí, Y học cổ truyền nên được gom thành các
+Phòng trưng bày chuyên đề (Thematic Galleries)
+tương tự NMC để người dùng dễ định vị.
+5.
+UNESCO (Dive into Intangible Cultural Heritage)
+Cách họ làm:
+Giao diện trực quan hóa
+Dive into Intangible Cultural Heritage
+và
+UNESCO ICH Lists
+sử dụng mạng lưới ngữ nghĩa (web-semantics constellation) kết nối hơn 700 di sản phi vật thể theo khái niệm, hệ sinh thái tự nhiên và lĩnh vực thay vì chỉ liệt kê danh sách phẳng.
+Bài học cho China Culture Explorer:
+Áp dụng mô hình thẻ tag ngữ nghĩa liên kết chéo cho mục
+Phong tục, Lễ hội & Di sản phi vật thể
+(ví dụ: từ
+Trà đạo
+kết nối sang
+Gốm sứ Cảnh Đức Trấn
+,
+Thiền tông
+và
+Tỉnh Phúc Kiến/Chiết Giang
+).
+6.
+China National Geography (中国国家地理 – dili360.com)
+Cách họ làm:
+China National Geography (中国国家地理网)
+và kho chuyên san tỉnh thành
+CNG Provincial Archives
+xây dựng bản sắc riêng cho từng tỉnh dựa trên
+sự giao thoa giữa địa mạo tự nhiên (núi, sông, khí hậu) và tính cách văn hóa bản địa
+, đi kèm nhiếp ảnh thực địa chuẩn mực.
+Bài học cho China Culture Explorer:
+Bổ sung ngay mục
+Địa mạo & Khí hậu định hình Văn hóa
+vào hồ sơ 34 tỉnh/thành (ví dụ: giải thích vì sao địa hình lòng chảo ẩm ướt của Tứ Xuyên định hình vị cay tê
+Málà
+và nhịp sống thưởng trà ở Thành Đô).
+7.
+The British Museum (Museum of the World & Collection Search)
+Cách họ làm:
+Nghiên cứu trải nghiệm người dùng trên giao diện
+Museum of the World (British Museum)
+và
+bộ lọc tra cứu đa tiêu chí
+chỉ ra rằng các bộ lọc niên đại (Date Range slider) phải luôn hiển thị rõ trạng thái đang lọc và nút xóa bộ lọc (Clear filter) dễ thấy để người dùng không bị kẹt trong tập kết quả rỗng.
+Bài học cho China Culture Explorer:
+Sửa ngay lỗi ở trang
+Khám phá
+và
+34 Tỉnh/Thành
+khi lọc không ra kết quả chỉ hiện khoảng trắng trống rỗng; luôn hiển thị trạng thái bộ lọc hiện hành kèm nút
+Xóa bộ lọc
+rõ ràng.
+8.
+Smithsonian Institution (National Museum of Asian Art)
+Cách họ làm:
+Chuyên khảo
+Song and Yuan Dynasty Painting and Calligraphy
+và cổng học liệu
+Explore a Topic by Area
+của Smithsonian phiên âm đầy đủ toàn bộ đề跋 (colophons), ấn chương (seals) và minh văn trên tranh sang chữ Hán kèm bản dịch tiếng Anh có chú giải học thuật nghiêm ngặt.
+Bài học cho China Culture Explorer:
+Khi giới thiệu các kiệt tác thư pháp và hội họa như
+Lan Đình Tập Tự
+hay
+Hàn Thực Thiếp
+, cần trích dẫn chính xác câu chữ Hán xuất hiện trong bức ảnh đang trưng bày để tránh nhầm lẫn tác phẩm.
+Part 8 — Website scorecard: Bảng chấm điểm thực nghiệm 68/100 trên 10 tiêu chí trọng số
+Điểm số dưới đây được chấm nghiêm ngặt dựa trên bằng chứng kiểm thử trực tiếp tại
+China Culture Explorer
+, tuyệt đối không cộng điểm cảm tính vì số lượng trang hay hiệu ứng:
+Lỗi tương tác tìm kiếm và sai lệch hình ảnh kéo tổng điểm trải nghiệm xuống 68/100 dù nội dung đạt 12/15
+30px per point) -->
+1. First Impression (Tối đa 10)
+7.0 / 10 (70%)
+2. UI & Visual Design (Tối đa 10)
+6.5 / 10 (65%)
+3. UX & Navigation (Tối đa 15)
+9.0 / 15 (60%)
+4. Content Quality (Tối đa 15)
+12.0 / 15 (80%)
+5. Information Architecture (Tối đa 10)
+6.5 / 10 (65%)
+6. Educational & Research Value (Tối đa 10)
+8.0 / 10 (80%)
+7. Image Quality (Tối đa 10)
+4.5 / 10 (45%)
+8. Mobile & Responsive Layout (Tối đa 5)
+3.0 / 5 (60%)
+9. Technical Performance (Tối đa 5)
+3.5 / 5 (70%)
+10. Uniqueness & Differentiation (Tối đa 10)
+8.0 / 10 (80%)
+Đơn vị: Điểm thực tế trên trọng số tối đa của từng tiêu chí (Tổng cộng: 68.0 / 100 điểm). Dữ liệu trích xuất từ đợt kiểm toán trực tiếp
+China Culture Explorer
+ngày 15/11/2026.
+Tiêu chí đánh giá
+Điểm số
+Lý do chấm điểm & Bằng chứng thực tế
+Vấn đề tồn tại
+Đề xuất cải tiến cụ thể
+1. First Impression
+7.0 / 10
+Tạo được khí chất học thuật Đông Á ngay khi mở trang với bức
+Giang Sơn Như Thử Đa Kiều
+và hệ thống số liệu quy mô (40 chuyên luận, 103 mục từ điển).
+Mật độ chữ và nút bấm ở Hero quá dày; thanh tìm kiếm
+Ctrl+K
+trên Header không phản hồi khi người dùng mới nhấp vào.
+Tối giản Hero còn 1 tiêu đề, 1 đoạn dẫn ngắn, 2 nút CTA và sửa dứt điểm ô tìm kiếm trên Header.
+2. UI & Visual Design
+6.5 / 10
+Bảng màu giấy tuyên và đỏ chu sa có tính thẩm mỹ cao; bố cục 3 cột trong trang đọc chuyên luận rất sạch và chuyên nghiệp.
+Menu chính rớt thành 2 dòng trên desktop; nền mega-menu bị trong suốt đè chữ; nút đóng modal lỗi thành
+[]
+; lỗi tương phản ở Dark Mode và modal Zoom.
+Gộp bớt mục trên Main Menu để nằm gọn 1 dòng; đặt nền đặc cho mega-menu; thay icon đóng modal bằng SVG chuẩn; chỉnh lại bảng màu Dark Mode.
+3. UX & Navigation
+9.0 / 15
+Có bộ lọc chủ đề, công cụ so sánh 2 tỉnh/thành và chức năng lưu
+♡ Lưu
+hoạt động ổn định.
+SPA dùng 1 URL duy nhất không có routing; chuyển tab từ cuối trang không tự cuộn lên đầu; tìm kiếm tiếng Việt có dấu ở 34 tỉnh trả về 0 kết quả.
+Bổ sung URL hash/path routing, thêm lệnh
+scrollTo(0, 0)
+khi đổi tab và tích hợp hàm bỏ dấu tiếng Việt cho toàn bộ ô tìm kiếm.
+4. Content Quality
+12.0 / 15
+40 chuyên luận có chiều sâu học thuật thực sự, lập luận chặt chẽ, kết nối lịch sử – triết học – kinh tế và có hệ thống thuật ngữ Hán – Pinyin chuẩn.
+Sót lỗi dữ liệu thô:
+Biên soạn: [object Object]
+, 4 dòng
+undefined
+ở menu Triết học, nhãn
+MASTER PROMPT 06 & 06A
+, dư ngoặc đơn; thiếu Pinyin tên món ăn ở 34 tỉnh.
+Chạy kịch bản rà soát (linting) toàn bộ file JSON/dữ liệu nguồn để xóa sạch chuỗi
+undefined
+,
+[object Object]
+và nhãn prompt nội bộ.
+5. Information Architecture
+6.5 / 10
+Phân chia 8 trụ cột tri thức và phân nhóm 34 đơn vị cấp tỉnh theo 6 đại vùng + 4 loại hình hành chính rõ ràng, chuẩn xác.
+Trùng lặp chức năng giữa Quick Start Tour, 5 Role Journeys và 6 Learning Paths trên trang chủ; một số lĩnh vực lớn (Văn học, Tôn giáo, Ẩm thực) bị gộp ẩn khó tìm.
+Hợp nhất 3 khu vực định hướng đầu trang chủ thành 1 khối duy nhất; tạo các thẻ lọc chuyên đề rõ ràng cho Văn học, Tôn giáo và Ẩm thực.
+6. Educational & Research Value
+8.0 / 10
+Tích hợp từ điển chiết tự Lục thư, xuất thẻ Anki, trích dẫn APA/BibTeX và cột từ vựng song hành ngay bên cạnh bài đọc.
+Nhầm lẫn tác phẩm thư pháp (chú thích
+Hàn Thực Thiếp
+nhưng ảnh là
+Lan Đình Tập Tự
+) làm giảm độ tin cậy nghiên cứu; mục lục TOC không cuộn tới phần Tài liệu tham khảo.
+Kiểm tra chéo toàn bộ hiện vật và tư liệu gốc; sửa neo cuộn (anchor scroll) của TOC và gắn link đối chiếu tới nguồn bảo tàng/văn bản gốc.
+7. Image Quality
+4.5 / 10
+Ảnh đại diện của 34 tỉnh/thành (Thiên Đàn, Lục Gia Chủy, Potala, Cửu Trại Câu...) được chọn đúng địa danh đặc trưng.
+Ảnh công nhân xây gạch ở mục
+Âm Dương Ngũ Hành
+; ảnh sơ đồ Tử Cấm Thành bị kéo giãn và lặp lại ở 5 mục không liên quan (kể cả vùng Hoa Đông); ảnh
+Thanh Minh Thượng Hà Đồ
+bị vỡ nét.
+Thay thế ngay ảnh mục Âm Dương Ngũ Hành và 5 banner dùng lặp ảnh Tử Cấm Thành; nâng cấp ảnh độ phân giải cao cho các danh tác hội họa.
+8. Mobile & Responsive Experience
+3.0 / 5
+Các lưới thẻ bài viết và danh bạ tỉnh có cấu trúc CSS Grid linh hoạt.
+Ngay trên màn hình desktop chuẩn, thanh menu chính đã rớt thành 2 dòng và thanh
+7 Kỷ nguyên Hội họa
+bị tràn ngang cắt chữ; trang chủ quá dài khi cuộn dọc.
+Thiết kế lại Header thu gọn và chuyển thanh kỷ nguyên hội họa sang dạng cuộn ngang có chỉ báo (scrollable pills) không cắt chữ.
+9. Technical Performance
+3.5 / 5
+Tốc độ phản hồi khi chuyển đổi trạng thái client-side và lưu Bookmark vào
+localStorage
+diễn ra tức thì.
+Nhiều khung ảnh ở trang Quốc họa và Bảo tàng Số hiện ô màu be trống trơn khá lâu khi tải; thông báo kỹ thuật
+"máy chủ SQLite cục bộ"
+không khớp với bản chạy tĩnh trên Netlify.
+Chuyển toàn bộ ảnh sang định dạng WebP có kích thước phù hợp kèm
+loading="lazy"
+; gỡ bỏ các câu thông báo kỹ thuật nội bộ.
+10. Uniqueness & Differentiation
+8.0 / 10
+Sự kết hợp độc đáo giữa Khảo cứu Hán học + Chiết tự Lục thư/Anki + Giao lưu Trung – Việt + Văn hóa Kinh doanh RCEP tạo ra vị thế khác biệt rõ rệt.
+Sự khác biệt về tầm nhìn đang bị che khuất bởi các lỗi hoàn thiện bề mặt khiến người dùng mới chưa kịp trải nghiệm hết chiều sâu bên trong.
+Đẩy mạnh trải nghiệm "Đọc khảo cứu kết hợp tra cứu chiết tự & đối sánh Trung – Việt" ngay từ màn hình đầu tiên sau khi đã dọn sạch lỗi giao diện.
+Part 9 — Prioritized improvement roadmap: Lộ trình nâng cấp khả thi theo 4 cấp độ ưu tiên (P0 – P3)
+Thay vì dàn trải nguồn lực, lộ trình dưới đây sắp xếp các hạng mục theo mức độ tác động trực tiếp đến độ tin cậy và trải nghiệm người dùng:
+Mức ưu tiên
+Vấn đề cần giải quyết
+Bằng chứng & Vị trí cụ thể
+Tác động đến người dùng
+Giải pháp triển khai
+Độ phức tạp
+P0 · Critical
+Lộ lỗi dữ liệu
+[object Object]
+,
+undefined
+và nhãn Prompt nội bộ
+Bài
+Thư Pháp Ngũ Thể
+(dòng tác giả); Mega-menu
+Triết học
+(4 mục Tống–Minh Lý học); tiêu đề trang
+Nghiên cứu
+(
+MASTER PROMPT 06 & 06A
+); thẻ bài viết (
+v2.1 (49/50)
+).
+Làm mất uy tín học thuật ngay lập tức; người dùng nghĩ website là sản phẩm sinh tự động bằng AI chưa qua kiểm duyệt.
+Sửa hàm render chuỗi tác giả (trích xuất thuộc tính
+author.name
+thay vì in object); điền phụ đề cho 4 mục Triết học; xóa toàn bộ chuỗi
+MASTER PROMPT
+và nhãn QA.
+Low
+P0 · Critical
+Sai lệch nghiêm trọng hình ảnh minh họa và chú thích tác phẩm
+Thẻ
+Âm Dương, Ngũ Hành & Thuật số
+ở Section 03 Trang chủ (ảnh công nhân xây gạch); bài
+Thư Pháp Ngũ Thể
+(chú thích
+Hàn Thực Thiếp
+nhưng ảnh là
+Lan Đình Tập Tự
+); bản đồ vùng
+Hoa Đông
+hiện ảnh
+Tử Cấm Thành Bắc Kinh
+.
+Gây phản cảm thị giác và sai lệch kiến thức lịch sử nghệ thuật cơ bản đối với người học và nhà nghiên cứu.
+Thay ảnh thẻ Âm Dương Ngũ Hành bằng đồ hình Thái Cực/Lạc Thư; thay đúng ảnh
+Hàn Thực Thiếp
+của Tô Thức; thay ảnh vùng Hoa Đông bằng cảnh quan Giang Nam/Thượng Hải và bỏ việc dùng lặp ảnh Tử Cấm Thành ở 5 tab.
+Low
+P0 · Critical
+Liệt thanh tìm kiếm Header (
+Ctrl+K
+) và lỗi tìm kiếm tiếng Việt có dấu
+Ô tìm kiếm trên thanh Header toàn trang; ô tìm kiếm trong
+Danh bạ 34 Tỉnh/Thành
+(gõ
+Quảng Đông
+,
+Tứ Xuyên
+trả về 0 kết quả).
+Chặn đứng luồng tra cứu thông tin của người dùng Việt Nam ngay từ thao tác đầu tiên.
+Gắn sự kiện mở Modal tìm kiếm toàn cục cho ô Header và phím tắt
+Ctrl+K
+; chuẩn hóa chuỗi tìm kiếm bằng
+.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+.
+Low
+P1 · High
+SPA không có URL Routing và giữ kẹt vị trí cuộn khi chuyển trang
+Toàn bộ các tab trên Main Menu và liên kết ở Footer (chuyển từ Footer sang tab mới bị giữ nguyên vị trí cuộn ở giữa/cuối trang).
+Người dùng bị lạc vị trí khi chuyển chuyên mục, không thể dùng nút Back trình duyệt hoặc gửi link bài viết cho người khác.
+Tích hợp History API hoặc Hash Router (
+#/domain/...
+,
+#/essay/...
+) và gọi
+window.scrollTo({ top: 0, behavior: 'instant' })
+mỗi khi đổi route.
+Medium
+P1 · High
+Lỗi tương phản chữ trên Modal Zoom ảnh, Dark Mode và nền Mega-menu
+Modal
+Phóng to
+ảnh Quốc họa (chữ trắng trên nền trắng); Mega-menu
+Lịch sử
+,
+Triết học
+(nền trong suốt đè chữ); nút đóng modal hiện
+[]
+; Dark Mode chữ đỏ sẫm khó đọc.
+Không đọc được thông tin bản quyền/chú thích ảnh; gây mỏi mắt và khó thao tác đóng hộp thoại.
+Đặt nền tối
+rgba(17,18,20,0.92)
+cho dải chú thích trong Modal Zoom; đặt nền đặc 100% cho Mega-menu; dùng icon SVG cho nút đóng
+×
+; tăng độ sáng mã màu chữ trong Dark Mode đạt chuẩn tương phản ≥ 7:1.
+Low
+P1 · High
+Quá tải thông tin ở Hero Section và vỡ dòng thanh Main Menu
+Header & Hero Section trên Trang chủ (11 mục menu rớt thành 2 hàng; 7 cụm nút/công cụ trên Hero; 2 thẻ
+Tiếp tục gần đây
+bị trùng lặp).
+Làm người dùng mới choáng ngợp trong 30 giây đầu và chiếm mất diện tích hiển thị nội dung.
+Thu gọn Main Menu từ 11 xuống 6 mục cấp 1 nằm gọn trên 1 hàng; hợp nhất Quick Start Tour và các lộ trình trùng lặp; lọc trùng mảng
+recentlyViewed
+.
+Medium
+P2 · Medium
+Thiếu Pinyin và mục Lịch sử / Địa lý riêng trong Hồ sơ 34 Tỉnh/Thành
+Modal
+Hồ sơ Tỉnh
+của cả 34 đơn vị hành chính (ví dụ mục Ẩm thực của Bắc Kinh chỉ có
+北京烤鸭
+mà không có Pinyin).
+Giảm giá trị học tiếng Trung và thiếu nền tảng địa văn hóa giải thích bản sắc vùng miền.
+Bổ sung trường Pinyin cho toàn bộ danh từ riêng/món ăn trong dữ liệu 34 tỉnh; thêm 2 mục ngắn
+Lịch sử hình thành
+và
+Địa hình – Khí hậu
+.
+Medium
+P2 · Medium
+Bản đồ vùng miền mới chỉ là sơ đồ 6 khối đa giác và 16 chấm đô thị
+Chế độ 1 (
+Bản đồ Tương tác 6 Đại vùng
+) trong mục
+Vùng miền 地域
+.
+Người dùng không hình dung được vị trí địa lý thực tế và ranh giới tiếp giáp của 34 tỉnh/thành.
+Nhúng bản đồ SVG chuẩn ranh giới 34 đơn vị hành chính cấp tỉnh cho phép hover/click trực tiếp vào từng tỉnh để mở Hồ sơ Tỉnh.
+Medium
+P3 · Future
+Trình xem tranh cuộn Deep-Zoom và Popup Từ điển Tam ngữ trực tiếp
+Trang
+Quốc họa Danh tác
+(54 tác phẩm) và nội dung văn bản trong 40 bài chuyên luận.
+Nâng tầm website từ trang đọc bài viết thành bảo tàng số và phòng học Hán ngữ tương tác thực thụ.
+Tích hợp trình xem ảnh phân mảnh (tile-based zoom viewer) cho các bức tranh cuộn dài và tính năng nhấp vào chữ Hán bất kỳ để xem giải nghĩa Lục thư + lưu Anki.
+High
+Part 10 — Your honest verdict: Bảy câu trả lời thẳng thắn từ góc nhìn người dùng thực tế
+“China Culture Explorer có phần lõi tri thức của một công trình biên khảo nghiêm túc, nhưng đang khoác lớp vỏ vận hành của một bản nháp kỹ thuật chưa qua khâu biên tập cuối cùng.”
+Bạn có thực sự muốn sử dụng website này không?
+Có, nếu mục đích của tôi là đọc các bài chuyên luận tổng hợp bằng tiếng Việt về lịch sử tư tưởng, Bách Gia Chư Tử, giao lưu Trung – Việt và học từ vựng qua chiết tự Lục thư. Bố cục đọc 3 cột của bài viết thực sự hữu ích. Nhưng nếu dùng như một công cụ tra cứu nhanh hoặc thưởng lãm bảo tàng nghệ thuật thị giác, tôi sẽ bị ức chế bởi thanh tìm kiếm hỏng và hình ảnh độ phân giải thấp.
+Bạn có giới thiệu website này cho người khác không?
+Ở thời điểm hiện tại (bản build ngày 15/11/2026):
+Chưa thể giới thiệu rộng rãi
+, đặc biệt là với giảng viên, nhà nghiên cứu hoặc người học khắt khe. Chỉ cần họ mở trang ra thấy ảnh công nhân xây gạch ở mục
+Âm Dương Ngũ Hành
+, dòng chữ
+Biên soạn: [object Object]
+, nhãn
+MASTER PROMPT 06 & 06A
+hay bức ảnh
+Lan Đình Tập Tự
+bị chú thích nhầm thành
+Hàn Thực Thiếp
+, họ sẽ đánh giá thấp toàn bộ công sức biên soạn phía sau. Ngay khi bạn khắc phục xong nhóm lỗi P0 (chỉ mất khoảng 1–2 ngày làm việc), đây sẽ là một địa chỉ rất đáng giới thiệu cho cộng đồng học tiếng Trung và nghiên cứu Đông Á tại Việt Nam.
+Điều gì khiến bạn muốn quay lại?
+Ba yếu tố giữ chân thực chất nhất là: (1) Cấu trúc bài chuyên luận 3 cột kết hợp nội dung khảo cứu với cột từ vựng Hán – Pinyin bên phải; (2) Kho 103 mục từ điển chiết tự Lục thư có thể lưu vào
+Học tập 我的学习
+và xuất Anki; và (3) Góc nhìn đối sánh Trung – Việt xuyên suốt từ lịch sử văn hiến đến thương mại RCEP mà không trang web dịch thuật nào có được.
+Điều gì khiến bạn rời khỏi website?
+Sự đứt gãy niềm tin và trải nghiệm: nhấp vào ô tìm kiếm
+Ctrl+K
+trên cùng nhưng không gõ được chữ; gõ tìm
+Tứ Xuyên
+hay
+Quảng Đông
+ra màn hình trắng; bấm chuyển mục từ cuối trang bị giữ kẹt ở lưng chừng trang mới; và nhìn thấy cùng một bức ảnh sơ đồ Tử Cấm Thành bị kéo giãn lặp đi lặp lại ở 5 chuyên mục khác nhau.
+Website đang thiếu điều gì quan trọng nhất?
+Website không thiếu số lượng chữ hay số lượng tính năng; thứ nó đang thiếu nhất là
+Kỷ luật Biên tập & Kiểm định Chất lượng Xuất bản (Editorial & QA Discipline)
+— sự chỉn chu để đảm bảo mỗi bức ảnh khớp tuyệt đối với chú thích, mỗi ô tìm kiếm đều trả về kết quả đúng, và không một dòng mã lỗi (
+undefined
+,
+[object Object]
+) hay nhãn nhắc lệnh nội bộ nào lọt ra trước mắt độc giả.
+Ba thay đổi nào có thể nâng cấp website rõ rệt nhất ngay lập tức?
+Thứ nhất:
+Dọn sạch toàn bộ lỗi hiển thị dữ liệu và hình ảnh (xóa
+[object Object]
+,
+undefined
+,
+MASTER PROMPT
+, thay ảnh công nhân xây gạch ở mục Âm Dương, sửa ảnh
+Hàn Thực Thiếp
+, và thay 5 banner Tử Cấm Thành bị lặp).
+Thứ hai:
+Sửa dứt điểm hệ thống tìm kiếm (kích hoạt ô
+Ctrl+K
+trên Header và thêm bộ lọc tiếng Việt không phân biệt dấu cho 34 tỉnh/thành cùng 40 chuyên luận).
+Thứ ba:
+Bổ sung URL Routing (
+#/essay/...
+,
+#/province/...
+) kèm lệnh tự động cuộn lên đầu trang khi chuyển mục và thu gọn thanh Main Menu về 1 hàng duy nhất.
+Nếu được quyền thiết kế lại một phần, bạn sẽ chọn phần nào và tại sao?
+Tôi sẽ thiết kế lại hoàn toàn
+Khu vực Khám phá 34 Đơn vị Hành chính Cấp tỉnh kết hợp Header/Hero Trang chủ
+. Thay vì một trang chủ dài lê thê 8 khu vực và một sơ đồ 6 khối đa giác trừu tượng, tôi sẽ đặt một
+Bản đồ Địa lý – Văn hóa 34 Tỉnh/Thành tương tác thật
+làm tâm điểm khám phá trực quan, nơi người dùng có thể chuyển đổi mượt mà giữa 3 lớp bản đồ (
+Địa mạo & Danh thắng
+,
+Kinh đô các Triều đại
+, và
+Hành lang Kinh tế – Thương mại Trung – Việt
+), nhấp vào bất kỳ tỉnh nào để mở hồ sơ đầy đủ Hán – Pinyin – Hán Việt và kết nối trực tiếp tới các bài chuyên luận, bảo vật quốc họa xuất xứ từ chính vùng đất đó.
+Sources & Benchmark References
+China Culture Explorer (Live Production Build under Audit):
+https://wonderful-clafoutis-8b4aa3.netlify.app/
+(Kiểm thử thực tế toàn bộ DOM, điều hướng, 34 tỉnh/thành, từ điển Lục thư và 40 chuyên luận ngày 15/11/2026).
+Google Arts & Culture — Wonders of China & Chinese Shadow Art:
+Wonders of China Hub
+và
+Chinese Shadow Art Online Exhibits
+.
+The Metropolitan Museum of Art — Heilbrunn Timeline of Art History:
+Heilbrunn Timeline of Art History
+và
+The Met Collection Database
+.
+The Palace Museum (Bảo tàng Cố Cung Bắc Kinh):
+Digital Palace Museum Ecosystem (数字故宫)
+,
+Panoramic Palace Museum (全景故宫)
+và
+Palace Museum Youth Digital Exhibitions
+.
+National Museum of China (Bảo tàng Quốc gia Trung Quốc):
+NMC Online Collections
+và
+NMC Thematic Exhibitions
+.
+UNESCO Intangible Cultural Heritage:
+Dive into Intangible Cultural Heritage Semantic Visualizations
+và
+Browse the Lists of Intangible Cultural Heritage
+.
+China National Geography (中国国家地理):
+China National Geography Portal (中国国家地理网)
+và
+Provincial Special Issue Archives (往期回顾)
+.
+The British Museum — Rich-Prospect Collection Interfaces:
+Museum of the World Interface Evaluation (Museums and the Web)
+và
+Collection Search & Date Range Filtering Guide
+.
+Smithsonian Institution — National Museum of Asian Art:
+Song and Yuan Dynasty Painting and Calligraphy Digital Catalogue
+và
+Explore a Topic by Area Educator Resources
+.
