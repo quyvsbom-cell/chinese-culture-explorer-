@@ -7,7 +7,11 @@
 window.CCE_AUTH = (function () {
   const DASHBOARD_IDENTITY_URL = "https://app.netlify.com/projects/chinese-culture-explorer/identity";
   const LOCAL_PREVIEW_KEY = "cce_local_preview_google_user_v1";
-  const CDN_IDENTITY_URL = "https://esm.sh/@netlify/identity@1.0.1";
+  const OAUTH_RETURN_PATH_KEY = "cce_oauth_return_path_v1";
+  const CDN_IDENTITY_URLS = [
+    "https://cdn.jsdelivr.net/npm/@netlify/identity@2.0.1/+esm",
+    "https://esm.sh/@netlify/identity@2.0.1"
+  ];
 
   const isLocalHost =
     typeof window !== "undefined" &&
@@ -21,7 +25,23 @@ window.CCE_AUTH = (function () {
   let status = isLocalHost ? "local_dev" : "initializing"; // "initializing" | "ready" | "identity_disabled" | "local_dev" | "error"
   let lastError = null;
   let initialized = false;
+  let initPromise = null;
   const listeners = new Set();
+
+  async function loadIdentitySdk() {
+    let lastErr = null;
+    for (const url of CDN_IDENTITY_URLS) {
+      try {
+        const mod = await import(url);
+        if (mod && typeof mod.getSettings === "function" && typeof mod.oauthLogin === "function") {
+          return mod;
+        }
+      } catch (err) {
+        lastErr = err;
+      }
+    }
+    throw lastErr || new Error("Unable to load @netlify/identity@2.0.1");
+  }
 
   function readLocalPreviewUser() {
     if (!isLocalHost) return null;
@@ -45,14 +65,14 @@ window.CCE_AUTH = (function () {
 
   function sanitizeUser(u) {
     if (!u) return null;
-    const meta = u.user_metadata || {};
-    const appMeta = u.app_metadata || {};
+    const meta = u.userMetadata || u.user_metadata || {};
+    const appMeta = u.appMetadata || u.app_metadata || {};
     return {
       id: u.id || "local-preview",
       email: u.email || "",
-      fullName: meta.full_name || meta.name || u.email || "Thành viên Google",
-      avatarUrl: meta.avatar_url || "",
-      provider: appMeta.provider || "google",
+      fullName: u.name || meta.full_name || meta.name || u.email || "Thành viên Google",
+      avatarUrl: u.pictureUrl || meta.avatar_url || "",
+      provider: u.provider || appMeta.provider || "google",
       roles: Array.isArray(u.roles) ? u.roles : (Array.isArray(appMeta.roles) ? appMeta.roles : []),
       isLocalDemo: Boolean(u.isLocalDemo)
     };
@@ -74,12 +94,25 @@ window.CCE_AUTH = (function () {
   }
 
   function getAvailableProviders() {
-    if (!settings || !settings.external) return [];
-    const ext = settings.external;
-    return ["google", "github", "gitlab", "bitbucket"].filter((k) => Boolean(ext[k]));
+    const map = (settings && (settings.providers || settings.external)) || null;
+    if (!map) return [];
+    return ["google", "github", "gitlab", "bitbucket"].filter((k) => Boolean(map[k]));
   }
 
-  async function init() {
+  function restorePostOAuthPath() {
+    try {
+      const retPath = sessionStorage.getItem(OAUTH_RETURN_PATH_KEY);
+      sessionStorage.removeItem(OAUTH_RETURN_PATH_KEY);
+      if (retPath && retPath.startsWith("/") && !retPath.startsWith("//") && retPath !== window.location.pathname + window.location.search) {
+        window.history.replaceState(null, "", retPath);
+        window.dispatchEvent(new PopStateEvent("popstate"));
+      }
+    } catch {
+      // ignore navigation restore errors
+    }
+  }
+
+  async function runInit() {
     if (isLocalHost) {
       currentUser = readLocalPreviewUser();
       status = "local_dev";
@@ -89,13 +122,37 @@ window.CCE_AUTH = (function () {
     }
 
     try {
-      sdk = await import(CDN_IDENTITY_URL);
+      const rawHash = window.location.hash || "";
+      if (/error_description=/.test(rawHash)) {
+        try {
+          lastError = new URLSearchParams(rawHash.replace(/^#/, "")).get("error_description") || "OAuth cancelled";
+          window.history.replaceState(null, "", window.location.pathname + window.location.search);
+        } catch {}
+        restorePostOAuthPath();
+      }
+
+      sdk = await loadIdentitySdk();
+
+      if (typeof sdk.onAuthChange === "function") {
+        sdk.onAuthChange((_event, user) => {
+          currentUser = user || null;
+          notify();
+        });
+      }
+
+      let callbackHandled = false;
       if (typeof sdk.handleAuthCallback === "function") {
-        const cbResult = await sdk.handleAuthCallback();
-        if (cbResult && cbResult.user) {
-          currentUser = cbResult.user;
+        try {
+          const cbResult = await sdk.handleAuthCallback();
+          if (cbResult && cbResult.user) {
+            currentUser = cbResult.user;
+            callbackHandled = true;
+          }
+        } catch (cbErr) {
+          lastError = String((cbErr && cbErr.message) || cbErr || "");
         }
       }
+
       if (typeof sdk.getSettings === "function") {
         try {
           settings = await sdk.getSettings();
@@ -104,13 +161,18 @@ window.CCE_AUTH = (function () {
           lastError = String((sErr && sErr.message) || "Identity chưa được bật trên Netlify Dashboard");
         }
       }
-      if (typeof sdk.getUser === "function") {
+
+      if (!currentUser && typeof sdk.getUser === "function") {
         try {
           const existing = await sdk.getUser();
           if (existing) currentUser = existing;
         } catch {
           // ignore unauthenticated state
         }
+      }
+
+      if (callbackHandled) {
+        restorePostOAuthPath();
       }
 
       if (!settings) {
@@ -126,6 +188,13 @@ window.CCE_AUTH = (function () {
     initialized = true;
     notify();
     return getPublicState();
+  }
+
+  function init() {
+    if (!initPromise) {
+      initPromise = runInit();
+    }
+    return initPromise;
   }
 
   async function signInWithOAuth(provider) {
@@ -148,6 +217,12 @@ window.CCE_AUTH = (function () {
       return { ok: true, mode: "local_demo" };
     }
 
+    if (!initialized) {
+      try {
+        await init();
+      } catch {}
+    }
+
     if (!sdk || status === "identity_disabled") {
       return {
         ok: false,
@@ -167,10 +242,20 @@ window.CCE_AUTH = (function () {
     }
 
     try {
+      sessionStorage.setItem(OAUTH_RETURN_PATH_KEY, window.location.pathname + window.location.search);
+    } catch {
+      // ignore storage errors
+    }
+
+    try {
       await sdk.oauthLogin(provider);
-      return { ok: true };
+      return { ok: true, redirecting: true };
     } catch (err) {
-      lastError = String((err && err.message) || err || "OAuth sign-in error");
+      const msg = String((err && err.message) || err || "");
+      if (/redirecting to oauth/i.test(msg)) {
+        return { ok: true, redirecting: true };
+      }
+      lastError = msg || "OAuth sign-in error";
       notify();
       return { ok: false, code: "oauth_failed", error: lastError, dashboardUrl: DASHBOARD_IDENTITY_URL };
     }
