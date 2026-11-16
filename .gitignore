@@ -11,6 +11,9 @@ data/*.db
 data/*.sqlite
 data/*.sqlite3
 
+# Local backup archives (never deployed)
+backups/
+
 # Netlify local linking & build artifacts (never commit .netlify/state.json)
 .netlify/
 node_modules/
