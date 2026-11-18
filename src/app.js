@@ -696,6 +696,8 @@
     activeRegionId: "east",
     activeCityId: "beijing",
     regionViewMode: "map", // map | destinations | directory
+    activeDestHubId: "dest-beijing",
+    activeDestAreaId: "bj-core-axis",
     provinceQuery: "",
     provinceRegionFilter: "all",
     museumCategory: "all",
@@ -807,9 +809,13 @@
       .replace(/'/g, "&#39;");
   }
 
+  const _normTextCache = new Map();
   function normalizeText(str) {
     if (str == null) return "";
-    return String(str)
+    const raw = String(str);
+    const cached = _normTextCache.get(raw);
+    if (cached !== undefined) return cached;
+    const norm = raw
       .normalize("NFC")
       .toLowerCase()
       .normalize("NFD")
@@ -817,6 +823,9 @@
       .replace(/đ/g, "d")
       .replace(/Đ/g, "d")
       .trim();
+    if (_normTextCache.size > 5000) _normTextCache.clear();
+    _normTextCache.set(raw, norm);
+    return norm;
   }
 
   function showToast(msg) {
@@ -2599,9 +2608,9 @@
                     <div><strong>Danh bạ Đầy đủ ${allProvinces.length || 34} Đơn vị Cấp tỉnh &amp; Hành trang</strong><span class="mega-link-sub">23 Tỉnh · 5 Khu Tự trị · 4 Thành phố TW · 2 Đặc khu</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">省市</span>
                   </button>
-                  <button type="button" class="mega-link-btn" data-action="nav" data-page="regions">
-                    <div><strong>Bản đồ Tương tác 4 Lớp &amp; 16 Cố đô Văn hóa</strong><span class="mega-link-sub">Bắc Kinh · Tây An · Thượng Hải · Thành Đô · Quảng Châu · Lhasa</span></div>
-                    <span class="hanzi" style="color:var(--accent-cinnabar);">地图</span>
+                  <button type="button" class="mega-link-btn" data-action="set-map-view-page" data-mode="destinations">
+                    <div><strong>Cẩm nang Du lịch 3 Cấp &amp; 16 Cố đô Văn hóa</strong><span class="mega-link-sub">Top 11 Điểm đến 5A (Tỉnh → Đô thị → Trải nghiệm) &amp; 5 Tuyến Cao tốc 12306</span></div>
+                    <span class="hanzi" style="color:var(--accent-cinnabar);">文旅</span>
                   </button>
                   <button type="button" class="mega-link-btn" data-action="open-province-compare">
                     <div><strong>So sánh Chéo 2 Tỉnh/Thành Trực quan</strong><span class="mega-link-sub">Đối chiếu địa mạo, kinh tế RCEP, di sản UNESCO &amp; ẩm thực</span></div>
@@ -6828,6 +6837,129 @@
     `;
   }
 
+  function renderDestinationsDeepAtlas() {
+    const atlas = window.CCE_DESTINATIONS_ATLAS;
+    if (!atlas || !Array.isArray(atlas.hubs) || !atlas.hubs.length) return "";
+    const enM = isEnglishUi();
+    const hubs = atlas.hubs;
+    const corridors = atlas.corridors || [];
+    const activeHub = hubs.find((h) => h.id === ui.activeDestHubId) || hubs[0];
+    const areas = activeHub.areas || [];
+    const activeArea = areas.find((a) => a.id === ui.activeDestAreaId) || areas[0];
+    const spots = (activeArea && activeArea.spots) || [];
+
+    return `
+      <div class="dest-atlas-shell">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.75rem;margin-bottom:0.45rem;">
+          <div>
+            <div class="editorial-kicker">${enM ? "STAGE 1 DEEP TOURISM DATA • LEVEL 1 → LEVEL 2 → LEVEL 3" : "DỮ LIỆU DU LỊCH CHUYÊN SÂU 3 CẤP • CẤP TỈNH → CỤM ĐÔ THỊ → DANH THẮNG 5A"}</div>
+            <h2 style="font-family:var(--font-editorial);font-size:1.55rem;margin:0.15rem 0;">
+              ${enM ? "Top 11 Flagship Destinations & High-Speed Rail Atlas" : "Cẩm nang Điểm đến 3 Cấp Trọng điểm (Top 10 + Hoàng Sơn An Huy)"}
+            </h2>
+          </div>
+          ${activeHub.provinceId ? `
+            <button type="button" class="btn btn-secondary btn-sm" data-action="open-province-detail" data-id="${escapeHtml(activeHub.provinceId)}">
+              ${enM ? "Open Full 12-Dim Provincial Dossier →" : "Mở Hồ sơ 12 Chiều Tỉnh này →"}
+            </button>
+          ` : ""}
+        </div>
+
+        <div class="dest-hub-grid" role="tablist" aria-label="${enM ? "Level 1 Provincial Destination Hubs" : "Cấp 1: Chọn Tỉnh/Thành Điểm đến Trọng điểm"}">
+          ${hubs.map((h) => `
+            <button type="button" class="filter-pill ${h.id === activeHub.id ? "active" : ""}" data-action="dest-select-hub" data-id="${escapeHtml(h.id)}">
+              ${escapeHtml(enM ? h.nameEn : h.nameVi)} <span class="hanzi">${escapeHtml(h.nameZh)}</span>
+            </button>
+          `).join("")}
+        </div>
+
+        <div class="dest-level-box">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.45rem;">
+            <div>
+              <span class="badge badge-gold">${escapeHtml(enM ? activeHub.tierBadgeEn : activeHub.tierBadgeVi)}</span>
+              <strong style="margin-left:0.45rem;font-size:1.05rem;">${escapeHtml(enM ? activeHub.nameEn : activeHub.nameVi)} (<span class="hanzi">${escapeHtml(activeHub.nameZh)}</span>)</strong>
+            </div>
+            <span style="font-size:0.78rem;color:var(--jade-green);font-weight:600;">${escapeHtml(enM ? activeHub.bestSeasonEn : activeHub.bestSeasonVi)}</span>
+          </div>
+          <p style="font-size:0.86rem;line-height:1.58;margin:0 0 0.55rem;">${escapeHtml(enM ? activeHub.overviewEn : activeHub.overviewVi)}</p>
+          <div class="grid grid-2" style="gap:0.65rem;font-size:0.8rem;">
+            <div style="background:var(--bg-paper);border:1px solid var(--hairline);padding:0.55rem 0.7rem;">
+              <strong style="color:var(--imperial-red);">${enM ? "Airports & 12306 Rail Hubs:" : "Sân bay & Ga Cao tốc 12306:"}</strong><br>
+              <span style="color:var(--text-secondary);">${escapeHtml(enM ? activeHub.gatewayEn : activeHub.gatewayVi)}</span>
+            </div>
+            <div style="background:var(--bg-paper);border:1px solid var(--hairline);padding:0.55rem 0.7rem;">
+              <strong style="color:var(--jade-green);">${enM ? "Passport & Field Booking Note:" : "Lưu ý Hộ chiếu & Đặt vé Thực địa:"}</strong><br>
+              <span style="color:var(--text-secondary);">${escapeHtml(enM ? activeHub.passportNoteEn : activeHub.passportNoteVi)}</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:0.55rem;">
+          <div style="font-size:0.76rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:0.35rem;">
+            ${enM ? `Level 2 · Key Cities & Scenic Zones (${areas.length})` : `Cấp 2 · Đô thị & Phân khu Trải nghiệm (${areas.length})`}
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:0.38rem;">
+            ${areas.map((a) => `
+              <button type="button" class="filter-pill ${activeArea && a.id === activeArea.id ? "active" : ""}" data-action="dest-select-area" data-id="${escapeHtml(a.id)}">
+                ${escapeHtml(enM ? a.nameEn : a.nameVi)} <span class="hanzi">${escapeHtml(a.nameZh)}</span>
+              </button>
+            `).join("")}
+          </div>
+          ${activeArea ? `
+            <p style="font-size:0.81rem;color:var(--text-secondary);margin:0.45rem 0 0;">
+              <strong>${enM ? "Local Transit:" : "Di chuyển nội vùng:"}</strong> ${escapeHtml(enM ? activeArea.transitEn : activeArea.transitVi)}
+            </p>
+          ` : ""}
+        </div>
+
+        <div style="font-size:0.76rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.04em;margin:0.9rem 0 0.2rem;">
+          ${enM ? `Level 3 · Official Scenic Spots & Authentic Food Pairings (${spots.length})` : `Cấp 3 · Danh thắng 5A/UNESCO, Trải nghiệm & Ẩm thực Bản địa (${spots.length})`}
+        </div>
+        <div class="dest-spots-grid">
+          ${spots.map((sp) => `
+            <article class="dest-spot-card">
+              <div class="dest-spot-thumb">
+                <img src="${escapeHtml(sp.img || activeHub.heroImg)}" alt="${escapeHtml(enM ? sp.nameEn : sp.nameVi)}" loading="lazy" decoding="async" />
+                <button type="button" class="btn btn-sm" style="position:absolute;top:0.45rem;right:0.5rem;padding:0.15rem 0.45rem;font-size:0.68rem;background:rgba(15,16,18,0.74);color:#F2EFE9;border:1px solid rgba(255,255,255,0.22);" data-action="open-custom-image" data-src="${escapeHtml(sp.img || activeHub.heroImg)}" data-caption="${escapeHtml(enM ? sp.nameEn : sp.nameVi)}" data-credit="">${ICONS.zoom}</button>
+              </div>
+              <div style="padding:0.8rem 0.9rem;display:flex;flex-direction:column;flex:1;gap:0.35rem;">
+                <div style="display:flex;justify-content:space-between;align-items:center;gap:0.35rem;flex-wrap:wrap;">
+                  <span class="badge badge-red" style="font-size:0.68rem;">${escapeHtml(sp.rating)}</span>
+                  <span class="hanzi" style="font-size:0.85rem;color:var(--imperial-red);font-weight:700;">${escapeHtml(sp.nameZh)} ${renderSpeakBtn(sp.nameZh)}</span>
+                </div>
+                <h4 style="margin:0.1rem 0;font-size:1.02rem;">${escapeHtml(enM ? sp.nameEn : sp.nameVi)}</h4>
+                <p style="font-size:0.81rem;line-height:1.5;margin:0;color:var(--text-secondary);">${escapeHtml(enM ? sp.expEn : sp.expVi)}</p>
+                <p style="font-size:0.79rem;line-height:1.45;margin:0.15rem 0 0;"><strong>${enM ? "Must-Try Dishes:" : "Ẩm thực gợi ý:"}</strong> ${escapeHtml(enM ? sp.foodEn : sp.foodVi)}</p>
+                <p style="font-size:0.76rem;line-height:1.42;margin:auto 0 0;padding-top:0.35rem;border-top:1px dashed var(--hairline);color:var(--jade-green);">
+                  <strong>${enM ? "Entry Note:" : "Đặt vé & Lưu ý:"}</strong> ${escapeHtml(enM ? sp.bookingEn : sp.bookingVi)}
+                </p>
+              </div>
+            </article>
+          `).join("")}
+        </div>
+
+        ${corridors.length ? `
+          <div style="margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border-subtle);">
+            <div style="font-size:0.76rem;font-weight:700;color:var(--imperial-red);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:0.55rem;">
+              ${enM ? "Cross-Province HSR Intercity Loops" : "5 Hành lang Đường sắt Cao tốc Liên tỉnh Tiêu biểu (Việt–Trung & Nội địa)"}
+            </div>
+            <div class="grid grid-2" style="gap:0.65rem;">
+              ${corridors.map((cr) => `
+                <div class="dest-corridor-card">
+                  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.2rem;">
+                    <strong>${escapeHtml(enM ? cr.nameEn : cr.nameVi)}</strong>
+                    <span class="badge badge-outline" style="font-size:0.68rem;">${escapeHtml(enM ? cr.durationEn : cr.durationVi)}</span>
+                  </div>
+                  <div class="hanzi" style="font-size:0.8rem;color:var(--imperial-red);margin-bottom:0.2rem;">${escapeHtml(cr.stopsZh)}</div>
+                  <div style="font-size:0.79rem;color:var(--text-secondary);line-height:1.45;">${escapeHtml(enM ? cr.highlightsEn : cr.highlightsVi)}</div>
+                </div>
+              `).join("")}
+            </div>
+          </div>
+        ` : ""}
+      </div>
+    `;
+  }
+
   function renderRegionsPage() {
     const enM = isEnglishUi();
     const help = getEnHelp();
@@ -6871,8 +7003,8 @@
               <div class="regions-mode-top">
                 <span class="badge ${ui.regionViewMode === "destinations" ? "badge-jade" : "badge-outline"}">${enM ? "Mode 2" : "Chế độ 2"}</span>
               </div>
-              <strong>${enM ? "16 Historic &amp; Commercial Cities" : "16 Đô thị Lịch sử &amp; Kinh tế"}</strong>
-              <span>${enM ? "8-dimension profiles covering history, cuisine, dialect, architecture &amp; economy" : "Thẻ ảnh + hồ sơ chuyên sâu 8 chiều của 16 thành phố tiêu biểu"}</span>
+              <strong>${enM ? "3-Level Travel Atlas &amp; 16 Cities" : "Cẩm nang Du lịch 3 Cấp &amp; 16 Đô thị"}</strong>
+              <span>${enM ? "Level 1 Provinces → Level 2 Areas → Level 3 5A Scenic Spots, HSR Loops &amp; 16 City Profiles" : "Tỉnh trọng điểm → Đô thị → Danh thắng 5A/UNESCO, Tuyến Cao tốc &amp; 16 Thành phố"}</span>
             </button>
 
             <button type="button" class="regions-mode-card ${ui.regionViewMode === "directory" ? "active" : ""}" data-action="set-map-view" data-mode="directory">
@@ -6917,6 +7049,9 @@
             `
             : ui.regionViewMode === "destinations"
             ? `
+              <div id="destinations-atlas-slot">
+                ${renderDestinationsDeepAtlas()}
+              </div>
               <div class="grid grid-3" style="margin-bottom:2rem;">
                 ${Regions.cities.map((c, cIdx) => `
                   <article class="card interactive" style="border-color:${c.id === activeCity.id ? "var(--imperial-red)" : "var(--border-subtle)"};">
@@ -9711,6 +9846,10 @@
               </h2>
             </div>
             <div style="display:flex;gap:0.45rem;align-items:center;flex-wrap:wrap;">
+              ${(() => {
+                const atlasHub = (window.CCE_DESTINATIONS_ATLAS && window.CCE_DESTINATIONS_ATLAS.hubs || []).find((h) => h.provinceId === pr.id);
+                return atlasHub ? `<button type="button" class="btn btn-jade btn-sm" data-action="open-destinations-hub" data-id="${escapeHtml(atlasHub.id)}">${enPM ? "3-Level Travel Guide →" : "Du lịch 3 Cấp →"}</button>` : "";
+              })()}
               <button type="button" class="btn btn-gold btn-sm" data-action="compare-with-province" data-id="${pr.id}">${enPM ? "Compare" : "Đối chiếu Tỉnh"}</button>
               <button type="button" class="btn ${fav ? "btn-jade" : "btn-secondary"} btn-sm" data-action="toggle-bookmark" data-type="province" data-id="${pr.id}" data-title="${enPM ? `Division: ${escapeHtml(pr.nameEn || pr.nameVi)}` : `Tỉnh/Thành: ${escapeHtml(pr.nameVi)}`}">
                 ${enPM ? (fav ? "Saved" : "Save") : (fav ? "Đã lưu" : "Lưu")}
@@ -10382,28 +10521,26 @@
 
   let lastRenderedPageKey = null;
 
-  function render() {
-    const app = document.getElementById("app");
-    if (!app) return;
-    const state = Store.getState();
+  function hasAnyOpenModalState() {
+    return Boolean(
+      ui.activeArtifactId ||
+      ui.activePaintingId ||
+      ui.paintingCompareOpen ||
+      ui.paintingZoomOpen ||
+      ui.activeProvinceId ||
+      ui.provinceCompareOpen ||
+      ui.activeTermId ||
+      ui.searchModalOpen ||
+      ui.updatesModalOpen ||
+      ui.lightboxOpen ||
+      ui.activeEditorialImageId ||
+      (ui.customModalImage && ui.customModalImage.src) ||
+      document.querySelector("#cce-modal-root .modal-backdrop.open")
+    );
+  }
 
-    const samePageReRender = lastRenderedPageKey === state.activePage;
-    const prevScrollY = window.scrollY || window.pageYOffset || 0;
-    lastRenderedPageKey = state.activePage;
-
-    const activeElId = document.activeElement ? document.activeElement.id : null;
-    const selStart = document.activeElement && typeof document.activeElement.selectionStart === "number" ? document.activeElement.selectionStart : null;
-    const openModalEl = app.querySelector(".modal-panel, .painting-detail-modal-stage, .lightbox-stage");
-    const prevModalScroll = openModalEl ? openModalEl.scrollTop : 0;
-
-    app.innerHTML = `
-      ${renderHeader()}
-      <main id="main-content">
-        ${renderPageContent(state.activePage)}
-      </main>
-      ${renderFooter()}
-      ${renderMobileNavDrawer()}
-      ${renderMobileBottomNav(state.activePage)}
+  function renderAllModalsHTML() {
+    return `
       ${renderArtifactModal()}
       ${renderPaintingDetailModal()}
       ${renderPaintingCompareModal()}
@@ -10419,33 +10556,15 @@
       ${window.CCE_LABS_EXT ? window.CCE_LABS_EXT.renderInlineGlossModal(isEnglishUi()) : ""}
       ${renderVocabSelectionPopover()}
     `;
+  }
 
-    const hasOpenModal = Boolean(
-      ui.activeArtifactId ||
-      ui.activePaintingId ||
-      ui.paintingCompareOpen ||
-      ui.paintingZoomOpen ||
-      ui.activeProvinceId ||
-      ui.provinceCompareOpen ||
-      ui.activeTermId ||
-      ui.searchModalOpen ||
-      ui.updatesModalOpen ||
-      ui.lightboxOpen ||
-      ui.activeEditorialImageId ||
-      (ui.customModalImage && ui.customModalImage.src) ||
-      (app && app.querySelector(".modal-backdrop.open"))
-    );
-    document.body.style.overflow = hasOpenModal ? "hidden" : "";
-
-    if (samePageReRender && prevScrollY > 0) {
-      window.scrollTo(0, prevScrollY);
-    }
-
-    if (prevModalScroll > 0) {
-      const nextModalEl = app.querySelector(".modal-panel, .painting-detail-modal-stage, .lightbox-stage");
+  function syncModalPostUpdate(prevModalScroll, activeElId, selStart) {
+    const modalRoot = document.getElementById("cce-modal-root");
+    document.body.style.overflow = hasAnyOpenModalState() ? "hidden" : "";
+    if (prevModalScroll > 0 && modalRoot) {
+      const nextModalEl = modalRoot.querySelector(".modal-panel, .painting-detail-modal-stage, .lightbox-stage");
       if (nextModalEl) nextModalEl.scrollTop = prevModalScroll;
     }
-
     if (ui.paintingZoomOpen) {
       const zCanvas = document.getElementById("painting-zoom-canvas");
       const activePin = document.getElementById("active-painting-hotspot-pin");
@@ -10457,7 +10576,6 @@
         zCanvas.scrollTo({ left: targetX, top: targetY, behavior: "smooth" });
       }
     }
-
     if (activeElId) {
       const el = document.getElementById(activeElId);
       if (el) {
@@ -10467,10 +10585,127 @@
         }
       }
     }
-
     if (typeof updateDocumentSeoMeta === "function") {
       updateDocumentSeoMeta();
     }
+  }
+
+  function renderModalsOnly() {
+    const modalRoot = document.getElementById("cce-modal-root");
+    if (!modalRoot) { render(); return; }
+    const activeElId = document.activeElement ? document.activeElement.id : null;
+    const selStart = document.activeElement && typeof document.activeElement.selectionStart === "number" ? document.activeElement.selectionStart : null;
+    const openModalEl = modalRoot.querySelector(".modal-panel, .painting-detail-modal-stage, .lightbox-stage");
+    const prevModalScroll = openModalEl ? openModalEl.scrollTop : 0;
+    modalRoot.innerHTML = renderAllModalsHTML();
+    syncModalPostUpdate(prevModalScroll, activeElId, selStart);
+  }
+
+  function patchHeaderOnly() {
+    const headerRoot = document.getElementById("cce-header-root");
+    if (!headerRoot) { render(); return; }
+    headerRoot.innerHTML = renderHeader();
+  }
+
+  function patchHeaderThemeOnly() {
+    const isDark = Store.getState().theme === "dark";
+    const lp = getLangPack();
+    document.querySelectorAll('[data-action="toggle-theme"]').forEach((btn) => {
+      btn.innerHTML = isDark ? ICONS.sun : ICONS.moon;
+      btn.title = isDark ? lp.themeLight : lp.themeDark;
+    });
+  }
+
+  function patchMainOnly() {
+    const mainEl = document.getElementById("main-content");
+    if (!mainEl) { render(); return; }
+    const state = Store.getState();
+    const prevScrollY = window.scrollY || window.pageYOffset || 0;
+    const activeElId = document.activeElement ? document.activeElement.id : null;
+    const selStart = document.activeElement && typeof document.activeElement.selectionStart === "number" ? document.activeElement.selectionStart : null;
+    mainEl.innerHTML = renderPageContent(state.activePage);
+    if (prevScrollY > 0 && lastRenderedPageKey === state.activePage) {
+      window.scrollTo(0, prevScrollY);
+    }
+    if (activeElId) {
+      const el = document.getElementById(activeElId);
+      if (el) {
+        try { el.focus({ preventScroll: true }); } catch { el.focus(); }
+        if (selStart !== null && typeof el.setSelectionRange === "function") {
+          try { el.setSelectionRange(selStart, selStart); } catch {}
+        }
+      }
+    }
+    if (ForbiddenCity3D && typeof ForbiddenCity3D.initMountedCanvasIfAny === "function") {
+      ForbiddenCity3D.initMountedCanvasIfAny();
+    }
+  }
+
+  function patchSlot(slotId, rendererFn) {
+    const slot = document.getElementById(slotId);
+    if (!slot) { patchMainOnly(); return; }
+    slot.innerHTML = rendererFn();
+  }
+
+  const _inputTimers = new Map();
+  function scheduleSlotInput(key, fn, delayMs = 95) {
+    if (_inputTimers.has(key)) clearTimeout(_inputTimers.get(key));
+    _inputTimers.set(key, setTimeout(() => {
+      _inputTimers.delete(key);
+      fn();
+    }, delayMs));
+  }
+
+  function syncBookmarkButtonsInDom() {
+    const enM = isEnglishUi();
+    document.querySelectorAll('[data-action="toggle-bookmark"]').forEach((btn) => {
+      const bType = btn.getAttribute("data-type");
+      const bId = btn.getAttribute("data-id");
+      if (!bType || !bId) return;
+      const saved = Store.isBookmarked(bType, bId);
+      if (bType === "article") {
+        btn.innerHTML = `${ICONS.bookmark} ${saved ? (enM ? "Saved" : "Đã lưu") : (enM ? "Save" : "Lưu")}`;
+      } else if (bType === "province") {
+        btn.classList.toggle("btn-jade", saved);
+        btn.classList.toggle("btn-secondary", !saved);
+        btn.textContent = enM ? (saved ? "Saved" : "Save") : (saved ? "Đã lưu" : "Lưu");
+      } else if (bType === "city") {
+        btn.textContent = saved ? (enM ? "Saved City" : "Đã lưu thành phố") : (enM ? "Save City" : "Lưu thành phố");
+      }
+    });
+  }
+
+  function render() {
+    const app = document.getElementById("app");
+    if (!app) return;
+    const state = Store.getState();
+
+    const samePageReRender = lastRenderedPageKey === state.activePage;
+    const prevScrollY = window.scrollY || window.pageYOffset || 0;
+    lastRenderedPageKey = state.activePage;
+
+    const activeElId = document.activeElement ? document.activeElement.id : null;
+    const selStart = document.activeElement && typeof document.activeElement.selectionStart === "number" ? document.activeElement.selectionStart : null;
+    const openModalEl = app.querySelector(".modal-panel, .painting-detail-modal-stage, .lightbox-stage");
+    const prevModalScroll = openModalEl ? openModalEl.scrollTop : 0;
+
+    app.innerHTML = `
+      <div id="cce-header-root">${renderHeader()}</div>
+      <main id="main-content">
+        ${renderPageContent(state.activePage)}
+      </main>
+      <div id="cce-footer-root">${renderFooter()}</div>
+      <div id="cce-nav-root">${renderMobileNavDrawer()}${renderMobileBottomNav(state.activePage)}</div>
+      <div id="cce-modal-root">${renderAllModalsHTML()}</div>
+    `;
+
+    document.body.style.overflow = hasAnyOpenModalState() ? "hidden" : "";
+
+    if (samePageReRender && prevScrollY > 0) {
+      window.scrollTo(0, prevScrollY);
+    }
+
+    syncModalPostUpdate(prevModalScroll, activeElId, selStart);
 
     if (ForbiddenCity3D && typeof ForbiddenCity3D.initMountedCanvasIfAny === "function") {
       ForbiddenCity3D.initMountedCanvasIfAny();
@@ -10481,12 +10716,14 @@
     // Dismiss Hero autocomplete if clicking outside hero-search-wrap
     if (ui.heroAutocompleteOpen && !e.target.closest(".hero-search-wrap")) {
       ui.heroAutocompleteOpen = false;
-      render();
+      const slot = document.getElementById("hero-autocomplete-slot");
+      if (slot) slot.innerHTML = "";
+      else patchMainOnly();
     }
 
     if (ui.vocabSelectionPopup && !e.target.closest(".vocab-capture-popover") && !e.target.closest("[data-action='open-vocab-capture-manual']")) {
       ui.vocabSelectionPopup = null;
-      render();
+      renderModalsOnly();
     }
 
     const target = e.target.closest("[data-action]");
@@ -10606,7 +10843,7 @@
       case "open-search":
         ui.searchModalOpen = true;
         ui.mobileNavOpen = false;
-        render();
+        renderModalsOnly();
         setTimeout(() => {
           const inp = document.getElementById("global-search-input");
           if (inp) inp.focus();
@@ -10615,7 +10852,7 @@
 
       case "close-search":
         ui.searchModalOpen = false;
-        render();
+        renderModalsOnly();
         break;
 
       case "quick-search": {
@@ -10625,14 +10862,14 @@
         ui.searchModalOpen = true;
         ui.heroAutocompleteOpen = false;
         Store.addSearchHistory(q);
-        render();
+        renderModalsOnly();
         break;
       }
 
       case "search-cat-filter":
         ui.searchCategoryFilter = target.getAttribute("data-cat") || "all";
         ui.searchLimit = 18;
-        render();
+        renderModalsOnly();
         break;
 
       case "clear-search-filters":
@@ -10642,7 +10879,7 @@
         ui.searchLevelFilter = "all";
         ui.searchSourceFilter = "all";
         ui.searchLimit = 18;
-        render();
+        renderModalsOnly();
         break;
 
       case "clear-search-history":
@@ -10651,7 +10888,7 @@
 
       case "load-more-search":
         ui.searchLimit += 18;
-        render();
+        patchSlot("global-search-results-slot", renderGlobalSearchResultsHTML);
         break;
 
       case "close-modal-backdrop":
@@ -10662,30 +10899,30 @@
             ui.activeArtifactId = null;
             syncHashFromState(Store.getState().activePage || "museum");
           } else ui.searchModalOpen = false;
-          render();
+          renderModalsOnly();
         }
         break;
 
       case "filter-explore":
         ui.exploreCategory = target.getAttribute("data-cat");
-        render();
+        patchMainOnly();
         break;
 
       case "filter-museum-cat":
         ui.museumCategory = target.getAttribute("data-cat");
-        render();
+        patchMainOnly();
         break;
 
       case "set-museum-view":
         ui.museumViewMode = target.getAttribute("data-mode");
-        render();
+        patchMainOnly();
         break;
 
       case "clear-museum-filters":
         ui.museumCategory = "all";
         ui.museumPeriodFilter = "all";
         ui.museumQuery = "";
-        render();
+        patchMainOnly();
         break;
 
       case "open-artifact":
@@ -10694,7 +10931,7 @@
         ui.searchModalOpen = false;
         ui.heroAutocompleteOpen = false;
         syncHashFromState(`artifact=${id}`);
-        render();
+        renderModalsOnly();
         break;
 
       case "close-artifact":
@@ -10702,12 +10939,12 @@
         ui.activeHotspotIdx = 0;
         ui.lightboxOpen = false;
         syncHashFromState(Store.getState().activePage || "museum");
-        render();
+        renderModalsOnly();
         break;
 
       case "zoom-artifact":
         ui.lightboxOpen = true;
-        render();
+        renderModalsOnly();
         break;
 
       case "open-painting-detail":
@@ -10717,14 +10954,14 @@
         ui.heroAutocompleteOpen = false;
         ui.paintingZoomScale = 1;
         syncHashFromState(`painting=${id}`);
-        render();
+        renderModalsOnly();
         break;
 
       case "close-painting-detail":
         ui.activePaintingId = null;
         ui.paintingZoomScale = 1;
         syncHashFromState(Store.getState().activePage || "paintings");
-        render();
+        renderModalsOnly();
         break;
 
       case "close-painting-backdrop":
@@ -10732,7 +10969,7 @@
           ui.activePaintingId = null;
           ui.paintingZoomScale = 1;
           syncHashFromState(Store.getState().activePage || "paintings");
-          render();
+          renderModalsOnly();
         }
         break;
 
@@ -10742,7 +10979,7 @@
         ui.paintingZoomScale = 1;
         Store.setPage("paintings");
         syncHashFromState(`painting=${id}`);
-        render();
+        renderModalsOnly();
         break;
 
       case "switch-painting-to-artifact":
@@ -10751,12 +10988,12 @@
         ui.paintingZoomScale = 1;
         Store.setPage("museum");
         syncHashFromState(`artifact=${id}`);
-        render();
+        renderModalsOnly();
         break;
 
       case "set-painting-tab":
         ui.paintingDetailTab = target.getAttribute("data-tab") || "historical";
-        render();
+        renderModalsOnly();
         break;
 
       case "open-painting-zoom": {
@@ -10768,69 +11005,69 @@
         ui.paintingZoomScale = 1;
         ui.activeHotspotIdx = 0;
         ui.paintingHandscrollMode = isHandscrollArtwork(zoomTarget);
-        render();
+        renderModalsOnly();
         break;
       }
 
       case "close-painting-zoom":
         ui.paintingZoomOpen = false;
         ui.paintingZoomScale = 1;
-        render();
+        renderModalsOnly();
         break;
 
       case "zoom-step-in":
         ui.paintingZoomScale = Math.min(3, (ui.paintingZoomScale || 1) + 0.25);
-        render();
+        renderModalsOnly();
         break;
 
       case "zoom-step-out":
         ui.paintingZoomScale = Math.max(0.75, (ui.paintingZoomScale || 1) - 0.25);
-        render();
+        renderModalsOnly();
         break;
 
       case "zoom-step-reset":
         ui.paintingZoomScale = 1;
-        render();
+        renderModalsOnly();
         break;
 
       case "open-paintings-compare":
         ui.paintingCompareOpen = true;
-        render();
+        renderModalsOnly();
         break;
 
       case "close-painting-compare":
         ui.paintingCompareOpen = false;
-        render();
+        renderModalsOnly();
         break;
 
       case "close-compare-backdrop":
         if (e.target.classList.contains("modal-backdrop")) {
           ui.paintingCompareOpen = false;
-          render();
+          renderModalsOnly();
         }
         break;
 
       case "compare-with-this":
         if (id) ui.paintingCompareLeftId = id;
         ui.paintingCompareOpen = true;
-        render();
+        renderModalsOnly();
         break;
 
       case "launch-comparison":
         ui.paintingCompareLeftId = target.getAttribute("data-left") || "xishan-xinglv";
         ui.paintingCompareRightId = target.getAttribute("data-right") || "xiaoxiang-tu";
         ui.paintingCompareOpen = true;
-        render();
+        renderModalsOnly();
         break;
 
       case "filter-painting-era":
         ui.paintingsEraFilter = target.getAttribute("data-era") || "all";
-        render();
+        patchMainOnly();
         break;
 
       case "filter-painting-genre":
         ui.paintingsGenreFilter = target.getAttribute("data-genre") || "all";
-        render();
+        patchMainOnly();
         break;
 
       case "clear-paintings-filters":
@@ -10839,12 +11076,12 @@
         ui.paintingsMuseumFilter = "all";
         ui.paintingsAttributionFilter = "all";
         ui.paintingsQuery = "";
-        render();
+        patchMainOnly();
         break;
 
       case "set-paintings-view":
         ui.paintingsViewMode = target.getAttribute("data-mode") || "grid";
-        render();
+        patchMainOnly();
         break;
 
       case "scroll-to-paintings":
@@ -10871,18 +11108,18 @@
       case "close-lightbox":
         if (e.target === target || target.tagName === "BUTTON") {
           ui.lightboxOpen = false;
-          render();
+          renderModalsOnly();
         }
         break;
 
       case "select-period":
         ui.activePeriodId = id;
-        render();
+        patchMainOnly();
         break;
 
       case "select-map-layer":
         ui.mapLayerMode = target.getAttribute("data-mode") || "regions";
-        render();
+        patchMainOnly();
         break;
 
       case "select-map-province": {
@@ -10891,13 +11128,13 @@
         const provList = (Regions && (Regions.provincesDirectory || Regions.provincialDirectory)) || [];
         const matchedProv = provList.find((pr) => pr.id === id);
         if (matchedProv && matchedProv.regionId) ui.activeRegionId = matchedProv.regionId;
-        render();
+        patchMainOnly();
         break;
       }
 
       case "select-hotspot":
         ui.activeHotspotIdx = Number(target.getAttribute("data-idx") || 0);
-        render();
+        renderModalsOnly();
         break;
 
       case "tour-prev-hotspot":
@@ -10911,19 +11148,19 @@
           const cur = Math.max(0, Math.min(Number(ui.activeHotspotIdx || 0), total - 1));
           ui.activeHotspotIdx = action === "tour-next-hotspot" ? (cur + 1) % total : (cur - 1 + total) % total;
         }
-        render();
+        renderModalsOnly();
         break;
       }
 
       case "set-classics-treasury":
         ui.classicsTreasuryFilter = target.getAttribute("data-treasury") || "all";
-        render();
+        patchMainOnly();
         break;
 
       case "clear-classics-filters":
         ui.classicsTreasuryFilter = "all";
         ui.classicsQuery = "";
-        render();
+        patchMainOnly();
         break;
 
       case "set-home-journey-filter":
@@ -10986,7 +11223,7 @@
 
       case "filter-timeline":
         ui.timelineFilter = target.getAttribute("data-type");
-        render();
+        patchMainOnly();
         break;
 
       case "open-school":
@@ -10995,7 +11232,7 @@
           Store.setPage("philosophy");
           window.scrollTo({ top: 0, behavior: "smooth" });
         } else {
-          render();
+          patchMainOnly();
         }
         break;
 
@@ -11009,7 +11246,7 @@
 
       case "set-trad-tab":
         ui.traditionalTab = target.getAttribute("data-tab");
-        render();
+        patchMainOnly();
         break;
 
       case "select-region":
@@ -11020,19 +11257,56 @@
           Store.setPage("regions");
           window.scrollTo({ top: 0, behavior: "smooth" });
         } else {
-          render();
+          patchMainOnly();
         }
         break;
 
       case "select-city":
         ui.activeCityId = id;
-        render();
+        patchMainOnly();
         break;
 
       case "set-map-view":
         ui.regionViewMode = target.getAttribute("data-mode");
-        render();
+        patchMainOnly();
         break;
+
+      case "set-map-view-page":
+        ui.activeMegaMenu = null;
+        ui.mobileNavOpen = false;
+        ui.regionViewMode = target.getAttribute("data-mode") || "destinations";
+        Store.setPage("regions");
+        syncHashFromState("regions");
+        window.scrollTo({ top: 0, behavior: "instant" });
+        break;
+
+      case "dest-select-hub": {
+        ui.activeDestHubId = id;
+        const atlas = window.CCE_DESTINATIONS_ATLAS;
+        const hub = atlas && atlas.hubs ? atlas.hubs.find((h) => h.id === id) : null;
+        ui.activeDestAreaId = hub && hub.areas && hub.areas[0] ? hub.areas[0].id : null;
+        patchSlot("destinations-atlas-slot", renderDestinationsDeepAtlas);
+        break;
+      }
+
+      case "dest-select-area":
+        ui.activeDestAreaId = id;
+        patchSlot("destinations-atlas-slot", renderDestinationsDeepAtlas);
+        break;
+
+      case "open-destinations-hub": {
+        const atlas = window.CCE_DESTINATIONS_ATLAS;
+        const hub = atlas && atlas.hubs ? atlas.hubs.find((h) => h.id === id) : null;
+        ui.activeDestHubId = id || "dest-beijing";
+        ui.activeDestAreaId = hub && hub.areas && hub.areas[0] ? hub.areas[0].id : null;
+        ui.activeProvinceId = null;
+        ui.regionViewMode = "destinations";
+        Store.setPage("regions");
+        syncHashFromState("regions");
+        render();
+        window.scrollTo({ top: 0, behavior: "instant" });
+        break;
+      }
 
       case "jump-city":
         ui.activeCityId = id;
@@ -11044,12 +11318,12 @@
 
       case "set-learn-tab":
         ui.learningTab = target.getAttribute("data-tab");
-        render();
+        patchMainOnly();
         break;
 
       case "set-province-layer":
         ui.provinceLayerTab = target.getAttribute("data-layer") || "all";
-        render();
+        renderModalsOnly();
         break;
 
       case "set-survival-pack":
@@ -11621,7 +11895,7 @@
       case "toggle-mega-menu": {
         const key = target.getAttribute("data-mega");
         ui.activeMegaMenu = ui.activeMegaMenu === key ? null : key;
-        render();
+        patchHeaderOnly();
         break;
       }
 
@@ -11639,17 +11913,17 @@
 
       case "set-hero-artwork":
         ui.heroArtworkMode = target.getAttribute("data-mode") || "jiangshan-masterpiece";
-        render();
+        patchMainOnly();
         break;
 
       case "close-mega":
         ui.activeMegaMenu = null;
-        render();
+        patchHeaderOnly();
         break;
 
       case "select-role-journey":
         ui.activeRoleJourneyId = id || "visitor";
-        render();
+        patchMainOnly();
         break;
 
       case "start-journey":
@@ -11670,18 +11944,18 @@
         const dir = Number(target.getAttribute("data-dir") || 1);
         const total = Math.max(1, Math.ceil((Regions.cities || []).length / 4));
         ui.homeDestSlideIdx = ((ui.homeDestSlideIdx + dir) % total + total) % total;
-        render();
+        patchMainOnly();
         break;
       }
 
       case "select-dest-slide":
         ui.homeDestSlideIdx = Number(target.getAttribute("data-idx") || 0);
-        render();
+        patchMainOnly();
         break;
 
       case "set-home-journal-cat":
         ui.homeJournalCat = target.getAttribute("data-cat") || "all";
-        render();
+        patchMainOnly();
         break;
 
       case "set-home-province-type": {
@@ -11691,7 +11965,7 @@
         if (matched.length && !matched.some((pr) => pr.id === ui.selectedMapProvinceId)) {
           ui.selectedMapProvinceId = matched[0].id;
         }
-        render();
+        patchMainOnly();
         break;
       }
 
@@ -11705,12 +11979,12 @@
 
       case "filter-province-region":
         ui.provinceRegionFilter = target.getAttribute("data-region") || "all";
-        render();
+        patchMainOnly();
         break;
 
       case "set-explore-view":
         ui.exploreViewMode = target.getAttribute("data-mode") || "grid";
-        render();
+        patchMainOnly();
         break;
 
       case "clear-explore-facets":
@@ -11723,17 +11997,17 @@
         ui.exploreDifficulty = "all";
         ui.exploreSourceType = "all";
         ui.exploreLimit = 12;
-        render();
+        patchMainOnly();
         break;
 
       case "explore-load-more":
         ui.exploreLimit += 12;
-        render();
+        patchSlot("explore-results-slot", renderExploreResultsContent);
         break;
 
       case "set-library-subtab":
         ui.librarySubTab = target.getAttribute("data-tab") || "monograph";
-        render();
+        patchMainOnly();
         break;
 
       case "open-library-tab":
@@ -11749,17 +12023,17 @@
         showToast(isEnglishUi()
           ? (ui.articleScholarMode ? "Scholar Apparatus enabled (primary citations, Hanzi & Liushu layers visible)" : "Switched to Story Reading Mode (Default)")
           : (ui.articleScholarMode ? "Đã bật Chế độ Khảo cứu (hiển thị đầy đủ Hán văn, Lục thư & trích dẫn)" : "Đã chuyển về Chế độ Đọc (Mặc định)"));
-        render();
+        patchMainOnly();
         break;
 
       case "filter-monograph-chap":
         ui.activeMonographChapter = target.getAttribute("data-chap") || "all";
-        render();
+        patchMainOnly();
         break;
 
       case "filter-source-type":
         ui.sourceFilterType = target.getAttribute("data-type") || "all";
-        render();
+        patchMainOnly();
         break;
 
       case "open-custom-image":
@@ -11768,13 +12042,13 @@
           caption: target.getAttribute("data-caption") || "",
           credit: target.getAttribute("data-credit") || ""
         };
-        render();
+        renderModalsOnly();
         break;
 
       case "close-custom-image":
         if (e.target === target || target.tagName === "BUTTON") {
           ui.customModalImage = null;
-          render();
+          renderModalsOnly();
         }
         break;
 
@@ -11793,17 +12067,17 @@
         ui.paintingZoomOpen = true;
         ui.paintingZenMode = true;
         ui.paintingZoomScale = 1;
-        render();
+        renderModalsOnly();
         break;
 
       case "toggle-painting-zen":
         ui.paintingZenMode = !ui.paintingZenMode;
-        render();
+        renderModalsOnly();
         break;
 
       case "toggle-painting-handscroll":
         ui.paintingHandscrollMode = !ui.paintingHandscrollMode;
-        render();
+        renderModalsOnly();
         break;
 
       case "close-painting-zoom-backdrop":
@@ -11812,7 +12086,7 @@
           ui.paintingZenMode = false;
           ui.paintingHandscrollMode = false;
           ui.paintingZoomScale = 1;
-          render();
+          renderModalsOnly();
         }
         break;
 
@@ -11828,37 +12102,37 @@
       case "open-province-detail":
         ui.activeProvinceId = id;
         syncHashFromState(`province=${id}`);
-        render();
+        renderModalsOnly();
         break;
 
       case "close-province-detail":
         ui.activeProvinceId = null;
         syncHashFromState(Store.getState().activePage || "regions");
-        render();
+        renderModalsOnly();
         break;
 
       case "close-province-detail-backdrop":
         if (e.target === target) {
           ui.activeProvinceId = null;
           syncHashFromState(Store.getState().activePage || "regions");
-          render();
+          renderModalsOnly();
         }
         break;
 
       case "open-province-compare":
         ui.provinceCompareOpen = true;
-        render();
+        renderModalsOnly();
         break;
 
       case "close-province-compare":
         ui.provinceCompareOpen = false;
-        render();
+        renderModalsOnly();
         break;
 
       case "close-province-compare-backdrop":
         if (e.target === target) {
           ui.provinceCompareOpen = false;
-          render();
+          renderModalsOnly();
         }
         break;
 
@@ -11870,7 +12144,7 @@
           }
         }
         ui.provinceCompareOpen = true;
-        render();
+        renderModalsOnly();
         break;
 
       case "open-updates-modal":
@@ -11878,24 +12152,24 @@
         ui.mobileNavOpen = false;
         ui.updatesTab = target.getAttribute("data-tab") || ui.updatesTab || "reader";
         ui.updatesModalOpen = true;
-        render();
+        renderModalsOnly();
         break;
 
       case "close-updates-modal":
         ui.updatesModalOpen = false;
-        render();
+        renderModalsOnly();
         break;
 
       case "close-updates-backdrop":
         if (e.target === target) {
           ui.updatesModalOpen = false;
-          render();
+          renderModalsOnly();
         }
         break;
 
       case "set-updates-tab":
         ui.updatesTab = target.getAttribute("data-tab") || "reader";
-        render();
+        renderModalsOnly();
         break;
 
       case "unsubscribe-email":
@@ -11990,13 +12264,13 @@
             ui.mapLayerMode = "corridors";
           }
         }
-        render();
+        patchMainOnly();
         break;
       }
 
       case "toggle-zen-reading":
         ui.articleZenReading = !ui.articleZenReading;
-        render();
+        patchMainOnly();
         break;
 
       case "print-dossier":
@@ -12034,87 +12308,82 @@
       showToast(getLangPack().langChangedToast || `Đã chuyển giao diện: ${e.target.value.toUpperCase()}`);
     } else if (action === "vocab-article-filter") {
       ui.vocabFilterArticle = e.target.value || "all";
-      render();
+      patchMainOnly();
     } else if (action === "filter-painting-museum") {
       ui.paintingsMuseumFilter = e.target.value;
-      render();
+      patchSlot("paintings-grid-slot", renderPaintingsGridContent);
     } else if (action === "filter-painting-attr") {
       ui.paintingsAttributionFilter = e.target.value;
-      render();
+      patchSlot("paintings-grid-slot", renderPaintingsGridContent);
     } else if (action === "set-paintings-sort") {
       ui.paintingsSort = e.target.value;
-      render();
+      patchSlot("paintings-grid-slot", renderPaintingsGridContent);
     } else if (action === "select-compare-left") {
       ui.paintingCompareLeftId = e.target.value;
-      render();
+      renderModalsOnly();
     } else if (action === "select-compare-right") {
       ui.paintingCompareRightId = e.target.value;
-      render();
+      renderModalsOnly();
     } else if (action === "select-prov-compare-left") {
       ui.provinceCompareLeftId = e.target.value;
-      render();
+      renderModalsOnly();
     } else if (action === "select-prov-compare-right") {
       ui.provinceCompareRightId = e.target.value;
-      render();
+      renderModalsOnly();
     } else if (action === "dict-deck-filter") {
       ui.dictDeckFilter = e.target.value || "all";
-      const slot = document.getElementById("dict-results-slot");
-      if (slot) {
-        slot.innerHTML = renderDictionaryResultsContent();
-      } else {
-        render();
-      }
+      patchSlot("dict-results-slot", renderDictionaryResultsContent);
     } else if (action === "flashcard-deck-filter") {
       ui.flashcardDeckFilter = e.target.value || "all";
       ui.flashcardIdx = 0;
       ui.flashcardFlipped = false;
-      render();
+      patchMainOnly();
     } else if (action === "flashcard-level-filter") {
       ui.flashcardLevelFilter = e.target.value || "all";
       ui.flashcardIdx = 0;
       ui.flashcardFlipped = false;
-      render();
+      patchMainOnly();
     } else if (action === "flashcard-topic-filter") {
       ui.flashcardTopicFilter = e.target.value || "all";
       ui.flashcardIdx = 0;
       ui.flashcardFlipped = false;
-      render();
+      patchMainOnly();
     } else if (action === "museum-period-filter") {
       ui.museumPeriodFilter = e.target.value;
-      render();
+      patchSlot("museum-results-slot", renderMuseumResultsContent);
     } else if (action === "search-filter-period") {
       ui.searchPeriodFilter = e.target.value;
-      render();
+      renderModalsOnly();
     } else if (action === "search-filter-region") {
       ui.searchRegionFilter = e.target.value;
-      render();
+      renderModalsOnly();
     } else if (action === "search-filter-level") {
       ui.searchLevelFilter = e.target.value;
-      render();
+      renderModalsOnly();
     } else if (action === "search-filter-source") {
       ui.searchSourceFilter = e.target.value;
-      render();
+      renderModalsOnly();
     } else if (action === "explore-sort-change") {
       ui.exploreSort = e.target.value;
-      render();
+      patchSlot("explore-results-slot", renderExploreResultsContent);
     } else if (action === "explore-facet-period") {
       ui.explorePeriod = e.target.value;
-      render();
+      patchSlot("explore-results-slot", renderExploreResultsContent);
     } else if (action === "explore-facet-region") {
       ui.exploreRegion = e.target.value;
-      render();
+      patchSlot("explore-results-slot", renderExploreResultsContent);
     } else if (action === "explore-facet-type") {
       ui.exploreContentType = e.target.value;
-      render();
+      patchSlot("explore-results-slot", renderExploreResultsContent);
     } else if (action === "explore-facet-lang") {
       ui.exploreLanguage = e.target.value;
-      render();
+      patchSlot("explore-results-slot", renderExploreResultsContent);
     } else if (action === "explore-facet-difficulty") {
       ui.exploreDifficulty = e.target.value;
-      render();
+      patchSlot("explore-results-slot", renderExploreResultsContent);
     } else if (action === "explore-facet-source") {
       ui.exploreSourceType = e.target.value;
-      render();
+      patchSlot("explore-results-slot", renderExploreResultsContent);
     }
   });
 
@@ -12126,71 +12395,63 @@
       ui.heroSearchText = e.target.value;
       const trimmed = e.target.value.trim();
       ui.heroAutocompleteOpen = Boolean(trimmed);
-      const slot = document.getElementById("hero-autocomplete-slot");
-      if (!trimmed) {
-        if (slot) slot.innerHTML = "";
-      } else if (slot) {
-        slot.innerHTML = renderHeroAutocomplete();
-      }
+      scheduleSlotInput("hero-ac", () => {
+        const slot = document.getElementById("hero-autocomplete-slot");
+        if (!ui.heroSearchText.trim()) {
+          if (slot) slot.innerHTML = "";
+        } else if (slot) {
+          slot.innerHTML = renderHeroAutocomplete();
+        }
+      }, 65);
     } else if (action === "paintings-search-input") {
       ui.paintingsQuery = e.target.value;
-      const slot = document.getElementById("paintings-grid-slot");
-      const countEl = document.getElementById("paintings-count-slot");
-      if (countEl) countEl.textContent = String(getFilteredPaintings().length);
-      if (slot) {
-        slot.innerHTML = renderPaintingsGridContent();
-      } else {
-        render();
-      }
+      scheduleSlotInput("paintings-q", () => {
+        const slot = document.getElementById("paintings-grid-slot");
+        const countEl = document.getElementById("paintings-count-slot");
+        if (countEl) countEl.textContent = String(getFilteredPaintings().length);
+        if (slot) slot.innerHTML = renderPaintingsGridContent();
+        else patchMainOnly();
+      }, 95);
     } else if (action === "dict-search-input") {
       ui.dictQuery = e.target.value;
-      const slot = document.getElementById("dict-results-slot");
-      if (slot) {
-        slot.innerHTML = renderDictionaryResultsContent();
-      } else {
-        render();
-      }
+      scheduleSlotInput("dict-q", () => {
+        patchSlot("dict-results-slot", renderDictionaryResultsContent);
+      }, 95);
     } else if (action === "museum-search-input") {
       ui.museumQuery = e.target.value;
-      const slot = document.getElementById("museum-results-slot");
-      if (slot) {
-        slot.innerHTML = renderMuseumResultsContent();
-      } else {
-        render();
-      }
+      scheduleSlotInput("museum-q", () => {
+        patchSlot("museum-results-slot", renderMuseumResultsContent);
+      }, 95);
     } else if (action === "global-search-input") {
       ui.searchQuery = e.target.value;
       ui.searchLimit = 18;
-      const slot = document.getElementById("global-search-results-slot");
-      if (slot) {
-        slot.innerHTML = renderGlobalSearchResultsHTML();
-      } else {
-        render();
-      }
+      scheduleSlotInput("global-q", () => {
+        const slot = document.getElementById("global-search-results-slot");
+        if (slot) slot.innerHTML = renderGlobalSearchResultsHTML();
+        else renderModalsOnly();
+      }, 95);
     } else if (action === "quiz-short-input") {
       ui.quizShortAnswers[e.target.getAttribute("data-qid")] = e.target.value;
     } else if (action === "explore-query-input") {
       ui.exploreQuery = e.target.value;
-      const slot = document.getElementById("explore-results-slot");
-      if (slot) {
-        slot.innerHTML = renderExploreResultsContent();
-      } else {
-        render();
-      }
+      scheduleSlotInput("explore-q", () => {
+        patchSlot("explore-results-slot", renderExploreResultsContent);
+      }, 95);
     } else if (action === "province-query-input") {
       ui.provinceQuery = e.target.value;
-      const slot = document.getElementById("provinces-grid-slot");
-      if (slot) {
-        slot.innerHTML = renderProvincesDirectoryContent();
-      } else {
-        render();
-      }
+      scheduleSlotInput("prov-q", () => {
+        patchSlot("provinces-grid-slot", renderProvincesDirectoryContent);
+      }, 95);
     } else if (action === "classics-query-input") {
       ui.classicsQuery = e.target.value;
-      render();
+      scheduleSlotInput("classics-q", () => {
+        patchMainOnly();
+      }, 110);
     } else if (action === "vocab-search-input") {
       ui.vocabSearchQuery = e.target.value;
-      render();
+      scheduleSlotInput("vocab-q", () => {
+        patchMainOnly();
+      }, 110);
     } else if (action === "fc3d-explode") {
       if (ForbiddenCity3D && typeof ForbiddenCity3D.handleAction === "function") {
         ForbiddenCity3D.handleAction("fc3d-explode", e.target, Store, showToast, render);
@@ -12833,7 +13094,33 @@
   });
 
   // Initialize Auth, Store, Clean Path Routing, and Render
-  Store.subscribe(render);
+  Store.subscribe((_nextState, reason) => {
+    if (reason === "theme") {
+      patchHeaderThemeOnly();
+      return;
+    }
+    if (reason === "reading") {
+      return;
+    }
+    if (reason === "bookmark") {
+      syncBookmarkButtonsInDom();
+      if (hasAnyOpenModalState()) renderModalsOnly();
+      if (Store.getState().activePage === "learning") patchMainOnly();
+      return;
+    }
+    if (reason === "vocab") {
+      if (hasAnyOpenModalState()) renderModalsOnly();
+      if (Store.getState().activePage === "learning" || Store.getState().activePage === "article") {
+        patchMainOnly();
+      }
+      return;
+    }
+    if (reason === "font" && Store.getState().activePage === "article") {
+      patchMainOnly();
+      return;
+    }
+    render();
+  });
   Auth.subscribe(render);
   Store.init();
   applyRouteFromLocation();

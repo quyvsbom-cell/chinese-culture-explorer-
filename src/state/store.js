@@ -168,7 +168,8 @@ window.CCE_STORE = (function () {
     }
   }
 
-  async function pushToServer() {
+  let pushTimer = null;
+  async function pushToServerNow() {
     if (!backendApiAvailable) return;
     try {
       const res = await fetch("/api/state", {
@@ -182,16 +183,25 @@ window.CCE_STORE = (function () {
     }
   }
 
-  function notify() {
-    listeners.forEach((fn) => fn(state));
+  function pushToServer() {
+    if (!backendApiAvailable) return;
+    if (pushTimer) clearTimeout(pushTimer);
+    pushTimer = setTimeout(() => {
+      pushTimer = null;
+      pushToServerNow();
+    }, 350);
   }
 
-  function update(mutator) {
+  function notify(reason = "all") {
+    listeners.forEach((fn) => fn(state, reason));
+  }
+
+  function update(mutator, reason = "all") {
     mutator(state);
     state.updatedAt = Date.now();
     saveLocal();
     pushToServer();
-    notify();
+    notify(reason);
   }
 
   function todayStr() {
@@ -215,29 +225,29 @@ window.CCE_STORE = (function () {
       update((s) => {
         s.theme = s.theme === "light" ? "dark" : "light";
         document.documentElement.setAttribute("data-theme", s.theme);
-      });
+      }, "theme");
     },
     setUiLang(lang) {
       update((s) => {
         s.uiLang = lang;
         if (lang === "zh-TW") s.scriptMode = "both";
         document.documentElement.setAttribute("lang", lang);
-      });
+      }, "lang");
     },
     setArticleFontSize(size) {
       update((s) => {
         s.articleFontSize = size;
-      });
+      }, "font");
     },
     toggleScriptMode() {
       update((s) => {
         s.scriptMode = s.scriptMode === "both" ? "simplified" : "both";
-      });
+      }, "all");
     },
     setPage(pageId) {
       update((s) => {
         s.activePage = pageId;
-      });
+      }, "page");
     },
     isBookmarked(type, id) {
       return state.bookmarks.some((b) => b.type === type && b.id === id);
@@ -252,7 +262,7 @@ window.CCE_STORE = (function () {
           s.bookmarks.unshift({ type, id, title, addedAt: todayStr() });
           added = true;
         }
-      });
+      }, "bookmark");
       return added;
     },
     isArticleCompleted(articleId) {
@@ -263,14 +273,14 @@ window.CCE_STORE = (function () {
         const idx = s.completedArticles.indexOf(articleId);
         if (idx >= 0) s.completedArticles.splice(idx, 1);
         else s.completedArticles.push(articleId);
-      });
+      }, "all");
     },
     recordReading(type, id, title) {
       update((s) => {
         s.readingHistory = s.readingHistory.filter((h) => !(h.type === type && h.id === id));
         s.readingHistory.unshift({ type, id, title, viewedAt: todayStr() });
         if (s.readingHistory.length > 25) s.readingHistory.pop();
-      });
+      }, "reading");
     },
     isVocabCollected(termId) {
       return state.collectedVocab.includes(termId);
@@ -284,7 +294,7 @@ window.CCE_STORE = (function () {
           s.collectedVocab.push(termId);
           added = true;
         }
-      });
+      }, "vocab");
       return added;
     },
     toggleMasteredFlashcard(termId) {
