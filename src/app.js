@@ -8091,7 +8091,7 @@
           </div>
           <div style="display:flex;gap:0.45rem;flex-wrap:wrap;">
             <button type="button" class="btn ${zeroPinyin ? "btn-primary" : "btn-secondary"} btn-sm" data-action="toggle-survival-zero-pinyin" aria-pressed="${zeroPinyin ? "true" : "false"}">
-              ${zeroPinyin ? (enL ? "🧠 Zero-Pinyin Recall: ON" : "🧠 Zero-Pinyin Recall: ĐANG BẬT") : (enL ? "👁️ Pinyin Visible" : "👁️ Đang Hiện Sẵn Pinyin")}
+              ${zeroPinyin ? (enL ? "Zero-Pinyin Recall: ON" : "Zero-Pinyin Recall: ĐANG BẬT") : (enL ? "Mode: Pinyin Visible" : "Chế độ: Đang Hiện Pinyin")}
             </button>
             <button type="button" class="btn btn-jade btn-sm" data-action="export-survival-anki" data-fmt="csv">${ICONS.download} Anki .CSV</button>
             <button type="button" class="btn btn-secondary btn-sm" data-action="export-survival-anki" data-fmt="tsv">${ICONS.download} .TSV</button>
@@ -8143,7 +8143,7 @@
                     ${zeroPinyin ? `
                       <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
                         <button type="button" class="btn ${isRevealed ? "btn-secondary" : "btn-primary"} btn-sm" data-action="toggle-survival-reveal" data-id="${escapeHtml(it.id)}">
-                          ${isRevealed ? (enL ? "Hide Answer" : "Ẩn Đáp án") : (enL ? "👁️ Tap to Reveal Pinyin, Radicals & Meaning" : "👁️ Chạm để Hiện Pinyin, Chiết tự & Nghĩa")}
+                          ${isRevealed ? (enL ? "Hide Answer" : "Ẩn Đáp án") : (enL ? "Tap to Reveal Pinyin, Radicals & Meaning" : "Chạm để Hiện Pinyin, Chiết tự & Nghĩa")}
                         </button>
                       </div>
                     ` : ""}

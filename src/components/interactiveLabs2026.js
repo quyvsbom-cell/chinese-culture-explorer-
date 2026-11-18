@@ -271,8 +271,8 @@
               <h3 style="margin:0;font-family:var(--font-editorial);font-size:1.35rem;">${enMode ? "Self-Regulating River Split: Fish Mouth, Flying Sand Weir & Bottleneck" : "Thử Điều Tiết Mực Nước Lũ vs. Mùa Kiệt Qua 3 Bộ Phận Kỳ Vĩ"}</h3>
             </div>
             <div style="display:flex;gap:0.45rem;flex-wrap:wrap;">
-              <button type="button" class="btn ${isFlood ? "btn-primary" : "btn-secondary"} btn-sm" data-action="lab-dujiangyan-mode" data-mode="flood">${enMode ? "🌊 Summer Flood (60% Outer Spill)" : "🌊 Mùa Lũ Hạ–Thu (Xả lũ 60%)"}</button>
-              <button type="button" class="btn ${!isFlood ? "btn-jade" : "btn-secondary"} btn-sm" data-action="lab-dujiangyan-mode" data-mode="dry">${enMode ? "🌾 Winter Dry (60% Inner Irrigate)" : "🌾 Mùa Kiệt Đông–Xuân (Tưới 60%)"}</button>
+              <button type="button" class="btn ${isFlood ? "btn-primary" : "btn-secondary"} btn-sm" data-action="lab-dujiangyan-mode" data-mode="flood">${enMode ? "Summer Flood (60% Outer Spill)" : "Mùa Lũ Hạ–Thu (Xả lũ 60%)"}</button>
+              <button type="button" class="btn ${!isFlood ? "btn-jade" : "btn-secondary"} btn-sm" data-action="lab-dujiangyan-mode" data-mode="dry">${enMode ? "Winter Dry (60% Inner Irrigate)" : "Mùa Kiệt Đông–Xuân (Tưới 60%)"}</button>
             </div>
           </div>
 
@@ -334,7 +334,7 @@
               <div class="editorial-kicker" style="color:var(--imperial-red);margin-bottom:0.2rem;">${enMode ? "ZIWU LIUZHU · 12-MERIDIAN 24H CIRCADIAN CLOCK" : "ĐỒNG HỒ SINH HỌC TỬ NGỌ LƯU CHÚ (子午流注 · 12 CANH GIỜ NỘI KINH)"}</div>
               <h3 style="margin:0;font-family:var(--font-editorial);font-size:1.35rem;">${enMode ? "Tap Any Two-Hour Window or Match Current Clock Hour" : "Chạm Chọn Canh Giờ Dưỡng Sinh Theo Đồng Hồ Cơ Thể Đông Y"}</h3>
             </div>
-            <button type="button" class="btn btn-primary btn-sm" data-action="lab-meridian-now">🕒 ${enMode ? "Sync Current Local Hour" : "Chọn theo Giờ Hiện Tại"}</button>
+            <button type="button" class="btn btn-primary btn-sm" data-action="lab-meridian-now">${enMode ? "Sync Current Local Hour" : "Đồng bộ Giờ Hiện Tại"}</button>
           </div>
 
           <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:0.4rem;margin-bottom:0.9rem;">
@@ -354,7 +354,7 @@
               </div>
               <div style="display:flex;align-items:center;gap:0.4rem;">
                 <span class="hanzi" style="font-size:1.15rem;color:var(--imperial-red);font-weight:700;">${cur.hanzi}</span>
-                <button type="button" class="tts-speak-btn" data-action="speak-zh" data-zh="${cur.hanzi}" title="Listen">🔊</button>
+                <button type="button" class="tts-speak-btn" data-action="speak-zh" data-zh="${cur.hanzi}" title="Listen"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="width:0.88rem;height:0.88rem;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 010 7.07"/><path d="M19.07 4.93a10 10 0 010 14.14"/></svg></button>
               </div>
             </div>
             <h4 style="margin:0.15rem 0 0.35rem;font-size:1.12rem;">${enMode ? cur.organEn : cur.organVi}</h4>
@@ -405,7 +405,7 @@
               <strong style="color:var(--imperial-red);">${enMode ? "7-Day Execution Plan & 12306 Hubs" : "Kế hoạch 7 Ngày & Ga Cao tốc 12306 Trọng yếu"}</strong>
               <div style="font-size:0.78rem;margin:0.4rem 0;color:var(--text-muted);">${enMode ? "Departure:" : "Xuất phát:"} <strong>${enMode ? border.labelEn : border.labelVi}</strong></div>
               <div style="display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:0.55rem;">
-                ${route.stations.map((s) => `<span class="badge badge-outline" style="font-size:0.72rem;">🚄 ${s}</span>`).join("")}
+                ${route.stations.map((s) => `<span class="badge badge-outline" style="font-size:0.72rem;">${enMode ? "HSR" : "Ga"} · ${s}</span>`).join("")}
               </div>
               <ul style="margin:0;padding-left:1.1rem;font-size:0.83rem;line-height:1.55;">
                 ${(enMode ? route.dayPlanEn : route.dayPlanVi).map((d) => `<li style="margin-bottom:0.25rem;">${d}</li>`).join("")}
@@ -467,7 +467,7 @@
 
           <div style="display:flex;align-items:center;gap:0.65rem;flex-wrap:wrap;margin-bottom:0.65rem;">
             <span class="hanzi" style="font-size:1.65rem;font-weight:800;color:var(--imperial-red);">${q.hanzi}</span>
-            <button type="button" class="tts-speak-btn" data-action="speak-zh" data-zh="${q.hanzi.split("·")[0].trim()}" title="Speak">🔊</button>
+            <button type="button" class="tts-speak-btn" data-action="speak-zh" data-zh="${q.hanzi.split("·")[0].trim()}" title="Speak"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="width:0.88rem;height:0.88rem;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 010 7.07"/><path d="M19.07 4.93a10 10 0 010 14.14"/></svg></button>
             <span class="badge badge-outline">${enMode ? q.topicEn : q.topicVi}</span>
           </div>
 
@@ -490,7 +490,7 @@
 
           ${isAnswered ? `
             <div class="callout-editorial" style="margin:0.85rem 0 0;padding:0.75rem 1rem;border-left-color:${isCorrect ? "var(--jade-green)" : "var(--imperial-red)"};">
-              <strong style="color:${isCorrect ? "var(--jade-green)" : "var(--imperial-red)"};">${isCorrect ? (enMode ? "✅ Exact Match!" : "✅ Chính xác tuyệt đối!") : (enMode ? "❌ Review Logic:" : "❌ Lưu ý Logic Thực chiến:")}</strong>
+              <strong style="color:${isCorrect ? "var(--jade-green)" : "var(--imperial-red)"};">${isCorrect ? (enMode ? "[VERIFIED]" : "[CHÍNH XÁC]") : (enMode ? "[REVIEW LOGIC]" : "[LƯU Ý THỰC CHIẾN]")}</strong>
               ${enMode ? q.explainEn : q.explainVi}
             </div>
           ` : ""}

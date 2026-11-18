@@ -2108,10 +2108,10 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     const canvasId = tall ? "fc3d-canvas-monograph" : "fc3d-canvas-home";
     const pinsId = tall ? "fc3d-pins-monograph" : "fc3d-pins-home";
     const lightLabel = ui3d.lightingPreset === 0
-      ? (en ? "☀️ Day Studio" : "☀️ Ban Ngày")
+      ? (en ? "Day Studio" : "Ban Ngày")
       : ui3d.lightingPreset === 1
-      ? (en ? "🌇 Dusk" : "🌇 Hoàng Hôn")
-      : (en ? "🌙 Night CAD" : "🌙 Sa bàn Đêm");
+      ? (en ? "Dusk" : "Hoàng Hôn")
+      : (en ? "Night CAD" : "Sa bàn Đêm");
     const wrapClass = isScrolly ? "fc3d-canvas-wrap fc3d-canvas-scrolly" : (tall ? "fc3d-canvas-wrap fc3d-canvas-tall" : "fc3d-canvas-wrap");
 
     return `
@@ -2135,10 +2135,10 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
           <div class="fc3d-hud-top-left" aria-label="${en ? "3D Viewport Utilities" : "Công cụ Khung nhìn 3D"}">
             <span class="fc3d-hud-badge">紫禁城 · WebGL</span>
             <button type="button" class="fc3d-pill ${ui3d.autoOrbit ? "active" : ""}" data-action="fc3d-toggle-orbit">
-              ${ui3d.autoOrbit ? (en ? "⟳ Orbit: ON" : "⟳ Tự Xoay: BẬT") : (en ? "⟳ Orbit: OFF" : "⟳ Tự Xoay: TẮT")}
+              ${ui3d.autoOrbit ? (en ? "Orbit: ON" : "Tự Xoay: BẬT") : (en ? "Orbit: OFF" : "Tự Xoay: TẮT")}
             </button>
             <button type="button" class="fc3d-pill ${ui3d.showPins ? "active" : ""}" data-action="fc3d-toggle-pins">
-              ${ui3d.showPins ? (en ? "📍 Pins: ON" : "📍 Nhãn 3D: BẬT") : (en ? "📍 Pins: OFF" : "📍 Nhãn 3D: TẮT")}
+              ${ui3d.showPins ? (en ? "Pins: ON" : "Nhãn 3D: BẬT") : (en ? "Pins: OFF" : "Nhãn 3D: TẮT")}
             </button>
             <button type="button" class="fc3d-pill" data-action="fc3d-cycle-light">${lightLabel}</button>
           </div>
@@ -2221,20 +2221,20 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     const orbitBtn = shell.querySelector('[data-action="fc3d-toggle-orbit"]');
     if (orbitBtn) {
       orbitBtn.classList.toggle("active", ui3d.autoOrbit);
-      orbitBtn.textContent = ui3d.autoOrbit ? (en ? "⟳ Orbit: ON" : "⟳ Tự Xoay: BẬT") : (en ? "⟳ Orbit: OFF" : "⟳ Tự Xoay: TẮT");
+      orbitBtn.textContent = ui3d.autoOrbit ? (en ? "Orbit: ON" : "Tự Xoay: BẬT") : (en ? "Orbit: OFF" : "Tự Xoay: TẮT");
     }
     const pinsBtn = shell.querySelector('[data-action="fc3d-toggle-pins"]');
     if (pinsBtn) {
       pinsBtn.classList.toggle("active", ui3d.showPins);
-      pinsBtn.textContent = ui3d.showPins ? (en ? "📍 Pins: ON" : "📍 Nhãn 3D: BẬT") : (en ? "📍 Pins: OFF" : "📍 Nhãn 3D: TẮT");
+      pinsBtn.textContent = ui3d.showPins ? (en ? "Pins: ON" : "Nhãn 3D: BẬT") : (en ? "Pins: OFF" : "Nhãn 3D: TẮT");
     }
     const lightBtn = shell.querySelector('[data-action="fc3d-cycle-light"]');
     if (lightBtn) {
       lightBtn.textContent = ui3d.lightingPreset === 0
-        ? (en ? "☀️ Day Studio" : "☀️ Ban Ngày")
+        ? (en ? "Day Studio" : "Ban Ngày")
         : ui3d.lightingPreset === 1
-        ? (en ? "🌇 Dusk" : "🌇 Hoàng Hôn")
-        : (en ? "🌙 Night CAD" : "🌙 Sa bàn Đêm");
+        ? (en ? "Dusk" : "Hoàng Hôn")
+        : (en ? "Night CAD" : "Sa bàn Đêm");
     }
     const slider = shell.querySelector('[data-action="fc3d-explode"]');
     if (slider) slider.value = String(ui3d.explodePercent);
@@ -2435,10 +2435,10 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
                   </div>
                   <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
                     <button type="button" class="fc3d-pill" style="background:#171512;border-color:#D7BA81;" data-action="fc3d-select-chapter" data-idx="${idx}">
-                      🎯 ${en ? "Focus Camera" : "Xoay tới vị trí"}
+                      ${en ? "Focus Camera" : "Xoay tới vị trí"}
                     </button>
                     <button type="button" class="fc3d-pill" style="background:#1F6E5C;border-color:#1F6E5C;" data-action="fc3d-chapter-xray" data-idx="${idx}">
-                      🔬 ${en ? "Peel X-Ray Layer" : "Bóc lớp X-Ray"}
+                      ${en ? "Peel X-Ray Layer" : "Bóc lớp X-Ray"}
                     </button>
                   </div>
                 </article>
