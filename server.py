@@ -121,9 +121,12 @@ class ExplorerHandler(SimpleHTTPRequestHandler):
         else:
             rel = req_path.lstrip("/")
             fs_target = (BASE_DIR / rel).resolve()
+            is_within_base = fs_target == BASE_DIR or BASE_DIR in fs_target.parents
             is_static_prefix = lower_path.startswith(("/assets/", "/src/", "/styles/"))
             has_file_ext = bool(Path(req_path).suffix)
-            if not is_static_prefix and not has_file_ext and not fs_target.is_file():
+            if is_within_base and fs_target.is_dir() and (fs_target / "index.html").is_file():
+                self.path = f"/{rel.rstrip('/')}/index.html"
+            elif not is_static_prefix and not has_file_ext and not fs_target.is_file():
                 self.path = "/index.html"
         super().do_GET()
 

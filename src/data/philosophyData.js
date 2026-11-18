@@ -209,7 +209,7 @@ window.CCE_PHILOSOPHY = {
       nameZh: "魏晋玄学",
       historicalOrigins:
         "Khởi phát vào thế kỷ III–IV SCN (thời Tam Quốc – Lưỡng Tấn) khi chế độ Kinh học chương cú đời Hán suy tàn cùng biến loạn chính trị. Giới danh sĩ tìm cách dung hợp Nho gia và Đạo gia qua ba bộ sách kinh điển gọi là 'Tam Huyền' (《Chu Dịch》, 《Lão Tử》, 《Trang Tử》).",
-      majorThinkers: "Hà晏 (Hà Án), Vương Bật (王弼), Kê Khang (嵇康), Nguyễn Tịch (阮籍), Hướng Tú (向秀), Quách Tượng (郭象).",
+      majorThinkers: "Hà Yến (何晏), Vương Bật (王弼), Kê Khang (嵇康), Nguyễn Tịch (阮籍), Hướng Tú (向秀), Quách Tượng (郭象).",
       fundamentalPrinciples:
         "Đặt vấn đề bản thể luận sâu sắc ('Bản – Mạt', 'Hữu – Vô'): Vương Bật chủ trương 'Dĩ Vô vi bản' (lấy cái Vô hình không định danh làm gốc của vạn vật hữu hình), đồng thời luận giải mối quan hệ giữa 'Danh giáo' (lễ pháp Nho gia) và 'Tự nhiên' (bản tính tự do Đạo gia).",
       classicalTexts: ["《老子注》 & 《周易注》 (Vương Bật)", "《庄子注》 (Quách Tượng)", "《声无哀乐论》 (Kê Khang)", "《世说新语》 (Thế Thuyết Tân Ngữ)"],
@@ -264,7 +264,7 @@ window.CCE_PHILOSOPHY = {
         "Lý tồn hồ dục (理存乎欲): Đới Chấn khẳng định đạo lý không tách rời nhu cầu sinh tồn chính đáng của con người."
       ],
       historicalInfluence:
-        "Đặt nền móng phương pháp luận khoa học bản địa về ngữ âm học lịch sử (phân bộ cổ âm), huấn诂 học, hiệu勘 học và khảo cổ kim thạch; đồng thời truyền cảm hứng trực tiếp cho học giả Lê Quý Đôn (《Vân Đài Loại Ngữ》) tại Việt Nam thế kỷ XVIII.",
+        "Đặt nền móng phương pháp luận học thuật bản địa về ngữ âm học lịch sử (phân bộ cổ âm), huấn cổ học (训诂学), hiệu khám học (校勘学) và khảo cổ kim thạch; qua đó truyền cảm hứng trực tiếp cho học giả Lê Quý Đôn (《Vân Đài Loại Ngữ》) tại Việt Nam thế kỷ XVIII.",
       contemporaryRelevance:
         "Phương châm 'Thực sự cầu thị' và tinh thần kiểm chứng nguồn tài liệu gốc (Primary Source Verification) chính là kim chỉ nam của nghiên cứu học thuật hiện đại.",
       vietnamRelevance:

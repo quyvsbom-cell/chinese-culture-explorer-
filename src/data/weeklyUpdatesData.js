@@ -36,10 +36,10 @@ window.CCE_WEEKLY_UPDATES = (function () {
       kind: "changelog",
       targetId: "changelog",
       date: "2026-11-18",
-      titleVi: "Phát hành v2.6: Mở khóa 100% Đọc tự do, Sổ tay Ngữ cảnh, Song ngữ EN Toàn bộ 64 Bài & Hành trang Thực địa",
-      titleEn: "Release v2.6: 100% Open-Read Monographs, Contextual Vocab Notebook, Full 64-Essay EN Edition & Travel Readiness",
+      titleVi: "Phát hành v2.6: Mở khóa 100% Đọc tự do, Sổ tay Ngữ cảnh, Song ngữ EN Toàn bộ 65 Bài & Hành trang Thực địa",
+      titleEn: "Release v2.6: 100% Open-Read Monographs, Contextual Vocab Notebook, Full 65-Essay EN Edition & Travel Readiness",
       summaryVi: "Gỡ bỏ hoàn toàn cổng chặn đọc bài viết, thay Anki tĩnh bằng Sổ tay Ghi chú khi bôi đen văn bản, bổ sung Hành trang 34 tỉnh & thơ Tứ tuyệt Sáng lập.",
-      summaryEn: "Removed full-text reader gates, replaced standalone Anki panes with live highlighted phrase capture, localized all 64 essays & Related Articles to English, and added 34-province travel dossiers."
+      summaryEn: "Removed full-text reader gates, replaced standalone Anki panes with live highlighted phrase capture, localized all 65 essays & Related Articles to English, and added 34-province travel dossiers."
     }
   ];
 
@@ -50,8 +50,8 @@ window.CCE_WEEKLY_UPDATES = (function () {
       type: "feature",
       tagVi: "[Nâng cấp Hệ thống & Dữ liệu]",
       tagEn: "[Website Feature & Data Update]",
-      titleVi: "Mô hình 3D Tử Cấm Thành Đa chi tiết, Mở khóa Đọc tự do & Toàn bộ 64 Chuyên luận Song ngữ VI/EN",
-      titleEn: "High-Detail 3D Forbidden City Dissection, 100% Open-Access Monographs & Full 64-Essay VI/EN Parity",
+      titleVi: "Mô hình 3D Tử Cấm Thành Đa chi tiết, Mở khóa Đọc tự do & Toàn bộ 65 Chuyên luận Song ngữ VI/EN",
+      titleEn: "High-Detail 3D Forbidden City Dissection, 100% Open-Access Monographs & Full 65-Essay VI/EN Parity",
       itemsVi: [
         "Giải phẫu 3D Tử Cấm Thành (src/components/forbiddenCity3D.js) với 4 hệ mái Phi Diềm cong, 10 Linh thú góc mái, 3 tầng Tu Di Tọa, 250 tấn Đan Bệ, Nội Kim Thủy Hà & Ngũ Long Kiều, Cửu Long Bích và nội thất Đấu củng X-Ray đối sánh Cố đô Huế.",
         "Gỡ bỏ cổng chặn đăng nhập khi đọc bài viết: toàn văn 64+ chuyên luận, sử liệu gốc 4 lớp và trích dẫn APA/BibTeX đều mở tự do cho độc giả & Google Search.",

@@ -411,7 +411,7 @@
         },
         {
           heading: "5. Văn hóa Dân tộc Tráng – Hồng Dao Long Tích & Trình tự Thời tiết Mùa Nước Đổ",
-          body: "Tại khu thắng cảnh Long Tích (cách trung tâm Quế Lâm 80 km), ba ngôi làng cổ Bình An Tráng trại, Kim Khanh Đại Trại (Hồng Dao) và Cổ Tráng trại giữ trọn kiến trúc nhà gỗ ba tầng chống ẩm và tục nuôi tóc dài độc đáo của phụ nữ Hồng Dao (trên 1,4 mét, được xem là biểu tượng trường thọ và sinh sôi). Bốn mùa ruộng bậc thang tạo nên bốn cảnh quan khác biệt: tháng 5–6 mùa đổ ải mặt ruộng phản chiếu bầu trời như hàng nghìn mảnh gương, tháng 7–8 xanh mướt mạ non, tháng 9–10 vàng rực mùa gặt và tháng 12–2 phủ sương tuyết trắng xóa."
+          body: "Tại khu thắng cảnh Long Tích (cách trung tâm Quế Lâm 80 km), ba ngôi làng cổ Bình An Tráng trại, Kim Khanh Đại Trại (Hồng Dao) và Cổ Tráng trại vẫn gìn giữ nếp nhà gỗ ba tầng chống ẩm và tục nuôi tóc dài đặc trưng của phụ nữ Hồng Dao (dài trên 1,4 mét, biểu trưng cho trường thọ và sinh sôi). Bốn mùa ruộng bậc thang chuyển sắc liên tục: tháng 5–6 mùa đổ ải mặt nước phản chiếu bầu trời như hàng nghìn tấm gương, tháng 7–8 xanh ngát mạ non, tháng 9–10 vàng rực mùa gặt và tháng 12–2 phủ sương tuyết trắng xóa."
         }
       ],
       conclusion:

@@ -1031,7 +1031,7 @@ window.CCE_INTELLIGENCE = {
         lastVerified: "2026-11-15",
         version: "v2.0",
         auditClassification: "1. Factually Solid",
-        changeLog: "Đối chiếu bản Chu Dịch truyền thế với bản帛书周易 (Bạch thư Chu Dịch Mã Vương Đôi, 168 TCN).",
+        changeLog: "Đối chiếu bản Chu Dịch truyền thế với bản Bạch thư Chu Dịch (帛书周易 Mã Vương Đôi, 168 TCN).",
         justifyingSource: "Chu Dịch Chính Nghĩa (Khổng Dĩnh Đạt) & Bảo tàng Tỉnh Hồ Nam (Mã Vương Đôi)"
       },
       "tang-dynasty-cosmopolitan": {

@@ -156,15 +156,15 @@ window.CCE_VISUALS = {
       {
         id: "east",
         label: "HOA ĐÔNG 华东",
-        lx: 658,
-        ly: 288,
+        lx: 682,
+        ly: 292,
         path: "M 600 290 L 655 245 L 740 280 L 758 395 L 698 482 L 592 442 L 575 360 Z"
       },
       {
         id: "south",
         label: "HOA NAM & TRUNG NAM 华南",
-        lx: 526,
-        ly: 422,
+        lx: 518,
+        ly: 446,
         path: "M 420 295 L 490 290 L 600 290 L 575 360 L 592 442 L 685 485 L 625 562 L 505 568 L 455 515 L 485 385 Z"
       }
     ];
@@ -250,8 +250,8 @@ window.CCE_VISUALS = {
     const isCapitalMode = mapMode === "capitals";
 
     return `
-      <svg viewBox="0 0 920 620" class="china-svg-map" style="width:100%;height:auto;max-height:640px;" role="img" aria-label="Bản đồ tương tác 34 đơn vị hành chính cấp tỉnh và 6 đại vùng văn hóa Trung Quốc">
-        <rect x="0" y="0" width="920" height="620" rx="14" fill="transparent" />
+      <svg viewBox="-16 -10 956 645" class="china-svg-map" style="width:100%;height:auto;max-height:640px;" role="img" aria-label="Bản đồ tương tác 34 đơn vị hành chính cấp tỉnh và 6 đại vùng văn hóa Trung Quốc">
+        <rect x="-16" y="-10" width="956" height="645" rx="2" fill="transparent" />
 
         <!-- Subtle Grid & Historical Compass -->
         <g opacity="0.14" stroke="currentColor" stroke-dasharray="4 4">
@@ -267,7 +267,7 @@ window.CCE_VISUALS = {
         ${regions
           .map((r) => {
             const isActive = activeRegionId === r.id;
-            const pillW = Math.max(122, r.label.length * 7.6 + 18);
+            const pillW = Math.max(134, r.label.length * 7.9 + 24);
             const regionFillOpacity = mapMode === "regions" ? (isActive ? "0.78" : "0.42") : "0.18";
             return `
               <g data-action="select-region" data-id="${r.id}" style="cursor:pointer;">
@@ -277,9 +277,9 @@ window.CCE_VISUALS = {
                   fill-opacity="${regionFillOpacity}"
                   class="map-region-shape ${isActive ? "active" : ""}"
                 />
-                <g style="cursor:pointer;opacity:${mapMode === "regions" ? "1" : "0.7"};">
+                <g style="pointer-events:none;opacity:${mapMode === "regions" ? "1" : "0.7"};">
                   <rect x="${r.lx - pillW / 2}" y="${r.ly - 13}" width="${pillW}" height="22" rx="11" fill="${isActive ? "#9E2A2B" : "rgba(22, 20, 18, 0.78)"}" stroke="${isActive ? "#FDE68A" : "rgba(232, 210, 160, 0.45)"}" stroke-width="1.2" />
-                  <text x="${r.lx}" y="${r.ly + 2}" text-anchor="middle" font-size="11.5" font-weight="700" letter-spacing="0.4" fill="#F7F4ED" style="pointer-events:none;">
+                  <text x="${r.lx}" y="${r.ly + 2}" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="0.35" fill="#F7F4ED" style="pointer-events:none;">
                     ${r.label}
                   </text>
                 </g>

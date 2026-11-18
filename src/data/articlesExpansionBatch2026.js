@@ -117,8 +117,8 @@
       ],
       relatedTopics: ["Tấn thương Bình Dao", "Sử ký Tư Mã Thiên", "Nho thương", "Đàm phán B2B"],
       references: [
-        { author: "Sima Qian (Tư Mã Thiên)", date: "~91 TCN", title: "Shiji — Huozhi Liezhuan (史记·货殖列传)", url: "https://ctext.org/shiji/huo-zhi-lie-zhuan", sourceType: "Sử liệu Kinh điển (TYPE A)", verificationNote: "Văn bản Hán văn cổ chuẩn hóa trên Chinese Text Project." },
-        { author: "Yu Ying-shih (Dư Anh Thời)", date: "1987", title: "Zhongguo jinshi zongjiao lunli yu shangren jingshen (中国近世宗教伦理与商人精神)", url: "https://scholar.google.com/", sourceType: "Chuyên khảo Sử học Tư tưởng (TYPE B)", verificationNote: "Công trình kinh điển về đạo đức thương nhân Minh – Thanh." }
+        { author: "Sima Qian (Tư Mã Thiên)", date: "~91 TCN", title: "Shiji — Huozhi Liezhuan (史记·货殖列传)", url: "https://ctext.org/shiji/huo-zhi-lie-zhuan", sourceType: "Sử liệu Kinh điển", verificationNote: "Văn bản Hán văn cổ chuẩn hóa trên Chinese Text Project." },
+        { author: "Yu Ying-shih (Dư Anh Thời)", date: "1987", title: "Zhongguo jinshi zongjiao lunli yu shangren jingshen (中国近世宗教伦理与商人精神)", url: "https://scholar.google.com/", sourceType: "Chuyên khảo Sử học Tư tưởng", verificationNote: "Công trình kinh điển về đạo đức thương nhân Minh – Thanh." }
       ]
     },
 
@@ -217,8 +217,8 @@
       ],
       relatedTopics: ["Bình Dao cổ thành", "Huy Mặc & Tuyên Chỉ", "Văn hóa Đàm phán", "Ngân hàng Cổ điển"],
       references: [
-        { author: "McDermott, J. P.", date: "2013", title: "The Making of a New Rural Order in South China: Village, Land, and Lineage in Huizhou", url: "https://scholar.google.com/", sourceType: "Nghiên cứu Đại học Cambridge (TYPE A)", verificationNote: "Tài liệu chuẩn về cấu trúc gia tộc – thương mại Huệ Châu." },
-        { author: "Palace Museum / Shanxi Pingyao Archive", date: "2024", title: "Rishengchang Exchange Shop Archival Exhibition (日昇昌票号史料)", url: "https://whc.unesco.org/en/list/812", sourceType: "Hồ sơ Di sản UNESCO (TYPE B)", verificationNote: "Thông tin kiểm chứng về thành cổ Bình Dao và hệ thống Phiếu hiệu." }
+        { author: "McDermott, J. P.", date: "2013", title: "The Making of a New Rural Order in South China: Village, Land, and Lineage in Huizhou", url: "https://scholar.google.com/", sourceType: "Nghiên cứu Đại học Cambridge", verificationNote: "Tài liệu chuẩn về cấu trúc gia tộc – thương mại Huệ Châu." },
+        { author: "Palace Museum / Shanxi Pingyao Archive", date: "2024", title: "Rishengchang Exchange Shop Archival Exhibition (日昇昌票号史料)", url: "https://whc.unesco.org/en/list/812", sourceType: "Hồ sơ Di sản UNESCO", verificationNote: "Thông tin kiểm chứng về thành cổ Bình Dao và hệ thống Phiếu hiệu." }
       ]
     },
 
@@ -316,8 +316,8 @@
       ],
       relatedTopics: ["Tuyền Châu – Hạ Môn", "Gốm Chu Đậu", "Hội An", "RCEP"],
       references: [
-        { author: "Zhao Rugua (Triệu Nhữ Quát)", date: "1225", title: "Zhufan Zhi (诸蕃志 — Description of Foreign Nations)", url: "https://ctext.org/wiki.pl?if=gb&res=468831", sourceType: "Địa chí Hàng hải Đời Tống (TYPE A)", verificationNote: "Văn bản sử học hàng hải đối chiếu tại Tuyền Châu." },
-        { author: "Li Tana & Reid, A.", date: "1993–2011", title: "Cochinchina: Vietnamese Economic History & The Hội An Archive", url: "https://scholar.google.com/", sourceType: "Sử học Kinh tế Đông Nam Á (TYPE B)", verificationNote: "Nghiên cứu về mạng lưới thương cảng Mân – Quảng – Đàng Trong." }
+        { author: "Zhao Rugua (Triệu Nhữ Quát)", date: "1225", title: "Zhufan Zhi (诸蕃志 — Description of Foreign Nations)", url: "https://ctext.org/wiki.pl?if=gb&res=468831", sourceType: "Địa chí Hàng hải Đời Tống", verificationNote: "Văn bản sử học hàng hải đối chiếu tại Tuyền Châu." },
+        { author: "Li Tana & Reid, A.", date: "1993–2011", title: "Cochinchina: Vietnamese Economic History & The Hội An Archive", url: "https://scholar.google.com/", sourceType: "Sử học Kinh tế Đông Nam Á", verificationNote: "Nghiên cứu về mạng lưới thương cảng Mân – Quảng – Đàng Trong." }
       ]
     },
 
@@ -407,8 +407,8 @@
       ],
       relatedTopics: ["Thiên Công Khai Vật", "Cảnh Đức Trấn", "Thâm Quyến Hoa Cường Bắc", "C/O Form E"],
       references: [
-        { author: "Song Yingxing (Tống Ứng Tinh)", date: "1637", title: "Tiangong Kaiwu — Đào Diên Quyển 7 (天工开物·陶埏)", url: "https://ctext.org/wiki.pl?if=gb&res=451232", sourceType: "Bách khoa Kỹ nghệ Minh Triều (TYPE A)", verificationNote: "Văn bản gốc mô tả quy trình gốm Cảnh Đức Trấn 72 bước." },
-        { author: "Enright, M. et al.", date: "2005–2024", title: "Regional Powerhouse: The Greater Pearl River Delta & China Clusters", url: "https://scholar.google.com/", sourceType: "Nghiên cứu Cụm Công nghiệp (TYPE B)", verificationNote: "Khảo sát thực địa mạng lưới sản xuất Quảng Đông – Chiết Giang." }
+        { author: "Song Yingxing (Tống Ứng Tinh)", date: "1637", title: "Tiangong Kaiwu — Đào Diên Quyển 7 (天工开物·陶埏)", url: "https://ctext.org/wiki.pl?if=gb&res=451232", sourceType: "Bách khoa Kỹ nghệ Minh Triều", verificationNote: "Văn bản gốc mô tả quy trình gốm Cảnh Đức Trấn 72 bước." },
+        { author: "Enright, M. et al.", date: "2005–2024", title: "Regional Powerhouse: The Greater Pearl River Delta & China Clusters", url: "https://scholar.google.com/", sourceType: "Nghiên cứu Cụm Công nghiệp", verificationNote: "Khảo sát thực địa mạng lưới sản xuất Quảng Đông – Chiết Giang." }
       ]
     },
 
@@ -428,16 +428,16 @@
       readMinutes: 12,
       epistemicTag: "Âm vận học Lịch sử • Đồng văn Đông Á",
       heroImage: {
-        src: "assets/images/academic/han-silk-banner.jpg",
-        caption: "Di sản văn tự cổ và truyền thống bảo tồn âm đọc Hán – Việt giúp tái dựng hệ thống thanh mẫu, vận mẫu thời Đường – Tống.",
-        credit: "CCE Historical Linguistics Archive"
+        src: "assets/images/museum/yongle-dadian.jpg",
+        caption: "《Vĩnh Lạc Đại Điển》 và hệ thống vận thư cổ điển Đông Á sắp xếp theo âm vận 《Hồng Vũ Chính Vận》 — chứng tích sống động giúp đối chiếu lớp âm Hán–Việt từ thời Đường – Tống.",
+        credit: "National Library of China & CCE Historical Linguistics Archive"
       },
       abstract:
         "Phân tích tại sao lớp từ vựng Hán–Việt trong tiếng Việt lại đóng vai trò 'hóa thạch sống' quý giá bậc nhất thế giới để giới ngôn ngữ học phục nguyên âm đọc tiếng Hán Trung cổ (*Trung cổ Hán ngữ* 中古汉语 – giai đoạn Đường–Tống, phản ánh trong *Thiết Vận* năm 601 và *Quảng Vận* năm 1008) — đặc biệt là khả năng lưu giữ trọn vẹn các phụ âm cuối nhập thanh `-p`, `-t`, `-k` (-c/-ch) cùng phân biệt âm môi – âm mũi mà tiếng Phổ thông Bắc Kinh hiện đại đã đánh mất.",
       keyTakeaways: [
         "Hệ thống đọc chữ Hán tiêu chuẩn tại Việt Nam (gọi là âm Hán–Việt, khác với lớp 'Hán–Việt cổ' như buồng < phòng, mùi < vị) hình thành chủ yếu từ tiếng Quan thoại Tràng An thời Vãn Đường – đầu Tống (thế kỷ VIII–X).",
         "Tiếng Quan thoại Bắc Kinh ngày nay đã mất sạch ba phụ âm tắc cuối (Nhập thanh 入声: `-p`, `-t`, `-k`), khiến 'nhất/bát/thập/quốc/học' trở thành âm mở; trong khi tiếng Việt (cùng tiếng Quảng Đông) vẫn giữ gần như nguyên vẹn: *thập* (十 -p), *bát* (八 -t), *quốc* (国 -k/c).",
-        "Nắm vững quy luật chuyển âm Đường – Tống giúp người Việt không chỉ đọc thơ Đường chuẩn niêm luật Bằng – Trắc hơn tiếng Phổ thông hiện đại, mà còn học từ vựng HSK/tiếng Trung nhanh gấp 3 lần bằng cầu nối thanh điệu và vận mẫu."
+        "Nắm vững quy luật chuyển âm Đường – Tống giúp người Việt đọc thơ Đường chuẩn niêm luật Bằng – Trắc hơn cả tiếng Phổ thông hiện đại, đồng thời ghi nhớ từ vựng HSK nhanh hơn nhờ cầu nối thanh điệu và vận mẫu."
       ],
       introduction:
         "Hãy thử đọc to bốn chữ trong một bài thơ tuyệt cú nổi tiếng của Vương Chi Hoán: 'Bạch nhật y sơn tận / Hoàng Hà nhập hải lưu'. Nếu đọc bằng tiếng Quan thoại Bắc Kinh ngày nay (*Bái rì yī shān jìn / Huáng Hé rù hǎi liú*), các chữ *bạch* (白 bái), *nhật* (日 rì), *nhập* (入 rù) nghe kéo dài êm ả chẳng khác gì thanh bằng, và luật vần 'bạch – nhập' hoàn toàn biến mất sự dứt khoát. Thế nhưng, khi một người Việt cất tiếng đọc bằng âm Hán–Việt — 'Bạch nhật', 'nhập hải' — ta nghe rõ tiếng tắc nghẽn ngắn ngủi đặc trưng ở vần *-ch* (`-k`) và *-p*: đó chính xác là nhịp điệu âm vang của kinh đô Trường An nghìn hai trăm năm trước được bảo quản trọn vẹn trong tiếng mẹ đẻ của người Việt.",
@@ -509,8 +509,8 @@
       ],
       relatedTopics: ["Chữ Nôm", "Luật Bằng Trắc", "Đường Thi", "GS Nguyễn Tài Cẩn"],
       references: [
-        { author: "Nguyễn Tài Cẩn", date: "1979 (Tái bản 2004)", title: "Nguồn gốc và quá trình hình thành cách đọc Hán Việt", url: "https://scholar.google.com/", sourceType: "Chuyên khảo Ngôn ngữ học Lịch sử (TYPE B)", verificationNote: "Tác phẩm nền tảng của giới Hán Nôm và Ngữ âm học Việt Nam." },
-        { author: "Lu Fayan (Lục Pháp Ngôn) & Chen Pengnian", date: "601 / 1008", title: "Qieyun & Guangyun Digital Rhyme Dictionary (广韵)", url: "https://ctext.org/library.pl?if=gb&file=82450", sourceType: "Vận thư Cổ điển (TYPE A)", verificationNote: "Văn bản phân chia 206 vận chuẩn Trung cổ." }
+        { author: "Nguyễn Tài Cẩn", date: "1979 (Tái bản 2004)", title: "Nguồn gốc và quá trình hình thành cách đọc Hán Việt", url: "https://scholar.google.com/", sourceType: "Chuyên khảo Ngôn ngữ học Lịch sử", verificationNote: "Tác phẩm nền tảng của giới Hán Nôm và Ngữ âm học Việt Nam." },
+        { author: "Lu Fayan (Lục Pháp Ngôn) & Chen Pengnian", date: "601 / 1008", title: "Qieyun & Guangyun Digital Rhyme Dictionary (广韵)", url: "https://ctext.org/library.pl?if=gb&file=82450", sourceType: "Vận thư Cổ điển", verificationNote: "Văn bản phân chia 206 vận chuẩn Trung cổ." }
       ]
     },
 
@@ -527,9 +527,9 @@
       readMinutes: 11,
       epistemicTag: "Văn học So sánh • Đối thoại Đồng văn",
       heroImage: {
-        src: "assets/images/provinces/hunan-zhangjiajie.jpg",
-        caption: "Cảnh quan núi sông vùng Hồ Nam – Đỗng Đình Hồ trên tuyến đường thủy bộ ngàn dặm của các sứ bộ Đại Việt tiến lên Yên Kinh.",
-        credit: "CCE Literary Geography Archive"
+        src: "assets/images/provinces/hubei-yellow-crane-tower.jpg",
+        caption: "Hoàng Hạc Lâu (Vũ Hán, Hồ Bắc) bên bờ Trường Giang — điểm dừng chân khơi nguồn nhiều thi phẩm đặc sắc trong 《Bắc Hành Tạp Lục》 của Nguyễn Du.",
+        credit: "Chinese Culture Explorer Literary Geography Archive"
       },
       abstract:
         "Khảo cứu truyền thống ngoại giao văn hóa 'Bút đàm đồng văn' trong hàng trăm tập *Sứ trình thi* (使程诗) / *Yên hành lục* (燕行录) suốt thế kỷ XIII–XIX của các sứ thần Việt Nam (Mạc Đĩnh Chi, Nguyễn Trung Ngạn, Phùng Khắc Khoan, Lê Quý Đôn, Ngô Thì Nhậm, Nguyễn Du), trọng tâm phân tích *Bắc hành tạp lục* (北行杂录 – 131 bài thơ chữ Hán năm 1813–1814) của Đại thi hào Nguyễn Du như cầu nối nhân văn giữa lịch sử Việt Nam và Trung Hoa.",
@@ -596,7 +596,7 @@
         { hanzi: "录", traditional: "錄", pinyin: "lù", hanViet: "Lục", liushuType: "Hình thanh (形声)", breakdown: "钅 (Kim) + 录 (Lục): ban đầu chỉ khắc ghi trên kim loại đá, về sau nghĩa là ghi chép văn bản (*Tạp lục* 杂录)." }
       ],
       sinoVietnameseComparison: {
-        summary: "Kho tàng *Sứ trình thi* là minh chứng rõ nét nhất cho thấy người Việt không chỉ tiếp nhận thụ động văn hóa chữ Hán, mà còn dùng chính chữ Hán để sáng tạo học thuật, phản biện lịch sử và giao tiếp bình đẳng quốc tế.",
+        summary: "Kho tàng *Sứ trình thi* cho thấy sĩ phu Việt Nam tiếp biến văn hóa chữ Hán một cách chủ động, dùng chính ngôn ngữ văn hiến chung để sáng tạo học thuật, phản biện lịch sử và đối thoại văn hóa bình đẳng.",
         points: [
           "Nhiều tác phẩm của Phùng Khắc Khoan, Lê Quý Đôn từng được khắc in hoặc đưa vào các tuyển tập văn học lưu hành ngay tại Bắc Kinh – Giang Nam thế kỷ XVII–XIX.",
           "Dọc tuyến Lạng Sơn – Quế Lâm ngày nay (hành lang giao lưu hiện đại 240h miễn thị thực), di tích miếu cổ và văn bia dọc sông Ly Giang – Tương Giang vẫn lưu dấu bước chân các đoàn sứ Việt xưa."
@@ -608,8 +608,8 @@
       ],
       relatedTopics: ["Nguyễn Du Bắc hành tạp lục", "Lê Quý Đôn", "Viện Hán Nôm", "Văn học chữ Hán Việt Nam"],
       references: [
-        { author: "Viện Nghiên cứu Hán Nôm", date: "1993–2024", title: "Tổng tập Thơ văn Đi sứ Việt Nam (Thư mục Di sản Hán Nôm)", url: "https://hannom.org.vn/", sourceType: "Kho Lưu trữ Văn bản Gốc Việt Nam (TYPE A)", verificationNote: "Bao gồm nguyên tác Bắc hành tạp lục và Bắc sứ thông lục." },
-        { author: "Kelley, L. C.", date: "2005", title: "Beyond the Bronze Pillars: Envoy Poetry and the Sino-Vietnamese Relationship", url: "https://scholar.google.com/", sourceType: "Chuyên khảo Sử học Quốc tế (TYPE B)", verificationNote: "Phân tích ngôn ngữ thơ đi sứ Việt Nam trong ngoại giao Đông Á." }
+        { author: "Viện Nghiên cứu Hán Nôm", date: "1993–2024", title: "Tổng tập Thơ văn Đi sứ Việt Nam (Thư mục Di sản Hán Nôm)", url: "https://hannom.org.vn/", sourceType: "Kho Lưu trữ Văn bản Gốc Việt Nam", verificationNote: "Bao gồm nguyên tác Bắc hành tạp lục và Bắc sứ thông lục." },
+        { author: "Kelley, L. C.", date: "2005", title: "Beyond the Bronze Pillars: Envoy Poetry and the Sino-Vietnamese Relationship", url: "https://scholar.google.com/", sourceType: "Chuyên khảo Sử học Quốc tế", verificationNote: "Phân tích ngôn ngữ thơ đi sứ Việt Nam trong ngoại giao Đông Á." }
       ]
     },
 
@@ -694,8 +694,8 @@
       ],
       relatedTopics: ["Đấu củng Tử Cấm Thành", "Đình làng Bắc Bộ", "Làng cổ Đường Lâm", "Doanh Tạo Pháp Thức"],
       references: [
-        { author: "Liang Sicheng (Lương Tư Thành)", date: "1944 / 1984", title: "A Pictorial History of Chinese Architecture (中国建筑史)", url: "https://scholar.google.com/", sourceType: "Công trình Kiến trúc Kinh điển (TYPE B)", verificationNote: "Tài liệu giải phẫu chi tiết hệ Đấu củng từ đời Đường đến Thanh." },
-        { author: "Nguyễn Quân & Trần Lâm Biền", date: "1996–2018", title: "Kiến trúc Đình làng Việt Nam & Nghệ thuật Tạo hình Cổ truyền", url: "https://scholar.google.com/", sourceType: "Nghiên cứu Di sản Kiến trúc Việt Nam (TYPE B)", verificationNote: "Phân tích kỹ nghệ kẻ chuyền, bẩy hiên tại Chu Quyến – Tây Đằng – Đường Lâm." }
+        { author: "Liang Sicheng (Lương Tư Thành)", date: "1944 / 1984", title: "A Pictorial History of Chinese Architecture (中国建筑史)", url: "https://scholar.google.com/", sourceType: "Công trình Kiến trúc Kinh điển", verificationNote: "Tài liệu giải phẫu chi tiết hệ Đấu củng từ đời Đường đến Thanh." },
+        { author: "Nguyễn Quân & Trần Lâm Biền", date: "1996–2018", title: "Kiến trúc Đình làng Việt Nam & Nghệ thuật Tạo hình Cổ truyền", url: "https://scholar.google.com/", sourceType: "Nghiên cứu Di sản Kiến trúc Việt Nam", verificationNote: "Phân tích kỹ nghệ kẻ chuyền, bẩy hiên tại Chu Quyến – Tây Đằng – Đường Lâm." }
       ]
     },
 
@@ -712,9 +712,9 @@
       readMinutes: 11,
       epistemicTag: "Giáo dục So sánh • Khoa cử Hán học",
       heroImage: {
-        src: "assets/images/academic/ming-forbidden-city.jpg",
-        caption: "Trục lễ nghi giáo dục và cung đình cổ điển Đông Á — nơi những tân khoa Tiến sĩ yết kiến Hoàng đế và khắc tên trên bia đá trường tồn cùng văn hiến.",
-        credit: "CCE Educational Heritage Archive"
+        src: "assets/images/academic/van-mieu-hanoi.jpg",
+        caption: "Khuê Văn Các tại Văn Miếu – Quốc Tử Giám Hà Nội — biểu tượng truyền thống khoa cử Nho học Đại Việt trong dòng chảy văn hiến Đông Á.",
+        credit: "Di tích Quốc gia Đặc biệt Văn Miếu – Quốc Tử Giám Hà Nội"
       },
       abstract:
         "So sánh trực tiếp kiến trúc học quan và cơ chế tuyển chọn nhân tài qua chế độ Khoa cử (科举 – Kējǔ) tại ba biểu tượng văn hiến: Khổng Miếu Khúc Phụ, Quốc Tử Giám Bắc Kinh và Văn Miếu – Quốc Tử Giám Hà Nội (dựng năm 1070 / 1076). Phân tích sự tiếp biến từ mô hình *Tứ phối – Thập triết*, bia đá Tiến sĩ trên lưng rùa đến lộ trình kinh điển *Tu thân – Tề gia – Trị quốc – Bình thiên hạ* cùng nét tôn vinh đặc biệt vị thế thầy giáo Chu Văn An tại Thăng Long.",
@@ -780,8 +780,8 @@
       ],
       relatedTopics: ["Khuê Văn Các", "Thân Nhân Trung", "Quốc Tử Giám Bắc Kinh", "Chu Văn An"],
       references: [
-        { author: "Ban Quản lý Di tích Văn Miếu – Quốc Tử Giám", date: "2011–2025", title: "Văn bia Tiến sĩ Văn Miếu – Quốc Tử Giám Thăng Long (UNESCO Memory of the World)", url: "https://vanmieu.gov.vn/", sourceType: "Di sản Tư liệu Thế giới UNESCO (TYPE B)", verificationNote: "Văn bản bia ký đối chiếu song ngữ Hán–Việt chính thức." },
-        { author: "Beijing Kongmiao & Guozijian Museum", date: "2024", title: "History of the Imperial Academy & Jinshi Steles (北京孔庙和国子监)", url: "https://en.dpm.org.cn/", sourceType: "Bảo tàng Di sản Bắc Kinh (TYPE B)", verificationNote: "Tư liệu khảo chứng 51.624 Tiến sĩ Nguyên–Minh–Thanh." }
+        { author: "Ban Quản lý Di tích Văn Miếu – Quốc Tử Giám", date: "2011–2025", title: "Văn bia Tiến sĩ Văn Miếu – Quốc Tử Giám Thăng Long (UNESCO Memory of the World)", url: "https://vanmieu.gov.vn/", sourceType: "Di sản Tư liệu Thế giới UNESCO", verificationNote: "Văn bản bia ký đối chiếu song ngữ Hán–Việt chính thức." },
+        { author: "Beijing Kongmiao & Guozijian Museum", date: "2024", title: "History of the Imperial Academy & Jinshi Steles (北京孔庙和国子监)", url: "https://en.dpm.org.cn/", sourceType: "Bảo tàng Di sản Bắc Kinh", verificationNote: "Tư liệu khảo chứng 51.624 Tiến sĩ Nguyên–Minh–Thanh." }
       ]
     },
 
@@ -869,8 +869,8 @@
       ],
       relatedTopics: ["Hoàng Đế Nội Kinh", "Âm Dương hợp lịch", "Trị vị bệnh", "Tuệ Tĩnh"],
       references: [
-        { author: "Huangdi Neijing (Tố Vấn)", date: "Thế kỷ III–I TCN", title: "Suwen — Siqi Tiaoshen Dalun (素问·四气调神大论)", url: "https://ctext.org/huangdi-neijing/si-qi-tiao-shen-da-lun", sourceType: "Y kinh Cổ điển (TYPE A)", verificationNote: "Văn bản gốc thiên 2 sách Hoàng Đế Nội Kinh." },
-        { author: "UNESCO Intangible Cultural Heritage", date: "2016", title: "The Twenty-Four Solar Terms (二十四节气)", url: "https://ich.unesco.org/en/RL/the-twenty-four-solar-terms-00647", sourceType: "Hồ sơ Di sản UNESCO (TYPE B)", verificationNote: "Hồ sơ công nhận khoa học thiên văn và đời sống Đông Á." }
+        { author: "Huangdi Neijing (Tố Vấn)", date: "Thế kỷ III–I TCN", title: "Suwen — Siqi Tiaoshen Dalun (素问·四气调神大论)", url: "https://ctext.org/huangdi-neijing/si-qi-tiao-shen-da-lun", sourceType: "Y kinh Cổ điển", verificationNote: "Văn bản gốc thiên 2 sách Hoàng Đế Nội Kinh." },
+        { author: "UNESCO Intangible Cultural Heritage", date: "2016", title: "The Twenty-Four Solar Terms (二十四节气)", url: "https://ich.unesco.org/en/RL/the-twenty-four-solar-terms-00647", sourceType: "Hồ sơ Di sản UNESCO", verificationNote: "Hồ sơ công nhận khoa học thiên văn và đời sống Đông Á." }
       ]
     },
 
@@ -906,7 +906,7 @@
         {
           heading: "1. Giải mã Cấu trúc 60 Hoa Giáp: Toán học Thời gian Của Cổ nhân",
           body:
-            "Mười Thiên Can (甲 Giáp, 乙 Ất, 丙 Bính, 丁 Đinh, 戊 Mậu, 己 Kỷ, 庚 Canh, 辛 Tân, 壬 Nhâm, 癸 Quý) chia thành 5 hành Âm–Dương; mười hai Địa Chi (子 Tý, 丑 Sửu, 寅 Dần, 卯 Mão, 辰 Thìn, 巳 Tỵ, 午 Ngọ, 未 Mùi, 申 Thân, 酉 Dậu, 戌 Tuất, 亥 Hợi) không chỉ đánh dấu 12 tháng mùa vụ mà còn chứa ẩn hàm lượng sinh khí riêng ('Địa chi tàng can'). Vì 10 đều chẵn và 12 đều chẵn có ước chung lớn nhất là 2, nên số cặp Dương đi với Dương, Âm đi với Âm chính xác bằng `(10 × 12) / 2 = 60`. Điểm mấu chốt mà ít người biết: chuyển đổi năm Can Chi trong Tử Bình **bắt đầu tại điểm Lập Xuân (~4/2) và từng tháng đổi tại từng Tiết khí**, chứng tỏ Bát Tự hoàn toàn đo lường nhịp bức xạ Mặt Trời chứ không theo mùng 1 Tết Mặt Trăng!"
+            "Mười Thiên Can (甲 Giáp, 乙 Ất, 丙 Bính, 丁 Đinh, 戊 Mậu, 己 Kỷ, 庚 Canh, 辛 Tân, 壬 Nhâm, 癸 Quý) chia thành 5 hành Âm–Dương; mười hai Địa Chi (子 Tý, 丑 Sửu, 寅 Dần, 卯 Mão, 辰 Thìn, 巳 Tỵ, 午 Ngọ, 未 Mùi, 申 Thân, 酉 Dậu, 戌 Tuất, 亥 Hợi) vừa đánh dấu 12 tháng mùa vụ vừa ẩn chứa hàm lượng sinh khí riêng ('Địa chi tàng can'). Vì 10 và 12 đều chia hết cho 2, nên số cặp Dương đi với Dương, Âm đi với Âm chính xác bằng `(10 × 12) / 2 = 60`. Điểm mấu chốt ít được chú ý là việc chuyển năm Can Chi trong Tử Bình **khởi từ điểm Lập Xuân (~4/2) và đổi tháng theo từng Tiết khí**, cho thấy Bát Tự vận hành theo chu kỳ bức xạ Mặt Trời chứ không theo mùng 1 Tết Âm lịch."
         },
         {
           heading: "2. Bốn Cột Trụ & Triết Lý 'Trung Hòa – Điều Hậu' Trong Tử Bình",
@@ -955,8 +955,8 @@
       ],
       relatedTopics: ["Lục thập Hoa Giáp", "Hoàng Đế Nội Kinh", "Trích Thiên Tủy", "Dương lịch Tiết khí"],
       references: [
-        { author: "Xu Zi Ping / Xu Dasheng", date: "Thời Tống", title: "Yuanhai Ziping (渊海子平 — Siku Quanshu Collection)", url: "https://ctext.org/", sourceType: "Văn hiến Cổ học (TYPE A)", verificationNote: "Nguyên bản định hình phép Tử Bình Nhật chủ." },
-        { author: "Ren Tieqiao (Nhậm Thiết Tiều)", date: "Thế kỷ XIX", title: "Ditian Sui Chanyi (滴天髓阐微)", url: "https://ctext.org/", sourceType: "Bình chú Kinh điển (TYPE B)", verificationNote: "Văn bản lý luận cân bằng Ngũ hành kinh điển nhất của Tử Bình." }
+        { author: "Xu Zi Ping / Xu Dasheng", date: "Thời Tống", title: "Yuanhai Ziping (渊海子平 — Siku Quanshu Collection)", url: "https://ctext.org/", sourceType: "Văn hiến Cổ học", verificationNote: "Nguyên bản định hình phép Tử Bình Nhật chủ." },
+        { author: "Ren Tieqiao (Nhậm Thiết Tiều)", date: "Thế kỷ XIX", title: "Ditian Sui Chanyi (滴天髓阐微)", url: "https://ctext.org/", sourceType: "Bình chú Kinh điển", verificationNote: "Văn bản lý luận cân bằng Ngũ hành kinh điển nhất của Tử Bình." }
       ]
     },
 
@@ -1041,8 +1041,8 @@
       ],
       relatedTopics: ["Tử Cấm Thành Bắc Kinh", "Tử Vi Nam – Bắc phái", "Thiên văn Sử ký", "Cổ học Trung Hoa"],
       references: [
-        { author: "Sima Qian (Tư Mã Thiên)", date: "~91 TCN", title: "Shiji — Tianguan Shu (史记·天官书)", url: "https://ctext.org/shiji/tian-guan-shu", sourceType: "Chính sử Thiên văn Cổ đại (TYPE A)", verificationNote: "Văn bản nền tảng về Tử Vi Viên và Tam Viên Nhị Thập Bát Tú." },
-        { author: "Luo Hongxian (La Hồng Tiên, hiệu chính)", date: "~1550 (Gia Tĩnh Minh)", title: "Ziwei Doushu Quanshu (紫微斗数全书)", url: "https://ctext.org/", sourceType: "Tư liệu Cổ học Minh triều (TYPE B)", verificationNote: "Văn bản khắc in đầy đủ sớm nhất còn lưu truyền." }
+        { author: "Sima Qian (Tư Mã Thiên)", date: "~91 TCN", title: "Shiji — Tianguan Shu (史记·天官书)", url: "https://ctext.org/shiji/tian-guan-shu", sourceType: "Chính sử Thiên văn Cổ đại", verificationNote: "Văn bản nền tảng về Tử Vi Viên và Tam Viên Nhị Thập Bát Tú." },
+        { author: "Luo Hongxian (La Hồng Tiên, hiệu chính)", date: "~1550 (Gia Tĩnh Minh)", title: "Ziwei Doushu Quanshu (紫微斗数全书)", url: "https://ctext.org/", sourceType: "Tư liệu Cổ học Minh triều", verificationNote: "Văn bản khắc in đầy đủ sớm nhất còn lưu truyền." }
       ]
     },
 
@@ -1127,8 +1127,8 @@
       ],
       relatedTopics: ["Tượng truyện Thanh Hoa", "Bát Quái", "Leibniz Nhị phân", "Ngô Tất Tố"],
       references: [
-        { author: "Zhouyi (Kinh Dịch – Bản chú thích Vương Bật & Chu Hy)", date: "Thế kỷ IX TCN – XII SCN", title: "Zhouyi / Yijing (周易 · 十翼)", url: "https://ctext.org/book-of-changes", sourceType: "Ngũ Kinh Nguyên điển (TYPE A)", verificationNote: "Văn bản song ngữ chuẩn hóa đầy đủ 64 quẻ và Thập Dực." },
-        { author: "Nguyễn Hiến Lê", date: "1990", title: "Kinh Dịch – Đạo của người quân tử", url: "https://scholar.google.com/", sourceType: "Bình chú Triết học Việt Nam (TYPE B)", verificationNote: "Tài liệu tham khảo tiếng Việt chuẩn mực tách bạch triết học khỏi mê tín." }
+        { author: "Zhouyi (Kinh Dịch – Bản chú thích Vương Bật & Chu Hy)", date: "Thế kỷ IX TCN – XII SCN", title: "Zhouyi / Yijing (周易 · 十翼)", url: "https://ctext.org/book-of-changes", sourceType: "Ngũ Kinh Nguyên điển", verificationNote: "Văn bản song ngữ chuẩn hóa đầy đủ 64 quẻ và Thập Dực." },
+        { author: "Nguyễn Hiến Lê", date: "1990", title: "Kinh Dịch – Đạo của người quân tử", url: "https://scholar.google.com/", sourceType: "Bình chú Triết học Việt Nam", verificationNote: "Tài liệu tham khảo tiếng Việt chuẩn mực tách bạch triết học khỏi mê tín." }
       ]
     },
 
@@ -1215,8 +1215,8 @@
       ],
       relatedTopics: ["Chuyết Chính Viên", "Văn Trưng Minh", "Tranh Thủy mặc", "Kế Thành Viên Dã"],
       references: [
-        { author: "Ji Cheng (Kế Thành)", date: "1631", title: "Yuan Ye — The Craft of Gardens (园冶)", url: "https://ctext.org/", sourceType: "Cẩm nang Kiến trúc Cảnh quan Minh triều (TYPE A)", verificationNote: "Nguyên điển mỹ học tạo dựng Lâm viên cổ điển." },
-        { author: "UNESCO World Heritage Centre", date: "1997 / 2000", title: "Classical Gardens of Suzhou (苏州古典园林)", url: "https://whc.unesco.org/en/list/813", sourceType: "Hồ sơ Di sản Thế giới UNESCO (TYPE B)", verificationNote: "Danh lục 9 lâm viên tiêu biểu Tô Châu." }
+        { author: "Ji Cheng (Kế Thành)", date: "1631", title: "Yuan Ye — The Craft of Gardens (园冶)", url: "https://ctext.org/", sourceType: "Cẩm nang Kiến trúc Cảnh quan Minh triều", verificationNote: "Nguyên điển mỹ học tạo dựng Lâm viên cổ điển." },
+        { author: "UNESCO World Heritage Centre", date: "1997 / 2000", title: "Classical Gardens of Suzhou (苏州古典园林)", url: "https://whc.unesco.org/en/list/813", sourceType: "Hồ sơ Di sản Thế giới UNESCO", verificationNote: "Danh lục 9 lâm viên tiêu biểu Tô Châu." }
       ]
     },
 
@@ -1302,8 +1302,8 @@
       ],
       relatedTopics: ["Thư pháp Ngũ thể", "Giấy Dó Việt Nam", "Tô Thức Hàn Thực Thiếp", "Cảnh Đức Trấn"],
       references: [
-        { author: "Su Shi (Tô Thức)", date: "Thế kỷ XI", title: "Dongpo Zhilin — Lun Wenfang Sibao (东坡志林)", url: "https://ctext.org/", sourceType: "Bút ký Thư họa Bắc Tống (TYPE A)", verificationNote: "Ghi chép phẩm bình về nghiên Đoan và mực Huy." },
-        { author: "UNESCO Intangible Cultural Heritage", date: "2009", title: "Traditional Handicrafts of Making Xuan Paper (宣纸传统制作技艺)", url: "https://ich.unesco.org/en/RL/traditional-handicrafts-of-making-xuan-paper-00201", sourceType: "Di sản UNESCO (TYPE B)", verificationNote: "Tài liệu về 108 bước sản xuất giấy Tuyên huyện Kính." }
+        { author: "Su Shi (Tô Thức)", date: "Thế kỷ XI", title: "Dongpo Zhilin — Lun Wenfang Sibao (东坡志林)", url: "https://ctext.org/", sourceType: "Bút ký Thư họa Bắc Tống", verificationNote: "Ghi chép phẩm bình về nghiên Đoan và mực Huy." },
+        { author: "UNESCO Intangible Cultural Heritage", date: "2009", title: "Traditional Handicrafts of Making Xuan Paper (宣纸传统制作技艺)", url: "https://ich.unesco.org/en/RL/traditional-handicrafts-of-making-xuan-paper-00201", sourceType: "Di sản UNESCO", verificationNote: "Tài liệu về 108 bước sản xuất giấy Tuyên huyện Kính." }
       ]
     },
 
@@ -1388,8 +1388,8 @@
       ],
       relatedTopics: ["Lục Đại Trà Loại", "Ấm Tử Sa", "Trà Shan Tuyết Việt Nam", "Long Tỉnh Tây Hồ"],
       references: [
-        { author: "Lu Yu (Lục Vũ)", date: "~760–780 SCN", title: "Chajing — The Classic of Tea (茶经)", url: "https://ctext.org/chajing", sourceType: "Nguyên điển Trà Học (TYPE A)", verificationNote: "Văn bản 3 quyển 10 thiên cổ nhất thế giới về trà." },
-        { author: "UNESCO Intangible Cultural Heritage", date: "2022", title: "Traditional Tea Processing Techniques and Associated Social Practices in China", url: "https://ich.unesco.org/en/RL/traditional-tea-processing-techniques-and-associated-social-practices-in-china-01884", sourceType: "Di sản UNESCO (TYPE B)", verificationNote: "Bao gồm phương pháp sao sấy 6 loại trà và lễ nghi xã hội." }
+        { author: "Lu Yu (Lục Vũ)", date: "~760–780 SCN", title: "Chajing — The Classic of Tea (茶经)", url: "https://ctext.org/chajing", sourceType: "Nguyên điển Trà Học", verificationNote: "Văn bản 3 quyển 10 thiên cổ nhất thế giới về trà." },
+        { author: "UNESCO Intangible Cultural Heritage", date: "2022", title: "Traditional Tea Processing Techniques and Associated Social Practices in China", url: "https://ich.unesco.org/en/RL/traditional-tea-processing-techniques-and-associated-social-practices-in-china-01884", sourceType: "Di sản UNESCO", verificationNote: "Bao gồm phương pháp sao sấy 6 loại trà và lễ nghi xã hội." }
       ]
     },
 
@@ -1480,8 +1480,8 @@
       ],
       relatedTopics: ["Tứ nghệ Văn nhân", "Đạo Đức Kinh", "Voyager Golden Record", "Đàn Bầu Việt Nam"],
       references: [
-        { author: "UNESCO Intangible Cultural Heritage", date: "2003 / 2008", title: "Guqin and Its Music (古琴艺术)", url: "https://ich.unesco.org/en/RL/guqin-and-its-music-00061", sourceType: "Di sản Kiệt tác Nhân loại UNESCO (TYPE B)", verificationNote: "Bao gồm tư liệu về Giản Tự Phổ và hệ thống trường phái Thục, Ngô, Quảng Lăng." },
-        { author: "Van Gulik, R. H.", date: "1940 (Rev. 1969)", title: "The Lore of the Chinese Lute: An Essay in the Ideology of the Ch'in", url: "https://scholar.google.com/", sourceType: "Chuyên khảo Hán học Cổ nhạc Kinh điển (TYPE B)", verificationNote: "Công trình quốc tế uy tín nhất về tư tưởng học Cổ cầm." }
+        { author: "UNESCO Intangible Cultural Heritage", date: "2003 / 2008", title: "Guqin and Its Music (古琴艺术)", url: "https://ich.unesco.org/en/RL/guqin-and-its-music-00061", sourceType: "Di sản Kiệt tác Nhân loại UNESCO", verificationNote: "Bao gồm tư liệu về Giản Tự Phổ và hệ thống trường phái Thục, Ngô, Quảng Lăng." },
+        { author: "Van Gulik, R. H.", date: "1940 (Rev. 1969)", title: "The Lore of the Chinese Lute: An Essay in the Ideology of the Ch'in", url: "https://scholar.google.com/", sourceType: "Chuyên khảo Hán học Cổ nhạc Kinh điển", verificationNote: "Công trình quốc tế uy tín nhất về tư tưởng học Cổ cầm." }
       ]
     }
   ];

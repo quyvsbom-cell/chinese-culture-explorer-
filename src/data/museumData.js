@@ -155,7 +155,7 @@ window.CCE_MUSEUM = {
       dimensions: "Cao 24,8 cm × Dài 528,7 cm",
       origin: "Trương Trạch Đoan (张择端), họa sĩ Hàn lâm Đồ họa viện triều Bắc Tống; mô tả kinh đô Đông Kinh (Khai Phong) dọc sông Biện",
       culturalSignificance:
-        "Được coi là 'bách khoa toàn thư bằng hình ảnh' về đời sống đô thị, thương mại, đóng tàu thuyền và giao thông thủy-bộ thời Tống. Bức họa mô tả hàng trăm nhân vật thuộc mọi tầng lớp, cầu Hồng Kiều bằng gỗ không trụ chống giữa sông và các hiệu thuốc, trà quán, lạc đà chở hàng.",
+        "Họa quyển này xứng đáng là 'bách khoa toàn thư bằng hình ảnh' về đời sống đô thị, thương mại, đóng tàu thuyền và giao thông thủy-bộ thời Tống. Bức họa mô tả hàng trăm nhân vật thuộc mọi tầng lớp, cầu Hồng Kiều bằng gỗ không trụ chống giữa sông cùng các hiệu thuốc, trà quán và đoàn lạc đà chở hàng.",
       historicalContext:
         "Phản ánh cuộc Cách mạng Thương mại thời Tống: hệ thống phường – thị khép kín từ đời Đường đã tan rã, nhường chỗ cho phố buôn bán mở cửa ngày đêm dọc tuyến Đại Vận Hà.",
       collection: "Bảo tàng Cố Cung Bắc Kinh (故宫博物院)",
@@ -330,7 +330,7 @@ window.CCE_MUSEUM = {
       dimensions: "386 cm × 456 cm",
       origin: "Vẽ tại kinh đô Nam Kinh đầu triều Minh (phỏng đại lãnh thổ đế chế và thế giới Á–Âu–Phi theo địa lý thế kỷ XIV)",
       culturalSignificance:
-        "Một trong những bản đồ thế giới cổ nhất còn tồn tại ở Đông Á: khắc họa không chỉ lãnh thổ nhà Minh phóng đại ở trung tâm mà còn thể hiện bán đảo Ấn Độ, bán đảo Ả Rập, châu Âu và đường bờ biển châu Phi (bao gồm vùng đất có hồ nước lớn ở miền nam châu Phi) trước thời kỳ thám hiểm của Trịnh Hòa.",
+        "Một trong những bản đồ thế giới cổ nhất còn tồn tại ở Đông Á: ngoài phần lãnh thổ nhà Minh phóng đại ở trung tâm, tác phẩm còn phác họa bán đảo Ấn Độ, bán đảo Ả Rập, châu Âu và đường bờ biển châu Phi (bao gồm vùng hồ nước lớn ở miền nam châu Phi) trước cả hải trình Trịnh Hòa.",
       historicalContext:
         "Lưu ý sử học: Bản đồ cổ đại sử dụng phép tỷ lệ chính trị – văn hóa (phóng to vùng trung tâm và thu nhỏ vùng ngoại vi) nên không đồng nhất với phép chiếu trắc địa hiện đại hay ranh giới hành chính ngày nay.",
       collection: "Trung tâm Lưu trữ Lịch sử Số 1 Trung Quốc (中国第一历史档案馆, Bắc Kinh)",
@@ -805,7 +805,7 @@ window.CCE_MUSEUM = {
       periodId: "xia-shang-zhou",
       regionId: "north",
       difficulty: "Academic / Advanced",
-      sourceType: "Kinh điển học (Kinh học史)",
+      sourceType: "Kinh điển học (Kinh học sử 经学史)",
       primaryQuote: {
         zh: "天行健，君子以自强不息；地势坤，君子以厚德载物。",
         pinyin: "Tiān xíng jiàn, jūnzǐ yǐ zìqiáng bù xī; dì shì kūn, jūnzǐ yǐ hòu dé zài wù.",
@@ -857,7 +857,7 @@ window.CCE_MUSEUM = {
       comparativeAnalysis:
         "So với nhà Tần – Hán mở rộng bằng quân sự và Hán hóa từ trung tâm, nhà Đường thời sơ và thịnh kỳ kết hợp di sản văn hóa Lục Triều phía Nam với tinh thần cởi mở của tầng lớp quý tộc Quan-Lũng phía Bắc, tạo nên kinh đô Trường An đa tôn giáo (Phật giáo, Cảnh giáo, Hỏa giáo, Nho-Đạo) và sức lan tỏa sâu rộng tới Nhật Bản (Khiển Đường sứ), Tân La và Giao Châu – Việt Nam.",
       conclusion:
-        "Bước ngoặt Loạn An Sử (755–763) không chỉ khép lại thế giới quan hướng ngoại thời Thịnh Đường mà còn khởi phát quá trình dịch chuyển trọng tâm kinh tế – văn hóa về vùng đồng bằng Trường Giang, mở đường cho nền kinh tế thị trường và tầng lớp văn nhân thời Tống.",
+        "Bước ngoặt Loạn An Sử (755–763) khép lại thế giới quan hướng ngoại thời Thịnh Đường, đồng thời khởi phát quá trình dịch chuyển trọng tâm kinh tế – văn hóa về đồng bằng Trường Giang, mở đường cho nền kinh tế thị trường và tầng lớp văn nhân thời Tống.",
       relatedFigures: [
         { name: "Đường Thái Tông (唐太宗)", dates: "598–649 SCN", role: "Kiến thiết nền thịnh trị Trinh Quán" },
         { name: "Huyền Trang (玄奘)", dates: "602–664 SCN", role: "Thỉnh kinh Ấn Độ và lập dịch trường tại Trường An" },

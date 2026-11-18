@@ -289,7 +289,7 @@
       english: "Chinese character radical; semantic indexing component in dictionaries",
       vietnamese: "Bộ thủ; thành phần đứng đầu phân loại theo ngữ nghĩa giúp tra cứu và chiết tự chữ Hán",
       mnemonic: "Mỗi đại gia đình chữ Hán (部) đều có một thủ lĩnh (首) đứng đầu dẫn lối nghĩa.",
-      context: "Học chữ Hán hiệu quả nhất là nắm vững ~100 bộ thủ tần suất cao (氵nước, 火lửa, 木cây, 艹cỏ, 讠lời nói, 心/忄tâm, 钅kim loại).",
+      context: "Học chữ Hán hiệu quả là nắm vững ~100 bộ thủ tần suất cao (氵 nước, 火 lửa, 木 cây, 艹 cỏ, 讠 lời nói, 心/忄 tâm, 钅 kim loại).",
       examples: [
         { zh: "认识常用部首，能迅速推断陌生汉字的大致类别。", pinyin: "Rènshi chángyòng bùshǒu, néng xùnsù tuīduàn mòshēng Hànzì de dàzhì lèibié.", en: "Knowing common radicals lets you quickly infer the semantic category of unfamiliar characters.", vi: "Nhận biết các bộ thủ thông dụng giúp suy đoán nhanh loại nghĩa của chữ Hán mới gặp." },
         { zh: "传统《康熙字典》共确立了二百一十四个部首。", pinyin: "Chuántǒng 《Kāngxī Zìdiǎn》 gòng quèlì le èrbǎi yīshísì gè bùshǒu.", en: "The Kangxi Dictionary famously established a canonical system of 214 radicals.", vi: "Kinh điển Khang Hy Tự Điển đã xác lập quy chuẩn 214 bộ thủ." },
@@ -1525,7 +1525,7 @@
       pos: "n.",
       liushuType: "会意 · 形声",
       deckId: "deck-06",
-      radical: "巾 (tờ giấy/vải viết thư帖)",
+      radical: "巾 (tờ giấy/vải viết thư thiếp 书帖)",
       components: "Bức thư 84 chữ của Lục Cơ (Tây Tấn) viết trên giấy ma cổ gửi thăm bệnh bạn, bảo tồn nguyên bản sớm nhất còn tồn tại của thư pháp danh gia Trung Quốc ('Tổ thiếp' / Đệ nhất pháp thiếp).",
       english: "Pingfu Tie (Letter on Recovery) by Lu Ji; oldest surviving authenticated calligraphy masterpiece",
       vietnamese: "Bình Phục Thiếp; bức thư pháp cổ nhất còn bản gốc trên giấy gai của Lục Cơ đời Tây Tấn (~300 SCN)",

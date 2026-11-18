@@ -10,14 +10,17 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     explodePercent: 0,
     autoOrbit: true,
     showPins: true,
+    seismicActive: false,
     lightingPreset: 0, // 0: Day, 1: Sunset, 2: Blueprint Night
     activeChapterIdx: 0,
     activeZoneId: "001",
-    activeTableKey: "fc", // "fc" | "hue" | "timber"
+    activeJumpSec: "fc3d-sec-01",
+    activeTableKey: "fc",
     activeTimelinePhase: "all" // "all" | "P1" | "P2" | "P3"
   };
 
   let rt = null; // Active Three.js runtime for safe SPA unmount/remount
+  let scrollPauseUntil = 0;
 
   // --------------------------------------------------------------------------
   // GROUNDED BILINGUAL (VI / EN / ZH) ARCHITECTURAL DATASETS
@@ -28,19 +31,19 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       code: "ZONE 001",
       nameVi: "Ngọ Môn (Cổng Chính Phía Nam)",
       nameEn: "Meridian Gate (South Portal)",
-      hanzi: "午门 · Wumen (Meridian Gate)",
-      areaOrScaleVi: "Cao 38 m · Lầu chính 60,05 m × 25 m",
-      areaOrScaleEn: "Height 38 m · Main Pavilion 60.05 m × 25 m",
-      hueEquivalentVi: "Ngọ Môn Huế (Lầu Ngũ Phượng, cửa chính Hoàng thành Huế)",
-      hueEquivalentEn: "Hue Meridian Gate (Five Phoenix Pavilion, Nguyen Citadel)",
-      planMetricVi: "3 cửa trung tâm + 2 cửa dịch (Hoàng đế đi cửa giữa)",
-      planMetricEn: "3 Central Portals + 2 Side Wings (Emperor's Center Arch)",
-      actualMetricVi: "Tường đài đỏ cao 12 m · Ngũ Phượng Lâu chữ U",
-      actualMetricEn: "12 m Crimson Bastion Wall · U-Shaped Five Phoenix Towers",
-      summaryVi: "Cổng lớn nhất phía Nam Tử Cấm Thành (xây năm 1420), gồm 5 lầu phượng hoàng (Ngũ Phượng Lâu) nối bằng hành lang trắng trên đài tường đỏ cao 12 m.",
-      summaryEn: "Southern ceremonial entrance built in 1420: a 12 m crimson U-shaped bastion topped by five connected white-corridor pavilions reaching 38 m high.",
-      detailVi: "Lầu chính Ngọ Môn dài 60,05 m, rộng 25 m (9 gian × 5 gian), tổng chiều cao 38 m, hai bên có lầu chuông và lầu trống cùng tứ phương đình. Cửa giữa chỉ dành cho Hoàng đế (Hoàng hậu chỉ đi qua 1 lần vào ngày đại hôn, cùng Tam Khôi sau kỳ thi Đình). Quan văn võ đi cửa Đông, hoàng thân quốc thích đi cửa Tây.",
-      detailEn: "According to Palace Museum surveys, the central hall spans 60.05 m × 25 m (9 × 5 bays), flanked by twin projecting arms crowned with bell/drum square pavilions and wing halls. Only the Emperor—and on rare exceptions the Empress on her wedding day plus the top three Jinshi laureates—used the central arch.",
+      hanzi: "午门 · Wǔmén (Ngọ Môn)",
+      areaOrScaleVi: "Cao 37,95 m · Ngũ Phượng Lâu chữ U",
+      areaOrScaleEn: "Height 37.95 m · U-Shaped Five Phoenix Towers",
+      hueEquivalentVi: "Ngọ Môn Huế (1833, 5 lối đi & Lầu Ngũ Phượng 100 cột lim)",
+      hueEquivalentEn: "Hue Meridian Gate (1833, 5 Portals & Five-Phoenix Pavilion)",
+      planMetricVi: "3 cửa chính + 2 cửa dịch phân cấp Nghi lễ tuyệt đối",
+      planMetricEn: "3 Axial Portals + 2 Side Corridors by Court Rank",
+      actualMetricVi: "Tường đài gạch đỏ cao 12 m tạo hiệu ứng vây hãm thị giác",
+      actualMetricEn: "12 m Brick Bastion Creating Visual Compressive Authority",
+      summaryVi: "Cổng lớn nhất phía Nam Tử Cấm Thành (1420), gồm tổ hợp Ngũ Phượng Lâu 5 mái chữ U cao 37,95 m trên đài tường đỏ cao 12 m.",
+      summaryEn: "Southern ceremonial entrance built in 1420: a 12 m crimson U-shaped bastion topped by five connected pavilions rising 37.95 m.",
+      detailVi: "Lầu chính Ngọ Môn dài 60,05 m, rộng 25 m (9×5 gian), hai cánh nhô về Nam tạo quảng trường uy áp. Cửa giữa chỉ dành cho Hoàng đế (ngoại lệ Hoàng hậu ngày đại hôn và Tam Khôi sau thi Đình). Đối sánh trực tiếp với Ngọ Môn Đại Nội Huế xây dựng năm 1833 thời Minh Mạng.",
+      detailEn: "Spanning 60.05 m × 25 m (9×5 bays), two projecting flanking wings embrace arriving envoys. Its Vietnam parallel, Hue's Ngo Mon (1833), adapts the U-shaped five-portal base with lighter ironwood timber frames and polychrome enamel roofs.",
       vocab: { term: "午门 · Ngọ Môn", pinyin: "Wǔmén", hanViet: "Ngọ Môn", meaning: "U-shaped Five-Phoenix Meridian Gate guarding the southern approach" },
       sourceUrl: "https://artsandculture.google.com/story/meridian-gate-the-entrance-to-the-forbidden-city-the-palace-museum/NQUxZvrUFVtvAg?hl=en",
       camPos: [0, 29, 108],
@@ -50,46 +53,46 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     {
       id: "002",
       code: "ZONE 002",
-      nameVi: "Sân Ngọ Môn & 5 Cầu Kim Thủy",
-      nameEn: "Meridian Plaza & Five Golden Water Bridges",
-      hanzi: "内金水桥 · Thái Hòa Môn & Nội Kim Thủy Hà",
-      areaOrScaleVi: "Sân 140 m × 210 m · 5 cầu cẩm thạch",
-      areaOrScaleEn: "Plaza 140 m × 210 m · 5 White Marble Bridges",
-      hueEquivalentVi: "Cầu Trung Đạo bắc qua hồ Thái Dịch (Đại Nội Huế)",
-      hueEquivalentEn: "Trung Dao Bridge over Thai Dich Lake (Hue Citadel)",
-      planMetricVi: "Sông nhân tạo uốn hình cánh cung + Sư tử đồng",
-      planMetricEn: "Bow-Shaped Courtyard Canal + Guarding Bronze Lions",
-      actualMetricVi: "Quảng trường Thái Hòa phía sau rộng 30.000 m²",
-      actualMetricEn: "Treeless 30,000 m² Taihedian Square Behind Gate",
-      summaryVi: "Khoảng sân rộng 140 m × 210 m ngay sau Ngọ Môn với dòng Nội Kim Thủy Hà uốn cong bắc qua 5 cây cầu đá Hán Bạch Ngọc dẫn tới Thái Hòa Môn.",
-      summaryEn: "A vast 140 × 210 m forecourt traversed by the bow-shaped Inner Golden Water River and five white marble bridges leading to the Gate of Supreme Harmony.",
-      detailVi: "Dòng sông nhân tạo Nội Kim Thủy mang ý nghĩa phong thủy tụ khí trước Thái Hòa Môn (có đôi sư tử đồng lớn nhất Cố Cung trấn giữ), hai bên là Hiệp Hòa Môn (Đông) và Hy Hòa Môn (Tây). Bước qua Thái Hòa Môn là đại quảng trường lát gạch rộng 30.000 m² cùng Văn Hoa Điện và Võ Anh Điện.",
-      detailEn: "Flanked by the Hall of Literary Glory (East) and Martial Valor (West), the canal links Fengshui harmony with storm drainage and firefighting water supply before opening onto the 30,000 m² treeless ceremony plaza.",
-      vocab: { term: "内金水桥 · Ngũ Long Kiều", pinyin: "Nèi Jīnshuǐ Qiáo", hanViet: "Nội Kim Thủy Kiều", meaning: "Five carved white marble bridges spanning the bow-shaped Inner Golden Water Canal" },
+      nameVi: "Nội Kim Thủy Hà, Quảng Trường Thái Hòa & Móng Ngầm 15 Lớp",
+      nameEn: "Inner Golden Water Canal & 15-Layer Cutaway Courtyard",
+      hanzi: "内金水桥 · 广场 · 十五层地基",
+      areaOrScaleVi: "Sân 30.000 m² không bóng cây · Nền 15 lớp gạch Kim chuyên",
+      areaOrScaleEn: "Treeless 30,000 m² Plaza · 15-Stratum Brick Foundation",
+      hueEquivalentVi: "Cầu Trung Đạo bắc qua Hồ Thái Dịch xanh mát (Đại Nội Huế)",
+      hueEquivalentEn: "Trung Dao Bridge & Landscaped Thai Dich Lake (Hue)",
+      planMetricVi: "5 cầu Hán Bạch Ngọc bắc qua Nội Kim Thủy Hà hình cánh cung",
+      planMetricEn: "Five White Marble Bridges Over Bow-Shaped Canal",
+      actualMetricVi: "Đào sâu 15 lớp gạch Kim chuyên + đất nện (~3,5–5 m), 0 cây xanh",
+      actualMetricEn: "15 Alternating Golden-Brick & Rammed-Earth Strata (~3.5–5 m Depth)",
+      summaryVi: "Từ 5 cầu Nội Kim Thủy qua Thái Hòa Môn mở ra sân 30.000 m² lát 15 lớp gạch Kim chuyên xen đất nện hoàn toàn không trồng cây để chống thích khách đào hầm.",
+      summaryEn: "Past the five marble bridges opens the stark 30,000 m² plaza engineered atop 15 interlocking courses of Suzhou bricks and rammed earth—kept deliberately treeless for security.",
+      detailVi: "Bên góc sân mô hình đã cắt lớp lộ rõ 15 tầng gạch Kim chuyên và đất nện xếp ngang–dọc xen kẽ vừa chịu lún vừa ngăn tuyệt đối thích khách đào hầm hay rễ cây phá móng; khác hẳn cảnh quan Hồ Thái Dịch rợp bóng cây tại Đại Nội Huế.",
+      detailEn: "A subsurface corner cutaway in this 3D model reveals all 15 stratified brick and tamped-loam courses engineered to repel tunneling and distribute axial drainage, contrasting sharply with Hue's shaded lakeside gardens.",
+      vocab: { term: "内金水桥 · Nội Kim Thủy Kiều", pinyin: "Nèi Jīnshuǐ Qiáo", hanViet: "Nội Kim Thủy Kiều", meaning: "Five white marble bridges over the bow-shaped canal before Taihemen" },
       sourceUrl: "https://www.idcpc.org.cn/english2023/chinadelights/arts/architecture/202307/t20230727_157790.html",
-      camPos: [26, 25, 76],
-      lookAt: [0, 4, 46],
-      pinPos: [0, 12, 42]
+      camPos: [-34, 19, 54],
+      lookAt: [-16, 2, 34],
+      pinPos: [-18, 8, 34]
     },
     {
       id: "003",
       code: "ZONE 003",
-      nameVi: "Điện Thái Hòa (Trung Tâm Ngoại Triều)",
-      nameEn: "Hall of Supreme Harmony (Outer Court Core)",
-      hanzi: "太和殿 · Taihedian (Hall of Supreme Harmony)",
-      areaOrScaleVi: "Cao 30 m · 9 gian ngang × 5 gian sâu · 10 thú nóc",
-      areaOrScaleEn: "Height 30 m · 9 × 5 Bays · 10 Unique Roof Ridge Beasts",
-      hueEquivalentVi: "Điện Thái Hòa Huế (Nơi thiết đại triều và đặt ngai vàng)",
-      hueEquivalentEn: "Thai Hoa Hall in Hue (Nguyen Coronation & Court Audience)",
-      planMetricVi: "9 gian × 5 gian · Mái Trọng diêm Vũ điện + 10 thú nóc",
-      planMetricEn: "9 × 5 Nine-Five Imperial Bay · Double Hipped + 10 Beasts",
-      actualMetricVi: "Minh thiết triều thường kỳ → Thanh chỉ dùng đại lễ",
-      actualMetricEn: "Ming Daily Audiences -> Qing Restricted to Grand State Rituals",
-      summaryVi: "Công trình gỗ cổ lớn nhất Trung Quốc còn tồn tại trên đài Tam Đài Hán Bạch Ngọc 3 tầng (1.142 đầu rồng thoát nước), sân trước đặt 18 đỉnh đồng, hạc–quy đồng, Nhật khuê và Gia lượng.",
-      summaryEn: "Imperial China's largest surviving timber structure perched atop a three-tier white marble terrace with 1,142 dragon drainage spouts, gilt-bronze fire vats, sundial, and grain measure.",
-      detailVi: "Điện Thái Hòa là tâm điểm tối cao của toàn bộ Tử Cấm Thành theo chuẩn số 'Cửu Ngũ chí tôn' (9 gian × 5 gian), nổi bật với mái Trọng diêm Vũ điện, 72 cột Kim ti Nam mộc (6 cột chính thếp vàng cuốn rồng), ngai vàng 9 rồng và quả cầu Gương Hiên Viên trên trần Tảo tỉnh. Bật X-Ray để nhìn xuyên vào bên trong!",
-      detailEn: "Taihedian stands as the ceremonial apex of the Forbidden City over a 9 × 5 bay ('Nine-Five Sovereignty') footprint supported by interlocking Dougong brackets, 72 Nanmu pillars, a recessed dragon caisson ceiling, and the Xuanyuan Mirror suspended above the Nine-Dragon Throne.",
-      vocab: { term: "太和殿 · Thái Hòa Điện", pinyin: "Tàihédiàn", hanViet: "Thái Hòa Điện", meaning: "Flagship double-eave hipped timber hall atop three-tier Xumizuo terrace" },
+      nameVi: "Điện Thái Hòa (Đỉnh Cao Quy Chế & Mộng Đấu Củng)",
+      nameEn: "Hall of Supreme Harmony (Canonical Apex & Dougong)",
+      hanzi: "太和殿 · 斗拱 (Thái Hòa Điện & Đấu Củng)",
+      areaOrScaleVi: "2.377 m² (nhỏ hơn ~50% bản 1420) · Cao 35,05 m gồm Tam Đài 8,13 m",
+      areaOrScaleEn: "2,377 m² (~50% Smaller than 1420 Hall) · Total Apex 35.05 m",
+      hueEquivalentVi: "Điện Thái Hòa Huế (Trùng thiềm điệp ốc 1.440 m², nền 2,3 m)",
+      hueEquivalentEn: "Hue Thai Hoa Hall (Twin-Roof Joinery, 1,440 m²)",
+      planMetricVi: "11×5 gian trên trục chính · Mái Trọng diêm Vũ điện & 10 thú nóc",
+      planMetricEn: "11×5 Axial Bays · Double-Hipped Glazed Roof & 10 Ridge Beasts",
+      actualMetricVi: "72 cột đặt nổi trên đá tảng (0 đinh) · Rỗng quyền lực thường nhật",
+      actualMetricEn: "72 Unanchored Nanmu Pillars · Restricted to Grand State Rituals",
+      summaryVi: "Tái thiết lần cuối năm 1695 (rộng 64 m × sâu 37 m, nhỏ hơn gần nửa so với bản năm 1420 do cạn gỗ đại thụ); đứng vững qua 300+ trận động đất nhờ Đấu Củng và cột đặt nổi.",
+      summaryEn: "Rebuilt in 1695 at 64 × 37 m (nearly half its original 1420 span due to giant Nanmu depletion), surviving 300+ earthquakes thanks to interlocking Dougong brackets and surface plinth columns.",
+      detailVi: "Dù ngự trên đài Tam Đài 3 tầng có 1.142 đầu rồng Ly Thủ thoát nước trong 20 phút và chứa 10 linh thú nóc độc nhất, Điện Thái Hòa từ thời Thanh quá rộng và vang lạnh nên chỉ dùng cho lễ Đăng cơ/Vạn thọ; toàn bộ thiết triều chuyển ra Càn Thanh Môn rồi Dưỡng Tâm Điện.",
+      detailEn: "Perched atop the triple marble terrace ringed by 1,142 dragon spouts, Taihedian remained an intimidating ritual stage during the Qing—while real administrative power migrated into smaller heated chambers.",
+      vocab: { term: "太和殿 · Thái Hòa Điện", pinyin: "Tàihédiàn", hanViet: "Thái Hòa Điện", meaning: "Flagship double-eave hall rebuilt in 1695 atop the triple Xumizuo terrace" },
       sourceUrl: "https://en.wikipedia.org/wiki/Forbidden_City",
       camPos: [28, 22, 34],
       lookAt: [0, 10, 14],
@@ -98,166 +101,166 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     {
       id: "004",
       code: "ZONE 004",
-      nameVi: "Điện Trung Hòa (Không Gian Chuẩn Bị Nghi Lễ)",
-      nameEn: "Hall of Central Harmony (Square Pavilion)",
-      hanzi: "中和殿 · Zhonghedian (Hall of Central Harmony)",
-      areaOrScaleVi: "Mặt bằng vuông · Xây năm 1420 (Trùng tu 1627, 1765)",
-      areaOrScaleEn: "Square Plan · Built 1420 (Restored 1627 & 1765)",
-      hueEquivalentVi: "Điện Cần Chánh (Nơi vua Nguyễn chuẩn bị trước lễ Đại triều)",
-      hueEquivalentEn: "Can Chanh Hall (Pre-Audience Assembly in Hue)",
-      planMetricVi: "Điểm dừng nghỉ của Hoàng đế giữa Tam Đại Điện",
-      planMetricEn: "Imperial Staging Pavilion Between the Two Grand Halls",
-      actualMetricVi: "Mái ngói lưu ly vàng chóp vuông 攒尖顶 + Bảo đính vàng",
-      actualMetricEn: "Square Glazed Pyramidal Roof with Golden Baoding Finial",
-      summaryVi: "Nằm tại phần eo thu hẹp của đài đá 3 tầng hình chữ Thổ (土) giữa Điện Thái Hòa và Điện Bảo Hòa; xây dựng năm 1420 và trùng tu năm 1627, 1765.",
-      summaryEn: "Standing along the narrow central waist of the Earth-shaped three-tier terrace, crowned by a sweeping square pyramidal tent roof and gilded lotus finial.",
-      detailVi: "Trước khi bước ra Điện Thái Hòa cử hành đại lễ, Hoàng đế ngự tại Điện Trung Hòa để nghỉ ngơi, nhận lễ bái của quan phụ trách nghi lễ và kiểm tra văn bản tế lễ hoặc nông cụ trước lễ Tịch Điền.",
-      detailEn: "Emperors paused inside this tranquil single-eave square hall to receive ceremonial briefings, inspect agricultural seed boxes for seasonal rites, and compose themselves before entering Taihedian.",
-      vocab: { term: "中和殿 · Trung Hòa Điện", pinyin: "Zhōnghédiàn", hanViet: "Trung Hòa Điện", meaning: "Square pyramidal hall connecting Supreme and Preserving Harmony" },
-      sourceUrl: "https://www.idcpc.org.cn/english2023/chinadelights/arts/architecture/202307/t20230727_157790.html",
-      camPos: [-26, 22, 8],
-      lookAt: [0, 9, 0],
-      pinPos: [0, 16, 0]
+      nameVi: "Điện Trung Hòa, Điện Bảo Hòa & Tảng Đá 250 Tấn",
+      nameEn: "Central & Preserving Harmony + 250-Ton Dragon Stone",
+      hanzi: "中和殿 · 保和殿 · 丹陛大石雕",
+      areaOrScaleVi: "Bảo Hòa Điện 9 gian + Tảng đá Vân Long 16,57 m × 3,07 m (250 tấn)",
+      areaOrScaleEn: "Baohedian + 16.57 m Carved Dragon Monolith (250 Metric Tons)",
+      hueEquivalentVi: "Điện Cần Chánh & Thềm Rồng Đá Thanh Đại Nội Huế",
+      hueEquivalentEn: "Can Chanh Hall & Carved Stone Dragon Stairways (Hue)",
+      planMetricVi: "Eo đài chữ Thổ · Nơi nghỉ trước Đại triều & tổ chức thi Đình",
+      planMetricEn: "Waist of H-Shaped Terrace · Pre-Audience & Palace Exams",
+      actualMetricVi: "Kéo đá 250 tấn qua 70 km đường trượt băng nhân tạo (20.000 dân phu)",
+      actualMetricEn: "250t Slab Hauled 70 km Across Winter Artificial Ice Road",
+      summaryVi: "Từ chóp vuông Điện Trung Hòa tới Điện Bảo Hòa (nơi thi Đình triều Thanh), phía Bắc đặt tảng Vân Long Đại Thạch Điêu nặng 250 tấn kéo từ Phòng Sơn bằng kỹ nghệ đóng băng mặt đường.",
+      summaryEn: "Connecting square Zhonghedian to Baohedian (venue for top Jinshi Palace Examinations), backed by the 250-ton Fangshan marble monolith slid across 70 km of frozen well-water.",
+      detailVi: "Bài toán logistics thế kỷ XV: không xe bánh gỗ nào chịu nổi khối đá >250 tấn. Minh triều huy động 20.000 dân phu đào giếng cách mỗi 500 m suốt 70 km, dội nước giữa mùa đông âm độ tạo đường trượt băng hoàn thành trong 28 ngày.",
+      detailEn: "Faced with transporting a >250-ton slab beyond wheeled-cart limits, Ming engineers dug water wells every 500 m along 70 km to freeze an artificial winter ice track hauled in 28 days.",
+      vocab: { term: "云龙大石雕 · Vân Long Thạch Điêu", pinyin: "Yúnlóng Dà Shídiāo", hanViet: "Vân Long Đại Thạch Điêu", meaning: "16.57 m monolithic marble dragon carving behind Hall of Preserving Harmony" },
+      sourceUrl: "https://campus-cdhk.oss-cn-hongkong.aliyuncs.com/store_manager/epaper/0/85/25/595790/page.pdf",
+      camPos: [24, 21, -28],
+      lookAt: [0, 8, -15],
+      pinPos: [0, 18, -15]
     },
     {
       id: "005",
       code: "ZONE 005",
-      nameVi: "Điện Bảo Hòa & Tảng Đá Điêu Khắc 250 Tấn",
-      nameEn: "Hall of Preserving Harmony & 250-Ton Dragon Slab",
-      hanzi: "保和殿 · Baohedian & 丹陛大石雕",
-      areaOrScaleVi: "Mái Trọng diêm Yết sơn · Đá Vân Long nặng 250 tấn",
-      areaOrScaleEn: "Double Xieshan Roof · Monolithic 250-Ton Dragon Ramp",
-      hueEquivalentVi: "Sân Đại Triều Nghi & Hệ thống bậc thềm rồng đá Huế",
-      hueEquivalentEn: "Hue Grand Courtyard & Carved Dragon Stone Stairways",
-      planMetricVi: "Nơi tổ chức quốc yến & kỳ thi Đình (Điện thí)",
-      planMetricEn: "Qing Imperial Palace Examination & State Banquet Hall",
-      actualMetricVi: "Tảng đá chạm rồng phía Bắc nặng 250 tấn (= 4.000 người)",
-      actualMetricEn: "Monolithic North Marble Ramp Weighing 250 Metric Tons",
-      summaryVi: "Nằm ở cực Bắc đài đá 3 tầng Ngoại Triều với kiểu mái Trọng diêm Yết sơn (9 gian); phía Bắc điện là bức phù điêu đá nguyên khối nặng nhất Tử Cấm Thành (250 tấn).",
-      summaryEn: "Crowning the northern edge of the three-tier terrace with a double-eave Xieshan roof, backed by the Forbidden City's heaviest stone relief: a 250-ton Fangshan marble dragon slab.",
-      detailVi: "Dưới thời Càn Long nhà Thanh, kỳ thi Đình (Điện thí) chọn Tiến sĩ được chuyển vào tổ chức tại Điện Bảo Hòa. Ngay bậc thềm phía Bắc là tấm đá Vân Long nguyên khối nặng 250 tấn chạm 9 con rồng bay trong mây và sóng biển, được kéo về Bắc Kinh trên đường băng tưới nước đóng đá mùa đông.",
-      detailEn: "Emperor Qianlong relocated the highest-tier Palace Examination (Jinshi) here. Behind its northern staircase lies the 16.57m monolithic marble ramp hauled from Fangshan over artificial winter ice roads.",
-      vocab: { term: "保和殿 · Bảo Hòa Điện", pinyin: "Bǎohédiàn", hanViet: "Bảo Hòa Điện", meaning: "Northernmost Outer Court hall famous for Palace Exams and the 250-ton dragon carving" },
-      sourceUrl: "https://campus-cdhk.oss-cn-hongkong.aliyuncs.com/store_manager/epaper/0/85/25/595790/page.pdf",
-      camPos: [24, 21, -28],
-      lookAt: [0, 8, -16],
-      pinPos: [0, 18, -15]
+      nameVi: "Càn Thanh Môn (Ranh Giới Tiền Triều – Hậu Tẩm)",
+      nameEn: "Gate of Heavenly Purity (Outer–Inner Court Boundary)",
+      hanzi: "乾清门 · Ranh giới Tiền Triều – Hậu Tẩm",
+      areaOrScaleVi: "Tường ngăn Đông–Tây · Nơi Khang Hy thiết triều mỗi sáng",
+      areaOrScaleEn: "Dividing Transverse Wall · Kangxi's Early Morning Audience Gate",
+      hueEquivalentVi: "Đại Cung Môn (Ranh giới Hoàng thành – Tử Cấm Thành Huế)",
+      hueEquivalentEn: "Dai Cung Mon (Border to Hue Forbidden Purple City)",
+      planMetricVi: "Vượt qua cửa này là khu Nội Đình cấm nam quan bước vào",
+      planMetricEn: "Threshold Separating State Halls from Imperial Private Residences",
+      actualMetricVi: "Quân Cơ Xứ ẩn mình ngay cạnh góc Tây Càn Thanh Môn từ 1729",
+      actualMetricEn: "Grand Council Clerical Shed Seated Right Outside West Flank (1729)",
+      summaryVi: "Tuyến phân định nghiêm ngặt giữa Tiền Triều (công vụ ngoại đình) và Hậu Tẩm (nội đình hoàng tộc); từng là nơi Khang Hy nghe tấu sớ lúc 5 giờ sáng gọi là 'Ngự Môn Thính Chính'.",
+      summaryEn: "The fortified architectural divider separating Outer Court bureaucracy from Inner Court family life, famous as Emperor Kangxi's dawn audience gallery.",
+      detailVi: "Khi bước qua Càn Thanh Môn, ngay bên phải phía Tây là dãy phòng ngói giản dị của Quân Cơ Xứ được lập năm 1729 để bảo mật tuyệt đối mệnh lệnh quân sự – minh chứng cho tính thực dụng vượt trên hình thức cung đình.",
+      detailEn: "Steps west of Qianqingmen sat the humble single-story Grand Council watchhouse created in 1729 for rapid wartime secrecy.",
+      vocab: { term: "乾清门 · Càn Thanh Môn", pinyin: "Qiánqīngmén", hanViet: "Càn Thanh Môn", meaning: "Architectural threshold demarcating Outer Court state ritual from Inner Court rule" },
+      sourceUrl: "https://www.idcpc.org.cn/english2023/chinadelights/arts/architecture/202307/t20230727_157790.html",
+      camPos: [-22, 19, -22],
+      lookAt: [0, 6, -32],
+      pinPos: [0, 12, -32]
     },
     {
       id: "006",
       code: "ZONE 006",
-      nameVi: "Hậu Tam Cung Nội Đình (Càn Thanh · Giao Thái · Khôn Ninh)",
-      nameEn: "Inner Three Palaces (Qianqinggong · Jiaotaidian · Kunninggong)",
-      hanzi: "乾清宫 · 交泰殿 · 坤宁宫 (Inner Court Core)",
-      areaOrScaleVi: "Qua Càn Thanh Môn · Trục cư trú Hoàng đế & Hoàng hậu",
-      areaOrScaleEn: "Beyond Qianqingmen · Inner Court Axial Sanctuaries",
-      hueEquivalentVi: "Điện Càn Thành & Cung Khôn Thái (Tử Cấm Thành Huế)",
-      hueEquivalentEn: "Can Thanh & Khon Thai Palaces (Hue Purple Citadel)",
-      planMetricVi: "Tẩm cung chính thức của Hoàng đế & Hoàng hậu",
-      planMetricEn: "Formal Inner Residences of Emperor & Empress",
-      actualMetricVi: "Từ năm 1722 (Ung Chính), vua chuyển sang ở Dưỡng Tâm Điện",
-      actualMetricEn: "From 1722 (Yongzheng), Monarch Shifted Daily Living to Yangxindian",
-      summaryVi: "Cụm 3 cung điện trung tâm của Nội Đình đặt trên đài đá Bạch Ngọc liên hoàn phía sau Càn Thanh Môn, phản chiếu cấu trúc Tam Đại Điện của Ngoại Triều.",
-      summaryEn: "Three monumental Inner Court halls mirroring the Outer Court triad: Qianqinggong (Heavenly Purity), Jiaotaidian (Union), and Kunninggong (Earthly Tranquility).",
-      detailVi: "Theo quy chế ban đầu, Càn Thanh Cung (9 gian, mái Trọng diêm Vũ điện) là nơi ở và làm việc của Hoàng đế (treo hoành phi 'Chính Đại Quang Minh'), Giao Thái Điện giữ 25 bảo ấn ngọc tỷ, Khôn Ninh Cung là tẩm cung Hoàng hậu. Từ thời Ung Chính, Càn Thanh Cung chuyên dùng cho nghi lễ nội đình còn sinh hoạt chuyển sang Dưỡng Tâm Điện.",
-      detailEn: "Though designed as the Emperor's grand sleeping palace, Qianqinggong grew too vast and exposed; Yongzheng moved daily rule to Yangxindian while hiding the sealed succession edict behind Qianqinggong's 'Zhengda Guangming' plaque.",
-      vocab: { term: "乾清宫 · Càn Thanh Cung", pinyin: "Qiánqīnggōng", hanViet: "Càn Thanh Cung", meaning: "Principal Inner Court sanctuary housing the secret succession edict plaque" },
+      nameVi: "Càn Thanh Cung & Giao Thái Điện (Trục Nội Đình)",
+      nameEn: "Palace of Heavenly Purity & Hall of Union",
+      hanzi: "乾清宫 · 交泰殿 (Nội Đình Trung Trục)",
+      areaOrScaleVi: "Càn Thanh Cung 1.400 m² · Giao Thái Điện giữ 25 Ngọc Tỷ",
+      areaOrScaleEn: "Qianqinggong 1,400 m² · Jiaotaidian 25 Imperial Seals",
+      hueEquivalentVi: "Điện Càn Thành (Tẩm cung Vua triều Nguyễn, Đại Nội Huế)",
+      hueEquivalentEn: "Can Thanh Palace (Royal Living Sanctuary in Hue Citadel)",
+      planMetricVi: "Quy chế là Tẩm cung chính thức của Hoàng đế trên trục giữa",
+      planMetricEn: "Designated Primary Imperial Residence on Central Axis",
+      actualMetricVi: "Bị bỏ trống cư trú từ 1723; hoành phi 'Chính Đại Quang Minh' giấu mật chiếu",
+      actualMetricEn: "Vacated for Daily Living in 1723; Plaque Concealed Secret Will",
+      summaryVi: "Càn Thanh Cung cao 20 m, rộng 1.400 m² vốn thiết kế cho Hoàng đế ngự ngủ triều Minh nhưng bị đánh giá quá trống trải, lạnh lẽo và dễ tổn thương.",
+      summaryEn: "Built as the Ming monarch's official inner sanctuary, 1,400 m² Qianqinggong felt cavernous and draughty, prompting Yongzheng to relocate daily life west in 1723.",
+      detailVi: "Sau hoành phi 'Chính Đại Quang Minh' của Càn Thanh Cung, Ung Chính đặt Hộp Mật Kiến Trữ (giấu tên người kế vị); bên cạnh là Giao Thái Điện hình vuông lưu giữ 25 bảo ấn triều Thanh.",
+      detailEn: "Behind Qianqinggong's 'Zhengda Guangming' plaque lay the locked succession box, while adjacent square Jiaotaidian safeguarded 25 Qing dynastic state seals.",
+      vocab: { term: "乾清宫 · Càn Thanh Cung", pinyin: "Qiánqīnggōng", hanViet: "Càn Thanh Cung", meaning: "Principal Inner Court sanctuary housing the secret succession edict" },
       sourceUrl: "https://www.idcpc.org.cn/english2023/chinadelights/arts/architecture/202307/t20230727_157790.html",
-      camPos: [-30, 24, -36],
-      lookAt: [0, 7, -46],
-      pinPos: [0, 15, -42]
+      camPos: [26, 22, -38],
+      lookAt: [0, 7, -45],
+      pinPos: [0, 15, -43]
     },
     {
       id: "007",
       code: "ZONE 007",
-      nameVi: "Dưỡng Tâm Điện (Tâm Điểm Dịch Chuyển Quyền Lực Thực Tế)",
-      nameEn: "Hall of Mental Cultivation (Functional Shift Epicenter)",
-      hanzi: "养心殿 · Yangxindian (Hall of Mental Cultivation)",
-      areaOrScaleVi: "Phía Tây Nội Đình · Chữ Công (工) · Chiếu ngà 216×139 cm",
-      areaOrScaleEn: "West Inner Court · I-Shaped Plan · 250-Yr Ivory Mat",
-      hueEquivalentVi: "Điện Kiến Trung & Viện Cơ Mật (Trung tâm điều hành thực tế)",
-      hueEquivalentEn: "Kien Trung Hall & Privy Council (Executive Nerve Center)",
-      planMetricVi: "Cung phụ trợ hình chữ Công (工) phía Tây Càn Thanh Môn",
-      planMetricEn: "Secondary West Service Compound Adjacent to Qianqingmen",
-      actualMetricVi: "8 đời vua Thanh ăn ở, phê duyệt tấu chương mật tại đây",
-      actualMetricEn: "Residence & Decision Room of Eight Qing Emperors (1722–1911)",
-      summaryVi: "Điểm nhấn chuyển dịch công năng lịch sử: từ năm 1722, Dưỡng Tâm Điện (sát Quân Cơ Xứ) thay Càn Thanh Cung thành trung tâm quyền lực thực tế suốt 8 triều Thanh.",
-      summaryEn: "The historic functional-shift epicenter: beginning in 1722, eight Qing emperors governed the empire from this compact I-shaped compound beside the Grand Council.",
-      detailVi: "Vì Càn Thanh Cung quá rộng và lộ thiên, vua Ung Chính chuyển về Dưỡng Tâm Điện sát dãy nhà Quân Cơ Xứ để phê duyệt mật chiết suốt đêm. Tại đây còn phòng Tam Hy Đường của Càn Long và từng diễn ra chế độ Thùy liêm thính chính.",
-      detailEn: "Compact, easily heated, and steps from Grand Council scribes, Yangxindian also holds Emperor Qianlong's Three Rarities Study (Sanxitang) and witnessed late-Qing regency behind the yellow curtain.",
-      vocab: { term: "养心殿 · Dưỡng Tâm Điện", pinyin: "Yǎngxīndiàn", hanViet: "Dưỡng Tâm Điện", meaning: "Compact western palace that became the true executive heart of Qing rule" },
+      nameVi: "Khôn Ninh Cung & Khu Dưỡng Lão Ninh Thọ Cung (Ngọc 1,07 Tấn)",
+      nameEn: "Palace of Earthly Tranquility & Ningshougong (1.07t Jade)",
+      hanzi: "坤宁宫 · 宁寿宫 · 大禹治水玉山",
+      areaOrScaleVi: "Khôn Ninh Cung phòng tân hôn · Ninh Thọ Cung rộng phía Đông",
+      areaOrScaleEn: "Kunninggong Nuptial Suite · Eastern Ningshougong Wing",
+      hueEquivalentVi: "Cung Khôn Thái & Cung Trường Sanh – Diên Thọ (Huế)",
+      hueEquivalentEn: "Khon Thai Palace & Truong Sanh–Dien Tho Retirement Wing",
+      planMetricVi: "Tẩm cung Hoàng hậu + 'Tử Cấm Thành thu nhỏ' của Càn Long",
+      planMetricEn: "Empress's Residence + Qianlong's Mini Retirement Complex",
+      actualMetricVi: "Khôn Ninh Cung thành tế đường Mãn Châu; lưu giữ ngọc điêu 1,07 tấn",
+      actualMetricEn: "Adapted for Manchu Shaman Rituals; Houses 1.07-Ton Jade Carving",
+      summaryVi: "Khôn Ninh Cung ở cực Bắc Hậu Tam Cung kết hợp khu Ninh Thọ Cung phía Đông (cải tạo 1772 cho Càn Long nghỉ hưu) cùng khối ngọc bích Hòa Điền nặng 1,07 tấn.",
+      summaryEn: "Unites Kunninggong (northernmost axial hall converted to shaman rituals with a crimson nuptial chamber) and eastern Ningshougong guarding the 1.07-ton jade boulder.",
+      detailVi: "Chính tại Nhạc Thọ Đường cuối dãy Ninh Thọ Cung lưu giữ bức điêu khắc 'Đại Vũ trị thủy đồ' bằng ngọc Hòa Điền nặng hơn 1 tấn chế tác suốt 7 năm.",
+      detailEn: "Carved over seven years under Qianlong, the 1.07-ton Hetian jade mountain ('Yu the Great Taming the Floods') remains anchored deep inside Leshou Hall.",
+      vocab: { term: "坤宁宫 · Khôn Ninh Cung", pinyin: "Kūnnínggōng", hanViet: "Khôn Ninh Cung", meaning: "Northern axial Empress hall transformed for Manchu rites and royal weddings" },
       sourceUrl: "https://www.idcpc.org.cn/english2023/chinadelights/arts/architecture/202307/t20230727_157790.html",
-      camPos: [-42, 20, -26],
-      lookAt: [-20, 5, -36],
-      pinPos: [-20, 12, -36]
+      camPos: [48, 22, -32],
+      lookAt: [32, 6, -42],
+      pinPos: [36, 13, -38]
     },
     {
       id: "008",
       code: "ZONE 008",
-      nameVi: "Ninh Thọ Cung, Cửu Long Bích & Đại Ngọc Điêu 1,07 Tấn",
-      nameEn: "Palace of Tranquil Longevity, Nine-Dragon Screen & 1.07-Ton Jade",
-      hanzi: "宁寿宫 · 九龙壁 (Palace of Peaceful Longevity)",
-      areaOrScaleVi: "Xây 1689, trùng tu 1772 · Cửu Long Bích 270 viên gạch men",
-      areaOrScaleEn: "Built 1689 / Expanded 1772 · 270 Polychrome Glazed Tiles",
-      hueEquivalentVi: "Cung Trường Sanh & Cung Diên Thọ (Đại Nội Huế)",
-      hueEquivalentEn: "Truong Sanh & Dien Tho Retirement Palaces (Hue)",
-      planMetricVi: "\"Tử Cấm Thành thu nhỏ\" cho Càn Long làm Thái Thượng Hoàng",
-      planMetricEn: "Qianlong's Autonomous 'Mini Forbidden City' Retirement Wing",
-      actualMetricVi: "Bụng rồng trắng thứ 3 trên Cửu Long Bích vá bằng gỗ sơn!",
-      actualMetricEn: "Historic Wooden Patch in the 3rd White Dragon's Belly",
-      summaryVi: "Quần thể phía Đông được vua Càn Long cải tạo năm 1772 thành Hoàng Cực Điện – Ninh Thọ Cung – Nhạc Thọ Đường, nổi bật với Cửu Long Bích 270 mảnh lưu ly và khối ngọc bích nặng 1,07 tấn.",
-      summaryEn: "Eastern complex reshaped in 1772 for Qianlong's retirement, featuring the 270-tile glazed Nine-Dragon Screen (famed for a craftsman's painted wooden repair on the 3rd white dragon) and the 1.07-ton jade mountain.",
-      detailVi: "Cửu Long Bích ghép từ 270 mảnh gốm tráng men (9 rồng mặt chính, 5 rồng viền). Khi nung bị vỡ một mảnh ở bụng con rồng trắng thứ 3, thợ mộc đã điêu khắc một miếng gỗ sơn trắng ghép khít vào để kịp ngày khánh thành. Phía Bắc là tượng ngọc Đại Vũ trị thủy 1,07 tấn.",
-      detailEn: "When a white glazed tile cracked inside the kiln right before Qianlong's inspection, a master carpenter carved an interlocking Nanmu wood piece lacquered glossy white to match the porcelain glaze seamless to the naked eye.",
-      vocab: { term: "九龙壁 · Cửu Long Bích", pinyin: "Jiǔlóngbì", hanViet: "Cửu Long Bích", meaning: "29.4m glazed nine-dragon relief screen built in 1771 at Ningshougong" },
+      nameVi: "Dưỡng Tâm Điện & Quân Cơ Xứ (Tâm Điểm Quyền Lực Thực ~5.000 m²)",
+      nameEn: "Yangxindian & Grand Council (True Executive Core ~5,000 m²)",
+      hanzi: "养心殿 · 军机处 (Dịch chuyển công năng từ 1723)",
+      areaOrScaleVi: "~5.000 m² (14,2% Tam Đại Điện / 0,7% Cố Cung) · Chữ Công (工)",
+      areaOrScaleEn: "~5,000 m² (0.7% of Palace Area) · Compact I-Shaped Plan",
+      hueEquivalentVi: "Điện Cần Chánh & Viện Cơ Mật (Trung tâm điều hành thực tế triều Nguyễn)",
+      hueEquivalentEn: "Kien Trung Hall & Privy Council (Executive Nerve Center in Hue)",
+      planMetricVi: "Quy chế gốc chỉ là cung phụ chế tạo đồ dùng phía Tây Nội Đình",
+      planMetricEn: "Originally Designed as Auxiliary Service Courtyard West of Axis",
+      actualMetricVi: "Từ 1723: 8 đời Hoàng đế Thanh phê tấu chương, điều hành đế chế tại đây",
+      actualMetricEn: "Since 1723: Residence & War Room of Eight Late Qing Emperors",
+      summaryVi: "ĐIỂM NÓNG CHUYỂN ĐỔI CÔNG NĂNG: Từ 1723 (Ung Chính), quyền lực thực tế rời khỏi trục lễ nghi khổng lồ về cụm ~5.000 m² hình chữ Công (工) sát dãy trực Quân Cơ Xứ.",
+      summaryEn: "ARCHITECTURAL FUNCTIONAL SHIFT: Beginning 1723, Qing emperors governed an empire of 400M subjects not from 35,000 m² Outer Halls, but inside this compact ~5,000 m² heated compound.",
+      detailVi: "Chuyển sang chế độ '[2] Thực Tế Vận Hành & Khảo Cổ' để thấy toàn bộ Tam Đại Điện & Hậu Tam Cung hóa khung dây mờ trong khi Dưỡng Tâm Điện + Quân Cơ Xứ rực sáng Đỏ Chu Sa (#B8292F) — giống mô hình giải phẫu giữa quy hoạch tượng trưng và thực chất sử dụng.",
+      detailEn: "Toggle State [2] Reality View: ceremonial axial halls fade into golden wireframe outlines while Yangxindian and the Grand Council glow solid Cinnabar Red—highlighting spatial functional divergence.",
+      vocab: { term: "养心殿 · Dưỡng Tâm Điện", pinyin: "Yǎngxīndiàn", hanViet: "Dưỡng Tâm Điện", meaning: "Compact western palace where 8 Qing emperors ruled after 1723" },
       sourceUrl: "https://www.idcpc.org.cn/english2023/chinadelights/arts/architecture/202307/t20230727_157790.html",
-      camPos: [54, 22, -24],
-      lookAt: [36, 5, -34],
-      pinPos: [36, 13, -32]
+      camPos: [-44, 21, -24],
+      lookAt: [-21, 5, -35],
+      pinPos: [-22, 12, -35]
     },
     {
       id: "009",
       code: "ZONE 009",
-      nameVi: "Đông – Tây Lục Cung & Kết Cấu Đấu Củng – 80 Triệu Viên Gạch",
-      nameEn: "Six Eastern & Western Palaces · Dougong & 80M Bricks",
-      hanzi: "东西六宫 · 斗拱 (Twelve Courtyard Palaces)",
-      areaOrScaleVi: "12 viện tứ hợp đối xứng · 80 triệu viên gạch (1,93 triệu tấn)",
-      areaOrScaleEn: "12 Symmetrical Quadrangles · 80M Bricks (1.93M Tons)",
-      hueEquivalentVi: "Hệ thống Lục Viện trong Tử Cấm Thành Huế",
-      hueEquivalentEn: "Inner Six Courtyards System in Hue Imperial Citadel",
-      planMetricVi: "12 tiểu quần thể tam hợp / tứ hợp viện có tường vây riêng",
-      planMetricEn: "Twelve Walled Siheyuan Courtyard Compounds",
-      actualMetricVi: "Khung gỗ Đấu Củng không đinh · 27 công thức vữa vôi",
-      actualMetricEn: "Zero-Nail Interlocking Dougong Joinery · 27 Mortar Mixes",
-      summaryVi: "Hệ thống 12 cung viện đối xứng Đông – Tây (mỗi cung gồm cổng, chính điện, hậu điện và hai phối điện), xây dựng đồng bộ bằng khung gỗ mộng Đấu Củng chịu chấn động không đinh sắt.",
-      summaryEn: "Twelve self-contained red-walled quadrangles lining East and West avenues, constructed on pre-fitted wooden frames bound strictly by seismic-absorbing Dougong brackets without iron nails.",
-      detailVi: "Toàn bộ khung gỗ gồm cột, xà, hoành được dựng trước khi xây viên gạch đầu tiên, liên kết bằng mộng Đấu Củng (斗拱) giúp tán lực động đất cực tốt. Kiến trúc sư triều Thanh còn làm mô hình tỷ lệ 'Thang dạng' (样式雷烫样) bằng giấy gỗ dâng vua duyệt.",
-      detailEn: "Yangshi Lei court architects built intricate layered paper-and-wood scale models ('Tangyang') to verify every beam and eave profile before prefabricating Dougong brackets off-site.",
-      vocab: { term: "斗拱 · Đấu Củng", pinyin: "Dǒugǒng", hanViet: "Đấu Củng", meaning: "Interlocking wooden bracket system absorbing roof weight and seismic shock without nails" },
+      nameVi: "Đông – Tây Lục Cung, Cửu Long Bích & Mộng Đấu Củng",
+      nameEn: "Six East–West Courtyards, Nine-Dragon Screen & Dougong",
+      hanzi: "东西六宫 · 九龙壁 · 80M 砖瓦",
+      areaOrScaleVi: "12 viện tứ hợp · Cửu Long Bích 270 viên · 80 triệu viên gạch",
+      areaOrScaleEn: "12 Walled Quadrangles · 270 Glazed Tiles · 80M Fired Bricks",
+      hueEquivalentVi: "Hệ thống Lục Viện Nội Đình Tử Cấm Thành Huế",
+      hueEquivalentEn: "Six Inner Courtyard Compounds (Hue Imperial Citadel)",
+      planMetricVi: "12 cung viện cân xứng Đông–Tây dùng mộng gỗ không đinh sắt",
+      planMetricEn: "Twelve Symmetrical Nail-Free Timber Quadrangles",
+      actualMetricVi: "Mảnh gỗ sơn trắng vá bụng rồng thứ 3 trên Cửu Long Bích (1772)",
+      actualMetricEn: "Craftsman's Wooden Glaze Replacement on 3rd White Dragon (1772)",
+      summaryVi: "12 cung viện đối xứng Đông–Tây sử dụng 80 triệu viên gạch cùng kết cấu mộng gỗ chịu chấn động, kết nối bức Cửu Long Bích 270 phiến gốm lưu ly bên Ninh Thọ Cung.",
+      summaryEn: "Twelve enclosed courtyard sanctuaries framed in interlocking earthquake-resistant timber paired with 27 formulas of lime mortar and the 270-tile glazed Nine-Dragon Screen.",
+      detailVi: "Chứng minh tư duy tiêu chuẩn hóa module: cột, xà, đấu củng được gia công hàng loạt ngoài công trường dựa trên mô hình giấy gỗ Tạng dạng (样式雷烫样) trước khi lắp dựng.",
+      detailEn: "Court architects built intricate layered paper-wood scale mockups ('Yangshi Lei Tangyang') to standardize beam joinery and fire-wall separation across all twelve compounds.",
+      vocab: { term: "斗拱 · Đấu Củng", pinyin: "Dǒugǒng", hanViet: "Đấu Củng", meaning: "Interlocking wooden bracket system absorbing roof load and seismic shock without nails" },
       sourceUrl: "https://campus-cdhk.oss-cn-hongkong.aliyuncs.com/store_manager/epaper/0/85/25/595790/page.pdf",
-      camPos: [52, 34, -46],
-      lookAt: [12, 5, -50],
-      pinPos: [-32, 11, -50]
+      camPos: [54, 34, -46],
+      lookAt: [14, 5, -48],
+      pinPos: [-34, 11, -50]
     },
     {
       id: "010",
       code: "ZONE 010",
-      nameVi: "Ngự Hoa Viên, Thần Vũ Môn & 4 Giác Lâu 72 Bờ Nóc",
-      nameEn: "Imperial Garden, Shenwumen & 72-Ridge Corner Towers",
-      hanzi: "御花园 · 神武门 · 角楼 (Garden, North Portal & Towers)",
-      areaOrScaleVi: "Ngự Hoa Viên 12.000 m² · Tường 10m, Hào 6m · 4 Giác Lâu",
-      areaOrScaleEn: "12,000 m² Garden · 10m Curtain Wall · 4 Corner Towers",
-      hueEquivalentVi: "Vườn Cơ Hạ, Cửa Hòa Bình & Các Khuyết Đài (Đại Nội Huế)",
-      hueEquivalentEn: "Co Ha Garden, Hoa Binh Gate & Corner Bastions (Hue)",
-      planMetricVi: "Khâm An Điện, Đôi Tú Sơn, Vạn Xuân Đình & Thiên Thu Đình",
-      planMetricEn: "Kham An Hall, Dui Xiu Shan Rockery & Twin Season Pavilions",
-      actualMetricVi: "Lối ra hiện nay (Vào Nam Ngọ Môn – Ra Bắc Thần Vũ Môn)",
-      actualMetricEn: "Modern One-Way Museum Route (Enter South, Exit North Gate)",
-      summaryVi: "Xây năm 1417, Ngự Hoa Viên rộng 12.000 m² quy tụ Khâm An Điện, núi đá Đôi Tú Sơn, Vạn Xuân Đình, cổ thụ bách tùng trước Thần Vũ Môn và 4 Giác Lâu '9 dầm 18 cột 72 bờ nóc'.",
-      summaryEn: "Built in 1417, the 12,000 m² Imperial Garden softens the strict Confucian axial grid with Taihu rockeries and centuries-old cypresses before reaching Shenwumen and the 72-ridge cruciform corner watchtowers.",
-      detailVi: "Trái với sự trang nghiêm vuông vức phía Nam, Ngự Hoa Viên kiến tạo cảnh quan Đạo gia phóng khoáng trước khi khép lại trục 960 m tại Cổng Bắc Thần Vũ Môn (bên ngoài là công viên đồi Cảnh Sơn — điểm ngắm toàn cảnh tương ứng góc camera Isometric).",
-      detailEn: "Exiting Shenwumen brings visitors straight to Jingshan Hill's Wanchun Pavilion directly across the 52m moat — offering the real-life panoramic vantage point matching this 3D isometric camera.",
-      vocab: { term: "角楼 · Giác Lâu", pinyin: "Jiǎolóu", hanViet: "Giác Lâu", meaning: "9-beam, 18-pillar, 72-ridge cruciform corner watchtowers over the 52m moat" },
+      nameVi: "Ngự Hoa Viên, Thần Vũ Môn, 4 Giác Lâu 72 Bờ Nóc & Hộ Thành Hà",
+      nameEn: "Imperial Garden, Shenwumen, 72-Ridge Towers & 52m Moat",
+      hanzi: "御花园 · 神武门 · 角楼 · 护城河",
+      areaOrScaleVi: "Vườn 12.000 m² · Tường 10 m · Hào rộng 52 m × sâu 6 m · 308 Vạc đồng",
+      areaOrScaleEn: "12,000 m² Garden · 10 m Wall · 52 m Wide Moat · 308 Bronze Vats",
+      hueEquivalentVi: "Vườn Cơ Hạ, Cửa Hòa Bình & Hộ Thành Hà 30–50m (Đại Nội Huế)",
+      hueEquivalentEn: "Co Ha Garden, Hoa Binh Gate & Perfume River Moat System",
+      planMetricVi: "Khâm An Điện, Đôi Tú Sơn, Vạn Xuân Đình & 4 Giác Lâu góc thành",
+      planMetricEn: "Kham An Hall, Dui Xiu Shan Rockery & Cruciform Corner Watchtowers",
+      actualMetricVi: "308 vạc đồng Môn hải (chữa cháy) + 9 lương 18 trụ 72 bờ nóc Giác Lâu",
+      actualMetricEn: "308 Heated Fire Vats + 9-Beam 18-Pillar 72-Ridge Corner Joinery",
+      summaryVi: "Khép lại trục 960 m phía Bắc qua khu vườn Đạo gia 12.000 m² tới Thần Vũ Môn, nổi bật với 4 Giác Lâu thập tự '9 lương 18 trụ 72 bờ nóc' soi bóng xuống Hộ Thành Hà rộng 52 m.",
+      summaryEn: "Completing the 960m axis via a serene 12,000 m² cypress-shaded retreat flanked by four cruciform corner towers rising above the 52m-wide defensive moat.",
+      detailVi: "Đi qua cổng Thần Vũ Môn là lối lên đỉnh Vạn Xuân Đình (đồi Cảnh Sơn) — góc nhìn thực tế toàn cảnh mái lưu ly trùng khít hoàn toàn với phối cảnh Isometric của mô hình WebGL này.",
+      detailEn: "Exiting North Gate Shenwumen brings visitors onto Jingshan Hill's Wanchun Pavilion, reproducing this exact 3D isometric sweep back toward Meridian Gate.",
+      vocab: { term: "角楼 · Giác Lâu", pinyin: "Jiǎolóu", hanViet: "Giác Lâu", meaning: "9-beam, 18-pillar, 72-ridge cruciform corner watchtowers guarding the 52m moat" },
       sourceUrl: "https://www.idcpc.org.cn/english2023/chinadelights/arts/architecture/202307/t20230727_157790.html",
       camPos: [26, 28, -98],
       lookAt: [0, 6, -70],
@@ -268,163 +271,375 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
   const SCROLLY_CHAPTERS = [
     {
       step: "01",
-      tagVi: "TỔNG THỂ QUY HOẠCH · 960M × 750M",
-      tagEn: "MASTER AXIAL GRID · 960M × 750M",
-      titleVi: "9.999 Gian Truyền Thuyết vs. 8.886 Gian Thực Tế Khảo Cổ",
-      titleEn: "Mythical 9,999.5 Rooms vs. Surveyed 8,886 Bays",
+      tagVi: "TOÀN CẢNH · 724.250 M²",
+      tagEn: "OVERVIEW · 724,250 M²",
+      titleVi: "724.250 m² & Ảo Ảnh 9.999,5 Gian vs. 8.707 Gian Thực Tế",
+      titleEn: "724,250 m² Precinct: 9,999.5 Myth vs. 8,707 Surveyed Bays",
+      statuteLabelVi: "TRUYỀN THUYẾT & QUY CHẾ",
+      statuteLabelEn: "IMPERIAL MYTH / STATUTE",
+      statuteValVi: "9.999,5 gian phòng (kém Thiên Đình nửa gian; quy hoạch Tiền Triều Hậu Thị)",
+      statuteValEn: "9,999.5 bays (symbolic half-room deferring to Heaven's 10,000)",
+      realityLabelVi: "KHẢO SÁT CỐ CUNG (1973)",
+      realityLabelEn: "1973 ARCHAEOLOGICAL SURVEY",
+      realityValVi: "8.707 gian thực tế (8.886 gian tính cả lầu góc) trong 980 tòa kiến trúc",
+      realityValEn: "8,707 verified bays (8,886 incl. corner towers) across 980 structures",
       stateMode: "plan",
       zoneId: "001",
       camPos: [58, 68, 122],
       lookAt: [0, 2, -6],
-      bodyVi: "Đối chiếu quy chế biểu trưng và hiện trạng khảo sát cho thấy Tử Cấm Thành (1406–1420) thường được truyền tụng có 9.999,5 gian phòng (kém Thiên Đình nửa gian). Tuy nhiên, khảo sát đo đạc thực tế của Bảo tàng Cố Cung xác định quần thể rộng 724.250 m² này hiện có chính xác 8.886 gian trong 980 tòa nhà, bao bọc bởi tường thành cao 10 m, 4 Giác Lâu 72 bờ nóc và hào sâu 6 m.",
-      bodyEn: "Comparing symbolic cosmology with modern surveying reveals how folklore credits the Forbidden City (1406–1420) with 9,999.5 bays—half a room shy of Heaven—whereas archival Palace Museum surveys inside the 724,250 m² walled precinct measure exactly 8,886 surviving bays across 980 structures.",
-      vnLensVi: "ĐỐI CHIẾU HOÀNG THÀNH THĂNG LONG & ĐẠI NỘI HUẾ: Quy thức trục chính tâm Nam–Bắc ('Tả Tổ Hữu Xã, Tiền Triều Hậu Thị') của Bắc Kinh cũng là nguyên lý quy hoạch cốt lõi tại Hoàng thành Thăng Long và Kinh thành Huế. Khi đi thực địa Bắc Kinh, nhớ đặt vé hộ chiếu trước 7 ngày lúc 20:00 và đi một chiều Nam (Ngọ Môn) → Bắc (Thần Vũ Môn).",
-      vnLensEn: "SINO-VIETNAMESE AXIAL HERITAGE: Beijing's sacred North–South royal axis ('Ancestral Temple Left, Altar Right, Court Front, Market Rear') parallels the planning of Thang Long Imperial Citadel and Hue Imperial City. Book passport-linked tickets 7 days prior and walk South (Meridian Gate) to North (Shenwumen)."
+      bodyVi: "Cuộc tổng kiểm kê thực địa từng gian của học giả Vu Trác Vân và Bảo tàng Cố Cung năm 1973 đã chính thức giải mã con số truyền thuyết 9.999,5 gian: quần thể tường thành 960 m × 750 m bọc hào 52 m thực chất sở hữu 8.707 gian hoàn chỉnh (8.886 gian tính thêm 4 Giác Lâu).",
+      bodyEn: "Architect Yu Zhuoyun's meticulous 1973 Palace Museum field survey demystified the 9,999.5-room legend—confirming exactly 8,707 structural bays (8,886 with corner towers) inside the 960 × 750 m moat-ringed rectangle.",
+      vnLensVi: "CẢNH BÁO HỒ SƠ HUẾ: Cả Bắc Kinh (72,4 ha) và Hoàng thành Huế (36 ha trong Kinh thành 520 ha) đều tổ chức theo nguyên lý 'Tiền Triều Hậu Tẩm – Tả Tổ Hữu Xã'.",
+      vnLensEn: "SINO-VIET HERITAGE: Both Beijing (72.4 ha) and Hue's Imperial Citadel (36 ha) anchor governance on Confucian Front-Court, Rear-Sanctuary axial zoning."
     },
     {
       step: "02",
-      tagVi: "GIẢI PHẪU CỬA NGÕ · NGỌ MÔN (38M)",
-      tagEn: "SOUTHERN PORTAL · MERIDIAN GATE (38M)",
-      titleVi: "Ngọ Môn (午门): Tường Đài 12m, Lầu Ngũ Phượng & Quy Chế 3 Cửa",
-      titleEn: "U-Shaped Fortress Bastion & Strict Three-Gate Protocol",
+      tagVi: "CỬA NGÕ · NGỌ MÔN 37,95 M",
+      tagEn: "PORTAL · MERIDIAN GATE 37.95 M",
+      titleVi: "Ngọ Môn (午门) & Nghệ Thuật Uy Áp Thị Giác Hai Cánh Chữ U",
+      titleEn: "Meridian Gate: Visual Containment Wings & Five Phoenix Roofs",
+      statuteLabelVi: "NHÌN TỪ NGOÀI CỔNG",
+      statuteLabelEn: "EXTERIOR IMPRESSION",
+      statuteValVi: "Tưởng như cổng thành 1 tầng lầu đơn tuyến đón quan lại vào chầu",
+      statuteValEn: "Appears as a singular southern gateway facade from Tiananmen approach",
+      realityLabelVi: "CẤU TRÚC THỰC & HUẾ",
+      realityLabelEn: "ACTUAL FORM & HUE PARALLEL",
+      realityValVi: "Tổ hợp Ngũ Phượng Lâu cao 37,95 m vươn 2 cánh tạo vây hãm · Đối sánh Ngọ Môn Huế (1833)",
+      realityValEn: "37.95 m U-shaped U-wing compression · Comparable to Hue Ngọ Môn (1833)",
       stateMode: "plan",
       zoneId: "001",
       camPos: [0, 26, 106],
       lookAt: [0, 8, 66],
-      bodyVi: "Ngọ Môn vươn cao 38 m với tường đài đỏ 12 m và lầu chính dài 60,05 m × rộng 25 m nối với 2 lầu chuông trống và 4 đình góc (Ngũ Phượng Lâu). Ba lối đi phân cấp tuyệt đối: cửa giữa chỉ dành cho Hoàng đế (ngoại lệ Hoàng hậu ngày đại hôn và Tam Khôi xuất cung sau thi Đình); quan lại đi cửa Đông; tôn thất đi cửa Tây.",
-      bodyEn: "Rising 38 meters on a 12-meter crimson brick bastion, the U-shaped gate links five pavilions (Five Phoenix Towers) over three strict axial tunnels separating Emperor, civil/military officials, and imperial clan.",
-      vnLensVi: "ĐỐI CHIẾU ĐẠI NỘI HUẾ: Ngọ Môn Huế (xây 1833 thời Minh Mạng) kế thừa cấu trúc chữ U và Lầu Ngũ Phượng trên cao, nhưng kết hợp thanh thoát với mái ngói lưu ly và nghệ thuật pháp lam Huế.",
-      vnLensEn: "HUE PARALLEL: Hue's Ngo Mon (1833, Minh Mang reign) adapts the identical U-shaped bastion and Five Phoenix upper gallery, scaled harmoniously to the Perfume River axis."
+      bodyVi: "Ngay khi bước vào vòng ôm của hai cánh cổng Ngọ Môn cao 37,95 m trên nền đài gạch đỏ 12 m, tầm nhìn ngang bị khóa chặt để tạo áp lực tâm lý tuyệt đối trước khi phân luồng 3 cửa (giữa cho Hoàng đế, Đông cho quan văn võ, Tây cho tôn thất).",
+      bodyEn: "Stepping inside the 37.95 m U-shaped flanks compresses peripheral vision, enforcing strict axial hierarchy across three arched passages reserved for Monarch, mandarins, and imperial kin.",
+      vnLensVi: "ĐỐI SÁNH CỐ ĐÔ HUẾ: Ngọ Môn Huế (1833) kế thừa đài chữ U 5 cửa nhưng dựng Lầu Ngũ Phượng bằng 100 cột lim và ngói lưu ly vàng – xanh thanh thoát giữa thiên nhiên.",
+      vnLensEn: "HUE PARALLEL: Built under Emperor Minh Mạng (1833), Hue's Meridian Gate adapts the five-passage U-platform with lighter 100-column ironwood upper galleries."
     },
     {
       step: "03",
-      tagVi: "KHÔNG GIAN ĐỆM · SÂN 140M × 210M",
-      tagEn: "BUFFER FORECOURT · 5 MARBLE BRIDGES",
-      titleVi: "Sông Nội Kim Thủy, 5 Cầu Đá Cẩm Thạch & Quảng Trường 30.000 m²",
-      titleEn: "Inner Golden Water Canal & Treeless 30,000 m² Ceremony Plaza",
-      stateMode: "plan",
+      tagVi: "NGẦM 15 LỚP · 0 BÓNG CÂY",
+      tagEn: "SUBSURFACE · 15 STRATA & TREELESS",
+      titleVi: "Quảng Trường Thái Hòa & Mặt Cắt Ngầm 15 Lớp Không Một Bóng Cây",
+      titleEn: "Taihedian Forecourt: 15 Subsurface Courses & Zero-Tree Security",
+      statuteLabelVi: "BỀ MẶT SÂN ĐÁ BÌNH THƯỜNG",
+      statuteLabelEn: "SURFACE IMPRESSION",
+      statuteValVi: "Tưởng chỉ lát 1–2 lớp gạch đá vôi trên mặt sân 30.000 m²",
+      statuteValEn: "Appears as simple flat flagstones across a 30,000 m² open plaza",
+      realityLabelVi: "CẮT LỚP MÓNG THỰC ĐỊA",
+      realityLabelEn: "EXCAVATED REALITY",
+      realityValVi: "15 lớp gạch Kim chuyên xếp ngang–dọc + đất nện (~4–5 m) ngăn đào hầm, cấm trồng cây",
+      realityValEn: "15 cross-laid Golden Brick & rammed-earth layers (~4–5 m) blocking tunnels",
+      stateMode: "actual",
       zoneId: "002",
-      camPos: [28, 24, 76],
-      lookAt: [0, 4, 46],
-      bodyVi: "Sau Ngọ Môn là sân rộng 140 × 210 m, nơi dòng Nội Kim Thủy Hà uốn hình cánh cung được bắc qua bởi 5 cầu cẩm thạch Hán Bạch Ngọc. Qua Thái Hòa Môn mở ra quảng trường rộng 30.000 m² không trồng một bóng cây nhằm tạo uy thế tuyệt đối và ngăn thích khách ẩn nấp.",
-      bodyEn: "Past Meridian Gate flows the bow-shaped Inner Golden Water Canal spanned by five white marble bridges. Beyond Taihemen opens the vast 30,000 m² plaza kept deliberately treeless for unobstructed imperial sightlines and security.",
-      vnLensVi: "ĐỐI CHIẾU ĐẠI NỘI HUẾ: Khác với sân gạch trơ trụi ở Bắc Kinh, Đại Nội Huế đặt hồ Thái Dịch và thảm cây xanh ngay sau Ngọ Môn (cầu Trung Đạo), phản ánh mỹ học hòa điệu khí hậu nhiệt đới Việt Nam.",
-      vnLensEn: "ECOLOGICAL CONTRAST: Unlike Beijing's stark stone forecourt, Hue Citadel embeds lotus ponds and lush canopy gardens behind Ngo Mon along Trung Dao Bridge."
+      camPos: [-32, 18, 52],
+      lookAt: [-16, 1.5, 34],
+      bodyVi: "Camera đang hạ thấp chiếu thẳng vào khối cắt ngầm tại góc sân Thái Hòa: bên dưới lớp gạch lộ thiên là 15 tầng gạch Kim chuyên và đất nện xếp vuông góc xen kẽ. Khu Tiền Triều tuyệt đối không trồng cây để triệt tiêu điểm ẩn nấp của thích khách và không làm gãy thế uy nghi.",
+      bodyEn: "Our camera dips directly into the exposed 15-stratum pit cutout: alternating courses of fired Suzhou clay bricks and tamped earth defeat tunneling, frost heave, and root damage across the treeless court.",
+      vnLensVi: "ĐỐI SÁNH HUẾ: Ngược lại hoàn toàn, Đại Nội Huế bố trí Hồ Thái Dịch, cầu Trung Đạo và cây xanh rợp bóng ngay trước Điện Thái Hòa theo triết lý hòa điệu sơn thủy.",
+      vnLensEn: "ECOLOGICAL CONTRAST: Hue Citadel conversely integrates lotus ponds and cooling shade foliage directly ahead of its coronation plaza."
     },
     {
       step: "04",
-      tagVi: "TRUNG TÂM NGOẠI TRIỀU · CAO 30M",
-      tagEn: "OUTER COURT APEX · TAIHEDIAN (30M)",
-      titleVi: "Tam Đại Điện, Đài Tam Đài Chữ Thổ & Nghịch Lý Điện Thái Hòa",
-      titleEn: "Three Great Halls on Xumizuo Terrace & Ceremonial Reality",
-      stateMode: "actual",
+      tagVi: "NGHỊCH LÝ TAM ĐẠI ĐIỆN",
+      tagEn: "CEREMONIAL PARADOX · TAIHEDIAN",
+      titleVi: "Điện Thái Hòa (太和殿): Đỉnh Cao Quy Chế Nhưng Rỗng Quyền Lực Thường Nhật",
+      titleEn: "Taihedian: Supreme Architectural Status vs. Cavernous Utility",
+      statuteLabelVi: "QUY CHẾ NGOẠI TRIỀU",
+      statuteLabelEn: "CANONICAL EXPECTATION",
+      statuteValVi: "Nơi Hoàng đế thiết triều xử lý quốc sự hàng ngày (Phụng Thiên Điện 1420 rộng ~95m)",
+      statuteValEn: "Assumed daily imperial seat (original 1420 hall spanned ~95 m wide)",
+      realityLabelVi: "HIỆN TRẠNG TÁI THIẾT 1695",
+      realityLabelEn: "1695 REBUILD REALITY",
+      realityValVi: "Thu nhỏ gần một nửa còn 64 × 37 m (2.377 m²); lạnh & vang nên chỉ dùng đại lễ",
+      realityValEn: "Shrunk ~50% to 64 × 37 m (2,377 m²); unheated & drafty, used only for grand rites",
+      stateMode: "plan",
       zoneId: "003",
       camPos: [28, 21, 34],
       lookAt: [0, 10, 14],
-      bodyVi: "Đặt trên đài Tam Đài chữ 'Thổ' (土) 3 tầng (1.142 đầu rồng Ly Thủ thoát nước), sân trước đặt 18 đỉnh đồng, hạc–quy đồng, Nhật khuê và Gia lượng; Điện Thái Hòa cao 30 m với mái Trọng diêm Vũ điện và 10 linh thú góc mái. Giải phẫu lịch sử cho thấy từ nhà Thanh, do điện quá rộng và lạnh, thiết triều thường nhật chuyển về Càn Thanh Môn và Dưỡng Tâm Điện.",
-      bodyEn: "Elevated atop an H-shaped three-tier marble terrace ringed by 1,142 dragon drainage heads, bronze sundial, and 10 unmatched roof beasts, Taihedian stands 30m high—yet its cavernous draftiness pushed daily Qing administration elsewhere.",
-      vnLensVi: "ĐỐI CHIẾU HUẾ: Điện Thái Hòa ở Huế giữ truyền thống lễ Đại triều mồng 1 và Rằm dưới bửu tán cửu long thếp vàng và 25 ô pháp lam 'nhất thi nhất họa'.",
-      vnLensEn: "HUE PARALLEL: Hue's Thai Hoa Hall preserved active lunar court audiences beneath its gilded nine-dragon canopy and 'one poem, one painting' enamel friezes."
+      bodyVi: "Do cháy sét liên tiếp các năm 1421, 1557, 1597 và cạn kiệt gỗ Kim ti Nam mộc nguyên khối, bản tái thiết năm 1695 thu hẹp gần nửa diện tích so với năm 1420. Căn điện cao 35,05 m (gồm Tam Đài 8,13 m) quá rộng và lạnh để họp thường nhật nên chỉ dùng cho lễ Đăng cơ và Vạn thọ.",
+      bodyEn: "Following catastrophic lightning fires (1421, 1557, 1597) and timber scarcity, the 1695 Taihedian rebuild shrank nearly half its 1420 width (~95m to 64m)—serving strictly as a glacial, dramatic ritual cathedral.",
+      vnLensVi: "HUẾ: Điện Thái Hòa (Huế) vẫn duy trì thiết đại triều vào mồng 1 & Rằm hàng tháng với kết cấu kép Trùng thiềm điệp ốc chống nóng–bão hiệu quả.",
+      vnLensEn: "HUE: Hue's Thai Hoa Hall stayed in active lunar court service thanks to lower-profile double-connected roofs suited to central coastal monsoons."
     },
     {
       step: "05",
-      tagVi: "DỊCH CHUYỂN CÔNG NĂNG · NỘI ĐÌNH",
-      tagEn: "FUNCTIONAL SHIFT · INNER COURT POWER",
-      titleVi: "Từ Càn Thanh Cung Sang Dưỡng Tâm Điện: 'Thay Đổi Công Năng' Thực Tế",
-      titleEn: "From Qianqinggong to Yangxindian: Real-World Spatial Shift",
-      stateMode: "actual",
-      zoneId: "007",
-      camPos: [-42, 20, -24],
-      lookAt: [-18, 5, -36],
-      bodyVi: "Năm 1722, Hoàng đế Ung Chính rời bỏ tẩm cung chính thức Càn Thanh Cung sang làm việc và nghỉ ngơi tại Dưỡng Tâm Điện sát Quân Cơ Xứ. Suốt gần 200 năm sau, 8 đời hoàng đế nhà Thanh điều hành đế chế từ khu chữ Công (工) nhỏ gọn phía Tây này — một chuyển dịch công năng thực tế đáng kinh ngạc so với quy hoạch gốc.",
-      bodyEn: "In 1722, Emperor Yongzheng left grand Qianqinggong to live and govern from compact Yangxindian next to Grand Council clerks—transforming an auxiliary western compound into the de facto political center of the Qing dynasty for nearly two centuries.",
-      vnLensVi: "MẸO THỰC ĐỊA: Đừng chỉ đi thẳng trục giữa! Hãy rẽ Tây thăm Dưỡng Tâm Điện (Tam Hy Đường) và rẽ Đông vào Ninh Thọ Cung xem Cửu Long Bích 270 mảnh gốm (vá gỗ ở con rồng trắng thứ 3) & ngọc điêu 1,07 tấn.",
-      vnLensEn: "FIELD TIP: Most rushed tours miss East/West flanks—detour West to Yangxindian (Sanxitang study) and East to Ningshougong's glazed Nine-Dragon Screen and 1.07-ton jade boulder."
-    },
-    {
-      step: "06",
-      tagVi: "GIẢI PHẪU KẾT CẤU X-RAY · ĐẤU CỦNG & ĐÁ 250 TẤN",
-      tagEn: "X-RAY DOUGONG JOINERY & 250T MONOLITH",
-      titleVi: "Bóc Tách Mái Trọng Diêm, Đấu Củng Không Đinh, Cột Nam Mộc & Ngai Vàng",
-      titleEn: "Exploding Double-Eave Roofs to Expose Dougong Brackets & Nanmu Pillars",
+      tagVi: "X-RAY · KHÁNG CHẤN ĐẤU CỦNG",
+      tagEn: "X-RAY · SEISMIC DOUGONG",
+      titleVi: "Giải Phẫu Cơ Học Đấu Củng (斗拱) & Cột Gỗ Đặt Nổi Không Chôn Móng",
+      titleEn: "Exploded Dougong Joinery & Zero-Nail Unanchored Columns",
+      statuteLabelVi: "GIẢ ĐỊNH XÂY DỰNG HIỆN ĐẠI",
+      statuteLabelEn: "MODERN INTUITION",
+      statuteValVi: "Cột phải chôn sâu móng bê tông và đóng đinh thép mới đỡ nổi mái ngói khổng lồ",
+      statuteValEn: "Massive roofs require deep concrete footings and steel anchor bolts",
+      realityLabelVi: "CƠ HỌC GỖ KHÔNG ĐINH",
+      realityLabelEn: "ZERO-NAIL ENGINEERING",
+      realityValVi: "72 cột Kim ti Nam mộc đặt phẳng trên đá 'Bình thân tọa' + mộng Đấu Củng chịu 300+ động đất",
+      realityValEn: "Columns rest flat on stone plinths (slipping safely under shock) + Dougong damping",
       stateMode: "xray",
       zoneId: "003",
       camPos: [25, 22, 28],
       lookAt: [0, 12, 12],
-      bodyVi: "Khi bật Bóc tách X-Ray và kéo thanh nâng mái, mô hình tách rời tầng mái thượng diêm, hạ diêm và cụm mộng Đấu Củng (斗拱) nhiều tầng để lộ rõ hàng cột Kim ti Nam mộc vàng rực, bệ ngai vàng Cửu Long và quả cầu Gương Hiên Viên bên trong Điện Thái Hòa — minh chứng kỹ nghệ chống động đất không đinh sắt.",
-      bodyEn: "In Exploded X-Ray view, upper/lower golden glazed eaves and stepped Dougong cantilevers rise upward while crimson outer walls turn translucent—exposing golden Nanmu pillars, the Nine-Dragon Throne dais, and the suspended Xuanyuan Mirror.",
-      vnLensVi: "KỸ NGHỆ VẬT LIỆU: 80 triệu viên gạch (1,93 triệu tấn) + 27 công thức vữa vôi + tảng đá Vân Long 250 tấn sau Bảo Hòa Điện là minh chứng đỉnh cao của kỹ nghệ vật liệu và mộc công cổ truyền Đông Á.",
-      vnLensEn: "MATERIAL SCALE: 80 million kiln bricks (1.93M tons), 27 lime mortar formulas, and a 250-ton carved dragon stone slab showcase the zenith of pre-modern East Asian structural and material craft."
+      bodyVi: "Chế độ Bóc tách X-Ray nâng mái Trọng diêm Vũ điện và làm mờ tường gạch bao che: 100% tải trọng dồn xuống hàng cột Kim ti Nam mộc đặt tự do trên đá chân tảng (không chôn ngầm). Khi xảy ra trận động đất Tam Hà 7,8 độ Richter năm 1679, hệ cột trượt nhẹ còn Đấu Củng đàn hồi triệt tiêu chấn động theo nguyên lý 'Tường đổ nhà không đổ'.",
+      bodyEn: "X-Ray explosion lifts the heavy double-eave roof off translucent masonry infill: timber walls carry zero load while free-standing Nanmu pillars and layered Dougong brackets absorb lateral seismic shear during quakes up to M7.8 (1679).",
+      vnLensVi: "ĐỐI SÁNH ĐẠI NỘI HUẾ: Mộc công Huế thay hệ Đấu Củng tầng cao bằng vì kèo Kẻ Chuyền, Bẩy Hiên nối mộng gỗ lim vững chắc thấp trọng tâm.",
+      vnLensEn: "HUE PARALLEL: Hue carpenters swapped tall stacked Dougong for lower-center-of-gravity ironwood Ke Chuyen rafters tied by Trùng thiềm điệp ốc mortises."
+    },
+    {
+      step: "06",
+      tagVi: "LOGISTICS THẾ KỶ XV · ĐÁ 250 TẤN",
+      tagEn: "15TH-CENTURY LOGISTICS · 250T",
+      titleVi: "Tảng Đá 250 Tấn (Vân Long Đại Thạch Điêu) & Đường Trượt Băng 70 km",
+      titleEn: "250-Ton Dragon Monolith & The 70 km Winter Ice Road",
+      statuteLabelVi: "THÁCH THỨC VẬN CHUYỂN",
+      statuteLabelEn: "TRANSPORT CONSTRAINT",
+      statuteValVi: "Đá nguyên khối 16,57 × 3,07 × 1,7 m nặng 250 tấn (ban đầu >300 tấn) từ Phòng Sơn",
+      statuteValEn: "16.57 m Fangshan stone (>300 t rough) snapped any wooden cart axle",
+      realityLabelVi: "GIẢI PHÁP LOGISTICS MÙA ĐÔNG",
+      realityLabelEn: "ENGINEERING BREAKTHROUGH",
+      realityValVi: "20.000 dân phu đào giếng cách mỗi 500 m, dội nước đóng băng kéo đi trong 28 ngày",
+      realityValEn: "20,000 workers dug wells every 500 m to spray an ice slide completed in 28 days",
+      stateMode: "plan",
+      zoneId: "004",
+      camPos: [24, 21, -28],
+      lookAt: [0, 8, -16],
+      bodyVi: "Nằm sau lưng Điện Bảo Hòa là phiến đá chạm 9 rồng lớn nhất quần thể. Để đưa tảng đá nặng bằng 4.000 người trưởng thành vượt 70 km từ mỏ Phòng Sơn vào năm 1420 (và thay mới thời Càn Long), triều đình tận dụng nhiệt độ đóng băng tháng Chạp tưới nước mặt đường làm giảm ma sát trượt bằng gỗ trượt.",
+      bodyEn: "Positioned along the northern stairway of Baohedian, this 250-ton nine-dragon ramp could never roll on wheels—Ming logisticians engineered a 70 km artificial mid-winter ice highway lubricated by spaced well water.",
+      vnLensVi: "SO SÁNH: Tại Đại Nội Huế, các bậc thềm rồng đá Thanh kích thước gọn hơn nhưng chạm trổ tinh xảo rồng chầu hồi đầu mang dấu ấn mỹ thuật Việt.",
+      vnLensEn: "HUE: Hue's bluestone dragon balustrades scale gracefully to fit court terraces with distinctive Vietnamese curled-mane reliefs."
     },
     {
       step: "07",
-      tagVi: "KẾT THÚC TRỤC BẮC · NGỰ HOA VIÊN (12.000 M²)",
-      tagEn: "NORTHERN CULMINATION · IMPERIAL GARDEN",
-      titleVi: "Ngự Hoa Viên, Núi Đôi Tú Sơn, 4 Giác Lâu & Tầm Nhìn Đồi Cảnh Sơn",
-      titleEn: "Taihu Rockery, 72-Ridge Corner Towers & Jingshan Overlook",
+      tagVi: "CHUYỂN ĐỔI CÔNG NĂNG · 1723",
+      tagEn: "FUNCTIONAL SHIFT · 1723",
+      titleVi: "Cú Dịch Chuyển Quyền Lực Năm 1723: Dưỡng Tâm Điện & Quân Cơ Xứ",
+      titleEn: "The 1723 Power Shift: Compact Yangxindian & Grand Council",
+      statuteLabelVi: "QUY HOẠCH TRỤC CHÍNH (TIỀN–HẬU)",
+      statuteLabelEn: "FORMAL IMPERIAL AXIS",
+      statuteValVi: "Tam Đại Điện (~35.000 m²) & Càn Thanh Cung (1.400 m²) là trung tâm trị quốc",
+      statuteValEn: "Outer Triad (~35,000 m²) & Qianqinggong (1,400 m²) designated as ruler's hub",
+      realityLabelVi: "THỰC TẾ TỪ 1723 (ĐỎ CHU SA)",
+      realityLabelEn: "DE FACTO CENTER SINCE 1723",
+      realityValVi: "Dưỡng Tâm Điện + Quân Cơ Xứ chỉ ~5.000 m² (14,2% Tam Đại Điện / 0,7% Cố Cung)",
+      realityValEn: "Yangxindian + Grand Council (~5,000 m²; 0.7% of area) ruled 8 reigns / 200 yrs",
+      stateMode: "actual",
+      zoneId: "008",
+      camPos: [-44, 21, -24],
+      lookAt: [-21, 5, -35],
+      bodyVi: "Mô hình vừa chuyển sang chế độ '[2] Thực Tế Vận Hành & Khảo Cổ': toàn bộ Tam Đại Điện và Hậu Tam Cung chuyển thành khung dây mờ, chỉ còn cụm Dưỡng Tâm Điện & dãy trực Quân Cơ Xứ phía Tây bừng sáng Đỏ Chu Sa (#B8292F). Suốt gần 200 năm cuối triều Thanh, 8 hoàng đế xử lý toàn bộ mật tấu đế chế ngay trong khuôn viên ấm áp nhỏ hẹp chỉ chiếm 0,7% diện tích Cố Cung này.",
+      bodyEn: "Notice our 3D scene now switches ceremonial palaces to ghosted golden wireframes while isolating Yangxindian and the Grand Council in solid Cinnabar Red: for two centuries after Yongzheng (1723), empire-wide command operated inside 0.7% of the palace footprint.",
+      vnLensVi: "THỰC ĐỊA QUAN TRỌNG: Hầu hết tour du lịch đi thẳng trục giữa và bỏ qua góc Tây này — hãy rẽ trái ngay khi qua Càn Thanh Môn để xem Dưỡng Tâm Điện & Tam Hy Đường.",
+      vnLensEn: "FIELD ROUTE: Tour groups marching down the main axis miss this spot—turn West at Qianqingmen to inspect the true Qing nerve center."
+    },
+    {
+      step: "08",
+      tagVi: "72 BỜ NÓC · 308 VẠC ĐỒNG",
+      tagEn: "72 RIDGES · 308 FIRE VATS",
+      titleVi: "Giác Lâu (角楼) 72 Bờ Nóc, 1.142 Đầu Rồng & 308 Vạc Đồng Phòng Hỏa",
+      titleEn: "Corner Towers (72 Roof Ridges), 1,142 Waterspouts & Fire Safety",
+      statuteLabelVi: "VỌNG GÁC QUÂN SỰ & TRANG TRÍ",
+      statuteLabelEn: "APPEARANCE AT A GLANCE",
+      statuteValVi: "Tưởng Giác Lâu chỉ là tháp canh góc tường và vạc đồng để bày trang trí sân",
+      statuteValEn: "Looks like decorative corner watchtowers and bronze courtyard urns",
+      realityLabelVi: "HẠ TẦNG PHÒNG HỎA & THOÁT NƯỚC",
+      realityLabelEn: "UTILITY INFRASTRUCTURE",
+      realityValVi: "9 lương 18 trụ 72 bờ nóc + 308 vạc Môn hải đốt than chống đóng băng + 1.142 rồng tiêu úng",
+      realityValEn: "Heated 308 fire cauldrons + 1,142 dragon storm drains flushing Tam Đài in 20m",
       stateMode: "plan",
       zoneId: "010",
-      camPos: [26, 26, -96],
-      lookAt: [0, 6, -70],
-      bodyVi: "Cực Bắc của trục 960 m mở vào Ngự Hoa Viên (12.000 m², xây năm 1417) với Khâm An Điện, Đôi Tú Sơn (Ngự Cảnh Đình), Vạn Xuân Đình – Thiên Thu Đình và bách tùng 500 tuổi trước cổng Thần Vũ Môn cùng 4 Giác Lâu 72 bờ nóc.",
-      bodyEn: "Closing the 960m axis, the 12,000 m² Imperial Garden weaves jagged Taihu rockeries, twin seasonal pavilions, and 500-year cypresses inside the protective reach of the four 72-ridge Corner Towers.",
-      vnLensVi: "HÀNH TRANG NGỌA DU: Sau khi bước qua Thần Vũ Môn, đi qua đường lên đỉnh đồi Cảnh Sơn để chiêm ngưỡng toàn bộ trục mái vàng — góc nhìn thực tế trùng khít góc Isometric trên mô hình 3D này.",
-      vnLensEn: "PANORAMIC FINALE: After exiting North Gate Shenwumen, climb Jingshan Hill directly opposite to view all golden rooftops aligned toward Meridian Gate—matching this 3D isometric angle."
+      camPos: [56, 26, -86],
+      lookAt: [42, 7, -64],
+      bodyVi: "Để bảo vệ quần thể gỗ lớn nhất thế giới trước giặc lửa, Cố Cung bố trí 308 vạc đồng/sắt ('Môn hải') chứa nước chữa cháy bọc nỉ giữ nhiệt và đốt than từ bệ đá bên dưới vào mùa đông để không đóng băng; kết hợp 1.142 đầu rồng đá Ly Đầu tháo sạch nước mưa trên đài đá 3 tầng chỉ trong 20 phút.",
+      bodyEn: "Defending 980 timber buildings demanded 308 insulated bronze/iron 'Gate-Sea' vats warmed with charcoal beneath winter stone plinths, alongside 1,142 stone dragon scuppers discharging heavy summer rain off the marble terrace in 20 minutes.",
+      vnLensVi: "TỔNG KẾT ĐỐI SÁNH: Khi rời Thần Vũ Môn hãy đi đối diện sang đồi Cảnh Sơn để nhìn trọn đường chân trời mái vàng nối từ Giác Lâu về Ngọ Môn.",
+      vnLensEn: "PANORAMA FINISH: Exit Shenwumen north toward Jingshan Hill's Wanchun Pavilion to match this exact isometric vista in person."
+    }
+  ];
+
+  const MULTISCALE_COMPARISON_ROWS = [
+    {
+      metricVi: "1. Tổng số gian phòng (Bays / Rooms)",
+      metricEn: "1. Total Palace Bays / Rooms",
+      statuteValVi: "9.999,5 gian (Truyền thuyết Thiên tử)",
+      statuteValEn: "9,999.5 bays (Heavenly Myth)",
+      statutePct: 100,
+      realityValVi: "8.707 gian thực tế / 8.886 gian tính cả Giác Lâu (Khảo sát Vu Trác Vân 1973)",
+      realityValEn: "8,707 verified bays / 8,886 incl. corner towers (1973 Survey)",
+      realityPct: 89,
+      hueValVi: "~147 công trình lớn nhỏ quy hoạch hài hòa sông Hương – núi Ngự",
+      hueValEn: "~147 coordinated structures scaled to Perfume River geomancy",
+      huePct: 28
+    },
+    {
+      metricVi: "2. Diện tích Khuôn viên Cốt lõi",
+      metricEn: "2. Core Walled Citadel Footprint",
+      statuteValVi: "724.250 m² (Trục chuẩn 960 m × 750 m)",
+      statuteValEn: "724,250 m² (960 m × 750 m Canonical Grid)",
+      statutePct: 100,
+      realityValVi: "72,4 ha kín tường 10 m, hào 52 m; thực tế 980 tòa kiến trúc gỗ–gạch",
+      realityValEn: "72.4 ha enclosed by 10m wall & 52m moat; 980 timber-brick halls",
+      realityPct: 100,
+      hueValVi: "Hoàng thành Huế 360.000 m² (36 ha) nằm trong Kinh thành rộng 520 ha",
+      hueValEn: "Hue Imperial City 360,000 m² (inside 520 ha outer Citadel)",
+      huePct: 50
+    },
+    {
+      metricVi: "3. Quy mô Điện Thái Hòa (Minh 1420 vs Thanh 1695 vs Huế)",
+      metricEn: "3. Hall of Supreme Harmony Footprint",
+      statuteValVi: "Phụng Thiên Điện gốc 1420 (~4.700 m², ngang ~95 m)",
+      statuteValEn: "Original 1420 Hall (~4,700 m², ~95 m wide)",
+      statutePct: 100,
+      realityValVi: "Tái thiết 1695: 11×5 gian (2.377 m², 64×37 m, cao 35,05 m — nhỏ hơn gần nửa!)",
+      realityValEn: "1695 Rebuild: 11×5 bays (2,377 m², 64×37 m, 35.05 m — nearly 50% smaller)",
+      realityPct: 51,
+      hueValVi: "Thái Hòa Huế (1805 / 1833 / 2024): Trùng thiềm điệp ốc 1.440 m² (nền ~2,3 m)",
+      hueValEn: "Hue Thai Hoa Hall: Twin-roof 1,440 m² on 2.3 m stone terrace",
+      huePct: 31
+    },
+    {
+      metricVi: "4. Diện tích Trung tâm Điều hành Thực tế",
+      metricEn: "4. Functional Shift: Ritual vs Executive Core",
+      statuteValVi: "~35.000 m² Khu Tiền Triều Tam Đại Điện (theo điển chế)",
+      statuteValEn: "~35,000 m² Outer Ceremonial Triad (Canonical Rule)",
+      statutePct: 100,
+      realityValVi: "~5.000 m² Dưỡng Tâm Điện & Quân Cơ Xứ từ 1723 (chỉ bằng 14,2% Tiền Triều / 0,7% Cố Cung)",
+      realityValEn: "~5,000 m² Yangxindian & Grand Council since 1723 (14.2% of Outer / 0.7% total)",
+      realityPct: 14,
+      hueValVi: "Viện Cơ Mật & Khu Cần Chánh – Kiến Trung điều hành linh hoạt nội triều",
+      hueValEn: "Hue Privy Council & Can Chanh–Kien Trung administrative cluster",
+      huePct: 18
+    },
+    {
+      metricVi: "5. Chiều rộng Hộ Thành Hà (Moat Barrier)",
+      metricEn: "5. Protective Moat System Width",
+      statuteValVi: "Chuẩn thành quách 4 mặt bảo vệ Bắc–Nam–Đông–Tây",
+      statuteValEn: "Four-sided Imperial Defensive Canal Blueprint",
+      statutePct: 100,
+      realityValVi: "52 m rộng × 6 m sâu quanh tường thành dài 3,4 km Bắc Kinh",
+      realityValEn: "52 m wide × 6 m deep encircling the 3.4 km Beijing curtain wall",
+      realityPct: 100,
+      hueValVi: "Hộ Thành Hà Huế rộng 30–50 m nối thủy đạo trực tiếp với Sông Hương",
+      hueValEn: "Hue Citadel Moat 30–50 m wide feeding naturally into Perfume River",
+      huePct: 77
+    },
+    {
+      metricVi: "6. Chiều sâu Gia cố Nền Móng Quảng Trường",
+      metricEn: "6. Subsurface Foundation Courses",
+      statuteValVi: "Cung điện thông thường: 3–5 lớp đất nện",
+      statuteValEn: "Standard Palace Courtyard: 3–5 Rammed Earth Layers",
+      statutePct: 33,
+      realityValVi: "15 lớp gạch Kim chuyên & đất nện (~3,5–5 m sâu) tại sân Thái Hòa Bắc Kinh",
+      realityValEn: "15 courses of Suzhou bricks & tamped soil (~3.5–5 m deep) at Taihedian",
+      realityPct: 100,
+      hueValVi: "Hệ nền đá Thanh cao thoát lũ miền Trung + móng cột đặt trên đá tảng chạm sen",
+      hueValEn: "Elevated flood-resilient bluestone terraces & lotus stone plinths in Hue",
+      huePct: 55
     }
   ];
 
   const MULTISCALE_TABLES = {
     fc: {
-      col1Vi: "Quy Chế Biểu Trưng / Truyền Thuyết Minh–Thanh",
-      col2Vi: "Thực Tế Khảo Cổ & Vận Hành (Bảo Tàng Cố Cung)",
-      col1En: "Symbolic Statute / Imperial Folklore",
-      col2En: "Archaeological Survey & Actual Operation",
-      rows: [
-        { metricVi: "Tổng số gian phòng (Rooms / Bays)", metricEn: "Total Palace Bays", val1: 9999, label1Vi: "9.999,5 gian (Truyền thuyết Thiên tử)", label1En: "9,999.5 bays (Heavenly Myth)", val2: 8886, label2Vi: "8.886 gian (Khảo sát thực tế)", label2En: "8,886 bays (Surveyed Fact)", noteVi: "Chênh 1.113,5 gian giữa con số biểu trưng Cửu Ngũ và số gian đếm thực", noteEn: "Difference of 1,113.5 bays between mythic symbolism and physical count" },
-        { metricVi: "Chiều dài Nam–Bắc × Đông–Tây", metricEn: "Axis Length × Courtyard Width", val1: 960, label1Vi: "Dài 960 m (Trục Nam – Bắc)", label1En: "960 m North–South Axis", val2: 750, label2Vi: "Rộng 750 m (Trục Đông – Tây)", label2En: "750 m East–West Span", noteVi: "Tổng diện tích quần thể 724.250 m² (~72,4 ha)", noteEn: "Enclosing 724,250 m² within the 52m perimeter moat" },
-        { metricVi: "Chiều cao Ngọ Môn vs Tường đài đỏ", metricEn: "Meridian Gate Height vs Crimson Wall", val1: 38, label1Vi: "38 m (Đỉnh mái Ngũ Phượng Lâu)", label1En: "38 m Five-Phoenix Apex", val2: 12, label2Vi: "12 m (Tường đài gạch đỏ)", label2En: "12 m Brick Fortress Base", noteVi: "Lầu chính dài 60,05 m × rộng 25 m (9×5 gian)", noteEn: "Main tower spans 60.05 m × 25 m" },
-        { metricVi: "Chiều cao Điện Thái Hòa vs Tường thành", metricEn: "Supreme Harmony Apex vs Perimeter Wall", val1: 30, label1Vi: "30 m (Đặt trên đài Tam Đài 3 tầng)", label1En: "30 m Above Triple Marble Platform", val2: 10, label2Vi: "10 m (Tường thành + Hào sâu 6 m)", label2En: "10 m Curtain Wall + 6 m Moat", noteVi: "Điện Thái Hòa rộng 9 gian × 5 gian trên sân 30.000 m²", noteEn: "Faces the 30,000 m² treeless ceremony plaza" },
-        { metricVi: "Số hoàng đế trị vì: Triều Minh vs Thanh", metricEn: "Reigning Monarchs: Ming vs Qing", val1: 14, label1Vi: "14 Hoàng đế nhà Minh (1420–1644)", label1En: "14 Ming Emperors", val2: 10, label2Vi: "10 Hoàng đế nhà Thanh (1644–1924)", label2En: "10 Qing Emperors", noteVi: "8 hoàng đế cuối nhà Thanh chuyển ở Dưỡng Tâm Điện", noteEn: "8 late Qing emperors resided inside Yangxindian" },
-        { metricVi: "Khối lượng Tảng đá Vân Long vs Ngọc điêu", metricEn: "Dragon Ramp Monolith vs Jade Mountain", val1: 250, label1Vi: "250 tấn (Tảng đá sau Bảo Hòa Điện)", label1En: "250 Metric Tons (Dragon Slab)", val2: 1.07, label2Vi: "1,07 tấn (Đại Vũ trị thủy ngọc bích)", label2En: "1.07 Tons (Duyu Jade Carving)", noteVi: "Toàn thành dùng 80 triệu viên gạch nặng 1,93 triệu tấn", noteEn: "Backed by 80M fired bricks across 27 lime mortar recipes" },
-        { metricVi: "Cửu Long Bích: Mảnh gốm vs Mảnh gỗ vá", metricEn: "Nine-Dragon Screen: Tiles vs Timber Patch", val1: 270, label1Vi: "270 phiến lưu ly 7 màu", label1En: "270 Glazed Relief Tiles", val2: 1, label2Vi: "1 miếng gỗ vá bụng rồng trắng thứ 3", label2En: "1 Carved Wood Repair Piece", noteVi: "Chi tiết bảo tồn sai lệch lò nung nổi tiếng năm 1772", noteEn: "Ingenious kiln-crack wooden replacement from 1772" }
-      ]
-    },
-    hue: {
-      col1Vi: "Tử Cấm Thành Bắc Kinh (1420)",
-      col2Vi: "Hoàng Thành & Đại Nội Huế (1804–1833)",
-      col1En: "Beijing Forbidden City (1420)",
-      col2En: "Hue Imperial Citadel (1804–1833)",
-      rows: [
-        { metricVi: "Diện tích quần thể lõi", metricEn: "Core Complex Footprint", val1: 724250, label1Vi: "724.250 m² (72,4 ha Tử Cấm Thành)", label1En: "724,250 m² Forbidden City", val2: 360000, label2Vi: "360.000 m² Hoàng Thành Huế (chu vi 2.400 m)", label2En: "360,000 m² Hue Citadel Core", noteVi: "Cùng quy hoạch trục Nam–Bắc nhưng Huế điều chỉnh theo khí hậu nhiệt đới & sông Hương", noteEn: "Shared North–South axis tailored harmonically to Perfume River wind corridors" },
-        { metricVi: "Chiều cao Ngọ Môn", metricEn: "Meridian Gate Height", val1: 38, label1Vi: "38 m Ngọ Môn Bắc Kinh (5 cửa chính–phụ)", label1En: "38 m Beijing Meridian Gate", val2: 17.5, label2Vi: "17,5 m Ngọ Môn Huế (Lầu Ngũ Phượng)", label2En: "17.5 m Hue Meridian Gate", noteVi: "Đều dùng cấu trúc đài chữ U làm lễ đăng cơ và ban lịch", noteEn: "Both adopt the U-shaped Five-Phoenix masonry bastion for court proclamations" },
-        { metricVi: "Sân Đại Triều & Điện Thái Hòa", metricEn: "Supreme Harmony & Ceremony Plaza", val1: 2377, label1Vi: "2.377 m² sàn Điện Thái Hòa Bắc Kinh", label1En: "2,377 m² Beijing Taihedian", val2: 1200, label2Vi: "1.200 m² Điện Thái Hòa Huế (Trùng thiềm Điệp ốc)", label2En: "1,200 m² Hue Thai Hoa Hall", noteVi: "Bắc Kinh hướng uy nghiêm choáng ngợp; Huế thêm hồ Thái Dịch xanh mát", noteEn: "Beijing maximizes stark majesty; Hue pairs lotus lakes and polychrome enamels" },
-        { metricVi: "Phân khu chức năng trục chính", metricEn: "Indexed Axial Precincts", val1: 10, label1Vi: "10 Cụm cung điện trục chính (001–010)", label1En: "10 Axial Zones (001–010)", val2: 10, label2Vi: "10 Cụm Ngọ Môn – Thái Hòa – Cần Chánh – Càn Thành – Vườn", label2En: "10 Paired Gate, Court, Palace & Garden Zones", noteVi: "Phản ánh tương đồng 'Tả Tổ Hữu Xã, Tiền Triều Hậu Tẩm' trong văn hiến Đông Á", noteEn: "Mirrors shared Confucian administrative zoning across East Asian palaces" }
-      ]
-    },
-    timber: {
-      col1Vi: "Thông Số Quy Phạm Hoàng Gia",
-      col2Vi: "Kỹ Nghệ Vật Liệu & Kết Cấu Thích Ứng",
-      col1En: "Imperial Architectural Canon",
-      col2En: "Material Craft & Seismic Structural Reality",
-      rows: [
-        { metricVi: "Cột chống Điện Thái Hòa", metricEn: "Taihedian Nanmu Pillars", val1: 72, label1Vi: "72 cột gỗ Kim ti Nam mộc nguyên thân", label1En: "72 Full-Trunk Golden Nanmu Pillars", val2: 6, label2Vi: "6 cột chính thếp vàng quấn rồng quanh ngai", label2En: "6 Coiled-Dragon Gold-Leaf Throne Pillars", noteVi: "Cột không chôn xuống đất mà đặt trên đá tảng tránh ẩm mục", noteEn: "Pillars rest unanchored on polished stone plinths to slip safely in earthquakes" },
-        { metricVi: "Linh thú góc mái (Thái Hòa vs Càn Thanh)", metricEn: "Roof Ridge Beasts", val1: 10, label1Vi: "10 linh thú trên mái Điện Thái Hòa (độc nhất)", label1En: "10 Ridge Beasts (Taihedian — Unique Apex)", val2: 9, label2Vi: "9 linh thú trên mái Càn Thanh Cung", label2En: "9 Ridge Beasts (Qianqinggong)", noteVi: "Số lượng linh thú phân định cấp bậc lễ nghi nghiêm ngặt của tòa điện", noteEn: "Increasing beast count visibly encodes imperial ritual hierarchy" },
-        { metricVi: "Hệ thống thoát nước Tam Đài", metricEn: "Marble Terrace Drainage", val1: 1142, label1Vi: "1.142 đầu rồng đá Ly Thủ phun nước mưa", label1En: "1,142 Carved Dragon Waterspouts", val2: 8.13, label2Vi: "3 tầng đài cẩm thạch Tu Di Tọa cao 8,13 m", label2En: "8.13 m Triple White Marble Platform", noteVi: "Biến hệ thống kỹ thuật thoát nước thành kỳ quan 'Thiên Long thổ thủy' khi mưa lớn", noteEn: "Turns utilitarian storm drainage into cascading architectural spectacle" }
-      ]
+      col1Vi: "Quy Chế Biểu Trưng / Truyền Thuyết",
+      col2Vi: "Thực Tế Khảo Cổ & Vận Hành (Cố Cung)",
+      col1En: "Symbolic Statute / Myth",
+      col2En: "Archaeological & Operational Reality",
+      rows: MULTISCALE_COMPARISON_ROWS.map((r) => ({
+        metricVi: r.metricVi,
+        metricEn: r.metricEn,
+        val1: r.statutePct,
+        label1Vi: r.statuteValVi,
+        label1En: r.statuteValEn,
+        val2: r.realityPct,
+        label2Vi: r.realityValVi,
+        label2En: r.realityValEn,
+        noteVi: r.hueValVi,
+        noteEn: r.hueValEn
+      }))
     }
   };
 
   const TIMELINE_EVENTS = [
-    { year: "1406–1407", phase: "P1", badgeVi: "GĐ1 · KHỞI CÔNG", badgeEn: "PHASE 1 · START", titleVi: "Minh Vĩnh Lạc ban chiếu kiến tạo Tử Cấm Thành", titleEn: "Yongle Decree Launches Construction", descVi: "Huy động 100.000 nghệ nhân và 1 triệu dân công chế tác gỗ Nam Mộc, gạch Kim Chuyên và 80 triệu viên gạch.", descEn: "Mobilized 100,000 master artisans using Sichuan Nanmu timber, Suzhou golden bricks, and 80M masonry blocks." },
-    { year: "1417", phase: "P1", badgeVi: "GĐ1 · CẢNH QUAN", badgeEn: "PHASE 1 · GARDEN", titleVi: "Hoàn thiện Ngự Hoa Viên rộng 12.000 m²", titleEn: "12,000 m² Imperial Garden Completed", descVi: "Kiến tạo không gian thượng uyển Đôi Tú Sơn – Khâm An Điện hài hòa cổ thụ và đá Thái Hồ.", descEn: "Balanced rigid axial symmetry with Taihu rockeries and ancient cypress groves in the north." },
-    { year: "1420", phase: "P1", badgeVi: "GĐ1 · HOÀN THÀNH", badgeEn: "PHASE 1 · DEDICATED", titleVi: "Khánh thành quần thể 960m × 750m sau 14 năm", titleEn: "960m × 750m Complex Dedicated", descVi: "Hoàn tất trục lễ nghi Ngọ Môn – Tam Đại Điện – Nội Đình, khởi đầu triều đại 14 hoàng đế Minh.", descEn: "Inaugurated the Ming Imperial Axis hosting 14 Ming emperors through 1644." },
-    { year: "1627 & 1644", phase: "P1", badgeVi: "GĐ1 · CHUYỂN GIAO", badgeEn: "PHASE 1 · TRANSITION", titleVi: "Trùng tu Trung Hòa Điện & Chuyển giao Minh – Thanh", titleEn: "Zhonghedian Rebuild & Qing Transition", descVi: "Phục dựng Trung Hòa Điện (1627); năm 1644 triều Thanh tiếp quản Tử Cấm Thành.", descEn: "Hall of Central Harmony restored (1627); Qing Dynasty assumed palace stewardship in 1644." },
-    { year: "1689", phase: "P2", badgeVi: "GĐ2 · MỞ RỘNG", badgeEn: "PHASE 2 · EXPANSION", titleVi: "Xây dựng Ninh Thọ Cung ở khu vực phía Đông", titleEn: "Ningshougong Erected in Eastern Precinct", descVi: "Khởi dựng tiền thân khu 'Tử Cấm Thành thu nhỏ' dưới thời Hoàng đế Khang Hy.", descEn: "Constructed the eastern wing destined to become Qianlong's autonomous retirement complex." },
-    { year: "1722", phase: "P2", badgeVi: "GĐ2 · DỊCH CHUYỂN", badgeEn: "PHASE 2 · SHIFT", titleVi: "Ung Chính chuyển tâm quyền lực sang Dưỡng Tâm Điện", titleEn: "Power Shifts from Qianqinggong to Yangxindian", descVi: "Dịch chuyển công năng thực tế: 8 đời vua Thanh điều hành đế chế từ Dưỡng Tâm Điện sát Quân Cơ Xứ.", descEn: "Real-world functional shift: eight Qing rulers governed daily from compact Yangxindian." },
-    { year: "1765 & 1772", phase: "P2", badgeVi: "GĐ2 · ĐỈNH CAO", badgeEn: "PHASE 2 · PINNACLE", titleVi: "Hoàng Cực Điện, Cửu Long Bích & Ngọc 1,07 tấn", titleEn: "Nine-Dragon Screen & 1.07-Ton Jade", descVi: "Hoàn thiện Cửu Long Bích 270 viên gốm (vá gỗ rồng thứ 3) và ngọc điêu Đại Vũ trị thủy.", descEn: "Qianlong expanded Ningshougong with the 270-tile dragon screen and 1.07-ton jade boulder." },
-    { year: "1924–1925", phase: "P3", badgeVi: "GĐ3 · BẢO TÀNG", badgeEn: "PHASE 3 · MUSEUM", titleVi: "Thành lập Bảo tàng Cố Cung (Song Thập 1925)", titleEn: "Palace Museum Opened to Public (1925)", descVi: "Khép lại hơn 500 năm hoàng quyền 24 hoàng đế, mở cửa cấm địa thành bảo tàng văn hóa công lập.", descEn: "Transformed the forbidden sanctuary of 24 emperors into a public national museum." },
-    { year: "1961 & 1987", phase: "P3", badgeVi: "GĐ3 · DI SẢN UNESCO", badgeEn: "PHASE 3 · UNESCO", titleVi: "Di sản Thế giới UNESCO Kiến trúc Gỗ Lớn Nhất", titleEn: "UNESCO World Heritage Listing (1987)", descVi: "Ghi danh quần thể kiến trúc gỗ cổ đại bảo tồn nguyên vẹn quy mô lớn nhất toàn cầu.", descEn: "Inscribed as the largest preserved complex of ancient palatial timber structures worldwide." },
-    { year: "2020–2026", phase: "P3", badgeVi: "GĐ3 · SỐ HÓA 3D", badgeEn: "PHASE 3 · DIGITAL TWIN", titleVi: "Kỷ niệm 600 năm Cố Cung & Giải phẫu 3D trên CCE", titleEn: "600th Anniversary & Interactive 3D Dissection on CCE", descVi: "Tái hiện trực quan 10 phân khu cung điện, mái cong Phi Diềm, Đấu Củng X-Ray và đối sánh kiến trúc Đại Nội Huế.", descEn: "Interactive WebGL reconstruction of 10 palatial zones, curved eaves, and X-Ray Dougong joinery compared alongside Hue Citadel." }
+    { year: "1406–1416", phase: "P1", badgeVi: "GĐ1 · KHAI THÁC & CHUẨN BỊ", badgeEn: "PHASE 1 · TIMBER & STONE", titleVi: "Chiếu Vĩnh Lạc khởi dựng Tử Cấm Thành — Khai thác gỗ Kim ti Nam mộc", titleEn: "Yongle Decree Launches Construction & Remote Nanmu Logging", descVi: "Minh Thành Tổ Chu Đệ hạ chiếu xây kinh đô Bắc Kinh (1406); quan viên đi Tứ Xuyên, Vân Nam, Quý Châu mất 3–5 năm vận chuyển từng thân Kim ti Nam mộc và đá Phòng Sơn 250 tấn.", descEn: "Emperor Yongle ordered the Beijing palace transfer in 1406; giant Phoebe zhennan logs from Sichuan/Yunnan required 3–5 years per beam to float and haul north." },
+    { year: "1417–1420", phase: "P1", badgeVi: "GĐ1 · NGUYỄN AN & HOÀN THÀNH", badgeEn: "PHASE 1 · MASTERWORK 1420", titleVi: "100.000 nghệ nhân (công trình sư Nguyễn An) dựng xong năm 1420", titleEn: "100,000 Artisans & Chief Designer Nguyễn An Complete Core Complex", descVi: "Đội ngũ thợ thủ công (với tổng công trình sư Nguyễn An — nhân tài kiến trúc gốc Việt giữ vai trò chủ chốt quy hoạch Đại Minh cung thành) cùng 1 triệu dân phu hoàn tất quần thể tháng 12/1420.", descEn: "Over 100,000 master artisans—crucially directed by Vietnamese-born chief court architect Ruan An (Nguyễn An)—and 1M laborers completed the axial palace in Dec 1420." },
+    { year: "9/5/1421", phase: "P2", badgeVi: "GĐ2 · ĐẠI HỎA SÉT ĐÁNH", badgeEn: "PHASE 2 · 1421 LIGHTNING FIRE", titleVi: "Sét đánh cháy trụi Tam Đại Điện chỉ 4 tháng sau khánh thành", titleEn: "Three Great Halls Destroyed by Lightning Four Months After Dedication", descVi: "Ngày 9/5/1421, sét đánh thẳng Phụng Thiên Điện (tiền thân Điện Thái Hòa) tạo thành trận đại hỏa hoạn đầu tiên thiêu rụi cụm Ngoại Triều.", descEn: "Lightning struck Fengtian Hall on 9 May 1421—just 4 months after opening ceremonies—starting an era of cyclical timber conflagrations." },
+    { year: "1557 & 1597", phase: "P2", badgeVi: "GĐ2 · HỎA HOẠN GIA TĨNH – VẠN LỊCH", badgeEn: "PHASE 2 · RECURRING FIRES", titleVi: "Hai vụ cháy lớn liên tiếp phá hủy lại toàn bộ Tam Đại Điện", titleEn: "Ming Fires of 1557 & 1597 Force Repeated Structural Rebuilds", descVi: "Hai vụ hỏa hoạn thời Minh Gia Tĩnh và Vạn Lịch làm nguồn gỗ cổ thụ Nam mộc Tây Nam cạn kiệt nghiêm trọng, buộc triều đình điều chỉnh kết cấu cột ghép.", descEn: "Repeated conflagrations in 1557 and 1597 exhausted old-growth Nanmu forests, reshaping imperial structural engineering." },
+    { year: "1695", phase: "P2", badgeVi: "GĐ2 · THU HẸP QUY MÔ", badgeEn: "PHASE 2 · 1695 DOWNSCALED REBUILD", titleVi: "Khang Hy tái thiết Điện Thái Hòa thu nhỏ gần một nửa bản 1420", titleEn: "Kangxi Finalizes Present Taihedian at Half Original 1420 Scale", descVi: "Khang Hy năm thứ 34 tái thiết Điện Thái Hòa hiện nay: chiều ngang thu hẹp từ ~95 m xuống 64 m, dùng lõi gỗ thông ghép bọc ngoài và giảm tỷ lệ Đấu Củng từ chịu lực thuần túy sang trang trí phối hợp.", descEn: "Reconstructed for the last time in 1695 (width reduced from ~95m to 64m) using bundled-timber core pillars and more compact late-imperial Dougong brackets." },
+    { year: "1723–1729", phase: "P3", badgeVi: "GĐ3 · DỊCH CHUYỂN QUYỀN LỰC", badgeEn: "PHASE 3 · 1723 POWER SHIFT", titleVi: "Ung Chính rời Càn Thanh Cung sang Dưỡng Tâm Điện & Lập Quân Cơ Xứ", titleEn: "Yongzheng Relocates to Yangxindian & Forms Grand Council (1723–1729)", descVi: "Từ năm 1723, tâm điểm trị quốc thực sự rời trục chính về khu chữ Công (~5.000 m²) sát dãy trực Quân Cơ Xứ, điều hành đế chế suốt 8 triều Hoàng đế Thanh.", descEn: "Rejecting cavernous Qianqinggong, Yongzheng established the de facto Qing nerve center inside heated western chambers beside Grand Council clerks." },
+    { year: "1805–1833", phase: "P3", badgeVi: "GĐ3 · TƯƠNG CHIẾU ĐẠI VIỆT / HUẾ", badgeEn: "PHASE 3 · HUE CITADEL PARALLEL", titleVi: "Vua Gia Long & Minh Mạng quy hoạch Đại Nội Huế theo Trùng thiềm điệp ốc", titleEn: "Emperors Gia Long & Minh Mạng Plan Hue Citadel (1805–1833)", descVi: "Xây Điện Thái Hòa (1805) và Ngọ Môn (1833) tại Huế: tiếp thu điển chế Ngũ hành – trục Nam–Bắc nhưng sáng tạo hệ mái đôi Trùng thiềm điệp ốc & Nhất Thi Nhất Họa thích ứng khí hậu miền Trung.", descEn: "Built Hue Thai Hoa Hall (1805) and Meridian Gate (1833), pairing North–South Confucian zoning with Vietnam's flood-and-cyclone-resilient twin-roof joinery." },
+    { year: "1973–2026", phase: "P3", badgeVi: "GĐ3 · GIẢI MÃ 8.707 GIAN & 3D", badgeEn: "PHASE 3 · 1973 SURVEY & 3D TWIN", titleVi: "Vu Trác Vân kiểm kê 8.707 gian (1973) & Số hóa WebGL 3D trên CCE", titleEn: "1973 Inventory Confirms 8,707 Bays; Interactive 3D Dissection", descVi: "Nhóm chuyên gia Vu Trác Vân hoàn tất đo đạc từng gian năm 1973, kết thúc huyền thoại 9.999,5 gian; ngày nay được tái dựng thành mô hình giải phẫu 3D WebGL đối sánh Trung – Việt.", descEn: "Architect Yu Zhuoyun's 1973 archaeological count settled the 9,999.5 myth at 8,707 verified bays (8,886 w/ towers)—now reconstructed live in Three.js." }
+  ];
+
+  const HUE_COMPARATOR_VECTORS = [
+    {
+      code: "01",
+      titleVi: "Triết lý Không gian & Cảnh quan",
+      titleEn: "Spatial Philosophy & Ecology",
+      beijingVi: "<strong>Uy quyền Tuyệt đối & Chế ngự:</strong> Sân đá khổng lồ 30.000 m² hoàn toàn không bóng cây, đài đá Hán Bạch Ngọc 3 tầng cao 8,13 m đẩy ngai vàng lên tách biệt trần thế.",
+      beijingEn: "<strong>Awe & Spatial Dominance:</strong> Treeless 30,000 m² flagstone courts and 8.13 m three-tier marble platforms assert intimidating celestial detachment.",
+      hueVi: "<strong>Hài hòa Sơn Thủy & Sinh thái:</strong> Đặt Hồ Thái Dịch xanh mát, cây xanh và lấy Núi Ngự Bình làm Tiền án, Sông Hương làm Minh đường tự nhiên.",
+      hueEn: "<strong>Natural Harmonics & Fengshui:</strong> Integrates lotus-filled Thai Dich Lake, shaded foliage, Ngu Binh Mountain screen, and Perfume River flow."
+    },
+    {
+      code: "02",
+      titleVi: "Giải pháp Mở rộng Nội thất & Mái",
+      titleEn: "Interior Volume & Roof Architecture",
+      beijingVi: "<strong>Tăng chiều cao & Mái Trọng diêm:</strong> Dùng cột Kim ti Nam mộc khổng lồ đẩy mái Trọng diêm Vũ điện cao tới 26,92 m trên bệ đài.",
+      beijingEn: "<strong>Vertical Scale & Heavy Hips:</strong> Relies on giant Nanmu columns hoisting massive glazed double-eave hipped roofs 26.92 m above terrace stones.",
+      hueVi: "<strong>Trùng thiềm điệp ốc (Nhà kép 2 mái):</strong> Nối Tiền doanh (7 gian 2 chái) và Chính doanh (5 gian 2 chái) bằng trần vòm <em>Thừa lưu</em> — vừa rộng lòng nhà không cần gỗ quá khổ vừa hạ thấp trọng tâm chống bão.",
+      hueEn: "<strong>Twin-Roof Joinery (Trùng thiềm điệp ốc):</strong> Bridges Front & Main timber bays beneath a concave <em>Thừa lưu</em> soffit—expanding depth without oversized beams while resisting coastal typhoons."
+    },
+    {
+      code: "03",
+      titleVi: "Hệ Liên kết Chịu lực & Trang trí",
+      titleEn: "Load-Bearing Joinery & Carvings",
+      beijingVi: "<strong>Hệ Đấu Củng (斗拱) nhiều tầng:</strong> Hàng nghìn mẩu gỗ đan cài chìa đỡ mái vươn xa không đinh sắt, kèm 10 linh thú nóc mái phân cấp.",
+      beijingEn: "<strong>Stacked Dougong Brackets:</strong> Deep multi-tier interlocking timber cantilevers without iron nails paired with hierarchical ceramic ridge beasts.",
+      hueVi: "<strong>Kẻ Chuyền, Bẩy Hiên & Nhất Thi Nhất Họa:</strong> Mộng gỗ lim chắc khỏe kết hợp hệ ô hộc <em>Nhất Thi Nhất Họa</em> (một bài thơ chữ Hán + một tranh thếp vàng độc bản).",
+      hueEn: "<strong>Ke Chuyen Rafters & Carved Poetry:</strong> Resilient ironwood frames decorated across ceiling panels with 'One Poem, One Painting' gilded wood reliefs."
+    },
+    {
+      code: "04",
+      titleVi: "Vật liệu & Màu sắc Hoàng gia",
+      titleEn: "Materials & Chromatic Heritage",
+      beijingVi: "<strong>Ngói Lưu Ly Vàng & Tường Đất Hoàng Thổ:</strong> Phối hai sắc Đỏ Chu Sa – Vàng Hoàng Lưu Ly rực rỡ trên nền băng giá Hoa Bắc.",
+      beijingEn: "<strong>Northern Chromatics:</strong> Expansive yellow glazed tiles juxtaposed against deep loess red walls.",
+      hueVi: "<strong>Hoàng/Thanh Lưu Ly & Pháp Lam – Khảm Sành Sứ:</strong> Gốm tráng men Pháp lam (Pháp lang Huế) kháng ẩm mặn nhiệt đới và khảm sành sứ tinh xảo trên nóc mái.",
+      hueEn: "<strong>Hue Enamel & Ceramic Mosaics:</strong> Typhoon-durable polychrome <em>Pháp lam</em> copper enameling and shimmering shattered-porcelain roof mosaics."
+    }
+  ];
+
+  const SYNTHESIS_GROUPS_4 = [
+    {
+      group: "NHÓM 01",
+      accent: "#1F6E5C",
+      titleVi: "Cơ chế Kháng chấn 600 Năm ('Tường đổ nhà không đổ')",
+      titleEn: "600-Year Seismic Resilience ('Walls Collapse, Frame Stands')",
+      bodyVi: "Tường gạch chỉ là vách ngăn giữ nhiệt. 100% trọng lượng mái dồn qua mộng <strong>Đấu Củng</strong> xuống cột gỗ Kim ti Nam mộc đặt phẳng trên đá tảng <em>Bình thân tọa</em> (không chôn móng), cho phép công trình trượt nhẹ ma sát giảm chấn qua 300+ trận động đất (đỉnh điểm 7,8 độ Richter năm 1679).",
+      bodyEn: "Brick walls carry zero roof load. Interlocking Dougong brackets channel weight down unanchored Nanmu pillars resting flat on stone plinths—gliding harmlessly across M7.8 seismic waves."
+    },
+    {
+      group: "NHÓM 02",
+      accent: "#B8292F",
+      titleVi: "Hệ thống Trị thủy 1.142 Đầu Rồng & 308 Vạc Chữa cháy",
+      titleEn: "1,142 Dragon Storm Drains & 308 Heated Fire Cauldrons",
+      bodyVi: "1.142 đầu rồng đá <em>Ly Đầu</em> quanh Tam Đài thoát toàn bộ nước mưa thành kỳ quan 'Thiên long phún thủy' xuống Nội Kim Thủy Hà trong 20 phút. Song song, 308 vạc đồng <em>Môn hải</em> được đun than từ hốc đá đáy vào mùa đông để đảm bảo luôn có nước lỏng chữa cháy.",
+      bodyEn: "1,142 sculpted stone spouts evacuate heavy monsoon rains in 20 minutes into the Inner Canal, while 308 winter-heated bronze/iron vats guarantee unfrozen fire-suppression reserves."
+    },
+    {
+      group: "NHÓM 03",
+      accent: "#3B4D7A",
+      titleVi: "Nhãn quan Đối sánh Bản sắc Kiến trúc Trung – Việt",
+      titleEn: "Comparing Northern Chinese Canon vs. Vietnamese Hue Adaptation",
+      bodyVi: "Tại thực địa hãy phân biệt: Bắc Kinh dùng mái cong đầu đao nhiều tầng Đấu Củng thu nhỏ thời Thanh để tạo áp lực thị giác dọc sân trống; còn Huế tối ưu khí hậu miền Trung bằng bộ khung gỗ lim hạ trọng tâm <em>Trùng thiềm điệp ốc</em>, nghệ thuật <em>Pháp lam</em> và <em>Nhất Thi Nhất Họa</em>.",
+      bodyEn: "Distinguish Beijing's stark stone plazas and lofty stacked Dougong from Hue's storm-tuned twin-roof ironwood joinery, lush lakes, and enameled Poetry-and-Painting bays."
+    },
+    {
+      group: "NHÓM 04",
+      accent: "#D99B26",
+      titleVi: "Cẩm nang Thực địa cho Độc giả Việt (Field Checklist)",
+      titleEn: "On-Site Field Checklist & Essential Lexicon",
+      bodyVi: "<strong>(1) Ngắm Đấu Củng & Đá 250 tấn:</strong> Đi ra ngay phía sau Điện Bảo Hòa. <strong>(2) Không bỏ sót quyền lực thực:</strong> Sau khi qua Càn Thanh Môn, rẽ trái sang <strong>Dưỡng Tâm Điện & Quân Cơ Xứ</strong> thay vì chỉ đi thẳng trục giữa. <strong>Từ vựng thực địa:</strong> <code>斗拱</code> Đấu Củng · <code>太和殿</code> Thái Hòa Điện · <code>养心殿</code> Dưỡng Tâm Điện · <code>军机处</code> Quân Cơ Xứ · <code>汉白玉</code> Hán Bạch Ngọc · <code>鎏金铜缸</code> Lưu Kim Đồng Cang.",
+      bodyEn: "<strong>(1) Dragon Stone & Brackets:</strong> Check behind Baohedian. <strong>(2) True Power Wing:</strong> Turn West past Qianqingmen to Yangxindian & Grand Council. <strong>Key Terms:</strong> <code>斗拱</code> Dougong · <code>太和殿</code> Taihedian · <code>养心殿</code> Yangxindian · <code>军机处</code> Grand Council · <code>汉白玉</code> Hanbaiyu Marble · <code>鎏金铜缸</code> Gilt Bronze Vats."
+    }
   ];
 
   // --------------------------------------------------------------------------
@@ -606,9 +821,20 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       zoneId,
       layer: layer || "body",
       isShiftTarget: Boolean(isShiftTarget),
+      baseX: mesh.position.x,
       baseY: mesh.position.y,
+      baseZ: mesh.position.z,
       explodeMult: explodeMult || 0
     };
+    mesh.traverse((child) => {
+      if (child.isMesh && child.material && !child.material._fc3dUnique) {
+        child.material = child.material.clone();
+        child.material._fc3dUnique = true;
+        child.material.userData = child.material.userData || {};
+        child.material.userData.origColorHex = child.material.color ? child.material.color.getHex() : 0xffffff;
+        child.material.userData.origEmissiveHex = child.material.emissive ? child.material.emissive.getHex() : 0x000000;
+      }
+    });
     if (!zoneMeshMap[zoneId]) zoneMeshMap[zoneId] = [];
     zoneMeshMap[zoneId].push(mesh);
     if ((explodeMult || 0) > 0) explodableMeshes.push(mesh);
@@ -1156,14 +1382,37 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     root.add(createDetailedPalaceHall({ w: 14, d: 9, baseH: 1.6, bodyH: 4.0, roofH: 3.8, x: 42, y: 0.8, z: 50, zoneId: "002", roofType: "gable", doubleEave: false, isMarbleBase: true }, texLib, regFn));
     root.add(createDetailedPalaceHall({ w: 14, d: 9, baseH: 1.6, bodyH: 4.0, roofH: 3.8, x: -42, y: 0.8, z: 50, zoneId: "002", roofType: "gable", doubleEave: false, isMarbleBase: true }, texLib, regFn));
 
-    // ZONE 003-005: H-Shaped (土) Three-Tier Marble Terrace (Tam Đài / Santai)
+    // ZONE 002 Subsurface Cutaway: 15 Alternating Kim Chuyên Brick & Rammed-Earth Courses (No Trees Security)
+    const cutawayGroup = new THREE.Group();
+    cutawayGroup.position.set(-18, 0.85, 34);
+    for (let st = 0; st < 15; st++) {
+      const shrink = st * 0.28;
+      const isBrick = st % 2 === 0;
+      const layerMat = new THREE.MeshStandardMaterial({
+        color: isBrick ? 0x8b7e6a : 0x1f6e5c,
+        roughness: 0.72
+      });
+      const strataMesh = new THREE.Mesh(new THREE.BoxGeometry(10.5 - shrink, 0.22, 7.6 - shrink * 0.7), layerMat);
+      strataMesh.position.y = 0.28 - st * 0.21;
+      cutawayGroup.add(strataMesh);
+    }
+    const cutawayRim = new THREE.Mesh(
+      new THREE.BoxGeometry(11.2, 0.25, 8.2),
+      new THREE.MeshStandardMaterial({ color: 0xd99b26, roughness: 0.4 })
+    );
+    cutawayRim.position.y = 0.05;
+    cutawayGroup.add(cutawayRim);
+    regFn("002", cutawayGroup, "subsurface", false, 0);
+    root.add(cutawayGroup);
+
+    // ZONE 003-004: H-Shaped (土) Three-Tier Marble Terrace (Tam Đài / Santai)
     const santaiGroup = new THREE.Group();
     santaiGroup.position.set(0, 0.8, 0);
     const santaiMat = new THREE.MeshStandardMaterial({ map: texLib.whiteMarble, color: 0xf7f5f0, roughness: 0.45 });
     [
       { z: 16, w1: 48, d1: 26, w2: 43, d2: 22, w3: 38, d3: 18, zoneId: "003" },
       { z: 0, w1: 36, d1: 14, w2: 32, d2: 12, w3: 28, d3: 10, zoneId: "004" },
-      { z: -15, w1: 44, d1: 22, w2: 39, d2: 18, w3: 34, d3: 15, zoneId: "005" }
+      { z: -15, w1: 44, d1: 22, w2: 39, d2: 18, w3: 34, d3: 15, zoneId: "004" }
     ].forEach((sec) => {
       const t1 = new THREE.Mesh(new THREE.BoxGeometry(sec.w1, 2.0, sec.d1), santaiMat);
       t1.position.set(0, 1.0, sec.z);
@@ -1191,7 +1440,7 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     root.add(santaiGroup);
 
     // ZONE 003: Điện Thái Hòa + Sundials + Censers + Fire Vats + Side Galleries
-    root.add(createDetailedPalaceHall({ w: 31, d: 15.5, baseH: 0.4, bodyH: 7.4, roofH: 7.8, x: 0, y: 6.4, z: 16, zoneId: "003", roofType: "hip", doubleEave: true, isMarbleBase: true, isShiftTarget: true, hasInteriorThrone: true, baysX: 9, baysZ: 5, plaqueText: "太和殿" }, texLib, regFn));
+    root.add(createDetailedPalaceHall({ w: 31, d: 15.5, baseH: 0.4, bodyH: 7.4, roofH: 7.8, x: 0, y: 6.4, z: 16, zoneId: "003", roofType: "hip", doubleEave: true, isMarbleBase: true, isShiftTarget: false, hasInteriorThrone: true, baysX: 9, baysZ: 5, plaqueText: "太和殿" }, texLib, regFn));
     root.add(createCourtyardArtifact("sundial", 11.5, 6.4, 23.2, "003", regFn));
     root.add(createCourtyardArtifact("sundial", -11.5, 6.4, 23.2, "003", regFn));
     [-8.5, -5.5, 5.5, 8.5].forEach((cx) => root.add(createCourtyardArtifact("censer", cx, 6.4, 23.0, "003", regFn)));
@@ -1199,25 +1448,26 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     root.add(createDetailedPalaceHall({ w: 7.5, d: 34, baseH: 1.5, bodyH: 4.5, roofH: 4.2, x: 34, y: 0.8, z: 16, zoneId: "003", roofType: "gable", doubleEave: true }, texLib, regFn));
     root.add(createDetailedPalaceHall({ w: 7.5, d: 34, baseH: 1.5, bodyH: 4.5, roofH: 4.2, x: -34, y: 0.8, z: 16, zoneId: "003", roofType: "gable", doubleEave: true }, texLib, regFn));
 
-    // ZONE 004: Điện Trung Hòa (Square Pyramidal Roof)
+    // ZONE 004: Điện Trung Hòa + Điện Bảo Hòa + 250-ton Dragon Monolith
     root.add(createDetailedPalaceHall({ w: 11.5, d: 11.5, baseH: 0.4, bodyH: 5.2, roofH: 5.6, x: 0, y: 6.4, z: 0, zoneId: "004", roofType: "pyramid", doubleEave: false, isMarbleBase: true, hasInteriorThrone: true, baysX: 3, baysZ: 3, plaqueText: "中和殿" }, texLib, regFn));
-
-    // ZONE 005: Điện Bảo Hòa + 250-ton Dragon Monolith
-    root.add(createDetailedPalaceHall({ w: 25.5, d: 13.0, baseH: 0.4, bodyH: 6.2, roofH: 6.4, x: 0, y: 6.4, z: -15, zoneId: "005", roofType: "gable", doubleEave: true, isMarbleBase: true, isShiftTarget: true, hasInteriorThrone: true, baysX: 9, baysZ: 5, plaqueText: "保和殿" }, texLib, regFn));
+    root.add(createDetailedPalaceHall({ w: 25.5, d: 13.0, baseH: 0.4, bodyH: 6.2, roofH: 6.4, x: 0, y: 6.4, z: -15, zoneId: "004", roofType: "gable", doubleEave: true, isMarbleBase: true, isShiftTarget: false, hasInteriorThrone: true, baysX: 9, baysZ: 5, plaqueText: "保和殿" }, texLib, regFn));
     const dragonMonolith = new THREE.Mesh(
       new THREE.BoxGeometry(6.2, 5.8, 10.5),
       new THREE.MeshStandardMaterial({ map: texLib.dragonSlab, color: 0xf5f3ee, roughness: 0.35 })
     );
     dragonMonolith.position.set(0, 3.2, -26.2);
     dragonMonolith.rotation.x = -0.45;
-    regFn("005", dragonMonolith, "foundation", true, 0);
+    regFn("004", dragonMonolith, "foundation", false, 0);
     root.add(dragonMonolith);
 
-    // ZONE 006: Càn Thanh Môn & Hậu Tam Cung
+    // ZONE 005: Càn Thanh Môn (Boundary Separating Outer & Inner Courts)
     const innerDivideWall = new THREE.Mesh(new THREE.BoxGeometry(118, 3.8, 1.6), wallMat);
     innerDivideWall.position.set(0, 2.4, -32);
+    regFn("005", innerDivideWall, "foundation", false, 0);
     root.add(innerDivideWall);
-    root.add(createDetailedPalaceHall({ w: 14, d: 6.5, baseH: 1.6, bodyH: 3.8, roofH: 3.8, x: 0, y: 0.8, z: -32, zoneId: "006", roofType: "gable", doubleEave: false, isMarbleBase: true }, texLib, regFn));
+    root.add(createDetailedPalaceHall({ w: 14, d: 6.5, baseH: 1.6, bodyH: 3.8, roofH: 3.8, x: 0, y: 0.8, z: -32, zoneId: "005", roofType: "gable", doubleEave: false, isMarbleBase: true }, texLib, regFn));
+
+    // ZONE 006: Càn Thanh Cung & Giao Thái Điện
     const innerTerrace = new THREE.Mesh(new THREE.BoxGeometry(28, 2.4, 30), santaiMat);
     innerTerrace.position.set(0, 2.0, -49);
     root.add(innerTerrace);
@@ -1225,38 +1475,40 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     regFn("006", innerTerrace, "foundation", false, 0);
     root.add(createDetailedPalaceHall({ w: 22, d: 10.5, baseH: 0.3, bodyH: 5.2, roofH: 5.4, x: 0, y: 3.2, z: -40, zoneId: "006", roofType: "hip", doubleEave: true, isMarbleBase: true, hasInteriorThrone: true, baysX: 9, baysZ: 5, plaqueText: "乾清宫" }, texLib, regFn));
     root.add(createDetailedPalaceHall({ w: 8.8, d: 8.8, baseH: 0.3, bodyH: 4.0, roofH: 4.4, x: 0, y: 3.2, z: -49.5, zoneId: "006", roofType: "pyramid", doubleEave: false, isMarbleBase: true }, texLib, regFn));
-    root.add(createDetailedPalaceHall({ w: 19.5, d: 9.8, baseH: 0.3, bodyH: 4.8, roofH: 4.8, x: 0, y: 3.2, z: -58.5, zoneId: "006", roofType: "hip", doubleEave: true, isMarbleBase: true, baysX: 9, baysZ: 4 }, texLib, regFn));
 
-    // ZONE 007: Dưỡng Tâm Điện (I-plan + Grand Council)
+    // ZONE 007: Khôn Ninh Cung & Khu Dưỡng Lão Ninh Thọ Cung (Ngọc 1,07 tấn)
+    root.add(createDetailedPalaceHall({ w: 19.5, d: 9.8, baseH: 0.3, bodyH: 4.8, roofH: 4.8, x: 0, y: 3.2, z: -58.5, zoneId: "007", roofType: "hip", doubleEave: true, isMarbleBase: true, baysX: 9, baysZ: 4 }, texLib, regFn));
+    root.add(createDetailedPalaceHall({ w: 16.5, d: 9.5, baseH: 2.2, bodyH: 4.8, roofH: 4.8, x: 37, y: 0.8, z: -31, zoneId: "007", roofType: "gable", doubleEave: true, isMarbleBase: true, isShiftTarget: false, hasInteriorThrone: true }, texLib, regFn));
+    root.add(createDetailedPalaceHall({ w: 15.0, d: 8.5, baseH: 1.8, bodyH: 4.4, roofH: 4.2, x: 37, y: 0.8, z: -43, zoneId: "007", roofType: "hip", doubleEave: false, isMarbleBase: true, isShiftTarget: false }, texLib, regFn));
+    root.add(createDetailedPalaceHall({ w: 13.5, d: 8.5, baseH: 1.6, bodyH: 4.2, roofH: 4.0, x: 37, y: 0.8, z: -55, zoneId: "007", roofType: "gable", doubleEave: false, isMarbleBase: true, isShiftTarget: false }, texLib, regFn));
+    const jadeSculpture = new THREE.Mesh(new THREE.DodecahedronGeometry(1.45, 1), new THREE.MeshStandardMaterial({ color: 0x38a169, roughness: 0.2, metalness: 0.3 }));
+    jadeSculpture.position.set(37, 3.8, -50.5);
+    regFn("007", jadeSculpture, "interior_columns", false, 0);
+    root.add(jadeSculpture);
+
+    // ZONE 008: Dưỡng Tâm Điện & Quân Cơ Xứ (Tâm điểm Quyền lực Thực ~5.000 m²)
     const yxWall = new THREE.Mesh(new THREE.BoxGeometry(19, 3.2, 16), wallMat);
     yxWall.position.set(-23, 2.1, -36);
-    const yxFloor = new THREE.Mesh(new THREE.BoxGeometry(17.6, 2.2, 14.6), new THREE.MeshStandardMaterial({ color: 0x3d3a35 }));
+    regFn("008", yxWall, "body", true, 0);
+    const yxFloor = new THREE.Mesh(new THREE.BoxGeometry(17.6, 2.2, 14.6), new THREE.MeshStandardMaterial({ color: 0x5c181b }));
     yxFloor.position.set(-23, 1.8, -36);
+    regFn("008", yxFloor, "foundation", true, 0);
     root.add(yxWall, yxFloor);
-    root.add(createDetailedPalaceHall({ w: 14.5, d: 6.5, baseH: 1.2, bodyH: 4.4, roofH: 4.2, x: -23, y: 2.2, z: -33, zoneId: "007", roofType: "gable", doubleEave: false, isShiftTarget: true, hasInteriorThrone: true, plaqueText: "养心殿" }, texLib, regFn));
-    root.add(createDetailedPalaceHall({ w: 5.2, d: 4.5, baseH: 1.0, bodyH: 3.6, roofH: 3.2, x: -23, y: 2.2, z: -36.5, zoneId: "007", roofType: "gable", doubleEave: false, isShiftTarget: true }, texLib, regFn));
-    root.add(createDetailedPalaceHall({ w: 13.5, d: 5.5, baseH: 1.2, bodyH: 4.0, roofH: 3.8, x: -23, y: 2.2, z: -40, zoneId: "007", roofType: "hip", doubleEave: false, isShiftTarget: true }, texLib, regFn));
-    root.add(createDetailedPalaceHall({ w: 9.5, d: 4.2, baseH: 0.8, bodyH: 2.8, roofH: 2.6, x: -20, y: 1.2, z: -26.5, zoneId: "007", roofType: "gable", doubleEave: false, isShiftTarget: true }, texLib, regFn));
+    root.add(createDetailedPalaceHall({ w: 14.5, d: 6.5, baseH: 1.2, bodyH: 4.4, roofH: 4.2, x: -23, y: 2.2, z: -33, zoneId: "008", roofType: "gable", doubleEave: false, isShiftTarget: true, hasInteriorThrone: true, plaqueText: "养心殿" }, texLib, regFn));
+    root.add(createDetailedPalaceHall({ w: 5.2, d: 4.5, baseH: 1.0, bodyH: 3.6, roofH: 3.2, x: -23, y: 2.2, z: -36.5, zoneId: "008", roofType: "gable", doubleEave: false, isShiftTarget: true }, texLib, regFn));
+    root.add(createDetailedPalaceHall({ w: 13.5, d: 5.5, baseH: 1.2, bodyH: 4.0, roofH: 3.8, x: -23, y: 2.2, z: -40, zoneId: "008", roofType: "hip", doubleEave: false, isShiftTarget: true }, texLib, regFn));
+    root.add(createDetailedPalaceHall({ w: 9.5, d: 4.2, baseH: 0.8, bodyH: 2.8, roofH: 2.6, x: -20, y: 1.2, z: -26.5, zoneId: "008", roofType: "gable", doubleEave: false, isShiftTarget: true, plaqueText: "军机处" }, texLib, regFn));
 
-    // ZONE 008: Ninh Thọ Cung, Cửu Long Bích & Ngọc 1,07 tấn
+    // ZONE 009: Đông – Tây Lục Cung (12 Courtyard Compounds) & Cửu Long Bích
     const ndGroup = new THREE.Group();
     ndGroup.position.set(37, 0.8, -19);
     const ndBase = new THREE.Mesh(new THREE.BoxGeometry(13.5, 1.4, 2.2), new THREE.MeshStandardMaterial({ map: texLib.whiteMarble, color: 0xf5f2eb }));
     ndBase.position.y = 0.7;
     const ndBody = new THREE.Mesh(new THREE.BoxGeometry(12.8, 3.4, 1.5), new THREE.MeshStandardMaterial({ map: texLib.nineDragonWall, roughness: 0.2, metalness: 0.3 }));
     ndBody.position.y = 3.1;
-    ndGroup.add(ndBase, ndBody, createTraditionalRoofTier({ w: 13.6, d: 2.6, h: 1.8, yBase: 4.8, zoneId: "008", isShiftTarget: true, roofType: "hip", explodeMult: 0.6 }, texLib, regFn));
-    regFn("008", ndBody, "body", true, 0);
+    ndGroup.add(ndBase, ndBody, createTraditionalRoofTier({ w: 13.6, d: 2.6, h: 1.8, yBase: 4.8, zoneId: "009", isShiftTarget: false, roofType: "hip", explodeMult: 0.6 }, texLib, regFn));
+    regFn("009", ndBody, "body", false, 0);
     root.add(ndGroup);
-    root.add(createDetailedPalaceHall({ w: 16.5, d: 9.5, baseH: 2.2, bodyH: 4.8, roofH: 4.8, x: 37, y: 0.8, z: -31, zoneId: "008", roofType: "gable", doubleEave: true, isMarbleBase: true, isShiftTarget: true, hasInteriorThrone: true }, texLib, regFn));
-    root.add(createDetailedPalaceHall({ w: 15.0, d: 8.5, baseH: 1.8, bodyH: 4.4, roofH: 4.2, x: 37, y: 0.8, z: -43, zoneId: "008", roofType: "hip", doubleEave: false, isMarbleBase: true, isShiftTarget: true }, texLib, regFn));
-    root.add(createDetailedPalaceHall({ w: 13.5, d: 8.5, baseH: 1.6, bodyH: 4.2, roofH: 4.0, x: 37, y: 0.8, z: -55, zoneId: "008", roofType: "gable", doubleEave: false, isMarbleBase: true, isShiftTarget: true }, texLib, regFn));
-    const jadeSculpture = new THREE.Mesh(new THREE.DodecahedronGeometry(1.45, 1), new THREE.MeshStandardMaterial({ color: 0x38a169, roughness: 0.2, metalness: 0.3 }));
-    jadeSculpture.position.set(37, 3.8, -50.5);
-    regFn("008", jadeSculpture, "interior_columns", true, 0);
-    root.add(jadeSculpture);
-
-    // ZONE 009: Đông – Tây Lục Cung (12 Courtyard Compounds)
     const buildCompound = (cx, cz) => {
       const cWall = new THREE.Mesh(new THREE.BoxGeometry(10.8, 2.8, 9.2), wallMat);
       cWall.position.set(cx, 1.9, cz);
@@ -1319,18 +1571,43 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
           if (!child.isMesh || !child.material) return;
           const layer = obj.userData.layer || child.userData.layer || "body";
           const isShift = obj.userData.isShiftTarget || child.userData.isShiftTarget;
+          const origColor = child.material.userData && typeof child.material.userData.origColorHex === "number"
+            ? child.material.userData.origColorHex
+            : null;
           child.material.transparent = true;
+
           if (ui3d.dissectionState === "actual") {
-            child.material.opacity = isShift || isSelected ? 1.0 : 0.28;
-            if (child.material.emissive) {
-              child.material.emissive.setHex(isShift ? 0x4a0e0e : isSelected ? 0x2e2005 : 0x000000);
+            const isSub = layer === "subsurface";
+            const useWire = Boolean(!isShift && !isSelected && !isSub && layer !== "ground");
+            child.material.wireframe = useWire;
+            if (useWire) {
+              child.material.opacity = 0.34;
+              if (child.material.color) child.material.color.setHex(0xd99b26);
+              if (child.material.emissive) child.material.emissive.setHex(0x221704);
+            } else {
+              child.material.opacity = 1.0;
+              if (origColor !== null && child.material.color) child.material.color.setHex(origColor);
+              if (isShift) {
+                if (child.material.color) child.material.color.setHex(0xb8292f);
+                if (child.material.emissive) child.material.emissive.setHex(0x5a1014);
+              } else if (isSub) {
+                if (child.material.color) child.material.color.setHex(0x1f6e5c);
+                if (child.material.emissive) child.material.emissive.setHex(0x0f3d32);
+              } else if (child.material.emissive) {
+                child.material.emissive.setHex(isSelected ? 0x2e2005 : 0x000000);
+              }
             }
           } else if (ui3d.dissectionState === "xray") {
+            child.material.wireframe = false;
+            if (origColor !== null && child.material.color) child.material.color.setHex(origColor);
             child.material.opacity = layer === "wall_shell" ? 0.22 : 0.98;
             if (child.material.emissive) {
-              child.material.emissive.setHex(layer === "dougong" || layer === "interior_columns" ? 0x3d2206 : 0x000000);
+              const isSeismic = layer === "dougong" || layer === "interior_columns" || layer === "subsurface";
+              child.material.emissive.setHex(isSeismic ? 0x154d3f : 0x000000);
             }
           } else {
+            child.material.wireframe = false;
+            if (origColor !== null && child.material.color) child.material.color.setHex(origColor);
             child.material.opacity = 1.0;
             if (child.material.emissive) {
               child.material.emissive.setHex(isSelected ? 0x2c1d04 : 0x000000);
@@ -1400,7 +1677,10 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       }
       const sx = (v.x * 0.5 + 0.5) * w;
       const sy = (-(v.y * 0.5) + 0.5) * h;
-      if (sx < 24 || sx > w - 24 || sy < 30 || sy > h - 60) {
+      const halfPin = w < 540 ? 60 : 82;
+      const topSafe = w < 540 ? 44 : 40;
+      const bottomSafe = w < 540 ? 32 : 52;
+      if (sx < halfPin || sx > w - halfPin || sy < topSafe || sy > h - bottomSafe) {
         item.el.style.display = "none";
         return;
       }
@@ -1410,7 +1690,7 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       const box = item.el.querySelector(".pin-box");
       if (box) {
         if (item.zoneId === ui3d.activeZoneId) {
-          box.style.backgroundColor = "#9E1B1B";
+          box.style.backgroundColor = "#B8292F";
           box.style.borderColor = "#FFD700";
         } else {
           box.style.backgroundColor = "rgba(20,20,19,0.88)";
@@ -1420,14 +1700,87 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     });
   }
 
+  function bindScrollyObserver(rtState) {
+    if (rtState.io) {
+      rtState.io.disconnect();
+      rtState.io = null;
+    }
+    if (typeof IntersectionObserver === "undefined") return;
+    const cards = Array.from(document.querySelectorAll(".fc3d-scrolly-card[data-fc3d-card-idx]"));
+    if (!cards.length) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (Date.now() < scrollPauseUntil) return;
+        const visible = entries.filter((en) => en.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (!visible.length) return;
+        const idx = Number(visible[0].target.getAttribute("data-fc3d-card-idx"));
+        if (!Number.isFinite(idx) || idx === ui3d.activeChapterIdx) return;
+        const ch = SCROLLY_CHAPTERS[idx];
+        if (!ch) return;
+        ui3d.activeChapterIdx = idx;
+        ui3d.dissectionState = ch.stateMode;
+        ui3d.explodePercent = ch.stateMode === "xray" ? 78 : 0;
+        ui3d.activeZoneId = ch.zoneId;
+        ui3d.autoOrbit = false;
+        flyCamera(ch.camPos, ch.lookAt);
+        updateDissectionVisuals();
+        syncStageUiInPlace();
+      },
+      { threshold: [0.52, 0.72] }
+    );
+    cards.forEach((c) => io.observe(c));
+    rtState.io = io;
+  }
+
+  function renderSvgIsometricFallback(container, en) {
+    if (!container) return;
+    const zCur = FORBIDDEN_CITY_ZONES.find((z) => z.id === ui3d.activeZoneId) || FORBIDDEN_CITY_ZONES[2];
+    const explodeShift = Math.round((ui3d.explodeLevel || 0) * 0.24);
+    container.innerHTML = `
+      <div style="width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:1rem;background:#101216;color:#F7F4ED;">
+        <svg viewBox="0 0 760 360" width="100%" style="max-height:310px;border:1px solid rgba(217,155,38,0.35);background:#15181F;" role="img" aria-label="Isometric Architectural Cutaway of the Forbidden City">
+          <line x1="60" y1="190" x2="700" y2="190" stroke="#D99B26" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.65" />
+          <rect x="82" y="160" width="44" height="60" fill="#2A1B18" stroke="#D99B26" stroke-width="1.5" />
+          <text x="104" y="238" fill="#E8D2A0" font-size="10" text-anchor="middle">001</text>
+          <rect x="148" y="168" width="42" height="44" fill="#182B27" stroke="#1F6E5C" stroke-width="1.5" />
+          <text x="169" y="238" fill="#9EE6D3" font-size="10" text-anchor="middle">002</text>
+          <polygon points="215,180 335,180 325,212 225,212" fill="#E6DFD3" stroke="#D99B26" stroke-width="1.2" />
+          <rect x="232" y="${132 - explodeShift}" width="86" height="46" fill="#9E2A2B" stroke="#D99B26" stroke-width="2" />
+          <polygon points="222,${132 - explodeShift} 275,${102 - explodeShift} 328,${132 - explodeShift}" fill="#D99B26" />
+          <text x="275" y="238" fill="#FDE68A" font-size="11" font-weight="700" text-anchor="middle">003 · THÁI HÒA</text>
+          <rect x="352" y="156" width="54" height="54" fill="#2A1B18" stroke="#D99B26" stroke-width="1.4" />
+          <text x="379" y="238" fill="#E8D2A0" font-size="10" text-anchor="middle">004–005</text>
+          <rect x="425" y="162" width="56" height="48" fill="#2A1B18" stroke="#D99B26" stroke-width="1.4" />
+          <text x="453" y="238" fill="#E8D2A0" font-size="10" text-anchor="middle">006</text>
+          <rect x="502" y="152" width="60" height="58" fill="#5E1518" stroke="#FF6B5B" stroke-width="2" />
+          <text x="532" y="238" fill="#FCA5A5" font-size="10" font-weight="700" text-anchor="middle">008 · DƯỠNG TÂM</text>
+          <rect x="220" y="252" width="340" height="16" fill="#1F6E5C" opacity="0.82" stroke="#9EE6D3" />
+          <text x="390" y="264" fill="#F7F4ED" font-size="9.5" font-weight="700" text-anchor="middle">15-LAYER INTERLOCKING BRICK FOUNDATION (横七竖八)</text>
+          <rect x="585" y="160" width="90" height="50" fill="#1F242D" stroke="#3B4D7A" stroke-width="1.5" />
+          <text x="630" y="238" fill="#CBD5E1" font-size="10" text-anchor="middle">009–010 · BẮC MÔN</text>
+        </svg>
+        <div style="font-size:0.78rem;color:#CBD5E1;margin-top:0.55rem;text-align:center;">
+          ${en ? `SVG Architectural Isometric Mode · Active Zone ${zCur.code}: ${zCur.titleEn}` : `Chế độ Mặt cắt Kiến trúc SVG · Phân khu ${zCur.code}: ${zCur.titleVi}`}
+        </div>
+      </div>
+    `;
+  }
+
   function mountCanvas(containerId, pinsId) {
     const container = document.getElementById(containerId);
-    if (!container || typeof THREE === "undefined") return;
+    if (!container) return;
+    const curLang = (window.CCE_STORE && window.CCE_STORE.getState().uiLang) || "vi";
+    const isEnPin = curLang === "en";
+    if (typeof THREE === "undefined") {
+      renderSvgIsometricFallback(container, isEnPin);
+      return;
+    }
 
     if (rt) {
       try {
         if (rt.rafId) cancelAnimationFrame(rt.rafId);
         if (rt.ro) rt.ro.disconnect();
+        if (rt.io) rt.io.disconnect();
         if (rt.renderer) {
           if (rt.renderer.forceContextLoss) rt.renderer.forceContextLoss();
           rt.renderer.dispose();
@@ -1437,10 +1790,8 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     }
 
     container.innerHTML = "";
-    const curLang = (window.CCE_STORE && window.CCE_STORE.getState().uiLang) || "vi";
-    const isEnPin = curLang === "en";
-    const w = Math.max(320, container.clientWidth || 860);
-    const h = Math.max(340, container.clientHeight || 480);
+    const w = Math.max(240, container.clientWidth || 340);
+    const h = Math.max(280, container.clientHeight || 420);
 
     const texLib = buildProceduralTextures();
     const scene = new THREE.Scene();
@@ -1456,10 +1807,20 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     camera.position.copy(camCurrentPos);
     camera.lookAt(lookCurrentPos);
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
-    renderer.setSize(w, h);
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
+    } catch (_webglErr) {
+      renderSvgIsometricFallback(container, isEnPin);
+      return;
+    }
+    renderer.setSize(w, h, false);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.shadowMap.enabled = true;
+    renderer.domElement.addEventListener("webglcontextlost", (ev) => {
+      ev.preventDefault();
+      renderSvgIsometricFallback(container, isEnPin);
+    });
     container.appendChild(renderer.domElement);
 
     const ambientLight = new THREE.AmbientLight(0xfff8eb, 0.72);
@@ -1493,7 +1854,7 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
         el.className = "pin-3d-label";
         el.setAttribute("data-action", "fc3d-focus-zone");
         el.setAttribute("data-zone", z.id);
-        const pinLabel = (isEnPin ? z.nameEn : z.nameVi).split("(")[0].trim();
+        const pinLabel = (isEnPin ? z.nameEn : z.nameVi).split("(")[0].split("·")[0].split("&")[0].trim();
         el.innerHTML = `
           <div class="pin-box">
             <span style="color:#D4AF37;font-weight:700;">${z.id}</span>
@@ -1534,6 +1895,7 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       sphericalTheta: 0.45,
       sphericalPhi: 1.02,
       ro: null,
+      io: null,
       rafId: null
     };
     rt = rtState;
@@ -1587,16 +1949,22 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       }
     });
 
+    let roRaf = null;
     const ro = new ResizeObserver(() => {
-      if (!container.isConnected || !rt) return;
-      const nw = Math.max(300, container.clientWidth);
-      const nh = Math.max(300, container.clientHeight);
-      rt.camera.aspect = nw / nh;
-      rt.camera.updateProjectionMatrix();
-      rt.renderer.setSize(nw, nh);
+      if (roRaf) cancelAnimationFrame(roRaf);
+      roRaf = requestAnimationFrame(() => {
+        if (!container.isConnected || !rt) return;
+        const nw = Math.max(240, container.clientWidth);
+        const nh = Math.max(260, container.clientHeight);
+        rt.camera.aspect = nw / nh;
+        rt.camera.updateProjectionMatrix();
+        rt.renderer.setSize(nw, nh, false);
+        updatePinPositions(container);
+      });
     });
     ro.observe(container);
     rt.ro = ro;
+    bindScrollyObserver(rtState);
 
     applyLightingPreset();
     updateDissectionVisuals();
@@ -1618,6 +1986,25 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
         rt.camTargetPos.x = rt.lookTargetPos.x + rt.orbitRadius * Math.sin(rt.sphericalPhi) * Math.sin(rt.sphericalTheta);
         rt.camTargetPos.y = rt.lookTargetPos.y + rt.orbitRadius * Math.cos(rt.sphericalPhi);
         rt.camTargetPos.z = rt.lookTargetPos.z + rt.orbitRadius * Math.sin(rt.sphericalPhi) * Math.cos(rt.sphericalTheta);
+      }
+      if (ui3d.seismicActive) {
+        const nowT = performance.now() * 0.022;
+        const wave = Math.sin(nowT) * 0.75 + Math.sin(nowT * 2.3) * 0.25;
+        rt.fcRootGroup.position.x = wave * 0.92;
+        rt.fcRootGroup.position.z = Math.cos(nowT * 1.4) * 0.34;
+        rt.explodableMeshes.forEach((mesh) => {
+          if (mesh.userData && typeof mesh.userData.baseX === "number") {
+            const damp = (mesh.userData.explodeMult || 0.5) * 0.24;
+            mesh.position.x = mesh.userData.baseX - wave * damp;
+          }
+        });
+      } else if (rt.fcRootGroup.position.x !== 0 || rt.fcRootGroup.position.z !== 0) {
+        rt.fcRootGroup.position.set(0, 0, 0);
+        rt.explodableMeshes.forEach((mesh) => {
+          if (mesh.userData && typeof mesh.userData.baseX === "number") {
+            mesh.position.x = mesh.userData.baseX;
+          }
+        });
       }
       rt.camCurrentPos.lerp(rt.camTargetPos, 0.08);
       rt.lookCurrentPos.lerp(rt.lookTargetPos, 0.08);
@@ -1660,7 +2047,7 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     `;
   }
 
-  function renderStageMarkup(lang, tall) {
+  function renderStageMarkup(lang, tall, isScrolly) {
     const en = lang === "en";
     const canvasId = tall ? "fc3d-canvas-monograph" : "fc3d-canvas-home";
     const pinsId = tall ? "fc3d-pins-monograph" : "fc3d-pins-home";
@@ -1669,30 +2056,53 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       : ui3d.lightingPreset === 1
       ? (en ? "🌇 Golden Hour" : "🌇 Hoàng Hôn")
       : (en ? "🌙 Night Blueprint" : "🌙 Sa bàn Đêm");
+    const wrapClass = isScrolly ? "fc3d-canvas-wrap fc3d-canvas-scrolly" : (tall ? "fc3d-canvas-wrap fc3d-canvas-tall" : "fc3d-canvas-wrap");
 
     return `
       <div class="fc3d-stage-shell" data-fc3d-mount="${canvasId}" data-fc3d-pins="${pinsId}">
         <div class="fc3d-topbar">
           <div class="fc3d-pill-group">
             <span class="fc3d-pill active" style="cursor:default;">
-              ${en ? "Forbidden City · 紫禁城 (960×750m · High Detail)" : "Tử Cấm Thành · 紫禁城 (960×750m · Chi tiết cao)"}
+              ${en ? "Forbidden City · 紫禁城 (960×750m · WebGL)" : "Tử Cấm Thành · 紫禁城 (960×750m · WebGL)"}
             </span>
           </div>
           <div class="fc3d-pill-group">
             <button type="button" class="fc3d-pill ${ui3d.dissectionState === "plan" ? "active" : ""}" data-action="fc3d-set-state" data-state="plan">
-              ${en ? "● Statute (9,999 Bays)" : "● Quy chế (9.999 Gian)"}
+              ${en ? "[1] Canonical Blueprint (9,999)" : "[1] Quy Chế Điển Lễ (9.999)"}
             </button>
             <button type="button" class="fc3d-pill ${ui3d.dissectionState === "actual" ? "active" : ""}" data-action="fc3d-set-state" data-state="actual">
-              ${en ? "▲ Reality (8,886 & Shift)" : "▲ Thực tế (8.886 & Dịch chuyển)"}
+              ${en ? "[2] Archaeological Reality (8,707 & Shift)" : "[2] Thực Tế & Khung Dây (8.707)"}
             </button>
             <button type="button" class="fc3d-pill ${ui3d.dissectionState === "xray" ? "active" : ""}" data-action="fc3d-set-state" data-state="xray">
-              ${en ? "❖ X-Ray Dougong" : "❖ Bóc tách X-Ray Đấu Củng"}
+              ${en ? "[3] X-Ray Dougong & Columns" : "[3] Bóc Tách X-Ray Đấu Củng"}
             </button>
           </div>
         </div>
 
+        <div class="fc3d-legend-bar" aria-label="${en ? "4-Color Semantic Legend" : "Chú giải 4 Mã màu Học thuật"}">
+          <span class="fc3d-legend-item">
+            <span class="fc3d-legend-swatch" style="background:#D99B26;"></span>
+            <span>${en ? "Glazed Gold: Canonical Axis" : "Vàng Lưu Ly: Trục Quy chế"}</span>
+          </span>
+          <span class="fc3d-legend-item">
+            <span class="fc3d-legend-swatch" style="background:#B8292F;"></span>
+            <span>${en ? "Cinnabar Red: 1723 Power Shift (Yangxindian)" : "Đỏ Chu Sa: Dịch chuyển Quyền lực (Dưỡng Tâm Điện)"}</span>
+          </span>
+          <span class="fc3d-legend-item">
+            <span class="fc3d-legend-swatch" style="background:#1F6E5C;"></span>
+            <span>${en ? "Jade Teal: Seismic Dougong & 15-Layer Base" : "Xanh Ngọc Bích: Kháng chấn & Móng 15 lớp"}</span>
+          </span>
+          <span class="fc3d-legend-item">
+            <span class="fc3d-legend-swatch" style="background:#3B4D7A;"></span>
+            <span>${en ? "Hue Indigo: Hue Citadel Counterpart" : "Lam Pháp Lam: Tương chiếu Đại Nội Huế"}</span>
+          </span>
+        </div>
+
         <div class="fc3d-topbar" style="background:#141210;padding:0.45rem 1rem;border-bottom:1px solid rgba(242,239,233,0.12);">
           <div class="fc3d-pill-group">
+            <button type="button" class="fc3d-pill ${ui3d.seismicActive ? "active" : ""}" data-action="fc3d-toggle-seismic">
+              ${ui3d.seismicActive ? (en ? "🌊 Seismic M7.8 Shake: ON" : "🌊 Thử Động Đất 7,8 Độ: ĐANG RUNG") : (en ? "🌊 Simulate M7.8 Quake" : "🌊 Thử Nghiệm Động Đất 7,8 Độ Richter")}
+            </button>
             <button type="button" class="fc3d-pill ${ui3d.autoOrbit ? "active" : ""}" data-action="fc3d-toggle-orbit">
               ${ui3d.autoOrbit ? (en ? "⟳ Orbit: ON" : "⟳ Tự Xoay: BẬT") : (en ? "⟳ Orbit: OFF" : "⟳ Tự Xoay: TẮT")}
             </button>
@@ -1703,23 +2113,23 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
           </div>
           <div class="fc3d-pill-group">
             <button type="button" class="fc3d-pill" data-action="fc3d-cam-preset" data-preset="closeup">
-              ${en ? "Taihedian & Dougong" : "Cận cảnh Thái Hòa & Đấu Củng"}
+              ${en ? "Taihedian" : "Thái Hòa"}
+            </button>
+            <button type="button" class="fc3d-pill" data-action="fc3d-cam-preset" data-preset="subsurface">
+              ${en ? "15-Layer Base" : "Móng 15 lớp"}
             </button>
             <button type="button" class="fc3d-pill" data-action="fc3d-cam-preset" data-preset="south">
-              ${en ? "Meridian Gate" : "Cổng Ngọ Môn"}
+              ${en ? "Meridian Gate" : "Ngọ Môn"}
             </button>
             <button type="button" class="fc3d-pill" data-action="fc3d-cam-preset" data-preset="iso">
               ${en ? "Isometric" : "Phối cảnh"}
-            </button>
-            <button type="button" class="fc3d-pill" data-action="fc3d-cam-preset" data-preset="top">
-              ${en ? "Top Plan" : "Trục đứng"}
             </button>
             <button type="button" class="fc3d-pill" data-action="fc3d-zoom" data-dir="in" title="Zoom In">+</button>
             <button type="button" class="fc3d-pill" data-action="fc3d-zoom" data-dir="out" title="Zoom Out">−</button>
           </div>
         </div>
 
-        <div class="fc3d-canvas-wrap ${tall ? "fc3d-canvas-tall" : ""}">
+        <div class="${wrapClass}">
           <div id="${canvasId}" style="width:100%;height:100%;"></div>
           <div id="${pinsId}" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:5;"></div>
           <div class="fc3d-overlay-hud">
@@ -1729,11 +2139,11 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
 
         <div class="fc3d-xray-bar">
           <label for="fc3d-explode-${tall ? "m" : "h"}" style="font-weight:700;color:#D7BA81;">
-            ${en ? `Exploded Roof Reveal (${ui3d.explodePercent}%)` : `Thanh Bóc tách Mái Lưu Ly & Đấu Củng (${ui3d.explodePercent}%)`}
+            ${en ? `Exploded Roof & Dougong (${ui3d.explodePercent}%)` : `Thanh Bóc tách Mái Trọng Diêm & Đấu Củng (${ui3d.explodePercent}%)`}
           </label>
-          <input id="fc3d-explode-${tall ? "m" : "h"}" type="range" min="0" max="100" value="${ui3d.explodePercent}" data-action="fc3d-explode" style="flex:1;min-width:150px;accent-color:#9E2A2B;" />
-          <span style="font-size:0.75rem;color:#B9B2A8;">
-            ${en ? "Drag to rotate 360° · Wheel zoom · Click 3D pins" : "Kéo xoay 360° · Cuộn để Zoom · Click nhãn 3D hoặc mesh"}
+          <input id="fc3d-explode-${tall ? "m" : "h"}" type="range" min="0" max="100" value="${ui3d.explodePercent}" data-action="fc3d-explode" style="flex:1;min-width:140px;accent-color:#B8292F;" />
+          <span style="font-size:0.74rem;color:#B9B2A8;">
+            ${en ? "Drag 360° · Wheel zoom · Click pins or scroll story cards" : "Kéo xoay 360° · Cuộn Zoom · Bấm nhãn 3D hoặc cuộn thẻ câu chuyện"}
           </span>
         </div>
 
@@ -1758,9 +2168,16 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     document.querySelectorAll('[data-action="fc3d-focus-zone"]').forEach((btn) => {
       btn.classList.toggle("active", btn.getAttribute("data-zone") === ui3d.activeZoneId);
     });
-    document.querySelectorAll('[data-action="fc3d-select-chapter"]').forEach((btn) => {
-      btn.classList.toggle("active", Number(btn.getAttribute("data-idx")) === ui3d.activeChapterIdx);
+    document.querySelectorAll('.fc3d-scrolly-card[data-fc3d-card-idx]').forEach((card) => {
+      card.classList.toggle("active", Number(card.getAttribute("data-fc3d-card-idx")) === ui3d.activeChapterIdx);
     });
+    const seismicBtn = shell.querySelector('[data-action="fc3d-toggle-seismic"]');
+    if (seismicBtn) {
+      seismicBtn.classList.toggle("active", ui3d.seismicActive);
+      seismicBtn.textContent = ui3d.seismicActive
+        ? (en ? "🌊 Seismic M7.8 Shake: ON" : "🌊 Thử Động Đất 7,8 Độ: ĐANG RUNG")
+        : (en ? "🌊 Simulate M7.8 Quake" : "🌊 Thử Nghiệm Động Đất 7,8 Độ Richter");
+    }
     const orbitBtn = shell.querySelector('[data-action="fc3d-toggle-orbit"]');
     if (orbitBtn) {
       orbitBtn.classList.toggle("active", ui3d.autoOrbit);
@@ -1781,9 +2198,9 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     }
     const slider = shell.querySelector('[data-action="fc3d-explode"]');
     if (slider) slider.value = String(ui3d.explodePercent);
-    const sliderLbl = shell.querySelector('.fc3d-xray-bar label');
+    const sliderLbl = shell.querySelector(".fc3d-xray-bar label");
     if (sliderLbl) {
-      sliderLbl.textContent = en ? `Exploded Roof Reveal (${ui3d.explodePercent}%)` : `Thanh Bóc tách Mái Lưu Ly & Đấu Củng (${ui3d.explodePercent}%)`;
+      sliderLbl.textContent = en ? `Exploded Roof & Dougong (${ui3d.explodePercent}%)` : `Thanh Bóc tách Mái Trọng Diêm & Đấu Củng (${ui3d.explodePercent}%)`;
     }
     const hud = shell.querySelector(".fc3d-overlay-hud");
     if (hud) hud.innerHTML = renderStageHudHtml(en);
@@ -1819,7 +2236,7 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     ];
     return `
       <div style="margin-top:0.85rem;">
-        <div style="font-size:0.72rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-cinnabar);margin-bottom:0.45rem;">
+        <div style="font-size:0.72rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#B8292F;margin-bottom:0.45rem;">
           ${en ? "ARCHIVAL PHOTOGRAPHIC REFERENCE GALLERY · CLICK ANY PLATE TO INSPECT" : "BỘ ẢNH THỰC TẾ TỬ CẤM THÀNH ĐỐI CHIẾU · NHẤN ĐỂ PHÓNG TO CHI TIẾT"}
         </div>
         <div class="grid grid-4" style="gap:0.65rem;">
@@ -1853,21 +2270,21 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
         <div class="container">
           <div class="ed-section-head">
             <div>
-              <div class="ed-meta-line" style="color:var(--accent-cinnabar);margin-bottom:0.25rem;">
+              <div class="ed-meta-line" style="color:#B8292F;margin-bottom:0.25rem;">
                 ${en ? "CENTRAL ARCHITECTURAL EMBLEM · ZIJINCHENG (960M × 750M)" : "BIỂU TƯỢNG KIẾN TRÚC TRUNG TÂM · TỬ CẤM THÀNH (紫禁城) 960M × 750M"}
               </div>
-              <h2 class="ed-h2">${en ? "Interactive 3D Forbidden City Dissection & East Asian Axis" : "Giải phẫu 3D Tử Cấm Thành (500+ Chi tiết): Đấu Củng, Trục Đế Vương & Đối Sánh Cố Đô Huế"}</h2>
+              <h2 class="ed-h2">${en ? "Interactive 3D Forbidden City Dissection & Hue Citadel Comparison" : "Giải phẫu 3D Tử Cấm Thành (8 Chương Tương tác): Quy chế, Đấu Củng & Đối Sánh Cố Đô Huế"}</h2>
               <p style="margin:0.35rem 0 0;color:var(--text-secondary);max-width:74ch;font-size:0.93rem;">
                 ${en
-                  ? "Inspect curved double-eave roofs, 10 ridge beasts, 3-step Dougong brackets, Nanmu pillars, triple white marble Xumizuo terraces, and X-Ray interior revelations compared alongside Hue Imperial Citadel."
-                  : "Mô hình Three.js dựng chi tiết mái Trọng Diêm Vũ Điện cong vút, Li Vẫn, 10 thú nóc, Đấu Củng 3 tầng, cột Kim ti Nam mộc, tam đài Hán Bạch Ngọc 1.142 đầu rồng thoát nước, tảng đá 250 tấn, 12 Đông–Tây Lục Cung và Giác Lâu 72 bờ nóc."}
+                  ? "Toggle Canonical Blueprint vs Archaeological Reality Wireframe (showing the 1723 power shift to Yangxindian), simulate an M7.8 seismic quake on unanchored columns, and explore 15 subsurface plaza layers alongside Hue Imperial Citadel."
+                  : "Chuyển đổi tức thì giữa Quy chế Điển lễ (9.999,5 gian), Thực tế Khảo cổ Khung dây (8.707 gian & cú dịch chuyển năm 1723 sang Dưỡng Tâm Điện), thử nghiệm động đất 7,8 độ Richter và xem mặt cắt móng 15 lớp gạch Kim chuyên."}
               </p>
             </div>
             <button type="button" class="ed-btn-primary" data-action="open-article" data-id="forbidden-city-3d-dissection">
-              ${en ? "Open Full 7-Chapter 3D Treatise →" : "Mở Chuyên luận Giải phẫu 3D Đầy đủ →"}
+              ${en ? "Open Full 6-Section 3D Treatise →" : "Mở Chuyên luận Giải phẫu 6 Phần Đầy đủ →"}
             </button>
           </div>
-          ${renderStageMarkup(lang, false)}
+          ${renderStageMarkup(lang, false, false)}
           ${renderForbiddenCityPhotoStrip(en)}
         </div>
       </section>
@@ -1876,125 +2293,235 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
 
   function renderMonographPage(lang) {
     const en = lang === "en";
-    const scaleSet = MULTISCALE_TABLES[ui3d.activeTableKey] || MULTISCALE_TABLES.fc;
     const filteredTimeline = ui3d.activeTimelinePhase === "all"
       ? TIMELINE_EVENTS
       : TIMELINE_EVENTS.filter((e) => e.phase === ui3d.activeTimelinePhase);
 
-    return `
-      <div style="margin:1.25rem 0 1.75rem;">
-        ${renderStageMarkup(lang, true)}
-        ${renderForbiddenCityPhotoStrip(en)}
-      </div>
+    const jumpTabs = [
+      { id: "fc3d-sec-01", vi: "01. ĐẶT VẤN ĐỀ", en: "01. HYPOTHESIS & KPI" },
+      { id: "fc3d-sec-02", vi: "02. GIẢI PHẪU 3D (01–08)", en: "02. 3D SCROLLYTELLING (8)" },
+      { id: "fc3d-sec-03", vi: "03. BẢNG ĐỐI CHIẾU ĐA THANG", en: "03. MULTI-SCALE BARS" },
+      { id: "fc3d-sec-04", vi: "04. BIÊN NIÊN SỬ 3 GIAI ĐOẠN", en: "04. 3-STAGE TIMELINE" },
+      { id: "fc3d-sec-05", vi: "05. ĐỐI SÁNH CỐ ĐÔ HUẾ", en: "05. HUE CITADEL MATCH" },
+      { id: "fc3d-sec-06", vi: "06. MA TRẬN CƠ CHẾ & THỰC ĐỊA", en: "06. SYNTHESIS & FIELD" }
+    ];
 
-      <!-- 7-Chapter Camera Scrollytelling Tour -->
-      <h3 style="font-family:var(--font-editorial);margin:1.75rem 0 0.75rem;">
-        ${en ? "Seven-Chapter Camera Scrollytelling Dissection" : "Chuyên luận Giải phẫu 7 Chương Dẫn hướng Camera 3D"}
-      </h3>
-      <div class="fc3d-monograph-grid">
-        <div>
-          ${SCROLLY_CHAPTERS.map((ch, idx) => `
-            <button type="button" class="fc3d-chapter-card ${ui3d.activeChapterIdx === idx ? "active" : ""}" data-action="fc3d-select-chapter" data-idx="${idx}">
-              <div style="display:flex;justify-content:space-between;font-size:0.7rem;font-weight:800;letter-spacing:0.08em;color:var(--accent-cinnabar);text-transform:uppercase;">
-                <span>${en ? `CHAPTER ${ch.step}` : `CHƯƠNG ${ch.step}`}</span>
-                <span>${en ? ch.tagEn : ch.tagVi}</span>
-              </div>
-              <div style="font-family:var(--font-editorial);font-size:1.12rem;font-weight:700;margin:0.25rem 0 0.35rem;color:var(--ink-primary);">
-                ${en ? ch.titleEn : ch.titleVi}
-              </div>
-              <div style="font-size:0.86rem;line-height:1.58;color:var(--text-secondary);">
-                ${en ? ch.bodyEn : ch.bodyVi}
-              </div>
-              <div style="margin-top:0.55rem;padding-top:0.45rem;border-top:1px solid var(--hairline);font-size:0.8rem;color:var(--accent-jade);">
-                ${en ? ch.vnLensEn : ch.vnLensVi}
-              </div>
+    return `
+      <div class="fc3d-monograph-wrap" id="fc3d-monograph-root">
+        <!-- Sticky 1px Section Jump Bar -->
+        <nav class="fc3d-jump-bar" id="fc3d-jump-bar" aria-label="${en ? "Monograph Sections" : "Điều hướng 6 Phần Giải phẫu"}">
+          ${jumpTabs.map((jt) => `
+            <button type="button" class="fc3d-jump-btn ${ui3d.activeJumpSec === jt.id ? "active" : ""}" data-action="fc3d-jump-sec" data-target="${jt.id}">
+              ${en ? jt.en : jt.vi}
             </button>
           `).join("")}
-        </div>
+        </nav>
 
-        <aside style="display:flex;flex-direction:column;gap:1.15rem;">
-          <div style="padding:1.15rem;border:1px solid var(--hairline);background:var(--bg-surface);">
-            <div style="font-size:0.7rem;font-weight:800;letter-spacing:0.08em;color:var(--accent-cinnabar);margin-bottom:0.45rem;">
-              ${en ? "MULTI-SCALE QUANTITATIVE DISSECTION" : "BẢNG ĐỐI SÁNH ĐA THANG ĐO"}
-            </div>
-            <div style="display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:0.85rem;">
-              <button type="button" class="filter-pill ${ui3d.activeTableKey === "fc" ? "active" : ""}" data-action="fc3d-set-dataset" data-dataset="fc">
-                ${en ? "A. Forbidden City" : "A. Tử Cấm Thành"}
-              </button>
-              <button type="button" class="filter-pill ${ui3d.activeTableKey === "hue" ? "active" : ""}" data-action="fc3d-set-dataset" data-dataset="hue">
-                ${en ? "B. vs Hue Citadel" : "B. vs Đại Nội Huế"}
-              </button>
-              <button type="button" class="filter-pill ${ui3d.activeTableKey === "timber" ? "active" : ""}" data-action="fc3d-set-dataset" data-dataset="timber">
-                ${en ? "C. Timber & Stone" : "C. Kết cấu Gỗ & Đá"}
-              </button>
-            </div>
-            ${scaleSet.rows.map((r) => {
-              const maxV = Math.max(r.val1, r.val2, 0.001);
-              const pct1 = Math.max(5, Math.round((r.val1 / maxV) * 100));
-              const pct2 = r.val2 === 0 ? 0 : Math.max(5, Math.round((r.val2 / maxV) * 100));
-              return `
-                <div class="fc3d-bar-row" style="padding-bottom:0.65rem;border-bottom:1px solid var(--hairline);">
-                  <div style="font-weight:700;font-size:0.84rem;margin-bottom:0.2rem;">${en ? r.metricEn : r.metricVi}</div>
-                  <div style="font-size:0.75rem;color:var(--accent-jade);font-weight:600;">● ${en ? r.label1En : r.label1Vi}</div>
-                  <div class="fc3d-bar-track" style="margin:0.15rem 0 0.35rem;"><div class="fc3d-bar-fill" style="width:${pct1}%;background:var(--accent-jade);"></div></div>
-                  <div style="font-size:0.75rem;color:var(--accent-cinnabar);font-weight:600;">▲ ${en ? r.label2En : r.label2Vi}</div>
-                  <div class="fc3d-bar-track" style="margin:0.15rem 0 0.25rem;"><div class="fc3d-bar-fill" style="width:${pct2}%;background:var(--accent-cinnabar);"></div></div>
-                  <div style="font-size:0.73rem;color:var(--text-muted);">${en ? r.noteEn : r.noteVi}</div>
-                </div>
-              `;
-            }).join("")}
+        <!-- SECTION 1: INVESTIGATIVE MASTHEAD, SAPO & 4-COLUMN KPI CONTRAST STRIP -->
+        <section id="fc3d-sec-01" class="fc3d-masthead-box">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
+            <span class="fc3d-tag-red">${en ? "SPECIAL 3D ARCHITECTURAL DISSECTION" : "CHUYÊN LUẬN GIẢI PHẪU 3D ĐẶC BIỆT"}</span>
+            <span class="hanzi" style="font-size:0.84rem;color:var(--text-muted);font-weight:600;">紫禁城三维解剖与顺化皇城对比研究</span>
           </div>
-        </aside>
-      </div>
-
-      <!-- 10-Zone Spatial Grid & Sino-Vietnamese Comparison -->
-      <div style="margin-top:2rem;padding:1.25rem;border:1px solid var(--hairline);background:var(--bg-surface);">
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;margin-bottom:1rem;">
-          <div>
-            <div style="font-size:0.72rem;font-weight:800;letter-spacing:0.08em;color:var(--accent-cinnabar);">
-              ${en ? "AXIAL SPATIAL ARCHITECTURE · 10 CORE INDEXED ZONES (001–010)" : "CẤU TRÚC KHÔNG GIAN TRỤC CHÍNH · 10 PHÂN KHU HẠT NHÂN (001–010)"}
+          <p class="fc3d-sapo-lead">
+            ${en
+              ? "Planned in 1406 under Emperor Yongle as an inviolable spatial symbol of Heavenly Mandate—immortalized in folklore with <strong>9,999.5 bays</strong> and strict Front-Court / Rear-Residence rules—field measurements by the Palace Museum in 1973 proved the Forbidden City actually holds <strong>8,707 verified bays (8,886 including corner towers)</strong>. More strikingly, for the last 200 years of the Qing Dynasty (1723–1911), real imperial rule shifted off the 2,377 m² Hall of Supreme Harmony onto the compact <strong>~5,000 m² Yangxindian &amp; Grand Council wing</strong> on the western flank."
+              : "Được quy hoạch từ năm 1406 dưới thời Minh Thành Tổ Chu Đệ như biểu tượng bất khả xâm phạm của thiên mệnh với truyền thuyết <strong>9.999,5 gian phòng</strong> và nguyên tắc <em>Tiền Triều Hậu Thị</em>, nhưng đợt khảo sát thực địa từng gian năm 1973 của Bảo tàng Cố Cung (Vu Trác Vân chủ trì) xác định Tử Cấm Thành thực tế chỉ có <strong>8.707 gian (8.886 gian tính cả lầu góc)</strong>. Đáng chú ý hơn, suốt gần 200 năm cuối triều Thanh từ năm 1723, trung tâm quyền lực thực sự không còn nằm ở Điện Thái Hòa rộng 2.377 m² trên trục chính, mà dịch chuyển hoàn toàn sang cụm <strong>Dưỡng Tâm Điện và Quân Cơ Xứ (~5.000 m²)</strong> ở góc Tây."}
+          </p>
+          <div class="fc3d-kpi-strip">
+            <div class="fc3d-kpi-cell">
+              <div style="font-size:0.7rem;font-weight:800;letter-spacing:0.06em;color:var(--text-muted);">${en ? "01. PALACE BAYS REALITY" : "01. QUY MÔ GIAN PHÒNG"}</div>
+              <div class="fc3d-kpi-num">9.999,5 → 8.707 / 8.886</div>
+              <div style="font-size:0.78rem;color:var(--text-secondary);">${en ? "Myth vs 1973 physical survey across 980 timber halls" : "Truyền thuyết vs Khảo sát thực địa năm 1973 (980 tòa)"}</div>
             </div>
-            <h3 style="margin:0.15rem 0 0;font-family:var(--font-editorial);">
-              ${en ? "Forbidden City 10 Palatial Zones ⇄ Hue Imperial Citadel Equivalents" : "Đối chiếu 10 Phân khu Tử Cấm Thành ⇄ Đại Nội Kinh Thành Huế"}
+            <div class="fc3d-kpi-cell">
+              <div style="font-size:0.7rem;font-weight:800;letter-spacing:0.06em;color:var(--text-muted);">${en ? "02. DE FACTO POWER SHIFT" : "02. TRỌNG TÂM QUYỀN LỰC"}</div>
+              <div class="fc3d-kpi-num" style="color:#B8292F;">35.000 m² → ~5.000 m²</div>
+              <div style="font-size:0.78rem;color:var(--text-secondary);">${en ? "From 1723: 0.7% of area (Yangxindian) ruled empire" : "Từ 1723: Dưỡng Tâm Điện & Quân Cơ Xứ (0,7% Cố Cung)"}</div>
+            </div>
+            <div class="fc3d-kpi-cell">
+              <div style="font-size:0.7rem;font-weight:800;letter-spacing:0.06em;color:var(--text-muted);">${en ? "03. SEISMIC ENDURANCE" : "03. KỶ LỤC KHÁNG CHẤN"}</div>
+              <div class="fc3d-kpi-num" style="color:#1F6E5C;">0 Nails · 300+ Quakes</div>
+              <div style="font-size:0.78rem;color:var(--text-secondary);">${en ? "Dougong + plinths survived 1679 M7.8 earthquake" : "Đấu Củng & cột đặt nổi vượt qua trận 7,8 Richter (1679)"}</div>
+            </div>
+            <div class="fc3d-kpi-cell">
+              <div style="font-size:0.7rem;font-weight:800;letter-spacing:0.06em;color:var(--text-muted);">${en ? "04. BEIJING vs HUE SCALE" : "04. ĐỐI SÁNH TRUNG – VIỆT"}</div>
+              <div class="fc3d-kpi-num" style="color:#3B4D7A;">72,4 ha ⇄ 36 ha (Huế)</div>
+              <div style="font-size:0.78rem;color:var(--text-secondary);">${en ? "Core Forbidden City vs 1805 Hue Citadel (520 ha outer)" : "Cố Cung Bắc Kinh vs Hoàng Thành Huế 1805 (Kinh thành 520 ha)"}</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 2: SPLIT-SCREEN STICKY 3D ENGINE (62%) + 8 SCROLLYTELLING CHAPTERS (38%) -->
+        <section id="fc3d-sec-02">
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.85rem;">
+            <div>
+              <div style="font-size:0.72rem;font-weight:800;letter-spacing:0.08em;color:#B8292F;">${en ? "SECTION 02 · INTERACTIVE 3D SCROLLYTELLING ENGINE" : "PHẦN 02 · MÔ HÌNH 3D TƯƠNG TÁC & 8 CHƯƠNG GIẢI PHẪU"}</div>
+              <h3 style="margin:0.15rem 0 0;font-family:var(--font-editorial);font-size:1.38rem;">
+                ${en ? "Scroll Story Cards or Click Zone Pins to Trigger Ghost Wireframe & X-Ray Modes" : "Cuộn Thẻ Câu Chuyện hoặc Chọn Chế Độ Khung Dây [2] / X-Ray [3] để Đối Chiếu Trực Tiếp"}
+              </h3>
+            </div>
+          </div>
+
+          <div class="fc3d-split-scrolly">
+            <div class="fc3d-sticky-stage">
+              ${renderStageMarkup(lang, true, true)}
+            </div>
+            <div class="fc3d-scrolly-column">
+              ${SCROLLY_CHAPTERS.map((ch, idx) => `
+                <article class="fc3d-scrolly-card ${ui3d.activeChapterIdx === idx ? "active" : ""}" data-fc3d-card-idx="${idx}">
+                  <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.7rem;font-weight:800;letter-spacing:0.08em;color:#B8292F;" class="fc3d-mono">
+                    <span>${en ? `CHAPTER ${ch.step}/08` : `CHƯƠNG ${ch.step}/08`}</span>
+                    <span>${en ? ch.tagEn : ch.tagVi}</span>
+                  </div>
+                  <h4 style="font-family:var(--font-editorial);font-size:1.08rem;margin:0.35rem 0 0.45rem;color:var(--ink-primary);">
+                    ${en ? ch.titleEn : ch.titleVi}
+                  </h4>
+                  <div class="fc3d-pill-compare">
+                    <div class="fc3d-pill-col statute">
+                      <div style="font-size:0.65rem;font-weight:800;color:#9A6700;letter-spacing:0.05em;">${en ? ch.statuteLabelEn : ch.statuteLabelVi}</div>
+                      <div style="margin-top:0.2rem;color:var(--ink-primary);">${en ? ch.statuteValEn : ch.statuteValVi}</div>
+                    </div>
+                    <div class="fc3d-pill-col reality">
+                      <div style="font-size:0.65rem;font-weight:800;color:#B8292F;letter-spacing:0.05em;">${en ? ch.realityLabelEn : ch.realityLabelVi}</div>
+                      <div style="margin-top:0.2rem;color:var(--ink-primary);font-weight:600;">${en ? ch.realityValEn : ch.realityValVi}</div>
+                    </div>
+                  </div>
+                  <p style="font-size:0.84rem;line-height:1.58;color:var(--text-secondary);margin:0 0 0.5rem;">
+                    ${en ? ch.bodyEn : ch.bodyVi}
+                  </p>
+                  <div style="font-size:0.78rem;line-height:1.48;color:#1F6E5C;padding:0.45rem 0.55rem;background:var(--bg-surface);border-left:2px solid #3B4D7A;margin-bottom:0.6rem;">
+                    ${en ? ch.vnLensEn : ch.vnLensVi}
+                  </div>
+                  <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+                    <button type="button" class="fc3d-pill" style="background:#171512;border-color:#D7BA81;" data-action="fc3d-select-chapter" data-idx="${idx}">
+                      🎯 ${en ? "Focus Camera" : "Xoay tới vị trí"}
+                    </button>
+                    <button type="button" class="fc3d-pill" style="background:#1F6E5C;border-color:#1F6E5C;" data-action="fc3d-chapter-xray" data-idx="${idx}">
+                      🔬 ${en ? "Peel X-Ray Layer" : "Bóc lớp X-Ray"}
+                    </button>
+                  </div>
+                </article>
+              `).join("")}
+            </div>
+          </div>
+
+          ${renderForbiddenCityPhotoStrip(en)}
+        </section>
+
+        <!-- SECTION 3: MULTI-SCALE HORIZONTAL BAR COMPARISON TABLE -->
+        <section id="fc3d-sec-03">
+          <div style="margin-bottom:0.75rem;">
+            <div style="font-size:0.72rem;font-weight:800;letter-spacing:0.08em;color:#B8292F;">${en ? "SECTION 03 · MULTI-SCALE QUANTITATIVE CONTRAST TABLE" : "PHẦN 03 · BẢNG GIẢI PHẪU ĐỊNH LƯỢNG ĐA THANG (3 CHIỀU ĐỐI SÁNH)"}</div>
+            <h3 style="margin:0.15rem 0 0;font-family:var(--font-editorial);font-size:1.38rem;">
+              ${en ? "Imperial Statute vs. Beijing Archaeological Survey vs. Hue Imperial Citadel" : "So sánh Quy chế / Truyền thuyết — Thực tế Cố Cung Bắc Kinh — Đại Nội Huế"}
             </h3>
           </div>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.65rem;">
-          ${FORBIDDEN_CITY_ZONES.map((z) => `
-            <button type="button" class="fc3d-chapter-card ${ui3d.activeZoneId === z.id ? "active" : ""}" style="margin:0;" data-action="fc3d-focus-zone" data-zone="${z.id}">
-              <div style="font-size:0.7rem;font-weight:800;color:var(--accent-cinnabar);">${z.code}</div>
-              <div style="font-weight:700;font-size:0.9rem;margin:0.15rem 0;">${en ? z.nameEn : z.nameVi}</div>
-              <div class="hanzi" style="font-size:0.78rem;color:var(--text-muted);">${z.hanzi}</div>
-              <div style="font-size:0.75rem;margin-top:0.35rem;color:var(--text-secondary);">⇄ ${en ? z.hueEquivalentEn : z.hueEquivalentVi}</div>
-            </button>`).join("")}
-        </div>
-      </div>
-
-      <!-- 3-Phase Historical Chronology (1406-2026) -->
-      <div style="margin-top:2rem;">
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;margin-bottom:0.85rem;">
-          <h3 style="margin:0;font-family:var(--font-editorial);">
-            ${en ? "620-Year Historical Chronology (1406–2026)" : "Dòng Thời Gian Ba Giai Đoạn Kiến Tạo & Số Hóa (1406–2026)"}
-          </h3>
-          <div style="display:flex;gap:0.35rem;flex-wrap:wrap;">
-            <button type="button" class="filter-pill ${ui3d.activeTimelinePhase === "all" ? "active" : ""}" data-action="fc3d-set-phase" data-phase="all">${en ? "All (10)" : "Tất cả (10 mốc)"}</button>
-            <button type="button" class="filter-pill ${ui3d.activeTimelinePhase === "P1" ? "active" : ""}" data-action="fc3d-set-phase" data-phase="P1">${en ? "Phase 1 · Ming" : "GĐ1 · Minh"}</button>
-            <button type="button" class="filter-pill ${ui3d.activeTimelinePhase === "P2" ? "active" : ""}" data-action="fc3d-set-phase" data-phase="P2">${en ? "Phase 2 · Qing" : "GĐ2 · Thanh"}</button>
-            <button type="button" class="filter-pill ${ui3d.activeTimelinePhase === "P3" ? "active" : ""}" data-action="fc3d-set-phase" data-phase="P3">${en ? "Phase 3 · 1925–2026" : "GĐ3 · Bảo tàng & 3D"}</button>
+          <div class="fc3d-table-wrap">
+            <table class="fc3d-multiscale-table">
+              <thead>
+                <tr>
+                  <th style="width:20%;">${en ? "METRIC" : "CHỈ SỐ GIẢI PHẪU"}</th>
+                  <th style="width:24%;">${en ? "CANON / MYTH (#D99B26)" : "QUY CHẾ / TRUYỀN THUYẾT"}</th>
+                  <th style="width:28%;">${en ? "ARCHAEOLOGICAL REALITY (#B8292F)" : "THỰC TẾ KHẢO CỔ BẮC KINH"}</th>
+                  <th style="width:28%;">${en ? "HUE CITADEL PARALLEL (#3B4D7A)" : "ĐỐI SÁNH ĐẠI NỘI HUẾ"}</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${MULTISCALE_COMPARISON_ROWS.map((row) => `
+                  <tr>
+                    <td><strong>${en ? row.metricEn : row.metricVi}</strong></td>
+                    <td>
+                      <div style="margin-bottom:0.3rem;">${en ? row.statuteValEn : row.statuteValVi}</div>
+                      <div class="fc3d-bar-track"><div class="fc3d-bar-fill" style="width:${row.statutePct}%;background:#D99B26;"></div></div>
+                    </td>
+                    <td>
+                      <div style="margin-bottom:0.3rem;font-weight:600;color:var(--ink-primary);">${en ? row.realityValEn : row.realityValVi}</div>
+                      <div class="fc3d-bar-track"><div class="fc3d-bar-fill" style="width:${row.realityPct}%;background:#B8292F;"></div></div>
+                    </td>
+                    <td>
+                      <div style="margin-bottom:0.3rem;color:var(--text-secondary);">${en ? row.hueValEn : row.hueValVi}</div>
+                      <div class="fc3d-bar-track"><div class="fc3d-bar-fill" style="width:${row.huePct}%;background:#3B4D7A;"></div></div>
+                    </td>
+                  </tr>
+                `).join("")}
+              </tbody>
+            </table>
           </div>
-        </div>
-        <div class="grid grid-2">
-          ${filteredTimeline.map((ev) => `
-            <div style="padding:1rem;border:1px solid var(--hairline);border-top:2.5px solid var(--accent-cinnabar);background:var(--bg-paper);">
-              <div style="display:flex;justify-content:space-between;font-size:0.72rem;font-weight:800;margin-bottom:0.25rem;">
-                <span>${ev.year}</span>
-                <span style="color:var(--accent-cinnabar);">${en ? ev.badgeEn : ev.badgeVi}</span>
-              </div>
-              <h4 style="margin:0 0 0.35rem;font-size:1rem;">${en ? ev.titleEn : ev.titleVi}</h4>
-              <p style="margin:0;font-size:0.84rem;line-height:1.56;color:var(--text-secondary);">${en ? ev.descEn : ev.descVi}</p>
+        </section>
+
+        <!-- SECTION 4: 3-STAGE HISTORICAL CHRONOLOGY TIMELINE -->
+        <section id="fc3d-sec-04">
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:0.75rem;margin-bottom:0.85rem;">
+            <div>
+              <div style="font-size:0.72rem;font-weight:800;letter-spacing:0.08em;color:#B8292F;">${en ? "SECTION 04 · 3-STAGE TIMELINE (1406–1973–2026)" : "PHẦN 04 · DÒNG THỜI GIAN 600 NĂM KIẾN TẠO & BIẾN ĐỔI (GĐ1 – GĐ2 – GĐ3)"}</div>
+              <h3 style="margin:0.15rem 0 0;font-family:var(--font-editorial);font-size:1.38rem;">
+                ${en ? "Why the Surviving Palace Differs from the 1420 Blueprint" : "Giải mã Vì sao Tử Cấm Thành Hiện tại Khác Bản Vẽ Gốc Năm 1420"}
+              </h3>
             </div>
-          `).join("")}
-        </div>
+            <div style="display:flex;gap:0.3rem;flex-wrap:wrap;">
+              <button type="button" class="fc3d-jump-btn ${ui3d.activeTimelinePhase === "all" ? "active" : ""}" data-action="fc3d-set-phase" data-phase="all">${en ? "All (8 Milestones)" : "Tất cả (8 mốc)"}</button>
+              <button type="button" class="fc3d-jump-btn ${ui3d.activeTimelinePhase === "P1" ? "active" : ""}" data-action="fc3d-set-phase" data-phase="P1">${en ? "GĐ1 · 1406–1420 Ming" : "GĐ1 · Kiến tạo Vĩnh Lạc"}</button>
+              <button type="button" class="fc3d-jump-btn ${ui3d.activeTimelinePhase === "P2" ? "active" : ""}" data-action="fc3d-set-phase" data-phase="P2">${en ? "GĐ2 · 1421–1695 Fires" : "GĐ2 · Hỏa hoạn & Thu nhỏ"}</button>
+              <button type="button" class="fc3d-jump-btn ${ui3d.activeTimelinePhase === "P3" ? "active" : ""}" data-action="fc3d-set-phase" data-phase="P3">${en ? "GĐ3 · 1723–2026 Shift" : "GĐ3 · Dịch chuyển & 1973"}</button>
+            </div>
+          </div>
+          <div class="grid grid-2" style="gap:0.85rem;">
+            ${filteredTimeline.map((ev) => `
+              <div style="padding:1rem;border:1px solid var(--hairline-strong,var(--hairline));border-top:2.5px solid #B8292F;background:var(--bg-paper);">
+                <div style="display:flex;justify-content:space-between;font-size:0.72rem;font-weight:800;margin-bottom:0.25rem;" class="fc3d-mono">
+                  <span>${ev.year}</span>
+                  <span style="color:#B8292F;">${en ? ev.badgeEn : ev.badgeVi}</span>
+                </div>
+                <h4 style="margin:0 0 0.35rem;font-size:1rem;font-family:var(--font-editorial);">${en ? ev.titleEn : ev.titleVi}</h4>
+                <p style="margin:0;font-size:0.84rem;line-height:1.58;color:var(--text-secondary);">${en ? ev.descEn : ev.descVi}</p>
+              </div>
+            `).join("")}
+          </div>
+        </section>
+
+        <!-- SECTION 5: ARCHITECTURAL CROSS-SECTION COMPARATOR (BEIJING vs HUE) -->
+        <section id="fc3d-sec-05">
+          <div style="margin-bottom:0.85rem;">
+            <div style="font-size:0.72rem;font-weight:800;letter-spacing:0.08em;color:#3B4D7A;">${en ? "SECTION 05 · SIDE-BY-SIDE CROSS-SECTION COMPARATOR" : "PHẦN 05 · SO SÁNH MẶT CẮT KIẾN TRÚC ĐIỆN THÁI HÒA (BẮC KINH vs ĐẠI NỘI HUẾ)"}</div>
+            <h3 style="margin:0.15rem 0 0;font-family:var(--font-editorial);font-size:1.38rem;">
+              ${en ? "Northern Glazed Monumentality vs. Huế Tropical Ironwood Mastery" : "Bốn Trục Kỹ Thuật Phân Định Kiến Trúc Cung Đình Phương Bắc & Bản Sắc Cố Đô Huế"}
+            </h3>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0.85rem;">
+            ${HUE_COMPARATOR_VECTORS.map((cmp) => `
+              <div class="fc3d-blueprint-grid">
+                <div class="fc3d-blueprint-card" style="border-top:2.5px solid #D99B26;">
+                  <div style="font-size:0.7rem;font-weight:800;color:#9A6700;" class="fc3d-mono">${cmp.code}. ${en ? "BEIJING FORBIDDEN CITY · " + cmp.titleEn : "ĐIỆN THÁI HÒA (BẮC KINH) · " + cmp.titleVi}</div>
+                  <p style="margin:0.45rem 0 0;font-size:0.86rem;line-height:1.6;color:var(--text-secondary);">${en ? cmp.beijingEn : cmp.beijingVi}</p>
+                </div>
+                <div class="fc3d-blueprint-card" style="border-top:2.5px solid #3B4D7A;">
+                  <div style="font-size:0.7rem;font-weight:800;color:#3B4D7A;" class="fc3d-mono">${cmp.code}. ${en ? "HUE IMPERIAL CITADEL · " + cmp.titleEn : "ĐIỆN THÁI HÒA (ĐẠI NỘI HUẾ) · " + cmp.titleVi}</div>
+                  <p style="margin:0.45rem 0 0;font-size:0.86rem;line-height:1.6;color:var(--text-secondary);">${en ? cmp.hueEn : cmp.hueVi}</p>
+                </div>
+              </div>
+            `).join("")}
+          </div>
+        </section>
+
+        <!-- SECTION 6: 4-GROUP SYNTHESIS MATRIX & PRE-DEPARTURE FIELD CHECKLIST -->
+        <section id="fc3d-sec-06">
+          <div style="margin-bottom:0.85rem;">
+            <div style="font-size:0.72rem;font-weight:800;letter-spacing:0.08em;color:#1F6E5C;">${en ? "SECTION 06 · 4-GROUP STRUCTURAL MATRIX & FIELD CHECKLIST" : "PHẦN 06 · MA TRẬN 4 CƠ CHẾ KỸ THUẬT & CẨM NANG THỰC ĐỊA CHO ĐỘC GIẢ VIỆT"}</div>
+            <h3 style="margin:0.15rem 0 0;font-family:var(--font-editorial);font-size:1.38rem;">
+              ${en ? "Seismic Damping, Drainage, Cross-Cultural Aesthetics & On-Site Vocabulary" : "Tổng Hợp 4 Lớp Giải Mã Kỹ Nghệ Xây Dựng Cố Cung & Lộ Trình Khảo Sát Thực Địa"}
+            </h3>
+          </div>
+          <div class="fc3d-matrix-grid">
+            ${SYNTHESIS_GROUPS_4.map((g) => `
+              <div class="fc3d-matrix-card" style="border-top:3px solid ${g.accent};">
+                <div style="font-size:0.7rem;font-weight:800;color:${g.accent};letter-spacing:0.06em;" class="fc3d-mono">${g.group}</div>
+                <h4 style="margin:0.25rem 0 0.45rem;font-family:var(--font-editorial);font-size:1.05rem;">${en ? g.titleEn : g.titleVi}</h4>
+                <p style="margin:0;font-size:0.85rem;line-height:1.6;color:var(--text-secondary);">${en ? g.bodyEn : g.bodyVi}</p>
+              </div>
+            `).join("")}
+          </div>
+        </section>
       </div>
     `;
   }
@@ -2002,8 +2529,13 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
   function handleAction(action, target, Store, showToast, rerender) {
     if (action === "fc3d-set-state") {
       ui3d.dissectionState = target.getAttribute("data-state") || "plan";
-      ui3d.explodePercent = ui3d.dissectionState === "xray" ? 82 : 0;
+      ui3d.explodePercent = ui3d.dissectionState === "xray" ? 78 : 0;
       updateDissectionVisuals();
+      if (!syncStageUiInPlace()) rerender();
+      return true;
+    }
+    if (action === "fc3d-toggle-seismic") {
+      ui3d.seismicActive = !ui3d.seismicActive;
       if (!syncStageUiInPlace()) rerender();
       return true;
     }
@@ -2028,13 +2560,15 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       if (p === "closeup") {
         ui3d.activeZoneId = "003";
         flyCamera([22, 18, 28], [0, 11, 15]);
+      } else if (p === "subsurface") {
+        ui3d.activeZoneId = "002";
+        ui3d.dissectionState = "actual";
+        flyCamera([-34, 19, 54], [-16, 2, 34]);
       } else if (p === "south") {
         ui3d.activeZoneId = "001";
         flyCamera([18, 22, 92], [0, 6, 58]);
       } else if (p === "iso") {
         flyCamera([68, 72, 112], [0, 4, -8]);
-      } else if (p === "top") {
-        flyCamera([0, 165, 8], [0, 0, 0]);
       }
       updateDissectionVisuals();
       if (!syncStageUiInPlace()) rerender();
@@ -2068,18 +2602,31 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       }
       return true;
     }
-    if (action === "fc3d-select-chapter") {
+    if (action === "fc3d-select-chapter" || action === "fc3d-chapter-xray") {
+      scrollPauseUntil = Date.now() + 900;
       const idx = Number(target.getAttribute("data-idx") || 0);
       const ch = SCROLLY_CHAPTERS[idx];
       if (ch) {
         ui3d.activeChapterIdx = idx;
-        ui3d.dissectionState = ch.stateMode;
-        ui3d.explodePercent = ch.stateMode === "xray" ? 82 : 0;
+        ui3d.dissectionState = action === "fc3d-chapter-xray" ? "xray" : ch.stateMode;
+        ui3d.explodePercent = ui3d.dissectionState === "xray" ? 78 : 0;
         ui3d.activeZoneId = ch.zoneId;
         ui3d.autoOrbit = false;
         flyCamera(ch.camPos, ch.lookAt);
         updateDissectionVisuals();
         if (!syncStageUiInPlace()) rerender();
+      }
+      return true;
+    }
+    if (action === "fc3d-jump-sec") {
+      const tid = target.getAttribute("data-target");
+      if (tid) {
+        ui3d.activeJumpSec = tid;
+        document.querySelectorAll('.fc3d-jump-btn[data-action="fc3d-jump-sec"]').forEach((b) => {
+          b.classList.toggle("active", b.getAttribute("data-target") === tid);
+        });
+        const el = document.getElementById(tid);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
       }
       return true;
     }
@@ -2123,6 +2670,9 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       const targetEl = id ? document.getElementById(id) : null;
       if (targetEl) {
         if (rt && rt.container === targetEl && targetEl.querySelector("canvas") && rt.lang === curLang) {
+          if (!rt.io && document.querySelector(".fc3d-scrolly-card[data-fc3d-card-idx]")) {
+            bindScrollyObserver(rt);
+          }
           return;
         }
         mountCanvas(id, pinsId);

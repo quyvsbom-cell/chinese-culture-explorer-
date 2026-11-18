@@ -72,7 +72,7 @@ window.CCE_ARTICLES = [
     introduction:
       "Nho gia (儒家) thường bị giản lược thành một danh sách các quy tắc vâng lời. Thực chất, trong hơn hai thiên niên kỷ, Nho học đã trải qua ít nhất ba lần tái cấu trúc triết học lớn (Tiên Tần Nho học, Kinh học đời Hán, và Tống-Minh Lý học) để trở thành hệ thống giáo dục, luân lý gia tộc và tuyển chọn nhân tài định hình toàn bộ cấu trúc xã hội Đông Á.",
     historicalBackground:
-      "Sau cuộc khủng hoảng uy tín khi nhà Tần sụp đổ chỉ sau 15 năm cai trị bằng Pháp gia thuần túy, nhà Tây Hán cần một học thuyết vừa củng cố trật tự trung ương vừa tạo sự đồng thuận đạo đức. Đề xuất của Đổng Trọng Thư thời Hán Vũ Đế ('Độc tôn Nho thuật') biến Nho giáo từ một học phái dân gian thành quốc giáo hành chính – học thuật, được thể chế hóa chặt chẽ hơn nữa qua chế độ Khoa cử thời Tùy-Đường và Tống-Minh-Thanh.",
+      "Sau cuộc khủng hoảng uy tín khi nhà Tần sụp đổ chỉ sau 15 năm cai trị bằng Pháp gia thuần túy, nhà Tây Hán cần một học thuyết vừa củng cố trật tự trung ương vừa tạo sự đồng thuận đạo đức. Đề xuất 'Độc tôn Nho thuật' của Đổng Trọng Thư thời Hán Vũ Đế đưa Nho giáo (儒家) từ một học phái nhân luân trở thành nền tảng hành chính – học thuật quốc gia, rồi tiếp tục được thể chế hóa chặt chẽ qua chế độ Khoa cử thời Tùy – Đường và Tống – Minh – Thanh.",
     mainContent: [
       {
         heading: "1. Từ 'Lễ trị' của Khổng Tử đến 'Tính Thiện' của Mạnh Tử",
@@ -974,15 +974,15 @@ window.CCE_ARTICLES = [
         date: "Quý IV/2026",
         title: "Báo cáo Chuyên khảo Thương mại Song phương Việt Nam – Trung Quốc Giai đoạn 2026–2030 (Mã tài liệu: VN-CN-TRD-2026-Q4, 58 trang)",
         url: "assets/docs/VN-CN-TRD-2026-Q4-Monograph.pdf",
-        sourceType: "Chuyên khảo Thực nghiệm & Dự báo Kinh tế lượng (TYPE B + TYPE C)",
-        verificationNote: "Nguồn dữ liệu gốc cho toàn bộ chuỗi thống kê 2021–10T/2026, phân rã Mirror Gap 39,66 tỷ USD và mô hình kinh tế lượng 2026E–2030F."
+        sourceType: "Chuyên khảo Thực nghiệm và Dự báo Kinh tế lượng",
+        verificationNote: "Đối chiếu chuỗi thống kê 2021–10T/2026, phân rã Mirror Gap 39,66 tỷ USD và mô hình dự báo 2026E–2030F."
       },
       {
         author: "Bộ Công Thương Việt Nam (MOIT) & Bộ Thương mại Trung Quốc (MOFCOM)",
         date: "2025–2026",
         title: "Nghị định thư Nâng cấp Hiệp định Thương mại Tự do ASEAN – Trung Quốc Phiên bản 3.0 (ACFTA 3.0, ký ngày 28/10/2025) & Quy định C/O Mẫu E",
         url: "https://moit.gov.vn/",
-        sourceType: "Hiệp định Thương mại Quốc tế & Pháp quy Hải quan (TYPE C)",
+        sourceType: "Hiệp định Thương mại Quốc tế và Pháp quy Hải quan",
         verificationNote: "Cơ sở pháp lý kiểm tra tiêu chí xuất xứ WO, RVC >= 40%, CTH, e-C/O và các biện pháp phòng vệ thương mại AD20, AD19."
       }
     ]
@@ -992,36 +992,36 @@ window.CCE_ARTICLES = [
     number: 19,
     category: "history",
     categoryLabel: "Lịch sử & Thể chế Đông Á",
-    titleVi: "Chế độ Khoa cử (科举) Trung Hoa & Đại Việt: Thể chế Tuyển chọn Tinh hoa, Văn Miếu và Tầng lớp Sĩ大夫",
+    titleVi: "Chế độ Khoa cử (科举) Trung Hoa và Đại Việt: Tuyển chọn nhân tài, Văn Miếu và tầng lớp Sĩ đại phu",
     titleZh: "中越科举制度比较：文官选拔体系、国子监进士碑与士大夫阶层",
     titleEn: "The Imperial Examination System (Keju) in China and Vietnam: Meritocratic Bureaucracy, Jinshi Steles, and Literati Society",
     readMinutes: 14,
     epistemicTag: "Sử học Thể chế • Giao lưu Văn hiến Đông Á",
     introduction:
-      "Trong hơn 1.300 năm ở Trung Quốc (605–1905) và 844 năm ở Việt Nam (1075–1919), chế độ Khoa cử (科举) là cơ chế tuyển chọn quan chức dựa trên thi cử văn học – kinh điển quy mô lớn nhất thế giới tiền hiện đại. Khoa cử không chỉ định hình bộ máy hành chính văn quan mà còn kiến tạo một không gian văn hóa trọng học chung từ Quốc Tử Giám Bắc Kinh,贡院 (Cống viện) Giang Nam đến Văn Miếu – Quốc Tử Giám Thăng Long.",
+      "Trong hơn 1.300 năm ở Trung Quốc (605–1905) và 844 năm ở Việt Nam (1075–1919), chế độ Khoa cử (科举) giữ vai trò là cơ chế tuyển chọn quan lại dựa trên thi cử kinh điển quy mô lớn bậc nhất thế giới tiền hiện đại. Thể chế này định hình bộ máy hành chính văn quan, đồng thời kiến tạo một không gian văn hóa trọng học liên thông từ Quốc Tử Giám Bắc Kinh, Cống viện (贡院) Giang Nam đến Văn Miếu – Quốc Tử Giám Thăng Long.",
     historicalBackground:
-      "Trước thời Tùy – Đường, quyền lực chính trị tại Trung Quốc nằm trong tay các đại gia tộc thế袭 qua chế độ 'Cửu phẩm trung chính' thời Ngụy – Tấn – Nam Bắc triều. Tùy Văn Đế và Tùy Dạng Đế bãi bỏ đặc quyền môn phiệt, thiết lập Tiến sĩ khoa. Sang thời Đường (Võ Tắc Thiên mở Võ cử và Điện thí) và đặc biệt là thời Bắc Tống (thực hiện 'Hồ danh' 糊名 rọc phách và 'Đằng lục' 誊录 chép lại bài thi để chống gian lận), khoa cử trở thành kênh dịch chuyển xã hội ('Triều vi điền xá lang, mộ đăng thiên tử đường'). Tại Đại Việt, vua Lý Nhân Tông mở khoa thi Minh Kinh bác học đầu tiên năm 1075 (Lê Văn Thịnh đỗ đầu), và đến thời Lê Thánh Tông (thế kỷ XV), khoa cử Nho học đạt tới đỉnh cao thể chế hóa với việc dựng Bia Tiến sĩ năm 1484.",
+      "Trước thời Tùy – Đường, quyền lực chính trị tại Trung Quốc tập trung trong tay các đại gia tộc thế tập qua chế độ Cửu phẩm trung chính thời Ngụy – Tấn – Nam Bắc triều. Tùy Văn Đế và Tùy Dạng Đế bãi bỏ đặc quyền môn phiệt, thiết lập Tiến sĩ khoa. Sang thời Đường (Võ Tắc Thiên mở Võ cử và Điện thí) rồi đến Bắc Tống (áp dụng quy chế Hồ danh 糊名 rọc phách và Đằng lục 誊录 chép lại bài thi để ngăn gian lận), khoa cử trở thành kênh tiến thân rộng mở ('Triều vi điền xá lang, mộ đăng thiên tử đường'). Tại Đại Việt, vua Lý Nhân Tông mở khoa thi Minh Kinh bác học đầu tiên năm 1075 (Lê Văn Thịnh đỗ đầu), và đến triều Lê Thánh Tông cuối thế kỷ XV, khoa cử Nho giáo (儒家) bước vào giai đoạn hoàn chỉnh với việc dựng Bia Tiến sĩ năm 1484.",
     mainContent: [
       {
         heading: "1. Cấu trúc Tam trường – Tứ cấp: Viện thí, Hương thí, Hội thí và Điện thí",
         body:
-          "Hệ thống khoa cử Minh – Thanh tại Trung Quốc và Lê – Nguyễn tại Việt Nam đều vận hành theo tháp tuyển lọc nghiêm ngặt. Tại Trung Quốc, thí sinh vượt qua kỳ thi ở châu huyện ('Đồng thí' 童试) đạt danh hiệu Sinh viên (Tú tài 秀才); sau đó cứ 3 năm một lần dự thi Hương (乡试) tại tỉnh lỵ vào mùa thu để đỗ Cử nhân (举人, người đứng đầu gọi là Giải nguyên 解元). Mùa xuân năm sau, các Cử nhân về kinh đô dự thi Hội (会试, đỗ đầu gọi là Hội nguyên 会元) và bước vào kỳ thi Đình (殿试) do Hoàng đế đích thân ra đề策问 (Sách vấn) để xếp hạng Tiến sĩ (进士): Đệ nhất giáp gồm 3 người (Trạng nguyên 状元, Bảng nhãn 榜眼, Thám hoa 探花), Đệ nhị giáp và Đệ tam giáp. Tại Việt Nam, cấu trúc Tam trường (Thi Hương – Thi Hội – Thi Đình) và Tứ trường (Kinh nghĩa, Chiếu–Chế–Biểu, Thơ–Phú, Văn sách) được vận dụng sáng tạo, sản sinh những bậc 'Lưỡng quốc Trạng nguyên' như Mạc Đĩnh Chi và các danh nho như Nguyễn Trãi, Lê Quý Đôn."
+          "Hệ thống khoa cử Minh – Thanh tại Trung Quốc và Lê – Nguyễn tại Việt Nam cùng vận hành theo tháp tuyển lọc nghiêm ngặt. Tại Trung Quốc, thí sinh vượt qua kỳ thi châu huyện (Đồng thí 童试) nhận danh hiệu Tú tài (秀才); sau đó cứ 3 năm một lần dự thi Hương (乡试) tại tỉnh lỵ vào mùa thu để lấy học vị Cử nhân (举人, người đỗ đầu gọi là Giải nguyên 解元). Mùa xuân năm kế tiếp, các Cử nhân về kinh đô dự thi Hội (会试, đỗ đầu gọi là Hội nguyên 会元) rồi bước vào kỳ Điện thí (殿试) do Hoàng đế trực tiếp ra đề Sách vấn (策问) để xếp hạng Tiến sĩ (进士): Đệ nhất giáp gồm 3 danh vị (Trạng nguyên 状元, Bảng nhãn 榜眼, Thám hoa 探花), nối tiếp là Đệ nhị giáp và Đệ tam giáp. Tại Việt Nam, mô hình Tam trường (Hương – Hội – Đình) cùng Tứ trường (Kinh nghĩa, Chiếu–Chế–Biểu, Thơ–Phú, Văn sách) được tiếp biến linh hoạt, sản sinh nhiều bậc Lưỡng quốc Trạng nguyên như Mạc Đĩnh Chi cùng những danh nho tiêu biểu như Nguyễn Trãi, Lê Quý Đôn."
       },
       {
-        heading: "2. Bia Tiến sĩ Bắc Kinh – Hà Nội và Tinh thần 'Hiền tài là nguyên khí của quốc gia'",
+        heading: "2. Bia Tiến sĩ Bắc Kinh – Hà Nội và tinh thần 'Hiền tài là nguyên khí của quốc gia'",
         body:
-          "Tại Quốc Tử Giám Bắc Kinh hiện còn bảo tồn 198 tấm Bia Đề danh Tiến sĩ của ba triều Nguyên, Minh, Thanh khắc tên hơn 51.624 vị Tiến sĩ. Tương ứng tại Văn Miếu – Quốc Tử Giám Hà Nội, 82 tấm Bia Tiến sĩ triều Lê – Mạc (1442–1779, được UNESCO công nhận Di sản Tư liệu Thế giới) khắc bài ký bất hủ của Thân Nhân Trung khoa Nhâm Tuất (dựng năm Hồng Đức 1484): 'Hiền tài là nguyên khí của quốc gia; nguyên khí thịnh thì thế nước mạnh mà vươn cao, nguyên khí suy thì thế nước yếu mà thấp xuống' (贤才国家之元气). Khác với tầng lớp quan lại Minh – Thanh thường gắn với các đại gia tộc thương紳 đô thị, tầng lớp Nho sĩ – Khoa bảng Đại Việt có mối liên kết hữu cơ với tự trị làng xã ('Phép vua thua lệ làng'), khi致仕 (về hưu) thường mở trường dạy học ngay tại thôn quê, giúp tỷ lệ biết chữ Hán–Nôm và văn hóa hương ước lan tỏa sâu vào nông thôn."
+          "Tại Quốc Tử Giám Bắc Kinh hiện còn lưu giữ 198 tấm Bia Đề danh Tiến sĩ thuộc ba triều Nguyên, Minh, Thanh, khắc danh tính hơn 51.624 vị Tiến sĩ. Ở Văn Miếu – Quốc Tử Giám Hà Nội, 82 tấm Bia Tiến sĩ triều Lê – Mạc (1442–1779, Di sản Tư liệu Thế giới UNESCO) ghi dấu bài ký của Thân Nhân Trung khắc năm Hồng Đức 1484: 'Hiền tài là nguyên khí của quốc gia; nguyên khí thịnh thì thế nước mạnh mà vươn cao, nguyên khí suy thì thế nước yếu mà thấp xuống' (贤才国家之元气). Nếu tầng lớp quan lại Minh – Thanh thường gắn kết với các đại gia tộc thương thân ở đô thị, thì giới Nho sĩ – Khoa bảng Đại Việt lại gắn bó hữu cơ với cộng đồng làng xã ('Phép vua thua lệ làng'); nhiều vị khi trí sĩ (致仕, về hưu) mở trường dạy học ngay tại quê nhà, góp phần đưa chữ Hán–Nôm và văn hóa hương ước thấm sâu vào đời sống nông thôn."
       },
       {
-        heading: "3. Đánh giá Sử học Khách quan: Công bằng Tuyển dụng và Sự Trì trệ Khoa học Thực nghiệm",
+        heading: "3. Đánh giá sử học: Tính công bằng trong tuyển dụng và độ trễ của khoa học thực nghiệm",
         body:
-          "Dưới góc nhìn xã hội học lịch sử (Max Weber, Benjamin Elman, Ho Ping-ti), chế độ khoa cử mang lại ba đóng góp lớn: (1) hạn chế sự cát cứ của quý tộc quân阀, (2) duy trì sự thống nhất văn tự và chuẩn mực đạo đức trên một lãnh thổ rộng lớn, và (3) tạo động lực học tập suốt đời trong dân gian. Tuy nhiên, từ giữa thời Minh – Thanh, việc chuẩn hóa bài thi theo thể văn 'Bát cổ' (八股文 — 8 phần đối ngẫu cứng nhắc chỉ được diễn giải theo chú giải Tứ Thư của Chu Hy) đã thu hẹp tư duy phản biện, khiến giới tinh hoa dồn toàn bộ trí lực vào từ chương kinh viện thay vì toán học, vật lý và kỹ thuật thực nghiệm — cho đến khi khoa cử chính thức bãi bỏ năm 1905 ở Trung Quốc và 1919 ở Việt Nam để nhường chỗ cho đại học hiện đại."
+          "Nhìn từ xã hội học lịch sử (Max Weber, Benjamin Elman, Ho Ping-ti), chế độ khoa cử đóng góp ba giá trị nền tảng: hạn chế tình trạng cát cứ của quý tộc quân phiệt, duy trì sự thống nhất văn tự và chuẩn mực trị quốc trên lãnh thổ rộng lớn, đồng thời nuôi dưỡng truyền thống hiếu học bền bỉ trong dân gian. Tuy nhiên, từ giữa thời Minh – Thanh, sự gò bó của thể văn Bát cổ (八股文 — tám đoạn đối ngẫu chặt chẽ chỉ được luận giải theo Tứ Thư tập chú của Chu Hy) dần thu hẹp tư duy phản biện, khiến giới tinh hoa dồn trọn trí lực vào từ chương kinh viện thay vì toán học, vật lý hay kỹ thuật thực nghiệm — cho đến khi khoa cử chính thức khép lại vào năm 1905 ở Trung Quốc và năm 1919 ở Việt Nam."
       }
     ],
     terminologyIds: ["keju", "jinshi", "jingshizhiyong", "ren"],
     examples: [
-      "Cống viện Giang Nam (江南贡院) tại Nam Kinh thời Minh – Thanh có tới 20.644 phòng thi biệt lập ('Hào xá' 号舍), nơi mỗi thí sinh vừa viết bài vừa ăn ngủ trong suốt 9 ngày 6 đêm của ba kỳ thi Hương.",
-      "Đối chiếu 198 bia Tiến sĩ tại Quốc Tử Giám Bắc Kinh (đặt trên bệ đá vuông/quy趺 trang nghiêm) và 82 bia Tiến sĩ tại Văn Miếu Hà Nội (mỗi tấm bia có trán bia chạm rồng, hoa sen, mây lửa mang phong cách điêu khắc dân gian Lê sơ – Lê trung hưng)."
+      "Cống viện Giang Nam (江南贡院) tại Nam Kinh thời Minh – Thanh có tới 20.644 phòng thi biệt lập ('Hào xá' 号舍), nơi mỗi thí sinh tự túc ăn ngủ và làm bài trong suốt 9 ngày 6 đêm qua ba kỳ thi Hương.",
+      "Đối chiếu 198 bia Tiến sĩ tại Quốc Tử Giám Bắc Kinh (đặt trên bệ đá vuông và quy phu trang nghiêm) với 82 bia Tiến sĩ tại Văn Miếu Hà Nội (trán bia chạm rồng, hoa sen và mây lửa mang đậm dấu ấn mỹ thuật dân gian Lê sơ – Lê trung hưng)."
     ],
     relatedTopics: ["Tư tưởng Khổng Tử", "Văn học Đi sứ & Bắc Sứ Lục", "Giáo dục & Áp lực Thi cử Đương đại"],
     references: [
@@ -1056,7 +1056,7 @@ window.CCE_ARTICLES = [
     introduction:
       "Trước thế kỷ XVI, Trung Quốc là một trong những trung tâm sáng tạo kỹ thuật năng động nhất thế giới với bốn phát minh làm thay đổi tiến trình lịch sử nhân loại: Nghề làm giấy, Kỹ thuật in ấn, Thuốc súng và La bàn từ, cùng nền toán học – thiên văn – nông học và luyện kim phát triển cao được kết tinh trong bộ bách khoa thư 《Thiên Công Khai Vật》 (1637). Việc khảo cứu lịch sử khoa học kỹ thuật Trung Hoa giúp người học hiểu rõ cả cội nguồn văn minh vật chất cổ đại lẫn câu hỏi học thuật nổi tiếng của Joseph Needham.",
     historicalBackground:
-      "Trong bộ cự著 《Science and Civilisation in China》 (Lịch sử Khoa học và Văn minh Trung Quốc, khởi xướng năm 1954 tại Đại học Cambridge), nhà hóa sinh và sử học khoa học người Anh Joseph Needham (Lý Ước Sắt 李约瑟) đã chứng minh bằng tư liệu khảo cổ rằng hàng trăm kỹ thuật then chốt (từ làm giấy sợi thực vật thời Hán, bàn tính, la bàn từ tính, khoan giếng sâu, cầu vòm Triệu Châu, luyện gang lò cao đến in chữ rời đất nung của Tất Thăng năm 1041–1048) đã xuất hiện ở Trung Quốc sớm hơn châu Âu từ vài thế kỷ đến hơn một thiên niên kỷ.",
+      "Trong bộ cự tác 《Science and Civilisation in China》 (Lịch sử Khoa học và Văn minh Trung Quốc, khởi xướng năm 1954 tại Đại học Cambridge), nhà hóa sinh và sử học khoa học người Anh Joseph Needham (Lý Ước Sắt 李约瑟) đã chứng minh bằng tư liệu khảo cổ rằng hàng trăm kỹ thuật then chốt (làm giấy sợi thực vật thời Hán, bàn tính, la bàn từ tính, khoan giếng sâu, cầu vòm Triệu Châu, luyện gang lò cao và in chữ rời đất nung của Tất Thăng năm 1041–1048) từng xuất hiện tại Trung Quốc sớm hơn châu Âu từ vài thế kỷ đến hơn một thiên niên kỷ.",
     mainContent: [
       {
         heading: "1. Tứ Đại Phát Minh và Hành trình Truyền bá Đông – Tây qua Con đường Tơ lụa",
@@ -1127,7 +1127,7 @@ window.CCE_ARTICLES = [
       {
         heading: "3. Hợp nhất 'Thi – Thư – Họa – Ấn' và Thực hành Thư pháp tại Việt Nam",
         body:
-          "Từ thời Tống – Nguyên (Tô Đông Pha, Triệu Mạnh Phủ) đến Minh – Thanh (Đường寅, Văn Trưng Minh, Bát Đại Sơn Nhân, Tề Bạch Thạch), một bức họa hoàn chỉnh không chỉ có hình vẽ mà là sự hòa quyện của bốn nghệ thuật: Thơ đề vịnh (Thi 诗) mở chiều sâu ý cảnh, Chữ viết lời đề (Thư 书) cân bằng bố cục với nét vẽ (Họa 画), và Dấu ấn chu sa (Ấn 印) đóng ở đầu bài ('Dẫn thủ chương'), dưới tên tác giả ('Danh chương') và góc tranh ('Áp giác chương') tạo điểm nhấn sắc đỏ rực rỡ trên nền mực đen giấy trắng. Tại Việt Nam, truyền thống thư pháp Hán – Nôm (trên hoành phi, câu đối, sắc phong, bia đá Văn Miếu) cùng dòng Thư pháp chữ Quốc ngữ hiện đại tạo nên một cuộc đối thoại thẩm mỹ sống động giữa nét bút lông truyền thống và chữ cái Latin."
+          "Từ thời Tống – Nguyên (Tô Đông Pha, Triệu Mạnh Phủ) đến Minh – Thanh (Đường Dần, Văn Trưng Minh, Bát Đại Sơn Nhân, Tề Bạch Thạch), một bức họa hoàn chỉnh là sự hòa quyện của bốn nghệ thuật: Thơ đề vịnh (Thi 诗) mở chiều sâu ý cảnh, Chữ viết lời đề (Thư 书) cân bằng bố cục với nét vẽ (Họa 画), và Dấu ấn chu sa (Ấn 印) đóng ở đầu bài ('Dẫn thủ chương'), dưới tên tác giả ('Danh chương') hay góc tranh ('Áp giác chương') tạo điểm nhấn sắc đỏ rực rỡ trên nền mực đen giấy trắng. Tại Việt Nam, truyền thống thư pháp Hán – Nôm (trên hoành phi, câu đối, sắc phong, bia đá Văn Miếu) cùng dòng Thư pháp chữ Quốc ngữ hiện đại tạo nên một cuộc đối thoại thẩm mỹ sống động giữa nét bút lông truyền thống và chữ cái Latin."
       }
     ],
     terminologyIds: ["wenfangsibao", "zhuanke", "lantingjixu", "liubai"],
@@ -1178,7 +1178,7 @@ window.CCE_ARTICLES = [
       {
         heading: "2. Phân biệt Pháp lý Sống còn trong Hợp đồng: 'Định kim' (定金) vs. 'Đính kim' (订金)",
         body:
-          "Trong thực tiễn ký kết Hợp đồng Mua bán Hàng hóa Quốc tế (销售合同 / 采购合同) với nhà cung cấp Trung Quốc, sai lầm đắt giá nhất nằm ở hai từ đồng âm `Dìngjīn`: (A) `定金` (chữ Định có bộ Miên 宀): Là 'Tiền đặt cọc bảo đảm thực hiện hợp đồng' được quy định tại Điều 586 và Điều 587 《Bộ luật Dân sự Trung Quốc》 (中华人民共和国民法典, có hiệu lực từ 2021). Khoản `定金` không vượt quá 20% giá trị hợp đồng chính và chịu quy tắc phạt cọc cứng: bên mua hủy đơn thì mất trắng khoản `定金`; bên bán không giao hàng thì phải đền gấp đôi (`双倍返还`). (B) `订金` (chữ Đính có bộ Ngôn 讠): Về mặt pháp lý Trung Quốc chỉ được xem là 'Tiền ứng trước đặt hàng' (`预付款`), không có hiệu lực phạt cọc gấp đôi; nếu hợp đồng không thực hiện được thì bên nhận chỉ hoàn trả đúng số tiền đã nhận. Do đó, khi chuyển khoản 30% T/T deposit cho xưởng Trung Quốc, nhân sự xuất nhập khẩu Việt Nam phải kiểm tra chính xác chữ Hán trên Hóa đơn chiếu lệ (Proforma Invoice) và Hợp đồng."
+          "Trong thực tiễn ký kết Hợp đồng Mua bán Hàng hóa Quốc tế (销售合同 / 采购合同) với nhà cung cấp Trung Quốc, sai lầm đắt giá nhất nằm ở hai từ đồng âm `Dìngjīn`: (A) `定金` (chữ Định có bộ Miên 宀): Là 'Tiền đặt cọc bảo đảm thực hiện hợp đồng' được quy định tại Điều 586 và Điều 587 《Bộ luật Dân sự Trung Quốc》 (中华人民共和国民法典, hiệu lực từ 2021). Khoản `定金` tối đa 20% giá trị hợp đồng chính và chịu quy tắc phạt cọc cứng: bên mua hủy đơn thì mất trắng khoản `定金`; bên bán không giao hàng thì phải đền gấp đôi (`双倍返还`). (B) `订金` (chữ Đính có bộ Ngôn 讠): Về mặt pháp lý Trung Quốc chỉ mang tính chất 'Tiền ứng trước đặt hàng' (`预付款`), không có hiệu lực phạt cọc gấp đôi; nếu hợp đồng không thực hiện được thì bên nhận hoàn trả đúng số tiền đã nhận. Do đó, khi chuyển khoản 30% T/T deposit cho xưởng Trung Quốc, nhân sự xuất nhập khẩu Việt Nam phải đối chiếu chính xác chữ Hán trên Hóa đơn chiếu lệ (Proforma Invoice) và Hợp đồng."
       },
       {
         heading: "3. Chuẩn hóa Thuật ngữ Hải quan – Vận tải trên Bộ Chứng từ Song ngữ",

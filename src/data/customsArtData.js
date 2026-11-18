@@ -81,7 +81,7 @@ window.CCE_CUSTOMS_ART = {
       nameEn: "Ancestral Worship",
       nameZh: "祭祖与宗祠",
       origins: "Một trong những mạch nguồn tôn giáo – đạo đức cổ xưa nhất từ nhà Thương (tế tổ tiên để cầu phù hộ) được Nho gia hợp lý hóa thành nghĩa vụ báo ân ('Báo bản phản thủy').",
-      symbolism: "Bài vị (Thần chủ牌位), Gia phả (族谱) và Từ đường (宗祠) kết nối cá nhân vào dòng chảy liên tục của gia tộc quá khứ – hiện tại – tương lai.",
+      symbolism: "Bài vị (Thần chủ bài vị 牌位), Gia phả (族谱) và Từ đường (宗祠) kết nối cá nhân vào dòng chảy liên tục của gia tộc quá khứ – hiện tại – tương lai.",
       regionalDiff: "Cực kỳ phát triển ở vùng Phúc Kiến, Quảng Đông, Chiết Giang, An Huy (Huy Châu) với các đại từ đường kiến trúc đồ sộ và quỹ đất hương hỏa dòng họ.",
       modernTransform: "Tái phục hồi gia phả và họp mặt dòng họ dịp Thanh Minh – Đông Chí ở nhiều tỉnh miền Nam; số hóa gia phả trực tuyến."
     },

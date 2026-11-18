@@ -81,7 +81,7 @@ window.CCE_ARTICLES_EN = {
         "date": "1637",
         "title": "Tiangong Kaiwu — Chapter 7: Ceramics (天工开物·陶埏)",
         "url": "https://ctext.org/wiki.pl?if=gb&res=451232",
-        "sourceType": "Ming Technical Encyclopedia (TYPE A)",
+        "sourceType": "Ming Technical Encyclopedia",
         "verificationNote": "Original Ming text documenting the 72-step Jingdezhen porcelain workflow."
       },
       {
@@ -89,7 +89,7 @@ window.CCE_ARTICLES_EN = {
         "date": "2005–2024",
         "title": "Regional Powerhouse: The Greater Pearl River Delta & China Clusters",
         "url": "https://scholar.google.com/",
-        "sourceType": "Industrial Cluster Study (TYPE B)",
+        "sourceType": "Industrial Cluster Study",
         "verificationNote": "Empirical fieldwork on specialized manufacturing networks across Guangdong and Zhejiang."
       }
     ],
@@ -464,7 +464,7 @@ window.CCE_ARTICLES_EN = {
         "date": "20/08/2026",
         "title": "Announcement on Expanding the 240-Hour Visa-Free Transit Policy to 65 Ports of Entry",
         "url": "https://en.nia.gov.cn/",
-        "sourceType": "Immigration Policy Bulletin (TYPE C)",
+        "sourceType": "Immigration Policy Bulletin",
         "verificationNote": "August–October 2026 official update documented in dossier GUILIN-TRV-2026-10."
       },
       {
@@ -587,7 +587,7 @@ window.CCE_ARTICLES_EN = {
         "date": "2026",
         "title": "Administrative Divisions of the People's Republic of China & Urban Geography Curriculum",
         "url": "https://xzqh.mca.gov.cn/",
-        "sourceType": "National Administrative Data (TYPE C)",
+        "sourceType": "National Administrative Data",
         "verificationNote": "Fully cross-referenced in the 34-Province Directory tab (#regions)."
       },
       {
@@ -833,7 +833,7 @@ window.CCE_ARTICLES_EN = {
         "date": "2026",
         "title": "National Enterprise Credit Information Publicity System (NECIPS)",
         "url": "https://www.gsxt.gov.cn/",
-        "sourceType": "Official Corporate Registry Database (TYPE C)",
+        "sourceType": "Official Corporate Registry Database",
         "verificationNote": "Mandatory public portal for verifying Mainland Chinese legal entities in B2B due diligence."
       },
       {
@@ -1079,7 +1079,7 @@ window.CCE_ARTICLES_EN = {
         "date": "2023–2026",
         "title": "Interim Measures for Generative AI Services & China's AI Semiconductor Value Chain",
         "url": "https://www.cac.gov.cn/",
-        "sourceType": "Official Regulatory Instrument (TYPE C)",
+        "sourceType": "Official Regulatory Instrument",
         "verificationNote": "Synthesized from Chapters 3–6 of Monograph CN-AI-REV-2026-Q4."
       },
       {
@@ -1198,7 +1198,7 @@ window.CCE_ARTICLES_EN = {
         "date": "Q4 2026",
         "title": "Vietnam–China Bilateral Trade Monograph 2026–2030 (Document Code: VN-CN-TRD-2026-Q4, 58 pp.)",
         "url": "assets/docs/VN-CN-TRD-2026-Q4-Monograph.pdf",
-        "sourceType": "Empirical Monograph & Econometric Forecast (TYPE B + TYPE C)",
+        "sourceType": "Empirical Monograph & Econometric Forecast",
         "verificationNote": "Primary data source for the 2021–10M 2026 statistical series, decomposition of the USD 39.66B Mirror Gap, and the 2026E–2030F econometric model."
       },
       {
@@ -1206,7 +1206,7 @@ window.CCE_ARTICLES_EN = {
         "date": "2025–2026",
         "title": "Protocol to Upgrade the ASEAN–China Free Trade Area Version 3.0 (ACFTA 3.0, signed October 28, 2025) & C/O Form E Regulations",
         "url": "https://moit.gov.vn/",
-        "sourceType": "International Trade Agreement & Customs Regulations (TYPE C)",
+        "sourceType": "International Trade Agreement & Customs Regulations",
         "verificationNote": "Legal basis for verifying WO, RVC ≥ 40%, and CTH origin criteria, electronic C/O (e-C/O), and trade-remedy measures AD20 and AD19."
       },
       {
@@ -2925,7 +2925,7 @@ window.CCE_ARTICLES_EN = {
         "date": "2024–2026",
         "title": "National Registry of China Time-Honored Brands (中华老字号信息管理)",
         "url": "https://zhlzh.mofcom.gov.cn/",
-        "sourceType": "Official PRC Government Portal (TYPE C)",
+        "sourceType": "Official PRC Government Portal",
         "verificationNote": "Authoritative verification portal for the certification status of all 1,455 Lǎozìhào brands."
       },
       {
@@ -3743,7 +3743,7 @@ window.CCE_ARTICLES_EN = {
         "date": "1944 / 1984",
         "title": "A Pictorial History of Chinese Architecture (中国建筑史)",
         "url": "https://scholar.google.com/",
-        "sourceType": "Classic Architectural Monograph (TYPE B)",
+        "sourceType": "Classic Architectural Monograph",
         "verificationNote": "Detailed structural anatomy of the dougong bracket system from the Tang through the Qing dynasties."
       },
       {
@@ -3751,7 +3751,7 @@ window.CCE_ARTICLES_EN = {
         "date": "1996–2018",
         "title": "Kiến trúc Đình làng Việt Nam & Nghệ thuật Tạo hình Cổ truyền (Architecture of the Vietnamese Village Communal House and Traditional Plastic Arts)",
         "url": "https://scholar.google.com/",
-        "sourceType": "Vietnamese Architectural Heritage Study (TYPE B)",
+        "sourceType": "Vietnamese Architectural Heritage Study",
         "verificationNote": "Analyzes kẻ chuyền and bẩy hiên joinery at Chu Quyến, Tây Đằng, and Đường Lâm."
       }
     ],
@@ -4216,7 +4216,7 @@ window.CCE_ARTICLES_EN = {
         "date": "1993–2024",
         "title": "Tổng tập Thơ văn Đi sứ Việt Nam (Comprehensive Collection of Vietnamese Envoy Literature — Han–Nom Heritage Catalog)",
         "url": "https://hannom.org.vn/",
-        "sourceType": "Vietnamese Primary Manuscript Archive (TYPE A)",
+        "sourceType": "Vietnamese Primary Manuscript Archive",
         "verificationNote": "Includes original Classical Chinese texts of Bắc hành tạp lục and Bắc sứ thông lục."
       },
       {
@@ -4224,7 +4224,7 @@ window.CCE_ARTICLES_EN = {
         "date": "2005",
         "title": "Beyond the Bronze Pillars: Envoy Poetry and the Sino-Vietnamese Relationship",
         "url": "https://scholar.google.com/",
-        "sourceType": "International Historical Monograph (TYPE B)",
+        "sourceType": "International Historical Monograph",
         "verificationNote": "Analyzes the rhetoric and literary conventions of Vietnamese envoy poetry in East Asian diplomacy."
       }
     ],
@@ -4666,7 +4666,7 @@ window.CCE_ARTICLES_EN = {
         "date": "11th century CE",
         "title": "Miscellaneous Notes from the Eastern Slope: On the Four Treasures (Dongpo Zhilin · Lun Wenfang Sibao / 东坡志林)",
         "url": "https://ctext.org/",
-        "sourceType": "Northern Song Literati Notebook (TYPE A)",
+        "sourceType": "Northern Song Literati Notebook",
         "verificationNote": "Primary firsthand notes evaluating Duan inkstones and Huizhou inksticks."
       },
       {
@@ -4674,7 +4674,7 @@ window.CCE_ARTICLES_EN = {
         "date": "2009",
         "title": "Traditional Handicrafts of Making Xuan Paper (宣纸传统制作技艺)",
         "url": "https://ich.unesco.org/en/RL/traditional-handicrafts-of-making-xuan-paper-00201",
-        "sourceType": "UNESCO Heritage Dossier (TYPE B)",
+        "sourceType": "UNESCO Heritage Dossier",
         "verificationNote": "Official documentation detailing the 108-step Jing County Xuan paper manufacturing process."
       }
     ],
@@ -4750,7 +4750,7 @@ window.CCE_ARTICLES_EN = {
         "date": "Song Dynasty",
         "title": "Yuanhai Ziping (渊海子平 — Siku Quanshu Collection)",
         "url": "https://ctext.org/",
-        "sourceType": "Classical Technical Literature (TYPE A)",
+        "sourceType": "Classical Technical Literature",
         "verificationNote": "Foundational Song-dynasty compilation establishing the Day-Master Ziping methodology."
       },
       {
@@ -4758,7 +4758,7 @@ window.CCE_ARTICLES_EN = {
         "date": "19th Century",
         "title": "Ditian Sui Chanwei (滴天髓阐微 — Elucidation of the Marrow of Dripping Heaven)",
         "url": "https://ctext.org/",
-        "sourceType": "Classical Commentary (TYPE B)",
+        "sourceType": "Classical Commentary",
         "verificationNote": "Foremost theoretical treatise on Five-Element dynamic equilibrium in the Ziping tradition."
       }
     ],
@@ -5142,7 +5142,7 @@ window.CCE_ARTICLES_EN = {
         "date": "2014 / Updated 2026",
         "title": "South China Karst (Guilin Karst Component)",
         "url": "https://whc.unesco.org/en/list/1248/",
-        "sourceType": "UNESCO World Heritage Dossier (TYPE C)",
+        "sourceType": "UNESCO World Heritage Dossier",
         "verificationNote": "Official UNESCO dossier recognizing Guilin's globally significant karst geomorphology."
       },
       {
@@ -5270,7 +5270,7 @@ window.CCE_ARTICLES_EN = {
         "date": "2003 / 2008",
         "title": "Guqin and Its Music (古琴艺术)",
         "url": "https://ich.unesco.org/en/RL/guqin-and-its-music-00061",
-        "sourceType": "UNESCO Masterpiece of Intangible Heritage (TYPE B)",
+        "sourceType": "UNESCO Masterpiece of Intangible Heritage",
         "verificationNote": "Dossier covering Jianzipu tablature and major regional lineages including Shu, Wu, and Guangling."
       },
       {
@@ -5278,7 +5278,7 @@ window.CCE_ARTICLES_EN = {
         "date": "1940 (Rev. 1969)",
         "title": "The Lore of the Chinese Lute: An Essay in the Ideology of the Ch'in",
         "url": "https://scholar.google.com/",
-        "sourceType": "Classical Sinological Musicology Monograph (TYPE B)",
+        "sourceType": "Classical Sinological Musicology Monograph",
         "verificationNote": "Landmark English-language monograph on the intellectual and spiritual lore of the Guqin."
       }
     ],
@@ -5365,7 +5365,7 @@ window.CCE_ARTICLES_EN = {
         "date": "1979 (Reprinted 2004)",
         "title": "Nguồn gốc và quá trình hình thành cách đọc Hán Việt (Origins and Historical Formation of Sino-Vietnamese Pronunciation)",
         "url": "https://scholar.google.com/",
-        "sourceType": "Historical Linguistics Monograph (TYPE B)",
+        "sourceType": "Historical Linguistics Monograph",
         "verificationNote": "Foundational scholarship in Vietnamese Han–Nom studies and historical phonology."
       },
       {
@@ -5373,7 +5373,7 @@ window.CCE_ARTICLES_EN = {
         "date": "601 / 1008 CE",
         "title": "Qieyun & Guangyun Digital Rhyme Dictionary (广韵)",
         "url": "https://ctext.org/library.pl?if=gb&file=82450",
-        "sourceType": "Classical Rhyme Dictionary (TYPE A)",
+        "sourceType": "Classical Rhyme Dictionary",
         "verificationNote": "Canonical phonological text dividing Middle Chinese into 206 standard rhyme categories."
       }
     ],
@@ -5831,7 +5831,7 @@ window.CCE_ARTICLES_EN = {
         "date": "2011–2025",
         "title": "Văn bia Tiến sĩ Văn Miếu – Quốc Tử Giám Thăng Long (Doctoral Steles of the Temple of Literature – Imperial Academy, Thăng Long, UNESCO Memory of the World)",
         "url": "https://vanmieu.gov.vn/",
-        "sourceType": "UNESCO Documentary Heritage (TYPE B)",
+        "sourceType": "UNESCO Documentary Heritage",
         "verificationNote": "Official collated Sino-Vietnamese bilingual texts of the stone stele inscriptions."
       },
       {
@@ -5839,7 +5839,7 @@ window.CCE_ARTICLES_EN = {
         "date": "2024",
         "title": "History of the Imperial Academy & Jinshi Steles (北京孔庙和国子监)",
         "url": "https://en.dpm.org.cn/",
-        "sourceType": "Beijing Heritage Museum (TYPE B)",
+        "sourceType": "Beijing Heritage Museum",
         "verificationNote": "Archival documentation of the 51,624 Yuan–Ming–Qing Jinshi graduates."
       }
     ],
@@ -6264,7 +6264,7 @@ window.CCE_ARTICLES_EN = {
         "date": "c. 760–780 CE",
         "title": "The Classic of Tea (Chajing / 茶经)",
         "url": "https://ctext.org/chajing",
-        "sourceType": "Foundational Tea Treatise (TYPE A)",
+        "sourceType": "Foundational Tea Treatise",
         "verificationNote": "World's earliest surviving systematic treatise on tea in three scrolls and ten chapters."
       },
       {
@@ -6272,7 +6272,7 @@ window.CCE_ARTICLES_EN = {
         "date": "2022",
         "title": "Traditional Tea Processing Techniques and Associated Social Practices in China",
         "url": "https://ich.unesco.org/en/RL/traditional-tea-processing-techniques-and-associated-social-practices-in-china-01884",
-        "sourceType": "UNESCO Heritage Dossier (TYPE B)",
+        "sourceType": "UNESCO Heritage Dossier",
         "verificationNote": "Covers traditional processing methods across the six tea categories and associated communal rituals."
       }
     ],
@@ -6372,7 +6372,7 @@ window.CCE_ARTICLES_EN = {
         "date": "1225",
         "title": "Zhufan Zhi (诸蕃志 — Records of Foreign Peoples)",
         "url": "https://ctext.org/wiki.pl?if=gb&res=468831",
-        "sourceType": "Song-Dynasty Maritime Gazetteer (TYPE A)",
+        "sourceType": "Song-Dynasty Maritime Gazetteer",
         "verificationNote": "Primary maritime historical source collated at Quanzhou."
       },
       {
@@ -6380,7 +6380,7 @@ window.CCE_ARTICLES_EN = {
         "date": "1993–2011",
         "title": "Cochinchina: Vietnamese Economic History & The Hội An Archive",
         "url": "https://scholar.google.com/",
-        "sourceType": "Southeast Asian Economic History (TYPE B)",
+        "sourceType": "Southeast Asian Economic History",
         "verificationNote": "Foundational scholarship on the Fujian–Guangdong–Đàng Trong maritime port network."
       }
     ],
@@ -6492,7 +6492,7 @@ window.CCE_ARTICLES_EN = {
         "date": "c. 91 BCE",
         "title": "Records of the Grand Historian: Biographies of the Money-Makers (Shiji • Huozhi Liezhuan / 史记·货殖列传)",
         "url": "https://ctext.org/shiji/huo-zhi-lie-zhuan",
-        "sourceType": "Classical Historical Primary Source (TYPE A)",
+        "sourceType": "Classical Historical Primary Source",
         "verificationNote": "Standardized classical Chinese text cross-checked on the Chinese Text Project."
       },
       {
@@ -6500,7 +6500,7 @@ window.CCE_ARTICLES_EN = {
         "date": "1987",
         "title": "Religious Ethics and the Merchant Spirit in Early Modern China (中国近世宗教伦理与商人精神)",
         "url": "https://scholar.google.com/",
-        "sourceType": "Intellectual History Monograph (TYPE B)",
+        "sourceType": "Intellectual History Monograph",
         "verificationNote": "Seminal scholarly study examining Neo-Confucianism, Chan/Daoist ethics, and Ming–Qing merchant culture."
       }
     ],
@@ -7320,7 +7320,7 @@ window.CCE_ARTICLES_EN = {
         "date": "3rd–1st Century BCE",
         "title": "Suwen — Siqi Tiaoshen Dalun (素问·四气调神大论)",
         "url": "https://ctext.org/huangdi-neijing/si-qi-tiao-shen-da-lun",
-        "sourceType": "Classical Medical Canon (TYPE A)",
+        "sourceType": "Classical Medical Canon",
         "verificationNote": "Original text of Chapter 2 of the Yellow Emperor's Inner Canon: Basic Questions."
       },
       {
@@ -7328,7 +7328,7 @@ window.CCE_ARTICLES_EN = {
         "date": "2016",
         "title": "The Twenty-Four Solar Terms (二十四节气)",
         "url": "https://ich.unesco.org/en/RL/the-twenty-four-solar-terms-00647",
-        "sourceType": "UNESCO Heritage Dossier (TYPE B)",
+        "sourceType": "UNESCO Heritage Dossier",
         "verificationNote": "Official inscription dossier documenting the astronomical science and East Asian seasonal practices."
       }
     ],
@@ -7575,7 +7575,7 @@ window.CCE_ARTICLES_EN = {
         "date": "1631",
         "title": "The Craft of Gardens (Yuanye / 园冶)",
         "url": "https://ctext.org/",
-        "sourceType": "Ming-Dynasty Landscape Architecture Treatise (TYPE A)",
+        "sourceType": "Ming-Dynasty Landscape Architecture Treatise",
         "verificationNote": "Canonical primary treatise on classical Chinese garden aesthetics and construction."
       },
       {
@@ -7583,7 +7583,7 @@ window.CCE_ARTICLES_EN = {
         "date": "1997 / 2000",
         "title": "Classical Gardens of Suzhou (苏州古典园林)",
         "url": "https://whc.unesco.org/en/list/813",
-        "sourceType": "UNESCO World Heritage Dossier (TYPE B)",
+        "sourceType": "UNESCO World Heritage Dossier",
         "verificationNote": "Official inscription dossier covering the nine representative classical gardens of Suzhou."
       }
     ],
@@ -8195,7 +8195,7 @@ window.CCE_ARTICLES_EN = {
         "date": "2013",
         "title": "The Making of a New Rural Order in South China: Village, Land, and Lineage in Huizhou",
         "url": "https://scholar.google.com/",
-        "sourceType": "Cambridge University Press Monograph (TYPE A)",
+        "sourceType": "Cambridge University Press Monograph",
         "verificationNote": "Authoritative study of Huizhou lineage institutions, land contracts, and merchant society."
       },
       {
@@ -8203,7 +8203,7 @@ window.CCE_ARTICLES_EN = {
         "date": "2024",
         "title": "Rishengchang Exchange Shop Archival Exhibition (日昇昌票号史料)",
         "url": "https://whc.unesco.org/en/list/812",
-        "sourceType": "UNESCO World Heritage Dossier (TYPE B)",
+        "sourceType": "UNESCO World Heritage Dossier",
         "verificationNote": "Verified archival documentation on the Ancient City of Pingyao and the Piàohào banking network."
       }
     ],
@@ -8469,7 +8469,7 @@ window.CCE_ARTICLES_EN = {
         "date": "2023 / Updated 2026",
         "title": "Decree 13/2023/ND-CP on Personal Data Protection & Enterprise AI Deployment Framework",
         "url": "https://vanban.chinhphu.vn/",
-        "sourceType": "Vietnamese Legal Instrument (TYPE C)",
+        "sourceType": "Vietnamese Legal Instrument",
         "verificationNote": "Mandatory compliance framework for enterprises processing personal data with AI in Vietnam."
       },
       {
@@ -8592,7 +8592,7 @@ window.CCE_ARTICLES_EN = {
         "date": "2026",
         "title": "Guide to Accommodation Registration and Entry/Exit Procedures for Foreigners in China",
         "url": "https://en.nia.gov.cn/",
-        "sourceType": "State Regulatory Agency (TYPE C)",
+        "sourceType": "State Regulatory Agency",
         "verificationNote": "Official rules governing 24-hour temporary residence registration and port procedures."
       },
       {
@@ -8960,7 +8960,7 @@ window.CCE_ARTICLES_EN = {
         "date": "9th century BCE – 12th century CE",
         "title": "The Book of Changes and the Ten Wings (Zhouyi · Shiyi / 周易·十翼)",
         "url": "https://ctext.org/book-of-changes",
-        "sourceType": "Primary Classic of the Five Classics (TYPE A)",
+        "sourceType": "Primary Classic of the Five Classics",
         "verificationNote": "Standardized critical text encompassing all 64 hexagrams and the Ten Wings commentaries."
       },
       {
@@ -8968,7 +8968,7 @@ window.CCE_ARTICLES_EN = {
         "date": "1990",
         "title": "Kinh Dịch – Đạo của người quân tử (The Book of Changes: The Way of the Noble Person)",
         "url": "https://scholar.google.com/",
-        "sourceType": "Vietnamese Philosophical Commentary (TYPE B)",
+        "sourceType": "Vietnamese Philosophical Commentary",
         "verificationNote": "Authoritative Vietnamese-language philosophical exposition separating rational Yijing thought from superstition."
       }
     ],
@@ -9232,7 +9232,7 @@ window.CCE_ARTICLES_EN = {
         "date": "c. 91 BCE",
         "title": "Records of the Grand Historian: Treatise on the Celestial Offices (Shiji · Tianguan Shu / 史记·天官书)",
         "url": "https://ctext.org/shiji/tian-guan-shu",
-        "sourceType": "Official Dynastic History & Ancient Astronomy (TYPE A)",
+        "sourceType": "Official Dynastic History & Ancient Astronomy",
         "verificationNote": "Foundational canonical text on the Purple Palace Enclosure (Ziwei Yuan), Three Enclosures, and Twenty-Eight Lunar Mansions."
       },
       {
@@ -9240,7 +9240,7 @@ window.CCE_ARTICLES_EN = {
         "date": "c. 1550 (Jiajing reign, Ming dynasty)",
         "title": "Complete Compendium of Zi Wei Dou Shu (Ziwei Doushu Quanshu / 紫微斗数全书)",
         "url": "https://ctext.org/",
-        "sourceType": "Ming-Era Classical Treatise (TYPE B)",
+        "sourceType": "Ming-Era Classical Treatise",
         "verificationNote": "Earliest surviving complete printed compendium of the Zi Wei Dou Shu system."
       }
     ],

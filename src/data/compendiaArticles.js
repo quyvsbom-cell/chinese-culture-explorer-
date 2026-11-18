@@ -28,7 +28,7 @@ window.CCE_COMPENDIA_ARTICLES = [
       "Trong 10 tháng đầu năm 2026, kim ngạch tiếp tục bứt phá lên 289,98 tỷ USD (+38,20% YoY), trong đó tương quan chuỗi cung ứng điện tử – bán dẫn đạt r = 0,984 (R² = 0,968)."
     ],
     introduction:
-      "Trong nghiên cứu kinh tế đối ngoại Việt – Trung, một trong những sai lầm phổ biến nhất của giới phân tích là sử dụng số liệu đơn phương mà không đối chiếu sự khác biệt hệ thống giữa Tổng cục Hải quan Việt Nam và Tổng cục Hải quan Trung Quốc (GACC). Chuyên khảo VN-CN-TRD-2026-Q4 chứng minh rằng khoảng cách thống kê 39,66 tỷ USD năm 2025 không phải sai sót kế toán mà là hệ quả cấu trúc của chuỗi cung ứng trung chuyển qua Hong Kong.",
+      "Trong nghiên cứu kinh tế đối ngoại Việt – Trung, giới phân tích thường dễ vướng sai số nếu chỉ dùng thống kê đơn phương mà bỏ qua khác biệt phương pháp luận giữa Hải quan Việt Nam và Tổng cục Hải quan Trung Quốc (GACC). Chuyên khảo VN-CN-TRD-2026-Q4 chứng minh khoản chênh lệch 39,66 tỷ USD năm 2025 không phải nhầm lẫn kế toán, mà bắt nguồn từ cấu trúc chuỗi cung ứng trung chuyển qua Hong Kong.",
     historicalBackground:
       "Từ sau khi Trung Quốc gia nhập WTO (2001) và ACFTA có hiệu lực (2010), kim ngạch song phương tăng từ mức vài tỷ USD lên hơn 256 tỷ USD (2025). Khi chuỗi cung ứng điện tử (Samsung, Foxconn, Luxshare, Goertek) dịch chuyển mạnh vào Bắc Ninh, Bắc Giang, Hải Phòng, luồng linh kiện bán dẫn và mô-đun màn hình đi qua cảng trung chuyển Hong Kong – Thâm Quyến tạo ra độ vênh thống kê 'nước xuất xứ' (Country of Origin) vs. 'nước giao hàng' (Country of Consignment).",
     mainContent: [
@@ -239,7 +239,7 @@ window.CCE_COMPENDIA_ARTICLES = [
         date: "2024–2026",
         title: "Danh lục Trung Hoa Lão Tự Hiệu Quốc gia (中华老字号信息管理)",
         url: "https://zhlzh.mofcom.gov.cn/",
-        sourceType: "Cổng thông tin Chính phủ Trung Quốc (TYPE C)",
+        sourceType: "Cổng thông tin Chính phủ Trung Quốc",
         verificationNote: "Tra cứu chính thức trạng thái chứng nhận 1.455 thương hiệu Lão Tự Hiệu."
       }
     ]
@@ -298,7 +298,7 @@ window.CCE_COMPENDIA_ARTICLES = [
         date: "2026",
         title: "Hướng dẫn Lưu trú & Xuất nhập cảnh cho Người nước ngoài tại Trung Quốc",
         url: "https://en.nia.gov.cn/",
-        sourceType: "Cơ quan Quản lý Nhà nước (TYPE C)",
+        sourceType: "Cơ quan Quản lý Nhà nước",
         verificationNote: "Quy định chính thức về khai báo tạm trú 24h và chính sách cửa khẩu."
       }
     ]
@@ -327,7 +327,7 @@ window.CCE_COMPENDIA_ARTICLES = [
       "Ruộng bậc thang Long Tích (龙脊梯田) do người Tráng và người Dao Đỏ kiến tạo liên tục từ thời Nguyên – Minh suốt hơn 650 năm."
     ],
     introduction:
-      "Câu ngạn ngữ 'Quế Lâm sơn thủy giáp thiên hạ, Dương Sóc sơn thủy giáp Quế Lâm' (桂林山水甲天下，阳朔山水甲桂林) không chỉ ca ngợi vẻ đẹp thủy mặc tự nhiên, mà còn phản ánh một khu vực giao thoa lịch sử đặc biệt giữa văn minh Hoa Hạ (kênh đào Linh Cừ thời Tần) và các tộc người Bách Việt cổ (người Tráng, người Dao).",
+      "Câu ngạn ngữ 'Quế Lâm sơn thủy giáp thiên hạ, Dương Sóc sơn thủy giáp Quế Lâm' (桂林山水甲天下，阳朔山水甲桂林) ca ngợi vẻ đẹp thủy mặc tự nhiên, đồng thời ghi dấu vùng giao thoa lịch sử đặc biệt giữa văn minh Hoa Hạ (kênh đào Linh Cừ thời Tần) và các tộc người Bách Việt cổ như người Tráng, người Dao.",
     historicalBackground:
       "Năm 214 TCN, Tần Thủy Hoàng cho đào kênh Linh Cừ (灵渠) tại Hưng An (Quế Lâm) nối liền sông Tương (lưu vực Trường Giang) với sông Ly (lưu vực Châu Giang), tạo thành tuyến đường thủy chiến lược mở mang Lĩnh Nam. Đến thời Minh, Tĩnh Giang Vương Thành trở thành trung tâm hành chính – học thuật quan trọng bậc nhất vùng Tây Nam.",
     mainContent: [
@@ -359,7 +359,7 @@ window.CCE_COMPENDIA_ARTICLES = [
         date: "2014 / Updated 2026",
         title: "South China Karst (Guilin Karst Component)",
         url: "https://whc.unesco.org/en/list/1248/",
-        sourceType: "Di sản Thế giới UNESCO (TYPE C)",
+        sourceType: "Di sản Thế giới UNESCO",
         verificationNote: "Hồ sơ công nhận giá trị địa chất Karst toàn cầu của Quế Lâm."
       }
     ]
@@ -418,7 +418,7 @@ window.CCE_COMPENDIA_ARTICLES = [
         date: "20/08/2026",
         title: "Thông báo Mở rộng Chính sách Quá cảnh Miễn thị thực 240 Giờ tại 65 Cửa khẩu",
         url: "https://en.nia.gov.cn/",
-        sourceType: "Văn bản Chính sách Xuất nhập cảnh (TYPE C)",
+        sourceType: "Văn bản Chính sách Xuất nhập cảnh",
         verificationNote: "Cập nhật chính thức tháng 8–10/2026 trong hồ sơ GUILIN-TRV-2026-10."
       }
     ]
@@ -599,7 +599,7 @@ window.CCE_COMPENDIA_ARTICLES = [
         date: "2023–2026",
         title: "Biện pháp Tạm thời Quản lý Dịch vụ Trí tuệ Nhân tạo Tạo sinh & Chuỗi Bán dẫn AI Trung Quốc",
         url: "https://www.cac.gov.cn/",
-        sourceType: "Văn bản Pháp quy Chính thức (TYPE C)",
+        sourceType: "Văn bản Pháp quy Chính thức",
         verificationNote: "Tổng hợp từ Chương 3–6 của Chuyên khảo CN-AI-REV-2026-Q4."
       }
     ]
@@ -616,9 +616,9 @@ window.CCE_COMPENDIA_ARTICLES = [
     readMinutes: 8,
     epistemicTag: "Quản trị Doanh nghiệp • Tuân thủ Pháp lý VN",
     heroImage: {
-      src: "assets/images/editorial/infographic-contemporary-digital.svg",
-      caption: "Ứng dụng mô hình AI mã nguồn mở triển khai nội bộ (On-premise) giúp doanh nghiệp Việt Nam tối ưu chi phí và bảo vệ chủ quyền dữ liệu.",
-      credit: "CN-AI-REV-2026-Q4 Vietnam Playbook"
+      src: "assets/images/articles/hero-vietnam-ai-decree13.jpg",
+      caption: "Triển khai mô hình AI mã nguồn mở trên hạ tầng nội bộ (On-premise) giúp doanh nghiệp Việt Nam tối ưu chi phí và bảo đảm tuân thủ dữ liệu theo Nghị định 13/2023/NĐ-CP.",
+      credit: "Chinese Culture Explorer Editorial Photography Archive"
     },
     keyTakeaways: [
       "Doanh nghiệp Việt Nam KHÔNG nên gửi dữ liệu nhạy cảm khách hàng lên API đám mây công cộng nước ngoài vì rủi ro lộ bí mật thương mại và vi phạm quy định chuyển dữ liệu xuyên biên giới.",
@@ -626,7 +626,7 @@ window.CCE_COMPENDIA_ARTICLES = [
       "Mọi hoạt động xử lý dữ liệu cá nhân bằng AI tại Việt Nam phải tuân thủ nghiêm ngặt Nghị định 13/2023/NĐ-CP (Hồ sơ đánh giá tác động xử lý dữ liệu cá nhân & sự đồng ý của chủ thể dữ liệu)."
     ],
     introduction:
-      "Sự trỗi dậy của các mô hình AI mã nguồn mở chất lượng cao nhưng chi phí thấp từ Trung Quốc (Qwen, DeepSeek) mở ra cơ hội lớn cho doanh nghiệp vừa và nhỏ Việt Nam. Tuy nhiên, việc triển khai thiếu kiểm soát qua API đám mây xuyên biên giới tiềm ẩn rủi ro pháp lý nghiêm trọng.",
+      "Sự trỗi dậy của các mô hình AI mã nguồn mở chi phí thấp từ Trung Quốc (Qwen, DeepSeek) mở ra cơ hội lớn cho doanh nghiệp vừa và nhỏ Việt Nam. Tuy vậy, việc truyền dữ liệu trực tiếp qua các cổng API đám mây xuyên biên giới mà thiếu rào chắn kiểm soát lại kéo theo nhiều rủi ro pháp lý nghiêm trọng.",
     historicalBackground:
       "Từ ngày 01/07/2023, Nghị định 13/2023/NĐ-CP về Bảo vệ dữ liệu cá nhân của Chính phủ Việt Nam chính thức có hiệu lực, đặt ra yêu cầu chặt chẽ đối với việc chuyển dữ liệu cá nhân công dân Việt Nam ra nước ngoài và đánh giá tác động xử lý dữ liệu.",
     mainContent: [
@@ -658,7 +658,7 @@ window.CCE_COMPENDIA_ARTICLES = [
         date: "2023 / Updated 2026",
         title: "Nghị định 13/2023/NĐ-CP về Bảo vệ dữ liệu cá nhân & Khung triển khai AI Doanh nghiệp",
         url: "https://vanban.chinhphu.vn/",
-        sourceType: "Văn bản Pháp luật Việt Nam (TYPE C)",
+        sourceType: "Văn bản Pháp luật Việt Nam",
         verificationNote: "Khung tuân thủ bắt buộc đối với doanh nghiệp xử lý dữ liệu bằng AI tại Việt Nam."
       }
     ]
@@ -778,7 +778,7 @@ window.CCE_COMPENDIA_ARTICLES = [
         date: "2026",
         title: "Hệ thống Công khai Thông tin Tín dụng Doanh nghiệp Quốc gia (NECIPS)",
         url: "https://www.gsxt.gov.cn/",
-        sourceType: "Cơ sở Dữ liệu Pháp nhân Chính thức (TYPE C)",
+        sourceType: "Cơ sở Dữ liệu Pháp nhân Chính thức",
         verificationNote: "Cổng tra cứu pháp nhân doanh nghiệp Trung Quốc bắt buộc trong thẩm định B2B."
       }
     ]
@@ -1020,7 +1020,7 @@ window.CCE_COMPENDIA_ARTICLES = [
         date: "2026",
         title: "Phân cấp Hành chính Cộng hòa Nhân dân Trung Hoa & Giáo trình Địa lý Đô thị",
         url: "https://xzqh.mca.gov.cn/",
-        sourceType: "Dữ liệu Hành chính Quốc gia (TYPE C)",
+        sourceType: "Dữ liệu Hành chính Quốc gia",
         verificationNote: "Đối chiếu đầy đủ trong tab Danh bạ 34 Tỉnh (#regions)."
       }
     ]
