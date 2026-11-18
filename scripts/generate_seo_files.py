@@ -15,6 +15,8 @@ from __future__ import annotations
 import html
 import pathlib
 import re
+import shutil
+import struct
 import sys
 from datetime import date
 
@@ -469,12 +471,52 @@ def parse_artifacts() -> list[dict[str, str]]:
     return results
 
 
+def get_image_info(rel_path: str) -> tuple[int, int, str]:
+    """Read pixel width, height, and MIME type from JPEG/PNG/WebP headers cleanly."""
+    p = pathlib.Path(rel_path.strip().lstrip("/"))
+    ext = p.suffix.lower()
+    mime = "image/webp" if ext == ".webp" else ("image/png" if ext == ".png" else "image/jpeg")
+    if not p.is_file():
+        return (1200, 780, mime)
+    try:
+        data = p.read_bytes()
+        if ext == ".png" and len(data) >= 24 and data[:8] == b"\x89PNG\r\n\x1a\n":
+            w, h = struct.unpack(">II", data[16:24])
+            return (w, h, mime)
+        if ext in (".jpg", ".jpeg") and len(data) > 4 and data[:2] == b"\xff\xd8":
+            i = 2
+            while i < len(data) - 9:
+                if data[i] != 0xFF:
+                    i += 1
+                    continue
+                marker = data[i + 1]
+                if marker in (0xC0, 0xC1, 0xC2, 0xC3):
+                    h, w = struct.unpack(">HH", data[i + 5 : i + 9])
+                    return (w, h, mime)
+                if marker in (0xD8, 0xD9, 0x01) or (0xD0 <= marker <= 0xD7):
+                    i += 2
+                else:
+                    seg_len = struct.unpack(">H", data[i + 2 : i + 4])[0]
+                    i += 2 + seg_len
+        if ext == ".webp" and len(data) >= 30 and data[:4] == b"RIFF" and data[8:12] == b"WEBP":
+            chunk = data[12:16]
+            if chunk == b"VP8X":
+                w = 1 + int.from_bytes(data[24:27], "little")
+                h = 1 + int.from_bytes(data[27:30], "little")
+                return (w, h, mime)
+    except Exception:
+        pass
+    return (1200, 780, mime)
+
+
 def render_route_html(
     template: str, route_path: str, title: str, description: str, rel_image: str
 ) -> str:
     clean_route = "/" if route_path == "/" else "/" + route_path.strip("/")
     page_url = f"{BASE_URL}{clean_route}"
     img_url = f"{BASE_URL}/{rel_image.strip().lstrip('/')}"
+    w, h, mime = get_image_info(rel_image)
+    og_type = "article" if clean_route.startswith("/chuyen-luan/") else "website"
 
     e_title = html.escape(title, quote=True)
     e_desc = html.escape(description, quote=True)
@@ -514,8 +556,44 @@ def render_route_html(
         count=1,
     )
     out = re.sub(
+        r'<meta\s+property="og:type"\s+content="[^"]*"\s*/?>',
+        f'<meta property="og:type" content="{og_type}" />',
+        out,
+        count=1,
+    )
+    out = re.sub(
         r'<meta\s+property="og:image"\s+content="[^"]*"\s*/?>',
         f'<meta property="og:image" content="{e_img}" />',
+        out,
+        count=1,
+    )
+    out = re.sub(
+        r'<meta\s+property="og:image:secure_url"\s+content="[^"]*"\s*/?>',
+        f'<meta property="og:image:secure_url" content="{e_img}" />',
+        out,
+        count=1,
+    )
+    out = re.sub(
+        r'<meta\s+property="og:image:type"\s+content="[^"]*"\s*/?>',
+        f'<meta property="og:image:type" content="{mime}" />',
+        out,
+        count=1,
+    )
+    out = re.sub(
+        r'<meta\s+property="og:image:width"\s+content="[^"]*"\s*/?>',
+        f'<meta property="og:image:width" content="{w}" />',
+        out,
+        count=1,
+    )
+    out = re.sub(
+        r'<meta\s+property="og:image:height"\s+content="[^"]*"\s*/?>',
+        f'<meta property="og:image:height" content="{h}" />',
+        out,
+        count=1,
+    )
+    out = re.sub(
+        r'<meta\s+property="og:image:alt"\s+content="[^"]*"\s*/?>',
+        f'<meta property="og:image:alt" content="{e_title}" />',
         out,
         count=1,
     )
@@ -561,7 +639,25 @@ def main() -> None:
         sec_img = img if is_raster_exists(img) else DEFAULT_RASTER_OG
         active_sections.append((path, title, desc, sec_img, prio, freq))
 
-    # Collect routes for sitemap & static HTML generation
+    # Remove legacy root-level route directories so Netlify serves flat rewrites at HTTP 200 without 301 trailing-slash redirects
+    legacy_root_dirs = [
+        "chuyen-luan", "tinh-thanh", "quoc-hoa", "bao-tang",
+        "explore", "kham-pha", "lich-su", "triet-hoc", "van-hoa",
+        "trung-viet", "kinh-doanh", "thu-vien", "hoc-tap", "gioi-thieu",
+        "phap-ly", "van-hien-bao-tang", "goc-nhin-so-tu",
+        "hai-quan-chinh-sach", "logistics", "nghe-nghiep-du-hoc",
+    ]
+    for dname in legacy_root_dirs:
+        dp = pathlib.Path(dname)
+        if dp.is_dir():
+            shutil.rmtree(dp, ignore_errors=True)
+
+    seo_root = pathlib.Path("seo_pages")
+    if seo_root.is_dir():
+        shutil.rmtree(seo_root, ignore_errors=True)
+    seo_root.mkdir(parents=True, exist_ok=True)
+
+    # Collect routes for sitemap & flat static HTML generation under seo_pages/
     sitemap_urls: list[tuple[str, str, str]] = []
     static_shells_written = 0
 
@@ -569,9 +665,9 @@ def main() -> None:
         sitemap_urls.append((path, freq, prio))
         if path == "/":
             continue
-        target_dir = pathlib.Path(path.lstrip("/"))
-        target_dir.mkdir(parents=True, exist_ok=True)
-        (target_dir / "index.html").write_text(
+        target_file = seo_root / f"{path.lstrip('/')}.html"
+        target_file.parent.mkdir(parents=True, exist_ok=True)
+        target_file.write_text(
             render_route_html(template_html, path, title, desc, sec_img),
             encoding="utf-8",
         )
@@ -587,9 +683,9 @@ def main() -> None:
         for item in items:
             rpath = f"/{prefix}/{item['id']}"
             sitemap_urls.append((rpath, freq, prio))
-            target_dir = pathlib.Path(prefix) / item["id"]
-            target_dir.mkdir(parents=True, exist_ok=True)
-            (target_dir / "index.html").write_text(
+            target_file = seo_root / prefix / f"{item['id']}.html"
+            target_file.parent.mkdir(parents=True, exist_ok=True)
+            target_file.write_text(
                 render_route_html(
                     template_html,
                     rpath,

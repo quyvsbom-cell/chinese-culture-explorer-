@@ -37,6 +37,7 @@
       dateEstimate: "Thế kỷ XII–XIII (Lò Quan Tu Nội Ty & Giao Đàn Hạ tại Hàng Châu)",
       material: "Xương gốm đen giàu sắt ('Hắc thai') tráng men ngọc dày nhiều lớp ('Tử khẩu thiết túc')",
       dimensions: "Cao 23,5 cm × Đường kính đáy 9,8 cm",
+      imageUrl: "assets/images/museum/quan-yao-vase.jpg",
       origin: "Hàng Châu (Lâm An), tỉnh Chiết Giang — Ngự lò dành riêng cho hoàng cung Nam Tống",
       collection: "Bảo tàng Cố Cung Quốc lập Đài Bắc & Bảo tàng Cố Cung Bắc Kinh",
       culturalSignificance:
@@ -64,6 +65,7 @@
       dateEstimate: "Thế kỷ XII–XIV (Truyền thuyết Long Tuyền Chương Sinh Nhất Diêu)",
       material: "Gốm men tro vàng xám hai tầng rạn kép nhuộm mực và trà",
       dimensions: "Cao 16,8 cm × Rộng vai 13,2 cm",
+      imageUrl: "assets/images/museum/ge-yao-incense-burner.jpg",
       origin: "Vùng Long Tuyền (Chiết Giang) / Lò truyền thế hoàng cung",
       collection: "Bảo tàng Cố Cung Bắc Kinh (故宫博物院)",
       culturalSignificance:
@@ -91,6 +93,7 @@
       dateEstimate: "Thế kỷ XI–XII",
       material: "Sứ trắng ngà nung úp ngược ('Phúc thiêu pháp') bọc viền miệng đồng ('Mang khẩu')",
       dimensions: "Cao 7,2 cm × Đường kính miệng 21,6 cm",
+      imageUrl: "assets/images/museum/ding-yao-bowl.jpg",
       origin: "Khúc Dương (Khu vực Định Châu), tỉnh Hà Bắc",
       collection: "Bảo tàng Cố Cung Bắc Kinh & Victoria and Albert Museum",
       culturalSignificance:
@@ -118,6 +121,7 @@
       dateEstimate: "Thế kỷ XII",
       material: "Men khoáng đồng tự biến sắc trong lửa ('Diêu biến' 窑变) sắc tím hoa hồng – lam thiên thanh",
       dimensions: "Cao 14,5 cm × Miệng cánh hoa lăng rộng 25,8 cm",
+      imageUrl: "assets/images/museum/jun-yao-bowl.jpg",
       origin: "Vũ Châu (Quân Đài), tỉnh Hà Nam",
       collection: "Bảo tàng Cố Cung Đài Bắc & Đại học London Percival David",
       culturalSignificance:
@@ -145,6 +149,7 @@
       dateEstimate: "Khoảng 1200–1046 TCN (Khai quật tại Ninh Hương, Hồ Nam năm 1938)",
       material: "Hợp kim đồng – thiếc – chì đúc khuôn ghép khối liền công nghệ cực cao",
       dimensions: "Cao 58,3 cm × Miệng rộng 52,4 cm × Trọng lượng 34,5 kg",
+      imageUrl: "assets/images/museum/siyang-fangzun.jpg",
       origin: "Khai quật tại Hoàng Tài (Ninh Hương, Hồ Nam) — giao thoa văn hóa Thương Trung Nguyên với lưu vực Trường Giang",
       collection: "Bảo tàng Quốc gia Trung Quốc (Bắc Kinh)",
       culturalSignificance:
@@ -172,6 +177,7 @@
       dateEstimate: "Năm 113 TCN (Khai quật tại lăng mộ vách núi Mãn Thành, Hà Bắc năm 1968)",
       material: "2.498 miếng ngọc Hòa Điền mài phẳng đục 4 lỗ góc, khâu bằng ~1.100 gam chỉ vàng ròng",
       dimensions: "Dài 188 cm — chia 5 khối giáp phủ kín đầu, áo, tay áo, quần và giày",
+      imageUrl: "assets/images/museum/jinlv-yuyi.jpg",
       origin: "Mãn Thành (Hà Bắc) — Lăng mộ Lưu Thắng (anh trai Hán Vũ Đế)",
       collection: "Bảo tàng Tỉnh Hà Bắc (Thạch Gia Trang)",
       culturalSignificance:
@@ -199,6 +205,7 @@
       dateEstimate: "Cuối thế kỷ III – đầu IV SCN (Hơn 1.700 năm tuổi)",
       material: "Mực nho trên giấy gai thô thời Tây Tấn ('Ma chỉ'), 9 dòng gồm 84 chữ Chương Thảo",
       dimensions: "Cao 23,7 cm × Dài 20,6 cm",
+      imageUrl: "assets/images/museum/pingfu-tie.jpg",
       origin: "Bức thư thăm hỏi sức khỏe bạn bè viết bằng ngòi bút cọ tù (Ngưu vĩ bút / Trúc bút sơ khai) của nhà văn Lục Cơ",
       collection: "Bảo tàng Cố Cung Bắc Kinh (Khởi công phục chế & trưng bày hiếm)",
       culturalSignificance:
@@ -226,6 +233,7 @@
       dateEstimate: "Nguyên bản Thế kỷ IV SCN / Bản trúc chỉ mô phỏng Thế kỷ XI",
       material: "Mực đậm trên giấy trúc Giang Nam, 3 dòng ngắn 22 chữ Hành–Thảo 'Nhất bút thư'",
       dimensions: "Cao 27 cm × Dài 11,9 cm (kèm quyển bồi bạt dài hơn 3 mét)",
+      imageUrl: "assets/images/museum/zhongqiu-tie.jpg",
       origin: "Vương Hiến Chi (con trai 'Thư Thánh' Vương Hy Chi), được Hoàng đế Càn Long đưa vào Tam Hy Đường Tử Cấm Thành năm 1746",
       collection: "Bảo tàng Cố Cung Bắc Kinh (Thủ đô Bắc Kinh)",
       culturalSignificance:
@@ -253,6 +261,7 @@
       dateEstimate: "Cuối thế kỷ IV SCN",
       material: "Mực nho trên giấy Tuyên cổ thời Tấn, 5 dòng 47 chữ Hành thư thanh tú tự nhiên",
       dimensions: "Cao 25,1 cm × Dài 17,2 cm",
+      imageUrl: "assets/images/museum/boyuan-tie.jpg",
       origin: "Vương Tuân (cháu họ Vương Hy Chi) gửi thăm hỏi thân thích Bá Viễn",
       collection: "Bảo tàng Cố Cung Bắc Kinh",
       culturalSignificance:
@@ -280,6 +289,7 @@
       dateEstimate: "Thời Chu Hiếu Vương (~890 TCN, khai quật năm 1890 tại Phù Phong, Thiểm Tây)",
       material: "Đồng thanh đúc nguyên khối hoa văn gợn sóng ('Ba khúc văn' & 'Thiết khúc văn')",
       dimensions: "Cao 93,1 cm × Đường kính miệng 75,6 cm × Trọng lượng 201,5 kg",
+      imageUrl: "assets/images/museum/daxiguan-ding.jpg",
       origin: "Bảo Kê / Phù Phong (Thiểm Tây) — của đại thần Thiện phu Khắc dâng tế tổ phụ Sư Hoa Phủ",
       collection: "Bảo tàng Thượng Hải (Thủ kho 'Tam Đại Đỉnh' cùng Mao Công Đỉnh)",
       culturalSignificance:
@@ -307,6 +317,7 @@
       dateEstimate: "Thời Càn Long (~1750–1780)",
       material: "Đá tía tự nhiên khe Đoan Khê Lão Khanh (Triệu Khánh, Quảng Đông) kèm chấm mắt chim công ('Thạch nhãn')",
       dimensions: "Dài 24,2 cm × Rộng 16,4 cm × Dày 3,2 cm",
+      imageUrl: "assets/images/museum/zhaoqing-duanyan-inkstone.jpg",
       origin: "Mỏ đá Lão Khanh dưới đáy sông Tây Giang (Triệu Khánh)",
       collection: "Bảo tàng Cố Cung & Bảo tàng Tỉnh Quảng Đông",
       culturalSignificance:
@@ -334,6 +345,7 @@
       dateEstimate: "Năm 756 SCN (Chế tác tại Thành Đô bởi danh tượng Lôi Uy đời Đường Túc Tông)",
       material: "Mặt gỗ ngô đồng cổ sơn mài đen pha sừng hươu – bột vàng ('Bát bảo khôi') rạn vết vỏ mai rùa ('Xà phúc đoạn văn')",
       dimensions: "Dài 124 cm × Rộng vai 21,8 cm — 7 dây, 13 nút huy ốc xà cừ",
+      imageUrl: "assets/images/museum/guqin-jiuxiao-huanpei.jpg",
       origin: "Xưởng đàn gia tộc Lôi Thị tại đất Thục (Tứ Xuyên)",
       collection: "Bảo tàng Cố Cung Bắc Kinh (Đứng đầu Tứ đại Danh cầm Trung Hoa)",
       culturalSignificance:

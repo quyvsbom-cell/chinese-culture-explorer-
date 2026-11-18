@@ -455,6 +455,21 @@ window.CCE_STORE = (function () {
         s.activeJourneyId = demo.activeJourneyId;
         s.journeyStepMap = demo.journeyStepMap;
       });
+    },
+    importPassportSnapshot(payload) {
+      if (!payload || typeof payload !== "object") return false;
+      const src = payload.storeState && typeof payload.storeState === "object" ? payload.storeState : payload;
+      update((s) => {
+        const arrayKeys = ["bookmarks", "completedArticles", "collectedVocab", "customFlashcards", "notes", "highlights", "readingHistory", "quizResults", "flashcardMastered", "vocabNotebook", "pausedJourneys"];
+        arrayKeys.forEach((k) => {
+          if (Array.isArray(src[k])) s[k] = src[k];
+        });
+        if (src.journeyStepMap && typeof src.journeyStepMap === "object") s.journeyStepMap = src.journeyStepMap;
+      });
+      if (payload.quizArenaBest != null) {
+        try { localStorage.setItem("cce_quiz_arena_best", String(payload.quizArenaBest)); } catch (_e) {}
+      }
+      return true;
     }
   };
 })();

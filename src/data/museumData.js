@@ -653,6 +653,7 @@ window.CCE_MUSEUM = {
       dateEstimate: "Thế kỷ II SCN (khai quật tháng 10 năm 1969)",
       material: "Đồng thanh đúc nguyên khối rỗng bên trong",
       dimensions: "Cao 34,5 cm × Dài 45 cm × Rộng 13 cm (Nặng 7,15 kg)",
+      imageUrl: "assets/images/museum/ma-dap-phi-yen.jpg",
       origin: "Khai quật tại Mộ Hán Lôi Đài (雷台汉墓), Võ Uy (武威), Hành lang Hà Tây, tỉnh Cam Túc",
       culturalSignificance:
         "Được chọn làm biểu tượng Du lịch Trung Quốc (中国旅游标志) nhờ kỳ tích cân bằng động lực học: toàn bộ trọng lượng 7,15 kg của chiến mã đang phi nước đại chỉ dồn trên một móng sau bên phải giẫm nhẹ lên lưng chim én đang sải cánh bay!",
@@ -677,6 +678,7 @@ window.CCE_MUSEUM = {
       dateEstimate: "Thế kỷ IX TCN (đào thấy cuối thời Đạo Quang, ~1843 tại Kỳ Sơn, Thiểm Tây)",
       material: "Đồng thanh ba chân hai tai thẳng đứng, hoa văn hoàn đới và trọng hoàn",
       dimensions: "Cao 53,8 cm × Đường kính miệng 47,9 cm (Nặng 34,7 kg)",
+      imageUrl: "assets/images/museum/mao-gong-ding.jpg",
       origin: "Kỳ Sơn, Bảo Kê, tỉnh Thiểm Tây (trung tâm đất Chu cổ)",
       culturalSignificance:
         "Trong lòng đỉnh đúc **497 chữ Kim văn (金文)** chia làm 32 dòng — bài minh văn thanh đồng dài nhất còn tồn tại từ thời Tây Chu, tương đương một thiên trong sách 《Thượng Thư》 chép nguyên văn sách mệnh của Chu Tuyên Vương phong thưởng cho thúc phụ Mao Công Âm.",
@@ -701,6 +703,7 @@ window.CCE_MUSEUM = {
       dateEstimate: "Cuối Bắc Tống (lò quan Bảo Phong, Thanh Lương Tự, Hà Nam hoạt động chưa đầy 20 năm)",
       material: "Đất sét xám hương tro mỏng tráng men ngọc pha bột mã não (玛瑙入釉)",
       dimensions: "Cao 3,4 cm × Đường kính miệng 18,5 cm (đáy có 3–5 vết đinh vừng 'Chi ma đinh')",
+      imageUrl: "assets/images/museum/ru-yao-tianqing.jpg",
       origin: "Nhữ Châu / Bảo Phong, tỉnh Hà Nam — đứng đầu Ngũ Đại Danh Diêu (Nhữ – Quan – Ca – Quân – Định)",
       culturalSignificance:
         "Đạt tới lý tưởng thẩm mỹ tối giản Đạo gia của Tống Huy Tông với sắc men 'Vũ quá thiên thanh vân phá xứ' (màu trời xanh trong sau cơn mưa tan mây), bề mặt rạn băng tinh tế như cánh ve (Tiền văn khai phiến).",
