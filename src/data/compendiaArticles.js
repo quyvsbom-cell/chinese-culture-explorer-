@@ -470,12 +470,12 @@ window.CCE_COMPENDIA_ARTICLES = [
     terminologyIds: ["fapiao", "chadao"],
     examples: [
       "Mẹo giao tiếp: Khi thanh toán tại quầy tạp hóa nhỏ bằng Alipay, chỉ cần hỏi 'Wǒ sǎo nǐ?' (Tôi quét mã của anh nhé?) rồi giơ máy ảnh quét mã QR in sẵn trên quầy.",
-      "Truy cập Tab Flashcard trong mục Học tập (#learning) để ôn tập toàn bộ bộ từ vựng HSK & Thực địa kèm xuất file Anki CSV."
+      "Truy cập Sổ tay Từ vựng & Ghi chú Chuyên luận trong mục Học tập (#learning) để lưu cụm từ thực địa kèm xuất file CSV/TSV."
     ],
-    relatedTopics: ["Tiếng Phổ Thông", "Alipay & WeChat", "Ẩm thực Trung Hoa", "Anki Flashcards"],
+    relatedTopics: ["Tiếng Phổ Thông", "Alipay & WeChat", "Ẩm thực Trung Hoa", "Sổ tay Từ vựng"],
     references: [
       {
-        author: "Ban Biên tập Chinese Culture Explorer",
+        author: "Lê Hưng Thịnh (黎兴盛) — CHINESE CULTURE EXPLORER",
         date: "2026",
         title: "Sổ tay Cụm từ Tiếng Trung Du lịch & Giao thương Thực chiến (ZH-VI-PHRASE-2026)",
         url: "https://www.hanban.org/",
@@ -1075,7 +1075,7 @@ window.CCE_COMPENDIA_ARTICLES = [
     relatedTopics: ["Thể diện Mianzi", "Lễ nghi Nho gia", "Rượu Bạch tửu", "Giao tiếp Công sở"],
     references: [
       {
-        author: "Ban Biên tập Chinese Culture Explorer",
+        author: "Lê Hưng Thịnh (黎兴盛) — CHINESE CULTURE EXPLORER",
         date: "2026",
         title: "CHINA UNLOCKED: Cultural Etiquette, Banquet Protocols & Gift Taboos (Module 8–10)",
         url: "https://ctext.org/liji",

@@ -201,7 +201,7 @@
       titleEn: "China UNESCO Intangible Cultural Heritage: Kunqu, Peking Opera, Guqin & Shadow Puppetry",
       originalSource: "Chinese Culture Explorer ICH Heritage Photography Archive",
       sourceUrl: "https://ich.unesco.org/en/state/china-CN",
-      creator: "Ban Biên tập Di sản Phi vật thể & Sân khấu Cổ điển CCE",
+      creator: "Lê Hưng Thịnh (黎兴盛) — CHINESE CULTURE EXPLORER",
       institution: "Chinese Culture Explorer Performing Arts Archive",
       copyrightHolder: "CCE Educational Heritage Archive",
       license: "Open Educational Archive",

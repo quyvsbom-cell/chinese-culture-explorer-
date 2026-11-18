@@ -38,6 +38,30 @@
       ctaZh: "阅读创始人寄语全文 →"
     },
 
+    founderPoem: {
+      titleVi: "Tứ tuyệt Khai tâm — Ngữ học & Thông thương",
+      titleEn: "Foundational Quatrain — Language & Global Exchange",
+      titleZh: "七言绝句 · 文脉通商",
+      vi: [
+        "Văn hiến ngàn năm mở lối nhìn,",
+        "Hán – Anh – Việt ngữ nối giao thương.",
+        "Trăm năm đại cuộc thông Âu – Á,",
+        "Phá bỏ thiên kiến, vượt đại dương."
+      ],
+      zh: [
+        "千年文献启宏图，",
+        "汉英越语贯商途。",
+        "百载兴邦通欧亚，",
+        "破除偏见越沧溟。"
+      ],
+      en: [
+        "Millennia of heritage widen the lens of sight,",
+        "Chinese, English, and Vietnamese bridge the lanes of trade.",
+        "A century's ascent connects Eurasia's might,",
+        "Beyond narrow prejudice, across the ocean's tide."
+      ]
+    },
+
     officialTagline: "Explore Chinese Civilization. Understand Its Philosophy. Discover Its Culture.",
     officialTaglineLines: [
       "Explore Chinese Civilization.",
@@ -212,8 +236,8 @@
             text: "Từ tư tưởng Bách gia chư tử, quy luật Âm Dương – Ngũ Hành, nhịp cầu giao thoa văn hóa Trung – Việt, cho đến hồ sơ thực địa của 34 tỉnh, thành phố và khu tự trị Trung Hoa — nơi địa lý, lịch sử ngàn năm và thực lực kinh tế đương đại soi chiếu lẫn nhau."
           },
           {
-            title: "Một công cụ tự học ngoại ngữ và khảo cứu thực chiến:",
-            text: "Nơi mỗi khái niệm và từ vựng không chỉ là một nghĩa dịch máy móc, mà được giải phẫu tận gốc theo Lục thư, đối chiếu âm Hán–Việt – Pinyin – Anh ngữ và sẵn sàng xuất ra thẻ Anki để đồng hành cùng bạn trên hành trình rèn luyện ngoại ngữ mỗi ngày."
+            title: "Một sổ tay tự học ngoại ngữ và khảo cứu thực chiến:",
+            text: "Nơi mỗi khái niệm và cụm từ không chỉ là một nghĩa dịch máy móc, mà được giải phẫu tận gốc theo Lục thư, đối chiếu âm Hán–Việt – Pinyin – Anh ngữ, cho phép bạn bôi đen lưu trực tiếp vào Sổ tay Từ vựng & Ghi chú khi đọc chuyên luận và xuất .CSV/.TSV khi cần."
           }
         ],
         closingNote: {
@@ -247,7 +271,7 @@
           },
           {
             title: "A practical companion for language study and research.",
-            text: "Every concept and word is more than a mechanical translation. Each is taken apart at the root through the Six Scripts, set beside its Sino-Vietnamese reading, Pinyin, and English, and ready to export as an Anki card for your daily practice."
+            text: "Every concept and phrase is more than a mechanical translation. Each is broken down through the Six Scripts, set beside its Sino-Vietnamese reading, Pinyin, and English, and lets you highlight and save terms with contextual notes straight into your Vocabulary & Reading Notebook (with .CSV/.TSV export)."
           }
         ],
         closingNote: {
@@ -288,7 +312,7 @@
         title: "Giới thiệu Dự án • What is CHINESE CULTURE EXPLORER?",
         titleZh: "01. 项目简介",
         summary:
-          "CHINESE CULTURE EXPLORER – 中国文化探索 là một nền tảng tri thức văn hóa và học thuật số độc lập do Lê Hưng Thịnh khởi tạo, kết hợp năm cấu phần trong một hệ sinh thái thống nhất: Bảo tàng Số, Bách khoa Văn minh Trung Hoa, Thư viện Tư liệu Đối chiếu, Phòng học Hán ngữ Zero-Pinyin (Anki) và Cầu nối Nghiên cứu Trung – Việt."
+          "CHINESE CULTURE EXPLORER – 中国文化探索 là một nền tảng tri thức văn hóa và học thuật số độc lập do Lê Hưng Thịnh khởi tạo, kết hợp năm cấu phần trong một hệ sinh thái thống nhất: Bảo tàng Số, Bách khoa Văn minh Trung Hoa, Thư viện Tư liệu Đối chiếu, Từ điển Chiết tự Lục thư & Sổ tay Ngữ cảnh, và Cầu nối Nghiên cứu Trung – Việt."
       },
       {
         num: "02",
@@ -323,7 +347,7 @@
         title: "Triết lý Học tập • Learning Philosophy",
         titleZh: "05. 学习方法论",
         points: [
-          { label: "Active Recall & Anki Zero-Pinyin", text: "Mặt trước flashcard chỉ hiện Hán tự trần để kích thích truy xuất trực tiếp âm – nghĩa." },
+          { label: "Active Recall & Chiết tự Trực tiếp", text: "Mặt trước của mỗi mục từ tập trung vào Hán tự trần để kích thích truy xuất trực tiếp âm – nghĩa trước khi xem phiên âm." },
           { label: "Spaced Repetition & Bilingual Bridging", text: "Ghi nhớ dài hạn qua chiết tự bộ thủ Lục thư, âm Hán-Việt và cầu nối Anh–Việt." },
           { label: "Feynman Technique", text: "Hệ thống câu hỏi tự diễn đạt giúp người học tái cấu trúc khái niệm phức tạp bằng ngôn từ riêng." },
           { label: "Comparative Learning & Knowledge Mapping", text: "So sánh liên trường phái, liên vùng và đồ thị liên kết triết học – lịch sử – thương mại." }
@@ -419,7 +443,7 @@
         sections: [
           {
             heading: "1. Mục đích Giáo dục & Nghiên cứu Phi thương mại",
-            body: "Người học, giảng viên và nhà nghiên cứu được phép truy cập, đọc chuyên luận, sử dụng từ điển Zero-Pinyin, xuất bộ thẻ Anki (.CSV/.TSV) và lưu ghi chú cá nhân phục vụ tự học, giảng dạy và nghiên cứu học thuật."
+            body: "Người học, giảng viên và nhà nghiên cứu được phép truy cập, đọc chuyên luận, sử dụng Từ điển Chiết tự Lục thư & Sổ tay Ngữ cảnh, lưu ghi chú cá nhân trực tiếp trên văn bản và xuất từ vựng (.CSV/.TSV) phục vụ tự học, giảng dạy và nghiên cứu học thuật."
           },
           {
             heading: "2. Quy tắc Trích dẫn Tài liệu Gốc của Nền tảng",
@@ -451,7 +475,7 @@
             heading: "1. Kiến trúc Dữ liệu Cục bộ – Không Theo dõi Quảng cáo",
             body: "CHINESE CULTURE EXPLORER vận hành theo nguyên tắc ưu tiên quyền riêng tư tại thiết bị người dùng:",
             bullets: [
-              "Lịch sử đọc bài, từ vựng Anki đã thu thập, kết quả trắc nghiệm Active Recall và Nhật ký học tập được lưu cục bộ trên trình duyệt (localStorage) và/hoặc cơ sở dữ liệu SQLite cục bộ khi chạy máy chủ nội bộ.",
+              "Lịch sử đọc bài, sổ tay từ vựng & ghi chú ngữ cảnh, kết quả trắc nghiệm Active Recall và Nhật ký học tập được lưu cục bộ trên trình duyệt (localStorage) và/hoặc cơ sở dữ liệu SQLite cục bộ khi chạy máy chủ nội bộ.",
               "Nền tảng không cài đặt cookie theo dõi quảng cáo bên thứ ba và không bán dữ liệu hành vi người học."
             ]
           },

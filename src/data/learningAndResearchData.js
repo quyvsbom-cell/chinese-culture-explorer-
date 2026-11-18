@@ -22,8 +22,8 @@ window.CCE_LEARNING_RESEARCH = {
       roleEn: "Language Learner",
       roleVi: "Người Học Hán Ngữ",
       roleZh: "汉语与汉字学习者",
-      tagline: "Học từ vựng chữ Hán qua chiết tự Lục thư, đối chiếu âm Hán–Việt, thẻ lật Zero-Pinyin và ngữ cảnh văn hóa.",
-      startAction: { type: "page", id: "learning", label: "Mở Từ điển Hán Ngữ & Thẻ lật Anki" },
+      tagline: "Học từ vựng chữ Hán qua chiết tự Lục thư, đối chiếu âm Hán–Việt, ghi chú ngữ cảnh trực tiếp trên chuyên luận và xuất sổ tay từ vựng.",
+      startAction: { type: "page", id: "learning", label: "Mở Từ điển Hán Ngữ & Sổ tay Từ vựng" },
       secondaryAction: { type: "article", id: "sino-vietnamese-translation-business", label: "Đọc bài Từ Hán–Việt Đồng hình Dị nghĩa" },
       recommendedIds: ["sino-vietnamese-translation-business", "chinese-calligraphy-seal-aesthetics", "sino-vietnam-history"]
     },
@@ -258,7 +258,7 @@ window.CCE_LEARNING_RESEARCH = {
     {
       id: "q2",
       type: "vocabulary",
-      category: "Từ vựng Zero-Pinyin (Active Recall)",
+      category: "Từ vựng Chiết tự (Active Recall)",
       promptHanzi: "留白",
       question: "Nhìn chữ Hán trên (留白): Nghĩa mỹ học và Pinyin chính xác của thuật ngữ này là gì?",
       options: [
@@ -319,7 +319,7 @@ window.CCE_LEARNING_RESEARCH = {
     {
       id: "q6",
       type: "vocabulary",
-      category: "Từ vựng Kinh doanh Zero-Pinyin",
+      category: "Từ vựng Kinh doanh & Xã hội học",
       promptHanzi: "差序格局",
       question: "Khái niệm xã hội học 差序格局 (Phí Hiếu Thông đề xuất năm 1947) giải thích điều gì?",
       options: [
@@ -358,7 +358,7 @@ window.CCE_LEARNING_RESEARCH = {
     {
       id: "q9",
       type: "hanzi",
-      category: "Hán ngữ Zero-Pinyin & Nông lịch",
+      category: "Hán ngữ Cổ điển & Nông lịch",
       promptHanzi: "二十四节气",
       question: "Nhìn trực diện Hán tự trên (không Pinyin): Khái niệm văn hóa – thiên văn này đo lường chu kỳ nào?",
       options: [
@@ -424,7 +424,7 @@ window.CCE_LEARNING_RESEARCH = {
     {
       id: "q14",
       type: "vocabulary",
-      category: "Hợp đồng Ngoại thương Zero-Pinyin",
+      category: "Hợp đồng Ngoại thương · Chiết tự Pháp lý",
       promptHanzi: "定金 vs 订金",
       question: "Trong hợp đồng mua bán hàng hóa với nhà cung cấp Trung Quốc, sự khác biệt pháp lý cốt lõi giữa 定金 và 订金 là gì?",
       options: [
@@ -455,7 +455,7 @@ window.CCE_LEARNING_RESEARCH = {
     {
       id: "q16",
       type: "vocabulary",
-      category: "Triết học Tâm học Zero-Pinyin",
+      category: "Triết học Tâm học · Chiết tự Kinh điển",
       promptHanzi: "知行合一",
       question: "Mệnh đề triết học 知行合一 do Vương Dương Minh đề xướng thời Minh mang ý nghĩa cốt lõi nào?",
       options: [

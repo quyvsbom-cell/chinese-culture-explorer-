@@ -315,7 +315,7 @@ button {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 160;
+  z-index: 820;
   background: var(--bg-paper);
   border-bottom: 1px solid var(--hairline);
   transition: background-color var(--transition-med);
@@ -1867,7 +1867,7 @@ button {
 }
 
 /* ==========================================================================
-   Elevated Modern Cultural Editorial Article Reader (VnExpress & Smithsonian style)
+   Elevated Modern Cultural Editorial Article Reader (Museum & Smithsonian style)
    ========================================================================== */
 .article-reader-shell {
   padding: 1.5rem 0 3.5rem;
@@ -3681,7 +3681,8 @@ textarea:focus-visible {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 160;
+  z-index: 820;
+  background: var(--bg-paper);
 }
 
 .nav-strip {
@@ -3742,14 +3743,20 @@ textarea:focus-visible {
   left: 0;
   right: 0;
   top: 100%;
-  z-index: 210;
+  z-index: 950;
   isolation: isolate;
   opacity: 1;
-  background: var(--bg-elevated);
+  background: #FFFFFF;
+  color: var(--ink-primary);
   border-top: 1px solid var(--hairline);
   border-bottom: 2px solid var(--ink-primary);
-  box-shadow: 0 22px 48px rgba(15, 16, 18, 0.16);
+  box-shadow: 0 24px 56px rgba(15, 16, 18, 0.24);
   animation: megaFadeIn 0.16s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-theme="dark"] .mega-menu-shell {
+  background: #1A1918;
+  color: #F2EFE9;
 }
 
 @keyframes megaFadeIn {
@@ -5573,22 +5580,28 @@ textarea:focus-visible {
   gap: 0.5rem;
   text-align: left;
   padding: 0.52rem 0.68rem;
-  border-radius: 2px;
-  border: 1px solid var(--hairline-strong, var(--border-subtle));
-  background: var(--bg-surface);
-  color: var(--ink-primary, var(--text-primary));
+  border-radius: 0px;
+  border: 1px solid rgba(242, 239, 233, 0.22);
+  background: #1B1C20;
+  color: #F2EFE9;
   cursor: pointer;
-  transition: border-color 0.15s ease, background 0.15s ease, transform 0.12s ease;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
 }
 
 .hotspot-chip-btn:hover {
-  border-color: var(--accent-cinnabar);
+  border-color: #D7BA81;
+  background: #25272D;
 }
 
 .hotspot-chip-btn.active {
-  border-color: var(--accent-cinnabar);
-  border-left: 3px solid var(--accent-cinnabar);
-  background: var(--bg-accent-soft);
+  border-color: #D7BA81;
+  border-left: 3px solid #D7BA81;
+  background: #9E2A2B;
+  color: #FFFFFF;
+}
+
+.hotspot-chip-btn.active span {
+  color: #FFFFFF !important;
 }
 
 .hotspot-chip-index {
@@ -5596,8 +5609,8 @@ textarea:focus-visible {
   width: 24px;
   height: 24px;
   border-radius: 999px;
-  background: var(--border-subtle);
-  color: var(--ink-primary, var(--text-primary));
+  background: rgba(242, 239, 233, 0.16);
+  color: #F2EFE9;
   font-family: var(--font-sans);
   font-size: 0.74rem;
   font-weight: 800;
@@ -5607,16 +5620,24 @@ textarea:focus-visible {
 }
 
 .hotspot-chip-btn.active .hotspot-chip-index {
-  background: var(--accent-cinnabar);
-  color: #FAF7F2;
+  background: #FFFFFF;
+  color: #7D1F20 !important;
 }
 
 .hotspot-detail-card {
-  background: var(--bg-paper);
-  border: 1px solid var(--hairline-strong, var(--border-strong));
-  border-left: 4px solid var(--accent-cinnabar);
-  border-radius: 2px;
+  background: #FAF7F2;
+  color: #1A1918;
+  border: 1px solid rgba(26, 25, 24, 0.22);
+  border-left: 4px solid #9E2A2B;
+  border-radius: 0px;
   padding: 1.05rem 1.2rem;
+}
+
+[data-theme="dark"] .hotspot-detail-card {
+  background: #1A1918;
+  color: #F2EFE9;
+  border-color: rgba(242, 239, 233, 0.22);
+  border-left: 4px solid #E06C6D;
 }
 
 .hotspot-detail-header {
@@ -7345,4 +7366,412 @@ textarea:focus-visible {
 
 [data-theme="dark"] .google-reader-gate-note a {
   color: #E8D2A0;
+}
+
+
+/* ==========================================================================
+   V2.6 ADDITIONS: FOUNDER POEM, VOCABULARY NOTEBOOK, 3D FORBIDDEN CITY
+   EMBLEM, TRAVEL READINESS & WEEKLY EMAIL CHANGELOG STUDIO
+   ========================================================================== */
+
+/* Trilingual Founder Poem (Quatrain) */
+.founder-poem-trilingual {
+  margin: 1.5rem 0;
+  padding: 1.35rem 1.5rem;
+  background: var(--bg-paper);
+  border: 1px solid var(--hairline);
+  border-top: 2.5px solid var(--accent-cinnabar);
+}
+
+.founder-poem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 0.9rem;
+}
+
+@media (max-width: 860px) {
+  .founder-poem-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.founder-poem-col {
+  padding: 0.9rem 1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--hairline);
+}
+
+.founder-poem-lang {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-cinnabar);
+  margin-bottom: 0.5rem;
+}
+
+.founder-poem-lines {
+  font-family: var(--font-editorial);
+  font-size: 1.04rem;
+  line-height: 1.75;
+  color: var(--ink-primary);
+}
+
+.founder-poem-lines.hanzi {
+  font-family: var(--font-hanzi-serif);
+  font-size: 1.18rem;
+  letter-spacing: 0.06em;
+}
+
+/* Contextual Text-Selection Vocabulary Capture Popover */
+.vocab-capture-popover {
+  position: fixed;
+  z-index: 980;
+  background: #181715;
+  color: #FAF7F2;
+  border: 1px solid #D7BA81;
+  padding: 0.45rem 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  max-width: min(360px, 92vw);
+}
+
+.vocab-capture-popover button {
+  border: 1px solid #D7BA81;
+  background: #9E2A2B;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.32rem 0.68rem;
+  cursor: pointer;
+}
+
+.vocab-capture-popover button:hover {
+  background: #7D1F20;
+}
+
+/* Vocabulary & Reading Notebook Panel */
+.vocab-notebook-entry {
+  background: var(--bg-paper);
+  border: 1px solid var(--hairline);
+  border-left: 3px solid var(--accent-cinnabar);
+  padding: 1rem 1.15rem;
+}
+
+.vocab-notebook-quote {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  padding: 0.5rem 0.75rem;
+  border-left: 2px solid var(--gold);
+  background: var(--bg-surface);
+  margin: 0.55rem 0;
+}
+
+/* Forbidden City 3D Hero Emblem & Architectural Dissection Monograph */
+.fc3d-section {
+  background: var(--bg-paper);
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  padding: 2.5rem 0;
+}
+
+.fc3d-stage-shell {
+  border: 1px solid var(--hairline-strong, var(--hairline));
+  background: #13110F;
+  color: #FAF7F2;
+  position: relative;
+}
+
+.fc3d-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 1rem;
+  background: #1B1815;
+  border-bottom: 1px solid rgba(215, 186, 129, 0.25);
+}
+
+.fc3d-pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.fc3d-pill {
+  padding: 0.34rem 0.72rem;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  border: 1px solid rgba(242, 239, 233, 0.24);
+  background: #23201C;
+  color: #F2EFE9;
+  cursor: pointer;
+}
+
+.fc3d-pill:hover {
+  border-color: #D7BA81;
+}
+
+.fc3d-pill.active {
+  background: #9E2A2B;
+  border-color: #D7BA81;
+  color: #FFFFFF;
+}
+
+.fc3d-canvas-wrap {
+  position: relative;
+  width: 100%;
+  height: 460px;
+  background: radial-gradient(circle at 50% 35%, #231E19 0%, #110F0D 80%);
+  overflow: hidden;
+}
+
+.fc3d-canvas-wrap.fc3d-canvas-tall {
+  height: 560px;
+}
+
+.fc3d-overlay-hud {
+  position: absolute;
+  left: 0.85rem;
+  bottom: 0.85rem;
+  max-width: min(370px, calc(100% - 1.7rem));
+  background: rgba(17, 15, 13, 0.9);
+  border: 1px solid rgba(215, 186, 129, 0.42);
+  padding: 0.7rem 0.9rem;
+  color: #FAF7F2;
+  pointer-events: auto;
+  z-index: 6;
+}
+
+@media (max-width: 760px) {
+  .fc3d-canvas-wrap {
+    height: auto;
+  }
+  .fc3d-canvas-wrap > div[id^="fc3d-canvas"],
+  .fc3d-canvas-wrap > div[id^="fc3d-pins"] {
+    height: 320px !important;
+    bottom: auto !important;
+  }
+  .fc3d-canvas-wrap.fc3d-canvas-tall > div[id^="fc3d-canvas"],
+  .fc3d-canvas-wrap.fc3d-canvas-tall > div[id^="fc3d-pins"] {
+    height: 360px !important;
+    bottom: auto !important;
+  }
+  .fc3d-overlay-hud {
+    position: static;
+    max-width: 100%;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+  }
+}
+
+.fc3d-xray-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem 1rem;
+  background: #171512;
+  border-top: 1px solid rgba(242, 239, 233, 0.14);
+  font-size: 0.79rem;
+  color: #E2DDD4;
+}
+
+.fc3d-hotspots-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.7rem 1rem;
+  background: #141210;
+  border-top: 1px solid rgba(242, 239, 233, 0.12);
+}
+
+.fc3d-monograph-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+  gap: 1.35rem;
+  align-items: start;
+}
+
+@media (max-width: 980px) {
+  .fc3d-monograph-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fc3d-chapter-card {
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--hairline);
+  border-left: 3px solid transparent;
+  background: var(--bg-paper);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 0.55rem;
+}
+
+.fc3d-chapter-card.active {
+  border-left-color: var(--accent-cinnabar);
+  background: var(--bg-surface);
+}
+
+.fc3d-bar-row {
+  margin-bottom: 0.7rem;
+}
+
+.fc3d-bar-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.fc3d-bar-track {
+  height: 9px;
+  background: var(--bg-muted);
+  border: 1px solid var(--hairline);
+}
+
+.fc3d-bar-fill {
+  height: 100%;
+  background: var(--accent-cinnabar);
+}
+
+/* Pre-Trip Travel Readiness & Survival Hanzi Table */
+.travel-readiness-card {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.35rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--hairline);
+  border-top: 2.5px solid var(--accent-jade);
+}
+
+.travel-signs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 0.55rem;
+  margin-top: 0.75rem;
+}
+
+.travel-sign-chip {
+  padding: 0.55rem 0.7rem;
+  background: var(--bg-paper);
+  border: 1px solid var(--hairline);
+}
+
+/* Weekly Updates Bell, Changelog & Gmail Studio */
+.nav-bell-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+}
+
+.nav-bell-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-cinnabar);
+}
+
+.updates-hot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .updates-hot-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.updates-card {
+  padding: 1.1rem 1.2rem;
+  background: var(--bg-paper);
+  border: 1px solid var(--hairline);
+  border-top: 2px solid var(--ink-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.65rem;
+}
+
+.updates-tag {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-cinnabar);
+}
+
+.email-studio-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.email-step-box {
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--hairline);
+  background: var(--bg-surface);
+  font-size: 0.8rem;
+}
+
+.email-preview-frame {
+  border: 1px solid var(--hairline);
+  background: #FFFFFF;
+  color: #1A1918;
+  padding: 1.25rem 1.4rem;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+/* Floating 3D Projected Callout Labels */
+.pin-3d-label {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 8;
+}
+
+.pin-box {
+  padding: 2px 7px;
+  background: rgba(20, 20, 19, 0.9);
+  border: 1px solid rgba(212, 175, 55, 0.78);
+  color: #F7F5F0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pin-3d-label:hover .pin-box {
+  background: #9E1B1B !important;
+  border-color: #FFD700 !important;
+  color: #FFFFFF !important;
+}
+
+.pin-stem {
+  width: 1px;
+  height: 12px;
+  background: #D4AF37;
+  margin: 0 auto;
 }

@@ -1,7 +1,7 @@
 // ============================================================================
 // State Management & Persistence Store (localStorage + SQLite API Sync)
 // Stores learning progress, bookmarks, collected vocab, notes, highlights,
-// custom Anki flashcards, reading history, quiz history, and UI preferences.
+// contextual vocabulary notebook entries, changelog email preferences, reading history, and UI preferences.
 // ============================================================================
 
 window.CCE_STORE = (function () {
@@ -23,6 +23,15 @@ window.CCE_STORE = (function () {
     readingHistory: [],
     quizResults: [],
     flashcardMastered: [],
+    vocabNotebook: [],
+    emailSubscription: {
+      subscribed: false,
+      email: "",
+      frequency: "weekly",
+      topics: ["hot", "articles", "updates"],
+      updatedAt: ""
+    },
+    changelogPublishedLog: [],
     activeJourneyId: null,
     pausedJourneys: [],
     journeyStepMap: {}
@@ -59,6 +68,32 @@ window.CCE_STORE = (function () {
       { type: "article", id: "hundred-schools", title: "Bách Gia Chư Tử: Thời đại Trục tâm của Tư tưởng Trung Hoa", viewedAt: "2026-11-15" }
     ],
     flashcardMastered: ["wenhua", "cha"],
+    vocabNotebook: [
+      {
+        id: "vn-sample-1",
+        term: "差序格局",
+        pinyin: "chàxù géjú",
+        hanViet: "Sai tự cách cục",
+        meaning: "Differential mode of association (Phí Hiếu Thông 1947)",
+        sourceSentence: "Trong mạng lưới thương mại Đông Á, chữ Tín vận hành qua cấu trúc 差序格局 (đồng tâm theo mức độ thân sơ).",
+        articleId: "confucianism-society",
+        articleTitle: "Nho giáo & Cấu trúc Xã hội Đông Á",
+        note: "Khái niệm mấu chốt khi đối chiếu hợp đồng pháp lý phương Tây và mạng lưới tin cậy B2B Trung Quốc.",
+        createdAt: "2026-11-18"
+      },
+      {
+        id: "vn-sample-2",
+        term: "斗拱 · Đấu củng",
+        pinyin: "dǒugǒng",
+        hanViet: "Đấu củng",
+        meaning: "Interlocking wooden bracket system absorbing seismic energy",
+        sourceSentence: "Hệ vì kèo 斗拱 dưới mái hiên Phi Diềm giúp Thái Hòa Điện chịu động đất suốt 600 năm không dùng đinh sắt.",
+        articleId: "forbidden-city-3d-dissection",
+        articleTitle: "Giải phẫu 3D Tử Cấm Thành (紫禁城): Đấu Củng & Trục Đế Vương",
+        note: "Thuật ngữ kiến trúc gỗ cổ truyền — xuất hiện cả trong điện Thái Hòa Cố Cung và Điện Thái Hòa Huế.",
+        createdAt: "2026-11-18"
+      }
+    ],
     activeJourneyId: "journey-01",
     journeyStepMap: {
       "journey-01": [0]
@@ -107,7 +142,8 @@ window.CCE_STORE = (function () {
       }
       const serverData = await res.json();
       if (serverData && serverData.state && Object.keys(serverData.state).length > 0) {
-        state = { ...structuredClone(DEFAULT_STATE), ...serverData.state };
+        const preservedPage = state.activePage;
+        state = { ...structuredClone(DEFAULT_STATE), ...serverData.state, activePage: preservedPage };
         document.documentElement.setAttribute("data-theme", state.theme || "light");
         document.documentElement.setAttribute("lang", state.uiLang || "vi");
         saveLocal();
@@ -308,6 +344,57 @@ window.CCE_STORE = (function () {
           score,
           total,
           date: todayStr()
+        });
+      });
+    },
+    addVocabNotebookEntry(entry) {
+      if (!entry || !String(entry.term || "").trim()) return;
+      update((s) => {
+        if (!Array.isArray(s.vocabNotebook)) s.vocabNotebook = [];
+        s.vocabNotebook.unshift({
+          id: "vn-" + Date.now() + "-" + Math.random().toString(36).slice(2, 6),
+          term: String(entry.term || "").trim(),
+          pinyin: String(entry.pinyin || "").trim(),
+          hanViet: String(entry.hanViet || "").trim(),
+          meaning: String(entry.meaning || "").trim(),
+          sourceSentence: String(entry.sourceSentence || "").trim(),
+          articleId: String(entry.articleId || "").trim(),
+          articleTitle: String(entry.articleTitle || "").trim(),
+          note: String(entry.note || "").trim(),
+          createdAt: todayStr()
+        });
+      });
+    },
+    updateVocabNotebookEntry(entryId, patch) {
+      update((s) => {
+        if (!Array.isArray(s.vocabNotebook)) s.vocabNotebook = [];
+        const idx = s.vocabNotebook.findIndex((item) => item.id === entryId);
+        if (idx >= 0) {
+          s.vocabNotebook[idx] = { ...s.vocabNotebook[idx], ...patch, updatedAt: todayStr() };
+        }
+      });
+    },
+    deleteVocabNotebookEntry(entryId) {
+      update((s) => {
+        s.vocabNotebook = (s.vocabNotebook || []).filter((item) => item.id !== entryId);
+      });
+    },
+    setEmailSubscription(patch) {
+      update((s) => {
+        s.emailSubscription = {
+          ...(s.emailSubscription || DEFAULT_STATE.emailSubscription),
+          ...patch,
+          updatedAt: todayStr()
+        };
+      });
+    },
+    addChangelogLog(item) {
+      update((s) => {
+        if (!Array.isArray(s.changelogPublishedLog)) s.changelogPublishedLog = [];
+        s.changelogPublishedLog.unshift({
+          id: "log-" + Date.now(),
+          ...item,
+          publishedAt: todayStr()
         });
       });
     },
