@@ -96,76 +96,82 @@ window.CCE_VISUALS = {
     `;
   },
 
-  renderChinaMapSVG(activeRegionId, activeCityId, mapMode = "regions", activeProvinceId = null, provinces = []) {
+  renderChinaMapSVG(activeRegionId, activeCityId, mapMode = "regions", activeProvinceId = null, provinces = [], mapOpts = {}) {
+    const enMode = Boolean(mapOpts && mapOpts.enMode);
+    const activeHsr = Array.isArray(mapOpts && mapOpts.hsrFilters)
+      ? mapOpts.hsrFilters
+      : (mapMode === "corridors" ? ["hsr-gba", "hsr-sw", "hsr-yn", "hsr-jh"] : []);
+
     const regionColors = {
       northwest: "#7E5D43",
       north: "#9F2929",
-      northeast: "#4B637A",
-      southwest: "#B63D32",
-      east: "#637F72",
-      south: "#B99A62"
+      northeast: "#3F5973",
+      southwest: "#A83A2F",
+      east: "#1F6E5C",
+      south: "#9A6700"
     };
 
     const adminColors = {
-      municipality: "#D97706",
-      sar: "#2563EB",
-      autonomous: "#059669",
-      province: "#9F2929"
+      municipality: "#B8292F",
+      sar: "#9A6700",
+      autonomous: "#1F6E5C",
+      province: "#4A433D"
     };
 
     const corridorColors = {
       "Kinh–Tân–Ký (京津冀)": "#9F2929",
-      "Châu thổ Trường Giang (长三角)": "#0F766E",
-      "Vùng Vịnh Lớn & Lĩnh Nam (粤港澳)": "#B45309",
-      "Thành Đô–Trùng Khánh (成渝经济圈)": "#B91C1C",
-      "Hành lang RCEP – Việt Nam": "#047857",
-      "Con đường Tơ lụa & Á–Âu": "#7C2D12",
-      "Trung Nguyên & Trung Du Trường Giang": "#4338CA",
-      "Vành đai Đông Bắc & Hoàn Bột Hải": "#334155"
+      "Châu thổ Trường Giang (长三角)": "#1F6E5C",
+      "Vùng Vịnh Lớn & Lĩnh Nam (粤港澳)": "#9A6700",
+      "Thành Đô–Trùng Khánh (成渝经济圈)": "#B8292F",
+      "Hành lang RCEP – Việt Nam": "#1F6E5C",
+      "Con đường Tơ lụa & Á–Âu": "#7E5D43",
+      "Trung Nguyên & Trung Du Trường Giang": "#3B4D7A",
+      "Vành đai Đông Bắc & Hoàn Bột Hải": "#3F5973"
     };
 
+    // Refined geographic macro-region vector polygons (newspaper cartography precision)
     const regions = [
       {
         id: "northwest",
-        label: "TÂY BẮC 西北",
-        lx: 225,
-        ly: 185,
-        path: "M 70 140 L 210 65 L 375 110 L 455 205 L 420 295 L 265 305 L 125 285 L 55 210 Z"
+        label: enMode ? "NORTHWEST 西北" : "TÂY BẮC 西北",
+        lx: 230,
+        ly: 186,
+        path: "M 54 174 L 116 112 L 194 70 L 280 95 L 368 135 L 448 195 L 456 266 L 418 308 L 284 316 L 146 286 L 78 242 Z"
       },
       {
         id: "north",
-        label: "HOA BẮC 华北",
-        lx: 515,
-        ly: 126,
-        path: "M 375 110 L 540 60 L 665 95 L 655 230 L 600 290 L 490 290 L 420 295 L 455 205 Z"
+        label: enMode ? "NORTH CHINA 华北" : "HOA BẮC 华北",
+        lx: 525,
+        ly: 132,
+        path: "M 368 135 L 445 78 L 555 56 L 656 88 L 664 218 L 605 288 L 490 296 L 448 266 L 448 195 Z"
       },
       {
         id: "northeast",
-        label: "ĐÔNG BẮC 东北",
-        lx: 742,
-        ly: 174,
-        path: "M 665 95 L 745 32 L 845 70 L 820 195 L 735 235 L 655 230 Z"
+        label: enMode ? "NORTHEAST 东北" : "ĐÔNG BẮC 东北",
+        lx: 744,
+        ly: 162,
+        path: "M 656 88 L 718 34 L 785 40 L 848 78 L 826 178 L 748 228 L 664 218 Z"
       },
       {
         id: "southwest",
-        label: "TÂY NAM 西南",
-        lx: 215,
+        label: enMode ? "SOUTHWEST 西南" : "TÂY NAM 西南",
+        lx: 234,
         ly: 416,
-        path: "M 105 288 L 265 305 L 420 295 L 485 385 L 455 515 L 315 545 L 175 455 L 90 375 Z"
+        path: "M 88 304 L 146 286 L 284 316 L 418 308 L 468 378 L 448 486 L 352 536 L 286 502 L 214 446 L 96 388 Z"
       },
       {
         id: "east",
-        label: "HOA ĐÔNG 华东",
+        label: enMode ? "EAST CHINA 华东" : "HOA ĐÔNG 华东",
         lx: 682,
-        ly: 292,
-        path: "M 600 290 L 655 245 L 740 280 L 758 395 L 698 482 L 592 442 L 575 360 Z"
+        ly: 304,
+        path: "M 605 288 L 664 238 L 718 262 L 732 342 L 758 386 L 700 478 L 598 446 L 578 358 Z"
       },
       {
         id: "south",
-        label: "HOA NAM & TRUNG NAM 华南",
-        lx: 518,
-        ly: 446,
-        path: "M 420 295 L 490 290 L 600 290 L 575 360 L 592 442 L 685 485 L 625 562 L 505 568 L 455 515 L 485 385 Z"
+        label: enMode ? "SOUTH & CENTRAL 华南" : "HOA NAM & TRUNG NAM 华南",
+        lx: 534,
+        ly: 432,
+        path: "M 418 308 L 490 296 L 605 288 L 578 358 L 598 446 L 662 478 L 626 544 L 548 548 L 456 542 L 448 486 L 468 378 Z"
       }
     ];
 
@@ -238,48 +244,75 @@ window.CCE_VISUALS = {
       const short = (p.identity && p.identity.abbreviation) || p.abbr || def.short;
       const capitalEra = (p.mapCoordinates && p.mapCoordinates.historicalCapitalEra) || def.capitalEra;
       const corridor = (p.mapCoordinates && p.mapCoordinates.economicCorridor) || def.corridor;
-      const nameVi = p.nameVi || p.id.replace("prov-", "");
+      const nameVi = enMode ? (p.nameEn || p.nameVi || p.id.replace("prov-", "")) : (p.nameVi || p.id.replace("prov-", ""));
       let fillColor = regionColors[p.regionId] || "#9F2929";
-      if (mapMode === "admin") fillColor = adminColors[cat] || "#9F2929";
-      else if (mapMode === "capitals") fillColor = /Kinh đô|Trường An|Lạc Dương|Khai Phong|Nam Kinh|Lâm An|Bắc Kinh|Thịnh Kinh|Tây Hạ|Cổ Thục|Nam Việt/.test(capitalEra) ? "#D97706" : "#475569";
-      else if (mapMode === "corridors") fillColor = corridorColors[corridor] || "#637F72";
+      if (mapMode === "admin") fillColor = adminColors[cat] || "#4A433D";
+      else if (mapMode === "capitals") fillColor = /Kinh đô|Trường An|Lạc Dương|Khai Phong|Nam Kinh|Lâm An|Bắc Kinh|Thịnh Kinh|Tây Hạ|Cổ Thục|Nam Việt/.test(capitalEra) ? "#9A6700" : "#4A433D";
+      else if (mapMode === "corridors") fillColor = corridorColors[corridor] || "#1F6E5C";
       return { id: p.id, nameVi, short, x, y, cat, capitalEra, corridor, fillColor, regionId: p.regionId };
     });
 
     const isCorridorMode = mapMode === "corridors";
     const isCapitalMode = mapMode === "capitals";
 
-    return `
-      <svg viewBox="-16 -10 956 645" class="china-svg-map" style="width:100%;height:auto;max-height:640px;" role="img" aria-label="Bản đồ tương tác 34 đơn vị hành chính cấp tỉnh và 6 đại vùng văn hóa Trung Quốc">
-        <rect x="-16" y="-10" width="956" height="645" rx="2" fill="transparent" />
+    const hsrLines = [
+      { id: "hsr-gba", d: "M 456 544 L 484 506 L 576 496 L 612 526", color: "#B8292F", label: enMode ? "Pingxiang → Nanning → Guangzhou → Shenzhen/HK" : "Bằng Tường → Nam Ninh → Quảng Châu → Thâm Quyến/HK", lx: 522, ly: 556 },
+      { id: "hsr-sw", d: "M 456 544 L 484 506 L 426 448 L 432 386 L 362 368", color: "#1F6E5C", label: enMode ? "Pingxiang → Nanning → Guiyang → Chongqing → Chengdu" : "Bằng Tường → Nam Ninh → Quý Dương → Trùng Khánh → Thành Đô", lx: 432, ly: 468 },
+      { id: "hsr-yn", d: "M 366 548 L 334 484 L 294 456 L 284 426", color: "#9A6700", label: enMode ? "Hekou → Kunming → Dali → Lijiang" : "Hà Khẩu → Côn Minh → Đại Lý → Lệ Giang", lx: 300, ly: 515 },
+      { id: "hsr-jh", d: "M 586 184 L 626 256 L 646 326 L 710 356 L 676 386", color: "#3B4D7A", label: enMode ? "Beijing–Nanjing–Shanghai–Hangzhou HSR Spine" : "Trục Cao tốc Kinh–Hộ (Bắc Kinh–Nam Kinh–Thượng Hải–Hàng Châu)", lx: 742, ly: 266 }
+    ];
 
-        <!-- Subtle Grid & Historical Compass -->
-        <g opacity="0.14" stroke="currentColor" stroke-dasharray="4 4">
+    const vnGates = [
+      { code: "VN-LK", label: enMode ? "Lao Cai / Hekou (河口)" : "Lào Cai / Hà Khẩu (河口)", x: 366, y: 552 },
+      { code: "VN-HN", label: enMode ? "Huu Nghi / Pingxiang (凭祥)" : "Hữu Nghị / Bằng Tường (凭祥)", x: 456, y: 548 },
+      { code: "VN-MC", label: enMode ? "Mong Cai / Dongxing (东兴)" : "Móng Cái / Đông Hưng (东兴)", x: 492, y: 558 }
+    ];
+
+    return `
+      <svg viewBox="-16 -10 956 645" class="china-svg-map" style="width:100%;height:auto;max-height:640px;border:1px solid var(--hairline);background:var(--bg-paper);" role="img" aria-label="${enMode ? "Interactive vector map of 34 Chinese provincial units and 12306 cross-border rail corridors" : "Bản đồ vector tương tác 34 đơn vị hành chính cấp tỉnh Trung Quốc và tuyến đường sắt 12306 nối cửa khẩu Việt Nam"}">
+        <rect x="-16" y="-10" width="956" height="645" fill="transparent" />
+
+        <!-- Editorial Cartography Coordinate Grid -->
+        <g opacity="0.16" stroke="var(--text-muted)" stroke-width="0.8" stroke-dasharray="3 3">
+          <line x1="0" y1="150" x2="920" y2="150" />
           <line x1="0" y1="305" x2="920" y2="305" />
+          <line x1="0" y1="460" x2="920" y2="460" />
+          <line x1="230" y1="0" x2="230" y2="620" />
           <line x1="460" y1="0" x2="460" y2="620" />
+          <line x1="690" y1="0" x2="690" y2="620" />
+        </g>
+        <g opacity="0.45" font-family="var(--font-mono)" font-size="8.5" fill="var(--text-muted)">
+          <text x="6" y="146">40°N</text>
+          <text x="6" y="301">30°N</text>
+          <text x="6" y="456">23.5°N</text>
+          <text x="234" y="12">90°E</text>
+          <text x="464" y="12">105°E</text>
+          <text x="694" y="12">120°E</text>
         </g>
 
-        <!-- Yellow River & Yangtze River Stylised Curves -->
-        <path d="M 300 255 Q 425 188 525 258 T 665 262" fill="none" stroke="#B99A62" stroke-width="2.5" stroke-dasharray="7 4" opacity="0.55" />
-        <path d="M 275 375 Q 430 415 565 365 T 718 352" fill="none" stroke="#637F72" stroke-width="2.5" opacity="0.5" />
+        <!-- Yellow River (黄河) & Yangtze River (长江) Hairline Courses -->
+        <path d="M 300 255 Q 425 188 525 258 T 665 262" fill="none" stroke="#9A6700" stroke-width="1.8" stroke-dasharray="6 3" opacity="0.6" />
+        <path d="M 275 375 Q 430 415 565 365 T 718 352" fill="none" stroke="#1F6E5C" stroke-width="1.8" opacity="0.58" />
 
-        <!-- Macro Regions -->
+        <!-- 6 Macro Regions (Zero Rounded Corners) -->
         ${regions
           .map((r) => {
             const isActive = activeRegionId === r.id;
-            const pillW = Math.max(134, r.label.length * 7.9 + 24);
-            const regionFillOpacity = mapMode === "regions" ? (isActive ? "0.78" : "0.42") : "0.18";
+            const pillW = Math.max(132, r.label.length * 7.6 + 22);
+            const regionFillOpacity = mapMode === "regions" ? (isActive ? "0.72" : "0.34") : "0.14";
             return `
               <g data-action="select-region" data-id="${r.id}" style="cursor:pointer;">
                 <path
                   d="${r.path}"
                   fill="${regionColors[r.id]}"
                   fill-opacity="${regionFillOpacity}"
+                  stroke="${isActive ? "#171512" : "var(--hairline)"}"
+                  stroke-width="${isActive ? "1.6" : "0.9"}"
                   class="map-region-shape ${isActive ? "active" : ""}"
                 />
-                <g style="pointer-events:none;opacity:${mapMode === "regions" ? "1" : "0.7"};">
-                  <rect x="${r.lx - pillW / 2}" y="${r.ly - 13}" width="${pillW}" height="22" rx="11" fill="${isActive ? "#9E2A2B" : "rgba(22, 20, 18, 0.78)"}" stroke="${isActive ? "#FDE68A" : "rgba(232, 210, 160, 0.45)"}" stroke-width="1.2" />
-                  <text x="${r.lx}" y="${r.ly + 2}" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="0.35" fill="#F7F4ED" style="pointer-events:none;">
+                <g style="pointer-events:none;opacity:${mapMode === "regions" ? "1" : "0.72"};">
+                  <rect x="${r.lx - pillW / 2}" y="${r.ly - 12}" width="${pillW}" height="21" rx="0" fill="${isActive ? "#B8292F" : "#181715"}" stroke="${isActive ? "#D7BA81" : "#6F685F"}" stroke-width="1" />
+                  <text x="${r.lx}" y="${r.ly + 2}" text-anchor="middle" font-size="10.2" font-weight="700" letter-spacing="0.45" fill="#F7F4ED" style="pointer-events:none;font-family:var(--font-mono);">
                     ${r.label}
                   </text>
                 </g>
@@ -289,59 +322,76 @@ window.CCE_VISUALS = {
           .join("")}
 
         ${isCorridorMode ? `
-          <!-- Trade Corridors Overlay -->
-          <g fill="none" stroke-linecap="round">
-            <path d="M 162 172 Q 255 215 344 242 T 454 284 L 540 292" stroke="#D97706" stroke-width="3" stroke-dasharray="6 4" opacity="0.88" />
-            <path d="M 668 454 Q 635 505 576 496 T 484 506 L 450 578" stroke="#10B981" stroke-width="3.2" stroke-dasharray="6 3" opacity="0.9" />
-            <path d="M 710 356 Q 600 355 536 356 T 362 368" stroke="#38BDF8" stroke-width="2.6" stroke-dasharray="4 4" opacity="0.82" />
-            <path d="M 334 484 Q 355 542 405 585" stroke="#10B981" stroke-width="2.8" stroke-dasharray="5 3" opacity="0.88" />
+          <g fill="none" stroke-linecap="square" opacity="0.72">
+            <path d="M 162 172 Q 255 215 344 242 T 454 284 L 540 292" stroke="#9A6700" stroke-width="2.2" stroke-dasharray="6 4" />
+            <path d="M 710 356 Q 600 355 536 356 T 362 368" stroke="#3B4D7A" stroke-width="2" stroke-dasharray="4 4" />
           </g>
         ` : ""}
 
+        ${hsrLines.filter((h) => activeHsr.includes(h.id)).map((h) => `
+          <g style="pointer-events:none;">
+            <path d="${h.d}" fill="none" stroke="#FFFFFF" stroke-width="4.4" stroke-linecap="square" opacity="0.75" />
+            <path d="${h.d}" fill="none" stroke="${h.color}" stroke-width="2.6" stroke-dasharray="6 3" stroke-linecap="square" />
+          </g>
+        `).join("")}
+
         ${isCapitalMode ? `
-          <!-- Dynastic Capital Axis Line -->
-          <g fill="none" stroke="#FBBF24" stroke-width="2" stroke-dasharray="4 4" opacity="0.72">
+          <g fill="none" stroke="#9A6700" stroke-width="1.8" stroke-dasharray="4 3" opacity="0.82">
             <path d="M 454 284 L 540 292 L 586 184 L 646 326 L 676 386" />
           </g>
         ` : ""}
 
-        <!-- Vietnam Cross-Border Corridor Reference -->
-        <g opacity="0.9">
-          <path d="M 412 536 Q 465 554 506 574 L 486 608 L 392 592 Z" fill="var(--jade-green)" fill-opacity="0.22" stroke="var(--jade-green)" stroke-dasharray="4 3" />
-          <text x="448" y="586" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--jade-green)">Hành lang Biên giới Việt–Trung</text>
+        <!-- Northern Vietnam 3 Border Crossing Gates -->
+        <g>
+          <path d="M 342 544 L 506 544 L 494 606 L 348 606 Z" fill="#1F6E5C" fill-opacity="0.16" stroke="#1F6E5C" stroke-width="1.1" stroke-dasharray="3 2" />
+          <text x="424" y="596" text-anchor="middle" font-size="9.5" font-weight="800" fill="#1F6E5C" style="font-family:var(--font-mono);">
+            ${enMode ? "NORTHERN VIETNAM BORDER GATEWAYS (12306 CONNECT)" : "3 CỬA KHẨU BẮC VIỆT NAM NỐI CAO TỐC 12306"}
+          </text>
+          ${vnGates.map((g, gi) => `
+            <g>
+              <rect x="${g.x - 4}" y="${g.y - 4}" width="8" height="8" fill="#B8292F" stroke="#F7F4ED" stroke-width="1.2" />
+              <text x="${g.x}" y="${g.y + (gi === 1 ? 19 : 11)}" text-anchor="middle" font-size="8.2" font-weight="700" fill="var(--ink-primary)" style="paint-order:stroke;stroke:var(--bg-paper);stroke-width:2.5px;">${g.label}</text>
+            </g>
+          `).join("")}
         </g>
 
-        <!-- All 34 Interactive Provincial Nodes -->
+        <!-- All 34 Interactive Provincial Units (Architectural Square / Diamond Markers) -->
         ${provNodes
           .map((pn) => {
             const isSel = activeProvinceId === pn.id;
-            const r = isSel ? 13 : 10.5;
+            const half = isSel ? 12 : 9.5;
+            const isMun = pn.cat === "municipality";
+            const isSar = pn.cat === "sar";
+            const isAuto = pn.cat === "autonomous";
+            const shape = isAuto
+              ? `<polygon points="${pn.x},${pn.y - half - 2} ${pn.x + half + 2},${pn.y} ${pn.x},${pn.y + half + 2} ${pn.x - half - 2},${pn.y}" fill="${pn.fillColor}" fill-opacity="${isSel ? "1" : "0.9"}" stroke="${isSel ? "#D7BA81" : "#F7F4ED"}" stroke-width="${isSel ? "2.4" : "1.2"}" />`
+              : `<rect x="${pn.x - half}" y="${pn.y - half}" width="${half * 2}" height="${half * 2}" rx="0" fill="${isMun ? "#B8292F" : (isSar ? "#9A6700" : pn.fillColor)}" fill-opacity="${isSel ? "1" : "0.9"}" stroke="${isSel ? "#D7BA81" : "#F7F4ED"}" stroke-width="${isSel ? "2.4" : "1.2"}" />`;
             return `
               <g class="map-province-node ${isSel ? "active" : ""}" data-action="select-map-province" data-id="${pn.id}" style="cursor:pointer;">
                 <title>${pn.nameVi} (${pn.short}) • ${pn.corridor}</title>
-                <circle cx="${pn.x}" cy="${pn.y}" r="${r}" fill="${pn.fillColor}" fill-opacity="${isSel ? "1" : "0.88"}" stroke="${isSel ? "#FDE68A" : "#FFFFFF"}" stroke-width="${isSel ? "2.8" : "1.5"}" />
-                <text x="${pn.x}" y="${pn.y + 3.5}" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF" style="pointer-events:none;font-family:'Noto Serif SC',serif;">${pn.short}</text>
+                ${shape}
+                <text x="${pn.x}" y="${pn.y + 3.5}" text-anchor="middle" font-size="9.5" font-weight="700" fill="#FFFFFF" style="pointer-events:none;font-family:'Noto Serif SC',serif;">${pn.short}</text>
               </g>
             `;
           })
           .join("")}
 
-        <!-- Priority Cities (shown in default Regions view or lightly alongside) -->
+        <!-- Priority Cities (shown cleanly in default Regions view) -->
         ${mapMode === "regions" ? cityPins
           .map((c) => {
             const isActive = activeCityId === c.id;
             return `
               <g class="map-city-pin ${isActive ? "active" : ""}" data-action="select-city" data-id="${c.id}" style="cursor:pointer;">
-                ${c.leader ? `<line x1="${c.x}" y1="${c.y}" x2="${c.lx + (c.anchor === "start" ? -4 : 4)}" y2="${c.ly - 3}" stroke="rgba(232, 210, 160, 0.65)" stroke-width="1.2" stroke-dasharray="3 2" />` : ""}
-                <circle cx="${c.x}" cy="${c.y}" r="${isActive ? 7.5 : 5}" fill="${isActive ? "#9F2929" : "#202020"}" stroke="#F7F4ED" stroke-width="1.8" />
+                ${c.leader ? `<line x1="${c.x}" y1="${c.y}" x2="${c.lx + (c.anchor === "start" ? -4 : 4)}" y2="${c.ly - 3}" stroke="rgba(215, 186, 129, 0.72)" stroke-width="1" stroke-dasharray="2 2" />` : ""}
+                <rect x="${c.x - (isActive ? 5 : 3.5)}" y="${c.y - (isActive ? 5 : 3.5)}" width="${isActive ? 10 : 7}" height="${isActive ? 10 : 7}" fill="${isActive ? "#B8292F" : "#181715"}" stroke="#F7F4ED" stroke-width="1.2" />
                 <text
                   x="${c.lx}"
                   y="${c.ly}"
                   text-anchor="${c.anchor}"
-                  font-size="11.2"
+                  font-size="10.4"
                   font-weight="${isActive ? "700" : "600"}"
                   fill="#F7F4ED"
-                  style="paint-order:stroke;stroke:rgba(20,18,16,0.92);stroke-width:3.8px;stroke-linejoin:round;"
+                  style="paint-order:stroke;stroke:rgba(20,18,16,0.94);stroke-width:3.5px;stroke-linejoin:round;"
                 >${c.name}</text>
               </g>
             `;
@@ -351,7 +401,7 @@ window.CCE_VISUALS = {
     `;
   },
 
-  renderFiveElementsSVG(elements) {
+  renderFiveElementsSVG(elements, enMode = false) {
     const coords = [
       { x: 200, y: 46 },  // Wood (top)
       { x: 342, y: 146 }, // Fire (right)
@@ -361,7 +411,7 @@ window.CCE_VISUALS = {
     ];
 
     return `
-      <svg viewBox="0 0 400 365" style="max-width:390px;width:100%;display:block;margin:0 auto;" role="img" aria-label="Sơ đồ Ngũ Hành Tương Sinh Tương Khắc">
+      <svg viewBox="0 0 400 365" style="max-width:390px;width:100%;display:block;margin:0 auto;" role="img" aria-label="${enMode ? "Five Phases Generating and Restraining Diagram" : "Sơ đồ Ngũ Hành Tương Sinh Tương Khắc"}">
         <!-- Outer Generative Pentagon (Tương Sinh) -->
         <polygon
           points="${coords.map((c) => `${c.x},${c.y}`).join(" ")}"
@@ -384,13 +434,13 @@ window.CCE_VISUALS = {
               <g>
                 <circle cx="${c.x}" cy="${c.y}" r="32" fill="${el.color}" stroke="var(--ivory-white)" stroke-width="2.5" />
                 <text x="${c.x}" y="${c.y - 2}" text-anchor="middle" fill="#F7F4ED" font-family="'Noto Serif SC', serif" font-size="18" font-weight="700">${el.zh}</text>
-                <text x="${c.x}" y="${c.y + 15}" text-anchor="middle" fill="#F7F4ED" font-size="10.5" font-weight="600">${el.nameVi}</text>
+                <text x="${c.x}" y="${c.y + 15}" text-anchor="middle" fill="#F7F4ED" font-size="10.5" font-weight="600">${enMode ? (el.nameEn || el.nameVi) : el.nameVi}</text>
               </g>
             `;
           })
           .join("")}
         <text x="200" y="352" text-anchor="middle" font-size="11" fill="var(--text-muted)">
-          Viền ngoài xanh: Tương Sinh (相生) • Ngôi sao đỏ đứt nét: Tương Khắc (相克)
+          ${enMode ? "Jade pentagon: Generating Cycle (相生) • Dashed red star: Restraining Cycle (相克)" : "Viền ngoài xanh: Tương Sinh (相生) • Ngôi sao đỏ đứt nét: Tương Khắc (相克)"}
         </text>
       </svg>
     `;

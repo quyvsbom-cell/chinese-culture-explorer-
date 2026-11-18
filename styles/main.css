@@ -1246,7 +1246,7 @@ button {
 .map-explorer-layout {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: 1.75rem;
+  gap: 1rem;
   align-items: start;
 }
 
@@ -1254,13 +1254,16 @@ button {
   background: var(--bg-card);
   border: 1px solid var(--border-gold);
   border-radius: var(--radius-xl);
-  padding: 1.25rem;
+  padding: 0.8rem 0.9rem;
   box-shadow: var(--shadow-md);
 }
 
 .china-svg-map {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
+  max-height: clamp(300px, 47vh, 430px);
   height: auto;
+  margin: 0 auto;
   display: block;
 }
 
@@ -6875,7 +6878,7 @@ textarea:focus-visible {
 
 .academic-banner-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  grid-template-columns: 1fr;
   gap: 0;
   align-items: stretch;
   width: 100%;
@@ -6884,12 +6887,17 @@ textarea:focus-visible {
 .academic-banner-media {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  min-height: 240px;
-  max-height: 340px;
+  aspect-ratio: 21 / 9;
+  min-height: 280px;
+  max-height: 450px;
   overflow: hidden;
   background: var(--bg-paper);
-  border-right: 1px solid var(--hairline);
+  border-right: none;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.academic-banner-media:last-child {
+  border-bottom: none;
 }
 
 .academic-banner-media img {
@@ -7074,10 +7082,13 @@ textarea:focus-visible {
 }
 
 .academic-banner-body {
-  padding: 1.5rem 1.75rem;
+  padding: 1rem 1.5rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem 1.25rem;
   background: var(--bg-surface);
   color: var(--ink-primary);
 }
@@ -8309,4 +8320,142 @@ textarea:focus-visible {
   margin-top: 0.2rem;
   font-size: 0.8rem;
   color: var(--text-muted);
+}
+
+/* ============================================================================
+   PHASE 1 ADDITIONS: ZEN SLOW-READ 65CH, INLINE GLOSS CHIPS, HSR BAR, PRINT A4
+   ============================================================================ */
+
+.inline-gloss-chip {
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-bottom: 1px dotted var(--accent-cinnabar, #9E2A2B);
+  color: inherit;
+  font: inherit;
+  padding: 0 0.08rem;
+  margin: 0;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.inline-gloss-chip:hover,
+.inline-gloss-chip:focus-visible {
+  background: rgba(158, 42, 43, 0.1);
+  color: var(--accent-cinnabar, #9E2A2B);
+  outline: none;
+}
+
+.article-reader-shell.is-curatorial-zen .article-reader-grid {
+  grid-template-columns: minmax(0, 65ch) !important;
+  justify-content: center !important;
+}
+.article-reader-shell.is-curatorial-zen .article-sidebar,
+.article-reader-shell.is-curatorial-zen .article-toc-aside,
+.article-reader-shell.is-curatorial-zen .editorial-contextual-hub,
+.article-reader-shell.is-curatorial-zen .article-meta-sidebar {
+  display: none !important;
+}
+.article-reader-shell.is-curatorial-zen .article-main-col,
+.article-reader-shell.is-curatorial-zen .article-prose {
+  max-width: 65ch !important;
+  margin-inline: auto !important;
+  font-size: 1.08rem !important;
+  line-height: 1.9 !important;
+}
+
+.hsr-corridor-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0 0 0.4rem;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid var(--hairline);
+  background: var(--bg-paper);
+  border-radius: 0;
+}
+.hsr-corridor-pill {
+  appearance: none;
+  border: 1px solid var(--hairline);
+  background: var(--bg-surface);
+  color: var(--ink-primary);
+  padding: 0.18rem 0.45rem;
+  font-size: 0.71rem;
+  font-weight: 600;
+  border-radius: 0;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.map-layer-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.4rem;
+}
+.map-layer-bar .filter-pill {
+  padding: 0.22rem 0.5rem;
+  font-size: 0.72rem;
+}
+.map-inspector-panel {
+  padding: 0.75rem 0.85rem;
+}
+@media (min-width: 1024px) {
+  .map-inspector-panel {
+    position: sticky;
+    top: 72px;
+  }
+}
+.hsr-corridor-pill:hover {
+  border-color: var(--accent-cinnabar, #9E2A2B);
+}
+.hsr-corridor-pill.active {
+  background: var(--accent-cinnabar, #9E2A2B);
+  border-color: var(--accent-cinnabar, #9E2A2B);
+  color: #FAF7F2;
+}
+
+@media print {
+  .site-header,
+  .mobile-bottom-nav,
+  .site-footer,
+  .mega-menu-panel,
+  .reading-progress-bar,
+  .ed-back-to-top,
+  .article-toolbar,
+  .article-sidebar,
+  .article-toc-aside,
+  .editorial-img-zoom-pill,
+  .academic-banner-zoom,
+  .btn,
+  button.modal-close-btn {
+    display: none !important;
+  }
+  body,
+  [data-theme="dark"] body {
+    background: #ffffff !important;
+    color: #141414 !important;
+    font-size: 10.5pt !important;
+    line-height: 1.55 !important;
+  }
+  .modal-backdrop.open {
+    position: static !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+  }
+  .modal-panel {
+    box-shadow: none !important;
+    border: 1px solid #d0d0d0 !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    color: #141414 !important;
+  }
+  .card,
+  .academic-section-banner {
+    background: #ffffff !important;
+    color: #141414 !important;
+    border-color: #d0d0d0 !important;
+    break-inside: avoid;
+  }
 }

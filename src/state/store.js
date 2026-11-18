@@ -142,8 +142,20 @@ window.CCE_STORE = (function () {
       }
       const serverData = await res.json();
       if (serverData && serverData.state && Object.keys(serverData.state).length > 0) {
+        const localTs = Number(state.updatedAt || 0);
+        const serverTs = Number(serverData.state.updatedAt || 0);
+        if (localTs >= serverTs && localTs > 0) {
+          pushToServer();
+          return;
+        }
         const preservedPage = state.activePage;
-        state = { ...structuredClone(DEFAULT_STATE), ...serverData.state, activePage: preservedPage };
+        const preservedLang = localStorage.getItem(STORAGE_KEY) ? state.uiLang : (serverData.state.uiLang || state.uiLang);
+        state = {
+          ...structuredClone(DEFAULT_STATE),
+          ...serverData.state,
+          activePage: preservedPage,
+          uiLang: preservedLang || "vi"
+        };
         document.documentElement.setAttribute("data-theme", state.theme || "light");
         document.documentElement.setAttribute("lang", state.uiLang || "vi");
         saveLocal();
@@ -176,6 +188,7 @@ window.CCE_STORE = (function () {
 
   function update(mutator) {
     mutator(state);
+    state.updatedAt = Date.now();
     saveLocal();
     pushToServer();
     notify();

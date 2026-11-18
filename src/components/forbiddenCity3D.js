@@ -30,7 +30,7 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       code: "ZONE 001",
       nameVi: "Ngọ Môn (Cổng Chính Phía Nam)",
       nameEn: "Meridian Gate (South Portal)",
-      hanzi: "午门 · Wǔmén (Ngọ Môn)",
+      hanzi: "午门 · Wǔmén",
       areaOrScaleVi: "Cao 37,95 m · Ngũ Phượng Lâu chữ U",
       areaOrScaleEn: "Height 37.95 m · U-Shaped Five Phoenix Towers",
       hueEquivalentVi: "Ngọ Môn Huế (1833, 5 lối đi & Lầu Ngũ Phượng 100 cột lim)",
@@ -2151,7 +2151,7 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
               ${en ? "15-Layer" : "Móng 15 lớp"}
             </button>
             <button type="button" class="fc3d-pill" data-action="fc3d-cam-preset" data-preset="south">
-              ${en ? "Ngọ Môn" : "Ngọ Môn"}
+              ${en ? "Meridian Gate" : "Ngọ Môn"}
             </button>
             <button type="button" class="fc3d-pill" data-action="fc3d-cam-preset" data-preset="iso">
               ${en ? "Isometric" : "Phối cảnh"}

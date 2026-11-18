@@ -687,8 +687,10 @@
         id: "pack-dining-order",
         number: "04",
         titleVi: "Ẩm Thực Bản Địa & Gọi Món",
+        titleEn: "Local Cuisine & QR Ordering",
         titleZh: "地道美食与点餐",
         descVi: "Quét QR gọi món ngay tại bàn ăn, kiểm soát độ cay/rau mùi và gói đồ ăn thừa chuyên nghiệp.",
+        descEn: "Scan table QR menus smoothly, customize spice or herbs, ask for takeaways, and settle bills locally.",
         items: [
           {
             id: "sv-401",
@@ -698,8 +700,11 @@
             vi: "Cay nhẹ / Hoàn toàn không cay",
             en: "Mild Spice / Zero Chili",
             liushuType: "Hình thanh & Hội ý",
+            liushuTypeEn: "Phono-Semantic & Compound",
             radicalLogic: "微 (nhỏ nhẹ thoáng qua) vs 免 (cởi bỏ miễn trừ) + 辣 (chữ Tân 辛 cay đắng bên bộ Bó củi 束 -> vị ớt cay xé).",
-            fieldTip: "Lưu ý: Ở Tứ Xuyên / Trùng Khánh / Giang Tây, '微辣' vẫn cay bằng mức cay khá ở Việt Nam! Nếu không ăn cay được phải nói 免辣 (miǎnlà)."
+            radicalLogicEn: "微 (faint/slight) vs. 免 (exempt/remove) + 辣 (spicy radical 辛 bitter paired with 束 tied bundle -> biting chili spice).",
+            fieldTip: "Lưu ý: Ở Tứ Xuyên / Trùng Khánh / Giang Tây, '微辣' vẫn cay bằng mức cay khá ở Việt Nam! Nếu không ăn cay được phải nói 免辣 (miǎnlà).",
+            fieldTipEn: "In Sichuan, Chongqing, or Hunan, 'mild' (微辣) still bites—say 免辣 (miǎnlà) explicitly if you prefer zero chili."
           },
           {
             id: "sv-402",
@@ -709,8 +714,11 @@
             vi: "Xin đừng cho rau mùi (ngò rí)",
             en: "No Cilantro / Coriander Please",
             liushuType: "Tượng hình & Hình thanh",
+            liushuTypeEn: "Pictographic & Phono-Semantic",
             radicalLogic: "香 (bộ Hòa 禾 lúa thơm + Nhật 日 nắng lên tỏa hương) + 菜 (bộ Thảo 艹 thảo mộc rau + 采 tay hái rau).",
-            fieldTip: "Trong app gọi món QR thường có ô ghi chú sẵn '不要香菜' hoặc '不要葱花' (không hành hoa) bấm tích 1 chạm."
+            radicalLogicEn: "香 (fragrant grain 禾 under sun 日) + 菜 (grass radical 艹 paired with hand picking 采 -> leafy herb).",
+            fieldTip: "Trong app gọi món QR thường có ô ghi chú sẵn '不要香菜' hoặc '不要葱花' (không hành hoa) bấm tích 1 chạm.",
+            fieldTipEn: "Most QR table apps feature one-tap toggles for 'No cilantro' (不要香菜) or 'No scallions' (不要葱花)."
           },
           {
             id: "sv-403",
@@ -720,8 +728,11 @@
             vi: "Món đặc sản tủ làm nên thương hiệu của quán",
             en: "Restaurant Signature Dish",
             liushuType: "Hình thanh",
+            liushuTypeEn: "Phono-Semantic",
             radicalLogic: "招 (tay vẫy gọi khách) + 牌 (tấm bảng gỗ khắc tên hiệu) + 菜 (món ăn rau thịt). Nghĩa đen: Món ghi trên biển hiệu treo trước cửa!",
-            fieldTip: "Ở các quán lâu đời (Lão tự hào), cứ gọi 1–2 món đứng đầu mục 招牌 hoặc 人气榜 trên menu QR là chuẩn vị nhất."
+            radicalLogicEn: "招 (beckoning hand) + 牌 (wooden storefront plaque) + 菜 (dish) — literally the house specialty advertised on the signboard.",
+            fieldTip: "Ở các quán lâu đời (Lão tự hào), cứ gọi 1–2 món đứng đầu mục 招牌 hoặc 人气榜 trên menu QR là chuẩn vị nhất.",
+            fieldTipEn: "At heritage eateries, ordering 1–2 top items under 招牌 or 人气榜 guarantees authentic house classics."
           },
           {
             id: "sv-404",
@@ -731,8 +742,11 @@
             vi: "Quét mã QR dán trên bàn để xem thực đơn & đặt món",
             en: "Scan Table QR to Order",
             liushuType: "Hội ý & Hình thanh",
+            liushuTypeEn: "Compound & Phono-Semantic",
             radicalLogic: "点 (chấm chọn đánh dấu) + 餐 (bộ Thực 食 đồ ăn dưới bộ Đãi 歹 tay chia thức ăn: bữa ăn). Quét mã trên mặt bàn là thanh toán & gửi đơn thẳng xuống bếp.",
-            fieldTip: "Dùng WeChat hoặc Alipay quét mã góc bàn; nếu điện thoại báo lỗi đăng nhập sđt TQ, nhờ phục vụ 点单 giúp."
+            radicalLogicEn: "扫 (sweep/scan) + 码 (code) + 点餐 (select dishes & dining course), routing table orders straight to the kitchen.",
+            fieldTip: "Dùng WeChat hoặc Alipay quét mã góc bàn; nếu điện thoại báo lỗi đăng nhập sđt TQ, nhờ phục vụ 点单 giúp.",
+            fieldTipEn: "Scan via WeChat or Alipay; if an overseas phone login blocks ordering, ask staff for manual 点单 assistance."
           },
           {
             id: "sv-405",
@@ -742,8 +756,11 @@
             vi: "Gói thức ăn còn dư mang về",
             en: "Pack Leftovers / Takeaway",
             liushuType: "Hình thanh & Tượng hình",
+            liushuTypeEn: "Phono-Semantic & Pictographic",
             radicalLogic: "打 (bộ Thủ 扌 thao tác hành động) + 包 (tượng hình bao bọc thai nhi/vật bên trong -> gói bọc lại).",
-            fieldTip: "Các khẩu phần món vùng Đông Bắc hay Tứ Xuyên rất lớn, gọi vừa phải hoặc nói '麻烦打包' để đóng hộp mang về."
+            radicalLogicEn: "打 (hand action 扌) + 包 (pictograph of wrapping safely inside -> bundle leftovers).",
+            fieldTip: "Các khẩu phần món vùng Đông Bắc hay Tứ Xuyên rất lớn, gọi vừa phải hoặc nói '麻烦打包' để đóng hộp mang về.",
+            fieldTipEn: "Northern & Sichuan portions are generous—say '麻烦打包' (máfan dǎbāo) to request clean takeaway boxes."
           },
           {
             id: "sv-406",
@@ -753,8 +770,11 @@
             vi: "Thanh toán hóa đơn bàn ăn",
             en: "Ask for the Check / Pay Bill",
             liushuType: "Hội ý",
+            liushuTypeEn: "Compound Ideograph",
             radicalLogic: "买 (mua trả tiền) + 单 (tờ đơn/tờ giấy kê danh sách). Ở miền Bắc TQ còn gọi là 结账 (jiézhàng - kết sổ nợ/tiền).",
-            fieldTip: "Khi dùng dịch vụ 扫码点餐 thường đã thanh toán trước khi ăn hoặc bấm nút 买单 trên ứng dụng ngay tại bàn."
+            radicalLogicEn: "买 (buy/settle) + 单 (itemized slip). Northern China also uses 结账 (jiézhàng) to close the ledger.",
+            fieldTip: "Khi dùng dịch vụ 扫码点餐 thường đã thanh toán trước khi ăn hoặc bấm nút 买单 trên ứng dụng ngay tại bàn.",
+            fieldTipEn: "QR mini-apps typically settle payment upon order, or click 买单 to pay before departing."
           }
         ]
       },
@@ -762,8 +782,10 @@
         id: "pack-pay-hotel",
         number: "05",
         titleVi: "Thanh Toán Số & Khách Sạn",
+        titleEn: "Digital Payments & Hotels",
         titleZh: "移动支付与住宿",
         descVi: "Sử dụng Alipay / WeChat Pay bằng thẻ quốc tế tại quầy thu ngân và làm thủ tục nhận phòng khách sạn bằng hộ chiếu.",
+        descEn: "Link international cards inside Alipay/WeChat Pay cleanly and navigate hotel check-in, deposits, and receipts.",
         items: [
           {
             id: "sv-501",
@@ -773,8 +795,11 @@
             vi: "Ví điện tử Alipay / WeChat Pay (liên kết thẻ Visa/Mastercard)",
             en: "Alipay / WeChat Pay",
             liushuType: "Hình thanh & Hội ý",
+            liushuTypeEn: "Phono-Semantic & Compound",
             radicalLogic: "支 (nhánh tay trao đi) + 付 (Nhân 亻 trao tay Thốn 寸 bàn tay vật tiền: chi trả) + 宝 (báu vật bảo chứng thanh toán).",
-            fieldTip: "Liên kết trước 2 thẻ Visa/MasterCard vào cả Alipay lẫn WeChat tại Việt Nam (giới hạn giao dịch 200 RMB miễn phí 3%)."
+            radicalLogicEn: "支 (dispense) + 付 (person 亻 handing via inch/hand 寸 -> pay) + 宝 (treasure/vault).",
+            fieldTip: "Liên kết trước 2 thẻ Visa/MasterCard vào cả Alipay lẫn WeChat tại Việt Nam (giới hạn giao dịch 200 RMB miễn phí 3%).",
+            fieldTipEn: "Bind international cards to both Alipay & WeChat before boarding; single purchases <= 200 RMB waive the 3% foreign card fee."
           },
           {
             id: "sv-502",
@@ -784,8 +809,11 @@
             vi: "Mở mã vạch thanh toán để thu ngân quét máy",
             en: "Show Payment Barcode for Cashier Scan",
             liushuType: "Hội ý",
+            liushuTypeEn: "Compound Ideograph",
             radicalLogic: "出 + 示 (đưa ra cho thấy rõ) + 付款 (trả khoản tiền) + 码 (mã số vạch/QR).",
-            fieldTip: "Tại siêu thị 7-Eleven hay nhà thuốc, nhân viên dùng máy quét tít mã QR của bạn (tức 'Pay/Receive' 付款码) thay vì bạn quét máy họ."
+            radicalLogicEn: "出示 (present clearly) + 付款 (remit funds) + 码 (barcode/QR).",
+            fieldTip: "Tại siêu thị 7-Eleven hay nhà thuốc, nhân viên dùng máy quét tít mã QR của bạn (tức 'Pay/Receive' 付款码) thay vì bạn quét máy họ.",
+            fieldTipEn: "At convenience stores and metros, hold up your dynamic 付款码 QR/barcode so the cashier scanner reads it."
           },
           {
             id: "sv-503",
@@ -795,8 +823,11 @@
             vi: "Tiền đặt cọc (lúc nhận phòng khách sạn hoặc thuê thiết bị)",
             en: "Security Deposit",
             liushuType: "Hình thanh",
+            liushuTypeEn: "Phono-Semantic",
             radicalLogic: "押 (bộ Thủ 扌 ấn giữ niêm phong lại) + 金 (tiền tệ kim loại: khoản tiền đặt giữ tạm để đảm bảo).",
-            fieldTip: "Đa phần khách sạn đặt qua Trip.com đã miễn 押金, nhưng nếu trả cọc khi nhận phòng nhớ giữ biên lai hoàn trả (退押金) lúc trả phòng."
+            radicalLogicEn: "押 (hand 扌 holding in pledge) + 金 (metal currency -> refundable deposit).",
+            fieldTip: "Đa phần khách sạn đặt qua Trip.com đã miễn 押金, nhưng nếu trả cọc khi nhận phòng nhớ giữ biên lai hoàn trả (退押金) lúc trả phòng.",
+            fieldTipEn: "Major international Trip.com stays waive deposits; if charged on check-in, verify 退押金 refund slip upon departure."
           },
           {
             id: "sv-504",
@@ -806,8 +837,11 @@
             vi: "Làm thủ tục nhận phòng (check-in) tại quầy lễ tân",
             en: "Front Desk Hotel Check-in",
             liushuType: "Hội ý & Hình thanh",
+            liushuTypeEn: "Compound & Phono-Semantic",
             radicalLogic: "前台 (quầy phía trước) + 办理 (giải quyết giấy tờ) + 入住 (Nhân 亻 chủ 人 ở lại đứng: vào lưu trú).",
-            fieldTip: "Từ năm 2024 khách sạn tại TQ không còn hạn chế khách nước ngoài; lễ tân sẽ quét Hộ chiếu + chụp ảnh khai báo lưu trú tự động."
+            radicalLogicEn: "前台 (front desk) + 办理 (process paperwork) + 入住 (enter and reside/stay).",
+            fieldTip: "Từ năm 2024 khách sạn tại TQ không còn hạn chế khách nước ngoài; lễ tân sẽ quét Hộ chiếu + chụp ảnh khai báo lưu trú tự động.",
+            fieldTipEn: "Since 2024 regulations allow licensed hotels nationwide to register foreign passports directly at Reception."
           },
           {
             id: "sv-505",
@@ -817,8 +851,11 @@
             vi: "Trả phòng / Xuất hóa đơn tài chính (công tác)",
             en: "Check-out / Issue Official Tax Invoice",
             liushuType: "Hội ý",
+            liushuTypeEn: "Compound Ideograph",
             radicalLogic: "退 (bộ Sước 辶 bước lùi trả lại) + 房 (căn phòng) / 开 (mở xuất) + 发票 (tờ phiếu hóa đơn chuẩn thuế điện tử).",
-            fieldTip: "Nếu đi công tác cần hóa đơn thanh toán công ty, đưa thông tin công ty hoặc xuất E-Fapiao ngay tại quầy 前台."
+            radicalLogicEn: "退 (step back/return) + 房 (room) / 开 (issue) + 发票 (official tax e-invoice).",
+            fieldTip: "Nếu đi công tác cần hóa đơn thanh toán công ty, đưa thông tin công ty hoặc xuất E-Fapiao ngay tại quầy 前台.",
+            fieldTipEn: "For business expense reimbursement, request an electronic Fapiao receipt directly from hotel reception before checkout."
           }
         ]
       },
@@ -826,8 +863,10 @@
         id: "pack-emergency-customs",
         number: "06",
         titleVi: "Khẩn Cấp, Y Tế & Hải Quan",
+        titleEn: "Emergency, Medical & Customs",
         titleZh: "应急与海关",
         descVi: "Xử lý tình huống khẩn cấp: mua thuốc tây/Đông y, báo mất đồ, khai báo hải quan cửa khẩu và liên hệ cơ quan ngoại giao Việt Nam.",
+        descEn: "Essential phrases for pharmacy visits, local police loss reports, customs declarations, and emergency 120 / embassy contacts.",
         items: [
           {
             id: "sv-601",
@@ -837,8 +876,11 @@
             vi: "Đồn Công an khu vực (trình báo mất hộ chiếu / thất lạc đồ)",
             en: "Local Police Station",
             liushuType: "Hội ý",
+            liushuTypeEn: "Compound Ideograph",
             radicalLogic: "派 (phân nhánh cử đi) + 出 (ra ngoài) + 所 (bộ Hộ 户 cửa + Cân 斤: trụ sở cơ quan đặt tại cơ sở).",
-            fieldTip: "Số khẩn cấp cảnh sát là 110; nếu mất hộ chiếu phải đến 派出所 lấy 'Giấy xác nhận mất giấy tờ' mới làm lại hộ chiếu tạm tại Sứ quán."
+            radicalLogicEn: "派出 (dispatched field office) + 所 (door 户 + axe 斤 -> administrative station).",
+            fieldTip: "Số khẩn cấp cảnh sát là 110; nếu mất hộ chiếu phải đến 派出所 lấy 'Giấy xác nhận mất giấy tờ' mới làm lại hộ chiếu tạm tại Sứ quán.",
+            fieldTipEn: "Police emergency line is 110; an official police loss certificate is mandatory before applying for an emergency passport."
           },
           {
             id: "sv-602",
@@ -848,8 +890,11 @@
             vi: "Nhà thuốc tây / hiệu dược thảo",
             en: "Pharmacy / Drugstore",
             liushuType: "Hình thanh",
+            liushuTypeEn: "Phono-Semantic",
             radicalLogic: "药 (bộ Thảo 艹 cây cỏ thuốc + 约 buộc bó lại: cây thuốc -> dược phẩm) + 店 (cửa hàng).",
-            fieldTip: "Các chuỗi nhà thuốc uy tín như 老百姓大药房 mở 24/24 ở thành phố lớn, có dược sĩ kê thuốc cảm, đau bụng bằng quét dịch màn hình."
+            radicalLogicEn: "药 (herb radical 艹 + phonetic 约 -> medicinal botanical/pharmacy) + 店 (shop).",
+            fieldTip: "Các chuỗi nhà thuốc uy tín như 老百姓大药房 mở 24/24 ở thành phố lớn, có dược sĩ kê thuốc cảm, đau bụng bằng quét dịch màn hình.",
+            fieldTipEn: "Major urban chains like LBX Pharmacy stay open 24/7 with pharmacists assisting smoothly via translation apps."
           },
           {
             id: "sv-603",
@@ -859,8 +904,11 @@
             vi: "Kiểm soát xuất nhập cảnh / Khai báo Hải quan",
             en: "Border Immigration / Customs Declaration",
             liushuType: "Hình thanh & Hội ý",
+            liushuTypeEn: "Phono-Semantic & Compound",
             radicalLogic: "边 (vùng biên ải) + 检 (kiểm tra); 海关 (cửa ải biển cả -> Hải quan) + 申报 (khai trình rõ ràng).",
-            fieldTip: "Tuyệt đối không mang thực phẩm tươi sống, trái cây hoặc quá 20.000 RMB tiền mặt qua 边检 mà không khai báo."
+            radicalLogicEn: "边检 (border inspection) + 海关 (maritime/customs gate) + 申报 (formal declaration).",
+            fieldTip: "Tuyệt đối không mang thực phẩm tươi sống, trái cây hoặc quá 20.000 RMB tiền mặt qua 边检 mà không khai báo.",
+            fieldTipEn: "Never carry fresh fruit, meat, or >20,000 RMB cash across immigration without explicit customs declaration."
           },
           {
             id: "sv-604",
@@ -870,8 +918,11 @@
             vi: "Đại sứ quán (Bắc Kinh) / Tổng Lãnh sự quán Việt Nam (Quảng Châu, Nam Ninh, Thượng Hải, Côn Minh, Hồng Kông)",
             en: "Embassy / Consulate General of Vietnam in China",
             liushuType: "Hội ý & Hình thanh",
+            liushuTypeEn: "Compound & Phono-Semantic",
             radicalLogic: "驻 (đóng trụ sở tại) + 华 (Trung Hoa) + 使 (nhân 亻 cử đi truyền mệnh) + 馆 (dinh quán ngoại giao).",
-            fieldTip: "Lưu sẵn số trực bảo hộ công dân Đại sứ quán VN tại Bắc Kinh (+86-10-6532-1155) vào danh bạ trước khi khởi hành."
+            radicalLogicEn: "驻华 (resident mission in China) + 大使馆/领事馆 (Embassy / Consulate General diplomatic compound).",
+            fieldTip: "Lưu sẵn số trực bảo hộ công dân Đại sứ quán VN tại Bắc Kinh (+86-10-6532-1155) vào danh bạ trước khi khởi hành.",
+            fieldTipEn: "Save citizen assistance hotline details for your home embassy/consulate in Beijing, Shanghai, Guangzhou, Nanning, or Kunming."
           },
           {
             id: "sv-605",
@@ -881,8 +932,11 @@
             vi: "Phòng Cấp cứu Bệnh viện / Gọi xe cấp cứu 120",
             en: "Emergency Room / Ambulance 120",
             liushuType: "Hội ý & Hình thanh",
+            liushuTypeEn: "Compound & Phono-Semantic",
             radicalLogic: "急 (bộ Tâm 心 dưới bàn tay vội giữ: gấp gáp) + 诊 (bộ Ngôn 讠 hỏi mạch bệnh) + 救 (cứu giúp khẩn cấp).",
-            fieldTip: "Khác với Việt Nam (115), số gọi xe cứu thương tại Trung Quốc là **120** và cứu hỏa là **119**."
+            radicalLogicEn: "急 (urgent heart 心) + 诊 (medical consultation) + 急救 120 (ambulance dispatch).",
+            fieldTip: "Khác với Việt Nam (115), số gọi xe cứu thương tại Trung Quốc là **120** và cứu hỏa là **119**.",
+            fieldTipEn: "Dial 120 for emergency medical ambulance dispatch in mainland China (and 119 for fire)."
           }
         ]
       }
