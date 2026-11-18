@@ -1790,6 +1790,62 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     return true;
   }
 
+  function renderForbiddenCityPhotoStrip(en) {
+    const photos = [
+      {
+        src: "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
+        titleVi: "Cổng Son 81 Đinh Đồng & Trục Thái Hòa",
+        titleEn: "81-Stud Crimson Gate & Axis",
+        credit: "Forbidden City Archival Collection"
+      },
+      {
+        src: "assets/images/museum/forbidden-city-jingshan-panorama.webp",
+        titleVi: "Toàn cảnh Trục Nam–Bắc từ Cảnh Sơn",
+        titleEn: "Jingshan Panorama Over Rooftops",
+        credit: "Forbidden City Architectural View"
+      },
+      {
+        src: "assets/images/museum/forbidden-city-crimson-gate-terrace.jpg",
+        titleVi: "Cửa Son, Đường Ngự Đạo & Tam Đài Bạch Ngọc",
+        titleEn: "Sacred Approach & White Marble Terrace",
+        credit: "Forbidden City Archival View"
+      },
+      {
+        src: "assets/images/museum/forbidden-city-autumn-ginkgo-moat.jpg",
+        titleVi: "Hào Nước Hộ Thành & Ngân Hạnh Mùa Thu",
+        titleEn: "Palace Moat & Autumn Ginkgo Framing",
+        credit: "Forbidden City Seasonal View"
+      }
+    ];
+    return `
+      <div style="margin-top:0.85rem;">
+        <div style="font-size:0.72rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-cinnabar);margin-bottom:0.45rem;">
+          ${en ? "ARCHIVAL PHOTOGRAPHIC REFERENCE GALLERY · CLICK ANY PLATE TO INSPECT" : "BỘ ẢNH THỰC TẾ TỬ CẤM THÀNH ĐỐI CHIẾU · NHẤN ĐỂ PHÓNG TO CHI TIẾT"}
+        </div>
+        <div class="grid grid-4" style="gap:0.65rem;">
+          ${photos.map((ph) => `
+            <button
+              type="button"
+              class="card interactive"
+              style="padding:0;overflow:hidden;text-align:left;cursor:pointer;border:1px solid var(--hairline);background:var(--bg-surface);"
+              data-action="open-custom-image"
+              data-src="${ph.src}"
+              data-caption="${en ? ph.titleEn : ph.titleVi}"
+              data-credit="${ph.credit}"
+            >
+              <div style="aspect-ratio:16/10;width:100%;overflow:hidden;background:#141210;">
+                <img src="${ph.src}" alt="${en ? ph.titleEn : ph.titleVi}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" />
+              </div>
+              <div style="padding:0.45rem 0.6rem;font-size:0.76rem;font-weight:700;color:var(--ink-primary);line-height:1.3;">
+                ${en ? ph.titleEn : ph.titleVi}
+              </div>
+            </button>
+          `).join("")}
+        </div>
+      </div>
+    `;
+  }
+
   function renderHomeSection(lang) {
     const en = lang === "en";
     return `
@@ -1812,6 +1868,7 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
             </button>
           </div>
           ${renderStageMarkup(lang, false)}
+          ${renderForbiddenCityPhotoStrip(en)}
         </div>
       </section>
     `;
@@ -1827,6 +1884,7 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     return `
       <div style="margin:1.25rem 0 1.75rem;">
         ${renderStageMarkup(lang, true)}
+        ${renderForbiddenCityPhotoStrip(en)}
       </div>
 
       <!-- 7-Chapter Camera Scrollytelling Tour -->

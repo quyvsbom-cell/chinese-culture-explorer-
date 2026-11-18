@@ -53,9 +53,9 @@
       periodId: "ming-qing",
       regionId: "north",
       heroImage: {
-        src: "assets/images/museum/taihe-dian.jpg",
-        caption: "Tử Cấm Thành (Bắc Kinh) — Mô hình 3D tương tác đa tầng bóc tách kết cấu gỗ Đấu Củng & trục không gian hoàng gia",
-        credit: "Chinese Culture Explorer 3D Archive"
+        src: "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
+        caption: "Trục Thần Đạo Tử Cấm Thành (紫禁城) nhìn qua cổng son đinh đồng Cửu Hoành Cửu Tung (9×9) thẳng tới Thái Hòa Điện trên Tam Đài Hán Bạch Ngọc",
+        credit: "Chinese Culture Explorer 3D & Archival Photography"
       },
       introduction: "Khởi công năm 1406 dưới triều Minh Vĩnh Lạc trên diện tích 724.250 m² (960 m × 750 m), Tử Cấm Thành (紫禁城) là quần thể kiến trúc gỗ cổ đại lớn nhất hành tinh còn tồn tại. Chuyên luận 3D này tổ chức 10 phân khu hạt nhân dọc trục Nam–Bắc cùng kỹ thuật giải phẫu không gian 3 trạng thái để mổ xẻ hệ mái Trọng Diêm Phi Diềm, 10 linh thú nóc, cụm mộng Đấu Củng không đinh, ba tầng bệ đá Tu Di Tọa và đối chiếu trực tiếp với Điện Thái Hòa – Ngọ Môn Kinh thành Huế.",
       historicalContext: "Truyền thuyết dân gian gán cho Cố Cung 9.999,5 gian phòng (kém Thiên Đình nửa gian theo quy chuẩn tối cao). Tuy nhiên khảo sát thực tế của Bảo tàng Cố Cung xác định con số thực là 8.886 gian trong 980 tòa kiến trúc. Hơn nữa, từ năm 1722 (vua Ung Chính), trung tâm điều hành thực tế đã dịch chuyển từ đại điện Càn Thanh Cung sang khu chữ Công Dưỡng Tâm Điện ở phía Tây Nội Đình sát Quân Cơ Xứ.",
@@ -189,6 +189,7 @@
       plateGreatWall: "I. Vạn Lý Trường Thành",
       plateJiangshan: "II. Giang Sơn Đa Kiều",
       plateQianli: "III. Thiên Lý Giang Sơn",
+      plateForbiddenCity: "IV. Tử Cấm Thành",
       plateZoomHint: "Nhấn vào ảnh để mở Không gian Bảo tàng & Điểm nhấn chi tiết",
       z2Kicker: "",
       z2Title: "Đọc chuyên luận Tiêu điểm",
@@ -310,6 +311,7 @@
       plateGreatWall: "I. Great Wall of China",
       plateJiangshan: "II. Rivers & Mountains",
       plateQianli: "III. A Thousand Li of Rivers",
+      plateForbiddenCity: "IV. Forbidden City",
       plateZoomHint: "Click plate to open High-Res Museum & Hotspot Inspector",
       z2Kicker: "",
       z2Title: "Featured Reading Room",
@@ -1251,7 +1253,7 @@
           </figcaption>
         ` : ""}
 
-        ${!opts.compact && opts.showMapMeta !== false && img.mapMetadata ? `
+        ${!opts.compact && opts.showMapMeta !== false && img.mapMetadata && !isEnglishUi() ? `
           <div class="map-metadata-panel">
             <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.35rem;">
               <strong style="color:var(--ink-black);">Chú giải Bản đồ (Map Legend): ${escapeEditorialHtml(img.mapMetadata.title)}</strong>
@@ -1262,7 +1264,7 @@
               ${(img.mapMetadata.legend || []).map((lg) => `
                 <div class="map-legend-item">
                   <span style="font-weight:700;color:var(--imperial-red);white-space:nowrap;">${escapeEditorialHtml(lg.symbol)}</span>
-                  <span style="color:var(--text-secondary);">${escapeEditorialHtml(lg.label)}</span>
+                  <span style="color:var(--text-secondary);">${escapeHtml(lg.label)}</span>
                 </div>
               `).join("")}
             </div>
@@ -1272,12 +1274,12 @@
           </div>
         ` : ""}
 
-        ${!opts.compact && callouts.length ? `
+        ${!opts.compact && callouts.length && (!isEnglishUi() || callouts.some((c) => c.titleEn || c.detailEn)) ? `
           <div class="editorial-callout-grid">
             ${callouts.map((c) => `
               <div class="editorial-callout-card">
-                <div style="margin-bottom:0.2rem;"><span class="callout-code-pill">${escapeEditorialHtml(c.code)}</span><strong>${escapeEditorialHtml(c.title)}</strong></div>
-                <div style="color:var(--text-secondary);line-height:1.45;">${escapeEditorialHtml(c.detail)}</div>
+                <div style="margin-bottom:0.2rem;"><span class="callout-code-pill">${escapeEditorialHtml(c.code)}</span><strong>${escapeEditorialHtml(isEnglishUi() ? (c.titleEn || c.title) : c.title)}</strong></div>
+                <div style="color:var(--text-secondary);line-height:1.45;">${escapeEditorialHtml(isEnglishUi() ? (c.detailEn || c.detail) : c.detail)}</div>
               </div>
             `).join("")}
           </div>
@@ -2166,6 +2168,34 @@
           </div>
         `;
       })()}
+
+      ${(prov.id === "prov-beijing" || prov.id === "prov-sichuan") ? (() => {
+        const enG = isEnglishUi();
+        const extraPhotos = prov.id === "prov-beijing"
+          ? [
+              { src: "assets/images/museum/forbidden-city-imperial-axis-gate.jpg", cap: enG ? "Forbidden City Central Axis Gate" : "Cổng Son 81 Đinh Đồng Axis" },
+              { src: "assets/images/museum/forbidden-city-jingshan-panorama.webp", cap: enG ? "Jingshan Panorama Over Palace" : "Toàn cảnh Từ Cảnh Sơn" },
+              { src: "assets/images/museum/forbidden-city-crimson-gate-terrace.jpg", cap: enG ? "Triple Marble Terraces Approach" : "Lối Ngự đạo & Tam Đài" },
+              { src: "assets/images/museum/forbidden-city-autumn-ginkgo-moat.jpg", cap: enG ? "Moat & Autumn Ginkgo Canopy" : "Hào Nước & Ngân Hạnh Thu" }
+            ]
+          : [
+              { src: "assets/images/museum/jiuzhaigou-five-flower-lake.jpg", cap: enG ? "Jiuzhaigou Five Flower Lake" : "Ngũ Hoa Hải Cửu Trại Câu" },
+              { src: "assets/images/museum/jiuzhaigou-emerald-autumn-forest.webp", cap: enG ? "Jiuzhaigou Emerald Mirror Lake" : "Hồ Gương Sắc Thu Tứ Xuyên" }
+            ];
+        return `
+          <div class="card mt-2" style="padding:1rem 1.15rem;">
+            <h4 style="margin:0 0 0.65rem;color:var(--imperial-red);">${enG ? "Real-Site Photographic Supplement" : "Bộ Ảnh Thực Địa Bổ Sung"}</h4>
+            <div class="grid ${extraPhotos.length > 2 ? "grid-4" : "grid-2"}" style="gap:0.65rem;">
+              ${extraPhotos.map((p) => `
+                <button type="button" class="card interactive" style="padding:0;overflow:hidden;text-align:left;border:1px solid var(--hairline);" data-action="open-custom-image" data-src="${p.src}" data-caption="${escapeHtml(p.cap)}" data-credit="Chinese Culture Explorer Archive">
+                  <img src="${p.src}" alt="${escapeHtml(p.cap)}" loading="lazy" style="width:100%;aspect-ratio:16/10;object-fit:cover;display:block;" />
+                  <div style="padding:0.4rem 0.55rem;font-size:0.78rem;font-weight:700;">${escapeHtml(p.cap)}</div>
+                </button>
+              `).join("")}
+            </div>
+          </div>
+        `;
+      })() : ""}
     `;
   }
 
@@ -3011,7 +3041,20 @@
         museum: qianliPainting.museum || "故宫博物院",
         action: "open-painting-zoom",
         id: qianliPainting.id
-      } : null
+      } : null,
+      "forbidden-city-masterpiece": {
+        mode: "forbidden-city-masterpiece",
+        src: "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
+        titleVi: "Tử Cấm Thành · Trục Thần Đạo Cổng Son 81 Đinh Đồng",
+        titleEn: "Forbidden City Central Axis Through the Crimson 81-Stud Gate",
+        titleZh: "紫禁城中轴线红门太和殿全景",
+        artistLabel: "Quy hoạch Cung đình Vĩnh Lạc (1406–1420)",
+        dynastyLabel: "Minh – Thanh (明清)",
+        dimensions: "724.250 m² · 8.886 Gian",
+        museum: "故宫博物院 · The Palace Museum",
+        action: "open-article",
+        id: "forbidden-city-3d-dissection"
+      }
     };
     const activePlate = plateMap[ui.heroArtworkMode] || plateMap["great-wall-masterpiece"] || plateMap["jiangshan-masterpiece"] || plateMap["qianli-masterpiece"];
 
@@ -3038,7 +3081,10 @@
     const leadEd = leadArt ? getArticleEditorial(leadArt.id) : null;
     const leadThumbId = leadEd && leadEd.thumbnailConfig ? leadEd.thumbnailConfig.imageId : null;
     const leadImgObj = leadThumbId ? getEditorialImage(leadThumbId) : null;
-    const leadPhoto = (leadImgObj && (leadImgObj.url || leadImgObj.src)) || (leadArt && (leadArt.heroImage || getAcademicPhotoForItem(leadArt.category, leadArt.id, 0))) || "assets/images/articles/hero-tang-dynasty.jpg";
+    const rawLeadHero = leadArt && (leadArt.heroImage || getAcademicPhotoForItem(leadArt.category, leadArt.id, 0));
+    const leadPhoto = (leadImgObj && (leadImgObj.url || leadImgObj.src))
+      || (typeof rawLeadHero === "string" ? rawLeadHero : (rawLeadHero && (rawLeadHero.src || rawLeadHero.imageUrl)))
+      || "assets/images/museum/forbidden-city-imperial-axis-gate.jpg";
     const leadExcerpt = (leadEd && leadEd.standfirst) || (leadArt && leadArt.introduction ? `${leadArt.introduction.slice(0, 175).trim()}…` : "");
 
     // ------------------------------------------------------------------
@@ -3086,7 +3132,7 @@
       museum: pt.museum || "Bảo tàng Cố Cung"
     }));
 
-    const preferredArtifactIds = ["great-wall-scroll", "jiangshan-ruci-duojiao", "houmuwu-ding", "david-vases", "taihe-dian", "liangzhu-yucong"];
+    const preferredArtifactIds = ["great-wall-scroll", "jiangshan-ruci-duojiao", "forbidden-city-axis-gate", "houmuwu-ding", "taihe-dian", "david-vases"];
     const pickedArtifacts = [];
     preferredArtifactIds.forEach((aid) => {
       const found = (Museum && Museum.artifacts || []).find((a) => a.id === aid && a.imageUrl);
@@ -3155,10 +3201,11 @@
                   <div class="ed-plaque-sub">${escapeHtml(activePlate.artistLabel)} · ${escapeHtml(activePlate.museum)}</div>
                 </div>
               ` : ""}
-              <div class="ed-plate-switcher" role="tablist" aria-label="Chọn tác phẩm trưng bày chính">
+              <div class="ed-plate-switcher" role="tablist" aria-label="${state.uiLang === "en" ? "Select hero artwork" : "Chọn tác phẩm trưng bày chính"}">
                 <button type="button" class="ed-plate-tab ${ui.heroArtworkMode === "great-wall-masterpiece" ? "active" : ""}" data-action="set-hero-artwork" data-mode="great-wall-masterpiece">${escapeHtml(lp.plateGreatWall)}</button>
                 <button type="button" class="ed-plate-tab ${ui.heroArtworkMode === "jiangshan-masterpiece" ? "active" : ""}" data-action="set-hero-artwork" data-mode="jiangshan-masterpiece">${escapeHtml(lp.plateJiangshan)}</button>
                 <button type="button" class="ed-plate-tab ${ui.heroArtworkMode === "qianli-masterpiece" ? "active" : ""}" data-action="set-hero-artwork" data-mode="qianli-masterpiece">${escapeHtml(lp.plateQianli)}</button>
+                <button type="button" class="ed-plate-tab ${ui.heroArtworkMode === "forbidden-city-masterpiece" ? "active" : ""}" data-action="set-hero-artwork" data-mode="forbidden-city-masterpiece">${escapeHtml(lp.plateForbiddenCity || "IV. Tử Cấm Thành")}</button>
               </div>
             </div>
           </div>
@@ -7812,29 +7859,32 @@
         </div>
       </div>
 
-      <h3 style="font-family:var(--font-editorial);font-size:1.55rem;margin-bottom:1rem;">Lộ trình Học tập Đề xuất</h3>
+      <h3 style="font-family:var(--font-editorial);font-size:1.55rem;margin-bottom:1rem;">${enL ? "Recommended Learning Journeys" : "Lộ trình Học tập Đề xuất"}</h3>
       <div class="grid grid-2" style="margin-bottom:2rem;">
         ${LearningResearch.learningPaths
           .map(
             (path) => `
               <div class="card">
-                <div class="card-title-zh">${path.titleZh}</div>
-                <h4 style="margin:0.25rem 0;">${path.titleVi}</h4>
-                <p style="font-size:0.88rem;">${path.description}</p>
+                <div class="card-title-zh">${path.titleZh || path.code || ""}</div>
+                <h4 style="margin:0.25rem 0;">${escapeHtml(enL ? (path.titleEn || path.titleVi) : path.titleVi)}</h4>
+                <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:0.3rem;font-weight:600;">${escapeHtml(enL ? (path.difficultyEn || path.difficulty || "") : (path.difficulty || ""))}</div>
+                <p style="font-size:0.88rem;">${escapeHtml(enL ? (path.descriptionEn || path.description) : path.description)}</p>
                 <div style="display:flex;flex-direction:column;gap:0.45rem;">
                   ${path.steps
                     .map((step) => {
                       const done = step.targetType === "article" && state.completedArticles.includes(step.targetId);
+                      const matchedArt = step.targetType === "article" ? Articles.find((a) => a.id === step.targetId) : null;
+                      const stepTitleEn = step.labelEn || (matchedArt && getArticleEnPack(matchedArt.id) ? getArticleEnPack(matchedArt.id).title : step.label);
                       return `
                         <button
                           type="button"
                           class="btn btn-secondary btn-sm"
-                          style="justify-content:space-between;"
+                          style="justify-content:space-between;text-align:left;"
                           data-action="${step.targetType === "article" ? "open-article" : "nav"}"
                           ${step.targetType === "article" ? `data-id="${step.targetId}"` : `data-page="${step.targetId}"`}
                         >
-                          <span>${done ? "" : "○ "} ${step.label}</span>
-                          <span>Mở →</span>
+                          <span>${done ? "✓ " : "○ "} ${escapeHtml(enL ? stepTitleEn : step.label)}</span>
+                          <span>${enL ? "Open →" : "Mở →"}</span>
                         </button>
                       `;
                     })
@@ -7848,26 +7898,29 @@
 
       <div class="grid grid-2">
         <div class="card">
-          <h4 style="margin-bottom:0.75rem;">Đề xuất Bài học Tiếp theo</h4>
+          <h4 style="margin-bottom:0.75rem;">${enL ? "Recommended Next Monographs" : "Đề xuất Bài học Tiếp theo"}</h4>
           ${nextArticles.length
             ? nextArticles
                 .map(
-                  (art) => `
+                  (art) => {
+                    const avNext = getLocalizedArticleView(art, null, null);
+                    return `
                     <div class="flashcard-layer" style="margin-bottom:0.6rem;display:flex;justify-content:space-between;align-items:center;gap:0.75rem;">
                       <div>
-                        <strong>${art.titleVi}</strong><br>
-                        <span style="font-size:0.78rem;color:var(--text-muted);">${art.titleZh} • ${art.readMinutes} phút</span>
+                        <strong>${escapeHtml(avNext.title)}</strong><br>
+                        <span style="font-size:0.78rem;color:var(--text-muted);">${escapeHtml(art.titleZh)} • ${art.readMinutes} ${enL ? "min read" : "phút"}</span>
                       </div>
-                      <button type="button" class="btn btn-primary btn-sm" data-action="open-article" data-id="${art.id}">Học</button>
+                      <button type="button" class="btn btn-primary btn-sm" data-action="open-article" data-id="${art.id}">${enL ? "Read" : "Học"}</button>
                     </div>
-                  `
+                  `;
+                  }
                 )
                 .join("")
-            : `<p>Bạn đã hoàn thành toàn bộ ${Articles.length} chuyên luận nền tảng!</p>`}
+            : `<p>${enL ? `You have completed all ${Articles.length} core monographs!` : `Bạn đã hoàn thành toàn bộ ${Articles.length} chuyên luận nền tảng!`}</p>`}
         </div>
 
         <div class="card">
-          <h4 style="margin-bottom:0.75rem;">Lịch sử Đọc & Kết quả Trắc nghiệm</h4>
+          <h4 style="margin-bottom:0.75rem;">${enL ? "Reading History &amp; Quiz Scores" : "Lịch sử Đọc &amp; Kết quả Trắc nghiệm"}</h4>
           ${state.readingHistory.slice(0, 4)
             .map(
               (h) => `
@@ -7880,8 +7933,8 @@
             .join("")}
           ${state.quizResults && state.quizResults.length
             ? `<div class="epistemic-box" style="margin-top:0.75rem;margin-bottom:0;">
-                <div class="epistemic-title">Điểm Kiểm tra Gần nhất</div>
-                <div style="font-size:0.86rem;">Đúng <strong>${state.quizResults[0].score}/${state.quizResults[0].total}</strong> câu (${state.quizResults[0].date})</div>
+                <div class="epistemic-title">${enL ? "Latest Quiz Result" : "Điểm Kiểm tra Gần nhất"}</div>
+                <div style="font-size:0.86rem;">${enL ? "Score:" : "Đúng"} <strong>${state.quizResults[0].score}/${state.quizResults[0].total}</strong> (${state.quizResults[0].date})</div>
               </div>`
             : ""}
         </div>
@@ -11585,6 +11638,30 @@
       }
     }
   }, { capture: true });
+
+  // Automatic APA 7th Citation Attribution when copying > 40 words from #main-content
+  document.addEventListener("copy", (e) => {
+    try {
+      const sel = window.getSelection ? window.getSelection() : null;
+      if (!sel || sel.isCollapsed) return;
+      const text = String(sel.toString() || "").trim();
+      const words = text.split(/\s+/).filter(Boolean);
+      if (words.length <= 40) return;
+      const anchorNode = sel.anchorNode && (sel.anchorNode.nodeType === 1 ? sel.anchorNode : sel.anchorNode.parentElement);
+      if (!anchorNode || !anchorNode.closest("#main-content")) return;
+      const activeArt = ui.activeArticleId ? Articles.find((a) => a.id === ui.activeArticleId) : null;
+      const titleForCite = activeArt ? getLocalizedArticleView(activeArt, null, null).title : document.title;
+      const citationLine = isEnglishUi()
+        ? `\n\n— Source Attribution (APA 7th): Lê, H. T. (2026). ${titleForCite}. ${Brand.projectName}. Retrieved from ${window.location.href}`
+        : `\n\n— Nguồn trích dẫn (APA 7th): Lê, H. T. (2026). ${titleForCite}. ${Brand.projectName}. Truy cập tại: ${window.location.href}`;
+      if (e.clipboardData && typeof e.clipboardData.setData === "function") {
+        e.preventDefault();
+        e.clipboardData.setData("text/plain", text + citationLine);
+      }
+    } catch (_err) {
+      // ignore clipboard restrictions
+    }
+  });
 
   // Full Dual Router (Clean Path History API + Legacy Hash Fallback) & Dynamic SEO
   let isApplyingHashRoute = false;

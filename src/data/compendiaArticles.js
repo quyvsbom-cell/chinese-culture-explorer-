@@ -1005,7 +1005,7 @@ window.CCE_COMPENDIA_ARTICLES = [
       {
         heading: "3. Ma trận 7 Siêu Đô thị & 6 Đại Cụm Đô thị (城市群)",
         body:
-          "Nghiên cứu CHINA UNLOCKED đối chiếu 7 đô thị cốt lõi (Bắc Kinh, Thượng Hải, Quảng Châu, Thâm Quyến, Thành Đô, Hàng Châu, Trùng Khánh) qua 12 chiều dữ liệu (GDP, chi phí sinh hoạt, phương ngữ, khí hậu, ngành mũi nhọn, nhịp sống). Xu hướng quy hoạch 2026–2035 tập trung kết nối đường sắt liên vùng biến các cụm đô thị như Quảng Châu – Thâm Quyến – Hồng Kông thành một siêu thị trường thống nhất."
+          "Nghiên cứu CHINA UNLOCKED đối chiếu 7 đô thị cốt lõi (Bắc Kinh, Thượng Hải, Quảng Châu, Thâm Quyến, Thành Đô, Hàng Châu, Trùng Khánh) qua hệ tiêu chí đa chiều (GDP, chi phí sinh hoạt, phương ngữ, khí hậu, ngành mũi nhọn, nhịp sống). Xu hướng quy hoạch 2026–2035 tập trung kết nối đường sắt liên vùng biến các cụm đô thị như Quảng Châu – Thâm Quyến – Hồng Kông thành một siêu thị trường thống nhất."
       }
     ],
     terminologyIds: ["fazhi"],

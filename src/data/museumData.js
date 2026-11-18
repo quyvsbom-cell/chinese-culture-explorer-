@@ -361,7 +361,32 @@ window.CCE_MUSEUM = {
       collection: "Bảo tàng Cố Cung Bắc Kinh (Di sản Văn hóa Thế giới UNESCO)",
       attribution: "Hồ sơ kiến trúc cổ Bảo tàng Cố Cung & UNESCO World Heritage Centre.",
       imageUrl: "assets/images/museum/taihe-dian.jpg",
-      relatedIds: ["great-wall-scroll", "daming-hunyitu"]
+      relatedIds: ["forbidden-city-axis-gate", "great-wall-scroll", "daming-hunyitu"]
+    },
+    {
+      id: "forbidden-city-axis-gate",
+      category: "architecture",
+      categoryLabel: "Kiến trúc Cổ điển",
+      featuredCollections: ["architecture", "collections"],
+      nameVi: "Trục Thần Đạo Tử Cấm Thành & Cổng Son 81 Đinh Đồng",
+      nameEn: "Forbidden City Central Axis & 81-Stud Crimson Gate Vista",
+      nameZh: "紫禁城中轴线红门太和殿全景",
+      nameZhTrad: "紫禁城中軸線紅門太和殿全景",
+      pinyin: "Zǐjìnchéng Zhōngzhóuxiàn",
+      periodId: "ming",
+      periodLabel: "Minh – Thanh (明清)",
+      dateEstimate: "1406–1420 SCN (Minh Vĩnh Lạc)",
+      material: "Gỗ nam mộc sơn son, đinh đồng mạ vàng bố trí Cửu Hoành Cửu Tung (9×9 = 81 đinh), nền đá hoa cương & Hán Bạch Ngọc",
+      dimensions: "Trục đối xứng Nam–Bắc dài 961 m × Rộng 753 m (Toàn khu 724.250 m²)",
+      origin: "Cổng Trung tâm trục Thần Đạo nhìn thẳng vào Quảng trường Thái Hòa Điện, Bắc Kinh",
+      culturalSignificance:
+        "Mỗi cánh cửa hoàng gia tại các cổng trục chính của Tử Cấm Thành đóng 81 chiếc đinh đồng mạ vàng xếp thành 9 hàng ngang × 9 hàng dọc ('Cửu Hoành Cửu Tung', số Cửu Ngũ cực dương), đóng vai trò vừa khóa mộng kỹ thuật vừa biểu thị đẳng cấp thiên tử khi nhìn xuyên dọc đường ngự đạo hướng về Thái Hòa Điện.",
+      historicalContext:
+        "Toàn bộ không gian từ Ngọ Môn tiến qua cầu Kim Thủy tới Thái Hòa Môn và Thái Hòa Điện được tính toán theo tỷ lệ thu hút thị giác một điểm tụ, khiến du khách vừa bước qua ngưỡng cổng son đã thu trọn toàn cảnh tam đài Hán Bạch Ngọc vào tầm mắt.",
+      collection: "Bảo tàng Cố Cung Bắc Kinh (Di sản Văn hóa Thế giới UNESCO)",
+      attribution: "Tư liệu ảnh kiến trúc Tử Cấm Thành bổ sung vào Bảo tàng Số CCE.",
+      imageUrl: "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
+      relatedIds: ["taihe-dian", "great-wall-scroll"]
     },
     {
       id: "houmuwu-ding",

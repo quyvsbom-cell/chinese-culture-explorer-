@@ -71,17 +71,19 @@ window.CCE_LEARNING_RESEARCH = {
       titleZh: "中华文明与历史脉络导览",
       estimatedMinutes: 55,
       difficulty: "Foundation • Nhập môn đến Trung cấp",
+      difficultyEn: "Foundation • Introductory to Intermediate",
       description: "Khám phá tiến trình 5.000 năm từ Ngọc Lương Chử, Giáp Cốt văn thời Thương, thể chế Tam Tỉnh Lục Bộ và Khoa cử đến bốn phát minh khoa học kỹ thuật cổ đại.",
+      descriptionEn: "Trace five millennia of Chinese civilization from Liangzhu jades, Shang oracle bones, Tang Three Departments and Keju civil examinations to ancient science and technology.",
       objectives: [
         "Phân biệt ranh giới giữa Truyền thuyết cổ đại và Chứng cứ khảo cổ xác thực (Lương Chử, Ân Khư, Tam Tinh Đôi).",
         "Hiểu cơ chế vận hành của nhà nước văn quan qua chế độ Khoa cử (科举) và quy hoạch đô thị Trường An.",
         "Đánh giá khách quan Tứ đại phát minh, 《Thiên Công Khai Vật》 và Câu hỏi Joseph Needham."
       ],
       steps: [
-        { label: "Bước 1: Tiến trình Triều đại & Sử học Nghiêm cẩn", targetType: "page", targetId: "history", summary: "Khảo sát 11 thời kỳ lịch sử và bảng phân tầng chứng cứ khảo cổ." },
-        { label: "Bước 2: Thời đại Hoàng kim Nhà Đường & Trường An", targetType: "article", targetId: "tang-golden-age", summary: "Quy hoạch đô thị 108 phường, Tam Tỉnh Lục Bộ và giao lưu Á – Âu." },
-        { label: "Bước 3: Chế độ Khoa cử (科举) Trung Hoa & Đại Việt", targetType: "article", targetId: "imperial-examination-keju", summary: "Thể chế tuyển chọn tinh hoa suốt 1.300 năm và Bia Tiến sĩ Văn Miếu." },
-        { label: "Bước 4: Tứ Đại Phát Minh & 《Thiên Công Khai Vật》", targetType: "article", targetId: "four-great-inventions-science", summary: "Giấy, In ấn, Thuốc súng, La bàn từ và lịch sử khoa học kỹ thuật." }
+        { label: "Bước 1: Tiến trình Triều đại & Sử học Nghiêm cẩn", labelEn: "Step 1: Dynastic Timeline & Archival Historiography", targetType: "page", targetId: "history", summary: "Khảo sát 11 thời kỳ lịch sử và bảng phân tầng chứng cứ khảo cổ." },
+        { label: "Bước 2: Thời đại Hoàng kim Nhà Đường & Trường An", labelEn: "Step 2: Tang Golden Age & Chang'an Urbanism", targetType: "article", targetId: "tang-golden-age", summary: "Quy hoạch đô thị 108 phường, Tam Tỉnh Lục Bộ và giao lưu Á – Âu." },
+        { label: "Bước 3: Chế độ Khoa cử (科举) Trung Hoa & Đại Việt", labelEn: "Step 3: The Imperial Examination System (Keju)", targetType: "article", targetId: "imperial-examination-keju", summary: "Thể chế tuyển chọn tinh hoa suốt 1.300 năm và Bia Tiến sĩ Văn Miếu." },
+        { label: "Bước 4: Tứ Đại Phát Minh & 《Thiên Công Khai Vật》", labelEn: "Step 4: The Four Great Inventions & Tiangong Kaiwu", targetType: "article", targetId: "four-great-inventions-science", summary: "Giấy, In ấn, Thuốc súng, La bàn từ và lịch sử khoa học kỹ thuật." }
       ],
       relatedResources: ["houmuwu-ding", "taihe-dian", "jinshi-doctoral-stele"],
       recommendedNext: "path-philosophy"
@@ -94,16 +96,18 @@ window.CCE_LEARNING_RESEARCH = {
       titleZh: "儒释道三教与诸子百家思想",
       estimatedMinutes: 50,
       difficulty: "Intermediate • Đại học & Học thuật",
+      difficultyEn: "Intermediate • University & Academic Inquiry",
       description: "Đi sâu vào cuộc tranh biện trục tâm thời Xuân Thu – Chiến Quốc, cấu trúc xã hội Nho gia, triết lý Vô vi Đạo gia, Thiền tông và Tâm học Vương Dương Minh.",
+      descriptionEn: "Examine the Hundred Schools of Thought, Confucian social ethics, Daoist wuwei philosophy, Chan Buddhism, and Wang Yangming's Mind-Learning.",
       objectives: [
         "Nắm vững bối cảnh xã hội Học viện Tắc Hạ và sự ra đời của Bách Gia Chư Tử.",
         "Giải thích khái niệm 'Sai tự cách cục' (差序格局) của Phí Hiếu Thông và ảnh hưởng của Nho học.",
         "Đối chiếu 12 trường phái tư tưởng từ Tiên Tần đến Lý học Chu Hy và Tâm học 'Tri hành hợp nhất'."
       ],
       steps: [
-        { label: "Bước 1: Bách Gia Chư Tử & Học viện Tắc Hạ", targetType: "article", targetId: "hundred-schools", summary: "Thị trường ý tưởng đa cực thời Xuân Thu – Chiến Quốc." },
-        { label: "Bước 2: Tư tưởng Khổng Tử & Sai tự cách cục", targetType: "article", targetId: "confucianism-society", summary: "Ngũ thường, Lễ trị và cấu trúc vòng tròn đồng tâm Đông Á." },
-        { label: "Bước 3: Ma trận Đối sánh 12 Trường phái & 15 Kinh điển", targetType: "page", targetId: "philosophy", summary: "Đọc nguyên bản trích đoạn Luận Ngữ, Đạo Đức Kinh, Truyền Tập Lục, Lục Tổ Đàn Kinh." }
+        { label: "Bước 1: Bách Gia Chư Tử & Học viện Tắc Hạ", labelEn: "Step 1: The Hundred Schools & Jixia Academy", targetType: "article", targetId: "hundred-schools", summary: "Thị trường ý tưởng đa cực thời Xuân Thu – Chiến Quốc." },
+        { label: "Bước 2: Tư tưởng Khổng Tử & Sai tự cách cục", labelEn: "Step 2: Confucius & Concentric Social Networks", targetType: "article", targetId: "confucianism-society", summary: "Ngũ thường, Lễ trị và cấu trúc vòng tròn đồng tâm Đông Á." },
+        { label: "Bước 3: Ma trận Đối sánh 12 Trường phái & 15 Kinh điển", labelEn: "Step 3: 12 Philosophical Schools & 15 Classics Matrix", targetType: "page", targetId: "philosophy", summary: "Đọc nguyên bản trích đoạn Luận Ngữ, Đạo Đức Kinh, Truyền Tập Lục, Lục Tổ Đàn Kinh." }
       ],
       relatedResources: ["lantingji-xu", "yongle-dadian"],
       recommendedNext: "path-cosmology"
@@ -116,18 +120,20 @@ window.CCE_LEARNING_RESEARCH = {
       titleZh: "阴阳五行、《易经》与传统术数考辨",
       estimatedMinutes: 60,
       difficulty: "Advanced • Nhận thức luận & Cổ học",
+      difficultyEn: "Advanced • Epistemology & Classical Systems",
       description: "Giải mã nguồn gốc địa lý – thiên văn của Âm Dương, Ngũ Hành, Kinh Dịch, 24 Tiết khí Đông y và khảo cứu khách quan Tử Vi – Bát Tự – Phong Thủy.",
+      descriptionEn: "Decode the geographical roots of Yin-Yang, Wu Xing dynamic systems, the Book of Changes, 24 solar terms in TCM, and symbolic divination classics.",
       objectives: [
         "Truy nguyên nguồn gốc quang chiếu địa hình ('Sơn nam thủy bắc') của Âm Dương và động học Ngũ Hành.",
         "Phân biệt tầng Kinh văn Tây Chu, Thập Dực và bản lụa Mã Vương Đôi của 《Chu Dịch》.",
         "Tách bạch tri thức thiên văn nông lịch (24 Tiết khí), dưỡng sinh Nội Kinh và hệ thống ký hiệu Thuật số với khoa học thực nghiệm."
       ],
       steps: [
-        { label: "Bước 1: Nguồn gốc & Tiến hóa Khái niệm Âm Dương", targetType: "article", targetId: "yinyang-origins", summary: "Từ quan sát nắng–râm sườn núi đến phạm trù triết học." },
-        { label: "Bước 2: Ngũ Hành Tương Sinh – Tương Khắc", targetType: "article", targetId: "five-elements", summary: "Mô hình hệ thống động học trong 《Thượng Thư · Hồng Phạm》." },
-        { label: "Bước 3: Văn bản học 《Kinh Dịch》 & Đối thoại Leibniz", targetType: "article", targetId: "iching-development", summary: "Bát quái, 64 quẻ và lịch sử tiếp nhận Đông – Tây." },
-        { label: "Bước 4: 24 Tiết khí & Dưỡng sinh 《Hoàng Đế Nội Kinh》", targetType: "article", targetId: "tcm-solar-terms-yangsheng", summary: "Lịch Mặt Trời hoàng đạo và y học cổ truyền." },
-        { label: "Bước 5: Khảo cứu Bát Tự, Tử Vi, Phong Thủy & Kỳ Môn", targetType: "article", targetId: "chinese-metaphysics-systems", summary: "Cấu trúc ký hiệu học Can Chi và giới hạn nhận thức luận." }
+        { label: "Bước 1: Nguồn gốc & Tiến hóa Khái niệm Âm Dương", labelEn: "Step 1: Origins & Evolution of Yin-Yang", targetType: "article", targetId: "yinyang-origins", summary: "Từ quan sát nắng–râm sườn núi đến phạm trù triết học." },
+        { label: "Bước 2: Ngũ Hành Tương Sinh – Tương Khắc", labelEn: "Step 2: Five Elements Generating & Overcoming Cycles", targetType: "article", targetId: "five-elements", summary: "Mô hình hệ thống động học trong 《Thượng Thư · Hồng Phạm》." },
+        { label: "Bước 3: Văn bản học 《Kinh Dịch》 & Đối thoại Leibniz", labelEn: "Step 3: Textual History of I Ching & Leibniz Dialogue", targetType: "article", targetId: "iching-development", summary: "Bát quái, 64 quẻ và lịch sử tiếp nhận Đông – Tây." },
+        { label: "Bước 4: 24 Tiết khí & Dưỡng sinh 《Hoàng Đế Nội Kinh》", labelEn: "Step 4: 24 Solar Terms & TCM Yangsheng Philosophy", targetType: "article", targetId: "tcm-solar-terms-yangsheng", summary: "Lịch Mặt Trời hoàng đạo và y học cổ truyền." },
+        { label: "Bước 5: Khảo cứu Bát Tự, Tử Vi, Phong Thủy & Kỳ Môn", labelEn: "Step 5: Bazi, Ziwei, Fengshui & Symbolic Epistemology", targetType: "article", targetId: "chinese-metaphysics-systems", summary: "Cấu trúc ký hiệu học Can Chi và giới hạn nhận thức luận." }
       ],
       relatedResources: ["han-shipan-astrolabe", "acupuncture-bronze-figure"],
       recommendedNext: "path-regions"
@@ -140,17 +146,19 @@ window.CCE_LEARNING_RESEARCH = {
       titleZh: "中国地域文化：京派、海派、江南与岭南",
       estimatedMinutes: 50,
       difficulty: "Intermediate • Địa văn hóa & Mỹ học",
+      difficultyEn: "Intermediate • Geocultural Diversity & Aesthetics",
       description: "Du hành qua 6 đại vùng địa lý, 16 đô thị tiêu biểu và 34 tỉnh thành — từ Tứ Hợp Viện Bắc Kinh, Thạch Khố Môn Thượng Hải, Viên lâm Tô Châu đến Thư họa & Trà đạo.",
+      descriptionEn: "Journey through 6 macro-regions, 16 historic cities, and 34 provinces—from Beijing courtyard architecture and Shanghai shikumen to Jiangnan gardens and tea culture.",
       objectives: [
         "So sánh văn hóa Kinh Phái (Bắc Kinh), Hải Phái (Thượng Hải), Giang Nam (Tô–Hàng) và Lĩnh Nam (Quảng–Thâm).",
         "Hiểu nguyên lý kết cấu gỗ Đấu củng kháng chấn và mỹ học 'Tá cảnh' trong lâm viên cổ điển.",
         "Thưởng thức nghệ thuật Thủy mặc, Thư pháp ngũ thể, Triện khắc và 6 đại trà hệ Trung Hoa."
       ],
       steps: [
-        { label: "Bước 1: Song Thành Ký Bắc Kinh vs Thượng Hải", targetType: "article", targetId: "beijing-shanghai-culture", summary: "Đối chiếu kiến trúc, tâm thức đô thị và phong cách đàm phán." },
-        { label: "Bước 2: Kiến trúc Gỗ Đấu củng & Lâm viên Tô Châu", targetType: "article", targetId: "traditional-architecture-gardens", summary: "Cơ học kháng chấn không đinh sắt và triết lý viên lâm." },
-        { label: "Bước 3: Hội họa Thủy mặc & Thư pháp – Triện khắc", targetType: "article", targetId: "chinese-calligraphy-seal-aesthetics", summary: "Ngũ thể thư pháp, phương thốn ấn chương và Thi–Thư–Họa–Ấn." },
-        { label: "Bước 4: Văn hóa Trà đạo & Bản đồ 34 Tỉnh thành", targetType: "page", targetId: "regions", summary: "Khám phá bản đồ tương tác 6 vùng và danh bạ 34 đơn vị hành chính." }
+        { label: "Bước 1: Song Thành Ký Bắc Kinh vs Thượng Hải", labelEn: "Step 1: Tale of Two Cities: Beijing vs Shanghai", targetType: "article", targetId: "beijing-shanghai-culture", summary: "Đối chiếu kiến trúc, tâm thức đô thị và phong cách đàm phán." },
+        { label: "Bước 2: Kiến trúc Gỗ Đấu củng & Lâm viên Tô Châu", labelEn: "Step 2: Dougong Timber Joinery & Classical Gardens", targetType: "article", targetId: "traditional-architecture-gardens", summary: "Cơ học kháng chấn không đinh sắt và triết lý viên lâm." },
+        { label: "Bước 3: Hội họa Thủy mặc & Thư pháp – Triện khắc", labelEn: "Step 3: Ink Wash Aesthetics, Calligraphy & Seal Carving", targetType: "article", targetId: "chinese-calligraphy-seal-aesthetics", summary: "Ngũ thể thư pháp, phương thốn ấn chương và Thi–Thư–Họa–Ấn." },
+        { label: "Bước 4: Văn hóa Trà đạo & Bản đồ 34 Tỉnh thành", labelEn: "Step 4: Tea Heritage & 34 Provinces Directory", targetType: "page", targetId: "regions", summary: "Khám phá bản đồ tương tác 6 vùng và danh bạ 34 đơn vị hành chính." }
       ],
       relatedResources: ["jiangshan-ruci-duojiao", "qianli-jiangshan", "great-wall-scroll"],
       recommendedNext: "path-culture-vietnam"
@@ -163,17 +171,19 @@ window.CCE_LEARNING_RESEARCH = {
       titleZh: "中越文化交流：历史互动、汉喃与本土创造",
       estimatedMinutes: 50,
       difficulty: "Intermediate / Advanced • Sử học & Ngôn ngữ So sánh",
+      difficultyEn: "Intermediate / Advanced • Comparative History & Philology",
       description: "Phân tích mô hình 3 tầng (Tiếp nhận – Thích nghi – Sáng tạo nội sinh) qua âm Hán–Việt, Chữ Nôm, Khoa cử, Bắc Y – Nam Dược, Gốm Chu Đậu và dịch thuật hợp đồng.",
+      descriptionEn: "Analyze Vietnam's three-tier localization (Reception, Adaptation, Innovation) through Sino-Vietnamese phonology, Chữ Nôm, Chu Đậu ceramics, and commercial contract translation.",
       objectives: [
         "Hiểu cơ chế hình thành âm Hán–Việt từ ngữ âm Đường–Tống và cấu trúc sáng tạo Chữ Nôm bản địa.",
         "Đối sánh thể chế Khoa cử, Luật Hồng Đức, Tết Nguyên Đán và gốm hoa lam Chu Đậu trên tuyến Tơ lụa Hàng hải.",
         "Nhận diện và phòng tránh bẫy 'Từ đồng hình dị nghĩa' Hán–Việt (như 定金 vs 订金) trong dịch thuật kinh tế."
       ],
       steps: [
-        { label: "Bước 1: Lịch sử Giao lưu & Bản địa hóa Trung – Việt", targetType: "article", targetId: "sino-vietnam-history", summary: "Mô hình 3 tầng phân tích từ văn tự, tư tưởng đến thương cảng." },
-        { label: "Bước 2: Con đường Tơ lụa Hàng hải & Gốm Chu Đậu", targetType: "article", targetId: "silk-road-maritime-trade", summary: "Mạng lưới Thị Bạc Ty và vai trò thương cảng Đại Việt thế kỷ XV." },
-        { label: "Bước 3: Từ Hán–Việt 'Đồng Hình Dị Nghĩa' & Dịch Hợp đồng", targetType: "article", targetId: "sino-vietnamese-translation-business", summary: "Phân biệt pháp lý Định kim (定金) vs Đính kim (订金) và thuật ngữ ngoại thương." },
-        { label: "Bước 4: Chuyên trang Đối sánh 16 Chủ đề Trung – Việt", targetType: "page", targetId: "sino-vietnam", summary: "Bảng đối chiếu 12 chiều văn hóa, pháp điển, y dược và ẩm thực." }
+        { label: "Bước 1: Lịch sử Giao lưu & Bản địa hóa Trung – Việt", labelEn: "Step 1: Sino-Vietnamese Cultural Exchange Trajectory", targetType: "article", targetId: "sino-vietnam-history", summary: "Mô hình 3 tầng phân tích từ văn tự, tư tưởng đến thương cảng." },
+        { label: "Bước 2: Con đường Tơ lụa Hàng hải & Gốm Chu Đậu", labelEn: "Step 2: Maritime Silk Road & Chu Đậu Blue-White Ceramics", targetType: "article", targetId: "silk-road-maritime-trade", summary: "Mạng lưới Thị Bạc Ty và vai trò thương cảng Đại Việt thế kỷ XV." },
+        { label: "Bước 3: Từ Hán–Việt 'Đồng Hình Dị Nghĩa' & Dịch Hợp đồng", labelEn: "Step 3: Sino-Vietnamese False Friends in Trade Contracts", targetType: "article", targetId: "sino-vietnamese-translation-business", summary: "Phân biệt pháp lý Định kim (定金) vs Đính kim (订金) và thuật ngữ ngoại thương." },
+        { label: "Bước 4: Chuyên trang Đối sánh 16 Chủ đề Trung – Việt", labelEn: "Step 4: 16 Comparative Sino-Vietnamese Themes Hub", targetType: "page", targetId: "sino-vietnam", summary: "Bảng đối chiếu chuyên sâu văn hóa, pháp điển, y dược và ẩm thực." }
       ],
       relatedResources: ["chu-dau-blue-white-ceramic", "zheng-he-navigation-chart"],
       recommendedNext: "path-ib-china"
@@ -186,17 +196,19 @@ window.CCE_LEARNING_RESEARCH = {
       titleZh: "现代商业文化、跨境供应链与当代中国社会",
       estimatedMinutes: 55,
       difficulty: "Applied Professional • Kinh doanh Quốc tế & Logistics",
+      difficultyEn: "Applied Professional • International Business & Supply Chains",
       description: "Kết nối văn hóa thương bang truyền thống, mạng lưới Guanxi–Xinyong–Mianzi với nghiệp vụ C/O Form E, mã HS, chuỗi cung ứng C2M và 12 tập đoàn tiêu biểu.",
+      descriptionEn: "Bridge historical merchant guilds and Guanxi–Xinyong–Mianzi ethics with C/O Form E audits, RCEP trade corridors, and 12 major Chinese enterprise case studies.",
       objectives: [
         "Đặt Guanxi (Quan hệ), Xinyong (Tín nhiệm) và Mianzi (Thể diện) đúng vị trí bên cạnh hợp đồng pháp lý và SLA.",
         "Thực hành quy trình kiểm toán bộ chứng từ ngoại thương Trung–Việt, mã HS và tiêu chí xuất xứ C/O Form E / RCEP.",
         "Phân tích mô hình vận hành của 12 doanh nghiệp lớn (Alibaba, JD, Tencent, Huawei, BYD, SHEIN, CATL, Xiaomi...)."
       ],
       steps: [
-        { label: "Bước 1: Guanxi, Thể diện & Tinh thần Khế ước Hiện đại", targetType: "article", targetId: "guanxi-business", summary: "Phân tích xã hội học kinh tế về tín nhiệm và hợp đồng." },
-        { label: "Bước 2: Chuỗi Cung ứng Trung – Việt, Hải quan & C/O Form E", targetType: "article", targetId: "china-vietnam-supply-chain-rcep", summary: "Vành đai công nghiệp, 3 hành lang logistics và kiểm toán xuất xứ ACFTA/RCEP." },
-        { label: "Bước 3: Chuyển đổi Số, Nội quyển & Quốc triều Đương đại", targetType: "article", targetId: "contemporary-china-digital", summary: "Siêu hạ tầng số, tâm lý xã hội trẻ và xu hướng tiêu dùng mới." },
-        { label: "Bước 4: Nghiên cứu 20 Chủ đề & 12 Case Studies Tập đoàn", targetType: "page", targetId: "business", summary: "Khảo sát thực tiễn Alibaba, Huawei, BYD, SHEIN, CATL, COSCO..." }
+        { label: "Bước 1: Guanxi, Thể diện & Tinh thần Khế ước Hiện đại", labelEn: "Step 1: Guanxi, Mianzi & Modern Contract Law", targetType: "article", targetId: "guanxi-business", summary: "Phân tích xã hội học kinh tế về tín nhiệm và hợp đồng." },
+        { label: "Bước 2: Chuỗi Cung ứng Trung – Việt, Hải quan & C/O Form E", labelEn: "Step 2: China–Vietnam Supply Chains & C/O Form E", targetType: "article", targetId: "china-vietnam-supply-chain-rcep", summary: "Vành đai công nghiệp, 3 hành lang logistics và kiểm toán xuất xứ ACFTA/RCEP." },
+        { label: "Bước 3: Chuyển đổi Số, Nội quyển & Quốc triều Đương đại", labelEn: "Step 3: Digital Ecosystems, Involution & Guochao", targetType: "article", targetId: "contemporary-china-digital", summary: "Siêu hạ tầng số, tâm lý xã hội trẻ và xu hướng tiêu dùng mới." },
+        { label: "Bước 4: Nghiên cứu 20 Chủ đề & 12 Case Studies Tập đoàn", labelEn: "Step 4: 20 B2B Topics & 12 Enterprise Case Studies", targetType: "page", targetId: "business", summary: "Khảo sát thực tiễn Alibaba, Huawei, BYD, SHEIN, CATL, COSCO..." }
       ],
       relatedResources: ["qingming-scroll", "david-vases"],
       recommendedNext: "path-foundation"

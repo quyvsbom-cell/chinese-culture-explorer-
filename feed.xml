@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CHINESE CULTURE EXPLORER – 中国文化探索</title>
+    <link>https://chinese-culture-explorer.netlify.app/</link>
+    <description>Digital Chinese cultural encyclopedia, 3D Forbidden City dissection, 54 master paintings, 34 provincial cultural &amp; travel dossiers, and Sino-Vietnamese scholarly research curated by Lê Hưng Thịnh (黎兴盛).</description>
+    <language>vi</language>
+    <lastBuildDate>Wed, 18 Nov 2026 12:30:00 +0700</lastBuildDate>
+    <atom:link href="https://chinese-culture-explorer.netlify.app/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Giải phẫu 3D Tử Cấm Thành (紫禁城): Đấu Củng, Trục Đế Vương &amp; Đối Sánh Cố Đô Huế</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/forbidden-city-3d-dissection</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/forbidden-city-3d-dissection</guid>
+      <pubDate>Wed, 18 Nov 2026 12:00:00 +0700</pubDate>
+      <author>Lê Hưng Thịnh (黎兴盛)</author>
+      <description>High-detail Three.js 3-state 3D dissection of the Forbidden City (960×750m, 8,886 surveyed bays, 1722 Yangxindian shift, interlocking Dougong timber joinery) paired with East Asian palace parallels at Hue Imperial Citadel.</description>
+    </item>
+    <item>
+      <title>Chiến lược Đàm phán B2B 7 Bước với Nhà máy Trung Quốc, NECIPS &amp; Giám định PSI</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-b2b-7-stage-contract-necips-psi</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-b2b-7-stage-contract-necips-psi</guid>
+      <pubDate>Tue, 17 Nov 2026 10:00:00 +0700</pubDate>
+      <author>Lê Hưng Thịnh (黎兴盛)</author>
+      <description>Due diligence framework covering NECIPS Unified Social Credit Code lookup, red-star Gongzhang company seals, Định kim (定金) vs Đính kim (订金), and pre-shipment inspection protocols.</description>
+    </item>
+    <item>
+      <title>Bản cập nhật Nền tảng v2.6: Mở khóa Toàn văn 100%, Sổ tay Từ vựng Ngữ cảnh &amp; Hành trang 34 Tỉnh/Thành</title>
+      <link>https://chinese-culture-explorer.netlify.app/hoc-tap</link>
+      <guid>https://chinese-culture-explorer.netlify.app/hoc-tap</guid>
+      <pubDate>Mon, 16 Nov 2026 09:00:00 +0700</pubDate>
+      <author>Lê Hưng Thịnh (黎兴盛)</author>
+      <description>Removed reading gates on all 65 monographs and APA 7th/BibTeX citations, launched mouse-selection Contextual Vocabulary &amp; Reading Notebook with .CSV/.TSV export, and added Pre-Trip Field Readiness checklists across 34 provinces.</description>
+    </item>
+  </channel>
+</rss>

@@ -66,7 +66,7 @@ window.CCE_COMPENDIA = {
       titleZh: "中国区域地理、产业集群与中越跨境供应链战略报告",
       titleEn: "China's Provincial Geography, Industrial Clusters & Bilateral Supply Chains (China Unlocked)",
       imageUrl: "assets/images/jiangshan-ruci-duojiao.jpg",
-      summary: "Bản đồ tư duy từ Việt Nam (1.444 km biên giới, Tam cấp địa hình, Đường Hồ Huỳnh Dung 94%/6%, Tuyến Tần Lĩnh – Sông Hoài), hồ sơ 22 tỉnh + 5 khu tự trị + 4 trực hạt thị (vì sao Trùng Khánh tách khỏi Tứ Xuyên năm 1997) + 2 SAR, ma trận 12 chiều của 7 siêu đô thị, 6 đại cụm đô thị, 3 case study thu mua thực chiến, giáo trình 14 học phần và 100 thuật ngữ địa-kinh tế."
+      summary: "Bản đồ tư duy từ Việt Nam (1.444 km biên giới, Tam cấp địa hình, Đường Hồ Huỳnh Dung 94%/6%, Tuyến Tần Lĩnh – Sông Hoài), hồ sơ 22 tỉnh + 5 khu tự trị + 4 trực hạt thị (vì sao Trùng Khánh tách khỏi Tứ Xuyên năm 1997) + 2 SAR, ma trận đối sánh chuyên sâu 7 siêu đô thị, 6 đại cụm đô thị, 3 case study thu mua thực chiến, giáo trình 14 học phần và 100 thuật ngữ địa-kinh tế."
     },
     {
       id: "compendium-field-guide",
