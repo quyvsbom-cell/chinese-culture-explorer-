@@ -10,8 +10,7 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     explodePercent: 0,
     autoOrbit: true,
     showPins: true,
-    seismicActive: false,
-    lightingPreset: 0, // 0: Day, 1: Sunset, 2: Blueprint Night
+    lightingPreset: 0, // 0: Day Studio, 1: Sunset, 2: Blueprint Night
     activeChapterIdx: 0,
     activeZoneId: "001",
     activeJumpSec: "fc3d-sec-01",
@@ -294,8 +293,8 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     },
     {
       step: "02",
-      tagVi: "CỬA NGÕ · NGỌ MÔN 37,95 M",
-      tagEn: "PORTAL · MERIDIAN GATE 37.95 M",
+      tagVi: "CỬA NGÕ · NGỌ MÔN 37,95\u00A0M",
+      tagEn: "PORTAL · MERIDIAN GATE 37.95\u00A0M",
       titleVi: "Ngọ Môn (午门) & Nghệ Thuật Uy Áp Thị Giác Hai Cánh Chữ U",
       titleEn: "Meridian Gate: Visual Containment Wings & Five Phoenix Roofs",
       statuteLabelVi: "NHÌN TỪ NGOÀI CỔNG",
@@ -1279,6 +1278,7 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
 
     const citadelBase = new THREE.Mesh(new THREE.BoxGeometry(126, 1.4, 162), new THREE.MeshStandardMaterial({ color: 0x383632, roughness: 0.85 }));
     citadelBase.position.set(0, 0.2, 0);
+    regFn("002", citadelBase, "ground", false, 0);
     root.add(citadelBase);
 
     const imperialWay = new THREE.Mesh(new THREE.BoxGeometry(12, 0.18, 154), new THREE.MeshStandardMaterial({ color: 0xcfcbc2, roughness: 0.6 }));
@@ -1298,6 +1298,8 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       wMesh.position.set(ws.x, 2.6, ws.z);
       const capMesh = new THREE.Mesh(new THREE.BoxGeometry(ws.w + 0.3, 0.45, ws.d + 0.3), wallCapMat);
       capMesh.position.set(ws.x, 5.3, ws.z);
+      regFn("001", wMesh, "wall_shell", false, 0);
+      regFn("001", capMesh, "wall_shell", false, 0);
       root.add(wMesh, capMesh);
     });
 
@@ -1384,23 +1386,23 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
 
     // ZONE 002 Subsurface Cutaway: 15 Alternating Kim Chuyên Brick & Rammed-Earth Courses (No Trees Security)
     const cutawayGroup = new THREE.Group();
-    cutawayGroup.position.set(-18, 0.85, 34);
+    cutawayGroup.position.set(-18, 0.96, 34);
     for (let st = 0; st < 15; st++) {
-      const shrink = st * 0.28;
+      const shrink = st * 0.24;
       const isBrick = st % 2 === 0;
       const layerMat = new THREE.MeshStandardMaterial({
-        color: isBrick ? 0x8b7e6a : 0x1f6e5c,
-        roughness: 0.72
+        color: isBrick ? 0xb8862d : 0x1f6e5c,
+        roughness: 0.65
       });
-      const strataMesh = new THREE.Mesh(new THREE.BoxGeometry(10.5 - shrink, 0.22, 7.6 - shrink * 0.7), layerMat);
-      strataMesh.position.y = 0.28 - st * 0.21;
+      const strataMesh = new THREE.Mesh(new THREE.BoxGeometry(10.8 - shrink, 0.22, 7.8 - shrink * 0.65), layerMat);
+      strataMesh.position.y = 0.22 - st * 0.23;
       cutawayGroup.add(strataMesh);
     }
     const cutawayRim = new THREE.Mesh(
-      new THREE.BoxGeometry(11.2, 0.25, 8.2),
-      new THREE.MeshStandardMaterial({ color: 0xd99b26, roughness: 0.4 })
+      new THREE.BoxGeometry(11.6, 0.26, 8.6),
+      new THREE.MeshStandardMaterial({ color: 0xd99b26, roughness: 0.38 })
     );
-    cutawayRim.position.y = 0.05;
+    cutawayRim.position.y = 0.08;
     cutawayGroup.add(cutawayRim);
     regFn("002", cutawayGroup, "subsurface", false, 0);
     root.add(cutawayGroup);
@@ -1556,13 +1558,8 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
   // --------------------------------------------------------------------------
   function updateDissectionVisuals() {
     if (!rt) return;
-    const targetExplode = Number(ui3d.explodePercent || 0) / 100;
-    rt.explodableMeshes.forEach((mesh) => {
-      if (mesh.userData && typeof mesh.userData.baseY === "number") {
-        const mult = mesh.userData.explodeMult || 1.0;
-        mesh.position.y = mesh.userData.baseY + targetExplode * 14 * mult;
-      }
-    });
+    const isLightStudio = ui3d.lightingPreset === 0 && document.documentElement.getAttribute("data-theme") !== "dark";
+    const highlightZoneFocus = ui3d.dissectionState === "actual";
 
     Object.keys(rt.zoneMeshMap).forEach((zId) => {
       const isSelected = zId === ui3d.activeZoneId;
@@ -1575,32 +1572,45 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
             ? child.material.userData.origColorHex
             : null;
           child.material.transparent = true;
+          child.material.depthWrite = true;
 
-          if (ui3d.dissectionState === "actual") {
+          if (highlightZoneFocus) {
             const isSub = layer === "subsurface";
-            const useWire = Boolean(!isShift && !isSelected && !isSub && layer !== "ground");
-            child.material.wireframe = useWire;
-            if (useWire) {
-              child.material.opacity = 0.34;
-              if (child.material.color) child.material.color.setHex(0xd99b26);
-              if (child.material.emissive) child.material.emissive.setHex(0x221704);
+            const isGround = layer === "ground";
+            if (isGround) {
+              child.material.wireframe = false;
+              if (origColor !== null && child.material.color) child.material.color.setHex(isLightStudio ? 0xE2DDD3 : origColor);
+              if (child.material.emissive) child.material.emissive.setHex(0x000000);
+              const showPitThrough = ui3d.activeZoneId === "002";
+              child.material.opacity = showPitThrough ? 0.24 : 0.92;
+              child.material.depthWrite = !showPitThrough;
             } else {
-              child.material.opacity = 1.0;
-              if (origColor !== null && child.material.color) child.material.color.setHex(origColor);
-              if (isShift) {
-                if (child.material.color) child.material.color.setHex(0xb8292f);
-                if (child.material.emissive) child.material.emissive.setHex(0x5a1014);
-              } else if (isSub) {
-                if (child.material.color) child.material.color.setHex(0x1f6e5c);
-                if (child.material.emissive) child.material.emissive.setHex(0x0f3d32);
-              } else if (child.material.emissive) {
-                child.material.emissive.setHex(isSelected ? 0x2e2005 : 0x000000);
+              const useWire = Boolean(!isShift && !isSelected && !isSub);
+              child.material.wireframe = useWire;
+              if (useWire) {
+                child.material.opacity = isLightStudio ? 0.24 : 0.34;
+                if (child.material.color) child.material.color.setHex(isLightStudio ? 0x8F877A : 0xd99b26);
+                if (child.material.emissive) child.material.emissive.setHex(isLightStudio ? 0x000000 : 0x221704);
+              } else {
+                child.material.opacity = 1.0;
+                if (isSub) {
+                  if (origColor !== null && child.material.color) child.material.color.setHex(origColor);
+                  if (child.material.emissive) child.material.emissive.setHex(0x0f3d32);
+                } else if (isShift || (isSelected && ui3d.activeZoneId !== "002")) {
+                  if (child.material.color) child.material.color.setHex(0xc83228);
+                  if (child.material.emissive) child.material.emissive.setHex(0x4a0e0b);
+                } else {
+                  if (origColor !== null && child.material.color) child.material.color.setHex(origColor);
+                  if (child.material.emissive) child.material.emissive.setHex(isSelected ? 0x2e2005 : 0x000000);
+                }
               }
             }
           } else if (ui3d.dissectionState === "xray") {
             child.material.wireframe = false;
             if (origColor !== null && child.material.color) child.material.color.setHex(origColor);
-            child.material.opacity = layer === "wall_shell" ? 0.22 : 0.98;
+            const fadeGround = layer === "ground" && ui3d.activeZoneId === "002";
+            child.material.opacity = layer === "wall_shell" || fadeGround ? 0.20 : 0.98;
+            child.material.depthWrite = !(layer === "wall_shell" || fadeGround);
             if (child.material.emissive) {
               const isSeismic = layer === "dougong" || layer === "interior_columns" || layer === "subsurface";
               child.material.emissive.setHex(isSeismic ? 0x154d3f : 0x000000);
@@ -1620,31 +1630,46 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
 
   function applyLightingPreset() {
     if (!rt) return;
-    const { scene, ambientLight, sunLight } = rt;
+    const { scene, ambientLight, hemiLight, sunLight, gridHelper } = rt;
+    const isDarkSite = document.documentElement.getAttribute("data-theme") === "dark";
     if (ui3d.lightingPreset === 0) {
-      scene.background.setHex(0x101216);
-      scene.fog.color.setHex(0x101216);
-      ambientLight.color.setHex(0xfff8eb);
-      ambientLight.intensity = 0.72;
-      sunLight.color.setHex(0xfff0d4);
-      sunLight.intensity = 1.15;
+      const studioBg = isDarkSite ? 0x111317 : 0xF6F3EC;
+      scene.background.setHex(studioBg);
+      scene.fog.color.setHex(studioBg);
+      ambientLight.color.setHex(isDarkSite ? 0xfff8eb : 0xffffff);
+      ambientLight.intensity = isDarkSite ? 0.72 : 0.86;
+      if (hemiLight) {
+        hemiLight.color.setHex(isDarkSite ? 0xffebc8 : 0xfffcf5);
+        hemiLight.groundColor.setHex(isDarkSite ? 0x1f242d : 0xd9d2c5);
+        hemiLight.intensity = isDarkSite ? 0.45 : 0.56;
+      }
+      sunLight.color.setHex(isDarkSite ? 0xfff0d4 : 0xfff5df);
+      sunLight.intensity = isDarkSite ? 1.15 : 1.06;
       sunLight.position.set(95, 145, 110);
+      if (gridHelper && gridHelper.material) {
+        gridHelper.material.transparent = true;
+        gridHelper.material.opacity = isDarkSite ? 0.45 : 0.22;
+      }
     } else if (ui3d.lightingPreset === 1) {
-      scene.background.setHex(0x1a1114);
-      scene.fog.color.setHex(0x1a1114);
+      scene.background.setHex(0x1f1414);
+      scene.fog.color.setHex(0x1f1414);
       ambientLight.color.setHex(0xffd1a6);
-      ambientLight.intensity = 0.62;
+      ambientLight.intensity = 0.64;
+      if (hemiLight) hemiLight.intensity = 0.42;
       sunLight.color.setHex(0xff8c42);
       sunLight.intensity = 1.45;
       sunLight.position.set(-130, 65, 85);
+      if (gridHelper && gridHelper.material) gridHelper.material.opacity = 0.35;
     } else {
       scene.background.setHex(0x090c12);
       scene.fog.color.setHex(0x090c12);
       ambientLight.color.setHex(0x90cdf4);
-      ambientLight.intensity = 0.58;
+      ambientLight.intensity = 0.60;
+      if (hemiLight) hemiLight.intensity = 0.40;
       sunLight.color.setHex(0xe2e8f0);
       sunLight.intensity = 0.95;
       sunLight.position.set(60, 160, 40);
+      if (gridHelper && gridHelper.material) gridHelper.material.opacity = 0.35;
     }
   }
 
@@ -1678,8 +1703,8 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       const sx = (v.x * 0.5 + 0.5) * w;
       const sy = (-(v.y * 0.5) + 0.5) * h;
       const halfPin = w < 540 ? 60 : 82;
-      const topSafe = w < 540 ? 44 : 40;
-      const bottomSafe = w < 540 ? 32 : 52;
+      const topSafe = w < 540 ? 64 : 74;
+      const bottomSafe = w < 540 ? 44 : 58;
       if (sx < halfPin || sx > w - halfPin || sy < topSafe || sy > h - bottomSafe) {
         item.el.style.display = "none";
         return;
@@ -1705,40 +1730,69 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       rtState.io.disconnect();
       rtState.io = null;
     }
+    if (rtState.jumpIo) {
+      rtState.jumpIo.disconnect();
+      rtState.jumpIo = null;
+    }
     if (typeof IntersectionObserver === "undefined") return;
     const cards = Array.from(document.querySelectorAll(".fc3d-scrolly-card[data-fc3d-card-idx]"));
-    if (!cards.length) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (Date.now() < scrollPauseUntil) return;
-        const visible = entries.filter((en) => en.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        if (!visible.length) return;
-        const idx = Number(visible[0].target.getAttribute("data-fc3d-card-idx"));
-        if (!Number.isFinite(idx) || idx === ui3d.activeChapterIdx) return;
-        const ch = SCROLLY_CHAPTERS[idx];
-        if (!ch) return;
-        ui3d.activeChapterIdx = idx;
-        ui3d.dissectionState = ch.stateMode;
-        ui3d.explodePercent = ch.stateMode === "xray" ? 78 : 0;
-        ui3d.activeZoneId = ch.zoneId;
-        ui3d.autoOrbit = false;
-        flyCamera(ch.camPos, ch.lookAt);
-        updateDissectionVisuals();
-        syncStageUiInPlace();
-      },
-      { threshold: [0.52, 0.72] }
-    );
-    cards.forEach((c) => io.observe(c));
-    rtState.io = io;
+    if (cards.length) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          if (Date.now() < scrollPauseUntil) return;
+          const visible = entries.filter((en) => en.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+          if (!visible.length) return;
+          const idx = Number(visible[0].target.getAttribute("data-fc3d-card-idx"));
+          if (!Number.isFinite(idx) || idx === ui3d.activeChapterIdx) return;
+          const ch = SCROLLY_CHAPTERS[idx];
+          if (!ch) return;
+          ui3d.activeChapterIdx = idx;
+          ui3d.dissectionState = ch.stateMode;
+          ui3d.explodePercent = ch.stateMode === "xray" ? 78 : 0;
+          ui3d.activeZoneId = ch.zoneId;
+          ui3d.autoOrbit = false;
+          flyCamera(ch.camPos, ch.lookAt);
+          updateDissectionVisuals();
+          syncStageUiInPlace();
+        },
+        { threshold: [0.52, 0.72] }
+      );
+      cards.forEach((c) => io.observe(c));
+      rtState.io = io;
+    }
+
+    const secEls = ["fc3d-sec-01", "fc3d-sec-02", "fc3d-sec-03", "fc3d-sec-04", "fc3d-sec-05", "fc3d-sec-06"]
+      .map((sid) => document.getElementById(sid))
+      .filter(Boolean);
+    if (secEls.length) {
+      const jumpIo = new IntersectionObserver(
+        (entries) => {
+          const hit = entries
+            .filter((en) => en.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+          if (!hit || !hit.target || !hit.target.id) return;
+          const sid = hit.target.id;
+          if (sid === ui3d.activeJumpSec) return;
+          ui3d.activeJumpSec = sid;
+          document.querySelectorAll('.fc3d-jump-btn[data-action="fc3d-jump-sec"]').forEach((btn) => {
+            btn.classList.toggle("active", btn.getAttribute("data-target") === sid);
+          });
+        },
+        { rootMargin: "-135px 0px -55% 0px", threshold: [0.05, 0.25] }
+      );
+      secEls.forEach((el) => jumpIo.observe(el));
+      rtState.jumpIo = jumpIo;
+    }
   }
 
   function renderSvgIsometricFallback(container, en) {
     if (!container) return;
-    const zCur = FORBIDDEN_CITY_ZONES.find((z) => z.id === ui3d.activeZoneId) || FORBIDDEN_CITY_ZONES[2];
-    const explodeShift = Math.round((ui3d.explodeLevel || 0) * 0.24);
+    const zCur = FORBIDDEN_CITY_ZONES.find((z) => z.id === ui3d.activeZoneId) || FORBIDDEN_CITY_ZONES[0];
+    const zoneName = en ? (zCur.nameEn || zCur.titleEn || "Meridian Gate") : (zCur.nameVi || zCur.titleVi || "Ngọ Môn");
+    const explodeShift = Math.round((ui3d.explodePercent || 0) * 0.24);
     container.innerHTML = `
-      <div style="width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:1rem;background:#101216;color:#F7F4ED;">
-        <svg viewBox="0 0 760 360" width="100%" style="max-height:310px;border:1px solid rgba(217,155,38,0.35);background:#15181F;" role="img" aria-label="Isometric Architectural Cutaway of the Forbidden City">
+      <div style="width:100%;height:100%;min-height:380px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:0.85rem;padding:1.25rem;background:#101216;color:#F7F4ED;">
+        <svg viewBox="0 0 760 360" width="100%" style="max-height:310px;border:1px solid rgba(217,155,38,0.35);background:#15181F;display:block;" role="img" aria-label="Isometric Architectural Cutaway of the Forbidden City">
           <line x1="60" y1="190" x2="700" y2="190" stroke="#D99B26" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.65" />
           <rect x="82" y="160" width="44" height="60" fill="#2A1B18" stroke="#D99B26" stroke-width="1.5" />
           <text x="104" y="238" fill="#E8D2A0" font-size="10" text-anchor="middle">001</text>
@@ -1759,8 +1813,8 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
           <rect x="585" y="160" width="90" height="50" fill="#1F242D" stroke="#3B4D7A" stroke-width="1.5" />
           <text x="630" y="238" fill="#CBD5E1" font-size="10" text-anchor="middle">009–010 · BẮC MÔN</text>
         </svg>
-        <div style="font-size:0.78rem;color:#CBD5E1;margin-top:0.55rem;text-align:center;">
-          ${en ? `SVG Architectural Isometric Mode · Active Zone ${zCur.code}: ${zCur.titleEn}` : `Chế độ Mặt cắt Kiến trúc SVG · Phân khu ${zCur.code}: ${zCur.titleVi}`}
+        <div style="font-size:0.8rem;color:#E5E0D7;text-align:center;line-height:1.45;padding:0.35rem 0.65rem;border:1px solid rgba(215,186,129,0.28);background:rgba(20,18,16,0.9);">
+          ${en ? `SVG Architectural Isometric Mode · Active Zone ${zCur.code}: ${zoneName}` : `Chế độ Mặt cắt Kiến trúc SVG · Phân khu ${zCur.code}: ${zoneName}`}
         </div>
       </div>
     `;
@@ -1781,6 +1835,7 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
         if (rt.rafId) cancelAnimationFrame(rt.rafId);
         if (rt.ro) rt.ro.disconnect();
         if (rt.io) rt.io.disconnect();
+        if (rt.jumpIo) rt.jumpIo.disconnect();
         if (rt.renderer) {
           if (rt.renderer.forceContextLoss) rt.renderer.forceContextLoss();
           rt.renderer.dispose();
@@ -1881,10 +1936,14 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       camera,
       renderer,
       ambientLight,
+      hemiLight,
       sunLight,
+      rimLight,
+      gridHelper,
       fcRootGroup,
       zoneMeshMap,
       explodableMeshes,
+      explodeCurrent: Number(ui3d.explodePercent || 0) / 100,
       pinElements,
       meshCount: stats.count,
       camCurrentPos,
@@ -1896,6 +1955,7 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       sphericalPhi: 1.02,
       ro: null,
       io: null,
+      jumpIo: null,
       rafId: null
     };
     rt = rtState;
@@ -1969,6 +2029,14 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     applyLightingPreset();
     updateDissectionVisuals();
 
+    // Sync initial roof elevation at mount
+    rtState.explodableMeshes.forEach((mesh) => {
+      if (mesh.userData && typeof mesh.userData.baseY === "number") {
+        const mult = mesh.userData.explodeMult || 1.0;
+        mesh.position.y = mesh.userData.baseY + rtState.explodeCurrent * 14 * mult;
+      }
+    });
+
     // Respect current zone camera target on re-mount
     const zCur = FORBIDDEN_CITY_ZONES.find((z) => z.id === ui3d.activeZoneId);
     if (zCur && !ui3d.autoOrbit) {
@@ -1987,22 +2055,13 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
         rt.camTargetPos.y = rt.lookTargetPos.y + rt.orbitRadius * Math.cos(rt.sphericalPhi);
         rt.camTargetPos.z = rt.lookTargetPos.z + rt.orbitRadius * Math.sin(rt.sphericalPhi) * Math.cos(rt.sphericalTheta);
       }
-      if (ui3d.seismicActive) {
-        const nowT = performance.now() * 0.022;
-        const wave = Math.sin(nowT) * 0.75 + Math.sin(nowT * 2.3) * 0.25;
-        rt.fcRootGroup.position.x = wave * 0.92;
-        rt.fcRootGroup.position.z = Math.cos(nowT * 1.4) * 0.34;
+      const targetExplode = Number(ui3d.explodePercent || 0) / 100;
+      if (Math.abs(rt.explodeCurrent - targetExplode) > 0.001) {
+        rt.explodeCurrent += (targetExplode - rt.explodeCurrent) * 0.14;
         rt.explodableMeshes.forEach((mesh) => {
-          if (mesh.userData && typeof mesh.userData.baseX === "number") {
-            const damp = (mesh.userData.explodeMult || 0.5) * 0.24;
-            mesh.position.x = mesh.userData.baseX - wave * damp;
-          }
-        });
-      } else if (rt.fcRootGroup.position.x !== 0 || rt.fcRootGroup.position.z !== 0) {
-        rt.fcRootGroup.position.set(0, 0, 0);
-        rt.explodableMeshes.forEach((mesh) => {
-          if (mesh.userData && typeof mesh.userData.baseX === "number") {
-            mesh.position.x = mesh.userData.baseX;
+          if (mesh.userData && typeof mesh.userData.baseY === "number") {
+            const mult = mesh.userData.explodeMult || 1.0;
+            mesh.position.y = mesh.userData.baseY + rt.explodeCurrent * 14 * mult;
           }
         });
       }
@@ -2022,26 +2081,23 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
   function renderStageHudHtml(en) {
     const zone = FORBIDDEN_CITY_ZONES.find((z) => z.id === ui3d.activeZoneId) || FORBIDDEN_CITY_ZONES[0];
     return `
-      <div style="font-size:0.68rem;font-weight:800;letter-spacing:0.08em;color:#D7BA81;text-transform:uppercase;">
+      <div style="font-size:0.64rem;font-weight:800;letter-spacing:0.07em;color:#D7BA81;text-transform:uppercase;">
         ${zone.code} · <span class="hanzi">${zone.hanzi}</span>
       </div>
-      <div style="font-family:var(--font-editorial);font-size:1.05rem;font-weight:700;margin:0.15rem 0 0.25rem;color:#FFFFFF;">
+      <div style="font-family:var(--font-editorial);font-size:0.96rem;font-weight:700;margin:0.12rem 0 0.18rem;color:#FFFFFF;line-height:1.25;">
         ${en ? zone.nameEn : zone.nameVi}
       </div>
-      <div style="font-size:0.75rem;color:#D7BA81;margin-bottom:0.35rem;">
+      <div style="font-size:0.72rem;color:#F3D999;margin-bottom:0.35rem;line-height:1.35;">
         ${en ? zone.areaOrScaleEn : zone.areaOrScaleVi}
       </div>
-      <p style="margin:0 0 0.45rem;font-size:0.8rem;line-height:1.48;color:#E5E0D7;">
-        ${en ? zone.detailEn : zone.detailVi}
-      </p>
-      <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+      <div style="display:flex;gap:0.32rem;flex-wrap:wrap;">
         ${zone.vocab ? `
-          <button type="button" class="fc3d-pill" style="background:#9E2A2B;border-color:#D7BA81;" data-action="fc3d-save-vocab" data-zone="${zone.id}">
-            + ${en ? "Save Term to Notebook" : "Lưu Thuật ngữ vào Sổ tay"}
+          <button type="button" class="fc3d-pill" style="background:#9E2A2B;border-color:#D7BA81;padding:0.24rem 0.52rem;font-size:0.7rem;" data-action="fc3d-save-vocab" data-zone="${zone.id}">
+            + ${en ? "Save Term" : "Lưu Thuật ngữ"}
           </button>
         ` : ""}
-        <a href="${zone.sourceUrl}" target="_blank" rel="noopener noreferrer" class="fc3d-pill" style="text-decoration:none;">
-          ${en ? "Palace Source ↗" : "Tư liệu Gốc ↗"}
+        <a href="${zone.sourceUrl}" target="_blank" rel="noopener noreferrer" class="fc3d-pill" style="text-decoration:none;padding:0.24rem 0.52rem;font-size:0.7rem;">
+          ${en ? "Source ↗" : "Tư liệu ↗"}
         </a>
       </div>
     `;
@@ -2052,98 +2108,89 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     const canvasId = tall ? "fc3d-canvas-monograph" : "fc3d-canvas-home";
     const pinsId = tall ? "fc3d-pins-monograph" : "fc3d-pins-home";
     const lightLabel = ui3d.lightingPreset === 0
-      ? (en ? "☀️ Day Daylight" : "☀️ Ban Ngày")
+      ? (en ? "☀️ Day Studio" : "☀️ Ban Ngày")
       : ui3d.lightingPreset === 1
-      ? (en ? "🌇 Golden Hour" : "🌇 Hoàng Hôn")
-      : (en ? "🌙 Night Blueprint" : "🌙 Sa bàn Đêm");
+      ? (en ? "🌇 Dusk" : "🌇 Hoàng Hôn")
+      : (en ? "🌙 Night CAD" : "🌙 Sa bàn Đêm");
     const wrapClass = isScrolly ? "fc3d-canvas-wrap fc3d-canvas-scrolly" : (tall ? "fc3d-canvas-wrap fc3d-canvas-tall" : "fc3d-canvas-wrap");
 
     return `
       <div class="fc3d-stage-shell" data-fc3d-mount="${canvasId}" data-fc3d-pins="${pinsId}">
-        <div class="fc3d-topbar">
-          <div class="fc3d-pill-group">
-            <span class="fc3d-pill active" style="cursor:default;">
-              ${en ? "Forbidden City · 紫禁城 (960×750m · WebGL)" : "Tử Cấm Thành · 紫禁城 (960×750m · WebGL)"}
-            </span>
+        <div class="fc3d-mode-bar" role="group" aria-label="${en ? "3D Dissection Modes" : "3 Chế độ Giải phẫu 3D"}">
+          <button type="button" class="fc3d-pill ${ui3d.dissectionState === "plan" ? "active" : ""}" data-action="fc3d-set-state" data-state="plan">
+            ${en ? "[1] Canonical (9,999)" : "[1] Quy Chế Điển Lễ (9.999)"}
+          </button>
+          <button type="button" class="fc3d-pill ${ui3d.dissectionState === "actual" ? "active" : ""}" data-action="fc3d-set-state" data-state="actual">
+            ${en ? "[2] Reality & Wireframe (8,707)" : "[2] Thực Tế & Khung Dây (8.707)"}
+          </button>
+          <button type="button" class="fc3d-pill ${ui3d.dissectionState === "xray" ? "active" : ""}" data-action="fc3d-set-state" data-state="xray">
+            ${en ? "[3] X-Ray Dougong" : "[3] Bóc Tách X-Ray Đấu Củng"}
+          </button>
+        </div>
+
+        <div class="${wrapClass}">
+          <div id="${canvasId}" style="width:100%;height:100%;"></div>
+          <div id="${pinsId}" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:5;"></div>
+
+          <div class="fc3d-hud-top-left" aria-label="${en ? "3D Viewport Utilities" : "Công cụ Khung nhìn 3D"}">
+            <span class="fc3d-hud-badge">紫禁城 · WebGL</span>
+            <button type="button" class="fc3d-pill ${ui3d.autoOrbit ? "active" : ""}" data-action="fc3d-toggle-orbit">
+              ${ui3d.autoOrbit ? (en ? "⟳ Orbit: ON" : "⟳ Tự Xoay: BẬT") : (en ? "⟳ Orbit: OFF" : "⟳ Tự Xoay: TẮT")}
+            </button>
+            <button type="button" class="fc3d-pill ${ui3d.showPins ? "active" : ""}" data-action="fc3d-toggle-pins">
+              ${ui3d.showPins ? (en ? "📍 Pins: ON" : "📍 Nhãn 3D: BẬT") : (en ? "📍 Pins: OFF" : "📍 Nhãn 3D: TẮT")}
+            </button>
+            <button type="button" class="fc3d-pill" data-action="fc3d-cycle-light">${lightLabel}</button>
           </div>
-          <div class="fc3d-pill-group">
-            <button type="button" class="fc3d-pill ${ui3d.dissectionState === "plan" ? "active" : ""}" data-action="fc3d-set-state" data-state="plan">
-              ${en ? "[1] Canonical Blueprint (9,999)" : "[1] Quy Chế Điển Lễ (9.999)"}
+
+          <div class="fc3d-hud-bottom-right" aria-label="${en ? "Camera Angles & Zoom" : "Góc máy Camera & Thu phóng"}">
+            <button type="button" class="fc3d-pill" data-action="fc3d-cam-preset" data-preset="closeup">
+              ${en ? "Taihedian" : "Thái Hòa"}
             </button>
-            <button type="button" class="fc3d-pill ${ui3d.dissectionState === "actual" ? "active" : ""}" data-action="fc3d-set-state" data-state="actual">
-              ${en ? "[2] Archaeological Reality (8,707 & Shift)" : "[2] Thực Tế & Khung Dây (8.707)"}
+            <button type="button" class="fc3d-pill" data-action="fc3d-cam-preset" data-preset="subsurface">
+              ${en ? "15-Layer" : "Móng 15 lớp"}
             </button>
-            <button type="button" class="fc3d-pill ${ui3d.dissectionState === "xray" ? "active" : ""}" data-action="fc3d-set-state" data-state="xray">
-              ${en ? "[3] X-Ray Dougong & Columns" : "[3] Bóc Tách X-Ray Đấu Củng"}
+            <button type="button" class="fc3d-pill" data-action="fc3d-cam-preset" data-preset="south">
+              ${en ? "Ngọ Môn" : "Ngọ Môn"}
             </button>
+            <button type="button" class="fc3d-pill" data-action="fc3d-cam-preset" data-preset="iso">
+              ${en ? "Isometric" : "Phối cảnh"}
+            </button>
+            <button type="button" class="fc3d-pill fc3d-zoom-btn" data-action="fc3d-zoom" data-dir="in" title="Zoom In">+</button>
+            <button type="button" class="fc3d-pill fc3d-zoom-btn" data-action="fc3d-zoom" data-dir="out" title="Zoom Out">−</button>
+          </div>
+
+          <div class="fc3d-overlay-hud">
+            ${renderStageHudHtml(en)}
           </div>
         </div>
 
         <div class="fc3d-legend-bar" aria-label="${en ? "4-Color Semantic Legend" : "Chú giải 4 Mã màu Học thuật"}">
           <span class="fc3d-legend-item">
             <span class="fc3d-legend-swatch" style="background:#D99B26;"></span>
-            <span>${en ? "Glazed Gold: Canonical Axis" : "Vàng Lưu Ly: Trục Quy chế"}</span>
+            <span>${en ? "Gold: Canonical Axis" : "Vàng Lưu Ly: Trục Quy chế"}</span>
           </span>
           <span class="fc3d-legend-item">
-            <span class="fc3d-legend-swatch" style="background:#B8292F;"></span>
-            <span>${en ? "Cinnabar Red: 1723 Power Shift (Yangxindian)" : "Đỏ Chu Sa: Dịch chuyển Quyền lực (Dưỡng Tâm Điện)"}</span>
+            <span class="fc3d-legend-swatch" style="background:#C83228;"></span>
+            <span>${en ? "Cinnabar: 1723 Shift / Focus" : "Đỏ Chu Sa: Dịch chuyển 1723 & Tâm điểm"}</span>
           </span>
           <span class="fc3d-legend-item">
             <span class="fc3d-legend-swatch" style="background:#1F6E5C;"></span>
-            <span>${en ? "Jade Teal: Seismic Dougong & 15-Layer Base" : "Xanh Ngọc Bích: Kháng chấn & Móng 15 lớp"}</span>
+            <span>${en ? "Jade: Dougong & 15-Layer Base" : "Xanh Ngọc Bích: Kháng chấn & Móng 15 lớp"}</span>
           </span>
           <span class="fc3d-legend-item">
             <span class="fc3d-legend-swatch" style="background:#3B4D7A;"></span>
-            <span>${en ? "Hue Indigo: Hue Citadel Counterpart" : "Lam Pháp Lam: Tương chiếu Đại Nội Huế"}</span>
+            <span>${en ? "Hue Indigo: Hue Citadel" : "Lam Pháp Lam: Đại Nội Huế"}</span>
           </span>
         </div>
 
-        <div class="fc3d-topbar" style="background:#141210;padding:0.45rem 1rem;border-bottom:1px solid rgba(242,239,233,0.12);">
-          <div class="fc3d-pill-group">
-            <button type="button" class="fc3d-pill ${ui3d.seismicActive ? "active" : ""}" data-action="fc3d-toggle-seismic">
-              ${ui3d.seismicActive ? (en ? "🌊 Seismic M7.8 Shake: ON" : "🌊 Thử Động Đất 7,8 Độ: ĐANG RUNG") : (en ? "🌊 Simulate M7.8 Quake" : "🌊 Thử Nghiệm Động Đất 7,8 Độ Richter")}
-            </button>
-            <button type="button" class="fc3d-pill ${ui3d.autoOrbit ? "active" : ""}" data-action="fc3d-toggle-orbit">
-              ${ui3d.autoOrbit ? (en ? "⟳ Orbit: ON" : "⟳ Tự Xoay: BẬT") : (en ? "⟳ Orbit: OFF" : "⟳ Tự Xoay: TẮT")}
-            </button>
-            <button type="button" class="fc3d-pill ${ui3d.showPins ? "active" : ""}" data-action="fc3d-toggle-pins">
-              ${ui3d.showPins ? (en ? "📍 3D Pins: ON" : "📍 Nhãn 3D: BẬT") : (en ? "📍 3D Pins: OFF" : "📍 Nhãn 3D: TẮT")}
-            </button>
-            <button type="button" class="fc3d-pill" data-action="fc3d-cycle-light">${lightLabel}</button>
-          </div>
-          <div class="fc3d-pill-group">
-            <button type="button" class="fc3d-pill" data-action="fc3d-cam-preset" data-preset="closeup">
-              ${en ? "Taihedian" : "Thái Hòa"}
-            </button>
-            <button type="button" class="fc3d-pill" data-action="fc3d-cam-preset" data-preset="subsurface">
-              ${en ? "15-Layer Base" : "Móng 15 lớp"}
-            </button>
-            <button type="button" class="fc3d-pill" data-action="fc3d-cam-preset" data-preset="south">
-              ${en ? "Meridian Gate" : "Ngọ Môn"}
-            </button>
-            <button type="button" class="fc3d-pill" data-action="fc3d-cam-preset" data-preset="iso">
-              ${en ? "Isometric" : "Phối cảnh"}
-            </button>
-            <button type="button" class="fc3d-pill" data-action="fc3d-zoom" data-dir="in" title="Zoom In">+</button>
-            <button type="button" class="fc3d-pill" data-action="fc3d-zoom" data-dir="out" title="Zoom Out">−</button>
-          </div>
-        </div>
-
-        <div class="${wrapClass}">
-          <div id="${canvasId}" style="width:100%;height:100%;"></div>
-          <div id="${pinsId}" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:5;"></div>
-          <div class="fc3d-overlay-hud">
-            ${renderStageHudHtml(en)}
-          </div>
-        </div>
-
         <div class="fc3d-xray-bar">
-          <label for="fc3d-explode-${tall ? "m" : "h"}" style="font-weight:700;color:#D7BA81;">
-            ${en ? `Exploded Roof & Dougong (${ui3d.explodePercent}%)` : `Thanh Bóc tách Mái Trọng Diêm & Đấu Củng (${ui3d.explodePercent}%)`}
+          <label for="fc3d-explode-${tall ? "m" : "h"}" style="font-weight:700;color:#D7BA81;white-space:nowrap;">
+            ${en ? `Roof & Dougong Lift (${ui3d.explodePercent}%)` : `Thanh Bóc tách Mái & Đấu Củng (${ui3d.explodePercent}%)`}
           </label>
-          <input id="fc3d-explode-${tall ? "m" : "h"}" type="range" min="0" max="100" value="${ui3d.explodePercent}" data-action="fc3d-explode" style="flex:1;min-width:140px;accent-color:#B8292F;" />
-          <span style="font-size:0.74rem;color:#B9B2A8;">
-            ${en ? "Drag 360° · Wheel zoom · Click pins or scroll story cards" : "Kéo xoay 360° · Cuộn Zoom · Bấm nhãn 3D hoặc cuộn thẻ câu chuyện"}
+          <input id="fc3d-explode-${tall ? "m" : "h"}" type="range" min="0" max="100" value="${ui3d.explodePercent}" data-action="fc3d-explode" style="flex:1;min-width:120px;accent-color:#B8292F;" />
+          <span style="font-size:0.72rem;color:#B9B2A8;white-space:nowrap;">
+            ${en ? "Drag 360° · Wheel zoom · Click pins" : "Kéo xoay 360° · Cuộn Zoom · Bấm nhãn 3D"}
           </span>
         </div>
 
@@ -2171,13 +2218,6 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     document.querySelectorAll('.fc3d-scrolly-card[data-fc3d-card-idx]').forEach((card) => {
       card.classList.toggle("active", Number(card.getAttribute("data-fc3d-card-idx")) === ui3d.activeChapterIdx);
     });
-    const seismicBtn = shell.querySelector('[data-action="fc3d-toggle-seismic"]');
-    if (seismicBtn) {
-      seismicBtn.classList.toggle("active", ui3d.seismicActive);
-      seismicBtn.textContent = ui3d.seismicActive
-        ? (en ? "🌊 Seismic M7.8 Shake: ON" : "🌊 Thử Động Đất 7,8 Độ: ĐANG RUNG")
-        : (en ? "🌊 Simulate M7.8 Quake" : "🌊 Thử Nghiệm Động Đất 7,8 Độ Richter");
-    }
     const orbitBtn = shell.querySelector('[data-action="fc3d-toggle-orbit"]');
     if (orbitBtn) {
       orbitBtn.classList.toggle("active", ui3d.autoOrbit);
@@ -2186,21 +2226,21 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     const pinsBtn = shell.querySelector('[data-action="fc3d-toggle-pins"]');
     if (pinsBtn) {
       pinsBtn.classList.toggle("active", ui3d.showPins);
-      pinsBtn.textContent = ui3d.showPins ? (en ? "📍 3D Pins: ON" : "📍 Nhãn 3D: BẬT") : (en ? "📍 3D Pins: OFF" : "📍 Nhãn 3D: TẮT");
+      pinsBtn.textContent = ui3d.showPins ? (en ? "📍 Pins: ON" : "📍 Nhãn 3D: BẬT") : (en ? "📍 Pins: OFF" : "📍 Nhãn 3D: TẮT");
     }
     const lightBtn = shell.querySelector('[data-action="fc3d-cycle-light"]');
     if (lightBtn) {
       lightBtn.textContent = ui3d.lightingPreset === 0
-        ? (en ? "☀️ Day Daylight" : "☀️ Ban Ngày")
+        ? (en ? "☀️ Day Studio" : "☀️ Ban Ngày")
         : ui3d.lightingPreset === 1
-        ? (en ? "🌇 Golden Hour" : "🌇 Hoàng Hôn")
-        : (en ? "🌙 Night Blueprint" : "🌙 Sa bàn Đêm");
+        ? (en ? "🌇 Dusk" : "🌇 Hoàng Hôn")
+        : (en ? "🌙 Night CAD" : "🌙 Sa bàn Đêm");
     }
     const slider = shell.querySelector('[data-action="fc3d-explode"]');
     if (slider) slider.value = String(ui3d.explodePercent);
     const sliderLbl = shell.querySelector(".fc3d-xray-bar label");
     if (sliderLbl) {
-      sliderLbl.textContent = en ? `Exploded Roof & Dougong (${ui3d.explodePercent}%)` : `Thanh Bóc tách Mái Trọng Diêm & Đấu Củng (${ui3d.explodePercent}%)`;
+      sliderLbl.textContent = en ? `Roof & Dougong Lift (${ui3d.explodePercent}%)` : `Thanh Bóc tách Mái & Đấu Củng (${ui3d.explodePercent}%)`;
     }
     const hud = shell.querySelector(".fc3d-overlay-hud");
     if (hud) hud.innerHTML = renderStageHudHtml(en);
@@ -2276,8 +2316,8 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
               <h2 class="ed-h2">${en ? "Interactive 3D Forbidden City Dissection & Hue Citadel Comparison" : "Giải phẫu 3D Tử Cấm Thành (8 Chương Tương tác): Quy chế, Đấu Củng & Đối Sánh Cố Đô Huế"}</h2>
               <p style="margin:0.35rem 0 0;color:var(--text-secondary);max-width:74ch;font-size:0.93rem;">
                 ${en
-                  ? "Toggle Canonical Blueprint vs Archaeological Reality Wireframe (showing the 1723 power shift to Yangxindian), simulate an M7.8 seismic quake on unanchored columns, and explore 15 subsurface plaza layers alongside Hue Imperial Citadel."
-                  : "Chuyển đổi tức thì giữa Quy chế Điển lễ (9.999,5 gian), Thực tế Khảo cổ Khung dây (8.707 gian & cú dịch chuyển năm 1723 sang Dưỡng Tâm Điện), thử nghiệm động đất 7,8 độ Richter và xem mặt cắt móng 15 lớp gạch Kim chuyên."}
+                  ? "Toggle Canonical Blueprint vs. Archaeological Reality Wireframe (showing the 1723 power shift to Yangxindian), lift roofs into X-Ray Dougong view, and explore 15 subsurface plaza layers alongside Hue Imperial Citadel."
+                  : "Chuyển đổi tức thì giữa Quy chế Điển lễ (9.999,5 gian), Thực tế Khảo cổ Khung dây (8.707 gian nền & cú dịch chuyển năm 1723 sang Dưỡng Tâm Điện), bóc tách X-Ray Đấu Củng và xem mặt cắt móng 15 lớp gạch Kim chuyên."}
               </p>
             </div>
             <button type="button" class="ed-btn-primary" data-action="open-article" data-id="forbidden-city-3d-dissection">
@@ -2325,14 +2365,14 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
           </div>
           <p class="fc3d-sapo-lead">
             ${en
-              ? "Planned in 1406 under Emperor Yongle as an inviolable spatial symbol of Heavenly Mandate—immortalized in folklore with <strong>9,999.5 bays</strong> and strict Front-Court / Rear-Residence rules—field measurements by the Palace Museum in 1973 proved the Forbidden City actually holds <strong>8,707 verified bays (8,886 including corner towers)</strong>. More strikingly, for the last 200 years of the Qing Dynasty (1723–1911), real imperial rule shifted off the 2,377 m² Hall of Supreme Harmony onto the compact <strong>~5,000 m² Yangxindian &amp; Grand Council wing</strong> on the western flank."
-              : "Được quy hoạch từ năm 1406 dưới thời Minh Thành Tổ Chu Đệ như biểu tượng bất khả xâm phạm của thiên mệnh với truyền thuyết <strong>9.999,5 gian phòng</strong> và nguyên tắc <em>Tiền Triều Hậu Thị</em>, nhưng đợt khảo sát thực địa từng gian năm 1973 của Bảo tàng Cố Cung (Vu Trác Vân chủ trì) xác định Tử Cấm Thành thực tế chỉ có <strong>8.707 gian (8.886 gian tính cả lầu góc)</strong>. Đáng chú ý hơn, suốt gần 200 năm cuối triều Thanh từ năm 1723, trung tâm quyền lực thực sự không còn nằm ở Điện Thái Hòa rộng 2.377 m² trên trục chính, mà dịch chuyển hoàn toàn sang cụm <strong>Dưỡng Tâm Điện và Quân Cơ Xứ (~5.000 m²)</strong> ở góc Tây."}
+              ? "Planned in 1406 under Emperor Yongle as an inviolable spatial symbol of Heavenly Mandate—immortalized in folklore with <strong>9,999.5 bays</strong> and strict Front-Court / Rear-Residence rules—field measurements by the Palace Museum in 1973 proved the Forbidden City actually holds <strong>8,707 base floor bays (8,886 total bays including upper gallery pavilions &amp; corner towers)</strong>. More strikingly, for the last 200 years of the Qing Dynasty (1723–1911), real imperial rule shifted off the 2,377 m² Hall of Supreme Harmony onto the compact <strong>~5,000 m² Yangxindian &amp; Grand Council wing</strong> on the western flank."
+              : "Được quy hoạch từ năm 1406 dưới thời Minh Thành Tổ Chu Đệ như biểu tượng bất khả xâm phạm của thiên mệnh với truyền thuyết <strong>9.999,5 gian phòng</strong> và nguyên tắc <em>Tiền Triều Hậu Thị</em>, nhưng đợt khảo sát thực địa từng gian năm 1973 của Bảo tàng Cố Cung (Vu Trác Vân chủ trì) xác định Tử Cấm Thành thực tế có <strong>8.707 gian nền thực địa (8.886 tổng số gian tính cả lầu gác và Giác Lâu)</strong>. Đáng chú ý hơn, suốt gần 200 năm cuối triều Thanh từ năm 1723, trung tâm quyền lực thực sự không còn nằm ở Điện Thái Hòa rộng 2.377 m² trên trục chính, mà dịch chuyển hoàn toàn sang cụm <strong>Dưỡng Tâm Điện và Quân Cơ Xứ (~5.000 m²)</strong> ở góc Tây."}
           </p>
           <div class="fc3d-kpi-strip">
             <div class="fc3d-kpi-cell">
               <div style="font-size:0.7rem;font-weight:800;letter-spacing:0.06em;color:var(--text-muted);">${en ? "01. PALACE BAYS REALITY" : "01. QUY MÔ GIAN PHÒNG"}</div>
               <div class="fc3d-kpi-num">9.999,5 → 8.707 / 8.886</div>
-              <div style="font-size:0.78rem;color:var(--text-secondary);">${en ? "Myth vs 1973 physical survey across 980 timber halls" : "Truyền thuyết vs Khảo sát thực địa năm 1973 (980 tòa)"}</div>
+              <div style="font-size:0.78rem;color:var(--text-secondary);">${en ? "8,707 ground bays (8,886 total with upper corner towers)" : "8.707 gian nền thực địa (8.886 tổng gian tính cả lầu gác)"}</div>
             </div>
             <div class="fc3d-kpi-cell">
               <div style="font-size:0.7rem;font-weight:800;letter-spacing:0.06em;color:var(--text-muted);">${en ? "02. DE FACTO POWER SHIFT" : "02. TRỌNG TÂM QUYỀN LỰC"}</div>
@@ -2341,7 +2381,7 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
             </div>
             <div class="fc3d-kpi-cell">
               <div style="font-size:0.7rem;font-weight:800;letter-spacing:0.06em;color:var(--text-muted);">${en ? "03. SEISMIC ENDURANCE" : "03. KỶ LỤC KHÁNG CHẤN"}</div>
-              <div class="fc3d-kpi-num" style="color:#1F6E5C;">0 Nails · 300+ Quakes</div>
+              <div class="fc3d-kpi-num" style="color:#1F6E5C;">${en ? "0 Nails · 300+ Quakes" : "0 Đinh sắt · 300+ Động đất"}</div>
               <div style="font-size:0.78rem;color:var(--text-secondary);">${en ? "Dougong + plinths survived 1679 M7.8 earthquake" : "Đấu Củng & cột đặt nổi vượt qua trận 7,8 Richter (1679)"}</div>
             </div>
             <div class="fc3d-kpi-cell">
@@ -2352,8 +2392,8 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
           </div>
         </section>
 
-        <!-- SECTION 2: SPLIT-SCREEN STICKY 3D ENGINE (62%) + 8 SCROLLYTELLING CHAPTERS (38%) -->
-        <section id="fc3d-sec-02">
+        <!-- SECTION 2: WIDE 12-COLUMN SPLIT-SCREEN STICKY 3D ENGINE (66%) + 8 SCROLLYTELLING CHAPTERS (34%) -->
+        <section id="fc3d-sec-02" class="fc3d-sec02-wide">
           <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.85rem;">
             <div>
               <div style="font-size:0.72rem;font-weight:800;letter-spacing:0.08em;color:#B8292F;">${en ? "SECTION 02 · INTERACTIVE 3D SCROLLYTELLING ENGINE" : "PHẦN 02 · MÔ HÌNH 3D TƯƠNG TÁC & 8 CHƯƠNG GIẢI PHẪU"}</div>
@@ -2370,9 +2410,9 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
             <div class="fc3d-scrolly-column">
               ${SCROLLY_CHAPTERS.map((ch, idx) => `
                 <article class="fc3d-scrolly-card ${ui3d.activeChapterIdx === idx ? "active" : ""}" data-fc3d-card-idx="${idx}">
-                  <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.7rem;font-weight:800;letter-spacing:0.08em;color:#B8292F;" class="fc3d-mono">
-                    <span>${en ? `CHAPTER ${ch.step}/08` : `CHƯƠNG ${ch.step}/08`}</span>
-                    <span>${en ? ch.tagEn : ch.tagVi}</span>
+                  <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;font-size:0.7rem;font-weight:800;letter-spacing:0.08em;color:#B8292F;" class="fc3d-mono">
+                    <span style="white-space:nowrap;">${en ? `CHAPTER ${ch.step}/08` : `CHƯƠNG ${ch.step}/08`}</span>
+                    <span class="fc3d-chapter-tag">${en ? ch.tagEn : ch.tagVi}</span>
                   </div>
                   <h4 style="font-family:var(--font-editorial);font-size:1.08rem;margin:0.35rem 0 0.45rem;color:var(--ink-primary);">
                     ${en ? ch.titleEn : ch.titleVi}
@@ -2534,11 +2574,6 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       if (!syncStageUiInPlace()) rerender();
       return true;
     }
-    if (action === "fc3d-toggle-seismic") {
-      ui3d.seismicActive = !ui3d.seismicActive;
-      if (!syncStageUiInPlace()) rerender();
-      return true;
-    }
     if (action === "fc3d-toggle-orbit") {
       ui3d.autoOrbit = !ui3d.autoOrbit;
       if (!syncStageUiInPlace()) rerender();
@@ -2670,7 +2705,9 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       const targetEl = id ? document.getElementById(id) : null;
       if (targetEl) {
         if (rt && rt.container === targetEl && targetEl.querySelector("canvas") && rt.lang === curLang) {
-          if (!rt.io && document.querySelector(".fc3d-scrolly-card[data-fc3d-card-idx]")) {
+          applyLightingPreset();
+          updateDissectionVisuals();
+          if ((!rt.io && document.querySelector(".fc3d-scrolly-card[data-fc3d-card-idx]")) || (!rt.jumpIo && document.getElementById("fc3d-sec-01"))) {
             bindScrollyObserver(rt);
           }
           return;

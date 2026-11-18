@@ -78,7 +78,7 @@
         "Mô hình WebGL 3D tương tác (nằm ngay trên trang này) cho phép bật X-Ray tách mái Trọng Diêm – Đấu Củng 3 bậc để lộ 6 cột rồng vàng Nam mộc & Cửu Long Bảo Tọa.",
         "Hành trang thực địa Bắc Kinh: bắt buộc đặt vé Tử Cấm Thành bằng hộ chiếu trước 7 ngày lúc 20:00 (giờ Bắc Kinh) và đi tuyến một chiều vào Nam Ngọ Môn – ra Bắc Thần Vũ Môn."
       ],
-      terminologyIds: ["dougong", "zijincheng", "taihedian", "wumen"],
+      terminologyIds: ["dougong", "zhongyan-wudian", "jinxiang-doudicao", "xumizuo"],
       examples: [
         "Thực hành ngay trên mô hình 3D ở đầu bài: chọn 'Bóc tách X-Ray Đấu Củng' và kéo thanh nâng mái lên 82% để quan sát hàng cột Nam Mộc vàng và Gương Hiên Viên.",
         "Bôi đen thuật ngữ bất kỳ (như 斗拱, 须弥座, Dưỡng Tâm Điện) để lưu trực tiếp kèm câu ngữ cảnh vào Sổ tay Từ vựng & Ghi chú."
@@ -721,12 +721,16 @@
     paintingCompareLeftId: "xishan-xinglv",
     paintingCompareRightId: "zao-chun-tu",
     activeProvinceId: null,
+    provinceLayerTab: "all", // all | pulse | roots | travel
     provinceCompareOpen: false,
     provinceCompareLeftId: "prov-beijing",
     provinceCompareRightId: "prov-guangdong",
     onboardingDismissed: false,
     dailyIdx: 0,
-    learningTab: "dashboard", // dashboard | dictionary | flashcards | kmap | quiz | journal
+    learningTab: "dashboard", // dashboard | dictionary | flashcards | kmap | quiz | journal | survival
+    survivalPackFilter: "all",
+    survivalZeroPinyin: true,
+    revealedSurvivalIds: {},
     dictLevelFilter: "all",
     dictDeckFilter: "all",
     dictQuery: "",
@@ -1653,6 +1657,55 @@
       : `Đã xuất ${cards.length} mục từ Sổ tay Từ điển (.${format.toUpperCase()})`);
   }
 
+  function exportSurvivalAnkiFile(format, packFilter = "all") {
+    const packs = (window.CCE_SURVIVAL_PACKS && window.CCE_SURVIVAL_PACKS.packs) || [];
+    const activePacks = packFilter === "all" ? packs : packs.filter((p) => p.id === packFilter);
+    const items = [];
+    activePacks.forEach((pk) => {
+      (pk.items || []).forEach((it) => {
+        items.push({ pack: pk, item: it });
+      });
+    });
+    if (!items.length) {
+      showToast("Không có mục từ sinh tồn nào để xuất file!");
+      return;
+    }
+    const fmt = format === "tsv" ? "tsv" : "csv";
+    const sep = fmt === "tsv" ? "\t" : ",";
+    const cleanCell = (val) => {
+      const s = String(val || "").replace(/\r?\n/g, " ").trim();
+      if (fmt === "tsv") return s.replace(/\t/g, " ");
+      return `"${s.replace(/"/g, '""')}"`;
+    };
+    const header = ["Front_Hanzi_ZeroPinyin", "Pinyin", "Han_Viet", "Liushu_Radical_Logic", "Meaning_Vi_En", "Field_Tip", "Pack_Tag"].join(sep);
+    const rows = items.map(({ pack, item }) => {
+      const meaning = `${item.vi} | ${item.en}`;
+      const tag = `CCE::Survival::Pack_${pack.number}`;
+      return [
+        cleanCell(item.hanzi),
+        cleanCell(item.pinyin),
+        cleanCell(item.hanViet),
+        cleanCell(`[${item.liushuType}] ${item.radicalLogic}`),
+        cleanCell(meaning),
+        cleanCell(item.fieldTip),
+        cleanCell(tag)
+      ].join(sep);
+    });
+    const bom = "\uFEFF";
+    const blob = new Blob([bom + header + "\n" + rows.join("\n")], {
+      type: fmt === "tsv" ? "text/tab-separated-values;charset=utf-8;" : "text/csv;charset=utf-8;"
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `cce_survival_hanzi_${packFilter || "all"}.${fmt}`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    showToast(`Đã xuất ${items.length} từ Hành trang Sinh tồn chuẩn Anki (.${fmt.toUpperCase()})!`);
+  }
+
   function copyTextToClipboard(text, successMsg) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard
@@ -2009,177 +2062,216 @@
       : [];
     const heritage = Array.isArray(prov.heritageAndLandmarks) ? prov.heritageAndLandmarks : [];
     const figures = Array.isArray(prov.notableFigures) ? prov.notableFigures : [];
+    const l1 = prov.layer1UrbanPulse || null;
+    const l2 = prov.layer2HistoricalRoots || null;
+    const l3 = prov.layer3TravelVietnam || null;
+    const activeLayer = ui.provinceLayerTab || "all";
+    const showL1 = activeLayer === "all" || activeLayer === "pulse";
+    const showL2 = activeLayer === "all" || activeLayer === "roots";
+    const showL3 = activeLayer === "all" || activeLayer === "travel";
+    const ready = TravelReadiness && typeof TravelReadiness.getProvinceReadiness === "function"
+      ? TravelReadiness.getProvinceReadiness(prov)
+      : null;
+
     return `
-      <div class="prov-encyclopedia-grid">
-        <div class="prov-dim-card">
-          <h4>1. Định danh Hành chính &amp; Ngôn ngữ học (简称)</h4>
-          <p style="font-size:0.86rem;line-height:1.58;margin:0;">
-            <strong>Hán tự:</strong> ${escapeHtml(idn.hanziSimplified || prov.nameZh)} ${idn.hanziTraditional && idn.hanziTraditional !== idn.hanziSimplified ? `(Phồn thể: ${escapeHtml(idn.hanziTraditional)})` : ""}<br>
-            <strong>Pinyin &amp; Hán–Việt:</strong> <span class="pinyin">${escapeHtml(idn.pinyin || "")}</span> • <em>${escapeHtml(idn.hanViet || prov.nameVi)}</em><br>
-            <strong>Loại hình:</strong> ${escapeHtml(idn.adminTypeFull || prov.adminType || "")}<br>
-            <strong>Viết tắt (简称):</strong> <strong style="color:var(--imperial-red);">${escapeHtml(idn.abbreviation || prov.abbr || "")} (${escapeHtml(idn.abbreviationPinyin || "")})</strong> — ${escapeHtml(idn.abbreviationOrigin || "")}<br>
-            <strong>Thủ phủ / Trung tâm:</strong> ${escapeHtml(idn.capitalCity || prov.capital || "")}
-          </p>
-        </div>
+      <div class="tabs-bar" role="tablist" aria-label="Cấu trúc 3 lớp địa văn hóa cho người học Việt Nam" style="margin-bottom:1.1rem;">
+        <button type="button" class="tab-btn ${activeLayer === "all" ? "active" : ""}" data-action="set-province-layer" data-layer="all">Tất cả 3 Lớp</button>
+        <button type="button" class="tab-btn ${activeLayer === "pulse" ? "active" : ""}" data-action="set-province-layer" data-layer="pulse">Lớp 1 · Đời sống Đương đại</button>
+        <button type="button" class="tab-btn ${activeLayer === "roots" ? "active" : ""}" data-action="set-province-layer" data-layer="roots">Lớp 2 · Căn cốt Lịch sử &amp; Tư tưởng</button>
+        <button type="button" class="tab-btn ${activeLayer === "travel" ? "active" : ""}" data-action="set-province-layer" data-layer="travel">Lớp 3 · Hành trang 12306 &amp; Cụm KT</button>
+      </div>
 
-        <div class="prov-dim-card">
-          <h4>2. Địa mạo &amp; Khí hậu Định hình Văn hóa</h4>
-          <p style="font-size:0.86rem;line-height:1.58;margin:0;">
-            ${escapeHtml((prov.geographyAndClimate && prov.geographyAndClimate.summary) || prov.geography || "")}
-            ${prov.geographyAndClimate && prov.geographyAndClimate.causality ? `<br><br><strong>Cơ chế Nhân–Quả Địa lý &amp; Văn hóa:</strong> ${escapeHtml(prov.geographyAndClimate.causality)}` : ""}
-          </p>
-        </div>
-
-        <div class="prov-dim-card">
-          <h4>3. Tiến trình Lịch sử qua các Triều đại</h4>
-          <p style="font-size:0.86rem;line-height:1.58;margin:0;">${escapeHtml(prov.historicalEvolution || prov.cultureHistory || "")}</p>
-        </div>
-
-        <div class="prov-dim-card">
-          <h4>4. Bản sắc Tiểu vùng Văn hóa &amp; Phương ngôn</h4>
-          <p style="font-size:0.86rem;line-height:1.58;margin:0;">${escapeHtml(prov.culturalIdentity || prov.cultureHistory || "")}</p>
-        </div>
-
-        <div class="prov-dim-card">
-          <h4>6. Di sản Phi vật thể &amp; Nghề Thủ công</h4>
-          <p style="font-size:0.86rem;line-height:1.58;margin:0;">${escapeHtml(prov.intangibleHeritage || prov.famousPlaces || "")}</p>
-        </div>
-
-        <div class="prov-dim-card">
-          <h4>8. Trụ cột Kinh tế Đương đại &amp; Chuỗi cung ứng</h4>
-          <p style="font-size:0.86rem;line-height:1.58;margin:0;">${escapeHtml(prov.economyAndIndustry || prov.economyNote || "")}</p>
-        </div>
-
-        <div class="prov-dim-card">
-          <h4>9. Kết nối Việt Nam, RCEP &amp; Đại học Trọng điểm</h4>
-          <p style="font-size:0.86rem;line-height:1.58;margin:0;">${escapeHtml(prov.vietnamConnectivity || "")}</p>
-        </div>
-
-        <div class="prov-dim-card">
-          <h4>11–12. Thực địa, Đầu mối Giao thông &amp; Bản đồ</h4>
-          <p style="font-size:0.86rem;line-height:1.58;margin:0;">
-            ${escapeHtml(prov.travelAndLogistics || "")}
-            ${prov.mapCoordinates ? `<br><br><strong>Tọa độ Bản đồ:</strong> ${escapeHtml(prov.mapCoordinates.economicCorridor || "")} • Cố đô: ${escapeHtml(prov.mapCoordinates.historicalCapitalEra || "")}` : ""}
-          </p>
-        </div>
-
-        ${prov.commercialAndSupplyChain ? `
+      ${showL1 ? `
+        <section style="margin-bottom:1.25rem;">
+          <div class="editorial-kicker" style="color:var(--imperial-red);margin-bottom:0.35rem;">LỚP 1 · ĐỜI SỐNG ĐƯƠNG ĐẠI &amp; DẤU ẤN THỊ GIÁC</div>
+          ${l1 ? `
+            <div class="card" style="padding:1rem 1.15rem;border-left:4px solid var(--imperial-red);margin-bottom:0.85rem;">
+              <h4 style="margin:0 0 0.45rem;font-family:var(--font-editorial);font-size:1.15rem;color:var(--ink-primary);">${formatInlineMd(l1.title, true)}</h4>
+              <p style="margin:0;font-size:0.9rem;line-height:1.65;color:var(--text-secondary);">${formatInlineMd(l1.body, true)}</p>
+            </div>
+          ` : ""}
           <div class="prov-dim-card">
-            <h4>13. Thương bang Lịch sử, Cụm Công nghiệp &amp; Hành lang Việt–Trung</h4>
-            <div style="font-size:0.85rem;line-height:1.58;display:flex;flex-direction:column;gap:0.42rem;">
-              <div><strong>Thương bang &amp; Truyền thống:</strong> ${escapeHtml(prov.commercialAndSupplyChain.historicalGuild || "")}</div>
-              <div><strong>Cụm Công nghiệp Hiện đại:</strong> ${escapeHtml(prov.commercialAndSupplyChain.modernClusters || "")}</div>
-              <div><strong>Cửa ngõ Logistics:</strong> ${escapeHtml(prov.commercialAndSupplyChain.hubsAndCorridors || "")}</div>
-              <div style="color:var(--jade-green);"><strong>Kết nối Việt Nam – ASEAN:</strong> ${escapeHtml(prov.commercialAndSupplyChain.vietnamAseanLink || "")}</div>
-            </div>
+            <h4>Trụ cột Đô thị Hiện đại &amp; Chuỗi giá trị</h4>
+            <p style="font-size:0.86rem;line-height:1.58;margin:0;">${escapeHtml(prov.economyAndIndustry || prov.economyNote || "")}</p>
           </div>
-        ` : ""}
+        </section>
+      ` : ""}
 
-        ${prov.literaryAndHistoricalEchoes ? (() => {
-          const echo = prov.literaryAndHistoricalEchoes;
-          return `
+      ${showL2 ? `
+        <section style="margin-bottom:1.25rem;">
+          <div class="editorial-kicker" style="color:var(--antique-gold);margin-bottom:0.35rem;">LỚP 2 · CĂN CỐT LỊCH SỬ, TƯ TƯỞNG &amp; ĐỊA VĂN HÓA</div>
+          ${l2 && l2.lineageSummary ? `
+            <div class="callout-editorial" style="margin:0 0 0.85rem;padding:0.75rem 1rem;">
+              <strong>Mạch Lịch sử – Triết học Đặc trưng:</strong> ${formatInlineMd(l2.lineageSummary, true)}
+            </div>
+          ` : ""}
+          <div class="prov-encyclopedia-grid">
             <div class="prov-dim-card">
-              <h4>14. Âm vang Thi ca &amp; Điển tích Địa danh</h4>
-              <div style="font-size:0.86rem;margin-bottom:0.4rem;">
-                <strong>${escapeHtml(echo.workTitle || "")}</strong> — <em>${escapeHtml(echo.author || "")}</em> (${escapeHtml(echo.dynasty || "")})
-              </div>
-              <div class="callout-editorial" style="margin:0.4rem 0;padding:0.65rem 0.85rem;">
-                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;">
-                  <div class="hanzi" style="font-size:1.05rem;line-height:1.55;color:var(--ink-primary);">${formatHanzi(echo.quoteZh || "", echo.quoteZhTrad || echo.quoteZh || "")}</div>
-                  ${renderSpeakBtn(echo.quoteZh || "", "Nghe đọc nguyên tác chữ Hán")}
-                </div>
-                ${echo.pinyin ? `<div class="pinyin" style="font-size:0.8rem;margin-top:0.25rem;">${escapeHtml(echo.pinyin)}</div>` : ""}
-                ${echo.hanViet ? `<div style="font-size:0.8rem;color:var(--imperial-red);font-weight:600;margin-top:0.2rem;">Hán–Việt: ${escapeHtml(echo.hanViet)}</div>` : ""}
-              </div>
-              <p style="font-size:0.83rem;line-height:1.55;margin:0.35rem 0 0;color:var(--text-secondary);">${escapeHtml(echo.meaningVi || "")}</p>
+              <h4>1. Định danh Hành chính &amp; Ngôn ngữ học (简称)</h4>
+              <p style="font-size:0.86rem;line-height:1.58;margin:0;">
+                <strong>Hán tự:</strong> ${escapeHtml(prov.headerFormatted || idn.hanziSimplified || prov.nameZh)} ${idn.hanziTraditional && idn.hanziTraditional !== idn.hanziSimplified ? `(Phồn thể: ${escapeHtml(idn.hanziTraditional)})` : ""}<br>
+                <strong>Pinyin &amp; Hán–Việt:</strong> <span class="pinyin">${escapeHtml(idn.pinyin || "")}</span> • <em>${escapeHtml(idn.hanViet || prov.nameVi)}</em><br>
+                <strong>Loại hình:</strong> ${escapeHtml(idn.adminTypeFull || prov.adminType || "")}<br>
+                <strong>Viết tắt (简称):</strong> <strong style="color:var(--imperial-red);">${escapeHtml(idn.abbreviation || prov.abbr || "")} (${escapeHtml(idn.abbreviationPinyin || "")})</strong> — ${escapeHtml(idn.abbreviationOrigin || "")}<br>
+                <strong>Thủ phủ / Trung tâm:</strong> ${escapeHtml(idn.capitalCity || prov.capital || "")}
+              </p>
             </div>
-          `;
-        })() : ""}
-      </div>
 
-      ${heritage.length ? `
-        <div class="card mt-2" style="padding:1rem 1.15rem;">
-          <h4 style="margin:0 0 0.65rem;color:var(--imperial-red);">5. Di sản Thế giới UNESCO &amp; Quần thể Danh thắng Biểu tượng (${heritage.length} Địa danh)</h4>
-          <div class="prov-dishes-grid">
-            ${heritage.map((h) => `
-              <div class="prov-dish-item">
-                <div style="font-weight:700;color:var(--imperial-red);"><span class="hanzi">${escapeHtml(h.hanzi || "")}</span> (${escapeHtml(h.pinyin || "")})</div>
-                <div style="font-weight:600;margin:0.15rem 0;">${escapeHtml(h.hanViet || "")} — ${escapeHtml(h.nameVi || "")}</div>
-                <div style="font-size:0.8rem;color:var(--text-secondary);">${escapeHtml(h.significance || "")}</div>
-              </div>
-            `).join("")}
+            <div class="prov-dim-card">
+              <h4>2. Địa mạo &amp; Khí hậu Định hình Văn hóa</h4>
+              <p style="font-size:0.86rem;line-height:1.58;margin:0;">
+                ${escapeHtml((prov.geographyAndClimate && prov.geographyAndClimate.summary) || prov.geography || "")}
+                ${prov.geographyAndClimate && prov.geographyAndClimate.causality ? `<br><br><strong>Cơ chế Nhân–Quả Địa lý &amp; Văn hóa:</strong> ${escapeHtml(prov.geographyAndClimate.causality)}` : ""}
+              </p>
+            </div>
+
+            <div class="prov-dim-card">
+              <h4>3. Tiến trình Lịch sử qua các Triều đại</h4>
+              <p style="font-size:0.86rem;line-height:1.58;margin:0;">${escapeHtml(prov.historicalEvolution || prov.cultureHistory || "")}</p>
+            </div>
+
+            <div class="prov-dim-card">
+              <h4>4. Bản sắc Tiểu vùng Văn hóa &amp; Phương ngôn</h4>
+              <p style="font-size:0.86rem;line-height:1.58;margin:0;">${escapeHtml(prov.culturalIdentity || prov.cultureHistory || "")}</p>
+            </div>
+
+            <div class="prov-dim-card">
+              <h4>6. Di sản Phi vật thể &amp; Nghề Thủ công</h4>
+              <p style="font-size:0.86rem;line-height:1.58;margin:0;">${escapeHtml(prov.intangibleHeritage || prov.famousPlaces || "")}</p>
+            </div>
+
+            ${prov.literaryAndHistoricalEchoes ? (() => {
+              const echo = prov.literaryAndHistoricalEchoes;
+              return `
+                <div class="prov-dim-card">
+                  <h4>14. Âm vang Thi ca &amp; Điển tích Địa danh</h4>
+                  <div style="font-size:0.86rem;margin-bottom:0.4rem;">
+                    <strong>${escapeHtml(echo.workTitle || "")}</strong> — <em>${escapeHtml(echo.author || "")}</em> (${escapeHtml(echo.dynasty || "")})
+                  </div>
+                  <div class="callout-editorial" style="margin:0.4rem 0;padding:0.65rem 0.85rem;">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;">
+                      <div class="hanzi" style="font-size:1.05rem;line-height:1.55;color:var(--ink-primary);">${formatHanzi(echo.quoteZh || "", echo.quoteZhTrad || echo.quoteZh || "")}</div>
+                      ${renderSpeakBtn(echo.quoteZh || "", "Nghe đọc nguyên tác chữ Hán")}
+                    </div>
+                    ${echo.pinyin ? `<div class="pinyin" style="font-size:0.8rem;margin-top:0.25rem;">${escapeHtml(echo.pinyin)}</div>` : ""}
+                    ${echo.hanViet ? `<div style="font-size:0.8rem;color:var(--imperial-red);font-weight:600;margin-top:0.2rem;">Hán–Việt: ${escapeHtml(echo.hanViet)}</div>` : ""}
+                  </div>
+                  <p style="font-size:0.83rem;line-height:1.55;margin:0.35rem 0 0;color:var(--text-secondary);">${escapeHtml(echo.meaningVi || "")}</p>
+                </div>
+              `;
+            })() : ""}
           </div>
-        </div>
+
+          ${heritage.length ? `
+            <div class="card mt-2" style="padding:1rem 1.15rem;">
+              <h4 style="margin:0 0 0.65rem;color:var(--imperial-red);">5. Di sản Thế giới UNESCO &amp; Quần thể Danh thắng (${heritage.length} Địa danh)</h4>
+              <div class="prov-dishes-grid">
+                ${heritage.map((h) => `
+                  <div class="prov-dish-item">
+                    <div style="font-weight:700;color:var(--imperial-red);"><span class="hanzi">${escapeHtml(h.hanzi || "")}</span> (${escapeHtml(h.pinyin || "")})</div>
+                    <div style="font-weight:600;margin:0.15rem 0;">${escapeHtml(h.hanViet || "")} — ${escapeHtml(h.nameVi || "")}</div>
+                    <div style="font-size:0.8rem;color:var(--text-secondary);">${escapeHtml(h.significance || "")}</div>
+                  </div>
+                `).join("")}
+              </div>
+            </div>
+          ` : ""}
+
+          <div class="card mt-2" style="padding:1rem 1.15rem;">
+            <h4 style="margin:0 0 0.45rem;color:var(--imperial-red);">7. Hệ thống Ẩm thực Bản địa &amp; Đặc sản Biểu tượng</h4>
+            ${prov.culinaryCulture && prov.culinaryCulture.styleOverview ? `<p style="font-size:0.86rem;margin:0 0 0.65rem;">${escapeHtml(prov.culinaryCulture.styleOverview)}</p>` : ""}
+            ${dishes.length ? `
+              <div class="prov-dishes-grid">
+                ${dishes.map((d) => `
+                  <div class="prov-dish-item">
+                    <div style="display:flex;justify-content:space-between;gap:0.35rem;align-items:center;">
+                      <strong class="hanzi">${escapeHtml(d.hanzi)}</strong>
+                      ${renderSpeakBtn(d.hanzi)}
+                    </div>
+                    <div style="font-size:0.8rem;color:var(--imperial-red);font-weight:600;">${escapeHtml(d.pinyin)} • <span style="color:var(--jade-green);">${escapeHtml(d.hanViet)}</span></div>
+                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0;">${escapeHtml(d.description)}</p>
+                  </div>
+                `).join("")}
+              </div>
+            ` : `<p style="font-size:0.86rem;margin:0;">${escapeHtml(prov.signatureFood || "")}</p>`}
+          </div>
+
+          ${figures.length ? `
+            <div class="card mt-2" style="padding:1rem 1.15rem;">
+              <h4 style="margin:0 0 0.6rem;color:var(--imperial-red);">10. Danh nhân Lịch sử, Tư tưởng gia &amp; Văn nhân Tiêu biểu</h4>
+              <div class="prov-figure-grid">
+                ${figures.map((f) => `
+                  <div class="prov-dish-item">
+                    <div style="font-weight:700;"><span class="hanzi">${escapeHtml(f.hanzi)}</span> (${escapeHtml(f.pinyin)})</div>
+                    <div style="font-size:0.82rem;color:var(--imperial-red);font-weight:600;">${escapeHtml(f.hanViet || f.nameVi)} (${escapeHtml(f.lifespan || "")})</div>
+                    <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0;">${escapeHtml(f.contribution)}</p>
+                  </div>
+                `).join("")}
+              </div>
+            </div>
+          ` : ""}
+        </section>
       ` : ""}
 
-      <div class="card mt-2" style="padding:1rem 1.15rem;">
-        <h4 style="margin:0 0 0.45rem;color:var(--imperial-red);">7. Hệ thống Ẩm thực Bản địa &amp; Đặc sản Biểu tượng</h4>
-        ${prov.culinaryCulture && prov.culinaryCulture.styleOverview ? `<p style="font-size:0.86rem;margin:0 0 0.65rem;">${escapeHtml(prov.culinaryCulture.styleOverview)}</p>` : ""}
-        ${dishes.length ? `
-          <div class="prov-dishes-grid">
-            ${dishes.map((d) => `
-              <div class="prov-dish-item">
-                <div style="display:flex;justify-content:space-between;gap:0.35rem;align-items:center;">
-                  <strong class="hanzi">${escapeHtml(d.hanzi)}</strong>
-                  ${renderSpeakBtn(d.hanzi)}
-                </div>
-                <div style="font-size:0.8rem;color:var(--imperial-red);font-weight:600;">${escapeHtml(d.pinyin)} • <span style="color:var(--jade-green);">${escapeHtml(d.hanViet)}</span></div>
-                <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0;">${escapeHtml(d.description)}</p>
+      ${showL3 ? `
+        <section style="margin-bottom:1.15rem;">
+          <div class="editorial-kicker" style="color:var(--jade-green);margin-bottom:0.35rem;">LỚP 3 · HÀNH TRANG THỰC ĐỊA CHO NGƯỜI VIỆT (12306 · WECHAT · CỤM CÔNG NGHIỆP)</div>
+          ${l3 && Array.isArray(l3.hsrStations12306) && l3.hsrStations12306.length ? `
+            <div class="card" style="padding:1rem 1.15rem;margin-bottom:0.85rem;border-top:3px solid var(--jade-green);">
+              <h4 style="margin:0 0 0.6rem;color:var(--jade-green);">Đầu mối Đường sắt Cao tốc 12306 (Hán tự + Pinyin Chuẩn)</h4>
+              <div class="grid ${l3.hsrStations12306.length > 2 ? "grid-3" : "grid-2"}" style="gap:0.65rem;">
+                ${l3.hsrStations12306.map((st) => `
+                  <div style="border:1px solid var(--hairline);padding:0.55rem 0.7rem;background:var(--bg-surface);">
+                    <div style="display:flex;justify-content:space-between;align-items:center;gap:0.35rem;">
+                      <strong class="hanzi" style="font-size:1.05rem;color:var(--imperial-red);">${escapeHtml(st.hanzi)}</strong>
+                      ${renderSpeakBtn(st.hanzi.split("/")[0].trim(), "Nghe tên nhà ga 12306")}
+                    </div>
+                    <div class="pinyin" style="font-size:0.78rem;color:var(--jade-green);font-weight:600;">${escapeHtml(st.pinyin)}</div>
+                    <div style="font-size:0.78rem;color:var(--text-secondary);margin-top:0.2rem;line-height:1.45;">${escapeHtml(st.noteVi)}</div>
+                  </div>
+                `).join("")}
               </div>
-            `).join("")}
-          </div>
-        ` : `<p style="font-size:0.86rem;margin:0;">${escapeHtml(prov.signatureFood || "")}</p>`}
-      </div>
+            </div>
+          ` : ""}
 
-      ${figures.length ? `
-        <div class="card mt-2" style="padding:1rem 1.15rem;">
-          <h4 style="margin:0 0 0.6rem;color:var(--imperial-red);">10. Danh nhân Lịch sử, Tư tưởng gia &amp; Văn nhân Tiêu biểu</h4>
-          <div class="prov-figure-grid">
-            ${figures.map((f) => `
-              <div class="prov-dish-item">
-                <div style="font-weight:700;"><span class="hanzi">${escapeHtml(f.hanzi)}</span> (${escapeHtml(f.pinyin)})</div>
-                <div style="font-size:0.82rem;color:var(--imperial-red);font-weight:600;">${escapeHtml(f.hanViet || f.nameVi)} (${escapeHtml(f.lifespan || "")})</div>
-                <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0;">${escapeHtml(f.contribution)}</p>
+          ${ready ? `
+            <div class="travel-readiness-card" style="margin-top:0;">
+              <h4 style="margin:0 0 0.65rem;">Đặt Vé WeChat (提前预约 / 护照), Mùa Đẹp &amp; Ứng xử Thực địa tại ${escapeHtml(prov.nameVi)}</h4>
+              <div class="grid grid-2" style="gap:0.85rem;">
+                <div style="font-size:0.85rem;line-height:1.6;">
+                  <div><strong>Mùa đẹp nhất:</strong> ${escapeHtml(ready.bestSeasonVi || prov.bestSeason || "")}</div>
+                  <div style="margin-top:0.45rem;"><strong>Đặt vé Bảo tàng &amp; Số hóa:</strong> ${formatInlineMd(l3 && l3.bookingAndDigitalSurvival ? l3.bookingAndDigitalSurvival : ready.mustKnowVi || "", true)}</div>
+                </div>
+                <div style="font-size:0.85rem;line-height:1.6;">
+                  <div><strong>Khẩu vị &amp; Gọi món:</strong> ${escapeHtml(ready.flavorVi || prov.cuisine || "")}</div>
+                  <div style="margin-top:0.45rem;padding:0.5rem 0.65rem;background:var(--bg-jade-soft);border-left:3px solid var(--jade-green);">
+                    <strong>Cụm Công nghiệp Chủ lực &amp; Hành lang Thương mại:</strong> ${formatInlineMd(l3 && l3.industryCorridorBridge ? l3.industryCorridorBridge : ready.noteVi || "", true)}
+                  </div>
+                </div>
               </div>
-            `).join("")}
-          </div>
-        </div>
+              <div class="travel-signs-grid" style="margin-top:0.75rem;">
+                ${(ready.signs || []).map((s) => `
+                  <div class="travel-sign-chip">
+                    <div class="hanzi" style="font-weight:700;color:var(--accent-cinnabar);font-size:0.95rem;">${escapeHtml(s.hanzi)}</div>
+                    <div class="pinyin" style="font-size:0.74rem;color:var(--text-muted);">${escapeHtml(s.pinyin)}</div>
+                    <div style="font-size:0.78rem;">${escapeHtml(s.vi)}</div>
+                  </div>
+                `).join("")}
+              </div>
+            </div>
+          ` : ""}
+
+          ${prov.commercialAndSupplyChain ? `
+            <div class="prov-dim-card mt-2">
+              <h4>Kết nối Thương bang Lịch sử &amp; Giáo dục Việt–Trung</h4>
+              <div style="font-size:0.84rem;line-height:1.55;display:flex;flex-direction:column;gap:0.35rem;">
+                <div><strong>Thương bang lịch sử:</strong> ${escapeHtml(prov.commercialAndSupplyChain.historicalGuild || "")}</div>
+                <div><strong>Cụm công nghiệp &amp; RCEP:</strong> ${escapeHtml(prov.commercialAndSupplyChain.modernClusters || "")} • ${escapeHtml(prov.vietnamConnectivity || "")}</div>
+              </div>
+            </div>
+          ` : ""}
+        </section>
       ` : ""}
-
-      ${(() => {
-        const ready = TravelReadiness && typeof TravelReadiness.getProvinceReadiness === "function"
-          ? TravelReadiness.getProvinceReadiness(prov)
-          : null;
-        if (!ready) return "";
-        const en = isEnglishUi();
-        return `
-          <div class="travel-readiness-card">
-            <div class="editorial-kicker" style="color:var(--accent-jade);margin-bottom:0.2rem;">
-              ${en ? "PRE-TRIP CULTURAL &amp; FIELD READINESS · NGOẠI DU → THỰC ĐỊA" : "HÀNH TRANG VĂN HÓA &amp; THỰC ĐỊA TRƯỚC CHUYẾN ĐI · NGỌA DU → THỰC ĐỊA"}
-            </div>
-            <h4 style="margin:0 0 0.65rem;">${en ? `Practical Preparation Before Visiting ${escapeHtml(prov.nameEn || prov.nameVi)}` : `Cần Biết Trước Khi Đi ${escapeHtml(prov.nameVi)}`}</h4>
-            <div class="grid grid-2" style="gap:0.85rem;">
-              <div style="font-size:0.85rem;line-height:1.58;">
-                <div><strong>${en ? "Best Season:" : "Mùa đẹp nhất:"}</strong> ${escapeHtml(en ? ready.bestSeasonEn : ready.bestSeasonVi)}</div>
-                <div style="margin-top:0.4rem;"><strong>${en ? "Booking & Transit Note:" : "Lưu ý Vé & Di chuyển:"}</strong> ${escapeHtml(en ? ready.mustKnowEn : ready.mustKnowVi)}</div>
-              </div>
-              <div style="font-size:0.85rem;line-height:1.58;">
-                <div><strong>${en ? "Must-Try Flavors:" : "Khẩu vị Bản địa:"}</strong> ${escapeHtml(en ? ready.flavorEn : ready.flavorVi)}</div>
-                ${ready.noteVi ? `<div style="margin-top:0.4rem;color:var(--text-secondary);"><strong>${en ? "Field Lens:" : "Góc nhìn Quan sát:"}</strong> ${escapeHtml(ready.noteVi)}</div>` : ""}
-              </div>
-            </div>
-            <div class="travel-signs-grid">
-              ${(ready.signs || []).map((s) => `
-                <div class="travel-sign-chip">
-                  <div class="hanzi" style="font-weight:700;color:var(--accent-cinnabar);font-size:0.95rem;">${escapeHtml(s.hanzi)}</div>
-                  <div class="pinyin" style="font-size:0.74rem;color:var(--text-muted);">${escapeHtml(s.pinyin)}</div>
-                  <div style="font-size:0.78rem;">${escapeHtml(en ? s.en : s.vi)}</div>
-                </div>
-              `).join("")}
-            </div>
-          </div>
-        `;
-      })()}
 
       ${(prov.id === "prov-beijing" || prov.id === "prov-sichuan") ? (() => {
         const enG = isEnglishUi();
@@ -3722,7 +3814,7 @@
               <article class="card interactive">
                 ${Visuals.renderArtifactVisualHTML(art, false)}
                 <div class="card-title-zh" style="margin-top:0.65rem;">${art.nameZh}</div>
-                <h4 style="margin:0.2rem 0 0.35rem;">${art.nameVi}</h4>
+                <h4 style="margin:0.2rem 0 0.35rem;">${formatInlineMd(art.nameVi, true)}</h4>
                 <p style="font-size:0.82rem;color:var(--text-secondary);">${art.collection} • ${art.periodLabel}</p>
                 <button type="button" class="btn btn-primary btn-sm" data-action="open-artifact" data-id="${art.id}">Xem Hiện vật →</button>
               </article>
@@ -3929,7 +4021,7 @@
     const thumbRatio = ed && ed.thumbnailConfig ? ed.thumbnailConfig.aspectRatio : "16:10";
     const thumbImg = thumbId ? getEditorialImage(thumbId) : null;
     const fallbackThumb = !thumbId ? (art.heroImage || getAcademicPhotoForItem(art.category, art.id, art.number || 0)) : null;
-    const excerptRaw = v.standfirst || (v.introduction ? `${v.introduction.slice(0, 132)}...` : "");
+    const excerptRaw = v.standfirst || (v.introduction ? slicePlainPreview(v.introduction, 132) : "");
     return `
       <article class="card interactive" style="display:flex;flex-direction:column;justify-content:space-between;">
         <div>
@@ -3951,8 +4043,8 @@
             >${ICONS.bookmark} ${bookmarked ? (v.isEn ? "Saved" : "Đã lưu") : (v.isEn ? "Save" : "Lưu")}</button>
           </div>
           <div class="card-title-zh">${art.titleZh}</div>
-          <h3 class="card-title" style="font-size:1.14rem;">${escapeHtml(v.title)}</h3>
-          <p style="font-size:0.85rem;margin-bottom:0.85rem;">${escapeEditorialHtml(excerptRaw)}</p>
+          <h3 class="card-title" style="font-size:1.14rem;">${formatInlineMd(v.title, true)}</h3>
+          <p style="font-size:0.85rem;margin-bottom:0.85rem;">${formatInlineMd(excerptRaw, true)}</p>
         </div>
         <div class="card-footer-row" style="border-top:1px solid var(--border-subtle);padding-top:0.75rem;">
           <span style="font-size:0.77rem;color:var(--text-muted);">${art.readMinutes} ${v.isEn ? "min read" : "phút"} • ${thumbImg ? escapeEditorialHtml(thumbImg.institution.replace("Chinese Culture Explorer ", "CCE ")) : `${v.references.length} ${v.isEn ? "sources" : "nguồn gốc"}`}</span>
@@ -3960,6 +4052,11 @@
         </div>
       </article>
     `;
+  }
+
+  function slicePlainPreview(str, maxLen = 115) {
+    const clean = String(str || "").replace(/\*{1,2}([^*]+?)\*{1,2}/g, "$1").replace(/\*{1,2}/g, "");
+    return clean.length > maxLen ? `${clean.slice(0, maxLen)}...` : clean;
   }
 
   function formatInlineMd(str, escapeFirst = false) {
@@ -4163,7 +4260,7 @@
                 <span class="badge badge-outline">${art.readMinutes} ${enM ? "min read" : "phút đọc"}</span>
               </div>
             </div>
-            <h1 style="font-size:clamp(1.85rem, 3vw, 2.55rem);margin-bottom:0.35rem;">${escapeHtml(v.title)}</h1>
+            <h1 style="font-size:clamp(1.85rem, 3vw, 2.55rem);margin-bottom:0.35rem;">${formatInlineMd(v.title, true)}</h1>
             <div class="card-title-zh" style="font-size:1.35rem;margin-bottom:0.2rem;">${art.titleZh} ${renderSpeakBtn(art.titleZh, "Listen to Chinese title")}</div>
             ${v.subTitle ? `<div style="font-size:0.98rem;color:var(--text-muted);">${escapeHtml(v.subTitle)}</div>` : ""}
             ${v.standfirst ? `<p class="editorial-standfirst">${escapeEditorialHtml(v.standfirst)}</p>` : ""}
@@ -4183,7 +4280,7 @@
         </div>
       </section>
 
-      <section class="article-reader-shell${isAcademic ? "" : " is-story-mode"} fade-in-up">
+      <section class="article-reader-shell${isAcademic ? "" : " is-story-mode"}${art.id === "forbidden-city-3d-dissection" ? " is-panoramic-3d" : ""} fade-in-up">
         <div class="container">
           ${isAcademic ? `
             <div class="mobile-article-drawer-bar">
@@ -4267,9 +4364,6 @@
                       ${ICONS.book} ${enM ? "Terms" : "Thuật ngữ"} (${(art.terminologyIds || []).length})
                     </button>
                   ` : ""}
-                  <button type="button" class="editorial-mode-btn ${isAcademic ? "active" : ""}" data-action="toggle-scholar-mode" aria-pressed="${isAcademic ? "true" : "false"}">
-                    ${isAcademic ? (enM ? "Story View (Default)" : "Chế độ Đọc (Mặc định)") : (enM ? "Scholar Apparatus (Hanzi & Cite)" : "Chế độ Khảo cứu (Hán văn & Trích dẫn)")}
-                  </button>
                 </div>
 
                 <div class="toolbar-right-group">
@@ -4673,7 +4767,7 @@
                         <span class="badge badge-gold">${art.categoryLabel} • ${art.periodLabel}</span>
                         <button type="button" class="btn btn-ghost btn-sm" data-action="toggle-bookmark" data-type="artifact" data-id="${art.id}" data-title="${escapeHtml(art.nameVi)}">${ICONS.bookmark} ${fav ? "Đã lưu" : "Lưu"}</button>
                       </div>
-                      <h3 style="margin-bottom:0.2rem;">${art.nameVi} (<span class="hanzi">${formatHanzi(art.nameZh, art.nameZhTrad)}</span>)</h3>
+                      <h3 style="margin-bottom:0.2rem;">${formatInlineMd(art.nameVi, true)} (<span class="hanzi">${formatHanzi(art.nameZh, art.nameZhTrad)}</span>)</h3>
                       <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.5rem;">${art.nameEn} • <span class="pinyin">${art.pinyin}</span></div>
                       <p style="font-size:0.88rem;margin-bottom:0.6rem;"><strong>Lưu giữ:</strong> ${art.collection} • <strong>Chất liệu:</strong> ${art.material}</p>
                       <button type="button" class="btn btn-primary btn-sm" data-action="open-artifact" data-id="${art.id}">Xem Hồ sơ Giám định →</button>
@@ -4696,9 +4790,9 @@
                       <button type="button" class="btn btn-ghost btn-sm" data-action="toggle-bookmark" data-type="artifact" data-id="${art.id}" data-title="${escapeHtml(art.nameVi)}">${ICONS.bookmark} ${fav ? "Đã lưu" : "Lưu"}</button>
                     </div>
                     <div class="card-title-zh">${art.nameZh}</div>
-                    <h3 class="card-title" style="font-size:1.15rem;">${art.nameVi}</h3>
+                    <h3 class="card-title" style="font-size:1.15rem;">${formatInlineMd(art.nameVi, true)}</h3>
                     ${isScroll ? `<span class="handscroll-caption-line">Trường quyển ngang · Nhấn để cuộn xem toàn bức →</span>` : ""}
-                    <p style="font-size:0.84rem;margin-top:0.35rem;">${art.culturalSignificance.slice(0, 115)}...</p>
+                    <p style="font-size:0.84rem;margin-top:0.35rem;">${escapeEditorialHtml(slicePlainPreview(art.culturalSignificance, 115))}</p>
                     <div class="card-footer-row">
                       <span class="pinyin" style="font-size:0.78rem;">${art.pinyin}</span>
                       <button type="button" class="btn btn-primary btn-sm" data-action="open-artifact" data-id="${art.id}">Chi tiết →</button>
@@ -4802,7 +4896,7 @@
             ${matchingPainting ? `<button type="button" class="btn btn-gold btn-sm" data-action="switch-artifact-to-painting" data-id="${matchingPainting.id}">Mở Hồ sơ Quốc họa 9 Chiều →</button>` : ""}
           </div>
 
-          <h2 style="font-family:var(--font-editorial);font-size:2rem;">${art.nameVi}</h2>
+          <h2 style="font-family:var(--font-editorial);font-size:2rem;">${formatInlineMd(art.nameVi, true)}</h2>
           <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:0.75rem;margin-bottom:1rem;">
             <span style="font-size:1.25rem;">${formatHanzi(art.nameZh, art.nameZhTrad)}</span>
             <span class="pinyin">${art.pinyin}</span>
@@ -4830,15 +4924,26 @@
           </div>
 
           <div class="flashcard-layer" style="margin-bottom:0.75rem;">
-            <strong>Ý nghĩa Văn hóa & Nghệ thuật:</strong><br>${art.culturalSignificance}
+            <strong>Ý nghĩa Văn hóa & Nghệ thuật:</strong><br>${formatInlineMd(art.culturalSignificance, true)}
           </div>
           <div class="flashcard-layer" style="margin-bottom:0.75rem;">
-            <strong>Bối cảnh Lịch sử:</strong><br>${art.historicalContext}
+            <strong>Bối cảnh Lịch sử:</strong><br>${formatInlineMd(art.historicalContext, true)}
           </div>
           <div class="epistemic-box" style="margin-bottom:1rem;">
-            <div class="epistemic-title">Nguồn Tư liệu & Quyền Lưu trữ (Attribution)</div>
+            <div class="epistemic-title">Nguồn Tư liệu &amp; Quyền Lưu trữ (Attribution)</div>
             <p style="margin:0;font-size:0.86rem;">${art.attribution}</p>
           </div>
+
+          ${art.visitorNote ? `
+            <div class="card" style="margin-bottom:1rem;padding:0.95rem 1.1rem;border-left:4px solid var(--jade-green);background:var(--bg-jade-soft);">
+              <div class="editorial-kicker" style="color:var(--jade-green);margin-bottom:0.25rem;">4. GÓC NHÌN THAM QUAN &amp; KHẢO CỨU CHO KHÁCH VIỆT</div>
+              <div style="font-size:0.86rem;line-height:1.58;display:flex;flex-direction:column;gap:0.38rem;">
+                <div><strong>Kỹ thuật Chế tác Nổi bật:</strong> ${formatInlineMd(art.visitorNote.techniqueDissection || art.material || "", true)}</div>
+                <div><strong>Địa điểm &amp; Lưu ý Bảo tồn:</strong> ${formatInlineMd(art.visitorNote.rotationStatus || "", true)}</div>
+                <div><strong>Điểm Cần Quan Sát Đầu Tiên:</strong> ${formatInlineMd(art.visitorNote.whatToLookForFirst || "", true)}</div>
+              </div>
+            </div>
+          ` : ""}
 
           ${related.length
             ? `<div>
@@ -5364,12 +5469,26 @@
               <!-- ATTRIBUTION CALLOUT BOX -->
               <div class="card" style="margin-top:1rem;padding:0.9rem 1rem;background:var(--bg-accent-soft);border:1px solid var(--border-red);">
                 <div style="font-size:0.8rem;font-weight:700;color:var(--cinnabar-red);margin-bottom:0.25rem;">
-                  TÌNH TRẠNG QUY THUỘC & GIÁM ĐỊNH BẢO TÀNG:
+                  TÌNH TRẠNG QUY THUỘC &amp; GIÁM ĐỊNH BẢO TÀNG:
                 </div>
                 <div style="font-size:0.84rem;color:var(--text-secondary);line-height:1.5;">
                   ${p.attribution}
                 </div>
               </div>
+
+              ${p.visitorNote ? `
+                <div class="card" style="margin-top:0.85rem;padding:0.95rem 1rem;border-left:4px solid var(--jade-green);background:var(--bg-jade-soft);">
+                  <div style="display:flex;justify-content:space-between;align-items:center;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem;">
+                    <span style="font-size:0.75rem;font-weight:800;color:var(--jade-green);letter-spacing:0.05em;">4. LƯU Ý THAM QUAN CHO ĐỘC GIẢ VIỆT</span>
+                    <span class="badge ${p.visitorNote.isRestrictedRotation ? "badge-red" : "badge-jade"}">${escapeHtml(p.visitorNote.rotationBadge || "")}</span>
+                  </div>
+                  <div style="font-size:0.82rem;color:var(--text-secondary);line-height:1.55;display:flex;flex-direction:column;gap:0.32rem;">
+                    <div><strong>Nơi lưu giữ &amp; Quy tắc mở cuộn:</strong> ${formatInlineMd(p.visitorNote.rotationStatus || "", true)}</div>
+                    <div><strong>Quan sát đầu tiên:</strong> ${formatInlineMd(p.visitorNote.whatToLookForFirst || "", true)}</div>
+                    <div><strong>Giải phẫu Bút pháp &amp; Chất liệu:</strong> ${formatInlineMd(p.visitorNote.techniqueDissection || "", true)}</div>
+                  </div>
+                </div>
+              ` : ""}
 
               <!-- TECHNICAL SPECS TABLE -->
               <div class="card" style="margin-top:1rem;padding:1rem;">
@@ -6478,9 +6597,9 @@
             return `
             <article class="card interactive" style="display:flex;flex-direction:column;">
               ${renderAcademicCardThumb(provPhoto, `${pr.type} • ${pr.abbr || pr.nameZh}`)}
-              <div class="card-header-row" style="gap:0.45rem;align-items:center;flex-wrap:nowrap;">
+              <div class="card-header-row" style="gap:0.45rem;align-items:center;flex-wrap:wrap;">
                 <span class="badge badge-gold" style="white-space:nowrap;flex-shrink:0;">${pr.type === "Thành phố trực thuộc TW" ? "Đô thị trung ương" : pr.type}</span>
-                <span class="card-title-zh" style="display:inline-flex;align-items:center;gap:0.3rem;white-space:nowrap;flex-shrink:0;">${pr.nameZh}${pr.abbr ? ` · ${pr.abbr}` : ""} ${renderSpeakBtn(pr.nameZh, "Nghe phát âm tên tỉnh/thành")}</span>
+                <span class="card-title-zh" style="display:inline-flex;align-items:center;gap:0.3rem;white-space:nowrap;">${escapeHtml(pr.headerFormatted || `${pr.nameZh}${pr.abbr ? ` · ${pr.abbr}` : ""}`)} ${renderSpeakBtn(pr.nameZh, "Nghe phát âm tên tỉnh/thành")}</span>
               </div>
               <h3 class="card-title" style="font-size:1.15rem;">${pr.nameVi} (${pr.nameEn})</h3>
               ${pr.landmark ? `<p style="font-size:0.81rem;color:var(--antique-gold);margin-bottom:0.3rem;"><strong>Danh thắng:</strong> ${pr.landmark}</p>` : ""}
@@ -6857,6 +6976,44 @@
               )
               .join("")}
           </div>
+
+          ${(() => {
+            const matrices = Array.isArray(SinoVN.fiveComparativeMatrices) ? SinoVN.fiveComparativeMatrices : [];
+            if (!matrices.length) return "";
+            return `
+              <div style="margin-top:2.75rem;" id="sino-vn-5-matrices">
+                <div class="section-header">
+                  <div>
+                    <div class="editorial-kicker">5 Ma Trận Đối Sánh Cấu Trúc · Đồng Văn Nhưng Dị Bản</div>
+                    <h2 class="section-title" style="font-size:1.75rem;">5 Trục So sánh Song song: Cội rễ Chung, Sáng tạo Nội sinh &amp; Kinh tế 2026</h2>
+                    <p class="section-subtitle">Soi chiếu chi tiết từng cặp định chế kiến trúc, văn tự Chữ Nôm, khoa cử Văn Miếu, lễ tiết nông lịch và dòng chảy thương mại $296,3 tỷ USD (9T/2026) dưới khung ACFTA 3.0.</p>
+                  </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:1.15rem;">
+                  ${matrices.map((mx) => `
+                    <article class="card" style="padding:1.25rem 1.35rem;border-top:3px solid ${mx.id === "matrix-econ2026" ? "var(--jade-green)" : "var(--imperial-red)"};">
+                      <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.35rem;">
+                        <span class="badge ${mx.id === "matrix-econ2026" ? "badge-jade" : "badge-gold"}">MA TRẬN ${escapeHtml(mx.num)} · ${escapeHtml(mx.badgeVi)}</span>
+                        <span class="hanzi" style="font-size:0.9rem;color:var(--text-muted);">${escapeHtml(mx.titleZh)}</span>
+                      </div>
+                      <h3 class="card-title" style="margin:0.15rem 0 0.35rem;">${escapeHtml(mx.titleVi)}</h3>
+                      <p style="font-size:0.88rem;color:var(--text-secondary);margin:0 0 0.85rem;">${escapeHtml(mx.summaryVi)}</p>
+                      <div class="grid grid-2" style="gap:0.9rem;">
+                        ${(mx.columns || []).map((col, cIdx) => `
+                          <div class="flashcard-layer" style="margin:0;${cIdx === 1 ? "background:var(--bg-jade-soft);border-left:3px solid var(--jade-green);" : "border-left:3px solid var(--imperial-red);"}">
+                            <div style="font-weight:800;font-size:0.86rem;color:${cIdx === 1 ? "var(--jade-green)" : "var(--imperial-red)"};margin-bottom:0.45rem;">${escapeHtml(col.side)}</div>
+                            <ul style="margin:0;padding-left:1.1rem;font-size:0.84rem;line-height:1.58;display:flex;flex-direction:column;gap:0.35rem;">
+                              ${(col.points || []).map((pt) => `<li>${formatInlineMd(pt, false)}</li>`).join("")}
+                            </ul>
+                          </div>
+                        `).join("")}
+                      </div>
+                    </article>
+                  `).join("")}
+                </div>
+              </div>
+            `;
+          })()}
 
           <div style="margin-top:2.75rem;">
             <div class="section-header">
@@ -7881,20 +8038,119 @@
           <div class="tabs-bar">
             <button type="button" class="tab-btn ${tab === "dashboard" ? "active" : ""}" data-action="set-learn-tab" data-tab="dashboard">${enL ? "A. Dashboard" : "A. Bảng điều khiển"}</button>
             <button type="button" class="tab-btn ${tab === "dictionary" ? "active" : ""}" data-action="set-learn-tab" data-tab="dictionary">${enL ? `B. Liushu Lexicon (${Dictionary.length})` : `B. Từ điển Văn hóa (${Dictionary.length})`}</button>
-            <button type="button" class="tab-btn ${tab === "flashcards" ? "active" : ""}" data-action="set-learn-tab" data-tab="flashcards">${enL ? `C. Vocabulary &amp; Reading Notebook (${notebookCount})` : `C. Sổ tay Từ vựng &amp; Ghi chú (${notebookCount})`}</button>
-            <button type="button" class="tab-btn ${tab === "kmap" ? "active" : ""}" data-action="set-learn-tab" data-tab="kmap">${enL ? "D. Knowledge Map" : "D. Bản đồ Tri thức"}</button>
-            <button type="button" class="tab-btn ${tab === "quiz" ? "active" : ""}" data-action="set-learn-tab" data-tab="quiz">${enL ? "E. Quiz &amp; Feynman" : "E. Trắc nghiệm &amp; Feynman"}</button>
-            <button type="button" class="tab-btn ${tab === "journal" ? "active" : ""}" data-action="set-learn-tab" data-tab="journal">${enL ? "F. Study Journal" : "F. Nhật ký &amp; Ghi chú"}</button>
+            <button type="button" class="tab-btn ${tab === "survival" ? "active" : ""}" data-action="set-learn-tab" data-tab="survival">${enL ? "C. Survival Hanzi (6 Packs)" : "C. Hành trang Sinh tồn (6 Bộ)"}</button>
+            <button type="button" class="tab-btn ${tab === "flashcards" ? "active" : ""}" data-action="set-learn-tab" data-tab="flashcards">${enL ? `D. Vocabulary &amp; Reading Notebook (${notebookCount})` : `D. Sổ tay Từ vựng (${notebookCount})`}</button>
+            <button type="button" class="tab-btn ${tab === "kmap" ? "active" : ""}" data-action="set-learn-tab" data-tab="kmap">${enL ? "E. Knowledge Map" : "E. Bản đồ Tri thức"}</button>
+            <button type="button" class="tab-btn ${tab === "quiz" ? "active" : ""}" data-action="set-learn-tab" data-tab="quiz">${enL ? "F. Quiz &amp; Feynman" : "F. Trắc nghiệm &amp; Feynman"}</button>
+            <button type="button" class="tab-btn ${tab === "journal" ? "active" : ""}" data-action="set-learn-tab" data-tab="journal">${enL ? "G. Study Journal" : "G. Nhật ký &amp; Ghi chú"}</button>
           </div>
 
           ${tab === "dashboard" ? renderLearningDashboard() : ""}
           ${tab === "dictionary" ? renderDictionaryTab() : ""}
+          ${tab === "survival" ? renderSurvivalHanziTab() : ""}
           ${tab === "flashcards" ? renderVocabularyNotebookTab() : ""}
           ${tab === "kmap" ? renderKnowledgeMapTab() : ""}
           ${tab === "quiz" ? renderQuizTab() : ""}
           ${tab === "journal" ? renderJournalTab() : ""}
         </div>
       </section>
+    `;
+  }
+
+  function renderSurvivalHanziTab() {
+    const packs = (window.CCE_SURVIVAL_PACKS && window.CCE_SURVIVAL_PACKS.packs) || [];
+    const filterId = ui.survivalPackFilter || "all";
+    const visiblePacks = filterId === "all" ? packs : packs.filter((p) => p.id === filterId);
+    const totalCount = packs.reduce((acc, p) => acc + (p.items ? p.items.length : 0), 0);
+    const zeroPinyin = Boolean(ui.survivalZeroPinyin);
+    const revealedMap = ui.revealedSurvivalIds || {};
+
+    return `
+      <div class="card mb-2" style="padding:1.25rem 1.35rem;border-top:3px solid var(--jade-green);">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.85rem;">
+          <div>
+            <div class="editorial-kicker" style="color:var(--jade-green);margin-bottom:0.2rem;">HÀNH TRANG CHỮ HÁN THỰC CHIẾN · 六书实用汉字备忘</div>
+            <h2 style="font-family:var(--font-editorial);font-size:1.55rem;margin:0 0 0.35rem;">6 Bộ Chữ Hán Sinh Tồn Trước Giờ Bay (${totalCount} Cụm Từ Cốt Lõi Theo Logic Lục Thư)</h2>
+            <p style="margin:0;font-size:0.88rem;color:var(--text-secondary);max-width:74ch;">
+              Thay vì học vẹt từng mặt chữ, mỗi biển báo ga cao tốc 12306, bảo tàng, quán ăn và đồn công an đều được giải mã theo cấu trúc bộ thủ Lục thư. Bật <strong>Zero-Pinyin Active Recall</strong> để tự kiểm tra phản xạ nhận mặt chữ trước khi đi thực địa.
+            </p>
+          </div>
+          <div style="display:flex;gap:0.45rem;flex-wrap:wrap;">
+            <button type="button" class="btn ${zeroPinyin ? "btn-primary" : "btn-secondary"} btn-sm" data-action="toggle-survival-zero-pinyin" aria-pressed="${zeroPinyin ? "true" : "false"}">
+              ${zeroPinyin ? "🧠 Zero-Pinyin Recall: ĐANG BẬT" : "👁️ Đang Hiện Sẵn Pinyin"}
+            </button>
+            <button type="button" class="btn btn-jade btn-sm" data-action="export-survival-anki" data-fmt="csv">${ICONS.download} Anki .CSV</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-action="export-survival-anki" data-fmt="tsv">${ICONS.download} .TSV</button>
+          </div>
+        </div>
+
+        <div class="filter-bar" style="margin-top:0.95rem;margin-bottom:0;" role="tablist" aria-label="Lọc 6 bộ sinh tồn">
+          <button type="button" class="filter-pill ${filterId === "all" ? "active" : ""}" data-action="set-survival-pack" data-pack="all">Tất cả 6 Bộ (${totalCount})</button>
+          ${packs.map((pk) => `
+            <button type="button" class="filter-pill ${filterId === pk.id ? "active" : ""}" data-action="set-survival-pack" data-pack="${escapeHtml(pk.id)}">
+              Bộ ${escapeHtml(pk.number)}: ${escapeHtml(pk.titleVi)} (${(pk.items || []).length})
+            </button>
+          `).join("")}
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:1.5rem;">
+        ${visiblePacks.map((pk) => `
+          <section class="card" style="padding:1.25rem 1.35rem;">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.65rem;padding-bottom:0.55rem;border-bottom:1px solid var(--hairline);">
+              <div>
+                <span class="badge badge-gold">BỘ ${escapeHtml(pk.number)} · ${escapeHtml(pk.titleZh)}</span>
+                <h3 style="margin:0.35rem 0 0.2rem;font-family:var(--font-editorial);font-size:1.3rem;">${escapeHtml(pk.titleVi)}</h3>
+                <p style="margin:0;font-size:0.84rem;color:var(--text-secondary);">${escapeHtml(pk.descVi)}</p>
+              </div>
+              <button type="button" class="btn btn-ghost btn-sm" data-action="export-survival-anki" data-fmt="csv" data-pack="${escapeHtml(pk.id)}">${ICONS.download} Xuất riêng Bộ ${escapeHtml(pk.number)}</button>
+            </div>
+
+            <div class="grid grid-2" style="gap:0.85rem;">
+              ${(pk.items || []).map((it) => {
+                const isRevealed = !zeroPinyin || Boolean(revealedMap[it.id]);
+                return `
+                  <article class="card" style="padding:0.95rem 1rem;background:var(--bg-surface);border-left:3px solid ${isRevealed ? "var(--jade-green)" : "var(--imperial-red)"};display:flex;flex-direction:column;gap:0.45rem;">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;">
+                      <div>
+                        <span class="badge badge-outline" style="font-size:0.68rem;">${escapeHtml(it.liushuType)}</span>
+                        <div class="hanzi" style="font-size:1.45rem;font-weight:700;color:var(--ink-primary);margin-top:0.2rem;line-height:1.25;">${escapeHtml(it.hanzi)}</div>
+                      </div>
+                      <div style="display:flex;gap:0.35rem;flex-shrink:0;">
+                        ${renderSpeakBtn(it.hanzi.split("/")[0].trim(), "Nghe phát âm")}
+                        <button type="button" class="btn btn-ghost btn-sm" data-action="save-survival-to-notebook" data-id="${escapeHtml(it.id)}" title="Lưu vào Sổ tay">+ Lưu</button>
+                      </div>
+                    </div>
+
+                    ${zeroPinyin ? `
+                      <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+                        <button type="button" class="btn ${isRevealed ? "btn-secondary" : "btn-primary"} btn-sm" data-action="toggle-survival-reveal" data-id="${escapeHtml(it.id)}">
+                          ${isRevealed ? "Ẩn Đáp án" : "👁️ Chạm để Hiện Pinyin, Chiết tự & Nghĩa"}
+                        </button>
+                      </div>
+                    ` : ""}
+
+                    ${isRevealed ? `
+                      <div style="display:flex;flex-direction:column;gap:0.35rem;font-size:0.84rem;border-top:1px dashed var(--hairline);padding-top:0.45rem;">
+                        <div><span class="pinyin" style="color:var(--imperial-red);font-weight:700;">${escapeHtml(it.pinyin)}</span> • <span style="color:var(--jade-green);font-weight:700;">Hán–Việt: ${escapeHtml(it.hanViet)}</span></div>
+                        <div><strong>Nghĩa:</strong> ${escapeHtml(it.vi)} <span style="color:var(--text-muted);">(${escapeHtml(it.en)})</span></div>
+                        <div style="padding:0.45rem 0.6rem;background:var(--bg-paper);border:1px solid var(--hairline);">
+                          <strong style="color:var(--antique-gold);">Giải mã Bộ thủ Lục thư:</strong> ${escapeHtml(it.radicalLogic)}
+                        </div>
+                        <div style="font-size:0.79rem;color:var(--text-secondary);"><strong>Mẹo thực địa:</strong> ${formatInlineMd(it.fieldTip, true)}</div>
+                      </div>
+                    ` : `
+                      <div style="font-size:0.78rem;color:var(--text-muted);font-style:italic;">
+                        Chế độ Active Recall: tự nhẩm mặt chữ Hán &amp; đoán bộ thủ trước khi mở đáp án.
+                      </div>
+                    `}
+                  </article>
+                `;
+              }).join("")}
+            </div>
+          </section>
+        `).join("")}
+      </div>
     `;
   }
 
@@ -9153,7 +9409,7 @@
               </div>
               <h2 style="font-family:var(--font-editorial);font-size:1.85rem;margin:0;">
                 ${escapeHtml(pr.nameVi)} (${escapeHtml(pr.nameEn)})
-                <span class="hanzi" style="color:var(--imperial-red);margin-left:0.45rem;">${escapeHtml(pr.nameZh)}</span>
+                <span class="hanzi" style="color:var(--imperial-red);margin-left:0.45rem;font-size:1.25rem;">${escapeHtml(pr.headerFormatted || pr.nameZh)}</span>
                 ${renderSpeakBtn(pr.nameZh, "Nghe phát âm tên tỉnh/thành")}
               </h2>
             </div>
@@ -10520,6 +10776,62 @@
         render();
         break;
 
+      case "set-province-layer":
+        ui.provinceLayerTab = target.getAttribute("data-layer") || "all";
+        render();
+        break;
+
+      case "set-survival-pack":
+        ui.survivalPackFilter = target.getAttribute("data-pack") || "all";
+        render();
+        break;
+
+      case "toggle-survival-zero-pinyin":
+        ui.survivalZeroPinyin = !ui.survivalZeroPinyin;
+        render();
+        break;
+
+      case "toggle-survival-reveal": {
+        if (!ui.revealedSurvivalIds) ui.revealedSurvivalIds = {};
+        ui.revealedSurvivalIds[id] = !ui.revealedSurvivalIds[id];
+        render();
+        break;
+      }
+
+      case "save-survival-to-notebook": {
+        const packs = (window.CCE_SURVIVAL_PACKS && window.CCE_SURVIVAL_PACKS.packs) || [];
+        let foundItem = null;
+        let foundPack = null;
+        packs.forEach((pk) => {
+          const hit = (pk.items || []).find((x) => x.id === id);
+          if (hit) {
+            foundItem = hit;
+            foundPack = pk;
+          }
+        });
+        if (foundItem && Store && Store.addVocabNotebookEntry) {
+          Store.addVocabNotebookEntry({
+            term: foundItem.hanzi,
+            pinyin: foundItem.pinyin,
+            hanViet: foundItem.hanViet,
+            meaning: `${foundItem.vi} — [${foundItem.liushuType}]`,
+            sourceSentence: foundItem.radicalLogic,
+            articleId: "survival-packs",
+            articleTitle: `Hành trang Sinh tồn (${foundPack ? foundPack.titleVi : ""})`,
+            note: foundItem.fieldTip
+          });
+          showToast(`Đã lưu "${foundItem.hanzi}" vào Sổ tay Từ vựng!`);
+          render();
+        }
+        break;
+      }
+
+      case "export-survival-anki": {
+        const packArg = target.getAttribute("data-pack") || ui.survivalPackFilter || "all";
+        exportSurvivalAnkiFile(target.getAttribute("data-fmt") || "csv", packArg);
+        break;
+      }
+
       case "filter-dict-level":
         ui.dictLevelFilter = target.getAttribute("data-level");
         render();
@@ -11782,7 +12094,7 @@
   const PATH_TO_PAGE = Object.entries(CLEAN_PAGE_PATHS).reduce((acc, [page, p]) => {
     acc[p] = page;
     return acc;
-  }, {});
+  }, { "/kham-pha": "explore" });
   const SITE_ORIGIN =
     window.location.protocol === "http:" || window.location.protocol === "https:"
       ? (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
@@ -11824,7 +12136,7 @@
     const activePage = state.activePage || "home";
     let title = "CHINESE CULTURE EXPLORER – 中国文化探索";
     let description =
-      "Khám phá văn minh Trung Hoa: 64 chuyên luận khảo cứu, 30 cổ tịch Tứ Khố, 54 kiệt tác quốc họa, 36 bảo vật bảo tàng và hồ sơ địa văn hóa 34 tỉnh thành.";
+      "Khám phá văn minh Trung Hoa: 65 chuyên luận khảo cứu, 30 cổ tịch Tứ Khố, 54 kiệt tác quốc họa, 37 bảo vật bảo tàng và hồ sơ địa văn hóa 34 tỉnh thành.";
     let canonicalPath = CLEAN_PAGE_PATHS[activePage] || "/";
     let ogImageSrc = "assets/images/museum/forbidden-city-imperial-axis-gate.jpg";
     const isRasterSrc = (s) => Boolean(s) && !/\.svg(?:$|\?)/i.test(String(s));
@@ -11904,10 +12216,10 @@
       }
     } else {
       const pageTitles = {
-        explore: "64 Chuyên luận & Mục lục Tri thức | CHINESE CULTURE EXPLORER",
+        explore: "65 Chuyên luận & Mục lục Tri thức | CHINESE CULTURE EXPLORER",
         library: "Thư viện 30 Cổ tịch Tứ Khố & Nghiên cứu | CHINESE CULTURE EXPLORER",
         paintings: "54 Kiệt tác Quốc họa & Giám định Zoom | CHINESE CULTURE EXPLORER",
-        museum: "Bảo tàng Số 36 Bảo vật Quốc gia | CHINESE CULTURE EXPLORER",
+        museum: "Bảo tàng Số 37 Bảo vật Quốc gia | CHINESE CULTURE EXPLORER",
         regions: "34 Tỉnh/Thành & 16 Đô thị Lịch sử Trung Hoa | CHINESE CULTURE EXPLORER",
         "sino-vietnam": "Giao lưu Văn hóa & Thương mại Trung – Việt | CHINESE CULTURE EXPLORER",
         business: "Văn hóa Kinh doanh & Đàm phán B2B | CHINESE CULTURE EXPLORER",
@@ -11925,6 +12237,9 @@
       ? ogImageSrc
       : `${SITE_ORIGIN}/${String(ogImageSrc).replace(/^\/+/, "")}`;
 
+    const stripMd = (s) => String(s || "").replace(/\*{1,2}([^*]+?)\*{1,2}/g, "$1");
+    title = stripMd(title);
+    description = stripMd(description);
     document.title = title;
     const descEl = document.querySelector('meta[name="description"]');
     if (descEl) descEl.setAttribute("content", description);

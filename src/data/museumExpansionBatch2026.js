@@ -72,7 +72,8 @@
         "Một trong Ngũ Đại Danh Diêu (Nhữ – Quan – Ca – Định – Quân) định hình khái niệm 'Wabi' tự nhiên không hoàn hảo của mỹ học gốm sứ Á Đông.",
       hotspotAnnotations: [
         { id: "gy-1", x: 50, y: 46, titleVi: "Mạng Rạn Kép 'Kim Ty Thiết Tuyến'", titleZh: "金丝铁线双色开片", pinyin: "Jīnsī tiěxiàn", category: "Kỹ nghệ Độc nhất", detail: "Đường nứt lớn thấm mực đen đan với đường nứt nhỏ nhuộm trà óng vàng tạo chiều sâu thấu thị qua men." },
-        { id: "gy-2", x: 50, y: 74, titleVi: "Ánh Men Mờ Trầm Ẩn Như Sáp Ong ('Ngưng Chi')", titleZh: "百圾碎酥光", pinyin: "Bǎijīsuì", category: "Mỹ học Chất men", detail: "Bề mặt men không bóng gắt mà mịn lì dịu mắt như mỡ đông." }
+        { id: "gy-2", x: 50, y: 74, titleVi: "Ánh Men Mờ Trầm Ẩn Như Sáp Ong ('Ngưng Chi')", titleZh: "百圾碎酥光", pinyin: "Bǎijīsuì", category: "Mỹ học Chất men", detail: "Bề mặt men không bóng gắt mà mịn lì dịu mắt như mỡ đông." },
+        { id: "gy-3", x: 32, y: 26, titleVi: "Chân Đế Sắt Đen & Tai Lư Mô Phỏng Đồng Cổ", titleZh: "紫口铁足与古耳", pinyin: "Zǐkǒu tiězú", category: "Hình chế Cổ điển", detail: "Phần gờ miệng mỏng men ngả sắc tía, đáy để mộc lộ cốt đất chứa hàm lượng sắt cao đặc trưng lò Ca." }
       ]
     },
     {
@@ -98,7 +99,8 @@
         "Sáng kiến xếp úp chén vào hộp nung nhiều tầng ('Phúc thiêu pháp' 覆烧法) giúp tăng gấp 3 công suất lò Định Châu và ảnh hưởng tới gốm sứ xuất khẩu khắp châu Á.",
       hotspotAnnotations: [
         { id: "dy-1", x: 50, y: 20, titleVi: "Viền Bọc Đồng Đỏ Chống Mẻ Miệng ('Mang Khẩu')", titleZh: "覆烧芒口镶铜", pinyin: "Mángkǒu", category: "Kỹ thuật Nung Tống", detail: "Vì đặt úp miệng khi nung không tráng men nên viền gốm thô được bọc bằng dải đồng hoặc bạc tinh xảo." },
-        { id: "dy-2", x: 50, y: 55, titleVi: "Chạm Chìm 'Bán Đao Nê' Nét Thanh Mảnh Thoát Khí", titleZh: "半刀泥刻花", pinyin: "Kèhuā", category: "Mỹ thuật Khắc chìm", detail: "Dao nghiêng một mặt tạo rãnh sâu nông đọng men tạo hiệu ứng nổi 3D dưới ánh sáng nghiêng." }
+        { id: "dy-2", x: 50, y: 55, titleVi: "Chạm Chìm 'Bán Đao Nê' Nét Thanh Mảnh Thoát Khí", titleZh: "半刀泥刻花", pinyin: "Kèhuā", category: "Mỹ thuật Khắc chìm", detail: "Dao nghiêng một mặt tạo rãnh sâu nông đọng men tạo hiệu ứng nổi 3D dưới ánh sáng nghiêng." },
+        { id: "dy-3", x: 46, y: 76, titleVi: "Giọt Men Đọng 'Lệ Ngân' Màu Trắng Ngà Ấm Áp", titleZh: "泪痕与牙白釉", pinyin: "Lèihén yòu", category: "Dấu hiệu Giám định", detail: "Dọc thân ngoài men dày thường tụ lại các vệt giọt chảy lấp lánh như giọt nến sáp trắng ngà." }
       ]
     },
     {
@@ -124,7 +126,8 @@
         "Cổ nhân có câu 'Hoàng kim hữu giá Quân vô giá' (Vàng có thể định giá chứ gốm Quân Diêu là vô giá) vì sắc tím tự nhiên độc bản.",
       hotspotAnnotations: [
         { id: "jyz-1", x: 48, y: 45, titleVi: "Hiệu Ứng Hóa Học 'Diêu Biến' Ôxit Đồng", titleZh: "入窑一色，出窑万彩", pinyin: "Yáobiàn", category: "Khoa học Vật liệu Cổ", detail: "Phản ứng khử đồng keo tạo tán xạ ánh sáng Rayleigh thành vệt tím hoa hồng giữa nền lam ngọc." },
-        { id: "jyz-2", x: 50, y: 80, titleVi: "Đường Rạn Ngắn Uốn Lượn 'Khâu Dẫn Tẩu Nê Văn'", titleZh: "蚯蚓走泥纹", pinyin: "Qiūyǐn zǒuníwén", category: "Dấu hiệu Giám định", detail: "Vết men dày tự liền lại sau khi nứt trong quá trình nung giống đường giun bò trên bùn." }
+        { id: "jyz-2", x: 50, y: 80, titleVi: "Đường Rạn Ngắn Uốn Lượn 'Khâu Dẫn Tẩu Nê Văn'", titleZh: "蚯蚓走泥纹", pinyin: "Qiūyǐn zǒuníwén", category: "Dấu hiệu Giám định", detail: "Vết men dày tự liền lại sau khi nứt trong quá trình nung giống đường giun bò trên bùn." },
+        { id: "jyz-3", x: 26, y: 24, titleVi: "Miệng Cánh Hoa Lăng & Số Hiệu Triện Đáy Cung Đình", titleZh: "葵花口与底足刻数", pinyin: "Kuíhuākǒu", category: "Nghi lễ Quân Diêu", detail: "Mỗi chậu hoa Quân quan triều khắc một chữ số (từ 1 đến 10) dưới đáy tương ứng kích thước chậu trồng thủy tiên." }
       ]
     },
     {
@@ -150,7 +153,8 @@
         "Chứng minh lưu vực trung du Trường Giang thời Ân Thương đạt trình độ luyện kim đúc ghép đa khối ('Phân chú tiếp đúc') tinh xảo không kém kinh đô An Dương.",
       hotspotAnnotations: [
         { id: "syf-1", x: 30, y: 42, titleVi: "Đầu Bốn Chú Dê Cuộn Sừng Sống Động Tầng Nổi", titleZh: "高浮雕四羊首", pinyin: "Sìyángshǒu", category: "Điêu khắc Bốn góc", detail: "Dê là linh vật cát tường ('Dương' 羊 đồng âm 'Tường' 祥 trong chữ Hán cổ), gắn kết hoàn hảo vai vuông và thân tròn." },
-        { id: "syf-2", x: 50, y: 65, titleVi: "Hoa Văn Thao Thiết & Mỏ Rồng Phủ Kín Mặt Vách", titleZh: "饕餮纹与扉棱", pinyin: "Tāotièwén", category: "Mỹ học Thương Chu", detail: "Toàn bộ thân tôn không chừa trống một cm nào nhờ những đường gân 'Phi lăng' che khít vết ghép khuôn." }
+        { id: "syf-2", x: 50, y: 65, titleVi: "Hoa Văn Thao Thiết & Mỏ Rồng Phủ Kín Mặt Vách", titleZh: "饕餮纹与扉棱", pinyin: "Tāotièwén", category: "Mỹ học Thương Chu", detail: "Toàn bộ thân tôn không chừa trống một cm nào nhờ những đường gân 'Phi lăng' che khít vết ghép khuôn." },
+        { id: "syf-3", x: 50, y: 18, titleVi: "Cổ Loa Xòe Rộng Khắc Rồng Quỳ Hai Đầu Đối Xứng", titleZh: "喇叭形阔口蕉叶纹", pinyin: "Jiāoyèwén", category: "Kỹ thuật Phức hợp", detail: "Vành miệng loe lớn trang trí họa tiết lá chuối thanh thoát, cân bằng khối tượng dê đồ sộ bên dưới." }
       ]
     },
     {
@@ -176,7 +180,8 @@
         "Bằng chứng khảo cổ giải mã chế độ tang lễ phân cấp bằng ngọc thời Hán: Hoàng đế & chư hầu thân vương dùng Chỉ Vàng (*Kim lũ*), tam công dùng Chỉ Bạc (*Ngân lũ*), thấp hơn dùng Chỉ Đồng (*Đồng lũ*).",
       hotspotAnnotations: [
         { id: "jly-1", x: 50, y: 24, titleVi: "Mặt Nạ Ngọc & Mũ Giáp Khâu Từng Miếng Vuông Tam Giác", titleZh: "玉面罩连缀", pinyin: "Yùmiànzhào", category: "Kỹ nghệ Chế tác Ngọc", detail: "Hàng trăm miếng ngọc mỏng từ Tân Cương cắt uốn vừa vặn hốc mắt, sống mũi." },
-        { id: "jly-2", x: 50, y: 60, titleVi: "2.498 Phiến Ngọc Khâu 1,1 kg Sợi Vàng Ròng", titleZh: "金丝连缀二千四百余片", pinyin: "Jīnlǚ liánzhuì", category: "Lễ chế Tây Hán", detail: "Từng sợi chỉ vàng uốn xoắn giữ khoảng hở hợp lý tránh nứt gãy khi đặt vào quan tài gỗ." }
+        { id: "jly-2", x: 50, y: 60, titleVi: "2.498 Phiến Ngọc Khâu 1,1 kg Sợi Vàng Ròng", titleZh: "金丝连缀二千四百余片", pinyin: "Jīnlǚ liánzhuì", category: "Lễ chế Tây Hán", detail: "Từng sợi chỉ vàng uốn xoắn giữ khoảng hở hợp lý tránh nứt gãy khi đặt vào quan tài gỗ." },
+        { id: "jly-3", x: 50, y: 84, titleVi: "Ủng Ngọc Đóng Kín Gót Chân & Mười Ngón Tay", titleZh: "玉靴与九窍玉塞", pinyin: "Jiǔqiào yùsāi", category: "Tín ngưỡng Bất tử", detail: "Phần chân giáp ngọc nối với 9 nút bịt khiếu bằng ngọc Bích nhằm giữ 'tinh khí' không thoát ra khỏi cơ thể." }
       ]
     },
     {
@@ -202,7 +207,8 @@
         "Vượt qua biến cố 1.700 năm chiến loạn (từng qua tay Tống Huy Tông và triều Thanh), được nhà sưu tầm Trương Bá Câu kiên quyết bảo lưu không bán ra nước ngoài rồi hiến tặng Nhà nước Trung Quốc năm 1956.",
       hotspotAnnotations: [
         { id: "pft-1", x: 46, y: 42, titleVi: "Thể Chương Thảo Cổ Cứng Cỏi ('Bất Kết Bất Liên')", titleZh: "章草古意笔法", pinyin: "Zhāngcǎo", category: "Chuyển tiếp Thư thể", detail: "Các chữ giữ nét đứt gãy độc lập từng chữ theo dư âm Lệ thư thay vì nối liền như Kim thảo đời Đường." },
-        { id: "pft-2", x: 18, y: 72, titleVi: "Ấn Triện Song Rồng Thời Bắc Tống Huy Tông & Trương Bá Câu", titleZh: "宣和御玺及历代题跋", pinyin: "Xuānhé guǎnbǎo", category: "Giám định Sử học", detail: "Dấu triện hoàng gia Bắc Tống và bài đề chữ vàng 'Lục Cơ Bình Phục Thiếp' của chính Tống Huy Tông." }
+        { id: "pft-2", x: 18, y: 72, titleVi: "Ấn Triện Song Rồng Thời Bắc Tống Huy Tông & Trương Bá Câu", titleZh: "宣和御玺及历代题跋", pinyin: "Xuānhé guǎnbǎo", category: "Giám định Sử học", detail: "Dấu triện hoàng gia Bắc Tống và bài đề chữ vàng 'Lục Cơ Bình Phục Thiếp' của chính Tống Huy Tông." },
+        { id: "pft-3", x: 74, y: 36, titleVi: "Chất Giấy Gai Thô 'Ma Chỉ' Hơn 1.700 Năm Tuổi", titleZh: "西晋秃笔麻纸纹理", pinyin: "Mázhǐ bǐyùn", category: "Vật liệu Cổ thư", detail: "Mặt giấy sần thớ đay kết hợp bút cọ ngọn ngắn không nhọn tạo nên vẻ mộc mạc trầm tĩnh độc nhất vô nhị." }
       ]
     },
     {
@@ -228,7 +234,8 @@
         "Cùng với *Khoái Tuyết Thời Tình Thiếp* (nay ở Đài Bắc) và *Bá Viễn Thiếp*, tạo thành bộ ba Tam Hy Đường lừng danh — và được mua chuộc hồi hương từ Hồng Kông về Bắc Kinh năm 1951.",
       hotspotAnnotations: [
         { id: "zqt-1", x: 50, y: 45, titleVi: "Lối Viết Liền Hơi 'Nhất Bút Thư' Của Tiểu Vương", titleZh: "王献之一笔书神韵", pinyin: "Yībǐshū", category: "Cách mạng Hành–Thảo", detail: "Chỉ vỏn vẹn 22 chữ ('Trung thu bất phục tương kiến...') nhưng mạch khí cuộn trào như dải lụa múa." },
-        { id: "zqt-2", x: 25, y: 30, titleVi: "Bản Đề Của Mễ Phất & Vua Càn Long Khắc Tam Hy Đường", titleZh: "乾隆三希堂御题", pinyin: "Sānxītáng", category: "Lịch sử Sưu tầm", detail: "Đoạn bạt chứng minh quá trình lưu lạc rồi tái ngộ tại Tử Cấm Thành." }
+        { id: "zqt-2", x: 25, y: 30, titleVi: "Bản Đề Của Mễ Phất & Vua Càn Long Khắc Tam Hy Đường", titleZh: "乾隆三希堂御题", pinyin: "Sānxītáng", category: "Lịch sử Sưu tầm", detail: "Đoạn bạt chứng minh quá trình lưu lạc rồi tái ngộ tại Tử Cấm Thành." },
+        { id: "zqt-3", x: 76, y: 70, titleVi: "Tranh Hoa Họa Vẽ Phụ Bồi & Triện Ấn Hoàng Gia Thanh Triều", titleZh: "竹纸墨色与藏印", pinyin: "Zhúzhǐ mòsè", category: "Giám định Vật liệu", detail: "Chất mực đen bóng bám trên giấy trúc mềm (tiết lộ dấu ấn lâm mô tuyệt kỹ thời Bắc Tống)." }
       ]
     },
     {
@@ -254,7 +261,8 @@
         "Đổng Kỳ Xương thời Minh xem đây là chứng cứ vàng để nghiên cứu thư pháp Đông Tấn chưa qua tay thợ đồ lại đời sau.",
       hotspotAnnotations: [
         { id: "byt-1", x: 50, y: 40, titleVi: "Bút Đạm Hành Thư Chân Tích Thế Kỷ IV", titleZh: "东晋真迹墨韵", pinyin: "Xíngshū zhēnjì", category: "Chân phẩm Tấn triều", detail: "Vết mực có chỗ khô nhạt chỗ đẫm ướt chứng tỏ bút viết trực tiếp trên mặt giấy xơ tự nhiên thời Đông Tấn." },
-        { id: "byt-2", x: 22, y: 65, titleVi: "Lời Bình Giám Định Kinh Điển Của Đổng Kỳ Xương & Thẩm Châu", titleZh: "明清题跋鉴藏", pinyin: "Jiàncáng tíbá", category: "Lịch sử Truyền thừa", detail: "Hàng chữ nhỏ bên trái do danh họa Đổng Kỳ Xương chép tôn vinh tài hoa nhà họ Vương." }
+        { id: "byt-2", x: 22, y: 65, titleVi: "Lời Bình Giám Định Kinh Điển Của Đổng Kỳ Xương & Thẩm Châu", titleZh: "明清题跋鉴藏", pinyin: "Jiàncáng tíbá", category: "Lịch sử Truyền thừa", detail: "Hàng chữ nhỏ bên trái do danh họa Đổng Kỳ Xương chép tôn vinh tài hoa nhà họ Vương." },
+        { id: "byt-3", x: 78, y: 28, titleVi: "Ngự Bút Càn Long Đề 'Giang Tả Phong Lưu' Đầu Cuộn", titleZh: "乾隆御题引首", pinyin: "Jiāngzuǒ fēngliú", category: "Tam Hy Đường Ký", detail: "Dòng dẫn đầu cuộn do Càn Long đích thân đề tặng khi hợp bích ba bảo vật thư pháp đất Ngụy–Tấn." }
       ]
     },
     {
@@ -280,7 +288,8 @@
         "Bài minh văn chia đôi: phần đầu ca tụng tổ phụ; phần sau chép nguyên bản sắc lệnh ban thưởng ruộng đất, nô tỳ và lễ phục của Thiên tử nhà Chu — tư liệu sơ cấp về chế độ Phong kiến Tây Chu.",
       hotspotAnnotations: [
         { id: "dkd-1", x: 50, y: 38, titleVi: "290 Chữ Kim Văn Kẻ Ô Vuông Thư Pháp Hoàn Mỹ", titleZh: "二百九十字金文方格铭文", pinyin: "Jīnwén míngwén", category: "Thư pháp Kim văn", detail: "Khác với chữ Thương–Chu sớm kích thước lộn xộn, chữ khắc bên trong Đại Khắc Đỉnh đều tăm tắp báo hiệu chữ Tiểu Triện." },
-        { id: "dkd-2", x: 50, y: 74, titleVi: "Hoa Văn Sóng Gợn 'Ba Khúc Văn' Đầy Tính Trật Tự Chu Lễ", titleZh: "环带波曲纹", pinyin: "Bōqūwén", category: "Mỹ học Tây Chu", detail: "Thay quái thú bằng những dải sóng nhịp nhàng biểu trưng trật tự lễ nhạc." }
+        { id: "dkd-2", x: 50, y: 74, titleVi: "Hoa Văn Sóng Gợn 'Ba Khúc Văn' Đầy Tính Trật Tự Chu Lễ", titleZh: "环带波曲纹", pinyin: "Bōqūwén", category: "Mỹ học Tây Chu", detail: "Thay quái thú bằng những dải sóng nhịp nhàng biểu trưng trật tự lễ nhạc." },
+        { id: "dkd-3", x: 28, y: 84, titleVi: "Ba Chân Thú Khắc Nổi Thao Thiết Vững Chãi 201,5 kg", titleZh: "三兽首蹄形鼎足", pinyin: "Shòutí dǐngzú", category: "Kiến trúc Luyện đồng", detail: "Ba chân vạc hình vó thú khỏe khoắn chống đỡ trọng lượng hơn 2 tạ suốt gần ba thiên niên kỷ." }
       ]
     },
     {
@@ -306,7 +315,8 @@
         "Minh chứng cho mối liên hệ chặt chẽ giữa thủ công khai thác đá quý Hoa Nam và văn hóa thư họa kinh đô Bắc Kinh – Giang Nam.",
       hotspotAnnotations: [
         { id: "dyi-1", x: 52, y: 48, titleVi: "Mặt Nghiên Láng Mịn Chứa 'Nhãn Thạch' Tự Nhiên", titleZh: "翡翠石眼与砚堂", pinyin: "Shíyǎn", category: "Địa chất Quý hiếm", detail: "Vết kết tinh khoáng sét lục bảo tự nhiên trong phiến đá hàng trăm triệu năm." },
-        { id: "dyi-2", x: 30, y: 26, titleVi: "Rãnh Chứa Mực ('Mặc Trì') Khắc Nổi Mây Rồng Vờn Ngọc", titleZh: "墨池云龙雕工", pinyin: "Mòchí", category: "Điêu khắc Hoa Nam", detail: "Rãnh trũng chứa nước mực khắc mây cuộn uyển chuyển bằng mũi đục sắt." }
+        { id: "dyi-2", x: 30, y: 26, titleVi: "Rãnh Chứa Mực ('Mặc Trì') Khắc Nổi Mây Rồng Vờn Ngọc", titleZh: "墨池云龙雕工", pinyin: "Mòchí", category: "Điêu khắc Hoa Nam", detail: "Rãnh trũng chứa nước mực khắc mây cuộn uyển chuyển bằng mũi đục sắt." },
+        { id: "dyi-3", x: 74, y: 72, titleVi: "Hộp Gỗ Tử Đàn Chạm Lộng Kèm Minh Tự Bảo Tồn Mặt Nghiên", titleZh: "紫檀配匣与铭刻", pinyin: "Zǐtán yànhé", category: "Bảo quản Hoàng gia", detail: "Hộp gỗ trắc quý đậy kín giữ ẩm cho mặt đá Lão Khanh, tránh bay hơi nước mực trong mùa hanh khô phương Bắc." }
       ]
     },
     {
@@ -332,7 +342,8 @@
         "Lưu giữ bài minh khắc của đại danh nhân Tô Thức, Hoàng Đình Kiên (Bắc Tống) ở đáy đàn trong kho tàng Di sản Cổ Cầm UNESCO.",
       hotspotAnnotations: [
         { id: "jxh-1", x: 48, y: 38, titleVi: "Đầu Đàn Dáng 'Phục Hy Thức' & Vết Sơn Mài Vết Rắn Ngàn Năm", titleZh: "蛇腹断纹漆面", pinyin: "Shéfù duànwén", category: "Giám định Đàn Cổ", detail: "Những vết rạn ngang thanh mảnh trên lớp sơn sống trộn bột sừng nai là bằng chứng xác thực tuổi đời trên 1.000 năm." },
-        { id: "jxh-2", x: 76, y: 55, titleVi: "Bút Tích Khắc Đáy 'Cửu Tiêu Hoàn Bội' & Bài Đề Của Tô Thức", titleZh: "苏轼黄庭坚铭文题刻", pinyin: "Qínfù míngkè", category: "Văn nhân Truyền thừa", detail: "Chứng thực chủ nhân từng sở hữu từ thời Đường qua tay Tô Đông Pha tới Cố Cung." }
+        { id: "jxh-2", x: 76, y: 55, titleVi: "Bút Tích Khắc Đáy 'Cửu Tiêu Hoàn Bội' & Bài Đề Của Tô Thức", titleZh: "苏轼黄庭坚铭文题刻", pinyin: "Qínfù míngkè", category: "Văn nhân Truyền thừa", detail: "Chứng thực chủ nhân từng sở hữu từ thời Đường qua tay Tô Đông Pha tới Cố Cung." },
+        { id: "jxh-3", x: 24, y: 48, titleVi: "13 Nút Huy Ốc Xà Cừ & Khe Đỡ Dây 'Nhạc Sơn' Cổ", titleZh: "十三螺钿徽位与岳山", pinyin: "Luódiàn huīwèi", category: "Cấu trúc Âm học", detail: "13 chấm ốc khảm theo tỷ lệ harmonic chuẩn xác, giúp ngón tay gảy âm bồi trong trẻo mà không cần phím chia ngăn." }
       ]
     }
   ];

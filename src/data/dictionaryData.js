@@ -4448,27 +4448,27 @@ window.CCE_DICTIONARY = [
     ]
   },
   {
-    "id": "dougong_bracket",
+    "id": "dougong",
     "hanzi": "斗拱",
     "traditional": "斗拱",
     "pinyin": "dǒugǒng",
     "hanViet": "ĐẤU CỦNG",
     "liushuType": "象形 · 形声",
-    "liushuCategory": "象形 · 形声",
+    "liushuCategory": "象形 / Hình thanh (象形 / 形声)",
     "level": "Advanced / Academic Chinese",
-    "topicTag": "Học thuật Cao cấp",
+    "topicTag": "Kiến trúc Cung đình",
     "pos": "n.",
-    "english": "Interlocking Wooden Bracket Set (Architecture)",
-    "vietnamese": "Hệ kết cấu mộng đấu – củng gỗ không đinh (Hán-Việt: ĐẤU CỦNG)",
-    "radical": "斗 (Khối gỗ hình đấu đong vuông) + 木+共 (Thanh cong đỡ mái)",
-    "radicalAnalysis": "斗 (Khối gỗ hình đấu đong vuông) + 木+共 (Thanh cong đỡ mái)",
-    "etymologyAndRadicals": "象形 · 形声 — Bộ thủ: 斗 (Khối gỗ hình đấu đong vuông) + 木+共 (Thanh cong đỡ mái). Kết hợp khối đệm vuông (Đấu 斗) và cánh tay gỗ uốn cong (Củng 拱) đỡ dàn mái nặng của cung điện.",
-    "components": "Kết hợp khối đệm vuông (Đấu 斗) và cánh tay gỗ uốn cong (Củng 拱) đỡ dàn mái nặng của cung điện.",
-    "context": "Cơ chế tiêu tán lực động đất cực kỳ thông minh giúp Tử Cấm Thành và Chùa gỗ Ứng Huyện đứng vững cả nghìn năm.",
+    "english": "Interlocking Wooden Bracket Set (Dougong)",
+    "vietnamese": "Đấu củng — Hệ con sơn chồng đấu không đinh (Hán-Việt: ĐẤU CỦNG)",
+    "radical": "斗 (Đấu - chiếc đấu đong thóc) + 扌/木+共 (Củng - hai tay chắp nâng đỡ)",
+    "radicalAnalysis": "Chữ 斗 (Đấu - bộ Đấu) tượng hình chiếc đấu đong thóc, chỉ khối gỗ vuông đỡ bên dưới; chữ 拱 (Củng - bộ Thủ 扌 + âm Công 共) chỉ hai tay chắp nâng đỡ, là thanh gỗ cong hình cánh cung vươn ra đỡ mái hiên.",
+    "etymologyAndRadicals": "象形 / 形声 — Chữ 斗 (Đấu) tượng hình chiếc đấu đong thóc, chỉ khối gỗ vuông đỡ bên dưới; chữ 拱 (Củng - bộ Thủ 扌 + âm Công 共) chỉ hai tay chắp nâng đỡ thanh dầm mái nặng.",
+    "components": "Hệ kết cấu con sơn chồng đấu đan cài bằng mộng gỗ không dùng đinh sắt, hoạt động như lò xo giảm chấn.",
+    "context": "Hệ kết cấu con sơn chồng đấu đan cài bằng mộng gỗ không dùng đinh sắt, giúp Tử Cấm Thành trụ vững qua hơn 300 trận động đất.",
     "related": [
-      "榫卯结构",
-      "古建筑",
-      "重檐歇山"
+      "重檐庑殿",
+      "金厢斗底槽",
+      "须弥座"
     ],
     "mnemonic": "Khối vuông đỡ (斗) phối hợp tay đòn cong (拱) nâng mái ngói nặng mà không cần một chiếc đinh sắt.",
     "examples": [
@@ -8344,6 +8344,93 @@ window.CCE_DICTIONARY = [
         "pinyin": "Dāngdài shèjì jiāng qīnghuácí wényàng yǔ huánbǎo cáiliào jiéhé, zhèngshì tuī chén chū xīn de fànlì.",
         "en": "Modern design blending blue-and-white motifs with eco materials exemplifies renewing tradition.",
         "vi": "Thiết kế đương đại đưa hoa văn Thanh Hoa lên vật liệu sinh thái là ví dụ tiêu biểu của Thôi trần xuất tân."
+      }
+    ]
+  },
+  {
+    "id": "zhongyan-wudian",
+    "hanzi": "重檐庑殿",
+    "traditional": "重檐廡殿",
+    "pinyin": "chóngyán wǔdiàn",
+    "hanViet": "TRỌNG DIÊM VŨ ĐIỆN",
+    "liushuType": "会意 · 形声",
+    "liushuCategory": "Hội ý & Hình thanh (会意 / 形声)",
+    "level": "Advanced / Academic Chinese",
+    "topicTag": "Kiến trúc Cung đình",
+    "pos": "n.",
+    "english": "Double-Eaved Hip Roof (Imperial Highest Grade)",
+    "vietnamese": "Trọng diêm vũ điện — Thức mái 2 tầng 4 mái dốc tối thượng (Hán-Việt: TRỌNG DIÊM VŨ ĐIỆN)",
+    "radical": "重 (Trọng: hai tầng chồng) + 檐 (Mộc 木: diềm mái) + 庑 (Nghiễm 广: mái hiên bốn phía) + 殿 (Cung điện)",
+    "radicalAnalysis": "重 (Trọng: hai tầng chồng lên nhau); 檐 (Diêm - bộ Mộc 木: diềm mái hiên gỗ); 庑 (Vũ - bộ Nghiễm 广: mái hiên rộng che bốn phía); 殿 (Điện: cung điện uy nghi).",
+    "etymologyAndRadicals": "会意 / 形声 — 重 (hai tầng chồng xếp); 檐 (bộ Mộc 木 chỉ rìa mái gỗ); 庑 (bộ Nghiễm 广 chỉ hành lang bốn mặt); 殿 (chính điện triều đình).",
+    "components": "Thức mái 2 tầng 4 mái dốc — cấp bậc mái tối thượng trong kiến trúc cổ Trung Hoa, chỉ dành riêng cho Hoàng đế tại Điện Thái Hòa.",
+    "context": "Trên toàn quần thể Tử Cấm Thành, Điện Thái Hòa mang kết cấu Trọng diêm vũ điện kèm đủ 10 linh thú nóc mái — quy chế độc tôn không cung điện nào khác vượt qua.",
+    "related": ["斗拱", "须弥座", "太和殿"],
+    "mnemonic": "Hai tầng mái chồng (重檐) đổ xuống bốn phía cung điện (庑殿) tạo uy nghi bậc nhất Thiên tử.",
+    "examples": [
+      {
+        "zh": "太和殿采用最高等级的重檐庑殿顶，彰显皇权至上。",
+        "pinyin": "Tàihédiàn cǎiyòng zuìgāo děngjí de chóngyán wǔdiàndǐng, zhāngxiǎn huángquán zhìshàng.",
+        "en": "The Hall of Supreme Harmony adopts the highest-ranking double-eaved hip roof to signify supreme authority.",
+        "vi": "Điện Thái Hòa dùng thức mái Trọng diêm vũ điện bậc cao nhất nhằm biểu thị uy quyền tối thượng."
+      }
+    ]
+  },
+  {
+    "id": "jinxiang-doudicao",
+    "hanzi": "金厢斗底槽",
+    "traditional": "金廂斗底槽",
+    "pinyin": "jīnxiāng dǒudǐcáo",
+    "hanViet": "KIM SƯƠNG ĐẤU ĐỂ TÀO",
+    "liushuType": "会意 · 营造法式",
+    "liushuCategory": "Hội ý chuyên ngành Do tạo Pháp thức (营造法式)",
+    "level": "Advanced / Academic Chinese",
+    "topicTag": "Kiến trúc Cung đình",
+    "pos": "n.",
+    "english": "Concentric Double-Colonnade Floorplan Grid",
+    "vietnamese": "Kim sương đấu đê tào — Mặt bằng 2 vòng cột đồng tâm (Hán-Việt: KIM SƯƠNG ĐẤU ĐỂ TÀO)",
+    "radical": "金 (Kim) + 厢 (Khung viền bao quanh) + 斗底槽 (Rãnh đáy đấu vuông vức khép kín)",
+    "radicalAnalysis": "金厢 (Kim sương: khung viền quý giá bao quanh); 斗底槽 (Đấu đê tào: rãnh không gian khép kín vuông vức như đáy chiếc đấu gỗ).",
+    "etymologyAndRadicals": "营造法式会意 — 金厢 (vành đai sảnh ngoài bọc lấy lõi chính); 斗底槽 (lòng chậu vuông hình đáy chiếc đấu gỗ tạo bởi vòng cột trong).",
+    "components": "Bố cục mặt bằng hai vòng cột đồng tâm (vòng cột hiên ngoài và vòng cột cái chịu lực bên trong) tạo thành hành lang bao quanh tâm điện.",
+    "context": "Chuẩn mực mặt bằng cổ điển trích từ Do tạo Pháp thức (1103), giúp phân tách hành lang hộ vệ quanh ngai vàng trong Điện Thái Hòa và Phụng Thiên Điện.",
+    "related": ["斗拱", "营造法式", "紫禁城"],
+    "mnemonic": "Vành ngoài bao bọc lõi vuông như đáy chiếc đấu (斗底槽) bằng hai vòng cột đồng tâm.",
+    "examples": [
+      {
+        "zh": "金厢斗底槽是《营造法式》中最高规格的殿堂柱网布局。",
+        "pinyin": "Jīnxiāng dǒudǐcáo shì 《Yíngzào Fǎshì》 zhōng zuìgāo guīgé de diàntáng zhùwǎng bùjú.",
+        "en": "The concentric double-colonnade grid is the premier column layout codified in the Yingzao Fashi.",
+        "vi": "Kim sương đấu đê tào là bố cục lưới cột cấp cao nhất được ghi chép trong Do tạo Pháp thức."
+      }
+    ]
+  },
+  {
+    "id": "xumizuo",
+    "hanzi": "须弥座",
+    "traditional": "須彌座",
+    "pinyin": "xūmízuò",
+    "hanViet": "TU DI TỌA",
+    "liushuType": "音译 · 形声",
+    "liushuCategory": "Phiên âm Phạn ngữ kết hợp Hình thanh (梵汉合璧)",
+    "level": "Advanced / Academic Chinese",
+    "topicTag": "Kiến trúc Cung đình",
+    "pos": "n.",
+    "english": "Sumeru Pedestal (Three-Tier White Marble Plinth)",
+    "vietnamese": "Tu Di tọa — Bệ đá Hán Bạch Ngọc 3 tầng Tam Đài (Hán-Việt: TU DI TỌA)",
+    "radical": "须弥 (Phiên âm núi Tu Di / Sumeru) + 座 (Bộ Nghiễm 广 + Tọa 坐: bệ đỡ vững chãi)",
+    "radicalAnalysis": "须弥 (Tu Di: phiên âm từ núi vũ trụ Sumeru); 座 (Tọa - bộ Nghiễm 广 + chữ Tọa 坐: bệ đá vững chãi nâng đỡ kiến trúc).",
+    "etymologyAndRadicals": "梵汉合璧 — 须弥 (âm Hán-Phạn chỉ núi thiêng Sumeru trung tâm vũ trụ); 座 (bộ Nghiễm 广 + chữ Tọa 坐 chỉ bệ ngai đá giật cấp thu eo ở giữa).",
+    "components": "Hệ đài móng đá cẩm thạch trắng Hán Bạch Ngọc 3 tầng xếp chồng nâng đỡ Tam Đại Điện, biểu trưng cho trục vũ trụ tối cao của Thiên tử.",
+    "context": "Đài Tam Đài cao 8,13 m dưới chân Tam Đại Điện ghép từ nhiều tầng Tu Di tọa giúp chống ẩm ngập hoàn toàn nhờ 1.142 đầu rồng Ly Thủ thoát nước trong 20 phút.",
+    "related": ["重檐庑殿", "太和殿", "螭首"],
+    "mnemonic": "Bệ đá mô phỏng hình núi thiêng Tu Di (须弥) thắt eo ở giữa để đỡ tòa bảo điện Thiên tử.",
+    "examples": [
+      {
+        "zh": "三大殿矗立在八米高的三层汉白玉须弥座台基之上。",
+        "pinyin": "Sāndàdiàn chùlì zài bāmǐ gāo de sāncéng Hànbáiyù xūmízuò táijī zhīshàng.",
+        "en": "The Three Great Halls stand atop an eight-meter, three-tier white marble Sumeru terrace.",
+        "vi": "Tam Đại Điện sừng sững trên đài móng Tu Di tọa đá Hán Bạch Ngọc ba tầng cao tám mét."
       }
     ]
   }

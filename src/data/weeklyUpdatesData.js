@@ -54,16 +54,16 @@ window.CCE_WEEKLY_UPDATES = (function () {
       titleEn: "High-Detail 3D Forbidden City Dissection, 100% Open-Access Monographs & Full 65-Essay VI/EN Parity",
       itemsVi: [
         "Giải phẫu 3D Tử Cấm Thành (src/components/forbiddenCity3D.js) với 4 hệ mái Phi Diềm cong, 10 Linh thú góc mái, 3 tầng Tu Di Tọa, 250 tấn Đan Bệ, Nội Kim Thủy Hà & Ngũ Long Kiều, Cửu Long Bích và nội thất Đấu củng X-Ray đối sánh Cố đô Huế.",
-        "Gỡ bỏ cổng chặn đăng nhập khi đọc bài viết: toàn văn 64+ chuyên luận, sử liệu gốc 4 lớp và trích dẫn APA/BibTeX đều mở tự do cho độc giả & Google Search.",
+        "Gỡ bỏ cổng chặn đăng nhập khi đọc bài viết: toàn văn 65 chuyên luận, sử liệu gốc 4 lớp và trích dẫn APA/BibTeX đều mở tự do cho độc giả & Google Search.",
         "Bổ sung Sổ tay Từ vựng & Ghi chú Chuyên luận (Text-Selection Popover + xuất CSV/TSV) thay thế màn hình học thẻ độc lập.",
-        "Hỗ trợ đầy đủ Tiếng Việt và Tiếng Anh cho toàn bộ 64 chuyên luận lẫn khối Đọc tiếp Chuyên luận Liên quan.",
+        "Hỗ trợ đầy đủ Tiếng Việt và Tiếng Anh cho toàn bộ 65 chuyên luận lẫn khối Đọc tiếp Chuyên luận Liên quan.",
         "Tích hợp Cẩm nang Ngọa Du -> Hành trang Thực địa 34 tỉnh (Alipay, Ga Cao tốc, 10 biển báo Hán tự) & Thơ Tứ tuyệt 3 ngữ của Nhà sáng lập."
       ],
       itemsEn: [
         "Launched high-detail Three.js Forbidden City architectural treatise with upturned Phi Diềm eaves, ridge beasts, 3-tier marble terraces, dragon ramp, Inner Golden Water River, Nine-Dragon Screen, X-Ray Dougong/Throne interior, and Hue Citadel comparisons.",
-        "Removed full-article Google sign-in gates: all 64+ monographs, primary-source layers, and APA/BibTeX citations are 100% open read.",
+        "Removed full-article Google sign-in gates: all 65 monographs, primary-source layers, and APA/BibTeX citations are 100% open read.",
         "Replaced standalone flashcard UI with the Contextual Vocabulary & Reading Notebook (text selection capture + CSV/TSV export).",
-        "Delivered full Vietnamese & English parity across all 64 essays and all Related Articles cards.",
+        "Delivered full Vietnamese & English parity across all 65 essays and all Related Articles cards.",
         "Added 34-province Pre-Trip Travel Readiness dossiers, First-Time Survival Hanzi guide, Weekly Updates Bell, and Founder Trilingual Quatrain."
       ]
     },
@@ -99,8 +99,8 @@ window.CCE_WEEKLY_UPDATES = (function () {
   function buildDigestSubject(lang = "vi") {
     const latest = siteChangelog[0];
     return lang === "en"
-      ? `[Chinese Culture Explorer · ${latest.version}] 3D Forbidden City Dissection, 64 Bilingual Essays & Contextual Vocab Notebook`
-      : `[Chinese Culture Explorer · ${latest.version}] Giải phẫu 3D Tử Cấm Thành, 64 Chuyên luận Song ngữ EN/VI & Sổ tay Ngữ cảnh`;
+      ? `[Chinese Culture Explorer · ${latest.version}] 3D Forbidden City Dissection, 65 Bilingual Essays & Contextual Vocab Notebook`
+      : `[Chinese Culture Explorer · ${latest.version}] Giải phẫu 3D Tử Cấm Thành, 65 Chuyên luận Song ngữ EN/VI & Sổ tay Ngữ cảnh`;
   }
 
   function buildDigestEmailHtml(lang = "vi", selectedScopes = ["hot", "articles", "updates"]) {

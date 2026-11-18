@@ -62,10 +62,17 @@ STATIC_SECTION_META = {
         "weekly",
     ),
     "/explore": (
-        f"Kho Chuyên luận & Mục lục Tri thức | {SITE_BRAND}",
-        "Hệ thống chuyên luận nghiên cứu lịch sử, triết học, kinh tế, thương mại Việt – Trung và văn hóa Đông Á.",
+        f"65 Chuyên luận & Mục lục Tri thức | {SITE_BRAND}",
+        "Hệ thống 65 chuyên luận nghiên cứu lịch sử, triết học, kinh tế, thương mại Việt – Trung và văn hóa Đông Á.",
         "assets/images/articles/hero-hundred-schools.jpg",
         "0.9",
+        "weekly",
+    ),
+    "/kham-pha": (
+        f"65 Chuyên luận & Mục lục Tri thức | {SITE_BRAND}",
+        "Hệ thống 65 chuyên luận nghiên cứu lịch sử, triết học, kinh tế, thương mại Việt – Trung và văn hóa Đông Á.",
+        "assets/images/articles/hero-hundred-schools.jpg",
+        "0.8",
         "weekly",
     ),
     "/lich-su": (
@@ -161,7 +168,7 @@ STATIC_SECTION_META = {
     ),
     "/van-hien-bao-tang": (
         f"Văn hiến, Quốc họa & Bảo tàng Số | {SITE_BRAND}",
-        "Cổng truy cập thống nhất kho chuyên luận văn hiến, 54 kiệt tác quốc họa và 36 bảo vật quốc gia.",
+        "Cổng truy cập thống nhất kho 65 chuyên luận văn hiến, 54 kiệt tác quốc họa và 37 bảo vật quốc gia.",
         "assets/images/museum/forbidden-city-jingshan-panorama.webp",
         "0.8",
         "weekly",
@@ -202,6 +209,7 @@ def is_raster_exists(rel_path: str | None) -> bool:
 def clean_text(raw: str, max_len: int = 160) -> str:
     txt = re.sub(r"<[^>]+>", " ", str(raw or ""))
     txt = txt.replace('\\"', '"').replace("\\'", "'").replace("\\n", " ")
+    txt = re.sub(r"\*{1,2}([^*]+?)\*{1,2}", r"\1", txt)
     txt = re.sub(r"\s+", " ", txt).strip()
     if len(txt) > max_len:
         txt = txt[: max_len - 1].rstrip(" ,;.") + "…"
