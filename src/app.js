@@ -2234,17 +2234,28 @@
             })() : ""}
           </div>
 
+          ${(() => {
+            const itemVis = (window.CCE_PROVINCE_ITEM_VISUALS && window.CCE_PROVINCE_ITEM_VISUALS[prov.id]) || {};
+            const hVis = Array.isArray(itemVis.heritage) ? itemVis.heritage : [];
+            const dVis = Array.isArray(itemVis.dishes) ? itemVis.dishes : [];
+            const fVis = Array.isArray(itemVis.figures) ? itemVis.figures : [];
+            return `
           ${heritage.length ? `
             <div class="card mt-2" style="padding:1rem 1.15rem;">
               <h4 style="margin:0 0 0.65rem;color:var(--imperial-red);">${enPr ? `5. UNESCO World Heritage & Landmark Sites (${heritage.length} Sites)` : `5. Di sản Thế giới UNESCO &amp; Quần thể Danh thắng (${heritage.length} Địa danh)`}</h4>
               <div class="prov-dishes-grid">
-                ${heritage.map((h) => `
+                ${heritage.map((h, hIdx) => {
+                  const hImg = hVis[hIdx];
+                  const hCap = `${h.hanzi || ""} • ${enVal(h, "nameVi") || h.nameVi || ""}`;
+                  return `
                   <div class="prov-dish-item">
+                    ${hImg ? `<button type="button" class="prov-item-thumb" data-action="open-custom-image" data-src="${escapeHtml(hImg)}" data-caption="${escapeHtml(hCap)}" data-credit="${escapeHtml(prov.nameEn || prov.nameVi)} • Architectural & Heritage Archive" title="${enPr ? "Zoom image" : "Phóng to ảnh"}"><img src="${escapeHtml(hImg)}" alt="${escapeHtml(hCap)}" loading="lazy" decoding="async" /></button>` : ""}
                     <div style="font-weight:700;color:var(--imperial-red);"><span class="hanzi">${escapeHtml(h.hanzi || "")}</span> (${escapeHtml(h.pinyin || "")})</div>
                     <div style="font-weight:600;margin:0.15rem 0;">${enPr ? escapeHtml(enVal(h, "nameVi")) : `${escapeHtml(h.hanViet || "")} — ${escapeHtml(enVal(h, "nameVi"))}`}</div>
                     <div style="font-size:0.8rem;color:var(--text-secondary);">${escapeHtml(enVal(h, "significance"))}</div>
                   </div>
-                `).join("")}
+                `;
+                }).join("")}
               </div>
             </div>
           ` : ""}
@@ -2254,8 +2265,12 @@
             ${prov.culinaryCulture && prov.culinaryCulture.styleOverview ? `<p style="font-size:0.86rem;margin:0 0 0.65rem;">${escapeHtml(enVal(prov.culinaryCulture, "styleOverview"))}</p>` : ""}
             ${dishes.length ? `
               <div class="prov-dishes-grid">
-                ${dishes.map((d) => `
+                ${dishes.map((d, dIdx) => {
+                  const dImg = dVis[dIdx];
+                  const dCap = `${d.hanzi || ""} (${d.pinyin || ""}) • ${enPr ? (d.nameEn || d.hanViet || "") : (d.hanViet || "")}`;
+                  return `
                   <div class="prov-dish-item">
+                    ${dImg ? `<button type="button" class="prov-item-thumb" data-action="open-custom-image" data-src="${escapeHtml(dImg)}" data-caption="${escapeHtml(dCap)}" data-credit="${escapeHtml(prov.nameEn || prov.nameVi)} Culinary Archive" title="${enPr ? "Zoom dish photo" : "Phóng to ảnh món ăn"}"><img src="${escapeHtml(dImg)}" alt="${escapeHtml(d.hanzi || d.hanViet || "")}" loading="lazy" decoding="async" /></button>` : ""}
                     <div style="display:flex;justify-content:space-between;gap:0.35rem;align-items:center;">
                       <strong class="hanzi">${escapeHtml(d.hanzi)}</strong>
                       ${renderSpeakBtn(d.hanzi)}
@@ -2263,7 +2278,8 @@
                     <div style="font-size:0.8rem;color:var(--imperial-red);font-weight:600;">${escapeHtml(d.pinyin)}${enPr ? (d.nameEn ? ` • <span style="color:var(--jade-green);">${escapeHtml(d.nameEn)}</span>` : "") : ` • <span style="color:var(--jade-green);">${escapeHtml(d.hanViet)}</span>`}</div>
                     <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0;">${escapeHtml(enVal(d, "description"))}</p>
                   </div>
-                `).join("")}
+                `;
+                }).join("")}
               </div>
             ` : `<p style="font-size:0.86rem;margin:0;">${escapeHtml(enVal(prov, "signatureFood"))}</p>`}
           </div>
@@ -2272,16 +2288,23 @@
             <div class="card mt-2" style="padding:1rem 1.15rem;">
               <h4 style="margin:0 0 0.6rem;color:var(--imperial-red);">${enPr ? "10. Historical Luminaries, Thinkers & Cultural Figures" : "10. Danh nhân Lịch sử, Tư tưởng gia &amp; Văn nhân Tiêu biểu"}</h4>
               <div class="prov-figure-grid">
-                ${figures.map((f) => `
+                ${figures.map((f, fIdx) => {
+                  const fImg = fVis[fIdx];
+                  const fCap = `${f.hanzi || ""} (${f.pinyin || ""}) — ${f.hanViet || f.nameVi || ""} (${f.lifespan || ""})`;
+                  return `
                   <div class="prov-dish-item">
+                    ${fImg ? `<button type="button" class="prov-item-thumb is-portrait" data-action="open-custom-image" data-src="${escapeHtml(fImg)}" data-caption="${escapeHtml(fCap)}" data-credit="Chinese Cultural & Historical Luminaries Archive" title="${enPr ? "Zoom portrait" : "Phóng to chân dung"}"><img src="${escapeHtml(fImg)}" alt="${escapeHtml(f.hanzi || f.hanViet || "")}" loading="lazy" decoding="async" /></button>` : ""}
                     <div style="font-weight:700;"><span class="hanzi">${escapeHtml(f.hanzi)}</span> (${escapeHtml(f.pinyin)})</div>
                     <div style="font-size:0.82rem;color:var(--imperial-red);font-weight:600;">${escapeHtml(f.hanViet || f.nameVi)} (${escapeHtml(f.lifespan || "")})</div>
                     <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0;">${escapeHtml(enVal(f, "contribution"))}</p>
                   </div>
-                `).join("")}
+                `;
+                }).join("")}
               </div>
             </div>
           ` : ""}
+            `;
+          })()}
         </section>
       ` : ""}
 
@@ -2381,29 +2404,30 @@
   function renderMegaMenuPanel() {
     const key = ui.activeMegaMenu;
     if (!key) return "";
+    const enMm = isEnglishUi();
     const allProvinces = (Regions && (Regions.provincesDirectory || Regions.provincialDirectory)) || [];
 
     if (key === "explore") {
       const subjects = [
-        { label: `Mục lục Chuyên luận (${Articles.length} Bài)`, zh: "学术长文", action: "nav", page: "explore" },
-        { label: `Niên biểu Lịch sử (${History.periods.length} Thời kỳ)`, zh: "历史编年", action: "nav", page: "history" },
-        { label: "Chế độ Khoa cử & Học thuật (科举)", zh: "科举制度", action: "open-article", id: "imperial-examination-keju" },
-        { label: "Con đường Tơ lụa & Hải thương", zh: "丝绸之路", action: "open-article", id: "silk-road-and-maritime-trade" }
+        { label: enMm ? `Essays & Monographs (${Articles.length})` : `Mục lục Chuyên luận (${Articles.length} Bài)`, zh: "学术长文", action: "nav", page: "explore" },
+        { label: enMm ? `Historical Timeline (${History.periods.length} Periods)` : `Niên biểu Lịch sử (${History.periods.length} Thời kỳ)`, zh: "历史编年", action: "nav", page: "history" },
+        { label: enMm ? "Imperial Examination (Keju) & Bureaucracy" : "Chế độ Khoa cử & Học thuật (科举)", zh: "科举制度", action: "open-article", id: "imperial-examination-keju" },
+        { label: enMm ? "Silk Road & Maritime Trade Routes" : "Con đường Tơ lụa & Hải thương", zh: "丝绸之路", action: "open-article", id: "silk-road-and-maritime-trade" }
       ];
       const eras = [
-        { label: "Thượng cổ & Xuân Thu – Chiến Quốc", sub: "Lương Chử · Thương · Chu · Bách gia Chư tử", id: "spring-autumn-warring" },
-        { label: "Đế chế Tần – Hán (秦汉)", sub: "Thống nhất chữ viết · Sử Ký · Con đường Tơ lụa", id: "qin-han" },
-        { label: "Thịnh Đường & Văn hiến Tống (唐宋)", sub: "Trường An · Khoa cử · Tống Nho · Quốc họa", id: "sui-tang" },
-        { label: "Nguyên – Minh – Thanh (元明清)", sub: "Tử Cấm Thành · Trịnh Hòa · Khảo cứ học", id: "ming" }
+        { label: enMm ? "Pre-Qin & Warring States" : "Thượng cổ & Xuân Thu – Chiến Quốc", sub: enMm ? "Liangzhu · Shang · Zhou · Hundred Schools" : "Lương Chử · Thương · Chu · Bách gia Chư tử", id: "spring-autumn-warring" },
+        { label: enMm ? "Qin & Han Empires (秦汉)" : "Đế chế Tần – Hán (秦汉)", sub: enMm ? "Unified Script · Shiji · Silk Road" : "Thống nhất chữ viết · Sử Ký · Con đường Tơ lụa", id: "qin-han" },
+        { label: enMm ? "Tang & Song Zenith (唐宋)" : "Thịnh Đường & Văn hiến Tống (唐宋)", sub: enMm ? "Chang'an · Keju · Neo-Confucianism · Landscape" : "Trường An · Khoa cử · Tống Nho · Quốc họa", id: "sui-tang" },
+        { label: enMm ? "Yuan, Ming & Qing (元明清)" : "Nguyên – Minh – Thanh (元明清)", sub: enMm ? "Forbidden City · Zheng He · Evidential Learning" : "Tử Cấm Thành · Trịnh Hòa · Khảo cứ học", id: "ming" }
       ];
       return `
-        <div class="mega-menu-shell" role="region" aria-label="Mega Menu Khám phá và Niên biểu">
+        <div class="mega-menu-shell" role="region" aria-label="${enMm ? "Explore & Timeline Mega Menu" : "Mega Menu Khám phá và Niên biểu"}">
           <div class="container mega-menu-inner">
             <div class="mega-3col-grid">
               <div>
                 <div class="mega-col-header">
-                  <span class="mega-col-title">Trụ cột I · Khám phá &amp; Niên biểu (历史探索)</span>
-                  <button type="button" class="btn btn-ghost btn-sm" data-action="nav" data-page="explore">Tất cả →</button>
+                  <span class="mega-col-title">${enMm ? "Pillar I · Exploration & History (历史探索)" : "Trụ cột I · Khám phá &amp; Niên biểu (历史探索)"}</span>
+                  <button type="button" class="btn btn-ghost btn-sm" data-action="nav" data-page="explore">${enMm ? "View All →" : "Tất cả →"}</button>
                 </div>
                 <div class="mega-links-list">
                   ${subjects.map((s) => `
@@ -2416,8 +2440,8 @@
               </div>
               <div>
                 <div class="mega-col-header">
-                  <span class="mega-col-title">Nhảy nhanh Trục Triều đại (朝代脉络)</span>
-                  <button type="button" class="btn btn-ghost btn-sm" data-action="nav" data-page="history">${History.timelineEvents.length} Mốc sử →</button>
+                  <span class="mega-col-title">${enMm ? "Jump by Dynastic Era (朝代脉络)" : "Nhảy nhanh Trục Triều đại (朝代脉络)"}</span>
+                  <button type="button" class="btn btn-ghost btn-sm" data-action="nav" data-page="history">${History.timelineEvents.length} ${enMm ? "Events →" : "Mốc sử →"}</button>
                 </div>
                 <div class="mega-links-list">
                   ${eras.map((e) => `
@@ -2430,19 +2454,19 @@
               </div>
               <div>
                 <div class="mega-col-header">
-                  <span class="mega-col-title">Tiêu điểm Thể chế &amp; Sử liệu</span>
-                  <button type="button" class="btn btn-ghost btn-sm" data-action="close-mega">Đóng ${ICONS.close}</button>
+                  <span class="mega-col-title">${enMm ? "Institutional Spotlight" : "Tiêu điểm Thể chế &amp; Sử liệu"}</span>
+                  <button type="button" class="btn btn-ghost btn-sm" data-action="close-mega">${enMm ? "Close" : "Đóng"} ${ICONS.close}</button>
                 </div>
                 <div class="mega-featured-card">
                   <div class="mega-featured-thumb">
-                    <img src="assets/images/articles/hero-keju-examinations.jpg" alt="Khoa cử Trung Hoa & Di sản Lịch sử" loading="lazy" />
+                    <img src="assets/images/articles/hero-keju-examinations.jpg" alt="${enMm ? "Chinese Imperial Examinations & Historical Heritage" : "Khoa cử Trung Hoa & Di sản Lịch sử"}" loading="lazy" />
                   </div>
                   <div class="mega-featured-body">
-                    <div class="ed-essay-kicker">Lịch sử Thể chế · 科举与士人</div>
-                    <h4 style="margin:0.2rem 0 0.35rem;font-size:0.96rem;">Từ Bảng vàng Khoa cử đến Đế chế Quan liêu Đông Á</h4>
+                    <div class="ed-essay-kicker">${enMm ? "Institutional History · 科举与士人" : "Lịch sử Thể chế · 科举与士人"}</div>
+                    <h4 style="margin:0.2rem 0 0.35rem;font-size:0.96rem;">${enMm ? "From Imperial Examination Lists to East Asian Meritocracy" : "Từ Bảng vàng Khoa cử đến Đế chế Quan liêu Đông Á"}</h4>
                     <div style="display:flex;gap:0.45rem;flex-wrap:wrap;margin-top:0.55rem;">
-                      <button type="button" class="btn btn-primary btn-sm" data-action="open-article" data-id="imperial-examination-keju">Đọc chuyên luận →</button>
-                      <button type="button" class="btn btn-secondary btn-sm" data-action="nav" data-page="history">14 Triều đại</button>
+                      <button type="button" class="btn btn-primary btn-sm" data-action="open-article" data-id="imperial-examination-keju">${enMm ? "Read Monograph →" : "Đọc chuyên luận →"}</button>
+                      <button type="button" class="btn btn-secondary btn-sm" data-action="nav" data-page="history">${enMm ? "14 Dynasties" : "14 Triều đại"}</button>
                     </div>
                   </div>
                 </div>
@@ -2455,65 +2479,65 @@
 
     if (key === "philosophy") {
       return `
-        <div class="mega-menu-shell" role="region" aria-label="Mega Menu Tư tưởng và Văn hiến">
+        <div class="mega-menu-shell" role="region" aria-label="${enMm ? "Philosophy & Classics Mega Menu" : "Mega Menu Tư tưởng và Văn hiến"}">
           <div class="container mega-menu-inner">
             <div class="mega-3col-grid">
               <div>
                 <div class="mega-col-header">
-                  <span class="mega-col-title">Trụ cột II · Tư tưởng &amp; Văn hiến (哲学文献)</span>
-                  <button type="button" class="btn btn-ghost btn-sm" data-action="nav" data-page="philosophy">Trang Triết học →</button>
+                  <span class="mega-col-title">${enMm ? "Pillar II · Thought &amp; Classics (哲学文献)" : "Trụ cột II · Tư tưởng &amp; Văn hiến (哲学文献)"}</span>
+                  <button type="button" class="btn btn-ghost btn-sm" data-action="nav" data-page="philosophy">${enMm ? "Philosophy →" : "Trang Triết học →"}</button>
                 </div>
                 <div class="mega-links-list">
                   <button type="button" class="mega-link-btn" data-action="nav" data-page="philosophy">
-                    <div><strong>Hệ thống Bách gia Chư tử (${Philosophy.schools.length} Trường phái)</strong><span class="mega-link-sub">Nho gia · Đạo gia · Mặc gia · Pháp gia · Thiền tông · Lý học</span></div>
+                    <div><strong>${enMm ? `Hundred Schools of Thought (${Philosophy.schools.length} Schools)` : `Hệ thống Bách gia Chư tử (${Philosophy.schools.length} Trường phái)`}</strong><span class="mega-link-sub">${enMm ? "Confucianism · Daoism · Mohism · Legalism · Chan Buddhism" : "Nho gia · Đạo gia · Mặc gia · Pháp gia · Thiền tông · Lý học"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">哲学</span>
                   </button>
                   <button type="button" class="mega-link-btn" data-action="nav-traditional" data-tab="metaphysics">
-                    <div><strong>Âm Dương, Chu Dịch &amp; Thuật số (${Metaphysics.systems.length})</strong><span class="mega-link-sub">Kinh Dịch 64 quẻ · Bát Tự · Phong Thủy · Kỳ Môn dưới góc nhìn Sử học</span></div>
+                    <div><strong>${enMm ? `Yin–Yang, I Ching &amp; Classical Systems (${Metaphysics.systems.length})` : `Âm Dương, Chu Dịch &amp; Thuật số (${Metaphysics.systems.length})`}</strong><span class="mega-link-sub">${enMm ? "64 Hexagrams · Bazi · Feng Shui · Qimen Dunjia in historical context" : "Kinh Dịch 64 quẻ · Bát Tự · Phong Thủy · Kỳ Môn dưới góc nhìn Sử học"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">易经</span>
                   </button>
                   <button type="button" class="mega-link-btn" data-action="nav-traditional" data-tab="customs">
-                    <div><strong>Phong tục, Lễ nghi &amp; 24 Tiết khí (${CustomsArt.customs.length})</strong><span class="mega-link-sub">Xuân Tiết · Thanh Minh · Đoan Ngọ · Trà đạo &amp; Dưỡng sinh Đông y</span></div>
+                    <div><strong>${enMm ? `Customs, Rituals &amp; 24 Solar Terms (${CustomsArt.customs.length})` : `Phong tục, Lễ nghi &amp; 24 Tiết khí (${CustomsArt.customs.length})`}</strong><span class="mega-link-sub">${enMm ? "Spring Festival · Qingming · Dragon Boat · Tea &amp; Yangsheng" : "Xuân Tiết · Thanh Minh · Đoan Ngọ · Trà đạo &amp; Dưỡng sinh Đông y"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">民俗</span>
                   </button>
                 </div>
               </div>
               <div>
                 <div class="mega-col-header">
-                  <span class="mega-col-title">Học phái &amp; Kinh điển Sơ cấp (${Philosophy.classicalTexts.length} Bộ)</span>
+                  <span class="mega-col-title">${enMm ? `Schools &amp; Primary Texts (${Philosophy.classicalTexts.length})` : `Học phái &amp; Kinh điển Sơ cấp (${Philosophy.classicalTexts.length} Bộ)`}</span>
                 </div>
                 <div class="mega-links-grid">
                   ${Philosophy.schools.slice(0, 6).map((s) => `
                     <button type="button" class="mega-link-btn" data-action="jump-school" data-id="${s.id}">
-                      <span><strong>${s.nameVi}</strong></span>
+                      <span><strong>${enVal(s, "nameVi") || s.nameVi}</strong></span>
                       <span class="hanzi" style="font-size:0.78rem;color:var(--accent-cinnabar);">${s.nameZh}</span>
                     </button>
                   `).join("")}
                   <button type="button" class="mega-link-btn" data-action="open-article" data-id="tcm-solar-terms-yangsheng">
-                    <span><strong>24 Tiết khí &amp; Nội Kinh</strong></span>
+                    <span><strong>${enMm ? "24 Solar Terms &amp; Neijing" : "24 Tiết khí &amp; Nội Kinh"}</strong></span>
                     <span class="hanzi" style="font-size:0.78rem;color:var(--accent-cinnabar);">节气</span>
                   </button>
                   <button type="button" class="mega-link-btn" data-action="open-article" data-id="literati-garden-aesthetics">
-                    <span><strong>Mỹ học Văn nhân Đương đại</strong></span>
+                    <span><strong>${enMm ? "Scholar Garden Aesthetics" : "Mỹ học Văn nhân Đương đại"}</strong></span>
                     <span class="hanzi" style="font-size:0.78rem;color:var(--accent-cinnabar);">园林</span>
                   </button>
                 </div>
               </div>
               <div>
                 <div class="mega-col-header">
-                  <span class="mega-col-title">Chuyên luận Kinh điển Tiêu biểu</span>
-                  <button type="button" class="btn btn-ghost btn-sm" data-action="close-mega">Đóng ${ICONS.close}</button>
+                  <span class="mega-col-title">${enMm ? "Featured Philosophical Monograph" : "Chuyên luận Kinh điển Tiêu biểu"}</span>
+                  <button type="button" class="btn btn-ghost btn-sm" data-action="close-mega">${enMm ? "Close" : "Đóng"} ${ICONS.close}</button>
                 </div>
                 <div class="mega-featured-card">
                   <div class="mega-featured-thumb">
                     <img src="assets/images/articles/hero-confucianism.jpg" alt="Nho học và Truyền thống Văn hiến Đông Á" loading="lazy" />
                   </div>
                   <div class="mega-featured-body">
-                    <div class="ed-essay-kicker">Triết học Kinh điển · 儒道佛合流</div>
-                    <h4 style="margin:0.2rem 0 0.35rem;font-size:0.96rem;">Cấu trúc Đạo đức Nho gia, Vô Vi Đạo học &amp; Tam Giáo Hợp Lưu</h4>
+                    <div class="ed-essay-kicker">${enMm ? "Classical Philosophy · 儒道佛合流" : "Triết học Kinh điển · 儒道佛合流"}</div>
+                    <h4 style="margin:0.2rem 0 0.35rem;font-size:0.96rem;">${enMm ? "Confucian Ethics, Daoist Wuwei &amp; Synthesis of the Three Teachings" : "Cấu trúc Đạo đức Nho gia, Vô Vi Đạo học &amp; Tam Giáo Hợp Lưu"}</h4>
                     <div style="display:flex;gap:0.45rem;flex-wrap:wrap;margin-top:0.55rem;">
-                      <button type="button" class="btn btn-primary btn-sm" data-action="nav" data-page="philosophy">Khảo cứu Kinh điển →</button>
-                      <button type="button" class="btn btn-secondary btn-sm" data-action="nav-traditional" data-tab="metaphysics">Thuật số</button>
+                      <button type="button" class="btn btn-primary btn-sm" data-action="nav" data-page="philosophy">${enMm ? "Explore Classics →" : "Khảo cứu Kinh điển →"}</button>
+                      <button type="button" class="btn btn-secondary btn-sm" data-action="nav-traditional" data-tab="metaphysics">${enMm ? "Cosmology" : "Thuật số"}</button>
                     </div>
                   </div>
                 </div>
@@ -2526,63 +2550,63 @@
 
     if (key === "paintings") {
       return `
-        <div class="mega-menu-shell" role="region" aria-label="Mega Menu Bảo tàng và Nghệ thuật">
+        <div class="mega-menu-shell" role="region" aria-label="${enMm ? "Museum & Arts Mega Menu" : "Mega Menu Bảo tàng và Nghệ thuật"}">
           <div class="container mega-menu-inner">
             <div class="mega-3col-grid">
               <div>
                 <div class="mega-col-header">
-                  <span class="mega-col-title">Trụ cột III · Bảo tàng &amp; Nghệ thuật (博物艺术)</span>
-                  <button type="button" class="btn btn-ghost btn-sm" data-action="nav" data-page="paintings">Vào Triển lãm →</button>
+                  <span class="mega-col-title">${enMm ? "Pillar III · Museum &amp; Arts (博物艺术)" : "Trụ cột III · Bảo tàng &amp; Nghệ thuật (博物艺术)"}</span>
+                  <button type="button" class="btn btn-ghost btn-sm" data-action="nav" data-page="paintings">${enMm ? "Gallery →" : "Vào Triển lãm →"}</button>
                 </div>
                 <div class="mega-links-list">
                   <button type="button" class="mega-link-btn" data-action="nav" data-page="paintings">
-                    <div><strong>Triển lãm Quốc họa Danh tác (${PaintingsList.length} Kiệt tác)</strong><span class="mega-link-sub">Từ Ngụy Tấn đến Hiện đại · Chấm soi Hotspot &amp; So sánh Kề đôi</span></div>
+                    <div><strong>${enMm ? `Guohua Painting Gallery (${PaintingsList.length} Masterworks)` : `Triển lãm Quốc họa Danh tác (${PaintingsList.length} Kiệt tác)`}</strong><span class="mega-link-sub">${enMm ? "Six Dynasties to Modern · Hotspot Zoom &amp; Side-by-Side Comparison" : "Từ Ngụy Tấn đến Hiện đại · Chấm soi Hotspot &amp; So sánh Kề đôi"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">国画</span>
                   </button>
                   <button type="button" class="mega-link-btn" data-action="nav" data-page="museum">
-                    <div><strong>Bảo tàng Số Hiện vật (${Museum.artifacts.length} Bảo vật)</strong><span class="mega-link-sub">Đồng thanh · Ngọc khí · Gốm sứ Cảnh Đức Trấn · Cổ tịch Giám định</span></div>
+                    <div><strong>${enMm ? `Digital Artifact Museum (${Museum.artifacts.length} Relics)` : `Bảo tàng Số Hiện vật (${Museum.artifacts.length} Bảo vật)`}</strong><span class="mega-link-sub">${enMm ? "Bronzes · Jade · Jingdezhen Porcelain · Provenance Archive" : "Đồng thanh · Ngọc khí · Gốm sứ Cảnh Đức Trấn · Cổ tịch Giám định"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">博物</span>
                   </button>
                   <button type="button" class="mega-link-btn" data-action="nav-traditional" data-tab="arts">
-                    <div><strong>Thư pháp, Triện khắc &amp; Kiến trúc (${CustomsArt.arts.length})</strong><span class="mega-link-sub">Ngũ thể Thư pháp · Cổ cầm · Hý khúc &amp; Lâm viên Tô Châu</span></div>
+                    <div><strong>${enMm ? `Calligraphy, Seal Carving &amp; Architecture (${CustomsArt.arts.length})` : `Thư pháp, Triện khắc &amp; Kiến trúc (${CustomsArt.arts.length})`}</strong><span class="mega-link-sub">${enMm ? "Five Scripts · Guqin · Classical Opera &amp; Suzhou Gardens" : "Ngũ thể Thư pháp · Cổ cầm · Hý khúc &amp; Lâm viên Tô Châu"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">美学</span>
                   </button>
                 </div>
               </div>
               <div>
                 <div class="mega-col-header">
-                  <span class="mega-col-title">Tuyển chọn Kiệt tác &amp; Hiện vật Cốt lõi</span>
+                  <span class="mega-col-title">${enMm ? "Curated Masterworks &amp; Relics" : "Tuyển chọn Kiệt tác &amp; Hiện vật Cốt lõi"}</span>
                 </div>
                 <div class="mega-links-list">
                   <button type="button" class="mega-link-btn" data-action="open-painting-detail" data-id="qianli-jiangshan">
-                    <div><strong>Thiên Lý Giang Sơn Đồ (Tống Vương Hi Mạnh)</strong><span class="mega-link-sub">Thanh lục sơn thủy quyển trục · Cố Cung Bắc Kinh</span></div>
+                    <div><strong>${enMm ? "A Thousand Li of Rivers and Mountains (Wang Ximeng)" : "Thiên Lý Giang Sơn Đồ (Tống Vương Hi Mạnh)"}</strong><span class="mega-link-sub">${enMm ? "Blue-green landscape handscroll · Palace Museum Beijing" : "Thanh lục sơn thủy quyển trục · Cố Cung Bắc Kinh"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">千里</span>
                   </button>
                   <button type="button" class="mega-link-btn" data-action="open-artifact" data-id="qingming-scroll">
-                    <div><strong>Thanh Minh Thượng Hà Đồ (Trương Trạch Đoan)</strong><span class="mega-link-sub">Kiệt tác đô thị Bắc Tống · Kèm 3 điểm soi cận cảnh</span></div>
+                    <div><strong>${enMm ? "Along the River During the Qingming Festival" : "Thanh Minh Thượng Hà Đồ (Trương Trạch Đoan)"}</strong><span class="mega-link-sub">${enMm ? "Northern Song urban scroll · 3 high-res inspection pins" : "Kiệt tác đô thị Bắc Tống · Kèm 3 điểm soi cận cảnh"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">清明</span>
                   </button>
                   <button type="button" class="mega-link-btn" data-action="open-artifact" data-id="sanxingdui-gold-mask">
-                    <div><strong>Mặt nạ Vàng Tam Tinh Đôi &amp; Văn hóa Ba Thục</strong><span class="mega-link-sub">Thanh đồng Thương – Thục (Tứ Xuyên)</span></div>
+                    <div><strong>${enMm ? "Sanxingdui Gold Mask &amp; Ancient Shu Culture" : "Mặt nạ Vàng Tam Tinh Đôi &amp; Văn hóa Ba Thục"}</strong><span class="mega-link-sub">${enMm ? "Shang–Shu Bronze Civilization (Sichuan)" : "Thanh đồng Thương – Thục (Tứ Xuyên)"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">三星堆</span>
                   </button>
                 </div>
               </div>
               <div>
                 <div class="mega-col-header">
-                  <span class="mega-col-title">Thư pháp &amp; Mỹ học Quyển trục</span>
-                  <button type="button" class="btn btn-ghost btn-sm" data-action="close-mega">Đóng ${ICONS.close}</button>
+                  <span class="mega-col-title">${enMm ? "Calligraphy &amp; Scroll Aesthetics" : "Thư pháp &amp; Mỹ học Quyển trục"}</span>
+                  <button type="button" class="btn btn-ghost btn-sm" data-action="close-mega">${enMm ? "Close" : "Đóng"} ${ICONS.close}</button>
                 </div>
                 <div class="mega-featured-card">
                   <div class="mega-featured-thumb mega-featured-thumb--contain">
                     <img src="assets/images/articles/hero-calligraphy-five-scripts.jpg" alt="《Lan Đình Tập Tự》 (Đường Thần Long mô bản)" loading="lazy" />
                   </div>
                   <div class="mega-featured-body">
-                    <div class="ed-essay-kicker">Mỹ học Thư pháp · 书法与篆刻</div>
-                    <h4 style="margin:0.2rem 0 0.35rem;font-size:0.96rem;">《Lan Đình Tập Tự》 &amp; Hệ thống Bút pháp Ngũ thể Cổ điển</h4>
+                    <div class="ed-essay-kicker">${enMm ? "Calligraphy Aesthetics · 书法与篆刻" : "Mỹ học Thư pháp · 书法与篆刻"}</div>
+                    <h4 style="margin:0.2rem 0 0.35rem;font-size:0.96rem;">${enMm ? "Lantingji Xu &amp; Five Classical Brushwork Scripts" : "《Lan Đình Tập Tự》 &amp; Hệ thống Bút pháp Ngũ thể Cổ điển"}</h4>
                     <div style="display:flex;gap:0.45rem;flex-wrap:wrap;margin-top:0.55rem;">
-                      <button type="button" class="btn btn-primary btn-sm" data-action="open-article" data-id="chinese-calligraphy-seal-aesthetics">Đọc chuyên luận →</button>
-                      <button type="button" class="btn btn-secondary btn-sm" data-action="nav" data-page="paintings">${PaintingsList.length} Quốc họa</button>
+                      <button type="button" class="btn btn-primary btn-sm" data-action="open-article" data-id="chinese-calligraphy-seal-aesthetics">${enMm ? "Read Monograph →" : "Đọc chuyên luận →"}</button>
+                      <button type="button" class="btn btn-secondary btn-sm" data-action="nav" data-page="paintings">${PaintingsList.length} ${enMm ? "Paintings" : "Quốc họa"}</button>
                     </div>
                   </div>
                 </div>
@@ -2595,37 +2619,37 @@
 
     if (key === "regions") {
       return `
-        <div class="mega-menu-shell" role="region" aria-label="Mega Menu 34 Tỉnh và Địa văn hóa">
+        <div class="mega-menu-shell" role="region" aria-label="${enMm ? "34 Provinces & Geocultural Atlas Mega Menu" : "Mega Menu 34 Tỉnh và Địa văn hóa"}">
           <div class="container mega-menu-inner">
             <div class="mega-3col-grid">
               <div>
                 <div class="mega-col-header">
-                  <span class="mega-col-title">Trụ cột IV · Địa văn hóa 34 Đơn vị (中华地域)</span>
-                  <button type="button" class="btn btn-ghost btn-sm" data-action="nav" data-page="regions">Mở Atlas →</button>
+                  <span class="mega-col-title">${enMm ? "Pillar IV · 34 Provincial Units (中华地域)" : "Trụ cột IV · Địa văn hóa 34 Đơn vị (中华地域)"}</span>
+                  <button type="button" class="btn btn-ghost btn-sm" data-action="nav" data-page="regions">${enMm ? "Open Atlas →" : "Mở Atlas →"}</button>
                 </div>
                 <div class="mega-links-list">
                   <button type="button" class="mega-link-btn" data-action="open-regions-directory">
-                    <div><strong>Danh bạ Đầy đủ ${allProvinces.length || 34} Đơn vị Cấp tỉnh &amp; Hành trang</strong><span class="mega-link-sub">23 Tỉnh · 5 Khu Tự trị · 4 Thành phố TW · 2 Đặc khu</span></div>
+                    <div><strong>${enMm ? `Full Directory of ${allProvinces.length || 34} Provinces &amp; Municipalities` : `Danh bạ Đầy đủ ${allProvinces.length || 34} Đơn vị Cấp tỉnh &amp; Hành trang`}</strong><span class="mega-link-sub">${enMm ? "23 Provinces · 5 Autonomous Regions · 4 Municipalities · 2 SARs" : "23 Tỉnh · 5 Khu Tự trị · 4 Thành phố TW · 2 Đặc khu"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">省市</span>
                   </button>
                   <button type="button" class="mega-link-btn" data-action="set-map-view-page" data-mode="destinations">
-                    <div><strong>Cẩm nang Du lịch 3 Cấp &amp; 16 Cố đô Văn hóa</strong><span class="mega-link-sub">Top 11 Điểm đến 5A (Tỉnh → Đô thị → Trải nghiệm) &amp; 5 Tuyến Cao tốc 12306</span></div>
+                    <div><strong>${enMm ? "3-Tier Travel Atlas &amp; 16 Cultural Capitals" : "Cẩm nang Du lịch 3 Cấp &amp; 16 Cố đô Văn hóa"}</strong><span class="mega-link-sub">${enMm ? "Top 11 5A Hubs (Province → District → Experience) &amp; 5 12306 Rail Routes" : "Top 11 Điểm đến 5A (Tỉnh → Đô thị → Trải nghiệm) &amp; 5 Tuyến Cao tốc 12306"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">文旅</span>
                   </button>
                   <button type="button" class="mega-link-btn" data-action="open-province-compare">
-                    <div><strong>So sánh Chéo 2 Tỉnh/Thành Trực quan</strong><span class="mega-link-sub">Đối chiếu địa mạo, kinh tế RCEP, di sản UNESCO &amp; ẩm thực</span></div>
+                    <div><strong>${enMm ? "Compare Any Two Provinces Side-by-Side" : "So sánh Chéo 2 Tỉnh/Thành Trực quan"}</strong><span class="mega-link-sub">${enMm ? "Geography, RCEP industries, UNESCO heritage &amp; regional cuisine" : "Đối chiếu địa mạo, kinh tế RCEP, di sản UNESCO &amp; ẩm thực"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">对比</span>
                   </button>
                 </div>
               </div>
               <div>
                 <div class="mega-col-header">
-                  <span class="mega-col-title">6 Đại vùng Địa văn hóa (六大文化区)</span>
+                  <span class="mega-col-title">${enMm ? "6 Macro Geocultural Regions (六大文化区)" : "6 Đại vùng Địa văn hóa (六大文化区)"}</span>
                 </div>
                 <div class="mega-links-grid">
                   ${Regions.macroRegions.map((r) => `
                     <button type="button" class="mega-link-btn" data-action="select-region" data-id="${r.id}">
-                      <span><strong>${r.nameVi}</strong></span>
+                      <span><strong>${enVal(r, "nameVi") || r.nameVi}</strong></span>
                       <span class="hanzi" style="font-size:0.78rem;color:var(--accent-cinnabar);">${r.nameZh}</span>
                     </button>
                   `).join("")}
@@ -2633,19 +2657,19 @@
               </div>
               <div>
                 <div class="mega-col-header">
-                  <span class="mega-col-title">Hồ sơ Vùng Trọng điểm</span>
-                  <button type="button" class="btn btn-ghost btn-sm" data-action="close-mega">Đóng ${ICONS.close}</button>
+                  <span class="mega-col-title">${enMm ? "Key Regional Corridor" : "Hồ sơ Vùng Trọng điểm"}</span>
+                  <button type="button" class="btn btn-ghost btn-sm" data-action="close-mega">${enMm ? "Close" : "Đóng"} ${ICONS.close}</button>
                 </div>
                 <div class="mega-featured-card">
                   <div class="mega-featured-thumb">
-                    <img src="assets/images/articles/hero-beijing-shanghai.jpg" alt="Địa văn hóa Bắc Kinh và Thượng Hải" loading="lazy" />
+                    <img src="assets/images/articles/hero-beijing-shanghai.jpg" alt="${enMm ? "Beijing & Shanghai Geocultural Corridors" : "Địa văn hóa Bắc Kinh và Thượng Hải"}" loading="lazy" />
                   </div>
                   <div class="mega-featured-body">
-                    <div class="ed-essay-kicker">Địa văn hóa 34 Tỉnh · 京沪与江南</div>
-                    <h4 style="margin:0.2rem 0 0.35rem;font-size:0.96rem;">Hành lang Bắc Kinh – Giang Nam – Lĩnh Nam trong Tổng thể 34 Tỉnh/Thành</h4>
+                    <div class="ed-essay-kicker">${enMm ? "34 Provinces Geocultural Matrix · 京沪与江南" : "Địa văn hóa 34 Tỉnh · 京沪与江南"}</div>
+                    <h4 style="margin:0.2rem 0 0.35rem;font-size:0.96rem;">${enMm ? "Beijing – Jiangnan – Lingnan Corridors Across All 34 Units" : "Hành lang Bắc Kinh – Giang Nam – Lĩnh Nam trong Tổng thể 34 Tỉnh/Thành"}</h4>
                     <div style="display:flex;gap:0.45rem;flex-wrap:wrap;margin-top:0.55rem;">
-                      <button type="button" class="btn btn-primary btn-sm" data-action="open-regions-directory">Mở Danh bạ 34 Tỉnh →</button>
-                      <button type="button" class="btn btn-secondary btn-sm" data-action="open-province-compare">So sánh</button>
+                      <button type="button" class="btn btn-primary btn-sm" data-action="open-regions-directory">${enMm ? "Open 34-Province Directory →" : "Mở Danh bạ 34 Tỉnh →"}</button>
+                      <button type="button" class="btn btn-secondary btn-sm" data-action="open-province-compare">${enMm ? "Compare" : "So sánh"}</button>
                     </div>
                   </div>
                 </div>
@@ -2658,64 +2682,64 @@
 
     if (key === "sino-vietnam") {
       return `
-        <div class="mega-menu-shell" role="region" aria-label="Mega Menu Trung Việt và Kinh doanh">
+        <div class="mega-menu-shell" role="region" aria-label="${enMm ? "Sino–Vietnam & Business Mega Menu" : "Mega Menu Trung Việt và Kinh doanh"}">
           <div class="container mega-menu-inner">
             <div class="mega-3col-grid">
               <div>
                 <div class="mega-col-header">
-                  <span class="mega-col-title">Trụ cột V · Trung – Việt &amp; Thương mại (中越商贸)</span>
-                  <button type="button" class="btn btn-ghost btn-sm" data-action="nav" data-page="sino-vietnam">Mở Trung – Việt →</button>
+                  <span class="mega-col-title">${enMm ? "Pillar V · Sino–Vietnam &amp; Trade (中越商贸)" : "Trụ cột V · Trung – Việt &amp; Thương mại (中越商贸)"}</span>
+                  <button type="button" class="btn btn-ghost btn-sm" data-action="nav" data-page="sino-vietnam">${enMm ? "Sino–Vietnam →" : "Mở Trung – Việt →"}</button>
                 </div>
                 <div class="mega-links-list">
                   <button type="button" class="mega-link-btn" data-action="nav" data-page="sino-vietnam">
-                    <div><strong>Giao lưu Văn hóa &amp; Lịch sử Trung – Việt</strong><span class="mega-link-sub">Tiếp nhận lịch sử · Bản địa hóa Chữ Nôm · Di sản Hán – Việt</span></div>
+                    <div><strong>${enMm ? "Sino–Vietnamese Cultural &amp; Historical Dialogue" : "Giao lưu Văn hóa &amp; Lịch sử Trung – Việt"}</strong><span class="mega-link-sub">${enMm ? "Critical Reception · Chu Nom Localization · Lexical Heritage" : "Tiếp nhận lịch sử · Bản địa hóa Chữ Nôm · Di sản Hán – Việt"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">中越</span>
                   </button>
                   <button type="button" class="mega-link-btn" data-action="nav-traditional" data-tab="contemporary">
-                    <div><strong>Xã hội &amp; Đổi mới Trung Quốc Đương đại (${CustomsArt.contemporary.length})</strong><span class="mega-link-sub">Kinh tế số · Hạ tầng Cao tốc · Bán dẫn Vùng Vịnh Lớn &amp; Guochao</span></div>
+                    <div><strong>${enMm ? `Contemporary Society &amp; Innovation (${CustomsArt.contemporary.length})` : `Xã hội &amp; Đổi mới Trung Quốc Đương đại (${CustomsArt.contemporary.length})`}</strong><span class="mega-link-sub">${enMm ? "Digital Economy · HSR Grid · GBA Supply Chains &amp; Guochao" : "Kinh tế số · Hạ tầng Cao tốc · Bán dẫn Vùng Vịnh Lớn &amp; Guochao"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">当代</span>
                   </button>
                   <button type="button" class="mega-link-btn" data-action="open-article" data-id="vietnam-china-trade-corridor">
-                    <div><strong>Hành lang Thương mại Lạng Sơn – Bằng Tường – RCEP</strong><span class="mega-link-sub">Logistics cửa khẩu · ACFTA Form E &amp; chuỗi cung ứng khu vực</span></div>
+                    <div><strong>${enMm ? "Lang Son – Pingxiang – RCEP Trade Corridor" : "Hành lang Thương mại Lạng Sơn – Bằng Tường – RCEP"}</strong><span class="mega-link-sub">${enMm ? "Border Gate Logistics · ACFTA Form E &amp; Regional Value Chains" : "Logistics cửa khẩu · ACFTA Form E &amp; chuỗi cung ứng khu vực"}</span></div>
                     <span style="color:var(--accent-cinnabar);font-weight:700;">→</span>
                   </button>
                 </div>
               </div>
               <div>
                 <div class="mega-col-header">
-                  <span class="mega-col-title">Thực chiến Kinh doanh &amp; Đàm phán B2B</span>
-                  <button type="button" class="btn btn-ghost btn-sm" data-action="nav" data-page="business">Trang Kinh doanh →</button>
+                  <span class="mega-col-title">${enMm ? "Practical B2B Culture &amp; Negotiation" : "Thực chiến Kinh doanh &amp; Đàm phán B2B"}</span>
+                  <button type="button" class="btn btn-ghost btn-sm" data-action="nav" data-page="business">${enMm ? "Business →" : "Trang Kinh doanh →"}</button>
                 </div>
                 <div class="mega-links-list">
                   <button type="button" class="mega-link-btn" data-action="nav" data-page="business">
-                    <div><strong>Cẩm nang Văn hóa Kinh doanh Trung Hoa</strong><span class="mega-link-sub">Guanxi (Quan hệ) · Mianzi (Thể diện) · Nghi thức Bàn tiệc &amp; WeCom</span></div>
+                    <div><strong>${enMm ? "Chinese Business Culture Playbook" : "Cẩm nang Văn hóa Kinh doanh Trung Hoa"}</strong><span class="mega-link-sub">${enMm ? "Guanxi · Mianzi · Banquet Protocol · WeCom Workflows" : "Guanxi (Quan hệ) · Mianzi (Thể diện) · Nghi thức Bàn tiệc &amp; WeCom"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">商贸</span>
                   </button>
                   <button type="button" class="mega-link-btn" data-action="open-article" data-id="chinese-business-negotiation-etiquette">
-                    <div><strong>Chiến lược Đàm phán Hợp đồng B2B &amp; Pháp lý</strong><span class="mega-link-sub">Soạn thảo song ngữ · Thẩm định nhà máy &amp; Trọng tài Thương mại</span></div>
+                    <div><strong>${enMm ? "B2B Contract Negotiation &amp; Legal Due Diligence" : "Chiến lược Đàm phán Hợp đồng B2B &amp; Pháp lý"}</strong><span class="mega-link-sub">${enMm ? "Bilingual contracts · Factory vetting &amp; Commercial Arbitration" : "Soạn thảo song ngữ · Thẩm định nhà máy &amp; Trọng tài Thương mại"}</span></div>
                     <span style="color:var(--accent-cinnabar);font-weight:700;">→</span>
                   </button>
                   <button type="button" class="mega-link-btn" data-action="open-article" data-id="guangdong-shenzhen-bay-area-ecosystem">
-                    <div><strong>Hệ sinh thái Sản xuất Quảng Đông – Thâm Quyến</strong><span class="mega-link-sub">Hoa Cường Bắc · Cụm công nghiệp Phật Sơn – Đông Hoản</span></div>
+                    <div><strong>${enMm ? "Guangdong – Shenzhen GBA Manufacturing Hub" : "Hệ sinh thái Sản xuất Quảng Đông – Thâm Quyến"}</strong><span class="mega-link-sub">${enMm ? "Huaqiangbei · Foshan – Dongguan Industrial Clusters" : "Hoa Cường Bắc · Cụm công nghiệp Phật Sơn – Đông Hoản"}</span></div>
                     <span style="color:var(--accent-cinnabar);font-weight:700;">→</span>
                   </button>
                 </div>
               </div>
               <div>
                 <div class="mega-col-header">
-                  <span class="mega-col-title">Đô thị &amp; Thương mại Đương đại</span>
-                  <button type="button" class="btn btn-ghost btn-sm" data-action="close-mega">Đóng ${ICONS.close}</button>
+                  <span class="mega-col-title">${enMm ? "Contemporary Hub &amp; Commerce" : "Đô thị &amp; Thương mại Đương đại"}</span>
+                  <button type="button" class="btn btn-ghost btn-sm" data-action="close-mega">${enMm ? "Close" : "Đóng"} ${ICONS.close}</button>
                 </div>
                 <div class="mega-featured-card">
                   <div class="mega-featured-thumb">
                     <img src="assets/images/articles/hero-contemporary-china.jpg" alt="Trung Quốc Đương đại và Vùng Vịnh Lớn" loading="lazy" />
                   </div>
                   <div class="mega-featured-body">
-                    <div class="ed-essay-kicker">Kinh tế &amp; Xã hội · 当代中国</div>
-                    <h4 style="margin:0.2rem 0 0.35rem;font-size:0.96rem;">Từ Nền tảng Văn hiến đến Chuỗi cung ứng Việt – Trung 2026</h4>
+                    <div class="ed-essay-kicker">${enMm ? "Economy &amp; Society · 当代中国" : "Kinh tế &amp; Xã hội · 当代中国"}</div>
+                    <h4 style="margin:0.2rem 0 0.35rem;font-size:0.96rem;">${enMm ? "From Cultural Foundations to 2026 Vietnam–China Supply Chains" : "Từ Nền tảng Văn hiến đến Chuỗi cung ứng Việt – Trung 2026"}</h4>
                     <div style="display:flex;gap:0.45rem;flex-wrap:wrap;margin-top:0.55rem;">
-                      <button type="button" class="btn btn-primary btn-sm" data-action="nav" data-page="sino-vietnam">Trung – Việt →</button>
-                      <button type="button" class="btn btn-secondary btn-sm" data-action="nav" data-page="business">Kinh doanh B2B</button>
+                      <button type="button" class="btn btn-primary btn-sm" data-action="nav" data-page="sino-vietnam">${enMm ? "Sino–Vietnam →" : "Trung – Việt →"}</button>
+                      <button type="button" class="btn btn-secondary btn-sm" data-action="nav" data-page="business">${enMm ? "B2B Trade" : "Kinh doanh B2B"}</button>
                     </div>
                   </div>
                 </div>
@@ -2728,57 +2752,57 @@
 
     if (key === "learning") {
       return `
-        <div class="mega-menu-shell" role="region" aria-label="Mega Menu Học tập và Thư viện">
+        <div class="mega-menu-shell" role="region" aria-label="${enMm ? "Learning & Research Library Mega Menu" : "Mega Menu Học tập và Thư viện"}">
           <div class="container mega-menu-inner">
             <div class="mega-3col-grid">
               <div>
                 <div class="mega-col-header">
-                  <span class="mega-col-title">Trụ cột VI · Học tập Chủ động &amp; Hán ngữ (学研字典)</span>
-                  <button type="button" class="btn btn-ghost btn-sm" data-action="nav" data-page="learning">Phòng học →</button>
+                  <span class="mega-col-title">${enMm ? "Pillar VI · Active Study &amp; Hanzi (学研字典)" : "Trụ cột VI · Học tập Chủ động &amp; Hán ngữ (学研字典)"}</span>
+                  <button type="button" class="btn btn-ghost btn-sm" data-action="nav" data-page="learning">${enMm ? "Study Hub →" : "Phòng học →"}</button>
                 </div>
                 <div class="mega-links-list">
                   <button type="button" class="mega-link-btn" data-action="nav-learning" data-tab="dictionary">
-                    <div><strong>Từ điển Chiết tự Lục thư (${Dictionary.length} Mục)</strong><span class="mega-link-sub">Giản/Phồn · Pinyin · Âm Hán-Việt · Bộ thủ &amp; Audio Phổ thông</span></div>
+                    <div><strong>${enMm ? `Liushu Etymology Dictionary (${Dictionary.length} Entries)` : `Từ điển Chiết tự Lục thư (${Dictionary.length} Mục)`}</strong><span class="mega-link-sub">${enMm ? "Simplified/Trad · Pinyin · Sino-Viet · Radicals &amp; Mandarin Audio" : "Giản/Phồn · Pinyin · Âm Hán-Việt · Bộ thủ &amp; Audio Phổ thông"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">词典</span>
                   </button>
                   <button type="button" class="mega-link-btn" data-action="nav-learning" data-tab="flashcards">
-                    <div><strong>Sổ tay Từ vựng &amp; Ghi chú Chuyên luận (CSV/TSV)</strong><span class="mega-link-sub">Lưu thuật ngữ từ văn bản đang đọc &amp; tra bộ từ điển 10 chuyên đề</span></div>
+                    <div><strong>${enMm ? "Vocabulary Notebook &amp; Flashcard Exports (CSV/TSV)" : "Sổ tay Từ vựng &amp; Ghi chú Chuyên luận (CSV/TSV)"}</strong><span class="mega-link-sub">${enMm ? "Capture terms while reading &amp; study 10 curated thematic decks" : "Lưu thuật ngữ từ văn bản đang đọc &amp; tra bộ từ điển 10 chuyên đề"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">笔记</span>
                   </button>
                   <button type="button" class="mega-link-btn" data-action="nav-learning" data-tab="kmap">
-                    <div><strong>Bản đồ Tri thức &amp; Nhật ký Nghiên cứu</strong><span class="mega-link-sub">K-Map tư tưởng · Trắc nghiệm Feynman · Ghi chú chuyên luận</span></div>
+                    <div><strong>${enMm ? "Knowledge Graph &amp; Research Journal" : "Bản đồ Tri thức &amp; Nhật ký Nghiên cứu"}</strong><span class="mega-link-sub">${enMm ? "Philosophical K-Map · Feynman Quiz · Personal Study Log" : "K-Map tư tưởng · Trắc nghiệm Feynman · Ghi chú chuyên luận"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">图谱</span>
                   </button>
                 </div>
               </div>
               <div>
                 <div class="mega-col-header">
-                  <span class="mega-col-title">Thư viện Nghiên cứu &amp; Dự án (学术研究)</span>
-                  <button type="button" class="btn btn-ghost btn-sm" data-action="nav" data-page="library">Thư viện →</button>
+                  <span class="mega-col-title">${enMm ? "Research Library &amp; Charter (学术研究)" : "Thư viện Nghiên cứu &amp; Dự án (学术研究)"}</span>
+                  <button type="button" class="btn btn-ghost btn-sm" data-action="nav" data-page="library">${enMm ? "Library →" : "Thư viện →"}</button>
                 </div>
                 <div class="mega-links-list">
                   <button type="button" class="mega-link-btn" data-action="open-library-tab" data-tab="classics">
-                    <div><strong>Thư viện Cổ tịch Nguyên điển (Tứ Khố · ${Philosophy.classicalTexts.length} Kinh điển)</strong><span class="mega-link-sub">Kinh · Sử · Tử · Tập đối chiếu chữ Hán, Pinyin, Hán–Việt &amp; Từ điển</span></div>
+                    <div><strong>${enMm ? `Four Treasuries Primary Classics (Siku · ${Philosophy.classicalTexts.length} Works)` : `Thư viện Cổ tịch Nguyên điển (Tứ Khố · ${Philosophy.classicalTexts.length} Kinh điển)`}</strong><span class="mega-link-sub">${enMm ? "Classics · History · Masters · Collections with Hanzi &amp; Pinyin" : "Kinh · Sử · Tử · Tập đối chiếu chữ Hán, Pinyin, Hán–Việt &amp; Từ điển"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">四库</span>
                   </button>
                   <button type="button" class="mega-link-btn" data-action="open-library-tab" data-tab="monograph">
-                    <div><strong>Báo cáo Chuyên khảo Việt – Trung 2026–2030</strong><span class="mega-link-sub">58 trang phân tích vĩ mô, thương mại &amp; biểu đồ số liệu</span></div>
+                    <div><strong>${enMm ? "Vietnam–China Strategic Monograph 2026–2030" : "Báo cáo Chuyên khảo Việt – Trung 2026–2030"}</strong><span class="mega-link-sub">${enMm ? "Macro analysis, trade corridors &amp; bilingual economic data" : "58 trang phân tích vĩ mô, thương mại &amp; biểu đồ số liệu"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">专著</span>
                   </button>
                   <button type="button" class="mega-link-btn" data-action="open-library-tab" data-tab="compendia">
-                    <div><strong>9 Bộ Chuyên khảo &amp; Thư mục Gốc (TYPE A–E)</strong><span class="mega-link-sub">Tổng cục Thống kê · Viện Bảo tàng Cố Cung · Kinh điển học thuật</span></div>
+                    <div><strong>${enMm ? "9 Compendia &amp; Primary Source Registry (TYPE A–E)" : "9 Bộ Chuyên khảo &amp; Thư mục Gốc (TYPE A–E)"}</strong><span class="mega-link-sub">${enMm ? "GSO / NSO · Palace Museum · Verified Scholarly Editions" : "Tổng cục Thống kê · Viện Bảo tàng Cố Cung · Kinh điển học thuật"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">索引</span>
                   </button>
                   <button type="button" class="mega-link-btn" data-action="nav" data-page="about">
-                    <div><strong>Về Dự án, Sáng lập viên &amp; Bản quyền Hình ảnh</strong><span class="mega-link-sub">Phương pháp luận kiểm chứng sử liệu · Public Domain / CC-BY-SA</span></div>
+                    <div><strong>${enMm ? "About, Founder Charter &amp; Image Attribution" : "Về Dự án, Sáng lập viên &amp; Bản quyền Hình ảnh"}</strong><span class="mega-link-sub">${enMm ? "Historical triangulation policy · Public Domain / CC-BY-SA" : "Phương pháp luận kiểm chứng sử liệu · Public Domain / CC-BY-SA"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">关于</span>
                   </button>
                 </div>
               </div>
               <div>
                 <div class="mega-col-header">
-                  <span class="mega-col-title">Tài liệu Chuyên khảo Trọng điểm</span>
-                  <button type="button" class="btn btn-ghost btn-sm" data-action="close-mega">Đóng ${ICONS.close}</button>
+                  <span class="mega-col-title">${enMm ? "Featured Research Compendium" : "Tài liệu Chuyên khảo Trọng điểm"}</span>
+                  <button type="button" class="btn btn-ghost btn-sm" data-action="close-mega">${enMm ? "Close" : "Đóng"} ${ICONS.close}</button>
                 </div>
                 <div class="mega-featured-card">
                   <div class="mega-featured-thumb">
@@ -2786,10 +2810,10 @@
                   </div>
                   <div class="mega-featured-body">
                     <div class="ed-essay-kicker">Research &amp; Active Recall · VN-CN-TRD-2026</div>
-                    <h4 style="margin:0.2rem 0 0.35rem;font-size:0.96rem;">Học Hán ngữ Chủ động &amp; Báo cáo Chuyên khảo Việt – Trung 58p</h4>
+                    <h4 style="margin:0.2rem 0 0.35rem;font-size:0.96rem;">${enMm ? "Active Hanzi Study &amp; 58-Page Vietnam–China Monograph" : "Học Hán ngữ Chủ động &amp; Báo cáo Chuyên khảo Việt – Trung 58p"}</h4>
                     <div style="display:flex;gap:0.45rem;flex-wrap:wrap;margin-top:0.55rem;">
-                      <button type="button" class="btn btn-primary btn-sm" data-action="nav" data-page="learning">Mở Sổ tay &amp; Học tập →</button>
-                      <button type="button" class="btn btn-secondary btn-sm" data-action="nav" data-page="library">Thư viện Nghiên cứu</button>
+                      <button type="button" class="btn btn-primary btn-sm" data-action="nav" data-page="learning">${enMm ? "Study Notebook →" : "Mở Sổ tay &amp; Học tập →"}</button>
+                      <button type="button" class="btn btn-secondary btn-sm" data-action="nav" data-page="library">${enMm ? "Research Library" : "Thư viện Nghiên cứu"}</button>
                     </div>
                   </div>
                 </div>
@@ -2808,13 +2832,14 @@
     const activePage = state.activePage;
     const isDark = state.theme === "dark";
     const lp = getLangPack();
+    const enHdr = isEnglishUi();
 
     return `
       <header class="site-header">
         <!-- Single Consolidated Navigation Bar (Brand Seal | 6 Pillars | Compact Controls) -->
-        <nav class="primary-nav-bar" aria-label="Điều hướng chính">
+        <nav class="primary-nav-bar" aria-label="${enHdr ? "Primary navigation" : "Điều hướng chính"}">
           <div class="container primary-nav-inner">
-            <a href="/" class="brand-link" data-action="nav" data-page="home" title="Trang chủ Chinese Culture Explorer">
+            <a href="/" class="brand-link" data-action="nav" data-page="home" title="${enHdr ? "Chinese Culture Explorer Home" : "Trang chủ Chinese Culture Explorer"}">
               <div class="brand-seal" aria-hidden="true">中国<br>文化</div>
               <div class="brand-title">
                 <span class="brand-name">CHINESE CULTURE EXPLORER</span>
@@ -2840,8 +2865,8 @@
                         data-action="toggle-mega"
                         data-mega="${item.id}"
                         aria-expanded="${ui.activeMegaMenu === item.id ? "true" : "false"}"
-                        aria-label="Mở menu ${getNavLabel(item)}"
-                        title="Mở danh mục con"
+                        aria-label="${enHdr ? `Open ${getNavLabel(item)} submenu` : `Mở menu ${getNavLabel(item)}`}"
+                        title="${enHdr ? "Open submenu" : "Mở danh mục con"}"
                       >${ICONS.chevronDown}</button>
                     ` : ""}
                   </li>
@@ -2850,16 +2875,16 @@
             </div>
 
             <div class="nav-utility-controls">
-              <button type="button" class="nav-util-btn" data-action="open-search" aria-label="Tìm kiếm (Ctrl+K)" title="${escapeHtml(lp.searchPlaceholder)} (Ctrl+K)">
+              <button type="button" class="nav-util-btn" data-action="open-search" aria-label="${enHdr ? "Search (Ctrl+K)" : "Tìm kiếm (Ctrl+K)"}" title="${escapeHtml(lp.searchPlaceholder)} (Ctrl+K)">
                 ${ICONS.search}
               </button>
-              <select class="nav-util-select" data-action="ui-lang-select" aria-label="Chọn ngôn ngữ giao diện">
+              <select class="nav-util-select" data-action="ui-lang-select" aria-label="${enHdr ? "Select interface language" : "Chọn ngôn ngữ giao diện"}">
                 <option value="vi" ${state.uiLang === "vi" ? "selected" : ""}>VI</option>
                 <option value="en" ${state.uiLang === "en" ? "selected" : ""}>EN</option>
                 <option value="zh-CN" ${state.uiLang === "zh-CN" ? "selected" : ""}>简体</option>
                 <option value="zh-TW" ${state.uiLang === "zh-TW" ? "selected" : ""}>繁體</option>
               </select>
-              <button type="button" class="nav-util-btn" data-action="toggle-script" title="Chuyển chế độ chữ Giản thể / Giản+Phồn thể">
+              <button type="button" class="nav-util-btn" data-action="toggle-script" title="${enHdr ? "Toggle Simplified / Simplified+Traditional Hanzi" : "Chuyển chế độ chữ Giản thể / Giản+Phồn thể"}">
                 <span class="hanzi">${state.scriptMode === "both" ? "简/繁" : "简体"}</span>
               </button>
               <button type="button" class="nav-util-btn nav-bell-btn" data-action="open-updates-modal" aria-label="${isEnglishUi() ? "Updates & Weekly Digest" : "Cập nhật Mới & Bản tin Tuần"}" title="${isEnglishUi() ? "Weekly Hot Picks, Changelog & Email Digest" : "Bài đọc Nóng, Cập nhật Website & Bản tin Email"}">
@@ -2970,17 +2995,17 @@
           </div>
 
           <div style="padding-top:0.5rem;">
-            <div style="font-size:0.74rem;font-weight:700;text-transform:uppercase;color:var(--ink-muted);margin-bottom:0.45rem;">Truy cập Nhanh</div>
+            <div style="font-size:0.74rem;font-weight:700;text-transform:uppercase;color:var(--ink-muted);margin-bottom:0.45rem;">${isEnglishUi() ? "Quick Access" : "Truy cập Nhanh"}</div>
             <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">
-              <button type="button" class="filter-pill" data-action="open-regions-directory">34 Tỉnh/Thành</button>
-              <button type="button" class="filter-pill" data-action="nav-learning" data-tab="dictionary">Từ điển (${Dictionary.length})</button>
+              <button type="button" class="filter-pill" data-action="open-regions-directory">${isEnglishUi() ? "34 Provinces" : "34 Tỉnh/Thành"}</button>
+              <button type="button" class="filter-pill" data-action="nav-learning" data-tab="dictionary">${isEnglishUi() ? `Dictionary (${Dictionary.length})` : `Từ điển (${Dictionary.length})`}</button>
               <button type="button" class="filter-pill" data-action="nav-learning" data-tab="flashcards">${isEnglishUi() ? "Vocab Notebook" : "Sổ tay Từ vựng"}</button>
-              <button type="button" class="filter-pill" data-action="open-founder-message">Founder</button>
+              <button type="button" class="filter-pill" data-action="open-founder-message">${isEnglishUi() ? "Founder" : "Sáng lập"}</button>
             </div>
           </div>
 
           <div style="border-top:1px solid var(--hairline);padding-top:0.85rem;display:flex;flex-direction:column;gap:0.65rem;">
-            <label style="font-size:0.8rem;font-weight:600;">Ngôn ngữ giao diện</label>
+            <label style="font-size:0.8rem;font-weight:600;">${isEnglishUi() ? "Interface Language" : "Ngôn ngữ giao diện"}</label>
             <select class="form-select" data-action="ui-lang-select">
               <option value="vi" ${state.uiLang === "vi" ? "selected" : ""}>Tiếng Việt (Mặc định)</option>
               <option value="en" ${state.uiLang === "en" ? "selected" : ""}>English Interface</option>
@@ -9338,7 +9363,57 @@
   }
 
   function renderAboutPage() {
+    const enAb = isEnglishUi();
     const aboutSecs = Brand.aboutSections || [];
+    const aboutEnMap = {
+      "about-sec-intro": {
+        title: "01 · Project Overview & What is CHINESE CULTURE EXPLORER?",
+        summary: "An independent, non-commercial digital cultural and scholarly platform initiated by Lê Hưng Thịnh, integrating five components in one coherent ecosystem: Digital Museum, Encyclopedia of Chinese Civilization, Comparative Literature & Primary Library, Liushu Etymology Dictionary & Contextual Notebook, and Sino–Vietnamese Cultural Bridge."
+      },
+      "about-sec-vision": {
+        title: "02 · Vision, Academic Standards & Mission",
+        summary: "Vision: Connect Chinese civilizational heritage, classical philosophy, and contemporary economic–cultural context within a rigorous, structured atlas. Mission: Empower learners in Vietnam and globally to move beyond fragmented rote memorization toward primary Hanzi text consultation, historical triangulation, and independent inquiry."
+      },
+      "about-sec-research": {
+        title: "04 · Research Philosophy & Source Triangulation",
+        points: [
+          { label: "Prioritize Primary Sources", text: "Cite classical Hanzi canons, dynastic histories, and archaeological reports before secondary commentary." },
+          { label: "Epistemological Distinction", text: "Clearly separate verifiable historical events, philosophical interpretation, folk belief, and empirical science (especially in TCM and Cosmology)." },
+          { label: "Regional & Temporal Plurality", text: "Never flatten Chinese civilization into a static monolith; anchor every topic in provincial geography, ethnic diversity, and dynastic change." },
+          { label: "Citation & Attribution Transparency", text: "Zero fabricated credentials or mock DOIs; every museum plate and external asset cites its archival holding and license." }
+        ]
+      },
+      "about-sec-learning": {
+        title: "05 · Learning Philosophy & Active Recall",
+        points: [
+          { label: "Active Recall & Direct Script", text: "Front-of-card practice leads with clean Hanzi characters to stimulate direct sound–meaning retrieval before revealing pinyin." },
+          { label: "Six Scripts (Liushu) & Bilingual Bridging", text: "Durable retention through radical decomposition, Sino–Vietnamese phonology, and structured Vietnamese–English synthesis." },
+          { label: "Feynman Method", text: "Self-explanation prompts guide learners to reconstruct complex historical and philosophical frameworks in clear own words." },
+          { label: "Comparative Knowledge Mapping", text: "Inter-school, inter-provincial comparison matrices and an interactive Knowledge Graph connecting thought, history, and regional commerce." }
+        ]
+      },
+      "about-sec-dialogue": {
+        title: "06 · Sino–Vietnamese Cultural Dialogue",
+        summary: "From Sino–Vietnamese vocabulary strata, Chu Nom literature, and 15th-century Chu Dau ceramic maritime trade to modern RCEP supply chains and C/O Form E protocols, this project approaches Vietnam as an equal, creative interlocutor in East Asian civilizational history."
+      },
+      "about-sec-founder": {
+        title: "07 · Founder Background — Lê Hưng Thịnh",
+        summary: "CHINESE CULTURE EXPLORER – 中国文化探索 was initiated by Lê Hưng Thịnh (黎兴盛) — an International Business undergraduate — as an open digital research notebook connecting regional economic analysis with East Asian humanities. It operates independently with zero fabricated institutional titles or sponsorships."
+      },
+      "about-sec-ip": {
+        title: "08 · Intellectual Property & Open Attribution",
+        summary: "All original bilingual analytical essays, editorial annotations, information architecture, conceptual diagrams, brand identity assets, and original application source code belong to Lê Hưng Thịnh (Copyright © 2026 Lê Hưng Thịnh. All Rights Reserved.), strictly distinct from public-domain historical classics and open-licensed museum photography."
+      },
+      "about-sec-contact": {
+        title: "09 · Project Governance & Academic Feedback",
+        summary: "CHINESE CULTURE EXPLORER – 中国文化探索 operates as an independent non-commercial scholarly platform. Academic inquiries, historical errata notifications, and copyright/attribution corrections may be submitted via the official Legal & IP Governance Center."
+      }
+    };
+    const brandAssetEn = {
+      "horizontal-lockup": { title: "Official Horizontal Wordmark", caption: "Pairs the square red cinnabar seal 朱文印 with the bilingual project title, official tagline, and founder signature." },
+      "founder-seal": { title: "Founder Visual Seal & Signature", caption: "Editorial colophon mark attesting independent authorship by Lê Hưng Thịnh across monographs and visual plates." },
+      "digital-favicon": { title: "Square Browser Seal Emblem (Favicon)", caption: "1:1 compact digital seal icon rendered in browser tabs and mobile shortcuts." }
+    };
     const introVision = aboutSecs.slice(0, 2);
     const remainingSecs = aboutSecs.slice(3);
     const fm = Brand.foundersMessage || {};
@@ -9351,14 +9426,14 @@
       <section class="page-hero">
         <div class="container">
           <div class="editorial-kicker">${escapeHtml(Brand.projectFullTitle)} • 关于本平台与创始人</div>
-          <h1>Giới thiệu Dự án, Triết lý Học thuật &amp; Bản sắc Sáng lập</h1>
+          <h1>${enAb ? "About the Project, Scholarly Philosophy &amp; Founder Identity" : "Giới thiệu Dự án, Triết lý Học thuật &amp; Bản sắc Sáng lập"}</h1>
           <p class="section-subtitle" style="margin-bottom:0.65rem;">
-            <strong>${escapeHtml(Brand.officialTagline)}</strong> — ${escapeHtml(Brand.finalBrandSummary || "")}
+            <strong>${escapeHtml(Brand.officialTagline)}</strong>${!enAb && Brand.finalBrandSummary ? ` — ${escapeHtml(Brand.finalBrandSummary)}` : ""}
           </p>
           <div style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;">
             <span class="badge badge-red">${escapeHtml(Brand.foundedByStatement)}</span>
             <span class="badge badge-gold">${escapeHtml(Brand.secondaryStatementEn)}</span>
-            <span class="badge badge-jade">${escapeHtml(Brand.projectCategoryVi || "Nền tảng Độc lập")}</span>
+            <span class="badge badge-jade">${enAb ? "Independent Cultural Platform" : escapeHtml(Brand.projectCategoryVi || "Nền tảng Độc lập")}</span>
           </div>
         </div>
       </section>
@@ -9369,16 +9444,19 @@
           <div class="about-nine-grid">
             ${introVision
               .map(
-                (sec) => `
+                (sec) => {
+                  const ov = enAb ? aboutEnMap[sec.id] : null;
+                  return `
                   <div id="${escapeHtml(sec.id)}" class="about-section-card">
                     <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;margin-bottom:0.65rem;">
                       <span class="about-num-badge">${escapeHtml(sec.num)}</span>
                       <span class="hanzi" style="font-size:0.86rem;color:var(--text-muted);">${escapeHtml(sec.titleZh)}</span>
                     </div>
-                    <h2 style="font-size:1.25rem;margin-bottom:0.55rem;">${escapeHtml(sec.title)}</h2>
-                    <p style="margin:0;color:var(--text-secondary);font-size:0.93rem;line-height:1.68;">${escapeHtml(sec.summary)}</p>
+                    <h2 style="font-size:1.25rem;margin-bottom:0.55rem;">${escapeHtml((ov && ov.title) || sec.title)}</h2>
+                    <p style="margin:0;color:var(--text-secondary);font-size:0.93rem;line-height:1.68;">${escapeHtml((ov && ov.summary) || sec.summary)}</p>
                   </div>
-                `
+                `;
+                }
               )
               .join("")}
           </div>
@@ -9387,8 +9465,8 @@
           <section id="founder-message-section" class="founder-message-panel">
             <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;">
               <div>
-                <h2 style="font-family:var(--font-editorial);font-size:1.65rem;margin:0 0 0.25rem 0;">Lời ngỏ từ Người sáng lập — ${escapeHtml(Brand.founderName)}</h2>
-                <div style="font-size:0.88rem;color:var(--text-muted);">${escapeHtml(Brand.founderRoleVi)}</div>
+                <h2 style="font-family:var(--font-editorial);font-size:1.65rem;margin:0 0 0.25rem 0;">${enAb ? `Founder's Note — ${escapeHtml(Brand.founderName)}` : `Lời ngỏ từ Người sáng lập — ${escapeHtml(Brand.founderName)}`}</h2>
+                <div style="font-size:0.88rem;color:var(--text-muted);">${escapeHtml(enAb ? (Brand.founderRole || "Founder & Creator") : Brand.founderRoleVi)}</div>
               </div>
               <img
                 src="${escapeHtml(Brand.assets.founderSeal)}"
@@ -9398,9 +9476,9 @@
               />
             </div>
 
-            <div class="filter-bar" role="tablist" aria-label="Chọn ngôn ngữ tâm thư sáng lập" style="margin:1.1rem 0 1.4rem;">
+            <div class="filter-bar" role="tablist" aria-label="${enAb ? "Select founder letter language" : "Chọn ngôn ngữ tâm thư sáng lập"}" style="margin:1.1rem 0 1.4rem;">
               ${[
-                { id: "all", label: "Song hành 3 Ngôn ngữ (VI · EN · 中文)" },
+                { id: "all", label: enAb ? "Trilingual Side-by-Side (VI · EN · 中文)" : "Song hành 3 Ngôn ngữ (VI · EN · 中文)" },
                 { id: "vi", label: "Tiếng Việt" },
                 { id: "en", label: "English" },
                 { id: "zh", label: "中文" }
@@ -9486,7 +9564,7 @@
 
             ${(() => {
               const fg = Brand.founderGuidance || {};
-              const guide = fmMode === "en" ? fg.en : fmMode === "zh" ? fg.zh : fg.vi;
+              const guide = (fmMode === "en" || (fmMode === "all" && enAb)) ? fg.en : fmMode === "zh" ? fg.zh : fg.vi;
               if (!guide) return "";
               return `
                 <div class="founder-guidance-wrap" id="founder-counsel-section">
@@ -9515,23 +9593,27 @@
           <div class="about-nine-grid">
             ${remainingSecs
               .map(
-                (sec) => `
+                (sec) => {
+                  const ov = enAb ? aboutEnMap[sec.id] : null;
+                  const pts = (ov && ov.points) ? ov.points : sec.points;
+                  return `
                   <div id="${escapeHtml(sec.id)}" class="about-section-card">
                     <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;margin-bottom:0.65rem;">
                       <span class="about-num-badge">${escapeHtml(sec.num)}</span>
                       <span class="hanzi" style="font-size:0.86rem;color:var(--text-muted);">${escapeHtml(sec.titleZh)}</span>
                     </div>
-                    <h2 style="font-size:1.22rem;margin-bottom:0.6rem;">${escapeHtml(sec.title)}</h2>
-                    ${sec.summary ? `<p style="margin:0;color:var(--text-secondary);font-size:0.92rem;line-height:1.68;">${escapeHtml(sec.summary)}</p>` : ""}
-                    ${sec.points && sec.points.length
-                      ? `<ul style="padding-left:1.15rem;margin:0;color:var(--text-secondary);font-size:0.9rem;">
-                          ${sec.points
+                    <h2 style="font-size:1.22rem;margin-bottom:0.6rem;">${escapeHtml((ov && ov.title) || sec.title)}</h2>
+                    ${(ov && ov.summary) || sec.summary ? `<p style="margin:0;color:var(--text-secondary);font-size:0.92rem;line-height:1.68;">${escapeHtml((ov && ov.summary) || sec.summary)}</p>` : ""}
+                    ${pts && pts.length
+                      ? `<ul style="padding-left:1.15rem;margin:0.5rem 0 0;color:var(--text-secondary);font-size:0.9rem;">
+                          ${pts
                             .map((pt) => `<li style="margin-bottom:0.45rem;"><strong>${escapeHtml(pt.label)}:</strong> ${escapeHtml(pt.text)}</li>`)
                             .join("")}
                         </ul>`
                       : ""}
                   </div>
-                `
+                `;
+                }
               )
               .join("")}
           </div>
@@ -9540,34 +9622,39 @@
           <section id="about-brand-identity" class="card" style="border-color:var(--border-gold);">
             <div class="card-header-row">
               <div>
-                <div class="editorial-kicker">Nhận diện Thương hiệu &amp; Hệ thống Thị giác • Visual Signature Guidelines</div>
-                <h2 style="margin:0;">Bộ Nhận diện Chính thức — ${escapeHtml(Brand.projectFullTitle)}</h2>
+                <div class="editorial-kicker">${enAb ? "Brand Identity &amp; Visual Signature Guidelines" : "Nhận diện Thương hiệu &amp; Hệ thống Thị giác • Visual Signature Guidelines"}</div>
+                <h2 style="margin:0;">${enAb ? `Official Visual Identity — ${escapeHtml(Brand.projectFullTitle)}` : `Bộ Nhận diện Chính thức — ${escapeHtml(Brand.projectFullTitle)}`}</h2>
               </div>
               <span class="badge badge-gold">${escapeHtml(Brand.founderSignature)}</span>
             </div>
 
             <div class="epistemic-box" style="margin:0.85rem 0;">
-              <div class="epistemic-title">Tuyên bố Độc lập Thể chế • Independent Platform Clarification</div>
-              <p style="margin:0;font-size:0.88rem;">${escapeHtml(bi.independenceNotice || "")}</p>
+              <div class="epistemic-title">${enAb ? "Independent Platform Clarification" : "Tuyên bố Độc lập Thể chế • Independent Platform Clarification"}</div>
+              <p style="margin:0;font-size:0.88rem;">${escapeHtml((enAb && bi.independenceNoticeEn) ? bi.independenceNoticeEn : (bi.independenceNotice || ""))}</p>
             </div>
 
             <div class="brand-guidelines-showcase">
               ${(bi.logoVariations || [])
                 .map(
-                  (lv) => `
+                  (lv) => {
+                    const lvOv = enAb ? brandAssetEn[lv.id] : null;
+                    const lvTitle = (lvOv && lvOv.title) || lv.title;
+                    const lvCap = (lvOv && lvOv.caption) || lv.caption;
+                    return `
                     <div class="brand-asset-plate">
-                      <img src="${escapeHtml(lv.src)}" alt="${escapeHtml(lv.title)}" loading="eager" />
+                      <img src="${escapeHtml(lv.src)}" alt="${escapeHtml(lvTitle)}" loading="eager" />
                       <div>
-                        <div style="font-weight:700;font-size:0.88rem;color:var(--text-primary);">${escapeHtml(lv.title)}</div>
-                        <div style="font-size:0.79rem;color:var(--text-muted);margin-top:0.2rem;">${escapeHtml(lv.caption)}</div>
+                        <div style="font-weight:700;font-size:0.88rem;color:var(--text-primary);">${escapeHtml(lvTitle)}</div>
+                        <div style="font-size:0.79rem;color:var(--text-muted);margin-top:0.2rem;">${escapeHtml(lvCap)}</div>
                       </div>
                     </div>
-                  `
+                  `;
+                  }
                 )
                 .join("")}
             </div>
 
-            <h3 style="font-size:1rem;margin:1.35rem 0 0.45rem;">Bảng màu Chuẩn Mực Học thuật &amp; Văn hóa (Brand Color System)</h3>
+            <h3 style="font-size:1rem;margin:1.35rem 0 0.45rem;">${enAb ? "Scholarly &amp; Cultural Palette (Brand Color System)" : "Bảng màu Chuẩn Mực Học thuật &amp; Văn hóa (Brand Color System)"}</h3>
             <div class="brand-swatch-grid">
               ${(bi.colorPalette || [])
                 .map(
@@ -9589,13 +9676,13 @@
           <section class="card">
             <div class="card-header-row">
               <div>
-                <div class="editorial-kicker">Pháp lý, Sở hữu Trí tuệ &amp; Nguồn Ảnh • Legal &amp; IP Documentation</div>
-                <h2 style="margin:0;">Cổng Hồ sơ Bản quyền, Chính sách &amp; Nguồn Tư liệu (8 Tài liệu)</h2>
+                <div class="editorial-kicker">${enAb ? "Legal, Intellectual Property &amp; Image Attribution" : "Pháp lý, Sở hữu Trí tuệ &amp; Nguồn Ảnh • Legal &amp; IP Documentation"}</div>
+                <h2 style="margin:0;">${enAb ? "Copyright Charter, Open Policies &amp; Provenance Center (8 Documents)" : "Cổng Hồ sơ Bản quyền, Chính sách &amp; Nguồn Tư liệu (8 Tài liệu)"}</h2>
               </div>
-              <button type="button" class="btn btn-primary btn-sm" data-action="open-legal-doc" data-doc="copyright">Mở Trung tâm Pháp lý →</button>
+              <button type="button" class="btn btn-primary btn-sm" data-action="open-legal-doc" data-doc="copyright">${enAb ? "Open Legal Center →" : "Mở Trung tâm Pháp lý →"}</button>
             </div>
             <p style="font-size:0.9rem;color:var(--text-secondary);margin:0.55rem 0 1rem;">
-              ${escapeHtml(Brand.copyrightNoticeFull)} — Phân định rạch ròi tài sản sáng tạo gốc của dự án, văn bản kinh điển phạm vi công cộng và nguồn cấp phép bảo tàng mở.
+              ${escapeHtml(Brand.copyrightNoticeFull)} — ${enAb ? "Distinguishing original bilingual research synthesis from public-domain historical classics and open-access museum holdings." : "Phân định rạch ròi tài sản sáng tạo gốc của dự án, văn bản kinh điển phạm vi công cộng và nguồn cấp phép bảo tàng mở."}
             </p>
             <div class="grid grid-4" style="gap:0.75rem;">
               ${legalPages
@@ -9610,7 +9697,7 @@
                     >
                       <span class="badge badge-outline">${escapeHtml(doc.number)} • ${escapeHtml(doc.titleZh)}</span>
                       <strong style="font-size:0.86rem;color:var(--text-primary);">${escapeHtml(doc.titleEn)}</strong>
-                      <span style="font-size:0.77rem;color:var(--text-muted);">${escapeHtml(doc.titleVi)}</span>
+                      ${enAb ? "" : `<span style="font-size:0.77rem;color:var(--text-muted);">${escapeHtml(doc.titleVi)}</span>`}
                     </button>
                   `
                 )
@@ -9623,23 +9710,88 @@
   }
 
   function renderLegalPage() {
+    const enLg = isEnglishUi();
     const legalList = Brand.legalPages || [];
     const activeDoc = legalList.find((d) => d.id === ui.activeLegalDocId) || legalList[0];
     const allEditorialImgs = EditorialMedia && EditorialMedia.images ? Object.values(EditorialMedia.images) : [];
     const allArtifacts = Museum && Museum.artifacts ? Museum.artifacts : [];
+    const legalEnMap = {
+      copyright: {
+        summary: "Copyright © 2026 Lê Hưng Thịnh. All Rights Reserved. Defines copyright scope covering original scholarly essays, UI architecture, bilingual dictionaries, and source code of CHINESE CULTURE EXPLORER – 中国文化探索.",
+        sections: [
+          { heading: "1. Official Copyright Holder", body: "All original editorial synthesis, information architecture, and application source code of CHINESE CULTURE EXPLORER – 中国文化探索 are owned by Founder & Creator Lê Hưng Thịnh.", bullets: ["Copyright © 2026 Lê Hưng Thịnh. All Rights Reserved.", "Project: CHINESE CULTURE EXPLORER – 中国文化探索", "Tagline: Explore Chinese Civilization. Understand Its Philosophy. Discover Its Culture."] },
+          { heading: "2. Original Protected Components", body: "Copyright protection under Vietnamese Intellectual Property Law and international treaties applies to:", bullets: ["Original analytical essays, Sino–Vietnamese comparative studies, and interdisciplinary commentary.", "Bilingual Vietnamese–English explanations, Six Scripts (Liushu) character etymology, mnemonics, and usage examples.", "All conceptual infographics, historical diagrams, editorial maps, and custom SVG illustrations.", "Brand identity assets (logos, seals, wordmarks), editorial UI layout, and platform source code."] },
+          { heading: "3. Public Domain & Third-Party Carve-Outs", body: "The platform strictly claims ZERO exclusive ownership over:", bullets: ["Historical facts, astronomical data for the 24 Solar Terms, or public-domain classics such as the Analects, Daodejing, Shiji, or Huangdi Neijing.", "Museum artifacts, rare manuscripts, and third-party open-access photographs belonging to holding institutions or creators.", "Open-licensed third-party works governed by their respective CC0 / CC BY-SA 4.0 licenses."] },
+          { heading: "4. Trademark & Registration Transparency", body: "Written works, computer programs, and brand marks are structured cleanly for formal IP filing where eligible. No registered trademark (®) is claimed prior to official government registration grant." }
+        ]
+      },
+      terms: {
+        summary: "Defines educational access permissions, scholarly citation standards, and prohibited scraping or commercial misappropriation across CHINESE CULTURE EXPLORER.",
+        sections: [
+          { heading: "1. Non-Commercial Education & Research Scope", body: "Learners, educators, and researchers may read monographs, use the Liushu Dictionary & Contextual Notebook, save personal study notes, and export CSV/TSV vocabulary lists for non-commercial study and teaching." },
+          { heading: "2. Attribution Requirements", body: "When citing original synthesis or diagrams from this platform, please credit: Lê Hưng Thịnh – CHINESE CULTURE EXPLORER – 中国文化探索.", bullets: ["Do not republish the entire monograph database or editorial assets commercially without prior written permission.", "Do not strip copyright notices, creator colophons, or holding museum credits attached to visual plates."] },
+          { heading: "3. Prohibited Conduct", bullets: ["Automated scraping or bulk redistribution for commercial packaging.", "Misrepresenting the platform as an official government organ, university press, or state-sponsored museum."] }
+        ]
+      },
+      privacy: {
+        summary: "Privacy-first commitment for learners and founder via Local-first browser storage with zero third-party ad tracking.",
+        sections: [
+          { heading: "1. Local-First Data Architecture & Zero Ad Trackers", body: "CHINESE CULTURE EXPLORER stores study activity strictly under user control:", bullets: ["Reading history, Vocabulary Notebook notes, Active Recall quiz state, and journal entries persist locally in your browser (localStorage) or local loopback dev storage.", "Zero third-party behavioral advertising cookies or telemetry brokers."] },
+          { heading: "2. Founder Privacy Protection", body: "Only the public creator identity (Lê Hưng Thịnh – Founder & Creator) is published; home addresses, personal IDs, and private phone numbers are omitted for digital privacy." }
+        ]
+      },
+      licensing: {
+        summary: "Clear four-tier rights framework separating original project synthesis, editorial SVG graphics, open third-party assets, and public-domain historical texts.",
+        sections: [
+          { heading: "1. Four-Layer Content Licensing Matrix", bullets: ["Tier A — Original Essays, Liushu Etymologies, UI & Code: Copyright © 2026 Lê Hưng Thịnh. All Rights Reserved.", "Tier B — Editorial Infographics, Timelines & Schematic Maps: Educational project assets with clear provenance metadata.", "Tier C — Classical Texts (Analects, Suwen, Shiji, etc.): Public Domain ancient originals; bilingual commentary remains project intellectual property.", "Tier D — Open Museum & Archive Media (UNESCO, Palace Museum Open Access, CText, Wikimedia Commons): Governed by respective Open Access / CC licenses."] },
+          { heading: "2. Digital Illustration & Archival Photograph Distinction", body: "Schematic maps and SVG study plates created programmatically for educational comparison are labeled explicitly as editorial reconstructions and never passed off as authentic historical excavations." }
+        ]
+      },
+      "image-credits": {
+        summary: "Eight-field provenance ledger covering editorial visuals, provincial photography, and digital museum artifacts: Creator, Institution, Source URL, Holder, License, Verification, Attribution, and Scope.",
+        sections: [
+          { heading: "Visual Attribution Principles", body: "Every image distinguishes clearly between Historical Artifact/Photograph, Editorial Reconstruction, Schematic Map, and Conceptual Visual—never scraping watermarked commercial press photography." }
+        ]
+      },
+      "ip-reporting": {
+        summary: "Good-faith channel for attribution corrections, citation amendments, or takedown requests aligned with Vietnam IP Law and international open standards.",
+        sections: [
+          { heading: "1. Respect for Third-Party Rights", body: "If any institution or creator identifies an image or excerpt requiring updated attribution or removal, the platform reviews and resolves valid notices promptly." },
+          { heading: "2. Required Notice Details", bullets: ["Contact identification of rights holder or authorized representative.", "Description of the copyrighted work claimed.", "Exact URL, Essay ID, or Image Asset ID on this platform.", "Proof or good-faith statement of ownership or license authority."] }
+        ]
+      },
+      disclaimer: {
+        summary: "Clarifies scholarly scope limitations regarding historical inquiry, classical health preservation (Yangsheng), cosmology symbols, customs regulations, and institutional independence.",
+        sections: [
+          { heading: "1. Independent Academic Reference Only", body: "Materials herein support cultural, historical, linguistic, and academic business education ONLY—never clinical medical advice, formal legal counsel, investment advice, or commercial fortune-telling." },
+          { heading: "2. Traditional Medicine & Cosmological Symbols", bullets: ["Huangdi Neijing and 24 Solar Terms content are examined historically and culturally—never substituting licensed medical diagnosis.", "Yijing hexagrams, Bazi, and Feng Shui are studied purely as historical symbol systems, strictly separated from empirical science."] },
+          { heading: "3. Trade, Customs & HS Code Reference", body: "Analyses of C/O Form E, RCEP, Incoterms, and HS classifications systematize learning workflows; real customs declarations must consult official current tariffs and ministries." },
+          { heading: "4. Non-Governmental Status", body: "An independent initiative by Lê Hưng Thịnh, unaffiliated with any state agency, national academy, or official museum." }
+        ]
+      },
+      founder: {
+        summary: "Official creator identity record of Lê Hưng Thịnh — Founder & Creator of CHINESE CULTURE EXPLORER – 中国文化探索.",
+        sections: [
+          { heading: "Official Identity Statement", bullets: ["Full Name (Founder & Creator): Lê Hưng Thịnh", "Role: Originator, Information Architect, and Lead Builder of CHINESE CULTURE EXPLORER – 中国文化探索", "Mission: Building a rigorous digital bridge linking Chinese civilizational studies, classical Hanzi philology, and Vietnam–China economic–cultural dialogue."] },
+          { heading: "Publication Ethics & Privacy Standard", body: "Strict adherence to zero fabricated academic degrees/affiliations and safeguarding non-public personal contact details." }
+        ]
+      }
+    };
+    const docEnOv = enLg ? legalEnMap[activeDoc.id] : null;
+    const renderDocSecs = (docEnOv && docEnOv.sections) ? docEnOv.sections : (activeDoc.sections || []);
 
     return `
       <section class="page-hero">
         <div class="container">
-          <div class="editorial-kicker">Bản quyền, Chính sách &amp; Nguồn Tư liệu • ${escapeHtml(Brand.projectFullTitle)}</div>
-          <h1>Trung tâm Pháp lý, Sở hữu Trí tuệ &amp; Chứng nhận Nguồn</h1>
+          <div class="editorial-kicker">${enLg ? "Copyright, Governance &amp; Provenance" : "Bản quyền, Chính sách &amp; Nguồn Tư liệu"} • ${escapeHtml(Brand.projectFullTitle)}</div>
+          <h1>${enLg ? "Legal Charter, Intellectual Property &amp; Source Attribution" : "Trung tâm Pháp lý, Sở hữu Trí tuệ &amp; Chứng nhận Nguồn"}</h1>
           <p class="section-subtitle" style="margin-bottom:0.8rem;">
-            ${escapeHtml(Brand.copyrightNoticeFull)} • ${escapeHtml(Brand.foundedByStatement)}. Chuẩn mực minh bạch nguồn tư liệu và pháp lý phù hợp định hướng Việt Nam &amp; quốc tế.
+            ${escapeHtml(Brand.copyrightNoticeFull)} • ${escapeHtml(Brand.foundedByStatement)}. ${enLg ? "Transparent archival provenance aligned with Vietnam &amp; international open scholarship standards." : "Chuẩn mực minh bạch nguồn tư liệu và pháp lý phù hợp định hướng Việt Nam &amp; quốc tế."}
           </p>
           <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
-            <button type="button" class="btn btn-secondary btn-sm" data-action="nav" data-page="about">← Quay lại Trang Giới thiệu</button>
-            <span class="badge badge-jade">8 Tài liệu Chính thức</span>
-            <span class="badge badge-gold">${allEditorialImgs.length} Tư liệu Đồ họa &amp; ${allArtifacts.length} Hiện vật Kiểm kê</span>
+            <button type="button" class="btn btn-secondary btn-sm" data-action="nav" data-page="about">${enLg ? "← Back to About &amp; Founder's Note" : "← Quay lại Trang Giới thiệu"}</button>
+            <span class="badge badge-jade">${enLg ? "8 Charter Documents" : "8 Tài liệu Chính thức"}</span>
+            <span class="badge badge-gold">${enLg ? `${allEditorialImgs.length} Archival Plates &amp; ${allArtifacts.length} Relics Audited` : `${allEditorialImgs.length} Tư liệu Đồ họa &amp; ${allArtifacts.length} Hiện vật Kiểm kê`}</span>
           </div>
         </div>
       </section>
@@ -9647,7 +9799,7 @@
       <section class="page-section">
         <div class="container">
           <div class="legal-layout-grid">
-            <aside class="legal-nav-list" aria-label="Danh mục 8 tài liệu pháp lý">
+            <aside class="legal-nav-list" aria-label="${enLg ? "8 Legal Charter Documents" : "Danh mục 8 tài liệu pháp lý"}">
               ${legalList
                 .map(
                   (doc) => `
@@ -9660,7 +9812,7 @@
                       <span class="about-num-badge">${escapeHtml(doc.number)}</span>
                       <span>
                         <span style="display:block;color:var(--text-primary);">${escapeHtml(doc.titleEn)}</span>
-                        <span style="font-size:0.74rem;color:var(--text-muted);">${escapeHtml(doc.titleVi)}</span>
+                        ${enLg ? "" : `<span style="font-size:0.74rem;color:var(--text-muted);">${escapeHtml(doc.titleVi)}</span>`}
                       </span>
                     </button>
                   `
@@ -9670,18 +9822,18 @@
 
             <div class="card" style="padding:1.6rem;">
               <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-                <span class="badge badge-red">Tài liệu ${escapeHtml(activeDoc.number)} / 08</span>
-                <span style="font-size:0.8rem;color:var(--text-muted);">Cập nhật: ${escapeHtml(activeDoc.lastUpdated)} • ${escapeHtml(Brand.founderSignature)}</span>
+                <span class="badge badge-red">${enLg ? `Document ${escapeHtml(activeDoc.number)} / 08` : `Tài liệu ${escapeHtml(activeDoc.number)} / 08`}</span>
+                <span style="font-size:0.8rem;color:var(--text-muted);">${enLg ? "Updated:" : "Cập nhật:"} ${escapeHtml(activeDoc.lastUpdated)} • ${escapeHtml(Brand.founderSignature)}</span>
               </div>
 
-              <h2 style="font-size:1.65rem;margin-bottom:0.25rem;">${escapeHtml(activeDoc.titleVi)}</h2>
+              <h2 style="font-size:1.65rem;margin-bottom:0.25rem;">${escapeHtml(enLg ? (activeDoc.titleEn || activeDoc.titleVi) : activeDoc.titleVi)}</h2>
               <div style="font-size:0.9rem;color:var(--text-muted);margin-bottom:0.9rem;">
-                ${escapeHtml(activeDoc.titleEn)} • <span class="hanzi">${escapeHtml(activeDoc.titleZh)}</span>
+                ${escapeHtml(enLg ? "" : activeDoc.titleEn)}${enLg ? "" : " • "}<span class="hanzi">${escapeHtml(activeDoc.titleZh)}</span>
               </div>
 
               <div class="epistemic-box" style="margin-bottom:1.25rem;">
-                <div class="epistemic-title">Tóm tắt Phạm vi Pháp lý</div>
-                <p style="margin:0;font-size:0.92rem;">${escapeHtml(activeDoc.summary)}</p>
+                <div class="epistemic-title">${enLg ? "Legal Scope Summary" : "Tóm tắt Phạm vi Pháp lý"}</div>
+                <p style="margin:0;font-size:0.92rem;">${escapeHtml((docEnOv && docEnOv.summary) ? docEnOv.summary : (enLg && activeDoc.summaryEn ? activeDoc.summaryEn : activeDoc.summary))}</p>
               </div>
 
               ${activeDoc.id === "founder" ? `
@@ -9696,7 +9848,7 @@
               ` : ""}
 
               <div style="display:flex;flex-direction:column;gap:1.1rem;">
-                ${(activeDoc.sections || [])
+                ${renderDocSecs
                   .map(
                     (sec) => `
                       <section style="padding-bottom:0.95rem;border-bottom:1px solid var(--border-subtle);">
@@ -9715,17 +9867,17 @@
 
               ${activeDoc.showDynamicCreditsMatrix ? `
                 <div style="margin-top:1.5rem;">
-                  <h3 style="font-size:1.15rem;margin-bottom:0.35rem;">1. Kiểm kê Bản quyền ${allEditorialImgs.length} Tư liệu Đồ họa &amp; Bản đồ Biên tập</h3>
-                  <p style="font-size:0.84rem;color:var(--text-muted);margin-bottom:0.5rem;">Ghi nhận đủ: Tác giả, Tổ chức lưu trữ, URL gốc, Chủ sở hữu bản quyền, Giấy phép, Hình thức xác thực và Yêu cầu trích dẫn.</p>
+                  <h3 style="font-size:1.15rem;margin-bottom:0.35rem;">${enLg ? `1. Copyright Registry — ${allEditorialImgs.length} Editorial Graphics &amp; Maps` : `1. Kiểm kê Bản quyền ${allEditorialImgs.length} Tư liệu Đồ họa &amp; Bản đồ Biên tập`}</h3>
+                  <p style="font-size:0.84rem;color:var(--text-muted);margin-bottom:0.5rem;">${enLg ? "Complete provenance record: Creator, Holding Institution, Original URL, Copyright Holder, License, Verification Status, and Required Citation." : "Ghi nhận đủ: Tác giả, Tổ chức lưu trữ, URL gốc, Chủ sở hữu bản quyền, Giấy phép, Hình thức xác thực và Yêu cầu trích dẫn."}</p>
                   <div class="credits-table-wrap">
                     <table class="credits-table">
                       <thead>
                         <tr>
-                          <th># / Mã Tài nguyên</th>
-                          <th>Tác phẩm &amp; Phân loại</th>
-                          <th>Tác giả / Tổ chức &amp; Nguồn gốc</th>
-                          <th>Chủ bản quyền &amp; Giấy phép</th>
-                          <th>Trạng thái &amp; Ghi nhận Bắt buộc</th>
+                          <th>${enLg ? "# / Asset ID" : "# / Mã Tài nguyên"}</th>
+                          <th>${enLg ? "Work &amp; Classification" : "Tác phẩm &amp; Phân loại"}</th>
+                          <th>${enLg ? "Creator / Institution &amp; Source" : "Tác giả / Tổ chức &amp; Nguồn gốc"}</th>
+                          <th>${enLg ? "Rights Holder &amp; License" : "Chủ bản quyền &amp; Giấy phép"}</th>
+                          <th>${enLg ? "Status &amp; Required Attribution" : "Trạng thái &amp; Ghi nhận Bắt buộc"}</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -9759,15 +9911,15 @@
                     </table>
                   </div>
 
-                  <h3 style="font-size:1.15rem;margin:1.65rem 0 0.35rem;">2. Kiểm kê Nguồn ${allArtifacts.length} Hiện vật Bảo tàng Số</h3>
+                  <h3 style="font-size:1.15rem;margin:1.65rem 0 0.35rem;">${enLg ? `2. Asset Inventory — ${allArtifacts.length} Digital Museum Relics` : `2. Kiểm kê Nguồn ${allArtifacts.length} Hiện vật Bảo tàng Số`}</h3>
                   <div class="credits-table-wrap">
                     <table class="credits-table">
                       <thead>
                         <tr>
                           <th>#</th>
-                          <th>Hiện vật &amp; Niên đại</th>
-                          <th>Xuất xứ &amp; Sưu tập Gốc</th>
-                          <th>Ghi nhận Nguồn Lưu trữ (Attribution)</th>
+                          <th>${enLg ? "Artifact &amp; Era" : "Hiện vật &amp; Niên đại"}</th>
+                          <th>${enLg ? "Provenance &amp; Original Collection" : "Xuất xứ &amp; Sưu tập Gốc"}</th>
+                          <th>${enLg ? "Holding Attribution" : "Ghi nhận Nguồn Lưu trữ (Attribution)"}</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -10607,6 +10759,12 @@
     headerRoot.innerHTML = renderHeader();
   }
 
+  function patchNavOnly() {
+    const navRoot = document.getElementById("cce-nav-root");
+    if (!navRoot) { render(); return; }
+    navRoot.innerHTML = `${renderMobileNavDrawer()}${renderMobileBottomNav(Store.getState().activePage)}`;
+  }
+
   function patchHeaderThemeOnly() {
     const isDark = Store.getState().theme === "dark";
     const lp = getLangPack();
@@ -10808,13 +10966,13 @@
 
       case "toggle-mobile-nav":
         ui.mobileNavOpen = !ui.mobileNavOpen;
-        render();
+        patchNavOnly();
         break;
 
       case "close-mobile-nav":
         if (e.target === target) {
           ui.mobileNavOpen = false;
-          render();
+          patchNavOnly();
         }
         break;
 
@@ -11165,7 +11323,7 @@
 
       case "set-home-journey-filter":
         ui.homeJourneyFilter = target.getAttribute("data-role") || "all";
-        render();
+        patchMainOnly();
         break;
 
       case "apply-empty-suggestion": {
@@ -11204,13 +11362,14 @@
           ui.searchLevelFilter = "all";
           ui.searchSourceFilter = "all";
         }
-        render();
+        if (tf === "search") renderModalsOnly();
+        else patchMainOnly();
         break;
       }
 
       case "set-timeline-layout":
         ui.timelineLayout = target.getAttribute("data-mode");
-        render();
+        patchMainOnly();
         break;
 
       case "jump-period":
@@ -11303,7 +11462,6 @@
         ui.regionViewMode = "destinations";
         Store.setPage("regions");
         syncHashFromState("regions");
-        render();
         window.scrollTo({ top: 0, behavior: "instant" });
         break;
       }
@@ -11328,18 +11486,18 @@
 
       case "set-survival-pack":
         ui.survivalPackFilter = target.getAttribute("data-pack") || "all";
-        render();
+        patchMainOnly();
         break;
 
       case "toggle-survival-zero-pinyin":
         ui.survivalZeroPinyin = !ui.survivalZeroPinyin;
-        render();
+        patchMainOnly();
         break;
 
       case "toggle-survival-reveal": {
         if (!ui.revealedSurvivalIds) ui.revealedSurvivalIds = {};
         ui.revealedSurvivalIds[id] = !ui.revealedSurvivalIds[id];
-        render();
+        patchMainOnly();
         break;
       }
 
@@ -11366,7 +11524,7 @@
             note: foundItem.fieldTip
           });
           showToast(`Đã lưu "${foundItem.hanzi}" vào Sổ tay Từ vựng!`);
-          render();
+          patchMainOnly();
         }
         break;
       }
@@ -11379,27 +11537,27 @@
 
       case "lab-dujiangyan-mode":
         if (window.CCE_LABS) window.CCE_LABS.setDujiangyanSeason(target.getAttribute("data-mode"));
-        render();
+        patchMainOnly();
         break;
 
       case "lab-meridian-now":
         if (window.CCE_LABS) window.CCE_LABS.setMeridianByHour(new Date().getHours());
-        render();
+        patchMainOnly();
         break;
 
       case "lab-meridian-pick":
         if (window.CCE_LABS) window.CCE_LABS.state.selectedMeridianIdx = Number(target.getAttribute("data-idx") || 0);
-        render();
+        patchMainOnly();
         break;
 
       case "trip-set-border":
         if (window.CCE_LABS) window.CCE_LABS.state.tripBorderId = id;
-        render();
+        patchMainOnly();
         break;
 
       case "trip-set-corridor":
         if (window.CCE_LABS) window.CCE_LABS.state.tripCorridorId = id;
-        render();
+        patchMainOnly();
         break;
 
       case "go-survival-packs":
@@ -11407,7 +11565,6 @@
         ui.activeProvinceId = null;
         Store.setPage("learning");
         window.scrollTo({ top: 0, behavior: "smooth" });
-        render();
         break;
 
       case "arena-answer": {
@@ -11415,7 +11572,7 @@
           const qid = target.getAttribute("data-qid");
           const optIdx = Number(target.getAttribute("data-opt"));
           window.CCE_LABS.state.quizAnsweredMap[qid] = optIdx;
-          render();
+          patchMainOnly();
           try {
             const badgeText = (document.querySelector("#quiz-arena-box .badge-jade") || {}).textContent || "";
             const m = badgeText.match(/(\d+)\//);
@@ -11434,7 +11591,7 @@
           const dir = Number(target.getAttribute("data-dir") || 1);
           window.CCE_LABS.state.quizIdx = (window.CCE_LABS.state.quizIdx + dir + 8) % 8;
         }
-        render();
+        patchMainOnly();
         break;
       }
 
@@ -11443,7 +11600,7 @@
           window.CCE_LABS.state.quizIdx = 0;
           window.CCE_LABS.state.quizAnsweredMap = {};
         }
-        render();
+        patchMainOnly();
         break;
 
       case "open-survival-evolution": {
@@ -11482,7 +11639,7 @@
             }
             ui.activeTermId = dynId;
           }
-          render();
+          renderModalsOnly();
         }
         break;
       }
@@ -11510,7 +11667,7 @@
 
       case "filter-dict-level":
         ui.dictLevelFilter = target.getAttribute("data-level");
-        render();
+        patchMainOnly();
         break;
 
       case "open-article": {
@@ -11543,7 +11700,7 @@
 
       case "set-article-depth":
         ui.articleDepthMode = target.getAttribute("data-depth") || "academic";
-        render();
+        patchMainOnly();
         break;
 
       case "reset-learning-progress":
@@ -11563,34 +11720,34 @@
       case "clear-province-filters":
         ui.provinceQuery = "";
         ui.provinceRegionFilter = "all";
-        render();
+        patchMainOnly();
         break;
 
       case "clear-dict-filters":
         ui.dictQuery = "";
         ui.dictLevelFilter = "all";
         ui.dictDeckFilter = "all";
-        render();
+        patchMainOnly();
         break;
 
       case "toggle-article-mobile-toc":
         ui.articleMobileTocOpen = !ui.articleMobileTocOpen;
-        render();
+        patchMainOnly();
         break;
 
       case "toggle-article-mobile-context":
         ui.articleMobileContextOpen = !ui.articleMobileContextOpen;
-        render();
+        patchMainOnly();
         break;
 
       case "open-editorial-lightbox":
         ui.activeEditorialImageId = target.getAttribute("data-img-id");
-        render();
+        renderModalsOnly();
         break;
 
       case "close-editorial-lightbox":
         ui.activeEditorialImageId = null;
-        render();
+        renderModalsOnly();
         break;
 
       case "editorial-lightbox-step":
@@ -11604,19 +11761,19 @@
           const dir = Number(target.getAttribute("data-dir")) || 1;
           const cur = ui.articleGalleryIndex[id] || 0;
           ui.articleGalleryIndex[id] = ((cur + dir) % gList.length + gList.length) % gList.length;
-          render();
+          patchMainOnly();
         }
         break;
       }
 
       case "article-gallery-select":
         ui.articleGalleryIndex[id] = Number(target.getAttribute("data-idx")) || 0;
-        render();
+        patchMainOnly();
         break;
 
       case "toggle-editorial-qa":
         ui.editorialQaOpen = !ui.editorialQaOpen;
-        render();
+        patchMainOnly();
         break;
 
       case "scroll-article-sec": {
@@ -11644,7 +11801,7 @@
 
       case "focus-article-note": {
         ui.articleMobileContextOpen = true;
-        render();
+        patchMainOnly();
         setTimeout(() => {
           const ta = document.getElementById("article-quick-note-textarea");
           if (ta) {
@@ -11737,13 +11894,13 @@
         ui.activeTermId = matched ? matched.id : id;
         ui.searchModalOpen = false;
         ui.heroAutocompleteOpen = false;
-        render();
+        renderModalsOnly();
         break;
       }
 
       case "close-term":
         ui.activeTermId = null;
-        render();
+        renderModalsOnly();
         break;
 
       case "toggle-collect-vocab": {
@@ -11758,7 +11915,7 @@
         ui.flashcardDeckMode = target.getAttribute("data-mode");
         ui.flashcardIdx = 0;
         ui.flashcardFlipped = false;
-        render();
+        patchMainOnly();
         break;
 
       case "clear-flashcard-filters":
@@ -11768,12 +11925,12 @@
         ui.flashcardTopicFilter = "all";
         ui.flashcardIdx = 0;
         ui.flashcardFlipped = false;
-        render();
+        patchMainOnly();
         break;
 
       case "flip-flashcard":
         ui.flashcardFlipped = !ui.flashcardFlipped;
-        render();
+        patchMainOnly();
         break;
 
       case "next-card": {
@@ -11781,7 +11938,7 @@
         if (!deck.length) break;
         ui.flashcardIdx = (ui.flashcardIdx + 1) % deck.length;
         ui.flashcardFlipped = false;
-        render();
+        patchMainOnly();
         break;
       }
 
@@ -11790,7 +11947,7 @@
         if (!deck.length) break;
         ui.flashcardIdx = (ui.flashcardIdx - 1 + deck.length) % deck.length;
         ui.flashcardFlipped = false;
-        render();
+        patchMainOnly();
         break;
       }
 
@@ -11804,14 +11961,14 @@
 
       case "select-kg-node":
         ui.activeKgNodeId = id;
-        render();
+        patchMainOnly();
         break;
 
       case "select-quiz-option": {
         const qid = target.getAttribute("data-qid");
         const idx = Number(target.getAttribute("data-idx"));
         ui.quizAnswers[qid] = idx;
-        render();
+        patchMainOnly();
         break;
       }
 
@@ -11824,7 +11981,7 @@
         });
         Store.recordQuizResult(score, mcq.length);
         showToast(`Đã chấm điểm: ${score}/${mcq.length} câu đúng`);
-        render();
+        patchMainOnly();
         break;
       }
 
@@ -11832,18 +11989,18 @@
         ui.quizAnswers = {};
         ui.quizShortAnswers = {};
         ui.quizSubmitted = false;
-        render();
+        patchMainOnly();
         break;
 
       case "edit-note":
         ui.editingNoteId = id;
-        render();
+        patchMainOnly();
         window.scrollTo({ top: 180, behavior: "smooth" });
         break;
 
       case "cancel-edit-note":
         ui.editingNoteId = null;
-        render();
+        patchMainOnly();
         break;
 
       case "delete-note":
@@ -11854,7 +12011,7 @@
 
       case "set-founder-msg-lang":
         ui.founderMsgLang = target.getAttribute("data-lang") || "all";
-        render();
+        patchMainOnly();
         break;
 
       case "open-founder-message":
@@ -12059,7 +12216,7 @@
 
       case "dismiss-onboarding":
         ui.onboardingDismissed = true;
-        render();
+        patchMainOnly();
         break;
 
       case "open-painting-zen":
@@ -12100,6 +12257,7 @@
       }
 
       case "open-province-detail":
+        ui.selectedMapProvinceId = id;
         ui.activeProvinceId = id;
         syncHashFromState(`province=${id}`);
         renderModalsOnly();
@@ -12186,7 +12344,7 @@
 
       case "dismiss-vocab-popover":
         ui.vocabSelectionPopup = null;
-        render();
+        renderModalsOnly();
         break;
 
       case "open-vocab-capture-manual": {
@@ -12202,7 +12360,7 @@
           x: Math.max(16, Math.min(window.innerWidth - 360, rect.left)),
           y: Math.max(76, Math.min(window.innerHeight - 190, rect.bottom + 8))
         };
-        render();
+        renderModalsOnly();
         break;
       }
 
@@ -12231,7 +12389,7 @@
 
       case "edit-vocab-entry":
         ui.vocabEditId = ui.vocabEditId === id ? null : id;
-        render();
+        patchMainOnly();
         break;
 
       case "delete-vocab-entry":
@@ -12472,7 +12630,9 @@
       ui.searchModalOpen = true;
       ui.searchLimit = 18;
       if (q && q.trim()) Store.addSearchHistory(q.trim());
-      render();
+      const slot = document.getElementById("hero-autocomplete-slot");
+      if (slot) slot.innerHTML = "";
+      renderModalsOnly();
       setTimeout(() => {
         const modalInp = document.getElementById("global-search-input");
         if (modalInp) modalInp.focus();
@@ -12555,7 +12715,7 @@
         showToast(isEnglishUi()
           ? `Saved "${term}" with context & note to Vocabulary Notebook!`
           : `Đã lưu "${term}" kèm ngữ cảnh & ghi chú vào Sổ tay!`);
-        render();
+        renderModalsOnly();
       }
     } else if (action === "add-vocab-notebook-form") {
       const fd = new FormData(e.target);
@@ -12615,7 +12775,7 @@
         x: Math.max(12, Math.min(window.innerWidth - 360, rect.left)),
         y: Math.max(68, Math.min(window.innerHeight - 175, rect.bottom + 8))
       };
-      render();
+      renderModalsOnly();
     } catch {}
   });
 
@@ -12629,7 +12789,7 @@
     const idx = Math.max(0, list.indexOf(ui.activeEditorialImageId));
     const nextIdx = ((idx + dir) % list.length + list.length) % list.length;
     ui.activeEditorialImageId = list[nextIdx];
-    render();
+    renderModalsOnly();
   }
 
   // Keyboard shortcuts (Ctrl+K for global search, Escape to close modals/drawers, Arrows in Editorial Lightbox)
@@ -12638,7 +12798,7 @@
     if ((e.ctrlKey || e.metaKey) && !e.altKey && isK) {
       e.preventDefault();
       ui.searchModalOpen = true;
-      render();
+      renderModalsOnly();
       const inp = document.getElementById("global-search-input");
       if (inp) inp.focus();
       requestAnimationFrame(() => {
@@ -12654,56 +12814,61 @@
     } else if (e.key === "Escape") {
       if (ui.vocabSelectionPopup) {
         ui.vocabSelectionPopup = null;
-        render();
+        renderModalsOnly();
       } else if (ui.updatesModalOpen) {
         ui.updatesModalOpen = false;
-        render();
+        renderModalsOnly();
       } else if (ui.customModalImage) {
         ui.customModalImage = null;
-        render();
+        renderModalsOnly();
       } else if (ui.activeEditorialImageId) {
         ui.activeEditorialImageId = null;
-        render();
+        renderModalsOnly();
       } else if (ui.lightboxOpen) {
         ui.lightboxOpen = false;
-        render();
+        renderModalsOnly();
       } else if (ui.activeTermId) {
         ui.activeTermId = null;
-        render();
+        renderModalsOnly();
       } else if (ui.activeArtifactId) {
         ui.activeArtifactId = null;
-        render();
+        syncHashFromState(Store.getState().activePage || "museum");
+        renderModalsOnly();
       } else if (ui.searchModalOpen) {
         ui.searchModalOpen = false;
-        render();
+        renderModalsOnly();
       } else if (ui.mobileNavOpen) {
         ui.mobileNavOpen = false;
-        render();
+        patchNavOnly();
       } else if (ui.paintingZoomOpen) {
         ui.paintingZoomOpen = false;
         ui.paintingZenMode = false;
         ui.paintingHandscrollMode = false;
         ui.paintingZoomScale = 1;
-        render();
+        renderModalsOnly();
       } else if (ui.provinceCompareOpen) {
         ui.provinceCompareOpen = false;
-        render();
+        renderModalsOnly();
       } else if (ui.activeProvinceId) {
         ui.activeProvinceId = null;
-        render();
+        syncHashFromState(Store.getState().activePage || "regions");
+        renderModalsOnly();
       } else if (ui.paintingCompareOpen) {
         ui.paintingCompareOpen = false;
-        render();
+        renderModalsOnly();
       } else if (ui.activePaintingId) {
         ui.activePaintingId = null;
         ui.paintingZoomScale = 1;
-        render();
+        syncHashFromState(Store.getState().activePage || "paintings");
+        renderModalsOnly();
       } else if (ui.activeMegaMenu) {
         ui.activeMegaMenu = null;
-        render();
+        patchHeaderOnly();
       } else if (ui.heroAutocompleteOpen) {
         ui.heroAutocompleteOpen = false;
-        render();
+        const slot = document.getElementById("hero-autocomplete-slot");
+        if (slot) slot.innerHTML = "";
+        else patchMainOnly();
       }
     }
   }, { capture: true });
