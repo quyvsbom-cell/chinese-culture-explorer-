@@ -118,7 +118,8 @@ def main() -> int:
         if p.name in {
             "v3WaveModules.js", "artifacts3DStudio.js", "galleryReaderV3.js",
             "hanziStrokePad.js", "learningLabV3.js", "v3Wave5Modules.js",
-            "srsEngine.js", "exporters.js", "lazyLoader.js"
+            "pentatonicStudio.js", "presentationMode.js", "localQaEngine.js",
+            "civilizationAtlas.js", "srsEngine.js", "exporters.js", "lazyLoader.js"
         }
     ]
     delim_issues = check_js_delimiters(v3_components)

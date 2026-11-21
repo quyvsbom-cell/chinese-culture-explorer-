@@ -2904,6 +2904,9 @@
             </div>
 
             <div class="nav-utility-controls">
+              <button type="button" class="nav-util-btn" data-action="open-local-qa" aria-label="${enHdr ? "Local Q&A" : "Hỏi đáp Tư liệu"}" title="${enHdr ? "Offline Cited Knowledge Q&A" : "Hỏi đáp Trích nguồn Cục bộ"}" style="font-size:0.74rem;font-weight:700;padding:0.28rem 0.5rem;">
+                Q&amp;A
+              </button>
               <button type="button" class="nav-util-btn" data-action="open-search" aria-label="${enHdr ? "Search (Ctrl+K)" : "Tìm kiếm (Ctrl+K)"}" title="${escapeHtml(lp.searchPlaceholder)} (Ctrl+K)">
                 ${ICONS.search}
               </button>
@@ -2926,19 +2929,22 @@
               ${(() => {
                 const authSt = Auth.getState();
                 const enM = isEnglishUi();
+                const curL = state.uiLang || "vi";
+                const signOutLbl = curL === "zh-CN" ? "退出" : curL === "zh-TW" ? "登出" : (enM ? "Exit" : "Thoát");
+                const signInLbl = curL === "zh-CN" ? "登录" : curL === "zh-TW" ? "登入" : (enM ? "Sign In" : "Đăng nhập");
                 if (authSt.authenticated && authSt.user) {
                   const shortName = String(authSt.user.fullName || authSt.user.email || "Google").split(/\s+/).slice(-2).join(" ");
                   return `
                     <button type="button" class="nav-util-btn nav-auth-btn is-authed" data-action="auth-signout" title="Google Account (${escapeHtml(authSt.user.email || authSt.user.fullName)}) — Click to Sign Out">
                       ${ICONS.user}
-                      <span>${escapeHtml(shortName)} · ${enM ? "Exit" : "Thoát"}</span>
+                      <span>${escapeHtml(shortName)} · ${signOutLbl}</span>
                     </button>
                   `;
                 }
                 return `
                   <button type="button" class="nav-util-btn nav-auth-btn" data-action="auth-signin-google" title="${enM ? "Sign in with Google to sync Vocabulary Notebook & reading preferences" : "Đăng nhập Google để đồng bộ Sổ tay Từ vựng & tùy chọn cá nhân"}">
                     ${ICONS.google}
-                    <span>${enM ? "Sign In" : "Đăng nhập"}</span>
+                    <span>${signInLbl}</span>
                   </button>
                 `;
               })()}
@@ -2984,18 +2990,21 @@
           ${(() => {
             const mAuth = Auth.getState();
             const enM = isEnglishUi();
+            const curL = state.uiLang || "vi";
+            const mSignOut = curL === "zh-CN" ? "退出登录" : curL === "zh-TW" ? "登出帳號" : (enM ? "Sign Out" : "Đăng xuất");
+            const mSignIn = curL === "zh-CN" ? "Google 登录（同步生词本）" : curL === "zh-TW" ? "Google 登入（同步生詞本）" : (enM ? "Sign in with Google (Sync Notebook)" : "Đăng nhập Google (Đồng bộ Sổ tay)");
             if (mAuth.authenticated && mAuth.user) {
               return `
                 <div style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem;padding:0.55rem 0.7rem;background:var(--bg-surface);border:1px solid var(--hairline);border-radius:3px;">
                   <span style="font-size:0.8rem;color:var(--ink-primary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${escapeHtml(mAuth.user.fullName || mAuth.user.email)}</span>
-                  <button type="button" class="btn btn-secondary btn-sm" data-action="auth-signout">${enM ? "Sign Out" : "Đăng xuất"}</button>
+                  <button type="button" class="btn btn-secondary btn-sm" data-action="auth-signout">${mSignOut}</button>
                 </div>
               `;
             }
             return `
               <button type="button" class="btn btn-secondary btn-sm" style="width:100%;justify-content:center;gap:0.45rem;" data-action="auth-signin-google">
                 ${ICONS.google}
-                <span>${enM ? "Sign in with Google (Sync Notebook)" : "Đăng nhập Google (Đồng bộ Sổ tay)"}</span>
+                <span>${mSignIn}</span>
               </button>
             `;
           })()}
@@ -4137,6 +4146,7 @@
           <div id="explore-results-slot">
             ${renderExploreResultsContent()}
           </div>
+          ${window.CCE_CIV_ATLAS ? window.CCE_CIV_ATLAS.renderGuidedTracks(enEx, Store.getState().completedArticles) + window.CCE_CIV_ATLAS.renderMatrix6x7(enEx) : ""}
         </div>
       </section>
     `;
@@ -4505,6 +4515,9 @@
                 </div>
 
                 <div class="toolbar-right-group" style="display:flex;gap:0.45rem;align-items:center;flex-wrap:wrap;">
+                  <button type="button" class="btn btn-secondary btn-sm toolbar-btn" data-action="open-slide-mode" data-id="${art.id}">
+                    ${enM ? "Slide Mode" : "Trình chiếu Slide"}
+                  </button>
                   <button type="button" class="btn ${ui.articleZenReading ? "btn-primary" : "btn-secondary"} btn-sm toolbar-btn" data-action="toggle-zen-reading" aria-pressed="${ui.articleZenReading ? "true" : "false"}">
                     ${enM ? (ui.articleZenReading ? "Exit Slow-Read" : "Slow-Read 65ch") : (ui.articleZenReading ? "Thoát Tĩnh lặng" : "Tĩnh lặng 65ch")}
                   </button>
@@ -4521,6 +4534,8 @@
                   </div>
                 </div>
               </div>
+
+              ${window.CCE_CIV_ATLAS ? window.CCE_CIV_ATLAS.renderArticleTtsBar(enM) : ""}
 
               ${ed.heroImageId ? `
                 <div id="sec-hero" style="margin-bottom:1.5rem;">
@@ -4586,6 +4601,7 @@
                   if (Lazy) Lazy.ensureBundle("3d-pack").then(() => patchMainOnly());
                   return `<div class="epistemic-box" style="margin:1.25rem 0;"><strong>${enM ? "Initializing 3D Architectural WebGL Studio..." : "Đang khởi tạo mô hình 3D Kiến trúc Tử Cấm Thành..."}</strong></div>`;
                 })()) : ""}
+                ${art.id === "temple-of-heaven-tiantan-cosmology-3d" && window.CCE_CIV_ATLAS ? window.CCE_CIV_ATLAS.renderTiantanEmbed(state.uiLang, enM) : ""}
 
                 <h3 id="sec-bg">${enM ? "1. Historical Context" : "1. Bối cảnh lịch sử"}</h3>
                 <p>${(window.CCE_LABS_EXT && window.CCE_LABS_EXT.injectInlineClassicalGloss) ? window.CCE_LABS_EXT.injectInlineClassicalGloss(formatInlineMd(v.historicalContext, false), enM) : formatInlineMd(v.historicalContext, false)}</p>
@@ -6834,6 +6850,7 @@
           )
           .join("")}
       </div>
+      ${window.CCE_CIV_ATLAS ? window.CCE_CIV_ATLAS.renderCustomsExpansion(enM) : ""}
     `;
   }
 
@@ -6857,6 +6874,7 @@
         </div>
       </div>
 
+      ${window.CCE_PENTATONIC_STUDIO ? window.CCE_PENTATONIC_STUDIO.renderStudio(enM) : ""}
       ${window.CCE_LABS_EXT ? window.CCE_LABS_EXT.renderPentatonicResonator(enM) : ""}
 
       <div class="grid grid-2">
@@ -12808,6 +12826,18 @@
         patchMainOnly();
         break;
 
+      case "open-slide-mode": {
+        const sId = target.getAttribute("data-id") || ui.activeArticleId;
+        const sArt = Articles.find((a) => a.id === sId) || Articles[0];
+        if (sArt && window.CCE_SLIDE_MODE) {
+          const sSup = getArticleSupplement(sArt.id) || {};
+          const sEd = getArticleEditorial(sArt.id) || {};
+          const sView = getLocalizedArticleView(sArt, sSup, sEd);
+          window.CCE_SLIDE_MODE.open(sArt, sView, isEnglishUi());
+        }
+        break;
+      }
+
       case "print-dossier":
         if (typeof window.print === "function") {
           window.print();
@@ -12846,6 +12876,9 @@
     if (action === "ui-lang-select") {
       Store.setUiLang(e.target.value);
       hydratePageBundles(Store.getState().activePage || "home", e.target.value, { needs3d: ui.activeArticleId === "forbidden-city-3d-dissection" });
+      if (window.CCE_ARTIFACTS_3D && window.CCE_ARTIFACTS_3D.syncTiantanLang) {
+        window.CCE_ARTIFACTS_3D.syncTiantanLang(e.target.value);
+      }
       showToast(getLangPack().langChangedToast || `Đã chuyển giao diện: ${e.target.value.toUpperCase()}`);
     } else if (action === "vocab-article-filter") {
       ui.vocabFilterArticle = e.target.value || "all";
