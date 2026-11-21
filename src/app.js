@@ -4148,6 +4148,7 @@
           <div id="explore-results-slot">
             ${renderExploreResultsContent()}
           </div>
+          ${window.CCE_V4_HUB ? window.CCE_V4_HUB.renderHub(enEx) : ""}
           ${window.CCE_CIV_ATLAS ? window.CCE_CIV_ATLAS.renderGuidedTracks(enEx, Store.getState().completedArticles) + window.CCE_CIV_ATLAS.renderMatrix6x7(enEx) : ""}
         </div>
       </section>
@@ -7737,6 +7738,7 @@
                 .join("")}
             </div>
           </div>
+          ${window.CCE_TRILINGUAL_STUDIO ? window.CCE_TRILINGUAL_STUDIO.renderStudio(enB) : ""}
           ${window.CCE_3D_LOGISTICS ? `<section class="card mt-2 mb-2" style="padding:1.1rem 1.25rem;border-top:3px solid var(--jade-green);">${window.CCE_3D_LOGISTICS.renderPanel(enB)}</section>` : ""}
           ${window.CCE_V3_W5 ? window.CCE_V3_W5.renderB2BExpansion(enB) : ""}
         </div>
@@ -10531,6 +10533,34 @@
       action: "nav",
       page: "library"
     }));
+
+    if (ui.searchQuery && ui.searchQuery.trim() && (cat === "all" || cat === "terms" || cat === "articles")) {
+      const qv4 = normalizeText(ui.searchQuery);
+      const tList = (window.CCE_TRADE_TRILINGUAL_V4 && window.CCE_TRADE_TRILINGUAL_V4.terms) || [];
+      tList.filter((t) => normalizeText(`${t.en} ${t.zh} ${t.pinyin} ${t.vi}`).includes(qv4)).slice(0, 6).forEach((t) => {
+        flatRows.push({
+          badge: "EU–China Logistics",
+          badgeClass: "badge-jade",
+          title: `${t.en} · ${t.zh} (${t.vi})`,
+          sub: `${t.pinyin} · ${t.contextEn || ""}`,
+          btnLabel: enS ? "Open Trade Studio" : "Mở Studio Logistics",
+          action: "nav",
+          page: "business"
+        });
+      });
+      const hskList = (window.CCE_LITERATURE_HSK_V4 && window.CCE_LITERATURE_HSK_V4.hskBriefs) || [];
+      hskList.filter((h) => normalizeText(`${h.zh} ${h.pinyin} ${h.hanViet} ${h.vi} ${h.en}`).includes(qv4)).slice(0, 4).forEach((h) => {
+        flatRows.push({
+          badge: `HSK ${h.hsk}`,
+          badgeClass: "badge-gold",
+          title: `${h.zh} (${h.pinyin}) — ${h.hanViet}: ${enS ? h.en : h.vi}`,
+          sub: `${h.en} · ${h.vi}`,
+          btnLabel: enS ? "Open HSK Hub" : "Mở Kho HSK",
+          action: "nav",
+          page: "explore"
+        });
+      });
+    }
 
     const totalAllCategories =
       (results.articles || []).length +

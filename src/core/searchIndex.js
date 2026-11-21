@@ -155,6 +155,36 @@
       });
     }
 
+    var litV4 = (window.CCE_LITERATURE_HSK_V4 && window.CCE_LITERATURE_HSK_V4.hskBriefs) || [];
+    for (i = 0; i < litV4.length; i++) {
+      var hb = litV4[i];
+      out.push({
+        type: "article",
+        id: "han-viet-phonology-middle-chinese",
+        title: "[HSK " + hb.hsk + "] " + hb.zh + " (" + hb.pinyin + ") — " + hb.vi,
+        titleEn: "[HSK " + hb.hsk + "] " + hb.zh + " — " + hb.en,
+        zh: hb.zh || "",
+        sub: hb.hanViet + " · HSK " + hb.hsk,
+        rawTitle: norm(hb.zh + " " + hb.pinyin + " " + hb.hanViet + " " + hb.vi + " " + hb.en),
+        body: norm(hb.en + " " + hb.vi)
+      });
+    }
+
+    var tradeV4 = (window.CCE_TRADE_TRILINGUAL_V4 && window.CCE_TRADE_TRILINGUAL_V4.terms) || [];
+    for (i = 0; i < tradeV4.length; i++) {
+      var tt = tradeV4[i];
+      out.push({
+        type: "business",
+        id: tt.id,
+        title: tt.en + " · " + tt.zh + " (" + tt.vi + ")",
+        titleEn: tt.en + " · " + tt.zh,
+        zh: tt.zh || "",
+        sub: tt.pinyin + " · EU–China Logistics",
+        rawTitle: norm(tt.en + " " + tt.zh + " " + tt.pinyin + " " + tt.vi),
+        body: norm(tt.contextEn || "")
+      });
+    }
+
     _items = out;
     _dirty = false;
     return out;
