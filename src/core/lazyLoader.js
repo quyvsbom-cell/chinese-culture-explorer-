@@ -22,7 +22,8 @@
   var BUNDLES = {
     "3d-pack": [
       "src/vendor/three.min.js",
-      "src/components/forbiddenCity3D.js"
+      "src/components/forbiddenCity3D.js",
+      "src/components/artifacts3DStudio.js"
     ],
     "en-pack": [
       "src/data/articlesEnData.js",
@@ -175,8 +176,7 @@
     } else if (pageId === "paintings") {
       need.push("paintings-pack");
     } else if (pageId === "museum") {
-      need.push("museum-classics-v3-pack", "paintings-pack");
-      if (extraFlags && extraFlags.needs3d) need.push("3d-pack");
+      need.push("museum-classics-v3-pack", "paintings-pack", "3d-pack");
     } else if (pageId === "philosophy" || pageId === "traditional" || pageId === "library") {
       need.push("museum-classics-v3-pack", "articles-v3-pack", "dictionary-pack");
     } else if (pageId === "learning") {
@@ -205,10 +205,8 @@
       need.push("regions-deep-pack");
       if (extraFlags && extraFlags.needs3d) need.push("3d-pack");
     } else if (pageId === "paintings") need.push("paintings-pack");
-    else if (pageId === "museum") {
-      need.push("museum-classics-v3-pack", "paintings-pack");
-      if (extraFlags && extraFlags.needs3d) need.push("3d-pack");
-    } else if (pageId === "philosophy" || pageId === "traditional" || pageId === "library") {
+    else if (pageId === "museum") need.push("museum-classics-v3-pack", "paintings-pack", "3d-pack");
+    else if (pageId === "philosophy" || pageId === "traditional" || pageId === "library") {
       need.push("museum-classics-v3-pack", "articles-v3-pack", "dictionary-pack");
     } else if (pageId === "learning") need.push("dictionary-pack", "museum-classics-v3-pack", "history-biz-v3-pack");
     else if (pageId === "sino-vietnam" || pageId === "business") need.push("history-biz-v3-pack");

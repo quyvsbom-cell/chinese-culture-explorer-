@@ -4384,6 +4384,7 @@
               <div style="display:flex;flex-wrap:wrap;gap:0.45rem;">
                 <span class="badge badge-red">${escapeHtml(v.categoryLabel)}</span>
                 <span class="badge badge-outline">${art.readMinutes} ${enM ? "min read" : "phút đọc"}</span>
+                <span id="cce-read-remaining" data-mins="${art.readMinutes}" class="badge badge-jade" style="font-size:0.72rem;">${art.readMinutes} ${enM ? "min left" : "phút còn lại"}</span>
               </div>
             </div>
             <h1 style="font-size:clamp(1.85rem, 3vw, 2.55rem);margin-bottom:0.35rem;">${formatInlineMd(v.title, true)}</h1>
@@ -4993,6 +4994,9 @@
             </div>
             <button type="button" class="btn btn-gold btn-sm" data-action="nav" data-page="paintings">${enM ? `Open ${PaintingsList.length} Master Paintings →` : `Chuyển sang Triển lãm ${PaintingsList.length} Quốc họa →`}</button>
           </div>
+
+          ${window.CCE_GALLERY_V3 ? window.CCE_GALLERY_V3.renderCraftTimeline4000(ui.museumPeriodFilter, enM) : ""}
+          ${window.CCE_ARTIFACTS_3D ? window.CCE_ARTIFACTS_3D.renderSection(enM, Store.getState().uiLang) : ""}
 
           <div class="card" style="margin-bottom:1.4rem;">
             <div class="grid grid-2" style="align-items:end;gap:1rem;margin-bottom:0.9rem;">
@@ -5779,15 +5783,8 @@
 
               <div class="analysis-panel-box">
                 ${tab === "historical" ? `
-                  <div class="analysis-item-row">
-                    <strong>${enM ? "1. Historical Background:" : "1. Historical Background — Bối cảnh Lịch sử:"}</strong>
-                    <p style="margin:0;">${an.historicalBackground || ""}</p>
-                  </div>
-                  <div class="analysis-item-row">
-                    <strong>${enM ? "2. Artist Biography & Career:" : "2. Artist Biography — Tiểu sử &amp; Hành trạng Họa sĩ:"}</strong>
-                    <p style="margin:0 0 0.5rem;">${pArtistBio || ""}</p>
-                    <p style="margin:0;">${an.artistBiography || ""}</p>
-                  </div>
+                  ${(an.historicalBackground || "").trim() ? `<div class="analysis-item-row"><strong>${enM ? "1. Historical Background:" : "1. Historical Background — Bối cảnh Lịch sử:"}</strong><p style="margin:0;">${an.historicalBackground}</p></div>` : ""}
+                  ${(pArtistBio || an.artistBiography || "").trim() ? `<div class="analysis-item-row"><strong>${enM ? "2. Artist Biography & Career:" : "2. Artist Biography — Tiểu sử &amp; Hành trạng Họa sĩ:"}</strong>${pArtistBio ? `<p style="margin:0 0 0.5rem;">${pArtistBio}</p>` : ""}${an.artistBiography ? `<p style="margin:0;">${an.artistBiography}</p>` : ""}</div>` : ""}
                   <div class="analysis-item-row" style="margin-bottom:0;">
                     <strong>${enM ? "3. Provenance & Transmission:" : "3. Provenance History — Lịch sử Lưu truyền &amp; Sưu tập:"}</strong>
                     <p style="margin:0;">${enM ? `Examined and stamped with imperial collector seals across successive dynasties before entering the permanent archive at ${escapeHtml(pMuseum)}.` : `Bảo vật từng qua tay giám định và đóng ấn ngự lãm của các hoàng gia, hiện được bảo tồn nghiêm ngặt tại ${escapeHtml(pMuseum)}.`}</p>
@@ -5915,7 +5912,12 @@
                 ${enM ? "Compare two masterworks across brushwork, ink tonality, spatial distance, and philosophical intent." : "Đặt song song 2 danh tác để so sánh kỹ thuật bút pháp, cách dùng mực, không gian tam viễn và ý niệm triết học."}
               </p>
             </div>
-            <button type="button" class="modal-close-btn" data-action="close-painting-compare" aria-label="${enM ? "Close comparison" : "Đóng so sánh"}">${ICONS.close}</button>
+            <div style="display:flex;gap:0.4rem;align-items:center;flex-wrap:wrap;">
+              <button type="button" class="btn btn-secondary btn-sm" data-action="v3-compare-zoom-in">+ Zoom</button>
+              <button type="button" class="btn btn-secondary btn-sm" data-action="v3-compare-zoom-out">- Zoom</button>
+              <button type="button" class="btn btn-secondary btn-sm" data-action="v3-compare-zoom-reset">1:1</button>
+              <button type="button" class="modal-close-btn" data-action="close-painting-compare" aria-label="${enM ? "Close comparison" : "Đóng so sánh"}">${ICONS.close}</button>
+            </div>
           </div>
 
           <div class="painting-compare-grid">
@@ -5932,8 +5934,8 @@
                 </select>
               </div>
 
-              <div style="height:260px;background:#141413;border-radius:var(--radius-md);overflow:hidden;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;">
-                <img decoding="async"  src="${left.image}" alt="${escapeHtml(enM ? (left.titleEn || left.titleVi) : left.titleVi)}" style="max-width:100%;max-height:100%;object-fit:contain;" onerror="this.src='assets/images/museum/qianli-jiangshan.jpg'" />
+              <div style="height:260px;background:#141413;border-radius:var(--radius-md);overflow:auto;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;">
+                <img decoding="async" src="${left.image}" alt="${escapeHtml(enM ? (left.titleEn || left.titleVi) : left.titleVi)}" style="max-width:100%;max-height:100%;object-fit:contain;transform:scale(${window.CCE_GALLERY_V3 ? window.CCE_GALLERY_V3.getSyncCompareZoom() : 1});transform-origin:center;transition:transform 0.2s;" onerror="this.src='assets/images/museum/qianli-jiangshan.jpg'" />
               </div>
 
               <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.75rem;">
@@ -5980,8 +5982,8 @@
                 </select>
               </div>
 
-              <div style="height:260px;background:#141413;border-radius:var(--radius-md);overflow:hidden;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;">
-                <img decoding="async"  src="${right.image}" alt="${escapeHtml(enM ? (right.titleEn || right.titleVi) : right.titleVi)}" style="max-width:100%;max-height:100%;object-fit:contain;" onerror="this.src='assets/images/museum/qianli-jiangshan.jpg'" />
+              <div style="height:260px;background:#141413;border-radius:var(--radius-md);overflow:auto;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;">
+                <img decoding="async" src="${right.image}" alt="${escapeHtml(enM ? (right.titleEn || right.titleVi) : right.titleVi)}" style="max-width:100%;max-height:100%;object-fit:contain;transform:scale(${window.CCE_GALLERY_V3 ? window.CCE_GALLERY_V3.getSyncCompareZoom() : 1});transform-origin:center;transition:transform 0.2s;" onerror="this.src='assets/images/museum/qianli-jiangshan.jpg'" />
               </div>
 
               <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.75rem;">
@@ -6060,6 +6062,7 @@
               <button type="button" class="lightbox-tool-btn" data-action="speak-zh" data-zh="${escapeHtml(`${p.titleZh}。${p.featuredQuote ? p.featuredQuote.zh : ""}`)}" title="${enM ? "Recite title & classical colophon" : "Nghe đọc tên tranh và lời đề cổ điển"}">
                 ${enM ? "Recite Inscription" : "Đọc đề từ"}
               </button>
+              ${window.CCE_GALLERY_V3 ? window.CCE_GALLERY_V3.renderHandscrollHudControls(isScroll, enM) : ""}
               <button type="button" class="lightbox-tool-btn lightbox-tool-btn-primary" data-action="close-painting-zoom">${ICONS.close} ${enM ? "Close" : "Đóng"}</button>
             </div>
           </div>
@@ -6710,6 +6713,7 @@
   function renderMetaphysicsTab() {
     const enM = isEnglishUi();
     return `
+      ${window.CCE_GALLERY_V3 ? window.CCE_GALLERY_V3.renderLiveSolarTermWidget(enM) : ""}
       <div class="epistemic-box critical" style="margin-bottom:1.75rem;">
         <div class="epistemic-title">${escapeHtml(enVal(Metaphysics.epistemologyBanner, "title"))}</div>
         <p style="margin:0;">${escapeHtml(enVal(Metaphysics.epistemologyBanner, "description"))}</p>
@@ -7754,6 +7758,7 @@
               return `<button type="button" class="filter-pill ${activeCat === c.id ? "active" : ""}" data-action="set-classics-treasury" data-treasury="${c.id}">${escapeHtml(catLbl)} (${cnt})</button>`;
             }).join("")}
           </div>
+          ${window.CCE_GALLERY_V3 ? window.CCE_GALLERY_V3.renderClassicsColToggles(enM) : ""}
         </div>
 
         <div id="classics-results-slot">
@@ -7788,15 +7793,15 @@
                           <span style="font-size:0.75rem;font-weight:700;color:var(--imperial-red);letter-spacing:0.03em;">${escapeHtml(enVal(leadEx, "passageTitle") || (enM ? "Original Text Excerpt" : "Đoạn trích Nguyên điển"))}</span>
                           ${renderSpeakBtn(leadEx.hanziSc || "", enM ? "Listen to classical Chinese reading" : "Nghe đọc nguyên văn cổ tịch")}
                         </div>
-                        <div class="hanzi" style="font-size:1.12rem;line-height:1.62;color:var(--ink-primary);margin-bottom:0.3rem;">
-                          ${formatHanzi(leadEx.hanziSc || "", leadEx.hanziTc || leadEx.hanziSc || "")}
-                        </div>
-                        ${leadEx.pinyin ? `<div class="pinyin" style="font-size:0.81rem;margin-bottom:0.25rem;">${escapeHtml(leadEx.pinyin)}</div>` : ""}
-                        ${leadEx.hanViet ? `<div style="font-size:0.8rem;color:var(--jade-green);font-weight:600;margin-bottom:0.35rem;">${enM ? "Sino–Viet Reading:" : "Hán–Việt:"} ${escapeHtml(leadEx.hanViet)}</div>` : ""}
-                        ${enM
-                          ? `<p style="font-size:0.85rem;line-height:1.56;margin:0 0 0.25rem;"><strong>Translation:</strong> ${escapeHtml(leadEx.en || txt.excerptEn || "")}</p>`
-                          : `<p style="font-size:0.85rem;line-height:1.56;margin:0 0 0.25rem;"><strong>Dịch nghĩa:</strong> ${escapeHtml(leadEx.vi || "")}</p>`}
-                        ${(enM ? leadEx.commentaryEn : leadEx.commentary) ? `<p style="font-size:0.81rem;line-height:1.5;margin:0;color:var(--text-secondary);"><em>${enM ? "Commentary:" : "Bình chú:"}</em> ${escapeHtml(enVal(leadEx, "commentary"))}</p>` : ""}
+                        ${(() => {
+                          const cols = (window.CCE_GALLERY_V3 && window.CCE_GALLERY_V3.getClassicCols()) || { sc: true, tc: true, py: true, tr: true };
+                          let zhOut = "";
+                          if (cols.sc && leadEx.hanziSc) zhOut += `<div><span class="badge badge-outline" style="font-size:0.62rem;margin-right:0.3rem;">简</span>${escapeHtml(leadEx.hanziSc)}</div>`;
+                          if (cols.tc && (leadEx.hanziTc || leadEx.hanziSc)) zhOut += `<div style="color:var(--text-secondary);"><span class="badge badge-outline" style="font-size:0.62rem;margin-right:0.3rem;">繁</span>${escapeHtml(leadEx.hanziTc || leadEx.hanziSc)}</div>`;
+                          return zhOut ? `<div class="hanzi" style="font-size:1.1rem;line-height:1.62;color:var(--ink-primary);margin-bottom:0.3rem;">${zhOut}</div>` : "";
+                        })()}
+                        ${(!window.CCE_GALLERY_V3 || window.CCE_GALLERY_V3.getClassicCols().py) ? `${leadEx.pinyin ? `<div class="pinyin" style="font-size:0.81rem;margin-bottom:0.25rem;">${escapeHtml(leadEx.pinyin)}</div>` : ""}${leadEx.hanViet ? `<div style="font-size:0.8rem;color:var(--jade-green);font-weight:600;margin-bottom:0.35rem;">${enM ? "Sino–Viet Reading:" : "Hán–Việt:"} ${escapeHtml(leadEx.hanViet)}</div>` : ""}` : ""}
+                        ${(!window.CCE_GALLERY_V3 || window.CCE_GALLERY_V3.getClassicCols().tr) ? `${enM ? `<p style="font-size:0.85rem;line-height:1.56;margin:0 0 0.25rem;"><strong>Translation:</strong> ${escapeHtml(leadEx.en || txt.excerptEn || "")}</p>` : `<p style="font-size:0.85rem;line-height:1.56;margin:0 0 0.25rem;"><strong>Dịch nghĩa:</strong> ${escapeHtml(leadEx.vi || "")}</p>`}${(enM ? leadEx.commentaryEn : leadEx.commentary) ? `<p style="font-size:0.81rem;line-height:1.5;margin:0;color:var(--text-secondary);"><em>${enM ? "Commentary:" : "Bình chú:"}</em> ${escapeHtml(enVal(leadEx, "commentary"))}</p>` : ""}` : ""}
                         ${Array.isArray(leadEx.keyTerms) && leadEx.keyTerms.length ? `
                           <div style="display:flex;gap:0.35rem;flex-wrap:wrap;margin-top:0.55rem;">
                             ${leadEx.keyTerms.map((tid) => {
@@ -9217,7 +9222,10 @@
 
   function renderKnowledgeMapTab() {
     const graph = LearningResearch.knowledgeGraph;
-    const node = graph.nodes.find((n) => n.id === ui.activeKgNodeId) || graph.nodes[0];
+    const kCat = window.CCE_GALLERY_V3 ? window.CCE_GALLERY_V3.getKMapCat() : "all";
+    const scopedNodes = kCat === "all" ? graph.nodes : graph.nodes.filter((n) => (n.category || n.cluster || n.pillar || "").toLowerCase().includes(kCat) || normalizeText(n.desc + " " + n.label).includes(kCat === "sino-viet" ? "viet" : kCat === "philosophy" ? "triet" : kCat === "history" ? "su" : "hoa"));
+    const activePool = scopedNodes.length ? scopedNodes : graph.nodes;
+    const node = activePool.find((n) => n.id === ui.activeKgNodeId) || activePool[0];
 
     return `
       <div class="card">
@@ -9229,6 +9237,7 @@
           <span class="badge badge-gold">Knowledge Mapping</span>
         </div>
 
+        ${window.CCE_GALLERY_V3 ? window.CCE_GALLERY_V3.renderKMapFilterBar(isEnglishUi()) : ""}
         <div class="knowledge-graph-wrap" style="overflow-x:auto;margin:1rem 0;">
           ${Visuals.renderKnowledgeGraphSVG(graph, node.id)}
         </div>
@@ -10938,6 +10947,15 @@
     if (_fc3dMain && typeof _fc3dMain.initMountedCanvasIfAny === "function") {
       _fc3dMain.initMountedCanvasIfAny();
     }
+    if (window.CCE_ARTIFACTS_3D && typeof window.CCE_ARTIFACTS_3D.initMountedCanvasIfAny === "function") {
+      window.CCE_ARTIFACTS_3D.initMountedCanvasIfAny();
+    }
+    if (window.CCE_GALLERY_V3 && typeof window.CCE_GALLERY_V3.afterRender === "function") {
+      window.CCE_GALLERY_V3.afterRender();
+    }
+    if (!document.querySelector("[data-fc3d-mount]") && !document.getElementById("cce-artifact-3d-canvas") && !document.getElementById("cce-china-3d-canvas") && window.CCE_WEBGL_MGR) {
+      window.CCE_WEBGL_MGR.disposeAll();
+    }
   }
 
   function patchSlot(slotId, rendererFn) {
@@ -11009,6 +11027,16 @@
     const _fc3dRender = getForbiddenCity3D();
     if (_fc3dRender && typeof _fc3dRender.initMountedCanvasIfAny === "function") {
       _fc3dRender.initMountedCanvasIfAny();
+    }
+    if (window.CCE_ARTIFACTS_3D && typeof window.CCE_ARTIFACTS_3D.initMountedCanvasIfAny === "function") {
+      window.CCE_ARTIFACTS_3D.initMountedCanvasIfAny();
+      window.CCE_ARTIFACTS_3D.syncTiantanLang(state.uiLang);
+    }
+    if (window.CCE_GALLERY_V3 && typeof window.CCE_GALLERY_V3.afterRender === "function") {
+      window.CCE_GALLERY_V3.afterRender();
+    }
+    if (!document.querySelector("[data-fc3d-mount]") && !document.getElementById("cce-artifact-3d-canvas") && !document.getElementById("cce-china-3d-canvas") && window.CCE_WEBGL_MGR) {
+      window.CCE_WEBGL_MGR.disposeAll();
     }
   }
 
@@ -11900,6 +11928,56 @@
       case "v3-select-arch":
         if (window.CCE_V3_MODS) window.CCE_V3_MODS.setArchId(id);
         patchMainOnly();
+        break;
+
+      case "v3-toggle-tiantan":
+        if (window.CCE_ARTIFACTS_3D) window.CCE_ARTIFACTS_3D.toggleTiantan();
+        patchMainOnly();
+        break;
+
+      case "v3-select-3d-artifact":
+        if (window.CCE_ARTIFACTS_3D) window.CCE_ARTIFACTS_3D.setArtifact(id);
+        patchMainOnly();
+        break;
+
+      case "v3-set-3d-light":
+        if (window.CCE_ARTIFACTS_3D) window.CCE_ARTIFACTS_3D.setLighting(target.getAttribute("data-light"));
+        patchMainOnly();
+        break;
+
+      case "v3-craft-period":
+        ui.museumPeriodFilter = target.getAttribute("data-period") || "all";
+        patchMainOnly();
+        break;
+
+      case "v3-toggle-classic-col":
+        if (window.CCE_GALLERY_V3) window.CCE_GALLERY_V3.toggleClassicCol(target.getAttribute("data-col"));
+        patchMainOnly();
+        break;
+
+      case "v3-filter-kmap":
+        if (window.CCE_GALLERY_V3) window.CCE_GALLERY_V3.setKMapCat(target.getAttribute("data-cat"));
+        patchMainOnly();
+        break;
+
+      case "v3-toggle-loupe":
+        if (window.CCE_GALLERY_V3) window.CCE_GALLERY_V3.toggleLoupe();
+        renderModalsOnly();
+        break;
+
+      case "v3-compare-zoom-in":
+        if (window.CCE_GALLERY_V3) window.CCE_GALLERY_V3.stepSyncCompareZoom(0.35);
+        renderModalsOnly();
+        break;
+
+      case "v3-compare-zoom-out":
+        if (window.CCE_GALLERY_V3) window.CCE_GALLERY_V3.stepSyncCompareZoom(-0.35);
+        renderModalsOnly();
+        break;
+
+      case "v3-compare-zoom-reset":
+        if (window.CCE_GALLERY_V3) window.CCE_GALLERY_V3.resetSyncCompareZoom();
+        renderModalsOnly();
         break;
 
       case "v3-select-arch-callout":

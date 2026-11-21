@@ -1830,7 +1830,8 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       return;
     }
 
-    if (rt) {
+    function disposeRtInstance() {
+      if (!rt) return;
       try {
         if (rt.rafId) cancelAnimationFrame(rt.rafId);
         if (rt.ro) rt.ro.disconnect();
@@ -1842,6 +1843,10 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
         }
       } catch {}
       rt = null;
+    }
+    disposeRtInstance();
+    if (window.CCE_WEBGL_MGR && typeof window.CCE_WEBGL_MGR.register === "function") {
+      window.CCE_WEBGL_MGR.register("forbidden-city-3d", disposeRtInstance);
     }
 
     container.innerHTML = "";
