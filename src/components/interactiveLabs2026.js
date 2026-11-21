@@ -442,25 +442,89 @@
       `;
     },
 
+    getQuizPool() {
+      const base = QUIZ_ARENA_QUESTIONS.map((x) => ({
+        id: x.id,
+        pillar: x.pillar || "field",
+        topicVi: x.topicVi || "Thực địa 12306 & B2B",
+        topicEn: x.topicEn || "Field & Business",
+        hanzi: x.hanzi || "",
+        questionVi: x.questionVi,
+        questionEn: x.questionEn || x.questionVi,
+        optionsVi: x.optionsVi,
+        optionsEn: x.optionsEn || x.optionsVi,
+        correctIndex: x.correctIndex,
+        explainVi: x.explainVi || x.explanationVi || "",
+        explainEn: x.explainEn || x.explanationEn || ""
+      }));
+      const v3 = (window.CCE_QUIZ_ARENA_V3 || []).map((x) => ({
+        id: x.id,
+        pillar: x.pillar || "culture",
+        topicVi: x.topicVi || (x.pillar ? String(x.pillar).toUpperCase() : "Văn hóa"),
+        topicEn: x.topicEn || (x.pillar ? String(x.pillar).toUpperCase() : "Culture"),
+        hanzi: x.hanzi || "",
+        questionVi: x.questionVi,
+        questionEn: x.questionEn || x.questionVi,
+        optionsVi: x.optionsVi,
+        optionsEn: x.optionsEn || x.optionsVi,
+        correctIndex: x.correctIndex,
+        explainVi: x.explanationVi || x.explainVi || "",
+        explainEn: x.explanationEn || x.explainEn || ""
+      }));
+      const v4 = (window.CCE_V4_QUIZ || []).map((x) => ({
+        id: x.id,
+        pillar: x.pillar || "v4",
+        topicVi: x.topicVi || (x.pillar ? String(x.pillar).replace(/_/g, " ").toUpperCase() : "V4"),
+        topicEn: x.topicEn || (x.pillar ? String(x.pillar).replace(/_/g, " ").toUpperCase() : "V4"),
+        hanzi: x.hanzi || "",
+        questionVi: x.questionVi,
+        questionEn: x.questionEn || x.questionVi,
+        optionsVi: x.optionsVi,
+        optionsEn: x.optionsEn || x.optionsVi,
+        correctIndex: x.correctIndex,
+        explainVi: x.explanationVi || x.explainVi || "",
+        explainEn: x.explanationEn || x.explainEn || ""
+      }));
+      const full = base.concat(v3, v4);
+      const pFilter = this.state.quizPillarFilter || "all";
+      if (pFilter === "all") return full;
+      const scoped = full.filter((q) => (q.pillar || "").toLowerCase().includes(pFilter));
+      return scoped.length ? scoped : full;
+    },
+
+    getQuizCount() {
+      return this.getQuizPool().length;
+    },
+
     renderPracticeQuizArena(enMode) {
-      const q = QUIZ_ARENA_QUESTIONS[this.state.quizIdx % QUIZ_ARENA_QUESTIONS.length];
-      const total = QUIZ_ARENA_QUESTIONS.length;
+      const pool = this.getQuizPool();
+      const q = pool[this.state.quizIdx % pool.length];
+      const total = pool.length;
       const ansMap = this.state.quizAnsweredMap || {};
       const selected = ansMap[q.id];
       const isAnswered = typeof selected === "number";
       const isCorrect = isAnswered && selected === q.correctIndex;
       const best = Number(localStorage.getItem("cce_quiz_arena_best") || "0");
       const curScore = Object.keys(ansMap).filter((qid) => {
-        const qObj = QUIZ_ARENA_QUESTIONS.find((x) => x.id === qid);
+        const qObj = pool.find((x) => x.id === qid);
         return qObj && ansMap[qid] === qObj.correctIndex;
       }).length;
+      const activePillar = this.state.quizPillarFilter || "all";
+      const pillars = [
+        { id: "all", vi: "Tất cả", en: "All Pillars" },
+        { id: "history", vi: "Lịch sử", en: "History" },
+        { id: "philosophy", vi: "Triết học", en: "Philosophy" },
+        { id: "art", vi: "Nghệ thuật", en: "Arts" },
+        { id: "trade", vi: "Giao thương XNK", en: "Trade & Logistics" },
+        { id: "sino", vi: "Việt–Trung", en: "Sino–Viet" }
+      ];
 
       return `
         <section class="card" id="quiz-arena-box" style="margin-bottom:1.75rem;padding:1.25rem 1.35rem;border-top:4px solid var(--imperial-red);background:var(--bg-paper);">
-          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;margin-bottom:0.85rem;">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;margin-bottom:0.65rem;">
             <div>
-              <div class="editorial-kicker" style="color:var(--imperial-red);margin-bottom:0.2rem;">${enMode ? "5-MINUTE FIELD & LIUSHU QUIZ ARENA" : "ĐẤU TRƯỜNG THỰC CHIẾN 5 PHÚT · BIỂN BÁO 12306, LỤC THƯ & B2B"}</div>
-              <h3 style="margin:0;font-family:var(--font-editorial);font-size:1.35rem;">${enMode ? `Question ${this.state.quizIdx + 1} / ${total}` : `Câu ${this.state.quizIdx + 1} / ${total} — ${q.topicVi}`}</h3>
+              <div class="editorial-kicker" style="color:var(--imperial-red);margin-bottom:0.2rem;">${enMode ? "5-MINUTE FIELD & LIUSHU QUIZ ARENA" : "ĐẤU TRƯỜNG TRI THỨC 6 TRỤ CỘT · LỤC THƯ, SỬ HỌC & GIAO THƯƠNG"}</div>
+              <h3 style="margin:0;font-family:var(--font-editorial);font-size:1.35rem;">${enMode ? `Question ${(this.state.quizIdx % total) + 1} / ${total}` : `Câu ${(this.state.quizIdx % total) + 1} / ${total} — ${q.topicVi}`}</h3>
             </div>
             <div style="display:flex;gap:0.5rem;align-items:center;">
               <span class="badge badge-jade">${enMode ? `Score: ${curScore}/${total}` : `Điểm: ${curScore}/${total}`}</span>
@@ -469,9 +533,13 @@
             </div>
           </div>
 
+          <div style="display:flex;gap:0.35rem;flex-wrap:wrap;margin-bottom:0.75rem;">
+            ${pillars.map((pl) => `<button type="button" class="filter-pill ${activePillar === pl.id ? "active" : ""}" data-action="v3-arena-pillar" data-pillar="${pl.id}" style="font-size:0.74rem;padding:0.2rem 0.55rem;">${enMode ? pl.en : pl.vi}</button>`).join("")}
+          </div>
+
           <div style="display:flex;align-items:center;gap:0.65rem;flex-wrap:wrap;margin-bottom:0.65rem;">
-            <span class="hanzi" style="font-size:1.65rem;font-weight:800;color:var(--imperial-red);">${q.hanzi}</span>
-            <button type="button" class="tts-speak-btn" data-action="speak-zh" data-zh="${q.hanzi.split("·")[0].trim()}" title="Speak"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="width:0.88rem;height:0.88rem;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 010 7.07"/><path d="M19.07 4.93a10 10 0 010 14.14"/></svg></button>
+            ${q.hanzi ? `<span class="hanzi" style="font-size:1.65rem;font-weight:800;color:var(--imperial-red);">${q.hanzi}</span>` : ""}
+            ${q.hanzi ? `<button type="button" class="tts-speak-btn" data-action="speak-zh" data-zh="${q.hanzi.split("·")[0].trim()}" title="Speak"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="width:0.88rem;height:0.88rem;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 010 7.07"/><path d="M19.07 4.93a10 10 0 010 14.14"/></svg></button>` : ""}
             <span class="badge badge-outline">${enMode ? q.topicEn : q.topicVi}</span>
           </div>
 
@@ -539,15 +607,18 @@
       const done = (state.completedArticles || []).length;
       const saved = (state.vocabNotebook || []).length + (state.collectedVocab || []).length;
       const marks = (state.bookmarks || []).length;
+      const srsDue = window.CCE_SRS ? window.CCE_SRS.getDueCards().length : 0;
+      const srsTotal = window.CCE_SRS ? window.CCE_SRS.loadDeck().length : 0;
       return `
         <section class="card" id="offline-study-passport" style="margin-top:1.5rem;padding:1.2rem 1.35rem;border-left:4px solid var(--antique-gold);background:var(--bg-paper);">
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;">
             <div>
-              <div class="editorial-kicker" style="color:var(--antique-gold);margin-bottom:0.2rem;">${enMode ? "OFFLINE-FIRST STUDY PASSPORT (.JSON)" : "HỘ CHIẾU VĂN HIẾN CÁ NHÂN (ĐỒNG BỘ OFFLINE KHÔNG CẦN ĐĂNG NHẬP)"}</div>
-              <h4 style="margin:0 0 0.25rem;font-size:1.15rem;">${enMode ? `Portable Study Archive · ${done} Essays · ${saved} Terms · ${marks} Bookmarks` : `Hồ sơ Tự Học Độc Lập · ${done} Bài đã đọc · ${saved} Từ vựng · ${marks} Mục đã lưu`}</h4>
-              <p style="margin:0;font-size:0.82rem;color:var(--text-secondary);">${enMode ? "Export your reading log, flashcards, and quiz records as a clean .json file or import onto any device." : "Xuất toàn bộ tiến độ đọc, sổ tay chữ Hán, ghi chú và kỷ lục trắc nghiệm ra file .json để chuyển sang máy khác hoàn toàn offline."}</p>
+              <div class="editorial-kicker" style="color:var(--antique-gold);margin-bottom:0.2rem;">${enMode ? "OFFLINE-FIRST STUDY PASSPORT & SRS (.JSON / ANKI .CSV)" : "HỘ CHIẾU VĂN HIẾN & THẺ NHỚ SM-2 CÁ NHÂN (OFFLINE KHÔNG CẦN ĐĂNG NHẬP)"}</div>
+              <h4 style="margin:0 0 0.25rem;font-size:1.15rem;">${enMode ? `Portable Study Archive · ${done} Essays · ${saved} Terms · ${srsDue}/${srsTotal} SRS Due · ${marks} Bookmarks` : `Hồ sơ Tự Học · ${done} Bài đã đọc · ${saved} Từ vựng · ${srsDue}/${srsTotal} Thẻ SM-2 đến hạn · ${marks} Đã lưu`}</h4>
+              <p style="margin:0;font-size:0.82rem;color:var(--text-secondary);">${enMode ? "Export your reading log, flashcards, and SM-2 schedule as JSON or 4-column Anki CSV (Hanzi/Pinyin/EN/VI)." : "Xuất toàn bộ tiến độ đọc, thẻ nhớ SM-2, ghi chú ra file .json hoặc xuất bộ thẻ Anki 4 cột UTF-8 BOM (Hán–Pinyin–Anh–Việt)."}</p>
             </div>
             <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;">
+              <button type="button" class="btn btn-jade btn-sm" data-action="srs-export-anki">${enMode ? "Anki 4-Col .CSV" : "Xuất Anki .CSV"}</button>
               <button type="button" class="btn btn-primary btn-sm" data-action="export-study-passport">${enMode ? "Export Passport .JSON" : "Xuất Hộ chiếu .JSON"}</button>
               <label class="btn btn-secondary btn-sm" style="cursor:pointer;margin:0;">
                 ${enMode ? "Import .JSON" : "Khôi phục .JSON"}

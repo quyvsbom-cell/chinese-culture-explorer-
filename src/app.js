@@ -8596,7 +8596,7 @@
           <div class="tabs-bar">
             <button type="button" class="tab-btn ${tab === "dashboard" ? "active" : ""}" data-action="set-learn-tab" data-tab="dashboard">${enL ? "A. Dashboard" : "A. Bảng điều khiển"}</button>
             <button type="button" class="tab-btn ${tab === "dictionary" ? "active" : ""}" data-action="set-learn-tab" data-tab="dictionary">${enL ? `B. Liushu Lexicon (${Dictionary.length})` : `B. Từ điển Văn hóa (${Dictionary.length})`}</button>
-            <button type="button" class="tab-btn ${tab === "survival" ? "active" : ""}" data-action="set-learn-tab" data-tab="survival">${enL ? "C. Survival Hanzi (6 Packs)" : "C. Hành trang Sinh tồn (6 Bộ)"}</button>
+            <button type="button" class="tab-btn ${tab === "survival" ? "active" : ""}" data-action="set-learn-tab" data-tab="survival">${(() => { const pCnt = ((window.CCE_SURVIVAL_PACKS && window.CCE_SURVIVAL_PACKS.packs) || []).length || 10; return enL ? `C. Survival Hanzi (${pCnt} Packs)` : `C. Hành trang Sinh tồn (${pCnt} Bộ)`; })()}</button>
             <button type="button" class="tab-btn ${tab === "flashcards" ? "active" : ""}" data-action="set-learn-tab" data-tab="flashcards">${enL ? `D. Vocabulary &amp; Reading Notebook (${notebookCount})` : `D. Sổ tay Từ vựng (${notebookCount})`}</button>
             <button type="button" class="tab-btn ${tab === "kmap" ? "active" : ""}" data-action="set-learn-tab" data-tab="kmap">${enL ? "E. Knowledge Map" : "E. Bản đồ Tri thức"}</button>
             <button type="button" class="tab-btn ${tab === "quiz" ? "active" : ""}" data-action="set-learn-tab" data-tab="quiz">${enL ? "F. Quiz &amp; Feynman" : "F. Trắc nghiệm &amp; Feynman"}</button>
@@ -8629,7 +8629,7 @@
         <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.85rem;">
           <div>
             <div class="editorial-kicker" style="color:var(--jade-green);margin-bottom:0.2rem;">${enL ? "PRE-DEPARTURE SURVIVAL HANZI PACKS · LIUSHU LOGIC" : "HÀNH TRANG CHỮ HÁN THỰC CHIẾN · 六书实用汉字备忘"}</div>
-            <h2 style="font-family:var(--font-editorial);font-size:1.55rem;margin:0 0 0.35rem;">${enL ? `6 Field Survival Hanzi Packs (${totalCount} Core Signage & Rail Phrases)` : `6 Bộ Chữ Hán Sinh Tồn Trước Giờ Bay (${totalCount} Cụm Từ Cốt Lõi Theo Logic Lục Thư)`}</h2>
+            <h2 style="font-family:var(--font-editorial);font-size:1.55rem;margin:0 0 0.35rem;">${enL ? `${packs.length} Field Survival Hanzi Packs (${totalCount} Core Signage & Rail Phrases)` : `${packs.length} Bộ Chữ Hán Sinh Tồn Trước Giờ Bay (${totalCount} Cụm Từ Cốt Lõi Theo Logic Lục Thư)`}</h2>
             <p style="margin:0;font-size:0.88rem;color:var(--text-secondary);max-width:74ch;">
               ${enL
                 ? "Instead of rote memorization, every 12306 station sign, museum rule, menu option, and police term is unpacked via Six Writings radical logic. Toggle <strong>Zero-Pinyin Active Recall</strong> to test instant visual recognition before flying."
@@ -8645,8 +8645,8 @@
           </div>
         </div>
 
-        <div class="filter-bar" style="margin-top:0.95rem;margin-bottom:0;" role="tablist" aria-label="${enL ? "Filter 6 Survival Packs" : "Lọc 6 bộ sinh tồn"}">
-          <button type="button" class="filter-pill ${filterId === "all" ? "active" : ""}" data-action="set-survival-pack" data-pack="all">${enL ? `All 6 Packs (${totalCount})` : `Tất cả 6 Bộ (${totalCount})`}</button>
+        <div class="filter-bar" style="margin-top:0.95rem;margin-bottom:0;" role="tablist" aria-label="${enL ? `Filter ${packs.length} Survival Packs` : `Lọc ${packs.length} bộ sinh tồn`}">
+          <button type="button" class="filter-pill ${filterId === "all" ? "active" : ""}" data-action="set-survival-pack" data-pack="all">${enL ? `All ${packs.length} Packs (${totalCount})` : `Tất cả ${packs.length} Bộ (${totalCount})`}</button>
           ${packs.map((pk) => `
             <button type="button" class="filter-pill ${filterId === pk.id ? "active" : ""}" data-action="set-survival-pack" data-pack="${escapeHtml(pk.id)}">
               ${enL ? `Pack ${escapeHtml(pk.number)}: ${escapeHtml(pk.titleEn || pk.titleVi)}` : `Bộ ${escapeHtml(pk.number)}: ${escapeHtml(pk.titleVi)}`} (${(pk.items || []).length})
@@ -8934,8 +8934,10 @@
                   <p style="font-size:0.88rem;margin-bottom:0.3rem;"><strong>VI:</strong> ${escapeHtml(t.vietnamese)}</p>
                   <p style="font-size:0.85rem;margin-bottom:0.5rem;"><strong>EN:</strong> ${escapeHtml(t.english)}</p>
                   <p style="font-size:0.82rem;color:var(--text-muted);"><strong>Bộ thủ:</strong> ${escapeHtml(t.radical)}</p>
-                  <div class="card-footer-row">
-                    <button type="button" class="btn btn-primary btn-sm" data-action="open-term" data-id="${t.id}">Chiết tự &amp; ${(t.examples || []).length} Ví dụ →</button>
+                  <div class="card-footer-row" style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+                    <button type="button" class="btn btn-primary btn-sm" style="flex:1;" data-action="open-term" data-id="${t.id}">Chiết tự &amp; ${(t.examples || []).length} Ví dụ →</button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-action="open-stroke-pad" data-hanzi="${escapeHtml(t.hanzi)}" data-pinyin="${escapeHtml(t.pinyin || "")}" title="Tập viết Ô Mễ Tự 米字格">米字格</button>
+                    <button type="button" class="btn btn-jade btn-sm" data-action="add-term-to-srs" data-id="${t.id}" title="Lưu vào Ôn tập SM-2">+ SRS</button>
                   </div>
                 </article>
               `;
@@ -8989,6 +8991,7 @@
       <div id="dict-results-slot">
         ${renderDictionaryResultsContent()}
       </div>
+      ${window.CCE_LEARNING_V3 ? window.CCE_LEARNING_V3.renderFalseFriendsPanel(isEnglishUi()) : ""}
     `;
   }
 
@@ -9054,6 +9057,7 @@
         </p>
       </div>
 
+      ${window.CCE_SRS ? window.CCE_SRS.renderReviewer(enL) : ""}
       <!-- PART 1: PERSONAL READING NOTEBOOK -->
       <div class="card mb-2" style="border-color:var(--border-gold);">
         <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0.75rem;margin-bottom:1rem;">
@@ -10292,6 +10296,12 @@
             <button type="button" class="btn btn-secondary btn-sm" data-action="add-term-to-notebook" data-id="${t.id}">
               + ${isEnglishUi() ? "Save with Note to Reading Notebook" : "Lưu kèm ghi chú vào Sổ tay"}
             </button>
+            <button type="button" class="btn btn-secondary btn-sm" data-action="open-stroke-pad" data-hanzi="${escapeHtml(t.hanzi)}" data-pinyin="${escapeHtml(t.pinyin || "")}">
+              米字格 ${isEnglishUi() ? "Stroke Practice" : "Tập viết Bút lông"}
+            </button>
+            <button type="button" class="btn btn-jade btn-sm" data-action="add-term-to-srs" data-id="${t.id}">
+              + ${isEnglishUi() ? "Add to SM-2 SRS" : "Nạp Thẻ SM-2"}
+            </button>
           </div>
 
           <div class="grid grid-2" style="gap:0.9rem;margin-bottom:1rem;">
@@ -10836,6 +10846,7 @@
       ui.lightboxOpen ||
       ui.activeEditorialImageId ||
       (ui.customModalImage && ui.customModalImage.src) ||
+      (window.CCE_STROKE_PAD && window.CCE_STROKE_PAD.isOpen()) ||
       document.querySelector("#cce-modal-root .modal-backdrop.open")
     );
   }
@@ -10856,6 +10867,7 @@
       ${renderCustomImageModal()}
       ${window.CCE_LABS_EXT ? window.CCE_LABS_EXT.renderInlineGlossModal(isEnglishUi()) : ""}
       ${renderVocabSelectionPopover()}
+      ${window.CCE_STROKE_PAD ? window.CCE_STROKE_PAD.renderModal(isEnglishUi()) : ""}
     `;
   }
 
@@ -10865,6 +10877,9 @@
     if (prevModalScroll > 0 && modalRoot) {
       const nextModalEl = modalRoot.querySelector(".modal-panel, .painting-detail-modal-stage, .lightbox-stage");
       if (nextModalEl) nextModalEl.scrollTop = prevModalScroll;
+    }
+    if (window.CCE_STROKE_PAD && window.CCE_STROKE_PAD.bindIfOpen) {
+      window.CCE_STROKE_PAD.bindIfOpen();
     }
     if (ui.paintingZoomOpen) {
       const zCanvas = document.getElementById("painting-zoom-canvas");
@@ -11778,11 +11793,20 @@
       case "arena-step": {
         if (window.CCE_LABS) {
           const dir = Number(target.getAttribute("data-dir") || 1);
-          window.CCE_LABS.state.quizIdx = (window.CCE_LABS.state.quizIdx + dir + 8) % 8;
+          const poolLen = Math.max(1, window.CCE_LABS.getQuizCount ? window.CCE_LABS.getQuizCount() : 8);
+          window.CCE_LABS.state.quizIdx = (window.CCE_LABS.state.quizIdx + dir + poolLen) % poolLen;
         }
         patchMainOnly();
         break;
       }
+
+      case "v3-arena-pillar":
+        if (window.CCE_LABS) {
+          window.CCE_LABS.state.quizPillarFilter = target.getAttribute("data-pillar") || "all";
+          window.CCE_LABS.state.quizIdx = 0;
+        }
+        patchMainOnly();
+        break;
 
       case "arena-reset":
         if (window.CCE_LABS) {
@@ -11834,23 +11858,10 @@
       }
 
       case "export-study-passport": {
-        const st = Store.getState();
-        const payload = {
-          version: "CCE-Passport-2026",
-          exportedAt: new Date().toISOString(),
-          quizArenaBest: localStorage.getItem("cce_quiz_arena_best") || "0",
-          storeState: st
-        };
-        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json;charset=utf-8;" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = `cce_study_passport_${new Date().toISOString().slice(0, 10)}.json`;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
-        showToast(isEnglishUi() ? "Exported Offline Study Passport .JSON!" : "Đã xuất file Hộ chiếu Tri thức .JSON!");
+        if (window.CCE_EXPORTERS) {
+          window.CCE_EXPORTERS.exportPassportBackup(Store.getState());
+          showToast(isEnglishUi() ? "Exported Full Study Passport & SM-2 Backup .JSON!" : "Đã xuất Hộ chiếu Tri thức & Thẻ SM-2 (.JSON)!");
+        }
         break;
       }
 
@@ -11973,6 +11984,82 @@
       case "v3-compare-zoom-out":
         if (window.CCE_GALLERY_V3) window.CCE_GALLERY_V3.stepSyncCompareZoom(-0.35);
         renderModalsOnly();
+        break;
+
+      case "srs-toggle-zero-pinyin":
+        if (window.CCE_SRS) window.CCE_SRS.toggleZeroPinyin();
+        patchMainOnly();
+        break;
+
+      case "srs-reveal":
+        if (window.CCE_SRS) window.CCE_SRS.reveal(id);
+        patchMainOnly();
+        break;
+
+      case "srs-grade":
+        if (window.CCE_SRS) {
+          window.CCE_SRS.gradeCard(id, target.getAttribute("data-grade"));
+          window.CCE_SRS.clearReveal();
+        }
+        patchMainOnly();
+        break;
+
+      case "srs-export-anki": {
+        const n = window.CCE_EXPORTERS ? window.CCE_EXPORTERS.exportSrsToAnki("csv") : 0;
+        showToast(n ? (isEnglishUi() ? `Exported ${n} trilingual SRS cards to Anki .CSV!` : `Đã xuất ${n} thẻ SM-2 tam ngữ ra Anki .CSV!`) : "Chưa có thẻ SM-2 nào.");
+        break;
+      }
+
+      case "add-term-to-srs": {
+        const t = getTermById(id);
+        if (t && window.CCE_SRS) {
+          const r = window.CCE_SRS.addCard({
+            id: "dict-" + t.id,
+            hanzi: t.hanzi,
+            pinyin: t.pinyin,
+            hanViet: t.hanViet,
+            meaningVi: t.vietnamese,
+            meaningEn: t.english,
+            source: "Liushu Dictionary"
+          });
+          showToast(r.added ? (isEnglishUi() ? `Added "${t.hanzi}" to SM-2 SRS deck!` : `Đã thêm "${t.hanzi}" vào bộ ôn tập SM-2!`) : (isEnglishUi() ? `"${t.hanzi}" is already in your SRS deck.` : `"${t.hanzi}" đã có trong bộ thẻ SM-2.`));
+        }
+        break;
+      }
+
+      case "open-stroke-pad":
+        if (window.CCE_STROKE_PAD) {
+          window.CCE_STROKE_PAD.open(target.getAttribute("data-hanzi") || "和", target.getAttribute("data-pinyin") || "");
+          renderModalsOnly();
+        }
+        break;
+
+      case "close-stroke-pad":
+        if (window.CCE_STROKE_PAD) window.CCE_STROKE_PAD.close();
+        renderModalsOnly();
+        break;
+
+      case "stroke-pad-undo":
+        if (window.CCE_STROKE_PAD) window.CCE_STROKE_PAD.undo();
+        break;
+
+      case "stroke-pad-clear":
+        if (window.CCE_STROKE_PAD) window.CCE_STROKE_PAD.clear();
+        break;
+
+      case "stroke-pad-ghost":
+        if (window.CCE_STROKE_PAD) window.CCE_STROKE_PAD.toggleGhost();
+        renderModalsOnly();
+        break;
+
+      case "v3-ff-ctx":
+        if (window.CCE_LEARNING_V3) window.CCE_LEARNING_V3.setContext(target.getAttribute("data-ctx"));
+        patchMainOnly();
+        break;
+
+      case "v3-ff-flip":
+        if (window.CCE_LEARNING_V3) window.CCE_LEARNING_V3.toggleFlip(id);
+        patchMainOnly();
         break;
 
       case "v3-compare-zoom-reset":
@@ -12717,8 +12804,13 @@
       const reader = new FileReader();
       reader.onload = () => {
         try {
-          const data = JSON.parse(String(reader.result || "{}"));
-          if (Store && Store.importPassportSnapshot && Store.importPassportSnapshot(data)) {
+          const rawJson = String(reader.result || "{}");
+          const data = JSON.parse(rawJson);
+          if (data && data.schema === "cce-passport-v1" && window.CCE_EXPORTERS) {
+            const res = window.CCE_EXPORTERS.restorePassportBackup(rawJson);
+            showToast(isEnglishUi() ? `Restored Study Passport & ${res.srsCount} SRS cards!` : `Đã khôi phục Hộ chiếu & ${res.srsCount} thẻ SM-2!`);
+            render();
+          } else if (Store && Store.importPassportSnapshot && Store.importPassportSnapshot(data)) {
             showToast(isEnglishUi() ? "Imported Study Passport cleanly!" : "Đã khôi phục Hộ chiếu Văn hiến thành công!");
             render();
           } else {
@@ -12983,6 +13075,16 @@
           articleTitle: pop.articleTitle || "",
           note
         });
+        if (window.CCE_SRS) {
+          window.CCE_SRS.addCard({
+            hanzi: term,
+            pinyin: dictHit ? (dictHit.pinyin || "") : "",
+            hanViet: dictHit ? (dictHit.hanViet || "") : "",
+            meaningVi: dictHit ? (dictHit.vietnamese || "") : (note || "Lưu từ bài viết"),
+            meaningEn: dictHit ? (dictHit.english || "") : "",
+            source: pop.articleTitle || "Reading Capture"
+          });
+        }
         ui.vocabSelectionPopup = null;
         showToast(isEnglishUi()
           ? `Saved "${term}" with context & note to Vocabulary Notebook!`
@@ -13107,8 +13209,17 @@
         e.preventDefault();
         stepEditorialLightbox(e.key === "ArrowLeft" ? -1 : 1);
       }
+    } else if (["1", "2", "3", "4"].includes(e.key) && window.CCE_SRS && document.getElementById("cce-srs-deck-widget")) {
+      const tag = document.activeElement ? document.activeElement.tagName : "";
+      if (!["INPUT", "TEXTAREA", "SELECT"].includes(tag)) {
+        const gradeBtn = document.querySelector(`[data-action="srs-grade"][data-grade="${e.key}"]`);
+        if (gradeBtn) gradeBtn.click();
+      }
     } else if (e.key === "Escape") {
-      if (ui.vocabSelectionPopup) {
+      if (window.CCE_STROKE_PAD && window.CCE_STROKE_PAD.isOpen()) {
+        window.CCE_STROKE_PAD.close();
+        renderModalsOnly();
+      } else if (ui.vocabSelectionPopup) {
         ui.vocabSelectionPopup = null;
         renderModalsOnly();
       } else if (ui.updatesModalOpen) {
