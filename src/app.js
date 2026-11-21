@@ -857,7 +857,18 @@
 
   function getLangPack() {
     const lang = Store.getState().uiLang || "vi";
-    return UI_I18N[lang] || UI_I18N.vi;
+    const base = UI_I18N[lang] || UI_I18N.vi;
+    const ext = window.CCE_UI_I18N_ZH && window.CCE_UI_I18N_ZH[lang];
+    if (!ext) return base;
+    return {
+      ...base,
+      mastheadNote: (ext.meta && ext.meta.siteSubtitle) || base.mastheadNote,
+      searchBtn: (ext.common && ext.common.searchButton) || base.searchBtn,
+      searchPlaceholder: (ext.common && ext.common.searchPlaceholder) || base.searchPlaceholder,
+      themeLight: (ext.settings && ext.settings.themeLight) || base.themeLight,
+      themeDark: (ext.settings && ext.settings.themeDark) || base.themeDark,
+      footerSubtitle: (ext.footer && ext.footer.openSourceNote) || base.footerSubtitle
+    };
   }
 
   function getNavLabel(item) {
@@ -4782,6 +4793,8 @@
                   </div>
                 </section>
 
+                ${window.CCE_V3_W5 ? window.CCE_V3_W5.renderArticleComprehension(art, enM, Dictionary) : ""}
+
                 ${renderCategorizedReferencesSection(v.references || [], enM, art)}
 
                 <h3 style="margin-top:2.5rem;">${enM ? "Related Monographs" : "Đọc tiếp chuyên luận liên quan"}</h3>
@@ -6667,6 +6680,7 @@
               </table>
             </div>
           </div>
+          ${window.CCE_V3_W5 ? window.CCE_V3_W5.renderConceptPairsStudio(enM) : ""}
         </div>
       </section>
     `;
@@ -7692,6 +7706,7 @@
                 .join("")}
             </div>
           </div>
+          ${window.CCE_V3_W5 ? window.CCE_V3_W5.renderB2BExpansion(enB) : ""}
         </div>
       </section>
     `;
@@ -8205,6 +8220,8 @@
           </article>
         `).join("")}
       </div>
+
+      ${window.CCE_V3_W5 ? window.CCE_V3_W5.renderCompendiaSvgDiagrams(isEnglishUi()) : ""}
 
       <!-- Deep Module A: China's AI Revolution & Semiconductors 2026 -->
       <div class="card mb-2" style="border-color:var(--border-gold);">
@@ -10904,6 +10921,9 @@
     if (typeof updateDocumentSeoMeta === "function") {
       updateDocumentSeoMeta();
     }
+    if (window.CCE_V3_W5 && typeof window.CCE_V3_W5.onModalSync === "function") {
+      window.CCE_V3_W5.onModalSync(hasAnyOpenModalState());
+    }
   }
 
   function renderModalsOnly() {
@@ -13370,10 +13390,15 @@
     const state = Store.getState();
     const activePage = state.activePage || "home";
     const enSeo = isEnglishUi();
+    const aCnt = Articles.length;
+    const pCnt = PaintingsList.length;
+    const mCnt = (Museum.artifacts || []).length;
+    const cCnt = (Philosophy && Philosophy.classicalTexts ? Philosophy.classicalTexts.length : 30);
+    const dCnt = Dictionary.length;
     let title = "CHINESE CULTURE EXPLORER – 中国文化探索";
     let description = enSeo
-      ? "Explore Chinese Civilization: 65 scholarly monographs, 30 Four Treasuries classics, 54 painting masterpieces, 37 digital museum artifacts, and 34 provincial dossiers."
-      : "Khám phá văn minh Trung Hoa: 65 chuyên luận khảo cứu, 30 cổ tịch Tứ Khố, 54 kiệt tác quốc họa, 37 bảo vật bảo tàng và hồ sơ địa văn hóa 34 tỉnh thành.";
+      ? `Explore Chinese Civilization: ${aCnt} scholarly monographs, ${cCnt} Four Treasuries classics, ${pCnt} painting masterpieces, ${mCnt} digital museum artifacts, and 34 provincial dossiers.`
+      : `Khám phá văn minh Trung Hoa: ${aCnt} chuyên luận khảo cứu, ${cCnt} cổ tịch Tứ Khố, ${pCnt} kiệt tác quốc họa, ${mCnt} bảo vật bảo tàng và hồ sơ địa văn hóa 34 tỉnh thành.`;
     let canonicalPath = CLEAN_PAGE_PATHS[activePage] || "/";
     let ogImageSrc = "assets/images/museum/forbidden-city-imperial-axis-gate.jpg";
     const isRasterSrc = (s) => Boolean(s) && !/\.svg(?:$|\?)/i.test(String(s));
@@ -13461,30 +13486,30 @@
       }
     } else {
       const pageTitles = enSeo ? {
-        explore: "65 Monographs &amp; Knowledge Directory | CHINESE CULTURE EXPLORER".replace(/&amp;/g, "&"),
+        explore: `${aCnt} Monographs & Knowledge Directory | CHINESE CULTURE EXPLORER`,
         history: "14-Dynasty History & Comparative Chrono-Axis | CHINESE CULTURE EXPLORER",
         philosophy: "Chinese Philosophy, Four Books & Five Classics | CHINESE CULTURE EXPLORER",
         traditional: "Traditional Architecture, Heritage & Etiquette | CHINESE CULTURE EXPLORER",
-        library: "30 Four Treasuries Classics & Research Library | CHINESE CULTURE EXPLORER",
-        paintings: "54 Chinese Painting Masterpieces & Zoom Inspection | CHINESE CULTURE EXPLORER",
-        museum: "Digital Museum of 37 National Treasures | CHINESE CULTURE EXPLORER",
+        library: `${cCnt} Four Treasuries Classics & Research Library | CHINESE CULTURE EXPLORER`,
+        paintings: `${pCnt} Chinese Painting Masterpieces & Zoom Inspection | CHINESE CULTURE EXPLORER`,
+        museum: `Digital Museum of ${mCnt} National Treasures | CHINESE CULTURE EXPLORER`,
         regions: "34 Provincial Divisions & 16 Historic Cities | CHINESE CULTURE EXPLORER",
         "sino-vietnam": "China–Vietnam Cultural & Commercial Heritage | CHINESE CULTURE EXPLORER",
         business: "Chinese Business Etiquette & RCEP Strategy | CHINESE CULTURE EXPLORER",
-        learning: "520+ Liushu Etymology Dictionary & Study Academy | CHINESE CULTURE EXPLORER",
+        learning: `${dCnt} Liushu Etymology Dictionary & Study Academy | CHINESE CULTURE EXPLORER`,
         about: "About the Project & Founder's Note — Lê Hưng Thịnh | CHINESE CULTURE EXPLORER"
       } : {
-        explore: "65 Chuyên luận & Mục lục Tri thức | CHINESE CULTURE EXPLORER",
+        explore: `${aCnt} Chuyên luận & Mục lục Tri thức | CHINESE CULTURE EXPLORER`,
         history: "Lịch sử 14 Triều đại & Trục Niên biểu So sánh | CHINESE CULTURE EXPLORER",
         philosophy: "Triết học Trung Hoa, Tứ Thư & Ngũ Kinh | CHINESE CULTURE EXPLORER",
         traditional: "Kiến trúc Cổ, Di sản & Lễ nghi Truyền thống | CHINESE CULTURE EXPLORER",
-        library: "Thư viện 30 Cổ tịch Tứ Khố & Nghiên cứu | CHINESE CULTURE EXPLORER",
-        paintings: "54 Kiệt tác Quốc họa & Giám định Zoom | CHINESE CULTURE EXPLORER",
-        museum: "Bảo tàng Số 37 Bảo vật Quốc gia | CHINESE CULTURE EXPLORER",
+        library: `Thư viện ${cCnt} Cổ tịch Tứ Khố & Nghiên cứu | CHINESE CULTURE EXPLORER`,
+        paintings: `${pCnt} Kiệt tác Quốc họa & Giám định Zoom | CHINESE CULTURE EXPLORER`,
+        museum: `Bảo tàng Số ${mCnt} Bảo vật Quốc gia | CHINESE CULTURE EXPLORER`,
         regions: "34 Tỉnh/Thành & 16 Đô thị Lịch sử Trung Hoa | CHINESE CULTURE EXPLORER",
         "sino-vietnam": "Giao lưu Văn hóa & Thương mại Trung – Việt | CHINESE CULTURE EXPLORER",
         business: "Văn hóa Kinh doanh & Đàm phán B2B | CHINESE CULTURE EXPLORER",
-        learning: "Từ điển Lục thư 520+ Mục từ & Sổ tay Từ vựng | CHINESE CULTURE EXPLORER",
+        learning: `Từ điển Lục thư ${dCnt} Mục từ & Sổ tay Từ vựng | CHINESE CULTURE EXPLORER`,
         about: "Về Dự án & Tâm thư Sáng lập viên Lê Hưng Thịnh | CHINESE CULTURE EXPLORER"
       };
       if (pageTitles[activePage]) title = pageTitles[activePage];
@@ -13728,8 +13753,11 @@
       Store.setUiLang(qpLang);
     }
   } catch {}
+  window.CCE_RENDER = render;
   applyRouteFromLocation();
-  Auth.init();
+  if (/#(?:access_token|confirmation_token|invite_token|recovery_token|email_change_token|error)=/i.test(window.location.hash || "")) {
+    Auth.init();
+  }
   render();
   hydratePageBundles(Store.getState().activePage || "home", Store.getState().uiLang || "vi", {
     needs3d: ui.activeArticleId === "forbidden-city-3d-dissection"
