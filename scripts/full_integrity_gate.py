@@ -122,6 +122,7 @@ def main() -> int:
             "civilizationAtlas.js", "china3DMap.js", "dougongJoinery3D.js",
             "vernacular3DStudio.js", "euChinaLogistics3D.js", "hydraulic3DStudio.js",
             "armillary3DStudio.js", "artifacts3DExtra.js", "studioHub3D.js",
+            "v4UXEnhancements.js", "travelUXHub.js",
             "srsEngine.js", "exporters.js", "lazyLoader.js"
         }
     ]

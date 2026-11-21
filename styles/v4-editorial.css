@@ -1,0 +1,245 @@
+/* ============================================================================
+   CHINESE CULTURE EXPLORER V4.0 — Global Editorial UI/UX Refinements
+   Strict 0px-2px Museum Editorial Geometry · Zero AI-Slop Colors · Mobile Safe
+   ============================================================================ */
+
+/* 1. Calm Compact 60px Scrolled Header Transition */
+body.is-scrolled .primary-nav-bar {
+  min-height: 58px;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  box-shadow: 0 2px 10px rgba(20, 18, 15, 0.08);
+}
+
+body.is-scrolled .brand-seal {
+  width: 34px;
+  height: 34px;
+  font-size: 0.62rem;
+}
+
+/* 2. NatGeo / Google Arts 4 Intent Cards + Recently Viewed Shelf */
+.cce-intent-strip {
+  padding: 1.35rem 0;
+  border-bottom: 1px solid var(--hairline);
+  background: var(--bg-paper);
+}
+
+.cce-intent-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.cce-intent-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 0.95rem 1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: border-color 0.16s ease, transform 0.16s ease;
+  color: var(--ink-primary);
+}
+
+.cce-intent-card:hover {
+  border-color: var(--imperial-red);
+  transform: translateY(-2px);
+}
+
+.cce-intent-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--imperial-red);
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
+
+.cce-intent-title {
+  font-family: var(--font-editorial);
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin-bottom: 0.28rem;
+  line-height: 1.25;
+}
+
+.cce-intent-desc {
+  font-size: 0.79rem;
+  color: var(--text-secondary);
+  line-height: 1.42;
+}
+
+.cce-recent-shelf {
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--hairline);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+/* 3. FT / Monocle 68ch Reading Room + Reading Theme Presets + Split-View */
+.cce-reading-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.55rem;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.85rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  font-size: 0.78rem;
+}
+
+body.cce-read-sepia .editorial-article-main {
+  background: #f4ecd8;
+  color: #2b2419;
+  padding: 1.25rem;
+  border: 1px solid #dfd2b5;
+}
+
+body.cce-read-night .editorial-article-main {
+  background: #171614;
+  color: #e8e2d6;
+  padding: 1.25rem;
+  border: 1px solid #2e2c28;
+}
+
+body.cce-read-night .editorial-article-main .article-prose,
+body.cce-read-night .editorial-article-main p,
+body.cce-read-night .editorial-article-main h2,
+body.cce-read-night .editorial-article-main h3 {
+  color: #e8e2d6;
+}
+
+.article-prose {
+  max-width: 68ch;
+}
+
+.cce-split-bilingual {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  padding: 1rem;
+  margin: 1rem 0 1.4rem;
+  border: 1px solid var(--border-gold);
+  background: var(--bg-surface);
+}
+
+.cce-split-col {
+  min-width: 0;
+  font-size: 0.9rem;
+  line-height: 1.68;
+}
+
+.cce-split-col + .cce-split-col {
+  border-left: 1px solid var(--hairline);
+  padding-left: 1rem;
+}
+
+/* 4. Met / Rijksstudio 70%+ Lightbox & Keyboard Command Palette Highlight */
+.lightbox-stage img,
+.painting-zoom-img {
+  min-height: 68vh;
+  max-height: 82vh;
+  object-fit: contain;
+}
+
+.cce-cmd-active {
+  outline: 2px solid var(--imperial-red) !important;
+  background: var(--bg-accent-soft) !important;
+}
+
+/* 5. Floating Quick Reference Drawer */
+.cce-quickref-fab {
+  position: fixed;
+  right: 1rem;
+  bottom: 4.5rem;
+  z-index: 880;
+  padding: 0.48rem 0.8rem;
+  background: var(--ink-black);
+  color: #faf7f2;
+  border: 1px solid var(--border-gold);
+  border-radius: 2px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.24);
+}
+
+[data-theme="dark"] .cce-quickref-fab {
+  background: #23211d;
+  color: #f2efe9;
+}
+
+.cce-quickref-drawer {
+  position: fixed;
+  right: 1rem;
+  bottom: 7.4rem;
+  z-index: 890;
+  width: min(360px, calc(100vw - 2rem));
+  max-height: 66vh;
+  overflow: auto;
+  background: var(--bg-paper);
+  border: 1px solid var(--imperial-red);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
+  padding: 0.95rem 1rem;
+  border-radius: 2px;
+}
+
+/* 6. Travel Hub Show-to-Driver Card */
+.cce-driver-card {
+  padding: 1.25rem;
+  background: #faf7f2;
+  color: #161513;
+  border: 2px solid #9e2a2b;
+  border-radius: 2px;
+}
+
+[data-theme="dark"] .cce-driver-card {
+  background: #1c1a17;
+  color: #f2efe9;
+}
+
+@media (max-width: 960px) {
+  .cce-intent-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .cce-split-bilingual {
+    grid-template-columns: 1fr;
+  }
+  .cce-split-col + .cce-split-col {
+    border-left: none;
+    border-top: 1px solid var(--hairline);
+    padding-left: 0;
+    padding-top: 0.85rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cce-intent-grid {
+    grid-template-columns: 1fr;
+  }
+  .cce-quickref-fab {
+    bottom: 4.8rem;
+    right: 0.65rem;
+    padding: 0.4rem 0.65rem;
+  }
+}
+
+@media print {
+  .cce-quickref-fab,
+  .cce-quickref-drawer,
+  .cce-reading-controls,
+  .article-toolbar,
+  #cce-article-tts-bar {
+    display: none !important;
+  }
+}

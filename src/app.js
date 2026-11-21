@@ -2175,11 +2175,11 @@
     const l1Body = enPr ? ((l1 && (l1.bodyEn || l1.body)) || "") : ((l1 && l1.body) || "");
     const l2Lineage = enPr ? ((l2 && (l2.lineageSummaryEn || l2.lineageSummary)) || "") : ((l2 && l2.lineageSummary) || "");
     return `
-      <div class="tabs-bar" role="tablist" aria-label="${enPr ? "3-Layer Geocultural Schema" : "Cấu trúc 3 lớp địa văn hóa cho người học Việt Nam"}" style="margin-bottom:1.1rem;">
-        <button type="button" class="tab-btn ${activeLayer === "all" ? "active" : ""}" data-action="set-province-layer" data-layer="all">${enPr ? "All 3 Layers" : "Tất cả 3 Lớp"}</button>
-        <button type="button" class="tab-btn ${activeLayer === "pulse" ? "active" : ""}" data-action="set-province-layer" data-layer="pulse">${enPr ? "Layer 1 · Urban Pulse" : "Lớp 1 · Đời sống Đương đại"}</button>
-        <button type="button" class="tab-btn ${activeLayer === "roots" ? "active" : ""}" data-action="set-province-layer" data-layer="roots">${enPr ? "Layer 2 · Roots & Heritage" : "Lớp 2 · Căn cốt Lịch sử &amp; Tư tưởng"}</button>
-        <button type="button" class="tab-btn ${activeLayer === "travel" ? "active" : ""}" data-action="set-province-layer" data-layer="travel">${enPr ? "Layer 3 · 12306 Rail & Clusters" : "Lớp 3 · Hành trang 12306 &amp; Cụm KT"}</button>
+      <div class="tabs-bar" role="tablist" aria-label="${enPr ? "5-Tab Province Dossier" : "Hồ sơ Tỉnh/Thành 5 Thẻ"}" style="margin-bottom:1.1rem;">
+        <button type="button" class="tab-btn ${activeLayer === "all" ? "active" : ""}" data-action="set-province-layer" data-layer="all">${enPr ? "Overview (All)" : "Tổng quan (Tất cả)"}</button>
+        <button type="button" class="tab-btn ${activeLayer === "pulse" ? "active" : ""}" data-action="set-province-layer" data-layer="pulse">${enPr ? "Heritage &amp; Economy" : "Kinh tế &amp; Đời sống"}</button>
+        <button type="button" class="tab-btn ${activeLayer === "roots" ? "active" : ""}" data-action="set-province-layer" data-layer="roots">${enPr ? "Culture &amp; Cuisine" : "Di sản, Văn hóa &amp; Ẩm thực"}</button>
+        <button type="button" class="tab-btn ${activeLayer === "travel" ? "active" : ""}" data-action="set-province-layer" data-layer="travel">${enPr ? "Transport &amp; Know Before You Go" : "Cao tốc 12306 &amp; Hành trang"}</button>
       </div>
 
       ${showL1 ? `
@@ -3440,6 +3440,8 @@
         </div>
       </section>
 
+      ${window.CCE_V4_UX ? window.CCE_V4_UX.renderHeroIntentAndRecent(homeEn) : ""}
+
       <!-- SECTION 01B: FORBIDDEN CITY 3D ARCHITECTURAL EMBLEM & DISSECTION -->
       ${getForbiddenCity3D() ? getForbiddenCity3D().renderHomeSection(state.uiLang) : `
         <section class="ed-section" style="padding:1.65rem 0;border-bottom:1px solid var(--hairline);background:var(--bg-surface);">
@@ -4536,6 +4538,8 @@
               </div>
 
               ${window.CCE_CIV_ATLAS ? window.CCE_CIV_ATLAS.renderArticleTtsBar(enM) : ""}
+              ${window.CCE_V4_UX ? window.CCE_V4_UX.renderReadingControlsBar(art, enM) : ""}
+              ${window.CCE_V4_UX ? window.CCE_V4_UX.renderBilingualSplitView(art) : ""}
 
               ${ed.heroImageId ? `
                 <div id="sec-hero" style="margin-bottom:1.5rem;">
@@ -7445,6 +7449,8 @@
               </div>
             </div>
           ` : ""}
+
+          ${window.CCE_TRAVEL_HUB ? window.CCE_TRAVEL_HUB.renderHub(enM, Regions) : ""}
 
           ${TravelReadiness ? (() => {
             const enR = isEnglishUi();
@@ -10890,6 +10896,7 @@
       ui.activeEditorialImageId ||
       (ui.customModalImage && ui.customModalImage.src) ||
       (window.CCE_STROKE_PAD && window.CCE_STROKE_PAD.isOpen()) ||
+      (window.CCE_V4_UX && window.CCE_V4_UX.isCollectionOpen()) ||
       document.querySelector("#cce-modal-root .modal-backdrop.open")
     );
   }
@@ -10911,6 +10918,7 @@
       ${window.CCE_LABS_EXT ? window.CCE_LABS_EXT.renderInlineGlossModal(isEnglishUi()) : ""}
       ${renderVocabSelectionPopover()}
       ${window.CCE_STROKE_PAD ? window.CCE_STROKE_PAD.renderModal(isEnglishUi()) : ""}
+      ${window.CCE_V4_UX ? window.CCE_V4_UX.renderCollectionModalHTML(isEnglishUi()) + window.CCE_V4_UX.renderQuickRefFloating(isEnglishUi()) : ""}
     `;
   }
 
@@ -13805,6 +13813,7 @@
     }
   } catch {}
   window.CCE_RENDER = render;
+  window.CCE_RENDER_MODALS = renderModalsOnly;
   window.CCE_SELECT_MAP_PROVINCE = (pid) => {
     if (!pid) return;
     ui.selectedMapProvinceId = pid;
