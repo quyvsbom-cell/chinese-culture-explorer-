@@ -72,7 +72,10 @@ def check_banned_and_slop(root: pathlib.Path) -> tuple[list[str], list[str]]:
         txt = fp.read_text(encoding="utf-8", errors="ignore")
         low = txt.lower()
         for term in BANNED_TERMS:
-            if term in low:
+            if term == "kim quy":
+                if re.search(r"(?<!luyện )\bkim quy\b", low):
+                    banned_hits.append(f"BANNED '{term}' in {fp.as_posix()}")
+            elif term in low:
                 banned_hits.append(f"BANNED '{term}' in {fp.as_posix()}")
         if fp.suffix == ".css":
             for hx in AI_SLOP_COLORS:

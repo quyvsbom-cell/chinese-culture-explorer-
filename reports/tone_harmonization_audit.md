@@ -1,0 +1,64 @@
+# Tone & Editorial Consistency Audit (`src/data/v3/`)
+
+- Total JS files scanned: **46**
+- Total refined string literals: **80**
+
+## Pattern Refinements Applied
+- `\bvibrant\b`: **16** replacements
+- `\bnổi bật với\b`: **11** replacements
+- `\bhòa quyện\b`: **9** replacements
+- `\btạo nên một\b`: **6** replacements
+- `\bnot merely\b`: **6** replacements
+- `\btapestry\b`: **6** replacements
+- `\bserves as a\b`: **4** replacements
+- `\bshowcases\b`: **4** replacements
+- `\bembodies the\b`: **4** replacements
+- `\bvô cùng ([a-záàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệíìỉĩịóòỏõọôốồổỗộơớờởỡợúùủũụưứừửữựýỳỷỹỵđ]+)\b`: **3** replacements
+- `\bgiao thoa giữa\b`: **2** replacements
+- `\bmang đậm\b`: **2** replacements
+- `\brealm of\b`: **2** replacements
+- `\bstands as a\b`: **2** replacements
+- `\bmột hành trình\b`: **1** replacements
+- `\btimeless\b`: **1** replacements
+- `\bunderscores\b`: **1** replacements
+- `\bseamlessly\b`: **1** replacements
+- `\btestament to\b`: **1** replacements
+- `\btapestry of\b`: **1** replacements
+- `\btuyệt tác\b`: **1** replacements
+
+## Per-File Summary
+- `articleComprehensionV3_p2.js`: 2 strings refined
+- `articlesDepthEnrichmentBatch3_p1.js`: 1 strings refined
+- `articlesDepthEnrichmentBatch3_p2.js`: 1 strings refined
+- `articlesExpansionV3_Part1a.js`: 1 strings refined
+- `articlesExpansionV3_Part1b.js`: 1 strings refined
+- `articlesExpansionV3_Part2a.js`: 3 strings refined
+- `articlesExpansionV3_Part2b.js`: 1 strings refined
+- `articlesExpansionV3_Part3a.js`: 1 strings refined
+- `articlesExpansionV3_Part3b.js`: 1 strings refined
+- `articlesExpansionV3_Part4.js`: 1 strings refined
+- `articlesExpansionV3_Part5a.js`: 4 strings refined
+- `bizExpansionV3.js`: 1 strings refined
+- `classicsExpansionV3.js`: 3 strings refined
+- `customsExpansionV3.js`: 2 strings refined
+- `destinationsDeepAtlasPart2_3a.js`: 1 strings refined
+- `destinationsDeepAtlasPart2_3b.js`: 6 strings refined
+- `destinationsDeepAtlasPart2_3c.js`: 4 strings refined
+- `dictionaryExpansionV3_p1.js`: 1 strings refined
+- `enParityArticlesV3_Part1a.js`: 3 strings refined
+- `enParityArticlesV3_Part1b.js`: 4 strings refined
+- `enParityArticlesV3_Part2a.js`: 7 strings refined
+- `enParityArticlesV3_Part2b.js`: 1 strings refined
+- `enParityArticlesV3_Part3a.js`: 3 strings refined
+- `enParityArticlesV3_Part3b.js`: 2 strings refined
+- `enParityArticlesV3_Part4.js`: 2 strings refined
+- `enParityArticlesV3_Part5a.js`: 4 strings refined
+- `enParityArticlesV3_Part5b.js`: 2 strings refined
+- `enParityComprehensionV3_p1.js`: 3 strings refined
+- `enParityComprehensionV3_p2.js`: 1 strings refined
+- `enParityCustomsV3.js`: 1 strings refined
+- `falseFriendsV3.js`: 3 strings refined
+- `guidedTracks2026.js`: 1 strings refined
+- `museumExpansionV3.js`: 4 strings refined
+- `paintingsExpansionV3.js`: 3 strings refined
+- `quizArenaBank2026.js`: 1 strings refined

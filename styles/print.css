@@ -1,0 +1,45 @@
+@media print {
+  .site-header,
+  .mobile-bottom-nav,
+  .site-footer,
+  .mega-menu-panel,
+  .reading-progress-bar,
+  .ed-back-to-top,
+  .article-toolbar,
+  .article-sidebar,
+  .article-toc-aside,
+  .editorial-img-zoom-pill,
+  .academic-banner-zoom,
+  .btn,
+  button.modal-close-btn {
+    display: none !important;
+  }
+  body,
+  [data-theme="dark"] body {
+    background: #ffffff !important;
+    color: #141414 !important;
+    font-size: 10.5pt !important;
+    line-height: 1.55 !important;
+  }
+  .modal-backdrop.open {
+    position: static !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+  }
+  .modal-panel {
+    box-shadow: none !important;
+    border: 1px solid #d0d0d0 !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    color: #141414 !important;
+  }
+  .card,
+  .academic-section-banner {
+    background: #ffffff !important;
+    color: #141414 !important;
+    border-color: #d0d0d0 !important;
+    break-inside: avoid;
+  }
+}

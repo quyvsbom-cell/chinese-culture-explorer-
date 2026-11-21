@@ -1,0 +1,115 @@
+{
+  "paintings": {
+    "55_wuniu_tu.jpg": "existing",
+    "56_zhaoye_bai_tu.jpg": "existing",
+    "57_jiangxing_chuxue_tu.jpg": "existing",
+    "58_tingqin_tu.jpg": "existing",
+    "59_hanjiang_dudiao_tu.jpg": "existing",
+    "60_jiulong_tu.jpg": "existing",
+    "61_xishan_qingyuan_tu.jpg": "existing",
+    "62_molan_tu.jpg": "existing",
+    "64_yufu_tu.jpg": "existing",
+    "65_momei_tu.jpg": "existing",
+    "66_taohuayuan_tu.jpg": "existing",
+    "67_songyin_fangyou_tu.jpg": "existing",
+    "68_hehua_shuiqin_tu.jpg": "existing",
+    "69_zhushi_zhengbanqiao.jpg": "existing",
+    "70_huangshan_tu_meiqing.jpg": "existing",
+    "71_bajun_tu_langshining.jpg": "existing",
+    "72_gusu_fanhua_tu.jpg": "existing"
+  },
+  "museum": {
+    "goujian-sword.jpg": "existing",
+    "sanxingdui-bronze-tree.jpg": "existing",
+    "fuhao-owl-zun.jpg": "existing",
+    "lianhe-fanghu.jpg": "existing",
+    "yongle-great-bell.jpg": {
+      "commonsTitle": "File:Big Bell Tower.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Big_Bell_Tower.jpg/1280px-Big_Bell_Tower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "origSize": [
+        2304,
+        3072
+      ]
+    },
+    "terracotta-general.jpg": {
+      "commonsTitle": "File:Antiquities of Samarkand. Tomb of Saint Kusam-ibn-Abbas (Shah-i Zindah) and Adjacent Mausoleums. Mausoleum of Emir Kutuluk Turdi Bek Aka. Detail of Niche Panel on the External Arch (Below) WDL3616.png",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Antiquities_of_Samarkand._Tomb_of_Saint_Kusam-ibn-Abbas_%28Shah-i_Zindah%29_and_Adjacent_Mausoleums._Mausoleum_of_Emir_Kutuluk_Turdi_Bek_Aka._Detail_of_Niche_Panel_on_the_External_Arch_%28Below%29_WDL3616.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "origSize": [
+        1024,
+        1386
+      ]
+    },
+    "changxin-palace-lamp.jpg": {
+      "commonsTitle": "File:20250118 Changxin Palace Lamp 01.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/20250118_Changxin_Palace_Lamp_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "origSize": [
+        1200,
+        1800
+      ]
+    },
+    "hejiacun-agate-cup.jpg": {
+      "commonsTitle": "File:Tang Agate Cup (50616899327).jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Tang_Agate_Cup_%2850616899327%29.jpg/1280px-Tang_Agate_Cup_%2850616899327%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "origSize": [
+        3648,
+        2736
+      ]
+    },
+    "tang-sancai-camel.jpg": {
+      "commonsTitle": "File:Tang Sancai Porcelain with Musicians on a Camel.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Tang_Sancai_Porcelain_with_Musicians_on_a_Camel.jpg/1280px-Tang_Sancai_Porcelain_with_Musicians_on_a_Camel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "origSize": [
+        3456,
+        5184
+      ]
+    },
+    "jian-yao-yaobian-tenmoku.jpg": {
+      "commonsTitle": "File:Yohen Tenmoku Tea Bowl(Seikado).jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Yohen_Tenmoku_Tea_Bowl%28Seikado%29.jpg/1280px-Yohen_Tenmoku_Tea_Bowl%28Seikado%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "origSize": [
+        2195,
+        3941
+      ]
+    },
+    "xuande-blue-white-meiping.jpg": {
+      "commonsTitle": "File:MET DP251192.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/MET_DP251192.jpg/1280px-MET_DP251192.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "origSize": [
+        3001,
+        4000
+      ]
+    },
+    "kuaixue-shiqing-tie.jpg": {
+      "commonsTitle": "File:The Calligraphy Model Sunny after Snow by Wang Xizhi.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/The_Calligraphy_Model_Sunny_after_Snow_by_Wang_Xizhi.jpg/1280px-The_Calligraphy_Model_Sunny_after_Snow_by_Wang_Xizhi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "origSize": [
+        8802,
+        480
+      ]
+    },
+    "jizhi-wengao-yan-zhenqing.jpg": {
+      "commonsTitle": "File:Yan Zhenqing - Draft of a Requiem to My Nephew.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Yan_Zhenqing_-_Draft_of_a_Requiem_to_My_Nephew.jpg/1280px-Yan_Zhenqing_-_Draft_of_a_Requiem_to_My_Nephew.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "origSize": [
+        6903,
+        400
+      ]
+    },
+    "song-printed-shiji.jpg": {
+      "commonsTitle": "File:Pen ts'ao, woodblock book 1249-ce.png",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Pen_ts%27ao%2C_woodblock_book_1249-ce.png/1280px-Pen_ts%27ao%2C_woodblock_book_1249-ce.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "origSize": [
+        2286,
+        1640
+      ]
+    },
+    "ngoc-lu-bronze-drum.jpg": {
+      "commonsTitle": "File:Ngoc Lu.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Ngoc_Lu.jpg/1280px-Ngoc_Lu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "origSize": [
+        1470,
+        1371
+      ]
+    }
+  }
+}

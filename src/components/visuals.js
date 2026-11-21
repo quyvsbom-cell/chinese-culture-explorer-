@@ -98,9 +98,11 @@ window.CCE_VISUALS = {
 
   renderChinaMapSVG(activeRegionId, activeCityId, mapMode = "regions", activeProvinceId = null, provinces = [], mapOpts = {}) {
     const enMode = Boolean(mapOpts && mapOpts.enMode);
-    const activeHsr = Array.isArray(mapOpts && mapOpts.hsrFilters)
+    const allDefaultHsr = ["hsr-gba", "hsr-sw", "hsr-yn", "hsr-jh", "hsr-jgj", "hsr-silk"];
+    const activeHsr = Array.isArray(mapOpts && mapOpts.hsrFilters) && mapOpts.hsrFilters.length
       ? mapOpts.hsrFilters
-      : (mapMode === "corridors" ? ["hsr-gba", "hsr-sw", "hsr-yn", "hsr-jh"] : []);
+      : (mapMode === "corridors" ? allDefaultHsr : []);
+    const geoMap = (typeof window !== "undefined" && window.CCE_CHINA_GEO) ? window.CCE_CHINA_GEO : null;
 
     const regionColors = {
       northwest: "#7E5D43",
@@ -115,7 +117,7 @@ window.CCE_VISUALS = {
       municipality: "#B8292F",
       sar: "#9A6700",
       autonomous: "#1F6E5C",
-      province: "#4A433D"
+      province: "#6A5A4D"
     };
 
     const corridorColors = {
@@ -129,115 +131,62 @@ window.CCE_VISUALS = {
       "Vành đai Đông Bắc & Hoàn Bột Hải": "#3F5973"
     };
 
-    // Refined geographic macro-region vector polygons (newspaper cartography precision)
-    const regions = [
-      {
-        id: "northwest",
-        label: enMode ? "NORTHWEST 西北" : "TÂY BẮC 西北",
-        lx: 230,
-        ly: 186,
-        path: "M 54 174 L 116 112 L 194 70 L 280 95 L 368 135 L 448 195 L 456 266 L 418 308 L 284 316 L 146 286 L 78 242 Z"
-      },
-      {
-        id: "north",
-        label: enMode ? "NORTH CHINA 华北" : "HOA BẮC 华北",
-        lx: 525,
-        ly: 132,
-        path: "M 368 135 L 445 78 L 555 56 L 656 88 L 664 218 L 605 288 L 490 296 L 448 266 L 448 195 Z"
-      },
-      {
-        id: "northeast",
-        label: enMode ? "NORTHEAST 东北" : "ĐÔNG BẮC 东北",
-        lx: 744,
-        ly: 162,
-        path: "M 656 88 L 718 34 L 785 40 L 848 78 L 826 178 L 748 228 L 664 218 Z"
-      },
-      {
-        id: "southwest",
-        label: enMode ? "SOUTHWEST 西南" : "TÂY NAM 西南",
-        lx: 234,
-        ly: 416,
-        path: "M 88 304 L 146 286 L 284 316 L 418 308 L 468 378 L 448 486 L 352 536 L 286 502 L 214 446 L 96 388 Z"
-      },
-      {
-        id: "east",
-        label: enMode ? "EAST CHINA 华东" : "HOA ĐÔNG 华东",
-        lx: 682,
-        ly: 304,
-        path: "M 605 288 L 664 238 L 718 262 L 732 342 L 758 386 L 700 478 L 598 446 L 578 358 Z"
-      },
-      {
-        id: "south",
-        label: enMode ? "SOUTH & CENTRAL 华南" : "HOA NAM & TRUNG NAM 华南",
-        lx: 534,
-        ly: 432,
-        path: "M 418 308 L 490 296 L 605 288 L 578 358 L 598 446 L 662 478 L 626 544 L 548 548 L 456 542 L 448 486 L 468 378 Z"
-      }
-    ];
-
-    const cityPins = [
-      { id: "harbin", name: "Cáp Nhĩ Tân 哈尔滨", x: 758, y: 105, lx: 772, ly: 100, anchor: "start" },
-      { id: "beijing", name: "Bắc Kinh 北京", x: 586, y: 184, lx: 572, ly: 180, anchor: "end" },
-      { id: "tianjin", name: "Thiên Tân 天津", x: 618, y: 208, lx: 632, ly: 212, anchor: "start" },
-      { id: "xian", name: "Tây An 西安", x: 446, y: 284, lx: 432, ly: 276, anchor: "end" },
-      { id: "wuhan", name: "Vũ Hán 武汉", x: 542, y: 362, lx: 528, ly: 366, anchor: "end" },
-      { id: "nanjing", name: "Nam Kinh 南京", x: 620, y: 338, lx: 606, ly: 334, anchor: "end" },
-      { id: "suzhou", name: "Tô Châu 苏州", x: 676, y: 344, lx: 736, ly: 312, anchor: "start", leader: true },
-      { id: "shanghai", name: "Thượng Hải 上海", x: 712, y: 356, lx: 756, ly: 358, anchor: "start", leader: true },
-      { id: "hangzhou", name: "Hàng Châu 杭州", x: 682, y: 386, lx: 742, ly: 402, anchor: "start", leader: true },
-      { id: "quanzhou-xiamen", name: "Tuyền Châu · Hạ Môn 泉厦", x: 684, y: 468, lx: 716, ly: 472, anchor: "start", leader: true },
-      { id: "chengdu", name: "Thành Đô 成都", x: 362, y: 364, lx: 348, ly: 366, anchor: "end" },
-      { id: "chongqing", name: "Trùng Khánh 重庆", x: 424, y: 388, lx: 408, ly: 416, anchor: "end", leader: true },
-      { id: "kunming", name: "Côn Minh 昆明", x: 334, y: 488, lx: 320, ly: 492, anchor: "end" },
-      { id: "nanning-pingxiang", name: "Nam Ninh · Bằng Tường 南宁", x: 476, y: 520, lx: 462, ly: 522, anchor: "end" },
-      { id: "guangzhou", name: "Quảng Châu 广州", x: 572, y: 500, lx: 558, ly: 502, anchor: "end" },
-      { id: "shenzhen", name: "Thâm Quyến 深圳", x: 616, y: 522, lx: 630, ly: 526, anchor: "start" }
+    const macroLabels = [
+      { id: "northwest", label: enMode ? "NORTHWEST 西北" : "TÂY BẮC 西北", lx: 226, ly: 175 },
+      { id: "north", label: enMode ? "NORTH 华北" : "HOA BẮC 华北", lx: 565, ly: 225 },
+      { id: "northeast", label: enMode ? "NORTHEAST 东北" : "ĐÔNG BẮC 东北", lx: 760, ly: 145 },
+      { id: "southwest", label: enMode ? "SOUTHWEST 西南" : "TÂY NAM 西南", lx: 280, ly: 405 },
+      { id: "east", label: enMode ? "EAST 华东" : "HOA ĐÔNG 华东", lx: 662, ly: 360 },
+      { id: "south", label: enMode ? "SOUTH & CENTRAL 华南" : "HOA NAM & TRUNG NAM", lx: 572, ly: 465 }
     ];
 
     const defaultProvinceCoords = {
-      "prov-beijing": { x: 586, y: 184, short: "京", cat: "municipality", capitalEra: "Yên · Liêu · Kim · Nguyên · Minh · Thanh", corridor: "Kinh–Tân–Ký (京津冀)" },
-      "prov-tianjin": { x: 618, y: 204, short: "津", cat: "municipality", capitalEra: "Thương cảng Kinh–Kỳ", corridor: "Kinh–Tân–Ký (京津冀)" },
-      "prov-hebei": { x: 562, y: 214, short: "冀", cat: "province", capitalEra: "Nước Triệu · Yên cổ", corridor: "Kinh–Tân–Ký (京津冀)" },
-      "prov-shanxi": { x: 512, y: 226, short: "晋", cat: "province", capitalEra: "Nước Tấn · Bắc Ngụy Bình Thành", corridor: "Kinh–Tân–Ký (京津冀)" },
-      "prov-inner-mongolia": { x: 468, y: 138, short: "蒙", cat: "autonomous", capitalEra: "Thượng Đô nhà Nguyên", corridor: "Vành đai Đông Bắc & Hoàn Bột Hải" },
-      "prov-liaoning": { x: 682, y: 184, short: "辽", cat: "province", capitalEra: "Thịnh Kinh (Hậu Kim – Sơ Thanh)", corridor: "Vành đai Đông Bắc & Hoàn Bột Hải" },
-      "prov-jilin": { x: 734, y: 146, short: "吉", cat: "province", capitalEra: "Bột Hải Quốc", corridor: "Vành đai Đông Bắc & Hoàn Bột Hải" },
-      "prov-heilongjiang": { x: 762, y: 92, short: "黑", cat: "province", capitalEra: "Thượng Kinh Hội Ninh (Nhà Kim)", corridor: "Vành đai Đông Bắc & Hoàn Bột Hải" },
-      "prov-shanghai": { x: 710, y: 356, short: "沪", cat: "municipality", capitalEra: "Đô thị Thương cảng Hiện đại", corridor: "Châu thổ Trường Giang (长三角)" },
-      "prov-jiangsu": { x: 646, y: 326, short: "苏", cat: "province", capitalEra: "Lục Triều · Nam Đường · Sơ Minh (Nam Kinh)", corridor: "Châu thổ Trường Giang (长三角)" },
-      "prov-zhejiang": { x: 676, y: 386, short: "浙", cat: "province", capitalEra: "Ngô Việt · Nam Tống (Lâm An)", corridor: "Châu thổ Trường Giang (长三角)" },
-      "prov-anhui": { x: 602, y: 342, short: "皖", cat: "province", capitalEra: "Thọ Xuân (Nước Sở) · Huy Châu", corridor: "Châu thổ Trường Giang (长三角)" },
-      "prov-fujian": { x: 668, y: 454, short: "闽", cat: "province", capitalEra: "Mân Việt · Đế cảng Tuyền Châu Tống–Nguyên", corridor: "Vùng Vịnh Lớn & Lĩnh Nam (粤港澳)" },
-      "prov-jiangxi": { x: 608, y: 416, short: "赣", cat: "province", capitalEra: "Kinh đô Sứ Cảnh Đức Trấn · Hồng Đô", corridor: "Trung Nguyên & Trung Du Trường Giang" },
-      "prov-shandong": { x: 626, y: 256, short: "鲁", cat: "province", capitalEra: "Nước Lỗ & Nước Tề (Tắc Hạ)", corridor: "Kinh–Tân–Ký (京津冀)" },
-      "prov-henan": { x: 540, y: 292, short: "豫", cat: "province", capitalEra: "Ân Khư · Lạc Dương · Khai Phong", corridor: "Trung Nguyên & Trung Du Trường Giang" },
-      "prov-hubei": { x: 536, y: 356, short: "鄂", cat: "province", capitalEra: "Kinh Sở (Dĩnh Đô) · Tân Hợi Vũ Xương", corridor: "Trung Nguyên & Trung Du Trường Giang" },
-      "prov-hunan": { x: 532, y: 422, short: "湘", cat: "province", capitalEra: "Nước Sở · Trường Sa Vương quốc", corridor: "Trung Nguyên & Trung Du Trường Giang" },
-      "prov-guangdong": { x: 576, y: 496, short: "粤", cat: "province", capitalEra: "Nam Việt (Phiên Ngung) · Thập Tam Hàng", corridor: "Vùng Vịnh Lớn & Lĩnh Nam (粤港澳)" },
-      "prov-guangxi": { x: 484, y: 506, short: "桂", cat: "autonomous", capitalEra: "Quế Lâm – Nam Ninh · Trạm đầu Việt–Trung", corridor: "Hành lang RCEP – Việt Nam" },
-      "prov-hainan": { x: 516, y: 568, short: "琼", cat: "province", capitalEra: "Cảng Tự do Thương mại Biển Đông", corridor: "Vùng Vịnh Lớn & Lĩnh Nam (粤港澳)" },
-      "prov-chongqing": { x: 432, y: 386, short: "渝", cat: "municipality", capitalEra: "Nước Ba · Bồi đô 1937–1945", corridor: "Thành Đô–Trùng Khánh (成渝经济圈)" },
-      "prov-sichuan": { x: 362, y: 368, short: "川", cat: "province", capitalEra: "Cổ Thục Tam Tinh Đôi · Thục Hán (Thành Đô)", corridor: "Thành Đô–Trùng Khánh (成渝经济圈)" },
-      "prov-guizhou": { x: 426, y: 448, short: "贵", cat: "province", capitalEra: "Dạ Lang cổ · Vương Dương Minh Long Trường", corridor: "Thành Đô–Trùng Khánh (成渝经济圈)" },
-      "prov-yunnan": { x: 334, y: 484, short: "云", cat: "province", capitalEra: "Điền Quốc · Nam Chiếu · Đại Lý", corridor: "Hành lang RCEP – Việt Nam" },
-      "prov-tibet": { x: 186, y: 388, short: "藏", cat: "autonomous", capitalEra: "Thổ Phồn (Cung Potala Lhasa)", corridor: "Con đường Tơ lụa & Á–Âu" },
-      "prov-shaanxi": { x: 454, y: 284, short: "陕", cat: "province", capitalEra: "Hàm Dương · Trường An (Chu–Tần–Hán–Đường)", corridor: "Con đường Tơ lụa & Á–Âu" },
-      "prov-gansu": { x: 344, y: 242, short: "甘", cat: "province", capitalEra: "Hành lang Hà Tây · Đôn Hoàng", corridor: "Con đường Tơ lụa & Á–Âu" },
-      "prov-qinghai": { x: 266, y: 282, short: "青", cat: "province", capitalEra: "Thổ Dục Hồn · Đền Kumbum", corridor: "Con đường Tơ lụa & Á–Âu" },
-      "prov-ningxia": { x: 404, y: 232, short: "宁", cat: "autonomous", capitalEra: "Kinh đô Tây Hạ (Hưng Khánh Phủ)", corridor: "Con đường Tơ lụa & Á–Âu" },
-      "prov-xinjiang": { x: 162, y: 172, short: "新", cat: "autonomous", capitalEra: "Tây Vực Đô hộ phủ (Hán) · An Tây Tứ Trấn", corridor: "Con đường Tơ lụa & Á–Âu" },
-      "prov-taiwan": { x: 742, y: 472, short: "台", cat: "province", capitalEra: "Đông Ninh Phủ · Đài Bắc Phủ", corridor: "Vùng Vịnh Lớn & Lĩnh Nam (粤港澳)" },
-      "prov-hongkong": { x: 612, y: 526, short: "港", cat: "sar", capitalEra: "Cảng Tự do Quốc tế & Tài chính Châu Á", corridor: "Vùng Vịnh Lớn & Lĩnh Nam (粤港澳)" },
-      "prov-macau": { x: 562, y: 534, short: "澳", cat: "sar", capitalEra: "Hào Kính · Giao thương Á–Âu thế kỷ XVI", corridor: "Vùng Vịnh Lớn & Lĩnh Nam (粤港澳)" }
+      "prov-beijing": { x: 631.2, y: 243.6, regionId: "north", short: "京", cat: "municipality", capitalEra: "Yên · Liêu · Kim · Nguyên · Minh · Thanh", corridor: "Kinh–Tân–Ký (京津冀)" },
+      "prov-tianjin": { x: 642.2, y: 255.9, regionId: "north", short: "津", cat: "municipality", capitalEra: "Thương cảng Kinh–Kỳ", corridor: "Kinh–Tân–Ký (京津冀)" },
+      "prov-hebei": { x: 604.3, y: 273.2, regionId: "north", short: "冀", cat: "province", capitalEra: "Nước Triệu · Yên cổ", corridor: "Kinh–Tân–Ký (京津冀)" },
+      "prov-shanxi": { x: 576.9, y: 276.2, regionId: "north", short: "晋", cat: "province", capitalEra: "Nước Tấn · Bắc Ngụy Bình Thành", corridor: "Kinh–Tân–Ký (京津冀)" },
+      "prov-inner-mongolia": { x: 564.5, y: 228.9, regionId: "north", short: "蒙", cat: "autonomous", capitalEra: "Thượng Đô nhà Nguyên", corridor: "Vành đai Đông Bắc & Hoàn Bột Hải" },
+      "prov-liaoning": { x: 730.1, y: 213.2, regionId: "northeast", short: "辽", cat: "province", capitalEra: "Thịnh Kinh (Hậu Kim – Sơ Thanh)", corridor: "Vành đai Đông Bắc & Hoàn Bột Hải" },
+      "prov-jilin": { x: 756.7, y: 179.8, regionId: "northeast", short: "吉", cat: "province", capitalEra: "Bột Hải Quốc", corridor: "Vành đai Đông Bắc & Hoàn Bột Hải" },
+      "prov-heilongjiang": { x: 775.3, y: 149.8, regionId: "northeast", short: "黑", cat: "province", capitalEra: "Thượng Kinh Hội Ninh (Nhà Kim)", corridor: "Vành đai Đông Bắc & Hoàn Bột Hải" },
+      "prov-shanghai": { x: 702.5, y: 382.3, regionId: "east", short: "沪", cat: "municipality", capitalEra: "Đô thị Thương cảng Hiện đại", corridor: "Châu thổ Trường Giang (长三角)" },
+      "prov-jiangsu": { x: 664.4, y: 369.4, regionId: "east", short: "苏", cat: "province", capitalEra: "Lục Triều · Nam Đường · Sơ Minh (Nam Kinh)", corridor: "Châu thổ Trường Giang (长三角)" },
+      "prov-zhejiang": { x: 683.9, y: 397.4, regionId: "east", short: "浙", cat: "province", capitalEra: "Ngô Việt · Nam Tống (Lâm An)", corridor: "Châu thổ Trường Giang (长三角)" },
+      "prov-anhui": { x: 643.5, y: 372.2, regionId: "east", short: "皖", cat: "province", capitalEra: "Thọ Xuân (Nước Sở) · Huy Châu", corridor: "Châu thổ Trường Giang (长三角)" },
+      "prov-fujian": { x: 672.0, y: 464.7, regionId: "east", short: "闽", cat: "province", capitalEra: "Mân Việt · Đế cảng Tuyền Châu Tống–Nguyên", corridor: "Vùng Vịnh Lớn & Lĩnh Nam (粤港澳)" },
+      "prov-jiangxi": { x: 623.9, y: 423.1, regionId: "east", short: "赣", cat: "province", capitalEra: "Kinh đô Sứ Cảnh Đức Trấn · Hồng Đô", corridor: "Trung Nguyên & Trung Du Trường Giang" },
+      "prov-shandong": { x: 639.5, y: 295.1, regionId: "east", short: "鲁", cat: "province", capitalEra: "Nước Lỗ & Nước Tề (Tắc Hạ)", corridor: "Kinh–Tân–Ký (京津冀)" },
+      "prov-henan": { x: 592.6, y: 325.8, regionId: "south", short: "豫", cat: "province", capitalEra: "Ân Khư · Lạc Dương · Khai Phong", corridor: "Trung Nguyên & Trung Du Trường Giang" },
+      "prov-hubei": { x: 601.5, y: 392.7, regionId: "south", short: "鄂", cat: "province", capitalEra: "Kinh Sở (Dĩnh Đô) · Tân Hợi Vũ Xương", corridor: "Trung Nguyên & Trung Du Trường Giang" },
+      "prov-hunan": { x: 582.9, y: 431.0, regionId: "south", short: "湘", cat: "province", capitalEra: "Nước Sở · Trường Sa Vương quốc", corridor: "Trung Nguyên & Trung Du Trường Giang" },
+      "prov-guangdong": { x: 587.1, y: 511.9, regionId: "south", short: "粤", cat: "province", capitalEra: "Nam Việt (Phiên Ngung) · Thập Tam Hàng", corridor: "Vùng Vịnh Lớn & Lĩnh Nam (粤港澳)" },
+      "prov-guangxi": { x: 517.3, y: 516.9, regionId: "south", short: "桂", cat: "autonomous", capitalEra: "Quế Lâm – Nam Ninh · Trạm đầu Việt–Trung", corridor: "Hành lang RCEP – Việt Nam" },
+      "prov-hainan": { x: 545.6, y: 561.5, regionId: "south", short: "琼", cat: "province", capitalEra: "Cảng Tự do Thương mại Biển Đông", corridor: "Vùng Vịnh Lớn & Lĩnh Nam (粤港澳)" },
+      "prov-chongqing": { x: 491.7, y: 409.5, regionId: "southwest", short: "渝", cat: "municipality", capitalEra: "Nước Ba · Bồi đô 1937–1945", corridor: "Thành Đô–Trùng Khánh (成渝经济圈)" },
+      "prov-sichuan": { x: 457.5, y: 391.4, regionId: "southwest", short: "川", cat: "province", capitalEra: "Cổ Thục Tam Tinh Đôi · Thục Hán (Thành Đô)", corridor: "Thành Đô–Trùng Khánh (成渝经济圈)" },
+      "prov-guizhou": { x: 494.6, y: 456.7, regionId: "southwest", short: "贵", cat: "province", capitalEra: "Dạ Lang cổ · Vương Dương Minh Long Trường", corridor: "Thành Đô–Trùng Khánh (成渝经济圈)" },
+      "prov-yunnan": { x: 438.3, y: 481.4, regionId: "southwest", short: "云", cat: "province", capitalEra: "Điền Quốc · Nam Chiếu · Đại Lý", corridor: "Hành lang RCEP – Việt Nam" },
+      "prov-tibet": { x: 275.3, y: 407.4, regionId: "southwest", short: "藏", cat: "autonomous", capitalEra: "Thổ Phồn (Cung Potala Lhasa)", corridor: "Con đường Tơ lụa & Á–Âu" },
+      "prov-shaanxi": { x: 526.2, y: 333.8, regionId: "northwest", short: "陕", cat: "province", capitalEra: "Hàm Dương · Trường An (Chu–Tần–Hán–Đường)", corridor: "Con đường Tơ lụa & Á–Âu" },
+      "prov-gansu": { x: 453.9, y: 305.0, regionId: "northwest", short: "甘", cat: "province", capitalEra: "Hành lang Hà Tây · Đôn Hoàng", corridor: "Con đường Tơ lụa & Á–Âu" },
+      "prov-qinghai": { x: 425.2, y: 296.1, regionId: "northwest", short: "青", cat: "province", capitalEra: "Thổ Dục Hồn · Đền Kumbum", corridor: "Con đường Tơ lụa & Á–Âu" },
+      "prov-ningxia": { x: 488.6, y: 266.5, regionId: "northwest", short: "宁", cat: "autonomous", capitalEra: "Kinh đô Tây Hạ (Hưng Khánh Phủ)", corridor: "Con đường Tơ lụa & Á–Âu" },
+      "prov-xinjiang": { x: 225.8, y: 181.4, regionId: "northwest", short: "新", cat: "autonomous", capitalEra: "Tây Vực Đô hộ phủ (Hán) · An Tây Tứ Trấn", corridor: "Con đường Tơ lụa & Á–Âu" },
+      "prov-taiwan": { x: 703.0, y: 481.4, regionId: "east", short: "台", cat: "province", capitalEra: "Đông Ninh Phủ · Đài Bắc Phủ", corridor: "Vùng Vịnh Lớn & Lĩnh Nam (粤港澳)" },
+      "prov-hongkong": { x: 599.7, y: 524.9, regionId: "south", short: "港", cat: "sar", capitalEra: "Cảng Tự do Quốc tế & Tài chính Châu Á", corridor: "Vùng Vịnh Lớn & Lĩnh Nam (粤港澳)" },
+      "prov-macau": { x: 590.9, y: 526.8, regionId: "south", short: "澳", cat: "sar", capitalEra: "Hào Kính · Giao thương Á–Âu thế kỷ XVI", corridor: "Vùng Vịnh Lớn & Lĩnh Nam (粤港澳)" }
     };
 
-    const provNodes = (Array.isArray(provinces) && provinces.length
+    const provList = (Array.isArray(provinces) && provinces.length)
       ? provinces
-      : Object.keys(defaultProvinceCoords).map((id) => ({ id, regionId: "east", adminType: "" }))
-    ).map((p) => {
-      const def = defaultProvinceCoords[p.id] || { x: 500, y: 320, short: "省", cat: "province", capitalEra: "", corridor: "Trung Nguyên & Trung Du Trường Giang" };
-      const x = (p.mapCoordinates && p.mapCoordinates.mapX) || def.x;
-      const y = (p.mapCoordinates && p.mapCoordinates.mapY) || def.y;
+      : Object.keys(defaultProvinceCoords).map((id) => ({ id, regionId: defaultProvinceCoords[id].regionId, adminType: "" }));
+
+    const provNodes = provList.map((p) => {
+      const def = defaultProvinceCoords[p.id] || { x: 520, y: 340, regionId: p.regionId || "east", short: "省", cat: "province", capitalEra: "", corridor: "Trung Nguyên & Trung Du Trường Giang" };
+      const g = geoMap && geoMap[p.id];
+      const x = g ? g.cx : ((p.mapCoordinates && p.mapCoordinates.mapX) || def.x);
+      const y = g ? g.cy : ((p.mapCoordinates && p.mapCoordinates.mapY) || def.y);
+      const dPath = g ? g.d : "";
       const cat =
         (p.identity && p.identity.adminCategory) ||
         (/Trực thuộc|直辖市/.test(p.adminType || "") ? "municipality" : /Đặc khu|特别行政区/.test(p.adminType || "") ? "sar" : /tự trị|自治区/.test(p.adminType || "") ? "autonomous" : def.cat);
@@ -245,159 +194,267 @@ window.CCE_VISUALS = {
       const capitalEra = (p.mapCoordinates && p.mapCoordinates.historicalCapitalEra) || def.capitalEra;
       const corridor = (p.mapCoordinates && p.mapCoordinates.economicCorridor) || def.corridor;
       const nameVi = enMode ? (p.nameEn || p.nameVi || p.id.replace("prov-", "")) : (p.nameVi || p.id.replace("prov-", ""));
-      let fillColor = regionColors[p.regionId] || "#9F2929";
-      if (mapMode === "admin") fillColor = adminColors[cat] || "#4A433D";
-      else if (mapMode === "capitals") fillColor = /Kinh đô|Trường An|Lạc Dương|Khai Phong|Nam Kinh|Lâm An|Bắc Kinh|Thịnh Kinh|Tây Hạ|Cổ Thục|Nam Việt/.test(capitalEra) ? "#9A6700" : "#4A433D";
+      const nameZh = p.nameZh || "";
+      const regId = p.regionId || def.regionId;
+      let fillColor = regionColors[regId] || "#9F2929";
+      if (mapMode === "admin") fillColor = adminColors[cat] || "#6A5A4D";
+      else if (mapMode === "capitals") fillColor = /Kinh đô|Trường An|Lạc Dương|Khai Phong|Nam Kinh|Lâm An|Bắc Kinh|Thịnh Kinh|Tây Hạ|Cổ Thục|Nam Việt/.test(capitalEra) ? "#9A6700" : "#5D564E";
       else if (mapMode === "corridors") fillColor = corridorColors[corridor] || "#1F6E5C";
-      return { id: p.id, nameVi, short, x, y, cat, capitalEra, corridor, fillColor, regionId: p.regionId };
+      return { id: p.id, nameVi, nameZh, short, x, y, dPath, cat, capitalEra, corridor, fillColor, regionId: regId, unesco: (p.unescoList || p.heritageSites || []).length };
     });
 
-    const isCorridorMode = mapMode === "corridors";
-    const isCapitalMode = mapMode === "capitals";
+    const cityPins = [
+      { id: "harbin", name: "Cáp Nhĩ Tân 哈尔滨", x: 775.3, y: 149.8, lx: 800, ly: 142, anchor: "start", leader: true },
+      { id: "beijing", name: "Bắc Kinh 北京", x: 631.2, y: 243.6, lx: 678, ly: 224, anchor: "start", leader: true },
+      { id: "tianjin", name: "Thiên Tân 天津", x: 642.2, y: 255.9, lx: 682, ly: 258, anchor: "start", leader: true },
+      { id: "xian", name: "Tây An 西安", x: 526.2, y: 333.8, lx: 512, ly: 326, anchor: "end" },
+      { id: "wuhan", name: "Vũ Hán 武汉", x: 601.5, y: 392.7, lx: 588, ly: 386, anchor: "end" },
+      { id: "nanjing", name: "Nam Kinh 南京", x: 664.4, y: 369.4, lx: 648, ly: 356, anchor: "end", leader: true },
+      { id: "shanghai", name: "Thượng Hải 上海", x: 702.5, y: 382.3, lx: 742, ly: 378, anchor: "start", leader: true },
+      { id: "hangzhou", name: "Hàng Châu 杭州", x: 683.9, y: 397.4, lx: 736, ly: 414, anchor: "start", leader: true },
+      { id: "chengdu", name: "Thành Đô 成都", x: 457.5, y: 391.4, lx: 444, ly: 384, anchor: "end" },
+      { id: "chongqing", name: "Trùng Khánh 重庆", x: 491.7, y: 409.5, lx: 510, ly: 424, anchor: "start", leader: true },
+      { id: "kunming", name: "Côn Minh 昆明", x: 438.3, y: 481.4, lx: 422, ly: 488, anchor: "end" },
+      { id: "nanning-pingxiang", name: "Nam Ninh 南宁", x: 517.3, y: 516.9, lx: 500, ly: 512, anchor: "end" },
+      { id: "guangzhou", name: "Quảng Châu 广州", x: 587.1, y: 511.9, lx: 572, ly: 506, anchor: "end" }
+    ];
 
+    // 12+ High-Speed Rail (12306) Corridors anchored to natural GeoJSON centroids + 3 Vietnam gates
     const hsrLines = [
-      { id: "hsr-gba", d: "M 456 544 L 484 506 L 576 496 L 612 526", color: "#B8292F", label: enMode ? "Pingxiang → Nanning → Guangzhou → Shenzhen/HK" : "Bằng Tường → Nam Ninh → Quảng Châu → Thâm Quyến/HK", lx: 522, ly: 556 },
-      { id: "hsr-sw", d: "M 456 544 L 484 506 L 426 448 L 432 386 L 362 368", color: "#1F6E5C", label: enMode ? "Pingxiang → Nanning → Guiyang → Chongqing → Chengdu" : "Bằng Tường → Nam Ninh → Quý Dương → Trùng Khánh → Thành Đô", lx: 432, ly: 468 },
-      { id: "hsr-yn", d: "M 366 548 L 334 484 L 294 456 L 284 426", color: "#9A6700", label: enMode ? "Hekou → Kunming → Dali → Lijiang" : "Hà Khẩu → Côn Minh → Đại Lý → Lệ Giang", lx: 300, ly: 515 },
-      { id: "hsr-jh", d: "M 586 184 L 626 256 L 646 326 L 710 356 L 676 386", color: "#3B4D7A", label: enMode ? "Beijing–Nanjing–Shanghai–Hangzhou HSR Spine" : "Trục Cao tốc Kinh–Hộ (Bắc Kinh–Nam Kinh–Thượng Hải–Hàng Châu)", lx: 742, ly: 266 }
+      { id: "hsr-gba", d: "M 492 534 L 517.3 516.9 L 587.1 511.9 L 599.7 524.9", color: "#B8292F", label: enMode ? "Pingxiang → Nanning → Guangzhou → Shenzhen/HK (~4h)" : "Bằng Tường → Nam Ninh → Quảng Châu → Thâm Quyến/HK (~4h)" },
+      { id: "hsr-sw", d: "M 492 534 L 517.3 516.9 L 494.6 456.7 L 491.7 409.5 L 457.5 391.4", color: "#1F6E5C", label: enMode ? "Pingxiang → Nanning → Guiyang → Chongqing → Chengdu (~6.5h)" : "Bằng Tường → Nam Ninh → Quý Dương → Trùng Khánh → Thành Đô (~6.5h)" },
+      { id: "hsr-yn", d: "M 438 524 L 438.3 481.4 L 412 464 L 404 446", color: "#9A6700", label: enMode ? "Lao Cai/Hekou → Kunming → Dali → Lijiang (~4.5h)" : "Lào Cai/Hà Khẩu → Côn Minh → Đại Lý → Lệ Giang (~4.5h)" },
+      { id: "hsr-mc", d: "M 516 544 L 518 532 L 517.3 516.9", color: "#9E2A2B", label: enMode ? "Mong Cai/Dongxing → Fangchenggang → Nanning (47 min)" : "Móng Cái/Đông Hưng → Phòng Thành Cảng → Nam Ninh (47 phút)" },
+      { id: "hsr-jh", d: "M 631.2 243.6 L 642.2 255.9 L 639.5 295.1 L 664.4 369.4 L 702.5 382.3 L 683.9 397.4", color: "#3B4D7A", label: enMode ? "Beijing–Tianjin–Jinan–Nanjing–Shanghai–Hangzhou HSR (4.5h)" : "Cao tốc Kinh–Hộ: Bắc Kinh–Tế Nam–Nam Kinh–Thượng Hải–Hàng Châu (4.5h)" },
+      { id: "hsr-jgj", d: "M 631.2 243.6 L 604.3 273.2 L 592.6 325.8 L 601.5 392.7 L 582.9 431.0 L 587.1 511.9 L 599.7 524.9", color: "#9F2929", label: enMode ? "Beijing–Shijiazhuang–Zhengzhou–Wuhan–Changsha–Guangzhou–HK (8h)" : "Cao tốc Kinh–Quảng–Cảng: Bắc Kinh–Vũ Hán–Trường Sa–Quảng Châu–HK (8h)" },
+      { id: "hsr-silk", d: "M 592.6 325.8 L 526.2 333.8 L 453.9 305.0 L 425.2 296.1 L 315 245 L 225.8 181.4", color: "#7E5D43", label: enMode ? "Silk Road HSR: Zhengzhou–Xi'an–Lanzhou–Xining–Urumqi" : "Cao tốc Con đường Tơ lụa: Trịnh Châu–Tây An–Lan Châu–Ô Lỗ Mộc Tề" },
+      { id: "hsr-yangtze", d: "M 702.5 382.3 L 643.5 372.2 L 601.5 392.7 L 491.7 409.5 L 457.5 391.4", color: "#2D5A4C", label: enMode ? "Yangtze River Corridor: Shanghai–Hefei–Wuhan–Chongqing–Chengdu" : "Cao tốc Duyên Giang: Thượng Hải–Hợp Phì–Vũ Hán–Trùng Khánh–Thành Đô" },
+      { id: "hsr-ne", d: "M 631.2 243.6 L 730.1 213.2 L 756.7 179.8 L 775.3 149.8", color: "#3F5973", label: enMode ? "Beijing–Shenyang–Changchun–Harbin Northeast HSR (4.5h)" : "Cao tốc Đông Bắc: Bắc Kinh–Thẩm Dương–Trường Xuân–Cáp Nhĩ Tân (4.5h)" },
+      { id: "hsr-coast", d: "M 683.9 397.4 L 672.0 464.7 L 640 498 L 587.1 511.9", color: "#A83A2F", label: enMode ? "Southeast Coastal HSR: Hangzhou–Fuzhou–Xiamen–Shenzhen" : "Cao tốc Duyên Hải Đông Nam: Hàng Châu–Phúc Châu–Hạ Môn–Thâm Quyến" },
+      { id: "hsr-xizang", d: "M 457.5 391.4 L 425.2 296.1 L 350 350 L 275.3 407.4", color: "#8C6D46", label: enMode ? "Qinghai–Tibet & Sichuan–Tibet Plateau Corridor" : "Hành lang Cao nguyên Thanh–Tạng & Xuyên–Tạng" },
+      { id: "hsr-huabao", d: "M 631.2 243.6 L 564.5 228.9 L 488.6 266.5 L 453.9 305.0", color: "#5D564E", label: enMode ? "North Steppe Rail: Beijing–Hohhot–Yinchuan–Lanzhou" : "Tuyến Thảo nguyên Hoa Bắc: Bắc Kinh–Hô Hòa Hạo Đặc–Ngân Xuyên–Lan Châu" }
     ];
 
     const vnGates = [
-      { code: "VN-LK", label: enMode ? "Lao Cai / Hekou (河口)" : "Lào Cai / Hà Khẩu (河口)", x: 366, y: 552 },
-      { code: "VN-HN", label: enMode ? "Huu Nghi / Pingxiang (凭祥)" : "Hữu Nghị / Bằng Tường (凭祥)", x: 456, y: 548 },
-      { code: "VN-MC", label: enMode ? "Mong Cai / Dongxing (东兴)" : "Móng Cái / Đông Hưng (东兴)", x: 492, y: 558 }
+      { code: "VN-LK", label: enMode ? "Lao Cai / Hekou" : "Lào Cai · Hà Khẩu", x: 438, y: 530, lx: 400, ly: 552, anchor: "end" },
+      { code: "VN-HN", label: enMode ? "Huu Nghi / Pingxiang" : "Hữu Nghị · Bằng Tường", x: 492, y: 540, lx: 492, ly: 566, anchor: "middle" },
+      { code: "VN-MC", label: enMode ? "Mong Cai / Dongxing" : "Móng Cái · Đông Hưng", x: 516, y: 550, lx: 525, ly: 582, anchor: "start" }
+    ];
+
+    const smallBadges = [
+      { id: "prov-beijing", label: "京 Bắc Kinh", x: 631.2, y: 243.6, bx: 682, by: 204 },
+      { id: "prov-tianjin", label: "津 Thiên Tân", x: 642.2, y: 255.9, bx: 682, by: 230 },
+      { id: "prov-shanghai", label: "沪 Thượng Hải", x: 702.5, y: 382.3, bx: 734, by: 360 }
     ];
 
     return `
-      <svg viewBox="-16 -10 956 645" class="china-svg-map" style="width:100%;height:auto;max-height:640px;border:1px solid var(--hairline);background:var(--bg-paper);" role="img" aria-label="${enMode ? "Interactive vector map of 34 Chinese provincial units and 12306 cross-border rail corridors" : "Bản đồ vector tương tác 34 đơn vị hành chính cấp tỉnh Trung Quốc và tuyến đường sắt 12306 nối cửa khẩu Việt Nam"}">
-        <rect x="-16" y="-10" width="956" height="645" fill="transparent" />
+      <div class="china-map-stage" data-map-stage="true">
+        <div class="china-map-zoom-controls" aria-label="${enMode ? "Map zoom controls" : "Điều khiển thu phóng bản đồ"}">
+          <button type="button" class="china-map-zoom-btn" data-action="map-zoom-in" title="${enMode ? "Zoom in" : "Phóng to"}">+</button>
+          <button type="button" class="china-map-zoom-btn" data-action="map-zoom-out" title="${enMode ? "Zoom out" : "Thu nhỏ"}">−</button>
+          <button type="button" class="china-map-zoom-btn" data-action="map-zoom-reset" title="${enMode ? "Reset view" : "Đặt lại"}">1×</button>
+        </div>
+        <div class="china-map-hover-tooltip" data-map-tooltip="true" hidden></div>
+        <div class="china-map-viewport" data-map-viewport="true">
+          <svg viewBox="10 10 905 615" data-map-svg="true" class="china-svg-map" style="width:100%;height:auto;max-height:640px;border:1px solid var(--hairline);background:var(--bg-paper);transform-origin:center center;transition:transform 0.2s ease;" role="img" aria-label="${enMode ? "Interactive natural-boundary vector map of 34 Chinese provincial units and 12306 rail corridors" : "Bản đồ địa lý tự nhiên tương tác 34 tỉnh thành Trung Quốc và mạng lưới đường sắt 12306"}">
+            <rect x="10" y="10" width="905" height="615" fill="transparent" />
 
-        <!-- Editorial Cartography Coordinate Grid -->
-        <g opacity="0.16" stroke="var(--text-muted)" stroke-width="0.8" stroke-dasharray="3 3">
-          <line x1="0" y1="150" x2="920" y2="150" />
-          <line x1="0" y1="305" x2="920" y2="305" />
-          <line x1="0" y1="460" x2="920" y2="460" />
-          <line x1="230" y1="0" x2="230" y2="620" />
-          <line x1="460" y1="0" x2="460" y2="620" />
-          <line x1="690" y1="0" x2="690" y2="620" />
-        </g>
-        <g opacity="0.45" font-family="var(--font-mono)" font-size="8.5" fill="var(--text-muted)">
-          <text x="6" y="146">40°N</text>
-          <text x="6" y="301">30°N</text>
-          <text x="6" y="456">23.5°N</text>
-          <text x="234" y="12">90°E</text>
-          <text x="464" y="12">105°E</text>
-          <text x="694" y="12">120°E</text>
-        </g>
+            <!-- Editorial Cartography Coordinate Grid -->
+            <g opacity="0.16" stroke="var(--text-muted)" stroke-width="0.7" stroke-dasharray="3 3">
+              <line x1="15" y1="150" x2="905" y2="150" />
+              <line x1="15" y1="305" x2="905" y2="305" />
+              <line x1="15" y1="460" x2="905" y2="460" />
+              <line x1="230" y1="15" x2="230" y2="615" />
+              <line x1="460" y1="15" x2="460" y2="615" />
+              <line x1="690" y1="15" x2="690" y2="615" />
+            </g>
+            <g opacity="0.45" font-family="var(--font-mono)" font-size="8.5" fill="var(--text-muted)">
+              <text x="18" y="146">40°N</text>
+              <text x="18" y="301">30°N</text>
+              <text x="18" y="456">23.5°N</text>
+              <text x="234" y="26">90°E</text>
+              <text x="464" y="26">105°E</text>
+              <text x="694" y="26">120°E</text>
+            </g>
 
-        <!-- Yellow River (黄河) & Yangtze River (长江) Hairline Courses -->
-        <path d="M 300 255 Q 425 188 525 258 T 665 262" fill="none" stroke="#9A6700" stroke-width="1.8" stroke-dasharray="6 3" opacity="0.6" />
-        <path d="M 275 375 Q 430 415 565 365 T 718 352" fill="none" stroke="#1F6E5C" stroke-width="1.8" opacity="0.58" />
+            <!-- 34 Authentic Natural-Boundary GeoJSON Provincial Polygons -->
+            <g class="map-provinces-polygons">
+              ${provNodes
+                .filter((pn) => pn.dPath)
+                .map((pn) => {
+                  const isSel = activeProvinceId === pn.id;
+                  const inActiveRegion = activeRegionId && pn.regionId === activeRegionId && mapMode === "regions";
+                  const fillOp = isSel ? "0.78" : (inActiveRegion ? "0.52" : "0.28");
+                  const strokeClr = isSel ? "#181715" : "var(--bg-paper)";
+                  const strokeW = isSel ? "1.8" : "0.95";
+                  return `<path
+                    d="${pn.dPath}"
+                    fill="${pn.fillColor}"
+                    fill-opacity="${fillOp}"
+                    fill-rule="evenodd"
+                    stroke="${strokeClr}"
+                    stroke-width="${strokeW}"
+                    class="map-province-poly ${isSel ? "active" : ""}"
+                    data-action="select-map-province"
+                    data-id="${pn.id}"
+                    data-tip-title="${pn.nameVi} (${pn.nameZh || pn.short})"
+                    data-tip-meta="${pn.corridor}${pn.unesco ? " · UNESCO: " + pn.unesco : ""}"
+                    style="cursor:pointer;transition:fill-opacity 0.15s ease;"
+                  ><title>${pn.nameVi} (${pn.short}) · ${pn.corridor}</title></path>`;
+                })
+                .join("")}
+            </g>
 
-        <!-- 6 Macro Regions (Zero Rounded Corners) -->
-        ${regions
-          .map((r) => {
-            const isActive = activeRegionId === r.id;
-            const pillW = Math.max(132, r.label.length * 7.6 + 22);
-            const regionFillOpacity = mapMode === "regions" ? (isActive ? "0.72" : "0.34") : "0.14";
-            return `
-              <g data-action="select-region" data-id="${r.id}" style="cursor:pointer;">
-                <path
-                  d="${r.path}"
-                  fill="${regionColors[r.id]}"
-                  fill-opacity="${regionFillOpacity}"
-                  stroke="${isActive ? "#171512" : "var(--hairline)"}"
-                  stroke-width="${isActive ? "1.6" : "0.9"}"
-                  class="map-region-shape ${isActive ? "active" : ""}"
-                />
-                <g style="pointer-events:none;opacity:${mapMode === "regions" ? "1" : "0.72"};">
-                  <rect x="${r.lx - pillW / 2}" y="${r.ly - 12}" width="${pillW}" height="21" rx="0" fill="${isActive ? "#B8292F" : "#181715"}" stroke="${isActive ? "#D7BA81" : "#6F685F"}" stroke-width="1" />
-                  <text x="${r.lx}" y="${r.ly + 2}" text-anchor="middle" font-size="10.2" font-weight="700" letter-spacing="0.45" fill="#F7F4ED" style="pointer-events:none;font-family:var(--font-mono);">
-                    ${r.label}
-                  </text>
+            <!-- Yellow River & Yangtze River Hairline Courses -->
+            <path d="M 390 296 Q 485 245 555 280 T 646 286" fill="none" stroke="#9A6700" stroke-width="1.6" stroke-dasharray="5 3" opacity="0.58" style="pointer-events:none;" />
+            <path d="M 365 405 Q 490 430 600 392 T 706 380" fill="none" stroke="#1F6E5C" stroke-width="1.6" opacity="0.58" style="pointer-events:none;" />
+
+            <!-- Macro-Region Interactive Badges (shown in Regions layer) -->
+            ${mapMode === "regions" ? macroLabels
+              .map((r) => {
+                const isActive = activeRegionId === r.id;
+                const w = Math.max(106, r.label.length * 6.8 + 16);
+                return `
+                  <g data-action="select-region" data-id="${r.id}" style="cursor:pointer;">
+                    <rect x="${r.lx - w / 2}" y="${r.ly - 11}" width="${w}" height="19" rx="0" fill="${isActive ? "#B8292F" : "#181715"}" fill-opacity="0.88" stroke="${isActive ? "#D7BA81" : "#7A7368"}" stroke-width="1" />
+                    <text x="${r.lx}" y="${r.ly + 2}" text-anchor="middle" font-size="9.2" font-weight="700" letter-spacing="0.4" fill="#F7F4ED" style="pointer-events:none;font-family:var(--font-mono);">
+                      ${r.label}
+                    </text>
+                  </g>
+                `;
+              })
+              .join("") : ""}
+
+            <!-- Active 12306 HSR Trunk Corridors -->
+            ${hsrLines
+              .filter((h) => activeHsr.includes(h.id))
+              .map((h) => `
+                <g style="pointer-events:none;">
+                  <title>${h.label}</title>
+                  <path d="${h.d}" fill="none" stroke="#FFFFFF" stroke-width="4.2" stroke-linecap="round" opacity="0.82" />
+                  <path d="${h.d}" fill="none" stroke="${h.color}" stroke-width="2.4" stroke-dasharray="6 3" stroke-linecap="round" />
                 </g>
+              `)
+              .join("")}
+
+            ${mapMode === "capitals" ? `
+              <g fill="none" stroke="#9A6700" stroke-width="1.9" stroke-dasharray="4 3" opacity="0.88" style="pointer-events:none;">
+                <path d="M 526.2 333.8 L 592.6 325.8 L 631.2 243.6 L 664.4 369.4 L 683.9 397.4" />
               </g>
-            `;
-          })
-          .join("")}
+            ` : ""}
 
-        ${isCorridorMode ? `
-          <g fill="none" stroke-linecap="square" opacity="0.72">
-            <path d="M 162 172 Q 255 215 344 242 T 454 284 L 540 292" stroke="#9A6700" stroke-width="2.2" stroke-dasharray="6 4" />
-            <path d="M 710 356 Q 600 355 536 356 T 362 368" stroke="#3B4D7A" stroke-width="2" stroke-dasharray="4 4" />
-          </g>
-        ` : ""}
+            <!-- Northern Vietnam 3 Cross-Border Gateways -->
+            <g style="pointer-events:none;">
+              <rect x="415" y="524" width="126" height="68" rx="0" fill="#1F6E5C" fill-opacity="0.1" stroke="#1F6E5C" stroke-width="0.9" stroke-dasharray="3 2" />
+              ${vnGates
+                .map((g) => `
+                  <g>
+                    <rect x="${g.x - 3.5}" y="${g.y - 3.5}" width="7" height="7" fill="#B8292F" stroke="#F7F4ED" stroke-width="1.1" />
+                    <text x="${g.lx}" y="${g.ly}" text-anchor="${g.anchor}" font-size="8.2" font-weight="700" fill="var(--ink-primary)" style="paint-order:stroke;stroke:var(--bg-paper);stroke-width:2.5px;">${g.label}</text>
+                  </g>
+                `)
+                .join("")}
+            </g>
 
-        ${hsrLines.filter((h) => activeHsr.includes(h.id)).map((h) => `
-          <g style="pointer-events:none;">
-            <path d="${h.d}" fill="none" stroke="#FFFFFF" stroke-width="4.4" stroke-linecap="square" opacity="0.75" />
-            <path d="${h.d}" fill="none" stroke="${h.color}" stroke-width="2.6" stroke-dasharray="6 3" stroke-linecap="square" />
-          </g>
-        `).join("")}
+            <!-- Compact Province Centroid Labels (zero clutter: short Hanzi badges) -->
+            ${provNodes
+              .filter((pn) => pn.id !== "prov-hongkong" && pn.id !== "prov-macau")
+              .map((pn) => {
+                const isSel = activeProvinceId === pn.id;
+                const rSz = isSel ? 9.5 : 7.5;
+                return `
+                  <g class="map-province-node ${isSel ? "active" : ""}" data-action="select-map-province" data-id="${pn.id}" data-tip-title="${pn.nameVi} (${pn.nameZh || pn.short})" data-tip-meta="${pn.corridor}" style="cursor:pointer;">
+                    <circle cx="${pn.x}" cy="${pn.y}" r="${rSz}" fill="${isSel ? "#B8292F" : "#1A1918"}" fill-opacity="${isSel ? "1" : "0.78"}" stroke="${isSel ? "#D7BA81" : "#F7F4ED"}" stroke-width="${isSel ? "2" : "1"}" />
+                    <text x="${pn.x}" y="${pn.y + 3}" text-anchor="middle" font-size="${isSel ? "8.8" : "7.6"}" font-weight="700" fill="#FFFFFF" style="pointer-events:none;font-family:'Noto Serif SC',serif;">${pn.short}</text>
+                  </g>
+                `;
+              })
+              .join("")}
 
-        ${isCapitalMode ? `
-          <g fill="none" stroke="#9A6700" stroke-width="1.8" stroke-dasharray="4 3" opacity="0.82">
-            <path d="M 454 284 L 540 292 L 586 184 L 646 326 L 676 386" />
-          </g>
-        ` : ""}
+            <!-- Leader Callouts for Dense Coast Municipalities & Hong Kong / Macau SARs -->
+            ${smallBadges
+              .map((sb) => {
+                const isSel = activeProvinceId === sb.id;
+                return `
+                  <g data-action="select-map-province" data-id="${sb.id}" style="cursor:pointer;">
+                    <line x1="${sb.x}" y1="${sb.y}" x2="${sb.bx}" y2="${sb.by}" stroke="${isSel ? "#B8292F" : "#757068"}" stroke-width="0.9" stroke-dasharray="2 2" />
+                    <rect x="${sb.bx}" y="${sb.by - 8}" width="64" height="16" fill="${isSel ? "#B8292F" : "var(--bg-elevated)"}" stroke="${isSel ? "#D7BA81" : "var(--border-medium)"}" stroke-width="0.9" />
+                    <text x="${sb.bx + 4}" y="${sb.by + 3}" font-size="8.2" font-weight="700" fill="${isSel ? "#FFFFFF" : "var(--ink-primary)"}" style="font-family:var(--font-sans);">${sb.label}</text>
+                  </g>
+                `;
+              })
+              .join("")}
 
-        <!-- Northern Vietnam 3 Border Crossing Gates -->
-        <g>
-          <path d="M 342 544 L 506 544 L 494 606 L 348 606 Z" fill="#1F6E5C" fill-opacity="0.16" stroke="#1F6E5C" stroke-width="1.1" stroke-dasharray="3 2" />
-          <text x="424" y="596" text-anchor="middle" font-size="9.5" font-weight="800" fill="#1F6E5C" style="font-family:var(--font-mono);">
-            ${enMode ? "NORTHERN VIETNAM BORDER GATEWAYS (12306 CONNECT)" : "3 CỬA KHẨU BẮC VIỆT NAM NỐI CAO TỐC 12306"}
-          </text>
-          ${vnGates.map((g, gi) => `
-            <g>
-              <rect x="${g.x - 4}" y="${g.y - 4}" width="8" height="8" fill="#B8292F" stroke="#F7F4ED" stroke-width="1.2" />
-              <text x="${g.x}" y="${g.y + (gi === 1 ? 19 : 11)}" text-anchor="middle" font-size="8.2" font-weight="700" fill="var(--ink-primary)" style="paint-order:stroke;stroke:var(--bg-paper);stroke-width:2.5px;">${g.label}</text>
+            <!-- Hong Kong & Macau Pearl River Estuary Inset Boxes -->
+            <g class="map-sar-insets">
+              <line x1="599.7" y1="524.9" x2="660" y2="546" stroke="#9A6700" stroke-width="1" stroke-dasharray="2 2" />
+              <g data-action="select-map-province" data-id="prov-hongkong" style="cursor:pointer;">
+                <rect x="660" y="536" width="84" height="22" fill="${activeProvinceId === "prov-hongkong" ? "#B8292F" : "var(--bg-elevated)"}" stroke="#9A6700" stroke-width="1.2" />
+                <text x="702" y="550" text-anchor="middle" font-size="8.6" font-weight="700" fill="${activeProvinceId === "prov-hongkong" ? "#FFFFFF" : "var(--ink-primary)"}">HK · 香港 SAR</text>
+              </g>
+              <line x1="590.9" y1="526.8" x2="660" y2="574" stroke="#9A6700" stroke-width="1" stroke-dasharray="2 2" />
+              <g data-action="select-map-province" data-id="prov-macau" style="cursor:pointer;">
+                <rect x="660" y="564" width="84" height="22" fill="${activeProvinceId === "prov-macau" ? "#B8292F" : "var(--bg-elevated)"}" stroke="#9A6700" stroke-width="1.2" />
+                <text x="702" y="578" text-anchor="middle" font-size="8.6" font-weight="700" fill="${activeProvinceId === "prov-macau" ? "#FFFFFF" : "var(--ink-primary)"}">MO · 澳门 SAR</text>
+              </g>
+            </g>
+
+            <!-- Priority City Labels (shown only when Regions mode & not cluttered) -->
+            ${mapMode === "regions" ? cityPins
+              .filter((c) => ["xian", "wuhan", "chengdu", "kunming", "guangzhou", "harbin"].includes(c.id))
+              .map((c) => {
+                const isActive = activeCityId === c.id;
+                return `
+                  <g class="map-city-pin ${isActive ? "active" : ""}" data-action="select-city" data-id="${c.id}" style="cursor:pointer;">
+                    ${c.leader ? `<line x1="${c.x}" y1="${c.y}" x2="${c.lx}" y2="${c.ly - 2}" stroke="rgba(215, 186, 129, 0.72)" stroke-width="0.9" stroke-dasharray="2 2" />` : ""}
+                    <text
+                      x="${c.lx}"
+                      y="${c.ly}"
+                      text-anchor="${c.anchor}"
+                      font-size="9.5"
+                      font-weight="${isActive ? "700" : "600"}"
+                      fill="var(--ink-primary)"
+                      style="paint-order:stroke;stroke:var(--bg-paper);stroke-width:3px;stroke-linejoin:round;"
+                    >${c.name}</text>
+                  </g>
+                `;
+              })
+              .join("") : ""}
+          </svg>
+        </div>
+      </div>
+    `;
+  },
+
+  renderCapitalMigrationMapSVG(enMode = false) {
+    const capitals = [
+      { id: "prov-shaanxi", name: enMode ? "Chang'an (Xi'an)" : "Trường An (Tây An)", zh: "长安", eras: "Chu · Tần · Hán · Đường", x: 526, y: 334, lx: 505, ly: 326, anchor: "end" },
+      { id: "prov-henan", name: enMode ? "Luoyang & Kaifeng" : "Lạc Dương · Khai Phong", zh: "洛阳 · 开封", eras: "Đông Chu · Đông Hán · Bắc Tống", x: 593, y: 326, lx: 593, ly: 308, anchor: "middle" },
+      { id: "prov-beijing", name: enMode ? "Beijing (Yanjing / Dadu)" : "Bắc Kinh (Đại Đô · Yên Kinh)", zh: "北京", eras: "Kim · Nguyên · Minh · Thanh", x: 631, y: 244, lx: 652, ly: 236, anchor: "start" },
+      { id: "prov-jiangsu", name: enMode ? "Nanjing (Jiankang)" : "Nam Kinh (Kiến Khang)", zh: "南京", eras: "Lục Triều · Nam Đường · Sơ Minh", x: 664, y: 369, lx: 686, ly: 364, anchor: "start" },
+      { id: "prov-zhejiang", name: enMode ? "Hangzhou (Lin'an)" : "Hàng Châu (Lâm An)", zh: "杭州", eras: "Ngô Việt · Nam Tống", x: 684, y: 397, lx: 704, ly: 412, anchor: "start" }
+    ];
+    return `
+      <div class="capital-migration-box">
+        <div class="editorial-kicker">${enMode ? "Historical Cartography · Axis of Capitals" : "Bản đồ Lịch sử · Trục Thiên đô Kinh đô Trung Hoa"}</div>
+        <h3 style="margin:0.2rem 0 0.5rem;font-size:1.15rem;">${enMode ? "West-to-East & South-to-North Shift of Chinese Imperial Capitals (2070 BCE – Present)" : "Quỹ đạo Dịch chuyển Kinh đô từ Quan Trung ra Hoa Đông & Hoa Bắc"}</h3>
+        <svg viewBox="360 190 420 265" style="width:100%;max-height:300px;border:1px solid var(--hairline);background:var(--bg-paper);" role="img" aria-label="${enMode ? "Imperial Capital Migration Map" : "Bản đồ dịch chuyển cố đô Trung Hoa"}">
+          <!-- Yellow River & Yangtze & Grand Canal -->
+          <path d="M 380 285 Q 490 250 560 295 T 650 285" fill="none" stroke="#9A6700" stroke-width="1.6" stroke-dasharray="5 3" opacity="0.65" />
+          <path d="M 380 410 Q 500 425 605 390 T 720 382" fill="none" stroke="#1F6E5C" stroke-width="1.6" opacity="0.65" />
+          <path d="M 631 244 Q 655 310 684 397" fill="none" stroke="#3B4D7A" stroke-width="1.4" stroke-dasharray="3 2" opacity="0.7" />
+          <!-- Capital Migration Trajectory -->
+          <path d="M 526 334 L 593 326 L 684 397 L 664 369 L 631 244" fill="none" stroke="#9E2A2B" stroke-width="2.2" />
+          ${capitals.map((c, idx) => `
+            <g data-action="open-province-detail" data-id="${c.id}" style="cursor:pointer;">
+              <circle cx="${c.x}" cy="${c.y}" r="8" fill="#9E2A2B" stroke="#F7F4ED" stroke-width="1.8" />
+              <text x="${c.x}" y="${c.y + 3}" text-anchor="middle" font-size="8.5" font-weight="700" fill="#FFFFFF">${idx + 1}</text>
+              <text x="${c.lx}" y="${c.ly}" text-anchor="${c.anchor}" font-size="9.5" font-weight="700" fill="var(--ink-primary)">${c.name} <tspan fill="#9E2A2B">${c.zh}</tspan></text>
+              <text x="${c.lx}" y="${c.ly + 11}" text-anchor="${c.anchor}" font-size="7.5" fill="var(--text-muted)">${c.eras}</text>
             </g>
           `).join("")}
-        </g>
-
-        <!-- All 34 Interactive Provincial Units (Architectural Square / Diamond Markers) -->
-        ${provNodes
-          .map((pn) => {
-            const isSel = activeProvinceId === pn.id;
-            const half = isSel ? 12 : 9.5;
-            const isMun = pn.cat === "municipality";
-            const isSar = pn.cat === "sar";
-            const isAuto = pn.cat === "autonomous";
-            const shape = isAuto
-              ? `<polygon points="${pn.x},${pn.y - half - 2} ${pn.x + half + 2},${pn.y} ${pn.x},${pn.y + half + 2} ${pn.x - half - 2},${pn.y}" fill="${pn.fillColor}" fill-opacity="${isSel ? "1" : "0.9"}" stroke="${isSel ? "#D7BA81" : "#F7F4ED"}" stroke-width="${isSel ? "2.4" : "1.2"}" />`
-              : `<rect x="${pn.x - half}" y="${pn.y - half}" width="${half * 2}" height="${half * 2}" rx="0" fill="${isMun ? "#B8292F" : (isSar ? "#9A6700" : pn.fillColor)}" fill-opacity="${isSel ? "1" : "0.9"}" stroke="${isSel ? "#D7BA81" : "#F7F4ED"}" stroke-width="${isSel ? "2.4" : "1.2"}" />`;
-            return `
-              <g class="map-province-node ${isSel ? "active" : ""}" data-action="select-map-province" data-id="${pn.id}" style="cursor:pointer;">
-                <title>${pn.nameVi} (${pn.short}) • ${pn.corridor}</title>
-                ${shape}
-                <text x="${pn.x}" y="${pn.y + 3.5}" text-anchor="middle" font-size="9.5" font-weight="700" fill="#FFFFFF" style="pointer-events:none;font-family:'Noto Serif SC',serif;">${pn.short}</text>
-              </g>
-            `;
-          })
-          .join("")}
-
-        <!-- Priority Cities (shown cleanly in default Regions view) -->
-        ${mapMode === "regions" ? cityPins
-          .map((c) => {
-            const isActive = activeCityId === c.id;
-            return `
-              <g class="map-city-pin ${isActive ? "active" : ""}" data-action="select-city" data-id="${c.id}" style="cursor:pointer;">
-                ${c.leader ? `<line x1="${c.x}" y1="${c.y}" x2="${c.lx + (c.anchor === "start" ? -4 : 4)}" y2="${c.ly - 3}" stroke="rgba(215, 186, 129, 0.72)" stroke-width="1" stroke-dasharray="2 2" />` : ""}
-                <rect x="${c.x - (isActive ? 5 : 3.5)}" y="${c.y - (isActive ? 5 : 3.5)}" width="${isActive ? 10 : 7}" height="${isActive ? 10 : 7}" fill="${isActive ? "#B8292F" : "#181715"}" stroke="#F7F4ED" stroke-width="1.2" />
-                <text
-                  x="${c.lx}"
-                  y="${c.ly}"
-                  text-anchor="${c.anchor}"
-                  font-size="10.4"
-                  font-weight="${isActive ? "700" : "600"}"
-                  fill="#F7F4ED"
-                  style="paint-order:stroke;stroke:rgba(20,18,16,0.94);stroke-width:3.5px;stroke-linejoin:round;"
-                >${c.name}</text>
-              </g>
-            `;
-          })
-          .join("") : ""}
-      </svg>
+        </svg>
+      </div>
     `;
   },
 

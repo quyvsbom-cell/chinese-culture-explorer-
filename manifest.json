@@ -1,8 +1,8 @@
 {
   "name": "CHINESE CULTURE EXPLORER – 中国文化探索",
   "short_name": "CultureExplorer",
-  "description": "Explore Chinese Civilization. Understand Its Philosophy. Discover Its Culture. Founded by Lê Hưng Thịnh.",
-  "start_url": "/index.html",
+  "description": "CHINESE CULTURE EXPLORER V3/V4 – Khám phá Văn minh Trung Hoa, 34 Tỉnh/Thành 3D, Bảo tàng Số, Cổ tịch Tứ Khố & Cầu nối Việt–Trung.",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#F7F4ED",
   "theme_color": "#9F2929",

@@ -34,7 +34,23 @@
   const EditorialMedia = window.CCE_EDITORIAL_MEDIA;
   const Intelligence = window.CCE_INTELLIGENCE || {};
   const Compendia = window.CCE_COMPENDIA || {};
-  const ForbiddenCity3D = window.CCE_FORBIDDEN_CITY_3D || null;
+  function getForbiddenCity3D() {
+    return window.CCE_FORBIDDEN_CITY_3D || null;
+  }
+  const Lazy = window.CCE_LAZY || null;
+  const CceRouter = window.CCE_ROUTER || null;
+  const CceSearch = window.CCE_SEARCH || null;
+
+  function hydratePageBundles(pageId, uiLang, extraFlags) {
+    if (!Lazy || typeof Lazy.ensureForState !== "function") return Promise.resolve();
+    const hadUnloaded = typeof Lazy.hasUnloaded === "function" ? Lazy.hasUnloaded(pageId, uiLang, extraFlags) : false;
+    return Lazy.ensureForState(pageId, uiLang, extraFlags).then(() => {
+      if (hadUnloaded) {
+        if (CceSearch && typeof CceSearch.markDirty === "function") CceSearch.markDirty();
+        render();
+      }
+    });
+  }
   const TravelReadiness = window.CCE_TRAVEL_READINESS || null;
   const WeeklyUpdates = window.CCE_WEEKLY_UPDATES || null;
 
@@ -892,7 +908,7 @@
       ? en.keyTakeaways
       : ((ed && ed.keyTakeaways && ed.keyTakeaways.length) ? ed.keyTakeaways : (art.keyTakeaways || []));
     const rawIntro = (en && en.introduction) || art.introduction || "";
-    const rawHist = (en && en.historicalContext) || art.historicalContext || art.historicalBackground || "";
+    const rawHist = (en && (en.historicalContext || en.historicalBackground)) || art.historicalContext || art.historicalBackground || "";
     const rawSections = (en && Array.isArray(en.mainContent) && en.mainContent.length)
       ? en.mainContent
       : (art.mainContent || []);
@@ -1817,8 +1833,9 @@
     const enPack = enC ? getArticleEnPack(art.id) : null;
     const aTit = (enPack && enPack.title) || (enC ? art.titleEn : null) || art.titleVi;
     const aCat = (enPack && enPack.categoryLabel) || art.categoryLabel;
-    const refTitle = (enPack && enPack.references && enPack.references[0] && enPack.references[0].title)
-      || (art.references && art.references[0] ? art.references[0].title : (enC ? "Verified archival scholarship" : "Tư liệu học thuật đối chiếu"));
+    const ref0 = (enPack && enPack.references && enPack.references[0]) || (art.references && art.references[0]) || null;
+    const refTitle = (ref0 && typeof ref0 === "object" ? (ref0.title || ref0.author) : ref0)
+      || (enC ? "Verified archival scholarship" : "Tư liệu học thuật đối chiếu");
     if (fmt === "bibtex") {
       const key = art.id.replace(/[^a-zA-Z0-9]/g, "_");
       return `@article{cce_art_${key},\n  author = {${escapeBibtexValue(Brand.founderName)} and Chinese Culture Explorer Editorial Board},\n  title = {{${escapeBibtexValue(aTit)} (${escapeBibtexValue(art.titleZh)})}},\n  journal = {${escapeBibtexValue(Brand.projectFullTitle)}},\n  year = {2026},\n  note = {Category: ${escapeBibtexValue(aCat)}. Primary Ref: ${escapeBibtexValue(refTitle)}}\n}`;
@@ -3403,7 +3420,18 @@
       </section>
 
       <!-- SECTION 01B: FORBIDDEN CITY 3D ARCHITECTURAL EMBLEM & DISSECTION -->
-      ${ForbiddenCity3D ? ForbiddenCity3D.renderHomeSection(state.uiLang) : ""}
+      ${getForbiddenCity3D() ? getForbiddenCity3D().renderHomeSection(state.uiLang) : `
+        <section class="ed-section" style="padding:1.65rem 0;border-bottom:1px solid var(--hairline);background:var(--bg-surface);">
+          <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:1.25rem;flex-wrap:wrap;">
+            <div>
+              <div class="editorial-kicker">${homeEn ? "3D ARCHITECTURAL HERITAGE · 紫禁城三维解剖" : "DI SẢN KIẾN TRÚC 3D · 紫禁城三维解剖"}</div>
+              <h2 class="ed-h2" style="margin:0.2rem 0 0.35rem;font-size:1.35rem;">${homeEn ? "Interactive 3D Forbidden City Dissection &amp; Dougong Joinery Studio" : "Phòng Giải phẫu 3D Tử Cấm Thành: Mộng Đấu Củng &amp; Trục Cố đô Huế"}</h2>
+              <p style="margin:0;color:var(--text-secondary);font-size:0.88rem;max-width:68ch;">${homeEn ? "Inspect interlocking bracket joinery, imperial rooftop guardians, and Three-Tier White Marble terraces in WebGL." : "Tải mô hình 3D tương tác để bóc tách kết cấu Đấu Củng không đinh và trục Thần Đạo Bắc – Nam."}</p>
+            </div>
+            <button type="button" class="ed-btn-primary" data-action="open-article" data-id="forbidden-city-3d-dissection">${homeEn ? "Launch 3D Studio →" : "Mở Phòng Giải phẫu 3D →"}</button>
+          </div>
+        </section>
+      `}
 
       <!-- CURATED READING ROOM (Asymmetric 7:5 Hairline Grid) -->
       <section class="ed-section" aria-label="Thư phòng Chuyên luận">
@@ -4222,15 +4250,21 @@
             <h3 class="ref-category-title">${enM ? cat.headingEn : cat.headingVi}</h3>
             <ol class="ref-clean-list">
               ${cat.items.map((ref) => {
-                const cleanType = cleanSourceTypeLabel(ref.sourceType);
+                const isStrRef = typeof ref === "string";
+                const rAuthor = isStrRef ? (enM ? "Scholarly Source" : "Tài liệu tham khảo") : (ref.author || "");
+                const rDate = isStrRef ? "" : (ref.date || "");
+                const rTitle = isStrRef ? ref : (ref.title || ref.note || "");
+                const rUrl = !isStrRef && ref.url && ref.url !== "#" ? ref.url : "";
+                const rNote = isStrRef ? "" : (ref.verificationNote || "");
+                const cleanType = isStrRef ? "" : cleanSourceTypeLabel(ref.sourceType);
                 return `
                   <li class="ref-item-clean">
                     <div>
-                      <strong>${escapeEditorialHtml(ref.author)}</strong> (${escapeEditorialHtml(ref.date)}) —
-                      <a href="${escapeHtml(ref.url)}" target="_blank" rel="noopener noreferrer"><em>${escapeEditorialHtml(ref.title)}</em> ↗</a>
+                      ${rAuthor ? `<strong>${escapeEditorialHtml(rAuthor)}</strong> ` : ""}${rDate ? `(${escapeEditorialHtml(rDate)}) ` : ""}${rAuthor || rDate ? "— " : ""}
+                      ${rUrl ? `<a href="${escapeHtml(rUrl)}" target="_blank" rel="noopener noreferrer"><em>${escapeEditorialHtml(rTitle)}</em> ↗</a>` : `<em>${escapeEditorialHtml(rTitle)}</em>`}
                       ${cleanType ? `<span class="badge badge-outline" style="margin-left:0.4rem;">${escapeEditorialHtml(cleanType)}</span>` : ""}
                     </div>
-                    ${ref.verificationNote ? `<div class="ref-item-note">${enM ? "Scope:" : "Phạm vi đối chứng:"} ${escapeEditorialHtml(ref.verificationNote)}</div>` : ""}
+                    ${rNote ? `<div class="ref-item-note">${enM ? "Scope:" : "Phạm vi đối chứng:"} ${escapeEditorialHtml(rNote)}</div>` : ""}
                   </li>
                 `;
               }).join("")}
@@ -4535,7 +4569,10 @@
                   <p style="margin:0;">${formatInlineMd(v.introduction, false)}</p>
                 </div>
 
-                ${art.id === "forbidden-city-3d-dissection" && ForbiddenCity3D ? ForbiddenCity3D.renderMonographPage(state.uiLang) : ""}
+                ${art.id === "forbidden-city-3d-dissection" ? (getForbiddenCity3D() ? getForbiddenCity3D().renderMonographPage(state.uiLang) : (() => {
+                  if (Lazy) Lazy.ensureBundle("3d-pack").then(() => patchMainOnly());
+                  return `<div class="epistemic-box" style="margin:1.25rem 0;"><strong>${enM ? "Initializing 3D Architectural WebGL Studio..." : "Đang khởi tạo mô hình 3D Kiến trúc Tử Cấm Thành..."}</strong></div>`;
+                })()) : ""}
 
                 <h3 id="sec-bg">${enM ? "1. Historical Context" : "1. Bối cảnh lịch sử"}</h3>
                 <p>${(window.CCE_LABS_EXT && window.CCE_LABS_EXT.injectInlineClassicalGloss) ? window.CCE_LABS_EXT.injectInlineClassicalGloss(formatInlineMd(v.historicalContext, false), enM) : formatInlineMd(v.historicalContext, false)}</p>
@@ -6311,6 +6348,68 @@
             })()}
           </div>
 
+          <!-- Wave 3.1: Imperial Capital Migration Map & Synchronized 14-Era China-Vietnam-World Axis -->
+          ${Visuals.renderCapitalMigrationMapSVG ? Visuals.renderCapitalMigrationMapSVG(enM) : ""}
+
+          ${(() => {
+            const hSync = window.CCE_HISTORY_SYNC_V3;
+            if (!hSync) return "";
+            const pTimeline = Array.isArray(hSync.parallelTimeline) ? hSync.parallelTimeline : [];
+            const kFigures = Array.isArray(hSync.keyFigures) ? hSync.keyFigures : [];
+            const activeSync = pTimeline.find((item) => item.eraId === activePeriod.id || activePeriod.id.indexOf(item.eraId) >= 0 || item.eraId.indexOf(activePeriod.id) >= 0) || pTimeline[0];
+            return `
+              ${activeSync ? `
+                <div class="sync-timeline-v3-card">
+                  <div class="editorial-kicker">${enM ? "Synchronized Chrono-Axis (China · Vietnam · World)" : "Trục Đồng đại Song song (Trung Quốc · Việt Nam · Thế giới)"}</div>
+                  <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem;">
+                    <h3 style="margin:0.2rem 0 0;">${escapeHtml(enM ? activeSync.eraNameEn : activeSync.eraNameVi)} <span class="hanzi">${escapeHtml(activeSync.eraNameZh)}</span></h3>
+                    <span class="badge badge-outline">${escapeHtml(activeSync.periodSpan)}</span>
+                  </div>
+                  <div class="sync-timeline-3col">
+                    <div class="sync-lane-box lane-cn">
+                      <strong style="display:block;margin-bottom:0.35rem;color:var(--accent-cinnabar);">${enM ? "China Milestones" : "Trục Trung Hoa"}</strong>
+                      <ul style="margin:0;padding-left:1rem;">
+                        ${((enM ? activeSync.chinaMilestonesEn : activeSync.chinaMilestonesVi) || []).map((ms) => `<li style="margin-bottom:0.3rem;">${escapeHtml(ms)}</li>`).join("")}
+                      </ul>
+                    </div>
+                    <div class="sync-lane-box lane-vn">
+                      <strong style="display:block;margin-bottom:0.35rem;color:var(--accent-jade);">${enM ? "Vietnam Parallel" : "Song hành Việt Nam"}</strong>
+                      <p style="margin:0;">${escapeHtml(enM ? activeSync.vietnamParallelEn : activeSync.vietnamParallelVi)}</p>
+                    </div>
+                    <div class="sync-lane-box lane-world">
+                      <strong style="display:block;margin-bottom:0.35rem;color:var(--antique-gold);">${enM ? "World Context" : "Bối cảnh Thế giới"}</strong>
+                      <p style="margin:0;">${escapeHtml(enM ? activeSync.worldParallelEn : activeSync.worldParallelVi)}</p>
+                    </div>
+                  </div>
+                </div>
+              ` : ""}
+
+              ${kFigures.length ? `
+                <div class="sync-timeline-v3-card">
+                  <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem;">
+                    <div>
+                      <div class="editorial-kicker">${enM ? `Biographical Index (${kFigures.length} Figures)` : `Danh nhân Lịch đại (${kFigures.length} Nhân vật)`}</div>
+                      <h3 style="margin:0.2rem 0 0;">${enM ? "Historical Figures Linked to Native Provinces" : "Nhân vật Lịch sử &amp; Tỉnh/Thành Cố hương"}</h3>
+                    </div>
+                  </div>
+                  <div class="history-figures-grid">
+                    ${kFigures.map((fig) => `
+                      <div class="history-figure-card">
+                        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:0.4rem;">
+                          <strong>${escapeHtml(enM ? fig.nameEn : fig.nameVi)} <span class="hanzi">${escapeHtml(fig.nameZh)}</span></strong>
+                          <span style="font-size:0.74rem;font-family:var(--font-mono);color:var(--text-muted);">${escapeHtml(fig.years)}</span>
+                        </div>
+                        <div style="font-size:0.8rem;font-weight:600;color:var(--accent-cinnabar);">${escapeHtml(enM ? fig.roleEn : fig.roleVi)}</div>
+                        <p style="margin:0;font-size:0.8rem;color:var(--text-secondary);line-height:1.45;">${escapeHtml(enM ? fig.significanceEn : fig.significanceVi)}</p>
+                        ${fig.provinceId ? `<button type="button" class="btn btn-secondary btn-sm" style="margin-top:auto;align-self:flex-start;padding:0.2rem 0.5rem;font-size:0.74rem;" data-action="open-province-detail" data-id="${escapeHtml(fig.provinceId)}">${enM ? "Province Dossier →" : "Xem Tỉnh cố hương →"}</button>` : ""}
+                      </div>
+                    `).join("")}
+                  </div>
+                </div>
+              ` : ""}
+            `;
+          })()}
+
           <!-- Filterable Event Timeline -->
           <div style="margin-top:2.75rem;">
             <div class="section-header">
@@ -6997,8 +7096,16 @@
     const hsrCorridors = [
       { id: "hsr-gba", labelVi: "GBA · Quảng Đông–HK", labelEn: "GBA · GD–HK HSR" },
       { id: "hsr-sw", labelVi: "Tây Nam · Thành Đô–TK", labelEn: "SW · Chengdu–CQ HSR" },
-      { id: "hsr-yn", labelVi: "Vân Nam · Côn Minh–Lệ Giang", labelEn: "YN · Kunming–Lijiang" },
-      { id: "hsr-jh", labelVi: "Kinh–Hỗ · Bắc Kinh–Thượng Hải", labelEn: "Jing–Hu · BJ–SH HSR" }
+      { id: "hsr-yn", labelVi: "Vân Nam · Côn Minh–LG", labelEn: "YN · Kunming–Lijiang" },
+      { id: "hsr-mc", labelVi: "Đông Hưng–Nam Ninh", labelEn: "Dongxing–Nanning" },
+      { id: "hsr-jh", labelVi: "Kinh–Hộ · BK–Thượng Hải", labelEn: "Jing–Hu · BJ–SH HSR" },
+      { id: "hsr-jgj", labelVi: "Kinh–Quảng–Cảng", labelEn: "Jing–Guang–HK HSR" },
+      { id: "hsr-silk", labelVi: "Tơ lụa · Lũng Hải–Tân", labelEn: "Silk Road HSR" },
+      { id: "hsr-yangtze", labelVi: "Duyên Giang · SH–Thành Đô", labelEn: "Yangtze River HSR" },
+      { id: "hsr-ne", labelVi: "Đông Bắc · BK–Cáp Nhĩ Tân", labelEn: "NE · BJ–Harbin HSR" },
+      { id: "hsr-coast", labelVi: "Duyên Hải · Hàng–Hạ–Thâm", labelEn: "SE Coastal HSR" },
+      { id: "hsr-xizang", labelVi: "Thanh–Tạng · Lhasa", labelEn: "Qinghai–Tibet Rail" },
+      { id: "hsr-huabao", labelVi: "Hoa Bắc · Hô–Ngân–Lan", labelEn: "North Steppe Rail" }
     ];
 
     return `
@@ -10261,6 +10368,18 @@
       action: "open-province-detail",
       id: pr.id
     }));
+    if (CceSearch && typeof CceSearch.search === "function" && ui.searchQuery.trim()) {
+      const deepHits = CceSearch.search(ui.searchQuery, 10).filter((h) => h.type === "province_item");
+      pushRows("provinces", deepHits, (dh) => ({
+        badge: enS ? "Regional Highlight" : "Đặc sản / Di sản Tỉnh",
+        badgeClass: "badge-gold",
+        title: enS ? (dh.titleEn || dh.title) : dh.title,
+        sub: `${dh.zh ? dh.zh + " · " : ""}${dh.sub || ""}`,
+        btnLabel: enS ? "Open Province" : "Mở Tỉnh thành",
+        action: "open-province-detail",
+        id: dh.id
+      }));
+    }
     pushRows("artifacts", results.artifacts, (m) => ({
       badge: "Bảo tàng Số",
       badgeClass: "badge-jade",
@@ -10794,8 +10913,9 @@
         }
       }
     }
-    if (ForbiddenCity3D && typeof ForbiddenCity3D.initMountedCanvasIfAny === "function") {
-      ForbiddenCity3D.initMountedCanvasIfAny();
+    const _fc3dMain = getForbiddenCity3D();
+    if (_fc3dMain && typeof _fc3dMain.initMountedCanvasIfAny === "function") {
+      _fc3dMain.initMountedCanvasIfAny();
     }
   }
 
@@ -10865,8 +10985,9 @@
 
     syncModalPostUpdate(prevModalScroll, activeElId, selStart);
 
-    if (ForbiddenCity3D && typeof ForbiddenCity3D.initMountedCanvasIfAny === "function") {
-      ForbiddenCity3D.initMountedCanvasIfAny();
+    const _fc3dRender = getForbiddenCity3D();
+    if (_fc3dRender && typeof _fc3dRender.initMountedCanvasIfAny === "function") {
+      _fc3dRender.initMountedCanvasIfAny();
     }
   }
 
@@ -10890,8 +11011,21 @@
     const action = target.getAttribute("data-action");
     const id = target.getAttribute("data-id");
 
-    if (action && action.startsWith("fc3d-") && ForbiddenCity3D && typeof ForbiddenCity3D.handleAction === "function") {
-      if (ForbiddenCity3D.handleAction(action, target, Store, showToast, render)) return;
+    const _fc3dClick = getForbiddenCity3D();
+    if (action && action.startsWith("fc3d-") && _fc3dClick && typeof _fc3dClick.handleAction === "function") {
+      if (_fc3dClick.handleAction(action, target, Store, showToast, render)) return;
+    }
+
+    if (action === "map-zoom-in" || action === "map-zoom-out" || action === "map-zoom-reset") {
+      const stage = target.closest("[data-map-stage]");
+      const svg = stage ? stage.querySelector("[data-map-svg]") : null;
+      if (svg) {
+        let cur = parseFloat(svg.getAttribute("data-zoom") || "1") || 1;
+        cur = action === "map-zoom-reset" ? 1 : (action === "map-zoom-in" ? Math.min(2.4, cur + 0.35) : Math.max(1, cur - 0.35));
+        svg.setAttribute("data-zoom", String(cur));
+        svg.style.transform = cur > 1 ? `scale(${cur.toFixed(2)})` : "";
+      }
+      return;
     }
 
     if (window.CCE_LABS_EXT && typeof window.CCE_LABS_EXT.handleAction === "function") {
@@ -10933,6 +11067,7 @@
 
       case "nav": {
         e.preventDefault();
+        if (CceRouter) CceRouter.saveScroll();
         const nextPage = target.getAttribute("data-page") || "home";
         ui.mobileNavOpen = false;
         ui.searchModalOpen = false;
@@ -10941,10 +11076,12 @@
         Store.setPage(nextPage);
         syncHashFromState(nextPage);
         window.scrollTo({ top: 0, behavior: "instant" });
+        hydratePageBundles(nextPage, Store.getState().uiLang);
         break;
       }
 
       case "nav-learning":
+        if (CceRouter) CceRouter.saveScroll();
         ui.mobileNavOpen = false;
         ui.searchModalOpen = false;
         ui.activeMegaMenu = null;
@@ -10952,9 +11089,11 @@
         Store.setPage("learning");
         syncHashFromState("learning");
         window.scrollTo({ top: 0, behavior: "instant" });
+        hydratePageBundles("learning", Store.getState().uiLang);
         break;
 
       case "nav-traditional":
+        if (CceRouter) CceRouter.saveScroll();
         ui.mobileNavOpen = false;
         ui.searchModalOpen = false;
         ui.activeMegaMenu = null;
@@ -10962,6 +11101,7 @@
         Store.setPage("traditional");
         syncHashFromState("traditional");
         window.scrollTo({ top: 0, behavior: "instant" });
+        hydratePageBundles("traditional", Store.getState().uiLang);
         break;
 
       case "toggle-mobile-nav":
@@ -12463,6 +12603,7 @@
     }
     if (action === "ui-lang-select") {
       Store.setUiLang(e.target.value);
+      hydratePageBundles(Store.getState().activePage || "home", e.target.value, { needs3d: ui.activeArticleId === "forbidden-city-3d-dissection" });
       showToast(getLangPack().langChangedToast || `Đã chuyển giao diện: ${e.target.value.toUpperCase()}`);
     } else if (action === "vocab-article-filter") {
       ui.vocabFilterArticle = e.target.value || "all";
@@ -12611,8 +12752,9 @@
         patchMainOnly();
       }, 110);
     } else if (action === "fc3d-explode") {
-      if (ForbiddenCity3D && typeof ForbiddenCity3D.handleAction === "function") {
-        ForbiddenCity3D.handleAction("fc3d-explode", e.target, Store, showToast, render);
+      const _fc3dInput = getForbiddenCity3D();
+      if (_fc3dInput && typeof _fc3dInput.handleAction === "function") {
+        _fc3dInput.handleAction("fc3d-explode", e.target, Store, showToast, render);
       }
     }
   });
@@ -12792,18 +12934,42 @@
     renderModalsOnly();
   }
 
-  // Keyboard shortcuts (Ctrl+K for global search, Escape to close modals/drawers, Arrows in Editorial Lightbox)
+  // Map province hover tooltip delegation
+  document.addEventListener("mouseover", (e) => {
+    const poly = e.target && e.target.closest ? e.target.closest("[data-tip-title]") : null;
+    if (!poly) return;
+    const stage = poly.closest("[data-map-stage]");
+    const tip = stage ? stage.querySelector("[data-map-tooltip]") : null;
+    if (!tip) return;
+    const title = poly.getAttribute("data-tip-title") || "";
+    const meta = poly.getAttribute("data-tip-meta") || "";
+    tip.innerHTML = `<strong>${escapeHtml(title)}</strong>${meta ? `<div style="font-size:0.72rem;color:var(--text-muted);margin-top:2px;">${escapeHtml(meta)}</div>` : ""}`;
+    tip.hidden = false;
+  });
+  document.addEventListener("mouseout", (e) => {
+    const poly = e.target && e.target.closest ? e.target.closest("[data-tip-title]") : null;
+    if (!poly) return;
+    const stage = poly.closest("[data-map-stage]");
+    const tip = stage ? stage.querySelector("[data-map-tooltip]") : null;
+    if (tip) tip.hidden = true;
+  });
+
+  // Keyboard shortcuts (Ctrl+K or '/' for global search, Escape to close modals/drawers, Arrows in Editorial Lightbox)
   window.addEventListener("keydown", (e) => {
     const isK = (e.key && e.key.toLowerCase() === "k") || e.code === "KeyK";
-    if ((e.ctrlKey || e.metaKey) && !e.altKey && isK) {
+    const activeTag = document.activeElement ? document.activeElement.tagName : "";
+    const inEditable = ["INPUT", "TEXTAREA", "SELECT"].includes(activeTag) || (document.activeElement && document.activeElement.isContentEditable);
+    const isSlashShortcut = e.key === "/" && !e.ctrlKey && !e.metaKey && !e.altKey && !inEditable;
+    if (((e.ctrlKey || e.metaKey) && !e.altKey && isK) || isSlashShortcut) {
       e.preventDefault();
       ui.searchModalOpen = true;
       renderModalsOnly();
-      const inp = document.getElementById("global-search-input");
-      if (inp) inp.focus();
       requestAnimationFrame(() => {
         const el = document.getElementById("global-search-input");
-        if (el) el.focus();
+        if (el) {
+          el.focus();
+          if (typeof el.setSelectionRange === "function") el.setSelectionRange(el.value.length, el.value.length);
+        }
       });
     } else if (ui.activeEditorialImageId && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
       const tag = document.activeElement ? document.activeElement.tagName : "";
@@ -13133,6 +13299,14 @@
           Store.setPage("article");
           window.scrollTo({ top: 0, behavior: "instant" });
           handled = true;
+        } else if (Lazy) {
+          Lazy.ensureForState("article", Store.getState().uiLang, { needs3d: hashId === "forbidden-city-3d-dissection" }).then(() => {
+            if (Articles.some((a) => a.id === hashId)) {
+              ui.activeArticleId = hashId;
+              Store.setPage("article");
+              render();
+            }
+          });
         }
       } else if (clean.startsWith("province=")) {
         const provId = clean.replace("province=", "").trim();
@@ -13151,6 +13325,14 @@
           Store.setPage("paintings");
           window.scrollTo({ top: 0, behavior: "instant" });
           handled = true;
+        } else if (Lazy) {
+          Lazy.ensureForState("paintings", Store.getState().uiLang).then(() => {
+            if (PaintingsList.some((p) => p.id === paintId)) {
+              ui.activePaintingId = paintId;
+              Store.setPage("paintings");
+              render();
+            }
+          });
         }
       } else if (clean.startsWith("artifact=")) {
         const artId = clean.replace("artifact=", "").trim();
@@ -13159,6 +13341,14 @@
           Store.setPage("museum");
           window.scrollTo({ top: 0, behavior: "instant" });
           handled = true;
+        } else if (Lazy) {
+          Lazy.ensureForState("museum", Store.getState().uiLang).then(() => {
+            if ((Museum.artifacts || []).some((m) => m.id === artId)) {
+              ui.activeArtifactId = artId;
+              Store.setPage("museum");
+              render();
+            }
+          });
         }
       } else if (clean === "founder-message-section" || clean === "about#founder-message-section") {
         Store.setPage("about");
@@ -13256,6 +13446,9 @@
 
   window.addEventListener("popstate", () => {
     applyRouteFromLocation();
+    const st = Store.getState();
+    hydratePageBundles(st.activePage || "home", st.uiLang || "vi");
+    if (CceRouter) CceRouter.restoreScroll();
   });
 
   // Initialize Auth, Store, Clean Path Routing, and Render
@@ -13288,7 +13481,23 @@
   });
   Auth.subscribe(render);
   Store.init();
+  try {
+    const qpLang = new URLSearchParams(window.location.search || "").get("lang");
+    if (qpLang && ["vi", "en", "zh-CN", "zh-TW"].includes(qpLang)) {
+      Store.setUiLang(qpLang);
+    }
+  } catch {}
   applyRouteFromLocation();
   Auth.init();
   render();
+  hydratePageBundles(Store.getState().activePage || "home", Store.getState().uiLang || "vi", {
+    needs3d: ui.activeArticleId === "forbidden-city-3d-dissection"
+  });
+  if (Lazy && typeof Lazy.warmAllInIdle === "function") Lazy.warmAllInIdle();
+  if (CceSearch && typeof CceSearch.warmIdle === "function") CceSearch.warmIdle();
+  if (typeof navigator !== "undefined" && "serviceWorker" in navigator && window.location.protocol !== "file:") {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/sw.js").catch(() => {});
+    });
+  }
 })();

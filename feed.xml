@@ -1,35 +1,767 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CHINESE CULTURE EXPLORER – 中国文化探索</title>
+    <title>CHINESE CULTURE EXPLORER</title>
     <link>https://chinese-culture-explorer.netlify.app/</link>
-    <description>Digital Chinese cultural encyclopedia, 3D Forbidden City dissection, 54 master paintings, 34 provincial cultural &amp; travel dossiers, and Sino-Vietnamese scholarly research curated by Lê Hưng Thịnh (黎兴盛).</description>
-    <language>vi</language>
-    <lastBuildDate>Wed, 18 Nov 2026 12:30:00 +0700</lastBuildDate>
     <atom:link href="https://chinese-culture-explorer.netlify.app/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Khảo cứu văn minh Trung Hoa, Quốc họa, Bảo tàng Số, và Địa văn hóa 34 tỉnh thành.</description>
+    <language>vi</language>
+    <lastBuildDate>2026-11-21T00:00:00Z</lastBuildDate>
     <item>
-      <title>Giải phẫu 3D Tử Cấm Thành (紫禁城): Đấu Củng, Trục Đế Vương &amp; Đối Sánh Cố Đô Huế</title>
+      <title>Giải phẫu 3D Tử Cấm Thành (紫禁城): Đấu Củng, Trục Đế Vương &amp; Đối Sánh Cố Đô Huế – CHINESE CULTURE EXPLORER</title>
       <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/forbidden-city-3d-dissection</link>
       <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/forbidden-city-3d-dissection</guid>
-      <pubDate>Wed, 18 Nov 2026 12:00:00 +0700</pubDate>
-      <author>Lê Hưng Thịnh (黎兴盛)</author>
-      <description>High-detail Three.js 3-state 3D dissection of the Forbidden City (960×750m, 8,886 surveyed bays, 1722 Yangxindian shift, interlocking Dougong timber joinery) paired with East Asian palace parallels at Hue Imperial Citadel.</description>
+      <category>arts</category>
+      <description>Khởi công năm 1406 dưới triều Minh Vĩnh Lạc trên diện tích 724.250 m² (960 m × 750 m), Tử Cấm Thành (紫禁城) là quần thể kiến trúc gỗ cổ đại lớn nhất hành tinh…</description>
     </item>
     <item>
-      <title>Chiến lược Đàm phán B2B 7 Bước với Nhà máy Trung Quốc, NECIPS &amp; Giám định PSI</title>
+      <title>Bách Gia Chư Tử: Thời đại Trục tâm của Tư tưởng Trung Hoa – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/hundred-schools</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/hundred-schools</guid>
+      <category>philosophy</category>
+      <description>Khái niệm &#x27;Chư tử bách gia&#x27; (诸子百家) không chỉ là danh sách liệt kê các học giả thời Xuân Thu – Chiến Quốc (770–221 TCN), mà là cuộc bùng nổ tri thức giải quyế…</description>
+    </item>
+    <item>
+      <title>Nho gia và Ảnh hưởng Cấu trúc tới Xã hội Trung Hoa – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/confucianism-society</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/confucianism-society</guid>
+      <category>philosophy</category>
+      <description>Nho gia (儒家) thường bị giản lược thành một danh sách các quy tắc vâng lời. Thực chất, trong hơn hai thiên niên kỷ, Nho học đã trải qua ít nhất ba lần tái cấu…</description>
+    </item>
+    <item>
+      <title>Nguồn gốc Lịch sử và Tiến hóa Tư duy của Học thuyết Âm Dương – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/yinyang-origins</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/yinyang-origins</guid>
+      <category>metaphysics</category>
+      <description>Trước khi trở thành biểu tượng Thái Cực đen-trắng phổ biến toàn cầu, &#x27;Âm&#x27; (阴) và &#x27;Dương&#x27; (阳) không phải là hai thực thể thần bí hay hai lực lượng siêu nhiên…</description>
+    </item>
+    <item>
+      <title>Hiểu đúng Thuyết Ngũ Hành: Năm Pha Vận động chứ không phải Năm Nguyên tố Tĩnh – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/five-elements</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/five-elements</guid>
+      <category>metaphysics</category>
+      <description>Dịch &#x27;Ngũ Hành&#x27; (五行) là &#x27;Five Elements&#x27; trong tiếng Anh dễ gây hiểu nhầm nghiêm trọng rằng cổ nhân Trung Hoa chỉ liệt kê 5 chất liệu tĩnh tương tự &#x27;4 nguyên…</description>
+    </item>
+    <item>
+      <title>Sự Hình thành Lịch sử của Kinh Dịch: Từ Sách Bói Cỏ Thi đến Đỉnh cao Triết học – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/iching-development</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/iching-development</guid>
+      <category>metaphysics</category>
+      <description>Hiếm có tác phẩm nào trong lịch sử nhân loại vừa là sách bói toán cổ đại, vừa đứng đầu Ngũ Kinh của Nho gia, vừa truyền cảm hứng cho Đạo gia, lại vừa ảnh hưở…</description>
+    </item>
+    <item>
+      <title>Ý nghĩa Văn hóa – Xã hội của Tết Nguyên Đán Trung Quốc (Xuân Tiết) – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/spring-festival-significance</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/spring-festival-significance</guid>
+      <category>customs</category>
+      <description>Tết Nguyên Đán — ngày nay tại Trung Quốc gọi chính thức là Xuân Tiết (春节) — không chỉ là kỳ nghỉ đón năm mới nông lịch mà là nghi thức tái khẳng định trật tự…</description>
+    </item>
+    <item>
+      <title>Triều Đường và Thời kỳ Hoàng kim của Văn minh Trung Hoa – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/tang-golden-age</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/tang-golden-age</guid>
+      <category>history</category>
+      <description>Triều Đường (618–907) được sử học Đông Á và quốc tế coi là đỉnh cao về sự tự tin, cởi mở đa văn hóa và hoàn thiện thể chế đế chế trung đại. Sức ảnh hưởng của…</description>
+    </item>
+    <item>
+      <title>Hội họa Thủy mặc: Mỹ học của Bút mực, Khoảng trống và Tâm cảnh – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/ink-wash-painting</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/ink-wash-painting</guid>
+      <category>arts</category>
+      <description>Nếu hội họa sơn dầu cổ điển phương Tây hướng tới tái hiện không gian ba chiều, ánh sáng và giải phẫu vật lý bằng màu sắc, thì hội họa thủy mặc (水墨画) Trung Ho…</description>
+    </item>
+    <item>
+      <title>Khái niệm &#x27;Quan hệ&#x27; (Guanxi) trong Kinh doanh Trung Quốc: Từ Xã hội học đến Thực tiễn Hiện đại – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/guanxi-business</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/guanxi-business</guid>
+      <category>business</category>
+      <description>Với sinh viên ngành Kinh doanh Quốc tế, &#x27;Quan hệ&#x27; (关系 – guānxi) là thuật ngữ được nhắc đến nhiều nhất nhưng cũng dễ bị hiểu sai nhất về thị trường Trung Quốc…</description>
+    </item>
+    <item>
+      <title>Văn hóa Trà Trung Quốc: Từ Thảo dược Cổ đại đến Thương mại Toàn cầu – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/tea-culture</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/tea-culture</guid>
+      <category>customs</category>
+      <description>Cây trà (Camellia sinensis) có nguồn gốc sinh học tại vùng Tây Nam Trung Quốc (Vân Nam – Tứ Xuyên – Quý Châu) và vùng núi tiếp giáp phía Bắc Đông Nam Á. Từ l…</description>
+    </item>
+    <item>
+      <title>Giao lưu Văn hóa Trung – Việt qua Dòng chảy Lịch sử: Tiếp nhận, Thích nghi và Bản sắc Riêng – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/sino-vietnam-history</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/sino-vietnam-history</guid>
+      <category>sino-vietnam</category>
+      <description>Việt Nam là quốc gia Đông Nam Á duy nhất nằm sâu trong Vòng văn hóa chữ Hán (Sinosphere) cùng với Trung Quốc, Nhật Bản và Triều Tiên. Nghiên cứu lịch sử giao…</description>
+    </item>
+    <item>
+      <title>Văn hóa Vùng miền Trung Quốc: Đối chiếu Bắc Kinh (&#x27;Kinh Phái&#x27;) và Thượng Hải (&#x27;Hải Phái&#x27;) – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/beijing-shanghai-culture</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/beijing-shanghai-culture</guid>
+      <category>regions</category>
+      <description>Một trong những sai lầm phổ biến nhất của người nước ngoài là nhìn Trung Quốc như một khối văn hóa đồng nhất. Ngay trong hai thành phố nổi tiếng nhất cả nước…</description>
+    </item>
+    <item>
+      <title>Kiến trúc Gỗ Cổ điển Trung Hoa: Cơ học Đấu Củng &amp; Mỹ học Viên lâm Tô Châu – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/traditional-architecture-gardens</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/traditional-architecture-gardens</guid>
+      <category>traditional</category>
+      <description>Nếu kiến trúc đá vĩnh cửu phương Tây hướng tới sự bất biến trước thời gian, thì kiến trúc gỗ truyền thống Trung Hoa đạt tới sự trường tồn qua hàng thiên niên…</description>
+    </item>
+    <item>
+      <title>Trung Quốc Đương đại: Hạ tầng Số, Chuỗi Cung ứng Toàn cầu &amp; Làn sóng Quốc Triều – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/contemporary-china-digital</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/contemporary-china-digital</guid>
+      <category>contemporary</category>
+      <description>Chỉ trong chưa đầy nửa thế kỷ kể từ Cải cách Mở cửa (1978), xã hội Trung Quốc đã chuyển dịch từ nền kinh tế nông nghiệp kế hoạch hóa sang hệ sinh thái công n…</description>
+    </item>
+    <item>
+      <title>Con đường Tơ lụa Lục địa &amp; Hải thương Đông Á: Từ Trương Khiên, Thị Bạc Tư đến Trịnh Hòa – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/silk-road-maritime-trade</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/silk-road-maritime-trade</guid>
+      <category>history</category>
+      <description>Thường được hình dung đơn giản như một tuyến lạc đà trên sa mạc, &#x27;Con đường Tơ lụa&#x27; trong lịch sử thực tế vận hành như một mạng lưới hai trục bổ trợ lẫn nhau…</description>
+    </item>
+    <item>
+      <title>Hoàng Đế Nội Kinh, 24 Tiết khí &amp; Đông y Dưỡng sinh: Nhịp Sinh học Nông lịch và Y lý Cổ truyền – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/tcm-solar-terms-yangsheng</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/tcm-solar-terms-yangsheng</guid>
+      <category>customs</category>
+      <description>Truyền thống dưỡng sinh (养生 – Yangsheng) ở Trung Quốc và Việt Nam không tách rời hệ tọa độ thời gian của 24 Tiết khí và nền tảng lý luận của bộ kinh điển 《Ho…</description>
+    </item>
+    <item>
+      <title>Giải phẫu Hệ thống Thuật số Cổ điển: So sánh Tử Vi Đẩu Số, Bát Tự Tứ Trụ, Phong Thủy &amp; Kỳ Môn Độn Giáp – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-metaphysics-systems</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-metaphysics-systems</guid>
+      <category>metaphysics</category>
+      <description>Trong văn hóa Đông Á, Tử Vi Đẩu Số, Bát Tự Tứ Trụ, Phong Thủy và Kỳ Môn Độn Giáp thường bị gộp chung thành &#x27;bói toán&#x27; hoặc bị thần thánh hóa cực đoan. Đặt tr…</description>
+    </item>
+    <item>
+      <title>Chuỗi Cung ứng Xuyên biên giới Trung – Việt, Hải quan (C/O Form E, ACFTA 3.0) &amp; Dự báo Kinh tế lượng 2026–2030 – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-vietnam-supply-chain-rcep</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-vietnam-supply-chain-rcep</guid>
+      <category>business</category>
+      <description>Thương mại song phương Việt Nam – Trung Quốc đã bước vào kỷ nguyên siêu kết nối công nghệ và chuỗi cung ứng: năm 2025 đạt 256,48 tỷ USD (+24,99% theo Hải qua…</description>
+    </item>
+    <item>
+      <title>Chế độ Khoa cử (科举) Trung Hoa và Đại Việt: Tuyển chọn nhân tài, Văn Miếu và tầng lớp Sĩ đại phu – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/imperial-examination-keju</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/imperial-examination-keju</guid>
+      <category>history</category>
+      <description>Trong hơn 1.300 năm ở Trung Quốc (605–1905) và 844 năm ở Việt Nam (1075–1919), chế độ Khoa cử (科举) giữ vai trò là cơ chế tuyển chọn quan lại dựa trên thi cử…</description>
+    </item>
+    <item>
+      <title>Tứ Đại Phát Minh (四大发明), 《Thiên Công Khai Vật》 &amp; Câu hỏi Joseph Needham về Khoa học Trung Hoa – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/four-great-inventions-science</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/four-great-inventions-science</guid>
+      <category>history</category>
+      <description>Trước thế kỷ XVI, Trung Quốc là một trong những trung tâm sáng tạo kỹ thuật năng động nhất thế giới với bốn phát minh làm thay đổi tiến trình lịch sử nhân lo…</description>
+    </item>
+    <item>
+      <title>Thư Pháp Ngũ Thể (篆隶楷行草), Nghệ thuật Triện Khắc (篆刻) &amp; Mỹ học &#x27;Thi – Thư – Họa – Ấn&#x27; – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-calligraphy-seal-aesthetics</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-calligraphy-seal-aesthetics</guid>
+      <category>art</category>
+      <description>Trong văn minh Trung Hoa, viết chữ không chỉ là phương tiện ghi chép ngôn ngữ mà được nâng lên thành nghệ thuật biểu đạt tâm tính tối cao: &#x27;Thư như kỳ nhân&#x27;…</description>
+    </item>
+    <item>
+      <title>Từ Hán–Việt &#x27;Đồng Hình Dị Nghĩa&#x27; (同形异义) &amp; Cạm bẫy Dịch thuật Hợp đồng Kinh tế Trung – Việt – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/sino-vietnamese-translation-business</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/sino-vietnamese-translation-business</guid>
+      <category>sino-vietnam</category>
+      <description>Hơn 65–70% từ vựng học thuật, chính trị, pháp lý và kinh tế trong tiếng Việt là từ gốc Hán (từ Hán–Việt). Kho tàng này là chiếc cầu nối tuyệt vời giúp người…</description>
+    </item>
+    <item>
+      <title>Giải phẫu Thương mại Việt – Trung &amp; Khoảng trống Số liệu (Mirror Gap 39,66 Tỷ USD) – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/vn-cn-mirror-gap-trade-anatomy</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/vn-cn-mirror-gap-trade-anatomy</guid>
+      <category>business</category>
+      <description>Trong nghiên cứu kinh tế đối ngoại Việt – Trung, giới phân tích thường dễ vướng sai số nếu chỉ dùng thống kê đơn phương mà bỏ qua khác biệt phương pháp luận…</description>
+    </item>
+    <item>
+      <title>TMĐT Xuyên biên giới (CBEC), Logistics Đường sắt &amp; Thuế Chống Bán phá giá Việt – Trung 2026–2030 – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/vn-cn-cbec-rail-antidumping-2026</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/vn-cn-cbec-rail-antidumping-2026</guid>
+      <category>business</category>
+      <description>Giai đoạn 2026–2030 đánh dấu bước chuyển dịch cấu trúc của thương mại Việt – Trung từ buôn bán tiểu ngạch truyền thống sang ba trụ cột mới: Thương mại điện t…</description>
+    </item>
+    <item>
+      <title>Lục Đại Trà Loại (六大茶类), Kỹ thuật Pha Trà &amp; Nghi lễ Khấu Thủ Lễ (叩手礼) – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/six-tea-categories-brewing-etiquette</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/six-tea-categories-brewing-etiquette</guid>
+      <category>customs</category>
+      <description>Nếu lịch sử trà Trung Hoa kéo dài gần 5.000 năm từ thời Thần Nông đến 《Trà Kinh》 (茶经) của Lục Vũ thời Đường, thì hệ thống phân loại khoa học hiện đại lại dựa…</description>
+    </item>
+    <item>
+      <title>Trung Hoa Lão Tự Hiệu (中华老字号): Di sản 1.455 Thương hiệu Trăm năm &amp; Làn sóng Quốc Triều – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-laozihao-guochao-brands</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-laozihao-guochao-brands</guid>
+      <category>business</category>
+      <description>Tại các khu phố cổ Bắc Kinh (Tiền Môn, Đại Sách Lan), Thượng Hải (Dự Viên) hay Hàng Châu (Thanh Hà Phường), biển hiệu vàng chữ đen đề &#x27;中华老字号&#x27; (Trung Hoa Lão…</description>
+    </item>
+    <item>
+      <title>Cẩm nang Pháp lý &amp; Y tế Thực địa tại Trung Quốc: Khách sạn Shèwài (涉外), Bệnh viện Tam Giáp &amp; Cửa khẩu – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/vietnamese-field-legal-medical-protocols</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/vietnamese-field-legal-medical-protocols</guid>
+      <category>sino-vietnam</category>
+      <description>Khác với du lịch tại Đông Nam Á hay châu Âu, việc đi lại, lưu trú, thanh toán và tiếp cận y tế tại Trung Quốc đại lục vận hành trên một hệ sinh thái pháp lý…</description>
+    </item>
+    <item>
+      <title>Quế Lâm – Dương Sóc – Long Tích: Địa lý Sơn thủy Karst, Tĩnh Giang Vương Phủ &amp; Văn hóa Tráng – Dao – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/guilin-yangshuo-longji-karst-heritage</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/guilin-yangshuo-longji-karst-heritage</guid>
+      <category>regions</category>
+      <description>Câu ngạn ngữ &#x27;Quế Lâm sơn thủy giáp thiên hạ, Dương Sóc sơn thủy giáp Quế Lâm&#x27; (桂林山水甲天下，阳朔山水甲桂林) ca ngợi vẻ đẹp thủy mặc tự nhiên, đồng thời ghi dấu vùng gia…</description>
+    </item>
+    <item>
+      <title>Quy chế Quá cảnh Miễn thị thực 240 Giờ (20/08/2026) &amp; Hướng dẫn Thực chiến cho Hộ chiếu Việt Nam – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-240h-visa-free-transit-guilin-2026</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-240h-visa-free-transit-guilin-2026</guid>
+      <category>sino-vietnam</category>
+      <description>Tháng 8/2026 đánh dấu một bước ngoặt quan trọng trong đi lại giữa Việt Nam và Trung Quốc khi Việt Nam chính thức được đưa vào diện hưởng quy chế Quá cảnh Miễ…</description>
+    </item>
+    <item>
+      <title>Ngôn ngữ Thực địa Trung Hoa: 5 Nhóm Mẫu câu Sinh tồn (Di chuyển, Trà quán, Lão Tự Hiệu, Thanh toán &amp; Y tế) – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/practical-chinese-field-phrasebook</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/practical-chinese-field-phrasebook</guid>
+      <category>sino-vietnam</category>
+      <description>Dù các ứng dụng dịch thuật phát triển mạnh, việc nắm vững 5 nhóm mẫu câu giao tiếp thực chiến kèm Hán tự chuẩn và Pinyin giúp bạn làm chủ tình huống nhanh hơ…</description>
+    </item>
+    <item>
+      <title>Cách mạng AI Trung Quốc 2026: Kiến trúc DeepSeek-R1/V3 (MLA, MoE, GRPO) &amp; Hệ sinh thái Qwen – Doubao – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-ai-revolution-deepseek-qwen-2026</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-ai-revolution-deepseek-qwen-2026</guid>
+      <category>contemporary</category>
+      <description>Thay vì bị tụt lại phía sau do lệnh kiểm soát xuất khẩu chip GPU cao cấp của Hoa Kỳ, hệ sinh thái trí tuệ nhân tạo Trung Quốc giai đoạn 2024–2026 đã thực hiệ…</description>
+    </item>
+    <item>
+      <title>Tự chủ Bán dẫn Trung Quốc 2026: Huawei Ascend 910B/910C, SMIC 7nm DUV SAQP &amp; Pháp lý Thuật toán CAC – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-semiconductor-ascend-smic-cac-2026</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-semiconductor-ascend-smic-cac-2026</guid>
+      <category>contemporary</category>
+      <description>Cuộc cạnh tranh AI thế kỷ 21 không chỉ diễn ra ở tầng thuật toán mà nằm ở &#x27;tầng silicon&#x27; (chế tạo chip bán dẫn) và &#x27;tầng thể chế&#x27; (luật quản trị dữ liệu). Tr…</description>
+    </item>
+    <item>
+      <title>Chiến lược Ứng dụng AI Trung Quốc &amp; Tuân thủ Dữ liệu (Nghị định 13/2023/NĐ-CP) cho Doanh nghiệp Việt Nam – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/vietnam-ai-adoption-playbook-decree-13</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/vietnam-ai-adoption-playbook-decree-13</guid>
+      <category>business</category>
+      <description>Sự trỗi dậy của các mô hình AI mã nguồn mở chi phí thấp từ Trung Quốc (Qwen, DeepSeek) mở ra cơ hội lớn cho doanh nghiệp vừa và nhỏ Việt Nam. Tuy vậy, việc t…</description>
+    </item>
+    <item>
+      <title>Văn hóa Đàm phán 3 Vùng Trung Quốc: Thể chế Hoa Bắc, Thực dụng Quảng Đông &amp; Thị trường Hoa Đông – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-regional-negotiation-styles</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-regional-negotiation-styles</guid>
+      <category>business</category>
+      <description>Nhiều doanh nghiệp Việt Nam thất bại ngay từ vòng gặp mặt đầu tiên vì áp dụng cùng một kịch bản giao tiếp cho cả đối tác ở Bắc Kinh, Thượng Hải và Thâm Quyến…</description>
+    </item>
+    <item>
+      <title>Giải phẫu 7 Giai đoạn Đàm phán B2B: Thẩm định NECIPS, Công chương (公章), Khuôn mẫu &amp; Kiểm định PSI – CHINESE CULTURE EXPLORER</title>
       <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-b2b-7-stage-contract-necips-psi</link>
       <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-b2b-7-stage-contract-necips-psi</guid>
-      <pubDate>Tue, 17 Nov 2026 10:00:00 +0700</pubDate>
-      <author>Lê Hưng Thịnh (黎兴盛)</author>
-      <description>Due diligence framework covering NECIPS Unified Social Credit Code lookup, red-star Gongzhang company seals, Định kim (定金) vs Đính kim (订金), and pre-shipment inspection protocols.</description>
+      <category>business</category>
+      <description>Hơn 80% tranh chấp thương mại của doanh nghiệp Việt Nam khi nhập hàng từ Trung Quốc không phải vì đối tác &#x27;lừa đảo ngay từ đầu&#x27;, mà do bỏ qua 4 hàng rào kỹ t…</description>
     </item>
     <item>
-      <title>Bản cập nhật Nền tảng v2.6: Mở khóa Toàn văn 100%, Sổ tay Từ vựng Ngữ cảnh &amp; Hành trang 34 Tỉnh/Thành</title>
-      <link>https://chinese-culture-explorer.netlify.app/hoc-tap</link>
-      <guid>https://chinese-culture-explorer.netlify.app/hoc-tap</guid>
-      <pubDate>Mon, 16 Nov 2026 09:00:00 +0700</pubDate>
-      <author>Lê Hưng Thịnh (黎兴盛)</author>
-      <description>Removed reading gates on all 65 monographs and APA 7th/BibTeX citations, launched mouse-selection Contextual Vocabulary &amp; Reading Notebook with .CSV/.TSV export, and added Pre-Trip Field Readiness checklists across 34 provinces.</description>
+      <title>Bản đồ Cụm Công nghiệp Trung Quốc: Vành đai Điện tử, Dệt may Kha Kiều &amp; Hành lang tới Bắc Ninh – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-industrial-clusters-vietnam-supply-chain</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-industrial-clusters-vietnam-supply-chain</guid>
+      <category>regions</category>
+      <description>Muốn mua hàng tận gốc hoặc định vị vị thế của Việt Nam trong chuỗi giá trị khu vực, cần đọc bản đồ Trung Quốc không chỉ theo ranh giới hành chính 34 tỉnh, mà…</description>
+    </item>
+    <item>
+      <title>Từ Hệ thống Quảng Châu (一口通商) đến &#x27;Tốc độ Thâm Quyến&#x27;: Chu trình Tạo mẫu 7 Ngày tại Hoa Cường Bắc – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/canton-system-to-huaqiangbei-7-day-cycle</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/canton-system-to-huaqiangbei-7-day-cycle</guid>
+      <category>business</category>
+      <description>Làm thế nào một làng chài 30.000 dân năm 1979 như Thâm Quyến có thể vươn lên thành &#x27;Thung lũng Silicon của phần cứng&#x27; với tỷ lệ chi cho R&amp;D đạt 5,81% GDP? Câ…</description>
+    </item>
+    <item>
+      <title>Đối chuẩn Kinh tế Quảng Đông (1,92 Nghìn tỷ USD) &amp; Thâm Quyến (5,81% R&amp;D) với 5 Tiểu vùng Việt Nam – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/guangdong-shenzhen-vs-vietnam-benchmark</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/guangdong-shenzhen-vs-vietnam-benchmark</guid>
+      <category>sino-vietnam</category>
+      <description>Thay vì so sánh một cách cảm tính, phương pháp đối chuẩn định lượng (Quantitative Benchmarking) đặt tỉnh Quảng Đông và thành phố Thâm Quyến lên bàn cân trực…</description>
+    </item>
+    <item>
+      <title>Cấu trúc 34 Đơn vị Hành chính Cấp Tỉnh Trung Quốc: 4 Trực hạt thị, 5 Khu tự trị, 2 Đặc khu &amp; 6 Cụm Đô thị – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-34-provincial-units-megalopolis-structure</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-34-provincial-units-megalopolis-structure</guid>
+      <category>regions</category>
+      <description>Việc hiểu đúng cấu trúc 34 đơn vị hành chính cấp tỉnh và mạng lưới &#x27;Cụm Đô thị&#x27; (城市群) là nền tảng bắt buộc khi nghiên cứu lịch sử, quản trị nhà nước hay hoạc…</description>
+    </item>
+    <item>
+      <title>Nghi thức Bàn tiệc (酒桌文化), Quy tắc Tặng quà Cấm kỵ &amp; Văn hóa Công sở Trung Quốc – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-banquet-gift-giving-etiquette</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-banquet-gift-giving-etiquette</guid>
+      <category>customs</category>
+      <description>Trong văn hóa xã hội và kinh doanh Trung Quốc, bàn tiệc (饭局 / 酒桌) không đơn thuần là nơi ăn uống mà là &#x27;sân khấu&#x27; kiểm chứng nhân cách, sự tinh tế (情商 EQ) và…</description>
+    </item>
+    <item>
+      <title>Văn học Trung Hoa qua Hai Trục Cổ điển &amp; Bạch thoại: Từ 《Kinh Thi》, Đường Thi – Tống Từ đến Tứ Đại Danh tác – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-classical-vernacular-literature</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-classical-vernacular-literature</guid>
+      <category>literature</category>
+      <description>Chuyên luận phân tích toàn diện sự tiến hóa của văn học Trung Hoa trên hai trục ngôn ngữ song hành: trục Văn ngôn (文言 – Wényán) tinh luyện bắt nguồn từ văn b…</description>
+    </item>
+    <item>
+      <title>Giải phẫu Bát Đại Thái Hệ Ẩm thực Trung Hoa, Triết lý Dược Thực Đồng Nguyên &amp; Bản đồ Lục Đại Trà Loại – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-eight-cuisines-tea-culture</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-eight-cuisines-tea-culture</guid>
+      <category>cuisine</category>
+      <description>Không phải là một nền ẩm thực đồng nhất, nghệ thuật ăn uống Trung Hoa phản ánh trực tiếp bản đồ khí hậu, thủy văn và lịch sử di cư của một vùng lục địa rộng…</description>
+    </item>
+    <item>
+      <title>Lịch sử Trang phục Trung Hoa: Cấu trúc Giao Lĩnh – Hữu Nhậm, Thâm Y, Mã Diện Quần đến Cách tân Kỳ Bào &amp; Trào… – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-hanfu-qipao-attire-history</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-hanfu-qipao-attire-history</guid>
+      <category>attire</category>
+      <description>Trang phục truyền thống Trung Hoa không đơn thuần là thời trang che thân mà được Nho giáo định danh là hệ thống mã hóa trật tự vũ trụ và luân lý (&#x27;Y quan chi…</description>
+    </item>
+    <item>
+      <title>Từ Ngọc Tông Lương Chử đến Lò Cảnh Đức Trấn: Văn minh Ngọc Khí Ngũ Đức, Ngũ Đại Danh Diêu Tống Triều &amp; Sứ Tha… – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-ceramics-porcelain-jade-heritage</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-ceramics-porcelain-jade-heritage</guid>
+      <category>ceramics-jade</category>
+      <description>Trước khi đồng thanh và sắt xuất hiện, nền văn minh Đông Á đã trải qua một kỷ nguyên rực rỡ kéo dài hai thiên niên kỷ mà giới khảo cổ gọi là &#x27;Thời đại Ngọc k…</description>
+    </item>
+    <item>
+      <title>Tam Giáo Đồng Nguyên (Nho – Thích – Đạo), Tín ngưỡng Tổ tiên &amp; Hệ thống Thần thoại Khởi nguyên Trung Hoa – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-folk-religion-syncretism-mythology</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-folk-religion-syncretism-mythology</guid>
+      <category>religion-folk</category>
+      <description>Khác với mô hình &#x27;độc thần giáo bài ngoại&#x27; tại Địa Trung Hải, đời sống tâm linh Trung Hoa vận hành theo cấu trúc dung hợp đa tầng gọi là &#x27;Tam Giáo Hợp Nhất&#x27;…</description>
+    </item>
+    <item>
+      <title>Trung Quốc Trong Danh Mục Di Sản Phi Vật Thể UNESCO (Top 1 Thế Giới): Từ Cổ Cầm 3.000 Năm, Côn Khúc &#x27;Bách Hí… – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-unesco-intangible-heritage-opera</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-unesco-intangible-heritage-opera</guid>
+      <category>ich-heritage</category>
+      <description>Tính đến giai đoạn 2024–2026 (sau khi Xuân Tiết được ghi danh cuối năm 2024), Trung Quốc dẫn đầu thế giới về số lượng Di sản Văn hóa Phi vật thể UNESCO với 4…</description>
+    </item>
+    <item>
+      <title>Lịch sử Khoa học &amp; Công nghệ Trung Hoa (Bài toán Needham): Từ Luyện kim Hán–Tống, Thiên Văn Quách Thủ Kính, 《… – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-science-technology-history-modern</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-science-technology-history-modern</guid>
+      <category>science-tech</category>
+      <description>Trong hơn một thiên niên kỷ từ thế kỷ III đến XV, nền văn minh Trung Hoa giữ vị thế tiên phong về kỹ thuật thực nghiệm trên toàn cầu. Ngoài Tứ Đại Phát Minh…</description>
+    </item>
+    <item>
+      <title>Văn hóa Học Vấn Trung Hoa qua Hai Thiên Niên Kỷ: Tứ Đại Thư Viện Tống Triều, Cải Cách Thái Nguyên Bồi, Kỳ Thi… – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-education-academy-study-abroad</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-education-academy-study-abroad</guid>
+      <category>education</category>
+      <description>Ít có nền văn minh nào đề cao học vấn làm thang bậc thăng tiến xã hội mãnh liệt như Trung Hoa với câu thành ngữ &#x27;Vạn ban giai hạ phẩm, duy hữu độc thư cao&#x27; (…</description>
+    </item>
+    <item>
+      <title>Chữ Tín (信) và Cuộc Tranh biện Nghĩa – Lợi (义利之辩) trong Thương đạo Trung Hoa – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/merchant-ethics-xin-yi-li</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/merchant-ethics-xin-yi-li</guid>
+      <category>business</category>
+      <description>Khảo sát bước chuyển biến lịch sử của khái niệm Tín (信 – Xìn) và cuộc tranh biện Nghĩa – Lợi (义利之辩 – Yì lì zhī biàn) từ kinh điển Tiên Tần (Luận Ngữ, Mạnh Tử…</description>
+    </item>
+    <item>
+      <title>Thập đại Thương bang (十大商帮): Huy thương &#x27;Giả nhi hiếu nho&#x27; và Hệ thống Phiếu hiệu Tấn thương – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/ten-merchant-guilds-huizhou-shanxi</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/ten-merchant-guilds-huizhou-shanxi</guid>
+      <category>business</category>
+      <description>Phân tích cơ chế tổ chức và bí quyết trường tồn suốt 400 năm (từ Minh Thành Hóa tới đầu thế kỷ XX) của hai trụ cột trong &#x27;Thập đại Thương bang&#x27; (十大商帮 – Shídà…</description>
+    </item>
+    <item>
+      <title>Mạng lưới Hải thương Mân – Quảng (闽商 · 潮商) và Con đường Tơ lụa trên Biển Đông – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/maritime-merchants-fujian-guangdong</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/maritime-merchants-fujian-guangdong</guid>
+      <category>business</category>
+      <description>Khảo cứu cơ chế hình thành và mạng lưới giao thương hàng hải liên thông Đông Á – Đông Nam Á của hải thương Phúc Kiến (Mân thương 闽商) và Triều Sán – Quảng Đôn…</description>
+    </item>
+    <item>
+      <title>Từ Công xưởng Cổ truyền (Cảnh Đức Trấn · Tô Hàng) đến Cụm Công nghiệp Hiện đại (Nghĩa Ô · Thâm Quyến) – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/artisan-kilns-to-industrial-clusters</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/artisan-kilns-to-industrial-clusters</guid>
+      <category>business</category>
+      <description>Truy nguyên tính liên tục lịch sử trong năng lực sản xuất chuyên môn hóa sâu (Division of Labor &amp; Modularity) của Trung Quốc: từ dây chuyền &#x27;Nhất khí thất th…</description>
+    </item>
+    <item>
+      <title>Ngữ âm Hán–Việt và Hóa thạch Âm vận Đường – Tống (Thiết Vận 切韵 &amp; Quảng Vận 广韵) – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/han-viet-phonology-middle-chinese</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/han-viet-phonology-middle-chinese</guid>
+      <category>sino-vietnam</category>
+      <description>Phân tích tại sao lớp từ vựng Hán–Việt trong tiếng Việt lại đóng vai trò &#x27;hóa thạch sống&#x27; quý giá bậc nhất thế giới để giới ngôn ngữ học phục nguyên âm đọc t…</description>
+    </item>
+    <item>
+      <title>Thơ văn Đi sứ (Sứ trình thi 使程诗) — Đối thoại Văn hiến Ngàn năm qua Bắc Hành Tạp Lục – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/envoy-poetry-bac-hanh-tap-luc</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/envoy-poetry-bac-hanh-tap-luc</guid>
+      <category>sino-vietnam</category>
+      <description>Khảo cứu truyền thống ngoại giao văn hóa &#x27;Bút đàm đồng văn&#x27; trong hàng trăm tập Sứ trình thi (使程诗) / Yên hành lục (燕行录) suốt thế kỷ XIII–XIX của các sứ thần…</description>
+    </item>
+    <item>
+      <title>Đối chiếu Kết cấu Gỗ Cổ truyền: Đấu củng (斗拱) Trung Hoa và Kẻ chuyền – Bẩy hiên Đình làng Bắc Bộ – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/comparative-timber-architecture-dougong</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/comparative-timber-architecture-dougong</guid>
+      <category>sino-vietnam</category>
+      <description>Phân tích cấu trúc cơ học và mỹ học của hai hệ kết cấu mộng gỗ Chuẩn mão (榫卯) tiêu biểu vùng Đông Á: bộ khung Đấu củng (斗拱 – Dǒugǒng) tầng tầng lớp lớp giúp…</description>
+    </item>
+    <item>
+      <title>Văn Miếu – Quốc Tử Giám và Chế độ Khoa cử Đông Á: Từ Khúc Phụ – Bắc Kinh đến Thăng Long – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/imperial-academies-temple-of-literature</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/imperial-academies-temple-of-literature</guid>
+      <category>sino-vietnam</category>
+      <description>So sánh trực tiếp kiến trúc học quan và cơ chế tuyển chọn nhân tài qua chế độ Khoa cử (科举 – Kējǔ) tại ba biểu tượng văn hiến: Khổng Miếu Khúc Phụ, Quốc Tử Gi…</description>
+    </item>
+    <item>
+      <title>24 Tiết khí (二十四节气) và Triết lý Thuận Thiên Thời trong Hoàng Đế Nội Kinh – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/solar-terms-huangdi-neijing</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/solar-terms-huangdi-neijing</guid>
+      <category>metaphysics</category>
+      <description>Giải mã bản chất khoa học thiên văn – nông nghiệp của hệ thống Nhị Thập Tứ Tiết Khí (二十四节气 – Di sản Văn hóa Phi vật thể UNESCO 2016): cách người Hoa cổ đại d…</description>
+    </item>
+    <item>
+      <title>Hệ thống Can Chi (干支历法) và Cấu trúc Tư duy Bát Tự Tử Bình (Uyên Hải Tử Bình &amp; Trích Thiên Tủy) – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/ganzhi-calendar-bazi-system</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/ganzhi-calendar-bazi-system</guid>
+      <category>metaphysics</category>
+      <description>Khảo sát lịch sử từ Giáp cốt văn đời Thương (thế kỷ XIV TCN) đã dùng chu kỳ 60 ngày Lục thập Hoa Giáp (10 Thiên Can × 12 Địa Chi) đến quá trình hệ thống hóa…</description>
+    </item>
+    <item>
+      <title>Kiến trúc Tinh đẩu và Nhân sinh quan trong Tử Vi Đẩu Số: Từ Thiên văn Bắc Đẩu đến Nam Phái Tam Hợp &amp; Bắc Phái… – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/ziwei-doushu-star-architecture</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/ziwei-doushu-star-architecture</guid>
+      <category>metaphysics</category>
+      <description>Khảo cứu nền tảng thiên văn học cổ đại Trung Hoa đứng sau hệ thống Tử Vi Đẩu Số (紫微斗数 – Zǐwēi Dǒushù): khái niệm vòng Tử Vi Viên (sao Bắc Cực và các sao quan…</description>
+    </item>
+    <item>
+      <title>Kinh Dịch (易经): Hào vị Đương Vị – Trung Chính và Tư duy Quản trị Thời – Vị (时与位) – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/yijing-hexagrams-strategy-timing</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/yijing-hexagrams-strategy-timing</guid>
+      <category>metaphysics</category>
+      <description>Bóc tách kiến trúc lô-gic nhị phân của bộ sách đứng đầu Ngũ Kinh — Chu Dịch (周易 – Zhōuyì): quy luật tổ hợp 64 quẻ từ 8 quẻ đơn Bát Quái, nguyên tắc định giá…</description>
+    </item>
+    <item>
+      <title>Nghệ thuật Tạo tác Lâm viên Tô Châu (苏州古典园林): Thủ pháp Tá Cảnh, Khuông Cảnh &amp; Ức Dương – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/suzhou-classical-gardens-aesthetics</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/suzhou-classical-gardens-aesthetics</guid>
+      <category>traditional</category>
+      <description>Giải mã bí quyết kiến trúc cảnh quan giúp những khu vườn đô thị chật hẹp chỉ vài nghìn mét vuông tại Tô Châu (Chuyết Chính Viên, Lưu Viên, Võng Sư Viên, Hoàn…</description>
+    </item>
+    <item>
+      <title>Văn Phòng Tứ Bảo (文房四宝): Hồ Bút, Huy Mặc, Tuyên Chỉ và Nghiên Đoan Trong Đời Sống Kẻ Sĩ – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/four-treasures-of-the-scholar-study</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/four-treasures-of-the-scholar-study</guid>
+      <category>arts</category>
+      <description>Khảo cứu quy trình chế tác thủ công tinh xảo kéo dài hàng năm trời của bộ tứ công cụ làm nên diện mạo thư pháp và hội họa thủy mặc Á Đông gọi là Văn Phòng Tứ…</description>
+    </item>
+    <item>
+      <title>Trà Kinh (茶经) của Lục Vũ và Sự Tiến hóa Trà Đạo: Từ Tiễn trà Đường – Điểm trà Tống đến Tử Sa Minh Thanh – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/lu-yu-tea-classic-evolution</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/lu-yu-tea-classic-evolution</guid>
+      <category>cuisine</category>
+      <description>Khảo cứu ba bước ngoặt vĩ đại kéo dài hơn 1.200 năm làm thay đổi hoàn toàn cách nhân loại uống trà, lấy cột mốc khởi nguồn là bộ chuyên khảo Trà Kinh (茶经 – C…</description>
+    </item>
+    <item>
+      <title>Cổ Cầm (古琴) và Mỹ học &#x27;Đại Âm Hy Thanh&#x27; (大音希声): Bảy Dây, Giản Tự Phổ &amp; Ba Khúc Nhạc Bất Hủ – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/guqin-zither-silent-sound-aesthetics</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/guqin-zither-silent-sound-aesthetics</guid>
+      <category>arts</category>
+      <description>Khảo cứu nhạc cụ đứng đầu trong &#x27;Tứ nghệ Văn nhân&#x27; (Cầm – Kỳ – Thi – Họa 琴棋书画) mang niên đại trên 3.000 năm — Cổ Cầm (古琴 – Gǔqín): giải mã cấu trúc thiên văn…</description>
+    </item>
+    <item>
+      <title>Văn minh Hạ–Thương–Chu: Giáp Cốt Văn Ân Khư &amp; Chế độ Tông pháp – Lễ nhạc Tây Chu – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/xia-shang-zhou-oracle-bones-rituals</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/xia-shang-zhou-oracle-bones-rituals</guid>
+      <category>history</category>
+      <description>Chuyên luận khảo sát quá trình hình thành nhà nước sơ khai ở lưu vực Hoàng Hà qua ba triều đại Hạ–Thương–Chu (khoảng 2070–771 TCN), tập trung vào hệ thống vă…</description>
+    </item>
+    <item>
+      <title>Tần Thủy Hoàng &amp; Cách mạng Thể chế: Quận Huyện chế, Thư Đồng Văn, Xa Đồng Quỹ &amp; Tần giản – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/qin-institutional-standardization</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/qin-institutional-standardization</guid>
+      <category>history</category>
+      <description>Chuyên luận phân tích cuộc tái cấu trúc toàn diện nhà nước Trung Hoa sau năm 221 TCN dưới thời Tần Thủy Hoàng, đối chiếu giữa ghi chép chính sử (&quot;Sử Ký&quot;) với…</description>
+    </item>
+    <item>
+      <title>Thời đại Lưỡng Tống: Phục hưng Đô thị Biện Kinh–Lâm An, Tiền giấy Giao Tử, Mộng Khê Bút Đàm &amp; Hải thương Tuyề… – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/song-dynasty-urban-science-renaissance</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/song-dynasty-urban-science-renaissance</guid>
+      <category>history</category>
+      <description>Chuyên luận khảo cứu chuyển biến kinh tế–xã hội và khoa học kỹ thuật thời Bắc Tống (960–1127) và Nam Tống (1127–1279): sự sụp đổ của chế độ Phường–Thị khép k…</description>
+    </item>
+    <item>
+      <title>Đại Vận Hà Kinh–Hàng &amp; Thủy lợi Đô Giang Yển (Lý Băng): Địa kinh tế Nam–Bắc của Đế quốc Thủy lợi – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/grand-canal-dujiangyan-hydraulic-empire</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/grand-canal-dujiangyan-hydraulic-empire</guid>
+      <category>history</category>
+      <description>Chuyên luận phân tích hai hệ thống công trình thủy lợi – giao thông thủy mang tính định hình lãnh thổ Trung Hoa: hệ thống phân thủy không đập Đô Giang Yển (k…</description>
+    </item>
+    <item>
+      <title>Biến đổi Cận đại Trung Hoa (1840–1949): Dương Vụ Vận Động, Mậu Tuất Biến Pháp, Ngũ Tứ &amp; Văn học Bạch thoại – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/modern-china-transformation-1840-1949</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/modern-china-transformation-1840-1949</guid>
+      <category>history</category>
+      <description>Chuyên luận hệ thống hóa lộ trình chuyển đổi ba tầng nấc của Trung Quốc từ sau Chiến tranh Nha phiến lần thứ nhất (1840) đến năm 1949: từ cải cách kỹ thuật –…</description>
+    </item>
+    <item>
+      <title>16 Cố đô Lịch sử Trung Hoa: Quy luật Dịch chuyển Kinh đô Trục Tây–Đông &amp; Nam–Bắc – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/sixteen-ancient-capitals-geopolitics</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/sixteen-ancient-capitals-geopolitics</guid>
+      <category>regions</category>
+      <description>Chuyên luận phân tích quy luật chọn và dời kinh đô suốt hơn ba thiên niên kỷ lịch sử Trung Hoa — từ trục Tây–Đông thời thượng cổ và trung cổ (Tây An, Lạc Dươ…</description>
+    </item>
+    <item>
+      <title>Trà Mã Cổ Đạo: Hành lang Giao thương Trà Phổ Nhĩ – Ngựa Chiến Vân Nam – Tứ Xuyên – Tây Tạng – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/tea-horse-road-southwest-corridor</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/tea-horse-road-southwest-corridor</guid>
+      <category>regions</category>
+      <description>Chuyên luận khảo cứu mạng lưới giao thương miền núi cao bậc nhất châu Á — Trà Mã Cổ Đạo (Điền–Tạng và Xuyên–Tạng) từ thời Đường–Tống đến giữa thế kỷ XX, giải…</description>
+    </item>
+    <item>
+      <title>Địa lý Gia vị &amp; Lên men Trung Hoa: Tương Đậu Tứ Xuyên, Giấm Trấn Giang, Rượu Thiệu Hưng &amp; Phân tầng Vị Vùng M… – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-fermentation-spices-culinary-geography</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-fermentation-spices-culinary-geography</guid>
+      <category>cuisine</category>
+      <description>Thay vì lặp lại mô tả tổng quan về Bát Đại Thái Hệ, chuyên luận đi thẳng vào &quot;hệ điều hành hóa sinh&quot; bên dưới ẩm thực Trung Hoa: công nghệ lên men bằng nấm m…</description>
+    </item>
+    <item>
+      <title>Văn hóa Tửu Đạo Trung Hoa: 12 Hương hình Bạch Tửu, Hoàng Tửu Cổ Truyền &amp; Thi Ca – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-liquor-culture-baijiu-huangjiu</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-liquor-culture-baijiu-huangjiu</guid>
+      <category>customs</category>
+      <description>Chuyên luận khảo sát hai trụ cột lớn của văn hóa rượu Trung Hoa — Hoàng Tửu (rượu gạo lên men cổ truyền 9.000 năm di sản) và Bạch Tửu (rượu chưng cất ngũ cốc…</description>
+    </item>
+    <item>
+      <title>Ngũ Nhạc &amp; Tứ Đại Phật Giáo Danh Sơn: Bản đồ Không gian Linh thiêng của Văn minh Trung Hoa – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/five-sacred-mountains-buddhist-peaks</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/five-sacred-mountains-buddhist-peaks</guid>
+      <category>regions</category>
+      <description>Chuyên luận giải mã hai hệ thống núi thiêng định hình không gian tinh thần Trung Hoa: Ngũ Nhạc (Thái Sơn, Hoa Sơn, Hành Sơn, Hằng Sơn, Tung Sơn) gắn với học…</description>
+    </item>
+    <item>
+      <title>Mỹ học Đôn Hoàng Mạc Cao Quật &amp; Tứ Đại Thạch Quật: Bích họa Phi Thiên &amp; Tạng Kinh Động – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/dunhuang-mogao-buddhist-grotto-art</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/dunhuang-mogao-buddhist-grotto-art</guid>
+      <category>arts</category>
+      <description>Chuyên luận phân tích tiến trình bản địa hóa nghệ thuật Phật giáo từ Tây Vực vào Trung Nguyên qua Tứ Đại Thạch Quật (Mạc Cao Quật, Vân Cương, Long Môn, Mạch…</description>
+    </item>
+    <item>
+      <title>Giải phẫu Sân khấu Hý Khúc Cổ truyền: Tứ Đại Hành Đương, Phổ Mặt Nạ (Kiểm Phổ) &amp; Đối chiếu Tuồng–Chèo Việt Nam – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/xiqu-stagecraft-face-masks-tuong</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/xiqu-stagecraft-face-masks-tuong</guid>
+      <category>arts</category>
+      <description>Chuyên luận giải phẫu cấu trúc nghệ thuật sân khấu Hý Khúc Trung Hoa — từ Côn Khúc (Di sản Phi vật thể UNESCO 2001) đến Kinh Kịch (UNESCO 2010): nguyên lý ướ…</description>
+    </item>
+    <item>
+      <title>Ngũ Đại Phong Cách Kiến trúc Dân cư Trung Hoa: Tứ Hợp Viện, Thổ Lâu, Huy Phái, Điếu Cước Lâu &amp; Diêu Động – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/five-vernacular-architecture-styles</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/five-vernacular-architecture-styles</guid>
+      <category>traditional</category>
+      <description>Chuyên luận giải mã năm hình thái kiến trúc dân cư tiêu biểu nhất của Trung Quốc dưới góc nhìn thích ứng khí hậu, vật liệu bản địa và tổ chức gia tộc: Tứ Hợp…</description>
+    </item>
+    <item>
+      <title>Cấu trúc Tư tưởng &amp; Tự sự 《Hồng Lâu Mộng》 và Tiểu thuyết Chương hồi Minh–Thanh – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/ming-qing-fiction-hongloumeng-anatomy</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/ming-qing-fiction-hongloumeng-anatomy</guid>
+      <category>literature</category>
+      <description>Chuyên luận truy nguyên tiến trình hình thành tiểu thuyết chương hồi Minh–Thanh từ &quot;Thoại bản&quot; kể chuyện thị dân thời Tống–Nguyên qua Tứ Đại Kỳ Thư đến đỉnh…</description>
+    </item>
+    <item>
+      <title>Sơn mài, Tơ lụa Giang Nam &amp; Tranh Khắc gỗ Dân gian: Dương Liễu Thanh – Đào Hoa Ổ đối chiếu Đông Hồ – Hàng Trố… – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/lacquerware-silk-woodblock-new-year-prints</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/lacquerware-silk-woodblock-new-year-prints</guid>
+      <category>arts</category>
+      <description>Chuyên luận khảo cứu ba trụ cột mỹ nghệ vật chất làm nên tên tuổi thủ công Trung Hoa — sơn mài (từ bát sơn Hà Mỗ Độ 7.000 năm đến sơn mài nước Sở và điêu tất…</description>
+    </item>
+    <item>
+      <title>Đối thoại Chính trị–Pháp trị Tiên Tần: Từ Tính Ác &amp; Lễ Pháp (Tuân Tử) đến Pháp–Thuật–Thế (Hàn Phi Tử) – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/pre-qin-legalism-xunzi-hanfeizi</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/pre-qin-legalism-xunzi-hanfeizi</guid>
+      <category>philosophy</category>
+      <description>Chuyên luận phân tích bước chuyển tư tưởng từ Nho gia hiện thực của Tuân Tử (khoảng 313–238 TCN) sang đỉnh cao tổng hợp Pháp gia của học trò ông là Hàn Phi T…</description>
+    </item>
+    <item>
+      <title>Tống Minh Lý Học: Cách Vật Trí Tri (Chu Hy) vs Tri Hành Hợp Nhất – Trí Lương Tri (Vương Dương Minh) &amp; Ảnh hưở… – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/song-ming-neo-confucianism-zhu-wang</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/song-ming-neo-confucianism-zhu-wang</guid>
+      <category>philosophy</category>
+      <description>Chuyên luận đối chiếu hai trụ cột triết học lớn nhất của Nho học hậu kỳ — Trình–Chu Lý học (Chu Hy, 1130–1200) và Lục–Vương Tâm học (Vương Dương Minh, 1472–1…</description>
+    </item>
+    <item>
+      <title>Thiền Tông Trung Hoa: Đạt Ma, Lục Tổ Đàn Kinh, Ngũ Gia Thất Tông &amp; Mỹ học &quot;Bất lập văn tự&quot; trong Thủy mặc–Trà… – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-chan-buddhism-aesthetics</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-chan-buddhism-aesthetics</guid>
+      <category>philosophy</category>
+      <description>Chuyên luận khảo cứu tiến trình bản địa hóa Phật giáo Ấn Độ thành Thiền Tông Trung Hoa — từ Bồ Đề Đạt Ma và cuộc cách mạng &quot;Đốn ngộ&quot; của Lục Tổ Huệ Năng tron…</description>
+    </item>
+    <item>
+      <title>Mặc Gia: Kiêm Ái, Phi Công, Thủ Thành Vũ Trang &amp; Phát hiện Sớm về Hình học, Quang học, Logic trong Mặc Kinh – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/mohism-logic-optics-ethics</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/mohism-logic-optics-ethics</guid>
+      <category>philosophy</category>
+      <description>Chuyên luận giải mã học phái độc đáo nhất thời Bách Gia Chư Tử — Mặc Gia do Mặc Địch (khoảng 470–391 TCN) sáng lập: hệ thống đạo đức vị lợi &quot;Kiêm Ái – Phi Cô…</description>
+    </item>
+    <item>
+      <title>Đạo giáo Toàn Chân &amp; Chính Nhất: Ranh giới Đạo gia Triết học vs Đạo giáo Tôn giáo, Nội Đan &amp; Âm nhạc Đạo quán – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/religious-daoism-quanzhen-zhengyi</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/religious-daoism-quanzhen-zhengyi</guid>
+      <category>philosophy</category>
+      <description>Chuyên luận phân định rõ ranh giới học thuật giữa Đạo gia triết học (Lão–Trang) và Đạo giáo tôn giáo bản địa hình thành từ cuối Đông Hán (Trương Đạo Lăng, 14…</description>
+    </item>
+    <item>
+      <title>Chữ Nôm Việt Nam &amp; Nguyên lý Lục thư: Hình thanh – Hội ý – Giả tá trong Quốc Âm Thi Tập &amp; Truyện Kiều – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chu-nom-liushu-script-dialogue</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chu-nom-liushu-script-dialogue</guid>
+      <category>sino-vietnam</category>
+      <description>Chuyên luận phân tích cơ chế cấu tạo văn tự của chữ Nôm Việt Nam (hình thành từ thế kỷ X–XIII đến thế kỷ XIX) dưới lăng kính Lục thư chữ Hán, khảo sát ba phư…</description>
+    </item>
+    <item>
+      <title>Quy hoạch Hoàng cung Đông Á: Trục Đế đô Tử Cấm Thành Bắc Kinh – Hoàng Thành Thăng Long – Kinh Thành Huế – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/imperial-palace-axes-beijing-thanglong-hue</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/imperial-palace-axes-beijing-thanglong-hue</guid>
+      <category>sino-vietnam</category>
+      <description>Chuyên luận so sánh ba quần thể hoàng cung Di sản Thế giới UNESCO tại Trung Quốc và Việt Nam — Tử Cấm Thành Bắc Kinh (1420), Hoàng Thành Thăng Long (1010) và…</description>
+    </item>
+    <item>
+      <title>Thiền phái Trúc Lâm Yên Tử &amp; Đối thoại Thiền Tông Tống–Nguyên – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/truc-lam-zen-song-yuan-dialogue</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/truc-lam-zen-song-yuan-dialogue</guid>
+      <category>sino-vietnam</category>
+      <description>Chuyên luận khảo cứu sự hình thành Thiền phái Trúc Lâm Yên Tử do Phật hoàng Trần Nhân Tông (1258–1308) sáng lập năm 1299 — đặt trong tương quan đối thoại với…</description>
+    </item>
+    <item>
+      <title>Truyền thống Sử học Đông Á: Kỷ Truyện 《Sử Ký》 vs Biên Niên 《Đại Việt Sử Ký Toàn Thư》 – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/east-asian-historiography-shiji-toanthu</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/east-asian-historiography-shiji-toanthu</guid>
+      <category>sino-vietnam</category>
+      <description>Chuyên luận đối chiếu hai thể tài cột trụ của nền sử học Đông Á cổ trung đại: thể Kỷ truyện lấy con người làm trung tâm do Tư Mã Thiên sáng lập trong &quot;Sử Ký&quot;…</description>
+    </item>
+    <item>
+      <title>Bắc Y &amp; Nam Dược: Đối thoại 《Hoàng Đế Nội Kinh》 với Tuệ Tĩnh &amp; Hải Thượng Lãn Ông – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/bac-y-nam-duoc-comparative-medicine</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/bac-y-nam-duoc-comparative-medicine</guid>
+      <category>sino-vietnam</category>
+      <description>Chuyên luận đối chiếu nền tảng lý luận của Trung y cổ điển (&quot;Hoàng Đế Nội Kinh&quot;, &quot;Thương Hàn Luận&quot;, &quot;Bản Thảo Cương Mục&quot;) với sự hình thành nền Y học Cổ truy…</description>
+    </item>
+    <item>
+      <title>Mạng lưới Đường sắt Cao tốc Bát Tung Bát Hoành (350 km/h) &amp; Mô hình Đô thị TOD – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-hsr-megaprojects-urban-network</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-hsr-megaprojects-urban-network</guid>
+      <category>contemporary</category>
+      <description>Chuyên luận phân tích quá trình hình thành mạng lưới đường sắt cao tốc lớn nhất thế giới từ tuyến Bắc Kinh – Thiên Tân (2008) qua khung &quot;Tứ Tung Tứ Hoành&quot; đế…</description>
+    </item>
+    <item>
+      <title>Chuyển dịch Năng lượng Xanh, Pin LFP/Natri-ion &amp; Hệ sinh thái Xe điện Trung Quốc – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-green-energy-ev-battery-ecosystem</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-green-energy-ev-battery-ecosystem</guid>
+      <category>contemporary</category>
+      <description>Chuyên luận phân tích chuỗi giá trị &quot;Tân Tam Dạng&quot; (xe năng lượng mới, pin lithium-ion và tấm pin mặt trời) giúp Trung Quốc dẫn đầu quá trình chuyển dịch xan…</description>
+    </item>
+    <item>
+      <title>Kinh tế Nền tảng, Thương mại Livestream &amp; Thanh toán Số: QR Alipay/WeChat Pay &amp; e-CNY – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-digital-payments-platform-economy</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-digital-payments-platform-economy</guid>
+      <category>contemporary</category>
+      <description>Chuyên luận giải mã hiện tượng &quot;nhảy cóc qua kỷ nguyên thẻ tín dụng&quot; tại Trung Quốc: từ cơ chế ký quỹ bảo đảm Alipay (2004) và Lì xì WeChat (2014) đưa mã QR…</description>
+    </item>
+    <item>
+      <title>Khảo cổ học Đương đại Trung Hoa (Tam Tinh Đôi, Lương Chử, Nhị Lý Đầu, Mã Vương Đôi) &amp; Mô hình &quot;Đa nguyên Nhất… – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/modern-chinese-archaeology-sanxingdui-liangzhu</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/modern-chinese-archaeology-sanxingdui-liangzhu</guid>
+      <category>history</category>
+      <description>Chuyên luận tổng hợp những phát hiện khảo cổ học làm thay đổi tận gốc nhận thức về nguồn gốc văn minh Trung Hoa suốt một thế kỷ qua — từ thành cổ thủy lợi Lư…</description>
+    </item>
+    <item>
+      <title>Hàng không Vũ trụ Đương đại Trung Quốc: Hệ thống Bắc Đẩu BeiDou, Trạm Thiên Cung &amp; Chương trình Hằng Nga – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-space-aerospace-tiangong-beidou</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-space-aerospace-tiangong-beidou</guid>
+      <category>contemporary</category>
+      <description>Chuyên luận hệ thống hóa hành trình hàng không vũ trụ tự chủ của Trung Quốc từ vệ tinh Đông Phương Hồng 1 (1970) và chuyến bay có người lái Thần Châu 5 (2003…</description>
+    </item>
+    <item>
+      <title>Quy tắc Xuất xứ Cộng gộp RCEP vs ACFTA 3.0: Cấu trúc WO, RVC 40% và Chuyển đổi Mã số Hàng hóa – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/rcep-acfta-cumulation-rules-vietnam</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/rcep-acfta-cumulation-rules-vietnam</guid>
+      <category>business</category>
+      <description>Trong kiến trúc thương mại Đông Á đương đại, doanh nghiệp Việt Nam giao dịch với Trung Quốc đồng thời tiếp cận hai khung ưu đãi lớn là ACFTA (với phiên bản n…</description>
+    </item>
+    <item>
+      <title>Hệ thống Hội chợ Công nghiệp Trung Quốc: Canton Fair 3 Pha, CIIE Thượng Hải, Yiwu Fair và Quy trình Khảo sát… – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-trade-fairs-canton-ciie-yiwu-guide</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-trade-fairs-canton-ciie-yiwu-guide</guid>
+      <category>business</category>
+      <description>Hệ thống hội chợ thương mại cấp quốc gia của Trung Quốc không chỉ là nơi trưng bày sản phẩm mà là hạ tầng kết nối trực tiếp giữa các cụm công nghiệp vùng miề…</description>
+    </item>
+    <item>
+      <title>Lệnh 248 và Lệnh 249 GACC: Cơ chế Mã số Vùng trồng, Cơ sở Đóng gói và Xuất khẩu Nông sản Chính ngạch – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/gacc-decree-248-249-vietnam-agri-export</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/gacc-decree-248-249-vietnam-agri-export</guid>
+      <category>business</category>
+      <description>Từ ngày 01/01/2022, Tổng cục Hải quan Trung Quốc (GACC) chính thức thi hành hai văn bản khung là Lệnh 248 (Quy định về đăng ký quản lý doanh nghiệp sản xuất…</description>
+    </item>
+    <item>
+      <title>Chiến lược Toàn cầu hóa của Doanh nghiệp Trung Quốc: Từ Gia công OEM sang Thương hiệu Toàn cầu và Chuỗi cung… – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-enterprises-globalization-playbook</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-enterprises-globalization-playbook</guid>
+      <category>business</category>
+      <description>Trong hơn hai thập kỷ kể từ khi Trung Quốc gia nhập WTO (năm 2001), làn sóng vươn ra toàn cầu (出海 - Chuhai) của doanh nghiệp Trung Quốc đã trải qua ba giai đ…</description>
+    </item>
+    <item>
+      <title>Pháp chế Hợp đồng B2B Trung–Việt: Giá trị Công chương (公章), Ngôn ngữ Ưu tiên, Điều khoản QC và Trọng tài CIET… – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/cross-border-b2b-contracts-cietac-viac</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/cross-border-b2b-contracts-cietac-viac</guid>
+      <category>business</category>
+      <description>Trong giao dịch mua bán hàng hóa quốc tế giữa doanh nghiệp Việt Nam và Trung Quốc, nhiều tranh chấp phát sinh không phải do thiếu thiện chí mà do khoảng trốn…</description>
+    </item>
+    <item>
+      <title>Thi ca Đường – Tống và Địa lý Thi nhân: Từ Tráng ca Trường An, Xích Bích đến Mỹ học Tây Hồ – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/tang-poetry-song-ci-poetics-geography</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/tang-poetry-song-ci-poetics-geography</guid>
+      <category>literature</category>
+      <description>Đường thi và Tống từ không chỉ là hai đỉnh cao ngôn từ kế tiếp nhau mà còn kiến hình thành nên một &quot;bản đồ địa lý tinh thần&quot; phủ khắp không gian Trung Hoa. T…</description>
+    </item>
+    <item>
+      <title>Hệ thống Phạm trù Mỹ học Trung Hoa: Khí Vận Sinh Động, Ý Cảnh, Lưu Bạch và Truyền Thần – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-aesthetic-concepts-qiyun-yijing</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-aesthetic-concepts-qiyun-yijing</guid>
+      <category>arts</category>
+      <description>Khác với truyền thống mỹ học phương Tây cổ đại vốn khởi đầu từ khái niệm &quot;mô phỏng tự nhiên&quot; (Mimesis của Plato và Aristotle), mỹ học cổ điển Trung Hoa lấy s…</description>
+    </item>
+    <item>
+      <title>Phả hệ Thư pháp Trung Hoa: Từ &quot;Tam Hy Đường&quot; đời Tấn, Bút pháp Đường – Tống đến Phong trào Bi Học Nhà Thanh – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/calligraphy-masterpieces-three-rarities-lineage</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/calligraphy-masterpieces-three-rarities-lineage</guid>
+      <category>arts</category>
+      <description>Thư pháp được mệnh danh là &quot;nghệ thuật trừu tượng tối cao&quot; của văn minh Trung Hoa, nơi mỗi nét bút vừa mang nghĩa ngôn từ vừa ghi lại trực tiếp nhịp thở, tốc…</description>
+    </item>
+    <item>
+      <title>Thần thoại Khởi nguyên Trung Hoa trong 《Sơn Hải Kinh》 và 《Hoài Nam Tử》: Không gian Côn Lôn, Bồng Lai và Thần… – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-mythology-shanhaijing-kunlun-penglai</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-mythology-shanhaijing-kunlun-penglai</guid>
+      <category>literature</category>
+      <description>Khác với thần thoại Hy Lạp được hệ thống hóa sớm thành một gia phả thống nhất trên đỉnh Olympus qua sử thi Homer và Hesiod, thần thoại Trung Hoa cổ đại tồn t…</description>
+    </item>
+    <item>
+      <title>Kỹ nghệ Khắc ván In Cổ (Kinh Kim Cương 868) và Đại Tùng Thư Trung Hoa: Từ Vĩnh Lạc Đại Điển đến Tứ Khố Toàn T… – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/east-asian-woodblock-printing-encyclopedias</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/east-asian-woodblock-printing-encyclopedias</guid>
+      <category>literature</category>
+      <description>Sáu thế kỷ trước máy in chữ kim loại của Gutenberg tại châu Âu, kỹ nghệ khắc ván in (Điêu bản ấn loát) đã ra đời tại Trung Quốc thời Đường, mà cột mốc còn ni…</description>
+    </item>
+    <item>
+      <title>Thiên Đàn Bắc Kinh (天坛): Vũ trụ luận Thiên Viên Địa Phương, Hình học Số 9, 28 Cột Gỗ Kỳ Niên Điện, Hồi Âm Bíc… – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/temple-of-heaven-tiantan-cosmology-3d</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/temple-of-heaven-tiantan-cosmology-3d</guid>
+      <category>traditional</category>
+      <description>Khởi dựng năm 1420 dưới thời Minh Vĩnh Lạc (cùng năm hoàn thành Tử Cấm Thành) tại phía nam kinh thành Bắc Kinh, Thiên Đàn (天坛) là quần thể tế Trời lớn nhất v…</description>
+    </item>
+    <item>
+      <title>Cửu Trại Câu (九寨沟): Địa chất Đá vôi Travertine, Thung lũng Chữ Y, Ngũ Hoa Hải và Chín Bản Làng Tạng – Khương – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/jiuzhaigou-travertine-karst</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/jiuzhaigou-travertine-karst</guid>
+      <category>regions</category>
+      <description>Nằm ở vùng chuyển tiếp từ rìa đông bắc cao nguyên Thanh Tạng xuống bồn địa Tứ Xuyên (Châu tự trị dân tộc Tạng – Khương A Bá), Cửu Trại Câu được UNESCO ghi da…</description>
+    </item>
+    <item>
+      <title>Trương Gia Giới – Vũ Lăng Nguyên (张家界): Cột Sa thạch Thạch anh 380 Triệu Năm, Thiên Môn Sơn và Nhà sàn Điếu C… – CHINESE CULTURE EXPLORER</title>
+      <link>https://chinese-culture-explorer.netlify.app/chuyen-luan/zhangjiajie-wulingyuan-sandstone-pillars</link>
+      <guid>https://chinese-culture-explorer.netlify.app/chuyen-luan/zhangjiajie-wulingyuan-sandstone-pillars</guid>
+      <category>regions</category>
+      <description>Tọa lạc tại vùng núi Tương Tây (tây bắc tỉnh Hồ Nam), Khu thắng cảnh Vũ Lăng Nguyên – Trương Gia Giới (Di sản Thiên nhiên Thế giới UNESCO năm 1992 và Công vi…</description>
     </item>
   </channel>
 </rss>

@@ -230,12 +230,23 @@ def unescape_js_str(s: str) -> str:
 def extract_field(block: str, field_names: list[str]) -> str:
     for fname in field_names:
         m = re.search(
-            rf'(?m)(?:^|[,{{\s])"?{re.escape(fname)}"?\s*:\s*\n?\s*"((?:[^"\\]|\\.)*)"',
+            rf'(?m)(?:^|[,{{\s])["\']?{re.escape(fname)}["\']?\s*:\s*\n?\s*(?:"((?:[^"\\]|\\.)*)"|\'((?:[^\'\\]|\\.)*)\')',
             block,
         )
         if m:
-            return unescape_js_str(m.group(1))
+            raw = m.group(1) if m.group(1) is not None else (m.group(2) or "")
+            return unescape_js_str(raw)
     return ""
+
+
+def parse_kv_map(txt: str, var_name: str) -> dict[str, str]:
+    m = re.search(rf"{re.escape(var_name)}\s*=\s*\{{(.*?)\}};", txt, re.S)
+    if not m:
+        return {}
+    return {
+        k: v
+        for k, v in re.findall(r'["\']([^"\']+)["\']\s*:\s*["\']([^"\']+)["\']', m.group(1))
+    }
 
 
 def load_editorial_image_maps() -> tuple[dict[str, str], dict[str, list[str]]]:
@@ -286,6 +297,7 @@ def load_editorial_image_maps() -> tuple[dict[str, str], dict[str, list[str]]]:
 def parse_articles(
     img_map: dict[str, str], art_ed_map: dict[str, list[str]]
 ) -> list[dict[str, str]]:
+    v3_files = sorted(str(p) for p in pathlib.Path("src/data/v3").glob("articlesExpansionV3_Part*.js"))
     article_files = [
         "src/app.js",
         "src/data/articlesData.js",
@@ -294,17 +306,18 @@ def parse_articles(
         "src/data/articlesMonographsPart2.js",
         "src/data/articlesExpansionBatch2026.js",
         "src/data/globalTradeHubData.js",
-    ]
+    ] + v3_files
     results: list[dict[str, str]] = []
     seen: set[str] = set()
     id_pat = re.compile(
-        r'(?m)^\s{2,8}id:\s*"([^"]+)"\s*,\s*(?=\r?\n\s{2,8}(?:number|category|categoryLabel|templateType|slug):)'
+        r'(?m)^\s{2,8}id:\s*["\']([^"\']+)["\']\s*,\s*(?=\r?\n\s{2,8}(?:number|category|categoryLabel|templateType|slug):)'
     )
     for rel in article_files:
         p = pathlib.Path(rel)
         if not p.exists():
             continue
         txt = p.read_text(encoding="utf-8")
+        v3_hero_map = parse_kv_map(txt, "HERO_MAP")
         matches = list(id_pat.finditer(txt))
         for i, m in enumerate(matches):
             aid = m.group(1)
@@ -318,13 +331,16 @@ def parse_articles(
             desc_raw = extract_field(block, ["abstract", "introduction", "standfirst"])
             cat = extract_field(block, ["category"])
 
-            # Find image: heroImage.src inside block -> articleEditorial -> category fallback -> default
+            # Find image: heroImage.src inside block -> V3 HERO_MAP -> articleEditorial -> category fallback -> default
             hero_src = ""
             mh = re.search(
-                r'heroImage\s*:\s*\{[^}]*?src\s*:\s*"([^"]+)"', block, re.S
+                r'heroImage\s*:\s*\{[^}]*?src\s*:\s*["\']([^"\']+)["\']', block, re.S
             )
             if mh and is_raster_exists(mh.group(1)):
                 hero_src = mh.group(1)
+
+            if not hero_src and aid in v3_hero_map and is_raster_exists(v3_hero_map[aid]):
+                hero_src = v3_hero_map[aid]
 
             if not hero_src and aid in art_ed_map:
                 for iid in art_ed_map[aid]:
@@ -350,6 +366,7 @@ def parse_articles(
                         158,
                     ),
                     "image": hero_src,
+                    "category": cat or "culture",
                 }
             )
     return results
@@ -389,50 +406,53 @@ def parse_provinces() -> list[dict[str, str]]:
 
 
 def parse_paintings() -> list[dict[str, str]]:
-    p = pathlib.Path("src/data/paintingsData.js")
-    if not p.exists():
-        return []
-    txt = p.read_text(encoding="utf-8")
     results: list[dict[str, str]] = []
     seen: set[str] = set()
-    matches = list(
-        re.finditer(
-            r'"id"\s*:\s*"([^"]+)"\s*,\s*\r?\n\s*"titleZh"\s*:', txt
-        )
-    )
-    for i, m in enumerate(matches):
-        ptid = m.group(1)
-        if ptid in seen:
-            continue
-        seen.add(ptid)
-        end = matches[i + 1].start() if i + 1 < len(matches) else len(txt)
-        seg = txt[m.start() : min(end, m.start() + 6500)]
-        title_vi = extract_field(seg, ["titleVi", "titleEn"]) or ptid
-        title_zh = extract_field(seg, ["titleZh"])
-        desc = (
-            extract_field(
-                seg,
-                ["artisticLegacy", "historicalBackground", "philosophicalMeaning", "significance"],
-            )
-            or f"Kiệt tác quốc họa {title_vi}."
-        )
-        img = extract_field(seg, ["imageUrl", "image", "src"])
-        if not is_raster_exists(img):
-            img = "assets/images/paintings/01_luoshenfu_tu.jpg"
-        zh_part = f" ({title_zh})" if title_zh else ""
-        results.append(
-            {
-                "id": ptid,
-                "title": f"{clean_text(title_vi, 75)}{zh_part} – Quốc họa | {SITE_BRAND}",
-                "description": clean_text(desc, 158),
-                "image": img,
-            }
-        )
+    p = pathlib.Path("src/data/paintingsData.js")
+    if p.exists():
+        txt = p.read_text(encoding="utf-8")
+        matches = list(re.finditer(r'"id"\s*:\s*"([^"]+)"\s*,\s*\r?\n\s*"titleZh"\s*:', txt))
+        for i, m in enumerate(matches):
+            ptid = m.group(1)
+            if ptid in seen:
+                continue
+            seen.add(ptid)
+            end = matches[i + 1].start() if i + 1 < len(matches) else len(txt)
+            seg = txt[m.start() : min(end, m.start() + 6500)]
+            title_vi = extract_field(seg, ["titleVi", "titleEn"]) or ptid
+            title_zh = extract_field(seg, ["titleZh"])
+            desc = extract_field(seg, ["artisticLegacy", "historicalBackground", "philosophicalMeaning", "significance"]) or f"Kiệt tác quốc họa {title_vi}."
+            img = extract_field(seg, ["imageUrl", "image", "src"])
+            if not is_raster_exists(img):
+                img = "assets/images/paintings/01_luoshenfu_tu.jpg"
+            zh_part = f" ({title_zh})" if title_zh else ""
+            results.append({"id": ptid, "title": f"{clean_text(title_vi, 75)}{zh_part} – Quốc họa | {SITE_BRAND}", "description": clean_text(desc, 158), "image": img})
+
+    pv3 = pathlib.Path("src/data/v3/paintingsExpansionV3.js")
+    if pv3.exists():
+        txt3 = pv3.read_text(encoding="utf-8")
+        pimg_map = parse_kv_map(txt3, "V3_PAINT_IMGS")
+        matches3 = list(re.finditer(r'id\s*:\s*[\'"]([^\'"]+)[\'"]\s*,\s*\r?\n\s*titleVi\s*:', txt3))
+        for i, m in enumerate(matches3):
+            ptid = m.group(1)
+            if ptid in seen:
+                continue
+            seen.add(ptid)
+            end = matches3[i + 1].start() if i + 1 < len(matches3) else len(txt3)
+            seg = txt3[m.start() : min(end, m.start() + 4500)]
+            title_vi = extract_field(seg, ["titleVi", "titleEn"]) or ptid
+            title_zh = extract_field(seg, ["titleZh"])
+            desc = extract_field(seg, ["analysisVi", "analysisEn"]) or f"Kiệt tác quốc họa {title_vi}."
+            img = pimg_map.get(ptid, "")
+            if not is_raster_exists(img):
+                img = "assets/images/paintings/22_qianli_jiangshan.jpg"
+            zh_part = f" ({title_zh})" if title_zh else ""
+            results.append({"id": ptid, "title": f"{clean_text(title_vi, 75)}{zh_part} – Quốc họa | {SITE_BRAND}", "description": clean_text(desc, 158), "image": img})
     return results
 
 
 def parse_artifacts() -> list[dict[str, str]]:
-    files = ["src/data/museumData.js", "src/data/museumExpansionBatch2026.js"]
+    files = ["src/data/museumData.js", "src/data/museumExpansionBatch2026.js", "src/data/v3/museumExpansionV3.js"]
     override_imgs = {
         "chu-dau-blue-white-ceramic": "assets/images/museum/chu-dau-ceramic.jpg",
         "jinshi-doctoral-stele": "assets/images/museum/jinshi-stele.jpg",
@@ -440,24 +460,25 @@ def parse_artifacts() -> list[dict[str, str]]:
     results: list[dict[str, str]] = []
     seen: set[str] = set()
     art_pat = re.compile(
-        r'(?m)^\s{4,8}id:\s*"([^"]+)"\s*,\s*(?=\r?\n\s{4,8}category:)'
+        r'(?m)^\s{4,8}id:\s*["\']([^"\']+)["\']\s*,\s*(?=\r?\n\s{4,8}(?:category|titleVi):)'
     )
     for rel in files:
         p = pathlib.Path(rel)
         if not p.exists():
             continue
         txt = p.read_text(encoding="utf-8")
+        v3_mimg = parse_kv_map(txt, "V3_MUS_IMGS")
         matches = list(art_pat.finditer(txt))
         for i, m in enumerate(matches):
             afid = m.group(1)
-            if afid in seen:
+            if afid in seen or afid.startswith("showcase-"):
                 continue
             seen.add(afid)
             end = matches[i + 1].start() if i + 1 < len(matches) else len(txt)
             seg = txt[m.start() : min(end, m.start() + 3500)]
-            name_vi = extract_field(seg, ["nameVi", "nameEn"]) or afid
-            desc = extract_field(seg, ["culturalSignificance", "historicalContext"]) or f"Bảo vật số {name_vi}."
-            img = override_imgs.get(afid) or extract_field(seg, ["imageUrl", "src"])
+            name_vi = extract_field(seg, ["nameVi", "titleVi", "nameEn", "titleEn"]) or afid
+            desc = extract_field(seg, ["culturalSignificance", "historicalContext", "summaryVi", "summaryEn"]) or f"Bảo vật số {name_vi}."
+            img = override_imgs.get(afid) or v3_mimg.get(afid) or extract_field(seg, ["imageUrl", "src"])
             if not is_raster_exists(img):
                 img = DEFAULT_RASTER_OG
             results.append(
@@ -714,6 +735,34 @@ def main() -> None:
         )
     lines.append("</urlset>")
     pathlib.Path("sitemap.xml").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+    # Generate valid RSS 2.0 feed.xml for curated essays
+    rss_lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">',
+        "  <channel>",
+        f"    <title>{html.escape(SITE_BRAND)}</title>",
+        f"    <link>{BASE_URL}/</link>",
+        f'    <atom:link href="{BASE_URL}/feed.xml" rel="self" type="application/rss+xml" />',
+        "    <description>Khảo cứu văn minh Trung Hoa, Quốc họa, Bảo tàng Số, và Địa văn hóa 34 tỉnh thành.</description>",
+        "    <language>vi</language>",
+        f"    <lastBuildDate>{TODAY}T00:00:00Z</lastBuildDate>",
+    ]
+    for art in articles:
+        link = f"{BASE_URL}/chuyen-luan/{art['id']}"
+        rss_lines.extend(
+            [
+                "    <item>",
+                f"      <title>{html.escape(art['title'])}</title>",
+                f"      <link>{html.escape(link)}</link>",
+                f"      <guid>{html.escape(link)}</guid>",
+                f"      <category>{html.escape(art.get('category', 'culture'))}</category>",
+                f"      <description>{html.escape(art['description'])}</description>",
+                "    </item>",
+            ]
+        )
+    rss_lines.extend(["  </channel>", "</rss>"])
+    pathlib.Path("feed.xml").write_text("\n".join(rss_lines) + "\n", encoding="utf-8")
 
     robots = "\n".join(
         [
