@@ -5025,7 +5025,9 @@
           </div>
 
           ${window.CCE_GALLERY_V3 ? window.CCE_GALLERY_V3.renderCraftTimeline4000(ui.museumPeriodFilter, enM) : ""}
-          ${window.CCE_ARTIFACTS_3D ? window.CCE_ARTIFACTS_3D.renderSection(enM, Store.getState().uiLang) : ""}
+          ${window.CCE_3D_HUB
+            ? window.CCE_3D_HUB.renderUnifiedStudio(enM, Store.getState().uiLang)
+            : (window.CCE_ARTIFACTS_3D ? window.CCE_ARTIFACTS_3D.renderSection(enM, Store.getState().uiLang) : "")}
 
           <div class="card" style="margin-bottom:1.4rem;">
             <div class="grid grid-2" style="align-items:end;gap:1rem;margin-bottom:0.9rem;">
@@ -6749,6 +6751,8 @@
         <p style="margin:0;">${escapeHtml(enVal(Metaphysics.epistemologyBanner, "description"))}</p>
       </div>
 
+      ${window.CCE_3D_ARMILLARY ? `<section class="card mb-2" style="padding:1.1rem 1.25rem;border-top:3px solid var(--antique-gold);">${window.CCE_3D_ARMILLARY.renderPanel(enM)}</section>` : ""}
+
       <div class="grid grid-2" style="margin-bottom:2rem;">
         <div class="card">
           <h3 class="card-title">${enM ? "Five Phases Dynamics (五行生克)" : "Sơ đồ Vận động Ngũ Hành (五行生克)"}</h3>
@@ -7249,8 +7253,9 @@
                 <div class="map-canvas-wrap">
                   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;flex-wrap:wrap;gap:0.4rem;">
                     <strong style="font-size:0.88rem;">${enM ? "4-Layer Atlas &amp; 34 Provincial Divisions" : "Bản đồ Tương tác 4 Lớp &amp; 34 Tỉnh/Thành"}</strong>
-                    <div style="display:flex;gap:0.35rem;align-items:center;">
+                    <div style="display:flex;gap:0.35rem;align-items:center;flex-wrap:wrap;">
                       <span class="badge badge-gold" style="font-size:0.7rem;">${enM ? `6 Regions · ${provinces.length} Divs` : `6 Vùng · ${provinces.length} Tỉnh`}</span>
+                      ${window.CCE_CHINA_3D_MAP ? window.CCE_CHINA_3D_MAP.renderViewSwitcher(enM) : ""}
                       <button type="button" class="btn btn-secondary btn-sm" style="padding:0.2rem 0.5rem;font-size:0.74rem;" data-action="open-province-compare">${enM ? "Compare" : "Đối chiếu"}</button>
                     </div>
                   </div>
@@ -7281,7 +7286,9 @@
                       </button>
                     `).join("")}
                   </div>
-                  ${Visuals.renderChinaMapSVG(activeRegion.id, activeCity.id, layerMode, ui.selectedMapProvinceId, provinces, { enMode: enM, hsrFilters })}
+                  ${(window.CCE_CHINA_3D_MAP && window.CCE_CHINA_3D_MAP.is3DMode())
+                    ? window.CCE_CHINA_3D_MAP.renderContainer(ui.selectedMapProvinceId, enM)
+                    : Visuals.renderChinaMapSVG(activeRegion.id, activeCity.id, layerMode, ui.selectedMapProvinceId, provinces, { enMode: enM, hsrFilters })}
                   <div class="map-legend-strip" style="font-size:0.73rem;margin-top:0.35rem;">
                     ${layerMode === "admin"
                       ? (enM
@@ -7724,6 +7731,7 @@
                 .join("")}
             </div>
           </div>
+          ${window.CCE_3D_LOGISTICS ? `<section class="card mt-2 mb-2" style="padding:1.1rem 1.25rem;border-top:3px solid var(--jade-green);">${window.CCE_3D_LOGISTICS.renderPanel(enB)}</section>` : ""}
           ${window.CCE_V3_W5 ? window.CCE_V3_W5.renderB2BExpansion(enB) : ""}
         </div>
       </section>
@@ -11003,10 +11011,15 @@
     if (window.CCE_ARTIFACTS_3D && typeof window.CCE_ARTIFACTS_3D.initMountedCanvasIfAny === "function") {
       window.CCE_ARTIFACTS_3D.initMountedCanvasIfAny();
     }
+    if (window.CCE_3D_HUB && typeof window.CCE_3D_HUB.initAllMounted === "function") {
+      window.CCE_3D_HUB.initAllMounted();
+    }
     if (window.CCE_GALLERY_V3 && typeof window.CCE_GALLERY_V3.afterRender === "function") {
       window.CCE_GALLERY_V3.afterRender();
     }
-    if (!document.querySelector("[data-fc3d-mount]") && !document.getElementById("cce-artifact-3d-canvas") && !document.getElementById("cce-china-3d-canvas") && window.CCE_WEBGL_MGR) {
+    const _has3dMain = (window.CCE_3D_HUB && window.CCE_3D_HUB.hasAny3dCanvasInDom()) ||
+      Boolean(document.querySelector("[data-fc3d-mount]") || document.getElementById("cce-artifact-3d-canvas") || document.getElementById("cce-china-3d-canvas"));
+    if (!_has3dMain && window.CCE_WEBGL_MGR) {
       window.CCE_WEBGL_MGR.disposeAll();
     }
   }
@@ -11085,10 +11098,15 @@
       window.CCE_ARTIFACTS_3D.initMountedCanvasIfAny();
       window.CCE_ARTIFACTS_3D.syncTiantanLang(state.uiLang);
     }
+    if (window.CCE_3D_HUB && typeof window.CCE_3D_HUB.initAllMounted === "function") {
+      window.CCE_3D_HUB.initAllMounted();
+    }
     if (window.CCE_GALLERY_V3 && typeof window.CCE_GALLERY_V3.afterRender === "function") {
       window.CCE_GALLERY_V3.afterRender();
     }
-    if (!document.querySelector("[data-fc3d-mount]") && !document.getElementById("cce-artifact-3d-canvas") && !document.getElementById("cce-china-3d-canvas") && window.CCE_WEBGL_MGR) {
+    const _has3dRender = (window.CCE_3D_HUB && window.CCE_3D_HUB.hasAny3dCanvasInDom()) ||
+      Boolean(document.querySelector("[data-fc3d-mount]") || document.getElementById("cce-artifact-3d-canvas") || document.getElementById("cce-china-3d-canvas"));
+    if (!_has3dRender && window.CCE_WEBGL_MGR) {
       window.CCE_WEBGL_MGR.disposeAll();
     }
   }
@@ -13787,6 +13805,11 @@
     }
   } catch {}
   window.CCE_RENDER = render;
+  window.CCE_SELECT_MAP_PROVINCE = (pid) => {
+    if (!pid) return;
+    ui.selectedMapProvinceId = pid;
+    patchMainOnly();
+  };
   applyRouteFromLocation();
   if (/#(?:access_token|confirmation_token|invite_token|recovery_token|email_change_token|error)=/i.test(window.location.hash || "")) {
     Auth.init();

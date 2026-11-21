@@ -119,7 +119,10 @@ def main() -> int:
             "v3WaveModules.js", "artifacts3DStudio.js", "galleryReaderV3.js",
             "hanziStrokePad.js", "learningLabV3.js", "v3Wave5Modules.js",
             "pentatonicStudio.js", "presentationMode.js", "localQaEngine.js",
-            "civilizationAtlas.js", "srsEngine.js", "exporters.js", "lazyLoader.js"
+            "civilizationAtlas.js", "china3DMap.js", "dougongJoinery3D.js",
+            "vernacular3DStudio.js", "euChinaLogistics3D.js", "hydraulic3DStudio.js",
+            "armillary3DStudio.js", "artifacts3DExtra.js", "studioHub3D.js",
+            "srsEngine.js", "exporters.js", "lazyLoader.js"
         }
     ]
     delim_issues = check_js_delimiters(v3_components)
