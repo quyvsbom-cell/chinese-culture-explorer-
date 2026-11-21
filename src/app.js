@@ -716,6 +716,7 @@
     activeDestAreaId: "bj-core-axis",
     provinceQuery: "",
     provinceRegionFilter: "all",
+    provinceDims: [],
     museumCategory: "all",
     museumPeriodFilter: "all",
     museumViewMode: "grid", // grid | list
@@ -1175,7 +1176,7 @@
       : "object-fit:cover;object-position:50% 30%;";
     return `
       <div class="academic-card-thumb img-skeleton-bg" style="position:relative;margin:0 0 0.9rem 0;aspect-ratio:16/10;width:100%;overflow:hidden;border-radius:var(--radius);background:var(--bg-surface);border:1px solid var(--hairline);">
-        <img src="${escapeHtml(photo.src)}" alt="${escapeHtml(capText)}" loading="lazy" style="width:100%;height:100%;${objStyle}display:block;" onerror="this.onerror=null;this.src='assets/images/museum/qianli-jiangshan.jpg';" />
+        <img decoding="async"  src="${escapeHtml(photo.src)}" alt="${escapeHtml(capText)}" loading="lazy" style="width:100%;height:100%;${objStyle}display:block;" onerror="this.onerror=null;this.src='assets/images/museum/qianli-jiangshan.jpg';" />
         ${isContain ? "" : `<div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(16,14,12,0.72) 0%, rgba(16,14,12,0.12) 45%, rgba(16,14,12,0.02) 100%);pointer-events:none;"></div>`}
         <button type="button" class="btn btn-sm" style="position:absolute;top:0.45rem;right:0.55rem;padding:0.16rem 0.45rem;font-size:0.67rem;background:rgba(15,16,18,0.72);color:#F2EFE9;border:1px solid rgba(255,255,255,0.22);border-radius:2px;" data-action="open-custom-image" data-src="${escapeHtml(photo.src)}" data-caption="${escapeHtml(capText)}" data-credit="">${ICONS.zoom}</button>
         ${!isContain && capText ? `
@@ -1205,7 +1206,7 @@
       <div class="card mb-2 academic-section-banner">
         <div class="academic-banner-grid">
           <div class="academic-banner-media${isContain ? " is-contain" : ""}">
-            <img src="${escapeHtml(banner.src)}" alt="${escapeHtml(captionText)}" loading="eager" style="width:100%;height:100%;${bannerFit}display:block;" />
+            <img decoding="async"  src="${escapeHtml(banner.src)}" alt="${escapeHtml(captionText)}" loading="eager" style="width:100%;height:100%;${bannerFit}display:block;" />
             <button type="button" class="btn btn-sm academic-banner-zoom" data-action="open-custom-image" data-src="${escapeHtml(banner.src)}" data-caption="${escapeHtml(captionText)}" data-credit="">${ICONS.zoom} ${enMode ? "View Original" : "Xem ảnh gốc"}</button>
           </div>
           ${hasFooter ? `
@@ -1395,7 +1396,7 @@
           </div>
 
           <div class="editorial-media-frame ${getEditorialRatioClass(img.aspectRatio || "16:9")}" style="max-height:70vh;background:#0F1012;border:1px solid rgba(242,239,233,0.16);">
-            <img class="editorial-img" src="${escapeEditorialHtml(img.src)}" alt="${escapeEditorialHtml(img.altText || imgTitle)}" style="object-fit:contain;background:#0F1012;" />
+            <img decoding="async"  class="editorial-img" src="${escapeEditorialHtml(img.src)}" alt="${escapeEditorialHtml(img.altText || imgTitle)}" style="object-fit:contain;background:#0F1012;" />
           </div>
 
           <div style="margin-top:0.85rem;">
@@ -1983,7 +1984,7 @@
       : `data-action="zoom-artifact"`;
     const scaleStyle = kind === "painting" ? `style="transform: scale(${ui.paintingZoomScale || 1});cursor:zoom-in;"` : `style="cursor:zoom-in;"`;
     const stageVisualHtml = imgSrc
-      ? `<img src="${escapeHtml(imgSrc)}" alt="${titleAlt}" class="hotspot-stage-img" ${kind === "painting" ? 'id="painting-modal-img"' : ""} ${zoomAttr} ${scaleStyle} onerror="this.src='assets/images/museum/qianli-jiangshan.jpg'" />`
+      ? `<img decoding="async"  src="${escapeHtml(imgSrc)}" alt="${titleAlt}" class="hotspot-stage-img" ${kind === "painting" ? 'id="painting-modal-img"' : ""} ${zoomAttr} ${scaleStyle} onerror="this.src='assets/images/museum/qianli-jiangshan.jpg'" />`
       : (kind === "artifact" ? Visuals.renderArtifactVisualHTML(item, true) : "");
     return `
       <div class="museum-viewer-frame" style="padding:0.75rem;">
@@ -2267,7 +2268,7 @@
                   return `
                   <div class="prov-dish-item">
                     ${hImg ? `<button type="button" class="prov-item-thumb" data-action="open-custom-image" data-src="${escapeHtml(hImg)}" data-caption="${escapeHtml(hCap)}" data-credit="${escapeHtml(prov.nameEn || prov.nameVi)} • Architectural & Heritage Archive" title="${enPr ? "Zoom image" : "Phóng to ảnh"}"><img src="${escapeHtml(hImg)}" alt="${escapeHtml(hCap)}" loading="lazy" decoding="async" /></button>` : ""}
-                    <div style="font-weight:700;color:var(--imperial-red);"><span class="hanzi">${escapeHtml(h.hanzi || "")}</span> (${escapeHtml(h.pinyin || "")})</div>
+                    <div style="display:flex;justify-content:space-between;gap:0.35rem;align-items:center;"><span style="font-weight:700;color:var(--imperial-red);"><span class="hanzi">${escapeHtml(h.hanzi || "")}</span> (${escapeHtml(h.pinyin || "")})</span>${h.hanzi ? renderSpeakBtn(h.hanzi) : ""}</div>
                     <div style="font-weight:600;margin:0.15rem 0;">${enPr ? escapeHtml(enVal(h, "nameVi")) : `${escapeHtml(h.hanViet || "")} — ${escapeHtml(enVal(h, "nameVi"))}`}</div>
                     <div style="font-size:0.8rem;color:var(--text-secondary);">${escapeHtml(enVal(h, "significance"))}</div>
                   </div>
@@ -2311,7 +2312,7 @@
                   return `
                   <div class="prov-dish-item">
                     ${fImg ? `<button type="button" class="prov-item-thumb is-portrait" data-action="open-custom-image" data-src="${escapeHtml(fImg)}" data-caption="${escapeHtml(fCap)}" data-credit="Chinese Cultural & Historical Luminaries Archive" title="${enPr ? "Zoom portrait" : "Phóng to chân dung"}"><img src="${escapeHtml(fImg)}" alt="${escapeHtml(f.hanzi || f.hanViet || "")}" loading="lazy" decoding="async" /></button>` : ""}
-                    <div style="font-weight:700;"><span class="hanzi">${escapeHtml(f.hanzi)}</span> (${escapeHtml(f.pinyin)})</div>
+                    <div style="display:flex;justify-content:space-between;gap:0.35rem;align-items:center;"><span style="font-weight:700;"><span class="hanzi">${escapeHtml(f.hanzi)}</span> (${escapeHtml(f.pinyin)})</span>${f.hanzi ? renderSpeakBtn(f.hanzi) : ""}</div>
                     <div style="font-size:0.82rem;color:var(--imperial-red);font-weight:600;">${escapeHtml(f.hanViet || f.nameVi)} (${escapeHtml(f.lifespan || "")})</div>
                     <p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0;">${escapeHtml(enVal(f, "contribution"))}</p>
                   </div>
@@ -2404,7 +2405,7 @@
             <div class="grid ${extraPhotos.length > 2 ? "grid-4" : "grid-2"}" style="gap:0.65rem;">
               ${extraPhotos.map((p) => `
                 <button type="button" class="card interactive" style="padding:0;overflow:hidden;text-align:left;border:1px solid var(--hairline);" data-action="open-custom-image" data-src="${p.src}" data-caption="${escapeHtml(p.cap)}" data-credit="Chinese Culture Explorer Archive">
-                  <img src="${p.src}" alt="${escapeHtml(p.cap)}" loading="lazy" style="width:100%;aspect-ratio:16/10;object-fit:cover;display:block;" />
+                  <img decoding="async"  src="${p.src}" alt="${escapeHtml(p.cap)}" loading="lazy" style="width:100%;aspect-ratio:16/10;object-fit:cover;display:block;" />
                   <div style="padding:0.4rem 0.55rem;font-size:0.78rem;font-weight:700;">${escapeHtml(p.cap)}</div>
                 </button>
               `).join("")}
@@ -2476,7 +2477,7 @@
                 </div>
                 <div class="mega-featured-card">
                   <div class="mega-featured-thumb">
-                    <img src="assets/images/articles/hero-keju-examinations.jpg" alt="${enMm ? "Chinese Imperial Examinations & Historical Heritage" : "Khoa cử Trung Hoa & Di sản Lịch sử"}" loading="lazy" />
+                    <img decoding="async"  src="assets/images/articles/hero-keju-examinations.jpg" alt="${enMm ? "Chinese Imperial Examinations & Historical Heritage" : "Khoa cử Trung Hoa & Di sản Lịch sử"}" loading="lazy" />
                   </div>
                   <div class="mega-featured-body">
                     <div class="ed-essay-kicker">${enMm ? "Institutional History · 科举与士人" : "Lịch sử Thể chế · 科举与士人"}</div>
@@ -2547,7 +2548,7 @@
                 </div>
                 <div class="mega-featured-card">
                   <div class="mega-featured-thumb">
-                    <img src="assets/images/articles/hero-confucianism.jpg" alt="Nho học và Truyền thống Văn hiến Đông Á" loading="lazy" />
+                    <img decoding="async"  src="assets/images/articles/hero-confucianism.jpg" alt="Nho học và Truyền thống Văn hiến Đông Á" loading="lazy" />
                   </div>
                   <div class="mega-featured-body">
                     <div class="ed-essay-kicker">${enMm ? "Classical Philosophy · 儒道佛合流" : "Triết học Kinh điển · 儒道佛合流"}</div>
@@ -2616,7 +2617,7 @@
                 </div>
                 <div class="mega-featured-card">
                   <div class="mega-featured-thumb mega-featured-thumb--contain">
-                    <img src="assets/images/articles/hero-calligraphy-five-scripts.jpg" alt="《Lan Đình Tập Tự》 (Đường Thần Long mô bản)" loading="lazy" />
+                    <img decoding="async"  src="assets/images/articles/hero-calligraphy-five-scripts.jpg" alt="《Lan Đình Tập Tự》 (Đường Thần Long mô bản)" loading="lazy" />
                   </div>
                   <div class="mega-featured-body">
                     <div class="ed-essay-kicker">${enMm ? "Calligraphy Aesthetics · 书法与篆刻" : "Mỹ học Thư pháp · 书法与篆刻"}</div>
@@ -2679,7 +2680,7 @@
                 </div>
                 <div class="mega-featured-card">
                   <div class="mega-featured-thumb">
-                    <img src="assets/images/articles/hero-beijing-shanghai.jpg" alt="${enMm ? "Beijing & Shanghai Geocultural Corridors" : "Địa văn hóa Bắc Kinh và Thượng Hải"}" loading="lazy" />
+                    <img decoding="async"  src="assets/images/articles/hero-beijing-shanghai.jpg" alt="${enMm ? "Beijing & Shanghai Geocultural Corridors" : "Địa văn hóa Bắc Kinh và Thượng Hải"}" loading="lazy" />
                   </div>
                   <div class="mega-featured-body">
                     <div class="ed-essay-kicker">${enMm ? "34 Provinces Geocultural Matrix · 京沪与江南" : "Địa văn hóa 34 Tỉnh · 京沪与江南"}</div>
@@ -2749,7 +2750,7 @@
                 </div>
                 <div class="mega-featured-card">
                   <div class="mega-featured-thumb">
-                    <img src="assets/images/articles/hero-contemporary-china.jpg" alt="Trung Quốc Đương đại và Vùng Vịnh Lớn" loading="lazy" />
+                    <img decoding="async"  src="assets/images/articles/hero-contemporary-china.jpg" alt="Trung Quốc Đương đại và Vùng Vịnh Lớn" loading="lazy" />
                   </div>
                   <div class="mega-featured-body">
                     <div class="ed-essay-kicker">${enMm ? "Economy &amp; Society · 当代中国" : "Kinh tế &amp; Xã hội · 当代中国"}</div>
@@ -2823,7 +2824,7 @@
                 </div>
                 <div class="mega-featured-card">
                   <div class="mega-featured-thumb">
-                    <img src="assets/images/articles/hero-supply-chain-rcep.jpg" alt="Chuyên khảo Thương mại Việt - Trung" loading="lazy" />
+                    <img decoding="async"  src="assets/images/articles/hero-supply-chain-rcep.jpg" alt="Chuyên khảo Thương mại Việt - Trung" loading="lazy" />
                   </div>
                   <div class="mega-featured-body">
                     <div class="ed-essay-kicker">Research &amp; Active Recall · VN-CN-TRD-2026</div>
@@ -3401,7 +3402,7 @@
             <div class="ed-hero-plate-wrap">
               ${activePlate ? `
                 <button type="button" class="ed-hero-plate-stage" data-action="${activePlate.action}" data-id="${activePlate.id}" style="width:100%;" title="${escapeHtml(lp.plateZoomHint)}">
-                  <img src="${activePlate.src}" alt="${escapeHtml(state.uiLang === "en" ? (activePlate.titleEn || activePlate.titleVi) : activePlate.titleVi)}" loading="eager" />
+                  <img decoding="async"  src="${activePlate.src}" alt="${escapeHtml(state.uiLang === "en" ? (activePlate.titleEn || activePlate.titleVi) : activePlate.titleVi)}" loading="eager" />
                 </button>
                 <div class="ed-museum-plaque">
                   <div class="ed-plaque-meta">${escapeHtml(activePlate.dynastyLabel)} · ${escapeHtml(activePlate.dimensions)}</div>
@@ -3455,7 +3456,7 @@
             <div class="ed-reading-grid">
               <article class="ed-reading-lead">
                 <button type="button" class="ed-reading-lead-img ${isArtworkOrDocumentSrc(leadPhoto, leadArt.id) ? "ed-reading-lead-img--contain" : ""}" data-action="open-article" data-id="${leadArt.id}" aria-label="Open ${escapeHtml(leadView.title)}">
-                  <img src="${escapeHtml(leadPhoto)}" alt="${escapeHtml(leadView.title)}" loading="lazy" />
+                  <img decoding="async"  src="${escapeHtml(leadPhoto)}" alt="${escapeHtml(leadView.title)}" loading="lazy" />
                 </button>
                 <div class="ed-meta-line">${escapeHtml(leadView.categoryLabel)} · ${leadArt.readMinutes} ${escapeHtml(lp.z2ReadUnit)} · <span class="hanzi">${escapeHtml(leadArt.titleZh)}</span></div>
                 <button type="button" class="ed-lead-headline" data-action="open-article" data-id="${leadArt.id}">${escapeHtml(leadView.title)}</button>
@@ -3571,7 +3572,7 @@
             ${exhibitStrip.map((item) => `
               <article class="ed-exhibit-plate">
                 <button type="button" class="ed-exhibit-stage" data-action="${item.action}" data-id="${item.id}" style="display:flex;width:100%;border:0;cursor:pointer;" aria-label="${homeEn ? "Inspect" : "Xem"} ${escapeHtml(homeEn ? (item.titleEn || item.titleVi) : item.titleVi)}">
-                  <img src="${escapeHtml(item.src)}" alt="${escapeHtml(homeEn ? (item.titleEn || item.titleVi) : item.titleVi)}" loading="lazy" />
+                  <img decoding="async"  src="${escapeHtml(item.src)}" alt="${escapeHtml(homeEn ? (item.titleEn || item.titleVi) : item.titleVi)}" loading="lazy" />
                 </button>
                 <button type="button" class="ed-exhibit-title" data-action="${item.action}" data-id="${item.id}" style="background:none;border:0;padding:0;text-align:left;cursor:pointer;">
                   ${escapeHtml(homeEn ? (item.titleEn || item.titleVi) : item.titleVi)} <span class="hanzi" style="font-weight:400;color:var(--text-muted);">${escapeHtml(item.titleZh)}</span>
@@ -4520,7 +4521,7 @@
                 return fbHero ? `
                   <figure id="sec-hero" class="editorial-figure editorial-figure--clean" style="margin:0 0 1.5rem;">
                     <div class="editorial-figure-frame" style="aspect-ratio:16/9;position:relative;overflow:hidden;border-radius:var(--radius-md);background:var(--bg-surface);border:1px solid var(--hairline);">
-                      <img src="${escapeHtml(fbHero.src)}" alt="${escapeHtml(v.title)}" loading="eager" style="width:100%;height:100%;${heroStyle}display:block;" />
+                      <img decoding="async"  src="${escapeHtml(fbHero.src)}" alt="${escapeHtml(v.title)}" loading="eager" style="width:100%;height:100%;${heroStyle}display:block;" />
                       <button type="button" class="editorial-img-zoom-pill" data-action="open-custom-image" data-src="${escapeHtml(fbHero.src)}" data-caption="${escapeHtml(v.heroCaption)}" data-credit="">${enM ? "⤢ Zoom" : "⤢ Phóng to"}</button>
                     </div>
                     ${v.heroCaption ? `
@@ -4664,7 +4665,7 @@
                               data-idx="${gIdx}"
                               aria-label="${enM ? `View frame ${gIdx + 1}: ` : `Xem ảnh ${gIdx + 1}: `}${escapeEditorialHtml(gTitle)}"
                             >
-                              <img src="${escapeEditorialHtml(gImg.src)}" alt="${escapeEditorialHtml(gTitle)}" loading="lazy" />
+                              <img decoding="async"  src="${escapeEditorialHtml(gImg.src)}" alt="${escapeEditorialHtml(gTitle)}" loading="lazy" />
                             </button>
                           `;
                         })
@@ -5243,7 +5244,7 @@
             return `
               <div class="card" style="display:flex;gap:1.25rem;align-items:center;padding:1rem;flex-wrap:wrap;">
                 <div style="width:168px;aspect-ratio:4/3;border-radius:var(--radius-md);overflow:hidden;background:${isScroll ? "#1B1917" : "var(--bg-surface)"};border:1px solid var(--hairline);padding:${isScroll ? "0" : "0.35rem"};display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;" data-action="open-painting-detail" data-id="${p.id}">
-                  <img src="${p.image}" alt="${escapeHtml(pTitleMain)}" style="width:100%;height:100%;object-fit:${isScroll ? "cover" : "contain"};object-position:${isScroll ? "28% center" : "center"};" onerror="this.src='assets/images/museum/qianli-jiangshan.jpg'" />
+                  <img decoding="async"  src="${p.image}" alt="${escapeHtml(pTitleMain)}" style="width:100%;height:100%;object-fit:${isScroll ? "cover" : "contain"};object-position:${isScroll ? "28% center" : "center"};" onerror="this.src='assets/images/museum/qianli-jiangshan.jpg'" />
                 </div>
                 <div style="flex:1;min-width:240px;">
                   <div class="ed-meta-line" style="margin-bottom:0.25rem;">
@@ -5285,7 +5286,7 @@
       return `
         <article class="painting-card ${isScroll ? "is-handscroll-card" : ""} fade-in-up" data-painting-id="${p.id}">
           <div class="painting-card-thumb-wrap ${isScroll ? "is-handscroll" : ""}" data-action="open-painting-detail" data-id="${p.id}" title="${enM ? "Click for 9-dimension curatorial analysis" : "Nhấn để xem phân tích học thuật 9 chiều kích"}">
-            <img src="${p.image}" alt="${escapeHtml(pTitleMain)} - ${p.titleZh}" loading="lazy" onload="if(this.naturalWidth / Math.max(1, this.naturalHeight) >= 2.2) { this.parentElement && this.parentElement.classList.add('is-handscroll'); this.closest('.painting-card') && this.closest('.painting-card').classList.add('is-handscroll-card'); }" onerror="this.src='assets/images/museum/qianli-jiangshan.jpg'" />
+            <img decoding="async"  src="${p.image}" alt="${escapeHtml(pTitleMain)} - ${p.titleZh}" loading="lazy" onload="if(this.naturalWidth / Math.max(1, this.naturalHeight) >= 2.2) { this.parentElement && this.parentElement.classList.add('is-handscroll'); this.closest('.painting-card') && this.closest('.painting-card').classList.add('is-handscroll-card'); }" onerror="this.src='assets/images/museum/qianli-jiangshan.jpg'" />
           </div>
 
           <div class="painting-card-body">
@@ -5932,7 +5933,7 @@
               </div>
 
               <div style="height:260px;background:#141413;border-radius:var(--radius-md);overflow:hidden;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;">
-                <img src="${left.image}" alt="${escapeHtml(enM ? (left.titleEn || left.titleVi) : left.titleVi)}" style="max-width:100%;max-height:100%;object-fit:contain;" onerror="this.src='assets/images/museum/qianli-jiangshan.jpg'" />
+                <img decoding="async"  src="${left.image}" alt="${escapeHtml(enM ? (left.titleEn || left.titleVi) : left.titleVi)}" style="max-width:100%;max-height:100%;object-fit:contain;" onerror="this.src='assets/images/museum/qianli-jiangshan.jpg'" />
               </div>
 
               <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.75rem;">
@@ -5980,7 +5981,7 @@
               </div>
 
               <div style="height:260px;background:#141413;border-radius:var(--radius-md);overflow:hidden;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;">
-                <img src="${right.image}" alt="${escapeHtml(enM ? (right.titleEn || right.titleVi) : right.titleVi)}" style="max-width:100%;max-height:100%;object-fit:contain;" onerror="this.src='assets/images/museum/qianli-jiangshan.jpg'" />
+                <img decoding="async"  src="${right.image}" alt="${escapeHtml(enM ? (right.titleEn || right.titleVi) : right.titleVi)}" style="max-width:100%;max-height:100%;object-fit:contain;" onerror="this.src='assets/images/museum/qianli-jiangshan.jpg'" />
               </div>
 
               <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.75rem;">
@@ -6072,7 +6073,7 @@
             return `
               <div class="painting-zen-canvas ${isScroll ? "handscroll-mode" : ""}" id="painting-zoom-canvas" style="background:#0F1012;border-radius:0px;padding:1rem;max-height:${isZen ? "82vh" : "66vh"};overflow:auto;text-align:${isScroll ? "left" : "center"};position:relative;">
                 <div class="painting-stage-inner" style="position:relative;display:inline-block;width:${stageWidth};${isScroll ? "height:62vh;" : ""}transition:width 0.25s ease;">
-                  <img
+                  <img decoding="async" 
                     src="${p.image}"
                     alt="${escapeHtml(pTitleMain)}"
                     style="width:100%;height:${isScroll ? "100%" : "auto"};object-fit:contain;display:block;"
@@ -6911,7 +6912,9 @@
     const provinces = Regions.provincesDirectory || Regions.provincialDirectory || [];
     const pq = normalizeText(ui.provinceQuery || "");
     const regionScopedProvinces = getProvincesForMacroRegion(provinces, ui.provinceRegionFilter);
+    const dims = Array.isArray(ui.provinceDims) ? ui.provinceDims : [];
     const filteredProvinces = regionScopedProvinces.filter((pr) => {
+      if (dims.length && window.CCE_V3_MODS && !window.CCE_V3_MODS.matchesMultiFilter(pr, dims)) return false;
       if (!pq) return true;
       return normalizeText(`${pr.nameVi} ${pr.nameEn} ${pr.nameZh} ${pr.capital} ${pr.highlights} ${pr.cuisine || ""} ${pr.landmark || ""}`).includes(pq);
     });
@@ -6919,7 +6922,7 @@
     return `
       <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.85rem;font-size:0.86rem;color:var(--text-secondary);">
         <span>${enM ? `Showing <strong>${filteredProvinces.length}</strong> / ${provinces.length} provincial divisions` : `Hiển thị <strong>${filteredProvinces.length}</strong> / ${provinces.length} đơn vị hành chính cấp tỉnh`}</span>
-        ${(ui.provinceRegionFilter !== "all" || ui.provinceQuery.trim())
+        ${(ui.provinceRegionFilter !== "all" || dims.length || ui.provinceQuery.trim())
           ? `<button type="button" class="btn btn-secondary btn-sm" data-action="clear-province-filters">${ICONS.close} ${enM ? "Clear Filters" : "Xóa bộ lọc Tỉnh/Thành"}</button>`
           : ""}
       </div>
@@ -6978,7 +6981,7 @@
           <div>
             <div class="editorial-kicker">${enM ? "STAGE 1 DEEP TOURISM DATA • LEVEL 1 → LEVEL 2 → LEVEL 3" : "DỮ LIỆU DU LỊCH CHUYÊN SÂU 3 CẤP • CẤP TỈNH → CỤM ĐÔ THỊ → DANH THẮNG 5A"}</div>
             <h2 style="font-family:var(--font-editorial);font-size:1.55rem;margin:0.15rem 0;">
-              ${enM ? "Top 11 Flagship Destinations & High-Speed Rail Atlas" : "Cẩm nang Điểm đến 3 Cấp Trọng điểm (Top 10 + Hoàng Sơn An Huy)"}
+              ${enM ? `3-Level Travel Atlas & High-Speed Rail Guide (${hubs.length}/34 Divisions)` : `Cẩm nang Điểm đến 3 Cấp Toàn Quốc (${hubs.length}/34 Tỉnh Thành)`}
             </h2>
           </div>
           ${activeHub.provinceId ? `
@@ -7173,6 +7176,7 @@
                   `).join("")}
                 </div>
 
+                ${window.CCE_V3_MODS ? window.CCE_V3_MODS.renderMultiFilterStrip(ui.provinceDims, enM) : ""}
                 <div id="provinces-grid-slot">
                   ${renderProvincesDirectoryContent()}
                 </div>
@@ -7273,7 +7277,7 @@
                         <span class="hanzi" style="color:var(--imperial-red);font-weight:700;font-size:0.86rem;">${escapeHtml(selectedMapProv.nameZh)}${selectedMapProv.abbr ? ` · ${escapeHtml(cleanAbbrEn(selectedMapProv.abbr, enM))}` : ""}</span>
                       </div>
                       <div style="display:flex;gap:0.6rem;align-items:center;margin-bottom:0.42rem;">
-                        ${selectedMapProv.image ? `<img src="${escapeHtml(selectedMapProv.image)}" alt="${escapeHtml(enM ? (selectedMapProv.nameEn || selectedMapProv.nameVi) : selectedMapProv.nameVi)}" style="width:68px;height:48px;object-fit:cover;flex-shrink:0;border:1px solid var(--hairline);" />` : ""}
+                        ${selectedMapProv.image ? `<img decoding="async"  src="${escapeHtml(selectedMapProv.image)}" alt="${escapeHtml(enM ? (selectedMapProv.nameEn || selectedMapProv.nameVi) : selectedMapProv.nameVi)}" style="width:68px;height:48px;object-fit:cover;flex-shrink:0;border:1px solid var(--hairline);" />` : ""}
                         <div style="min-width:0;flex:1;">
                           <h4 style="margin:0 0 0.12rem;font-size:0.95rem;">${escapeHtml(enM ? (selectedMapProv.nameEn || selectedMapProv.nameVi) : `${selectedMapProv.nameVi} (${selectedMapProv.nameEn})`)}</h4>
                           <p style="font-size:0.76rem;margin:0;color:var(--text-secondary);line-height:1.38;"><strong>${enM ? "Capital:" : "Thủ phủ:"}</strong> ${escapeHtml(enVal(selectedMapProv, "capital"))} • ${escapeHtml((enVal(selectedMapProv, "highlights") || "").slice(0, 95))}...</p>
@@ -7302,7 +7306,7 @@
 
                   <div style="border-top:1px solid var(--border-subtle);padding-top:0.55rem;">
                     <div style="display:flex;gap:0.65rem;align-items:center;margin-bottom:0.45rem;">
-                      ${regThumbSrc ? `<img src="${escapeHtml(regThumbSrc)}" alt="${escapeHtml(enVal(activeRegion, "nameVi"))}" style="width:68px;height:48px;object-fit:cover;flex-shrink:0;border:1px solid var(--hairline);" />` : ""}
+                      ${regThumbSrc ? `<img decoding="async"  src="${escapeHtml(regThumbSrc)}" alt="${escapeHtml(enVal(activeRegion, "nameVi"))}" style="width:68px;height:48px;object-fit:cover;flex-shrink:0;border:1px solid var(--hairline);" />` : ""}
                       <div style="min-width:0;flex:1;">
                         <div style="display:flex;justify-content:space-between;align-items:center;gap:0.35rem;">
                           <span class="badge badge-red" style="font-size:0.68rem;">${enM ? "Selected Region" : "Vùng đang chọn"}</span>
@@ -7445,6 +7449,7 @@
               </div>
             `;
           })() : ""}
+          ${window.CCE_V3_MODS ? window.CCE_V3_MODS.renderVernacularCrossSections(enM, renderSpeakBtn) : ""}
         </div>
       </section>
     `;
@@ -9575,7 +9580,7 @@
                 <h2 style="font-family:var(--font-editorial);font-size:1.65rem;margin:0 0 0.25rem 0;">${enAb ? `Founder's Note — ${escapeHtml(Brand.founderName)}` : `Lời ngỏ từ Người sáng lập — ${escapeHtml(Brand.founderName)}`}</h2>
                 <div style="font-size:0.88rem;color:var(--text-muted);">${escapeHtml(enAb ? (Brand.founderRole || "Founder & Creator") : Brand.founderRoleVi)}</div>
               </div>
-              <img
+              <img decoding="async" 
                 src="${escapeHtml(Brand.assets.founderSeal)}"
                 alt="${escapeHtml(Brand.founderSignature)}"
                 style="height:68px;width:auto;border-radius:2px;"
@@ -9749,7 +9754,7 @@
                     const lvCap = (lvOv && lvOv.caption) || lv.caption;
                     return `
                     <div class="brand-asset-plate">
-                      <img src="${escapeHtml(lv.src)}" alt="${escapeHtml(lvTitle)}" loading="eager" />
+                      <img decoding="async"  src="${escapeHtml(lv.src)}" alt="${escapeHtml(lvTitle)}" loading="eager" />
                       <div>
                         <div style="font-weight:700;font-size:0.88rem;color:var(--text-primary);">${escapeHtml(lvTitle)}</div>
                         <div style="font-size:0.79rem;color:var(--text-muted);margin-top:0.2rem;">${escapeHtml(lvCap)}</div>
@@ -9945,7 +9950,7 @@
 
               ${activeDoc.id === "founder" ? `
                 <div style="margin-bottom:1.25rem;">
-                  <img
+                  <img decoding="async" 
                     src="${escapeHtml(Brand.assets.founderSeal)}"
                     alt="${escapeHtml(Brand.founderSignature)}"
                     style="max-width:340px;width:100%;height:auto;border-radius:8px;border:1px solid var(--border-gold);"
@@ -10018,6 +10023,7 @@
                     </table>
                   </div>
 
+                  ${window.CCE_V3_MODS ? (() => { const ps = window.CCE_V3_MODS.getProvenanceStats(); return `<div class="flashcard-layer" style="margin:1.15rem 0;border-left:4px solid var(--jade-green);"><strong>${enLg ? `3. 456 Provincial Plates Provenance Breakdown (${ps.totalProvItems} plates)` : `3. Minh bạch Nguồn 456 Ảnh Tư liệu 34 Tỉnh thành (${ps.totalProvItems} ảnh)`}</strong><p style="margin:0.35rem 0 0;font-size:0.84rem;color:var(--text-secondary);">${enLg ? `171 Wikimedia Commons / Public Domain heritage plates, 170 regional culinary plates (${ps.editorialDishes} editorial reconstructions clearly labeled in lightbox), and 115 archival portraits.` : `171 ảnh di sản kiến trúc từ Wikimedia Commons/Public Domain, 170 ảnh ẩm thực vùng miền (trong đó ${ps.editorialDishes} đĩa minh họa biên tập được gắn nhãn rõ ràng khi phóng to), và 115 chân dung danh nhân lịch sử.`}</p></div>`; })() : ""}
                   <h3 style="font-size:1.15rem;margin:1.65rem 0 0.35rem;">${enLg ? `2. Asset Inventory — ${allArtifacts.length} Digital Museum Relics` : `2. Kiểm kê Nguồn ${allArtifacts.length} Hiện vật Bảo tàng Số`}</h3>
                   <div class="credits-table-wrap">
                     <table class="credits-table">
@@ -10059,6 +10065,12 @@
   // ==========================================================================
   function getRelatedKnowledgeForProvince(pr) {
     if (!pr) return { cities: [], articles: [], paintings: [], artifacts: [] };
+    const graph = window.CCE_CROSSLINKS && window.CCE_CROSSLINKS.getForProvince ? window.CCE_CROSSLINKS.getForProvince(pr.id) : [];
+    const pickByIds = (list, kindName) => {
+      const want = {};
+      graph.filter((e) => e.kind === kindName).forEach((e) => { want[e.id] = true; });
+      return (list || []).filter((x) => x && want[x.id]);
+    };
     const tokens = [pr.nameVi, pr.nameEn, pr.nameZh, pr.capital]
       .filter(Boolean)
       .map((t) => normalizeText(t))
@@ -10067,11 +10079,15 @@
       const hay = normalizeText(str || "");
       return tokens.some((tok) => hay.includes(tok));
     };
+    const mergeUnique = (prim, sec) => {
+      const seen = {};
+      return prim.concat(sec).filter((x) => x && x.id && !seen[x.id] && (seen[x.id] = true)).slice(0, 4);
+    };
     return {
       cities: (Regions.cities || []).filter((c) => hasMatch(`${c.nameVi} ${c.nameZh} ${c.nameEn} ${c.region} ${c.history}`)).slice(0, 3),
-      articles: (Articles || []).filter((a) => hasMatch(`${a.titleVi} ${a.titleEn} ${a.introduction} ${(a.relatedTopics || []).join(" ")}`)).slice(0, 3),
-      paintings: PaintingsList.filter((p) => hasMatch(`${p.titleVi} ${p.museum} ${p.analysis && p.analysis.historicalBackground || ""}`)).slice(0, 3),
-      artifacts: (Museum.artifacts || []).filter((m) => hasMatch(`${m.nameVi} ${m.collection} ${m.origin} ${m.historicalContext}`)).slice(0, 3)
+      articles: mergeUnique(pickByIds(Articles, "articles"), (Articles || []).filter((a) => hasMatch(`${a.titleVi} ${a.titleEn} ${a.introduction} ${(a.relatedTopics || []).join(" ")}`))),
+      paintings: mergeUnique(pickByIds(PaintingsList, "paintings"), PaintingsList.filter((p) => hasMatch(`${p.titleVi} ${p.museum} ${p.analysis && p.analysis.historicalBackground || ""}`))),
+      artifacts: mergeUnique(pickByIds(Museum.artifacts, "artifacts"), (Museum.artifacts || []).filter((m) => hasMatch(`${m.nameVi} ${m.collection} ${m.origin} ${m.historicalContext}`)))
     };
   }
 
@@ -10120,7 +10136,7 @@
 
           ${pr.image ? `
             <figure style="margin:0 0 1.15rem;background:var(--bg-surface);border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--hairline);">
-              <img src="${escapeHtml(pr.image)}" alt="${escapeHtml(enVal(pr, "landmark") || (enPM ? pr.nameEn : pr.nameVi))}" style="width:100%;aspect-ratio:16/9;max-height:430px;object-fit:cover;object-position:50% 35%;display:block;" />
+              <img decoding="async"  src="${escapeHtml(pr.image)}" alt="${escapeHtml(enVal(pr, "landmark") || (enPM ? pr.nameEn : pr.nameVi))}" style="width:100%;aspect-ratio:16/9;max-height:430px;object-fit:cover;object-position:50% 35%;display:block;" />
               <figcaption style="padding:0.55rem 0.85rem;font-size:0.82rem;color:var(--text-secondary);border-top:1px solid var(--hairline);">
                 <span><strong>${enPM ? "Signature Landmark:" : "Danh thắng biểu tượng:"}</strong> ${escapeHtml(enVal(pr, "landmark") || (enPM ? pr.nameEn : pr.nameVi))}</span>
               </figcaption>
@@ -10173,7 +10189,7 @@
         </div>
 
         <div style="aspect-ratio:16/10;background:var(--bg-surface);border:1px solid var(--hairline);border-radius:var(--radius-md);overflow:hidden;margin-bottom:0.85rem;">
-          <img src="${escapeHtml(pr.image || "")}" alt="${escapeHtml(pName)}" style="width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;" />
+          <img decoding="async"  src="${escapeHtml(pr.image || "")}" alt="${escapeHtml(pName)}" style="width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;" />
         </div>
 
         <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.5rem;">
@@ -10214,12 +10230,16 @@
                 ${enPM ? "Compare two provincial divisions across climate, best travel windows, regional cuisine, UNESCO heritage, and industrial clusters." : "Đặt cạnh nhau 2 tỉnh/thành để so sánh khí hậu, mùa du lịch, ẩm thực đặc trưng, di sản UNESCO và động lực kinh tế."}
               </p>
             </div>
-            <button type="button" class="modal-close-btn" data-action="close-province-compare" aria-label="${enPM ? "Close comparator" : "Đóng so sánh"}">${ICONS.close}</button>
+            <div style="display:flex;gap:0.45rem;align-items:center;flex-wrap:wrap;">
+              <button type="button" class="btn btn-secondary btn-sm" data-action="swap-province-compare">${enPM ? "Swap A ↔ B" : "Đổi chỗ A ↔ B"}</button>
+              <button type="button" class="btn btn-secondary btn-sm" data-action="print-dossier">${ICONS.fileText} ${enPM ? "Print A4" : "In Đối chiếu A4"}</button>
+              <button type="button" class="modal-close-btn" data-action="close-province-compare" aria-label="${enPM ? "Close comparator" : "Đóng so sánh"}">${ICONS.close}</button>
+            </div>
           </div>
 
           <div class="painting-compare-grid">
-            ${renderProvCol(left, enPM ? "FIRST DIVISION (LEFT PANEL)" : "TỈNH / THÀNH THỨ NHẤT (VẾ TRÁI)", "select-prov-compare-left")}
-            ${renderProvCol(right, enPM ? "SECOND DIVISION (RIGHT PANEL)" : "TỈNH / THÀNH THỨ HAI (VẾ PHẢI)", "select-prov-compare-right")}
+            ${window.CCE_V3_MODS && window.CCE_V3_MODS.renderCompareCol8Dim ? window.CCE_V3_MODS.renderCompareCol8Dim(left, enPM ? "FIRST DIVISION (LEFT PANEL)" : "TỈNH / THÀNH THỨ NHẤT (VẾ TRÁI)", "select-prov-compare-left", provinces, enPM, help, enVal, cleanAbbrEn, renderSpeakBtn(left.nameZh)) : renderProvCol(left, enPM ? "FIRST DIVISION (LEFT PANEL)" : "TỈNH / THÀNH THỨ NHẤT (VẾ TRÁI)", "select-prov-compare-left")}
+            ${window.CCE_V3_MODS && window.CCE_V3_MODS.renderCompareCol8Dim ? window.CCE_V3_MODS.renderCompareCol8Dim(right, enPM ? "SECOND DIVISION (RIGHT PANEL)" : "TỈNH / THÀNH THỨ HAI (VẾ PHẢI)", "select-prov-compare-right", provinces, enPM, help, enVal, cleanAbbrEn, renderSpeakBtn(right.nameZh)) : renderProvCol(right, enPM ? "SECOND DIVISION (RIGHT PANEL)" : "TỈNH / THÀNH THỨ HAI (VẾ PHẢI)", "select-prov-compare-right")}
           </div>
         </div>
       </div>
@@ -10638,8 +10658,9 @@
             <button type="button" class="lightbox-tool-btn lightbox-tool-btn-primary" data-action="close-custom-image">${ICONS.close} ${enM ? "Close Zoom" : "Đóng phóng to"}</button>
           </div>
           <div style="background:#0F1012;border-radius:0px;padding:0.5rem;max-height:76vh;overflow:auto;text-align:center;border:1px solid rgba(255,255,255,0.14);">
-            <img src="${escapeHtml(img.src)}" alt="${escapeHtml(img.caption || "")}" style="max-width:100%;max-height:72vh;object-fit:contain;display:inline-block;" />
+            <img decoding="async"  src="${escapeHtml(img.src)}" alt="${escapeHtml(img.caption || "")}" style="max-width:100%;max-height:72vh;object-fit:contain;display:inline-block;" />
           </div>
+          ${window.CCE_V3_MODS ? (() => { const pv = window.CCE_V3_MODS.getImageProvenance(img.src, img.credit, enM); return `<div style="margin-top:0.75rem;padding:0.55rem 0.8rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;font-size:0.78rem;"><span><span class="badge badge-gold" style="margin-right:0.4rem;">${escapeHtml(pv.badgeLabel)}</span><strong>${escapeHtml(pv.sourceLabel)}</strong></span><span style="color:#D8D2C5;">${escapeHtml(pv.license)}${pv.note ? ` · ${escapeHtml(pv.note)}` : ""}</span></div>`; })() : ""}
           ${(img.dimensions || img.material || img.museum) ? `
             <div style="margin-top:0.85rem;">
               ${renderArtworkViewerMeta({
@@ -11860,6 +11881,29 @@
       case "clear-province-filters":
         ui.provinceQuery = "";
         ui.provinceRegionFilter = "all";
+        ui.provinceDims = [];
+        patchMainOnly();
+        break;
+
+      case "toggle-prov-dim": {
+        const dim = target.getAttribute("data-dim");
+        if (dim) {
+          const arr = Array.isArray(ui.provinceDims) ? [...ui.provinceDims] : [];
+          const ix = arr.indexOf(dim);
+          if (ix >= 0) arr.splice(ix, 1); else arr.push(dim);
+          ui.provinceDims = arr;
+          patchMainOnly();
+        }
+        break;
+      }
+
+      case "v3-select-arch":
+        if (window.CCE_V3_MODS) window.CCE_V3_MODS.setArchId(id);
+        patchMainOnly();
+        break;
+
+      case "v3-select-arch-callout":
+        if (window.CCE_V3_MODS) window.CCE_V3_MODS.setCalloutIdx(target.getAttribute("data-idx"));
         patchMainOnly();
         break;
 
@@ -12421,6 +12465,14 @@
         ui.provinceCompareOpen = true;
         renderModalsOnly();
         break;
+
+      case "swap-province-compare": {
+        const tmp = ui.provinceCompareLeftId;
+        ui.provinceCompareLeftId = ui.provinceCompareRightId;
+        ui.provinceCompareRightId = tmp;
+        renderModalsOnly();
+        break;
+      }
 
       case "close-province-compare":
         ui.provinceCompareOpen = false;

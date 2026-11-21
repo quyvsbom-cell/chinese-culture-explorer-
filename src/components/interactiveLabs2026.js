@@ -432,7 +432,11 @@
           <div style="display:flex;flex-wrap:wrap;gap:0.45rem;margin-top:0.85rem;align-items:center;">
             <span style="font-size:0.78rem;color:var(--text-muted);font-weight:700;">${enMode ? "Open Province Dossiers on Route:" : "Mở nhanh Hồ sơ 3 Lớp các Tỉnh trên Tuyến:"}</span>
             ${route.provinces.map((pid) => `<button type="button" class="btn btn-secondary btn-sm" data-action="open-province" data-id="${pid}">${pid.replace("prov-", "").toUpperCase()} →</button>`).join("")}
-            <button type="button" class="btn btn-primary btn-sm" data-action="go-survival-packs">${enMode ? "Open 6 Survival Hanzi Packs →" : "Ôn 6 Bộ Chữ Hán Sinh Tồn →"}</button>
+            <button type="button" class="btn btn-primary btn-sm" data-action="go-survival-packs">${(() => {
+              const pLen = (window.CCE_SURVIVAL_PACKS && window.CCE_SURVIVAL_PACKS.packs && window.CCE_SURVIVAL_PACKS.packs.length) || 10;
+              return enMode ? `Open ${pLen} Survival Hanzi Packs →` : `Ôn ${pLen} Bộ Chữ Hán Sinh Tồn →`;
+            })()}</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-action="print-dossier">${enMode ? "Print 7-Day Route A4" : "In Lịch Trình A4"}</button>
           </div>
         </section>
       `;

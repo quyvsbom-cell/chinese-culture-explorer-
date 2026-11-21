@@ -22,10 +22,10 @@ window.CCE_DESTINATIONS_ATLAS = (function () {
       bestSeasonEn: "Sep – Nov (Crisp autumn foliage) & Apr – May (Clear spring skies)",
       gatewayVi: "Sân bay Quốc tế Đại Hưng (PKX) / Thủ Đô (PEK) • Ga Bắc Kinh Nam (tuyến Cao tốc Kinh–Hỗ đi Thượng Hải)",
       gatewayEn: "Daxing (PKX) & Capital (PEK) Airports • Beijing South HSR Station (Jing–Hu Express to Shanghai)",
-      overviewVi: "Trái tim 800 năm đế đô Liêu–Kim–Nguyên–Minh–Thanh với 7 Di sản Thế giới UNESCO dọc Trục Trung tâm (Central Axis) và tuyến Trường Thành phòng ngự phương Bắc.",
-      overviewEn: "Eight centuries of Liao–Jin–Yuan–Ming–Qing imperial urban planning uniting 7 UNESCO World Heritage ensembles along Beijing's Central Axis and northern Great Wall passes.",
-      passportNoteVi: "Cố Cung, Bảo tàng Quốc gia & Đại học Bắc Kinh yêu cầu đặt vé trước 7 ngày bằng số Hộ chiếu qua Mini-Program chính thức (Alipay/WeChat); mang theo hộ chiếu bản gốc ở mọi cửa kiểm soát.",
-      passportNoteEn: "The Palace Museum, National Museum, and top sites require advance passport-linked reservations up to 7 days prior via official mini-programs; always carry your physical passport.",
+      overviewVi: "Trái tim 800 năm đế đô Liêu–Kim–Nguyên–Minh–Thanh với 7 Di sản Thế giới UNESCO dọc Trục Trung tâm (Central Axis), đồng thời là nơi kiến trúc ngõ cổ Tứ Hợp Viện song hành cùng các tổ hợp nghệ thuật và công nghiệp tái sinh như 798 hay Công viên Thủ Cương.",
+      overviewEn: "Eight centuries of Liao–Jin–Yuan–Ming–Qing imperial urban planning uniting 7 UNESCO World Heritage ensembles along Beijing's Central Axis alongside adaptive-reuse contemporary hubs like 798 Art District, Shougang Park, and revitalized hutong lanes.",
+      passportNoteVi: "Cố Cung, Bảo tàng Quốc gia & Đại học Bắc Kinh yêu cầu đặt vé trước 7 ngày bằng số Hộ chiếu qua Mini-Program chính thức (Alipay/WeChat); mang theo hộ chiếu bản gốc ở mọi cửa kiểm soát và ga metro/tàu. Nên tách ngày đi trục cổ điển với buổi chiều dạo ngõ cổ Dương Mai Trúc Tà Nhai hoặc 798 để cảm nhận rõ nhịp giao thoa truyền thống – đương đại.",
+      passportNoteEn: "The Palace Museum, National Museum, and top sites require advance passport-linked reservations up to 7 days prior via official mini-programs; always carry your physical passport. Pair morning imperial visits with afternoon strolls through restored Yangmeizhu hutongs or 798 Art District to experience traditional and contemporary Beijing in one seamless rhythm.",
       areas: [
         {
           id: "bj-core-axis",
@@ -100,6 +100,44 @@ window.CCE_DESTINATIONS_ATLAS = (function () {
               foodEn: "Huairou roasted trout & rustic corn-flour village flatbreads.",
               bookingVi: "Nên chọn cáp treo khứ hồi nếu đi cùng gia đình hoặc mang giày đế bám trên các bậc đá dốc cổ.",
               bookingEn: "Book cable car / chairlift passes alongside entry reservation and wear high-grip footwear for steep Ming stonework."
+            }
+          ]
+        },
+        {
+          id: "bj-contemporary-hutong",
+          nameVi: "Giao thoa Hiện đại · Ngõ cổ Tái sinh & Nghệ thuật 798",
+          nameEn: "Contemporary Beijing · Revitalized Hutongs & 798 Arts",
+          nameZh: "胡同新生·798与首钢园",
+          transitVi: "Metro Tuyến 2/7/8 (Tiền Môn · Dương Mai Trúc · Thập Sát Hải), Tuyến 14 (Trạm Vọng Kinh Nam đi 798) & Tuyến 6/11 (Thủ Cương).",
+          transitEn: "Metro Lines 2/7/8 (Qianmen, Yangmeizhu, Shichahai), Line 14 (Wangjing South for 798), & Line 6/11 (Shougang Park).",
+          spots: [
+            {
+              id: "bj-yangmeizhu-shichahai",
+              rating: "Di sản Đô thị · Bảo tồn Ngõ cổ",
+              nameVi: "Ngõ Dương Mai Trúc Tà Nhai, Tiền Môn & Hồ Thập Sát Hải",
+              nameEn: "Yangmeizhu Xiejie Hutong & Shichahai Lakes",
+              nameZh: "杨梅竹斜街与什刹海",
+              img: "assets/images/prov_items/beijing/h2.jpg",
+              expVi: "Tuyến ngõ xuất bản sách thời Dân Quốc được cải tạo tinh tế theo nguyên tắc giữ nguyên nếp nhà xám Tứ Hợp Viện, xen kẽ hiệu sách độc lập, trà thất yên tĩnh, bảo tàng mini và không gian đi dạo ven hồ Thập Sát Hải từ sáng sớm tới tối.",
+              expEn: "A quietly revitalized Qing-era publishing hutong preserving authentic grey-brick siheyuan silhouettes alongside independent bookshops, artisan tea rooms, and lakeside twilight walks around Shichahai.",
+              foodVi: "Trà sen bát bảo, bánh Đậu Trấp truyền thống, mỳ Tương đen và ẩm thực Tứ Hợp Viện tinh giản.",
+              foodEn: "Aged lotus-leaf tea, Zhajiangmian hand-pulled noodles, and contemporary courtyard bites.",
+              bookingVi: "Đi bộ tự do không cần vé cổng; đẹp nhất lúc 08:30–10:30 khi ngõ yên tĩnh hoặc sau 17:00 quanh hồ Hậu Hải.",
+              bookingEn: "Open public lanes requiring no admission pass; quietest for architecture walks between 08:30–10:30 or after 17:00 by Houhai Lake."
+            },
+            {
+              id: "bj-798-shougang",
+              rating: "Nghệ thuật Đương đại & Di sản Công nghiệp",
+              nameVi: "Khu Nghệ thuật 798 & Công viên Công nghiệp Thủ Cương",
+              nameEn: "798 Art District & Shougang Industrial Park",
+              nameZh: "798艺术区与首钢园",
+              img: "assets/images/prov_items/beijing/h5.jpg",
+              expVi: "Biểu trưng cho diện mạo Bắc Kinh đương đại: tổ hợp nhà xưởng điện tử thập niên 1950 mái răng cưa Bauhaus (798) và các lò cao thép thế kỷ trước (Thủ Cương) chuyển hóa thành phòng triển lãm, không gian thiết kế công cộng và kiến trúc Olympic xanh.",
+              expEn: "Showcases Beijing's creative reinvention: 1950s Bauhaus sawtooth-roof electronics factories (798) and monumental steel blast furnaces (Shougang) transformed into contemporary galleries, book labs, and civic green spaces.",
+              foodVi: "Cà phê rang thủ công trong nhà xưởng gạch đỏ, trà chiều và khu ẩm thực đương đại Vọng Kinh.",
+              foodEn: "Craft roasteries inside red-brick industrial bays and nearby Wangjing culinary halls.",
+              bookingVi: "Không gian ngoài trời mở cửa miễn phí hàng ngày; các phòng tranh riêng thường đóng cửa Thứ Hai, nên kiểm tra lịch triển lãm trước.",
+              bookingEn: "Outdoor campuses are open daily; individual contemporary galleries often close Mondays."
             }
           ]
         }

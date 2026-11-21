@@ -63,12 +63,14 @@
       "src/data/v3/articlesDepthEnrichmentBatch3_p1.js",
       "src/data/v3/articlesDepthEnrichmentBatch3_p2.js",
       "src/data/v3/articleComprehensionV3_p1.js",
-      "src/data/v3/articleComprehensionV3_p2.js"
+      "src/data/v3/articleComprehensionV3_p2.js",
+      "src/data/crossLinkGraph2026.js"
     ],
     "regions-deep-pack": [
       "src/data/v3/destinationsDeepAtlasPart2_3a.js",
       "src/data/v3/destinationsDeepAtlasPart2_3b.js",
-      "src/data/v3/destinationsDeepAtlasPart2_3c.js"
+      "src/data/v3/destinationsDeepAtlasPart2_3c.js",
+      "src/data/crossLinkGraph2026.js"
     ],
     "paintings-pack": [
       "src/data/v3/paintingsExpansionV3.js"

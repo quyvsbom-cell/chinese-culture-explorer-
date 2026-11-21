@@ -189,7 +189,7 @@ def transform_articles_en(raw: str) -> str:
           if (r && typeof r === "object") return r;
           var s = String(r || "").trim();
           var fc = s.indexOf(",");
-          var mY = s.match(/\(([^)]{3,18})\)/);
+          var mY = s.match(/\\(([^)]{3,18})\\)/);
           return {
             author: fc > 0 ? s.slice(0, fc).replace(/\([^)]+\)/g, "").trim() : "Scholarly Reference",
             date: mY ? mY[1] : "Archival",
@@ -233,27 +233,42 @@ def transform_destinations(raw: str) -> str:
   }}
   var hubs = window.CCE_DESTINATIONS_ATLAS.hubs = window.CCE_DESTINATIONS_ATLAS.hubs || [];
   var seenHub = {{}};
+  var formatHsr = function (arr, isEn) {{
+    if (!arr) return "";
+    if (typeof arr === "string") return arr;
+    if (!Array.isArray(arr)) return String(arr);
+    return arr.map(function (h) {{
+      if (typeof h === "string") return h;
+      var city = isEn ? (h.cityEn || h.cityVi || "") : (h.cityVi || h.cityEn || "");
+      return [h.nameZh || "", h.pinyin ? "(" + h.pinyin + (city ? " · " + city : "") + ")" : city].filter(Boolean).join(" ");
+    }}).join(" • ");
+  }};
   var i, j, k;
   for (i = 0; i < hubs.length; i++) {{ if (hubs[i] && hubs[i].id) seenHub[hubs[i].id] = true; }}
   for (i = 0; i < srcList.length; i++) {{
     var item = srcList[i];
     if (!item || seenHub[item.id]) continue;
-    var fallbackImg = PROV_HERO_IMGS[item.provinceId] || "assets/images/provinces/beijing-temple-of-heaven.jpg";
+    var visObj = (window.CCE_PROVINCE_ITEM_VISUALS && window.CCE_PROVINCE_ITEM_VISUALS[item.provinceId]) || {{}};
+    var hImgs = Array.isArray(visObj.heritage) ? visObj.heritage : [];
+    var fallbackImg = PROV_HERO_IMGS[item.provinceId] || hImgs[0] || "assets/images/provinces/beijing-temple-of-heaven.jpg";
     var areas = [];
     var zones = item.zones || item.areas || [];
+    var spotCursor = 0;
     for (j = 0; j < zones.length; j++) {{
       var z = zones[j];
       var mappedSpots = [];
       var rawSpots = z.spots || [];
       for (k = 0; k < rawSpots.length; k++) {{
         var sp = rawSpots[k];
+        var autoImg = hImgs.length ? hImgs[spotCursor % hImgs.length] : fallbackImg;
+        spotCursor++;
         mappedSpots.push({{
           id: sp.id,
           rating: sp.category || "5A / UNESCO",
           nameVi: sp.nameVi,
           nameEn: sp.nameEn || sp.nameVi,
           nameZh: sp.nameZh || "",
-          img: sp.img || fallbackImg,
+          img: sp.img || autoImg || fallbackImg,
           expVi: sp.highlightVi || "",
           expEn: sp.highlightEn || sp.highlightVi || "",
           foodVi: sp.localDishVi || "Đặc sản địa phương bản địa",
@@ -283,8 +298,8 @@ def transform_destinations(raw: str) -> str:
       heroImg: fallbackImg,
       bestSeasonVi: item.bestSeasonVi || "",
       bestSeasonEn: item.bestSeasonEn || "",
-      gatewayVi: item.hsrHubs || "",
-      gatewayEn: item.hsrHubs || "",
+      gatewayVi: formatHsr(item.hsrHubs || item.gatewayVi, false),
+      gatewayEn: formatHsr(item.hsrHubs || item.gatewayEn, true),
       overviewVi: item.overviewVi || "",
       overviewEn: item.overviewEn || "",
       passportNoteVi: "Sử dụng hộ chiếu gốc để mua vé tàu 12306 và đặt vé danh thắng 5A chính quy.",

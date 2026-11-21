@@ -1,0 +1,190 @@
+{
+  "totalFiles": 725,
+  "totalMB": 135.8,
+  "referencedCount": 719,
+  "missingReferenced": [],
+  "oversizedOver750KB": [
+    {
+      "path": "assets/images/articles/hero-academy-shuyuan.jpg",
+      "bytes": 1082787,
+      "width": 1376,
+      "height": 768
+    },
+    {
+      "path": "assets/images/articles/hero-ai-deepseek-lab.jpg",
+      "bytes": 890106,
+      "width": 1376,
+      "height": 768
+    },
+    {
+      "path": "assets/images/articles/hero-chinese-banquet.jpg",
+      "bytes": 770531,
+      "width": 1376,
+      "height": 768
+    },
+    {
+      "path": "assets/images/articles/hero-chinese-cuisines.jpg",
+      "bytes": 841459,
+      "width": 1376,
+      "height": 768
+    },
+    {
+      "path": "assets/images/articles/hero-classical-books-scrolls.jpg",
+      "bytes": 792449,
+      "width": 1376,
+      "height": 768
+    },
+    {
+      "path": "assets/images/articles/hero-consular-field-guide.jpg",
+      "bytes": 983516,
+      "width": 1376,
+      "height": 768
+    },
+    {
+      "path": "assets/images/articles/hero-huaqiangbei-tech.jpg",
+      "bytes": 763761,
+      "width": 1376,
+      "height": 768
+    },
+    {
+      "path": "assets/images/articles/hero-laozihao-craft.jpg",
+      "bytes": 958700,
+      "width": 1376,
+      "height": 768
+    },
+    {
+      "path": "assets/images/articles/hero-metaphysics-systems.jpg",
+      "bytes": 858361,
+      "width": 1376,
+      "height": 768
+    },
+    {
+      "path": "assets/images/articles/hero-silk-embroidery-hanfu.jpg",
+      "bytes": 792106,
+      "width": 1376,
+      "height": 768
+    },
+    {
+      "path": "assets/images/articles/hero-sino-vietnam.jpg",
+      "bytes": 932042,
+      "width": 1280,
+      "height": 1917
+    },
+    {
+      "path": "assets/images/articles/hero-six-teas-gongfu.jpg",
+      "bytes": 910970,
+      "width": 1376,
+      "height": 768
+    },
+    {
+      "path": "assets/images/museum/boyuan-tie.jpg",
+      "bytes": 1004549,
+      "width": 1264,
+      "height": 848
+    },
+    {
+      "path": "assets/images/museum/siyang-fangzun.jpg",
+      "bytes": 806607,
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "assets/images/paintings/07_tianwang_songzi_tu.jpg",
+      "bytes": 979348,
+      "width": 990,
+      "height": 1342
+    },
+    {
+      "path": "assets/images/paintings/12_kuanglu_tu.jpg",
+      "bytes": 1205739,
+      "width": 1920,
+      "height": 3363
+    },
+    {
+      "path": "assets/images/paintings/17_xiesheng_zhenqin.jpg",
+      "bytes": 1012931,
+      "width": 1920,
+      "height": 399
+    },
+    {
+      "path": "assets/images/paintings/18_xishan_xinglv.jpg",
+      "bytes": 1998314,
+      "width": 1920,
+      "height": 4180
+    },
+    {
+      "path": "assets/images/paintings/20_wanhe_songfeng_litang.jpg",
+      "bytes": 1038094,
+      "width": 1920,
+      "height": 2560
+    },
+    {
+      "path": "assets/images/paintings/34_liujunzi_tu.jpg",
+      "bytes": 2130296,
+      "width": 1920,
+      "height": 3554
+    },
+    {
+      "path": "assets/images/paintings/35_qingbian_yinju.jpg",
+      "bytes": 2019443,
+      "width": 1533,
+      "height": 5084
+    },
+    {
+      "path": "assets/images/paintings/37_gumu_youquan.jpg",
+      "bytes": 1594084,
+      "width": 1280,
+      "height": 3779
+    },
+    {
+      "path": "assets/images/paintings/38_shanlu_songsheng.jpg",
+      "bytes": 768224,
+      "width": 1280,
+      "height": 2432
+    },
+    {
+      "path": "assets/images/paintings/39_hangong_chunxiao.jpg",
+      "bytes": 880103,
+      "width": 1920,
+      "height": 1199
+    },
+    {
+      "path": "assets/images/paintings/49_moxia_tu.jpg",
+      "bytes": 1088938,
+      "width": 576,
+      "height": 1699
+    },
+    {
+      "path": "assets/images/paintings/52_shujiang_bishitu.jpg",
+      "bytes": 1018383,
+      "width": 856,
+      "height": 1701
+    },
+    {
+      "path": "assets/images/provinces/anhui-huangshan-cloudsea.jpg",
+      "bytes": 843101,
+      "width": 1376,
+      "height": 768
+    },
+    {
+      "path": "assets/images/provinces/fujian-tulou.jpg",
+      "bytes": 813087,
+      "width": 1280,
+      "height": 1707
+    },
+    {
+      "path": "assets/images/provinces/hubei-yellow-crane-tower.jpg",
+      "bytes": 907855,
+      "width": 1376,
+      "height": 768
+    },
+    {
+      "path": "assets/images/provinces/jiangxi-wuyuan-village.jpg",
+      "bytes": 793128,
+      "width": 1280,
+      "height": 845
+    }
+  ],
+  "appImgTags": 35,
+  "appAsyncImgTags": 35
+}
