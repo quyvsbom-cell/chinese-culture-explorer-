@@ -76,7 +76,7 @@
     ["freight", "Free Time (e.g. 14 Days Free DEM/DET)", "免用箱期（免滞期）", "Miǎnyòngxiāngqī", "Số ngày Miễn phí Lưu bãi/Vỏ", "Crucial contract cushion preventing costly European port congestion fines."],
     ["freight", "Reefer Container", "冷藏集装箱", "Lěngcáng Jízhuāngxiāng", "Container Lạnh", "Active temperature-controlled unit for Vietnamese fruit & Chinese biologics."],
     ["freight", "Cross-Stuffing / Transshipment Hub", "中转拆拼箱 / 换柜", "Zhōngzhuǎn Huànguì", "Đảo hàng / Chuyển tải Trung chuyển", "Singapore, Port Klang, or Hong Kong hub operations for ASEAN–EU cargo."],
-    ["freight", "Rail-Sea Intermodal", "铁海联运", "Tiě-Hǎi Liányùn", "Vận tải Đa phương thức Sắt – Biển", "Connecting inland Chongqing/Chengdu hubs seamlessly with coastal ports."],
+    ["freight", "Rail-Sea Intermodal", "铁海联运", "Tiě-Hǎi Liányùn", "Vận tải Đa phương thức Sắt – Biển", "Connecting inland Chongqing/Chengdu hubs directly with coastal ports."],
     ["freight", "ISPM-15 Heat-Treated Pallet", "IPPC熏蒸热处理木托盘", "Xūnzhēng Mùtuōpán", "Pallet Gỗ Hun trùng Chuẩn Quốc tế", "Prevents immediate EU/Australian quarantine rejection at port of entry."],
     ["freight", "Force Majeure Notice", "不可抗力通知书", "Bùkěkànglì Tōngzhī", "Thông báo Bất khả kháng", "Formal notice template required during Red Sea rerouting or typhoon closures."],
     ["freight", "Cargo Tracking API / EDI Milestones", "货物追踪EDI节点更新", "Huòwù Zhuīzōng Jíshí Jìediǎn", "Theo dõi Hành trình EDI", "Carrier milestone codes (GATE IN, LOADED, ATA, POD DELIVERED) reported to EU HQ."],
@@ -123,7 +123,7 @@
     ["customs", "Clean on Board B/L", "清洁已装船提单", "Qīngjié Yǐzhuāngchuán Tídān", "Vận đơn Sạch Đã xếp lên tàu", "Required under UCP 600 L/C verifying intact external packaging at loading."],
     ["eu", "ENS Filing Deadline (24-Hour Rule)", "装船前24小时ENS预报", "Zhuāngchuánqián 24 Xiǎoshí Yùbào", "Khai báo An ninh Hàng hóa 24h", "Failing 24-hour advance manifest filing blocks EU port unloading."],
     ["incoterms", "EXW vs FCA Export Risk", "EXW下买方无法办理中国出口报关风险", "Chūkǒu Bàoguān Fēngxiǎn", "Rủi ro Không tự Xuất khẩu dưới EXW", "Use FCA instead of EXW when buying from Chinese factories without export entity."],
-    ["eu", "Dual-Language SOP Standard", "中英双语标准作业流程", "Zhōng-Yīng Shuāngyǔ SOP", "Quy trình Chuẩn Song ngữ Anh–Trung", "Keeps factory floor execution exact while aligning seamlessly with EU ERP systems."]
+    ["eu", "Dual-Language SOP Standard", "中英双语标准作业流程", "Zhōng-Yīng Shuāngyǔ SOP", "Quy trình Chuẩn Song ngữ Anh–Trung", "Keeps factory floor execution exact while aligning directly with EU ERP systems."]
   ];
 
   var TERMS = RAW_TERMS.map(function (r, i) {
@@ -187,7 +187,7 @@
       id: "dlg-07",
       role: "European Logistics Interview: Anti-Attrition Strength",
       contextVi: "Trả lời câu hỏi phỏng vấn về năng lực giữ cân bằng Tiếng Anh chuẩn và Tiếng Trung thực chiến",
-      promptEn: "Interviewer: 'Most candidates are strong in either European reporting OR Chinese factory calls, rarely both. How do you manage both seamlessly?'",
+      promptEn: "Interviewer: 'Most candidates are strong in either European reporting OR Chinese factory calls, rarely both. How do you manage both directly?'",
       answerEn: "'I run a dual-register workflow: I translate operational shop-floor updates from WeChat/Chinese ERP into concise, KPI-driven English reports (ETD/ETA, Free Time, CAPA, CBAM) for European HQ, ensuring zero nuance loss and keeping both business English and technical Mandarin active daily.'"
     },
     {
@@ -296,7 +296,7 @@
       eraHub: "Tuyền Châu – Quảng Châu – Vịnh Bắc Bộ · 海上丝路",
       ancientRoleVi: "Cảng Thị Tống–Nguyên nơi gốm Thanh Hoa, gốm Chu Đậu (Việt Nam) & tơ lụa vượt eo Malacca tới Ba Tư và Địa Trung Hải.",
       modernRoleVi: "Hệ thống Siêu cảng Container (Thượng Hải, Ninh Ba, Thâm Quyến – Diêm Điền, Hải Phòng) nối Kênh đào Suez tới Rotterdam/Antwerp.",
-      modernRoleEn: "Mega container ports seamlessly connect Vietnam & South China manufacturing with Northern Europe."
+      modernRoleEn: "Mega container ports directly connect Vietnam & South China manufacturing with Northern Europe."
     }
   ];
 

@@ -1,4 +1,4 @@
-"""Full Automated 8-Gate Integrity Check for Chinese Culture Explorer (V3.0+).
+"""Full Automated 10-Gate Integrity Check for Chinese Culture Explorer (V4.0).
 
 Usage: uv run python scripts/full_integrity_gate.py
 """
@@ -183,19 +183,73 @@ def main() -> int:
     print(f"[Gate 7] SEO & OG Shells Integrity: {'PASS' if not seo_issues else 'FAIL'}")
     failures.extend(seo_issues)
 
-    # Gate 8: EN Parity Audit Sub-Gate
+    # Gate 8: EN Parity Audit Sub-Gate (V3 + V4)
     parity = subprocess.run([sys.executable, "scripts/audit_en_parity.py"], capture_output=True, text=True)
     parity_ok = parity.returncode == 0
     print(f"[Gate 8] EN Parity Audit: {'PASS' if parity_ok else 'FAIL'}")
     if not parity_ok:
         failures.append(parity.stdout)
 
+    # Gate 9: V4 Data Packs, Epistemological Boundaries & Single WebGL Context
+    g9_issues: list[str] = []
+    v4_dir = ROOT / "src" / "data" / "v4"
+    for fn in [
+        "unescoHeritageEncyclopediaV4.js", "literatureOperaArtsV4.js",
+        "scienceTeaMedicineFoodV4.js", "sinoVietModernChinaV4.js",
+        "politicsEconHskTcmStudyV4.js", "tradeTrilingualBridgeV4.js",
+        "knowledgeGraphV4.js", "quizArenaV4.js"
+    ]:
+        if not (v4_dir / fn).is_file():
+            g9_issues.append(f"MISSING V4 data file: src/data/v4/{fn}")
+    if (v4_dir / "scienceTeaMedicineFoodV4.js").is_file():
+        st_txt = (v4_dir / "scienceTeaMedicineFoodV4.js").read_text(encoding="utf-8")
+        if "KHÔNG thay thế" not in st_txt or "NOT clinical" not in st_txt:
+            g9_issues.append("TCM dataset missing explicit non-clinical epistemic framing")
+    if (v4_dir / "politicsEconHskTcmStudyV4.js").is_file():
+        pe_txt = (v4_dir / "politicsEconHskTcmStudyV4.js").read_text(encoding="utf-8")
+        if "KHÔNG phải y học" not in pe_txt or "epistemicBannerEn" not in pe_txt:
+            g9_issues.append("Yin-Yang-Wuxing dataset missing non-clinical / non-predictive banner")
+    for mod in [
+        "src/components/china3DMap.js",
+        "src/components/3d/dougongJoinery3D.js",
+        "src/components/3d/vernacular3DStudio.js",
+        "src/components/3d/euChinaLogistics3D.js",
+        "src/components/3d/hydraulic3DStudio.js",
+        "src/components/3d/armillary3DStudio.js",
+        "src/components/3d/artifacts3DExtra.js",
+    ]:
+        mp = ROOT / mod
+        if not mp.is_file():
+            g9_issues.append(f"MISSING 3D studio: {mod}")
+        else:
+            m_txt = mp.read_text(encoding="utf-8")
+            if not re.search(r"(?:CCE_WEBGL_MGR|ensureMgr\(\)|ensureWebGLMgr\(\))\.register\(", m_txt):
+                g9_issues.append(f"3D studio lacks CCE_WEBGL_MGR.register(): {mod}")
+    print(f"[Gate 9] V4 Data, Epistemology & WebGL Mgr: {'PASS' if not g9_issues else 'FAIL'}")
+    failures.extend(g9_issues)
+
+    # Gate 10: PWA Cache Parity (cce-v4.0) & Zero Dev Jargon in UI Strings
+    g10_issues: list[str] = []
+    sw_txt = (ROOT / "sw.js").read_text(encoding="utf-8") if (ROOT / "sw.js").is_file() else ""
+    if 'CACHE_VERSION = "cce-v4.0"' not in sw_txt:
+        g10_issues.append('sw.js CACHE_VERSION is not "cce-v4.0"')
+    ui_scan = [ROOT / "index.html"] + sorted((ROOT / "src" / "components").rglob("*.js"))
+    for fp in ui_scan:
+        for idx, line in enumerate(fp.read_text(encoding="utf-8", errors="ignore").splitlines(), 1):
+            s = line.strip()
+            if s.startswith("//") or s.startswith("*") or s.startswith("<!--"):
+                continue
+            if re.search(r"\bBatch\s+\d+\b|\bV4\.0\b", line):
+                g10_issues.append(f"Dev jargon in UI ({fp.as_posix()}:{idx}): {s[:80]}")
+    print(f"[Gate 10] PWA Cache Parity & Clean UI Copy: {'PASS' if not g10_issues else 'FAIL'}")
+    failures.extend(g10_issues[:10])
+
     if failures:
         print("\nGATE FAILURES:")
         for f in failures:
             print(" -", f)
         return 1
-    print("\nALL 8 INTEGRITY GATES PASSED CLEANLY.")
+    print("\nALL 10 INTEGRITY GATES PASSED CLEANLY.")
     return 0
 
 

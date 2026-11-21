@@ -45,6 +45,29 @@ window.CCE_WEEKLY_UPDATES = (function () {
 
   const siteChangelog = [
     {
+      version: "v4.0.0",
+      date: "2026-11-22",
+      type: "feature",
+      tagVi: "[Phát hành Lớn · Hệ sinh thái 10 Studio 3D & Học thuật Liên ngành]",
+      tagEn: "[Major Release · 10 Interactive 3D Studios & Interdisciplinary Hub]",
+      titleVi: "Phiên bản v4.0: 10 Studio 3D WebGL, Giao diện Biên tập Toàn cầu, Kho HSK 4–9 / Đông y–Ngũ Hành / Du học & Logistics Trung–Âu–Việt",
+      titleEn: "Release v4.0: 10 WebGL 3D Studios, Global Editorial UX, HSK 4–9 / Yin–Yang–Wuxing / CSC Study & EU–China–Vietnam Logistics Studio",
+      itemsVi: [
+        "10 Mô hình Tương tác 3D WebGL đồng bộ 1 WebGL context duy nhất (CCE_WEBGL_MGR): Bản đồ Địa hình 3D 34 tỉnh + 12 tuyến HSR, Tử Cấm Thành, Thiên Đàn, 4 Bảo vật Quốc gia, Kết cấu Đấu Củng 4 tầng, Nhà Thổ Lâu/Tứ Hợp Viện/Huy Phái, Con đường Tơ lụa ↔ Trung–Âu 2026, Thủy lợi Đô Giang Yển, Hồn Thiên Nghi & Ngũ Hành, Biên Chung Nhạc Chuông – Thuyền Trịnh Hòa – Tượng Tần.",
+        "Giao diện Biên tập Toàn cầu (styles/v4-editorial.css): Thẻ định hướng theo 4 Mục tiêu, Kệ Đọc Gần Đây, Command Palette (Ctrl+K), Chế độ đọc Paper/Sepia/Night, Song ngữ Đối chiếu VI|EN, Bộ sưu tập & Sổ tay Tra nhanh.",
+        "Trung tâm Tri thức Chuyên sâu (/explore): Tứ đại Danh tác & 60 Điển cố HSK 4–9, Chuyên luận Ngữ pháp Gốc Âm Dương – Ngũ Hành kết nối Đông y / Phong thủy / Bát Tự / Tử Vi (đặt ranh giới phi lâm sàng), Hồ sơ Du học CSC/UIBE/SUFE/BLCU/BUCM, Chính trị – Kinh tế 2026 & 8 Thái hệ Ẩm thực + Góc nhìn Việt Nam.",
+        "Studio Thương mại Tam ngữ Âu–Trung–Việt & Con đường Tơ lụa (/kinh-doanh): 100 thuật ngữ Incoterms/CBAM/ICS2/EUDR, bài tập chống quên Tiếng Anh (Hide EN Recall), 8 cặp email Nhà máy TQ ↔ Trụ sở EU và 12 tình huống phỏng vấn Logistics Châu Âu.",
+        "Mở rộng Hầm Luyện Thi lên 180+ câu trắc nghiệm song ngữ và Cẩm nang Hành trang 34 tỉnh (Lịch 12 tháng, 8 Lịch trình, Thẻ Đưa Tài xế)."
+      ],
+      itemsEn: [
+        "Launched 10 Three.js Interactive 3D Studios under strict single-context coordination (CCE_WEBGL_MGR): 34-Province 3D Relief Map, Forbidden City, Temple of Heaven, 4 National Relics, 4-Tier Dougong Joinery, Tulou/Siheyuan/Huizhou Cutaways, Historic Silk Road <-> 2026 CR Express Corridor, Dujiangyan Damless Hydraulics, Celestial Armillary & Wuxing Disk, Bronze Chime Bells & Treasure Ship.",
+        "Global Editorial UX (styles/v4-editorial.css): 4 Goal Intent Cards, Recently Viewed Shelf, Ctrl+K Command Palette, Paper/Sepia/Night typography themes, Side-by-Side VI|EN Split-View, My Collection drawer, and QuickRef Pocket.",
+        "Interdisciplinary Knowledge Hub (/explore): Four Literary Canons + 60 HSK 4–9 idioms, Non-Clinical Yin–Yang–Five Phases Monograph synthesizing TCM/Fengshui/Bazi/Ziwei, CSC/UIBE/SUFE/BLCU/BUCM Study Abroad Dossiers, 2026 Politics & Macro, and Eight Cuisines.",
+        "EU–China–Vietnam Trilingual Trade & Silk Road Studio (/kinh-doanh): 100 Incoterms/CBAM/ICS2/EUDR terms, Hide-EN anti-attrition drills, 8 Factory ZH <-> EU HQ EN email pairs, 12 European Logistics interview scenarios, and Silk Road Historic-to-Modern Continuum.",
+        "Expanded Quiz Arena pool to 180+ bilingual MCQs alongside 34-Province Travel Hub (12-Month Calendar, 8 Itineraries, Bilingual Show-to-Driver Cards)."
+      ]
+    },
+    {
       version: "v2.6.0",
       date: "2026-11-18",
       type: "feature",

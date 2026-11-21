@@ -1,4 +1,4 @@
-"""Editorial Prose & Tone Harmonizer for src/data/v3/*.js.
+"""Editorial Prose & Tone Harmonizer for src/data/v3/*.js and src/data/v4/*.js.
 
 Tokenizes JavaScript string literals so identifiers, property keys, slugs,
 Hanzi citations, and asset paths are never altered. Replaces generic AI clichés
@@ -13,7 +13,8 @@ from __future__ import annotations
 import pathlib
 import re
 
-V3_DIR = pathlib.Path(__file__).resolve().parent.parent / "src" / "data" / "v3"
+ROOT_DATA = pathlib.Path(__file__).resolve().parent.parent / "src" / "data"
+SCAN_DIRS = [ROOT_DATA / "v3", ROOT_DATA / "v4"]
 REPORT_PATH = pathlib.Path(__file__).resolve().parent.parent / "reports" / "tone_harmonization_audit.md"
 
 # Ordered (compiled regex, replacement function or string) applied ONLY to natural-language string literals
@@ -36,11 +37,14 @@ EN_RULES: list[tuple[re.Pattern[str], object]] = [
     (re.compile(r"\btimeless\b", re.I), lambda m: "enduring" if m.group(0)[0].islower() else "Enduring"),
     (re.compile(r"\bvibrant\b", re.I), lambda m: "active" if m.group(0)[0].islower() else "Active"),
     (re.compile(r"\bV3\.0\b|\bV3\s+Archive\b", re.I), "Archival"),
+    (re.compile(r"\bV4\.0(?!\.\d)\b|\bV4\s+Archive\b", re.I), "Archival"),
 ]
 
 VI_RULES: list[tuple[re.Pattern[str], object]] = [
     (re.compile(r"\bV3\.0\b"), "lưu trữ"),
     (re.compile(r"\bv3\.0\b"), "lưu trữ"),
+    (re.compile(r"\bV4\.0(?!\.\d)\b"), "lưu trữ"),
+    (re.compile(r"\bv4\.0(?!\.\d)\b"), "lưu trữ"),
     (re.compile(r"\bđóng vai trò quan trọng\b"), "giữ vị trí trung tâm"),
     (re.compile(r"\bđóng vai trò then chốt\b"), "giữ chức năng hạt nhân"),
     (re.compile(r"\bminh chứng sống động\b"), "chứng tích trực tiếp"),
@@ -137,16 +141,19 @@ def process_js_source(src: str, counts: dict[str, int]) -> tuple[str, int]:
 def main():
     counts: dict[str, int] = {}
     file_stats: list[tuple[str, int]] = []
-    for fp in sorted(V3_DIR.glob("*.js")):
-        raw = fp.read_text(encoding="utf-8")
-        new_src, chg = process_js_source(raw, counts)
-        if chg > 0:
-            fp.write_text(new_src, encoding="utf-8")
-        file_stats.append((fp.name, chg))
+    for scan_dir in SCAN_DIRS:
+        if not scan_dir.is_dir():
+            continue
+        for fp in sorted(scan_dir.glob("*.js")):
+            raw = fp.read_text(encoding="utf-8")
+            new_src, chg = process_js_source(raw, counts)
+            if chg > 0:
+                fp.write_text(new_src, encoding="utf-8")
+            file_stats.append((f"{scan_dir.name}/{fp.name}", chg))
 
     total_edits = sum(c for _, c in file_stats)
     lines = [
-        "# Tone & Editorial Consistency Audit (`src/data/v3/`)",
+        "# Tone & Editorial Consistency Audit (`src/data/v3/` & `src/data/v4/`)",
         "",
         f"- Total JS files scanned: **{len(file_stats)}**",
         f"- Total refined string literals: **{total_edits}**",
