@@ -312,16 +312,40 @@ def main() -> int:
 
         if bundles:
             brands_cfg = bundles.get("CCE_V6_BRANDS_CRAFT", {})
+            liushu_cfg = bundles.get("CCE_V6_LIUSHU_VISUAL", {})
+            cosmo_cfg = bundles.get("CCE_V6_COSMOLOGY_VISUAL", {})
+            lit_cfg = bundles.get("CCE_V6_LITERATURE_VISUAL", {})
             trade_cfg = bundles.get("CCE_V6_TRADE_AND_CSC", {})
             v6_quiz = bundles.get("CCE_V6_QUIZ", [])
-            if len(brands_cfg.get("brandsAdditional36", [])) != 36:
-                g12_issues.append(f"Expected 36 brandsAdditional36, got {len(brands_cfg.get('brandsAdditional36', []))}")
-            if len(brands_cfg.get("giAdditional18", [])) != 18:
-                g12_issues.append(f"Expected 18 giAdditional18, got {len(brands_cfg.get('giAdditional18', []))}")
-            if len(trade_cfg.get("extraSupplyCases16", [])) != 16:
-                g12_issues.append(f"Expected 16 extraSupplyCases16, got {len(trade_cfg.get('extraSupplyCases16', []))}")
-            if len(v6_quiz) != 192:
-                g12_issues.append(f"Expected 192 V6 MCQs, got {len(v6_quiz)}")
+            expected_checks = [
+                (len(brands_cfg.get("brandsAdditional40", [])), 40, "brandsAdditional40"),
+                (len(brands_cfg.get("brandsAdditional36", [])), 36, "brandsAdditional36"),
+                (len(brands_cfg.get("giAdditional18", [])), 18, "giAdditional18"),
+                (len(brands_cfg.get("lzhDualComparePairs10", [])), 10, "lzhDualComparePairs10"),
+                (len(liushu_cfg.get("visualCharacters100", [])), 100, "visualCharacters100"),
+                (len(liushu_cfg.get("falseFriendsComic30", [])), 30, "falseFriendsComic30"),
+                (len(liushu_cfg.get("simpTradAsymmetry50", [])), 50, "simpTradAsymmetry50"),
+                (len(liushu_cfg.get("measureWordsVisual40", [])), 40, "measureWordsVisual40"),
+                (len(liushu_cfg.get("chengyuOrigins36", [])), 36, "chengyuOrigins36"),
+                (len(cosmo_cfg.get("culinaryHerbs48", [])), 48, "culinaryHerbs48"),
+                (len(cosmo_cfg.get("constellationsCulture28", [])), 28, "constellationsCulture28"),
+                (len(cosmo_cfg.get("cosmoCasebookAdditional12V6", [])), 12, "cosmoCasebookAdditional12V6"),
+                (len(lit_cfg.get("wenyanSyntaxTokens30", [])), 30, "wenyanSyntaxTokens30"),
+                (len(lit_cfg.get("poemPaintingPairs24", [])), 24, "poemPaintingPairs24"),
+                (len(lit_cfg.get("hskPassages40", [])), 40, "hskPassages40"),
+                (len(lit_cfg.get("hskEssayFrames30_Additional15", [])), 15, "hskEssayFrames30_Additional15"),
+                (len(lit_cfg.get("hanVietPoetryComparison15", [])), 15, "hanVietPoetryComparison15"),
+                (len(trade_cfg.get("annotatedTradeDocs10", [])), 10, "annotatedTradeDocs10"),
+                (len(trade_cfg.get("extraSupplyCases16", [])), 16, "extraSupplyCases16"),
+                (len(trade_cfg.get("b2bTerms150", [])), 150, "b2bTerms150"),
+                (len(trade_cfg.get("sinoVietWonders10", [])), 10, "sinoVietWonders10"),
+                (len(trade_cfg.get("cscUniversities24Atlas", [])), 24, "cscUniversities24Atlas"),
+                (len(trade_cfg.get("cscInterviewQuestions24", [])), 24, "cscInterviewQuestions24"),
+                (len(v6_quiz), 192, "CCE_V6_QUIZ"),
+            ]
+            for actual_cnt, exp_cnt, lbl in expected_checks:
+                if actual_cnt != exp_cnt:
+                    g12_issues.append(f"Expected {exp_cnt} {lbl}, got {actual_cnt}")
             vis_qs = [q for q in v6_quiz if q.get("isVisualQuestion")]
             if len(vis_qs) != 120:
                 g12_issues.append(f"Expected 120 Visual ID MCQs, got {len(vis_qs)}")

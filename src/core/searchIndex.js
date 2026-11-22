@@ -292,7 +292,7 @@
     }
 
     var v6B = window.CCE_V6_BRANDS_CRAFT || {};
-    (v6B.brandsAdditional36 || []).forEach(function (vb) {
+    (v6B.brandsAdditional40 || v6B.brandsAdditional36 || []).forEach(function (vb) {
       out.push({
         type: "traditional",
         id: vb.id,
@@ -304,70 +304,198 @@
         body: norm((vb.craftSecretVi || "") + " " + (vb.signatureProductVi || ""))
       });
     });
+    (v6B.lzhDualComparePairs10 || []).forEach(function (dc) {
+      out.push({
+        type: "traditional",
+        id: dc.id,
+        title: "[Đối sánh Lão Tự Hiệu] " + dc.titleVi,
+        titleEn: "[Brand Pair Compare] " + dc.titleEn,
+        zh: "",
+        sub: (dc.brandA || "") + " vs " + (dc.brandB || ""),
+        rawTitle: norm((dc.titleVi || "") + " " + (dc.titleEn || "") + " " + (dc.brandA || "") + " " + (dc.brandB || "")),
+        body: norm(dc.legalIpLessonVi || "")
+      });
+    });
     (v6B.giAdditional18 || []).forEach(function (vg) {
+      var vgVi = vg.vi || vg.nameVi || "";
+      var vgEn = vg.en || vg.nameEn || "";
       out.push({
         type: "business",
         id: vg.id,
-        title: "[GI Âu–Trung] " + vg.vi + " (" + vg.zh + ")",
-        titleEn: "[EU–China GI] " + vg.en + " (" + vg.zh + ")",
+        title: "[GI Âu–Trung] " + vgVi + " (" + vg.zh + ")",
+        titleEn: "[EU–China GI] " + vgEn + " (" + vg.zh + ")",
         zh: vg.zh || "",
         sub: vg.gbStandardCode || "Chỉ dẫn Địa lý V6",
-        rawTitle: norm(vg.zh + " " + vg.pinyin + " " + vg.vi + " " + vg.en),
-        body: norm((vg.euProtectionNoteVi || "") + " " + (vg.vnEvftaCounterpartVi || ""))
+        rawTitle: norm(vg.zh + " " + vg.pinyin + " " + vgVi + " " + vgEn),
+        body: norm((vg.euProtectionNoteVi || vg.protectionRuleVi || "") + " " + (vg.vnEuComparisonVi || vg.vnEvftaCounterpartVi || ""))
       });
     });
 
     var v6L = window.CCE_V6_LIUSHU_VISUAL || {};
-    (v6L.visualCharacters36 || []).forEach(function (lc) {
+    (v6L.visualCharacters100 || v6L.visualCharacters36 || []).forEach(function (lc) {
+      var mShort = lc.meaningShort || lc.meaningVi || "";
       out.push({
         type: "dict",
         id: lc.id,
-        title: "[Lục Thư] " + lc.zh + " · " + lc.hanViet + " (" + lc.meaningShort + ")",
-        titleEn: "[Liushu] " + lc.zh + " — " + lc.meaningEn,
+        title: "[Lục Thư] " + lc.zh + " · " + lc.hanViet + " (" + mShort + ")",
+        titleEn: "[Liushu] " + lc.zh + " — " + (lc.meaningEn || mShort),
         zh: lc.zh || "",
-        sub: lc.liushuType + " · " + lc.pinyin,
-        rawTitle: norm(lc.zh + " " + lc.pinyin + " " + lc.hanViet + " " + lc.meaningShort),
-        body: norm((lc.evolution4Stages || "") + " " + (lc.meaningVi || ""))
+        sub: (lc.liushuType || "") + " · " + (lc.pinyin || ""),
+        rawTitle: norm(lc.zh + " " + lc.pinyin + " " + lc.hanViet + " " + mShort),
+        body: norm((lc.evolution4StagesText || lc.svgMorphDesc || "") + " " + (lc.meaningVi || ""))
       });
     });
     (v6L.falseFriendsComic30 || []).forEach(function (ff) {
       out.push({
         type: "dict",
         id: ff.id,
-        title: "[Bạn Giả Hán–Việt] " + ff.zh + " — " + ff.panelBTrueZh,
-        titleEn: "[False Friend] " + ff.zh + " — " + ff.meaningEn,
+        title: "[Bạn Giả Hán–Việt] " + ff.zh + " — " + (ff.panelBTrueZh || ff.comicPanelB_RealMeaningVi),
+        titleEn: "[False Friend] " + ff.zh + " — " + (ff.meaningEn || ff.comicPanelB_RealMeaningEn),
         zh: ff.zh || "",
         sub: ff.pinyin + " · Tránh hiểu nhầm",
-        rawTitle: norm(ff.zh + " " + ff.pinyin + " " + ff.panelAVietTrap + " " + ff.panelBTrueZh),
+        rawTitle: norm(ff.zh + " " + ff.pinyin + " " + (ff.panelAVietTrap || "") + " " + (ff.panelBTrueZh || "")),
         body: norm(ff.tipVi || "")
+      });
+    });
+    (v6L.simpTradAsymmetry50 || []).forEach(function (stItem) {
+      out.push({
+        type: "dict",
+        id: stItem.id,
+        title: "[Giản–Phồn] " + stItem.simp + " → " + (stItem.trads || []).join(" / "),
+        titleEn: "[Simp–Trad] " + stItem.simp + " -> " + (stItem.trads || []).join(" / "),
+        zh: stItem.simp || "",
+        sub: "Bất đối xứng 1–Nhiều",
+        rawTitle: norm(stItem.simp + " " + (stItem.trads || []).join(" ") + " " + (stItem.diffVi || "")),
+        body: norm(stItem.classicalEtymologyVi || stItem.diffVi || "")
+      });
+    });
+    (v6L.measureWordsVisual40 || []).forEach(function (mw) {
+      out.push({
+        type: "dict",
+        id: mw.id,
+        title: "[Lượng từ] " + mw.zh + " (" + mw.pinyin + ") — " + mw.shapeVi,
+        titleEn: "[Measure Word] " + mw.zh + " — " + mw.usageEn,
+        zh: mw.zh || "",
+        sub: mw.exampleZh || "",
+        rawTitle: norm(mw.zh + " " + mw.pinyin + " " + mw.shapeVi + " " + mw.usageEn),
+        body: norm(mw.exampleZh || "")
+      });
+    });
+    (v6L.chengyuOrigins36 || []).forEach(function (cy) {
+      out.push({
+        type: "dict",
+        id: cy.id,
+        title: "[Thành ngữ 3 Khung] " + cy.zh + " (" + cy.hanViet + ")",
+        titleEn: "[Chengyu] " + cy.zh + " (" + cy.pinyin + ")",
+        zh: cy.zh || "",
+        sub: cy.source || "",
+        rawTitle: norm(cy.zh + " " + cy.pinyin + " " + cy.hanViet + " " + (cy.source || "")),
+        body: norm(cy.b2bUsageVi || "")
       });
     });
 
     var v6C = window.CCE_V6_COSMOLOGY_VISUAL || {};
-    (v6C.solarTerms24 || []).forEach(function (st) {
+    (v6C.solarTerms24 || v6C.solarTermsPhenology24 || []).forEach(function (stItem) {
+      var stVi = stItem.vi || stItem.nameVi || "";
       out.push({
         type: "article",
         id: "yinyang-origins",
-        title: "[24 Tiết Khí] " + st.zh + " (" + st.vi + ")",
-        titleEn: "[Solar Term] " + st.zh + " (" + st.vi + ")",
-        zh: st.zh || "",
-        sub: st.dateApprox + " · " + st.deg + " deg",
-        rawTitle: norm(st.zh + " " + st.pinyin + " " + st.vi),
-        body: norm((st.tamHau || "") + " " + (st.descVi || ""))
+        title: "[24 Tiết Khí] " + stItem.zh + " (" + stVi + ")",
+        titleEn: "[Solar Term] " + stItem.zh + " (" + (stItem.nameEn || stVi) + ")",
+        zh: stItem.zh || "",
+        sub: (stItem.dateApprox || stItem.gregorianApproxDate || "") + " · " + (stItem.deg || stItem.solarLongitudeDeg || 0) + " deg",
+        rawTitle: norm(stItem.zh + " " + stItem.pinyin + " " + stVi),
+        body: norm((stItem.tamHau || "") + " " + (stItem.descVi || ""))
+      });
+    });
+    (v6C.culinaryHerbs48 || v6C.herbarium24 || []).forEach(function (hb) {
+      out.push({
+        type: "article",
+        id: "yinyang-origins",
+        title: "[Herbarium 48] " + hb.nameVi + " (" + hb.zh + ")",
+        titleEn: "[Herbarium] " + (hb.nameEn || hb.nameVi) + " (" + hb.zh + ")",
+        zh: hb.zh || "",
+        sub: hb.latin || hb.latinName || "",
+        rawTitle: norm(hb.zh + " " + hb.pinyin + " " + hb.nameVi + " " + (hb.latinName || "")),
+        body: norm(hb.culinaryVi || hb.culinaryDishVi || "")
+      });
+    });
+    (v6C.constellationsCulture28 || []).forEach(function (cs) {
+      out.push({
+        type: "article",
+        id: "yinyang-origins",
+        title: "[28 Nhị Thập Bát Tú] " + cs.zh + " · " + cs.hanViet,
+        titleEn: "[Lunar Mansion] " + cs.zh + " · " + cs.iauCounterpart,
+        zh: cs.zh || "",
+        sub: cs.symbolGroup + " · " + cs.iauCounterpart,
+        rawTitle: norm(cs.zh + " " + cs.pinyin + " " + cs.hanViet + " " + cs.iauCounterpart),
+        body: norm(cs.noteVi || "")
+      });
+    });
+
+    var v6Lit = window.CCE_V6_LITERATURE_VISUAL || {};
+    (v6Lit.poemPaintingPairs24 || []).forEach(function (pp) {
+      out.push({
+        type: "article",
+        id: "literature-classics",
+        title: "[Thi Trung Hữu Họa] " + pp.titleVi + " (" + pp.titleZh + ")",
+        titleEn: "[Poem-Painting] " + pp.titleVi + " — " + pp.poet,
+        zh: pp.titleZh || "",
+        sub: pp.poet || "",
+        rawTitle: norm(pp.titleZh + " " + pp.titleVi + " " + (pp.poet || "")),
+        body: norm(pp.poemVi || "")
+      });
+    });
+    (v6Lit.hskPassages40 || []).forEach(function (hp) {
+      out.push({
+        type: "dict",
+        id: hp.id,
+        title: "[" + hp.hskLevel + " Đọc hiểu] " + hp.titleVi + " (" + hp.titleZh + ")",
+        titleEn: "[" + hp.hskLevel + "] " + hp.titleEn,
+        zh: hp.titleZh || "",
+        sub: hp.hskLevel + " Reading",
+        rawTitle: norm(hp.titleZh + " " + hp.titleVi + " " + hp.titleEn),
+        body: norm(hp.translationVi || "")
+      });
+    });
+    (v6Lit.hanVietPoetryComparison15 || []).forEach(function (hv) {
+      out.push({
+        type: "sino-vietnam",
+        id: hv.id,
+        title: "[Thi Ca Đường–Việt] " + hv.tangPoet + " ↔ " + hv.vietPoet,
+        titleEn: "[Sino-Viet Poetry] " + hv.tangPoet + " vs " + hv.vietPoet,
+        zh: hv.tangLineZh || "",
+        sub: hv.vietPoet || "",
+        rawTitle: norm(hv.tangPoet + " " + hv.vietPoet + " " + (hv.tangLineZh || "")),
+        body: norm(hv.comparisonVi || "")
       });
     });
 
     var v6T = window.CCE_V6_TRADE_AND_CSC || {};
     (v6T.annotatedTradeDocs10 || []).forEach(function (td) {
+      var tdVi = td.nameVi || td.titleVi || "";
+      var tdEn = td.nameEn || td.titleEn || "";
       out.push({
         type: "business",
         id: td.id,
-        title: "[Chứng từ XNK] " + td.nameVi + " (" + td.nameEn + ")",
-        titleEn: "[Trade Doc] " + td.nameEn,
-        zh: td.nameZh || "",
-        sub: td.issuerVi || "Incoterms & Customs Doc",
-        rawTitle: norm(td.nameVi + " " + td.nameEn + " " + td.nameZh),
-        body: norm(td.issuerVi || "")
+        title: "[Chứng từ XNK] " + tdVi + " (" + tdEn + ")",
+        titleEn: "[Trade Doc] " + tdEn,
+        zh: td.nameZh || td.titleZh || "",
+        sub: td.issuerVi || td.issuerRoleVi || "Incoterms & Customs Doc",
+        rawTitle: norm(tdVi + " " + tdEn + " " + (td.nameZh || td.titleZh || "")),
+        body: norm(td.issuerVi || td.issuerRoleVi || "")
+      });
+    });
+    (v6T.b2bTerms150 || []).forEach(function (bt) {
+      out.push({
+        type: "business",
+        id: bt.id,
+        title: "[" + (bt.v6Tag || "B2B Trade") + "] " + bt.en + " — " + bt.zh,
+        titleEn: "[" + (bt.v6Tag || "B2B Trade") + "] " + bt.en + " (" + bt.zh + ")",
+        zh: bt.zh || "",
+        sub: bt.pinyin + " · " + bt.vi,
+        rawTitle: norm(bt.en + " " + bt.zh + " " + bt.pinyin + " " + bt.hanViet + " " + bt.vi),
+        body: norm(bt.contextVi || "")
       });
     });
     (v6T.extraSupplyCases16 || []).forEach(function (sc6) {
@@ -382,16 +510,16 @@
         body: norm((sc6.riskIdentifiedEn || "") + " " + (sc6.actionPlanVi || ""))
       });
     });
-    (v6T.cscUniversities24 || []).forEach(function (cu) {
+    (v6T.cscUniversities24Atlas || v6T.cscUniversities24 || []).forEach(function (cu) {
       out.push({
         type: "sino-vietnam",
         id: cu.id,
         title: "[Học bổng CSC] " + cu.nameVi + " (" + cu.zh + ")",
-        titleEn: "[CSC University] " + cu.nameVi + " (" + cu.zh + ")",
+        titleEn: "[CSC University] " + (cu.nameEn || cu.nameVi) + " (" + cu.zh + ")",
         zh: cu.zh || "",
-        sub: "Agency " + cu.agencyNo + " · " + cu.cityVi,
-        rawTitle: norm(cu.zh + " " + cu.nameVi + " " + cu.cityVi + " " + cu.agencyNo),
-        body: norm(cu.majorsVi || "")
+        sub: "Agency " + (cu.agencyNo || cu.agencyNumber) + " · " + cu.cityVi,
+        rawTitle: norm(cu.zh + " " + cu.nameVi + " " + cu.cityVi + " " + (cu.agencyNo || cu.agencyNumber)),
+        body: norm(cu.majorsVi || cu.strengthsVi || "")
       });
     });
 

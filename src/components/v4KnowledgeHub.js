@@ -210,7 +210,9 @@
   function renderV5HskEssays(enM) {
     var hskData = window.CCE_V5_HSK_ESSAYS || {};
     var pairs20 = hskData.classicalModernPairs20 || [];
-    var tpl15 = hskData.hskArgumentTemplates15 || [];
+    var baseTpl = hskData.hskArgumentTemplates15 || [];
+    var v6Essays = (window.CCE_V6_LITERATURE_VISUAL && window.CCE_V6_LITERATURE_VISUAL.hskEssayFrames30_Additional15) || [];
+    var tpl15 = baseTpl.concat(v6Essays);
     if (!pairs20.length && !tpl15.length) return "";
     var pairImgs = [
       "assets/images/articles/hero-confucianism.jpg",
@@ -283,7 +285,9 @@
 
   function renderV5WuxingCasebook(enM) {
     var cb = window.CCE_V5_WUXING_CASEBOOK || {};
-    var cases = cb.historicalCases16 || [];
+    var baseCases = cb.historicalCases16 || [];
+    var v6Cases = (window.CCE_V6_COSMOLOGY_VISUAL && window.CCE_V6_COSMOLOGY_VISUAL.cosmoCasebookAdditional12V6) || [];
+    var cases = baseCases.concat(v6Cases);
     if (!cases.length) return "";
     var discObj = cb.epistemicDisclaimer || {};
     var wxImgs = [
@@ -298,7 +302,7 @@
     ];
     return (
       '<div id="cce-v5-wuxing-casebook" style="margin-top:1.45rem;padding-top:1rem;border-top:2px solid var(--hairline);">' +
-      '  <div class="editorial-kicker" style="color:var(--jade-green);">' + (enM ? "HISTORICAL CASEBOOK: COSMOLOGY, ARCHITECTURE & CALENDRICAL SCIENCE · 阴阳五行思想史案例集" : "16 NGHIÊN CỨU ĐIỂN HÌNH LỊCH SỬ TƯ TƯỞNG ÂM DƯƠNG – NGŨ HÀNH (ĐÔNG Y · PHONG THỦY · LỊCH PHÁP · TỬ VI)") + '</div>' +
+      '  <div class="editorial-kicker" style="color:var(--jade-green);">' + (enM ? (cases.length + " HISTORICAL CASE STUDIES: COSMOLOGY, ARCHITECTURE & CALENDRICAL SCIENCE · 阴阳五行思想史案例集") : (cases.length + " NGHIÊN CỨU ĐIỂN HÌNH LỊCH SỬ TƯ TƯỞNG ÂM DƯƠNG – NGŨ HÀNH (ĐÔNG Y · KIẾN TRÚC · LỊCH PHÁP)")) + '</div>' +
       (discObj.vi ? '<div class="epistemic-box critical" style="margin:0.45rem 0 0.9rem;font-size:0.8rem;">' + esc(enM ? (discObj.en || discObj.vi) : discObj.vi) + '</div>' : "") +
       '  <div class="grid grid-2" style="gap:0.85rem;max-height:580px;overflow:auto;">' +
       cases.map(function (c, idx) {
@@ -371,9 +375,10 @@
       var operas = (litRaw.fiveOperas && litRaw.fiveOperas.traditions) || [];
       var scripts = (litRaw.calligraphyFiveScripts && litRaw.calligraphyFiveScripts.scripts) || [];
 
+      var totalTemplatesCount = (((window.CCE_V5_HSK_ESSAYS || {}).hskArgumentTemplates15) || []).length + (((window.CCE_V6_LITERATURE_VISUAL || {}).hskEssayFrames30_Additional15) || []).length;
       var subBar = subPillsBar("hskSub", st.hskSub, [
         { id: "classics", lbl: enM ? "Journey to the West & Red Chamber + Canons" : "Tây Du Ký, Hồng Lâu Mộng & Tứ đại Danh tác" },
-        { id: "essays-v5", lbl: enM ? "20 Classical–Modern Pairs & 15 HSK 6–9 Templates" : "20 Cặp Cổ văn ↔ Hiện đại & 15 Khung Nghị luận HSK 6–9" },
+        { id: "essays-v5", lbl: enM ? ("20 Classical–Modern Pairs & " + totalTemplatesCount + " HSK 6–9 Templates") : ("20 Cặp Cổ văn ↔ Hiện đại & " + totalTemplatesCount + " Khung Nghị luận HSK 6–9") },
         { id: "briefs", lbl: enM ? ("60 HSK 4–9 Cultural Briefs (" + briefsAll.length + ")") : ("60 Đoạn đọc Văn hóa HSK 4–9 (" + briefsAll.length + ")") },
         { id: "poems", lbl: enM ? ("24 Tang–Song Poems (" + poems.length + ")") : ("24 Thi từ Đường–Tống (" + poems.length + ")") },
         { id: "chengyu", lbl: enM ? ("100 HSK Chengyu (" + chengyu.length + ")") : ("100 Thành ngữ Kinh điển (" + chengyu.length + ")") },
@@ -508,9 +513,10 @@
       var tcmDeep = pcRaw.tcmDeepStudy || {};
       var herbs = (sciRaw.tcmHeritageOverview && sciRaw.tcmHeritageOverview.culinaryHerbs12) || [];
 
+      var totalCaseCount = (((window.CCE_V5_WUXING_CASEBOOK || {}).historicalCases16) || []).length + (((window.CCE_V6_COSMOLOGY_VISUAL || {}).cosmoCasebookAdditional12V6) || []).length;
       var wBar = subPillsBar("wuxingSub", st.wuxingSub, [
-        { id: "matrix", lbl: enM ? "Yin–Yang–Wuxing 5×4 Matrix & 16 Cases" : "Ngữ pháp Gốc, Ma trận 5×4 & 16 Case" },
-        { id: "casebook-v5", lbl: enM ? "16 Historical Yin–Yang–Wuxing Case Studies" : "16 Nghiên cứu Điển hình Âm Dương – Ngũ Hành" },
+        { id: "matrix", lbl: enM ? ("Yin–Yang–Wuxing 5×4 Matrix & " + totalCaseCount + " Cases") : ("Ngữ pháp Gốc, Ma trận 5×4 & " + totalCaseCount + " Case") },
+        { id: "casebook-v5", lbl: enM ? (totalCaseCount + " Historical Yin–Yang–Wuxing Case Studies") : (totalCaseCount + " Nghiên cứu Điển hình Âm Dương – Ngũ Hành") },
         { id: "constitutions", lbl: enM ? ("9 Constitutions & 12 Wellness Herbs") : ("9 Thể chất Đông y & 12 Vị Dược thiện") },
         { id: "ziwu", lbl: enM ? ("12 Ziwu Liuzhu Meridian Clock & 20 TCM Terms") : ("12 Canh giờ Tử Ngọ Lưu Chú & 20 Thuật ngữ Tam ngữ") }
       ]);

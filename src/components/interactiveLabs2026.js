@@ -586,9 +586,10 @@
           </div>
 
           ${q.imagePath ? `
-            <div class="img-skeleton-bg" style="aspect-ratio:16/10;max-height:240px;width:100%;max-width:440px;overflow:hidden;border-radius:var(--radius);border:1px solid var(--hairline);margin-bottom:0.75rem;background:var(--bg-surface);cursor:pointer;" data-action="open-custom-image" data-src="${q.imagePath}" data-caption="${enMode ? q.topicEn : q.topicVi}">
+            <div class="img-skeleton-bg" style="aspect-ratio:16/10;max-height:240px;width:100%;max-width:440px;overflow:hidden;border-radius:var(--radius);border:1px solid var(--hairline);margin-bottom:0.45rem;background:var(--bg-surface);cursor:pointer;" data-action="open-custom-image" data-src="${q.imagePath}" data-caption="${enMode ? q.topicEn : q.topicVi}">
               <img src="${q.imagePath}" alt="${enMode ? q.topicEn : q.topicVi}" loading="lazy" style="width:100%;height:100%;object-fit:${/\.svg$/i.test(q.imagePath) ? "contain" : "cover"};display:block;" onerror="this.onerror=null;this.src='assets/images/museum/forbidden-city-imperial-axis-gate.jpg';" />
             </div>
+            ${q.visualInspectionGuideVi ? `<div style="font-size:0.78rem;color:var(--jade-green);margin-bottom:0.65rem;max-width:480px;">${q.visualInspectionGuideVi}</div>` : ""}
           ` : ""}
 
           <div style="display:flex;align-items:center;gap:0.65rem;flex-wrap:wrap;margin-bottom:0.65rem;">

@@ -61,7 +61,9 @@
   function renderStudio(enM) {
     var data = window.CCE_TRADE_TRILINGUAL_V4 || {};
     var tbRaw = window.CCE_V4_TRADE_BRIDGE || {};
-    var terms = data.terms || [];
+    var baseTerms = data.terms || [];
+    var v6Terms = (window.CCE_V6_TRADE_AND_CSC && window.CCE_V6_TRADE_AND_CSC.b2bTerms150) || [];
+    var terms = baseTerms.concat(v6Terms);
     var emails = data.emailPairs || [];
     var dialogues = data.dialogues || [];
     var parallelArticles = data.parallelArticles || tbRaw.parallelArticles10 || [];
@@ -74,7 +76,7 @@
     var q = trState.query.trim().toLowerCase();
     var filteredTerms = terms.filter(function (t) {
       var catOk = trState.cat === "all" || t.category === trState.cat;
-      var qOk = !q || (t.en + " " + t.zh + " " + t.pinyin + " " + t.vi).toLowerCase().indexOf(q) !== -1;
+      var qOk = !q || (t.en + " " + t.zh + " " + t.pinyin + " " + t.vi + " " + (t.v6Tag || "")).toLowerCase().indexOf(q) !== -1;
       return catOk && qOk;
     });
 
@@ -119,7 +121,7 @@
         '</div>' +
         '<div class="academic-table-wrap" style="max-height:460px;overflow:auto;">' +
         '  <table class="academic-table"><thead><tr><th>European Corporate English</th><th>Chinese Factory / Carrier (中文)</th><th>Vietnamese &amp; Ops Scope</th><th>SM-2 SRS</th></tr></thead><tbody>' +
-        filteredTerms.slice(0, 100).map(function (t) {
+        filteredTerms.map(function (t) {
           var enCell = trState.recallMode === "hide-en"
             ? '<details><summary style="cursor:pointer;color:var(--jade-green);font-size:0.78rem;">Reveal English ▾</summary><strong>' + esc(t.en) + '</strong></details>'
             : '<strong>' + esc(t.en) + '</strong> ' + spkBtn(t.en, "en-US");
@@ -127,7 +129,7 @@
             ? '<details><summary style="cursor:pointer;color:var(--imperial-red);font-size:0.78rem;">Reveal Chinese ▾</summary><span class="hanzi">' + esc(t.zh) + '</span> (' + esc(t.pinyin) + ')</details>'
             : '<strong class="hanzi" style="font-size:1rem;">' + esc(t.zh) + '</strong> ' + spkBtn(t.zh, "zh-CN") + '<br><span class="pinyin text-xs">' + esc(t.pinyin) + '</span>';
           var note = enM ? (t.contextEn || t.contextVi) : (t.contextVi || t.contextEn);
-          return '<tr><td>' + enCell + '</td><td>' + zhCell + '</td><td style="font-size:0.8rem;"><strong>' + esc(t.vi) + '</strong><br><span style="color:var(--text-muted);">' + esc(note) + '</span></td><td><button type="button" class="btn btn-secondary btn-sm" data-trst-act="push-srs" data-zh="' + esc(t.zh) + '" data-py="' + esc(t.pinyin) + '" data-vi="' + esc(t.vi) + '" data-en="' + esc(t.en) + '">+ SRS</button></td></tr>';
+          return '<tr><td>' + enCell + '</td><td>' + zhCell + '</td><td style="font-size:0.8rem;">' + (t.v6Tag ? '<span class="badge badge-gold" style="margin-right:0.3rem;font-size:0.68rem;">' + esc(t.v6Tag) + '</span>' : '') + '<strong>' + esc(t.vi) + '</strong><br><span style="color:var(--text-muted);">' + esc(note) + '</span></td><td><button type="button" class="btn btn-secondary btn-sm" data-trst-act="push-srs" data-zh="' + esc(t.zh) + '" data-py="' + esc(t.pinyin) + '" data-vi="' + esc(t.vi) + '" data-en="' + esc(t.en) + '">+ SRS</button></td></tr>';
         }).join("") +
         '  </tbody></table>' +
         '</div>'
@@ -205,7 +207,10 @@
         );
       }).join("") + '</div>';
     } else if (trState.tab === "cases24") {
-      var lanes = ["all", "CR Express Rail", "Yantian-Rotterdam Ocean", "Ningbo-Hamburg FCL", "Huunghi-Haiphong Hybrid", "EU CBAM Steel/Alu", "EUDR Traceability"];
+      var lanes = ["all"];
+      supplyCases.forEach(function (sc) {
+        if (sc && sc.lane && lanes.indexOf(sc.lane) === -1) lanes.push(sc.lane);
+      });
       var visCases = supplyCases.filter(function (sc) {
         var laneOk = trState.caseLane === "all" || sc.lane === trState.caseLane;
         var qOk = !q || (sc.titleVi + " " + sc.titleEn + " " + sc.scenarioZh + " " + sc.riskIdentifiedEn + " " + sc.actionPlanVi).toLowerCase().indexOf(q) !== -1;

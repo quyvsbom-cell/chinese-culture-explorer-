@@ -21,6 +21,7 @@
   }
 
   function resolveBrandThumb(b, idx) {
+    if (b && b.imagePath) return b.imagePath;
     var vis = (window.CCE_PROVINCE_ITEM_VISUALS && b && b.provinceId && window.CCE_PROVINCE_ITEM_VISUALS[b.provinceId]) || {};
     var dishes = Array.isArray(vis.dishes) ? vis.dishes : [];
     var heritage = Array.isArray(vis.heritage) ? vis.heritage : [];
@@ -57,7 +58,8 @@
   function mergeBrands() {
     var seed = (window.CCE_V5_LAOZIHAO && window.CCE_V5_LAOZIHAO.brands) || [];
     var exp = (window.CCE_V5_LAOZIHAO_EXPANDED && window.CCE_V5_LAOZIHAO_EXPANDED.brands60) || [];
-    var v6Add = (window.CCE_V6_BRANDS_CRAFT && window.CCE_V6_BRANDS_CRAFT.brandsAdditional36) || [];
+    var v6Obj = window.CCE_V6_BRANDS_CRAFT || {};
+    var v6Add = (v6Obj.brandsAdditional40 || []).concat(v6Obj.brandsAdditional36 || []);
     var seen = {};
     var out = [];
     seed.concat(exp, v6Add).forEach(function (b) {
@@ -66,7 +68,13 @@
       if (seen[key]) {
         // Merge any longer/enriched fields into existing item
         var prev = seen[key];
-        ["signatureProductVi", "signatureProductEn", "qualityStandardVi", "qualityStandardEn", "vietnamAseanLessonVi", "vietnamAseanLessonEn", "flagshipAddressZh", "craftProcessStepsVi", "craftProcessStepsEn", "sensoryOrMaterialSpecVi", "sensoryOrMaterialSpecEn", "authenticVsCounterfeitVi", "authenticVsCounterfeitEn"].forEach(function (k) {
+        [
+          "signatureProductVi", "signatureProductEn", "qualityStandardVi", "qualityStandardEn",
+          "vietnamAseanLessonVi", "vietnamAseanLessonEn", "flagshipAddressZh", "craftProcessStepsVi",
+          "craftProcessStepsEn", "sensoryOrMaterialSpecVi", "sensoryOrMaterialSpecEn",
+          "authenticVsCounterfeitVi", "authenticVsCounterfeitEn", "exportComplianceChecklistVi",
+          "exportComplianceChecklistEn", "mofcomBatch", "imagePath"
+        ].forEach(function (k) {
           if (!prev[k] && b[k]) prev[k] = b[k];
         });
         return;
@@ -80,10 +88,12 @@
   function renderPavilion(enM) {
     var brands = mergeBrands();
     var giBase = (window.CCE_V5_LAOZIHAO_EXPANDED && window.CCE_V5_LAOZIHAO_EXPANDED.giAppellations12) || [];
-    var giV6 = (window.CCE_V6_BRANDS_CRAFT && window.CCE_V6_BRANDS_CRAFT.giAdditional18) || [];
+    var v6B = window.CCE_V6_BRANDS_CRAFT || {};
+    var giV6 = v6B.giAdditional18 || [];
     var giList = giBase.concat(giV6);
-    var flows12 = (window.CCE_V6_BRANDS_CRAFT && window.CCE_V6_BRANDS_CRAFT.craftProcessFlowcharts12) || [];
-    var guilds5 = (window.CCE_V6_BRANDS_CRAFT && window.CCE_V6_BRANDS_CRAFT.merchantGuilds5) || [];
+    var flows12 = v6B.craftProcessFlowcharts12 || [];
+    var guilds5 = v6B.merchantGuilds5 || [];
+    var dualCompare10 = v6B.lzhDualComparePairs10 || [];
     if (!brands.length) return "";
 
     var counts = { all: brands.length, tcm_pharmacy: 0, culinary: 0, tea_spirits: 0, craft_studio: 0 };
@@ -162,6 +172,7 @@
               (b.sensoryOrMaterialSpecVi ? '<div><strong>' + (enM ? "Material &amp; Sensory Spec:" : "Định chuẩn Chất liệu &amp; Cảm quan:") + '</strong> ' + esc(enM ? (b.sensoryOrMaterialSpecEn || b.sensoryOrMaterialSpecVi) : b.sensoryOrMaterialSpecVi) + '</div>' : "") +
               (b.authenticVsCounterfeitVi ? '<div style="color:var(--imperial-red);"><strong>' + (enM ? "Authentication &amp; Origin Mark:" : "Nhận diện Chính hãng vs Hàng giả:") + '</strong> ' + esc(enM ? (b.authenticVsCounterfeitEn || b.authenticVsCounterfeitVi) : b.authenticVsCounterfeitVi) + '</div>' : "") +
               (b.qualityStandardVi ? '<div style="color:var(--jade-green);"><strong>' + (enM ? "Quality &amp; ICH Standard:" : "Tiêu chuẩn &amp; Di sản:") + '</strong> ' + esc(enM ? (b.qualityStandardEn || b.qualityStandardVi) : b.qualityStandardVi) + '</div>' : "") +
+              (b.exportComplianceChecklistVi ? '<div><strong>' + (enM ? "Export &amp; GACC Checklist:" : "Kiểm soát Xuất khẩu &amp; GACC:") + '</strong> ' + esc(enM ? (b.exportComplianceChecklistEn || b.exportComplianceChecklistVi) : b.exportComplianceChecklistVi) + '</div>' : "") +
               (b.vietnamAseanLessonVi ? '<div><strong>' + (enM ? "Vietnam/ASEAN Benchmark:" : "Đối chiếu Việt Nam/ASEAN:") + '</strong> ' + esc(enM ? (b.vietnamAseanLessonEn || b.vietnamAseanLessonVi) : b.vietnamAseanLessonVi) + '</div>' : "") +
               (b.flagshipAddressZh ? '<div style="color:var(--text-muted);"><strong>' + (enM ? "Original Storefront:" : "Địa điểm gốc:") + '</strong> <span class="hanzi">' + esc(b.flagshipAddressZh) + '</span> ' + spk(b.flagshipAddressZh) + '</div>' : "") +
               '    </div>' +
@@ -182,20 +193,21 @@
         '    <h3 style="font-family:var(--font-editorial);font-size:1.32rem;margin:0.2rem 0 0.85rem;">' + (enM ? (giList.length + " EU–China Protected Heritage GIs &amp; EVFTA Benchmarks") : (giList.length + " Sản vật Chỉ dẫn Địa lý Bảo hộ Song phương Âu–Trung &amp; Đối chiếu EVFTA Việt Nam")) + '</h3>' +
         '    <div class="grid grid-3" style="gap:0.85rem;">' +
         filteredGi.map(function (g, idx) {
-          var gImg = resolveBrandThumb({ provinceId: g.provinceId, cat: "tea_spirits" }, idx + 2);
-          var gTitle = enM ? g.en : g.vi;
+          var gImg = g.imagePath || resolveBrandThumb({ provinceId: g.provinceId, cat: "tea_spirits" }, idx + 2);
+          var gTitle = enM ? (g.en || g.nameEn) : (g.vi || g.nameVi);
           return (
             '<article class="flashcard-layer" style="display:flex;flex-direction:column;gap:0.35rem;padding:0.9rem 1rem;border-top:2px solid var(--jade-green);">' +
             renderLzhThumb(gImg, gTitle + " (" + g.zh + ")") +
             '  <div style="display:flex;justify-content:space-between;align-items:center;gap:0.4rem;">' +
             '    <span class="badge badge-jade">' + esc(g.gbStandardCode || "EU–China GI") + '</span>' +
-            '    <span>' + spk(g.zh) + ' <button type="button" class="btn btn-ghost btn-sm" style="padding:0.1rem 0.38rem;font-size:0.72rem;border:1px solid var(--hairline);" data-lzh-act="srs" data-zh="' + esc(g.zh) + '" data-py="' + esc(g.pinyin) + '" data-hv="' + esc(g.vi) + '" data-vi="' + esc(g.vi) + '" data-en="' + esc(g.en) + '">+ SRS</button></span>' +
+            '    <span>' + spk(g.zh) + ' <button type="button" class="btn btn-ghost btn-sm" style="padding:0.1rem 0.38rem;font-size:0.72rem;border:1px solid var(--hairline);" data-lzh-act="srs" data-zh="' + esc(g.zh) + '" data-py="' + esc(g.pinyin) + '" data-hv="' + esc(gTitle) + '" data-vi="' + esc(gTitle) + '" data-en="' + esc(g.en || g.nameEn) + '">+ SRS</button></span>' +
             '  </div>' +
             '  <strong class="hanzi" style="font-size:1.15rem;color:var(--imperial-red);">' + esc(g.zh) + ' <span class="pinyin text-xs">' + esc(g.pinyin) + '</span></strong>' +
             '  <strong>' + esc(gTitle) + '</strong>' +
-            '  <p style="font-size:0.8rem;margin:0.1rem 0;color:var(--text-secondary);">' + esc(enM ? g.euProtectionNoteEn : g.euProtectionNoteVi) + '</p>' +
-            (g.terroirAndCraftVi ? '<div style="font-size:0.78rem;background:var(--bg-paper);padding:0.45rem 0.55rem;border:1px solid var(--hairline);"><strong>' + (enM ? "Terroir &amp; Craft:" : "Thổ nhưỡng &amp; Kỹ nghệ:") + '</strong> ' + esc(enM ? g.terroirAndCraftEn : g.terroirAndCraftVi) + '</div>' : "") +
-            (g.vnEuComparisonVi ? '<div style="font-size:0.77rem;color:var(--jade-green);"><strong>' + (enM ? "EVFTA Parallel:" : "Đối chiếu EVFTA Việt Nam:") + '</strong> ' + esc(enM ? g.vnEuComparisonEn : g.vnEuComparisonVi) + '</div>' : "") +
+            '  <p style="font-size:0.8rem;margin:0.1rem 0;color:var(--text-secondary);">' + esc(enM ? (g.euProtectionNoteEn || g.protectionRuleEn) : (g.euProtectionNoteVi || g.protectionRuleVi)) + '</p>' +
+            (g.terroirAndCraftVi ? '<div style="font-size:0.78rem;background:var(--bg-paper);padding:0.45rem 0.55rem;border:1px solid var(--hairline);"><strong>' + (enM ? "Terroir &amp; Craft:" : "Thổ nhưỡng &amp; Kỹ nghệ:") + '</strong> ' + esc(enM ? (g.terroirAndCraftEn || g.terroirAndCraftVi) : g.terroirAndCraftVi) + '</div>' : "") +
+            (g.customsHsAndAuditVi ? '<div style="font-size:0.76rem;color:var(--text-muted);"><strong>' + (enM ? "EU Customs &amp; MRL Audit:" : "Kiểm toán Hải quan EU:") + '</strong> ' + esc(enM ? (g.customsHsAndAuditEn || g.customsHsAndAuditVi) : g.customsHsAndAuditVi) + '</div>' : "") +
+            (g.vnEuComparisonVi ? '<div style="font-size:0.77rem;color:var(--jade-green);"><strong>' + (enM ? "EVFTA Parallel:" : "Đối chiếu EVFTA Việt Nam:") + '</strong> ' + esc(enM ? (g.vnEuComparisonEn || g.vnEvftaCounterpartEn) : (g.vnEuComparisonVi || g.vnEvftaCounterpartVi)) + '</div>' : "") +
             '  <button type="button" class="btn btn-secondary btn-sm" style="margin-top:auto;align-self:flex-end;padding:0.15rem 0.45rem;font-size:0.72rem;" data-action="open-province-detail" data-id="' + esc(g.provinceId) + '">' + (enM ? "Province →" : "Tỉnh →") + '</button>' +
             '</article>'
           );
@@ -205,23 +217,52 @@
       ) : "") +
       (flows12.length ? (
         '  <div id="cce-v6-craft-flowcharts" style="margin-top:2rem;padding-top:1.35rem;border-top:2px solid var(--hairline);">' +
-        '    <div class="editorial-kicker" style="color:var(--imperial-red);">V6.0 HERITAGE PROCESS DIAGRAMS &amp; FIVE HISTORIC MERCHANT GUILDS · 传统工艺流程与五大商帮</div>' +
-        '    <h3 style="font-family:var(--font-editorial);font-size:1.28rem;margin:0.2rem 0 0.75rem;">' + (enM ? "12 Master Craft Step-by-Step Workflows &amp; 5 Merchant Guilds" : "12 Quy trình Thủ công Kinh điển &amp; Ngũ Đại Thương Bang Lịch sử") + '</h3>' +
-        '    <div class="grid grid-2" style="gap:0.8rem;max-height:480px;overflow:auto;margin-bottom:1rem;">' +
+        '    <div class="editorial-kicker" style="color:var(--imperial-red);">V6.0 HERITAGE PROCESS DIAGRAMS, NORTH–SOUTH COMPARE &amp; FIVE HISTORIC MERCHANT GUILDS</div>' +
+        '    <h3 style="font-family:var(--font-editorial);font-size:1.28rem;margin:0.2rem 0 0.75rem;">' + (enM ? "12 Master Craft Step-by-Step Workflows, 10 North–South Compare Matrices &amp; 5 Guilds" : "12 Quy trình Thủ công Kinh điển, 10 Cặp Đối Sánh Nam–Bắc &amp; Ngũ Đại Thương Bang") + '</h3>' +
+        '    <div class="grid grid-2" style="gap:0.8rem;max-height:520px;overflow:auto;margin-bottom:1.15rem;">' +
         flows12.map(function (fl) {
+          var steps = fl.steps || [];
+          var svgNodes = steps.map(function (step, sIdx) {
+            var sx = 12 + sIdx * 98;
+            return '<rect x="' + sx + '" y="8" width="84" height="32" rx="4" fill="#FBF9F4" stroke="#8C2318" stroke-width="1.2" />' +
+              '<text x="' + (sx + 42) + '" y="22" text-anchor="middle" font-size="8.5" font-weight="700" fill="#8C2318">' + esc(step.stepNum + ". " + (step.labelZh || "").slice(0, 4)) + '</text>' +
+              '<text x="' + (sx + 42) + '" y="34" text-anchor="middle" font-size="7" fill="#5F584D">' + esc((step.labelVi || "").slice(0, 14)) + '</text>' +
+              (sIdx < steps.length - 1 ? '<line x1="' + (sx + 84) + '" y1="24" x2="' + (sx + 98) + '" y2="24" stroke="#A88940" stroke-width="1.4" />' : "");
+          }).join("");
           return (
             '<div class="card" style="padding:0.85rem 0.95rem;font-size:0.79rem;">' +
-            '  <div style="display:flex;justify-content:space-between;align-items:center;"><strong style="color:var(--imperial-red);">' + esc(enM ? fl.titleEn : fl.titleVi) + '</strong>' + spk(fl.brandZh) + '</div>' +
-            '  <div class="hanzi text-xs" style="color:var(--text-muted);margin-bottom:0.45rem;">' + esc(fl.titleZh) + '</div>' +
+            '  <div style="display:flex;justify-content:space-between;align-items:center;"><strong style="color:var(--imperial-red);">' + esc(enM ? fl.titleEn : fl.titleVi) + '</strong>' + spk(fl.brandZh || fl.titleZh) + '</div>' +
+            '  <div class="hanzi text-xs" style="color:var(--text-muted);margin-bottom:0.35rem;">' + esc(fl.titleZh) + '</div>' +
+            '  <svg viewBox="0 0 ' + Math.max(220, steps.length * 98 + 12) + ' 48" style="width:100%;height:auto;margin-bottom:0.4rem;">' + svgNodes + '</svg>' +
             '  <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">' +
-            (fl.steps || []).map(function (step) {
-              return '<div style="flex:1 1 130px;padding:0.35rem 0.45rem;background:var(--bg-paper);border:1px solid var(--hairline);border-top:2px solid var(--antique-gold);font-size:0.73rem;"><strong>' + esc(step.stepNum + ". " + (enM ? step.labelEn : step.labelVi)) + '</strong><br><span class="hanzi" style="color:var(--imperial-red);">' + esc(step.labelZh) + '</span><br><span style="color:var(--text-muted);">' + esc(step.specNote) + '</span></div>';
+            steps.map(function (step) {
+              return '<div style="flex:1 1 130px;padding:0.35rem 0.45rem;background:var(--bg-paper);border:1px solid var(--hairline);border-top:2px solid var(--antique-gold);font-size:0.73rem;"><strong>' + esc(step.stepNum + ". " + (enM ? step.labelEn : step.labelVi)) + '</strong><br><span class="hanzi" style="color:var(--imperial-red);">' + esc(step.labelZh) + '</span><br><span style="color:var(--text-muted);">' + esc(step.specNote || step.tempOrToolNote || "") + '</span></div>';
             }).join("") +
             '  </div>' +
             '</div>'
           );
         }).join("") +
         '    </div>' +
+        (dualCompare10.length ? (
+          '    <h4 style="margin:0.8rem 0 0.55rem;color:var(--imperial-red);">' + (enM ? "10 Bilateral Regional Honored Brand Comparison Matrices" : "10 Cặp Đối Sánh Song Phương Nam – Bắc &amp; Pháp Lý Sở Hữu Trí Tuệ") + '</h4>' +
+          '    <div class="grid grid-2" style="gap:0.8rem;max-height:460px;overflow:auto;margin-bottom:1.15rem;">' +
+          dualCompare10.map(function (dc) {
+            return (
+              '<article class="card" style="padding:0.85rem 0.95rem;font-size:0.78rem;">' +
+              '  <strong style="color:var(--imperial-red);">' + esc(enM ? dc.titleEn : dc.titleVi) + '</strong>' +
+              '  <div class="text-xs" style="color:var(--text-muted);margin:0.2rem 0 0.4rem;">' + esc(dc.brandA + " vs " + dc.brandB) + '</div>' +
+              '  <div style="display:grid;gap:0.25rem;margin-bottom:0.4rem;">' +
+              (dc.fiveCriteriaCompare || []).map(function (row) {
+                return '<div style="padding:0.3rem 0.45rem;background:var(--bg-paper);border:1px solid var(--hairline);"><strong>' + esc(enM ? row.criterionEn : row.criterionVi) + ':</strong><br><span style="color:var(--imperial-red);">A:</span> ' + esc(row.valueA) + '<br><span style="color:var(--jade-green);">B:</span> ' + esc(row.valueB) + '</div>';
+              }).join("") +
+              '  </div>' +
+              '  <div style="color:var(--jade-green);"><strong>Pháp lý IP:</strong> ' + esc(enM ? dc.legalIpLessonEn : dc.legalIpLessonVi) + '</div>' +
+              (dc.vietnamBrandStrategyTakeawayVi ? '<div style="color:var(--text-secondary);margin-top:0.25rem;"><strong>Bài học VN:</strong> ' + esc(enM ? dc.vietnamBrandStrategyTakeawayEn : dc.vietnamBrandStrategyTakeawayVi) + '</div>' : "") +
+              '</article>'
+            );
+          }).join("") +
+          '    </div>'
+        ) : "") +
         (guilds5.length ? (
           '    <div class="grid grid-3" style="gap:0.7rem;">' +
           guilds5.map(function (gd) {
