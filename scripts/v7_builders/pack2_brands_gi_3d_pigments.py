@@ -8,6 +8,7 @@ from .pack_utils import (
     PROVINCE_IMAGES,
     ensure_verified_img,
     load_external_pack,
+    merge_positional_enrich,
     merge_unique_by_key,
     resolve_prov_item_img,
     sanitize_recursive,
@@ -557,12 +558,24 @@ def build_pack2() -> dict[str, Any]:
 
     if ext.get("brands20"):
         brands_20 = merge_unique_by_key(brands_20, ext["brands20"], "id")[:20]
+    cat_norm = {"craft": "craft_studio", "tcm": "tcm_pharmacy", "tea": "tea_spirits", "culinary": "culinary"}
+    for idx, b in enumerate(brands_20):
+        b["cat"] = cat_norm.get(str(b.get("cat", "")).strip(), str(b.get("cat", "craft_studio")))
+        b["mofcomBatch"] = "Trung Hoa Lão Tự Hào"
+        grp = "d" if b["cat"] == "culinary" else "h"
+        b["imagePath"] = ensure_verified_img(b.get("imagePath") or resolve_prov_item_img(b.get("provinceId", "beijing"), grp, idx))
+
     if ext.get("gi12") or ext.get("geoIndications12"):
         gi_12 = merge_unique_by_key(gi_12, ext.get("gi12") or ext.get("geoIndications12"), "id")[:12]
+    for g in gi_12:
+        g["vi"] = g.get("nameVi") or g.get("vi", "")
+        g["en"] = g.get("nameEn") or g.get("en", "")
+        g["imagePath"] = ensure_verified_img(g.get("imagePath") or PROVINCE_IMAGES.get(str(g.get("provinceId", "")).replace("prov-", ""), "assets/images/articles/hero-six-teas-gongfu.jpg"))
+
     if ext.get("museumStudios3d6"):
-        museum_3d_6 = merge_unique_by_key(museum_3d_6, ext["museumStudios3d6"], "id")[:6]
+        museum_3d_6 = merge_positional_enrich(museum_3d_6, ext["museumStudios3d6"])
     if ext.get("traditionalPigments8"):
-        traditional_pigments_8 = merge_unique_by_key(traditional_pigments_8, ext["traditionalPigments8"], "id")[:8]
+        traditional_pigments_8 = merge_positional_enrich(traditional_pigments_8, ext["traditionalPigments8"])
 
     return sanitize_recursive({
         "brandsAdditional20": brands_20,

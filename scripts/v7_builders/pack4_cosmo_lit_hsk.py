@@ -10,6 +10,7 @@ from .pack_utils import (
     PROVINCE_IMAGES,
     ensure_verified_img,
     load_external_pack,
+    merge_positional_enrich,
     merge_unique_by_key,
     resolve_prov_item_img,
     sanitize_recursive,
@@ -484,22 +485,113 @@ def build_pack4() -> dict[str, Any]:
         for tid, tp, vp, tl, vl, cmp_vi, tone_vi, ctx_vi in tang_viet_9
     ]
 
+    _prov_list = sorted(PROVINCE_IMAGES.keys())
     if ext.get("herbs12"):
         herbs_12 = merge_unique_by_key(herbs_12, ext["herbs12"], "id")[:12]
+    for idx, h in enumerate(herbs_12):
+        h_img = ensure_verified_img(h.get("image") or h.get("imagePath") or resolve_prov_item_img(_prov_list[(idx * 3) % len(_prov_list)], "f", idx))
+        h["image"] = h_img
+        h["imagePath"] = h_img
+        if "KHÔNG" not in str(h.get("nonClinicalReminderVi", "")):
+            h["nonClinicalReminderVi"] = NON_CLINICAL_VI
+        if "NOT clinical" not in str(h.get("nonClinicalReminderEn", "")):
+            h["nonClinicalReminderEn"] = NON_CLINICAL_EN
+
     if ext.get("microclimates6"):
-        micro_6 = merge_unique_by_key(micro_6, ext["microclimates6"], "id")[:6]
+        micro_6 = merge_positional_enrich(micro_6, ext["microclimates6"])
+    for m in micro_6:
+        m["challengeVi"] = m.get("climateChallengeVi") or m.get("challengeVi") or m.get("regionVi", "")
+        m["mechanismVi"] = m.get("passivePrincipleVi") or m.get("mechanismVi", "")
+        m["physicsVi"] = m.get("solarGeometryNoteVi") or m.get("physicsVi", "")
+
     if ext.get("cosmoCases8"):
         cosmo_8 = merge_unique_by_key(cosmo_8, ext["cosmoCases8"], "id")[:8]
-    if ext.get("novelGraphs2") and isinstance(ext["novelGraphs2"], list) and len(ext["novelGraphs2"]) == 2:
-        novel_graphs_2 = merge_unique_by_key(novel_graphs_2, ext["novelGraphs2"], "id")[:2]
+    for c in cosmo_8:
+        c["titleZh"] = c.get("titleZh") or c.get("eraZh") or c.get("titleVi", "")
+        c["summaryVi"] = c.get("summaryVi") or c.get("historicalScientificMechanismVi", "")
+        c["summaryEn"] = c.get("summaryEn") or c.get("historicalScientificMechanismEn", "")
+        c["image"] = ensure_verified_img(c.get("image") or c.get("imagePath") or "assets/images/museum/han-shipan.jpg")
+
+    ext_ng = ext.get("novelGraphs2")
+    if ext_ng:
+        ng_list = []
+        if isinstance(ext_ng, dict):
+            id_map = {"nho_lam_ngoai_su": "graph-nholamngoaisu", "su_ky": "graph-suky"}
+            for gk, gv in ext_ng.items():
+                if isinstance(gv, dict):
+                    gcopy = dict(gv)
+                    gcopy["id"] = gcopy.get("id") or id_map.get(gk, f"graph-{gk}")
+                    gcopy["nodes"] = [
+                        {
+                            **nd,
+                            "labelZh": nd.get("labelZh") or nd.get("nameZh") or nd.get("zh", ""),
+                            "labelVi": nd.get("labelVi") or nd.get("nameVi") or nd.get("vi", ""),
+                            "zh": nd.get("zh") or nd.get("nameZh") or nd.get("labelZh", ""),
+                            "vi": nd.get("vi") or nd.get("nameVi") or nd.get("labelVi", ""),
+                            "roleGroup": nd.get("roleGroup") or nd.get("group", "chinh"),
+                            "noteVi": nd.get("noteVi") or nd.get("roleVi", ""),
+                        }
+                        for nd in gcopy.get("nodes", [])
+                    ]
+                    gcopy["edges"] = [
+                        {
+                            **eg,
+                            "relationVi": eg.get("relationVi") or eg.get("relVi") or eg.get("rel", ""),
+                            "rel": eg.get("rel") or eg.get("relVi") or eg.get("relationVi", ""),
+                        }
+                        for eg in gcopy.get("edges", [])
+                    ]
+                    ng_list.append(gcopy)
+        elif isinstance(ext_ng, list):
+            ng_list = ext_ng
+        if len(ng_list) == 2:
+            novel_graphs_2 = merge_positional_enrich(novel_graphs_2, ng_list)
+
+    POEM_SUBJECT_TAG_MAP = {
+        "wang_wei_lu_chai": "assets/images/paintings/12_kuanglu_tu.jpg",
+        "west_lake": "assets/images/provinces/zhejiang-hangzhou-westlake.jpg",
+        "du_fu_oriole_willow": "assets/images/paintings/23_rui_he_tu.jpg",
+        "lushan_waterfall": "assets/images/paintings/36_lushan_gao.jpg",
+        "fuchun_mountains": "assets/images/paintings/32_fuchun_shanju.jpg",
+        "ni_zan_rongxi_studio": "assets/images/paintings/34_liujunzi_tu.jpg",
+        "shen_zhou_lofty_mount_lu": "assets/images/paintings/70_huangshan_tu_meiqing.jpg",
+        "shitao_landscape_ink": "assets/images/paintings/04_youchun_tu.jpg",
+        "river_snow_ma_yuan": "assets/images/paintings/59_hanjiang_dudiao_tu.jpg",
+        "li_qingzhao_chrysanthemum": "assets/images/paintings/48_zhushi_tu.jpg",
+        "tang_yin_autumn_fan": "assets/images/paintings/10_zhanhua_shinv_tu.jpg",
+    }
     if ext.get("poemPaintings12"):
         poem_12 = merge_unique_by_key(poem_12, ext["poemPaintings12"], "id")[:12]
+    for p in poem_12:
+        tag = p.get("paintingSubjectTag", "")
+        p["image"] = ensure_verified_img(POEM_SUBJECT_TAG_MAP.get(tag) or p.get("image") or "assets/images/paintings/12_kuanglu_tu.jpg")
+        p["title"] = f"{p.get('titleZh', '')} · {p.get('titleVi', '')}".strip(" ·")
+        p["authorVi"] = p.get("authorVi") or p.get("poet", "")
+        p["translateVi"] = p.get("poemVi") or p.get("translateVi", "")
+        p["pingZeNote"] = p.get("translateEn") or p.get("pingZePattern") or p.get("pingZeNote", "")
+
     if ext.get("wenyanTokens16"):
-        wenyan_16 = merge_unique_by_key(wenyan_16, ext["wenyanTokens16"], "id")[:16]
+        wenyan_16 = merge_positional_enrich(wenyan_16, ext["wenyanTokens16"])
+    for w in wenyan_16:
+        w["classicalExample"] = w.get("classicalExampleZh") or w.get("classicalExample", "")
+        w["modernMandarinEq"] = w.get("vernacularHskEquivalentZh") or w.get("modernMandarinEq", "")
+
     if ext.get("hskPassages20"):
         hsk_20 = merge_unique_by_key(hsk_20, ext["hskPassages20"], "id")[:20]
+
     if ext.get("hskEssays16"):
         essays_16 = merge_unique_by_key(essays_16, ext["hskEssays16"], "id")[:16]
+    for ef in essays_16:
+        ef["themeVi"] = ef.get("topicVi") or ef.get("themeVi", "")
+        ef["themeEn"] = ef.get("topicEn") or ef.get("themeEn", "")
+        ef["structureZh"] = ef.get("topicZh") or ef.get("structureZh", "")
+        blk = ef.get("blocks") or {}
+        if isinstance(blk, dict) and blk.get("topic"):
+            ef["viNote"] = (
+                f"{blk.get('topic', {}).get('vi', '')} — "
+                f"{blk.get('evidence', {}).get('vi', '')}"
+            ).strip(" —")
+
     if ext.get("tangVietPoems6"):
         tang_viet_9 = merge_unique_by_key(tang_viet_9, ext["tangVietPoems6"], "id")[:9]
 

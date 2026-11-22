@@ -8318,7 +8318,7 @@
       <!-- Deep Module A: China's AI Revolution & Semiconductors 2026 -->
       <div class="card mb-2" style="border-color:var(--border-gold);">
         <div class="card-header-row">
-          <span class="badge badge-red">COMPENDIUM #5 • 71-PAGE MASTER STUDY (OCT 2026)</span>
+          <span class="badge badge-red">${isEnglishUi() ? "TECHNOLOGY MONOGRAPH · 2026" : "CHUYÊN KHẢO CÔNG NGHỆ · 2026"}</span>
           <span class="card-title-zh">中国人工智能与半导体革命</span>
         </div>
         <h3 class="card-title" style="font-size:1.45rem;">Cách mạng AI &amp; Bán dẫn Trung Quốc 2026: DeepSeek-R1/V3, Qwen 2.5, Huawei Ascend 910C &amp; SMIC 7nm</h3>
@@ -8328,10 +8328,10 @@
               <table class="academic-table">
                 <thead>
                   <tr>
-                    <th>Mô hình / Nhà phát triển</th>
-                    <th>Kiến trúc &amp; Ngữ cảnh</th>
-                    <th>Điểm Benchmark</th>
-                    <th>Giá API &amp; Giấy phép</th>
+                    <th>${isEnglishUi() ? "Model / Lab" : "Mô hình / Nhà phát triển"}</th>
+                    <th>${isEnglishUi() ? "Architecture &amp; Context" : "Kiến trúc &amp; Ngữ cảnh"}</th>
+                    <th>${isEnglishUi() ? "Benchmark Score" : "Chỉ số đối chiếu"}</th>
+                    <th>${isEnglishUi() ? "API Price &amp; License" : "Giá API &amp; Giấy phép"}</th>
                   </tr>
                 </thead>
                 <tbody>

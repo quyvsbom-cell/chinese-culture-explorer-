@@ -1620,99 +1620,99 @@
     "gi-eu-01": {
       "gbStandardCode": "GB/T 18650 (Trà Long Tỉnh Tây Hồ)",
       "terroirAndCraftVi": "Thu hái búp non 1 tôm 1–2 lá vùng lõi Ngũ Đại Danh Khu quanh Tây Hồ, sao chảo gang phẳng dẹt nhiệt độ chuẩn để giữ sắc xanh và hương đậu rang.",
-      "terroirAndCraftEn": "Protected geographical terroir governed by Chinese national standard GB/T 18650 (Trà Long Tỉnh Tây Hồ) and bilateral EU–China GI traceability rules.",
+      "terroirAndCraftEn": "Hand-plucked one-bud-one-leaf shoots from West Lake's core Five Mountain sub-zones, flattened in heated iron pans for clean aroma and chestnut sweetness. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "So sánh với trà Shan Tuyết Tà Xùa/Suối Giàng của Việt Nam: kết hợp chứng nhận GI bảo vệ vùng lõi để chống hàng pha trộn trên Amazon/EU.",
-      "vnEuComparisonEn": "Benchmarks directly alongside Vietnam's 39 EU-protected GIs under EVFTA (e.g., Phu Quoc Fish Sauce, Luc Ngan Lychee) for origin protection and export value capture."
+      "vnEuComparisonEn": "Compare with northern Vietnam's ancient Shan Tuyet teas in Ta Xua and Suoi Giang: binding GI zoning to harvest rules prevents adulteration in EU retail."
     },
     "gi-eu-02": {
       "gbStandardCode": "GB/T 3532 & Quy chuẩn Sứ Cảnh Đức",
       "terroirAndCraftVi": "Nung bằng đất cao lanh tinh khiết vùng Dao Lý – Cảnh Đức Trấn ở nhiệt độ >1.300°C tạo độ thấu quang trắng trong như ngọc.",
-      "terroirAndCraftEn": "Protected geographical terroir governed by Chinese national standard GB/T 3532 & Quy chuẩn Sứ Cảnh Đức and bilateral EU–China GI traceability rules.",
+      "terroirAndCraftEn": "Fired above 1,300C from pure Gaoling kaolin clay harvested around Yaoli and Jingdezhen, producing clear bell-like resonance and jade-like translucency. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Tương đồng với Gốm Chu Đậu (Hải Dương) và Bát Tràng (Hà Nội) trong việc đăng ký nhãn hiệu tập thể xuất khẩu sang thị trường Đức/Pháp.",
-      "vnEuComparisonEn": "Benchmarks directly alongside Vietnam's 39 EU-protected GIs under EVFTA (e.g., Phu Quoc Fish Sauce, Luc Ngan Lychee) for origin protection and export value capture."
+      "vnEuComparisonEn": "Parallels Chu Dau (Hai Duong) and Bat Trang (Hanoi) porcelain lineages in registering collective geographic hallmarks across France and Germany."
     },
     "gi-eu-03": {
       "gbStandardCode": "GB/T 15551 (Lụa tơ tằm Hàng Châu)",
       "terroirAndCraftVi": "Dệt từ sợi tơ dâu tằm đồng bằng Thái Hồ mềm mịn, thoáng khí và nhuộm sắc thực vật truyền thống Hàng Châu – Tô Châu.",
-      "terroirAndCraftEn": "Protected geographical terroir governed by Chinese national standard GB/T 15551 (Lụa tơ tằm Hàng Châu) and bilateral EU–China GI traceability rules.",
+      "terroirAndCraftEn": "Woven from Taihu Plain white mulberry filaments and botanical dye baths perfected in Hangzhou and Suzhou silk ateliers. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Bài học trực tiếp cho Lụa Vạn Phúc (Hà Đông) và Tơ lụa Bảo Lộc trong chuyển đổi sang lụa hữu cơ đạt chứng chỉ OEKO-TEX tại Châu Âu.",
-      "vnEuComparisonEn": "Benchmarks directly alongside Vietnam's 39 EU-protected GIs under EVFTA (e.g., Phu Quoc Fish Sauce, Luc Ngan Lychee) for origin protection and export value capture."
+      "vnEuComparisonEn": "Offers a direct roadmap for Van Phuc (Hanoi) and Bao Loc silk workshops transitioning to traceable OEKO-TEX certification for European buyers."
     },
     "gi-eu-04": {
       "gbStandardCode": "GB/T 17946 (Hoàng tửu Thiệu Hưng)",
       "terroirAndCraftVi": "Lên men tự nhiên gạo nếp đặc biệt và mạch khúc bằng nước khoáng tinh khiết hồ Giám Hồ trong chum sành niêm đất vàng.",
-      "terroirAndCraftEn": "Protected geographical terroir governed by Chinese national standard GB/T 17946 (Hoàng tửu Thiệu Hưng) and bilateral EU–China GI traceability rules.",
+      "terroirAndCraftEn": "Slow clay-jar fermentation blending glutinous rice, wheat starter qu, and mineral-rich Jianhu Lake spring water sealed under yellow loam. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Chứng minh đồ uống lên men truyền thống châu Á hoàn toàn có thể đứng ngang hàng rượu vang/Champagne trong khung bảo hộ GI tại Brussels.",
-      "vnEuComparisonEn": "Benchmarks directly alongside Vietnam's 39 EU-protected GIs under EVFTA (e.g., Phu Quoc Fish Sauce, Luc Ngan Lychee) for origin protection and export value capture."
+      "vnEuComparisonEn": "Demonstrates how traditional Asian fermented beverages attain legal GI parity alongside French Champagne in Brussels filings."
     },
     "gi-eu-05": {
       "gbStandardCode": "GB/T 19598 (Trà Thiết Quan Âm An Khê)",
       "terroirAndCraftVi": "Trà Ô Long bán lên men chế biến qua công đoạn Sái thanh – Dao thanh tạo nốt hương hoa lan tự nhiên và hậu vị 'Âm vận'.",
-      "terroirAndCraftEn": "Protected geographical terroir governed by Chinese national standard GB/T 19598 (Trà Thiết Quan Âm An Khê) and bilateral EU–China GI traceability rules.",
+      "terroirAndCraftEn": "Semi-oxidized Anxi Oolong shaped through solar withering and rhythmic bamboo tossing to unlock natural orchid fragrance ('Yin Rhyme'). Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Gợi ý quy chuẩn hóa quy trình lên men bán phần cho vùng Ô Long Lâm Đồng/Mộc Châu để đàm phán hợp đồng OEM với các hãng trà Đức–Anh.",
-      "vnEuComparisonEn": "Benchmarks directly alongside Vietnam's 39 EU-protected GIs under EVFTA (e.g., Phu Quoc Fish Sauce, Luc Ngan Lychee) for origin protection and export value capture."
+      "vnEuComparisonEn": "Guides highland Oolong cooperatives in Lam Dong and Moc Chau on codifying oxidation logs for German and UK specialty tea contracts."
     },
     "gi-eu-06": {
       "gbStandardCode": "GB/T 22111 (Trà Phổ Nhĩ Vân Nam)",
       "terroirAndCraftVi": "Làm từ giống chè lá to Vân Nam phơi nắng (Sái thanh), ép bánh hoặc ủ chín (Thục trà) lưu trữ vi sinh biến đổi hương vị theo năm.",
-      "terroirAndCraftEn": "Protected geographical terroir governed by Chinese national standard GB/T 22111 (Trà Phổ Nhĩ Vân Nam) and bilateral EU–China GI traceability rules.",
+      "terroirAndCraftEn": "Sun-dried Yunnan big-leaf Camellia sinensis compressed into cakes or post-fermented into dark Ripe Puerh with age-evolving microflora. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Đồng quy trình tương cận với trà cổ thụ bánh ép vùng Hà Giang – Lai Châu của Việt Nam trong phân khúc sưu tầm thưởng trà cao cấp.",
-      "vnEuComparisonEn": "Benchmarks directly alongside Vietnam's 39 EU-protected GIs under EVFTA (e.g., Phu Quoc Fish Sauce, Luc Ngan Lychee) for origin protection and export value capture."
+      "vnEuComparisonEn": "Mirrors compressed ancient-tree cake production in Ha Giang and Lai Chau targeting global specialty tea collectors."
     },
     "gi-eu-07": {
       "gbStandardCode": "GB/T 20560 (Tương đậu tằm Bì Huyện)",
       "terroirAndCraftVi": "Lên men tự nhiên hỗn hợp ớt đỏ Nhị Kinh Điều, đậu tằm và muối giếng suốt hàng trăm ngày 'phơi nắng ngày, ủ sương đêm'.",
-      "terroirAndCraftEn": "Protected geographical terroir governed by Chinese national standard GB/T 20560 (Tương đậu tằm Bì Huyện) and bilateral EU–China GI traceability rules.",
+      "terroirAndCraftEn": "Erjingtiao chilies, broad beans, and well salt slow-fermented in open earthenware vats for months under daytime sun and night dew. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "So sánh với quy chế bảo hộ Nước mắm Phú Quốc (Việt Nam PDO đầu tiên tại EU): bảo vệ tên vùng sản xuất gia vị bản địa trước hàng nhái công nghiệp.",
-      "vnEuComparisonEn": "Benchmarks directly alongside Vietnam's 39 EU-protected GIs under EVFTA (e.g., Phu Quoc Fish Sauce, Luc Ngan Lychee) for origin protection and export value capture."
+      "vnEuComparisonEn": "Direct counterpart to Vietnam's Phu Quoc Fish Sauce (first ASEAN PDO in the EU), guarding artisanal condiment identity against bulk imitation."
     },
     "gi-eu-08": {
       "gbStandardCode": "GB/T 18623 (Giấm thơm Trấn Giang)",
       "terroirAndCraftVi": "Lên men thể rắn từng tầng từ gạo nếp, cám lúa mì và trấu qua công đoạn 'lăn muối phơi chum' suốt 1 năm.",
-      "terroirAndCraftEn": "Protected geographical terroir governed by Chinese national standard GB/T 18623 (Giấm thơm Trấn Giang) and bilateral EU–China GI traceability rules.",
+      "terroirAndCraftEn": "Solid-state tiered fermentation of glutinous rice, wheat bran, and husks rolled in salt-brined vats over a full year. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Tương đồng kỹ nghệ lên men truyền thống trong thùng gỗ bời lời/cẩm ở các cơ sở gia vị cổ truyền Việt Nam.",
-      "vnEuComparisonEn": "Benchmarks directly alongside Vietnam's 39 EU-protected GIs under EVFTA (e.g., Phu Quoc Fish Sauce, Luc Ngan Lychee) for origin protection and export value capture."
+      "vnEuComparisonEn": "Shares bacterial-crust vinegar and seasoning aging discipline with heritage Vietnamese barrel-aged condiment houses."
     },
     "gi-eu-09": {
       "gbStandardCode": "GB/T 18739 (Giấy Tuyên Chỉ Kính Huyện)",
       "terroirAndCraftVi": "Pha trộn vỏ cây Thanh Đàn mọc trên đá vôi Kính Huyện với rơm lúa gạo vùng núi ẩm để tạo độ thấm mực 3 chiều không phai.",
-      "terroirAndCraftEn": "Protected geographical terroir governed by Chinese national standard GB/T 18739 (Giấy Tuyên Chỉ Kính Huyện) and bilateral EU–China GI traceability rules.",
+      "terroirAndCraftEn": "Blends cliff-grown Qingtan wingceltis bark from Jingxian limestone slopes with wet mountain rice straw for ink diffusion lasting centuries. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Tham khảo bảo tồn giấy Dó truyền thống Đông Hồ/Yên Thái bằng quy trình định danh nguyên liệu địa phương.",
-      "vnEuComparisonEn": "Benchmarks directly alongside Vietnam's 39 EU-protected GIs under EVFTA (e.g., Phu Quoc Fish Sauce, Luc Ngan Lychee) for origin protection and export value capture."
+      "vnEuComparisonEn": "Informs archival conservation of Dong Ho and Yen Thai Do bark paper through verifiable local raw-fiber sourcing."
     },
     "gi-eu-10": {
       "gbStandardCode": "GB/T 18356 (Rượu Mao Đài Quý Châu)",
       "terroirAndCraftVi": "Sản xuất duy nhất tại lưu vực sông Xích Thủy có vi sinh vật khí hậu lòng chảo đặc thù không thể sao chép ở địa phương khác.",
-      "terroirAndCraftEn": "Protected geographical terroir governed by Chinese national standard GB/T 18356 (Rượu Mao Đài Quý Châu) and bilateral EU–China GI traceability rules.",
+      "terroirAndCraftEn": "Crafted solely in the Chishui River gorge basin where canyon heat, loess clay pits, and native microflora remain biologically irreplicable. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Bài học kinh điển về Terroir không thể di dời giúp bảo toàn biên lợi nhuận gộp >90% và giá trị thương hiệu quốc gia.",
-      "vnEuComparisonEn": "Benchmarks directly alongside Vietnam's 39 EU-protected GIs under EVFTA (e.g., Phu Quoc Fish Sauce, Luc Ngan Lychee) for origin protection and export value capture."
+      "vnEuComparisonEn": "Classic benchmark of non-relocatable terroir sustaining high gross margins and state-level GI equity."
     },
     "gi-eu-11": {
       "gbStandardCode": "GB/T 18745 (Trà Nham Vũ Di)",
       "terroirAndCraftVi": "Trồng trong khe đá phong hóa núi Vũ Di tạo dư vị khoáng chất 'Nham cốt hoa hương' đặc trưng cho Đại Hồng Bào và Nhục Quế.",
-      "terroirAndCraftEn": "Protected geographical terroir governed by Chinese national standard GB/T 18745 (Trà Nham Vũ Di) and bilateral EU–China GI traceability rules.",
+      "terroirAndCraftEn": "Tea bushes rooted in weathered rock fissures of Mount Wuyi, yielding the unmistakable mineral floral finish ('Yan Bone Flower Aroma'). Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Gợi mở cho nông sản đặc sản vùng núi đá vôi Đồng Văn / Cao Bằng xây dựng thương hiệu gắn liền địa chất UNESCO Công viên Địa chất.",
-      "vnEuComparisonEn": "Benchmarks directly alongside Vietnam's 39 EU-protected GIs under EVFTA (e.g., Phu Quoc Fish Sauce, Luc Ngan Lychee) for origin protection and export value capture."
+      "vnEuComparisonEn": "Highlights branding potential for rocky highland specialties from Dong Van and Cao Bang tied to UNESCO Geopark geology."
     },
     "gi-eu-12": {
       "gbStandardCode": "GB/T 19557 / Quy chuẩn Táo Yên Đài",
       "terroirAndCraftVi": "Trồng tại bán đảo Giao Đông hưởng biên độ nhiệt ngày–đêm lớn giáp Hoàng Hải giúp táo giòn ngọt, truy xuất vườn đạt chuẩn xuất khẩu EU.",
-      "terroirAndCraftEn": "Protected geographical terroir governed by Chinese national standard GB/T 19557 / Quy chuẩn Táo Yên Đài and bilateral EU–China GI traceability rules.",
+      "terroirAndCraftEn": "Orchard apples grown on the Jiaodong Peninsula under crisp Yellow Sea day-night swings, tracked per plot for EU residue compliance. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Đối chiếu trực tiếp Vải thiều Lục Ngạn, Thanh long Bình Thuận và Xoài Cao Lãnh trong kiểm soát MRL dư lượng xuất khẩu sang EU.",
-      "vnEuComparisonEn": "Benchmarks directly alongside Vietnam's 39 EU-protected GIs under EVFTA (e.g., Phu Quoc Fish Sauce, Luc Ngan Lychee) for origin protection and export value capture."
+      "vnEuComparisonEn": "Useful reference for Luc Ngan lychee, Binh Thuan dragon fruit, and Cao Lanh mango orchards tightening MRL export monitoring."
     }
   },
   "lessonEnrich": {
     "v5-m1-l1": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《禹贡》 / Địa hình Bậc thang — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 《禹贡》 / Địa hình Bậc thang — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: Book of Documents (Tribute of Yu) & Three-Step East Asian Topography — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "禹导河，积石至于龙门。",
       "primaryTextExcerptVi": "Vũ dẫn Hoàng Hà từ Tích Thạch tới Long Môn (《Thượng Thư · Vũ Cống》).",
       "primaryTextExcerptEn": "Yu channeled the Yellow River from Jishi Gorge down through Longmen (Book of Documents: Tribute of Yu).",
       "visualDiagramSpecVi": "Hình dung mặt cắt Tây–Đông 3 bậc thang: Cao nguyên Thanh Tạng (trên 4.000m) → Hoàng Thổ/Tứ Xuyên (1.000m) → Đồng bằng Hoa Bắc (<500m) quyết định dòng chảy Hoàng Hà–Trường Giang.",
       "visualDiagramSpecEn": "Mental Model: 3-tier West-to-East elevation staircase driving Yellow/Yangtze hydrology, Dujiangyan water-splitting ratios, and the Grand Canal spine.",
       "vietnamComparisonVi": "Đồng bằng châu thổ sông Hồng & sông Cửu Long cùng quy hoạch thủy lợi đồng bằng Việt Nam.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Parallel deltaic hydrology and dyke engineering across Vietnam's Red River and Mekong basins.",
       "keyTermsTrilingual": [
         {
           "zh": "三级阶梯",
@@ -1744,14 +1744,14 @@
     },
     "v5-m1-l2": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《禹贡》 / Địa hình Bậc thang — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 《禹贡》 / Địa hình Bậc thang — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: Book of Documents (Tribute of Yu) & Three-Step East Asian Topography — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "禹导河，积石至于龙门。",
       "primaryTextExcerptVi": "Vũ dẫn Hoàng Hà từ Tích Thạch tới Long Môn (《Thượng Thư · Vũ Cống》).",
       "primaryTextExcerptEn": "Yu channeled the Yellow River from Jishi Gorge down through Longmen (Book of Documents: Tribute of Yu).",
       "visualDiagramSpecVi": "Hình dung mặt cắt Tây–Đông 3 bậc thang: Cao nguyên Thanh Tạng (trên 4.000m) → Hoàng Thổ/Tứ Xuyên (1.000m) → Đồng bằng Hoa Bắc (<500m) quyết định dòng chảy Hoàng Hà–Trường Giang.",
       "visualDiagramSpecEn": "Mental Model: 3-tier West-to-East elevation staircase driving Yellow/Yangtze hydrology, Dujiangyan water-splitting ratios, and the Grand Canal spine.",
       "vietnamComparisonVi": "Đồng bằng châu thổ sông Hồng & sông Cửu Long cùng quy hoạch thủy lợi đồng bằng Việt Nam.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Parallel deltaic hydrology and dyke engineering across Vietnam's Red River and Mekong basins.",
       "keyTermsTrilingual": [
         {
           "zh": "三级阶梯",
@@ -1783,14 +1783,14 @@
     },
     "v5-m1-l3": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《禹贡》 / Địa hình Bậc thang — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 《禹贡》 / Địa hình Bậc thang — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: Book of Documents (Tribute of Yu) & Three-Step East Asian Topography — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "禹导河，积石至于龙门。",
       "primaryTextExcerptVi": "Vũ dẫn Hoàng Hà từ Tích Thạch tới Long Môn (《Thượng Thư · Vũ Cống》).",
       "primaryTextExcerptEn": "Yu channeled the Yellow River from Jishi Gorge down through Longmen (Book of Documents: Tribute of Yu).",
       "visualDiagramSpecVi": "Hình dung mặt cắt Tây–Đông 3 bậc thang: Cao nguyên Thanh Tạng (trên 4.000m) → Hoàng Thổ/Tứ Xuyên (1.000m) → Đồng bằng Hoa Bắc (<500m) quyết định dòng chảy Hoàng Hà–Trường Giang.",
       "visualDiagramSpecEn": "Mental Model: 3-tier West-to-East elevation staircase driving Yellow/Yangtze hydrology, Dujiangyan water-splitting ratios, and the Grand Canal spine.",
       "vietnamComparisonVi": "Đồng bằng châu thổ sông Hồng & sông Cửu Long cùng quy hoạch thủy lợi đồng bằng Việt Nam.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Parallel deltaic hydrology and dyke engineering across Vietnam's Red River and Mekong basins.",
       "keyTermsTrilingual": [
         {
           "zh": "三级阶梯",
@@ -1822,14 +1822,14 @@
     },
     "v5-m1-l4": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《禹贡》 / Địa hình Bậc thang — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 《禹贡》 / Địa hình Bậc thang — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: Book of Documents (Tribute of Yu) & Three-Step East Asian Topography — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "禹导河，积石至于龙门。",
       "primaryTextExcerptVi": "Vũ dẫn Hoàng Hà từ Tích Thạch tới Long Môn (《Thượng Thư · Vũ Cống》).",
       "primaryTextExcerptEn": "Yu channeled the Yellow River from Jishi Gorge down through Longmen (Book of Documents: Tribute of Yu).",
       "visualDiagramSpecVi": "Hình dung mặt cắt Tây–Đông 3 bậc thang: Cao nguyên Thanh Tạng (trên 4.000m) → Hoàng Thổ/Tứ Xuyên (1.000m) → Đồng bằng Hoa Bắc (<500m) quyết định dòng chảy Hoàng Hà–Trường Giang.",
       "visualDiagramSpecEn": "Mental Model: 3-tier West-to-East elevation staircase driving Yellow/Yangtze hydrology, Dujiangyan water-splitting ratios, and the Grand Canal spine.",
       "vietnamComparisonVi": "Đồng bằng châu thổ sông Hồng & sông Cửu Long cùng quy hoạch thủy lợi đồng bằng Việt Nam.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Parallel deltaic hydrology and dyke engineering across Vietnam's Red River and Mekong basins.",
       "keyTermsTrilingual": [
         {
           "zh": "三级阶梯",
@@ -1861,14 +1861,14 @@
     },
     "v5-m1-l5": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《禹贡》 / Địa hình Bậc thang — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 《禹贡》 / Địa hình Bậc thang — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: Book of Documents (Tribute of Yu) & Three-Step East Asian Topography — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "禹导河，积石至于龙门。",
       "primaryTextExcerptVi": "Vũ dẫn Hoàng Hà từ Tích Thạch tới Long Môn (《Thượng Thư · Vũ Cống》).",
       "primaryTextExcerptEn": "Yu channeled the Yellow River from Jishi Gorge down through Longmen (Book of Documents: Tribute of Yu).",
       "visualDiagramSpecVi": "Hình dung mặt cắt Tây–Đông 3 bậc thang: Cao nguyên Thanh Tạng (trên 4.000m) → Hoàng Thổ/Tứ Xuyên (1.000m) → Đồng bằng Hoa Bắc (<500m) quyết định dòng chảy Hoàng Hà–Trường Giang.",
       "visualDiagramSpecEn": "Mental Model: 3-tier West-to-East elevation staircase driving Yellow/Yangtze hydrology, Dujiangyan water-splitting ratios, and the Grand Canal spine.",
       "vietnamComparisonVi": "Đồng bằng châu thổ sông Hồng & sông Cửu Long cùng quy hoạch thủy lợi đồng bằng Việt Nam.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Parallel deltaic hydrology and dyke engineering across Vietnam's Red River and Mekong basins.",
       "keyTermsTrilingual": [
         {
           "zh": "三级阶梯",
@@ -1900,14 +1900,14 @@
     },
     "v5-m1-l6": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《禹贡》 / Địa hình Bậc thang — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 《禹贡》 / Địa hình Bậc thang — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: Book of Documents (Tribute of Yu) & Three-Step East Asian Topography — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "禹导河，积石至于龙门。",
       "primaryTextExcerptVi": "Vũ dẫn Hoàng Hà từ Tích Thạch tới Long Môn (《Thượng Thư · Vũ Cống》).",
       "primaryTextExcerptEn": "Yu channeled the Yellow River from Jishi Gorge down through Longmen (Book of Documents: Tribute of Yu).",
       "visualDiagramSpecVi": "Hình dung mặt cắt Tây–Đông 3 bậc thang: Cao nguyên Thanh Tạng (trên 4.000m) → Hoàng Thổ/Tứ Xuyên (1.000m) → Đồng bằng Hoa Bắc (<500m) quyết định dòng chảy Hoàng Hà–Trường Giang.",
       "visualDiagramSpecEn": "Mental Model: 3-tier West-to-East elevation staircase driving Yellow/Yangtze hydrology, Dujiangyan water-splitting ratios, and the Grand Canal spine.",
       "vietnamComparisonVi": "Đồng bằng châu thổ sông Hồng & sông Cửu Long cùng quy hoạch thủy lợi đồng bằng Việt Nam.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Parallel deltaic hydrology and dyke engineering across Vietnam's Red River and Mekong basins.",
       "keyTermsTrilingual": [
         {
           "zh": "三级阶梯",
@@ -1939,14 +1939,14 @@
     },
     "v5-m2-l1": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《史记》 · 《资治通鉴》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 《史记》 · 《资治通鉴》 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: Sima Qian's Shiji & Comprehensive Mirror for Aid in Government (Zizhi Tongjian) — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "究天人之际，通古今之变，成一家之言。",
       "primaryTextExcerptVi": "Khảo cứu giao thoa trời–người, thông suốt biến chuyển xưa–nay, lập nên luận thuyết một nhà (Tư Mã Thiên 《Sử Ký》).",
       "primaryTextExcerptEn": "Examine the boundary between Heaven and humanity, penetrate the transformations from past to present, and form an independent historical synthesis (Sima Qian).",
       "visualDiagramSpecVi": "Trục thời gian 14 triều đại song hành 6 Cố đô: Trường An/Lạc Dương (Hán–Đường) → Khai Phong/Hàng Châu (Tống) → Nam Kinh/Bắc Kinh (Minh–Thanh).",
       "visualDiagramSpecEn": "Mental Model: Synchronize 14 dynasties against East Asian capitals (Chang'an/Luoyang → Kaifeng/Hangzhou → Nanjing/Beijing) & parallel Vietnam dynasties.",
       "vietnamComparisonVi": "Đối chiếu song hành lịch sử tự chủ Lý – Trần – Lê – Nguyễn của Đại Việt trên trục thời gian.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Chronological synchronization with Vietnam's autonomous Ly, Tran, Le, and Nguyen dynasties.",
       "keyTermsTrilingual": [
         {
           "zh": "甲骨文",
@@ -1978,14 +1978,14 @@
     },
     "v5-m2-l2": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《史记》 · 《资治通鉴》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 《史记》 · 《资治通鉴》 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: Sima Qian's Shiji & Comprehensive Mirror for Aid in Government (Zizhi Tongjian) — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "究天人之际，通古今之变，成一家之言。",
       "primaryTextExcerptVi": "Khảo cứu giao thoa trời–người, thông suốt biến chuyển xưa–nay, lập nên luận thuyết một nhà (Tư Mã Thiên 《Sử Ký》).",
       "primaryTextExcerptEn": "Examine the boundary between Heaven and humanity, penetrate the transformations from past to present, and form an independent historical synthesis (Sima Qian).",
       "visualDiagramSpecVi": "Trục thời gian 14 triều đại song hành 6 Cố đô: Trường An/Lạc Dương (Hán–Đường) → Khai Phong/Hàng Châu (Tống) → Nam Kinh/Bắc Kinh (Minh–Thanh).",
       "visualDiagramSpecEn": "Mental Model: Synchronize 14 dynasties against East Asian capitals (Chang'an/Luoyang → Kaifeng/Hangzhou → Nanjing/Beijing) & parallel Vietnam dynasties.",
       "vietnamComparisonVi": "Đối chiếu song hành lịch sử tự chủ Lý – Trần – Lê – Nguyễn của Đại Việt trên trục thời gian.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Chronological synchronization with Vietnam's autonomous Ly, Tran, Le, and Nguyen dynasties.",
       "keyTermsTrilingual": [
         {
           "zh": "甲骨文",
@@ -2017,14 +2017,14 @@
     },
     "v5-m2-l3": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《史记》 · 《资治通鉴》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 《史记》 · 《资治通鉴》 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: Sima Qian's Shiji & Comprehensive Mirror for Aid in Government (Zizhi Tongjian) — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "究天人之际，通古今之变，成一家之言。",
       "primaryTextExcerptVi": "Khảo cứu giao thoa trời–người, thông suốt biến chuyển xưa–nay, lập nên luận thuyết một nhà (Tư Mã Thiên 《Sử Ký》).",
       "primaryTextExcerptEn": "Examine the boundary between Heaven and humanity, penetrate the transformations from past to present, and form an independent historical synthesis (Sima Qian).",
       "visualDiagramSpecVi": "Trục thời gian 14 triều đại song hành 6 Cố đô: Trường An/Lạc Dương (Hán–Đường) → Khai Phong/Hàng Châu (Tống) → Nam Kinh/Bắc Kinh (Minh–Thanh).",
       "visualDiagramSpecEn": "Mental Model: Synchronize 14 dynasties against East Asian capitals (Chang'an/Luoyang → Kaifeng/Hangzhou → Nanjing/Beijing) & parallel Vietnam dynasties.",
       "vietnamComparisonVi": "Đối chiếu song hành lịch sử tự chủ Lý – Trần – Lê – Nguyễn của Đại Việt trên trục thời gian.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Chronological synchronization with Vietnam's autonomous Ly, Tran, Le, and Nguyen dynasties.",
       "keyTermsTrilingual": [
         {
           "zh": "甲骨文",
@@ -2056,14 +2056,14 @@
     },
     "v5-m2-l4": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《史记》 · 《资治通鉴》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 《史记》 · 《资治通鉴》 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: Sima Qian's Shiji & Comprehensive Mirror for Aid in Government (Zizhi Tongjian) — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "究天人之际，通古今之变，成一家之言。",
       "primaryTextExcerptVi": "Khảo cứu giao thoa trời–người, thông suốt biến chuyển xưa–nay, lập nên luận thuyết một nhà (Tư Mã Thiên 《Sử Ký》).",
       "primaryTextExcerptEn": "Examine the boundary between Heaven and humanity, penetrate the transformations from past to present, and form an independent historical synthesis (Sima Qian).",
       "visualDiagramSpecVi": "Trục thời gian 14 triều đại song hành 6 Cố đô: Trường An/Lạc Dương (Hán–Đường) → Khai Phong/Hàng Châu (Tống) → Nam Kinh/Bắc Kinh (Minh–Thanh).",
       "visualDiagramSpecEn": "Mental Model: Synchronize 14 dynasties against East Asian capitals (Chang'an/Luoyang → Kaifeng/Hangzhou → Nanjing/Beijing) & parallel Vietnam dynasties.",
       "vietnamComparisonVi": "Đối chiếu song hành lịch sử tự chủ Lý – Trần – Lê – Nguyễn của Đại Việt trên trục thời gian.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Chronological synchronization with Vietnam's autonomous Ly, Tran, Le, and Nguyen dynasties.",
       "keyTermsTrilingual": [
         {
           "zh": "甲骨文",
@@ -2095,14 +2095,14 @@
     },
     "v5-m2-l5": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《史记》 · 《资治通鉴》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 《史记》 · 《资治通鉴》 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: Sima Qian's Shiji & Comprehensive Mirror for Aid in Government (Zizhi Tongjian) — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "究天人之际，通古今之变，成一家之言。",
       "primaryTextExcerptVi": "Khảo cứu giao thoa trời–người, thông suốt biến chuyển xưa–nay, lập nên luận thuyết một nhà (Tư Mã Thiên 《Sử Ký》).",
       "primaryTextExcerptEn": "Examine the boundary between Heaven and humanity, penetrate the transformations from past to present, and form an independent historical synthesis (Sima Qian).",
       "visualDiagramSpecVi": "Trục thời gian 14 triều đại song hành 6 Cố đô: Trường An/Lạc Dương (Hán–Đường) → Khai Phong/Hàng Châu (Tống) → Nam Kinh/Bắc Kinh (Minh–Thanh).",
       "visualDiagramSpecEn": "Mental Model: Synchronize 14 dynasties against East Asian capitals (Chang'an/Luoyang → Kaifeng/Hangzhou → Nanjing/Beijing) & parallel Vietnam dynasties.",
       "vietnamComparisonVi": "Đối chiếu song hành lịch sử tự chủ Lý – Trần – Lê – Nguyễn của Đại Việt trên trục thời gian.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Chronological synchronization with Vietnam's autonomous Ly, Tran, Le, and Nguyen dynasties.",
       "keyTermsTrilingual": [
         {
           "zh": "甲骨文",
@@ -2134,14 +2134,14 @@
     },
     "v5-m2-l6": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《史记》 · 《资治通鉴》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 《史记》 · 《资治通鉴》 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: Sima Qian's Shiji & Comprehensive Mirror for Aid in Government (Zizhi Tongjian) — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "究天人之际，通古今之变，成一家之言。",
       "primaryTextExcerptVi": "Khảo cứu giao thoa trời–người, thông suốt biến chuyển xưa–nay, lập nên luận thuyết một nhà (Tư Mã Thiên 《Sử Ký》).",
       "primaryTextExcerptEn": "Examine the boundary between Heaven and humanity, penetrate the transformations from past to present, and form an independent historical synthesis (Sima Qian).",
       "visualDiagramSpecVi": "Trục thời gian 14 triều đại song hành 6 Cố đô: Trường An/Lạc Dương (Hán–Đường) → Khai Phong/Hàng Châu (Tống) → Nam Kinh/Bắc Kinh (Minh–Thanh).",
       "visualDiagramSpecEn": "Mental Model: Synchronize 14 dynasties against East Asian capitals (Chang'an/Luoyang → Kaifeng/Hangzhou → Nanjing/Beijing) & parallel Vietnam dynasties.",
       "vietnamComparisonVi": "Đối chiếu song hành lịch sử tự chủ Lý – Trần – Lê – Nguyễn của Đại Việt trên trục thời gian.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Chronological synchronization with Vietnam's autonomous Ly, Tran, Le, and Nguyen dynasties.",
       "keyTermsTrilingual": [
         {
           "zh": "甲骨文",
@@ -2173,14 +2173,14 @@
     },
     "v5-m3-l1": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《论语》 · 《道德经》 · 《营造法式》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 《论语》 · 《道德经》 · 《营造法式》 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: The Analects, Daodejing & Yingzao Fashi Architectural Treatise — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "天地与我并生，而万物与我为一。",
       "primaryTextExcerptVi": "Trời đất cùng ta đồng sinh, muôn vật cùng ta hợp một (《Trang Tử · Tề Vật Luận》) & trục Thiên Đàn – Cấm Thành.",
       "primaryTextExcerptEn": "Heaven, earth, and I come into being together; the ten thousand things and I are one (Zhuangzi) paired with Tiantan's celestial geometry.",
       "visualDiagramSpecVi": "Soi sơ đồ: Đấu Củng (ma sát 3D chống động đất) + Bức tường Nho–Đạo–Pháp + Mái tròn Thiên Đàn (Dương) đặt trên nền vuông (Âm).",
       "visualDiagramSpecEn": "Mental Model: Dougong friction-damping joinery under radial Heaven–Earth cosmology (Round Tiantan roof = Heaven; Square altar = Earth).",
       "vietnamComparisonVi": "Kế thừa Đấu Củng & quy hoạch trục tại Ngọ Môn – Điện Thái Hòa Kinh thành Huế.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Adaptation of interlocking timber bracketry and axial courtyards at Hue's Meridian Gate and Hall of Supreme Harmony.",
       "keyTermsTrilingual": [
         {
           "zh": "和而不同",
@@ -2212,14 +2212,14 @@
     },
     "v5-m3-l2": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《论语》 · 《道德经》 · 《营造法式》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 《论语》 · 《道德经》 · 《营造法式》 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: The Analects, Daodejing & Yingzao Fashi Architectural Treatise — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "天地与我并生，而万物与我为一。",
       "primaryTextExcerptVi": "Trời đất cùng ta đồng sinh, muôn vật cùng ta hợp một (《Trang Tử · Tề Vật Luận》) & trục Thiên Đàn – Cấm Thành.",
       "primaryTextExcerptEn": "Heaven, earth, and I come into being together; the ten thousand things and I are one (Zhuangzi) paired with Tiantan's celestial geometry.",
       "visualDiagramSpecVi": "Soi sơ đồ: Đấu Củng (ma sát 3D chống động đất) + Bức tường Nho–Đạo–Pháp + Mái tròn Thiên Đàn (Dương) đặt trên nền vuông (Âm).",
       "visualDiagramSpecEn": "Mental Model: Dougong friction-damping joinery under radial Heaven–Earth cosmology (Round Tiantan roof = Heaven; Square altar = Earth).",
       "vietnamComparisonVi": "Kế thừa Đấu Củng & quy hoạch trục tại Ngọ Môn – Điện Thái Hòa Kinh thành Huế.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Adaptation of interlocking timber bracketry and axial courtyards at Hue's Meridian Gate and Hall of Supreme Harmony.",
       "keyTermsTrilingual": [
         {
           "zh": "和而不同",
@@ -2251,14 +2251,14 @@
     },
     "v5-m3-l3": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《论语》 · 《道德经》 · 《营造法式》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 《论语》 · 《道德经》 · 《营造法式》 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: The Analects, Daodejing & Yingzao Fashi Architectural Treatise — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "天地与我并生，而万物与我为一。",
       "primaryTextExcerptVi": "Trời đất cùng ta đồng sinh, muôn vật cùng ta hợp một (《Trang Tử · Tề Vật Luận》) & trục Thiên Đàn – Cấm Thành.",
       "primaryTextExcerptEn": "Heaven, earth, and I come into being together; the ten thousand things and I are one (Zhuangzi) paired with Tiantan's celestial geometry.",
       "visualDiagramSpecVi": "Soi sơ đồ: Đấu Củng (ma sát 3D chống động đất) + Bức tường Nho–Đạo–Pháp + Mái tròn Thiên Đàn (Dương) đặt trên nền vuông (Âm).",
       "visualDiagramSpecEn": "Mental Model: Dougong friction-damping joinery under radial Heaven–Earth cosmology (Round Tiantan roof = Heaven; Square altar = Earth).",
       "vietnamComparisonVi": "Kế thừa Đấu Củng & quy hoạch trục tại Ngọ Môn – Điện Thái Hòa Kinh thành Huế.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Adaptation of interlocking timber bracketry and axial courtyards at Hue's Meridian Gate and Hall of Supreme Harmony.",
       "keyTermsTrilingual": [
         {
           "zh": "和而不同",
@@ -2290,14 +2290,14 @@
     },
     "v5-m3-l4": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《论语》 · 《道德经》 · 《营造法式》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 《论语》 · 《道德经》 · 《营造法式》 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: The Analects, Daodejing & Yingzao Fashi Architectural Treatise — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "天地与我并生，而万物与我为一。",
       "primaryTextExcerptVi": "Trời đất cùng ta đồng sinh, muôn vật cùng ta hợp một (《Trang Tử · Tề Vật Luận》) & trục Thiên Đàn – Cấm Thành.",
       "primaryTextExcerptEn": "Heaven, earth, and I come into being together; the ten thousand things and I are one (Zhuangzi) paired with Tiantan's celestial geometry.",
       "visualDiagramSpecVi": "Soi sơ đồ: Đấu Củng (ma sát 3D chống động đất) + Bức tường Nho–Đạo–Pháp + Mái tròn Thiên Đàn (Dương) đặt trên nền vuông (Âm).",
       "visualDiagramSpecEn": "Mental Model: Dougong friction-damping joinery under radial Heaven–Earth cosmology (Round Tiantan roof = Heaven; Square altar = Earth).",
       "vietnamComparisonVi": "Kế thừa Đấu Củng & quy hoạch trục tại Ngọ Môn – Điện Thái Hòa Kinh thành Huế.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Adaptation of interlocking timber bracketry and axial courtyards at Hue's Meridian Gate and Hall of Supreme Harmony.",
       "keyTermsTrilingual": [
         {
           "zh": "和而不同",
@@ -2329,14 +2329,14 @@
     },
     "v5-m3-l5": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《论语》 · 《道德经》 · 《营造法式》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 《论语》 · 《道德经》 · 《营造法式》 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: The Analects, Daodejing & Yingzao Fashi Architectural Treatise — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "天地与我并生，而万物与我为一。",
       "primaryTextExcerptVi": "Trời đất cùng ta đồng sinh, muôn vật cùng ta hợp một (《Trang Tử · Tề Vật Luận》) & trục Thiên Đàn – Cấm Thành.",
       "primaryTextExcerptEn": "Heaven, earth, and I come into being together; the ten thousand things and I are one (Zhuangzi) paired with Tiantan's celestial geometry.",
       "visualDiagramSpecVi": "Soi sơ đồ: Đấu Củng (ma sát 3D chống động đất) + Bức tường Nho–Đạo–Pháp + Mái tròn Thiên Đàn (Dương) đặt trên nền vuông (Âm).",
       "visualDiagramSpecEn": "Mental Model: Dougong friction-damping joinery under radial Heaven–Earth cosmology (Round Tiantan roof = Heaven; Square altar = Earth).",
       "vietnamComparisonVi": "Kế thừa Đấu Củng & quy hoạch trục tại Ngọ Môn – Điện Thái Hòa Kinh thành Huế.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Adaptation of interlocking timber bracketry and axial courtyards at Hue's Meridian Gate and Hall of Supreme Harmony.",
       "keyTermsTrilingual": [
         {
           "zh": "和而不同",
@@ -2368,14 +2368,14 @@
     },
     "v5-m3-l6": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《论语》 · 《道德经》 · 《营造法式》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 《论语》 · 《道德经》 · 《营造法式》 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: The Analects, Daodejing & Yingzao Fashi Architectural Treatise — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "天地与我并生，而万物与我为一。",
       "primaryTextExcerptVi": "Trời đất cùng ta đồng sinh, muôn vật cùng ta hợp một (《Trang Tử · Tề Vật Luận》) & trục Thiên Đàn – Cấm Thành.",
       "primaryTextExcerptEn": "Heaven, earth, and I come into being together; the ten thousand things and I are one (Zhuangzi) paired with Tiantan's celestial geometry.",
       "visualDiagramSpecVi": "Soi sơ đồ: Đấu Củng (ma sát 3D chống động đất) + Bức tường Nho–Đạo–Pháp + Mái tròn Thiên Đàn (Dương) đặt trên nền vuông (Âm).",
       "visualDiagramSpecEn": "Mental Model: Dougong friction-damping joinery under radial Heaven–Earth cosmology (Round Tiantan roof = Heaven; Square altar = Earth).",
       "vietnamComparisonVi": "Kế thừa Đấu Củng & quy hoạch trục tại Ngọ Môn – Điện Thái Hòa Kinh thành Huế.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Adaptation of interlocking timber bracketry and axial courtyards at Hue's Meridian Gate and Hall of Supreme Harmony.",
       "keyTermsTrilingual": [
         {
           "zh": "和而不同",
@@ -2407,14 +2407,14 @@
     },
     "v5-m4-l1": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 六书《说文解字》 · HSK 7-9大纲 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 六书《说文解字》 · HSK 7-9大纲 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: Shuowen Jiezi Six Scripts Philology & HSK Bands 7–9 Syllabus — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "山有三远：自山下而仰山巅，谓之高远；自山前而窥山后，谓之深远；自近山而望远山，谓之平远。",
       "primaryTextExcerptVi": "Núi có Tam Viễn: từ chân nhìn đỉnh gọi Cao Viễn; từ trước nhìn thấu sau gọi Thâm Viễn; từ núi gần trông xa gọi Bình Viễn (Quách Hy 《Lâm Tuyền Cao Chí》).",
       "primaryTextExcerptEn": "A mountain has three distances: high distance gazing up, deep distance peering beyond, and level distance sweeping outward (Guo Xi).",
       "visualDiagramSpecVi": "Đọc bức Thủy mặc như hành trình đi bộ: góc Tiền cảnh (Bình Viễn) → Lưng chừng sương mù (Lưu Bạch) → Đỉnh hùng vĩ (Cao Viễn) + Con triện chu sa cân bằng bố cục.",
       "visualDiagramSpecEn": "Mental Model: Scan Guo Xi's 3 Perspectives along with negative blank space ('Liu Bai') and red seal stamps balancing ink tonnage.",
       "vietnamComparisonVi": "Tận dụng kho từ vựng Hán–Việt (70% từ vựng cao cấp tiếng Việt) để tăng tốc đọc hiểu.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Leveraging Sino-Vietnamese cognates (roughly 70% of formal Vietnamese vocabulary) to accelerate classical and C1-C2 reading.",
       "keyTermsTrilingual": [
         {
           "zh": "形声字",
@@ -2446,14 +2446,14 @@
     },
     "v5-m4-l2": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 六书《说文解字》 · HSK 7-9大纲 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 六书《说文解字》 · HSK 7-9大纲 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: Shuowen Jiezi Six Scripts Philology & HSK Bands 7–9 Syllabus — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "山有三远：自山下而仰山巅，谓之高远；自山前而窥山后，谓之深远；自近山而望远山，谓之平远。",
       "primaryTextExcerptVi": "Núi có Tam Viễn: từ chân nhìn đỉnh gọi Cao Viễn; từ trước nhìn thấu sau gọi Thâm Viễn; từ núi gần trông xa gọi Bình Viễn (Quách Hy 《Lâm Tuyền Cao Chí》).",
       "primaryTextExcerptEn": "A mountain has three distances: high distance gazing up, deep distance peering beyond, and level distance sweeping outward (Guo Xi).",
       "visualDiagramSpecVi": "Đọc bức Thủy mặc như hành trình đi bộ: góc Tiền cảnh (Bình Viễn) → Lưng chừng sương mù (Lưu Bạch) → Đỉnh hùng vĩ (Cao Viễn) + Con triện chu sa cân bằng bố cục.",
       "visualDiagramSpecEn": "Mental Model: Scan Guo Xi's 3 Perspectives along with negative blank space ('Liu Bai') and red seal stamps balancing ink tonnage.",
       "vietnamComparisonVi": "Tận dụng kho từ vựng Hán–Việt (70% từ vựng cao cấp tiếng Việt) để tăng tốc đọc hiểu.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Leveraging Sino-Vietnamese cognates (roughly 70% of formal Vietnamese vocabulary) to accelerate classical and C1-C2 reading.",
       "keyTermsTrilingual": [
         {
           "zh": "形声字",
@@ -2485,14 +2485,14 @@
     },
     "v5-m4-l3": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 六书《说文解字》 · HSK 7-9大纲 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 六书《说文解字》 · HSK 7-9大纲 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: Shuowen Jiezi Six Scripts Philology & HSK Bands 7–9 Syllabus — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "山有三远：自山下而仰山巅，谓之高远；自山前而窥山后，谓之深远；自近山而望远山，谓之平远。",
       "primaryTextExcerptVi": "Núi có Tam Viễn: từ chân nhìn đỉnh gọi Cao Viễn; từ trước nhìn thấu sau gọi Thâm Viễn; từ núi gần trông xa gọi Bình Viễn (Quách Hy 《Lâm Tuyền Cao Chí》).",
       "primaryTextExcerptEn": "A mountain has three distances: high distance gazing up, deep distance peering beyond, and level distance sweeping outward (Guo Xi).",
       "visualDiagramSpecVi": "Đọc bức Thủy mặc như hành trình đi bộ: góc Tiền cảnh (Bình Viễn) → Lưng chừng sương mù (Lưu Bạch) → Đỉnh hùng vĩ (Cao Viễn) + Con triện chu sa cân bằng bố cục.",
       "visualDiagramSpecEn": "Mental Model: Scan Guo Xi's 3 Perspectives along with negative blank space ('Liu Bai') and red seal stamps balancing ink tonnage.",
       "vietnamComparisonVi": "Tận dụng kho từ vựng Hán–Việt (70% từ vựng cao cấp tiếng Việt) để tăng tốc đọc hiểu.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Leveraging Sino-Vietnamese cognates (roughly 70% of formal Vietnamese vocabulary) to accelerate classical and C1-C2 reading.",
       "keyTermsTrilingual": [
         {
           "zh": "形声字",
@@ -2524,14 +2524,14 @@
     },
     "v5-m4-l4": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 六书《说文解字》 · HSK 7-9大纲 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 六书《说文解字》 · HSK 7-9大纲 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: Shuowen Jiezi Six Scripts Philology & HSK Bands 7–9 Syllabus — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "山有三远：自山下而仰山巅，谓之高远；自山前而窥山后，谓之深远；自近山而望远山，谓之平远。",
       "primaryTextExcerptVi": "Núi có Tam Viễn: từ chân nhìn đỉnh gọi Cao Viễn; từ trước nhìn thấu sau gọi Thâm Viễn; từ núi gần trông xa gọi Bình Viễn (Quách Hy 《Lâm Tuyền Cao Chí》).",
       "primaryTextExcerptEn": "A mountain has three distances: high distance gazing up, deep distance peering beyond, and level distance sweeping outward (Guo Xi).",
       "visualDiagramSpecVi": "Đọc bức Thủy mặc như hành trình đi bộ: góc Tiền cảnh (Bình Viễn) → Lưng chừng sương mù (Lưu Bạch) → Đỉnh hùng vĩ (Cao Viễn) + Con triện chu sa cân bằng bố cục.",
       "visualDiagramSpecEn": "Mental Model: Scan Guo Xi's 3 Perspectives along with negative blank space ('Liu Bai') and red seal stamps balancing ink tonnage.",
       "vietnamComparisonVi": "Tận dụng kho từ vựng Hán–Việt (70% từ vựng cao cấp tiếng Việt) để tăng tốc đọc hiểu.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Leveraging Sino-Vietnamese cognates (roughly 70% of formal Vietnamese vocabulary) to accelerate classical and C1-C2 reading.",
       "keyTermsTrilingual": [
         {
           "zh": "形声字",
@@ -2563,14 +2563,14 @@
     },
     "v5-m4-l5": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 六书《说文解字》 · HSK 7-9大纲 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 六书《说文解字》 · HSK 7-9大纲 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: Shuowen Jiezi Six Scripts Philology & HSK Bands 7–9 Syllabus — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "山有三远：自山下而仰山巅，谓之高远；自山前而窥山后，谓之深远；自近山而望远山，谓之平远。",
       "primaryTextExcerptVi": "Núi có Tam Viễn: từ chân nhìn đỉnh gọi Cao Viễn; từ trước nhìn thấu sau gọi Thâm Viễn; từ núi gần trông xa gọi Bình Viễn (Quách Hy 《Lâm Tuyền Cao Chí》).",
       "primaryTextExcerptEn": "A mountain has three distances: high distance gazing up, deep distance peering beyond, and level distance sweeping outward (Guo Xi).",
       "visualDiagramSpecVi": "Đọc bức Thủy mặc như hành trình đi bộ: góc Tiền cảnh (Bình Viễn) → Lưng chừng sương mù (Lưu Bạch) → Đỉnh hùng vĩ (Cao Viễn) + Con triện chu sa cân bằng bố cục.",
       "visualDiagramSpecEn": "Mental Model: Scan Guo Xi's 3 Perspectives along with negative blank space ('Liu Bai') and red seal stamps balancing ink tonnage.",
       "vietnamComparisonVi": "Tận dụng kho từ vựng Hán–Việt (70% từ vựng cao cấp tiếng Việt) để tăng tốc đọc hiểu.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Leveraging Sino-Vietnamese cognates (roughly 70% of formal Vietnamese vocabulary) to accelerate classical and C1-C2 reading.",
       "keyTermsTrilingual": [
         {
           "zh": "形声字",
@@ -2602,14 +2602,14 @@
     },
     "v5-m4-l6": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 六书《说文解字》 · HSK 7-9大纲 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 六书《说文解字》 · HSK 7-9大纲 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: Shuowen Jiezi Six Scripts Philology & HSK Bands 7–9 Syllabus — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "山有三远：自山下而仰山巅，谓之高远；自山前而窥山后，谓之深远；自近山而望远山，谓之平远。",
       "primaryTextExcerptVi": "Núi có Tam Viễn: từ chân nhìn đỉnh gọi Cao Viễn; từ trước nhìn thấu sau gọi Thâm Viễn; từ núi gần trông xa gọi Bình Viễn (Quách Hy 《Lâm Tuyền Cao Chí》).",
       "primaryTextExcerptEn": "A mountain has three distances: high distance gazing up, deep distance peering beyond, and level distance sweeping outward (Guo Xi).",
       "visualDiagramSpecVi": "Đọc bức Thủy mặc như hành trình đi bộ: góc Tiền cảnh (Bình Viễn) → Lưng chừng sương mù (Lưu Bạch) → Đỉnh hùng vĩ (Cao Viễn) + Con triện chu sa cân bằng bố cục.",
       "visualDiagramSpecEn": "Mental Model: Scan Guo Xi's 3 Perspectives along with negative blank space ('Liu Bai') and red seal stamps balancing ink tonnage.",
       "vietnamComparisonVi": "Tận dụng kho từ vựng Hán–Việt (70% từ vựng cao cấp tiếng Việt) để tăng tốc đọc hiểu.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Leveraging Sino-Vietnamese cognates (roughly 70% of formal Vietnamese vocabulary) to accelerate classical and C1-C2 reading.",
       "keyTermsTrilingual": [
         {
           "zh": "形声字",
@@ -2641,14 +2641,14 @@
     },
     "v5-m5-l1": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 12306 · CSC奖学金 · 饮食文化 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 12306 · CSC奖学金 · 饮食文化 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: China Railway 12306 Protocol, CSC Scholarship Portal & Culinary Field Archives — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "修合虽无人见，存心自有天知。",
       "primaryTextExcerptVi": "Khi bào chế tuy không người trông thấy, nhưng giữ tâm sáng tự có trời xanh chứng giám (Gia huấn Đồng Nhân Đường từ 1669).",
       "primaryTextExcerptEn": "Even when compounding in secret unseen by others, heaven observes the integrity of the artisan's heart (Tongrentang 1669 guild maxim).",
       "visualDiagramSpecVi": "Nối bản đồ 34 Tỉnh tới 64+ Lão Tự Hiệu & 12 GI Âu–Trung: Terroir tự nhiên × Kỹ nghệ thủ công lâu đời × Tiêu chuẩn GB/T bảo hộ SHTT.",
       "visualDiagramSpecEn": "Mental Model: Map each province's natural terroir to a multi-century craft pipeline and bilateral GB/T + EU GI origin certification.",
       "vietnamComparisonVi": "Thích nghi ẩm thực, thanh toán Alipay và chuẩn bị Study Plan CSC cho sinh viên Việt Nam.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Practical regional dining orientation, mobile payments (Alipay/WeChat Pay), and CSC study plans for Vietnamese scholars.",
       "keyTermsTrilingual": [
         {
           "zh": "八大菜系",
@@ -2680,14 +2680,14 @@
     },
     "v5-m5-l2": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 12306 · CSC奖学金 · 饮食文化 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 12306 · CSC奖学金 · 饮食文化 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: China Railway 12306 Protocol, CSC Scholarship Portal & Culinary Field Archives — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "修合虽无人见，存心自有天知。",
       "primaryTextExcerptVi": "Khi bào chế tuy không người trông thấy, nhưng giữ tâm sáng tự có trời xanh chứng giám (Gia huấn Đồng Nhân Đường từ 1669).",
       "primaryTextExcerptEn": "Even when compounding in secret unseen by others, heaven observes the integrity of the artisan's heart (Tongrentang 1669 guild maxim).",
       "visualDiagramSpecVi": "Nối bản đồ 34 Tỉnh tới 64+ Lão Tự Hiệu & 12 GI Âu–Trung: Terroir tự nhiên × Kỹ nghệ thủ công lâu đời × Tiêu chuẩn GB/T bảo hộ SHTT.",
       "visualDiagramSpecEn": "Mental Model: Map each province's natural terroir to a multi-century craft pipeline and bilateral GB/T + EU GI origin certification.",
       "vietnamComparisonVi": "Thích nghi ẩm thực, thanh toán Alipay và chuẩn bị Study Plan CSC cho sinh viên Việt Nam.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Practical regional dining orientation, mobile payments (Alipay/WeChat Pay), and CSC study plans for Vietnamese scholars.",
       "keyTermsTrilingual": [
         {
           "zh": "八大菜系",
@@ -2719,14 +2719,14 @@
     },
     "v5-m5-l3": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 12306 · CSC奖学金 · 饮食文化 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 12306 · CSC奖学金 · 饮食文化 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: China Railway 12306 Protocol, CSC Scholarship Portal & Culinary Field Archives — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "修合虽无人见，存心自有天知。",
       "primaryTextExcerptVi": "Khi bào chế tuy không người trông thấy, nhưng giữ tâm sáng tự có trời xanh chứng giám (Gia huấn Đồng Nhân Đường từ 1669).",
       "primaryTextExcerptEn": "Even when compounding in secret unseen by others, heaven observes the integrity of the artisan's heart (Tongrentang 1669 guild maxim).",
       "visualDiagramSpecVi": "Nối bản đồ 34 Tỉnh tới 64+ Lão Tự Hiệu & 12 GI Âu–Trung: Terroir tự nhiên × Kỹ nghệ thủ công lâu đời × Tiêu chuẩn GB/T bảo hộ SHTT.",
       "visualDiagramSpecEn": "Mental Model: Map each province's natural terroir to a multi-century craft pipeline and bilateral GB/T + EU GI origin certification.",
       "vietnamComparisonVi": "Thích nghi ẩm thực, thanh toán Alipay và chuẩn bị Study Plan CSC cho sinh viên Việt Nam.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Practical regional dining orientation, mobile payments (Alipay/WeChat Pay), and CSC study plans for Vietnamese scholars.",
       "keyTermsTrilingual": [
         {
           "zh": "八大菜系",
@@ -2758,14 +2758,14 @@
     },
     "v5-m5-l4": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 12306 · CSC奖学金 · 饮食文化 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 12306 · CSC奖学金 · 饮食文化 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: China Railway 12306 Protocol, CSC Scholarship Portal & Culinary Field Archives — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "修合虽无人见，存心自有天知。",
       "primaryTextExcerptVi": "Khi bào chế tuy không người trông thấy, nhưng giữ tâm sáng tự có trời xanh chứng giám (Gia huấn Đồng Nhân Đường từ 1669).",
       "primaryTextExcerptEn": "Even when compounding in secret unseen by others, heaven observes the integrity of the artisan's heart (Tongrentang 1669 guild maxim).",
       "visualDiagramSpecVi": "Nối bản đồ 34 Tỉnh tới 64+ Lão Tự Hiệu & 12 GI Âu–Trung: Terroir tự nhiên × Kỹ nghệ thủ công lâu đời × Tiêu chuẩn GB/T bảo hộ SHTT.",
       "visualDiagramSpecEn": "Mental Model: Map each province's natural terroir to a multi-century craft pipeline and bilateral GB/T + EU GI origin certification.",
       "vietnamComparisonVi": "Thích nghi ẩm thực, thanh toán Alipay và chuẩn bị Study Plan CSC cho sinh viên Việt Nam.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Practical regional dining orientation, mobile payments (Alipay/WeChat Pay), and CSC study plans for Vietnamese scholars.",
       "keyTermsTrilingual": [
         {
           "zh": "八大菜系",
@@ -2797,14 +2797,14 @@
     },
     "v5-m5-l5": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 12306 · CSC奖学金 · 饮食文化 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 12306 · CSC奖学金 · 饮食文化 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: China Railway 12306 Protocol, CSC Scholarship Portal & Culinary Field Archives — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "修合虽无人见，存心自有天知。",
       "primaryTextExcerptVi": "Khi bào chế tuy không người trông thấy, nhưng giữ tâm sáng tự có trời xanh chứng giám (Gia huấn Đồng Nhân Đường từ 1669).",
       "primaryTextExcerptEn": "Even when compounding in secret unseen by others, heaven observes the integrity of the artisan's heart (Tongrentang 1669 guild maxim).",
       "visualDiagramSpecVi": "Nối bản đồ 34 Tỉnh tới 64+ Lão Tự Hiệu & 12 GI Âu–Trung: Terroir tự nhiên × Kỹ nghệ thủ công lâu đời × Tiêu chuẩn GB/T bảo hộ SHTT.",
       "visualDiagramSpecEn": "Mental Model: Map each province's natural terroir to a multi-century craft pipeline and bilateral GB/T + EU GI origin certification.",
       "vietnamComparisonVi": "Thích nghi ẩm thực, thanh toán Alipay và chuẩn bị Study Plan CSC cho sinh viên Việt Nam.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Practical regional dining orientation, mobile payments (Alipay/WeChat Pay), and CSC study plans for Vietnamese scholars.",
       "keyTermsTrilingual": [
         {
           "zh": "八大菜系",
@@ -2836,14 +2836,14 @@
     },
     "v5-m5-l6": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 12306 · CSC奖学金 · 饮食文化 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 12306 · CSC奖学金 · 饮食文化 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: China Railway 12306 Protocol, CSC Scholarship Portal & Culinary Field Archives — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "修合虽无人见，存心自有天知。",
       "primaryTextExcerptVi": "Khi bào chế tuy không người trông thấy, nhưng giữ tâm sáng tự có trời xanh chứng giám (Gia huấn Đồng Nhân Đường từ 1669).",
       "primaryTextExcerptEn": "Even when compounding in secret unseen by others, heaven observes the integrity of the artisan's heart (Tongrentang 1669 guild maxim).",
       "visualDiagramSpecVi": "Nối bản đồ 34 Tỉnh tới 64+ Lão Tự Hiệu & 12 GI Âu–Trung: Terroir tự nhiên × Kỹ nghệ thủ công lâu đời × Tiêu chuẩn GB/T bảo hộ SHTT.",
       "visualDiagramSpecEn": "Mental Model: Map each province's natural terroir to a multi-century craft pipeline and bilateral GB/T + EU GI origin certification.",
       "vietnamComparisonVi": "Thích nghi ẩm thực, thanh toán Alipay và chuẩn bị Study Plan CSC cho sinh viên Việt Nam.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Practical regional dining orientation, mobile payments (Alipay/WeChat Pay), and CSC study plans for Vietnamese scholars.",
       "keyTermsTrilingual": [
         {
           "zh": "八大菜系",
@@ -2875,14 +2875,14 @@
     },
     "v5-m6-l1": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 中欧班列 · CBAM · 中华老字号 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 中欧班列 · CBAM · 中华老字号 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: CR Express Consignment Rules, EU CBAM & MOFCOM Honored Brand Registries — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "如我国之大越者，实为文献之邦。",
       "primaryTextExcerptVi": "Như nước Đại Việt ta từ trước, vốn xưng nền văn hiến đã lâu (Nguyễn Trãi 《Bình Ngô Đại Cáo》).",
       "primaryTextExcerptEn": "Our Great Viet state has long stood proud as a realm of cultured letters and distinct civilization (Nguyen Trai, 1428).",
       "visualDiagramSpecVi": "Đối chiếu hai vòng tròn giao thoa: Nền Hán–Việt & Nghi lễ Lễ Nhạc chung vùng Đông Á ↔ Bản sắc độc lập Việt Nam (Gốm Chu Đậu, Hoàng thành Huế, Chữ Nôm).",
       "visualDiagramSpecEn": "Mental Model: Dual Venn diagram separating shared East Asian classical vocabulary from distinctly indigenous Vietnamese architectural, ceramic, and literary forms.",
       "vietnamComparisonVi": "Phối hợp cảng Hải Phòng – Cửa khẩu Hữu Nghị với mạng lưới trung chuyển Thâm Quyến – Ninh Ba.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Operational coordination across Hai Phong Port, Huu Nghi border gates, and Shenzhen-Ningbo manufacturing hubs.",
       "keyTermsTrilingual": [
         {
           "zh": "一带一路",
@@ -2914,14 +2914,14 @@
     },
     "v5-m6-l2": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 中欧班列 · CBAM · 中华老字号 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 中欧班列 · CBAM · 中华老字号 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: CR Express Consignment Rules, EU CBAM & MOFCOM Honored Brand Registries — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "如我国之大越者，实为文献之邦。",
       "primaryTextExcerptVi": "Như nước Đại Việt ta từ trước, vốn xưng nền văn hiến đã lâu (Nguyễn Trãi 《Bình Ngô Đại Cáo》).",
       "primaryTextExcerptEn": "Our Great Viet state has long stood proud as a realm of cultured letters and distinct civilization (Nguyen Trai, 1428).",
       "visualDiagramSpecVi": "Đối chiếu hai vòng tròn giao thoa: Nền Hán–Việt & Nghi lễ Lễ Nhạc chung vùng Đông Á ↔ Bản sắc độc lập Việt Nam (Gốm Chu Đậu, Hoàng thành Huế, Chữ Nôm).",
       "visualDiagramSpecEn": "Mental Model: Dual Venn diagram separating shared East Asian classical vocabulary from distinctly indigenous Vietnamese architectural, ceramic, and literary forms.",
       "vietnamComparisonVi": "Phối hợp cảng Hải Phòng – Cửa khẩu Hữu Nghị với mạng lưới trung chuyển Thâm Quyến – Ninh Ba.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Operational coordination across Hai Phong Port, Huu Nghi border gates, and Shenzhen-Ningbo manufacturing hubs.",
       "keyTermsTrilingual": [
         {
           "zh": "一带一路",
@@ -2953,14 +2953,14 @@
     },
     "v5-m6-l3": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 中欧班列 · CBAM · 中华老字号 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 中欧班列 · CBAM · 中华老字号 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: CR Express Consignment Rules, EU CBAM & MOFCOM Honored Brand Registries — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "如我国之大越者，实为文献之邦。",
       "primaryTextExcerptVi": "Như nước Đại Việt ta từ trước, vốn xưng nền văn hiến đã lâu (Nguyễn Trãi 《Bình Ngô Đại Cáo》).",
       "primaryTextExcerptEn": "Our Great Viet state has long stood proud as a realm of cultured letters and distinct civilization (Nguyen Trai, 1428).",
       "visualDiagramSpecVi": "Đối chiếu hai vòng tròn giao thoa: Nền Hán–Việt & Nghi lễ Lễ Nhạc chung vùng Đông Á ↔ Bản sắc độc lập Việt Nam (Gốm Chu Đậu, Hoàng thành Huế, Chữ Nôm).",
       "visualDiagramSpecEn": "Mental Model: Dual Venn diagram separating shared East Asian classical vocabulary from distinctly indigenous Vietnamese architectural, ceramic, and literary forms.",
       "vietnamComparisonVi": "Phối hợp cảng Hải Phòng – Cửa khẩu Hữu Nghị với mạng lưới trung chuyển Thâm Quyến – Ninh Ba.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Operational coordination across Hai Phong Port, Huu Nghi border gates, and Shenzhen-Ningbo manufacturing hubs.",
       "keyTermsTrilingual": [
         {
           "zh": "一带一路",
@@ -2992,14 +2992,14 @@
     },
     "v5-m6-l4": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 中欧班列 · CBAM · 中华老字号 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 中欧班列 · CBAM · 中华老字号 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: CR Express Consignment Rules, EU CBAM & MOFCOM Honored Brand Registries — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "如我国之大越者，实为文献之邦。",
       "primaryTextExcerptVi": "Như nước Đại Việt ta từ trước, vốn xưng nền văn hiến đã lâu (Nguyễn Trãi 《Bình Ngô Đại Cáo》).",
       "primaryTextExcerptEn": "Our Great Viet state has long stood proud as a realm of cultured letters and distinct civilization (Nguyen Trai, 1428).",
       "visualDiagramSpecVi": "Đối chiếu hai vòng tròn giao thoa: Nền Hán–Việt & Nghi lễ Lễ Nhạc chung vùng Đông Á ↔ Bản sắc độc lập Việt Nam (Gốm Chu Đậu, Hoàng thành Huế, Chữ Nôm).",
       "visualDiagramSpecEn": "Mental Model: Dual Venn diagram separating shared East Asian classical vocabulary from distinctly indigenous Vietnamese architectural, ceramic, and literary forms.",
       "vietnamComparisonVi": "Phối hợp cảng Hải Phòng – Cửa khẩu Hữu Nghị với mạng lưới trung chuyển Thâm Quyến – Ninh Ba.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Operational coordination across Hai Phong Port, Huu Nghi border gates, and Shenzhen-Ningbo manufacturing hubs.",
       "keyTermsTrilingual": [
         {
           "zh": "一带一路",
@@ -3031,14 +3031,14 @@
     },
     "v5-m6-l5": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 中欧班列 · CBAM · 中华老字号 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 中欧班列 · CBAM · 中华老字号 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: CR Express Consignment Rules, EU CBAM & MOFCOM Honored Brand Registries — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "如我国之大越者，实为文献之邦。",
       "primaryTextExcerptVi": "Như nước Đại Việt ta từ trước, vốn xưng nền văn hiến đã lâu (Nguyễn Trãi 《Bình Ngô Đại Cáo》).",
       "primaryTextExcerptEn": "Our Great Viet state has long stood proud as a realm of cultured letters and distinct civilization (Nguyen Trai, 1428).",
       "visualDiagramSpecVi": "Đối chiếu hai vòng tròn giao thoa: Nền Hán–Việt & Nghi lễ Lễ Nhạc chung vùng Đông Á ↔ Bản sắc độc lập Việt Nam (Gốm Chu Đậu, Hoàng thành Huế, Chữ Nôm).",
       "visualDiagramSpecEn": "Mental Model: Dual Venn diagram separating shared East Asian classical vocabulary from distinctly indigenous Vietnamese architectural, ceramic, and literary forms.",
       "vietnamComparisonVi": "Phối hợp cảng Hải Phòng – Cửa khẩu Hữu Nghị với mạng lưới trung chuyển Thâm Quyến – Ninh Ba.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Operational coordination across Hai Phong Port, Huu Nghi border gates, and Shenzhen-Ningbo manufacturing hubs.",
       "keyTermsTrilingual": [
         {
           "zh": "一带一路",
@@ -3070,14 +3070,14 @@
     },
     "v5-m6-l6": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 中欧班列 · CBAM · 中华老字号 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-      "historicalEvidenceEn": "Primary & Archival Reference Anchor: 中欧班列 · CBAM · 中华老字号 — cross-checked against CCE digitized museum archives and canonical citations.",
+      "historicalEvidenceEn": "Archival reference: CR Express Consignment Rules, EU CBAM & MOFCOM Honored Brand Registries — verified against digitized museum collections and canonical textual sources.",
       "primaryTextExcerptZh": "如我国之大越者，实为文献之邦。",
       "primaryTextExcerptVi": "Như nước Đại Việt ta từ trước, vốn xưng nền văn hiến đã lâu (Nguyễn Trãi 《Bình Ngô Đại Cáo》).",
       "primaryTextExcerptEn": "Our Great Viet state has long stood proud as a realm of cultured letters and distinct civilization (Nguyen Trai, 1428).",
       "visualDiagramSpecVi": "Đối chiếu hai vòng tròn giao thoa: Nền Hán–Việt & Nghi lễ Lễ Nhạc chung vùng Đông Á ↔ Bản sắc độc lập Việt Nam (Gốm Chu Đậu, Hoàng thành Huế, Chữ Nôm).",
       "visualDiagramSpecEn": "Mental Model: Dual Venn diagram separating shared East Asian classical vocabulary from distinctly indigenous Vietnamese architectural, ceramic, and literary forms.",
       "vietnamComparisonVi": "Phối hợp cảng Hải Phòng – Cửa khẩu Hữu Nghị với mạng lưới trung chuyển Thâm Quyến – Ninh Ba.",
-      "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+      "vietnamComparisonEn": "Operational coordination across Hai Phong Port, Huu Nghi border gates, and Shenzhen-Ningbo manufacturing hubs.",
       "keyTermsTrilingual": [
         {
           "zh": "一带一路",
@@ -3111,183 +3111,183 @@
   "hskPairEnrich": {
     "cm-01": {
       "grammarBreakdownVi": "Phó từ nối mà-vậy-thì '而' + trợ từ nghi vấn cảm thán '不亦……乎' (chẳng phải ... sao?); '时' là trạng từ thời gian (= thường xuyên).",
-      "grammarBreakdownEn": "Philological note (CM-01): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Connective '而' pairs with the affirmative rhetorical frame '不亦……乎'; '时' acts as a temporal adverb meaning periodically.",
       "rhetoricalDeviceVi": "Câu phản vấn khẳng định '不亦……乎' + Đối ngẫu nhân quả tuần tự",
       "rhetoricalDeviceEn": "Rhetorical affirmation ('不亦……乎') paired with sequential cause–effect cadence",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Nhấn mạnh vòng lặp đọc–nghĩ–thực hành trong mở bài luận giáo dục hoặc trả lời câu hỏi phỏng vấn học bổng thạc sĩ CSC.",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Nhấn mạnh vòng lặp đọc–nghĩ–thực hành trong mở bài luận giáo dục hoặc trả lời câu hỏi phỏng vấn học bổng thạc sĩ CSC."
+      "hskEssayApplicationEn": "Anchors arguments on iterative study–reflection loops in education essays or CSC Master's admission interviews."
     },
     "cm-02": {
       "grammarBreakdownVi": "Cấu trúc '而' nối nguyên nhân – kết quả ('Ôn cái cũ để biết cái mới') + hư từ kết thúc khẳng định '矣'.",
-      "grammarBreakdownEn": "Philological note (CM-02): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Clause linker '而' marks purpose–result progression ('reviewing the old to understand the new'), sealed by final particle '矣'.",
       "rhetoricalDeviceVi": "Đối ngẫu bốn chữ chặt chẽ & Thước đo tiến hóa cũ–mới",
       "rhetoricalDeviceEn": "Four-character balanced antithesis bridging classical precedent and modern innovation",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Chứng minh phương pháp nghiên cứu tổng quan tài liệu (Literature Review): kế thừa nền tảng kinh điển để phát triển giải pháp 2026.",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Chứng minh phương pháp nghiên cứu tổng quan tài liệu (Literature Review): kế thừa nền tảng kinh điển để phát triển giải pháp 2026."
+      "hskEssayApplicationEn": "Demonstrates proper literature-review framing: synthesizing classical foundations before proposing modern workflow solutions."
     },
     "cm-03": {
       "grammarBreakdownVi": "'则' biểu thị kết quả logic tất yếu ('nếu học không nghĩ thì mù mờ'); đối ngẫu hoàn chỉnh hai vế song song 4+4 chữ.",
-      "grammarBreakdownEn": "Philological note (CM-03): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Conjunctive '则' denotes necessary logical consequence in balanced four-character parallel hemistichs.",
       "rhetoricalDeviceVi": "Mệnh đề giả định '则' liên kết hai vế đối lập bổ sung",
       "rhetoricalDeviceEn": "Conditional '则' symmetry contrasting blind rote study against reflective inquiry",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Dùng để phê phán lối học vẹt không phản biện và đề xuất tư duy phân tích đa chiều trong luận văn thạc sĩ.",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Dùng để phê phán lối học vẹt không phản biện và đề xuất tư duy phân tích đa chiều trong luận văn thạc sĩ."
+      "hskEssayApplicationEn": "Critiques unreflective rote study while advocating multi-angle empirical scrutiny in graduate research proposals."
     },
     "cm-04": {
       "grammarBreakdownVi": "Cách dùng từ loại hoạt dụng (Danh từ '行' vận hành/hành động) + tính từ '自强' (tự nỗ lực không ngừng).",
-      "grammarBreakdownEn": "Philological note (CM-04): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Class-changing nominal activation ('行' functioning verbally as cosmic motion) paired with the reflexive compound '自强'.",
       "rhetoricalDeviceVi": "Động từ hóa danh từ trang trọng & Điệp nhịp bốn âm tiết",
       "rhetoricalDeviceEn": "Classical noun-to-verb activation yielding austere institutional four-character rhythm",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Tạo khí chất trang trọng khi kết luận bài viết về chiến lược chuyển đổi bền vững của doanh nghiệp hoặc nỗ lực cá nhân.",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Tạo khí chất trang trọng khi kết luận bài viết về chiến lược chuyển đổi bền vững của doanh nghiệp hoặc nỗ lực cá nhân."
+      "hskEssayApplicationEn": "Provides an understated institutional closing line for essays on organizational renewal or personal perseverance."
     },
     "cm-05": {
       "grammarBreakdownVi": "Đối xứng chặt chẽ với Quẻ Càn: '厚德' (đạo đức dày sâu) làm nền để '载物' (gánh vác trọng trách và bao dung sự vật).",
-      "grammarBreakdownEn": "Philological note (CM-05): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Strict binary symmetry from the Book of Changes: cultivated virtue ('厚德') sustains institutional responsibility ('载物').",
       "rhetoricalDeviceVi": "Song đối Kinh Dịch: Thân tâm bên trong vs Trách nhiệm ngoài xã hội",
       "rhetoricalDeviceEn": "I Ching binary complementarity pairing inner moral depth with outer stewardship",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Khung chuẩn nói về trách nhiệm xã hội doanh nghiệp (ESG), đạo đức nghề nghiệp và tầm nhìn quản trị dài hạn.",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Khung chuẩn nói về trách nhiệm xã hội doanh nghiệp (ESG), đạo đức nghề nghiệp và tầm nhìn quản trị dài hạn."
+      "hskEssayApplicationEn": "Frames corporate ESG responsibility, professional integrity, and multi-year governance essays at C1–C2 register."
     },
     "cm-06": {
       "grammarBreakdownVi": "'始于' (bắt đầu từ...) đối với '合抱之木' / '九层之台' — phép ẩn dụ tăng tiến 3 tầng kinh điển của Lão Tử.",
-      "grammarBreakdownEn": "Philological note (CM-06): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Prepositional anchor '始于' anchors Laozi's three-tier escalating spatial and botanical metaphor.",
       "rhetoricalDeviceVi": "Ẩn dụ tăng tiến 3 tầng (Hợp bão → Cửu tầng → Thiên lý)",
       "rhetoricalDeviceEn": "Escalating triple botanical/architectural metaphor scaling micro-steps to macro results",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Thích hợp viết đoạn kế hoạch triển khai từng bước (phased roadmap) từ dự án nhỏ tới kết quả hệ thống lớn.",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Thích hợp viết đoạn kế hoạch triển khai từng bước (phased roadmap) từ dự án nhỏ tới kết quả hệ thống lớn."
+      "hskEssayApplicationEn": "Suited to phased implementation roadmaps detailing how small audited pilots scale into regional systems."
     },
     "cm-07": {
       "grammarBreakdownVi": "Đảo ngữ/ẩn dụ tích lũy: không tích từng bước nhỏ ('跬步') thì không thể đi ngàn dặm ('千里').",
-      "grammarBreakdownEn": "Philological note (CM-07): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Inverted negative conditional ('不积……无以……') isolates cumulative increments as prerequisites for scale.",
       "rhetoricalDeviceVi": "Đảo ngữ phủ định nhấn mạnh ('不积……无以……')",
       "rhetoricalDeviceEn": "Inverted negative conditional stressing cumulative compounding over isolated leaps",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Làm câu chủ đề cho đoạn viết về quá trình rèn luyện ngoại ngữ tam ngữ Anh–Trung–Việt hoặc chuẩn hóa dữ liệu EUDR/CBAM.",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Làm câu chủ đề cho đoạn viết về quá trình rèn luyện ngoại ngữ tam ngữ Anh–Trung–Việt hoặc chuẩn hóa dữ liệu EUDR/CBAM."
+      "hskEssayApplicationEn": "Serves as an opening topic sentence on daily trilingual drills or standardizing EUDR and CBAM supplier logs."
     },
     "cm-08": {
       "grammarBreakdownVi": "Chuỗi động từ liên tiếp '苦其心志，劳其筋骨' (làm cho khổ/nhọc...) thể hiện kết cấu khiến động (Causative) trong Cổ Hán ngữ.",
-      "grammarBreakdownEn": "Philological note (CM-08): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Serial causative verb chain ('苦其心志，劳其筋骨') marks classical transitive inflection of psychological endurance.",
       "rhetoricalDeviceVi": "Chuỗi động từ khiến động song hành ('苦其… 劳其…')",
       "rhetoricalDeviceEn": "Parallel causative verb chain sculpting psychological resilience rhetoric",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Dùng khi viết bài tự thuật (Personal Statement / Study Plan) kể về cách vượt qua áp lực đa ngôn ngữ và deadline công việc.",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Dùng khi viết bài tự thuật (Personal Statement / Study Plan) kể về cách vượt qua áp lực đa ngôn ngữ và deadline công việc."
+      "hskEssayApplicationEn": "Useful in personal statements describing how cross-border coordinators handled multilingual pressure and tight deadlines."
     },
     "cm-09": {
       "grammarBreakdownVi": "Hư từ liên tiếp 5 tầng mệnh đề nhân quả '博学 → 审问 → 慎思 → 明辨 → 笃行' của Lễ Ký – Trung Dung.",
-      "grammarBreakdownEn": "Philological note (CM-09): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Five-step linear conditional cascade from the Doctrine of the Mean linking broad reading through verification to execution.",
       "rhetoricalDeviceVi": "Chuỗi 5 nấc nhân quả liên hoàn (Lễ Ký)",
       "rhetoricalDeviceEn": "Five-stage progressive reasoning cascade (Inquiry → Scrutiny → Practice)",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Mô hình vàng 5 bước để trình bày phương pháp luận nghiên cứu (Methodology) trong đề cương học bổng CSC.",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Mô hình vàng 5 bước để trình bày phương pháp luận nghiên cứu (Methodology) trong đề cương học bổng CSC."
+      "hskEssayApplicationEn": "Classic five-step framework for structuring the Methodology chapter in CSC scholarship research plans."
     },
     "cm-10": {
       "grammarBreakdownVi": "Cấu trúc so sánh giả định với '不如' (không bằng) nhấn mạnh vai trò tương tác giữa dạy và học ('教学相长').",
-      "grammarBreakdownEn": "Philological note (CM-10): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Comparative counterfactual construction with '不如' foregrounds reciprocal growth between teaching and learning ('教学相长').",
       "rhetoricalDeviceVi": "Đối sánh tương tác '不如' (Dạy và Học bổ trợ lẫn nhau)",
       "rhetoricalDeviceEn": "Reciprocal comparative construction highlighting mutual pedagogical growth",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Phù hợp cho phỏng vấn ngành sư phạm, hợp tác đào tạo nhân sự Việt–Trung hoặc làm việc nhóm đa văn hóa.",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Phù hợp cho phỏng vấn ngành sư phạm, hợp tác đào tạo nhân sự Việt–Trung hoặc làm việc nhóm đa văn hóa."
+      "hskEssayApplicationEn": "Supports interviews in pedagogy, Sino-Vietnamese faculty mentoring, or cross-cultural project teams."
     },
     "cm-11": {
       "grammarBreakdownVi": "Cặp câu đối xứng đỉnh cao của Binh pháp Tôn Tử: '知彼知己' (biết người biết mình) -> '百战不殆' (trăm trận không nguy).",
-      "grammarBreakdownEn": "Philological note (CM-11): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Canonical symmetrical couplet from Sunzi coupling symmetric reconnaissance ('知彼知己') with operational durability ('百战不殆').",
       "rhetoricalDeviceVi": "Đối ngẫu tuyệt đối Kinh điển Quân sự (Biết mình – Biết người)",
       "rhetoricalDeviceEn": "Balanced martial couplet encoding asymmetric information readiness",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Vận dụng cực hay trong phân tích cạnh tranh thị trường, chuẩn bị đàm phán hợp đồng B2B và tìm hiểu văn hóa đối tác.",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Vận dụng cực hay trong phân tích cạnh tranh thị trường, chuẩn bị đàm phán hợp đồng B2B và tìm hiểu văn hóa đối tác."
+      "hskEssayApplicationEn": "Applicable to market-entry benchmarking, B2B contract negotiation prep, and partner compliance due diligence."
     },
     "cm-12": {
       "grammarBreakdownVi": "Điển cố 'Bào Đinh giải ngưu' — đạt tới cảnh giới thuần thục kết cấu tự nhiên nhờ tu dưỡng lâu năm ('以无厚入有间').",
-      "grammarBreakdownEn": "Philological note (CM-12): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Allusive Daoist parable ('以无厚入有间') frames structural precision outperforming brute effort.",
       "rhetoricalDeviceVi": "Điển cố ngụ ngôn kết hợp tương phản 'Vô hậu vs Hữu gián'",
       "rhetoricalDeviceEn": "Daoist parable compression contrasting effortless precision against brute force",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Ẩn dụ đắc lực về tối ưu hóa quy trình vận hành (Lean Operations / Process Mastery) không gây ma sát lãng phí.",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Ẩn dụ đắc lực về tối ưu hóa quy trình vận hành (Lean Operations / Process Mastery) không gây ma sát lãng phí."
+      "hskEssayApplicationEn": "Crisp metaphor for Lean operations and eliminating bureaucratic bottlenecks without excessive friction."
     },
     "cm-13": {
       "grammarBreakdownVi": "Tư Mã Thiên tổng kết sứ mệnh sử học qua cấu trúc song hành '究……之……，通……之……，成……之……'.",
-      "grammarBreakdownEn": "Philological note (CM-13): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Sima Qian's tripartite parallel historiography linking cosmic principles, chronological shift, and independent synthesis.",
       "rhetoricalDeviceVi": "Cấu trúc tam đoạn sử học ('究… 通… 成…')",
       "rhetoricalDeviceEn": "Tripartite historiographical manifesto linking cosmology, chronology, and synthesis",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Dùng để nêu mục tiêu tổng quát của bài nghiên cứu liên ngành kết hợp lịch sử cổ điển và kinh tế hiện đại.",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Dùng để nêu mục tiêu tổng quát của bài nghiên cứu liên ngành kết hợp lịch sử cổ điển và kinh tế hiện đại."
+      "hskEssayApplicationEn": "States overarching thesis aims combining institutional history with modern quantitative trade economics."
     },
     "cm-14": {
       "grammarBreakdownVi": "Cụm tương phản đối ngẫu nổi tiếng '先……而忧，后……而乐' (lo trước..., vui sau...) với kết cấu danh hóa của động từ.",
-      "grammarBreakdownEn": "Philological note (CM-14): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Temporal moral contrast ('先……而忧，后……而乐') nominalizes verbs inside classical civic-duty syntax.",
       "rhetoricalDeviceVi": "Tương phản đạo đức công dân ('Tiên ưu' ↔ 'Hậu lạc')",
       "rhetoricalDeviceEn": "Temporal moral chiasmus placing civic foresight ahead of private ease",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Dùng trong bài nghị luận về trách nhiệm cộng đồng, quản trị công và vai trò trí thức trẻ.",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Dùng trong bài nghị luận về trách nhiệm cộng đồng, quản trị công và vai trò trí thức trẻ."
+      "hskEssayApplicationEn": "Supports argumentative essays on civic stewardship, public policy, and institutional accountability."
     },
     "cm-15": {
       "grammarBreakdownVi": "'以……为镜' (lấy ... làm gương): cấu trúc giới-tân '以 + N + 为 + N' cực kỳ thông dụng trong văn ngôn và HSK 6.",
-      "grammarBreakdownEn": "Philological note (CM-15): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Prepositional pattern '以 + Noun + 为 + Noun' ('take X as a mirror'), frequently tested in C1–C2 prose and HSK 6.",
       "rhetoricalDeviceVi": "Giới–tân '以 + X + 为 + Y' (Lấy sử làm gương)",
       "rhetoricalDeviceEn": "Canonical prepositional frame ('以…为…') anchoring evidence-based reflection",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Mẫu câu sắc bén để chuyển sang phần rút ra bài học thực tiễn từ dữ liệu lịch sử hoặc các sự cố chuỗi cung ứng.",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Mẫu câu sắc bén để chuyển sang phần rút ra bài học thực tiễn từ dữ liệu lịch sử hoặc các sự cố chuỗi cung ứng."
+      "hskEssayApplicationEn": "Incisive transition pivoting from historical precedents or past supply chain incidents to concrete SOP fixes."
     },
     "cm-16": {
       "grammarBreakdownVi": "Đảo ngữ nhấn mạnh bằng chữ '焉' / cụm từ tứ tự cô đọng '和而不同' (hòa hợp mà không đồng hóa/hòa tan).",
-      "grammarBreakdownEn": "Philological note (CM-16): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Condensed four-character compound ('和而不同') contrasted via emphatic topicalization distinguishing harmony from conformity.",
       "rhetoricalDeviceVi": "Đảo ngữ khẳng định triết lý 'Hòa nhi bất đồng' (Luận Ngữ)",
       "rhetoricalDeviceEn": "Four-character oxymoronic synthesis distinguishing harmony from uniformity",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Câu chốt chuẩn mực về ngoại giao văn hóa, hợp tác liên văn hóa Việt–Trung–Âu giữ bản sắc riêng.",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Câu chốt chuẩn mực về ngoại giao văn hóa, hợp tác liên văn hóa Việt–Trung–Âu giữ bản sắc riêng."
+      "hskEssayApplicationEn": "Standard closing formulation for cultural diplomacy and ASEAN–China–EU cooperation honoring local autonomy."
     },
     "cm-17": {
       "grammarBreakdownVi": "Tỷ dụ tăng tiến 3 bậc kinh tế–giáo dục của Quản Tử ('一年之计 / 十年之计 / 终身之计').",
-      "grammarBreakdownEn": "Philological note (CM-17): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Guanzi's ascending three-horizon investment analogy (seasonal crop vs decade timber vs lifelong human cultivation).",
       "rhetoricalDeviceVi": "Tỷ dụ đầu tư 3 chu kỳ thời gian (1 năm / 10 năm / Suốt đời)",
       "rhetoricalDeviceEn": "Chronological triad comparing seasonal harvests against generational education",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Lý tưởng để luận giải đầu tư dài hạn cho giáo dục nhân lực, R&D và hạ tầng xanh thay vì chạy theo lợi ích ngắn hạn.",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Lý tưởng để luận giải đầu tư dài hạn cho giáo dục nhân lực, R&D và hạ tầng xanh thay vì chạy theo lợi ích ngắn hạn."
+      "hskEssayApplicationEn": "Justifies long-term capital allocation toward talent training, R&D, and green port infrastructure over quarterly metrics."
     },
     "cm-18": {
       "grammarBreakdownVi": "Kết cấu tương hỗ '兼相爱，交相利' của Mặc gia: kết nối đạo đức cộng đồng với lợi ích trao đổi công bằng.",
-      "grammarBreakdownEn": "Philological note (CM-18): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Mohist reciprocal syntax ('兼相爱，交相利') maps ethical reciprocity directly onto mutual economic benefit.",
       "rhetoricalDeviceVi": "Kết cấu tương hỗ 'Kiêm tương ái, Giao tương lợi' (Mặc Tử)",
       "rhetoricalDeviceEn": "Mutualist parallel syntax tying ethical reciprocity directly to joint economic gain",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Vận dụng trong chủ đề thương mại công bằng (Fair Trade), hợp tác đôi bên cùng có lợi (Win–Win Supply Chain).",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Vận dụng trong chủ đề thương mại công bằng (Fair Trade), hợp tác đôi bên cùng có lợi (Win–Win Supply Chain)."
+      "hskEssayApplicationEn": "Frames essays on Fair Trade rules and mutually verifiable win-win manufacturing partnerships."
     },
     "cm-19": {
       "grammarBreakdownVi": "Thành ngữ gốc sử Hậu Hán Thư gồm 4 chữ súc tích: '有志者' (người có chí) + '竟成' (rốt cuộc tất thành).",
-      "grammarBreakdownEn": "Philological note (CM-19): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Compact four-character Late Han aphorism ('有志者，事竟成') delivering direct rhetorical closure.",
       "rhetoricalDeviceVi": "Khẩu khí sử ký cô đọng tứ tự ('Hữu chí giả sự cánh thành')",
       "rhetoricalDeviceEn": "Four-character historical aphorism delivering crisp essay closure",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Mở hoặc kết ngắn gọn cho bài viết nghị lực cá nhân, khởi nghiệp hoặc hoàn thành chứng chỉ HSK/GACC phức tạp.",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Mở hoặc kết ngắn gọn cho bài viết nghị lực cá nhân, khởi nghiệp hoặc hoàn thành chứng chỉ HSK/GACC phức tạp."
+      "hskEssayApplicationEn": "Concise opening or concluding sentence for essays on persistence through complex HSK or GACC compliance milestones."
     },
     "cm-20": {
       "grammarBreakdownVi": "'问渠那得清如许' (hỏi kênh nước sao trong đến vậy) + hư từ chỉ nguyên nhân '为有' (bởi vì có...).",
-      "grammarBreakdownEn": "Philological note (CM-20): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+      "grammarBreakdownEn": "Zhu Xi's self-interrogative verse frame pairing causal particle '为有' with a clean closing springwater metaphor.",
       "rhetoricalDeviceVi": "Ẩn dụ tự vấn – đáp trữ tình triết lý (Chu Hi)",
       "rhetoricalDeviceEn": "Poetic self-questioning couplet closing academic essays on lifelong intellectual renewal",
       "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
       "hskEssayApplicationVi": "Câu kết trữ tình – triết lý cho bài viết về tầm quan trọng của việc không ngừng cập nhật tri thức mới.",
-      "hskEssayApplicationEn": "HSK 7–9 / CSC Model Context: Câu kết trữ tình – triết lý cho bài viết về tầm quan trọng của việc không ngừng cập nhật tri thức mới."
+      "hskEssayApplicationEn": "Measured philosophical close emphasizing continuous knowledge updates to keep analytical models current."
     }
   },
   "tplEnrich": {

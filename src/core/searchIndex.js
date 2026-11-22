@@ -239,7 +239,7 @@
         title: "[HP " + ls.moduleNum + "." + ls.lessonNum + "] " + ls.titleVi,
         titleEn: "[Module " + ls.moduleNum + "." + ls.lessonNum + "] " + (ls.titleEn || ls.titleVi),
         zh: (ls.titleZh || "").split("·")[0].trim(),
-        sub: "Khóa học V5 · " + (ls.titleZh || ""),
+        sub: "Học phần · " + (ls.titleZh || ""),
         rawTitle: norm((ls.titleVi || "") + " " + (ls.titleEn || "") + " " + (ls.titleZh || "")),
         body: norm((ls.coreQuestionVi || "") + " " + (ls.synthesisParagraphVi || ""))
       });
@@ -325,7 +325,7 @@
         title: "[GI Âu–Trung] " + vgVi + " (" + vg.zh + ")",
         titleEn: "[EU–China GI] " + vgEn + " (" + vg.zh + ")",
         zh: vg.zh || "",
-        sub: vg.gbStandardCode || "Chỉ dẫn Địa lý V6",
+        sub: vg.gbStandardCode || "Chỉ dẫn Địa lý",
         rawTitle: norm(vg.zh + " " + vg.pinyin + " " + vgVi + " " + vgEn),
         body: norm((vg.euProtectionNoteVi || vg.protectionRuleVi || "") + " " + (vg.vnEuComparisonVi || vg.vnEvftaCounterpartVi || ""))
       });
@@ -529,7 +529,7 @@
         title: "[" + sc6.lane + "] " + sc6.titleVi,
         titleEn: "[" + sc6.lane + "] " + sc6.titleEn,
         zh: "",
-        sub: sc6.lane + " · Decision Tree V6",
+        sub: sc6.lane + " · Cây Quyết Định",
         rawTitle: norm(sc6.lane + " " + sc6.titleVi + " " + sc6.titleEn),
         body: norm((sc6.riskIdentifiedEn || "") + " " + (sc6.actionPlanVi || ""))
       });
@@ -555,7 +555,7 @@
         title: "[Học phần " + ls.moduleNum + " · Bài " + ls.lessonNum + "] " + ls.titleVi,
         titleEn: "[Module " + ls.moduleNum + " · L" + ls.lessonNum + "] " + ls.titleEn,
         zh: ls.titleZh || "",
-        sub: ls.coreQuestionVi || "V7.0 Sequential Curriculum",
+        sub: ls.coreQuestionVi || "Sequential Curriculum",
         rawTitle: norm(ls.titleVi + " " + ls.titleEn + " " + (ls.titleZh || "")),
         body: norm(ls.synthesisParagraphVi || "")
       });
@@ -600,8 +600,8 @@
       out.push({
         type: "explore",
         id: bm.id,
-        title: "[Benchmark Tập đoàn] " + bm.orgName,
-        titleEn: "[Global Benchmark] " + bm.orgName,
+        title: "[Đối chiếu Quốc tế] " + bm.orgName,
+        titleEn: "[Global Reference] " + bm.orgName,
         zh: "",
         sub: bm.countryOrScope || "",
         rawTitle: norm(bm.orgName + " " + bm.countryOrScope + " " + (bm.coreBenchmarkFeatureVi || "")),

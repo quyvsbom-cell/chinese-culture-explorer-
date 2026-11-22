@@ -17,8 +17,8 @@
     { id: "hydraulic", vi: "Đô Giang Yển 3D", en: "Dujiangyan Hydraulics" },
     { id: "armillary", vi: "Hồn Thiên Nghi & Âm Dương Ngũ Hành", en: "Armillary & Wuxing Disk" },
     { id: "chimes", vi: "Biên Chung / Trịnh Hòa / Binh Mã Dũng", en: "Chime Bells & Treasure Ship" },
-    { id: "v6heritage", vi: "8 Studio Di sản V6 (#11–#18)", en: "8 V6 Heritage Labs (#11–#18)" },
-    { id: "v7masterpieces", vi: "6 Kiệt Tác 3D V7 (#19–#24)", en: "6 V7 Masterpieces (#19–#24)" }
+    { id: "v6heritage", vi: "8 Studio Di sản (#11–#18)", en: "8 Heritage Studios (#11–#18)" },
+    { id: "v7masterpieces", vi: "6 Kiệt Tác 3D (#19–#24)", en: "6 3D Masterpieces (#19–#24)" }
   ];
 
   function renderUnifiedStudio(enM, uiLang) {

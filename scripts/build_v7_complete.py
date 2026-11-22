@@ -239,11 +239,11 @@ def build_v7() -> pathlib.Path:
     pushUnique(tc.hsrCorridors8x8, V7_DATA.hsrCorridors8, function (x) {{ return x && (x.from + "|" + x.to); }});
   }}
 
-  // Humanize repetitive V6 visual quiz wrappers & backfill EN guides
+  // Ensure every Visual ID item carries concise VI/EN inspection notes
   if (Array.isArray(window.CCE_V6_QUIZ)) {{
     window.CCE_V6_QUIZ.forEach(function (q) {{
       if (!q || !q.isVisualQuestion) return;
-      if (q.visualInspectionGuideVi && q.visualInspectionGuideVi.indexOf("Mẹo quan sát ảnh [") === 0 && q.explainVi) {{
+      if (!q.visualInspectionGuideVi && q.explainVi) {{
         q.visualInspectionGuideVi = q.explainVi;
       }}
       if (!q.visualInspectionGuideEn) {{

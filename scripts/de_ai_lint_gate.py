@@ -96,11 +96,21 @@ def check_local_assets(root: pathlib.Path) -> list[str]:
     return sorted(set(missing))
 
 
+def check_boilerplate_clones(root: pathlib.Path) -> list[str]:
+    clones: list[str] = []
+    for fp in sorted((root / "src" / "data").rglob("*.js")):
+        txt = fp.read_text(encoding="utf-8", errors="ignore")
+        if "Mẹo quan sát ảnh [" in txt:
+            clones.append(f"BOILERPLATE_CLONE 'Mẹo quan sát ảnh [' in {fp.as_posix()}")
+    return clones
+
+
 def main() -> int:
     root = pathlib.Path(".")
     emojis = check_ui_emojis(root)
     banned, slop = check_banned_and_slop(root)
     missing = check_local_assets(root)
+    clones = check_boilerplate_clones(root)
 
     print("=== DE-AI AESTHETIC & ASSET GATE ===")
     print(f"UI Emoji violations : {len(emojis)}")
@@ -115,8 +125,11 @@ def main() -> int:
     print(f"Missing local imgs  : {len(missing)}")
     for m in missing[:15]:
         print(" ", m)
+    print(f"Boilerplate clones  : {len(clones)}")
+    for c in clones[:15]:
+        print(" ", c)
 
-    ok = not (emojis or banned or slop or missing)
+    ok = not (emojis or banned or slop or missing or clones)
     print("GATE_STATUS:", "PASS" if ok else "FAIL")
     return 0 if ok else 1
 

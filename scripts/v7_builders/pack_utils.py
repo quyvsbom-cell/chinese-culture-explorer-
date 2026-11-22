@@ -90,6 +90,8 @@ ALLOWED_SLOP_REPLACEMENTS = [
     (re.compile(r"\bhưng suy\b", re.I), "thịnh suy"),
     (re.compile(r"\bBatch\s+(\d+)\b", re.I), r"Đợt \1"),
     (re.compile(r"\bV4\.0\b", re.I), "phiên bản trước"),
+    (re.compile(r"\s*V7\.0\b", re.I), ""),
+    (re.compile(r"Đẳng cấp Thế giới", re.I), "Trọng điểm Quốc gia"),
     (re.compile(r"kiến hưng", re.I), "kiến thiết thịnh vượng"),
     (re.compile(r"#(?:6366f1|8b5cf6|a855f7|7c3aed|ec4899)", re.I), "#8C2318"),
 ]
@@ -150,30 +152,53 @@ def sanitize_recursive(obj: Any) -> Any:
     return obj
 
 
+def _overlay_non_empty(base_item: dict[str, Any], ext_item: dict[str, Any]) -> dict[str, Any]:
+    """Copy fields from ext_item onto base_item without erasing non-empty base values with blanks."""
+    combined = dict(base_item)
+    for k, v in ext_item.items():
+        if v is None or v == "" or v == [] or v == {}:
+            if k not in combined:
+                combined[k] = v
+        else:
+            combined[k] = v
+    return combined
+
+
 def merge_unique_by_key(base_list: list[dict[str, Any]], ext_list: list[dict[str, Any]], key: str = "id") -> list[dict[str, Any]]:
-    """Prefer enriched/external records when IDs match while preserving order and uniqueness."""
+    """Prefer enriched/external records when IDs match while preserving order, uniqueness, and non-empty base fields."""
     if not ext_list:
         return base_list
-    ext_map = {str(x.get(key)): x for x in ext_list if isinstance(x, dict) and x.get(key)}
+    ext_map = {str(x.get(key)): x for x in ext_list if isinstance(x, dict) and x.get(key) is not None}
     merged: list[dict[str, Any]] = []
     used: set[str] = set()
     for item in base_list:
-        ik = str(item.get(key, ""))
+        ik = str(item.get(key, "")) if isinstance(item, dict) and item.get(key) is not None else ""
         if ik in ext_map:
-            combined = dict(item)
-            combined.update(ext_map[ik])
-            merged.append(combined)
+            merged.append(_overlay_non_empty(item, ext_map[ik]))
             used.add(ik)
         else:
             merged.append(item)
             if ik:
                 used.add(ik)
     for item in ext_list:
-        ik = str(item.get(key, "")) if isinstance(item, dict) else ""
+        ik = str(item.get(key, "")) if isinstance(item, dict) and item.get(key) is not None else ""
         if ik and ik not in used:
             merged.append(item)
             used.add(ik)
     return merged
+
+
+def merge_positional_enrich(base_list: list[dict[str, Any]], ext_list: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Overlay external items positionally onto base_list when external IDs differ from base placeholders."""
+    if not ext_list:
+        return base_list
+    out: list[dict[str, Any]] = []
+    for idx, base_item in enumerate(base_list):
+        if idx < len(ext_list) and isinstance(ext_list[idx], dict):
+            out.append(_overlay_non_empty(base_item, ext_list[idx]))
+        else:
+            out.append(base_item)
+    return out
 
 
 def _strip_js_comments_outside_strings(js: str) -> str:
@@ -221,26 +246,131 @@ def _strip_js_comments_outside_strings(js: str) -> str:
     return "".join(out)
 
 
+def _js_literal_to_json(expr: str) -> str:
+    """Convert JS object/array literal syntax (unquoted keys, single quotes, trailing commas) into JSON."""
+    out: list[str] = []
+    i = 0
+    n = len(expr)
+    while i < n:
+        ch = expr[i]
+        if ch in ('"', "'"):
+            quote = ch
+            out.append('"')
+            i += 1
+            while i < n:
+                c = expr[i]
+                if c == "\\":
+                    nxt = expr[i + 1] if i + 1 < n else ""
+                    if quote == "'" and nxt == "'":
+                        out.append("'")
+                    elif quote == "'" and nxt == '"':
+                        out.append('\\"')
+                    elif nxt in ('"', "\\", "/", "b", "f", "n", "r", "t", "u"):
+                        out.append("\\" + nxt)
+                    else:
+                        out.append(nxt)
+                    i += 2
+                    continue
+                if c == quote:
+                    out.append('"')
+                    i += 1
+                    break
+                if c == '"' and quote == "'":
+                    out.append('\\"')
+                elif c == "\n":
+                    out.append("\\n")
+                elif c == "\r":
+                    pass
+                elif c == "\t":
+                    out.append("\\t")
+                else:
+                    out.append(c)
+                i += 1
+        elif ch.isalpha() or ch in ("_", "$"):
+            start = i
+            while i < n and (expr[i].isalnum() or expr[i] in ("_", "$")):
+                i += 1
+            ident = expr[start:i]
+            j = i
+            while j < n and expr[j] in " \t\r\n":
+                j += 1
+            if j < n and expr[j] == ":":
+                out.append(f'"{ident}"')
+            elif ident in ("true", "false", "null"):
+                out.append(ident)
+            else:
+                out.append(f'"{ident}"')
+        else:
+            out.append(ch)
+            i += 1
+    return re.sub(r",(\s*[\]}])", r"\1", "".join(out))
+
+
 def _extract_object_literal(raw_js: str) -> dict[str, Any]:
-    """Safely parse JSON or JS object assignment exported by Gemini Web."""
+    """Safely parse JSON or JS IIFE/module bundles exported by Gemini Web."""
     clean = _strip_js_comments_outside_strings(raw_js)
+    vars_found: dict[str, Any] = {}
+    pos = 0
+    for m in re.finditer(r"\b(?:var|let|const)\s+([A-Za-z_][A-Za-z0-9_]*)\s*=\s*([\[{])", clean):
+        if m.start() < pos:
+            continue
+        name = m.group(1)
+        open_ch = m.group(2)
+        close_ch = "]" if open_ch == "[" else "}"
+        idx = m.end() - 1
+        depth = 0
+        in_str: str | None = None
+        esc = False
+        end_idx: int | None = None
+        for k in range(idx, len(clean)):
+            c = clean[k]
+            if in_str:
+                if esc:
+                    esc = False
+                elif c == "\\":
+                    esc = True
+                elif c == in_str:
+                    in_str = None
+            else:
+                if c in ('"', "'"):
+                    in_str = c
+                elif c == open_ch:
+                    depth += 1
+                elif c == close_ch:
+                    depth -= 1
+                    if depth == 0:
+                        end_idx = k + 1
+                        break
+        if end_idx is not None:
+            try:
+                vars_found[name] = json.loads(_js_literal_to_json(clean[idx:end_idx]))
+                pos = end_idx
+            except Exception:
+                pass
+
+    if vars_found:
+        merged: dict[str, Any] = {}
+        for k, v in vars_found.items():
+            if k in ("partA", "partB") and isinstance(v, dict):
+                merged.update(v)
+            else:
+                merged[k] = v
+        if "lessons12" in merged and "lessons6" in merged and "lessons18" not in merged:
+            merged["lessons18"] = merged["lessons12"] + merged["lessons6"]
+        return merged
+
     start = clean.find("{")
     end = clean.rfind("}")
     if start == -1 or end <= start:
         return {}
     body = clean[start : end + 1]
-    # Remove trailing commas before } or ]
-    body = re.sub(r",(\s*[}\]])", r"\1", body)
-    # Try straight JSON first
     try:
-        parsed = json.loads(body)
+        parsed = json.loads(re.sub(r",(\s*[}\]])", r"\1", body))
         return parsed if isinstance(parsed, dict) else {}
     except Exception:
         pass
-    # Quote unquoted keys safely outside strings
-    fixed = re.sub(r'([{\[,]\s*)([A-Za-z_][A-Za-z0-9_]*)(\s*:)', r'\1"\2"\3', body)
     try:
-        parsed = json.loads(fixed)
+        parsed = json.loads(_js_literal_to_json(body))
         return parsed if isinstance(parsed, dict) else {}
     except Exception:
         return {}

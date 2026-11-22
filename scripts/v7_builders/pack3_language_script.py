@@ -236,6 +236,19 @@ def build_pack3() -> dict[str, Any]:
 
     if ext.get("liushu30"):
         liushu_50 = merge_unique_by_key(liushu_50, ext["liushu30"], "id")[:50]
+    for lc in liushu_50:
+        if not lc.get("evolution4Stages"):
+            lc["evolution4Stages"] = {
+                "oracleBone": str(lc.get("oracleBone", "")),
+                "bronzeScript": str(lc.get("bronzeScript", "")),
+                "smallSeal": str(lc.get("smallSeal", "")),
+                "regularScript": f"Khải thư '{lc.get('zh', '')}'",
+            }
+        lc["meaningShort"] = lc.get("meaningVi") or lc.get("meaningShort", "")
+        comps = lc.get("b2bCompounds") or []
+        if isinstance(comps, list) and comps and isinstance(comps[0], dict):
+            lc["b2bSample"] = " · ".join(f"{c.get('zh', '')} ({c.get('vi', '')})" for c in comps)
+
     if ext.get("falseFriends15"):
         ff_15 = merge_unique_by_key(ff_15, ext["falseFriends15"], "id")[:15]
     if ext.get("simpTrad20"):

@@ -4,7 +4,14 @@ from __future__ import annotations
 
 from typing import Any
 
-from .pack_utils import PROVINCE_IMAGES, ensure_verified_img, load_external_pack, merge_unique_by_key, sanitize_recursive
+from .pack_utils import (
+    PROVINCE_IMAGES,
+    ensure_verified_img,
+    load_external_pack,
+    merge_positional_enrich,
+    merge_unique_by_key,
+    sanitize_recursive,
+)
 
 
 def _make_hotspots(specs: list[tuple[int, str, str, str, str, str]]) -> list[dict[str, Any]]:
@@ -578,16 +585,55 @@ def build_pack5() -> dict[str, Any]:
 
     if ext.get("tradeTerms50"):
         trade_terms_50 = merge_unique_by_key(trade_terms_50, ext["tradeTerms50"], "id")[:50]
+
+    _HOTSPOT_FIELD_EN_MAP = {
+        "Mã số HS 10 chữ số và mã CIQ sản phẩm (HS / CIQ Code)": "HS / CIQ Product Code (10-digit HS & 3-digit CIQ)",
+        "Tên pháp nhân và địa chỉ nhà máy sản xuất (Production Facility Address)": "Production Facility Legal Name & Address",
+        "Bản cam kết tuân thủ quy định Trung Quốc và sơ đồ quy trình HACCP": "China Regulatory Compliance Pledge & HACCP Flow Diagram",
+        "Điều khoản Quyền sở hữu khuôn mẫu và Sở hữu trí tuệ (Tooling & IP Clause)": "Tooling Ownership & Intellectual Property Clause",
+        "Phụ lục Tiêu chuẩn kỹ thuật, Mẫu chuẩn Golden Sample và ngưỡng AQL": "Technical Specs, Golden Sample & AQL Tolerance Schedule",
+        "Điều khoản Ngôn ngữ ưu tiên và Trọng tài giải quyết tranh chấp": "Prevailing Language & Arbitration Jurisdiction Clause",
+        "Mục Khai báo bổ sung (Additional Declaration — PUC & PHC)": "Additional Declaration (PUC Orchard & PHC Packhouse Codes)",
+        "Tên khoa học loài thực vật và trọng lượng tịnh (Botanical Name & Net Weight)": "Botanical Scientific Name & Net Weight",
+        "Số container, số chì niêm phong và biển số xe lạnh (Conveyance Details)": "Container No., Customs Seal & Reefer Conveyance Details",
+        "Trường 42C / 42P: Kỳ hạn hối phiếu và điều khoản thanh toán chậm": "Field 42C / 42P: Usance Draft Tenor & Deferred Terms",
+        "Trường 46A: Danh mục chứng từ xuất trình bắt buộc": "Field 46A: Mandatory Presentation Document Schedule",
+        "Trường 44C & 48: Ngày giao hàng muộn nhất và thời hạn xuất trình chứng từ": "Fields 44C & 48: Latest Shipment Date & Presentation Window",
+        "Mã định danh giao dịch UETR / CIPS Reference & Mã mục đích thanh toán": "UETR / CIPS Transaction Reference & Payment Purpose Code",
+        "Tỷ giá quy đổi chốt lệnh và cơ chế chia phí (OUR / SHA / BEN)": "Locked Settlement FX Rate & Fee Allocation (OUR / SHA / BEN)",
+        "Đối chiếu số tiền thực nhận với số tờ khai hải quan đã thông quan": "Reconciled Wire Amount vs Cleared Customs Declaration",
+    }
+
     if ext.get("tradeDocs5"):
-        trade_docs_5 = merge_unique_by_key(trade_docs_5, ext["tradeDocs5"], "id")[:5]
+        trade_docs_5 = merge_positional_enrich(trade_docs_5, ext["tradeDocs5"])
+    for d in trade_docs_5:
+        d["nameVi"] = d.get("titleVi") or d.get("nameVi", "")
+        d["nameEn"] = d.get("titleEn") or d.get("nameEn", "")
+        d["nameZh"] = d.get("titleZh") or d.get("nameZh", "")
+        d["issuerVi"] = d.get("issuerRoleVi") or d.get("issuerVi", "")
+        for h in d.get("hotspots", []):
+            if isinstance(h, dict):
+                fraw = h.get("field") or ""
+                h["fieldVi"] = h.get("fieldVi") or h.get("fieldNameVi") or fraw
+                h["fieldEn"] = _HOTSPOT_FIELD_EN_MAP.get(fraw) or h.get("fieldEn") or h.get("fieldNameEn") or fraw
+                if not h.get("complianceRiskVi") and h.get("tipVi"):
+                    h["complianceRiskVi"] = h["tipVi"]
+                if not h.get("complianceRiskEn") and h.get("tipEn"):
+                    h["complianceRiskEn"] = h["tipEn"]
+
     if ext.get("supplyCases10"):
-        supply_cases_10 = merge_unique_by_key(supply_cases_10, ext["supplyCases10"], "id")[:10]
+        supply_cases_10 = merge_positional_enrich(supply_cases_10, ext["supplyCases10"])
     if ext.get("sinoVietWonders6"):
         sino_viet_6 = merge_unique_by_key(sino_viet_6, ext["sinoVietWonders6"], "id")[:6]
     if ext.get("cscUniversities12"):
         csc_unis_12 = merge_unique_by_key(csc_unis_12, ext["cscUniversities12"], "id")[:12]
+    for u in csc_unis_12:
+        u["agencyNo"] = u.get("agencyNumber") or u.get("agencyNo", "")
+        u["majorsVi"] = u.get("strengthsVi") or u.get("majorsVi", "")
     if ext.get("cscInterviews12"):
         csc_iv_12 = merge_unique_by_key(csc_iv_12, ext["cscInterviews12"], "id")[:12]
+    if ext.get("hsrCorridors4"):
+        hsr_8 = merge_positional_enrich(hsr_8[:4], ext["hsrCorridors4"]) + hsr_8[4:]
     if ext.get("heritageExpeditions16"):
         heritage_expeditions_16 = merge_unique_by_key(heritage_expeditions_16, ext["heritageExpeditions16"], "id")[:16]
     if ext.get("digitalTravelConcierge8"):

@@ -634,9 +634,7 @@ def build_pack1() -> dict[str, Any]:
     # Merge any user-supplied external Pack 1 lessons/modules cleanly
     ext_modules = ext.get("modulesMeta3") or ext.get("modulesMeta") or []
     if isinstance(ext_modules, list) and len(ext_modules) == 3:
-        for i, m in enumerate(ext_modules):
-            if isinstance(m, dict):
-                modules_meta_3[i].update({k: v for k, v in m.items() if v})
+        modules_meta_3 = merge_unique_by_key(modules_meta_3, ext_modules, "num")[:3]
 
     ext_lessons = (ext.get("lessons18") or []) + (ext.get("lessons12") or []) + (ext.get("lessons6") or [])
     if ext_lessons:

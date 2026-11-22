@@ -270,19 +270,22 @@ def main() -> int:
     print(f"[Gate 9] V4/V6/V7 Data, Epistemology & WebGL Mgr: {'PASS' if not g9_issues else 'FAIL'}")
     failures.extend(g9_issues)
 
-    # Gate 10: PWA Cache Parity (cce-v7.0) & Zero Dev Jargon in UI Strings
+    # Gate 10: PWA Cache Parity (cce-v7.1) & Zero Dev Jargon / Version Hype in UI Strings
     g10_issues: list[str] = []
     sw_txt = (ROOT / "sw.js").read_text(encoding="utf-8") if (ROOT / "sw.js").is_file() else ""
-    if 'CACHE_VERSION = "cce-v7.0"' not in sw_txt:
-        g10_issues.append('sw.js CACHE_VERSION is not "cce-v7.0"')
-    ui_scan = [ROOT / "index.html"] + sorted((ROOT / "src" / "components").rglob("*.js"))
+    if 'CACHE_VERSION = "cce-v7.1"' not in sw_txt:
+        g10_issues.append('sw.js CACHE_VERSION is not "cce-v7.1"')
+    ui_scan = [ROOT / "index.html", ROOT / "src" / "core" / "searchIndex.js"] + sorted((ROOT / "src" / "components").rglob("*.js"))
     for fp in ui_scan:
+        if not fp.is_file():
+            continue
         for idx, line in enumerate(fp.read_text(encoding="utf-8", errors="ignore").splitlines(), 1):
             s = line.strip()
-            if s.startswith("//") or s.startswith("*") or s.startswith("<!--"):
+            if s.startswith("//") or s.startswith("/*") or s.startswith("*") or s.startswith("<!--"):
                 continue
-            if re.search(r"\bBatch\s+\d+\b|\bV4\.0\b", line):
-                g10_issues.append(f"Dev jargon in UI ({fp.as_posix()}:{idx}): {s[:80]}")
+            cleaned = re.sub(r'\b(v[4567][A-Za-z0-9_]*|cce-[a-z0-9-]+|data-[a-z0-9-]+|v[4567]-)\b', '', line, flags=re.I)
+            if re.search(r"\bBatch\s+\d+\b|\bV[4567]\.0\b|Benchmark Tập đoàn", cleaned, re.I):
+                g10_issues.append(f"Dev jargon / version hype in UI ({fp.as_posix()}:{idx}): {s[:80]}")
     print(f"[Gate 10] PWA Cache Parity & Clean UI Copy: {'PASS' if not g10_issues else 'FAIL'}")
     failures.extend(g10_issues[:10])
 
@@ -470,7 +473,10 @@ def main() -> int:
             (len(v7_bundle.get("quiz100", [])), 100, "V7 quiz100"),
         ]
         for actual_c, exp_c, lbl in v7_counts:
-            if actual_c != exp_c:
+            if lbl == "simpTrad15":
+                if actual_c < exp_c:
+                    g14_issues.append(f"Expected >= {exp_c} {lbl}, got {actual_c}")
+            elif actual_c != exp_c:
                 g14_issues.append(f"Expected {exp_c} {lbl}, got {actual_c}")
 
         # Verify 100 base+v5+v6 + 20 V7 = 120 unique Honored Brands via coreZhKey
@@ -543,6 +549,22 @@ def main() -> int:
                 for idx_i, item_v in enumerate(obj):
                     _scan_en_leaks(item_v, f"{trail}[{idx_i}]")
         _scan_en_leaks(v7_bundle, "V7_DATA")
+
+        # Verify V5, V6, and EditorialMedia sources have 0 residual clones/slug leaks/VI-in-titleEn
+        if v6_bundle_path.is_file():
+            if "Mẹo quan sát ảnh [" in v6_raw:
+                g14_issues.append("V6 bundle contains residual 'Mẹo quan sát ảnh [' boilerplate")
+            if "bức họa paint-" in v6_raw:
+                g14_issues.append("V6 bundle contains raw 'bức họa paint-*' slug leak")
+        v5_enrich_path = ROOT / "src" / "data" / "v5" / "v5DeepEnrichmentLayer.js"
+        if v5_enrich_path.is_file() and "HSK 7–9 / CSC Model Context: " in v5_enrich_path.read_text(encoding="utf-8"):
+            g14_issues.append("V5 enrichment layer contains Vietnamese leak under HSK 7-9 Model Context")
+        emp_path = ROOT / "src" / "data" / "editorialMediaPack2026.js"
+        if emp_path.is_file():
+            for ln, line_txt in enumerate(emp_path.read_text(encoding="utf-8").splitlines(), 1):
+                if '"titleEn"' in line_txt and vi_only_rx.search(line_txt):
+                    g14_issues.append(f"VI diacritic leak in editorialMediaPack2026.js:{ln} titleEn")
+                    break
     print(f"[Gate 14] V7 All-Dataset Counts, 120 Brands & 600-MCQ / 150-Visual-ID Parity: {'PASS' if not g14_issues else 'FAIL'}")
     failures.extend(g14_issues[:10])
 

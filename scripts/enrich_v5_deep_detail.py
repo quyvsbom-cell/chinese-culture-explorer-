@@ -351,26 +351,117 @@ def main() -> int:
             brand_enrich[bid] = base
 
     # 2. Enrich GI 12
+    GI_EN_MAP = {
+        "gi-eu-01": (
+            "Hand-plucked one-bud-one-leaf shoots from West Lake's core Five Mountain sub-zones, flattened in heated iron pans for clean aroma and chestnut sweetness.",
+            "Compare with northern Vietnam's ancient Shan Tuyet teas in Ta Xua and Suoi Giang: binding GI zoning to harvest rules prevents adulteration in EU retail.",
+        ),
+        "gi-eu-02": (
+            "Fired above 1,300C from pure Gaoling kaolin clay harvested around Yaoli and Jingdezhen, producing clear bell-like resonance and jade-like translucency.",
+            "Parallels Chu Dau (Hai Duong) and Bat Trang (Hanoi) porcelain lineages in registering collective geographic hallmarks across France and Germany.",
+        ),
+        "gi-eu-03": (
+            "Woven from Taihu Plain white mulberry filaments and botanical dye baths perfected in Hangzhou and Suzhou silk ateliers.",
+            "Offers a direct roadmap for Van Phuc (Hanoi) and Bao Loc silk workshops transitioning to traceable OEKO-TEX certification for European buyers.",
+        ),
+        "gi-eu-04": (
+            "Slow clay-jar fermentation blending glutinous rice, wheat starter qu, and mineral-rich Jianhu Lake spring water sealed under yellow loam.",
+            "Demonstrates how traditional Asian fermented beverages attain legal GI parity alongside French Champagne in Brussels filings.",
+        ),
+        "gi-eu-05": (
+            "Semi-oxidized Anxi Oolong shaped through solar withering and rhythmic bamboo tossing to unlock natural orchid fragrance ('Yin Rhyme').",
+            "Guides highland Oolong cooperatives in Lam Dong and Moc Chau on codifying oxidation logs for German and UK specialty tea contracts.",
+        ),
+        "gi-eu-06": (
+            "Sun-dried Yunnan big-leaf Camellia sinensis compressed into cakes or post-fermented into dark Ripe Puerh with age-evolving microflora.",
+            "Mirrors compressed ancient-tree cake production in Ha Giang and Lai Chau targeting global specialty tea collectors.",
+        ),
+        "gi-eu-07": (
+            "Erjingtiao chilies, broad beans, and well salt slow-fermented in open earthenware vats for months under daytime sun and night dew.",
+            "Direct counterpart to Vietnam's Phu Quoc Fish Sauce (first ASEAN PDO in the EU), guarding artisanal condiment identity against bulk imitation.",
+        ),
+        "gi-eu-08": (
+            "Solid-state tiered fermentation of glutinous rice, wheat bran, and husks rolled in salt-brined vats over a full year.",
+            "Shares bacterial-crust vinegar and seasoning aging discipline with heritage Vietnamese barrel-aged condiment houses.",
+        ),
+        "gi-eu-09": (
+            "Blends cliff-grown Qingtan wingceltis bark from Jingxian limestone slopes with wet mountain rice straw for ink diffusion lasting centuries.",
+            "Informs archival conservation of Dong Ho and Yen Thai Do bark paper through verifiable local raw-fiber sourcing.",
+        ),
+        "gi-eu-10": (
+            "Crafted solely in the Chishui River gorge basin where canyon heat, loess clay pits, and native microflora remain biologically irreplicable.",
+            "Classic benchmark of non-relocatable terroir sustaining high gross margins and state-level GI equity.",
+        ),
+        "gi-eu-11": (
+            "Tea bushes rooted in weathered rock fissures of Mount Wuyi, yielding the unmistakable mineral floral finish ('Yan Bone Flower Aroma').",
+            "Highlights branding potential for rocky highland specialties from Dong Van and Cao Bang tied to UNESCO Geopark geology.",
+        ),
+        "gi-eu-12": (
+            "Orchard apples grown on the Jiaodong Peninsula under crisp Yellow Sea day-night swings, tracked per plot for EU residue compliance.",
+            "Useful reference for Luc Ngan lychee, Binh Thuan dragon fruit, and Cao Lanh mango orchards tightening MRL export monitoring.",
+        ),
+    }
     gi_enrich = {}
     for gid, (gb, craft, vncmp) in GI_DEEP_DATA.items():
+        gb_code = re.split(r"\s*[(&/]", gb)[0].strip()
+        craft_en, vncmp_en = GI_EN_MAP.get(gid, (
+            f"Protected geographical terroir governed by Chinese national standard {gb_code} and EU–China GI traceability rules.",
+            "Illustrates bilateral origin protection practices alongside Vietnamese EVFTA geographical indications.",
+        ))
         gi_enrich[gid] = {
             "gbStandardCode": gb,
             "terroirAndCraftVi": craft,
-            "terroirAndCraftEn": f"Protected geographical terroir governed by Chinese national standard {gb} and bilateral EU–China GI traceability rules.",
+            "terroirAndCraftEn": f"{craft_en} Governed under {gb_code} and bilateral EU–China GI origin controls.",
             "vnEuComparisonVi": vncmp,
-            "vnEuComparisonEn": "Benchmarks directly alongside Vietnam's 39 EU-protected GIs under EVFTA (e.g., Phu Quoc Fish Sauce, Luc Ngan Lychee) for origin protection and export value capture."
+            "vnEuComparisonEn": vncmp_en,
         }
 
     # 3. Enrich Lesson 1-36 + append Module 7 (Lessons 37-42)
     lesson_txt = pathlib.Path("src/data/v5/courseLessonsV5.js").read_text(encoding="utf-8")
     lesson_ids = re.findall(r'id:\s*"(v5-m\d+-l\d+)"', lesson_txt)
     MODULE_ROUTE_MAP = {
-        "1": ("regions", "Mở Bản đồ 34 Tỉnh & Địa lý 3D", "Open 34-Province Atlas & 3D Map", "《禹贡》 / Địa hình Bậc thang", "Đồng bằng châu thổ sông Hồng & sông Cửu Long cùng quy hoạch thủy lợi đồng bằng Việt Nam."),
-        "2": ("history", "Mở Dòng thời gian 14 Triều đại & Danh nhân", "Open 14 Dynasties & Portraits", "《史记》 · 《资治通鉴》", "Đối chiếu song hành lịch sử tự chủ Lý – Trần – Lê – Nguyễn của Đại Việt trên trục thời gian."),
-        "3": ("philosophy", "Mở Hệ thống Tư tưởng & Giải phẫu 3D", "Open Philosophy & 3D Labs", "《论语》 · 《道德经》 · 《营造法式》", "Kế thừa Đấu Củng & quy hoạch trục tại Ngọ Môn – Điện Thái Hòa Kinh thành Huế."),
-        "4": ("explore", "Mở Học viện HSK 4–9 & Văn ngôn", "Open HSK 4–9 & Classics Hub", "六书《说文解字》 · HSK 7-9大纲", "Tận dụng kho từ vựng Hán–Việt (70% từ vựng cao cấp tiếng Việt) để tăng tốc đọc hiểu."),
-        "5": ("regions", "Mở Cẩm nang Du học CSC & Du lịch", "Open Travel & CSC Study Hub", "12306 · CSC奖学金 · 饮食文化", "Thích nghi ẩm thực, thanh toán Alipay và chuẩn bị Study Plan CSC cho sinh viên Việt Nam."),
-        "6": ("business", "Mở Studio Logistics Âu–Trung & Lão Tự Hiệu", "Open EU–China Studio & Brands", "中欧班列 · CBAM · 中华老字号", "Phối hợp cảng Hải Phòng – Cửa khẩu Hữu Nghị với mạng lưới trung chuyển Thâm Quyến – Ninh Ba."),
+        "1": (
+            "regions", "Mở Bản đồ 34 Tỉnh & Địa lý 3D", "Open 34-Province Atlas & 3D Map",
+            "《禹贡》 / Địa hình Bậc thang",
+            "Book of Documents (Tribute of Yu) & Three-Step East Asian Topography",
+            "Đồng bằng châu thổ sông Hồng & sông Cửu Long cùng quy hoạch thủy lợi đồng bằng Việt Nam.",
+            "Parallel deltaic hydrology and dyke engineering across Vietnam's Red River and Mekong basins.",
+        ),
+        "2": (
+            "history", "Mở Dòng thời gian 14 Triều đại & Danh nhân", "Open 14 Dynasties & Portraits",
+            "《史记》 · 《资治通鉴》",
+            "Sima Qian's Shiji & Comprehensive Mirror for Aid in Government (Zizhi Tongjian)",
+            "Đối chiếu song hành lịch sử tự chủ Lý – Trần – Lê – Nguyễn của Đại Việt trên trục thời gian.",
+            "Chronological synchronization with Vietnam's autonomous Ly, Tran, Le, and Nguyen dynasties.",
+        ),
+        "3": (
+            "philosophy", "Mở Hệ thống Tư tưởng & Giải phẫu 3D", "Open Philosophy & 3D Labs",
+            "《论语》 · 《道德经》 · 《营造法式》",
+            "The Analects, Daodejing & Yingzao Fashi Architectural Treatise",
+            "Kế thừa Đấu Củng & quy hoạch trục tại Ngọ Môn – Điện Thái Hòa Kinh thành Huế.",
+            "Adaptation of interlocking timber bracketry and axial courtyards at Hue's Meridian Gate and Hall of Supreme Harmony.",
+        ),
+        "4": (
+            "explore", "Mở Học viện HSK 4–9 & Văn ngôn", "Open HSK 4–9 & Classics Hub",
+            "六书《说文解字》 · HSK 7-9大纲",
+            "Shuowen Jiezi Six Scripts Philology & HSK Bands 7–9 Syllabus",
+            "Tận dụng kho từ vựng Hán–Việt (70% từ vựng cao cấp tiếng Việt) để tăng tốc đọc hiểu.",
+            "Leveraging Sino-Vietnamese cognates (roughly 70% of formal Vietnamese vocabulary) to accelerate classical and C1-C2 reading.",
+        ),
+        "5": (
+            "regions", "Mở Cẩm nang Du học CSC & Du lịch", "Open Travel & CSC Study Hub",
+            "12306 · CSC奖学金 · 饮食文化",
+            "China Railway 12306 Protocol, CSC Scholarship Portal & Culinary Field Archives",
+            "Thích nghi ẩm thực, thanh toán Alipay và chuẩn bị Study Plan CSC cho sinh viên Việt Nam.",
+            "Practical regional dining orientation, mobile payments (Alipay/WeChat Pay), and CSC study plans for Vietnamese scholars.",
+        ),
+        "6": (
+            "business", "Mở Studio Logistics Âu–Trung & Lão Tự Hiệu", "Open EU–China Studio & Brands",
+            "中欧班列 · CBAM · 中华老字号",
+            "CR Express Consignment Rules, EU CBAM & MOFCOM Honored Brand Registries",
+            "Phối hợp cảng Hải Phòng – Cửa khẩu Hữu Nghị với mạng lưới trung chuyển Thâm Quyến – Ninh Ba.",
+            "Operational coordination across Hai Phong Port, Huu Nghi border gates, and Shenzhen-Ningbo manufacturing hubs.",
+        ),
     }
     lesson_terms_by_mod = {
         "1": [
@@ -458,18 +549,18 @@ def main() -> int:
     lesson_enrich = {}
     for lid in lesson_ids:
         mod_num = lid.split("-m")[1].split("-")[0]
-        r_page, r_vi, r_en, cite_vi, vn_vi = MODULE_ROUTE_MAP.get(mod_num, MODULE_ROUTE_MAP["1"])
+        r_page, r_vi, r_en, cite_vi, cite_en, vn_vi, vn_en = MODULE_ROUTE_MAP.get(mod_num, MODULE_ROUTE_MAP["1"])
         ex_zh, ex_vi, ex_en, vis_vi, vis_en = MODULE_VISUAL_PRIMARY.get(mod_num, MODULE_VISUAL_PRIMARY["1"])
         lesson_enrich[lid] = {
             "historicalEvidenceVi": f"Nguồn khảo chứng & tài liệu đối chiếu gốc: {cite_vi} — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
-            "historicalEvidenceEn": f"Primary & Archival Reference Anchor: {cite_vi} — cross-checked against CCE digitized museum archives and canonical citations.",
+            "historicalEvidenceEn": f"Archival reference: {cite_en} — verified against digitized museum collections and canonical textual sources.",
             "primaryTextExcerptZh": ex_zh,
             "primaryTextExcerptVi": ex_vi,
             "primaryTextExcerptEn": ex_en,
             "visualDiagramSpecVi": vis_vi,
             "visualDiagramSpecEn": vis_en,
             "vietnamComparisonVi": vn_vi,
-            "vietnamComparisonEn": "Structured comparative Vietnam–China–Europe lens helping learners anchor Chinese institutions alongside Vietnamese history and ASEAN trade realities.",
+            "vietnamComparisonEn": vn_en,
             "keyTermsTrilingual": lesson_terms_by_mod.get(mod_num, lesson_terms_by_mod["1"]),
             "readingLink": {"page": r_page, "labelVi": r_vi, "labelEn": r_en}
         }
@@ -504,18 +595,62 @@ def main() -> int:
         ("Khẩu khí sử ký cô đọng tứ tự ('Hữu chí giả sự cánh thành')", "Four-character historical aphorism delivering crisp essay closure"),
         ("Ẩn dụ tự vấn – đáp trữ tình triết lý (Chu Hi)", "Poetic self-questioning couplet closing academic essays on lifelong intellectual renewal")
     ]
+    HSK_PAIR_GRAM_EN = [
+        "Connective '而' pairs with the affirmative rhetorical frame '不亦……乎'; '时' acts as a temporal adverb meaning periodically.",
+        "Clause linker '而' marks purpose–result progression ('reviewing the old to understand the new'), sealed by final particle '矣'.",
+        "Conjunctive '则' denotes necessary logical consequence in balanced four-character parallel hemistichs.",
+        "Class-changing nominal activation ('行' functioning verbally as cosmic motion) paired with the reflexive compound '自强'.",
+        "Strict binary symmetry from the Book of Changes: cultivated virtue ('厚德') sustains institutional responsibility ('载物').",
+        "Prepositional anchor '始于' anchors Laozi's three-tier escalating spatial and botanical metaphor.",
+        "Inverted negative conditional ('不积……无以……') isolates cumulative increments as prerequisites for scale.",
+        "Serial causative verb chain ('苦其心志，劳其筋骨') marks classical transitive inflection of psychological endurance.",
+        "Five-step linear conditional cascade from the Doctrine of the Mean linking broad reading through verification to execution.",
+        "Comparative counterfactual construction with '不如' foregrounds reciprocal growth between teaching and learning ('教学相长').",
+        "Canonical symmetrical couplet from Sunzi coupling symmetric reconnaissance ('知彼知己') with operational durability ('百战不殆').",
+        "Allusive Daoist parable ('以无厚入有间') frames structural precision outperforming brute effort.",
+        "Sima Qian's tripartite parallel historiography linking cosmic principles, chronological shift, and independent synthesis.",
+        "Temporal moral contrast ('先……而忧，后……而乐') nominalizes verbs inside classical civic-duty syntax.",
+        "Prepositional pattern '以 + Noun + 为 + Noun' ('take X as a mirror'), frequently tested in C1–C2 prose and HSK 6.",
+        "Condensed four-character compound ('和而不同') contrasted via emphatic topicalization distinguishing harmony from conformity.",
+        "Guanzi's ascending three-horizon investment analogy (seasonal crop vs decade timber vs lifelong human cultivation).",
+        "Mohist reciprocal syntax ('兼相爱，交相利') maps ethical reciprocity directly onto mutual economic benefit.",
+        "Compact four-character Late Han aphorism ('有志者，事竟成') delivering direct rhetorical closure.",
+        "Zhu Xi's self-interrogative verse frame pairing causal particle '为有' with a clean closing springwater metaphor.",
+    ]
+    HSK_PAIR_APP_EN = [
+        "Anchors arguments on iterative study–reflection loops in education essays or CSC Master's admission interviews.",
+        "Demonstrates proper literature-review framing: synthesizing classical foundations before proposing modern workflow solutions.",
+        "Critiques unreflective rote study while advocating multi-angle empirical scrutiny in graduate research proposals.",
+        "Provides an understated institutional closing line for essays on organizational renewal or personal perseverance.",
+        "Frames corporate ESG responsibility, professional integrity, and multi-year governance essays at C1–C2 register.",
+        "Suited to phased implementation roadmaps detailing how small audited pilots scale into regional systems.",
+        "Serves as an opening topic sentence on daily trilingual drills or standardizing EUDR and CBAM supplier logs.",
+        "Useful in personal statements describing how cross-border coordinators handled multilingual pressure and tight deadlines.",
+        "Classic five-step framework for structuring the Methodology chapter in CSC scholarship research plans.",
+        "Supports interviews in pedagogy, Sino-Vietnamese faculty mentoring, or cross-cultural project teams.",
+        "Applicable to market-entry benchmarking, B2B contract negotiation prep, and partner compliance due diligence.",
+        "Crisp metaphor for Lean operations and eliminating bureaucratic bottlenecks without excessive friction.",
+        "States overarching thesis aims combining institutional history with modern quantitative trade economics.",
+        "Supports argumentative essays on civic stewardship, public policy, and institutional accountability.",
+        "Incisive transition pivoting from historical precedents or past supply chain incidents to concrete SOP fixes.",
+        "Standard closing formulation for cultural diplomacy and ASEAN–China–EU cooperation honoring local autonomy.",
+        "Justifies long-term capital allocation toward talent training, R&D, and green port infrastructure over quarterly metrics.",
+        "Frames essays on Fair Trade rules and mutually verifiable win-win manufacturing partnerships.",
+        "Concise opening or concluding sentence for essays on persistence through complex HSK or GACC compliance milestones.",
+        "Measured philosophical close emphasizing continuous knowledge updates to keep analytical models current.",
+    ]
     hsk_pair_enrich = {}
     for i, (gram_vi, app_vi) in enumerate(HSK_PAIR_DEEP, 1):
         pid = f"cm-{i:02d}"
         rh_vi, rh_en = RHETORICAL_DEVICES[(i - 1) % len(RHETORICAL_DEVICES)]
         hsk_pair_enrich[pid] = {
             "grammarBreakdownVi": gram_vi,
-            "grammarBreakdownEn": f"Philological note ({pid.upper()}): tracks particle compression in Classical Wenyan vs analytic explicitness in Modern Mandarin HSK 6–9.",
+            "grammarBreakdownEn": HSK_PAIR_GRAM_EN[i - 1],
             "rhetoricalDeviceVi": rh_vi,
             "rhetoricalDeviceEn": rh_en,
             "hskEssayApplicationZh": "综上所述，传承经典智慧并非墨守成规，而是将其系统性思维转化为现代学术研究与跨文化实践的行动准则。",
             "hskEssayApplicationVi": app_vi,
-            "hskEssayApplicationEn": f"HSK 7–9 / CSC Model Context: {app_vi}"
+            "hskEssayApplicationEn": HSK_PAIR_APP_EN[i - 1],
         }
 
     tpl_txt = pathlib.Path("src/data/v5/hskEssaysV5.js").read_text(encoding="utf-8")

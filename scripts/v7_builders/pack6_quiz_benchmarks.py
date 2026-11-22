@@ -8,6 +8,7 @@ from .pack_utils import (
     VISUAL_QUIZ_TAG_MAP,
     ensure_verified_img,
     load_external_pack,
+    merge_positional_enrich,
     merge_unique_by_key,
     sanitize_recursive,
 )
@@ -280,6 +281,39 @@ def build_pack6() -> dict[str, Any]:
         {"id": "yt-12", "youtubeId": "GkLhHNTOP3Y", "sectionTag": "tourism", "author": "ChinaVista", "titleVi": "Hoàng Sơn Huy Châu — Biển Mây & Thông Nghênh Khách", "titleEn": "Huangshan (Yellow Mountain), China | Travel Documentary", "summaryVi": "Hành trình chiêm ngưỡng kỳ quan núi granit Hoàng Sơn gắn với cổ thôn Hoành Thôn.", "summaryEn": "Scenic immersion across granite sea-of-clouds peaks and Huizhou ink villages.", "posterImage": ensure_verified_img("assets/images/provinces/anhui-huangshan-cloudsea.jpg")},
     ]
 
+    PACK6_VISUAL_TAG_MAP = {
+        "terracotta": "assets/images/museum/terracotta-general.jpg",
+        "qianli_jiangshan": "assets/images/paintings/22_qianli_jiangshan.jpg",
+        "taihe_dian": "assets/images/museum/taihe-dian.jpg",
+        "suzhou_garden": "assets/images/academic/suzhou-garden.jpg",
+        "fujian_tulou": "assets/images/provinces/fujian-tulou.jpg",
+        "temple_of_heaven": "assets/images/provinces/beijing-temple-of-heaven.jpg",
+        "lantingji_xu": "assets/images/museum/lantingji-xu.jpg",
+        "qingming_scroll": "assets/images/paintings/21_qingming_shanghe.jpg",
+        "houmuwu_ding": "assets/images/museum/houmuwu-ding.jpg",
+        "tang_sancai": "assets/images/museum/tang-sancai-camel.jpg",
+        "jiuzhaigou": "assets/images/provinces/sichuan-jiuzhaigou.jpg",
+        "guilin_karst": "assets/images/provinces/guangxi-guilin-li-river.jpg",
+        "west_lake": "assets/images/provinces/zhejiang-hangzhou-westlake.jpg",
+        "huangshan": "assets/images/provinces/anhui-huangshan-cloudsea.jpg",
+        "shanghai_bund": "assets/images/provinces/shanghai-bund-skyline.jpg",
+        "van_mieu": "assets/images/academic/van-mieu-hanoi.jpg",
+        "dougong": "assets/images/editorial/diagram-dougong-seismic.svg",
+        "guqin": "assets/images/museum/guqin-jiuxiao-huanpei.jpg",
+        "zheng_he": "assets/images/museum/zheng-he-chart.jpg",
+        "hongcun": "assets/images/provinces/anhui-hongcun-moonpond.jpg",
+        "canton_tower": "assets/images/provinces/guangdong-canton-tower.jpg",
+        "song_ceramics": "assets/images/museum/ru-yao-tianqing.jpg",
+        "sunzi_slips": "assets/images/academic/sunzi-bamboo-slips.jpg",
+        "dunhuang_star": "assets/images/provinces/gansu-dunhuang-mogao.jpg",
+        "acupuncture_bronze": "assets/images/museum/acupuncture-bronze.jpg",
+        "yongle_dadian": "assets/images/museum/yongle-dadian.jpg",
+        "luoshenfu": "assets/images/paintings/01_luoshenfu_tu.jpg",
+        "calligraphy_five_scripts": "assets/images/articles/hero-calligraphy-five-scripts.jpg",
+        "b2b_negotiation": "assets/images/articles/hero-b2b-negotiation-table.jpg",
+        "six_teas": "assets/images/articles/hero-six-teas-gongfu.jpg",
+    }
+
     if ext.get("quiz100"):
         quiz_100 = merge_unique_by_key(quiz_100, ext["quiz100"], "id")[:100]
     else:
@@ -287,14 +321,40 @@ def build_pack6() -> dict[str, Any]:
         if q_ext:
             quiz_100 = merge_unique_by_key(quiz_100, q_ext, "id")[:100]
 
-    # Always resolve Visual ID paths safely onto verified on-disk images
+    # Always resolve Visual ID paths safely onto verified on-disk images & normalize EN Sino-Viet citations
+    _vi_sv_en_repl = (
+        ("tiểu tâm", "tieu tam"),
+        ("cố nhân", "co nhan"),
+        ("quá cố", "qua co"),
+        ("'cố'", "'co'"),
+        ("Khuê (Kui)", "Khue (Kui)"),
+    )
     for q in quiz_100:
+        for ek in ("questionEn", "explainEn", "topicEn", "visualInspectionGuideEn"):
+            if isinstance(q.get(ek), str):
+                s_val = q[ek]
+                for src_w, dst_w in _vi_sv_en_repl:
+                    s_val = s_val.replace(src_w, dst_w)
+                q[ek] = s_val
+        if isinstance(q.get("optionsEn"), list):
+            new_opts = []
+            for opt in q["optionsEn"]:
+                if isinstance(opt, str):
+                    for src_w, dst_w in _vi_sv_en_repl:
+                        opt = opt.replace(src_w, dst_w)
+                new_opts.append(opt)
+            q["optionsEn"] = new_opts
         if q.get("isVisualQuestion"):
             tag = q.get("visualSubjectTag") or q.get("visualAssetHintTag") or ""
-            q["imagePath"] = ensure_verified_img(q.get("imagePath") or VISUAL_QUIZ_TAG_MAP.get(tag, "assets/images/museum/taihe-dian.jpg"))
+            q["imagePath"] = ensure_verified_img(
+                PACK6_VISUAL_TAG_MAP.get(tag) or VISUAL_QUIZ_TAG_MAP.get(tag) or q.get("imagePath") or "assets/images/museum/taihe-dian.jpg"
+            )
+            guide_vi = str(q.get("visualInspectionGuideVi") or "")
+            if not guide_vi or guide_vi.startswith("Mẹo quan sát ảnh ["):
+                q["visualInspectionGuideVi"] = str(q.get("explainVi") or f"Quan sát nét đặc trưng của {q.get('topicVi', '')}.")
 
     if ext.get("globalPlatformBenchmarks6"):
-        global_benchmarks_6 = merge_unique_by_key(global_benchmarks_6, ext["globalPlatformBenchmarks6"], "id")[:6]
+        global_benchmarks_6 = merge_positional_enrich(global_benchmarks_6, ext["globalPlatformBenchmarks6"])
 
     return sanitize_recursive({
         "quiz100": quiz_100,

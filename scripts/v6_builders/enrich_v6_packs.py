@@ -13,6 +13,11 @@ from .pack_brands_liushu import BRANDS_ADDITIONAL_36, MERCHANT_GUILDS_5
 from .pack_cosmo_lit import ZIWU_HOURS_12
 from .pack_trade_csc import CSC_GANTT_12, HSR_CORRIDORS_8X8, INCOTERMS_11
 
+try:
+    from v7_builders.pack_utils import resolve_prov_item_img
+except ImportError:
+    from scripts.v7_builders.pack_utils import resolve_prov_item_img
+
 ROOT = pathlib.Path(".")
 FALLBACK_RASTER = "assets/images/museum/forbidden-city-imperial-axis-gate.jpg"
 
@@ -115,6 +120,33 @@ PAINTING_REF_IMAGES: dict[str, str] = {
     "paint-dongting-lake": "assets/images/paintings/13_xiaoxiang_tu.jpg",
     "paint-fuchun-scroll": "assets/images/paintings/32_fuchun_shanju.jpg",
     "paint-ink-bamboo": "assets/images/paintings/69_zhushi_zhengbanqiao.jpg",
+}
+
+PAINTING_REF_NAMES_VI: dict[str, str] = {
+    "paint-wangwei-wangchuan": "Khuông Lư Đồ (Kinh Hạo) & thi pháp sơn thủy Vương Duy",
+    "paint-lushan-waterfall": "Lư Sơn Cao Đồ (Thẩm Chu)",
+    "paint-song-bird-willow": "Phù Dung Cẩm Kê Đồ (Tống Huy Tông)",
+    "paint-mayuan-hanjiang": "Hàn Giang Độc Điếu Đồ (Mã Viễn)",
+    "paint-westlake-spring": "Du Xuân Đồ (Triển Tử Kiền)",
+    "paint-westlake-mist": "Tảo Xuân Đồ (Quách Hy)",
+    "paint-lantern-festival": "Cô Tô Phồn Hoa Đồ (Từ Dương)",
+    "paint-lotus-pond-song": "Hà Hoa Thủy Cầm Đồ (Chu Đạp)",
+    "paint-hanshan-temple": "Giang Hành Sơ Tuyết Đồ (Triệu Cán)",
+    "paint-village-pastoral": "Tùng Âm Phóng Du Đồ",
+    "paint-yellow-river-tower": "Thiên Lý Giang Sơn Đồ (Vương Hy Mạnh)",
+    "paint-guqin-mist": "Thính Cầm Đồ (Triệu Cát)",
+    "paint-autumn-maple": "Vạn Sơn Hồng Biến (Lý Khả Nhiễm)",
+    "paint-scholar-studio": "Huệ Sơn Trà Hội Đồ (Văn Trưng Minh)",
+    "paint-fankuan-xishan": "Khê Sơn Hành Lữ Đồ (Phạm Khoan)",
+    "paint-jiangnan-spring": "Thước Hoa Thu Sắc Đồ (Triệu Mạnh Phủ)",
+    "paint-westlake-lotus": "Hà Hoa Thủy Cầm Đồ (Bắc Tống)",
+    "paint-guoxi-zaochun": "Tảo Xuân Đồ (Quách Hy)",
+    "paint-yuan-autumn-crow": "Lạc Mộc Thu Sắc Đồ (Vương Thời Mẫn)",
+    "paint-river-farewell": "Động Đình Ngư Ẩn Đồ (Ngô Trấn)",
+    "paint-chrysanthemum-southhill": "Đào Hoa Nguyên Đồ (Cừu Anh)",
+    "paint-dongting-lake": "Tiêu Tương Đồ (Đổng Nguyên)",
+    "paint-fuchun-scroll": "Phú Xuân Sơn Cư Đồ (Hoàng Công Vọng)",
+    "paint-ink-bamboo": "Trúc Thạch Đồ (Trịnh Bản Kiều)",
 }
 
 VISUAL_QUIZ_TAG_MAP: dict[str, str] = {
@@ -409,6 +441,50 @@ def parse_external_pack_js(fp: pathlib.Path) -> tuple[str, Any]:
     return var_name, obj
 
 
+_V6_CAT_PROSE: dict[str, dict[str, str]] = {
+    "tcm_pharmacy": {
+        "stepsVi": "1) Tuyển nguyên liệu đạo địa tại {pv} → 2) Bào chế theo gia huấn ({spec}) → 3) Kiểm định {std} → 4) Đóng sáp/bao bì chống ẩm và niêm phong truy xuất.",
+        "stepsEn": "1) Source Daodi botanicals in {pe} → 2) Process to classical formulation ({sten}) → 3) Audit under Chinese Pharmacopoeia / GMP → 4) Seal anti-counterfeit packaging.",
+        "chkVi": "Đối chiếu {std}, số lô bào chế và quy chuẩn phi lâm sàng nếu phân phối thực phẩm thảo mộc sang ASEAN–EU.",
+        "chkEn": "Check {sten}, clean batch registration, and GACC botanical import rules before cross-border shipment.",
+        "b2bVi": "Định vị thảo mộc & trà thực dưỡng truyền thống {pv}, chuyển từ bán dược liệu thô sang bao bì truy xuất chuẩn quốc tế.",
+        "b2bEn": "Traditional botanical craft from {pe}, upgrading loose herbs into serialized consumer formats.",
+        "vnVi": "Tham khảo cho chuỗi giá trị dược liệu Việt Nam (quế Trà My, sâm Ngọc Linh) khi đóng gói chuẩn xuất khẩu.",
+        "vnEn": "Practical benchmark for Vietnamese herbals transitioning from raw commodity exports to certified consumer goods.",
+    },
+    "culinary": {
+        "stepsVi": "1) Chọn nguyên liệu theo mùa tại {pv} → 2) Lên men / canh lửa truyền thống ({spec}) → 3) Đóng gói chuẩn {std} → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
+        "stepsEn": "1) Grade seasonal ingredients in {pe} → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
+        "chkVi": "Kiểm tra {std}, quy chuẩn vệ sinh GB 14881 và mã CIFER GACC khi xuất khẩu thực phẩm đóng gói.",
+        "chkEn": "Verify {sten}, GB 14881 hygiene specs, and GACC CIFER exporter registration on retail cartons.",
+        "b2bVi": "Đặc sản ẩm thực vùng {pv} giữ ổn định hương vị khi chuẩn hóa nước sốt/bánh kẹo phục vụ kênh bán lẻ xa.",
+        "b2bEn": "Regional culinary staple from {pe} balancing heirloom taste with standardized shelf-stable distribution.",
+        "vnVi": "Kinh nghiệm cho đặc sản Việt Nam khi chuẩn hóa công thức đóng gói mà không đánh mất vị bản địa.",
+        "vnEn": "Demonstrates how packaged heritage condiments maintain flavor consistency across overseas retail.",
+    },
+    "tea_spirits": {
+        "stepsVi": "1) Thu hái vụ xuân / ủ men cao lương tại {pv} → 2) Chế tác theo quy trình ({spec}) → 3) Ủ chum sành / định cấp {std} → 4) Gắn tem truy xuất vùng lõi.",
+        "stepsEn": "1) Harvest single-origin leaves or grain in {pe} → 2) Panning or clay-cellar distillation → 3) Earthenware aging under GI spec → 4) Attach tamper-evident seals.",
+        "chkVi": "Kiểm tra mã vùng lõi Chỉ dẫn Địa lý {std}, chứng nhận dư lượng nông dược và nắp chống giả.",
+        "chkEn": "Audit protected origin zone under {sten}, botanical residue limits, and serialized bottle/tin closures.",
+        "b2bVi": "Sản phẩm trà – tửu gắn chặt thổ nhưỡng {pv}, phân tầng rõ phẩm cấp biếu tặng và sưu tầm lâu năm.",
+        "b2bEn": "Terroir-linked tea and spirit provenance from {pe}, structured around graded collectable releases.",
+        "vnVi": "Gợi ý định danh thổ nhưỡng cho chè cổ thụ Hà Giang và cà phê đặc sản Việt Nam khi bước ra thị trường lớn.",
+        "vnEn": "Guides Vietnamese ancient-tree teas and specialty roasters on pairing origin grades with GI registration.",
+    },
+    "craft_studio": {
+        "stepsVi": "1) Tuyển nguyên liệu tự nhiên vùng {pv} → 2) Chế tác thủ công nhiều chặng ({spec}) → 3) Ký triện nghệ nhân & chuẩn {std} → 4) Đóng hộp bảo quản chống ẩm.",
+        "stepsEn": "1) Prepare natural fibers, clay, timber, or ore in {pe} → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
+        "chkVi": "Đối chiếu triện nghệ nhân, thông số kỹ thuật {std} và chứng từ xuất khẩu hàng thủ công mỹ nghệ.",
+        "chkEn": "Confirm master artisan hallmarked signature, archival grade specs ({sten}), and lawful cultural export paperwork.",
+        "b2bVi": "Đưa tinh hoa thủ công truyền đời tại {pv} vào phân khúc quà tặng bảo tàng và thiết kế nội thất đương đại.",
+        "b2bEn": "Artisan craftsmanship in {pe} positioned for museum collections and architectural studio commissions.",
+        "vnVi": "Đối sánh cho gốm Bát Tràng, lụa Vạn Phúc và tranh Đông Hồ khi gắn chứng nhận nghệ nhân với sản phẩm ứng dụng.",
+        "vnEn": "Parallels Bat Trang ceramics and Van Phuc silk in pairing master provenance with contemporary industrial design.",
+    },
+}
+
+
 def enrich_pack1(p1: dict, v5_brand_keys: set[str]) -> dict:
     brands40 = []
     brands36 = []
@@ -418,36 +494,19 @@ def enrich_pack1(p1: dict, v5_brand_keys: set[str]) -> dict:
         prov_vi, prov_en = PROVINCE_LABELS.get(prov_id, ("Trung Quốc", "China"))
         zh = item.get("zh", "")
         cat = item.get("cat", "culinary")
-        img_default = PROVINCE_IMAGES.get(prov_id, "assets/images/articles/hero-laozihao-craft.jpg")
-        if cat == "craft_studio":
-            img_default = PROVINCE_IMAGES.get(prov_id, "assets/images/articles/hero-laozihao-craft.jpg")
-        elif cat == "tea_spirits" and idx % 2 == 1:
-            img_default = "assets/images/articles/hero-six-teas-gongfu.jpg"
-        elif cat == "tcm_pharmacy" and idx % 2 == 1:
-            img_default = "assets/images/museum/acupuncture-bronze.jpg"
-        item["imagePath"] = ensure_verified_img(img_default)
-        item.setdefault("visitTipVi", f"Tham quan bảng hiệu chính thức {zh} tại {item.get('cityVi', prov_vi)} ({item.get('flagshipAddressZh', '')}).")
-        item["craftProcessStepsVi"] = (
-            f"1) Tuyển nguyên liệu bản địa vùng {prov_vi} → "
-            f"2) Định chuẩn {item.get('sensoryOrMaterialSpecVi', 'thông số cảm quan truyền thống')} → "
-            f"3) Chế tác thủ công chuẩn {item.get('qualityStandardVi', 'Trung Hoa Lão Tự Hiệu')} → "
-            f"4) Kiểm nghiệm dấu niêm phong chống giả & truy xuất nguồn gốc."
-        )
-        item["craftProcessStepsEn"] = (
-            f"1) Regional material sourcing in {prov_en} → "
-            f"2) Traditional craft calibration → "
-            f"3) Accredited execution per {item.get('qualityStandardEn', 'MOFCOM Honored Brand specs')} → "
-            f"4) Authentication & batch traceability verification."
-        )
-        item["exportComplianceChecklistVi"] = (
-            f"Đối chiếu tiêu chuẩn quốc gia {item.get('qualityStandardVi', 'GB/T')}; "
-            f"kiểm tra truy xuất {item.get('authenticVsCounterfeitVi', 'tem niêm phong chính hãng')}; "
-            f"hồ sơ GACC / truy xuất xuất xứ nếu xuất khẩu ASEAN–EU."
-        )
-        item["exportComplianceChecklistEn"] = (
-            f"Verify national specification ({item.get('qualityStandardEn', 'GB/T')}), "
-            f"origin authentication seals, and CIFER/GACC customs export eligibility."
-        )
+        grp = "d" if cat == "culinary" else "h"
+        prov_img = resolve_prov_item_img(prov_id, grp, seed_idx=idx)
+        item["imagePath"] = ensure_verified_img(prov_img)
+        if not item.get("visitTipVi"):
+            item["visitTipVi"] = f"Ghé hiệu chính thức {zh} tại {item.get('cityVi', prov_vi)} ({item.get('flagshipAddressZh', '')})."
+        tpl = _V6_CAT_PROSE.get(cat, _V6_CAT_PROSE["culinary"])
+        spec_vi = item.get("sensoryOrMaterialSpecVi", "quy chuẩn thủ công bản địa")
+        std_vi = item.get("qualityStandardVi", "Trung Hoa Lão Tự Hào")
+        std_en = item.get("qualityStandardEn", "MOFCOM Time-Honored Brand specs")
+        item["craftProcessStepsVi"] = tpl["stepsVi"].format(pv=prov_vi, spec=spec_vi, std=std_vi)
+        item["craftProcessStepsEn"] = tpl["stepsEn"].format(pe=prov_en, sten=std_en)
+        item["exportComplianceChecklistVi"] = tpl["chkVi"].format(std=std_vi)
+        item["exportComplianceChecklistEn"] = tpl["chkEn"].format(sten=std_en)
         brands40.append(item)
         if core_zh_key(zh) not in v5_brand_keys:
             brands36.append(item)
@@ -463,10 +522,14 @@ def enrich_pack1(p1: dict, v5_brand_keys: set[str]) -> dict:
                 continue
             seen_36.add(ckey)
             p_vi, p_en = PROVINCE_LABELS.get(bpid, ("Trung Quốc", "China"))
+            tpl = _V6_CAT_PROSE.get(bcat, _V6_CAT_PROSE["culinary"])
+            std_vi = "Trung Hoa Lão Tự Hào (中华老字号) & quy chuẩn vùng miền GB/T"
+            std_en = "MOFCOM China Time-Honored Brand registry & Chinese GB/T standards"
+            sup_idx = len(brands36)
             sup = {
                 "id": bid,
                 "cat": bcat,
-                "mofcomBatch": 1,
+                "mofcomBatch": "Trung Hoa Lão Tự Hào",
                 "zh": bzh,
                 "pinyin": bpy,
                 "hanViet": bhv,
@@ -478,23 +541,23 @@ def enrich_pack1(p1: dict, v5_brand_keys: set[str]) -> dict:
                 "cityVi": bcity,
                 "signatureProductVi": bprod_vi,
                 "signatureProductEn": bprod_en,
-                "qualityStandardVi": "Danh hiệu Trung Hoa Lão Tự Hiệu (中华老字号) Bộ Thương mại TQ & tiêu chuẩn quốc gia GB/T.",
-                "qualityStandardEn": "Official MOFCOM China Time-Honored Brand registry & Chinese National GB/T quality specifications.",
-                "craftSecretVi": f"Thương hiệu trăm năm vùng {bcity}: {bprod_vi}. Kế thừa quy phạm thủ công gia truyền và chữ Tín bản địa.",
-                "craftSecretEn": f"Time-honored enterprise rooted in {bcity}: {bprod_en}, anchored by multi-generation craft transmission.",
+                "qualityStandardVi": std_vi,
+                "qualityStandardEn": std_en,
+                "craftSecretVi": f"Thương hiệu trăm năm vùng {bcity}: {bprod_vi}. Lưu giữ kỹ nghệ gia truyền và chữ tín nghề nghiệp.",
+                "craftSecretEn": f"Historic enterprise in {p_en}: {bprod_en}, sustained across generations of regional apprenticeship.",
                 "sensoryOrMaterialSpecVi": bprod_vi,
-                "authenticVsCounterfeitVi": f"Nhận diện dấu mộc chính hãng {bzh} ({byr}) tại {bcity}.",
-                "b2bTradeVi": f"Bảo chứng xuất xứ địa lý {p_vi} giúp nâng tầm thương hiệu khi mở rộng phân phối quốc tế.",
-                "b2bTradeEn": f"Regional geographical authenticity from {p_en} supporting global retail and heritage positioning.",
-                "vietnamAseanLessonVi": "Mô hình nâng tầm sản vật di sản Việt Nam thành thương hiệu quốc gia đạt chuẩn chất lượng quốc tế.",
-                "vietnamAseanLessonEn": "Strategic precedent for upgrading Vietnamese craft heritage into certified national brands.",
+                "authenticVsCounterfeitVi": f"Đối chiếu dấu mộc chính hãng {bzh} ({byr}) tại {bcity}.",
+                "b2bTradeVi": tpl["b2bVi"].format(pv=p_vi),
+                "b2bTradeEn": tpl["b2bEn"].format(pe=p_en),
+                "vietnamAseanLessonVi": tpl["vnVi"],
+                "vietnamAseanLessonEn": tpl["vnEn"],
                 "flagshipAddressZh": f"{bzh}总店 ({bcity})",
-                "craftProcessStepsVi": f"1) Tuyển nguyên liệu vùng {p_vi} → 2) Định chuẩn {bprod_vi} → 3) Chế tác thủ công gia truyền → 4) Dán tem truy xuất chính hãng.",
-                "craftProcessStepsEn": f"1) Source materials in {p_en} → 2) Calibrate traditional specs → 3) Artisanal crafting → 4) Original seal authentication.",
-                "exportComplianceChecklistVi": "Kiểm tra dấu hiệu Trung Hoa Lão Tự Hiệu, mã chuẩn GB/T và hồ sơ GACC nếu xuất khẩu.",
-                "exportComplianceChecklistEn": "Verify Time-Honored Brand certificate, GB/T standard, and export compliance dossier.",
-                "visitTipVi": f"Tham quan bảng hiệu chính thức {bzh} tại {bcity}.",
-                "imagePath": ensure_verified_img(PROVINCE_IMAGES.get(bpid, "assets/images/articles/hero-laozihao-craft.jpg")),
+                "craftProcessStepsVi": tpl["stepsVi"].format(pv=p_vi, spec=bprod_vi, std=std_vi),
+                "craftProcessStepsEn": tpl["stepsEn"].format(pe=p_en, sten=std_en),
+                "exportComplianceChecklistVi": tpl["chkVi"].format(std=std_vi),
+                "exportComplianceChecklistEn": tpl["chkEn"].format(sten=std_en),
+                "visitTipVi": f"Tìm hiểu lịch sử cửa hiệu {bzh} tại {bcity}.",
+                "imagePath": ensure_verified_img(resolve_prov_item_img(bpid, "d" if bcat == "culinary" else "h", seed_idx=sup_idx + 2)),
             }
             brands36.append(sup)
 
@@ -506,7 +569,7 @@ def enrich_pack1(p1: dict, v5_brand_keys: set[str]) -> dict:
         for stp in nf.get("steps", []):
             st_copy = dict(stp)
             base_note = st_copy.get("tempOrToolNote") or st_copy.get("specNote") or ""
-            st_copy["specNote"] = base_note + (" · Điểm kiểm soát QC thủ công" if "QC" not in base_note else "")
+            st_copy["specNote"] = base_note + (" · Kiểm soát chất lượng thủ công" if "QC" not in base_note and "Kiểm soát" not in base_note else "")
             norm_steps.append(st_copy)
         nf["steps"] = norm_steps
         flows12.append(nf)
@@ -516,29 +579,55 @@ def enrich_pack1(p1: dict, v5_brand_keys: set[str]) -> dict:
         ng = dict(g)
         prov_id = ng.get("provinceId", "prov-xinjiang")
         prov_vi, prov_en = PROVINCE_LABELS.get(prov_id, ("Trung Quốc", "China"))
-        ng["vi"] = ng.get("nameVi", "")
-        ng["en"] = ng.get("nameEn", "")
+        n_vi = ng.get("nameVi", "")
+        n_en = ng.get("nameEn", "")
+        ng["vi"] = n_vi
+        ng["en"] = n_en
         ng["gbStandardCode"] = f"EU–China GI ({ng.get('euAgreementYear', 2021)})"
         ng["euProtectionNoteVi"] = ng.get("protectionRuleVi", "")
         ng["euProtectionNoteEn"] = ng.get("protectionRuleEn", "")
         ng["vnEuComparisonVi"] = ng.get("vnEvftaCounterpartVi", "")
         ng["vnEuComparisonEn"] = ng.get("vnEvftaCounterpartEn", "")
-        ng["terroirAndCraftVi"] = f"Đặc sản vùng thổ nhưỡng {prov_vi} ({ng.get('zh', '')}) gắn liền với điều kiện địa hình, nguồn nước và kỹ nghệ bảo quản cổ truyền được xác định trong hồ sơ Hiệp định Song phương EU–China GI."
-        ng["terroirAndCraftEn"] = f"Protected terroir heritage of {prov_en} integrating microclimate, traditional harvesting, and European–Chinese geographical origin standards."
-        ng["customsHsAndAuditVi"] = "Kiểm tra giấy chứng nhận vùng lõi GI, mã HS nông sản/gốm sứ và chứng từ kiểm dịch thực vật/hóa chất MRL khi thông quan EU."
-        ng["customsHsAndAuditEn"] = "Verify core-zone GI origin certificate, EU TARIC HS code classification, and MRL food-contact/phytosanitary audit reports."
-        ng["imagePath"] = ensure_verified_img(PROVINCE_IMAGES.get(prov_id, "assets/images/articles/hero-six-teas-gongfu.jpg"))
+        low_nm = n_vi.lower()
+        if "trà" in low_nm:
+            ng["terroirAndCraftVi"] = f"{n_vi} ({prov_vi}) gắn với vùng sườn núi, độ ẩm và quy trình sao sấy đặc thù nằm trong phụ lục Chỉ dẫn Địa lý Âu–Trung."
+            ng["terroirAndCraftEn"] = f"{n_en} grows on terraced microclimates in {prov_en}, where seasonal picking and panning steps are anchored in bilateral EU–China GI annexes."
+            ng["customsHsAndAuditVi"] = "Kiểm tra giấy chứng nhận vùng lõi trà GI, phân nhóm HS 0902 và báo cáo kiểm nghiệm dư lượng MRL."
+            ng["customsHsAndAuditEn"] = "Verify core tea-garden GI certificates, HS Chapter 0902 declarations, and European MRL pesticide residue reports."
+        elif any(k in low_nm for k in ("tửu", "giấm", "gạo", "miến", "mộc nhĩ")):
+            ng["terroirAndCraftVi"] = f"{n_vi} tại {prov_vi} kế thừa kỹ nghệ lên men, ủ chum hoặc phơi sấy truyền thống được định danh xuất xứ địa lý."
+            ng["terroirAndCraftEn"] = f"{n_en} from {prov_en} draws on regional fermentation, mineral water profiles, and codified GI storage rules."
+            ng["customsHsAndAuditVi"] = "Đối chiếu hồ sơ truy xuất cơ sở sản xuất vùng bảo hộ, nhãn phụ song ngữ và mã HS thực phẩm chế biến."
+            ng["customsHsAndAuditEn"] = "Confirm GI winery/pantry facility registration, EU/Vietnam allergen labeling, and TARIC HS classification."
+        elif any(k in low_nm for k in ("sứ", "tơ tằm")):
+            ng["terroirAndCraftVi"] = f"{n_vi} kết hợp nguyên liệu bản địa {prov_vi} (cao lanh hoặc tơ dâu tằm) với kỹ thuật lò nung, khung dệt cổ truyền."
+            ng["terroirAndCraftEn"] = f"{n_en} combines local {prov_en} mineral clay or mulberry fibers with regulated firing and loom finishing under GI protection."
+            ng["customsHsAndAuditVi"] = "Xác nhận chứng thư xuất xứ nghệ nhân vùng bảo hộ, tiêu chuẩn tiếp xúc thực phẩm/dệt may và đóng gói chống vỡ."
+            ng["customsHsAndAuditEn"] = "Audit protected origin hallmarking, porcelain lead-cadmium or textile dye limits, and export crating."
+        else:
+            ng["terroirAndCraftVi"] = f"{n_vi} hưởng biên độ nhiệt, thổ nhưỡng riêng của {prov_vi}, tạo chất lượng ổn định trước khi vào danh mục bảo hộ GI."
+            ng["terroirAndCraftEn"] = f"{n_en} derives distinct sugar-acid balance and aroma from {prov_en}'s soil and diurnal range under bilateral GI protection."
+            ng["customsHsAndAuditVi"] = "Kiểm tra mã vùng trồng, chứng thư kiểm dịch thực vật (Phytosanitary) và ngưỡng dư lượng MRL khi thông quan."
+            ng["customsHsAndAuditEn"] = "Cross-check registered orchard origin codes, phytosanitary certificates, and EU/ASEAN MRL agricultural thresholds."
+        img_gi = resolve_prov_item_img(prov_id, "d" if idx % 2 == 0 else "h", seed_idx=idx) if idx % 3 != 0 else PROVINCE_IMAGES.get(prov_id, "assets/images/articles/hero-six-teas-gongfu.jpg")
+        ng["imagePath"] = ensure_verified_img(img_gi)
         gi18.append(ng)
 
+    _comp_vi = [
+        "Kết hợp câu chuyện nguồn gốc địa phương với bộ tiêu chuẩn định lượng và đăng ký bảo hộ nhãn hiệu tập thể sớm.",
+        "Chuẩn hóa quy trình kiểm định chất lượng và bao bì truy xuất thay vì chỉ dựa vào danh tiếng truyền miệng.",
+        "Gắn thương hiệu di sản với chỉ dẫn địa lý vùng nguyên liệu để bảo vệ biên lợi nhuận khi mở rộng xuất khẩu.",
+    ]
+    _comp_en = [
+        "Pair authentic geographical roots with measurable quality specs and early collective trademark/GI filings.",
+        "Codify repeatable batch inspection and packaging traceability alongside craft heritage storytelling.",
+        "Anchor artisanal origin claims in verified regional supply zones to guard pricing power abroad.",
+    ]
     comp10 = []
-    for cmp_it in p1.get("lzhDualComparePairs10", []):
+    for idx, cmp_it in enumerate(p1.get("lzhDualComparePairs10", [])):
         nc = dict(cmp_it)
-        nc["vietnamBrandStrategyTakeawayVi"] = (
-            f"Gợi ý xây dựng thương hiệu Việt Nam: Kết hợp di sản địa phương với bộ quy chuẩn chất lượng minh bạch và đăng ký bảo hộ chỉ dẫn địa lý/nhãn hiệu tập thể song phương."
-        )
-        nc["vietnamBrandStrategyTakeawayEn"] = (
-            "Strategic lesson for Vietnamese heritage enterprises: couple multi-generational craft provenance with testable standards and international IP/GI filings."
-        )
+        nc["vietnamBrandStrategyTakeawayVi"] = _comp_vi[idx % len(_comp_vi)]
+        nc["vietnamBrandStrategyTakeawayEn"] = _comp_en[idx % len(_comp_en)]
         comp10.append(nc)
 
     guilds5 = [
@@ -605,43 +694,78 @@ def enrich_pack2(p2: dict) -> dict:
         nf["safeUsagePinyin"] = f"Phiên âm mẫu chuẩn: {nf.get('pinyin', '')} — đọc nhấn đúng thanh điệu trước đối tác."
         ff30.append(nf)
 
+    _rule_notes = [
+        "Đối chiếu trực tiếp bảng vận mẫu Thiết Vận / Quảng Vận thời Tùy–Đường với hệ thanh Hán–Việt cổ.",
+        "Hán–Việt lưu giữ nhiều âm đầu và vần khép cổ hơn so với Quan thoại Bắc Kinh hiện đại.",
+        "Khi gặp cụm âm tắc môi hoặc gốc lưỡi trong Hán–Việt, đối chiếu quy luật chuyển âm giúp suy ra bính âm.",
+        "Sự phân chia Bình–Thượng–Khứ–Nhập ở Giao Châu xưa là chìa khóa đoán thanh điệu Phổ thông.",
+    ]
+    _rule_tips = [
+        "Dựa vào âm đóng (-p/-t/-k/-m/-ng) trong từ Hán–Việt để xác định nhóm chữ không bật hơi hay nhập thanh cũ.",
+        "Tách thanh mẫu Hán–Việt trước khi ghép vần Phổ thông giúp giảm nhầm lẫn giữa cặp thanh điệu 2 và 3.",
+        "Gom theo nhóm chữ cùng thanh phù Lục Thư để nhớ quy luật đọc hàng loạt từ ghép song âm.",
+        "Kiểm tra cặp từ quen trong văn bản hành chính Việt Nam để suy ngược ra thanh điệu tương ứng.",
+    ]
     rules12 = []
-    for r in p2.get("archaicMiddleChineseRules12", []):
+    for idx, r in enumerate(p2.get("archaicMiddleChineseRules12", [])):
         nr = dict(r)
         nr["titleVi"] = nr.get("ruleNameVi", "")
-        nr["ruleVi"] = f"{nr.get('middleChineseFeature', '')} → TQ hiện đại: {nr.get('mandarinShift', '')} · Tiếng Việt: {nr.get('vietnameseRetention', '')}"
+        nr["ruleVi"] = f"{nr.get('middleChineseFeature', '')} -> TQ hiện đại: {nr.get('mandarinShift', '')} · Tiếng Việt: {nr.get('vietnameseRetention', '')}"
         nr["examplesVi"] = " · ".join(nr.get("examples", []))
-        nr["historicalPhonologyNoteVi"] = "Đối chiếu âm vận học lịch sử Thiết Vận / Quảng Vận (Hán ngữ Trung cổ đời Tùy–Đường) và âm đọc Cổ Hán–Việt tại Giao Châu."
-        nr["learningShortcutVi"] = "Mẹo học Hán ngữ: Dùng chính vần đóng (-p/-t/-k/-m/-ng) hoặc thanh điệu Hán–Việt để nhận diện nhanh thanh mẫu và thanh điệu Phổ thông."
+        nr["historicalPhonologyNoteVi"] = _rule_notes[idx % len(_rule_notes)]
+        nr["learningShortcutVi"] = _rule_tips[idx % len(_rule_tips)]
         rules12.append(nr)
 
+    _st_etym = [
+        "Cải cách chữ viết thập niên 1950 gộp Phồn thể ({trads}) thành cùng một hình Giản thể ({simp}).",
+        "Chữ Giản thể {simp} đảm nhiệm chung nghĩa của hai chữ Phồn thể tách biệt ({trads}) trong thư tịch cổ.",
+        "Phân tách nghĩa gốc từ bộ thủ cho thấy {trads} mang hai ngữ trường độc lập trước khi quy về {simp}.",
+        "Bộ đôi {trads} vốn khác hoàn toàn âm đọc hoặc nét nghĩa dù cùng viết thành {simp} ở Hoa lục.",
+    ]
+    _st_trap = [
+        "Khi xuất bản phẩm dùng tại Đài Loan, Hồng Kông hoặc trích dẫn cổ thư, đối chiếu ngữ cảnh thay vì chuyển đổi máy hàng loạt từ {simp}.",
+        "Bộ gõ tự động dễ chọn sai giữa {trads}; cần đọc trọn cụm từ trước khi chốt chữ Phồn thể cho ấn phẩm hoặc biển hiệu.",
+        "Trong hợp đồng và tài liệu bảo tàng song bản, kiểm tra kỹ cặp {trads} để tránh biến đổi sai tên riêng hoặc niên hiệu.",
+        "Tránh chuyển thẳng một-một từ {simp}: mỗi chữ trong {trads} tương ứng ngữ nghĩa và collocation riêng.",
+    ]
     st50 = []
-    for stp in p2.get("simpTradAsymmetry50", []):
+    for idx, stp in enumerate(p2.get("simpTradAsymmetry50", [])):
         ns = dict(stp)
         trads = " / ".join(ns.get("trads", []))
-        ns["classicalEtymologyVi"] = (
-            f"Trong đợt Giản hóa chữ Hán năm 1956–1964, một hình Giản thể ({ns.get('simp', '')}) đã gộp hai chữ Phồn thể vốn khác hẳn bộ thủ/ý nghĩa cổ điển ({trads})."
-        )
-        ns["taiwanHkSignageTrapVi"] = (
-            f"Lưu ý biển hiệu Đài Loan/Hồng Kông & Sách cổ: Tuyệt đối không tự động gõ ngược {ns.get('simp', '')} thành một chữ duy nhất mà phải kiểm tra ngữ cảnh cụ thể."
-        )
+        simp = ns.get("simp", "")
+        ns["classicalEtymologyVi"] = _st_etym[idx % len(_st_etym)].format(trads=trads, simp=simp)
+        ns["taiwanHkSignageTrapVi"] = _st_trap[idx % len(_st_trap)].format(trads=trads, simp=simp)
         ns["examplePairsZhVi"] = ns.get("diffVi", "")
         st50.append(ns)
 
+    _mw_ctx = [
+        "Cụm danh–lượng từ hay gặp trong chứng từ kho bãi, đóng gói: {ex}.",
+        "Mẫu kết hợp số lượng thực tế khi kiểm đếm hàng hóa: {ex}.",
+        "Cách dùng chuẩn trong giao dịch, mô tả kích thước kiện/mẫu: {ex}.",
+        "Diễn đạt tự nhiên khi trao đổi quy cách sản phẩm với nhà cung cấp: {ex}.",
+    ]
     mw40 = []
-    for m in p2.get("measureWordsVisual40", []):
+    for idx, m in enumerate(p2.get("measureWordsVisual40", [])):
         nm = dict(m)
+        ex_zh = nm.get("exampleZh", "")
         nm["cognitiveGeometryVi"] = f"Hình khối tri nhận: {nm.get('shapeVi', '')} ({nm.get('usageEn', '')})."
-        nm["b2bLogisticsCollocationsZhVi"] = f"Cụm từ kho bãi/hợp đồng thực chiến: {nm.get('exampleZh', '')}."
-        nm["exampleVi"] = f"Mẫu dùng chuẩn ({nm.get('zh', '')} · {nm.get('pinyin', '')}): {nm.get('usageEn', '')}."
+        nm["b2bLogisticsCollocationsZhVi"] = _mw_ctx[idx % len(_mw_ctx)].format(ex=ex_zh)
+        nm["exampleVi"] = f"{nm.get('zh', '')} ({nm.get('pinyin', '')}): {nm.get('usageEn', '')}."
         mw40.append(nm)
 
+    _cy_zh_tpl = [
+        "在跨国项目复盘会上，团队秉持“{zh}”的原则推进合作。",
+        "面对复杂供应链调整，双方约定以“{zh}”的精神协同应对。",
+        "制定年度合规方案时，法务与采购部门坚持“{zh}”的稳健思路。",
+        "总结长期合作经验时，负责人在致辞中引用了“{zh}”。",
+    ]
     cy36 = []
-    for c in p2.get("chengyuOrigins36", []):
+    for idx, c in enumerate(p2.get("chengyuOrigins36", [])):
         nc = dict(c)
-        nc["classicQuoteZh"] = nc.get("zh", "")
-        nc["classicQuoteVi"] = f"Điển tích trích từ {nc.get('source', 'Thư tịch cổ')}: " + " → ".join(nc.get("storyboard3", []))
-        nc["b2bSampleSentenceZh"] = f"Tại cuộc họp dự án, ban điều hành giữ tinh thần “{nc.get('zh', '')}”."
+        czh = nc.get("zh", "")
+        nc["classicQuoteZh"] = czh
+        nc["classicQuoteVi"] = f"{nc.get('source', 'Thư tịch cổ')}: " + " -> ".join(nc.get("storyboard3", []))
+        nc["b2bSampleSentenceZh"] = _cy_zh_tpl[idx % len(_cy_zh_tpl)].format(zh=czh)
         nc["b2bSampleSentenceVi"] = nc.get("b2bUsageVi", "")
         cy36.append(nc)
 
@@ -662,47 +786,83 @@ def enrich_pack3(p3: dict) -> dict:
     epistemic = {
         "vi": (
             f"{ep_raw.get('vi', '')} "
-            "[KHUNG KHOA HỌC BẮT BUỘC V6.0: Toàn bộ 24 Tiết khí, 12 Canh giờ Tử–Ngọ, Ngũ Hành, 28 Nhị Thập Bát Tú, "
-            "Herbarium 48 vị thực dưỡng & 12 Kiến trúc Vi khí hậu là tư liệu lịch sử tư tưởng, vật lý công trình và nhân học ẩm thực — "
+            "[KHUNG KHOA HỌC BẮT BUỘC: Toàn bộ 24 Tiết khí, 12 Canh giờ Tử–Ngọ, Ngũ Hành, 28 Nhị Thập Bát Tú, "
+            "tư liệu 48 vị thảo mộc ẩm thực & 12 Kiến trúc Vi khí hậu là tư liệu lịch sử tư tưởng, vật lý công trình và nhân học ẩm thực — "
             "tuyệt đối KHÔNG chẩn đoán lâm sàng và KHÔNG bói toán/tiên tri.]"
         ).strip(),
         "en": (
             f"{ep_raw.get('en', '')} "
-            "[V6.0 EPISTEMOLOGICAL BOUNDARY: All calendrical, botanical culinary, cosmological, and microclimate archives "
+            "[EPISTEMOLOGICAL BOUNDARY: All calendrical, botanical culinary, cosmological, and microclimate archives "
             "serve historical, anthropological, and architectural scholarship only — strictly NOT clinical advice or divination.]"
         ).strip(),
     }
 
     wx_cycle = ["Thổ · Kim", "Kim · Thủy", "Mộc · Hỏa", "Hỏa · Thổ", "Thủy · Mộc"]
+    prov_keys = sorted(PROVINCE_IMAGES.keys())
+    _herb_nc_vi = [
+        "Thực phẩm vùng miền phục vụ tham khảo văn hóa; không thay thế chẩn đoán hay điều trị y khoa.",
+        "Tư liệu ẩm thực cổ truyền và thực vật học lịch sử; không dùng thay tư vấn y tế lâm sàng.",
+        "Nguyên liệu gia giảm món ăn theo mùa trong thư tịch; tuyệt đối không thay thế điều trị y khoa.",
+    ]
+    _herb_nc_en = [
+        "Regional culinary ingredient documented for cultural reference; NOT clinical diagnosis or medical treatment.",
+        "Historical foodways and botanical reference archive; strictly NOT clinical guidance.",
+        "Seasonal pantry ingredient studied in food history; strictly NOT a substitute for medical care.",
+    ]
+    _herb_vn_warm = "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh."
+    _herb_vn_cool = "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam."
+    _herb_vn_bal = "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt."
     herbs48 = []
     for idx, h in enumerate(p3.get("culinaryHerbs48", [])):
         nh = dict(h)
+        prop_vi = nh.get("propertyNatureVi", "")
+        prop_low = prop_vi.lower()
         nh["wuxingElement"] = wx_cycle[idx % len(wx_cycle)]
-        nh["nature"] = f"{nh.get('propertyNatureVi', '')} · Ngũ vị: {nh.get('fiveFlavorVi', '')}"
+        nh["nature"] = f"{prop_vi} · Ngũ vị: {nh.get('fiveFlavorVi', '')}"
         nh["latin"] = nh.get("latinName", "")
-        nh["culinaryVi"] = f"{nh.get('culinaryDishVi', '')} ({nh.get('partUsedVi', '')} · Nguồn: {nh.get('historicalSourceBook', '')})"
-        nh["seasonalSolarTermMatchVi"] = "Phù hợp sử dụng gia giảm món canh/trà văn hóa theo chu kỳ Giao mùa Tiết khí Đông Á (phi lâm sàng)."
-        nh["botanicalRegionAndGiVi"] = f"Xuất xứ điển tích thực phẩm {nh.get('zh', '')} ghi nhận trong thư tịch {nh.get('historicalSourceBook', '')}."
-        nh["vietnamCulinaryParallelVi"] = f"Đối chiếu ẩm thực Việt Nam: Tương đồng truyền thống dùng gia vị thảo mộc cân bằng nhiệt – ẩm trong bếp gia đình Việt."
-        nh["image"] = ensure_verified_img(HERB_IMAGE_CYCLE[idx % len(HERB_IMAGE_CYCLE)])
+        nh["culinaryVi"] = f"{nh.get('culinaryDishVi', '')} ({nh.get('partUsedVi', '')} · {nh.get('historicalSourceBook', '')})"
+        if "hàn" in prop_low or "lương" in prop_low:
+            nh["seasonalSolarTermMatchVi"] = "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử."
+            nh["vietnamCulinaryParallelVi"] = _herb_vn_cool
+        elif "ôn" in prop_low or "nhiệt" in prop_low:
+            nh["seasonalSolarTermMatchVi"] = "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí."
+            nh["vietnamCulinaryParallelVi"] = _herb_vn_warm
+        else:
+            nh["seasonalSolarTermMatchVi"] = "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng)."
+            nh["vietnamCulinaryParallelVi"] = _herb_vn_bal
+        nh["botanicalRegionAndGiVi"] = f"Thư tịch {nh.get('historicalSourceBook', '')} ghi nhận xuất xứ bản địa của {nh.get('zh', '')}."
+        nh["nonClinicalReminderVi"] = _herb_nc_vi[idx % len(_herb_nc_vi)]
+        nh["nonClinicalReminderEn"] = _herb_nc_en[idx % len(_herb_nc_en)]
+        herb_img = HERB_IMAGE_CYCLE[idx % len(HERB_IMAGE_CYCLE)] if idx % 3 == 0 else resolve_prov_item_img(prov_keys[(idx * 5) % len(prov_keys)], "f" if idx % 2 else "h", seed_idx=idx)
+        nh["image"] = ensure_verified_img(herb_img)
         herbs48.append(nh)
 
+    _micro_cmp = [
+        "Gợi nhớ trục đón gió nồm và sân giếng trời thoáng sáng ở nhà truyền thống Bắc Bộ.",
+        "Chung giải pháp tường dày trát vôi và hiên sâu che nắng xiên, chống bão ven biển miền Trung Việt Nam.",
+        "Tương ứng nguyên lý thoát ẩm, nâng sàn cao hoặc dùng ngói âm dương tản nhiệt ở vùng núi và trung du Việt Nam.",
+        "Liên hệ trực tiếp với kỹ thuật mở cửa đối lưu và mái hiên dốc thoát mưa rào của nhà cổ Hội An – Huế.",
+    ]
     micro12 = []
-    for m in p3.get("historicalMicroclimateCases12", []):
+    for idx, m in enumerate(p3.get("historicalMicroclimateCases12", [])):
         nm = dict(m)
         nm["challengeVi"] = nm.get("climateChallengeVi", "")
         nm["mechanismVi"] = nm.get("architecturalMechanismVi", "")
         nm["physicsVi"] = (
             f"{nm.get('modernPhysicsPrincipleVi', '')} "
-            f"(Nắng hạ {nm.get('summerSunAngleDeg', 73)}° / Nắng đông {nm.get('winterSunAngleDeg', 26)}° · Hướng gió: {nm.get('prevailingWindDirection', '')})"
+            f"(Nắng hạ {nm.get('summerSunAngleDeg', 73)}° / Nắng đông {nm.get('winterSunAngleDeg', 26)}° · Gió chủ đạo: {nm.get('prevailingWindDirection', '')})"
         )
-        nm["vietnamArchitecturalComparisonVi"] = (
-            "Đối chiếu kiến trúc bản địa Việt Nam: Tương đồng nguyên lý dùng mái hiên sâu, hồ điều hòa/mái âm dương và tường hậu thông gió đón gió nồm Đông Nam Á."
-        )
+        nm["vietnamArchitecturalComparisonVi"] = _micro_cmp[idx % len(_micro_cmp)]
         micro12.append(nm)
 
+    _solar_delta = [
+        "Tiết xuân miền Bắc Việt Nam trùng mùa mưa phùn và lễ hội nông nghiệp đầu năm.",
+        "Tiết hạ gắn với gió mùa Tây Nam ẩm nóng, lệch nhịp mưa hạ lưu sông Trường Giang vài tuần.",
+        "Tiết thu nắng hanh Bắc Bộ và mùa nước nổi Đồng bằng sông Cửu Long trùng nhịp thu hoạch chính.",
+        "Mùa đông Đồng bằng sông Hồng đón gió mùa Đông Bắc tương ứng chuỗi tiết đại hàn ở Hoa Bắc.",
+    ]
     solar24 = []
-    for s in p3.get("solarTermsPhenology24", []):
+    for idx, s in enumerate(p3.get("solarTermsPhenology24", [])):
         ns = dict(s)
         ns["vi"] = ns.get("nameVi", "")
         ns["deg"] = ns.get("solarLongitudeDeg", 0)
@@ -712,8 +872,8 @@ def enrich_pack3(p3: dict) -> dict:
             f"{ns.get('seasonalTeaFoodVi', '')} · Thơ cổ: “{ns.get('eastAsianPoemZh', '')}” "
             f"({ns.get('poemVi', '')})"
         )
-        ns["agriculturalProverbZhVi"] = f"Nhật độ hoàng kinh {ns.get('solarLongitudeDeg', 0)}° (~{ns.get('gregorianApproxDate', '')}): Đồng bộ nông lịch cấy cày & trà vụ Đông Á."
-        ns["vietnamDeltaComparisonVi"] = "Đối chiếu đồng bằng Sông Hồng / ĐBSCL: Giúp đối chiếu chênh lệch chu kỳ gió mùa Á Đông giữa lưu vực Hoàng Hà và nhiệt đới Việt Nam."
+        ns["agriculturalProverbZhVi"] = f"Hoàng kinh {ns.get('solarLongitudeDeg', 0)}° (~{ns.get('gregorianApproxDate', '')}): Mốc theo dõi mùa vụ và trà xuân."
+        ns["vietnamDeltaComparisonVi"] = _solar_delta[min(idx // 6, 3)]
         solar24.append(ns)
 
     const28 = []
@@ -804,35 +964,65 @@ def enrich_pack4(p4: dict) -> dict:
         ]
         novels.append(nn)
 
+    _wy_trap_by_cat = {
+        "conjunction": "Hư từ nối mệnh đề dễ đảo quan hệ nhân – quả hoặc nhượng bộ; cần xác định rõ vế chính trước khi dịch.",
+        "modal_final": "Trợ từ ngữ khí cuối câu quyết định sắc thái khẳng định, nghi vấn hoặc cảm thán, tránh bỏ sót khi ngắt đoạn.",
+        "preposition": "Giới từ văn ngôn thường dẫn đối tượng hoặc phương thức thực hiện (như 以, 于, 自), khác vị trí với tiếng Hán hiện đại.",
+        "pronoun": "Đại từ chỉ thị và hồi chỉ cổ điển có thể thay cho cả cụm sự việc đứng trước thay vì chỉ một danh từ đơn.",
+        "structural_particle": "Trợ từ kết cấu (之, 者, 所) làm thay đổi chức năng danh hóa của động từ hoặc tính từ trong cụm từ.",
+    }
     wy30 = []
     for w in p4.get("wenyanSyntaxTokens30", []):
         nw = dict(w)
+        wcat = nw.get("category", "conjunction")
         nw["classicalExample"] = nw.get("classicalExampleZh", "")
         nw["modernMandarinEq"] = nw.get("vernacularHskEquivalentZh", "")
-        nw["sinoVietReadingRuleVi"] = f"Âm Hán–Việt chuẩn: {nw.get('hanViet', '')} ({nw.get('pinyin', '')}) — giữ sắc thái trang trọng khi trích dẫn cổ điển."
-        nw["commonExamTrapVi"] = f"Bẫy đọc hiểu HSK 6–9 / Văn ngôn: Phân biệt chức năng {nw.get('category', '')} với nghĩa hiện đại thông thường."
+        nw["sinoVietReadingRuleVi"] = f"Âm Hán–Việt: {nw.get('hanViet', '')} ({nw.get('pinyin', '')}) — quen thuộc trong điển tích và văn bản hành chính cổ."
+        nw["commonExamTrapVi"] = _wy_trap_by_cat.get(wcat, "Phân biệt chức năng hư từ cổ điển với nghĩa thực từ trong Hán ngữ hiện đại.")
         wy30.append(nw)
 
+    _poem_brush_notes = [
+        "Nhịp thanh trắc – bằng ({pz}) đi cùng khoảng trắng rộng trên giấy Tuyên gợi không gian tĩnh lặng.",
+        "Phân bố mực đậm ở tiền cảnh và mờ dần về hậu cảnh ứng với cấu trúc đối ngẫu ({pz}).",
+        "Họa pháp chấm nét gọn gàng tạo điểm tụ ánh nhìn tương phản với khoảng trống mở của bài thơ ({pz}).",
+        "Đường nét núi nước đan xen khoảng sương mở nhịp thở chậm cho khổ thơ ({pz}).",
+    ]
+    _poem_ctx_notes = [
+        "Ghi dấu giao thoa mỹ học Thi Trung Hữu Họa qua sáng tác của {poet}.",
+        "Thể hiện quan niệm lấy cảnh thiên nhiên gửi gắm tâm thế văn nhân đời {poet}.",
+        "Là tư liệu đối chiếu quen thuộc khi đọc thơ Đường – Tống cạnh cuộn tranh thủy mặc của {poet}.",
+        "Minh họa cách đề thơ và triện đỏ hòa làm một phần bố cục hội họa quanh {poet}.",
+    ]
     poems24 = []
-    for p in p4.get("poemPaintingPairs24", []):
+    for idx, p in enumerate(p4.get("poemPaintingPairs24", [])):
         np_item = dict(p)
         ref = np_item.get("paintingRefId", "")
+        ref_vi = PAINTING_REF_NAMES_VI.get(ref, "tác phẩm thủy mặc cổ điển")
+        pz = np_item.get("pingZePattern", "")
+        poet_name = np_item.get("poet", "")
         np_item["image"] = ensure_verified_img(PAINTING_REF_IMAGES.get(ref, "assets/images/paintings/01_luoshenfu_tu.jpg"))
         np_item["title"] = f"{np_item.get('titleVi', '')} ({np_item.get('titleZh', '')})"
-        np_item["authorVi"] = np_item.get("poet", "")
+        np_item["authorVi"] = poet_name
         np_item["epithetVi"] = np_item.get("hanViet", "")
         np_item["translateVi"] = np_item.get("poemVi", "")
         np_item["pinyin"] = np_item.get("hanViet", "")
-        np_item["visualNoteVi"] = f"Đối chiếu bố cục Tam Viễn – Lưu Bạch trên bức họa {ref}"
-        np_item["pingZeNote"] = np_item.get("pingZePattern", "")
-        np_item["brushworkAndCompositionVi"] = f"Phép dựng cảnh Thi Trung Hữu Họa: Kết nối nhịp điệu thanh điệu ({np_item.get('pingZePattern', '')}) với khoảng không thủy mặc trên tranh."
-        np_item["historicalContextVi"] = f"Tác phẩm tiêu biểu gắn liền mỹ học thi ca và hội họa văn nhân của {np_item.get('poet', '')}."
+        np_item["visualNoteVi"] = f"Đối chiếu bố cục Tam Viễn – Lưu Bạch trên {ref_vi}."
+        np_item["pingZeNote"] = pz
+        np_item["brushworkAndCompositionVi"] = _poem_brush_notes[idx % len(_poem_brush_notes)].format(pz=pz)
+        np_item["historicalContextVi"] = _poem_ctx_notes[idx % len(_poem_ctx_notes)].format(poet=poet_name)
         poems24.append(np_item)
 
+    _hsk_level_notes = {
+        "HSK5": "Bám mạch từ nối thời gian và {kw} từ khóa cốt lõi để nắm ý chính toàn đoạn.",
+        "HSK6": "Nhận diện câu phức nhiều tầng định ngữ xung quanh {kw} từ khóa chuyên đề trước khi chọn đáp án.",
+        "HSK7-9": "Tách rõ tầng lập luận nguyên nhân – phản biện dựa trên {kw} từ vựng học thuật trọng tâm.",
+    }
     passages40 = []
     for pa in p4.get("hskPassages40", []):
         npa = dict(pa)
-        npa["grammarPatternHighlightVi"] = f"Cấp độ {npa.get('hskLevel', 'HSK5')}: Luyện tách cụm chủ–vị dài, hư từ liên kết và đối chiếu từ khóa chuyên ngành ({len(npa.get('keyWords', []))} từ trọng tâm)."
+        lvl = npa.get("hskLevel", "HSK5")
+        kw_n = len(npa.get("keyWords", []))
+        npa["grammarPatternHighlightVi"] = _hsk_level_notes.get(lvl, "Tập trung {kw} từ khóa trọng tâm và mạch liên kết câu.").format(kw=kw_n)
         passages40.append(npa)
 
     essays15 = []
@@ -959,55 +1149,124 @@ def enrich_pack5(p5: dict) -> dict:
         "FTA": "customs_origin",
         "Logistics": "ocean_rail",
     }
+    _V6_TERM_CAT_TEMPLATES = {
+        "Incoterms": ("Điều khoản giao nhận (Hán–Việt: {hv}) phân định mốc chuyển rủi ro và chi phí bốc dỡ giữa xưởng và cảng.", "Governs risk transfer and freight cost checkpoints between supplier factory and destination port."),
+        "UCP600": ("Thuật ngữ thanh toán L/C (Hán–Việt: {hv}) kiểm soát rủi ro bất hợp lệ chứng từ ngân hàng.", "UCP 600 banking and documentary compliance term for L/C verification."),
+        "AQL": ("Thông số kiểm định ngoại quan (Hán–Việt: {hv}) áp dụng trước khi đóng container xuất xưởng.", "Pre-shipment AQL quality sampling standard used during factory audit inspections."),
+        "Legal": ("Điều khoản pháp lý OEM/hợp đồng (Hán–Việt: {hv}) bảo vệ quyền khuôn mẫu, sở hữu trí tuệ và trọng tài.", "Manufacturing contract provision protecting tooling equity, IP, and arbitration venue."),
+        "CBAM": ("Chỉ tiêu kê khai phát thải carbon EU CBAM (Hán–Việt: {hv}) bắt buộc thu thập theo lò luyện từ nhà máy.", "EU CBAM carbon emissions reporting metric collected per installation CN code."),
+        "EUDR": ("Hồ sơ truy xuất vùng nguyên liệu không phá rừng (Hán–Việt: {hv}) theo quy định EU 2023/1115.", "EU 2023/1115 deforestation-free traceability term requiring GeoJSON plot data."),
+        "ICS2": ("Khai báo an ninh trước khi xếp tàu/bay vào EU (Hán–Việt: {hv}), bắt buộc khớp mã HS 6 số.", "EU ICS2 pre-loading security filing terminology requiring accurate 6-digit HS codes."),
+        "CE_REACH": ("Quy chuẩn an toàn kỹ thuật và hóa chất Châu Âu (Hán–Việt: {hv}) đi kèm hồ sơ kỹ thuật SKU.", "EU technical safety and chemical compliance term linked to DoC and lab reports."),
+        "GACC": ("Nghiệp vụ đăng ký CIFER và kiểm dịch Hải quan TQ (Hán–Việt: {hv}) tại cửa khẩu và cảng biển.", "Chinese customs GACC and CIFER registration terminology for bilateral clearance."),
+        "FTA": ("Quy tắc xuất xứ C/O Form E, RCEP và EVFTA (Hán–Việt: {hv}) giúp xác định hưởng ưu đãi thuế quan.", "Preferential tariff and rules-of-origin term spanning ACFTA, RCEP, and EVFTA."),
+        "Logistics": ("Thuật ngữ vận hành kho bãi và đường sắt/biển (Hán–Việt: {hv}) dùng hàng ngày với forwarder.", "Daily port, container, and rail-freight operations term shared with carriers."),
+    }
     terms150 = []
     for tm in p5.get("b2bTerms150", []):
         nt = dict(tm)
         raw_cat = nt.get("category", "Logistics")
         nt["v6Tag"] = raw_cat
         nt["category"] = cat_map.get(raw_cat, "ocean_rail")
-        nt["contextVi"] = f"Nhóm chuẩn {raw_cat} · Âm Hán–Việt: {nt.get('hanViet', '')} — dùng trực tiếp khi làm việc với xưởng TQ và trụ sở châu Âu."
-        nt["contextEn"] = f"{raw_cat} domain terminology for EU–China–Vietnam operations and compliance audits."
+        hv = nt.get("hanViet", "")
+        vi_tpl, en_tpl = _V6_TERM_CAT_TEMPLATES.get(raw_cat, _V6_TERM_CAT_TEMPLATES["Logistics"])
+        nt["contextVi"] = vi_tpl.format(hv=hv)
+        nt["contextEn"] = en_tpl
         terms150.append(nt)
 
+    _wonder_guides = [
+        "Quan sát cấu trúc vì kèo, tỷ lệ mái và vật liệu gỗ/đá bản địa tại công trình.",
+        "Đối chiếu hoa văn trang trí, minh văn bia đá hoặc kỹ nghệ men gốm giữa hai nền văn hiến.",
+        "Ghi chú sự thích ứng khí hậu địa phương qua cách bố trí sân, hiên và hướng gió.",
+    ]
     wonders10 = []
-    for w in p5.get("sinoVietWonders10", []):
+    for idx, w in enumerate(p5.get("sinoVietWonders10", [])):
         nw = dict(w)
         wid = nw.get("id", "svw-01")
         vn_img, cn_img = WONDER_IMAGE_PAIRS.get(wid, ("assets/images/articles/hero-sino-vietnam.jpg", "assets/images/academic/ming-forbidden-city.jpg"))
         nw["vnImg"] = ensure_verified_img(vn_img)
         nw["chinaImg"] = ensure_verified_img(cn_img)
-        nw["pairTitle"] = f"{nw.get('vietnamWonder', '')} ↔ {nw.get('chinaWonder', '')}"
-        nw["summaryVi"] = f"Tương đồng thể chế/kỹ nghệ: {nw.get('sharedHeritageVi', '')} · Sáng tạo độc lập Việt Nam: {nw.get('distinctAdaptationVi', '')}"
-        nw["historicalTimelineCompareVi"] = f"Đặt {nw.get('vietnamWonder', '')} song hành cùng {nw.get('chinaWonder', '')} trên trục lịch sử giao lưu văn hiến bình đẳng Đông Á."
+        nw["pairTitle"] = f"{nw.get('vietnamWonder', '')} <-> {nw.get('chinaWonder', '')}"
+        nw["summaryVi"] = f"{nw.get('sharedHeritageVi', '')} · Nét riêng Việt Nam: {nw.get('distinctAdaptationVi', '')}"
+        nw["historicalTimelineCompareVi"] = f"Đặt {nw.get('vietnamWonder', '')} song hành với {nw.get('chinaWonder', '')} trong dòng chảy giao lưu văn hóa Đông Á."
         nw["architecturalOrCraftAnatomyVi"] = nw.get("distinctAdaptationVi", "")
-        nw["fieldVisitGuideVi"] = "Mẹo thực địa: Quan sát kỹ tỷ lệ mái, hoa văn bản địa Việt Nam và ghi chú nguồn gốc vật liệu địa phương khi tham quan."
+        nw["fieldVisitGuideVi"] = _wonder_guides[idx % len(_wonder_guides)]
         wonders10.append(nw)
 
     unis24 = []
-    for u in p5.get("cscUniversities24Atlas", []):
+    for idx, u in enumerate(p5.get("cscUniversities24Atlas", [])):
         nu = dict(u)
         prov_id = nu.get("provinceId", "prov-beijing")
         prov_vi, _ = PROVINCE_LABELS.get(prov_id, ("Trung Quốc", "China"))
-        nu["agencyNo"] = nu.get("agencyNumber", "")
-        nu["majorsVi"] = nu.get("strengthsVi", "")
+        ag = nu.get("agencyNumber", "")
+        st = nu.get("strengthsVi", "")
+        st_low = st.lower()
+        nu["agencyNo"] = ag
+        nu["majorsVi"] = st
         nu["cityVi"] = prov_vi
         nu["imagePath"] = ensure_verified_img(PROVINCE_IMAGES.get(prov_id, "assets/images/articles/hero-academy-shuyuan.jpg"))
-        nu["cscTypeA_vs_TypeB_NoteVi"] = f"Mã trường nộp CSC Type B & Type A tại {prov_vi}: {nu.get('agencyNumber', '')}. Kiểm tra hạn chót vòng sơ tuyển của Khoa (tháng 2–3)."
-        nu["vietnamAlumniCareerTrackVi"] = f"Cơ hội nghề nghiệp cựu sinh viên Việt Nam: R&D, chuỗi cung ứng Á–Âu, kiểm toán ESG và hợp tác công–tư tại {prov_vi}/Hà Nội/TP.HCM."
-        nu["recommendedHskAndIeltsVi"] = "Khuyên dùng: HSK 5–6 (>=210 điểm) cho hệ Tiếng Trung hoặc IELTS 6.5+ cho hệ Tiếng Anh."
+        if "bắc kinh" in prov_vi.lower():
+            nu["cscTypeA_vs_TypeB_NoteVi"] = f"Mã trường {ag} tại {prov_vi}: nộp trực tiếp qua cổng CSC Type B của trường trước hạn sơ tuyển tháng 2–3."
+        elif "thượng hải" in prov_vi.lower():
+            nu["cscTypeA_vs_TypeB_NoteVi"] = f"Mã trường {ag}: kết hợp CSC Type B và học bổng Chính quyền TP {prov_vi} (SGS) tăng tỷ lệ trúng tuyển."
+        else:
+            nu["cscTypeA_vs_TypeB_NoteVi"] = f"Mã trường {ag} ({prov_vi}): theo dõi cả suất CSC Type B và học bổng tỉnh/trường đầu xuân."
+        if any(k in st_low for k in ("kỹ thuật", "ai", "hàng hải", "cơ khí", "bán dẫn")):
+            nu["vietnamAlumniCareerTrackVi"] = f"Hướng nghề sau tốt nghiệp tại {prov_vi}/VN: kỹ sư R&D, tự động hóa nhà máy và chuyển giao công nghệ."
+            nu["recommendedHskAndIeltsVi"] = "Hệ Tiếng Anh chuộng IELTS 6.5+ kèm đề cương nghiên cứu định lượng; hệ Tiếng Trung cần HSK 5 (>=195 điểm)."
+        elif any(k in st_low for k in ("thương mại", "luật", "tài chính", "kinh tế", "logistics")):
+            nu["vietnamAlumniCareerTrackVi"] = f"Hướng nghề sau tốt nghiệp: điều phối chuỗi cung ứng Á–Âu, pháp lý hải quan, tài chính thương mại."
+            nu["recommendedHskAndIeltsVi"] = "HSK 5–6 (>=210 điểm) cho chương trình Tiếng Trung hoặc IELTS 6.5–7.0 cho chương trình song ngữ."
+        else:
+            nu["vietnamAlumniCareerTrackVi"] = f"Hướng nghề sau tốt nghiệp: giảng dạy, nghiên cứu Hán học – văn hóa, biên phiên dịch và hợp tác song phương."
+            nu["recommendedHskAndIeltsVi"] = "Ưu tiên HSK 5–6 kèm bài viết luận nghiên cứu học thuật rõ ràng bằng tiếng Trung hoặc tiếng Anh."
         unis24.append(nu)
 
+    CSC_INTERVIEW_EN_OUTLINES: dict[str, str] = {
+        "ciq-01": "Use a crisp three-part arc: university major and GPA/research metrics -> quantitative or multilingual strengths -> why this department and advisor.",
+        "ciq-02": "Link China–Vietnam supply chain dynamics directly to the institute's empirical focus and your prospective supervisor's recent work.",
+        "ciq-03": "Move sequentially from Research Gap -> Primary Research Question -> Concrete Policy or Trade Relevance for ASEAN–China–EU corridors.",
+        "ciq-04": "Specify exact estimators (e.g., Structural Gravity PPML, Panel FEM/REM, DID, or SEM), datasets (UN Comtrade, GACC), and tools (Stata/Python).",
+        "ciq-05": "Verify dataset availability upfront using open empirical panels (UN Comtrade, WITS, World Bank, bilateral customs statistics).",
+        "ciq-06": "Acknowledge one honest econometric limitation (endogeneity or reporting lag) alongside a clear robustness fix (IV or PPML controls).",
+        "ciq-07": "Cite two exact papers by your target supervisor, explain their methodological contribution, and outline how you extend them to ASEAN/Vietnam data.",
+        "ciq-08": "Structure via STAR: Problem Context -> Analytical Method -> Quantitative Finding -> Key Academic Takeaway.",
+        "ciq-09": "Combine verified HSK/IELTS proficiency with a disciplined daily habit of scanning CNKI and SSCI journal articles.",
+        "ciq-10": "Outline Year 1 (core coursework and literature synthesis) flowing cleanly into Year 2 (empirical estimation, paper submission, and thesis defense).",
+        "ciq-11": "Commit to zero plagiarism or fabricated observations; restrict AI tools strictly to language polishing while retaining full intellectual authorship.",
+        "ciq-12": "Connect graduate training in cross-border supply chains or trade economics to practical industry or policy research roles post-graduation.",
+        "ciq-13": "Analyze regional complementarities (Chinese intermediate inputs -> Vietnamese final assembly -> EU/US consumer markets) rather than zero-sum displacement.",
+        "ciq-14": "Weigh tariff and digital trade liberalization against stricter rules of origin (CTH/RVC/fabric-forward), EU CBAM, and EUDR compliance.",
+        "ciq-15": "Cite a concrete team disagreement resolved through active listening, shared quantitative metrics, and clear task reallocation.",
+        "ciq-16": "Point to practical cultural readiness, familiarity with daily apps (Alipay/WeChat), self-study discipline, and openness to campus integration.",
+        "ciq-17": "Never adjust observations to force significance; audit specification and omitted variables first, then interpret genuine economic mechanisms honestly.",
+        "ciq-18": "Identify one realistic flaw (such as over-editing early literature drafts) paired with concrete time-boxing steps already producing improvement.",
+        "ciq-19": "Share a grounded contingency path: provincial/university scholarships, relevant analyst experience, and a stronger follow-up application.",
+        "ciq-20": "Detail applied proficiency across Python, Stata, R, Power BI, SPSS/SmartPLS, and structured Excel modeling using actual project outputs.",
+        "ciq-21": "Allocate brief context to the setback itself and most of your answer to root-cause diagnosis, verification habits, and measurable recovery.",
+        "ciq-22": "Contrast near-term Scope 1–2 compliance costs for steel/aluminum exporters with long-term incentives toward greener electric-arc production.",
+        "ciq-23": "Answer candidly about your academic trajectory: remain open to doctoral progression if your Master's empirical work yields strong publishable findings.",
+        "ciq-24": "Prepare two focused questions about the department's current research clusters, field-work access, or academic seminar opportunities.",
+    }
+    _interview_pitfalls = [
+        "Tránh trả lời chung chung bằng lời hứa suông; hãy nêu số liệu, tên môn học hoặc tên công trình của giảng viên.",
+        "Không học thuộc lòng đoạn văn mẫu dễ lộ khi hội đồng hỏi vặn sâu vào chi tiết phương pháp.",
+        "Tránh chỉ kể khó khăn cá nhân; luôn dành trọng tâm cho giải pháp kỹ thuật và bài học rút ra.",
+        "Giữ tốc độ nói vừa phải, tách rõ 2–3 luận điểm thay vì liệt kê dài dòng không có kết cấu.",
+    ]
     ints24 = []
-    for q in p5.get("cscInterviewQuestions24", []):
+    for idx, q in enumerate(p5.get("cscInterviewQuestions24", [])):
         nq = dict(q)
+        qid = nq.get("id", "")
         nq["zh"] = nq.get("qZh", "")
         nq["vi"] = nq.get("qVi", "")
         nq["guideVi"] = nq.get("outlineVi", "")
         nq["modelAnswerZh"] = (
-            f"尊敬的各位评审老师好，关于“{nq.get('qZh', '')}”，我的体会是：{nq.get('qZh', '')[:18]}需要结合专业积累与中越—全球供应链学术视角，脚踏实地推进研究。"
+            f"各位老师好，关于“{nq.get('qZh', '')}”，我将结合专业基础、数据分析能力以及中越经贸研究视角展开说明。"
         )
-        nq["modelAnswerEn"] = f"Response Framework for '{nq.get('qEn', '')}': {nq.get('outlineVi', '')} Back claims with measurable GPA, research output, and bilateral impact."
-        nq["commonPitfallToAvoidVi"] = "Tránh học thuộc lòng văn mẫu chung chung thiếu dẫn chứng cụ thể về Giáo sư hoặc phòng Lab của trường mục tiêu."
+        en_outline = CSC_INTERVIEW_EN_OUTLINES.get(qid, "Present a structured empirical response linking academic background, quantitative rigor, and bilateral relevance.")
+        nq["modelAnswerEn"] = f"{nq.get('qEn', '')} — {en_outline}"
+        nq["commonPitfallToAvoidVi"] = _interview_pitfalls[idx % len(_interview_pitfalls)]
         ints24.append(nq)
 
     gantt12 = [{"id": g[0], "month": g[1], "milestone": g[2], "detailVi": g[3]} for g in CSC_GANTT_12]
@@ -1037,10 +1296,8 @@ def enrich_pack6(q_raw: list[dict]) -> list[dict]:
         if nq.get("isVisualQuestion"):
             tag = nq.get("visualSubjectTag", "")
             nq["imagePath"] = ensure_verified_img(VISUAL_QUIZ_TAG_MAP.get(tag, FALLBACK_RASTER))
-            nq["visualInspectionGuideVi"] = (
-                f"Mẹo quan sát ảnh [{nq.get('topicVi', '')}]: Chú ý đường nét, kết cấu đặc trưng của {nq.get('hanzi', '')} "
-                f"trước khi đối chiếu 4 lựa chọn."
-            )
+            nq["visualInspectionGuideVi"] = nq.get("explainVi") or f"Quan sát dấu hiệu đặc trưng của {nq.get('topicVi', '')}."
+            nq["visualInspectionGuideEn"] = nq.get("explainEn") or f"Inspect visual traits of {nq.get('topicEn', '')}."
         out.append(nq)
     return out
 
