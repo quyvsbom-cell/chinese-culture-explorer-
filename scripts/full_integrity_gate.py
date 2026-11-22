@@ -124,7 +124,7 @@ def main() -> int:
             "armillary3DStudio.js", "artifacts3DExtra.js", "studioHub3D.js",
             "v4UXEnhancements.js", "travelUXHub.js", "v4KnowledgeHub.js",
             "trilingualTradeStudio.js", "laozihaoPavilionV5.js", "v5CourseAcademy.js",
-            "srsEngine.js", "exporters.js", "lazyLoader.js"
+            "srsEngine.js", "exporters.js", "lazyLoader.js", "page-transition.js"
         }
     ]
     delim_issues = check_js_delimiters(v3_components)
