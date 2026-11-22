@@ -1,4 +1,4 @@
-"""V7 Pack 6 Builder: 100 MCQs (70 Theory + 30 Visual ID -> 600 Total / 150 Visual ID), 6 Global Benchmarks, 12 YouTube Videos, 1 Promo Video."""
+"""V7 Pack 6 Builder: 100 MCQs (70 Theory + 30 Visual ID -> 600 Total / 150 Visual ID), 6 Global Benchmarks & 12 YouTube Videos."""
 
 from __future__ import annotations
 
@@ -280,16 +280,6 @@ def build_pack6() -> dict[str, Any]:
         {"id": "yt-12", "youtubeId": "GkLhHNTOP3Y", "sectionTag": "tourism", "author": "ChinaVista", "titleVi": "Hoàng Sơn Huy Châu — Biển Mây & Thông Nghênh Khách", "titleEn": "Huangshan (Yellow Mountain), China | Travel Documentary", "summaryVi": "Hành trình chiêm ngưỡng kỳ quan núi granit Hoàng Sơn gắn với cổ thôn Hoành Thôn.", "summaryEn": "Scenic immersion across granite sea-of-clouds peaks and Huizhou ink villages.", "posterImage": ensure_verified_img("assets/images/provinces/anhui-huangshan-cloudsea.jpg")},
     ]
 
-    official_promo = {
-        "titleVi": "Video Quảng Cáo Chính Thức: Chinese Culture Explorer V7.0",
-        "titleEn": "Official Website Promotional Trailer: Chinese Culture Explorer V7.0",
-        "summaryVi": "Trailer 32.5 giây (1280×720 HD) kèm âm thanh ngũ cung Biên Chung giới thiệu trọn vẹn 10 Học phần (60 Bài), 24 Studio 3D WebGL, 120 Lão Tự Hào, 150 Lục Thư, 16 Tour Di sản 240h, 300 Thuật ngữ B2B và Đấu Trường 600 Câu (150 Visual ID).",
-        "summaryEn": "Official 32.5s HD trailer featuring pentatonic Bianzhong audio showcasing all 10 Modules, 24 3D Studios, 120 Heritage Brands, 16 UNESCO Expeditions, and 600-MCQ Quiz Arena.",
-        "videoPath": "assets/videos/cce-v7-official-promo.mp4",
-        "posterImage": ensure_verified_img("assets/images/museum/forbidden-city-imperial-axis-gate.jpg"),
-        "durationSec": 32.5,
-    }
-
     if ext.get("quiz100"):
         quiz_100 = merge_unique_by_key(quiz_100, ext["quiz100"], "id")[:100]
     else:
@@ -310,5 +300,4 @@ def build_pack6() -> dict[str, Any]:
         "quiz100": quiz_100,
         "globalPlatformBenchmarks6": global_benchmarks_6,
         "youtubeVideos12": youtube_videos_12,
-        "officialPromoVideo": official_promo,
     })

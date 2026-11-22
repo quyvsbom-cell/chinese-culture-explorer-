@@ -245,7 +245,6 @@
     return (
       '<section id="cce-v5-course-academy" class="card mb-2" style="margin-top:1.5rem;border-top:3px solid var(--imperial-red);padding:1.15rem 1.25rem;">' +
       (window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderCourseMindMapSvg ? window.CCE_V6_STUDIOS.renderCourseMindMapSvg(enM) : "") +
-      (window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderOfficialPromoCard ? window.CCE_V6_STUDIOS.renderOfficialPromoCard(enM) : "") +
       '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.6rem;margin-bottom:0.85rem;">' +
       '    <div>' +
       '      <div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "STRUCTURED LEARNING PATHWAY · 循序渐进十大课程模块 (" + allLessons.length + " LESSONS)" : "LỘ TRÌNH HỌC TẬP TUẦN TỰ NHƯ MỘT KHÓA HỌC · " + mods.length + " HỌC PHẦN · " + allLessons.length + " BÀI HỌC") + '</div>' +

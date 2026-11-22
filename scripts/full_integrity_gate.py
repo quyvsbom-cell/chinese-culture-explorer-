@@ -412,8 +412,11 @@ def main() -> int:
             g13_issues.append(f"Expected 6 new scenes in v7Masterpieces3D.js, found {len(v7_3d_ids)}")
 
     promo_video = ROOT / "assets" / "videos" / "cce-v7-official-promo.mp4"
-    if not promo_video.is_file() or promo_video.stat().st_size < 100_000:
-        g13_issues.append("Missing or undersized promo video: assets/videos/cce-v7-official-promo.mp4")
+    if promo_video.exists():
+        g13_issues.append("Removed promo video still exists on disk: assets/videos/cce-v7-official-promo.mp4")
+    for cpath in (ROOT / "src" / "components").rglob("*.js"):
+        if "cce-v7-official-promo.mp4" in cpath.read_text(encoding="utf-8", errors="ignore"):
+            g13_issues.append(f"Removed promo video still referenced in {cpath.relative_to(ROOT).as_posix()}")
 
     if v7_bundle:
         v7_core_checks = [
@@ -428,8 +431,8 @@ def main() -> int:
         for actual_c, exp_c, lbl in v7_core_checks:
             if actual_c != exp_c:
                 g13_issues.append(f"Expected {exp_c} {lbl}, got {actual_c}")
-        if not v7_bundle.get("officialPromoVideo", {}).get("videoPath"):
-            g13_issues.append("V7 officialPromoVideo missing videoPath")
+        if "officialPromoVideo" in v7_bundle:
+            g13_issues.append("Removed key officialPromoVideo still present in V7_DATA")
         for yt in v7_bundle.get("youtubeVideos12", []):
             if not re.fullmatch(r"[A-Za-z0-9_-]{11}", str(yt.get("youtubeId", ""))):
                 g13_issues.append(f"Invalid YouTube ID: {yt.get('youtubeId')}")

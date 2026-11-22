@@ -12813,15 +12813,6 @@
       "posterImage": "assets/images/provinces/anhui-huangshan-cloudsea.jpg"
     }
   ],
-  "officialPromoVideo": {
-    "titleVi": "Video Quảng Cáo Chính Thức: Chinese Culture Explorer V7.0",
-    "titleEn": "Official Website Promotional Trailer: Chinese Culture Explorer V7.0",
-    "summaryVi": "Trailer 32.5 giây (1280×720 HD) kèm âm thanh ngũ cung Biên Chung giới thiệu trọn vẹn 10 Học phần (60 Bài), 24 Studio 3D WebGL, 120 Lão Tự Hào, 150 Lục Thư, 16 Tour Di sản 240h, 300 Thuật ngữ B2B và Đấu Trường 600 Câu (150 Visual ID).",
-    "summaryEn": "Official 32.5s HD trailer featuring pentatonic Bianzhong audio showcasing all 10 Modules, 24 3D Studios, 120 Heritage Brands, 16 UNESCO Expeditions, and 600-MCQ Quiz Arena.",
-    "videoPath": "assets/videos/cce-v7-official-promo.mp4",
-    "posterImage": "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
-    "durationSec": 32.5
-  },
   "quiz100": [
     {
       "id": "v7-quiz-501",

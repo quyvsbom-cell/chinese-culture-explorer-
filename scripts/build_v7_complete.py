@@ -143,7 +143,6 @@ def build_v7() -> pathlib.Path:
         "digitalTravelConcierge8": p5["digitalTravelConcierge8"],
         "globalPlatformBenchmarks6": p6["globalPlatformBenchmarks6"],
         "youtubeVideos12": p6["youtubeVideos12"],
-        "officialPromoVideo": p6["officialPromoVideo"],
         "quiz100": p6["quiz100"],
     })
 
@@ -248,7 +247,7 @@ def build_v7() -> pathlib.Path:
     print("  50 Liushu -> 150 | 15 FF -> 45 | 15 ST -> 65 | 15 MW -> 55 | 14 Chengyu -> 50")
     print("  12 Herbs -> 60 | 6 Microclimates -> 18 | 8 Cosmo -> 36 | 2 Graphs -> 6 | 12 Poems -> 36")
     print("  50 B2B -> 300 | 5 Docs -> 15 | 10 Cases -> 50 | 6 SV -> 16 | 12 CSC -> 36 | 8 HSR -> 16")
-    print("  16 Heritage Expeditions | 8 Concierge 240h | 8 Pigments | 6 Benchmarks | 12 YouTube Videos | 1 Promo | 100 Quiz (30 Visual ID)")
+    print("  16 Heritage Expeditions | 8 Concierge 240h | 8 Pigments | 6 Benchmarks | 12 YouTube Videos | 100 Quiz (30 Visual ID)")
     return OUT_FILE
 
 

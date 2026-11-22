@@ -66,29 +66,8 @@
     );
   }
 
-  function renderOfficialPromoCard(enM) {
-    var v7 = window.CCE_V7_ENCYCLOPEDIA || {};
-    var promo = v7.officialPromoVideo || {
-      titleVi: "Video Quảng Cáo Chính Thức: Chinese Culture Explorer V7.0",
-      titleEn: "Official Website Promotional Trailer: Chinese Culture Explorer V7.0",
-      summaryVi: "Trailer 32.5 giây (1280×720 HD) kèm âm thanh ngũ cung giới thiệu trọn vẹn 10 Học phần, 24 Phòng 3D, 120 Lão Tự Hào, 16 Tour Di sản 240h & Đấu trường 600 câu.",
-      summaryEn: "Official 32.5s HD trailer introducing 10 Modules, 24 3D Labs, 120 Heritage Brands, 16 Expeditions & 600-MCQ Quiz Arena.",
-      videoPath: "assets/videos/cce-v7-official-promo.mp4",
-      posterImage: "assets/images/museum/forbidden-city-imperial-axis-gate.jpg"
-    };
-    return (
-      '<article class="card" id="cce-v7-promo-cinema-card" style="padding:1rem 1.15rem;border-top:3px solid #E5A93C;background:var(--bg-paper);">' +
-      '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.45rem;margin-bottom:0.55rem;">' +
-      '    <span class="badge badge-gold">OFFICIAL PROMO TRAILER V7.0 · H.264 HD</span>' +
-      '    <a href="' + esc(promo.videoPath) + '" download="chinese-culture-explorer-v7-promo.mp4" class="btn btn-secondary btn-sm">' + (enM ? "Download Promo .MP4 ↓" : "Tải Video Quảng Cáo .MP4 ↓") + '</a>' +
-      '  </div>' +
-      '  <h4 style="margin:0 0 0.35rem;font-size:1.05rem;">' + esc(enM ? promo.titleEn : promo.titleVi) + '</h4>' +
-      '  <p style="margin:0 0 0.65rem;font-size:0.81rem;color:var(--text-secondary);">' + esc(enM ? promo.summaryEn : promo.summaryVi) + '</p>' +
-      '  <video controls playsinline preload="metadata" poster="' + esc(promo.posterImage) + '" style="width:100%;max-height:420px;border-radius:var(--radius);border:1px solid var(--hairline);background:#111;display:block;">' +
-      '    <source src="' + esc(promo.videoPath) + '" type="video/mp4" />' +
-      '  </video>' +
-      '</article>'
-    );
+  function renderOfficialPromoCard() {
+    return "";
   }
 
   function esc(s) {
@@ -1121,8 +1100,7 @@
         '</div>';
     } else {
       body =
-        renderOfficialPromoCard(enM) +
-        '<h4 style="margin:1rem 0 0.6rem;font-size:1rem;">' + (enM ? yts.length + " Curated YouTube Documentaries (UNESCO, NatGeo, TED-Ed, DW)" : yts.length + " Video Tài Liệu YouTube Đính Kèm Theo Chuyên Mục") + '</h4>' +
+        '<h4 style="margin:0.2rem 0 0.65rem;font-size:1rem;">' + (enM ? yts.length + " Curated YouTube Documentaries (UNESCO, NatGeo, TED-Ed, DW)" : yts.length + " Video Tài Liệu YouTube Đính Kèm Theo Chuyên Mục") + '</h4>' +
         '<div class="grid grid-2" style="gap:0.8rem;max-height:620px;overflow:auto;">' +
         yts.map(function (vy) { return renderYoutubeCard(vy, enM); }).join("") +
         '</div>';
@@ -1131,13 +1109,13 @@
     return (
       '<section id="cce-v7-world-tourism-studio" class="card mb-2" style="margin-top:1.5rem;padding:1.15rem 1.25rem;border-top:3px solid #E5A93C;">' +
       '  <div class="editorial-kicker" style="color:var(--imperial-red);">V7.0 GLOBAL CULTURAL &amp; HERITAGE TOURISM HUB · 世界遗产远征、数字出行、矿物色谱与影视馆</div>' +
-      '  <h3 style="margin:0.15rem 0 0.55rem;font-size:1.22rem;">' + (enM ? "World Heritage Expeditions (16), Smart 240h Concierge (8), Mineral Pigments &amp; Cinema Hub" : "Studio Di Sản Thế Giới (" + exps.length + " Tour), Cẩm Nang Số 240h (" + guides.length + "), Sắc Tố Bảo Tàng &amp; Video Quảng Cáo Website") + '</h3>' +
+      '  <h3 style="margin:0.15rem 0 0.55rem;font-size:1.22rem;">' + (enM ? "World Heritage Expeditions (16), Smart 240h Concierge (8), Mineral Pigments &amp; " + yts.length + " YouTube Films" : "Studio Di Sản Thế Giới (" + exps.length + " Tour), Cẩm Nang Số 240h (" + guides.length + "), Sắc Tố Bảo Tàng &amp; " + yts.length + " Phim Tài Liệu YouTube") + '</h3>' +
       '  <div class="filter-bar" style="margin-bottom:0.85rem;">' +
       '    <button type="button" class="filter-pill ' + (st.worldTab === "expeditions" ? "active" : "") + '" data-v6st-act="wtab" data-val="expeditions">' + exps.length + ' Hành Trình Di Sản</button>' +
       '    <button type="button" class="filter-pill ' + (st.worldTab === "concierge" ? "active" : "") + '" data-v6st-act="wtab" data-val="concierge">' + guides.length + ' Cẩm Nang 240h &amp; Alipay</button>' +
       '    <button type="button" class="filter-pill ' + (st.worldTab === "pigments" ? "active" : "") + '" data-v6st-act="wtab" data-val="pigments">' + pigments.length + ' Sắc Tố Cổ Điển</button>' +
       '    <button type="button" class="filter-pill ' + (st.worldTab === "benchmarks" ? "active" : "") + '" data-v6st-act="wtab" data-val="benchmarks">' + benches.length + ' Benchmark Tập Đoàn</button>' +
-      '    <button type="button" class="filter-pill ' + (st.worldTab === "cinema" ? "active" : "") + '" data-v6st-act="wtab" data-val="cinema">Video Quảng Cáo &amp; ' + yts.length + ' YouTube</button>' +
+      '    <button type="button" class="filter-pill ' + (st.worldTab === "cinema" ? "active" : "") + '" data-v6st-act="wtab" data-val="cinema">' + yts.length + ' Video Tài Liệu YouTube</button>' +
       '  </div>' +
       body +
       '</section>'
