@@ -7,9 +7,9 @@
 (function () {
   "use strict";
 
-  var TIMING_ENTER_MS = 480;
-  var TIMING_HOLD_MS = 550;
-  var TIMING_EXIT_MS = 500;
+  var TIMING_ENTER_MS = 320;
+  var TIMING_HOLD_MS = 260;
+  var TIMING_EXIT_MS = 340;
   var TIMING_TOTAL_MS = TIMING_ENTER_MS + TIMING_HOLD_MS + TIMING_EXIT_MS;
 
   var PAGE_PATHS = {
@@ -110,8 +110,8 @@
       '  <div class="cce-pt-layer cce-pt-logo-lit">' + logoHtml + '</div>' +
       '</div>' +
       '<div class="cce-pt-footer">' +
-      '  <div id="cce-pt-tagline" class="cce-pt-tagline">CCE</div>' +
-      '  <div id="cce-pt-route" class="cce-pt-route">/</div>' +
+      '  <div id="cce-pt-tagline" class="cce-pt-tagline">' + getTargetTagline() + '</div>' +
+      '  <div id="cce-pt-route" class="cce-pt-route">HOME</div>' +
       '</div>'
     );
 
@@ -134,6 +134,15 @@
     return "vi";
   }
 
+  function formatRouteDisplay(routePath) {
+    var clean = String(routePath || "")
+      .replace(/^\/+|\/+$/g, "")
+      .replace(/\//g, " - ")
+      .trim()
+      .toUpperCase();
+    return clean || "HOME";
+  }
+
   function getTargetTagline() {
     var lang = getActiveLang().toLowerCase();
     if (lang.indexOf("zh") === 0) {
@@ -142,48 +151,13 @@
     return "CHINESE CULTURE EXPLORER";
   }
 
-  function startScrambleDecode(targetText, durationMs) {
+  function startScrambleDecode(targetText) {
     if (!_taglineEl) return;
     if (_scrambleTimer) {
       clearInterval(_scrambleTimer);
       _scrambleTimer = null;
     }
-
-    var isZh = targetText.charCodeAt(0) > 255;
-    var alphabet = isZh
-      ? "中国文化探索华夏文明九州典籍器物山水"
-      : "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    var seed = "CCE";
-    var totalSteps = Math.max(10, Math.round((durationMs || 460) / 28));
-    var step = 0;
-
-    _taglineEl.textContent = seed;
-    _scrambleTimer = setInterval(function () {
-      step += 1;
-      var progress = Math.min(1, step / totalSteps);
-      var currentLen = Math.round(seed.length + (targetText.length - seed.length) * Math.min(1, progress * 1.45));
-      var lockedCount = Math.floor(targetText.length * progress);
-      var out = "";
-
-      for (var i = 0; i < currentLen; i++) {
-        var targetCh = targetText.charAt(i);
-        if (i < lockedCount) {
-          out += targetCh;
-        } else if (targetCh === " ") {
-          out += " ";
-        } else {
-          out += alphabet.charAt((step * 7 + i * 11) % alphabet.length);
-        }
-      }
-
-      if (_taglineEl) _taglineEl.textContent = out;
-
-      if (step >= totalSteps) {
-        clearInterval(_scrambleTimer);
-        _scrambleTimer = null;
-        if (_taglineEl) _taglineEl.textContent = targetText;
-      }
-    }, 28);
+    _taglineEl.textContent = String(targetText || getTargetTagline()).toUpperCase();
   }
 
   function safeInvokeSwap(cb) {
@@ -198,7 +172,7 @@
   }
 
   function runTransition(routePath, swapCallback) {
-    var displayRoute = String(routePath || "/");
+    var displayRoute = formatRouteDisplay(routePath);
     if (prefersReducedMotion()) {
       safeInvokeSwap(swapCallback);
       return;
@@ -214,19 +188,20 @@
     _busy = true;
     clearTimers();
 
-    if (_taglineEl) _taglineEl.textContent = "CCE";
+    var tagline = getTargetTagline();
+    if (_taglineEl) _taglineEl.textContent = tagline;
     if (_routeEl) _routeEl.textContent = displayRoute;
 
     curtain.className = "is-resetting";
     void curtain.offsetWidth;
 
-    // Stage 1: Enter (480ms, curtain slides up from bottom to full viewport)
+    // Stage 1: Enter (320ms, curtain slides up from bottom to full viewport)
     curtain.className = "is-entering";
 
-    // Stage 2: Hold & Illuminate + Kinetic Tagline Decode (~550ms)
+    // Stage 2: Hold & Illuminate + Crisp Uppercase Typography
     _timers.push(setTimeout(function () {
       curtain.className = "is-holding is-illuminated";
-      startScrambleDecode(getTargetTagline(), 460);
+      startScrambleDecode(tagline);
     }, TIMING_ENTER_MS));
 
     // Stage 3: Route Swap at 100% cover, scroll top, & Exit upward
