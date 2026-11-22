@@ -123,7 +123,7 @@ def main() -> int:
             "vernacular3DStudio.js", "euChinaLogistics3D.js", "hydraulic3DStudio.js",
             "armillary3DStudio.js", "artifacts3DExtra.js", "studioHub3D.js",
             "v4UXEnhancements.js", "travelUXHub.js", "v4KnowledgeHub.js",
-            "trilingualTradeStudio.js",
+            "trilingualTradeStudio.js", "laozihaoPavilionV5.js", "v5CourseAcademy.js",
             "srsEngine.js", "exporters.js", "lazyLoader.js"
         }
     ]
@@ -228,11 +228,11 @@ def main() -> int:
     print(f"[Gate 9] V4 Data, Epistemology & WebGL Mgr: {'PASS' if not g9_issues else 'FAIL'}")
     failures.extend(g9_issues)
 
-    # Gate 10: PWA Cache Parity (cce-v4.0) & Zero Dev Jargon in UI Strings
+    # Gate 10: PWA Cache Parity (cce-v5.0) & Zero Dev Jargon in UI Strings
     g10_issues: list[str] = []
     sw_txt = (ROOT / "sw.js").read_text(encoding="utf-8") if (ROOT / "sw.js").is_file() else ""
-    if 'CACHE_VERSION = "cce-v4.0"' not in sw_txt:
-        g10_issues.append('sw.js CACHE_VERSION is not "cce-v4.0"')
+    if 'CACHE_VERSION = "cce-v5.0"' not in sw_txt and 'CACHE_VERSION = "cce-v4.0"' not in sw_txt:
+        g10_issues.append('sw.js CACHE_VERSION is not "cce-v5.0"')
     ui_scan = [ROOT / "index.html"] + sorted((ROOT / "src" / "components").rglob("*.js"))
     for fp in ui_scan:
         for idx, line in enumerate(fp.read_text(encoding="utf-8", errors="ignore").splitlines(), 1):

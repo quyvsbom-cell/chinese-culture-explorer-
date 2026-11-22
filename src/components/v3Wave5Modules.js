@@ -47,6 +47,25 @@
     return '<button type="button" class="tts-speak-btn" data-action="speak-zh" data-zh="' + esc(zh) + '" title="' + esc(label || "Listen zh-CN") + '" aria-label="' + esc(label || "Listen zh-CN") + '"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>';
   }
 
+  function resolveW5ProvThumb(provId, idx, fallback) {
+    var vis = (window.CCE_PROVINCE_ITEM_VISUALS && provId && window.CCE_PROVINCE_ITEM_VISUALS[provId]) || {};
+    var arr = Array.isArray(vis.heritage) ? vis.heritage : [];
+    if (arr.length) return arr[Math.abs(Number(idx) || 0) % arr.length];
+    return fallback || "assets/images/articles/hero-supply-chain-rcep.jpg";
+  }
+
+  function renderW5Thumb(src, caption, compact) {
+    if (!src) return "";
+    var styleBox = compact
+      ? "width:100%;height:96px;overflow:hidden;border-radius:var(--radius);border:1px solid var(--hairline);margin-bottom:0.5rem;background:var(--bg-surface);cursor:pointer;"
+      : "aspect-ratio:16/10;max-height:155px;width:100%;overflow:hidden;border-radius:var(--radius);border:1px solid var(--hairline);margin-bottom:0.55rem;background:var(--bg-surface);cursor:pointer;";
+    return (
+      '<div class="img-skeleton-bg" style="' + styleBox + '" data-action="open-custom-image" data-src="' + esc(src) + '" data-caption="' + esc(caption || "") + '">' +
+      '  <img src="' + esc(src) + '" alt="' + esc(caption || "Visual") + '" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;" onerror="this.onerror=null;this.src=\'assets/images/articles/hero-supply-chain-rcep.jpg\';" />' +
+      '</div>'
+    );
+  }
+
   // --------------------------------------------------------------------------
   // 1. B2B 18 Profiles (12 Industrial Clusters + 6 Globalized Cases) +
   //    8 Live Negotiation Scenarios + Printable A4 Checklist
@@ -133,15 +152,18 @@
 
       (filteredClusters.length ? (
         '<div class="grid grid-3" style="margin-bottom:2rem;">' +
-        filteredClusters.map(function (c) {
+        filteredClusters.map(function (c, idx) {
+          var cImg = resolveW5ProvThumb(c.provinceId, idx, "assets/images/articles/hero-huaqiangbei-tech.jpg");
+          var cCap = enM ? (c.nameEn || c.nameVi) : c.nameVi;
           return (
             '<article class="card">' +
+            renderW5Thumb(cImg, cCap, false) +
             '  <div class="card-header-row">' +
             '    <span class="badge badge-jade">' + esc(enM ? "Industrial Cluster" : "Cụm sản xuất") + '</span>' +
             '    <span class="badge badge-outline" style="font-size:0.7rem;">' + esc(c.hsrStation || "") + '</span>' +
             '  </div>' +
             '  <div class="card-title-zh">' + esc(c.nameZh) + ' ' + speakBtn(c.nameZh, c.nameVi) + '</div>' +
-            '  <h3 class="card-title" style="font-size:1.1rem;">' + esc(enM ? (c.nameEn || c.nameVi) : c.nameVi) + '</h3>' +
+            '  <h3 class="card-title" style="font-size:1.1rem;">' + esc(cCap) + '</h3>' +
             '  <p style="font-size:0.84rem;"><strong>' + (enM ? "Core Sectors:" : "Ngành mũi nhọn:") + '</strong> ' + esc(enM ? (c.sectorsEn || c.sectorsVi) : c.sectorsVi) + '</p>' +
             '  <div class="flashcard-layer" style="font-size:0.82rem;background:var(--bg-accent-soft);margin-bottom:0.7rem;">' +
             '    <strong>' + (enM ? "Vietnam Supply Link:" : "Kết nối Việt Nam:") + '</strong> ' + esc(enM ? (c.vnSupplyLinkEn || c.vnSupplyLinkVi) : c.vnSupplyLinkVi) +
@@ -155,12 +177,14 @@
 
       (filteredCases.length ? (
         '<div class="grid grid-3" style="margin-bottom:2.2rem;">' +
-        filteredCases.map(function (cs) {
+        filteredCases.map(function (cs, idx) {
           var csName = cs.name || cs.company || cs.id;
           var csZhMatch = String(csName).match(/[\u4e00-\u9fff]+/);
           var csZh = csZhMatch ? csZhMatch[0] : "";
+          var csImg = resolveW5ProvThumb(cs.provinceId, idx + 1, "assets/images/articles/hero-supply-chain-rcep.jpg");
           return (
             '<article class="card" style="border-top:3px solid var(--antique-gold);">' +
+            renderW5Thumb(csImg, csName, false) +
             '  <div class="card-header-row">' +
             '    <span class="badge badge-gold">' + esc(enM ? "Global Case" : "Case Toàn cầu") + '</span>' +
             '    <span class="badge badge-outline">' + esc(String(cs.provinceId || "").replace("prov-", "").toUpperCase()) + '</span>' +
@@ -446,24 +470,37 @@
       }).join("") +
       '  </div>' +
       '  <div class="grid grid-2">' +
-      filtered.map(function (p) {
-        return (
-          '<article class="card">' +
-          '  <div class="card-header-row">' +
-          '    <span class="badge badge-red">' + esc(p.category.toUpperCase()) + '</span>' +
-          '    <span class="text-xs" style="color:var(--text-muted);">' + esc(p.sourceText || "") + '</span>' +
-          '  </div>' +
-          '  <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:0.5rem;align-items:center;margin:0.5rem 0 0.7rem;padding:0.65rem;background:var(--bg-accent-soft);border:1px solid var(--hairline);">' +
-          '    <div><div class="hanzi" style="font-size:1.15rem;color:var(--imperial-red);">' + esc(p.termA_Zh) + ' ' + speakBtn(p.termA_Zh, p.termA_Vi) + '</div><strong style="font-size:0.9rem;">' + esc(enM ? (p.termA_En || p.termA_Vi) : p.termA_Vi) + '</strong></div>' +
-          '    <div style="font-weight:700;color:var(--text-muted);font-family:var(--font-mono);">vs</div>' +
-          '    <div><div class="hanzi" style="font-size:1.15rem;color:var(--jade-green);">' + esc(p.termB_Zh) + ' ' + speakBtn(p.termB_Zh, p.termB_Vi) + '</div><strong style="font-size:0.9rem;">' + esc(enM ? (p.termB_En || p.termB_Vi) : p.termB_Vi) + '</strong></div>' +
-          '  </div>' +
-          '  <p style="font-size:0.84rem;margin-bottom:0.45rem;"><strong>' + (enM ? "Canonical Definition:" : "Định nghĩa Nguyên điển:") + '</strong> ' + esc(enM ? (p.originalDefEn || p.originalDefVi) : p.originalDefVi) + '</p>' +
-          '  <p style="font-size:0.84rem;margin-bottom:0.45rem;"><strong>' + (enM ? "Structural Contrast:" : "Khác biệt Cốt lõi:") + '</strong> ' + esc(enM ? (p.coreDiffEn || p.coreDiffVi) : p.coreDiffVi) + '</p>' +
-          '  <p style="font-size:0.83rem;margin-bottom:0;color:var(--jade-green);"><strong>' + (enM ? "Modern Practice:" : "Ứng dụng Hiện đại:") + '</strong> ' + esc(enM ? (p.modernAppEn || p.modernAppVi) : p.modernAppVi) + '</p>' +
-          '</article>'
-        );
-      }).join("") +
+      (function () {
+        var catPools = {
+          philosophy: ["assets/images/articles/hero-hundred-schools.jpg", "assets/images/articles/hero-confucianism.jpg", "assets/images/academic/laozi-portrait.jpg", "assets/images/academic/wang-yangming.jpg", "assets/images/articles/hero-academy-shuyuan.jpg"],
+          history: ["assets/images/academic/qin-terracotta.jpg", "assets/images/articles/hero-keju-examinations.jpg", "assets/images/museum/yongle-dadian.jpg", "assets/images/academic/sunzi-bamboo-slips.jpg"],
+          metaphysics: ["assets/images/articles/hero-yinyang.jpg", "assets/images/articles/hero-wuxing.jpg", "assets/images/articles/hero-iching.jpg", "assets/images/museum/acupuncture-bronze.jpg"],
+          arts: ["assets/images/paintings/22_qianli_jiangshan.jpg", "assets/images/museum/lantingji-xu.jpg", "assets/images/academic/guqin-instrument.jpg", "assets/images/articles/hero-traditional-arch.jpg"],
+          business: ["assets/images/articles/hero-b2b-negotiation-table.jpg", "assets/images/articles/hero-supply-chain-rcep.jpg", "assets/images/articles/hero-guanxi.jpg", "assets/images/articles/hero-laozihao-craft.jpg"]
+        };
+        return filtered.map(function (p, idx) {
+          var pool = catPools[p.category] || catPools.philosophy;
+          var pImg = pool[idx % pool.length];
+          var pCap = (enM ? (p.termA_En || p.termA_Vi) : p.termA_Vi) + " vs " + (enM ? (p.termB_En || p.termB_Vi) : p.termB_Vi);
+          return (
+            '<article class="card">' +
+            renderW5Thumb(pImg, pCap, true) +
+            '  <div class="card-header-row">' +
+            '    <span class="badge badge-red">' + esc(p.category.toUpperCase()) + '</span>' +
+            '    <span class="text-xs" style="color:var(--text-muted);">' + esc(p.sourceText || "") + '</span>' +
+            '  </div>' +
+            '  <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:0.5rem;align-items:center;margin:0.5rem 0 0.7rem;padding:0.65rem;background:var(--bg-accent-soft);border:1px solid var(--hairline);">' +
+            '    <div><div class="hanzi" style="font-size:1.15rem;color:var(--imperial-red);">' + esc(p.termA_Zh) + ' ' + speakBtn(p.termA_Zh, p.termA_Vi) + '</div><strong style="font-size:0.9rem;">' + esc(enM ? (p.termA_En || p.termA_Vi) : p.termA_Vi) + '</strong></div>' +
+            '    <div style="font-weight:700;color:var(--text-muted);font-family:var(--font-mono);">vs</div>' +
+            '    <div><div class="hanzi" style="font-size:1.15rem;color:var(--jade-green);">' + esc(p.termB_Zh) + ' ' + speakBtn(p.termB_Zh, p.termB_Vi) + '</div><strong style="font-size:0.9rem;">' + esc(enM ? (p.termB_En || p.termB_Vi) : p.termB_Vi) + '</strong></div>' +
+            '  </div>' +
+            '  <p style="font-size:0.84rem;margin-bottom:0.45rem;"><strong>' + (enM ? "Canonical Definition:" : "Định nghĩa Nguyên điển:") + '</strong> ' + esc(enM ? (p.originalDefEn || p.originalDefVi) : p.originalDefVi) + '</p>' +
+            '  <p style="font-size:0.84rem;margin-bottom:0.45rem;"><strong>' + (enM ? "Structural Contrast:" : "Khác biệt Cốt lõi:") + '</strong> ' + esc(enM ? (p.coreDiffEn || p.coreDiffVi) : p.coreDiffVi) + '</p>' +
+            '  <p style="font-size:0.83rem;margin-bottom:0;color:var(--jade-green);"><strong>' + (enM ? "Modern Practice:" : "Ứng dụng Hiện đại:") + '</strong> ' + esc(enM ? (p.modernAppEn || p.modernAppVi) : p.modernAppVi) + '</p>' +
+            '</article>'
+          );
+        }).join("");
+      })() +
       '  </div>' +
       '</section>'
     );

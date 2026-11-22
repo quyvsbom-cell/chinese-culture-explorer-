@@ -203,6 +203,43 @@ body.cce-read-night .editorial-article-main h3 {
   border-radius: 2px;
 }
 
+/* 7. Horizontal Survival Hanzi Grid (Pre-Departure Signs & Dining) */
+.survival-hanzi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 0.72rem;
+  align-items: stretch;
+}
+.survival-hanzi-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.22rem;
+  padding: 0.72rem 0.85rem;
+  background: var(--bg-paper);
+  border: 1px solid var(--hairline);
+  border-top: 2px solid var(--jade-green);
+}
+.survival-hanzi-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4rem;
+}
+.survival-hanzi-item .hanzi {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+.survival-hanzi-item .pinyin {
+  font-size: 0.78rem;
+  color: var(--jade-green);
+}
+.survival-hanzi-item .meaning {
+  font-size: 0.81rem;
+  color: var(--text-secondary);
+}
+
 [data-theme="dark"] .cce-driver-card {
   background: #1c1a17;
   color: #f2efe9;

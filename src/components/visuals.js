@@ -110,6 +110,7 @@ window.CCE_VISUALS = {
       northeast: "#3F5973",
       southwest: "#A83A2F",
       east: "#1F6E5C",
+      central: "#9A6700",
       south: "#9A6700"
     };
 
@@ -132,12 +133,12 @@ window.CCE_VISUALS = {
     };
 
     const macroLabels = [
-      { id: "northwest", label: enMode ? "NORTHWEST 西北" : "TÂY BẮC 西北", lx: 226, ly: 175 },
-      { id: "north", label: enMode ? "NORTH 华北" : "HOA BẮC 华北", lx: 565, ly: 225 },
-      { id: "northeast", label: enMode ? "NORTHEAST 东北" : "ĐÔNG BẮC 东北", lx: 760, ly: 145 },
-      { id: "southwest", label: enMode ? "SOUTHWEST 西南" : "TÂY NAM 西南", lx: 280, ly: 405 },
-      { id: "east", label: enMode ? "EAST 华东" : "HOA ĐÔNG 华东", lx: 662, ly: 360 },
-      { id: "south", label: enMode ? "SOUTH & CENTRAL 华南" : "HOA NAM & TRUNG NAM", lx: 572, ly: 465 }
+      { id: "northwest", label: enMode ? "NORTHWEST 西北" : "TÂY BẮC 西北", lx: 225, ly: 130 },
+      { id: "north", label: enMode ? "NORTH 华北" : "HOA BẮC 华北", lx: 505, ly: 186 },
+      { id: "northeast", label: enMode ? "NORTHEAST 东北" : "ĐÔNG BẮC 东北", lx: 828, ly: 112 },
+      { id: "southwest", label: enMode ? "SOUTHWEST 西南" : "TÂY NAM 西南", lx: 250, ly: 452 },
+      { id: "east", label: enMode ? "EAST 华东" : "HOA ĐÔNG 华东", lx: 786, ly: 325 },
+      { id: "south", label: enMode ? "SOUTH & CENTRAL 华南" : "HOA NAM & TRUNG NAM", lx: 642, ly: 598 }
     ];
 
     const defaultProvinceCoords = {
@@ -190,12 +191,12 @@ window.CCE_VISUALS = {
       const cat =
         (p.identity && p.identity.adminCategory) ||
         (/Trực thuộc|直辖市/.test(p.adminType || "") ? "municipality" : /Đặc khu|特别行政区/.test(p.adminType || "") ? "sar" : /tự trị|自治区/.test(p.adminType || "") ? "autonomous" : def.cat);
-      const short = (p.identity && p.identity.abbreviation) || p.abbr || def.short;
+      const short = def.short || "省";
       const capitalEra = (p.mapCoordinates && p.mapCoordinates.historicalCapitalEra) || def.capitalEra;
       const corridor = (p.mapCoordinates && p.mapCoordinates.economicCorridor) || def.corridor;
       const nameVi = enMode ? (p.nameEn || p.nameVi || p.id.replace("prov-", "")) : (p.nameVi || p.id.replace("prov-", ""));
       const nameZh = p.nameZh || "";
-      const regId = p.regionId || def.regionId;
+      const regId = def.regionId || p.regionId || "east";
       let fillColor = regionColors[regId] || "#9F2929";
       if (mapMode === "admin") fillColor = adminColors[cat] || "#6A5A4D";
       else if (mapMode === "capitals") fillColor = /Kinh đô|Trường An|Lạc Dương|Khai Phong|Nam Kinh|Lâm An|Bắc Kinh|Thịnh Kinh|Tây Hạ|Cổ Thục|Nam Việt/.test(capitalEra) ? "#9A6700" : "#5D564E";
@@ -236,15 +237,15 @@ window.CCE_VISUALS = {
     ];
 
     const vnGates = [
-      { code: "VN-LK", label: enMode ? "Lao Cai / Hekou" : "Lào Cai · Hà Khẩu", x: 438, y: 530, lx: 400, ly: 552, anchor: "end" },
-      { code: "VN-HN", label: enMode ? "Huu Nghi / Pingxiang" : "Hữu Nghị · Bằng Tường", x: 492, y: 540, lx: 492, ly: 566, anchor: "middle" },
-      { code: "VN-MC", label: enMode ? "Mong Cai / Dongxing" : "Móng Cái · Đông Hưng", x: 516, y: 550, lx: 525, ly: 582, anchor: "start" }
+      { code: "VN-LK", label: enMode ? "Lao Cai / Hekou" : "Lào Cai · Hà Khẩu", x: 438, y: 530, lx: 405, ly: 548, anchor: "end" },
+      { code: "VN-HN", label: enMode ? "Huu Nghi / Pingxiang" : "Hữu Nghị · Bằng Tường", x: 486, y: 540, lx: 486, ly: 562, anchor: "middle" },
+      { code: "VN-MC", label: enMode ? "Mong Cai / Dongxing" : "Móng Cái · Đông Hưng", x: 516, y: 546, lx: 526, ly: 582, anchor: "start" }
     ];
 
     const smallBadges = [
-      { id: "prov-beijing", label: "京 Bắc Kinh", x: 631.2, y: 243.6, bx: 682, by: 204 },
-      { id: "prov-tianjin", label: "津 Thiên Tân", x: 642.2, y: 255.9, bx: 682, by: 230 },
-      { id: "prov-shanghai", label: "沪 Thượng Hải", x: 702.5, y: 382.3, bx: 734, by: 360 }
+      { id: "prov-beijing", label: "京 Bắc Kinh", x: 631.2, y: 243.6, bx: 754, by: 244 },
+      { id: "prov-tianjin", label: "津 Thiên Tân", x: 642.2, y: 255.9, bx: 754, by: 268 },
+      { id: "prov-shanghai", label: "沪 Thượng Hải", x: 702.5, y: 382.3, bx: 754, by: 382 }
     ];
 
     return `
@@ -283,7 +284,7 @@ window.CCE_VISUALS = {
                 .filter((pn) => pn.dPath)
                 .map((pn) => {
                   const isSel = activeProvinceId === pn.id;
-                  const inActiveRegion = activeRegionId && pn.regionId === activeRegionId && mapMode === "regions";
+                  const inActiveRegion = activeRegionId && (pn.regionId === activeRegionId || (activeRegionId === "south" && pn.regionId === "central")) && mapMode === "regions";
                   const fillOp = isSel ? "0.78" : (inActiveRegion ? "0.52" : "0.28");
                   const strokeClr = isSel ? "#181715" : "var(--bg-paper)";
                   const strokeW = isSel ? "1.8" : "0.95";

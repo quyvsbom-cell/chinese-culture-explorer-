@@ -266,7 +266,13 @@
               : esc(enVal(pr, "cuisine"))) +
           '</div>' +
           '<div><strong style="color:var(--imperial-red);">5. ' + (enPM ? "Luminaries & Literature:" : "Danh nhân & Thi ca:") + '</strong> ' +
-            (figures.length ? esc(figures.map(function (f) { return (f.hanViet || f.nameVi) + " (" + f.hanzi + ")"; }).join(" · ")) : esc(enVal(pr, "highlights"))) +
+            (figures.length ? '<div style="display:flex;flex-wrap:wrap;gap:0.45rem;margin-top:0.35rem;">' + figures.map(function (f, fi) {
+              var fImg = (vis.figures && vis.figures[fi]) || "";
+              return '<span style="display:inline-flex;align-items:center;gap:0.3rem;padding:0.18rem 0.45rem;border:1px solid var(--hairline);background:var(--bg-paper);">' +
+                (fImg ? '<img src="' + esc(fImg) + '" alt="' + esc(f.hanViet || f.hanzi) + '" style="width:22px;height:22px;object-fit:cover;object-position:top center;border-radius:50%;" />' : '') +
+                esc((f.hanViet || f.nameVi) + " (" + f.hanzi + ")") +
+              '</span>';
+            }).join("") + '</div>' : esc(enVal(pr, "highlights"))) +
             (pr.literaryAndHistoricalEchoes ? '<br><em>' + esc(enVal(pr.literaryAndHistoricalEchoes, "workTitle")) + ':</em> <span class="hanzi">' + esc(pr.literaryAndHistoricalEchoes.quoteZh || "") + '</span>' : '') +
           '</div>' +
           '<div><strong style="color:var(--imperial-red);">6. ' + (enPM ? "Dialect & Phonology:" : "Phương ngôn Bản địa:") + '</strong> ' + esc(enVal(pr, "dialect") || enVal(layer2.linguisticProfile || {}, "summaryVi") || (enPM ? "Mandarin & local topolects" : "Phổ thông & phương ngữ địa phương")) + '</div>' +

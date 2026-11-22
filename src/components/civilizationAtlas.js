@@ -24,6 +24,25 @@
       .replace(/"/g, "&quot;");
   }
 
+  function resolveProvThumb(provId, bucket, idx, fallback) {
+    var vis = (window.CCE_PROVINCE_ITEM_VISUALS && provId && window.CCE_PROVINCE_ITEM_VISUALS[provId]) || {};
+    var arr = Array.isArray(vis[bucket]) ? vis[bucket] : [];
+    if (arr.length) return arr[Math.abs(Number(idx) || 0) % arr.length];
+    return fallback || "assets/images/articles/hero-traditional-arch.jpg";
+  }
+
+  function renderAtlasThumb(src, caption, compact) {
+    if (!src) return "";
+    var styleBox = compact
+      ? "width:100%;height:90px;overflow:hidden;border-radius:var(--radius);border:1px solid var(--hairline);margin-bottom:0.45rem;background:var(--bg-surface);cursor:pointer;"
+      : "aspect-ratio:16/10;max-height:150px;width:100%;overflow:hidden;border-radius:var(--radius);border:1px solid var(--hairline);margin-bottom:0.5rem;background:var(--bg-surface);cursor:pointer;";
+    return (
+      '<div class="img-skeleton-bg" style="' + styleBox + '" data-action="open-custom-image" data-src="' + esc(src) + '" data-caption="' + esc(caption || "") + '">' +
+      '  <img src="' + esc(src) + '" alt="' + esc(caption || "Visual") + '" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;" onerror="this.onerror=null;this.src=\'assets/images/articles/hero-traditional-arch.jpg\';" />' +
+      '</div>'
+    );
+  }
+
   // --------------------------------------------------------------------------
   // 1. 6x7 Civilization Atlas Matrix (6 Historical Horizons x 7 Domains)
   // --------------------------------------------------------------------------
@@ -149,9 +168,12 @@
         '  <div class="editorial-kicker" style="color:var(--jade-green);">' + (enM ? "CHINESE TOP TEN TEAS · 中国十大名茶" : "Thập Đại Danh Trà Trung Hoa · 中国十大名茶") + '</div>' +
         '  <h3 class="card-title">' + teas.length + (enM ? " Canonical Famous Teas & Brewing Matrix" : " Danh trà Tiêu biểu & Chuẩn pha ấm") + '</h3>' +
         '  <div class="grid grid-2" style="gap:0.75rem;">' +
-        teas.map(function (t) {
+        teas.map(function (t, idx) {
+          var tImg = resolveProvThumb(t.provinceId, "heritage", idx, "assets/images/articles/hero-six-teas-gongfu.jpg");
+          var tCap = (enM ? (t.nameEn || t.nameVi) : t.nameVi) + " (" + (t.nameZh || "") + ")";
           return (
             '<div class="flashcard-layer" style="font-size:0.83rem;">' +
+            renderAtlasThumb(tImg, tCap, true) +
             '  <div style="display:flex;justify-content:space-between;gap:0.4rem;"><strong>' + esc(enM ? (t.nameEn || t.nameVi) : t.nameVi) + ' (<span class="hanzi">' + esc(t.nameZh) + '</span>)</strong><span class="badge badge-outline">' + esc(t.brewTempC || "") + '°C</span></div>' +
             '  <div style="color:var(--text-muted);margin:0.2rem 0;">' + esc(enM ? (t.teaTypeEn || t.teaTypeVi) : t.teaTypeVi) + ' · ' + esc(enM ? (t.teawareEn || t.teawareVi) : t.teawareVi) + '</div>' +
             '  <div>' + esc(enM ? (t.notesEn || t.notesVi) : t.notesVi) + '</div>' +
@@ -165,16 +187,27 @@
         '  <div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "THE SIX ARTS OF ZHOU EDUCATION · 周代六艺教育" : "Lục Nghệ Giáo dục Nho gia Cổ điển · 周代六艺") + '</div>' +
         '  <h3 class="card-title">' + arts6.length + (enM ? " Classical Disciplines (Li · Yue · She · Yu · Shu · Shu)" : " Môn Tu thân Cổ điển (Lễ · Nhạc · Xạ · Ngự · Thư · Số)") + '</h3>' +
         '  <div class="grid grid-3" style="gap:0.75rem;">' +
-        arts6.map(function (a) {
-          return (
-            '<div class="flashcard-layer" style="font-size:0.83rem;">' +
-            '  <div class="hanzi" style="font-size:1.3rem;color:var(--imperial-red);">' + esc(a.nameZh) + '</div>' +
-            '  <strong>' + esc(enM ? (a.nameEn || a.nameVi) : a.nameVi) + '</strong>' +
-            '  <p style="margin:0.35rem 0 0.25rem;">' + esc(enM ? (a.westernZhouOriginEn || a.westernZhouOriginVi) : a.westernZhouOriginVi) + '</p>' +
-            '  <div style="color:var(--text-secondary);">' + esc(enM ? (a.scholarSignificanceEn || a.scholarSignificanceVi) : a.scholarSignificanceVi) + '</div>' +
-            '</div>'
-          );
-        }).join("") +
+        (function () {
+          var sixArtImgs = [
+            "assets/images/articles/hero-confucianism.jpg",
+            "assets/images/academic/guqin-instrument.jpg",
+            "assets/images/academic/sunzi-bamboo-slips.jpg",
+            "assets/images/museum/ma-dap-phi-yen.jpg",
+            "assets/images/articles/hero-calligraphy-five-scripts.jpg",
+            "assets/images/museum/han-shipan.jpg"
+          ];
+          return arts6.map(function (a, idx) {
+            return (
+              '<div class="flashcard-layer" style="font-size:0.83rem;">' +
+              renderAtlasThumb(sixArtImgs[idx % sixArtImgs.length], enM ? (a.nameEn || a.nameVi) : a.nameVi, true) +
+              '  <div class="hanzi" style="font-size:1.3rem;color:var(--imperial-red);">' + esc(a.nameZh) + '</div>' +
+              '  <strong>' + esc(enM ? (a.nameEn || a.nameVi) : a.nameVi) + '</strong>' +
+              '  <p style="margin:0.35rem 0 0.25rem;">' + esc(enM ? (a.westernZhouOriginEn || a.westernZhouOriginVi) : a.westernZhouOriginVi) + '</p>' +
+              '  <div style="color:var(--text-secondary);">' + esc(enM ? (a.scholarSignificanceEn || a.scholarSignificanceVi) : a.scholarSignificanceVi) + '</div>' +
+              '</div>'
+            );
+          }).join("");
+        })() +
         '  </div></div>'
       ) : "") +
       (eth.length ? (
@@ -182,9 +215,12 @@
         '  <div class="editorial-kicker" style="color:var(--antique-gold);">' + (enM ? "MULTI-ETHNIC CULTURAL HERITAGE · 多民族非遗档案" : "Di sản Đa dân tộc & Trang phục – Lễ hội · 多民族文化") + '</div>' +
         '  <h3 class="card-title">' + eth.length + (enM ? " Representative Ethnic Minority Cultures" : " Cộng đồng Dân tộc & Văn hóa Bản địa Tiêu biểu") + '</h3>' +
         '  <div class="grid grid-2" style="gap:0.75rem;">' +
-        eth.map(function (eItem) {
+        eth.map(function (eItem, idx) {
+          var eProv = (eItem.provinceIds && eItem.provinceIds[0]) || eItem.provinceId;
+          var eImg = resolveProvThumb(eProv, "heritage", idx, "assets/images/provinces/yunnan-lijiang-old-town.jpg");
           return (
             '<div class="flashcard-layer" style="font-size:0.83rem;">' +
+            renderAtlasThumb(eImg, enM ? (eItem.nameEn || eItem.nameVi) : eItem.nameVi, true) +
             '  <strong>' + esc(enM ? (eItem.nameEn || eItem.nameVi) : eItem.nameVi) + ' (<span class="hanzi">' + esc(eItem.nameZh) + '</span>)</strong>' +
             '  <p style="margin:0.3rem 0;"><strong>' + (enM ? "Script:" : "Văn tự:") + '</strong> ' + esc(enM ? (eItem.scriptEn || eItem.scriptVi) : eItem.scriptVi) + '</p>' +
             '  <p style="margin:0 0 0.3rem;"><strong>' + (enM ? "Attire:" : "Y phục:") + '</strong> ' + esc(enM ? (eItem.attireEn || eItem.attireVi) : eItem.attireVi) + '</p>' +
@@ -220,6 +256,14 @@
     if (!tracks.length) return "";
     var doneSet = {};
     (completedIds || []).forEach(function (id) { doneSet[id] = true; });
+    var trackImgs = [
+      "assets/images/museum/sanxingdui-bronze-tree.jpg",
+      "assets/images/articles/hero-confucianism.jpg",
+      "assets/images/articles/hero-yinyang.jpg",
+      "assets/images/paintings/22_qianli_jiangshan.jpg",
+      "assets/images/academic/van-mieu-hanoi.jpg",
+      "assets/images/articles/hero-supply-chain-rcep.jpg"
+    ];
     return (
       '<section id="cce-guided-tracks-v3" style="margin-top:2rem;">' +
       '  <div class="section-header" style="margin-bottom:0.85rem;">' +
@@ -229,10 +273,12 @@
       '    </div>' +
       '  </div>' +
       '  <div class="grid grid-2">' +
-      tracks.map(function (tr) {
+      tracks.map(function (tr, idx) {
+        var trTitle = enM ? (tr.titleEn || tr.titleVi) : tr.titleVi;
         return (
           '<article class="card">' +
-          '  <h4 style="margin:0 0 0.35rem;font-size:1.08rem;">' + esc(enM ? (tr.titleEn || tr.titleVi) : tr.titleVi) + '</h4>' +
+          renderAtlasThumb(trackImgs[idx % trackImgs.length], trTitle, false) +
+          '  <h4 style="margin:0 0 0.35rem;font-size:1.08rem;">' + esc(trTitle) + '</h4>' +
           '  <p style="font-size:0.83rem;color:var(--text-secondary);margin-bottom:0.75rem;">' + esc(enM ? (tr.descEn || tr.descVi) : tr.descVi) + '</p>' +
           '  <div style="display:flex;flex-direction:column;gap:0.35rem;">' +
           (tr.steps || []).slice(0, 6).map(function (s) {

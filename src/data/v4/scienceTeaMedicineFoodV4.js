@@ -1,39 +1,1135 @@
-// ============================================================================
-// CHINESE CULTURE EXPLORER V4.0 — Eight Cuisines, Tea & Non-Clinical TCM Study
-// Strictly Educational & Historical-Cultural Context Only (Non-Clinical)
-// ============================================================================
-
 (function () {
   "use strict";
+  window.CCE_V4_SCI_TEA = {
+    scienceAchievements: [
+      {
+        id: "sci-papermaking",
+        titleVi: "Kỹ thuật làm giấy Thái Luân",
+        titleEn: "Cai Lun Papermaking Technology",
+        titleZh: "造纸术",
+        pinyin: "Zàozhǐshù",
+        era: "Đông Hán (105 CN)",
+        inventorVi: "Thái Luân (cải tiến và chuẩn hóa quy trình từ sợi vỏ cây, gai, giẻ rách, lưới cá)",
+        significanceVi: "Thay thế thẻ tre nặng nề và lụa đắt đỏ bằng vật liệu ghi chép nhẹ, bền, giá thành thấp, đặt nền móng cho lưu trữ thư tịch và truyền bá tri thức khắp Á–Âu qua Con đường Tơ lụa.",
+        significanceEn: "Replaced heavy bamboo slips and costly silk with lightweight, durable plant-fiber sheets, catalyzing archival scholarship and spreading across Eurasia along the Silk Road."
+      },
+      {
+        id: "sci-printing",
+        titleVi: "In khắc bản và In chữ rời Tất Thăng",
+        titleEn: "Woodblock and Movable-Type Printing",
+        titleZh: "印刷术",
+        pinyin: "Yìnshuāshù",
+        era: "Đường – Bắc Tống (thế kỷ VII – khoảng 1041–1048)",
+        inventorVi: "Nghệ nhân khắc bản thời Đường; Tất Thăng phát minh chữ rời đất nung thời Bắc Tống",
+        significanceVi: "Chuyển đổi sao chép thủ công sang nhân bản hàng loạt kinh điển, nông thư và y thư; quy trình chữ rời của Tất Thăng được Thẩm Quát ghi chép chi tiết trong Mộng Khê Bút Đàm.",
+        significanceEn: "Transformed manual copying into mass reproduction of classics, agricultural treatises, and pharmacopoeias; Bi Sheng's ceramic movable type was documented in Shen Kuo's Dream Pool Essays."
+      },
+      {
+        id: "sci-compass",
+        titleVi: "La bàn từ tính (Tư Nam – Chỉ Nam Châm)",
+        titleEn: "Magnetic Compass",
+        titleZh: "指南针",
+        pinyin: "Zhǐnánzhēn",
+        era: "Chiến Quốc – Bắc Tống (thế kỷ IV TCN – thế kỷ XI CN)",
+        inventorVi: "Phát triển từ thìa đá nam châm Tư Nam đến kim từ tính nổi trên nước thời Tống",
+        significanceVi: "Từ công cụ định hướng phong thủy trở thành thiết bị hàng hải cốt lõi từ thời Tống, cho phép tàu viễn dương định vị trong điều kiện sương mù và ban đêm.",
+        significanceEn: "Evolved from the Han-era lodestone spoon (sinan) into a Song-dynasty maritime navigation instrument, enabling open-ocean voyages under overcast skies and at night."
+      },
+      {
+        id: "sci-gunpowder",
+        titleVi: "Thuốc súng đen (Hỏa Dược)",
+        titleEn: "Black Powder (Gunpowder)",
+        titleZh: "火药",
+        pinyin: "Huǒyào",
+        era: "Đường – Bắc Tống (thế kỷ IX – 1044)",
+        inventorVi: "Các nhà luyện đan Đạo gia; công thức quân sự chuẩn hóa trong Vũ Kinh Tổng Yếu (1044)",
+        significanceVi: "Hỗn hợp tiêu thạch, lưu huỳnh và than gỗ ban đầu phục vụ luyện đan và pháo hoa, sau đó tạo bước ngoặt trong kỹ thuật quân sự với hỏa thương, hỏa tiễn và đại bác đồng.",
+        significanceEn: "Formulated from saltpeter, sulfur, and charcoal by Daoist alchemists and codified in the 1044 Wujing Zongyao, revolutionizing pyrotechnics, fire lances, and early artillery."
+      },
+      {
+        id: "sci-seismoscope",
+        titleVi: "Hậu Phong Địa Động Nghi",
+        titleEn: "Zhang Heng Seismoscope",
+        titleZh: "候风地动仪",
+        pinyin: "Hòufēng Dìdòngyí",
+        era: "Đông Hán (132 CN)",
+        inventorVi: "Trương Hành (78–139 CN)",
+        significanceVi: "Khí cụ đồng đường kính khoảng 8 xích với 8 đầu rồng ngậm bi tương ứng 8 phương vị, ghi nhận chấn động địa chấn từ xa trước khi tin báo kịp tới kinh đô Lạc Dương.",
+        significanceEn: "A bronze vessel adorned with eight directional dragons and bronze balls, engineered to detect distant seismic waves and indicate the azimuth of tremors from Luoyang."
+      },
+      {
+        id: "sci-armillary",
+        titleVi: "Hỗn Thiên Nghi vận hành bằng thủy lực",
+        titleEn: "Water-Powered Armillary Sphere",
+        titleZh: "浑天仪",
+        pinyin: "Húntiānyí",
+        era: "Tây Hán – Đông Hán (thế kỷ I TCN – thế kỷ II CN)",
+        inventorVi: "Lạc Hạ Hoành, Cảnh Thọ Xương và Trương Hành",
+        significanceVi: "Hệ thống vòng đồng đồng tâm mô phỏng xích đạo, hoàng đạo và kinh tuyến thiên cầu, giúp đo tọa độ tinh tú và tính toán chính xác nhật thực, nguyệt thực.",
+        significanceEn: "Concentric graduated bronze rings modeling the celestial equator and ecliptic, enabling systematic star-coordinate measurement and eclipse prediction."
+      },
+      {
+        id: "sci-treasure-ships",
+        titleVi: "Bảo Thuyền Trịnh Hòa và khoang kín nước",
+        titleEn: "Zheng He Treasure Ships and Watertight Bulkheads",
+        titleZh: "郑和宝船",
+        pinyin: "Zhèng Hé Bǎochuán",
+        era: "Minh sơ (1405–1433)",
+        inventorVi: "Công xưởng đóng tàu Long Giang (Nam Kinh) dưới sự tổng chỉ huy của Trịnh Hòa",
+        significanceVi: "Hạm đội viễn dương lớn nhất thế giới thế kỷ XV thực hiện 7 chuyến hải trình tới Đông Nam Á, Ấn Độ Dương và Đông Phi, ứng dụng bánh lái trục cân bằng và vách ngăn kín nước.",
+        significanceEn: "Flagships of seven Ming maritime expeditions across Southeast Asia, the Indian Ocean, and East Africa, combining balanced axial rudders with watertight bulkhead hulls."
+      },
+      {
+        id: "sci-nine-chapters",
+        titleVi: "Cửu Chương Toán Thuật",
+        titleEn: "The Nine Chapters on the Mathematical Art",
+        titleZh: "九章算术",
+        pinyin: "Jiǔzhāng Suànshù",
+        era: "Hán sơ – Đông Hán (biên định thế kỷ I CN; Lưu Huy chú giải năm 263)",
+        inventorVi: "Tập thể toán học gia thời Hán; Lưu Huy hiệu chú",
+        significanceVi: "Tổng hợp 246 bài toán thực tiễn về đo ruộng, thuế khóa, thủy lợi; trình bày sớm phép khử Gauss cho hệ phương trình tuyến tính, số âm và thuật toán khai căn.",
+        significanceEn: "Compendium of 246 applied problems in surveying, taxation, and engineering, pioneering matrix elimination, negative numbers, and systematic root extraction."
+      },
+      {
+        id: "sci-qimin-yaoshu",
+        titleVi: "Tề Dân Yếu Thuật",
+        titleEn: "Essential Techniques for the Welfare of the People",
+        titleZh: "齐民要术",
+        pinyin: "Qímín Yàoshù",
+        era: "Bắc Ngụy (khoảng 533–544 CN)",
+        inventorVi: "Giả Tư Hiệp",
+        significanceVi: "Bộ nông thư hoàn chỉnh cổ nhất còn lưu truyền ở Trung Quốc gồm 10 quyển 92 thiên, hệ thống hóa kỹ thuật luân canh, chọn giống, ủ men vi sinh và bảo quản nông sản vùng Hoàng Hà.",
+        significanceEn: "The oldest extant complete Chinese agricultural treatise (10 volumes, 92 chapters), codifying dryland crop rotation, seed selection, fermentation, and food preservation."
+      },
+      {
+        id: "sci-dujiangyan",
+        titleVi: "Hệ thống thủy lợi Đô Giang Yển",
+        titleEn: "Dujiangyan Irrigation System",
+        titleZh: "都江堰",
+        pinyin: "Dūjiāngyàn",
+        era: "Chiến Quốc – nước Tần (256 TCN)",
+        inventorVi: "Lý Băng cùng con trai",
+        significanceVi: "Công trình dẫn thủy không đập chắn cổ nhất thế giới còn vận hành, dùng đê phân dòng Ngư Chủy, tràn xả lũ Phi Sa Yển và cửa dẫn Bảo Bình Khẩu biến bình nguyên Thành Đô thành Thiên Phủ chi quốc.",
+        significanceEn: "The world's oldest surviving damless diversion works, utilizing the Fish Mouth levee, Flying Sand Weir, and Bottle-Neck Channel to irrigate the Chengdu Plain for over two millennia."
+      },
+      {
+        id: "sci-grand-canal",
+        titleVi: "Đại Vận Hà Kinh – Hàng",
+        titleEn: "The Grand Canal",
+        titleZh: "京杭大运河",
+        pinyin: "Jīng–Háng Dà Yùnhé",
+        era: "Xuân Thu – Tùy (605–611) – Nguyên (1293)",
+        inventorVi: "Nhiều triều đại nối tiếp, quy hoạch liên thông lớn thời Tùy Dạng Đế và Quách Thủ Kính thời Nguyên",
+        significanceVi: "Tuyến đường thủy nhân tạo dài hơn 1.700 km nối liền năm lưu vực sông lớn từ Bắc Kinh đến Hàng Châu, vận dụng âu tàu hai cửa (phục áp) từ thời Tống để vượt chênh lệch địa hình.",
+        significanceEn: "An engineered waterway exceeding 1,700 kilometers linking five major river basins from Beijing to Hangzhou, incorporating Song-era pound locks to overcome elevation changes."
+      },
+      {
+        id: "sci-su-song-clock",
+        titleVi: "Thủy Vận Nghi Tượng Đài",
+        titleEn: "Su Song Water-Driven Astronomical Clock Tower",
+        titleZh: "水运仪象台",
+        pinyin: "Shuǐyùn Yíxiàngtái",
+        era: "Bắc Tống (1088–1092)",
+        inventorVi: "Tô Tụng và Hàn Công Liêm",
+        significanceVi: "Tháp gỗ cao khoảng 12 mét tại Khai Phong tích hợp hỗn thiên nghi, thiên cầu xoay và cơ cấu hồi thoát (escapement) dẫn động bằng bánh xe nước cùng truyền động xích sớm nhất lịch sử.",
+        significanceEn: "A twelve-meter astronomical tower in Kaifeng integrating a rotating celestial globe, armillary sphere, waterwheel escapement mechanism, and the earliest documented endless chain drive."
+      },
+      {
+        id: "sci-han-blast-furnace",
+        titleVi: "Luyện gang lỏng và lò cao thời Hán",
+        titleEn: "Han Dynasty Blast Furnace and Cast-Iron Metallurgy",
+        titleZh: "汉代高炉炼铁与生铁冶铸",
+        pinyin: "Hàndài Gāolú Liàntiě yǔ Shēngtiě Yězhù",
+        era: "Chiến Quốc – Đông Hán (thế kỷ V TCN – thế kỷ I CN)",
+        inventorVi: "Các quan xưởng luyện sắt thời Hán; Đỗ Thi cải tiến bễ thổi thủy lực Thủy Bài (31 CN)",
+        significanceVi: "Trung Quốc đạt nhiệt độ nấu chảy gang lỏng sớm hơn châu Âu hơn một thiên niên kỷ, kết hợp đúc khuôn lặp và tôi luyện thành thép dẻo phục vụ nông cụ và binh khí.",
+        significanceEn: "Achieved liquid cast-iron smelting over a millennium ahead of Europe, paired with Du Shi's water-powered bellows (31 CE) to mass-produce agricultural tools and refined steel."
+      },
+      {
+        id: "sci-shoushi-calendar",
+        titleVi: "Thụ Thời Lịch",
+        titleEn: "Shoushi Calendar (Season-Granting Calendar)",
+        titleZh: "授时历",
+        pinyin: "Shòushílì",
+        era: "Nhà Nguyên (1280–1281)",
+        inventorVi: "Quách Thủ Kính, Vương Tuân và Hứa Hành",
+        significanceVi: "Xác định độ dài năm chí tuyến là 365,2425 ngày — trùng khớp với lịch Gregory ban hành sau đó 301 năm — nhờ mạng lưới 27 đài quan trắc từ Nam Hải đến Bắc Cực địa lý Trung Á.",
+        significanceEn: "Calculated the tropical year at 365.2425 days—matching the Gregorian calendar introduced 301 years later—based on observations from 27 imperial stations."
+      },
+      {
+        id: "sci-tiangong-kaiwu",
+        titleVi: "Thiên Công Khai Vật",
+        titleEn: "Tiangong Kaiwu (Exploitation of the Works of Nature)",
+        titleZh: "天工开物",
+        pinyin: "Tiāngōng Kāiwù",
+        era: "Cuối thời Minh (1637)",
+        inventorVi: "Tống Ứng Tinh (1587–khoảng 1666)",
+        significanceVi: "Bách khoa công nghệ thủ công và nông nghiệp gồm 18 quyển kèm hơn 120 tranh khắc gỗ minh họa chi tiết dệt lụa, gốm Cảnh Đức Trấn, luyện kim, khai mỏ, đóng thuyền và làm đường.",
+        significanceEn: "An 18-chapter illustrated encyclopedia of Ming technology featuring over 120 woodcuts documenting sericulture, Jingdezhen porcelain, metallurgy, mining, shipbuilding, and sugar refining."
+      },
+      {
+        id: "sci-bencao-gangmu",
+        titleVi: "Bản Thảo Cương Mục",
+        titleEn: "Compendium of Materia Medica (Bencao Gangmu)",
+        titleZh: "本草纲目",
+        pinyin: "Běncǎo Gāngmù",
+        era: "Nhà Minh (hoàn thành 1578, khắc in 1596)",
+        inventorVi: "Lý Thời Trân (1518–1593)",
+        significanceVi: "Công trình dược vật học và tự nhiên học đồ sộ gồm 52 quyển, phân loại 1.892 vị dược liệu khoáng–thực–động vật cùng hơn 11.000 phương cổ, được UNESCO ghi danh Ký ức Thế giới năm 2011.",
+        significanceEn: "A 52-volume natural history and pharmacopoeia classifying 1,892 mineral, botanical, and zoological entries with over 11,000 formulas, inscribed on UNESCO's Memory of the World Register in 2011."
+      }
+    ],
+    astronomyCalendar: {
+      fourSymbols28MansionsVi: "Thiên văn cổ Trung Hoa chia dải hoàng đạo – xích đạo quanh thiên cầu thành 28 tinh tú (Nhị Thập Bát Tú) nhằm theo dõi chu kỳ chuyển động của Mặt Trăng và các hành tinh. Hai mươi tám chòm sao này quy về Tứ Tượng trấn giữ bốn phương: Đông phương Thanh Long (7 tú: Giác, Cang, Đê, Phòng, Tâm, Vĩ, Cơ), Bắc phương Huyền Vũ (7 tú: Đẩu, Ngưu, Nữ, Hư, Nguy, Thất, Bích), Tây phương Bạch Hổ (7 tú: Khuê, Lâu, Vị, Mão, Tất, Chủy, Sâm) và Nam phương Chu Tước (7 tú: Tỉnh, Quỷ, Liễu, Tinh, Trương, Dực, Chẩn).",
+      fourSymbols28MansionsEn: "Classical Chinese astronomy partitioned the ecliptic-equatorial belt into Twenty-Eight Lunar Mansions (Ershiba Xiu) to track lunar sidereal motion and planetary positions. These constellations are grouped into Four Celestial Symbols: Azure Dragon of the East (7 mansions), Black Tortoise of the North (7), White Tiger of the West (7), and Vermilion Bird of the South (7).",
+      stemsBranchesNoteVi: "Hệ Can Chi (Thiên Can – Địa Chi) phối hợp 10 Thiên Can (Giáp, Ất, Bính, Đinh, Mậu, Kỷ, Canh, Tân, Nhâm, Quý) với 12 Địa Chi (Tý, Sửu, Dần, Mão, Thìn, Tỵ, Ngọ, Mùi, Thân, Dậu, Tuất, Hợi) theo nguyên tắc dương phối dương, âm phối âm, tạo thành chu kỳ Lục Thập Hoa Giáp (60 đơn vị) dùng kỷ năm, tháng, ngày và canh giờ liên tục từ thời Thương – Hán đến nay.",
+      stemsBranchesNoteEn: "The Sexagenary Cycle (Ganzhi) pairs Ten Heavenly Stems with Twelve Earthly Branches in strict yang-to-yang and yin-to-yin order, generating a 60-unit cycle used continuously since the Shang and Han dynasties to record years, months, days, and double-hours.",
+      sampleMansions: [
+        {
+          id: "mansion-jiao",
+          quadrantVi: "Đông phương Thanh Long",
+          quadrantEn: "Azure Dragon of the East",
+          nameVi: "Giác Tú",
+          nameEn: "Horn Mansion",
+          nameZh: "角宿",
+          pinyin: "Jiǎoxiù",
+          meaningVi: "Đứng đầu 28 tú, tương ứng hai sao Spica và Zeta Virginis, biểu trưng cho sừng rồng xanh và thời điểm xuân phân nông vụ khởi đầu.",
+          meaningEn: "First of the 28 mansions (centered on Spica), representing the Dragon's horns and heralding the vernal agricultural cycle."
+        },
+        {
+          id: "mansion-xin",
+          quadrantVi: "Đông phương Thanh Long",
+          quadrantEn: "Azure Dragon of the East",
+          nameVi: "Tâm Tú (Đại Hỏa)",
+          nameEn: "Heart Mansion",
+          nameZh: "心宿",
+          pinyin: "Xīnxiù",
+          meaningVi: "Gồm sao sáng Antares (Tâm Tú Nhị / Đại Hỏa), là mốc quan trắc mùa hè tối quan trọng trong Kinh Thi với câu 'Thất nguyệt lưu Hỏa'.",
+          meaningEn: "Anchored by Antares (the Great Fire star), serving as a primary seasonal marker cited in the Classic of Poetry ('In the seventh month, the Fire Star declines')."
+        },
+        {
+          id: "mansion-mao",
+          quadrantVi: "Tây phương Bạch Hổ",
+          quadrantEn: "White Tiger of the West",
+          nameVi: "Mão Tú",
+          nameEn: "Hairy Head Mansion (Pleiades)",
+          nameZh: "昴宿",
+          pinyin: "Mǎoxiù",
+          meaningVi: "Tương ứng cụm sao Tua Rua (Pleiades), dùng định mốc thu phân – lập đông trong Kinh Thư (Nghiêu Điển).",
+          meaningEn: "Corresponding to the Pleiades star cluster, historically used in the Book of Documents to calibrate the autumn equinox and early winter."
+        },
+        {
+          id: "mansion-shen",
+          quadrantVi: "Tây phương Bạch Hổ",
+          quadrantEn: "White Tiger of the West",
+          nameVi: "Sâm Tú",
+          nameEn: "Three Stars Mansion (Orion)",
+          nameZh: "参宿",
+          pinyin: "Shēnxiù",
+          meaningVi: "Tương ứng chòm Lạp Hộ (Orion), nổi tiếng trong văn học qua điển cố 'Sâm Thương bất tương kiến' vì Sâm Tú và Tâm Tú không bao giờ cùng xuất hiện trên bầu trời.",
+          meaningEn: "Corresponding to Orion; famous in classical literature through the idiom of Orion and Antares never appearing simultaneously in the night sky."
+        },
+        {
+          id: "mansion-jing",
+          quadrantVi: "Nam phương Chu Tước",
+          quadrantEn: "Vermilion Bird of the South",
+          nameVi: "Tỉnh Tú (Đông Tỉnh)",
+          nameEn: "Well Mansion",
+          nameZh: "井宿",
+          pinyin: "Jǐngxiù",
+          meaningVi: "Chòm sao rộng nhất trong 28 tú (thuộc Song Tử), biểu trưng cho nguồn nước và phép đo chuẩn mực trong thiên văn cổ.",
+          meaningEn: "The widest of the 28 mansions (within Gemini), symbolizing water governance and standard astronomical measurement."
+        },
+        {
+          id: "mansion-zhang",
+          quadrantVi: "Nam phương Chu Tước",
+          quadrantEn: "Vermilion Bird of the South",
+          nameVi: "Trương Tú",
+          nameEn: "Extended Net Mansion",
+          nameZh: "张宿",
+          pinyin: "Zhāngxiù",
+          meaningVi: "Tương ứng phần thân chòm Trường Xà (Hydra), gắn với biểu tượng dạ yến, lễ nhạc và phẩm vật cung đình phương Nam.",
+          meaningEn: "Located in Hydra, traditionally associated with court banquets, ceremonial music, and southern seasonal abundance."
+        },
+        {
+          id: "mansion-dou",
+          quadrantVi: "Bắc phương Huyền Vũ",
+          quadrantEn: "Black Tortoise of the North",
+          nameVi: "Đẩu Tú (Nam Đẩu)",
+          nameEn: "Dipper Mansion",
+          nameZh: "斗宿",
+          pinyin: "Dǒuxiù",
+          meaningVi: "Sáu sao hình gáo trong chòm Nhân Mã (Sagittarius), đối ứng với Bắc Đẩu và đánh dấu tiết Đông chí trong lịch cổ.",
+          meaningEn: "Six stars forming the Southern Dipper in Sagittarius, paired conceptually with the Northern Dipper and linked to the winter solstice."
+        },
+        {
+          id: "mansion-shi",
+          quadrantVi: "Bắc phương Huyền Vũ",
+          quadrantEn: "Black Tortoise of the North",
+          nameVi: "Thất Tú (Doanh Thất)",
+          nameEn: "Encampment Mansion",
+          nameZh: "室宿",
+          pinyin: "Shìxiù",
+          meaningVi: "Thuộc chòm Phi Mã (Pegasus), thời cổ dùng quan sát thời điểm trung thiên buổi tối để khởi công xây dựng cung thất và đắp đê mùa thu.",
+          meaningEn: "Located in Pegasus; its autumn evening culmination historically signaled the proper season for royal construction and dike maintenance."
+        }
+      ]
+    },
+    tcmHeritageOverview: {
+      disclaimerVi: "Nội dung trình bày hệ thống tri thức Đông y dưới góc độ lịch sử tư tưởng và văn hóa thực dưỡng cổ truyền, không thay thế tư vấn y khoa lâm sàng.",
+      disclaimerEn: "Presented strictly as historical, cultural, and classical wellness heritage—never substituting licensed clinical medical advice.",
+      pillars: [
+        {
+          id: "tcm-zangxiang",
+          zh: "藏象",
+          pinyin: "Zàngxiàng",
+          vi: "Học thuyết Tạng Tượng",
+          en: "Zang-Xiang (Visceral Manifestation Theory)",
+          descVi: "Trình bày trong Hoàng Đế Nội Kinh, mô tả Ngũ Tạng (Tâm, Can, Tỳ, Phế, Thận) và Lục Phủ như một mạng lưới chức năng liên thông, phản ánh trạng thái nội tại ra sắc mặt, mạch tượng và ngũ quan.",
+          descEn: "Articulated in the Huangdi Neijing, conceptualizing the Five Zang and Six Fu organs as an interconnected functional system whose internal state manifests externally."
+        },
+        {
+          id: "tcm-jingluo",
+          zh: "经络",
+          pinyin: "Jīngluò",
+          vi: "Hệ thống Kinh Lạc",
+          en: "Meridian and Collateral Network",
+          descVi: "Khung lý thuyết về 12 kinh chính và Kỳ kinh bát mạch vận hành khí huyết khắp thân thể, tạo cơ sở văn hóa – kỹ thuật cho châm cứu, bấm huyệt và dưỡng sinh khí công.",
+          descEn: "Classical framework of twelve primary meridians and eight extraordinary vessels guiding qi and blood, underpinning acupuncture, acupressure, and traditional movement arts."
+        },
+        {
+          id: "tcm-sizhen",
+          zh: "四诊（望闻问切）",
+          pinyin: "Sìzhěn (Wàng Wén Wèn Qiè)",
+          vi: "Tứ Chẩn (Vọng – Văn – Vấn – Thiết)",
+          en: "Four Diagnostic Methods",
+          descVi: "Phương pháp quan sát tổng hợp kinh điển: Vọng (nhìn thần sắc, lưỡi), Văn (nghe âm thanh, hơi thở), Vấn (hỏi sinh hoạt, ăn ngủ) và Thiết (bắt mạch), nhấn mạnh biện chứng luận trị cá thể hóa.",
+          descEn: "Classical holistic observation combining inspection, auscultation-olfaction, inquiry, and pulse palpation to evaluate individual constitutional balance."
+        },
+        {
+          id: "tcm-yinyang-wuxing",
+          zh: "阴阳五行",
+          pinyin: "Yīnyáng Wǔxíng",
+          vi: "Âm Dương – Ngũ Hành",
+          en: "Yin–Yang and Five Phases Cosmology",
+          descVi: "Hệ quy chiếu triết học tự nhiên giải thích sự cân bằng động giữa hàn–nhiệt, hư–thực cùng quan hệ tương sinh tương khắc giữa năm hành Mộc, Hỏa, Thổ, Kim, Thủy trong nhịp sinh học bốn mùa.",
+          descEn: "Natural philosophy framework modeling dynamic equilibrium (cold–heat, deficiency–excess) and the generative–regulatory cycles of Wood, Fire, Earth, Metal, and Water."
+        }
+      ],
+      culinaryHerbs12: [
+        {
+          id: "herb-goji",
+          zh: "枸杞子",
+          pinyin: "Gǒuqǐzǐ",
+          vi: "Kỷ tử (Ninh Hạ)",
+          en: "Wolfberry / Goji Berry",
+          effectVi: "Trong thực dưỡng cổ truyền xếp nhóm vị ngọt tính bình, thường dùng pha trà hoặc hầm canh bồi bổ nhẹ vào mùa thu đông.",
+          effectEn: "Classified in classical dietetics as sweet and neutral, widely steeped in infusions or simmered in restorative soups.",
+          pairingVi: "Hầm canh gà, cháo kê, hoặc hãm cùng bạch cúc và hồng táo."
+        },
+        {
+          id: "herb-astragalus",
+          zh: "黄芪",
+          pinyin: "Huángqí",
+          vi: "Hoàng kỳ",
+          en: "Astragalus Root",
+          effectVi: "Vị thảo mộc kinh điển vùng Cam Túc – Nội Mông, theo thư tịch bản thảo có vị ngọt tính hơi ôn, quen thuộc trong các món canh hầm bồi bổ khí lực.",
+          effectEn: "Staple root from Gansu and Inner Mongolia, traditionally regarded as sweet and mildly warming in slow-simmered broths.",
+          pairingVi: "Hầm chung với gà ta, đương quy và kỷ tử trong canh thực dưỡng."
+        },
+        {
+          id: "herb-angelica",
+          zh: "当归",
+          pinyin: "Dāngguī",
+          vi: "Đương quy",
+          en: "Chinese Angelica Root",
+          effectVi: "Nổi tiếng từ vùng Mân Huyện (Cam Túc), mang hương thảo mộc đậm ấm, thường xuất hiện trong thực đơn canh dưỡng mùa lạnh.",
+          effectEn: "Renowned from Minxian in Gansu, prized for its aromatic warmth in winter stews and classical culinary broths.",
+          pairingVi: "Canh thịt cừu gừng tươi đương quy (Đương Quy Sinh Khương Dương Nhục Thang)."
+        },
+        {
+          id: "herb-jujube",
+          zh: "红枣",
+          pinyin: "Hóngzǎo",
+          vi: "Hồng táo (Đại táo)",
+          en: "Chinese Red Date (Jujube)",
+          effectVi: "Quả khô ngọt dịu phổ biến khắp Hoa Bắc và Tân Cương, dùng điều hòa vị canh thuốc và tạo vị ngọt tự nhiên cho cháo, chè.",
+          effectEn: "Naturally sweet dried fruit from North China and Xinjiang, used to harmonize herbal broths, congee, and sweet soups.",
+          pairingVi: "Nấu chè ngân nhĩ hạt sen, cháo gạo nếp hoặc trà gừng hồng táo."
+        },
+        {
+          id: "herb-yam",
+          zh: "淮山药",
+          pinyin: "Huáishānyào",
+          vi: "Hoài sơn (Củ mài)",
+          en: "Chinese Yam",
+          effectVi: "Đặc sản vùng Tiêu Tác (Hà Nam) giàu tinh bột mịn, theo truyền thống thực dưỡng mang tính bình, dễ tiêu hóa cho bữa ăn gia đình.",
+          effectEn: "Specialty tuber of Jiaozuo (Henan), valued in traditional dietetics for its neutral nature and gentle texture.",
+          pairingVi: "Hầm sườn heo, nấu cháo củ mài hoặc xào mộc nhĩ."
+        },
+        {
+          id: "herb-poria",
+          zh: "茯苓",
+          pinyin: "Fúlíng",
+          vi: "Phục linh",
+          en: "Poria Mushroom (Tuckahoe)",
+          effectVi: "Loại nấm mọc cộng sinh trên rễ thông, vị nhạt tính bình, từ thời Thanh đã đi vào ẩm thực cung đình Bắc Kinh qua món bánh Phục Linh Giáp Bính.",
+          effectEn: "Pine-root fungus with a mild, neutral profile, famously adapted into Qing imperial Beijing pastry (Fuling Jiabing).",
+          pairingVi: "Bánh Phục Linh Giáp Bính, canh Tứ Thần (cùng hoài sơn, hạt sen, khiếm thực)."
+        },
+        {
+          id: "herb-chrysanthemum",
+          zh: "白菊花",
+          pinyin: "Báijúhuā",
+          vi: "Bạch cúc (Hàng Bạch Cúc)",
+          en: "White Chrysanthemum",
+          effectVi: "Danh phẩm vùng Đồng Hương (Chiết Giang), vị thanh mát thoảng hương hoa, được ưa chuộng làm thức uống giải nhiệt mùa hè.",
+          effectEn: "Signature blossom of Tongxiang (Zhejiang), steeped as a cooling floral infusion during warm seasons.",
+          pairingVi: "Hãm trà cùng kỷ tử, trà Phổ Nhĩ chín (Cúc Phổ) hoặc mật ong."
+        },
+        {
+          id: "herb-chenpi",
+          zh: "陈皮",
+          pinyin: "Chénpí",
+          vi: "Trần bì (Vỏ quýt Tân Hội)",
+          en: "Aged Tangerine Peel",
+          effectVi: "Vỏ quýt chín phơi ủ nhiều năm (nổi tiếng nhất tại Tân Hội, Quảng Đông), tinh dầu thơm sâu, giúp khử tanh và tăng hương cho món hầm.",
+          effectEn: "Sun-dried aged citrus peel (most prized from Xinhui, Guangdong), lending deep citrus aromatics that balance rich meats.",
+          pairingVi: "Chè đậu đỏ trần bì, vịt hầm trần bì hoặc pha trà Phổ Nhĩ."
+        },
+        {
+          id: "herb-ginseng",
+          zh: "人参",
+          pinyin: "Rénshēn",
+          vi: "Nhân sâm (Trường Bạch Sơn)",
+          en: "Chinese Ginseng",
+          effectVi: "Thảo mộc quý vùng núi Trường Bạch (Đông Bắc), trong lịch sử bản thảo được xếp hàng thượng phẩm, dùng thận trọng với lượng nhỏ trong ẩm thực dưỡng sinh mùa đông.",
+          effectEn: "Revered root of the Changbai Mountains, classified in classical materia medica as a top-grade tonic used sparingly in winter cuisine.",
+          pairingVi: "Hầm cách thủy cùng gà ác hoặc thái lát mỏng hãm nước ấm."
+        },
+        {
+          id: "herb-coix",
+          zh: "薏苡仁",
+          pinyin: "Yìyǐrén",
+          vi: "Ý dĩ (Hạt bo bo)",
+          en: "Job's Tears (Coix Seed)",
+          effectVi: "Ngũ cốc thảo mộc truyền thống của vùng Hoa Nam ẩm ướt, vị ngọt nhạt hơi mát, thường rang sơ trước khi nấu nước hoặc cháo.",
+          effectEn: "Traditional grain-herb of humid South China, mildly cooling and lightly toasted before simmering in broths or porridge.",
+          pairingVi: "Nấu nước đậu đỏ ý dĩ, canh bí đao sườn non."
+        },
+        {
+          id: "herb-hawthorn",
+          zh: "山楂",
+          pinyin: "Shānzhā",
+          vi: "Sơn tra (Táo gai)",
+          en: "Chinese Hawthorn Berry",
+          effectVi: "Quả vị chua ngọt tự nhiên giàu axit hữu cơ, xuất hiện từ đồ ăn vặt đường phố Bắc Kinh (Đường Hồ Lô) đến món thịt kho giúp nhanh mềm và giảm ngấy.",
+          effectEn: "Tart-sweet fruit integral to Beijing candied skewers (tanghulu) and braised dishes to tenderize meats and cut richness.",
+          pairingVi: "Nước mơ sơn tra (Toan Mai Thang), kho thịt bò hoặc mứt sơn tra."
+        },
+        {
+          id: "herb-ginger",
+          zh: "生姜",
+          pinyin: "Shēngjiāng",
+          vi: "Sinh khương (Gừng tươi)",
+          en: "Fresh Ginger",
+          effectVi: "Gia vị thực dưỡng căn bản trong câu ngạn ngữ 'Sáng ăn gừng, tối ăn củ cải', vị cay tính ấm, dùng điều vị cho hải sản và trà ấm.",
+          effectEn: "Foundational warming culinary rhizome celebrated in classical household maxims, used to balance seafood and brew warming infusions.",
+          pairingVi: "Trà gừng đường nâu, hấp cá Quảng Đông hoặc nước chấm cua lông."
+        }
+      ]
+    },
+    teaEncyclopedia: {
+      sixCategories: [
+        {
+          id: "tea-cat-green",
+          nameVi: "Lục Trà (Trà Xanh)",
+          nameEn: "Green Tea",
+          nameZh: "绿茶",
+          pinyin: "Lǜchá",
+          fermentation: "0% (không oxy hóa; diệt men bằng sao chảo hoặc hấp)",
+          waterTempC: "75–85",
+          brewingVi: "Dùng cốc thủy tinh hoặc ấm sứ thành mỏng, tráng nước mát nhẹ rồi châm nước 80°C theo thành cốc để giữ búp non không bị chín đắng.",
+          brewingEn: "Steep in glass or thin porcelain at around 80°C along the vessel wall to preserve delicate buds and prevent astringency.",
+          flavorVi: "Hương cốm, hạt dẻ hoặc hoa lan thanh khiết; nước trà xanh vàng sáng, hậu vị ngọt dịu.",
+          flavorEn: "Crisp chestnut, fresh bean, or orchid aromatics with a luminous pale-jade liquor and sweet finish."
+        },
+        {
+          id: "tea-cat-white",
+          nameVi: "Bạch Trà (Trà Trắng)",
+          nameEn: "White Tea",
+          nameZh: "白茶",
+          pinyin: "Báichá",
+          fermentation: "5–10% (oxy hóa tự nhiên tối thiểu; chỉ làm héo và sấy khô)",
+          waterTempC: "85–95",
+          brewingVi: "Bạch trà búp non hãm ấm khải uyển (gaiwan) ở 85–90°C; bạch trà bánh ủ lâu năm (Lão Bạch Trà) có thể pha 95–100°C hoặc đun nhẹ.",
+          brewingEn: "Brew young buds in a gaiwan at 85–90°C; aged pressed white tea cakes tolerate 95–100°C or gentle simmering.",
+          flavorVi: "Ngọt thanh, hương mật hoa và cỏ khô tinh tế; trà ủ lâu chuyển sang mùi táo đỏ và dược thảo êm.",
+          flavorEn: "Delicate honeyed nectar and hay notes when young, maturing with age into warm jujube and herbal depth."
+        },
+        {
+          id: "tea-cat-yellow",
+          nameVi: "Hoàng Trà (Trà Vàng)",
+          nameEn: "Yellow Tea",
+          nameZh: "黄茶",
+          pinyin: "Huángchá",
+          fermentation: "10–20% (oxy hóa phi enzym qua bước 'muộn hoàng' ủ ẩm)",
+          waterTempC: "80–85",
+          brewingVi: "Hãm trong cốc thủy tinh cao hoặc khải uyển sứ trắng ở 80–85°C để quan sát búp trà dựng đứng 'tam khởi tam lạc'.",
+          brewingEn: "Steep in tall clear glass or white porcelain at 80–85°C to observe the vertical rise-and-fall motion of the buds.",
+          flavorVi: "Êm dịu hơn lục trà, khử hẳn vị hăng chát, nổi bật hương bắp non và ngọt hậu sâu.",
+          flavorEn: "Mellower and rounder than green tea, free of grassy sharpness, offering sweet corn and smooth umami."
+        },
+        {
+          id: "tea-cat-oolong",
+          nameVi: "Ô Long Trà (Thanh Trà)",
+          nameEn: "Oolong Tea",
+          nameZh: "乌龙茶（青茶）",
+          pinyin: "Wūlóngchá (Qīngchá)",
+          fermentation: "15–80% (bán oxy hóa; lắc tạo biên đỏ và sao lửa than)",
+          waterTempC: "95–100",
+          brewingVi: "Phù hợp nghệ thuật Công Phu Trà dùng ấm tử sa Nghi Hưng hoặc khải uyển Triều Châu; nước sôi 95–100°C, rót nhanh các nước đầu.",
+          brewingEn: "Best prepared Gongfu-style in Yixing clay or porcelain gaiwan with 95–100°C water and brisk initial infusions.",
+          flavorVi: "Phổ hương rộng nhất: từ hoa lan sữa (Thiết Quan Âm) đến khoáng thạch rang than 'nham vận' (Vũ Di Nham Trà).",
+          flavorEn: "Broadest aromatic spectrum—from orchid-cream freshness in Anxi Tieguanyin to roasted mineral 'rock rhyme' in Wuyi oolongs."
+        },
+        {
+          id: "tea-cat-black",
+          nameVi: "Hồng Trà (Trà Đen phương Tây)",
+          nameEn: "Black Tea (Red Tea)",
+          nameZh: "红茶",
+          pinyin: "Hóngchá",
+          fermentation: "80–100% (oxy hóa hoàn toàn tạo sắc nước đỏ hổ phách)",
+          waterTempC: "90–95",
+          brewingVi: "Hãm ấm sứ hoặc thủy tinh ở 90–95°C; tránh ngâm quá lâu ở các dòng búp vàng (Kim Tuấn Mi) để giữ vị mật mượt.",
+          brewingEn: "Steep in porcelain at 90–95°C; keep infusions brief for golden-bud styles such as Jin Jun Mei to preserve silky sweetness.",
+          flavorVi: "Nước đỏ sáng, hương mật ong, mạch nha, hoa hồng hoặc khói gỗ thông (Chính Sơn Tiểu Chủng).",
+          flavorEn: "Amber-red infusion with honey, malt, rose-petal, or pine-smoke aromatics depending on regional processing."
+        },
+        {
+          id: "tea-cat-dark",
+          nameVi: "Hắc Trà (Trà Lên Men Sau / Phổ Nhĩ)",
+          nameEn: "Dark Tea (Post-Fermented / Pu'er)",
+          nameZh: "黑茶",
+          pinyin: "Hēichá",
+          fermentation: "Lên men vi sinh (ác đôi hoặc ủ tự nhiên lâu năm)",
+          waterTempC: "95–100",
+          brewingVi: "Tráng trà nhanh 1–2 lần bằng nước sôi 100°C để đánh thức lá trà ép bánh; hãm tốt trong ấm tử sa thành dày.",
+          brewingEn: "Rinse once or twice briskly with boiling water to awaken compressed leaves; steep in heat-retaining Yixing clay.",
+          flavorVi: "Dày mượt, vị gỗ trầm, đất ẩm, táo tàu và chà là; độ bền nước cao (trên 10 lần châm).",
+          flavorEn: "Velvety, full-bodied liquor with aged wood, damp earth, and dried date notes sustaining over ten infusions."
+        }
+      ],
+      tenFamousTeas: [
+        {
+          id: "tea-longjing",
+          nameVi: "Tây Hồ Long Tỉnh",
+          nameEn: "West Lake Longjing (Dragon Well)",
+          nameZh: "西湖龙井",
+          pinyin: "Xīhú Lóngjǐng",
+          category: "Lục Trà",
+          originVi: "Khu vực Tây Hồ, Hàng Châu, Chiết Giang",
+          originEn: "West Lake District, Hangzhou, Zhejiang",
+          noteVi: "Nổi tiếng với tứ tuyệt 'Sắc lục, hương uất, vị cam, hình mỹ'; lá sao chảo thủ công dẹt đều màu xanh cốm, mang hương hạt dẻ rang.",
+          noteEn: "Celebrated for its four hallmarks—emerald hue, fragrant aroma, sweet taste, and flat spear-shaped pan-fired leaves with roasted chestnut notes."
+        },
+        {
+          id: "tea-biluochun",
+          nameVi: "Động Đình Bích Loa Xuân",
+          nameEn: "Dongting Biluochun",
+          nameZh: "洞庭碧螺春",
+          pinyin: "Dòngtíng Bìluóchūn",
+          category: "Lục Trà",
+          originVi: "Núi Đông và Tây Động Đình, Thái Hồ, Tô Châu, Giang Tô",
+          originEn: "Dongting Mountains, Lake Tai, Suzhou, Jiangsu",
+          noteVi: "Trồng xen canh với cây ăn quả như đào, mận, tỳ bà nên lá xoắn phủ lông tơ bạc thấm hương hoa quả tự nhiên đặc trưng.",
+          noteEn: "Intercropped with orchard trees such as peach and loquat, yielding tightly curled silver-downy buds infused with natural floral-fruity aromatics."
+        },
+        {
+          id: "tea-tieguanyin",
+          nameVi: "An Khê Thiết Quan Âm",
+          nameEn: "Anxi Tieguanyin",
+          nameZh: "安溪铁观音",
+          pinyin: "Ānxī Tiěguānyīn",
+          category: "Ô Long Trà",
+          originVi: "Huyện An Khê, Tuyền Châu, Phúc Kiến",
+          originEn: "Anxi County, Quanzhou, Fujian",
+          noteVi: "Lá cuộn tròn chắc như hạt chuồn chuồn, nổi danh với 'Quan Âm vận' — hương lan thanh cao bền qua bảy nước trà.",
+          noteEn: "Tightly rolled bead-like leaves renowned for 'Guanyin rhyme,' delivering crisp orchid fragrance across seven or more steepings."
+        },
+        {
+          id: "tea-dahongpao",
+          nameVi: "Vũ Di Đại Hồng Bào",
+          nameEn: "Wuyi Da Hong Pao",
+          nameZh: "武夷大红袍",
+          pinyin: "Wǔyí Dàhóngpáo",
+          category: "Ô Long Trà",
+          originVi: "Khu thắng cảnh Vũ Di Sơn, Phúc Kiến",
+          originEn: "Wuyi Mountains, Fujian",
+          noteVi: "Đại diện đỉnh cao của Vũ Di Nham Trà sinh trưởng trên kẽ đá phong hóa, sao than củi tạo dư vị khoáng chất 'nham cốt hoa hương'.",
+          noteEn: "Pinnacle of Wuyi Rock Oolong grown in weathered cliff crevices and charcoal-roasted for its signature mineral backbone and floral resonance."
+        },
+        {
+          id: "tea-keemun",
+          nameVi: "Kỳ Môn Hồng Trà",
+          nameEn: "Keemun Black Tea (Qimen Hongcha)",
+          nameZh: "祁门红茶",
+          pinyin: "Qímén Hóngchá",
+          category: "Hồng Trà",
+          originVi: "Huyện Kỳ Môn, Hoàng Sơn, An Huy",
+          originEn: "Qimen County, Huangshan, Anhui",
+          noteVi: "Một trong ba danh trà hương cao thế giới, đặc trưng bởi 'Kỳ Môn hương' kết hợp hoa hồng, trái cây chín và mật ong.",
+          noteEn: "One of the world's premier aromatic black teas, distinguished by 'Keemun aroma' blending rose blossom, stone fruit, and honey."
+        },
+        {
+          id: "tea-puer",
+          nameVi: "Vân Nam Phổ Nhĩ",
+          nameEn: "Yunnan Pu'er Tea",
+          nameZh: "云南普洱茶",
+          pinyin: "Yúnnán Pǔ'ěrchá",
+          category: "Hắc Trà",
+          originVi: "Phổ Nhĩ, Tây Song Bản Nạp, Lâm Thương, Vân Nam",
+          originEn: "Pu'er, Xishuangbanna, and Lincang, Yunnan",
+          noteVi: "Chế biến từ giống trà lá lớn Vân Nam phơi nắng; gồm Sinh Phổ (ủ chậm nhiều thập kỷ) và Thục Phổ (lên men ác đôi kỹ thuật năm 1973).",
+          noteEn: "Crafted from sun-dried Yunnan large-leaf cultivars in Raw (Sheng) form for long aging or Ripe (Shou) wet-piled form developed in 1973."
+        },
+        {
+          id: "tea-baihao",
+          nameVi: "Bạch Hào Ngân Châm",
+          nameEn: "Silver Needle White Tea (Baihao Yinzhen)",
+          nameZh: "白毫银针",
+          pinyin: "Báiháo Yínzhēn",
+          category: "Bạch Trà",
+          originVi: "Phúc Đỉnh và Chính Hòa, Phúc Kiến",
+          originEn: "Fuding and Zhenghe, Fujian",
+          noteVi: "Tuyển chọn duy nhất búp non đơn đầu xuân phủ kín lớp lông tơ trắng bạc, vị ngọt mượt tinh khiết như sương mai.",
+          noteEn: "Composed exclusively of plump early-spring single buds cloaked in silvery down, brewing a crystalline, honey-soft infusion."
+        },
+        {
+          id: "tea-junshan",
+          nameVi: "Quân Sơn Ngân Châm",
+          nameEn: "Junshan Silver Needle",
+          nameZh: "君山银针",
+          pinyin: "Jūnshān Yínzhēn",
+          category: "Hoàng Trà",
+          originVi: "Đảo Quân Sơn, hồ Động Đình, Nhạc Dương, Hồ Nam",
+          originEn: "Junshan Island, Lake Dongting, Yueyang, Hunan",
+          noteVi: "Tiến phẩm hoàng gia từ thời Đường, trải qua công đoạn muộn hoàng tỉ mỉ tạo nên vẻ đẹp 'kim tương ngọc' (ruột vàng bọc lông bạc).",
+          noteEn: "Imperial tribute tea since the Tang dynasty, undergoing delicate yellow-heaping to yield golden buds sheathed in silver fuzz."
+        },
+        {
+          id: "tea-luan-guapian",
+          nameVi: "Lục An Qua Phiến",
+          nameEn: "Lu'an Melon Seed Tea",
+          nameZh: "六安瓜片",
+          pinyin: "Lù'ān Guāpiàn",
+          category: "Lục Trà",
+          originVi: "Vùng núi Đại Biệt, Lục An, An Huy",
+          originEn: "Dabie Mountains, Lu'an, Anhui",
+          noteVi: "Danh trà độc đáo duy nhất trong mười loại không dùng búp hay cuống mà chỉ hái phiến lá đơn trưởng thành, sấy lửa than tạo hình hạt dưa.",
+          noteEn: "Uniquely crafted solely from single mature leaves without buds or stems, charcoal-baked into melon-seed shapes with robust sweetness."
+        },
+        {
+          id: "tea-xinyang-maojian",
+          nameVi: "Tín Dương Mao Tiêm",
+          nameEn: "Xinyang Maojian",
+          nameZh: "信阳毛尖",
+          pinyin: "Xìnyáng Máojiān",
+          category: "Lục Trà",
+          originVi: "Vùng núi Đồng Bách – Đại Biệt, Tín Dương, Hà Nam",
+          originEn: "Tongbai and Dabie Mountains, Xinyang, Henan",
+          noteVi: "Trà xanh bắc giới nổi danh từ thời Đường, sợi trà nhỏ thẳng phủ tuyết trắng, nước xanh sáng, vị đậm và hậu ngọt kéo dài.",
+          noteEn: "Northern green tea celebrated since the Tang era for slender white-tipped needles, active emerald liquor, and lingering sweet depth."
+        }
+      ]
+    },
+    nightMarkets12: [
+      {
+        id: "nm-beijing-niujie",
+        nameVi: "Phố ẩm thực Ngưu Nhai và Nam La Cổ Hạng",
+        nameEn: "Niujie Halal Quarter and Nanluoguxiang",
+        nameZh: "北京牛街与南锣鼓巷",
+        pinyin: "Běijīng Niújiē yǔ Nánluógǔxiàng",
+        provinceId: "prov-beijing",
+        signatureFoodsVi: "Bánh nếp Lư Đả Cổn, bánh ngọt Ngả Oa Oa, lẩu thịt cừu nồi đồng, mì tương đen Tạc Tương Miến, canh bộc đỗ",
+        signatureFoodsEn: "Lvdagun glutinous rice rolls, Aiwowo steamed cakes, copper-pot mutton hotpot, Zhajiangmian noodles, quick-blanched tripe",
+        fieldTipVi: "Ngưu Nhai là cộng đồng Hồi giáo lâu đời từ thời Liêu–Kim với chuẩn Halal nghiêm ngặt; nên ghé các tiệm bánh cổ truyền trước 18 giờ để tránh hết mẻ.",
+        fieldTipEn: "Niujie is a historic Hui Muslim neighborhood dating to the Liao–Jin era observing strict Halal standards; visit legacy pastry counters before dusk."
+      },
+      {
+        id: "nm-xian-muslim",
+        nameVi: "Phố Hồi Dân Nhai (Bắc Viện Môn)",
+        nameEn: "Xi'an Muslim Quarter (Beiyuanmen)",
+        nameZh: "西安回民街（北院门）",
+        pinyin: "Xī'ān Huímínjiē (Běiyuànmén)",
+        provinceId: "prov-shaanxi",
+        signatureFoodsVi: "Dương nhục bào mô (bánh mì bẻ vụn hầm cừu), bánh kẹp thịt Nhục Giáp Mô, mì Biangbiang sợi bản rộng, lương bì, bánh hồng chiên",
+        signatureFoodsEn: "Yangrou Paomo (hand-torn flatbread in mutton broth), Roujiamo, wide belt Biangbiang noodles, Liangpi cold noodles, persimmon cakes",
+        fieldTipVi: "Tránh chỉ dừng ở trục chính Bắc Viện Môn đông đúc; rẽ sang phố Đại Bì Viện hoặc Sái Kim Kiều để trải nghiệm quán địa phương lâu năm.",
+        fieldTipEn: "Step beyond the crowded Beiyuanmen main lane into Dapiyuan or Sajinqiao for longstanding local eateries."
+      },
+      {
+        id: "nm-chengdu-jinli",
+        nameVi: "Phố cổ Cẩm Lý",
+        nameEn: "Jinli Ancient Street",
+        nameZh: "成都锦里古街",
+        pinyin: "Chéngdū Jǐnlǐ Gǔjiē",
+        provinceId: "prov-sichuan",
+        signatureFoodsVi: "Bánh gạo đường Đường Du Quả Tử, mì Đam Đam, hoành thánh dầu ớt Long Sao Thủ, thịt bò Trương Phi, đậu phụ Ma Bà",
+        signatureFoodsEn: "Tangyou Guozi sweet fried rice balls, Dan Dan noodles, Zhong-style chili wontons, Zhang Fei spiced beef, Mapo Tofu",
+        fieldTipVi: "Nằm kề Đền Vũ Hầu, phố lên đèn đỏ rực sau 19 giờ; người không quen vị tê hoa tiêu nên dặn 'bất phóng ma' hoặc 'vi lạt'.",
+        fieldTipEn: "Adjacent to Wuhou Shrine, the lane illuminates with red lanterns after 7 PM; request mild spice or reduced Sichuan peppercorn if preferred."
+      },
+      {
+        id: "nm-chongqing-bayi",
+        nameVi: "Phố ẩm thực Bát Nhất (Giải Phóng Bi)",
+        nameEn: "Bayi Tasty Street (Jiefangbei)",
+        nameZh: "重庆八一好吃街",
+        pinyin: "Chóngqìng Bāyī Hǎochījiē",
+        provinceId: "prov-chongqing",
+        signatureFoodsVi: "Bún chua cay Toan Lạt Phấn, mì Trùng Khánh Tiểu Miến, lẩu mỡ bò chín ngăn, chạo xiên Sơn Thành, chè thạch Băng Phấn",
+        signatureFoodsEn: "Suanlafen hot-and-sour glass noodles, Chongqing Xiaomian, nine-grid tallow hotpot, spicy skewers, Bingfen ice jelly",
+        fieldTipVi: "Gọi thêm một bát Băng Phấn đường nâu hoặc sữa đậu nành lạnh để trung hòa độ tê cay đặc trưng của ẩm thực Sơn Thành.",
+        fieldTipEn: "Pair fiery noodles or skewers with brown-sugar Bingfen ice jelly or chilled soy milk to temper the numbing heat."
+      },
+      {
+        id: "nm-shanghai-yuyuan",
+        nameVi: "Khu ẩm thực Thành Hoàng Miếu – Dự Viên",
+        nameEn: "City God Temple and Yuyuan Food Quarter",
+        nameZh: "上海城隍庙豫园商圈",
+        pinyin: "Shànghǎi Chénghuángmiào Yùyuán",
+        provinceId: "prov-shanghai",
+        signatureFoodsVi: "Tiểu Long Bao Nam Tường nhân cua, bánh bao áp chảo Sinh Tiên Bao, bánh củ cải sợi, bánh gạo sườn heo, chè trôi nước Ninh Ba",
+        signatureFoodsEn: "Nanxiang crab-roe Xiaolongbao, pan-fried Shengjianbao, shredded radish pastries, pork-rib rice cakes, Ningbo sesame tangyuan",
+        fieldTipVi: "Khi ăn Tiểu Long Bao nên cắn nhẹ mép vỏ húp phần nước dùng nóng trước để tránh bỏng lưỡi; khẩu vị Bản Bang thiên ngọt thanh.",
+        fieldTipEn: "Nibble a small vent in Xiaolongbao to sip the hot broth first; Shanghai Benbang flavors lean toward delicate savory-sweet."
+      },
+      {
+        id: "nm-nanjing-fuzimiao",
+        nameVi: "Phố đêm Phu Tử Miếu – Tần Hoài",
+        nameEn: "Confucius Temple and Qinhuai River Night Market",
+        nameZh: "南京夫子庙秦淮风味街",
+        pinyin: "Nánjīng Fūzǐmiào Qínhuái",
+        provinceId: "prov-jiangsu",
+        signatureFoodsVi: "Miến tiết vịt Áp Huyết Phấn Ti Thang, vịt muối Kim Lăng Diêm Thủy Áp, bánh thịt nướng Áp Du Tô Thiêu Bính, cháo đậu đỏ hoa quế",
+        signatureFoodsEn: "Duck blood vermicelli soup, Jinling salted duck, duck-oil flaky sesame flatbreads, osmanthus red-bean porridge",
+        fieldTipVi: "Kết hợp thưởng thức ẩm thực Tần Hoài với đi bộ dọc hành lang đèn lồng bên sông vào buổi tối để cảm nhận không gian khoa cử Giang Nam.",
+        fieldTipEn: "Combine tasting Qinhuai specialties with an evening walk along the lantern-lit riverfront near the historic Imperial Examination Hall."
+      },
+      {
+        id: "nm-hangzhou-wulin",
+        nameVi: "Chợ đêm Vũ Lâm Dạ Thị",
+        nameEn: "Wulin Night Market",
+        nameZh: "杭州武林夜市",
+        pinyin: "Hángzhōu Wǔlín Yèshì",
+        provinceId: "prov-zhejiang",
+        signatureFoodsVi: "Bánh hành cuốn Thông Bao Cối, gà ăn mày Khiếu Hóa Kê, bánh Định Thắng, củ sen nhồi gạo nếp mật quế, tôm nõn trà Long Tỉnh",
+        signatureFoodsEn: "Congbaohui pressed scallion crepes, Beggar's Chicken, Dingsheng steamed rice cakes, osmanthus sticky-rice lotus root, Longjing shrimp",
+        fieldTipVi: "Cách hồ Tây chỉ vài phút đi bộ; ngoài quầy ăn vặt còn tập trung nhiều gian hàng thủ công mỹ nghệ Hàng Châu như quạt giấy và tơ lụa.",
+        fieldTipEn: "Minutes from West Lake, the market blends Hangzhou snacks with artisan stalls showcasing paper fans and silk crafts."
+      },
+      {
+        id: "nm-hongkong-mongkok",
+        nameVi: "Phố đêm Vượng Giác (Phố Phụ Nữ – Phố Miếu)",
+        nameEn: "Mong Kok and Temple Street Night Markets",
+        nameZh: "香港旺角与庙街夜市",
+        pinyin: "Xiānggǎng Wàngjiǎo yǔ Miàojiē",
+        provinceId: "prov-hongkong",
+        signatureFoodsVi: "Cá viên cà ri, bánh trứng gà non Kê Đản Tử, cháo thịt bằm trứng bắc thảo, cơm niêu Lạp Vị, trà sữa tất lụa",
+        signatureFoodsEn: "Curry fishballs, egg waffles (gai daan jai), preserved-egg pork congee, claypot rice with cured meats, silk-stocking milk tea",
+        fieldTipVi: "Quán Đại Bài Đương và tiệm trà chanh (Trà Nhà Hàng) hoạt động sôi nổi nhất từ 20 giờ đến nửa đêm; chuẩn bị thẻ Octopus hoặc tiền mặt lẻ.",
+        fieldTipEn: "Dai pai dong stalls and cha chaan teng diners peak between 8 PM and midnight; carry an Octopus card or small-denomination cash."
+      },
+      {
+        id: "nm-taipei-shilin",
+        nameVi: "Chợ đêm Sĩ Lâm",
+        nameEn: "Shilin Night Market",
+        nameZh: "台北士林夜市",
+        pinyin: "Táiběi Shìlín Yèshì",
+        provinceId: "prov-taiwan",
+        signatureFoodsVi: "Trứng đúc hàu Kha Tử Tiên, xúc xích kẹp nếp Đại Tràng Bao Tiểu Tràng, gà rán bản lớn Hào Đại, đậu phụ thối, trà sữa trân châu",
+        signatureFoodsEn: "Oyster omelet (o-a-jian), Taiwanese sausage wrapped in sticky rice, giant crispy chicken cutlet, stinky tofu, bubble tea",
+        fieldTipVi: "Khu ẩm thực tầng hầm B1 có điều hòa và chỗ ngồi sạch sẽ, trong khi khu quanh miếu Từ Thành ngoài trời lưu giữ không khí chợ đêm truyền thống.",
+        fieldTipEn: "The air-conditioned basement food court offers seated dining, while outdoor lanes around Cicheng Temple retain the classic street-stall atmosphere."
+      },
+      {
+        id: "nm-xiamen-zhongshan",
+        nameVi: "Phố đi bộ Trung Sơn Lộ và Chợ Bát Thị",
+        nameEn: "Zhongshan Road Pedestrian Street and Bashi Market",
+        nameZh: "厦门中山路与八市",
+        pinyin: "Xiàmén Zhōngshānlù yǔ Bāshì",
+        provinceId: "prov-fujian",
+        signatureFoodsVi: "Mì sa tế Sa Trà Miến, thạch sùng biển Thổ Duẩn Đống, bánh cuốn Mân Nam Nhuận Bính, bánh hàu chiên, chè đậu phộng Hoa Sinh Thang",
+        signatureFoodsEn: "Satay noodle soup (Shacha Mian), sea-worm aspic (Tusun Dong), Minnan spring rolls, oyster fritters, sweet peanut soup",
+        fieldTipVi: "Nổi bật với dãy nhà Kỵ Lâu (Qilou) mái vòm che mưa nắng; ghé chợ hải sản Bát Thị gần đó để xem hải sản eo biển Đài Loan tươi sống.",
+        fieldTipEn: "Framed by historic Qilou arcade shophouses; stroll into nearby Bashi seafood market for fresh Taiwan Strait catch."
+      },
+      {
+        id: "nm-nanning-zhongshan",
+        nameVi: "Phố ẩm thực Trung Sơn Lộ – Tam Nhai Lưỡng Hạng",
+        nameEn: "Nanning Zhongshan Road and Three Streets Two Alleys",
+        nameZh: "南宁中山路与三街两巷",
+        pinyin: "Nánníng Zhōngshānlù yǔ Sānjiē Liǎngxiàng",
+        provinceId: "prov-guangxi",
+        signatureFoodsVi: "Phở Lão Hữu Phấn, vịt nấu chanh Nịnh Mông Áp, ốc xào Điền Loa, trái cây dầm chua ngọt Toan Dã, bánh cuốn Quyển Đồng Phấn",
+        signatureFoodsEn: "Laoyoufen fermented-bean-and-bamboo-shoot rice noodles, lemon braised duck, spiced river snails, pickled tropical fruits (Suanye), rolled rice crepes",
+        fieldTipVi: "Hương vị Quảng Tây chua thanh, thơm măng muối và rất gần gũi với khẩu vị Việt Nam; nhộn nhịp nhất sau 20 giờ trong tiết trời ấm áp.",
+        fieldTipEn: "Guangxi's bright sour-savory palate with pickled bamboo shoots resonates closely with Vietnamese tastes; liveliest after 8 PM."
+      },
+      {
+        id: "nm-wuhan-hubuxiang",
+        nameVi: "Ngõ ẩm thực Hộ Bộ Hạng",
+        nameEn: "Hubu Alley",
+        nameZh: "武汉户部巷",
+        pinyin: "Wǔhàn Hùbùxiàng",
+        provinceId: "prov-hubei",
+        signatureFoodsVi: "Mì trộn sốt mè Nhiệt Can Miến, bánh nếp nhân tam tiên Đậu Bì, mì nước cá Hồ Thang Phấn, bánh rán Miện Oa, cổ vịt cay Vũ Hán",
+        signatureFoodsEn: "Reganmian hot dry sesame noodles, Sanxian Doupi stuffed tofu-skin rice cakes, peppery fish-paste noodle soup, Mianwo savory donuts, spiced duck necks",
+        fieldTipVi: "Được mệnh danh 'Đệ nhất hẻm ăn sáng Hán Thành' gần Hoàng Hạc Lâu; nên thử văn hóa 'Quá Tảo' (ăn sáng thịnh soạn) từ 7 đến 9 giờ sáng bên cạnh phiên chợ tối.",
+        fieldTipEn: "Celebrated near Yellow Crane Tower for Wuhan's 'Guozao' morning breakfast culture (7–9 AM) as well as its lively evening snack stalls."
+      }
+    ],
+    diningTerms120: [
+      { id: "dt-m01", cat: "methods", hanzi: "炒", pinyin: "chǎo", hanViet: "sao", vi: "Xào chảo lửa lớn", en: "Stir-fry", noteVi: "Kỹ thuật căn bản của ẩm thực Trung Hoa, giữ độ giòn và 'chảo khí' (wok hei)." },
+      { id: "dt-m02", cat: "methods", hanzi: "清蒸", pinyin: "qīngzhēng", hanViet: "thanh chưng", vi: "Hấp thanh đạm", en: "Clear steam", noteVi: "Phổ biến với cá tươi Quảng Đông, chỉ nêm gừng, hành và xì dầu nhẹ." },
+      { id: "dt-m03", cat: "methods", hanzi: "红烧", pinyin: "hóngshāo", hanViet: "hồng thiêu", vi: "Kho tàu / om nước màu", en: "Red-braise", noteVi: "Om mềm với xì dầu, rượu Thiệu Hưng và đường thắng màu cánh gián." },
+      { id: "dt-m04", cat: "methods", hanzi: "爆炒", pinyin: "bàochǎo", hanViet: "bạo sao", vi: "Xào lăn lửa cực lớn", en: "Flash stir-fry", noteVi: "Đảo nhanh trong vài chục giây để nguyên liệu chín tới mà không ra nước." },
+      { id: "dt-m05", cat: "methods", hanzi: "炖", pinyin: "dùn", hanViet: "độn", vi: "Hầm nhừ nhỏ lửa", en: "Slow stew", noteVi: "Thường dùng nồi đất hoặc nồi gang ninh thịt và thảo mộc lấy nước ngọt." },
+      { id: "dt-m06", cat: "methods", hanzi: "煲", pinyin: "bāo", hanViet: "bao", vi: "Ninh nồi đất kiểu Quảng Đông", en: "Claypot simmer", noteVi: "Dùng cho canh lão hỏa thang hoặc cơm niêu cháy giòn đáy nồi." },
+      { id: "dt-m07", cat: "methods", hanzi: "烤", pinyin: "kǎo", hanViet: "khảo", vi: "Quay / nướng lò", en: "Roast / grill", noteVi: "Áp dụng cho vịt quay Bắc Kinh, thịt xiên nướng than Tân Cương." },
+      { id: "dt-m08", cat: "methods", hanzi: "煎", pinyin: "jiān", hanViet: "tiên", vi: "Áp chảo ít dầu", en: "Pan-fry / sear", noteVi: "Tạo lớp vỏ vàng giòn một mặt như bánh bao Sinh Tiên hoặc sủi cảo áp chảo." },
+      { id: "dt-m09", cat: "methods", hanzi: "炸", pinyin: "zhá", hanViet: "tạc", vi: "Chiên ngập dầu", en: "Deep-fry", noteVi: "Chiên giòn nhanh trong dầu nóng, thường đi kèm bột áo mỏng." },
+      { id: "dt-m10", cat: "methods", hanzi: "凉拌", pinyin: "liángbàn", hanViet: "lương bạn", vi: "Trộn gỏi nguội", en: "Cold-dressed salad", noteVi: "Món khai vị nguội trộn giấm đen, dầu mè, tỏi băm hoặc dầu ớt." },
+      { id: "dt-m11", cat: "methods", hanzi: "卤", pinyin: "lǔ", hanViet: "lỗ", vi: "Kho nước ngũ vị hương (Lỗ vị)", en: "Master-stock braise", noteVi: "Ngâm nấu trong nồi nước gia vị thảo mộc tái sử dụng nhiều lần." },
+      { id: "dt-m12", cat: "methods", hanzi: "焖", pinyin: "mèn", hanViet: "muộn", vi: "Om đậy vung kín", en: "Covered braise", noteVi: "Đậy kín nắp để hơi nước và sốt thấm sâu vào thịt hoặc cơm." },
+      { id: "dt-m13", cat: "methods", hanzi: "涮", pinyin: "shuàn", hanViet: "xuyến", vi: "Nhúng lẩu nhanh", en: "Swish-boil (hotpot)", noteVi: "Nhúng lát thịt mỏng vào nồi nước dùng sôi trong vài giây." },
+      { id: "dt-m14", cat: "methods", hanzi: "白灼", pinyin: "báizhuó", hanViet: "bạch chước", vi: "Chần nước sôi giữ vị ngọt", en: "Blanch", noteVi: "Thường áp dụng cho tôm tươi hoặc rau cải làn, chấm xì dầu gừng." },
+      { id: "dt-m15", cat: "methods", hanzi: "干煸", pinyin: "gānbiān", hanViet: "can biên", vi: "Xào cháy cạnh ráo dầu", en: "Dry-fry", noteVi: "Xào cạn nước cho nguyên liệu săn lại, thơm mùi ớt khô và hoa tiêu." },
+      { id: "dt-m16", cat: "methods", hanzi: "干锅", pinyin: "gānguō", hanViet: "can oa", vi: "Nồi khô không nước dùng", en: "Dry hotpot", noteVi: "Phục vụ trên chảo gang nhỏ có bếp cồn giữ nóng, đậm gia vị." },
+      { id: "dt-m17", cat: "methods", hanzi: "铁板", pinyin: "tiěbǎn", hanViet: "thiết bản", vi: "Nướng chảo gang xèo xèo", en: "Sizzling iron plate", noteVi: "Món ăn dọn trên đĩa gang nung nóng, tỏa hương tiêu đen hoặc tỏi." },
+      { id: "dt-m18", cat: "methods", hanzi: "糖醋", pinyin: "tángcù", hanViet: "đường thố", vi: "Sốt chua ngọt", en: "Sweet and sour", noteVi: "Cân bằng giữa đường và giấm gạo, phổ biến với sườn non và cá chép." },
+      { id: "dt-m19", cat: "methods", hanzi: "水煮", pinyin: "shuǐzhǔ", hanViet: "thủy chử", vi: "Chần trong dầu ớt cay kiểu Tứ Xuyên", en: "Poached in chili oil", noteVi: "Dù chữ là 'luộc nước' nhưng thực tế phủ lớp dầu ớt và hoa tiêu sôi." },
+      { id: "dt-m20", cat: "methods", hanzi: "熏", pinyin: "xūn", hanViet: "huân", vi: "Hun khói trà / gỗ", en: "Smoked", noteVi: "Hun bằng lá trà, đường nâu hoặc gỗ táo như vịt hun khói Tứ Xuyên." },
 
+      { id: "dt-p01", cat: "proteins", hanzi: "猪肉", pinyin: "zhūròu", hanViet: "trư nhục", vi: "Thịt heo", en: "Pork", noteVi: "Nguồn đạm phổ biến nhất tại Trung Quốc trừ các quán Halal." },
+      { id: "dt-p02", cat: "proteins", hanzi: "五花肉", pinyin: "wǔhuāròu", hanViet: "ngũ hoa nhục", vi: "Thịt ba chỉ", en: "Pork belly", noteVi: "Nguyên liệu cốt lõi của thịt kho Đông Pha và thịt kho Mao Thị." },
+      { id: "dt-p03", cat: "proteins", hanzi: "排骨", pinyin: "páigǔ", hanViet: "bài cốt", vi: "Sườn heo", en: "Pork ribs", noteVi: "Thường chế biến chua ngọt, hấp tàu xì hoặc hầm củ sen." },
+      { id: "dt-p04", cat: "proteins", hanzi: "牛肉", pinyin: "niúròu", hanViet: "ngưu nhục", vi: "Thịt bò", en: "Beef", noteVi: "Xuất hiện nhiều trong mì bò Lan Châu và ẩm thực Tây Bắc." },
+      { id: "dt-p05", cat: "proteins", hanzi: "牛腩", pinyin: "niúnǎn", hanViet: "ngưu nạm", vi: "Thịt nạm bò", en: "Beef brisket", noteVi: "Rất mềm khi om củ cải trắng hoặc hầm cà chua kiểu Quảng Đông." },
+      { id: "dt-p06", cat: "proteins", hanzi: "羊肉", pinyin: "yángròu", hanViet: "dương nhục", vi: "Thịt cừu", en: "Mutton / lamb", noteVi: "Thịt chủ đạo của lẩu Bắc Kinh, xiên nướng Tân Cương và canh Tây An." },
+      { id: "dt-p07", cat: "proteins", hanzi: "鸡肉", pinyin: "jīròu", hanViet: "kê nhục", vi: "Thịt gà", en: "Chicken", noteVi: "Dùng cho gà Cung Bảo, gà luộc trắng Bạch Thiết Kê và gà hầm nấm." },
+      { id: "dt-p08", cat: "proteins", hanzi: "鸭肉", pinyin: "yāròu", hanViet: "áp nhục", vi: "Thịt vịt", en: "Duck", noteVi: "Nổi tiếng với vịt quay Bắc Kinh, vịt muối Nam Kinh và vịt quay Quảng Đông." },
+      { id: "dt-p09", cat: "proteins", hanzi: "鹅肉", pinyin: "éròu", hanViet: "nga nhục", vi: "Thịt ngỗng", en: "Goose", noteVi: "Đặc sản ngỗng quay da giòn Quảng Đông và ngỗng hầm Triều Châu." },
+      { id: "dt-p10", cat: "proteins", hanzi: "鱼", pinyin: "yú", hanViet: "ngư", vi: "Cá", en: "Fish", noteVi: "Biểu tượng cát tường 'niên niên hữu dư', thường hấp nguyên con hoặc nấu canh dưa cải." },
+      { id: "dt-p11", cat: "proteins", hanzi: "鲈鱼", pinyin: "lúyú", hanViet: "lô ngư", vi: "Cá vược / cá chẽm", en: "Sea bass", noteVi: "Ít xương dăm, thịt trắng ngọt, lựa chọn hàng đầu cho món cá hấp xì dầu." },
+      { id: "dt-p12", cat: "proteins", hanzi: "虾仁", pinyin: "xiārén", hanViet: "hà nhân", vi: "Tôm nõn bóc vỏ", en: "Shelled shrimp", noteVi: "Thường xào trà Long Tỉnh, xào trứng hoặc làm nhân há cảo." },
+      { id: "dt-p13", cat: "proteins", hanzi: "螃蟹", pinyin: "pángxiè", hanViet: "bàng giải", vi: "Cua", en: "Crab", noteVi: "Cua lông hồ Dương Trừng (Đại Trá Giải) vào mùa ngon nhất tháng 10–11." },
+      { id: "dt-p14", cat: "proteins", hanzi: "鱿鱼", pinyin: "yóuyú", hanViet: "vưu ngư", vi: "Mực ống", en: "Squid", noteVi: "Thường nướng chảo gang hoặc xào cần tây, ớt chuông." },
+      { id: "dt-p15", cat: "proteins", hanzi: "扇贝", pinyin: "shànbèi", hanViet: "phiến bối", vi: "Sò điệp", en: "Scallop", noteVi: "Phổ biến nhất là sò điệp hấp miến tỏi tại các quán hải sản ven biển." },
+      { id: "dt-p16", cat: "proteins", hanzi: "鸡蛋", pinyin: "jīdàn", hanViet: "kê đản", vi: "Trứng gà", en: "Chicken egg", noteVi: "Xuất hiện trong món gia đình kinh điển trứng xào cà chua." },
+      { id: "dt-p17", cat: "proteins", hanzi: "皮蛋", pinyin: "pídàn", hanViet: "bì đản", vi: "Trứng bắc thảo", en: "Century egg", noteVi: "Ăn nguội với đậu phụ non hoặc nấu cháo thịt nạc Quảng Đông." },
+      { id: "dt-p18", cat: "proteins", hanzi: "豆腐", pinyin: "dòufu", hanViet: "đậu hủ", vi: "Đậu phụ", en: "Tofu", noteVi: "Có nhiều loại: đậu phụ non (nộn), đậu phụ cứng (lão) và đậu phụ đông lạnh." },
+      { id: "dt-p19", cat: "proteins", hanzi: "毛肚", pinyin: "máodǔ", hanViet: "mao đỗ", vi: "Lá sách bò", en: "Beef omasum tripe", noteVi: "Món nhúng lẩu Trùng Khánh trứ danh theo quy tắc 'bảy lên tám xuống'." },
+      { id: "dt-p20", cat: "proteins", hanzi: "叉烧", pinyin: "chāshāo", hanViet: "xoa thiêu", vi: "Thịt xá xíu", en: "Char siu (barbecued pork)", noteVi: "Thịt heo ướp mật ong, mạch nha nướng bóng đỏ đặc trưng Quảng Đông." },
+
+      { id: "dt-v01", cat: "vegetables", hanzi: "小白菜", pinyin: "xiǎobáicài", hanViet: "tiểu bạch thái", vi: "Cải thìa / cải chíp", en: "Bok choy", noteVi: "Thường xào tỏi hoặc xào nấm hương, rất dễ ăn." },
+      { id: "dt-v02", cat: "vegetables", hanzi: "空心菜", pinyin: "kōngxīncài", hanViet: "không tâm thái", vi: "Rau muống", en: "Water spinach", noteVi: "Phổ biến ở Hoa Nam, hay xào tỏi hoặc xào chao (hủ nhũ)." },
+      { id: "dt-v03", cat: "vegetables", hanzi: "芥兰", pinyin: "jièlán", hanViet: "giới lan", vi: "Cải làn (cải rổ)", en: "Chinese broccoli (Gai lan)", noteVi: "Món rau kinh điển ăn kèm dầu hào hoặc gừng rượu trong tiệc Quảng Đông." },
+      { id: "dt-v04", cat: "vegetables", hanzi: "茄子", pinyin: "qiézi", hanViet: "già tử", vi: "Cà tím", en: "Eggplant", noteVi: "Nổi tiếng với món cà tím sốt Ngư Hương (chua cay ngọt, không có cá)." },
+      { id: "dt-v05", cat: "vegetables", hanzi: "土豆", pinyin: "tǔdòu", hanViet: "thổ đậu", vi: "Khoai tây", en: "Potato", noteVi: "Thường bào sợi xào giấm ớt (Toan Lạt Thổ Đậu Ti) giòn sần sật." },
+      { id: "dt-v06", cat: "vegetables", hanzi: "西红柿", pinyin: "xīhóngshì", hanViet: "tây hồng thị", vi: "Cà chua", en: "Tomato", noteVi: "Ở Hoa Nam và Đài Loan còn gọi là Phiên Già (番茄)." },
+      { id: "dt-v07", cat: "vegetables", hanzi: "黄瓜", pinyin: "huángguā", hanViet: "hoàng qua", vi: "Dưa leo / dưa chuột", en: "Cucumber", noteVi: "Món khai vị phổ biến nhất là dưa leo đập dập trộn tỏi giấm (Phách Hoàng Qua)." },
+      { id: "dt-v08", cat: "vegetables", hanzi: "四季豆", pinyin: "sìjìdòu", hanViet: "tứ quý đậu", vi: "Đậu cô ve", en: "Green beans", noteVi: "Thường chế biến xào cháy cạnh với thịt băm và cải muối (Can Biên Tứ Quý Đậu)." },
+      { id: "dt-v09", cat: "vegetables", hanzi: "冬瓜", pinyin: "dōngguā", hanViet: "đông qua", vi: "Bí đao", en: "Winter melon", noteVi: "Dùng nấu canh giải nhiệt hoặc hầm sườn, sò điệp khô." },
+      { id: "dt-v10", cat: "vegetables", hanzi: "莲藕", pinyin: "lián'ǒu", hanViet: "liên ngẫu", vi: "Củ sen", en: "Lotus root", noteVi: "Đặc sản vùng Hồ Bắc – Giang Nam, dùng hầm sườn hoặc thái lát trộn gỏi." },
+      { id: "dt-v11", cat: "vegetables", hanzi: "竹笋", pinyin: "zhúsǔn", hanViet: "trúc duẩn", vi: "Măng tre", en: "Bamboo shoots", noteVi: "Măng xuân (Xuân Duẩn) kho dầu tương là đặc sản mùa xuân Hàng Châu – Thượng Hải." },
+      { id: "dt-v12", cat: "vegetables", hanzi: "香菇", pinyin: "xiānggū", hanViet: "hương cô", vi: "Nấm hương / nấm đông cô", en: "Shiitake mushroom", noteVi: "Tạo vị ngọt tự nhiên (umami) cho cả món mặn lẫn món chay." },
+      { id: "dt-v13", cat: "vegetables", hanzi: "木耳", pinyin: "mù'ěr", hanViet: "mộc nhĩ", vi: "Mộc nhĩ / nấm mèo", en: "Wood ear mushroom", noteVi: "Giòn sần sật, thường trộn gỏi lạnh hoặc xào thịt heo." },
+      { id: "dt-v14", cat: "vegetables", hanzi: "金针菇", pinyin: "jīnzhēngū", hanViet: "kim châm cô", vi: "Nấm kim châm", en: "Enoki mushroom", noteVi: "Nguyên liệu gần như luôn có trong lẩu và món nướng giấy bạc." },
+      { id: "dt-v15", cat: "vegetables", hanzi: "菠菜", pinyin: "bōcài", hanViet: "ba thái", vi: "Rau chân vịt / cải bó xôi", en: "Spinach", noteVi: "Thường trộn lạc rang dầu mè hoặc nấu canh trứng." },
+      { id: "dt-v16", cat: "vegetables", hanzi: "豆芽", pinyin: "dòuyá", hanViet: "đậu nha", vi: "Giá đỗ", en: "Bean sprouts", noteVi: "Có giá đỗ xanh (lục đậu nha) và giá đỗ tương (hoàng đậu nha)." },
+      { id: "dt-v17", cat: "vegetables", hanzi: "苦瓜", pinyin: "kǔguā", hanViet: "khổ qua", vi: "Mướp đắng", en: "Bitter melon", noteVi: "Thường xào trứng muối hoặc hầm sườn giải nhiệt mùa hè Hoa Nam." },
+      { id: "dt-v18", cat: "vegetables", hanzi: "西兰花", pinyin: "xīlánhuā", hanViet: "tây lan hoa", vi: "Bông cải xanh / súp lơ xanh", en: "Broccoli", noteVi: "Món rau lành tính, hay xào tỏi hoặc xào tôm." },
+      { id: "dt-v19", cat: "vegetables", hanzi: "白萝卜", pinyin: "báiluóbo", hanViet: "bạch la bặc", vi: "Củ cải trắng", en: "Daikon radish", noteVi: "Dùng hầm xương, nấu lẩu hoặc làm bánh củ cải điểm tâm (La Bặc Cao)." },
+      { id: "dt-v20", cat: "vegetables", hanzi: "芹菜", pinyin: "qíncài", hanViet: "cần thái", vi: "Cần tây / rau cần", en: "Celery", noteVi: "Thường xào đậu phụ khô (Hương Can) hoặc xào mực, thịt bò." },
+
+      { id: "dt-s01", cat: "staples", hanzi: "米饭", pinyin: "mǐfàn", hanViet: "mễ phạn", vi: "Cơm trắng", en: "Steamed rice", noteVi: "Lương thực chính miền Nam; thường tính theo bát nhỏ hoặc nồi." },
+      { id: "dt-s02", cat: "staples", hanzi: "炒饭", pinyin: "chǎofàn", hanViet: "sao phạn", vi: "Cơm chiên / cơm rang", en: "Fried rice", noteVi: "Nổi tiếng nhất là cơm chiên Dương Châu với trứng, tôm, lạp xưởng." },
+      { id: "dt-s03", cat: "staples", hanzi: "粥", pinyin: "zhōu", hanViet: "chúc", vi: "Cháo", en: "Congee / porridge", noteVi: "Miền Bắc chuộng cháo kê (Tiểu Mễ Chúc), miền Nam chuộng cháo trắng ninh nhừ." },
+      { id: "dt-s04", cat: "staples", hanzi: "面条", pinyin: "miàntiáo", hanViet: "diện điều", vi: "Mì sợi", en: "Wheat noodles", noteVi: "Lương thực chủ lực miền Bắc với hàng trăm kiểu kéo tay, thái dao." },
+      { id: "dt-s05", cat: "staples", hanzi: "拉面", pinyin: "lāmiàn", hanViet: "lạp diện", vi: "Mì kéo tay (Lan Châu)", en: "Hand-pulled noodles", noteVi: "Sợi mì kéo trực tiếp trước khách, có thể chọn độ dày từ sợi chỉ đến bản rộng." },
+      { id: "dt-s06", cat: "staples", hanzi: "刀削面", pinyin: "dāoxiāomiàn", hanViet: "đao tước diện", vi: "Mì thái dao Sơn Tây", en: "Knife-shaved noodles", noteVi: "Thái trực tiếp từ khối bột vào nồi nước sôi, giữa dày rìa mỏng rất dai." },
+      { id: "dt-s07", cat: "staples", hanzi: "米粉", pinyin: "mǐfěn", hanViet: "mễ phấn", vi: "Bún / phở gạo", en: "Rice noodles", noteVi: "Đặc trưng vùng Hồ Nam, Quảng Tây (Quế Lâm) và Vân Nam (Mễ Tuyến)." },
+      { id: "dt-s08", cat: "staples", hanzi: "河粉", pinyin: "héfěn", hanViet: "hà phấn", vi: "Bánh phở bản rộng (Quảng Đông)", en: "Flat rice noodles (Ho fun)", noteVi: "Dùng trong món hủ tiếu xào bò khô (Can Sao Ngưu Hà)." },
+      { id: "dt-s09", cat: "staples", hanzi: "粉丝", pinyin: "fěnsī", hanViet: "phấn ti", vi: "Miến đậu xanh", en: "Glass vermicelli", noteVi: "Dùng trong miến tiết vịt Nam Kinh hoặc hấp sò điệp tỏi." },
+      { id: "dt-s10", cat: "staples", hanzi: "饺子", pinyin: "jiǎozi", hanViet: "giáo tử", vi: "Sủi cảo / bánh chẻo", en: "Dumplings", noteVi: "Món ăn biểu tượng giao thừa miền Bắc; có loại luộc (Thủy Giáo) và hấp." },
+      { id: "dt-s11", cat: "staples", hanzi: "锅贴", pinyin: "guōtiē", hanViet: "oa thiếp", vi: "Sủi cảo áp chảo giòn đáy", en: "Potstickers", noteVi: "Mặt đáy chiên vàng giòn, mặt trên hấp chín mềm bằng hơi nước." },
+      { id: "dt-s12", cat: "staples", hanzi: "馄饨", pinyin: "húntun", hanViet: "hồn độn", vi: "Hoành thánh / vằn thắn", en: "Wontons", noteVi: "Vỏ mỏng hơn sủi cảo; tại Tứ Xuyên gọi là Sao Thủ (抄手), Quảng Đông gọi là Vân Thôn (云吞)." },
+      { id: "dt-s13", cat: "staples", hanzi: "包子", pinyin: "bāozi", hanViet: "bao tử", vi: "Bánh bao có nhân", en: "Steamed stuffed bun", noteVi: "Nhân mặn (thịt, rau) hoặc nhân ngọt (đậu đỏ, mè đen), ăn sáng phổ biến." },
+      { id: "dt-s14", cat: "staples", hanzi: "小笼包", pinyin: "xiǎolóngbāo", hanViet: "tiểu long bao", vi: "Bánh bao nước súp hấp xửng nhỏ", en: "Soup dumplings", noteVi: "Đặc sản vùng Giang Nam – Thượng Hải, chấm giấm đen gừng thái chỉ." },
+      { id: "dt-s15", cat: "staples", hanzi: "馒头", pinyin: "mántou", hanViet: "màn thầu", vi: "Bánh màn thầu không nhân", en: "Steamed plain bun", noteVi: "Bánh bột mì hấp thay cơm ở miền Bắc; dùng chấm nước sốt món kho." },
+      { id: "dt-s16", cat: "staples", hanzi: "烧麦", pinyin: "shāomài", hanViet: "thiêu mại", vi: "Xíu mại hấp mở miệng", en: "Shumai", noteVi: "Miền Nam thường nhân tôm thịt hoặc gạo nếp; Nội Mông nổi tiếng nhân thịt cừu." },
+      { id: "dt-s17", cat: "staples", hanzi: "葱油饼", pinyin: "cōngyóubǐng", hanViet: "thông du bính", vi: "Bánh hành lá áp chảo", en: "Scallion pancake", noteVi: "Nhiều lớp bột giòn rụm thơm hành, món ăn đường phố khắp các đô thị." },
+      { id: "dt-s18", cat: "staples", hanzi: "油条", pinyin: "yóutiáo", hanViet: "du điều", vi: "Quẩy chiên giòn", en: "Fried dough sticks", noteVi: "Bữa sáng kinh điển ăn kèm sữa đậu nành nóng (Đậu Tương) hoặc cháo trắng." },
+      { id: "dt-s19", cat: "staples", hanzi: "年糕", pinyin: "niángāo", hanViet: "niên cao", vi: "Bánh gạo dẻo", en: "Rice cake", noteVi: "Ngụ ý 'niên niên cao thăng'; thường xào rau cải, cua hoặc nấu canh." },
+      { id: "dt-s20", cat: "staples", hanzi: "汤圆", pinyin: "tāngyuán", hanViet: "thang viên", vi: "Bánh trôi nước nhân mè / đậu phộng", en: "Glutinous rice balls", noteVi: "Món truyền thống dịp Tết Nguyên Tiêu và Đông chí, tượng trưng đoàn viên." },
+
+      { id: "dt-sp01", cat: "spices", hanzi: "酱油", pinyin: "jiàngyóu", hanViet: "tương du", vi: "Xì dầu / nước tương", en: "Soy sauce", noteVi: "Chia thành Sinh Trừu (mặn thanh tạo vị) và Lão Trừu (sánh đậm tạo màu)." },
+      { id: "dt-sp02", cat: "spices", hanzi: "陈醋", pinyin: "chéncù", hanViet: "trần thố", vi: "Giấm đen ủ lâu năm", en: "Aged black vinegar", noteVi: "Nổi tiếng nhất là giấm Sơn Tây và giấm Trấn Giang dùng chấm sủi cảo." },
+      { id: "dt-sp03", cat: "spices", hanzi: "蚝油", pinyin: "háoyóu", hanViet: "hào du", vi: "Dầu hào", en: "Oyster sauce", noteVi: "Gia vị chủ chốt tạo độ bóng và vị ngọt hậu trong ẩm thực Quảng Đông." },
+      { id: "dt-sp04", cat: "spices", hanzi: "香油", pinyin: "xiāngyóu", hanViet: "hương du", vi: "Dầu mè thơm", en: "Sesame oil", noteVi: "Rưới lên món gỏi nguội, canh hoặc làm nước chấm lẩu Tứ Xuyên để dịu cay." },
+      { id: "dt-sp05", cat: "spices", hanzi: "花椒", pinyin: "huājiāo", hanViet: "hoa tiêu", vi: "Hoa tiêu (tiêu Tứ Xuyên)", en: "Sichuan peppercorn", noteVi: "Tạo cảm giác tê đầu lưỡi (ma), khác với vị cay nóng của ớt." },
+      { id: "dt-sp06", cat: "spices", hanzi: "辣椒油", pinyin: "làjiāoyóu", hanViet: "lạt tiêu du", vi: "Dầu ớt chưng", en: "Chili oil", noteVi: "Dầu nóng dội vào ớt khô, mè và thảo mộc, có mặt trên hầu hết bàn ăn miền Tây Nam." },
+      { id: "dt-sp07", cat: "spices", hanzi: "豆瓣酱", pinyin: "dòubànjiàng", hanViet: "đậu biện tương", vi: "Tương đậu cay Bì Huyện", en: "Fermented broad-bean chili paste", noteVi: "Linh hồn của ẩm thực Tứ Xuyên như đậu phụ Ma Bà và thịt heo hồi oa." },
+      { id: "dt-sp08", cat: "spices", hanzi: "甜面酱", pinyin: "tiánmiànjiàng", hanViet: "điềm diện tương", vi: "Tương ngọt bột mì", en: "Sweet wheat bean paste", noteVi: "Nước chấm không thể thiếu của vịt quay Bắc Kinh và thịt heo xào Kinh Tương." },
+      { id: "dt-sp09", cat: "spices", hanzi: "芝麻酱", pinyin: "zhīmajiàng", hanViet: "chi ma tương", vi: "Sốt mè rang (bơ mè)", en: "Sesame paste", noteVi: "Nước chấm đặc trưng của lẩu cừu Bắc Kinh và mì trộn Vũ Hán." },
+      { id: "dt-sp10", cat: "spices", hanzi: "沙茶酱", pinyin: "shāchájiàng", hanViet: "sa trà tương", vi: "Tương sa tế Mân Nam – Triều Sán", en: "Shacha sauce", noteVi: "Làm từ tôm khô, cá khô, tỏi và lạc; lưu ý người dị ứng hải sản hoặc lạc." },
+      { id: "dt-sp11", cat: "spices", hanzi: "腐乳", pinyin: "fǔrǔ", hanViet: "hủ nhũ", vi: "Chao / đậu phụ lên men", en: "Fermented bean curd", noteVi: "Dùng xào rau muống, ăn cháo trắng hoặc pha nước chấm lẩu." },
+      { id: "dt-sp12", cat: "spices", hanzi: "五香粉", pinyin: "wǔxiāngfěn", hanViet: "ngũ hương phấn", vi: "Bột ngũ vị hương", en: "Five-spice powder", noteVi: "Phối trộn hoa hồi, quế, đinh hương, tiểu hồi và hoa tiêu." },
+      { id: "dt-sp13", cat: "spices", hanzi: "八角", pinyin: "bājiǎo", hanViet: "bát giác", vi: "Hoa hồi", en: "Star anise", noteVi: "Thảo mộc tạo mùi thơm chủ đạo cho các món kho tàu và nước dùng phở, mì." },
+      { id: "dt-sp14", cat: "spices", hanzi: "桂皮", pinyin: "guìpí", hanViet: "quế bì", vi: "Vỏ quế", en: "Cassia bark", noteVi: "Khử mùi thịt đỏ và tăng hương ấm cho món hầm, kho." },
+      { id: "dt-sp15", cat: "spices", hanzi: "孜然", pinyin: "zīrán", hanViet: "tư nhiên", vi: "Hạt thì là Ai Cập (Cumin)", en: "Cumin", noteVi: "Gia vị đặc trưng của thịt cừu nướng Tây Bắc và Tân Cương." },
+      { id: "dt-sp16", cat: "spices", hanzi: "蒜蓉", pinyin: "suànróng", hanViet: "toán dung", vi: "Tỏi băm nhuyễn", en: "Minced garlic", noteVi: "Rất hợp với rau xào, hải sản hấp và bát nước chấm lẩu." },
+      { id: "dt-sp17", cat: "spices", hanzi: "葱花", pinyin: "cōnghuā", hanViet: "thông hoa", vi: "Hành lá thái nhỏ", en: "Chopped scallions", noteVi: "Rắc hoàn thiện món canh, mì; nếu không ăn hành dặn 'bất yếu thông'." },
+      { id: "dt-sp18", cat: "spices", hanzi: "香菜", pinyin: "xiāngcài", hanViet: "hương thái", vi: "Rau mùi / ngò rí", en: "Cilantro / coriander", noteVi: "Thường có sẵn trong mì bò Lan Châu và canh; không ăn thì nói 'bất yếu hương thái'." },
+      { id: "dt-sp19", cat: "spices", hanzi: "料酒", pinyin: "liàojiǔ", hanViet: "liệu tửu", vi: "Rượu nấu ăn (Hoàng tửu)", en: "Cooking wine (Shaoxing wine)", noteVi: "Khử tanh hải sản và thịt; người kiêng cồn tuyệt đối cần lưu ý khi gọi món." },
+      { id: "dt-sp20", cat: "spices", hanzi: "豆豉", pinyin: "dòuchǐ", hanViet: "đậu xị", vi: "Tàu xì (đậu đen lên men)", en: "Fermented black beans", noteVi: "Tạo vị mặn thơm đậm đà cho sườn hấp tàu xì và cá hấp." },
+
+      { id: "dt-d01", cat: "dietary", hanzi: "免辣", pinyin: "miǎnlà", hanViet: "miễn lạt", vi: "Hoàn toàn không cay", en: "No chili / non-spicy", noteVi: "Câu quan trọng nhất tại Tứ Xuyên, Hồ Nam, Trùng Khánh; có thể nói thêm 'bất yếu lạt'." },
+      { id: "dt-d02", cat: "dietary", hanzi: "微辣", pinyin: "wēilà", hanViet: "vi lạt", vi: "Cay nhẹ", en: "Mildly spicy", noteVi: "Lưu ý mức 'vi lạt' ở Trùng Khánh hoặc Trường Sa vẫn có thể khá cay với người mới thử." },
+      { id: "dt-d03", cat: "dietary", hanzi: "中辣", pinyin: "zhōnglà", hanViet: "trung lạt", vi: "Cay vừa", en: "Medium spicy", noteVi: "Mức tiêu chuẩn của thực khách địa phương thích ăn cay." },
+      { id: "dt-d04", cat: "dietary", hanzi: "特辣", pinyin: "tèlà", hanViet: "đặc lạt", vi: "Cực cay", en: "Extra spicy", noteVi: "Mức cay nồng tối đa với nhiều ớt hiểm và dầu ớt." },
+      { id: "dt-d05", cat: "dietary", hanzi: "不放麻", pinyin: "bù fàng má", hanViet: "bất phóng ma", vi: "Không cho hoa tiêu (không tê)", en: "No numbing peppercorn", noteVi: "Dùng khi bạn ăn được cay ớt nhưng không quen cảm giác tê lưỡi." },
+      { id: "dt-d06", cat: "dietary", hanzi: "少油少盐", pinyin: "shǎo yóu shǎo yán", hanViet: "thiểu du thiểu diêm", vi: "Ít dầu ít muối", en: "Less oil and less salt", noteVi: "Câu dặn hữu ích giúp món xào Hoa Bắc – Tứ Xuyên thanh nhẹ, hợp khẩu vị Việt." },
+      { id: "dt-d07", cat: "dietary", hanzi: "素食", pinyin: "sùshí", hanViet: "tố thực", vi: "Đồ ăn chay", en: "Vegetarian food", noteVi: "Lưu ý một số quán bình dân vẫn dùng mỡ heo hoặc nước hầm xương khi xào rau." },
+      { id: "dt-d08", cat: "dietary", hanzi: "净素", pinyin: "jìngsù", hanViet: "tịnh tố", vi: "Thuần chay nghiêm ngặt (không ngũ vị tân)", en: "Strict Buddhist vegan", noteVi: "Không thịt, không trứng sữa, không mỡ động vật và không hành tỏi hẹ." },
+      { id: "dt-d09", cat: "dietary", hanzi: "清真", pinyin: "qīngzhēn", hanViet: "thanh chân", vi: "Ẩm thực Halal (Hồi giáo)", en: "Halal cuisine", noteVi: "Biển hiệu xanh lá đặc trưng; tuyệt đối không có thịt heo và không mang đồ ngoài vào quán." },
+      { id: "dt-d10", cat: "dietary", hanzi: "花生过敏", pinyin: "huāshēng guòmǐn", hanViet: "hoa sinh quá mẫn", vi: "Dị ứng lạc (đậu phộng)", en: "Peanut allergy", noteVi: "Cần báo trước vì dầu lạc và lạc rang dùng rất phổ biến ở Quảng Đông và Tứ Xuyên." },
+      { id: "dt-d11", cat: "dietary", hanzi: "海鲜过敏", pinyin: "hǎixiān guòmǐn", hanViet: "hải tiên quá mẫn", vi: "Dị ứng hải sản", en: "Seafood allergy", noteVi: "Cẩn trọng với dầu hào, sốt XO, sa tế và tôm khô ẩn trong nước dùng." },
+      { id: "dt-d12", cat: "dietary", hanzi: "坚果过敏", pinyin: "jiānguǒ guòmǐn", hanViet: "kiên quả quá mẫn", vi: "Dị ứng các loại hạt", en: "Tree nut allergy", noteVi: "Báo rõ khi gọi món bánh điểm tâm, gà Cung Bảo hoặc chè." },
+      { id: "dt-d13", cat: "dietary", hanzi: "不要味精", pinyin: "bù yào wèijīng", hanViet: "bất yếu vị tinh", vi: "Không dùng bột ngọt (mì chính)", en: "No MSG", noteVi: "Có thể nói thêm 'bất yếu kê tinh' nếu tránh cả hạt nêm gà." },
+      { id: "dt-d14", cat: "dietary", hanzi: "不要香菜", pinyin: "bù yào xiāngcài", hanViet: "bất yếu hương thái", vi: "Không bỏ rau mùi", en: "No cilantro", noteVi: "Rất hữu ích khi gọi mì, lẩu hoặc món trộn nguội." },
+      { id: "dt-d15", cat: "dietary", hanzi: "鸳鸯锅", pinyin: "yuānyāngguō", hanViet: "uyên ương oa", vi: "Nồi lẩu hai ngăn (một cay một thanh)", en: "Half-and-half hotpot", noteVi: "Giải pháp tối ưu khi đi nhóm có người ăn cay và người không ăn cay." },
+      { id: "dt-d16", cat: "dietary", hanzi: "常温水", pinyin: "chángwēnshuǐ", hanViet: "thường ôn thủy", vi: "Nước lọc nhiệt độ phòng", en: "Room-temperature water", noteVi: "Nhà hàng Trung Quốc mặc định phục vụ nước ấm (ôn thủy) hoặc trà nóng." },
+      { id: "dt-d17", cat: "dietary", hanzi: "招牌菜", pinyin: "zhāopáicài", hanViet: "chiêu bài thái", vi: "Món đặc sản tiêu biểu của quán", en: "Signature dish", noteVi: "Hỏi nhân viên về 'chiêu bài thái' để chọn nhanh món chuẩn vị nhất." },
+      { id: "dt-d18", cat: "dietary", hanzi: "买单", pinyin: "mǎidān", hanViet: "mãi đan", vi: "Tính tiền / thanh toán hóa đơn", en: "Check / bill please", noteVi: "Hoặc nói 'kết trướng' (结账); nhiều quán cho phép quét mã QR trên bàn để trả trực tiếp." },
+      { id: "dt-d19", cat: "dietary", hanzi: "打包", pinyin: "dǎbāo", hanViet: "đả bao", vi: "Gói thức ăn mang về", en: "Pack leftovers to go", noteVi: "Tập quán văn minh chống lãng phí lương thực, mọi nhà hàng đều sẵn sàng hỗ trợ." },
+      { id: "dt-d20", cat: "dietary", hanzi: "开发票", pinyin: "kāi fāpiào", hanViet: "khai phát phiếu", vi: "Xuất hóa đơn tài chính", en: "Issue official tax invoice", noteVi: "Cần thiết khi ăn tiếp khách công tác; hiện nay đa số xuất hóa đơn điện tử qua mã QR." }
+    ],
+    etiquetteTeaBanquet: [
+      {
+        id: "etiq-kouzhi",
+        titleVi: "Khấu chỉ tạ trà (Gõ ngón tay cảm ơn)",
+        titleEn: "Finger-Tapping Tea Thanks (Kouzhili)",
+        zhTerm: "叩指礼",
+        pinyin: "Kòuzhǐlǐ",
+        ruleVi: "Khi chủ trà hoặc người khác rót trà cho mình, khum nhẹ hai ngón trỏ và giữa gõ khẽ ba nhịp lên mặt bàn để thay lời cảm ơn (bậc dưới với trưởng bối dùng cả bàn tay khum năm ngón, đồng trang lứa dùng hai ngón).",
+        ruleEn: "When tea is poured for you, gently tap two curved fingers (index and middle) lightly on the table three times in gratitude; use a cupped five-finger gesture toward elders."
+      },
+      {
+        id: "etiq-seven-tenths",
+        titleVi: "Trà rót bảy phần, rượu rót đầy",
+        titleEn: "Seven-Tenths Tea, Full Cup of Wine",
+        zhTerm: "浅茶满酒",
+        pinyin: "Qiǎnchá Mǎnjiǔ",
+        ruleVi: "Rót trà chỉ nên đầy khoảng bảy phần chén để giữ hương thơm và tránh bỏng tay khách; đồng thời tuyệt đối không hướng vòi ấm trà chĩa thẳng vào mặt người đối diện.",
+        ruleEn: "Fill tea cups to roughly seventy percent to preserve aroma and prevent scalding; never leave the teapot spout pointed directly at another guest."
+      },
+      {
+        id: "etiq-seating",
+        titleVi: "Thứ tự chỗ ngồi bàn tròn",
+        titleEn: "Round-Table Seating Hierarchy",
+        zhTerm: "面门居中为尊",
+        pinyin: "Miànmén Jūzhōng Wéizūn",
+        ruleVi: "Vị trí chủ tọa (Chủ nhân) ngồi chính giữa hướng thẳng ra cửa phòng; khách danh dự nhất ngồi bên tay phải chủ tọa, khách quan trọng thứ hai ngồi bên tay trái; người trẻ hoặc trợ lý ngồi gần cửa để tiện gọi phục vụ.",
+        ruleEn: "The host takes the seat directly facing the entrance; the guest of honor sits to the host's right, the second-ranking guest to the left, and junior attendees sit closest to the door."
+      },
+      {
+        id: "etiq-chopsticks",
+        titleVi: "Kiêng kỵ khi đặt và dùng đũa",
+        titleEn: "Chopstick Etiquette and Taboos",
+        zhTerm: "筷子礼仪",
+        pinyin: "Kuàizi Lǐyí",
+        ruleVi: "Tuyệt đối không cắm thẳng đứng đôi đũa vào bát cơm (gợi liên tưởng bát hương cúng tế), không gõ đũa vào thành bát, không dùng đũa chỉ người khác hoặc bới lật thức ăn trong đĩa chung.",
+        ruleEn: "Never stick chopsticks vertically into rice (resembling funerary incense), tap bowls, point at people, or rummage through shared platters."
+      },
+      {
+        id: "etiq-toasting",
+        titleVi: "Kính rượu hạ thấp miệng chén",
+        titleEn: "Lowering the Glass During Toasts",
+        zhTerm: "敬酒礼仪",
+        pinyin: "Jìngjiǔ Lǐyí",
+        ruleVi: "Khi cụng ly với trưởng bối, đối tác cấp cao hoặc chủ tiệc, luôn đỡ đáy ly bằng tay trái và hạ miệng ly của mình thấp hơn miệng ly đối phương để biểu thị sự tôn trọng.",
+        ruleEn: "When clinking glasses with elders, senior partners, or hosts, support the base with your left hand and position your rim lower than theirs as a mark of respect."
+      },
+      {
+        id: "etiq-lazy-susan",
+        titleVi: "Quy tắc xoay mâm bàn tròn",
+        titleEn: "Lazy Susan Rotation Courtesy",
+        zhTerm: "转盘礼仪",
+        pinyin: "Zhuànpán Lǐyí",
+        ruleVi: "Xoay mâm kính chậm rãi theo chiều kim đồng hồ; luôn quan sát chắc chắn không có ai đang gắp thức ăn trước khi xoay và ưu tiên xoay món mới dọn về phía khách chính trước.",
+        ruleEn: "Rotate the glass turntable gently clockwise, verify no one is mid-serving before moving it, and bring newly arrived dishes to the guest of honor first."
+      },
+      {
+        id: "etiq-whole-fish",
+        titleVi: "Không lật ngược con cá nguyên con",
+        titleEn: "Serving Whole Fish Without Flipping",
+        zhTerm: "吃鱼不翻身",
+        pinyin: "Chīyú Bù Fānshēn",
+        ruleVi: "Tại vùng duyên hải và bàn tiệc thương mại, sau khi ăn hết phần thịt mặt trên, rút khung xương sống ra rồi gắp mặt dưới thay vì lật úp con cá (tránh điềm 'lật thuyền').",
+        ruleEn: "In coastal regions and business banquets, lift out the central backbone to eat the underside rather than flipping the fish over, avoiding the auspicious taboo of 'capsizing a boat.'"
+      },
+      {
+        id: "etiq-hosting-bill",
+        titleVi: "Nguyên tắc mời tiệc và thanh toán",
+        titleEn: "Hosting Protocol and Settling the Bill",
+        zhTerm: "请客买单礼俗",
+        pinyin: "Qǐngkè Mǎidān Lǐsú",
+        ruleVi: "Trong văn hóa tiếp đãi Trung Hoa, người đứng ra mời tiệc thường chủ động thanh toán trọn gói (hoặc kín đáo ra quầy thanh toán trước khi tiệc tan) thay vì chia đều hóa đơn ngay tại bàn.",
+        ruleEn: "In formal Chinese hospitality, the inviting host customarily settles the entire check—often discreetly away from the table—rather than splitting the bill per person."
+      }
+    ],
+    timberArchitectureIds: [
+      {
+        id: "arch-dougong",
+        nameVi: "Đấu Củng (Hệ con sơn chồng đấu)",
+        nameEn: "Dougong Interlocking Bracket Sets",
+        nameZh: "斗拱",
+        pinyin: "Dǒugǒng",
+        descVi: "Tổ hợp các khối gỗ vuông (đấu) và tay đỡ cong (củng) lắp ghép bằng mộng gỗ không dùng đinh sắt giữa đầu cột và mái hiên, vừa vươn xa mái chống mưa vừa hấp thụ lực địa chấn hiệu quả.",
+        descEn: "Nail-free mortise-and-tenon clusters of bearing blocks (dou) and bracket arms (gong) seated atop columns to support deep eaves while dissipating seismic energy."
+      },
+      {
+        id: "arch-tailiang",
+        nameVi: "Kết cấu Đài Lương (Nâng xà chồng rường)",
+        nameEn: "Tailiang Post-and-Beam Timber Frame",
+        nameZh: "抬梁式木构",
+        pinyin: "Táiliángshì Mùgòu",
+        descVi: "Kiểu khung gỗ chủ đạo ở Hoa Bắc và cung điện hoàng gia: các xà ngang ngắn dần xếp chồng lên cột ngắn tạo độ vồng mái uy nghi và không gian nội thất rộng thoáng, ít cột giữa.",
+        descEn: "Predominant Northern and imperial framing system stacking progressively shorter horizontal beams on stub posts, yielding grand curved roofs and expansive column-free interiors."
+      },
+      {
+        id: "arch-chuandou",
+        nameVi: "Kết cấu Xuyên Đấu (Cột xuyên kèo)",
+        nameEn: "Chuandou Column-and-Tie Timber Frame",
+        nameZh: "穿斗式木构",
+        pinyin: "Chuāndǒushì Mùgòu",
+        descVi: "Phổ biến trong dân cư Hoa Nam và Tây Nam: dùng nhiều cột gỗ mảnh dựng thẳng lên đỡ đòn tay mái, liên kết ngang bằng các thanh xuyên (xuyên phương), tiết kiệm gỗ lớn và thoáng khí.",
+        descEn: "Prevalent in Southern and Southwestern vernacular dwellings, using closely spaced slender columns rising directly to the purlins and tied by piercing horizontal tenons."
+      },
+      {
+        id: "arch-matouqiang",
+        nameVi: "Mã Đầu Tường (Tường đầu ngựa Huy Châu)",
+        nameEn: "Matouqiang Horse-Head Gable Wall",
+        nameZh: "马头墙",
+        pinyin: "Mǎtóuqiáng",
+        descVi: "Tường gạch quét vôi trắng vươn cao hơn mái ngói theo từng bậc giật cấp đặc trưng kiến trúc Huy Phái (An Huy – Giang Tây), chức năng chính là ngăn cháy lan giữa các nhà san sát.",
+        descEn: "Stepped whitewashed brick gable walls rising above dark tiled roofs in Huizhou architecture, engineered primarily as firebreaks across densely built villages."
+      },
+      {
+        id: "arch-siheyuan",
+        nameVi: "Tứ Hợp Viện Bắc Kinh",
+        nameEn: "Siheyuan Courtyard Residence",
+        nameZh: "四合院",
+        pinyin: "Sìhéyuàn",
+        descVi: "Quần thể nhà ở khép kín quay quanh sân trong vuông vắn theo trục Bắc–Nam (Chính phòng hướng Nam đón nắng đông, che gió bắc), phản ánh trật tự gia đình Nho giáo và thích nghi khí hậu lục địa.",
+        descEn: "Enclosed residential compound organized around a central courtyard along a north–south axis, maximizing winter sunlight while embodying Confucian spatial hierarchy."
+      },
+      {
+        id: "arch-tulou",
+        nameVi: "Phúc Kiến Thổ Lâu",
+        nameEn: "Fujian Tulou Earthen Building",
+        nameZh: "福建土楼",
+        pinyin: "Fújiàn Tǔlóu",
+        descVi: "Công trình cư trú cộng đồng nhiều tầng bằng tường đất nện trộn tre gỗ dày tới 1–2 mét hình tròn hoặc vuông của người Khách Gia và Mân Nam, kết hợp phòng thủ kiên cố với sinh hoạt dòng họ.",
+        descEn: "Multi-story circular or square communal dwellings built of thick rammed earth reinforced with bamboo strips by Hakka and Minnan clans for defense and shared lineage life."
+      }
+    ],
+    intangibleHeritage44: [
+      { id: "ich-01", nameVi: "Côn Khúc", nameEn: "Kun Qu opera", nameZh: "昆曲", year: 2008, domainVi: "Nghệ thuật trình diễn", domainEn: "Performing arts" },
+      { id: "ich-02", nameVi: "Nghệ thuật Cổ Cầm", nameEn: "Guqin and its music", nameZh: "古琴艺术", year: 2008, domainVi: "Nghệ thuật trình diễn", domainEn: "Performing arts" },
+      { id: "ich-03", nameVi: "Nghệ thuật Muqam của người Duy Ngô Nhĩ Tân Cương", nameEn: "Uyghur Muqam of Xinjiang", nameZh: "新疆维吾尔木卡姆艺术", year: 2008, domainVi: "Nghệ thuật trình diễn", domainEn: "Performing arts" },
+      { id: "ich-04", nameVi: "Dân ca trường điệu Mông Cổ (Urtiin Duu)", nameEn: "Urtiin Duu, traditional folk long song", nameZh: "蒙古族长调民歌", year: 2008, domainVi: "Nghệ thuật trình diễn", domainEn: "Performing arts" },
+      { id: "ich-05", nameVi: "Kỹ thuật nuôi tằm dệt lụa truyền thống Trung Quốc", nameEn: "Sericulture and silk craftsmanship of China", nameZh: "中国传统桑蚕丝织技艺", year: 2009, domainVi: "Thủ công mỹ nghệ truyền thống", domainEn: "Traditional craftsmanship" },
+      { id: "ich-06", nameVi: "Nam Âm (Phúc Kiến)", nameEn: "Nanyin", nameZh: "南音", year: 2009, domainVi: "Nghệ thuật trình diễn", domainEn: "Performing arts" },
+      { id: "ich-07", nameVi: "Kỹ thuật dệt gấm Vân Cẩm Nam Kinh", nameEn: "Craftsmanship of Nanjing Yunjin brocade", nameZh: "南京云锦织造技艺", year: 2009, domainVi: "Thủ công mỹ nghệ truyền thống", domainEn: "Traditional craftsmanship" },
+      { id: "ich-08", nameVi: "Kỹ thuật làm giấy Tuyên truyền thống", nameEn: "Traditional handicrafts of making Xuan paper", nameZh: "宣纸传统制作技艺", year: 2009, domainVi: "Thủ công mỹ nghệ truyền thống", domainEn: "Traditional craftsmanship" },
+      { id: "ich-09", nameVi: "Đại ca dân tộc Động", nameEn: "Grand song of the Dong ethnic group", nameZh: "侗族大歌", year: 2009, domainVi: "Nghệ thuật trình diễn", domainEn: "Performing arts" },
+      { id: "ich-10", nameVi: "Việt Kịch (Quảng Đông)", nameEn: "Yueju opera", nameZh: "粤剧", year: 2009, domainVi: "Nghệ thuật trình diễn", domainEn: "Performing arts" },
+      { id: "ich-11", nameVi: "Sử thi Gesar", nameEn: "Gesar epic tradition", nameZh: "格萨（斯）尔", year: 2009, domainVi: "Truyền thống và biểu đạt truyền khẩu", domainEn: "Oral traditions and expressions" },
+      { id: "ich-12", nameVi: "Kỹ thuật nung gốm thanh từ Long Tuyền", nameEn: "Traditional firing technology of Longquan celadon", nameZh: "龙泉青瓷传统烧制技艺", year: 2009, domainVi: "Thủ công mỹ nghệ truyền thống", domainEn: "Traditional craftsmanship" },
+      { id: "ich-13", nameVi: "Nghệ thuật Nhiệt Cống (Regong)", nameEn: "Regong arts", nameZh: "热贡艺术", year: 2009, domainVi: "Thủ công mỹ nghệ truyền thống", domainEn: "Traditional craftsmanship" },
+      { id: "ich-14", nameVi: "Tạng Hý (Kịch Tây Tạng)", nameEn: "Tibetan opera", nameZh: "藏戏", year: 2009, domainVi: "Nghệ thuật trình diễn", domainEn: "Performing arts" },
+      { id: "ich-15", nameVi: "Sử thi Manas", nameEn: "Manas", nameZh: "玛纳斯", year: 2009, domainVi: "Truyền thống và biểu đạt truyền khẩu", domainEn: "Oral traditions and expressions" },
+      { id: "ich-16", nameVi: "Nghệ thuật hát hầu âm Khoomei Mông Cổ", nameEn: "Mongolian art of singing, Khoomei", nameZh: "呼麦", year: 2009, domainVi: "Nghệ thuật trình diễn", domainEn: "Performing arts" },
+      { id: "ich-17", nameVi: "Dân ca Hoa Nhi (Hua'er)", nameEn: "Hua'er", nameZh: "花儿", year: 2009, domainVi: "Nghệ thuật trình diễn", domainEn: "Performing arts" },
+      { id: "ich-18", nameVi: "Cổ nhạc Tây An", nameEn: "Xi'an wind and percussion ensemble", nameZh: "西安鼓乐", year: 2009, domainVi: "Nghệ thuật trình diễn", domainEn: "Performing arts" },
+      { id: "ich-19", nameVi: "Múa Nông Nhạc dân tộc Triều Tiên tại Trung Quốc", nameEn: "Farmers' dance of China's Korean ethnic group", nameZh: "中国朝鲜族农乐舞", year: 2009, domainVi: "Nghệ thuật trình diễn", domainEn: "Performing arts" },
+      { id: "ich-20", nameVi: "Thư pháp Trung Quốc", nameEn: "Chinese calligraphy", nameZh: "中国书法", year: 2009, domainVi: "Nghệ thuật tạo hình và thủ công truyền thống", domainEn: "Traditional craftsmanship" },
+      { id: "ich-21", nameVi: "Nghệ thuật Triện khắc Trung Quốc", nameEn: "Art of Chinese seal engraving", nameZh: "中国篆刻", year: 2009, domainVi: "Thủ công mỹ nghệ truyền thống", domainEn: "Traditional craftsmanship" },
+      { id: "ich-22", nameVi: "Nghệ thuật cắt giấy Trung Quốc", nameEn: "Chinese paper-cut", nameZh: "中国剪纸", year: 2009, domainVi: "Thủ công mỹ nghệ truyền thống", domainEn: "Traditional craftsmanship" },
+      { id: "ich-23", nameVi: "Kỹ thuật dựng kiến trúc khung gỗ truyền thống Trung Quốc", nameEn: "Chinese traditional architectural craftsmanship for timber-framed structures", nameZh: "中国传统木结构建筑营造技艺", year: 2009, domainVi: "Thủ công mỹ nghệ truyền thống", domainEn: "Traditional craftsmanship" },
+      { id: "ich-24", nameVi: "Tết Đoan Ngọ", nameEn: "Dragon Boat festival", nameZh: "端午节", year: 2009, domainVi: "Tập quán xã hội, tín ngưỡng và lễ hội", domainEn: "Social practices, rituals and festive events" },
+      { id: "ich-25", nameVi: "Tín ngưỡng và tập tục Ma Tổ (Thiên Hậu)", nameEn: "Mazu belief and customs", nameZh: "妈祖信俗", year: 2009, domainVi: "Tập quán xã hội, tín ngưỡng và lễ hội", domainEn: "Social practices, rituals and festive events" },
+      { id: "ich-26", nameVi: "Kỹ thuật in khắc bản gỗ Trung Quốc", nameEn: "China engraved block printing technique", nameZh: "中国雕版印刷技艺", year: 2009, domainVi: "Thủ công mỹ nghệ truyền thống", domainEn: "Traditional craftsmanship" },
+      { id: "ich-27", nameVi: "Tết Năm Mới dân tộc Khương (chuyển sang Danh sách Đại diện 2024)", nameEn: "Qiang New Year festival", nameZh: "羌年", year: 2009, domainVi: "Tập quán xã hội, tín ngưỡng và lễ hội", domainEn: "Social practices, rituals and festive events" },
+      { id: "ich-28", nameVi: "Kỹ thuật dựng cầu vòm gỗ truyền thống Trung Quốc (chuyển sang Danh sách Đại diện 2024)", nameEn: "Traditional design and practices for building Chinese wooden arch bridges", nameZh: "中国木拱桥传统营造技艺", year: 2009, domainVi: "Thủ công mỹ nghệ truyền thống", domainEn: "Traditional craftsmanship" },
+      { id: "ich-29", nameVi: "Kỹ thuật se sợi, nhuộm, dệt và thêu truyền thống dân tộc Lê (chuyển sang Danh sách Đại diện 2024)", nameEn: "Traditional Li textile techniques: spinning, dyeing, weaving and embroidering", nameZh: "黎族传统纺染织绣技艺", year: 2009, domainVi: "Thủ công mỹ nghệ truyền thống", domainEn: "Traditional craftsmanship" },
+      { id: "ich-30", nameVi: "Kinh Kịch", nameEn: "Peking opera", nameZh: "京剧", year: 2010, domainVi: "Nghệ thuật trình diễn", domainEn: "Performing arts" },
+      { id: "ich-31", nameVi: "Châm cứu và cứu ngải trong Y học Cổ truyền Trung Quốc", nameEn: "Acupuncture and moxibustion of traditional Chinese medicine", nameZh: "中医针灸", year: 2010, domainVi: "Tri thức và tập quán về tự nhiên và vũ trụ", domainEn: "Knowledge and practices concerning nature and the universe" },
+      { id: "ich-32", nameVi: "Kỹ thuật đóng thuyền buồm Phúc Thuyền vách ngăn kín nước", nameEn: "Watertight-bulkhead technology of Chinese junks", nameZh: "中国水密隔舱福船制造技艺", year: 2010, domainVi: "Danh sách Bảo vệ Khẩn cấp – Thủ công truyền thống", domainEn: "Urgent Safeguarding List – Traditional craftsmanship" },
+      { id: "ich-33", nameVi: "Kỹ thuật in chữ rời bằng gỗ Trung Quốc", nameEn: "Wooden movable-type printing of China", nameZh: "中国活字印刷术", year: 2010, domainVi: "Danh sách Bảo vệ Khẩn cấp – Thủ công truyền thống", domainEn: "Urgent Safeguarding List – Traditional craftsmanship" },
+      { id: "ich-34", nameVi: "Nghệ thuật lễ hội Meshrep (Mạch Tây Nhiệt Phủ)", nameEn: "Meshrep", nameZh: "麦西热甫", year: 2010, domainVi: "Danh sách Bảo vệ Khẩn cấp – Tập quán xã hội và trình diễn", domainEn: "Urgent Safeguarding List – Social practices and performing arts" },
+      { id: "ich-35", nameVi: "Nghệ thuật rối bóng Trung Quốc", nameEn: "Chinese shadow puppetry", nameZh: "中国皮影戏", year: 2011, domainVi: "Nghệ thuật trình diễn", domainEn: "Performing arts" },
+      { id: "ich-36", nameVi: "Nghệ thuật kể chuyện Yimakan dân tộc Hách Triết", nameEn: "Hezhen Yimakan storytelling", nameZh: "赫哲族伊玛堪", year: 2011, domainVi: "Truyền thống và biểu đạt truyền khẩu", domainEn: "Oral traditions and expressions" },
+      { id: "ich-37", nameVi: "Chiến lược đào tạo thế hệ kế cận nghệ thuật múa rối Phúc Kiến", nameEn: "Strategy for training coming generations of Fujian puppetry practitioners", nameZh: "福建木偶戏后继人才培养计划", year: 2012, domainVi: "Danh mục Thực hành Bảo vệ Tiêu biểu", domainEn: "Register of Good Safeguarding Practices" },
+      { id: "ich-38", nameVi: "Châu Toán Trung Quốc (tri thức và thực hành tính toán bằng bàn tính)", nameEn: "Chinese Zhusuan, knowledge and practices of mathematical calculation through the abacus", nameZh: "中国珠算", year: 2013, domainVi: "Tri thức và tập quán về tự nhiên và vũ trụ", domainEn: "Knowledge and practices concerning nature and the universe" },
+      { id: "ich-39", nameVi: "Nhị Thập Tứ Tiết Khí (24 Tiết khí)", nameEn: "The Twenty-Four Solar Terms, knowledge in China of time and practices developed through observation of the sun's annual motion", nameZh: "二十四节气", year: 2016, domainVi: "Tri thức và tập quán về tự nhiên và vũ trụ", domainEn: "Knowledge and practices concerning nature and the universe" },
+      { id: "ich-40", nameVi: "Liệu pháp tắm dược thảo Lum trong Y học Cổ truyền Tây Tạng (Sowa Rigpa)", nameEn: "Lum medicinal bathing of Sowa Rigpa, knowledge and practices concerning life, health and illness prevention and treatment among the Tibetan people in China", nameZh: "藏医药浴法", year: 2018, domainVi: "Tri thức và tập quán về tự nhiên và vũ trụ", domainEn: "Knowledge and practices concerning nature and the universe" },
+      { id: "ich-41", nameVi: "Thái Cực Quyền", nameEn: "Taijiquan", nameZh: "太极拳", year: 2020, domainVi: "Tập quán xã hội, tri thức và thực hành thân – tâm", domainEn: "Social practices and traditional body-mind heritage" },
+      { id: "ich-42", nameVi: "Lễ Tống Vương Thuyền (Ong Chun / Wangchuan)", nameEn: "Ong Chun/Wangchuan/Wangkang ceremony, rituals and related practices for maintaining the sustainable connection between man and the ocean", nameZh: "送王船", year: 2020, domainVi: "Tập quán xã hội, tín ngưỡng và lễ hội", domainEn: "Social practices, rituals and festive events" },
+      { id: "ich-43", nameVi: "Kỹ thuật chế biến trà truyền thống và tập quán xã hội liên quan tại Trung Quốc", nameEn: "Traditional tea processing techniques and associated social practices in China", nameZh: "中国传统制茶技艺及其相关习俗", year: 2022, domainVi: "Thủ công truyền thống và tập quán xã hội", domainEn: "Traditional craftsmanship and social practices" },
+      { id: "ich-44", nameVi: "Tết Nguyên Đán – Thực hành xã hội của người Trung Quốc đón năm mới truyền thống", nameEn: "Spring festival, social practices of the Chinese people in celebration of traditional new year", nameZh: "春节——中国人庆祝传统新年的社会实践", year: 2024, domainVi: "Tập quán xã hội, tín ngưỡng và lễ hội", domainEn: "Social practices, rituals and festive events" }
+    ]
+  };
+})();
+// --- Backward-compatible Adapter (Non-Clinical TCM + Eight Great Cuisines) ---
+(function () {
+  "use strict";
+  var sci = window.CCE_V4_SCI_TEA || {};
+  var tcm = sci.tcmHeritageOverview || {};
   var EIGHT_CUISINES = [
     { id: "cui-chuan", zh: "川菜", vi: "Xuyên Thái (Tứ Xuyên)", en: "Sichuan Cuisine", techVi: "Hoa tiêu + ớt (Mala), Đậu tương Tỳ Huyện, đảo chảo nhanh.", techEn: "Mala numbing peppercorn, Pixian doubanjiang fermentation, layered seasoning.", sigVi: "Đậu phụ Ma Bà, Gà Cung Bảo, Lẩu Tứ Xuyên" },
     { id: "cui-yue", zh: "粤菜", vi: "Việt Thái (Quảng Đông)", en: "Cantonese Cuisine", techVi: "Giữ vị tươi nguyên bản (Thanh – Tiên – Hoạt – Nộn), hấp thủy nhiệt, điểm tâm Dimsum.", techEn: "Respecting natural umami via precision steaming, roasting, and Yum Cha dimsum.", sigVi: "Há cảo tôm, Xá xíu mật ong, Cháo sườn Quảng Đông" },
-    { id: "cui-lu", zh: "鲁菜", vi: "Lỗ Thái (Sơn Đông)", en: "Shandong Cuisine", techVi: "Đứng đầu Bát đại thái hệ trong cung đình Bắc Kinh; tinh thông hầm nước dùng thanh và hành tây.", techEn: "Imperial North ancestor renowned for crystal consommé broths and seafood Braising.", sigVi: "Hải sâm om hành, Cá chép chua ngọt" },
+    { id: "cui-lu", zh: "鲁菜", vi: "Lỗ Thái (Sơn Đông)", en: "Shandong Cuisine", techVi: "Đứng đầu Bát đại thái hệ trong cung đình Bắc Kinh; tinh thông hầm nước dùng thanh và hành tây.", techEn: "Imperial North ancestor renowned for crystal consommé broths and seafood braising.", sigVi: "Hải sâm om hành, Cá chép chua ngọt" },
     { id: "cui-su", zh: "苏菜", vi: "Tô Thái (Giang Tô)", en: "Jiangsu Cuisine", techVi: "Kỹ thuật thái dao tinh xảo (Văn Tư Đậu Phụ), lửa nhỏ hầm nhừ thanh ngọt.", techEn: "Virtuoso knife geometry and slow-braised mild sweetness.", sigVi: "Sư tử đầu (thịt viên), Cá quế Tùng Thử" },
     { id: "cui-zhe", zh: "浙菜", vi: "Chiết Thái (Chiết Giang)", en: "Zhejiang Cuisine", techVi: "Thanh đạm thanh nhã, kết hợp trà Long Tỉnh Hàng Châu & măng non Giang Nam.", techEn: "Delicate river seafood and Hangzhou Longjing tea infusions.", sigVi: "Tôm nõn xào trà Long Tỉnh, Thịt kho Đông Pha" },
-    { id: "cui-min", zh: "闽菜", vi: "Mân Thái (Phúc Kiến)", en: "Fujian Cuisine", techVi: "Canh hải sản núi rừng (Phật Khiêu Tường), men rượu hồng cúc.", techEn: "Complex mountain-and-sea stocks accented with red yeast rice wine lees.", sigVi: "Phật Khiêu Tường, Súp cá viên Phúc Châu" },
+    { id: "cui-min", zh: "Mân Thái", zhFull: "闽菜", vi: "Mân Thái (Phúc Kiến)", en: "Fujian Cuisine", techVi: "Canh hải sản núi rừng (Phật Khiêu Tường), men rượu hồng cúc.", techEn: "Complex mountain-and-sea stocks accented with red yeast rice wine lees.", sigVi: "Phật Khiêu Tường, Súp cá viên Phúc Châu" },
     { id: "cui-xiang", zh: "湘菜", vi: "Tương Thái (Hồ Nam)", en: "Hunan Cuisine", techVi: "Cay thuần khiết (ớt ngâm muối + xông khói lạp vị).", techEn: "Pure fermented chili heat paired with cured mountain smoked meats.", sigVi: "Đầu cá hấp ớt băm, Thịt xào ớt Hồ Nam" },
     { id: "cui-hui", zh: "徽菜", vi: "Huy Thái (An Huy)", en: "Anhui Cuisine", techVi: "Hầm lửa lớn – nhỏ bằng nồi đất núi Hoàng Sơn (măng khô, giăm bông Kim Hoa).", techEn: "Highland wild-herb stews and cured mountain ham braising.", sigVi: "Cá Quế thối Huy Châu, Vịt hầm măng khô" }
   ];
-
-  var TCM_FOUNDATIONS = {
-    disclaimerVi: "Lưu ý nhận thức luận: Phần Đông y (中医) trình bày lịch sử tư tưởng y học cổ truyền, kinh điển và dưỡng sinh văn hóa để tham khảo học thuật. Nội dung KHÔNG thay thế chẩn đoán, kê đơn hay điều trị y khoa chuyên nghiệp.",
-    disclaimerEn: "Epistemic Framing: This Traditional Chinese Medicine (中医) section presents historical intellectual foundations, classical texts, and seasonal wellness traditions strictly for cultural education—NOT clinical diagnosis or medical treatment.",
-    classics: [
-      { id: "tcm-neijing", zh: "《黄帝内经》", vi: "Hoàng Đế Nội Kinh (Tố Vấn & Linh Khu)", en: "Yellow Emperor's Inner Canon", noteVi: "Đặt nền móng lý luận Âm Dương – Ngũ Hành, Tạng Phủ, Kinh Lạc và nguyên tắc 'Trị vị bệnh' (phòng ngừa theo 4 mùa).", noteEn: "Establishes Yin-Yang, Five Phases, Zang-Fu, Meridian frameworks, and seasonal preventative harmony." },
-      { id: "tcm-shanghan", zh: "《伤寒杂病论》", vi: "Thương Hàn Tạp Bệnh Luận (Trương Trọng Cảnh)", en: "Treatise on Cold Damage Disorders", noteVi: "Hệ thống hóa Biện chứng Luận trị Lục Kinh và phương thang phối ngũ cổ điển thời Đông Hán.", noteEn: "Codified Six-Channel pattern differentiation and classical herbal formula architecture." },
-      { id: "tcm-bencao", zh: "《本草纲目》", vi: "Bản Thảo Cương Mục (Lý Thời Trân · 1578)", en: "Compendium of Materia Medica (1578)", noteVi: "Tổng kết 1.892 vị thảo mộc, khoáng vật và động vật theo phân loại tự nhiên học thời Minh — từng ảnh hưởng lớn tới Hải Thượng Lãn Ông ở Việt Nam.", noteEn: "Ming encyclopedic taxonomy of 1,892 natural substances that strongly engaged Vietnamese medical scholars." }
-    ],
-    principles: [
-      { id: "tcm-p1", zh: "藏象学说 (五脏六腑)", vi: "Học thuyết Tạng Tượng (Ngũ Tạng – Lục Phủ)", en: "Zang-Fu Functional System Model", summaryVi: "Can–Mộc, Tâm–Hỏa, Tỳ–Thổ, Phế–Kim, Thận–Thủy biểu trưng mạng lưới điều phối sinh lý liên kết thay vì chỉ cơ quan giải phẫu tách rời.", summaryEn: "Models Liver-Wood, Heart-Fire, Spleen-Earth, Lung-Metal, Kidney-Water as interconnected physiological networks rather than isolated organs." },
-      { id: "tcm-p2", zh: "经络气血", vi: "Hệ Kinh Lạc & Khí Huyết", en: "Meridian Pathways & Qi-Blood Flow", summaryVi: "12 Chính kinh nối kết biểu lý với tạng phủ; là cơ sở khái niệm cho châm cứu, bấm huyệt và thái cực dưỡng sinh.", summaryEn: "Twelve primary pathways linking surface acupoints with internal zang-fu balance in classical acupuncture and Taiji." },
-      { id: "tcm-p3", zh: "药食同源 · 节气养生", vi: "Dược Thực Đồng Nguyên & Dưỡng sinh Tiết khí", en: "Food-Medicine Continuity & Seasonal Wellness", summaryVi: "Khẩu vị ẩm thực 4 mùa Đông Á (gừng, kỳ tử, táo đỏ, trà xanh, cúc hoa) phản ánh tri thức thích nghi khí hậu bản địa.", summaryEn: "Everyday East Asian culinary staples (ginger, jujube, chrysanthemum, roasted tea) reflect climate-adaptive food traditions." }
-    ]
-  };
-
+  EIGHT_CUISINES[5].zh = "闽菜";
   window.CCE_SCIENCE_TCM_FOOD_V4 = {
     eightCuisines: EIGHT_CUISINES,
-    tcmFoundations: TCM_FOUNDATIONS
+    tcmFoundations: {
+      disclaimerVi: (tcm.disclaimerVi ? tcm.disclaimerVi + " " : "") + "(Nội dung KHÔNG thay thế chẩn đoán hay điều trị y khoa lâm sàng.)",
+      disclaimerEn: (tcm.disclaimerEn ? tcm.disclaimerEn + " " : "") + "(Strictly educational cultural study—NOT clinical medical diagnosis or treatment.)",
+      classics: [
+        { id: "tcm-neijing", zh: "《黄帝内经》", vi: "Hoàng Đế Nội Kinh (Tố Vấn & Linh Khu)", en: "Yellow Emperor's Inner Canon", noteVi: "Đặt nền móng lý luận Âm Dương – Ngũ Hành, Tạng Phủ, Kinh Lạc và dưỡng sinh theo 4 mùa.", noteEn: "Establishes Yin-Yang, Five Phases, Zang-Fu, Meridian frameworks, and seasonal preventative harmony." },
+        { id: "tcm-shanghan", zh: "《伤寒杂病论》", vi: "Thương Hàn Tạp Bệnh Luận (Trương Trọng Cảnh)", en: "Treatise on Cold Damage Disorders", noteVi: "Hệ thống hóa Biện chứng Luận trị Lục Kinh và phương thang phối ngũ cổ điển thời Đông Hán.", noteEn: "Codified Six-Channel pattern differentiation and classical herbal formula architecture." },
+        { id: "tcm-bencao", zh: "《本草纲目》", vi: "Bản Thảo Cương Mục (Lý Thời Trân · 1578)", en: "Compendium of Materia Medica (1578)", noteVi: "Tổng kết 1.892 vị tự nhiên học thời Minh — ảnh hưởng sâu sắc tới Hải Thượng Lãn Ông ở Việt Nam.", noteEn: "Ming encyclopedic taxonomy of 1,892 natural substances that strongly engaged Vietnamese medical scholars." }
+      ],
+      principles: (tcm.pillars || []).map(function (p) {
+        return {
+          id: p.id,
+          zh: p.zh + (p.pinyin ? " (" + p.pinyin + ")" : ""),
+          vi: p.vi,
+          en: p.en,
+          summaryVi: p.descVi || "",
+          summaryEn: p.descEn || ""
+        };
+      })
+    }
   };
 })();

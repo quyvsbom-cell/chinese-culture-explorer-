@@ -30,20 +30,41 @@ window.CCE_WEEKLY_UPDATES = (function () {
       summaryEn: "Legal boundary analysis on double-deposit liability alongside live phrase capture directly into your Vocabulary & Reading Notebook."
     },
     {
-      id: "pick-v26-platform",
-      badgeVi: "[Nâng cấp Hệ thống & Dữ liệu · v2.6]",
-      badgeEn: "[Website Feature & Data Update · v2.6]",
+      id: "pick-v50-platform",
+      badgeVi: "[Nâng cấp Hệ thống & Dữ liệu · v5.0]",
+      badgeEn: "[Website Feature & Data Update · v5.0]",
       kind: "changelog",
       targetId: "changelog",
-      date: "2026-11-18",
-      titleVi: "Phát hành v2.6: Mở khóa 100% Đọc tự do, Sổ tay Ngữ cảnh, Song ngữ EN Toàn bộ 65 Bài & Hành trang Thực địa",
-      titleEn: "Release v2.6: 100% Open-Read Monographs, Contextual Vocab Notebook, Full 65-Essay EN Edition & Travel Readiness",
-      summaryVi: "Gỡ bỏ hoàn toàn cổng chặn đọc bài viết, thay Anki tĩnh bằng Sổ tay Ghi chú khi bôi đen văn bản, bổ sung Hành trang 34 tỉnh & thơ Tứ tuyệt Sáng lập.",
-      summaryEn: "Removed full-text reader gates, replaced standalone Anki panes with live highlighted phrase capture, localized all 65 essays & Related Articles to English, and added 34-province travel dossiers."
+      date: "2026-11-22",
+      titleVi: "Phát hành v5.0: Khóa học 7 Học phần Tuần tự, 24 Trung Hoa Lão Tự Hiệu & Trọn bộ 6 Gói Dữ liệu Tri thức",
+      titleEn: "Release v5.0: 7-Module Sequential Curriculum, 24 Chinese Honored Brands & Full 6-Pack Knowledge Ingestion",
+      summaryVi: "Sắp xếp tri thức như một khóa học nối mạch logic, ra mắt chuyên mục Thương hiệu Lâu đời (中华老字号) và nạp trọn 1.093 mục song ngữ – tam ngữ.",
+      summaryEn: "Structured progressive 7-module study flow, dedicated Chinese Honored Brands pavilion, 28 historical figure portraits & full 1,093-entry trilingual expansion."
     }
   ];
 
   const siteChangelog = [
+    {
+      version: "v5.0.0",
+      date: "2026-11-22",
+      type: "feature",
+      tagVi: "[Phát hành Lớn · Khóa học 7 Học phần Tuần tự & Thương hiệu Lão Tự Hiệu]",
+      tagEn: "[Major Release · 7-Module Sequential Curriculum & Honored Brands Pavilion]",
+      titleVi: "Phiên bản v5.0: Sắp xếp Khóa học 7 Học phần Mạch lạc, Chuyên mục 24 Trung Hoa Lão Tự Hiệu (中华老字号) & Nạp trọn 6 Gói Dữ liệu Tri thức",
+      titleEn: "Release v5.0: Sequential 7-Module Curriculum Architecture, 24 Chinese Honored Brands Pavilion & Full 6-Pack Encyclopedic Ingestion",
+      itemsVi: [
+        "Kiến trúc Khóa Học 7 Học phần Tuần tự (src/components/v5CourseAcademy.js): nối mạch Địa lý – Lịch sử – Tư tưởng – Âm Dương Ngũ Hành – 10 Studio 3D – HSK 4–9/Du học – Logistics Tam ngữ, kèm thanh 'Mạch Logic Khóa Học — Bước Tiếp Theo' ở cuối mọi chuyên trang.",
+        "Chuyên mục Riêng 24 Thương hiệu Trung Hoa Lão Tự Hiệu (src/components/laozihaoPavilionV5.js): Đồng Nhân Đường (1669), Trần Lý Tế (1600), Toàn Tụ Đức, Mao Đài, Ngô Dụ Thái, Vinh Bảo Trai...",
+        "Nạp toàn bộ 6 gói dữ liệu bách khoa (1.093 mục): 59 Di sản UNESCO, 24 Thơ Đường–Tống, 100 Thành ngữ Chengyu, 9 Thể chất Đông y, 12 Đại học Du học CSC/UIBE/BUCM + 45 câu phỏng vấn, 100 Thuật ngữ Logistics Tam ngữ, 10 Bài đọc Song hành & 90 Câu Quiz độc lập.",
+        "Tinh chỉnh UI/UX từ phản hồi thực tế: chuẩn hóa bản đồ 2D 34 tỉnh không chồng nhãn, lưới ngang 10 Biển hiệu Sinh tồn, ảnh chân dung toàn bộ 28 Danh nhân Lịch đại (và 115 Danh nhân Cố hương), cùng sắp xếp Chuyên luận mới nhất lên đầu."
+      ],
+      itemsEn: [
+        "7-Module Progressive Curriculum (src/components/v5CourseAcademy.js) with persisted module completion and cross-page 'Next Connected Lesson' logic bridges.",
+        "Dedicated Chinese Time-Honored Brands Pavilion (中华老字号, src/components/laozihaoPavilionV5.js) showcasing 24 imperial-era pharmacies, culinary houses, tea/spirit estates, and studio crafters.",
+        "Full integration of all 6 bilingual/trilingual encyclopedic datasets (1,093 items): 59 UNESCO sites, 24 poems, 100 Chengyu, 9 TCM constitutions, 12 CSC universities + 45 expressions, 100 EU–China logistics terms, 10 parallel trilingual articles & 90 unique Quiz Arena MCQs.",
+        "User-driven UI polish: overlap-free 2D vector map with unified East China coloring, horizontal 10-sign survival Hanzi grid, historical portraits for all 28 era figures & 115 provincial luminaries, and newest-first article ordering."
+      ]
+    },
     {
       version: "v4.0.0",
       date: "2026-11-22",

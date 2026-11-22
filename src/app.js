@@ -121,6 +121,20 @@
       ]
     });
   }
+
+  let _lastSortedArtLen = -1;
+  function ensureNewestArticlesOrder() {
+    if (!Array.isArray(Articles) || Articles.length === _lastSortedArtLen) return;
+    const priorityRank = (a) => {
+      if (a.id === "temple-of-heaven-tiantan-cosmology-3d") return 100000;
+      if (a.id === "forbidden-city-3d-dissection") return 99999;
+      if (a.isFeatured3D) return 99990;
+      return Number(a.number || 0);
+    };
+    Articles.sort((a, b) => priorityRank(b) - priorityRank(a));
+    _lastSortedArtLen = Articles.length;
+  }
+  ensureNewestArticlesOrder();
   const Brand = window.CCE_BRAND || {
     projectName: "CHINESE CULTURE EXPLORER",
     projectNameZh: "中国文化探索",
@@ -701,12 +715,13 @@
     exploreLanguage: "all", // all | trilingual | classical-zh
     exploreDifficulty: "all", // all | Foundation | Intermediate | Advanced
     exploreSourceType: "all", // all | Primary | Academic | Museum
-    exploreSort: "featured", // featured | updated | readTimeAsc | readTimeDesc | titleAsc
+    exploreSort: "featured", // featured (newest) | courseOrder | readTimeAsc | readTimeDesc | titleAsc
     exploreViewMode: "grid", // grid | list
     exploreLimit: 12,
     activePeriodId: "spring-autumn-warring",
     timelineFilter: "all",
     timelineLayout: "horizontal", // horizontal | vertical
+    historyFigureMode: "key28", // key28 | prov115
     activeSchoolId: "confucianism",
     traditionalTab: "metaphysics", // metaphysics | customs | arts | contemporary
     activeRegionId: "east",
@@ -3298,6 +3313,7 @@
       { id: "sino-vietnam", label: lp.tabSinoVn },
       { id: "business", label: lp.tabBusiness }
     ];
+    ensureNewestArticlesOrder();
     const matchedArticles = ui.homeJournalCat === "all"
       ? Articles
       : Articles.filter((a) => a.category === ui.homeJournalCat);
@@ -3441,6 +3457,7 @@
       </section>
 
       ${window.CCE_V4_UX ? window.CCE_V4_UX.renderHeroIntentAndRecent(homeEn) : ""}
+      ${window.CCE_V5_ACADEMY ? `<div class="container">${window.CCE_V5_ACADEMY.renderCourseTracker(homeEn)}</div>` : ""}
 
       <!-- SECTION 01B: FORBIDDEN CITY 3D ARCHITECTURAL EMBLEM & DISSECTION -->
       ${getForbiddenCity3D() ? getForbiddenCity3D().renderHomeSection(state.uiLang) : `
@@ -3823,7 +3840,9 @@
       return true;
     });
 
+    ensureNewestArticlesOrder();
     const sortedArticles = [...filteredArticles].sort((a, b) => {
+      if (ui.exploreSort === "courseOrder") return Number(a.number || 999) - Number(b.number || 999);
       if (ui.exploreSort === "readTimeAsc") return a.readMinutes - b.readMinutes;
       if (ui.exploreSort === "readTimeDesc") return b.readMinutes - a.readMinutes;
       if (ui.exploreSort === "titleAsc") {
@@ -4059,7 +4078,8 @@
                 <div>
                   <label for="explore-sort-select" style="font-size:0.76rem;font-weight:700;color:var(--text-muted);display:block;margin-bottom:0.3rem;">${enEx ? "Sort Order" : "Sắp xếp (Sort)"}</label>
                   <select id="explore-sort-select" class="form-select" data-action="explore-sort-change">
-                    <option value="featured" ${ui.exploreSort === "featured" ? "selected" : ""}>${enEx ? "Editorial Curated Order" : "Thứ tự Biên tập (Featured)"}</option>
+                    <option value="featured" ${ui.exploreSort === "featured" ? "selected" : ""}>${enEx ? "Newest & 3D Flagship First" : "Mới nhất & Tiêu điểm 3D Lên Đầu"}</option>
+                    <option value="courseOrder" ${ui.exploreSort === "courseOrder" ? "selected" : ""}>${enEx ? "Curriculum Sequence (1 → 108)" : "Trình tự Khóa học Nền tảng (1 → 108)"}</option>
                     <option value="readTimeDesc" ${ui.exploreSort === "readTimeDesc" ? "selected" : ""}>${enEx ? "Deepest First (Read Time ↓)" : "Chuyên sâu nhất (Thời lượng ↓)"}</option>
                     <option value="readTimeAsc" ${ui.exploreSort === "readTimeAsc" ? "selected" : ""}>${enEx ? "Quickest First (Read Time ↑)" : "Đọc nhanh trước (Thời lượng ↑)"}</option>
                     <option value="titleAsc" ${ui.exploreSort === "titleAsc" ? "selected" : ""}>${enEx ? "Alphabetical (A → Z)" : "Bảng chữ cái (A → Z)"}</option>
@@ -6424,29 +6444,63 @@
                 </div>
               ` : ""}
 
-              ${kFigures.length ? `
+              ${kFigures.length ? (() => {
+                const provFigs = [];
+                if (ui.historyFigureMode === "prov115") {
+                  const pAll = (Regions && (Regions.provincesDirectory || Regions.provincialDirectory)) || [];
+                  const visMap = window.CCE_PROVINCE_ITEM_VISUALS || {};
+                  pAll.forEach((pr) => {
+                    const pVis = (visMap[pr.id] && visMap[pr.id].figures) || [];
+                    (pr.notableFigures || []).forEach((nf, idx) => {
+                      provFigs.push({
+                        nameVi: nf.hanViet || nf.nameVi || nf.hanzi,
+                        nameEn: nf.hanViet || nf.hanzi,
+                        nameZh: nf.hanzi || "",
+                        years: nf.lifespan || "",
+                        roleVi: `${enM ? (pr.nameEn || pr.nameVi) : pr.nameVi} (${pr.nameZh || ""})`,
+                        roleEn: pr.nameEn || pr.nameVi,
+                        significanceVi: nf.contribution || "",
+                        significanceEn: nf.contributionEn || nf.contribution || "",
+                        provinceId: pr.id,
+                        image: pVis[idx] || ""
+                      });
+                    });
+                  });
+                }
+                const displayFigs = ui.historyFigureMode === "prov115" && provFigs.length ? provFigs : kFigures;
+                return `
                 <div class="sync-timeline-v3-card">
-                  <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.6rem;">
                     <div>
-                      <div class="editorial-kicker">${enM ? `Biographical Index (${kFigures.length} Figures)` : `Danh nhân Lịch đại (${kFigures.length} Nhân vật)`}</div>
+                      <div class="editorial-kicker">${enM ? `Biographical Index (${displayFigs.length} Figures)` : `Danh nhân Lịch đại (${displayFigs.length} Nhân vật)`}</div>
                       <h3 style="margin:0.2rem 0 0;">${enM ? "Historical Figures Linked to Native Provinces" : "Nhân vật Lịch sử &amp; Tỉnh/Thành Cố hương"}</h3>
                     </div>
+                    <div class="filter-bar" style="margin:0;">
+                      <button type="button" class="filter-pill ${ui.historyFigureMode !== "prov115" ? "active" : ""}" data-action="set-history-figure-mode" data-mode="key28">${enM ? "28 Era Luminaries" : "28 Danh nhân Trục Lịch sử"}</button>
+                      <button type="button" class="filter-pill ${ui.historyFigureMode === "prov115" ? "active" : ""}" data-action="set-history-figure-mode" data-mode="prov115">${enM ? "All 34 Provinces (115)" : "Toàn bộ 34 Tỉnh/Thành (115)"}</button>
+                    </div>
                   </div>
-                  <div class="history-figures-grid">
-                    ${kFigures.map((fig) => `
+                  <div class="history-figures-grid" style="${ui.historyFigureMode === "prov115" ? "max-height:620px;overflow:auto;padding-right:0.25rem;" : ""}">
+                    ${displayFigs.map((fig) => {
+                      const fTitle = enM ? (fig.nameEn || fig.nameVi) : fig.nameVi;
+                      const fCap = `${fTitle} (${fig.nameZh}) — ${fig.years}`;
+                      return `
                       <div class="history-figure-card">
+                        ${fig.image ? `<button type="button" class="prov-item-thumb is-portrait" data-action="open-custom-image" data-src="${escapeHtml(fig.image)}" data-caption="${escapeHtml(fCap)}" data-credit="Chinese Cultural & Historical Luminaries Archive" title="${enM ? "Zoom portrait" : "Phóng to chân dung"}"><img src="${escapeHtml(fig.image)}" alt="${escapeHtml(fTitle)}" loading="${ui.historyFigureMode === "prov115" ? "lazy" : "eager"}" decoding="async" /></button>` : ""}
                         <div style="display:flex;justify-content:space-between;align-items:baseline;gap:0.4rem;">
-                          <strong>${escapeHtml(enM ? fig.nameEn : fig.nameVi)} <span class="hanzi">${escapeHtml(fig.nameZh)}</span></strong>
+                          <strong>${escapeHtml(fTitle)} <span class="hanzi">${escapeHtml(fig.nameZh)}</span></strong>
                           <span style="font-size:0.74rem;font-family:var(--font-mono);color:var(--text-muted);">${escapeHtml(fig.years)}</span>
                         </div>
-                        <div style="font-size:0.8rem;font-weight:600;color:var(--accent-cinnabar);">${escapeHtml(enM ? fig.roleEn : fig.roleVi)}</div>
-                        <p style="margin:0;font-size:0.8rem;color:var(--text-secondary);line-height:1.45;">${escapeHtml(enM ? fig.significanceEn : fig.significanceVi)}</p>
+                        <div style="font-size:0.8rem;font-weight:600;color:var(--accent-cinnabar);">${escapeHtml(enM ? (fig.roleEn || fig.roleVi) : fig.roleVi)}</div>
+                        <p style="margin:0;font-size:0.8rem;color:var(--text-secondary);line-height:1.45;">${escapeHtml(enM ? (fig.significanceEn || fig.significanceVi) : fig.significanceVi)}</p>
                         ${fig.provinceId ? `<button type="button" class="btn btn-secondary btn-sm" style="margin-top:auto;align-self:flex-start;padding:0.2rem 0.5rem;font-size:0.74rem;" data-action="open-province-detail" data-id="${escapeHtml(fig.provinceId)}">${enM ? "Province Dossier →" : "Xem Tỉnh cố hương →"}</button>` : ""}
                       </div>
-                    `).join("")}
+                    `;
+                    }).join("")}
                   </div>
                 </div>
-              ` : ""}
+              `;
+              })() : ""}
             `;
           })()}
 
@@ -6742,6 +6796,7 @@
           ${tab === "customs" ? renderCustomsTab() : ""}
           ${tab === "arts" ? renderArtsTab() : ""}
           ${tab === "contemporary" ? renderContemporaryTab() : ""}
+          ${window.CCE_LAOZIHAO_PAVILION ? window.CCE_LAOZIHAO_PAVILION.renderPavilion(enM) : ""}
         </div>
       </section>
     `;
@@ -7738,6 +7793,7 @@
                 .join("")}
             </div>
           </div>
+          ${window.CCE_LAOZIHAO_PAVILION ? window.CCE_LAOZIHAO_PAVILION.renderPavilion(enB) : ""}
           ${window.CCE_TRILINGUAL_STUDIO ? window.CCE_TRILINGUAL_STUDIO.renderStudio(enB) : ""}
           ${window.CCE_3D_LOGISTICS ? `<section class="card mt-2 mb-2" style="padding:1.1rem 1.25rem;border-top:3px solid var(--jade-green);">${window.CCE_3D_LOGISTICS.renderPanel(enB)}</section>` : ""}
           ${window.CCE_V3_W5 ? window.CCE_V3_W5.renderB2BExpansion(enB) : ""}
@@ -7818,12 +7874,14 @@
             </div>
           ` : `
             <div class="grid grid-2" style="gap:1.35rem;">
-              ${filtered.map((txt) => {
+              ${filtered.map((txt, idx) => {
                 const excerpts = Array.isArray(txt.excerpts) && txt.excerpts.length ? txt.excerpts : [];
                 const leadEx = excerpts[0] || null;
                 const extraEx = excerpts.slice(1);
+                const classicThumb = getAcademicPhotoForItem("texts", txt.id, idx);
                 return `
                   <article class="card classics-work-card" style="display:flex;flex-direction:column;gap:0.85rem;">
+                    ${renderAcademicCardThumb(classicThumb, enVal(txt, "treasuryLabel") || (enM ? "Canonical Work" : "Kinh điển"))}
                     <div class="ed-meta-line" style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;flex-wrap:wrap;">
                       <span>${escapeHtml(enVal(txt, "treasuryLabel") || (enM ? "Canonical Work" : "Kinh điển"))} · ${escapeHtml(enVal(txt, "era") || "")}</span>
                       <span class="hanzi" style="color:var(--imperial-red);font-weight:700;">${formatHanzi(txt.titleZh || "", txt.titleZhTrad || txt.titleZh || "")}</span>
@@ -8707,8 +8765,21 @@
       </div>
 
       <div style="display:flex;flex-direction:column;gap:1.5rem;">
-        ${visiblePacks.map((pk) => `
+        ${visiblePacks.map((pk, pkIdx) => {
+          const packVisuals = {
+            "pack-01-hsr-airport": { src: "assets/images/articles/hero-beijing-shanghai.jpg", caption: enL ? pk.titleEn : pk.titleVi },
+            "pack-02-museums-parks": { src: "assets/images/museum/taihe-dian.jpg", caption: enL ? pk.titleEn : pk.titleVi },
+            "pack-03-dining-allergy": { src: "assets/images/articles/hero-chinese-cuisines.jpg", caption: enL ? pk.titleEn : pk.titleVi },
+            "pack-04-alipay-hotels": { src: "assets/images/articles/hero-contemporary-china.jpg", caption: enL ? pk.titleEn : pk.titleVi },
+            "pack-05-police-medical": { src: "assets/images/articles/hero-consular-field-guide.jpg", caption: enL ? pk.titleEn : pk.titleVi },
+            "pack-06-b2b-customs": { src: "assets/images/articles/hero-supply-chain-rcep.jpg", caption: enL ? pk.titleEn : pk.titleVi },
+            "pack-07-medical": { src: "assets/images/museum/acupuncture-bronze.jpg", caption: enL ? pk.titleEn : pk.titleVi },
+            "pack-08-canton-factory": { src: "assets/images/articles/hero-b2b-negotiation-table.jpg", caption: enL ? pk.titleEn : pk.titleVi }
+          };
+          const pkPhoto = packVisuals[pk.id] || getAcademicPhotoForItem("survival", pk.id, pkIdx);
+          return `
           <section class="card" style="padding:1.25rem 1.35rem;">
+            ${renderAcademicCardThumb(pkPhoto, pk.titleZh)}
             <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.65rem;padding-bottom:0.55rem;border-bottom:1px solid var(--hairline);">
               <div>
                 <span class="badge badge-gold">${enL ? `PACK ${escapeHtml(pk.number)}` : `BỘ ${escapeHtml(pk.number)}`} · ${escapeHtml(pk.titleZh)}</span>
@@ -8765,7 +8836,8 @@
               }).join("")}
             </div>
           </section>
-        `).join("")}
+          `;
+        }).join("")}
       </div>
     `;
   }
@@ -10721,25 +10793,34 @@
   // Master Render & Event Delegation
   // ==========================================================================
   function renderPageContent(pageId) {
+    let html = "";
     switch (pageId) {
-      case "article": return renderArticlePage();
-      case "museum": return renderMuseumPage();
-      case "paintings": return renderPaintingsPage();
-      case "explore": return renderExplorePage();
-      case "history": return renderHistoryPage();
-      case "philosophy": return renderPhilosophyPage();
-      case "traditional": return renderTraditionalPage();
-      case "regions": return renderRegionsPage();
-      case "sino-vietnam": return renderSinoVietnamPage();
-      case "business": return renderBusinessPage();
-      case "library": return renderLibraryPage();
-      case "learning": return renderLearningPage();
-      case "about": return renderAboutPage();
-      case "legal": return renderLegalPage();
+      case "article": html = renderArticlePage(); break;
+      case "museum": html = renderMuseumPage(); break;
+      case "paintings": html = renderPaintingsPage(); break;
+      case "explore": html = renderExplorePage(); break;
+      case "history": html = renderHistoryPage(); break;
+      case "philosophy": html = renderPhilosophyPage(); break;
+      case "traditional": html = renderTraditionalPage(); break;
+      case "regions": html = renderRegionsPage(); break;
+      case "sino-vietnam": html = renderSinoVietnamPage(); break;
+      case "business": html = renderBusinessPage(); break;
+      case "library": html = renderLibraryPage(); break;
+      case "learning": html = renderLearningPage(); break;
+      case "about": html = renderAboutPage(); break;
+      case "legal": html = renderLegalPage(); break;
       case "home":
       default:
-        return renderHomePage();
+        html = renderHomePage();
+        break;
     }
+    if (window.CCE_V5_ACADEMY && typeof window.CCE_V5_ACADEMY.renderNextStepBridge === "function" && pageId !== "home") {
+      const bridgeHtml = window.CCE_V5_ACADEMY.renderNextStepBridge(pageId, isEnglishUi());
+      if (bridgeHtml) {
+        html += `<div class="container">${bridgeHtml}</div>`;
+      }
+    }
+    return html;
   }
 
   function renderCustomImageModal() {
@@ -11706,10 +11787,16 @@
         patchMainOnly();
         break;
 
+      case "set-history-figure-mode":
+        ui.historyFigureMode = target.getAttribute("data-mode") || "key28";
+        patchMainOnly();
+        break;
+
       case "select-region":
         ui.activeRegionId = id;
         ui.searchModalOpen = false;
         ui.heroAutocompleteOpen = false;
+        document.querySelectorAll("[data-map-tooltip]").forEach((el) => { el.hidden = true; });
         if (Store.getState().activePage !== "regions") {
           Store.setPage("regions");
           window.scrollTo({ top: 0, behavior: "smooth" });

@@ -1,143 +1,1114 @@
-// ============================================================================
-// CHINESE CULTURE EXPLORER V4.0 — Literary Canons & 60 HSK 4-9 Briefs
-// Journey to the West (西游记), Dream of the Red Chamber (红楼梦), Four Classics
-// & 60 Exam-Ready Cultural Idioms / Reading Hooks for HSK 4-9
-// ============================================================================
-
 (function () {
   "use strict";
-
-  var CANONS = [
-    {
-      id: "canon-xiyouji",
-      zh: "《西游记》· 吴承恩",
-      titleVi: "Tây Du Ký (Ngô Thừa Ân · Minh)",
-      titleEn: "Journey to the West (Wu Cheng'en, Ming)",
-      hskTag: "HSK 5–8 Core Literary Reference",
-      coreThemeVi: "Hành trình thỉnh kinh của Đường Tăng và Tôn Ngộ Không ẩn dụ quá trình luyện tâm Tam giáo hợp nhất (Phật–Đạo–Nho): Tâm viên Ý mã, hàng phục ngã chấp để đạt Giác ngộ.",
-      coreThemeEn: "Xuanzang's pilgrimage allegory blending Buddhism, Daoist alchemy ('Monkey of the Mind'), and Confucian self-mastery into an adventure epic.",
-      hskVocabVi: "Từ khóa HSK thường gặp: 取经 (thỉnh kinh), 心猿意马 (tâm viên ý mã), 七十二变 (72 phép biến hóa), 克服困难 (vượt qua gian nan)."
+  window.CCE_V4_LIT_ARTS = {
+    poems24: [
+      {
+        id: "poem-01",
+        genre: "Đường Thi",
+        titleVi: "Tĩnh Dạ Tứ",
+        titleEn: "Thoughts on a Still Night",
+        titleZh: "静夜思",
+        pinyin: "Jìng Yè Sī",
+        authorVi: "Lý Bạch",
+        authorZh: "李白",
+        era: "Thịnh Đường (701–762)",
+        originalZh: "床前明月光，\n疑是地上霜。\n举头望明月，\n低头思故乡。",
+        originalPinyin: "Chuáng qián míng yuè guāng,\nYí shì dì shàng shuāng.\nJǔ tóu wàng míng yuè,\nDī tóu sī gù xiāng.",
+        hanVietLines: "Sàng tiền minh nguyệt quang,\nNghi thị địa thượng sương.\nCử đầu vọng minh nguyệt,\nĐê đầu tư cố hương.",
+        translationVi: "Ánh trăng sáng trải trước đầu giường,\nThoáng ngỡ mặt nền phủ lớp sương.\nNgước mắt trông lên vầng nguyệt rạng,\nCúi đầu lặng nhớ chốn quê hương.",
+        translationEn: "Pale moonlight pools beside the sleeping frame,\nMistaken briefly for frost along the floor.\nI raise my eyes to meet the luminous orb,\nThen bow my head, recalling my native soil.",
+        poeticsAnalysisVi: "Bài ngũ ngôn tuyệt cú đạt cảnh giới mộc mạc mà hàm súc. Không dùng điển cố cầu kỳ, tác giả đặt hai cử chỉ đối ứng 'cử đầu' và 'đê đầu' trong ánh sáng lạnh của trăng thu để cô đọng nỗi hoài hương của khách viễn du.",
+        poeticsAnalysisEn: "This five-character quatrain achieves maximum resonance through stripped-down diction. Relying on two mirrored gestures—lifting and lowering the gaze—rather than learned allusions, Li Bai distills the solitude of travel beneath autumn moonlight."
+      },
+      {
+        id: "poem-02",
+        genre: "Đường Thi",
+        titleVi: "Vọng Lư Sơn Bộc Bố",
+        titleEn: "Gazing at the Mount Lu Cascade",
+        titleZh: "望庐山瀑布",
+        pinyin: "Wàng Lúshān Pùbù",
+        authorVi: "Lý Bạch",
+        authorZh: "李白",
+        era: "Thịnh Đường (701–762)",
+        originalZh: "日照香炉生紫烟，\n遥看瀑布挂前川。\n飞流直下三千尺，\n疑是银河落九天。",
+        originalPinyin: "Rì zhào Xiānglú shēng zǐ yān,\nYáo kàn pùbù guà qián chuān.\nFēi liú zhí xià sān qiān chǐ,\nYí shì Yínhé luò jiǔ tiān.",
+        hanVietLines: "Nhật chiếu Hương Lô sinh tử yên,\nDao khán bộc bố quải tiền xuyên.\nPhi lưu trực há tam thiên xích,\nNghi thị Ngân Hà lạc cửu thiên.",
+        translationVi: "Nắng soi đỉnh Hương Lô quyện khói tía,\nXa nhìn dải thác treo ngang dòng sông trước mặt.\nLuồng nước lao thẳng xuống ba nghìn thước,\nTưởng dải Ngân Hà đổ từ chín tầng trời.",
+        translationEn: "Daylight warms Incense Burner Peak into violet haze;\nSeen from afar, the waterfall hangs like silk above the stream.\nIts plunging current drops three thousand feet sheer,\nResembling the Celestial River spilling from the ninth sky.",
+        poeticsAnalysisVi: "Chữ 'quải' (treo) định hình dòng thác như một bức trục thủy mặc giữa không trung trước khi hai câu kết bùng nổ bằng thủ pháp khoa trương lãng mạn. Hình ảnh Ngân Hà nâng cảnh sắc Lư Sơn lên tầm vũ trụ.",
+        poeticsAnalysisEn: "The verb 'hangs' suspends the rushing cascade like a painted scroll before the closing couplet unleashes romantic hyperbole. Equating the falls with the Milky Way expands a regional vista into cosmic spectacle."
+      },
+      {
+        id: "poem-03",
+        genre: "Đường Thi",
+        titleVi: "Xuân Vọng",
+        titleEn: "Gazing upon Spring",
+        titleZh: "春望",
+        pinyin: "Chūn Wàng",
+        authorVi: "Đỗ Phủ",
+        authorZh: "杜甫",
+        era: "Thịnh Đường – Loạn An Sử (757)",
+        originalZh: "国破山河在，\n城春草木深。\n感时花溅泪，\n恨别鸟惊心。\n烽火连三月，\n家书抵万金。\n白头搔更短，\n浑欲不胜簪。",
+        originalPinyin: "Guó pò shān hé zài,\nChéng chūn cǎo mù shēn.\nGǎn shí huā jiàn lèi,\nHèn bié niǎo jīng xīn.\nFēng huǒ lián sān yuè,\nJiā shū dǐ wàn jīn.\nBái tóu sāo gèng duǎn,\nHún yù bù shèng zān.",
+        hanVietLines: "Quốc phá sơn hà tại,\nThành xuân thảo mộc thâm.\nCảm thời hoa tiễn lệ,\nHận biệt điểu kinh tâm.\nPhong hỏa liên tam nguyệt,\nGia thư để vạn kim.\nBạch đầu tao cánh đoản,\nHồn dục bất thăng trâm.",
+        translationVi: "Triều cương tan vỡ nhưng núi sông vẫn còn,\nMùa xuân về trên kinh thành chỉ thấy cỏ cây hoang rậm.\nXót thế sự, nhìn hoa nở mà lệ rơi,\nBuồn chia cắt, nghe tiếng chim mà lòng thảng thốt.\nKhói lửa chiến sự nối tiếp suốt ba tháng,\nMột bức thư nhà quý sánh vạn lạng vàng.\nGãi mái đầu bạc thấy tóc càng thêm thưa,\nDường như chẳng còn giữ nổi chiếc trâm cài.",
+        translationEn: "The dynasty fractures while ridges and rivers endure;\nSpring returns to the walled capital in overgrown weeds.\nMoved by the crisis, blossoms draw forth tears;\nPained by separation, birdsong startles the mind.\nSignal fires have burned across three straight months;\nNews from home outweighs ten thousand pieces of gold.\nScratched in worry, my white hair grows ever sparser,\nScarcely thick enough now to secure a hairpin.",
+        poeticsAnalysisVi: "Sáng tác tại Trường An khi thành bị quân phản loạn chiếm giữ, bài ngũ ngôn luật là mẫu mực của bút pháp trầm uất đốn tỏa. Đỗ Phủ đặt thiên nhiên trường tồn cạnh kinh đô đổ nát để khắc sâu nỗi đau nhân thế thời loạn.",
+        poeticsAnalysisEn: "Written during rebel occupation of Chang'an, this regulated verse exemplifies Du Fu's restrained gravitas. By pairing enduring terrain with a shattered polity, the poet turns personal wartime anxiety into historical testimony."
+      },
+      {
+        id: "poem-04",
+        genre: "Đường Thi",
+        titleVi: "Đăng Cao",
+        titleEn: "Ascending the Heights",
+        titleZh: "登高",
+        pinyin: "Dēng Gāo",
+        authorVi: "Đỗ Phủ",
+        authorZh: "杜甫",
+        era: "Thịnh Đường – Quỳ Châu (767)",
+        originalZh: "风急天高猿啸哀，\n渚清沙白鸟飞回。\n无边落木萧萧下，\n不尽长江滚滚来。\n万里悲秋常作客，\n百年多病独登台。\n艰难苦恨繁霜鬓，\n潦倒新停浊酒杯。",
+        originalPinyin: "Fēng jí tiān gāo yuán xiào āi,\nZhǔ qīng shā bái niǎo fēi huí.\nWú biān luò mù xiāo xiāo xià,\nBú jìn Cháng Jiāng gǔn gǔn lái.\nWàn lǐ bēi qiū cháng zuò kè,\nBǎi nián duō bìng dú dēng tái.\nJiān nán kǔ hèn fán shuāng bìn,\nLiáo dǎo xīn tíng zhuó jiǔ bēi.",
+        hanVietLines: "Phong cấp thiên cao viên khiếu ai,\nChử thanh sa bạch điểu phi hồi.\nVô biên lạc mộc tiêu tiêu há,\nBất tận Trường Giang cổn cổn lai.\nVạn lý bi thu thường tác khách,\nBách niên đa bệnh độc đăng đài.\nGian nan khổ hận phồn sương mấn,\nLạo đảo tân đình trọc tửu bôi.",
+        translationVi: "Gió thu xiết, bầu trời cao, tiếng vượn hú ai oán,\nBãi sông trong, cát trắng phau, cánh chim liệng vòng.\nRừng lá rụng ngút ngàn xào xạc trút xuống,\nDòng Trường Giang vô tận cuồn cuộn đổ về.\nCách quê muôn dặm buồn thu làm thân lữ khách,\nQuãng đời lắm bệnh một mình bước lên đài cao.\nGian truân uất hận làm tóc mai thêm dày sắc sương,\nCảnh đời lận đận nay lại phải đặt xuống chén rượu đục.",
+        translationEn: "Sharp winds, high skies, gibbons wailing in grief;\nClear river islets, pale sand, birds circling back.\nLimitless autumn leaves rustle steadily downward;\nThe unceasing Yangtze surges onward in heavy swells.\nTen thousand miles from home, forever a guest in autumn;\nAcross a frail lifetime, climbing the terrace alone.\nHardship and sorrow frost my temples ever thicker;\nWorn down by decline, I have lately ceased even cloudy wine.",
+        poeticsAnalysisVi: "Được bình phẩm đời Minh tôn xưng là đỉnh cao thất ngôn luật thi. Cả bốn liên đều đối ngẫu nghiêm mật, gom trọn không gian hùng vĩ vùng Tam Hiệp vào hai liên đầu rồi nén tám tầng bi cảm thân thế vào phần kết.",
+        poeticsAnalysisEn: "Celebrated by Ming critics as the apex of seven-character regulated verse. All four couplets sustain rigorous parallelism, anchoring personal frailty and exile against the immense seasonal momentum of the Yangtze Gorges."
+      },
+      {
+        id: "poem-05",
+        genre: "Đường Thi",
+        titleVi: "Lộc Sài",
+        titleEn: "The Deer Park",
+        titleZh: "鹿柴",
+        pinyin: "Lù Zhài",
+        authorVi: "Vương Duy",
+        authorZh: "王维",
+        era: "Thịnh Đường (701–761)",
+        originalZh: "空山不见人，\n但闻人语响。\n返景入深林，\n复照青苔上。",
+        originalPinyin: "Kōng shān bú jiàn rén,\nDàn wén rén yǔ xiǎng.\nFǎn jǐng rù shēn lín,\nFù zhào qīng tái shàng.",
+        hanVietLines: "Không sơn bất kiến nhân,\nĐãn văn nhân ngữ hưởng.\nPhản ảnh nhập thâm lâm,\nPhục chiếu thanh đài thượng.",
+        translationVi: "Núi vắng không thấy bóng người,\nChỉ thoáng nghe tiếng nói vọng xa.\nÁnh chiều tà xuyên vào rừng sâu,\nRọi sáng trở lại trên lớp rêu xanh.",
+        translationEn: "Across the quiet mountain no figure appears,\nYet faint echoes of conversation carry through the air.\nSlanted evening light slips into the dense woods,\nResting once more upon patches of green moss.",
+        poeticsAnalysisVi: "Trích từ tập 'Võng Xuyên tập', bài thơ là mẫu mực của Thiền thi và tinh thần 'thi trung hữu họa'. Tiếng nói thoáng qua càng khắc họa độ tĩnh mịch sâu thẳm của sơn lâm, còn vệt nắng chiều gợi ý niệm vô thường thanh tịnh.",
+        poeticsAnalysisEn: "Drawn from the Wang River Collection, this quatrain embodies Chan contemplative aesthetics and pictorial economy. Distant voices accentuate acoustic stillness, while receding twilight on moss intimates quiet impermanence."
+      },
+      {
+        id: "poem-06",
+        genre: "Đường Thi",
+        titleVi: "Xuân Hiểu",
+        titleEn: "Daybreak in Spring",
+        titleZh: "春晓",
+        pinyin: "Chūn Xiǎo",
+        authorVi: "Mạnh Hạo Nhiên",
+        authorZh: "孟浩然",
+        era: "Thịnh Đường (689–740)",
+        originalZh: "春眠不觉晓，\n处处闻啼鸟。\n夜来风雨声，\n花落知多少。",
+        originalPinyin: "Chūn mián bù jué xiǎo,\nChù chù wén tí niǎo.\nYè lái fēng yǔ shēng,\nHuā luò zhī duō shǎo.",
+        hanVietLines: "Xuân miên bất giác hiểu,\nXứ xứ văn đề điểu.\nDạ lai phong vũ thanh,\nHoa lạc tri đa thiểu.",
+        translationVi: "Giấc ngủ mùa xuân quên cả trời đã sáng,\nKhắp bốn bề vang rộn tiếng chim hót.\nĐêm qua nghe tiếng gió mưa lướt qua,\nChẳng biết hoa ngoài vườn đã rụng bao nhiêu.",
+        translationEn: "Wrapped in spring sleep, I missed the break of day;\nFrom every direction rises the chatter of birds.\nThrough the dark hours came wind and rain—\nWho knows how many petals fell before dawn?",
+        poeticsAnalysisVi: "Tiêu biểu cho mạch thơ điền viên thanh đạm của Mạnh Hạo Nhiên. Toàn bài cảm thụ mùa xuân qua thính giác và hồi ức đêm mưa, kết bằng câu hỏi nhẹ nhàng gợi niềm trân quý vẻ đẹp mong manh của tự nhiên.",
+        poeticsAnalysisEn: "Characteristic of Meng Haoran's unadorned pastoral voice, the verse perceives spring entirely through sound and recollection, closing on a gentle inquiry that captures tender attachment to transient bloom."
+      },
+      {
+        id: "poem-07",
+        genre: "Đường Thi",
+        titleVi: "Đăng Quán Tước Lâu",
+        titleEn: "Mounting Stork Pavilion",
+        titleZh: "登鹳雀楼",
+        pinyin: "Dēng Guànquè Lóu",
+        authorVi: "Vương Chi Hoán",
+        authorZh: "王之涣",
+        era: "Thịnh Đường (688–742)",
+        originalZh: "白日依山尽，\n黄河入海流。\n欲穷千里目，\n更上一层楼。",
+        originalPinyin: "Bái rì yī shān jìn,\nHuáng Hé rù hǎi liú.\nYù qióng qiān lǐ mù,\nGèng shàng yì céng lóu.",
+        hanVietLines: "Bạch nhật y sơn tận,\nHoàng Hà nhập hải lưu.\nDục cùng thiên lý mục,\nCánh thượng nhất tầng lâu.",
+        translationVi: "Mặt trời trắng khuất dần sau dãy núi,\nSông Hoàng Hà cuộn chảy ra biển lớn.\nMuốn thu trọn tầm mắt nghìn dặm xa,\nHãy bước lên thêm một tầng lầu nữa.",
+        translationEn: "The pale sun declines behind the western ridge;\nThe Yellow River courses onward to the sea.\nTo reach the farthest horizon a thousand miles out,\nClimb one more story up the tower.",
+        poeticsAnalysisVi: "Hai mươi chữ kết tinh khí tượng khoáng đạt thời Thịnh Đường. Không gian sơn hà hoành tráng ở hai câu đầu chuyển hóa tự nhiên thành triết lý khai mở tầm nhìn và khát vọng tự hoàn thiện ở hai câu cuối.",
+        poeticsAnalysisEn: "In twenty characters, Wang Zhihuan distills High Tang confidence. A sweeping geographic panorama smoothly turns into an enduring maxim linking physical elevation to intellectual breadth."
+      },
+      {
+        id: "poem-08",
+        genre: "Đường Thi",
+        titleVi: "Phong Kiều Dạ Bạc",
+        titleEn: "Night Anchorage at Maple Bridge",
+        titleZh: "枫桥夜泊",
+        pinyin: "Fēngqiáo Yèbó",
+        authorVi: "Trương Kế",
+        authorZh: "张继",
+        era: "Trung Đường (thế kỷ VIII)",
+        originalZh: "月落乌啼霜满天，\n江枫渔火对愁眠。\n姑苏城外寒山寺，\n夜半钟声到客船。",
+        originalPinyin: "Yuè luò wū tí shuāng mǎn tiān,\nJiāng fēng yú huǒ duì chóu mián.\nGūsū chéng wài Hánshān Sì,\nYè bàn zhōng shēng dào kè chuán.",
+        hanVietLines: "Nguyệt lạc ô đề sương mãn thiên,\nGiang phong ngư hỏa đối sầu miên.\nCô Tô thành ngoại Hàn Sơn tự,\nDạ bán chung thanh đáo khách thuyền.",
+        translationVi: "Trăng lặn, quạ kêu, hơi sương giăng khắp trời,\nHàng phong bên sông và ánh lửa chài đối diện giấc ngủ sầu.\nNgoài thành Cô Tô có ngôi chùa Hàn Sơn,\nTiếng chuông nửa đêm ngân vọng tới mạn thuyền khách.",
+        translationEn: "Moon sinking, crows calling, frost permeating the night air;\nRiverside maples and fishing lamps watch over restless sleep.\nOutside Suzhou's walls stands Cold Mountain Monastery,\nWhose midnight bell drifts across to the traveler's boat.",
+        poeticsAnalysisVi: "Bài thơ đưa chùa Hàn Sơn tại Tô Châu trở thành biểu tượng văn hóa Đông Á. Sự đan cài dày đặc của hình ảnh lạnh lẽo ở hai câu đầu được giải tỏa bằng dư âm trầm hùng của tiếng chuông nửa đêm.",
+        poeticsAnalysisEn: "This quatrain elevated Suzhou's Hanshan Temple into a lasting East Asian cultural landmark. Dense nocturnal imagery of frost and dim lanterns resolves into meditative calm with the resonance of the midnight monastery bell."
+      },
+      {
+        id: "poem-09",
+        genre: "Đường Thi",
+        titleVi: "Phú Đắc Cổ Nguyên Thảo Tống Biệt",
+        titleEn: "Ancient Plain Grasses at Parting",
+        titleZh: "赋得古原草送别",
+        pinyin: "Fùdé Gǔyuán Cǎo Sòngbié",
+        authorVi: "Bạch Cư Dị",
+        authorZh: "白居易",
+        era: "Trung Đường (772–846)",
+        originalZh: "离离原上草，\n一岁一枯荣。\n野火烧不尽，\n春风吹又生。\n远芳侵古道，\n晴翠接荒城。\n又送王孙去，\n萋萋满别情。",
+        originalPinyin: "Lí lí yuán shàng cǎo,\nYí suì yì kū róng.\nYě huǒ shāo bú jìn,\nChūn fēng chuī yòu shēng.\nYuǎn fāng qīn gǔ dào,\nQíng cuì jiē huāng chéng.\nYòu sòng wáng sūn qù,\nQī qī mǎn bié qíng.",
+        hanVietLines: "Ly ly nguyên thượng thảo,\nNhất tuế nhất khô vinh.\nDã hỏa thiêu bất tận,\nXuân phong xuy hựu sinh.\nViễn phương xâm cổ đạo,\nTình thúy tiếp hoang thành.\nHựu tống vương tôn khứ,\nThê thê mãn biệt tình.",
+        translationVi: "Cỏ mọc rậm rạp trên cánh đồng xưa,\nMỗi năm trải một vòng khô héo rồi xanh tươi.\nLửa đồng không sao thiêu rụi hết,\nGió xuân thổi qua lại bừng sức sống.\nHương cỏ xa lan tràn lên con đường cổ,\nSắc biếc dưới trời quang nối tận bức thành hoang.\nLại tiễn người bạn quý lên đường,\nCỏ xanh mướt mang nặng nỗi lưu luyến chia xa.",
+        translationEn: "Thick grasses blanket the ancient plain,\nWithering and flourishing once every year.\nBrushfires can never consume their roots;\nWhen spring winds return, green shoots rise again.\nDistant fragrance spills over the old highway;\nSunlit verdure meets the deserted ramparts.\nOnce more I escort a departing friend,\nWhere dense foliage brims with farewell sorrow.",
+        poeticsAnalysisVi: "Sáng tác thuở thiếu niên theo thể ứng thí nhưng vượt xa khuôn phép khoa cử. Cặp câu 'Dã hỏa thiêu bất tận, Xuân phong xuy hựu sinh' khái quát quy luật sinh diệt bền bỉ, khiến danh sĩ Cố Huống hết lời tán thưởng.",
+        poeticsAnalysisEn: "Composed in Bai Juyi's youth as a formal examination exercise, the poem transcends convention. Its celebrated second couplet on wildfire and spring wind turns a farewell motif into an emblem of cyclical endurance."
+      },
+      {
+        id: "poem-10",
+        genre: "Đường Thi",
+        titleVi: "Ô Y Hạng",
+        titleEn: "Black Robe Lane",
+        titleZh: "乌衣巷",
+        pinyin: "Wūyī Xiàng",
+        authorVi: "Lưu Vũ Tích",
+        authorZh: "刘禹锡",
+        era: "Trung Đường (772–842)",
+        originalZh: "朱雀桥边野草花，\n乌衣巷口夕阳斜。\n旧时王谢堂前燕，\n飞入寻常百姓家。",
+        originalPinyin: "Zhūquè Qiáo biān yě cǎo huā,\nWūyī Xiàng kǒu xī yáng xié.\nJiù shí Wáng Xiè táng qián yàn,\nFēi rù xún cháng bǎi xìng jiā.",
+        hanVietLines: "Chu Tước kiều biên dã thảo hoa,\nÔ Y hạng khẩu tịch dương tà.\nCựu thời Vương Tạ đường tiền yến,\nPhi nhập tầm thường bách tính gia.",
+        translationVi: "Bên cầu Chu Tước chỉ còn cỏ hoa mọc hoang,\nĐầu ngõ Ô Y bóng nắng chiều đổ nghiêng.\nĐàn chim én xưa từng làm tổ trước đại sảnh nhà Vương, Tạ,\nNay bay vào mái hiên của những gia đình dân thường.",
+        translationEn: "Wild weeds bloom beside Vermilion Bird Bridge;\nEvening light slants across the mouth of Black Robe Lane.\nSwallows that once nested beneath the halls of the Wang and Xie clans\nNow swoop under the eaves of ordinary households.",
+        poeticsAnalysisVi: "Kiệt tác hoài cổ về kinh đô Lục Triều tại Kim Lăng (Nam Kinh). Không trực tiếp bàn chuyện hưng phế, Lưu Vũ Tích dùng hình ảnh đàn én trở về chốn cũ để soi chiếu sự đổi thay sâu sắc của các thế tộc quyền quý thời Đông Tấn.",
+        poeticsAnalysisEn: "A classic historical meditation set in Nanjing, seat of the Six Dynasties. Avoiding overt lamentation, Liu Yuxi lets returning swallows register the quiet disappearance of the aristocratic Wang and Xie estates."
+      },
+      {
+        id: "poem-11",
+        genre: "Đường Thi",
+        titleVi: "Cẩm Sắt",
+        titleEn: "The Ornamented Zither",
+        titleZh: "锦瑟",
+        pinyin: "Jǐn Sè",
+        authorVi: "Lý Thương Ẩn",
+        authorZh: "李商隐",
+        era: "Vãn Đường (813–858)",
+        originalZh: "锦瑟无端五十弦，\n一弦一柱思华年。\n庄生晓梦迷蝴蝶，\n望帝春心托杜鹃。\n沧海月明珠有泪，\n蓝田日暖玉生烟。\n此情可待成追忆，\n只是当时已惘然。",
+        originalPinyin: "Jǐn sè wú duān wǔ shí xián,\nYì xián yí zhù sī huá nián.\nZhuāngshēng xiǎo mèng mí húdié,\nWàngdì chūn xīn tuō dùjuān.\nCāng hǎi yuè míng zhū yǒu lèi,\nLántián rì nuǎn yù shēng yān.\nCǐ qíng kě dài chéng zhuī yì,\nZhǐ shì dāng shí yǐ wǎng rán.",
+        hanVietLines: "Cẩm sắt vô đoan ngũ thập huyền,\nNhất huyền nhất trụ tư hoa niên.\nTrang sinh hiểu mộng mê hồ điệp,\nVọng Đế xuân tâm thác đỗ quyên.\nThương hải nguyệt minh châu hữu lệ,\nLam Điền nhật noãn ngọc sinh yên.\nThử tình khả đãi thành truy ức,\nChỉ thị đương thời dĩ võng nhiên.",
+        translationVi: "Cây đàn gấm vô cớ mang năm mươi dây,\nMỗi dây mỗi phím gợi nhớ tháng năm thanh xuân.\nTrang Chu trong giấc mộng sớm ngẩn ngơ hóa bướm,\nVọng Đế gửi tấm lòng xuân vào tiếng chim đỗ quyên.\nBiển lớn dưới trăng sáng, hạt châu đẫm giọt lệ,\nĐất Lam Điền nắng ấm, ngọc quý tỏa làn khói mờ.\nTâm tình ấy đâu đợi đến lúc hồi tưởng mới thấy tiếc,\nNgay khoảnh khắc đang trải qua đã thấy bâng khuâng khó nắm giữ.",
+        translationEn: "Why does the brocade zither carry fifty strings?\nEvery string and bridge recalls my prime years.\nAt dawn Zhuangzi dreamed himself a wandering butterfly;\nEmperor Wang entrusted his longing to the cuckoo's call.\nUnder ocean moonlight, pearls glisten like tears;\nIn warm Lantian sun, buried jade breathes faint vapor.\nNeed such feeling wait to become retrospect?\nEven while unfolding, it already felt elusive and bittersweet.",
+        poeticsAnalysisVi: "Đỉnh cao của bút pháp tượng trưng hàm súc thời Vãn Đường. Bốn điển cố dày đặc (Trang Chu mộng điệp, Vọng Đế hóa quyên, giao nhân khấp châu, Lam Điền ngọc yên) tạo nên cấu trúc đa nghĩa về ký ức, mộng ảo và sự trôi chảy của đời người.",
+        poeticsAnalysisEn: "The high point of Late Tang symbolic allusiveness. Four layered myths—Zhuangzi's butterfly, Emperor Wang's cuckoo, weeping sea pearls, and vaporous Lantian jade—compose an enigmatic elegy on memory and fleeting beauty."
+      },
+      {
+        id: "poem-12",
+        genre: "Đường Thi",
+        titleVi: "Bạc Tần Hoài",
+        titleEn: "Anchored on the Qinhuai",
+        titleZh: "泊秦淮",
+        pinyin: "Bó Qínhuái",
+        authorVi: "Đỗ Mục",
+        authorZh: "杜牧",
+        era: "Vãn Đường (803–852)",
+        originalZh: "烟笼寒水月笼沙，\n夜泊秦淮近酒家。\n商女不知亡国恨，\n隔江犹唱后庭花。",
+        originalPinyin: "Yān lóng hán shuǐ yuè lóng shā,\nYè bó Qínhuái jìn jiǔ jiā.\nShāng nǚ bù zhī wáng guó hèn,\nGé jiāng yóu chàng Hòutíng Huā.",
+        hanVietLines: "Yên lung hàn thủy nguyệt lung sa,\nDạ bạc Tần Hoài cận tửu gia.\nThương nữ bất tri vong quốc hận,\nCách giang do xướng Hậu Đình Hoa.",
+        translationVi: "Làn khói phủ dòng nước lạnh, ánh trăng bao trùm bãi cát,\nĐêm neo thuyền trên sông Tần Hoài sát quán rượu.\nCô gái hát nào hay mối hận mất nước xưa,\nCách bờ sông vẫn cất khúc Hậu Đình Hoa.",
+        translationEn: "Haze cloaks the chill water and moonlight veils the shoals;\nBy night my boat anchors near a Qinhuai tavern.\nThe hired singer feels no grief for fallen thrones,\nStill chanting 'Rear Courtyard Blossoms' across the stream.",
+        poeticsAnalysisVi: "Câu mở đầu kết hợp khói, nước, trăng, cát thành bức tranh đêm huyền ảo, làm nền cho cú ngoặt lịch sử ở hai câu cuối. Bằng điển cố 'Ngọc Thụ Hậu Đình Hoa' của Trần Hậu Chủ, Đỗ Mục cảnh tỉnh giới quyền quý Vãn Đường mải mê yến tiệc giữa lúc quốc vận suy tàn.",
+        poeticsAnalysisEn: "After an evocative opening that merges mist, river, moonlight, and sand, the quatrain pivots through an allusion to the doomed Chen dynasty's court song. Du Mu's quiet rebuke aims at Late Tang elites indulging in pleasure amid imperial decay."
+      },
+      {
+        id: "poem-13",
+        genre: "Tống Từ",
+        titleVi: "Thủy Điệu Ca Đầu · Minh Nguyệt Kỷ Thời Hữu",
+        titleEn: "Water Melody Prelude: Mid-Autumn Moon",
+        titleZh: "水调歌头·明月几时有",
+        pinyin: "Shuǐdiào Gētóu · Míngyuè Jǐshí Yǒu",
+        authorVi: "Tô Thức",
+        authorZh: "苏轼",
+        era: "Bắc Tống – Trung thu năm 1076",
+        originalZh: "明月几时有？把酒问青天。不知天上宫阙，今夕是何年。我欲乘风归去，又恐琼楼玉宇，高处不胜寒。起舞弄清影，何似在人间。\n转朱阁，低绮户，照无眠。不应有恨，何事长向别时圆？人有悲欢离合，月有阴晴圆缺，此事古难全。但愿人长久，千里共婵娟。",
+        originalPinyin: "Míng yuè jǐ shí yǒu? Bǎ jiǔ wèn qīng tiān. Bù zhī tiān shàng gōng què, jīn xī shì hé nián. Wǒ yù chéng fēng guī qù, yòu kǒng qióng lóu yù yǔ, gāo chù bú shèng hán. Qǐ wǔ nòng qīng yǐng, hé sì zài rén jiān.\nZhuǎn zhū gé, dī qǐ hù, zhào wú mián. Bù yīng yǒu hèn, hé shì cháng xiàng bié shí yuán? Rén yǒu bēi huān lí hé, yuè yǒu yīn qíng yuán quē, cǐ shì gǔ nán quán. Dàn yuàn rén cháng jiǔ, qiān lǐ gòng chán juān.",
+        hanVietLines: "Minh nguyệt kỷ thời hữu? Bả tửu vấn thanh thiên. Bất tri thiên thượng cung khuyết, kim tịch thị hà niên. Ngã dục thừa phong quy khứ, hựu khủng quỳnh lâu ngọc vũ, cao xứ bất thắng hàn. Khởi vũ lộng thanh ảnh, hà tự tại nhân gian.\nChuyển chu các, đê ỷ hộ, chiếu vô miên. Bất ưng hữu hận, hà sự trường hướng biệt thời viên? Nhân hữu bi hoan ly hợp, nguyệt hữu âm tình viên khuyết, thử sự cổ nan toàn. Đãn nguyện nhân trường cửu, thiên lý cộng thiền quyên.",
+        translationVi: "Vầng trăng sáng khởi sinh từ thuở nào? Nâng chén rượu hỏi trời xanh. Chẳng rõ nơi cung điện trên cao đêm nay là năm nào. Ta muốn nương gió trở về tiên giới, lại ngại lầu quỳnh gác ngọc chốn cao quá đỗi giá lạnh. Đứng dậy múa cùng bóng trong, nào đâu đẹp bằng cõi nhân gian.\nÁnh trăng vòng qua gác son, hạ xuống khung cửa lụa, soi người thao thức. Trăng vốn chẳng mang oán hận, cớ sao lại hay tròn đầy đúng lúc ly biệt? Đời người có vui buồn tan hợp, mặt trăng có mờ tỏ tròn khuyết, lẽ ấy xưa nay khó vẹn toàn. Chỉ ước người thân bình an bền lâu, dẫu cách nghìn dặm vẫn chung ngắm một vầng trăng.",
+        translationEn: "When did this bright moon first come into being? Cup in hand, I ask the deep sky what year tonight marks in heaven's palaces. I long to ride the wind back above, yet hesitate before the biting chill of jade towers on high. Rising to dance with my clear shadow, mortal earth proves warmer by far.\nGliding past vermilion pavilions and silk-screened windows, moonlight finds the wakeful. Bearing no malice, why does it wax full whenever kin are parted? Human lives know grief and joy, parting and reunion, just as the moon shifts between shadow and fullness—perfection has always been rare. May we endure in health, sharing this same radiant moon across a thousand miles.",
+        poeticsAnalysisVi: "Sáng tác tại Mật Châu dịp Trung thu khi hoài niệm người em Tô Triệt. Bài từ kết hợp cảm hứng lãng mạn Đạo gia với tinh thần nhập thế Nho gia, nâng nỗi nhớ thân tình lên triết lý chấp nhận quy luật bất toàn và lời chúc đoàn viên vượt khoảng cách.",
+        poeticsAnalysisEn: "Composed in Mizhou during the Mid-Autumn Festival for his absent brother Su Zhe, this lyric balances Daoist celestial yearning with Confucian affirmation of human life, turning separation into a serene wish for shared endurance."
+      },
+      {
+        id: "poem-14",
+        genre: "Tống Từ",
+        titleVi: "Niệm Nô Kiều · Xích Bích Hoài Cổ",
+        titleEn: "Meditation at the Red Cliffs",
+        titleZh: "念奴娇·赤壁怀古",
+        pinyin: "Niànnújiāo · Chìbì Huáigǔ",
+        authorVi: "Tô Thức",
+        authorZh: "苏轼",
+        era: "Bắc Tống – Hoàng Châu (1082)",
+        originalZh: "大江东去，浪淘尽，千古风流人物。故垒西边，人道是，三国周郎赤壁。乱石穿空，惊涛拍岸，卷起千堆雪。江山如画，一时多少豪杰。\n遥想公瑾当年，小乔初嫁了，雄姿英发。羽扇纶巾，谈笑间，樯橹灰飞烟灭。故国神游，多情应笑我，早生华发。人生如梦，一尊还酹江月。",
+        originalPinyin: "Dà jiāng dōng qù, làng táo jìn, qiān gǔ fēng liú rén wù. Gù lěi xī biān, rén dào shì, Sānguó Zhōu láng Chìbì. Luàn shí chuān kōng, jīng tāo pāi àn, juǎn qǐ qiān duī xuě. Jiāng shān rú huà, yì shí duō shǎo háo jié.\nYáo xiǎng Gōngjǐn dāng nián, Xiǎo Qiáo chū jià le, xióng zī yīng fā. Yǔ shàn guān jīn, tán xiào jiān, qiáng lǔ huī fēi yān miè. Gù guó shén yóu, duō qíng yīng xiào wǒ, zǎo shēng huá fà. Rén shēng rú mèng, yì zūn hái lèi jiāng yuè.",
+        hanVietLines: "Đại giang đông khứ, lãng đào tận, thiên cổ phong lưu nhân vật. Cố lũy tây biên, nhân đạo thị, Tam Quốc Chu lang Xích Bích. Loạn thạch xuyên không, kinh đào phách ngạn, quyển khởi thiên đôi tuyết. Giang sơn như họa, nhất thời đa thiểu hào kiệt.\nDao tưởng Công Cẩn đương niên, Tiểu Kiều sơ giá liễu, hùng tư anh phát. Vũ phiến quan cân, đàm tiếu gian, tường lỗ hôi phi yên diệt. Cố quốc thần du, đa tình ưng tiếu ngã, tảo sinh hoa phát. Nhân sinh như mộng, nhất tôn hoàn loại giang nguyệt.",
+        translationVi: "Trường Giang cuộn chảy về đông, sóng nước gột sạch bao bậc anh tài nghìn thuở. Phía tây thành lũy cũ, người đời truyền là chiến địa Xích Bích của Chu Du thời Tam Quốc. Đá dựng chọc trời, sóng lớn đập bờ, tung bọt như nghìn đống tuyết. Non sông tựa bức họa, một thời hội tụ biết bao hào kiệt.\nNhớ lại Công Cẩn năm xưa khi Tiểu Kiều mới về làm dâu, phong thái hiên ngang tuấn tú. Tay cầm quạt lông, đầu đội khăn lụa, giữa lúc nói cười mà chiến thuyền địch hóa tro khói. Tâm trí ngược dòng về cố quốc, tự cười mình đa cảm nên tóc sớm điểm bạc. Kiếp người thoáng tựa giấc mộng, hãy rót chén rượu tưới xuống dòng sông tế vầng trăng.",
+        translationEn: "The Great River rolls eastward, its currents washing away the celebrated figures of a millennium. West of the old earthworks, tradition locates Zhou Yu's Three Kingdoms battlefield at Red Cliffs. Crags pierce the clouds, crashing waves strike the bank and whip up thousands of snowy crests—a painted landscape that once hosted countless heroes.\nI picture Zhou Yu in his youth, newly wed to Xiao Qiao, commanding and poised. With feather fan and silk kerchief, amid calm conversation, enemy masts dissolved in ash and smoke. My mind wanders that ancient realm, smiling at how sentiment has silvered my hair so early. Since mortal existence resembles a dream, I pour this cup in tribute to the river moon.",
+        poeticsAnalysisVi: "Tác phẩm đặt nền móng cho trường phái từ Hào phóng, mở rộng biên độ Tống từ từ tình cảm khuê các sang lịch sử và hoài bão nam nhi. Đối sánh Chu Du công thành danh toại với cảnh ngộ biếm trích của mình tại Hoàng Châu, Tô Thức chọn thái độ khoáng đạt để vượt lên bi thương.",
+        poeticsAnalysisEn: "A foundational monument of the heroic (haofang) ci style, expanding lyric verse beyond private romance into historical reflection. Contrasting Zhou Yu's decisive victory with his own banishment in Huangzhou, Su Shi resolves frustration through philosophical poise."
+      },
+      {
+        id: "poem-15",
+        genre: "Tống Từ",
+        titleVi: "Như Mộng Lệnh · Tạc Dạ Vũ Sơ Phong Sậu",
+        titleEn: "Like a Dream: Light Rain and Sudden Wind",
+        titleZh: "如梦令·昨夜雨疏风骤",
+        pinyin: "Rúmèng Lìng · Zuóyè Yǔshū Fēngzhòu",
+        authorVi: "Lý Thanh Chiếu",
+        authorZh: "李清照",
+        era: "Bắc Tống (1084–khoảng 1155)",
+        originalZh: "昨夜雨疏风骤，\n浓睡不消残酒。\n试问卷帘人，\n却道海棠依旧。\n知否，知否？\n应是绿肥红瘦。",
+        originalPinyin: "Zuó yè yǔ shū fēng zhòu,\nNóng shuì bù xiāo cán jiǔ.\nShì wèn juǎn lián rén,\nQuè dào hǎitáng yī jiù.\nZhī fǒu, zhī fǒu?\nYīng shì lǜ féi hóng shòu.",
+        hanVietLines: "Tạc dạ vũ sơ phong sậu,\nNùng thụy bất tiêu tàn tửu.\nThí vấn quyển liêm nhân,\nKhước đạo hải đường y cựu.\nTri phủ, tri phủ?\nƯng thị lục phì hồng sấu.",
+        translationVi: "Đêm qua mưa thưa mà gió giật mạnh,\nGiấc ngủ sâu vẫn chưa tan hết men rượu tàn.\nGượng hỏi người đang cuốn rèm cửa,\nLại đáp rằng hoa hải đường vẫn y như cũ.\nCó biết chăng, có biết chăng?\nHẳn giờ đây lá xanh đã thêm dày còn hoa đỏ đã gầy rụng bớt.",
+        translationEn: "Last night scattered rain came with sudden gusts;\nEven deep slumber could not clear the lingering wine.\nI ask the attendant rolling up the blinds,\nWho replies that the crabapple blossoms look unchanged.\nDo you not see, do you not see?\nBy now the green leaves must be lush while the crimson petals grow sparse.",
+        poeticsAnalysisVi: "Tiêu biểu cho giai đoạn sáng tác sớm tinh tế của Lý Thanh Chiếu. Chỉ qua đối thoại ngắn và bốn chữ 'lục phì hồng sấu' (lá xanh mập mạp, hoa đỏ gầy guộc), tác giả nhân hóa thiên nhiên với cảm quan mẫn tiệp hiếm có về sự tàn phai của mùa xuân.",
+        poeticsAnalysisEn: "An early jewel of Li Qingzhao's restrained craft. Through a brief domestic exchange culminating in the coined image 'plump green, slender red,' she registers seasonal transience with remarkable visual economy."
+      },
+      {
+        id: "poem-16",
+        genre: "Tống Từ",
+        titleVi: "Nhất Tiễn Mai · Hồng Ngẫu Hương Tàn Ngọc Điệm Thu",
+        titleEn: "A Sprig of Plum: Autumn on the Jade Mat",
+        titleZh: "一剪梅·红藕香残玉簟秋",
+        pinyin: "Yìjiǎn Méi · Hóng'ǒu Xiāngcán Yùdiàn Qiū",
+        authorVi: "Lý Thanh Chiếu",
+        authorZh: "李清照",
+        era: "Bắc Tống (1084–khoảng 1155)",
+        originalZh: "红藕香残玉簟秋。轻解罗裳，独上兰舟。云中谁寄锦书来，雁字回时，月满西楼。\n花自飘零水自流。一种相思，两处闲愁。此情无计可消除，才下眉头，却上心头。",
+        originalPinyin: "Hóng ǒu xiāng cán yù diàn qiū. Qīng jiě luó shang, dú shàng lán zhōu. Yún zhōng shuí jì jǐn shū lái, yàn zì huí shí, yuè mǎn xī lóu.\nHuā zì piāo líng shuǐ zì liú. Yì zhǒng xiāng sī, liǎng chù xián chóu. Cǐ qíng wú jì kě xiāo chú, cái xià méi tóu, què shàng xīn tóu.",
+        hanVietLines: "Hồng ngẫu hương tàn ngọc điệm thu. Khinh giải la thường, độc thượng lan chu. Vân trung thùy ký cẩm thư lai, nhạn tự hồi thời, nguyệt mãn tây lâu.\nHoa tự phiêu linh thủy tự lưu. Nhất chủng tương tư, lưỡng xứ nhàn sầu. Thử tình vô kế khả tiêu trừ, tài há mi đầu, khước thượng tâm đầu.",
+        translationVi: "Sen hồng hương nhạt, chiếu trúc mát lạnh báo thu sang. Nhẹ thay áo lụa, một mình bước lên thuyền gỗ lan. Giữa tầng mây ai gửi thư gấm về, khi đàn nhạn xếp chữ bay ngang, ánh trăng ngập tràn lầu tây.\nHoa cứ lặng lẽ rơi, nước cứ vô tình chảy. Cùng một mối tương tư, chia nỗi sầu vương ở hai phương trời. Tâm tình này chẳng cách nào gột bỏ, vừa rời khỏi đôi mày đã lắng thẳng vào đáy lòng.",
+        translationEn: "Pink lotus scent fades and the smooth bamboo mat turns cool with autumn. Loosening my silk robe, I step alone onto the magnolia boat. Who sends a brocade letter through the clouds? As wild geese return in formation, moonlight fills the western pavilion.\nPetals drift on their own while water flows onward. One shared longing becomes quiet sorrow in two separate places. No remedy can dispel this feeling: scarcely has it left my knitted brow than it settles deep within my heart.",
+        poeticsAnalysisVi: "Bài từ tiêu biểu cho phong cách Uyển ước (tinh tế, uyển chuyển). Cặp câu kết 'tài há mi đầu, khước thượng tâm đầu' cụ thể hóa trạng thái tâm lý tương tư thành chuyển động hữu hình, có sức ảnh hưởng sâu rộng trong văn học cổ điển Đông Á.",
+        poeticsAnalysisEn: "A benchmark of the delicate (wanyue) ci school. Its celebrated closing cadence—tracking sorrow as it descends from the brow straight into the heart—gives abstract longing tactile immediacy."
+      },
+      {
+        id: "poem-17",
+        genre: "Tống Từ",
+        titleVi: "Thanh Ngọc Án · Nguyên Tịch",
+        titleEn: "Green Jade Table: The Lantern Festival",
+        titleZh: "青玉案·元夕",
+        pinyin: "Qīngyù Àn · Yuánxī",
+        authorVi: "Tân Khí Tật",
+        authorZh: "辛弃疾",
+        era: "Nam Tống (1140–1207)",
+        originalZh: "东风夜放花千树。更吹落、星如雨。宝马雕车香满路。凤箫声动，玉壶光转，一夜鱼龙舞。\n蛾儿雪柳黄金缕。笑语盈盈暗香去。众里寻他千百度。蓦然回首，那人却在，灯火阑珊处。",
+        originalPinyin: "Dōng fēng yè fàng huā qiān shù. Gèng chuī luò, xīng rú yǔ. Bǎo mǎ diāo chē xiāng mǎn lù. Fèng xiāo shēng dòng, yù hú guāng zhuǎn, yí yè yú lóng wǔ.\nÉ ér xuě liǔ huáng jīn lǚ. Xiào yǔ yíng yíng àn xiāng qù. Zhòng lǐ xún tā qiān bǎi dù. Mò rán huí shǒu, nà rén què zài, dēng huǒ lán shān chù.",
+        hanVietLines: "Đông phong dạ phóng hoa thiên thụ. Cánh xuy lạc, tinh như vũ. Bảo mã điêu xa hương mãn lộ. Phượng tiêu thanh động, ngọc hồ quang chuyển, nhất dạ ngư long vũ.\nNga nhi tuyết liễu hoàng kim lũ. Tiếu ngữ doanh doanh ám hương khứ. Chúng lý tầm tha thiên bách độ. Mạch nhiên hồi thủ, na nhân khước tại, đăng hỏa lan san xứ.",
+        translationVi: "Gió xuân ban đêm thắp nở nghìn cây hoa đèn, lại thổi rụng tàn lửa tựa mưa sao rơi. Ngựa quý xe chạm tỏa hương kín lối. Tiếng tiêu phượng ngân vang, ánh trăng tròn như bầu ngọc xoay vần, suốt đêm tưng bừng điệu múa đèn cá đèn rồng.\nTrâm bướm, cành liễu tuyết cài sợi chỉ vàng, tiếng cười nói rộn ràng thoảng hương lướt qua. Tìm bóng người ấy hàng nghìn trăm lượt giữa biển người. Chợt quay đầu nhìn lại, người ấy lại đứng lặng lẽ nơi ánh đèn đã thưa dần.",
+        translationEn: "Night breezes bloom a thousand trees of lanterns and scatter sparks like falling stars. Fine steeds and carved carriages fill the avenues with perfume. Phoenix flutes resonate, the jade-pitcher moon wheels overhead, and fish-and-dragon lanterns dance till dawn.\nHair ornaments of moth wings, snow-willow, and gold thread pass by amid bright laughter and faint scent. After searching through the crowd a thousand times, I glance back unexpectedly—and there that solitary figure stands where the festive lamps grow dim.",
+        poeticsAnalysisVi: "Vương Quốc Duy trong 'Nhân gian từ thoại' chọn câu kết bài này làm cảnh giới thứ ba (cao nhất) của sự nghiệp học vấn và sáng tạo. Bức tranh Nguyên tiêu phồn hoa tại Lâm An làm nền phản chiếu bản lĩnh cô cao, không hòa theo dòng chảy hưởng lạc của Tân Khí Tật.",
+        poeticsAnalysisEn: "Scholar Wang Guowei cited the final stanza as the third and highest stage of scholarly attainment. The dazzling Lantern Festival crowd in Southern Song Lin'an acts as a foil for Xin Qiji's quiet moral independence."
+      },
+      {
+        id: "poem-18",
+        genre: "Tống Từ",
+        titleVi: "Vũ Lâm Linh · Hàn Thiền Thê Thiết",
+        titleEn: "Bells in the Rain: Autumn Farewell",
+        titleZh: "雨霖铃·寒蝉凄切",
+        pinyin: "Yǔlínlíng · Hánchán Qīqiè",
+        authorVi: "Liễu Vĩnh",
+        authorZh: "柳永",
+        era: "Bắc Tống (khoảng 987–1053)",
+        originalZh: "寒蝉凄切，对长亭晚，骤雨初歇。都门帐饮无绪，留恋处，兰舟催发。执手相看泪眼，竟无语凝噎。念去去，千里烟波，暮霭沉沉楚天阔。\n多情自古伤离别，更那堪，冷落清秋节！今宵酒醒何处？杨柳岸，晓风残月。此去经年，应是良辰好景虚设。便纵有千种风情，更与何人说？",
+        originalPinyin: "Hán chán qī qiè, duì cháng tíng wǎn, zhòu yǔ chū xiē. Dū mén zhàng yǐn wú xù, liú liàn chù, lán zhōu cuī fā. Zhí shǒu xiāng kàn lèi yǎn, jìng wú yǔ níng yē. Niàn qù qù, qiān lǐ yān bō, mù ǎi chén chén Chǔ tiān kuò.\nDuō qíng zì gǔ shāng lí bié, gèng nǎ kān, lěng luò qīng qiū jié! Jīn xiāo jiǔ xǐng hé chù? Yáng liǔ àn, xiǎo fēng cán yuè. Cǐ qù jīng nián, yīng shì liáng chén hǎo jǐng xū shè. Biàn zòng yǒu qiān zhǒng fēng qíng, gèng yǔ hé rén shuō?",
+        hanVietLines: "Hàn thiền thê thiết, đối trường đình vãn, sậu vũ sơ hiết. Đô môn trướng ẩm vô tự, lưu luyến xứ, lan chu thôi phát. Chấp thủ tương khán lệ nhãn, cánh vô ngữ ngưng ế. Niệm khứ khứ, thiên lý yên ba, mộ ải trầm trầm Sở thiên khoát.\nĐa tình tự cổ thương ly biệt, cánh na kham, lãnh lạc thanh thu tiết! Kim tiêu tửu tỉnh hà xứ? Dương liễu ngạn, hiểu phong tàn nguyệt. Thử khứ kinh niên, ưng thị lương thần hảo cảnh hư thiết. Tiện túng hữu thiên chủng phong tình, cánh dữ hà nhân thuyết?",
+        translationVi: "Ve mùa lạnh rỉ rả ai oán trước trường đình lúc hoàng hôn, cơn mưa rào vừa dứt. Tiệc tiễn ngoài cửa kinh thành lòng rối bời, giữa giây phút lưu luyến mà thuyền gỗ lan đã giục rời bến. Nắm tay nhìn nhau qua đôi mắt nhòa lệ, nghẹn lời không thốt nổi câu nào. Nghĩ chặng đường sắp đi, nghìn dặm khói sóng mịt mù, sương chiều lắng nặng dưới bầu trời nước Sở mênh mông.\nNgười đa tình từ xưa vốn đau lòng khi chia ly, huống chi lại rơi vào tiết thu thanh vắng lạnh lẽo. Đêm nay tỉnh rượu sẽ đang ở chốn nào? Hẳn bên bờ dương liễu, dưới gió sớm và vầng trăng khuyết. Chuyến đi này cách biệt nhiều năm, bao ngày đẹp cảnh lành cũng hóa vô nghĩa. Dẫu trong lòng chất chứa nghìn nỗi niềm, biết ngỏ cùng ai?",
+        translationEn: "Autumn cicadas cry sharply by the post pavilion at dusk as a sudden downpour subsides. The farewell tent outside the capital brings no cheer; just as we linger, the magnolia boat urges departure. Clasping hands, we gaze through tearful eyes, choked into silence. Ahead stretch a thousand miles of misty waves under heavy evening haze and the vast southern sky.\nFeeling hearts have always grieved at parting—how much harder in desolate autumn! Where will I wake from wine tonight? Along a willow-lined bank, beneath dawn breezes and a waning moon. Gone for years to come, fine seasons and fair views will seem hollow; even with a thousand tender thoughts, to whom could I speak them?",
+        poeticsAnalysisVi: "Liễu Vĩnh là bậc thầy phát triển thể 'mạn từ' (từ điệu dài) với bút pháp 'phô trần' giàu kịch tính. Hình ảnh 'dương liễu ngạn, hiểu phong tàn nguyệt' kết hợp thực cảnh hiện tại với hư cảnh tưởng tượng sau khi rời bến, trở thành chuẩn mực kinh điển của từ biệt ly.",
+        poeticsAnalysisEn: "Liu Yong pioneered the extended ci form (manci) through layered narrative pacing. The iconic trio of willow bank, morning breeze, and fading moon shifts directly from present farewell to imagined solitude, defining classical parting lyrics."
+      },
+      {
+        id: "poem-19",
+        genre: "Tống Từ",
+        titleVi: "Điệp Luyến Hoa · Đình Viện Thâm Thâm Thâm Kỷ Hứa",
+        titleEn: "Butterflies Lingering over Flowers: Deep Courtyards",
+        titleZh: "蝶恋花·庭院深深深几许",
+        pinyin: "Diéliànhuā · Tíngyuàn Shēnshēn Shēn Jǐxǔ",
+        authorVi: "Âu Dương Tu",
+        authorZh: "欧阳修",
+        era: "Bắc Tống (1007–1072)",
+        originalZh: "庭院深深深几许，杨柳堆烟，帘幕无重数。玉勒雕鞍游冶处，楼高不见章台路。\n雨横风狂三月暮，门掩黄昏，无计留春住。泪眼问花花不语，乱红飞过秋千去。",
+        originalPinyin: "Tíng yuàn shēn shēn shēn jǐ xǔ, yáng liǔ duī yān, lián mù wú chóng shù. Yù lè diāo ān yóu yě chù, lóu gāo bú jiàn Zhāngtái lù.\nYǔ hèng fēng kuáng sān yuè mù, mén yǎn huáng hūn, wú jì liú chūn zhù. Lèi yǎn wèn huā huā bù yǔ, luàn hóng fēi guò qiū qiān qù.",
+        hanVietLines: "Đình viện thâm thâm thâm kỷ hứa, dương liễu đôi yên, liêm mạc vô trùng số. Ngọc lặc điêu an du dã xứ, lâu cao bất kiến Chương Đài lộ.\nVũ hoành phong cuồng tam nguyệt mộ, môn yểm hoàng hôn, vô kế lưu xuân trú. Lệ nhãn vấn hoa hoa bất ngữ, loạn hồng phi quá thu thiên khứ.",
+        translationVi: "Sân viện sâu thẳm biết sâu đến nhường nào, rặng dương liễu phủ lớp khói mờ, rèm trướng buông tầng tầng không đếm xuể. Ngựa hàm ngọc yên chạm rong chơi nơi phồn hoa, đứng trên lầu cao vẫn chẳng nhìn thấy lối về đường Chương Đài.\nMưa xiên gió dữ vào cuối tháng ba, khép cửa giữa bóng hoàng hôn, không còn cách nào giữ mùa xuân ở lại. Đôi mắt đẫm lệ hỏi hoa mà hoa chẳng đáp lời, chỉ thấy cánh hoa đỏ tả tơi bay vút qua chiếc xích đu.",
+        translationEn: "How deep, how deeply recessed is this courtyard? Willows gather like mist behind countless layered curtains. Where jeweled bridles and carved saddles roam in pleasure, even the tall pavilion cannot sight the Zhangtai road.\nSlanting rain and fierce gusts mark late third month; shutting the gate at twilight, there is no way to detain spring. Tearful eyes question the blossoms, yet the blossoms stay mute as scattered crimson petals blow past the garden swing.",
+        poeticsAnalysisVi: "Ba chữ 'thâm' nối tiếp ở câu mở đầu tạo cảm giác tầng lớp u tịch, từng được Lý Thanh Chiếu hết lòng ngưỡng mộ. Hai câu kết 'lệ nhãn vấn hoa hoa bất ngữ' là đỉnh cao của bút pháp 'dĩ ngã quan vật', nơi cảnh vật vô tình càng khắc sâu nỗi cô quạnh.",
+        poeticsAnalysisEn: "The triple repetition of 'deep' in the opening line—greatly admired by Li Qingzhao—builds an atmosphere of spatial enclosure. In the closing couplet, mute blossoms swirling past an empty swing crystallize quiet emotional isolation."
+      },
+      {
+        id: "poem-20",
+        genre: "Tống Từ",
+        titleVi: "Mãn Giang Hồng · Tả Hoài",
+        titleEn: "The Whole River Red: Expressing Resolve",
+        titleZh: "满江红·写怀",
+        pinyin: "Mǎnjiānghóng · Xiěhuái",
+        authorVi: "Nhạc Phi",
+        authorZh: "岳飞",
+        era: "Nam Tống (1103–1142)",
+        originalZh: "怒发冲冠，凭栏处、潇潇雨歇。抬望眼、仰天长啸，壮怀激烈。三十功名尘与土，八千里路云和月。莫等闲、白了少年头，空悲切。\n靖康耻，犹未雪。臣子恨，何时灭。驾长车，踏破贺兰山缺。壮志饥餐胡虏肉，笑谈渴饮匈奴血。待从头、收拾旧山河，朝天阙。",
+        originalPinyin: "Nù fà chōng guān, píng lán chù, xiāo xiāo yǔ xiē. Tái wàng yǎn, yǎng tiān cháng xiào, zhuàng huái jī liè. Sān shí gōng míng chén yǔ tǔ, bā qiān lǐ lù yún hé yuè. Mò děng xián, bái le shào nián tóu, kōng bēi qiè.\nJìngkāng chǐ, yóu wèi xuě. Chén zǐ hèn, hé shí miè. Jià cháng chē, tà pò Hèlán Shān quē. Zhuàng zhì jī cān húlǔ ròu, xiào tán kě yǐn Xiōngnú xuè. Dài cóng tóu, shōu shí jiù shān hé, cháo tiān què.",
+        hanVietLines: "Nộ phát xung quan, bằng lan xứ, tiêu tiêu vũ hiết. Đài vọng nhãn, ngưỡng thiên trường khiếu, tráng hoài kích liệt. Tam thập công danh trần dữ thổ, bát thiên lý lộ vân hòa nguyệt. Mạc đẳng nhàn, bạch liễu thiếu niên đầu, không bi thiết.\nTĩnh Khang sỉ, do vị tuyết. Thần tử hận, hà thời diệt. Giá trường xa, đạp phá Hạ Lan sơn khuyết. Tráng chí cơ xan hồ lỗ nhục, tiếu đàm khát ẩm Hung Nô huyết. Đãi tòng đầu, thu thập cựu sơn hà, triều thiên khuyết.",
+        translationVi: "Tóc giận dựng đứng chạm mũ, tựa bên lan can khi cơn mưa rào vừa tạnh. Ngước mắt trông xa, ngẩng mặt lên trời thét dài, chí lớn cuộn trào mãnh liệt. Ba mươi năm công danh nhẹ tựa bụi đất, tám nghìn dặm chinh chiến chỉ có mây trời và ánh trăng. Chớ để phí hoài khiến mái đầu tuổi trẻ hóa bạc mà luống công xót xa.\nNỗi nhục biến cố Tĩnh Khang vẫn chưa được rửa, mối hận của kẻ bề tôi bao giờ mới nguôi. Quyết đánh chiến xa đạp vỡ cửa ải núi Hạ Lan. Chí khí hào hùng thề quét sạch quân xâm lược. Đợi ngày thu phục trọn vẹn giang sơn cũ từ đầu, sẽ trở về triều bái cung khuyết.",
+        translationEn: "Wrath bristles beneath my cap as I lean on the railing after driving rain subsides. Lifting my gaze to the sky in a long cry, fierce purpose surges within. Thirty years of rank weigh no more than dust; eight thousand miles of marching pass under clouds and moon. Let not youth slip idly by until white hair brings vain regret.\nThe humiliation of Jingkang remains unavenged; when shall a loyal subject's grief end? Driving war chariots through the passes of Mount Helan, we vow to break the invader's power. Once our ancestral rivers and mountains are recovered anew, we shall return to report before the imperial court.",
+        poeticsAnalysisVi: "Tuyệt tác ái quốc gắn liền với danh tướng Nhạc Phi thời Nam Tống (dù giới khảo chứng sử học vẫn thảo luận về văn bản lưu truyền từ đời Minh). Nhịp điệu đanh thép, dùng vận trắc nhập thanh dồn dập cùng lời khuyên 'Mạc đẳng nhàn, bạch liễu thiếu niên đầu' tạo khí phách bi tráng bậc nhất.",
+        poeticsAnalysisEn: "A celebrated patriotic anthem associated with Southern Song general Yue Fei (while textual historians note its earliest extant printing dates to the Ming). Driving oblique-tone rhymes and the admonition against wasting youth give the lyric extraordinary rhetorical force."
+      },
+      {
+        id: "poem-21",
+        genre: "Nguyên Khúc",
+        titleVi: "Thiên Tịnh Sa · Thu Tư",
+        titleEn: "Sky-Clear Sand: Autumn Thoughts",
+        titleZh: "天净沙·秋思",
+        pinyin: "Tiānjìngshā · Qiūsī",
+        authorVi: "Mã Trí Viễn",
+        authorZh: "马致远",
+        era: "Nguyên (khoảng 1250–1321)",
+        originalZh: "枯藤老树昏鸦，\n小桥流水人家，\n古道西风瘦马。\n夕阳西下，\n断肠人在天涯。",
+        originalPinyin: "Kū téng lǎo shù hūn yā,\nXiǎo qiáo liú shuǐ rén jiā,\nGǔ dào xī fēng shòu mǎ.\nXī yáng xī xià,\nDuàn cháng rén zài tiān yá.",
+        hanVietLines: "Khô đằng lão thụ hôn nha,\nTiểu kiều lưu thủy nhân gia,\nCổ đạo tây phong sấu mã.\nTịch dương tây há,\nĐoạn trường nhân tại thiên nhai.",
+        translationVi: "Dây leo khô, cây già, quạ chiều,\nCầu nhỏ, dòng nước chảy, mái nhà dân,\nĐường cổ, gió tây, con ngựa gầy.\nNắng tà chìm về phương tây,\nKẻ đứt ruột sầu vẫn phiêu bạt nơi chân trời.",
+        translationEn: "Withered vines, aged trees, crows at dusk;\nA small bridge, flowing water, quiet cottages;\nAn ancient road, west wind, a lean horse.\nThe evening sun sinks westward;\nA heartbroken traveler remains at the edge of the world.",
+        poeticsAnalysisVi: "Được tôn xưng là 'Thu tư chi tổ' (bậc tổ của thơ văn tả nỗi buồn thu). Chỉ 28 chữ, Mã Trí Viễn xếp liền 9 danh ngữ không cần động từ nối, tạo hiệu ứng dựng cảnh điện ảnh: lấy ấm áp của 'tiểu kiều lưu thủy nhân gia' tương phản với cô độc của người lữ thứ.",
+        poeticsAnalysisEn: "Acclaimed as the supreme archetype of autumn nostalgia. In just twenty-eight characters, Ma Zhiyuan juxtaposes nine noun phrases without connective verbs, using the warmth of bridge and cottages to sharpen the wanderer's isolation."
+      },
+      {
+        id: "poem-22",
+        genre: "Nguyên Khúc",
+        titleVi: "Tứ Khối Ngọc · Nhàn Thích",
+        titleEn: "Four Pieces of Jade: Quiet Leisure",
+        titleZh: "四块玉·闲适",
+        pinyin: "Sìkuài Yù · Xiánshì",
+        authorVi: "Quan Hán Khanh",
+        authorZh: "关汉卿",
+        era: "Nguyên (khoảng 1230–1300)",
+        originalZh: "适意行，\n安心坐，\n渴时饮饥时餐醉时歌，\n困来时就向莎茵卧。\n日月长，\n天地阔，\n闲快活。",
+        originalPinyin: "Shì yì xíng,\nĀn xīn zuò,\nKě shí yǐn jī shí cān zuì shí gē,\nKùn lái shí jiù xiàng suō yīn wò.\nRì yuè cháng,\nTiān dì kuò,\nXián kuài huo.",
+        hanVietLines: "Thích ý hành,\nAn tâm tọa,\nKhát thời ẩm cơ thời xan túy thời ca,\nKhốn lai thời tựu hướng toa nhân ngọa.\nNhật nguyệt trường,\nThiên địa khoát,\nNhàn khoái hoạt.",
+        translationVi: "Thuận lòng mà bước,\nAn tâm mà ngồi,\nKhát thì uống, đói thì ăn, say thì ca hát,\nMỏi mệt liền ngả lưng lên thảm cỏ mềm.\nNgày tháng dài rộng,\nTrời đất mênh mông,\nThong dong tự tại biết bao.",
+        translationEn: "Walk as inclination leads,\nSit with a settled heart;\nDrink when thirsty, eat when hungry, sing when flushed with wine,\nAnd lie upon a cushion of meadow grass when drowsy.\nSun and moon stretch long,\nHeaven and earth lie wide—\nUnfettered ease and contentment.",
+        poeticsAnalysisVi: "Tác phẩm tiêu biểu cho phong cách tản khúc tự nhiên, gần khẩu ngữ thị dân của Quan Hán Khanh — bậc đại sư Nguyên tạp kịch. Giữa bối cảnh trí thức Hán bị gạt khỏi khoa cử đời Nguyên, bài khúc thể hiện tinh thần tự do phóng khoáng pha sắc thái Đạo gia.",
+        poeticsAnalysisEn: "Representative of Guan Hanqing's colloquial, buoyant sanqu style. Against the backdrop of suspended civil examinations under Yuan rule, the lyric affirms Daoist-inflected personal autonomy and everyday serenity."
+      },
+      {
+        id: "poem-23",
+        genre: "Nguyên Khúc",
+        titleVi: "Sơn Pha Dương · Đồng Quan Hoài Cổ",
+        titleEn: "Sheep on the Mountain Slope: Reflecting at Tongguan",
+        titleZh: "山坡羊·潼关怀古",
+        pinyin: "Shānpōyáng · Tóngguān Huáigǔ",
+        authorVi: "Trương Dưỡng Hạo",
+        authorZh: "张养浩",
+        era: "Nguyên (1270–1329)",
+        originalZh: "峰峦如聚，\n波涛如怒，\n山河表里潼关路。\n望西都，\n意踌躇。\n伤心秦汉经行处，\n宫阙万间都做了土。\n兴，百姓苦；\n亡，百姓苦。",
+        originalPinyin: "Fēng luán rú jù,\nBō tāo rú nù,\nShān hé biǎo lǐ Tóngguān lù.\nWàng xī dū,\nYì chóu chú.\nShāng xīn Qín Hàn jīng xíng chù,\nGōng què wàn jiān dōu zuò le tǔ.\nXīng, bǎi xìng kǔ;\nWáng, bǎi xìng kǔ.",
+        hanVietLines: "Phong loan như tụ,\nBa đào như nộ,\nSơn hà biểu lý Đồng Quan lộ.\nVọng tây đô,\nÝ trù trừ.\nThương tâm Tần Hán kinh hành xứ,\nCung khuyết vạn gian đô tố liễu thổ.\nHưng, bách tính khổ;\nVong, bách tính khổ.",
+        translationVi: "Núi non chập chùng như hội tụ,\nSóng Hoàng Hà gầm réo tựa cơn giận,\nTrong núi ngoài sông bao bọc con đường ải Đồng Quan.\nTrông về kinh đô phương tây,\nLòng ngổn ngang trăn trở.\nXót xa mảnh đất Tần, Hán xưa từng hưng thịnh,\nMuôn gian cung điện nay đều hóa cát bụi.\nTriều đại hưng thịnh, dân đen vẫn khổ;\nTriều đại suy vong, dân đen càng khổ.",
+        translationEn: "Peaks gather like an army,\nBillows roar in fury,\nMountains and river flank the road through Tongguan Pass.\nGazing toward the western capital,\nMy thoughts hesitate in sorrow.\nAlong the ancient grounds of Qin and Han,\nTen thousand palace halls have crumbled back to earth.\nWhen empires rise, the common people suffer;\nWhen empires fall, the common people suffer.",
+        poeticsAnalysisVi: "Viết trên đường đi cứu tế nạn đói Quan Trung năm 1329, bài tản khúc đạt tới tầm cao sử quan nhân bản hiếm có. Hai câu kết 'Hưng, bách tính khổ; Vong, bách tính khổ' vạch trần nghịch lý của lịch sử phong kiến: xây dựng cung điện hay binh đao đổi triều đều đè nặng lên vai dân thường.",
+        poeticsAnalysisEn: "Composed in 1329 while Zhang Yanghao traveled to relieve famine in Shaanxi, this lyric achieves rare historical lucidity. Its stark coda—that both imperial rise and imperial collapse burden ordinary people—cuts straight through dynastic nostalgia."
+      },
+      {
+        id: "poem-24",
+        genre: "Nguyên Khúc",
+        titleVi: "Thiên Tịnh Sa · Thu",
+        titleEn: "Sky-Clear Sand: Autumn Palette",
+        titleZh: "天净沙·秋",
+        pinyin: "Tiānjìngshā · Qiū",
+        authorVi: "Bạch Phác",
+        authorZh: "白朴",
+        era: "Nguyên (1226–khoảng 1306)",
+        originalZh: "孤村落日残霞，\n轻烟老树寒鸦，\n一点飞鸿影下。\n青山绿水，\n白草红叶黄花。",
+        originalPinyin: "Gū cūn luò rì cán xiá,\nQīng yān lǎo shù hán yā,\nYì diǎn fēi hóng yǐng xià.\nQīng shān lǜ shuǐ,\nBái cǎo hóng yè huáng huā.",
+        hanVietLines: "Cô thôn lạc nhật tàn hà,\nKhinh yên lão thụ hàn nha,\nNhất điểm phi hồng ảnh há.\nThanh sơn lục thủy,\nBạch thảo hồng diệp hoàng hoa.",
+        translationVi: "Xóm vắng, mặt trời lặn, ráng chiều còn sót,\nKhói mỏng, cây cổ thụ, cánh quạ trời lạnh,\nMột chấm bóng nhạn bay lướt xuống.\nNúi xanh nước biếc,\nCỏ trắng, lá đỏ, hoa cúc vàng.",
+        translationEn: "A lone hamlet, setting sun, lingering sunset clouds;\nThin smoke, old trees, chilly crows,\nAnd one speck of a wild goose gliding low.\nBlue-green hills and emerald stream,\nPale grass, crimson leaves, and yellow blooms.",
+        poeticsAnalysisVi: "Thuộc nhóm Tứ đại gia Nguyên khúc, Bạch Phác tạo ra đối cực sáng rực với 'Thu tư' của Mã Trí Viễn. Từ khung cảnh tiêu sơ lúc hoàng hôn, hai câu kết bất ngờ bừng lên năm gam màu thanh – lục – bạch – hồng – hoàng, vẽ nên bức tranh thu sống động và giàu thi vị.",
+        poeticsAnalysisEn: "One of the Four Masters of Yuan Drama, Bai Pu offers a chromatic counterpoint to Ma Zhiyuan's melancholy autumn. Opening in muted twilight, the final lines burst into five crisp pigments—blue-green, emerald, white, red, and yellow—transforming solitude into painterly vitality."
+      }
+    ],
+    fourGreatNovels: [
+      {
+        id: "novel-01",
+        titleVi: "Tam Quốc Diễn Nghĩa",
+        titleEn: "Romance of the Three Kingdoms",
+        titleZh: "三国演义",
+        pinyin: "Sānguó Yǎnyì",
+        authorEra: "La Quán Trung (Minh sơ, thế kỷ XIV)",
+        coreThemesVi: "Vòng tuần hoàn phân hợp của lịch sử ('Thiên hạ đại thế, phân cửu tất hợp, hợp cửu tất phân'), xung đột giữa trung nghĩa cá nhân và quyền mưu chính trị, nghệ thuật dụng binh và nhân trị qua các điển tích Kết nghĩa vườn đào, Tam cố thảo lư, Xích Bích.",
+        coreThemesEn: "Cyclical dynastic division and unification, the tension between personal loyalty and political statecraft, and strategic psychology illustrated through episodes such as the Peach Garden Oath, Three Visits to the Thatched Cottage, and the Battle of Red Cliffs.",
+        realLocationsVi: "Xích Bích (Hồ Bắc), Vũ Hầu Từ và Cẩm Lý tại Thành Đô (Tứ Xuyên), Cổ Long Trung tại Tương Dương (Hồ Bắc), Bạch Đế Thành (Trùng Khánh), Hứa Xương (Hà Nam).",
+        realLocationsEn: "Chibi battlefield (Hubei), Wuhou Shrine in Chengdu (Sichuan), Ancient Longzhong in Xiangyang (Hubei), Baidicheng (Chongqing), and Xuchang (Henan).",
+        vietnamReceptionVi: "Ảnh hưởng sâu đậm vào văn hóa đại chúng, tuồng cổ, cải lương và nghệ thuật kể chuyện truyền thống Việt Nam; các hình tượng Gia Cát Lượng, Quan Vũ, Tào Tháo trở thành ẩn dụ phổ biến về trí tuệ, tín nghĩa và mưu lược.",
+        vietnamReceptionEn: "Deeply embedded in Vietnamese classical theater (tuong, cai luong) and popular idioms, where Zhuge Liang, Guan Yu, and Cao Cao serve as cultural shorthand for strategy, fidelity, and statecraft."
+      },
+      {
+        id: "novel-02",
+        titleVi: "Thủy Hử",
+        titleEn: "Water Margin",
+        titleZh: "水浒传",
+        pinyin: "Shuǐhǔ Zhuàn",
+        authorEra: "Thi Nại Am (cuối Nguyên – đầu Minh, thế kỷ XIV)",
+        coreThemesVi: "Khát vọng công lý dân gian trước bộ máy quan lại tham nhũng ('quan bức dân phản'), tinh thần hiệp nghĩa giang hồ của 108 anh hùng Lương Sơn Bạc và bi kịch nội tại giữa lý tưởng trung quân với tự do thảo dã.",
+        coreThemesEn: "Popular resistance against official corruption, the code of brotherhood among the 108 outlaws of Mount Liang, and the tragic paradox between seeking imperial amnesty and preserving autonomous justice.",
+        realLocationsVi: "Thủy Bạc Lương Sơn (Tế Ninh, Sơn Đông), Cảnh Dương Cương (Dương Cốc, Sơn Đông), Khai Phong phủ (Hà Nam), chùa Đại Tướng Quốc và đầm Lục Hòa Tháp (Hàng Châu, Chiết Giang).",
+        realLocationsEn: "Mount Liang Marshes (Jining, Shandong), Jingyang Ridge (Yanggu, Shandong), Kaifeng Prefecture (Henan), and Liuhe Pagoda in Hangzhou (Zhejiang).",
+        vietnamReceptionVi: "Được dịch thuật và bình chú sớm tại Việt Nam, nổi bật qua bản phê bình của Kim Thánh Thán; các hồi Võ Tòng đả hổ, Lỗ Trí Thâm, Lâm Xung truyền cảm hứng cho văn học hiệp nghĩa và sân khấu dân gian.",
+        vietnamReceptionEn: "Widely read in Vietnam alongside Jin Shengtan's famous commentary, inspiring martial-chivalric storytelling and stage adaptations centered on Wu Song, Lu Zhishen, and Lin Chong."
+      },
+      {
+        id: "novel-03",
+        titleVi: "Tây Du Ký",
+        titleEn: "Journey to the West",
+        titleZh: "西游记",
+        pinyin: "Xīyóu Jì",
+        authorEra: "Ngô Thừa Ân (Trung – Vãn Minh, thế kỷ XVI)",
+        coreThemesVi: "Hành trình thỉnh kinh của thầy trò Đường Tăng dựa trên sử liệu Huyền Trang đời Đường, kết hợp ẩn dụ tu tâm Tam giáo đồng nguyên (Phật – Đạo – Nho), phép biện chứng giữa 'tâm viên' (Tôn Ngộ Không) và kỷ luật tu hành qua 81 kiếp nạn.",
+        coreThemesEn: "Mythologizing the Tang monk Xuanzang's pilgrimage to India, the novel weaves Buddhist, Daoist, and Confucian inner cultivation into a comic-heroic allegory of disciplining the restless 'monkey mind' across eighty-one trials.",
+        realLocationsVi: "Đại Nhạn Tháp tại Tây An (Thiểm Tây), Hoa Quả Sơn tại Liên Vân Cảng (Giang Tô), Hỏa Diệm Sơn tại Thổ Lỗ Phiên (Tân Cương), Hành lang Hà Tây (Cam Túc).",
+        realLocationsEn: "Giant Wild Goose Pagoda in Xi'an (Shaanxi), Mount Huaguo in Lianyungang (Jiangsu), Flaming Mountains in Turpan (Xinjiang), and the Hexi Corridor (Gansu).",
+        vietnamReceptionVi: "Trở thành ký ức văn hóa liên thế hệ tại Việt Nam qua cả văn bản dịch lẫn phim truyền hình kinh điển năm 1986; hệ thống điển tích như '72 phép biến hóa', 'Vòng kim cô', 'Hỏa nhãn kim tinh' đi thẳng vào ngôn ngữ đời sống.",
+        vietnamReceptionEn: "An intergenerational cultural touchstone in Vietnam through translations and the classic 1986 television adaptation, supplying everyday expressions such as the Golden Fillet and Seventy-Two Transformations."
+      },
+      {
+        id: "novel-04",
+        titleVi: "Hồng Lâu Mộng",
+        titleEn: "Dream of the Red Chamber",
+        titleZh: "红楼梦",
+        pinyin: "Hónglóu Mèng",
+        authorEra: "Tào Tuyết Cần (Tiền 80 hồi) & Cao Ngạc chỉnh lý (Thanh, thế kỷ XVIII)",
+        coreThemesVi: "Bức tranh bách khoa về sự thịnh suy của tứ đại gia tộc Giả – Sử – Vương – Tiết, bi kịch tình yêu Giả Bảo Ngọc – Lâm Đại Ngọc – Tiết Bảo Thoa, cùng mỹ học vườn cảnh, thi họa, ẩm thực, Đông y và triết lý sắc không về cõi phồn hoa.",
+        coreThemesEn: "An encyclopedic chronicle of the rise and collapse of the aristocratic Jia clan, tracing the tragic triangle of Jia Baoyu, Lin Daiyu, and Xue Baochai while illuminating Qing garden design, poetry clubs, cuisine, medicine, and Buddhist-Daoist impermanence.",
+        realLocationsVi: "Phủ Cung Vương và Đại Quan Viên (Bắc Kinh), Giang Ninh Chức Tạo Phủ tại Nam Kinh (Giang Tô), các danh viên Tô Châu và Dương Châu (Giang Tô).",
+        realLocationsEn: "Prince Gong's Mansion and Grand View Garden (Beijing), Jiangning Imperial Silk Manufactory in Nanjing (Jiangsu), and classical gardens of Suzhou and Yangzhou.",
+        vietnamReceptionVi: "Tạo lập hẳn mạch nghiên cứu 'Hồng học' tại Việt Nam, đồng thời gợi cảm hứng sâu sắc cho thi ca cổ điển và hiện đại về thân phận nữ giới, mỹ học tài mệnh tương đố và kỹ nghệ tiểu thuyết tâm lý.",
+        vietnamReceptionEn: "Fostering a dedicated Vietnamese branch of Redology, the novel shaped literary reflections on women's destinies, psychological portraiture, and the poignant contrast between talent and fate."
+      }
+    ],
+    fiveOperas: {
+      traditions: [
+        {
+          id: "opera-peking",
+          nameVi: "Kinh Kịch",
+          nameEn: "Peking Opera",
+          nameZh: "京剧",
+          pinyin: "Jīngjù",
+          provinceId: "prov-beijing",
+          featuresVi: "Hình thành cuối thế kỷ XVIII từ sự kiện 'Tứ đại Huy ban tiến kinh' năm 1790, kết hợp làn điệu Tây Bì – Nhị Hoàng với bốn kỹ năng Xướng (hát), Niệm (nói), Tố (diễn), Đả (võ). Được UNESCO ghi danh Di sản Văn hóa Phi vật thể năm 2010.",
+          featuresEn: "Crystallized after the Four Great Anhui Troupes entered Beijing in 1790, blending Xipi and Erhuang melodies across four codified arts: singing, recitation, acting, and martial acrobatics. Inscribed by UNESCO in 2010."
+        },
+        {
+          id: "opera-kunqu",
+          nameVi: "Côn Khúc",
+          nameEn: "Kunqu Opera",
+          nameZh: "昆曲",
+          pinyin: "Kūnqǔ",
+          provinceId: "prov-jiangsu",
+          featuresVi: "Được mệnh danh là 'Bách hý chi tổ' (tổ sư các loại hình hý khúc), khởi nguồn từ Côn Sơn (Giang Tô) thời Nguyên–Minh với thủy ma điệu êm ái, sáo trúc dẫn nhịp và kiệt tác 'Mẫu Đơn Đình' của Thang Hiển Tổ. Di sản UNESCO năm 2001.",
+          featuresEn: "Revered as the ancestor of Chinese operas, originating in Kunshan (Jiangsu) during the Yuan–Ming transition. Distinguished by flowing 'water-polished' melodies led by bamboo flute and Tang Xianzu's 'The Peony Pavilion.' UNESCO masterpiece since 2001."
+        },
+        {
+          id: "opera-yue",
+          nameVi: "Việt Kịch",
+          nameEn: "Yue Opera",
+          nameZh: "越剧",
+          pinyin: "Yuèjù",
+          provinceId: "prov-zhejiang",
+          featuresVi: "Phát tích tại Thặng Châu (Chiết Giang) đầu thế kỷ XX và hưng thịnh tại Thượng Hải, nổi tiếng với dàn diễn viên nữ đảm nhận cả vai nam (nữ tiểu sinh), chất giọng mềm mại Giang Nam qua các vở 'Lương Sơn Bá – Chúc Anh Đài' và 'Hồng Lâu Mộng'.",
+          featuresEn: "Born in Shengzhou (Zhejiang) in the early twentieth century and refined in Shanghai, famed for all-female troupes excelling in young scholar roles and lyrical Jiangnan staging of 'Butterfly Lovers' and 'Dream of the Red Chamber.'"
+        },
+        {
+          id: "opera-huangmei",
+          nameVi: "Hoàng Mai Hý",
+          nameEn: "Huangmei Opera",
+          nameZh: "黄梅戏",
+          pinyin: "Huángméixì",
+          provinceId: "prov-anhui",
+          featuresVi: "Bắt nguồn từ dân ca hái trà vùng Hoàng Mai (Hồ Bắc) và định hình tại An Khánh (An Huy). Giai điệu trong trẻo, mộc mạc, gần đời sống nông thôn, gắn liền với nghệ sĩ Nghiêm Phượng Anh cùng các vở 'Thiên Tiên Phối' và 'Nữ Phò Mã'.",
+          featuresEn: "Evolving from tea-picking folk songs around Huangmei and maturing in Anqing (Anhui), characterized by bright, accessible melodies and rustic charm in classics such as 'Heavenly Match' and 'The Female Prince Consort.'"
+        },
+        {
+          id: "opera-sichuan",
+          nameVi: "Xuyên Kịch",
+          nameEn: "Sichuan Opera",
+          nameZh: "川剧",
+          pinyin: "Chuānjù",
+          provinceId: "prov-sichuan",
+          featuresVi: "Hội tụ năm hệ thanh điệu (Côn, Cao, Hồ, Đàn, Đăng), đặc biệt nổi tiếng với kỹ nghệ 'Biến diện' (đổi mặt nạ tức thì theo tâm trạng nhân vật), phun lửa và lối diễn trào phúng đậm chất Ba Thục.",
+          featuresEn: "Synthesizing five regional vocal systems, Sichuan Opera is celebrated for witty Ba-Shu storytelling, fire-spitting stunts, and the closely guarded art of 'Bianlian' (instantaneous face-changing) to externalize sudden shifts of emotion."
+        }
+      ],
+      roles: [
+        {
+          id: "role-sheng",
+          nameVi: "Sinh",
+          nameEn: "Sheng (Male Roles)",
+          nameZh: "生",
+          pinyin: "Shēng",
+          descVi: "Tuyến nhân vật nam chính diện, phân nhánh thành Lão Sinh (trung niên, đeo râu, chín chắn), Tiểu Sinh (thanh niên nho nhã, không râu, dùng giọng giả thanh kết hợp giọng thật) và Võ Sinh (tướng lĩnh, hào hiệp tinh thông võ nghệ).",
+          descEn: "Dignified male roles subdivided into Laosheng (bearded, mature statesmen or scholars), Xiaosheng (clean-shaven young men blending falsetto and natural voice), and Wusheng (acrobatic martial heroes)."
+        },
+        {
+          id: "role-dan",
+          nameVi: "Đán",
+          nameEn: "Dan (Female Roles)",
+          nameZh: "旦",
+          pinyin: "Dàn",
+          descVi: "Tuyến nhân vật nữ, bao gồm Thanh Y (đoan trang, trọng ca xướng), Hoa Đán (hoạt bát, lanh lợi), Đao Mã Đán / Võ Đán (nữ tướng tài võ) và Lão Đán (phụ nữ cao tuổi dùng giọng thật trầm ấm).",
+          descEn: "Female roles encompassing Qingyi (poised, song-focused noblewomen), Huadan (vivacious young women), Daomadan and Wudan (warrior heroines), and Laodan (elderly matriarchs singing in natural chest voice)."
+        },
+        {
+          id: "role-jing",
+          nameVi: "Tịnh",
+          nameEn: "Jing (Painted-Face Roles)",
+          nameZh: "净",
+          pinyin: "Jìng",
+          descVi: "Còn gọi là Hoa Diện, chuyên đảm nhận nhân vật nam tính cách mạnh mẽ, khí phách phi thường hoặc gian hùng quyền thế như Bao Công, Trương Phi, Tào Tháo; nổi bật nhờ hóa trang kiểm phổ (mặt nạ vẽ) và giọng hát vang rền.",
+          descEn: "Known as Painted Faces, portraying forceful warriors, upright judges, or formidable strategists such as Bao Zheng, Zhang Fei, and Cao Cao, distinguished by bold facial choreography and resonant vocal projection."
+        },
+        {
+          id: "role-chou",
+          nameVi: "Sửu",
+          nameEn: "Chou (Clown & Wit Roles)",
+          nameZh: "丑",
+          pinyin: "Chǒu",
+          descVi: "Nhận diện qua mảng phấn trắng hình đậu phụ giữa sống mũi (Tam Hoa Kiểm). Đảm nhận vai hài hước, lanh trí hoặc châm biếm xã hội, được phép dùng khẩu ngữ địa phương để kết nối trực tiếp với khán giả.",
+          descEn: "Marked by a white chalk patch across the bridge of the nose. Playing quick-witted servants, comic officials, or sharp satirists, Chou performers are uniquely permitted colloquial speech and direct audience banter."
+        }
+      ],
+      lianpuMasks: [
+        {
+          id: "mask-red",
+          colorVi: "Đỏ",
+          colorEn: "Red",
+          colorZh: "红脸",
+          symbolicVi: "Trung nghĩa, dũng cảm, chính trực và son sắt.",
+          symbolicEn: "Loyalty, courage, moral rectitude, and devotion.",
+          exemplarVi: "Quan Vũ (Tam Quốc Diễn Nghĩa)",
+          exemplarEn: "Guan Yu (Romance of the Three Kingdoms)"
+        },
+        {
+          id: "mask-black",
+          colorVi: "Đen",
+          colorEn: "Black",
+          colorZh: "黑脸",
+          symbolicVi: "Cương trực, thiết diện vô tư, thẳng thắn hoặc hào sảng nóng nảy.",
+          symbolicEn: "Impartiality, stern integrity, or blunt, fierce valor.",
+          exemplarVi: "Bao Chửng, Trương Phi, Lý Quỳ",
+          exemplarEn: "Judge Bao Zheng, Zhang Fei, and Li Kui"
+        },
+        {
+          id: "mask-white",
+          colorVi: "Trắng",
+          colorEn: "White",
+          colorZh: "白脸",
+          symbolicVi: "Đa nghi, gian hùng, mưu mô thâm sâu (phân biệt phấn trắng gian thần với mảng trắng nhỏ của vai Sửu).",
+          symbolicEn: "Cunning, suspicion, and calculating ambition (distinct from the small comic patch of the Chou).",
+          exemplarVi: "Tào Tháo, Tần Cối, Nghiêm Tung",
+          exemplarEn: "Cao Cao, Qin Hui, and Yan Song"
+        },
+        {
+          id: "mask-blue",
+          colorVi: "Xanh lam",
+          colorEn: "Blue",
+          colorZh: "蓝脸",
+          symbolicVi: "Quật cường, kiêu hãnh, cơ trí nhưng bướng bỉnh và khó khuất phục.",
+          symbolicEn: "Fierce resolve, pride, astuteness, and untamed spirit.",
+          exemplarVi: "Đậu Nhĩ Đôn (Đạo Ngự Mã)",
+          exemplarEn: "Dou Erdun (Stealing the Imperial Steed)"
+        },
+        {
+          id: "mask-yellow",
+          colorVi: "Vàng",
+          colorEn: "Yellow",
+          colorZh: "黄脸",
+          symbolicVi: "Kiêu dũng tàn liệt, thâm trầm hoặc tính tình hung hãn.",
+          symbolicEn: "Fierce audacity, ruthless ambition, or volatile temperament.",
+          exemplarVi: "Điển Vi, Vũ Văn Thành Đô",
+          exemplarEn: "Dian Wei and Yuwen Chengdu"
+        },
+        {
+          id: "mask-green",
+          colorVi: "Lục",
+          colorEn: "Green",
+          colorZh: "绿脸",
+          symbolicVi: "Nóng nảy, bộc trực, thiếu kiềm chế, thường thấy ở hào kiệt lục lâm.",
+          symbolicEn: "Impulsiveness, stubborn temper, and untamed outlaw energy.",
+          exemplarVi: "Trình Giảo Kim, Thanh Diện Hổ",
+          exemplarEn: "Cheng Yaojin and Green-Faced Tiger"
+        },
+        {
+          id: "mask-purple",
+          colorVi: "Tím",
+          colorEn: "Purple",
+          colorZh: "紫脸",
+          symbolicVi: "Trầm ổn, túc trí đa mưu, công minh và giàu lòng hiếu nghĩa.",
+          symbolicEn: "Composure, seasoned wisdom, fairness, and filial rectitude.",
+          exemplarVi: "Từ Diên Chiêu, Kinh Kha",
+          exemplarEn: "Xu Yanzhao and Jing Ke"
+        },
+        {
+          id: "mask-gold-silver",
+          colorVi: "Vàng kim / Bạc",
+          colorEn: "Gold and Silver",
+          colorZh: "金银脸",
+          symbolicVi: "Thần linh, tiên Phật, yêu tinh hoặc nhân vật mang pháp lực siêu phàm.",
+          symbolicEn: "Deities, celestial guardians, immortals, and supernatural spirits.",
+          exemplarVi: "Nhị Lang Thần, Như Lai, Tôn Ngộ Không (phiên bản thần thoại)",
+          exemplarEn: "Erlang Shen, Buddhist deities, and mythological Sun Wukong"
+        }
+      ]
     },
-    {
-      id: "canon-hongloumeng",
-      zh: "《红楼梦》· 曹雪芹",
-      titleVi: "Hồng Lâu Mộng (Tào Tuyết Cần · Thanh)",
-      titleEn: "Dream of the Red Chamber (Cao Xueqin, Qing)",
-      hskTag: "HSK 7–9 High-Level Reading Canon",
-      coreThemeVi: "Đỉnh cao tiểu thuyết chương hồi miêu tả sự hưng suy của đại gia tộc Giả phủ, phơi bày cấu trúc lễ giáo, kinh tế trang viên, thi từ Đại Quan Viên và mỹ học bi kịch vô thường.",
-      coreThemeEn: "Pinnacle Qing realist-allegorical novel dissecting aristocratic lineage economics, poetry societies, gender dynamics, and tragic impermanence.",
-      hskVocabVi: "Từ khóa HSK thường gặp: 兴衰 (hưng suy), 封建礼教 (lễ giáo phong kiến), 真假虚实 (thực giả hư thực), 大观园 (Đại Quan Viên)."
+    calligraphyFiveScripts: {
+      scripts: [
+        {
+          id: "script-seal",
+          nameVi: "Triện Thư",
+          nameEn: "Seal Script",
+          nameZh: "篆书",
+          pinyin: "Zhuànshū",
+          era: "Thương – Chu – Tần (Đại Triện & Tiểu Triện)",
+          traitsVi: "Nét bút đều đặn, uốn lượn tròn trịa, bố cục cân đối nghiêm trang, lưu giữ dấu vết tượng hình cổ đại; Lý Tư chuẩn hóa Tiểu Triện thời Tần để thống nhất văn tự và vẫn được dùng trong nghệ thuật triện khắc đến nay.",
+          traitsEn: "Uniform stroke width, rounded curves, and symmetrical vertical balance preserving pictographic ancestry. Standardized by Li Si as Small Seal Script under the Qin dynasty, it remains the classical script of seal carving.",
+          masterVi: "Lý Tư (Tần), Lý Dương Băng (Đường), Ngô Xương Thạc (Thanh)",
+          masterEn: "Li Si (Qin), Li Yangbing (Tang), and Wu Changshuo (Qing)"
+        },
+        {
+          id: "script-clerical",
+          nameVi: "Lệ Thư",
+          nameEn: "Clerical Script",
+          nameZh: "隶书",
+          pinyin: "Lìshū",
+          era: "Cuối Tần – Hưng thịnh thời Hán",
+          traitsVi: "Bước ngoặt 'Lệ biến' chuyển nét tròn tượng hình thành nét thẳng vuông vắn, dáng chữ dẹt ngang, gắn liền với kỹ pháp 'Tàm đầu nhạn vĩ' (đầu tằm đuôi én) và nét mác vươn bay đầy khí thế.",
+          traitsEn: "Marking the decisive shift from rounded pictographs to rectilinear brushwork, Clerical Script features horizontal breadth and dramatic flared strokes known as 'silkworm head and swallow tail.'",
+          masterVi: "Thái Ung (Đông Hán), các bia cổ Tào Toàn Bi và Ất Dĩnh Bi",
+          masterEn: "Cai Yong (Eastern Han) and masters of the Cao Quan and Yi Ying steles"
+        },
+        {
+          id: "script-regular",
+          nameVi: "Khải Thư",
+          nameEn: "Regular Script",
+          nameZh: "楷书",
+          pinyin: "Kǎishū",
+          era: "Cuối Hán – Ngụy Tấn – Đỉnh cao thời Đường",
+          traitsVi: "Cấu trúc phương chính, rõ ràng từng nét chấm, ngang, sổ, phẩy, mác, trở thành chuẩn mực học tập và in ấn suốt hơn một thiên niên kỷ với Tứ đại gia Đường Khải (Âu, Nhan, Liễu, Triệu về sau).",
+          traitsEn: "Square, disciplined, and fully legible, Regular Script codified the eight fundamental strokes and served as the standard for official documents, education, and woodblock printing for over a millennium.",
+          masterVi: "Chung Do, Vương Hi Chi, Âu Dương Tuân, Nhan Chân Khanh, Liễu Công Quyền",
+          masterEn: "Zhong Yao, Wang Xizhi, Ouyang Xun, Yan Zhenqing, and Liu Gongquan"
+        },
+        {
+          id: "script-running",
+          nameVi: "Hành Thư",
+          nameEn: "Running Script",
+          nameZh: "行书",
+          pinyin: "Xíngshū",
+          era: "Đông Hán – Đỉnh cao Đông Tấn (thế kỷ IV)",
+          traitsVi: "Dung hòa giữa tính chuẩn mực của Khải thư và nhịp điệu phóng khoáng của Thảo thư; các nét bút có sự hô ứng liên mạch ('bút đoạn ý liên'), vừa dễ đọc vừa giàu biểu cảm cá nhân.",
+          traitsEn: "Poised between the clarity of Regular Script and the momentum of Cursive, Running Script links strokes through subtle aerial transitions, combining practical legibility with expressive rhythm.",
+          masterVi: "Vương Hi Chi ('Lan Đình Tập Tự'), Nhan Chân Khanh ('Tế Điệt Văn Cảo'), Tô Thức ('Hoàng Châu Hàn Thực Thi')",
+          masterEn: "Wang Xizhi ('Orchid Pavilion Preface'), Yan Zhenqing ('Draft Requiem to My Nephew'), and Su Shi ('Cold Food Observance')"
+        },
+        {
+          id: "script-cursive",
+          nameVi: "Thảo Thư",
+          nameEn: "Cursive Script",
+          nameZh: "草书",
+          pinyin: "Cǎoshū",
+          era: "Hán (Chương Thảo) – Ngụy Tấn (Kim Thảo) – Đường (Cuồng Thảo)",
+          traitsVi: "Giản lược hình thể tối đa để giải phóng tốc độ và khí vận của ngọn bút. Đỉnh cao Cuồng Thảo đời Đường biến chữ viết thành nghệ thuật đường nét trừu tượng đầy nhạc tính và cảm hứng xuất thần.",
+          traitsEn: "Abbreviating character structures to maximize velocity and breath-energy, Cursive evolved from Han Draft Cursive to Tang Wild Cursive, elevating calligraphy into pure rhythmic abstraction.",
+          masterVi: "Trương Chi (Đông Hán), Trương Húc và Hoài Tố ('Điên Trương Túy Tố' thời Đường)",
+          masterEn: "Zhang Zhi (Eastern Han), Zhang Xu, and Monk Huaisu (Tang)"
+        }
+      ],
+      fourTreasures: [
+        {
+          id: "treasure-brush",
+          nameVi: "Bút Lông",
+          nameEn: "Calligraphy Brush",
+          nameZh: "毛笔",
+          pinyin: "Máobǐ",
+          famousOriginVi: "Hồ Bút (Thiện Liễn, Hồ Châu, Chiết Giang)",
+          famousOriginEn: "Hu Brushes of Shanlian, Huzhou (Zhejiang)",
+          noteVi: "Đạt tứ đức 'Tiêm, Tề, Viên, Kiện' (nhọn, đều, tròn, khỏe); chia thành dương hào (lông dê mềm), lang hào (lông chồn đàn hồi) và kiêm hào (pha trộn).",
+          noteEn: "Judged by four virtues—pointed, even, round, and resilient—crafted from soft goat hair (yanghao), springy weasel hair (langhao), or balanced blends."
+        },
+        {
+          id: "treasure-ink",
+          nameVi: "Mực Thỏi",
+          nameEn: "Inkstick",
+          nameZh: "墨",
+          pinyin: "Mò",
+          famousOriginVi: "Huy Mặc (Hoàng Sơn / Huy Châu, An Huy)",
+          famousOriginEn: "Hui Ink of Huizhou (Anhui)",
+          noteVi: "Chế từ muội thông (tùng yên) hoặc muội dầu trẩu (du yên) trộn keo da động vật và xạ hương, đạt phẩm chất 'mực chia năm sắc' và bền màu hàng trăm năm.",
+          noteEn: "Compounded from pine soot or tung-oil soot bound with animal glue and aromatics, prized for subtle tonal gradations ('five colors of ink') and centuries-long archival stability."
+        },
+        {
+          id: "treasure-paper",
+          nameVi: "Giấy Tuyên",
+          nameEn: "Xuan Paper",
+          nameZh: "宣纸",
+          pinyin: "Xuānzhǐ",
+          famousOriginVi: "Kính Huyện, Tuyên Thành (An Huy)",
+          famousOriginEn: "Jing County, Xuancheng (Anhui)",
+          noteVi: "Làm từ vỏ cây thanh đàn và rơm lúa nếp ủ tự nhiên, được mệnh danh là 'Chỉ thọ thiên niên'. Gồm Sinh Tuyên (thấm loang mạnh cho thủy mặc) và Thục Tuyên (phủ phèn cho công bút).",
+          noteEn: "Handmade from wingceltis bark and rice straw, renowned as 'paper lasting a thousand years.' Raw Xuan yields expressive ink diffusion, while alum-sized Cooked Xuan supports fine-line painting."
+        },
+        {
+          id: "treasure-inkstone",
+          nameVi: "Nghiên Mực",
+          nameEn: "Inkstone",
+          nameZh: "砚",
+          pinyin: "Yàn",
+          famousOriginVi: "Đoan Nghiên (Triệu Khánh, Quảng Đông) và Hấp Nghiên (An Huy)",
+          famousOriginEn: "Duan Inkstone (Zhaoqing, Guangdong) and She Inkstone (Anhui)",
+          noteVi: "Đá mịn có khả năng 'phát mặc' nhanh mà không làm hại đầu bút lông, giữ ẩm tốt và thường được chạm khắc phù điêu tinh xảo như vật phẩm thưởng ngoạn trên án thư.",
+          noteEn: "Fine-grained stone prized for grinding dense ink rapidly without fraying brush tips, retaining moisture, and serving as a sculpted centerpiece of the scholar's studio."
+        }
+      ]
     },
-    {
-      id: "canon-sanguo",
-      zh: "《三国演义》· 罗贯中",
-      titleVi: "Tam Quốc Diễn Nghĩa (La Quán Trung)",
-      titleEn: "Romance of the Three Kingdoms",
-      hskTag: "HSK 6–8 Strategy & Management Idioms",
-      coreThemeVi: "Mưu lược quân sự, thu phục nhân tâm, liên minh Tôn–Lưu, chữ Tín – Nghĩa (Quan Vũ) và tư duy chiến lược trong đàm phán thương mại hiện đại.",
-      coreThemeEn: "Classical treatise on alliance politics, strategic deception, loyalty (Yi), and leadership archetypes frequently cited in Chinese B2B discourse.",
-      hskVocabVi: "Thành ngữ kinh điển: 草船借箭, 空城计, 三顾茅庐, 锦囊妙计."
+    music12Lu: {
+      summaryVi: "Hệ thống Thập Nhị Luật Lữ là thành tựu âm học và toán học cổ đại Trung Hoa, định chuẩn 12 cao độ trong một quãng tám theo phép 'Tam phân tổn ích' (ghi chép sớm trong Quản Tử và Lã Thị Xuân Thu), sau được Chu Tái Dục đời Minh hoàn thiện lý thuyết bình quân luật 12 bậc năm 1584.",
+      summaryEn: "The Twelve-Pitch system (Shier Lülü) represents a foundational achievement of ancient Chinese acoustics and mathematics. Derived via the 'subtract-and-add one-third' method documented in the Guanzi and Lüshi Chunqiu, its temperament was mathematically perfected by Ming prince Zhu Zaiyu's equal-temperament calculation in 1584.",
+      fiveTones: [
+        {
+          id: "tone-gong",
+          nameVi: "Cung",
+          nameEn: "Gong",
+          nameZh: "宫",
+          pinyin: "Gōng",
+          wuxingVi: "Thổ – Trung ương – Tỳ",
+          wuxingEn: "Earth – Center – Spleen",
+          characterVi: "Âm chủ trầm ổn, bao dung và trang nghiêm, tượng trưng cho bậc quân vương và trục điều hòa.",
+          characterEn: "Foundational, steady, and magnanimous, symbolizing sovereign harmony and central balance."
+        },
+        {
+          id: "tone-shang",
+          nameVi: "Thương",
+          nameEn: "Shang",
+          nameZh: "商",
+          pinyin: "Shāng",
+          wuxingVi: "Kim – Phương Tây – Phế",
+          wuxingEn: "Metal – West – Lungs",
+          characterVi: "Âm sắc trong sáng, đanh gọn và lắng đọng, gợi khí thu thanh liêm và phép tắc triều chính.",
+          characterEn: "Crisp, resonant, and austere, associated with autumn clarity, moral rectitude, and governance."
+        },
+        {
+          id: "tone-jue",
+          nameVi: "Giốc",
+          nameEn: "Jue",
+          nameZh: "角",
+          pinyin: "Jué",
+          wuxingVi: "Mộc – Phương Đông – Can",
+          wuxingEn: "Wood – East – Liver",
+          characterVi: "Âm điệu thư thái, vươn lên như chồi xuân nảy nở, biểu trưng cho sinh lực muôn dân.",
+          characterEn: "Buoyant and sprouting like spring growth, representing vitality and the flourishing of the people."
+        },
+        {
+          id: "tone-zhi",
+          nameVi: "Chủy",
+          nameEn: "Zhi",
+          nameZh: "徵",
+          pinyin: "Zhǐ",
+          wuxingVi: "Hỏa – Phương Nam – Tâm",
+          wuxingEn: "Fire – South – Heart",
+          characterVi: "Âm hưởng rộn ràng, nhiệt thành và sáng rỡ, gắn với mùa hạ và sự hưng thịnh của công việc.",
+          characterEn: "Lively, radiant, and energetic, linked to summer warmth and thriving civic endeavors."
+        },
+        {
+          id: "tone-yu",
+          nameVi: "Vũ",
+          nameEn: "Yu",
+          nameZh: "羽",
+          pinyin: "Yǔ",
+          wuxingVi: "Thủy – Phương Bắc – Thận",
+          wuxingEn: "Water – North – Kidneys",
+          characterVi: "Âm thanh mềm mại, thanh thoát và sâu lắng, gợi tiết đông tàng ẩn và sự hội tụ của vạn vật.",
+          characterEn: "Fluid, limpid, and introspective, evoking winter stillness and the gathering of natural bounty."
+        }
+      ],
+      twelvePitchesNoteVi: "Mười hai ống luật chia thành sáu Dương Luật (Hoàng Chung, Thái Thốc, Cô Tẩy, Nhuy Tân, Di Tắc, Vô Xạ) và sáu Âm Lữ (Đại Lữ, Giáp Chung, Trọng Lữ, Lâm Chung, Nam Lữ, Ứng Chung). Bộ biên chung Tăng Hầu Ất (thế kỷ V TCN, Bảo tàng Hồ Bắc) là minh chứng khảo cổ kiệt xuất cho khả năng chuyển điệu đầy đủ trên 12 bán âm cổ đại.",
+      twelvePitchesNoteEn: "The twelve pitch pipes divide into six Yang pitches (Lu) and six Yin pitches (Lü), anchored by the Yellow Bell (Huangzhong). The fifth-century BCE Marquis Yi of Zeng bronze bell set (Hubei Provincial Museum) provides extraordinary archaeological proof of full twelve-tone modulation."
     },
-    {
-      id: "canon-shuihu",
-      zh: "《水浒传》· 施耐庵",
-      titleVi: "Thủy Hử (Thi Nại Am)",
-      titleEn: "Water Margin",
-      hskTag: "HSK 5–7 Vernacular & Social Rebuke",
-      coreThemeVi: "Tái hiện xã hội thị dân và giang hồ Lương Sơn Bạc thời Tống qua ngôn ngữ Bạch thoại sống động, phản ánh xung đột quan lại và nghĩa khí bình dân.",
-      coreThemeEn: "Song-era vernacular epic exploring outlaw brotherhood, civic corruption, and grassroots solidarity at Liangshan Marsh.",
-      hskVocabVi: "Từ khóa Bạch thoại: 义气 (nghĩa khí), 官逼民反 (quan ép dân phản), 江湖 (giang hồ)."
-    },
-    {
-      id: "canon-tangsong",
-      zh: "唐诗宋词 & 京剧昆曲",
-      titleVi: "Đường Thi – Tống Từ & Hí Khúc (Côn Khúc / Kinh Kịch)",
-      titleEn: "Tang Poetry, Song Lyrics & Classical Opera",
-      hskTag: "HSK 4–9 Cultural Comprehension",
-      coreThemeVi: "Thi ca Lý Bạch – Đỗ Phủ – Tô Thức – Lý Thanh Chiếu rèn cảm thức từ vựng cô đọng; Kinh Kịch phân 4 hàng Sinh–Đán–Tịnh–Sửu chuẩn mực.",
-      coreThemeEn: "Concise imagery from Li Bai, Du Fu, Su Shi paired with four stylized Peking Opera roles (Sheng, Dan, Jing, Chou).",
-      hskVocabVi: "Từ khóa mỹ học: 意境 (ý cảnh), 含蓄 (hàm súc), 唱念做打 (Xướng Niệm Tố Đả)."
-    }
-  ];
-
-  // 60 Exam-Ready HSK 4-9 Cultural & Literary Idiom Briefs (Chengyu & Keywords)
-  var RAW_BRIEFS = [
-    [4, "一心一意", "yīxīn-yīyì", "Nhất tâm nhất ý", "Toàn tâm toàn ý", "Wholeheartedly; single-minded devotion"],
-    [4, "入乡随俗", "rùxiāng-suísú", "Nhập hương tùy tục", "Nhập gia tùy tục", "When in Rome, do as the locals do"],
-    [4, "马马虎虎", "mǎmǎ-hūhū", "Mã mã hổ hổ", "Tạm tạm, qua loa", "So-so; careless or mediocre"],
-    [4, "半途而废", "bàntú-érfèi", "Bán đồ nhi phế", "Bỏ cuộc giữa chừng", "Give up halfway through an endeavor"],
-    [4, "四面八方", "sìmiàn-bāfāng", "Tứ diện bát phương", "Khắp mọi nơi, bốn phương tám hướng", "From every direction; far and wide"],
-    [4, "一举两得", "yījǔ-liǎngdé", "Nhất cử lưỡng đắc", "Một công đôi việc", "Kill two birds with one stone"],
-    [4, "不可思议", "bùkě-sīyì", "Bất khả tư nghị", "Khó tin, kỳ diệu khôn lường", "Inconceivable; astonishing"],
-    [4, "雪中送炭", "xuězhōng-sòngtàn", "Tuyết trung tống thán", "Giúp đúng lúc hoạn nạn (đưa than ngày tuyết)", "Timely assistance in a crisis"],
-    [4, "画蛇添足", "huàshé-tiānzú", "Họa xà thiêm túc", "Vẽ rắn thêm chân (thừa thãi)", "Ruin a result with superfluous additions"],
-    [4, "亡羊补牢", "wángyáng-bǔláo", "Vong dương bổ lao", "Mất bò mới lo làm chuồng (sửa sai kịp lúc)", "Mend the fold after losing sheep (better late than never)"],
-    [5, "因地制宜", "yīndì-zhìyí", "Nhân địa chế nghi", "Tùy điều kiện địa phương mà định sách lược", "Adapt policy/logistics to local conditions"],
-    [5, "循序渐进", "xúnxù-jiànjìn", "Tuần tự tiệm tiến", "Tiến từng bước có trình tự", "Advance systematically step by step"],
-    [5, "实事求是", "shíshì-qiúshì", "Thực sự cầu thị", "Dựa trên sự thật thực chứng tìm chân lý", "Seek truth from verified empirical facts"],
-    [5, "取长补短", "qǔcháng-bǔduǎn", "Thủ trường bổ đoản", "Lấy sở trường bù sở đoản", "Learn from others' strengths to offset weaknesses"],
-    [5, "名副其实", "míngfù-qíshí", "Danh phó kỳ thực", "Danh xứng với thực", "Worthy of the name in reality"],
-    [5, "潜移默化", "qiányí-mòhuà", "Tiềm di mặc hóa", "Ảnh hưởng âm thầm lâu dài (giáo hóa văn hóa)", "Imperceptible long-term cultural influence"],
-    [5, "异曲同工", "yìqǔ-tónggōng", "Dị khúc đồng công", "Khác phương thức nhưng cùng đạt hiệu quả cao", "Different methods yielding equally fine outcomes"],
-    [5, "千方百计", "qiānfāng-bǎijì", "Thiên phương bách kế", "Tìm đủ mọi cách", "By every possible means"],
-    [5, "精益求精", "jīngyì-qiújīng", "Tinh ích cầu tinh", "Đã tinh xảo còn cầu tinh xảo hơn (chất lượng QC)", "Strive for relentless perfection (QC ethos)"],
-    [5, "胸有成竹", "xiōngyǒu-chéngzhú", "Hung hữu thành trúc", "Đã tính toán thấu đáo trước khi hành động", "Have a well-prepared plan in mind beforehand"],
-    [6, "三顾茅庐", "sāngù-máolú", "Tam cố thảo lư", "Ba lần đến lều tranh cầu hiền (Tam Quốc)", "Earnestly invite talented partners repeatedly"],
-    [6, "塞翁失马", "sàiwēng-shīmǎ", "Tái ông thất mã", "Trong họa có phúc, trong phúc ẩn họa", "A blessing in disguise (Huainanzi)"],
-    [6, "刻舟求剑", "kèzhōu-qiújiàn", "Khắc chu cầu kiếm", "Cứng nhắc bảo thủ, không theo biến đổi thực tế", "Rigidly ignore changing circumstances"],
-    [6, "饮水思源", "yǐnshuǐ-sīyuán", "Ẩm thủy tư nguyên", "Uống nước nhớ nguồn (Văn hóa tri ân)", "Remember the source while drinking water"],
-    [6, "守株待兔", "shǒuzhū-dàitù", "Thủ chu đãi thố", "Ôm cây đợi thỏ (thụ động)", "Wait passively for windfall luck"],
-    [6, "百闻不如一见", "bǎiwén-bùrú-yījiàn", "Bách văn bất như nhất kiến", "Trăm nghe không bằng một thấy (khảo sát thực địa)", "Seeing firsthand beats hearing a hundred times"],
-    [6, "举一反三", "jǔyī-fǎnsān", "Cử nhất phản tam", "Biết một suy ra ba (tư duy Luận Ngữ)", "Infer three applications from one principle"],
-    [6, "卧薪尝胆", "wòxīn-chángdǎn", "Nằm gai nếm mật", "Kiên trì phục hưng qua gian khổ", "Endure hardship to rebuild strength"],
-    [6, "海纳百川", "hǎinà-bǎichuān", "Hải nạp bách xuyên", "Biển rộng dung nạp trăm sông (tinh thần Thượng Hải)", "The ocean receives a hundred rivers (openness)"],
-    [6, "居安思危", "jūān-sīwēi", "Cư an tư nguy", "Khi bình yên vẫn lo phòng rủi ro chuỗi cung ứng", "Think of contingency risks even in calm times"],
-    [7, "心猿意马", "xīnyuán-yìmǎ", "Tâm viên ý mã", "Tâm trí xao động (ẩn dụ Tây Du Ký)", "Restless wavering mind (Journey to the West)"],
-    [7, "世外桃源", "shìwài-táoyuán", "Thế ngoại đào nguyên", "Cõi bình yên biệt lập (Đào Tiềm)", "Serene idyllic sanctuary away from turmoil"],
-    [7, "风声鹤唳", "fēngshēng-hèlì", "Phong thanh hạc lệ", "Hoảng loạn nghi kỵ quá mức (Trận Phì Thủy)", "Panic over every rustle of wind or crane call"],
-    [7, "破釜沉舟", "pòfǔ-chénzhōu", "Phá phủ trầm chu", "Đốt thuyền quyết chiến không đường lui (Hạng Vũ)", "Burn boats; commit irreversibly to a goal"],
-    [7, "草木皆兵", "cǎomù-jiēbīng", "Thảo mộc giai binh", "Nghi kỵ căng thẳng thấy cỏ cây đều ngỡ địch", "Extreme paranoia mistaking shadows for threats"],
-    [7, "东山再起", "dōngshān-zàiqǐ", "Đông Sơn tái khởi", "Phục hồi vị thế sau thời gian ẩn dật", "Stage a decisive comeback (Xie An)"],
-    [7, "纸上谈兵", "zhǐshàng-tánbīng", "Chỉ thượng đàm binh", "Lý thuyết suông thiếu thực chiến (Triệu Quát)", "Empty armchair theorizing lacking field practice"],
-    [7, "唇亡齿寒", "chúnwáng-chǐhán", "Môi hở răng lạnh", "Phụ thuộc lẫn nhau về an ninh – kinh tế", "Mutual geopolitical/supply interdependence"],
-    [7, "一衣带水", "yīyī-dàishuǐ", "Nhất y đới thủy", "Láng giềng sát vách cách một dải nước", "Close neighbors separated only by narrow waters"],
-    [7, "和而不同", "hé'ér-bùtóng", "Hòa nhi bất đồng", "Hòa hợp nhưng giữ bản sắc khác biệt (Luận Ngữ)", "Harmony without erasing diversity (Analects)"],
-    [8, "厚积薄发", "hòujī-bófā", "Hậu tích bạc phát", "Tích lũy chiều sâu dài hạn rồi bứt phá (Tô Thức)", "Accumulate deep preparation before decisive output"],
-    [8, "格物致知", "géwù-zhìzhī", "Cách vật trí tri", "Khảo sát quy luật sự vật để thấu triệt tri thức", "Investigate phenomena to attain knowledge"],
-    [8, "知行合一", "zhīxíng-héyī", "Tri hành hợp nhất", "Nhận thức đi liền hành động thực tiễn (Vương Dương Minh)", "Unity of knowledge and moral/practical action"],
-    [8, "天人合一", "tiānrén-héyī", "Thiên nhân hợp nhất", "Hài hòa con người với nhịp điệu tự nhiên", "Harmony between human society and cosmic cycles"],
-    [8, "物极必反", "wùjí-bìfǎn", "Vật cực tất phản", "Hiện tượng tới cực điểm tất chuyển hóa ngược lại", "When phenomena peak, they reverse polarity"],
-    [8, "防微杜渐", "fángwēi-dùjiàn", "Phòng vi đỗ tiệm", "Ngăn chặn lỗi sai từ mầm mống nhỏ (QC/tuân thủ)", "Nip minor defects/risks in the bud"],
-    [8, "统筹兼顾", "tǒngchóu-jiāngù", "Thống trù kiêm cố", "Hoạch định tổng thể hài hòa nhiều bên", "Coordinated holistic planning across stakeholders"],
-    [8, "开源节流", "kāiyuán-jiéliú", "Khai nguyên tiết lưu", "Mở rộng nguồn thu và tối ưu chi phí vận hành", "Expand revenue streams while trimming waste"],
-    [8, "未雨绸缪", "wèiyǔ-chóumóu", "Vị vũ trù mâu", "Chuẩn bị kế hoạch dự phòng trước cơn bão (Kinh Thi)", "Prepare contingency buffers before storms arrive"],
-    [8, "相辅相成", "xiāngfǔ-xiāngchéng", "Tương phụ tương thành", "Hai hệ thống bổ trợ lẫn nhau cùng hoàn thiện", "Mutually reinforcing complementary systems"],
-    [9, "纲举目张", "gāngjǔ-mùzhāng", "Cương cử mục trương", "Nắm được trục chính thì mọi chi tiết tự thông", "Grasp the master principle and details fall in place"],
-    [9, "道法自然", "dàofǎ-zìrán", "Đạo pháp tự nhiên", "Vận hành thuận theo quy luật tự phát (Đạo Đức Kinh)", "Systems follow spontaneous natural order"],
-    [9, "推陈出新", "tuīchén-chūxīn", "Thôi trần xuất tân", "Kế thừa tinh hoa cũ để sáng tạo cái mới", "Sublate heritage to innovate modern forms"],
-    [9, "博采众长", "bócǎi-zhòngcháng", "Bác thái chúng trường", "Tổng hợp tinh túy nhiều nền văn hóa/học phái", "Synthesize best practices across traditions"],
-    [9, "大象无形", "dàxiàng-wúxíng", "Đại tượng vô hình", "Hình thái tối cao vượt ngoài khuôn khổ hẹp (Lão Tử)", "Grandest pattern transcends rigid fixed bounds"],
-    [9, "不卑不亢", "bùbēi-bùkàng", "Bất ti bất kháng", "Thái độ đàm phán bình tĩnh, không khúm núm không ngạo mạn", "Poised negotiation demeanor: neither servile nor arrogant"],
-    [9, "求同存异", "qiútóng-cúnyì", "Cầu đồng tồn dị", "Tìm điểm chung hợp tác, gác lại dị biệt", "Seek common ground while reserving differences"],
-    [9, "殊途同归", "shūtú-tóngguī", "Thù đồ đồng quy", "Khác lộ trình nhưng cùng đi tới mục tiêu chung", "Different paths converging on shared objectives"],
-    [9, "与时俱进", "yǔshí-jùjìn", "Dữ thời câu tiến", "Cập nhật thể chế và kỹ năng theo thời đại", "Evolve institutions and skills alongside the era"],
-    [9, "行稳致远", "xíngwěn-zhìyuǎn", "Hành ổn trí viễn", "Đi vững vàng bền bỉ để vươn xa dài hạn", "Steady disciplined execution for long-range reach"]
-  ];
-
-  var HSK_BRIEFS = RAW_BRIEFS.map(function (r, idx) {
+    martialArtsYangsheng: [
+      {
+        id: "ma-taiji",
+        nameVi: "Thái Cực Quyền",
+        nameEn: "Taijiquan",
+        nameZh: "太极拳",
+        pinyin: "Tàijíquán",
+        originProvinceId: "prov-henan",
+        philosophyVi: "Khởi nguồn từ Trần Gia Câu (Ôn Huyện, Hà Nam) và lan tỏa qua các lưu phái Trần, Dương, Vũ, Ngô, Tôn. Lấy nguyên lý Âm Dương tương sinh, 'dĩ tĩnh chế động, dĩ nhu khắc cương' làm cốt lõi; được UNESCO ghi danh Di sản Văn hóa Phi vật thể năm 2020.",
+        philosophyEn: "Originating in Chenjiagou (Henan) and branching into Chen, Yang, Wu, Hao, and Sun lineages, Taijiquan embodies Yin-Yang balance, yielding softness overcoming force, and mindful breath coordination. Inscribed by UNESCO in 2020."
+      },
+      {
+        id: "ma-shaolin",
+        nameVi: "Võ Thuật Thiếu Lâm",
+        nameEn: "Shaolin Kung Fu",
+        nameZh: "少林武术",
+        pinyin: "Shàolín Wǔshù",
+        originProvinceId: "prov-henan",
+        philosophyVi: "Gắn liền với chùa Thiếu Lâm trên núi Tung Sơn (Hà Nam) từ thời Bắc Ngụy – Đường. Đề cao tinh thần 'Thiền Vũ hợp nhất', rèn luyện thân thể rắn rỏi làm phương tiện tu tập định lực với hệ thống quyền pháp, côn pháp đồ sộ.",
+        philosophyEn: "Rooted in Shaolin Monastery on Mount Song (Henan) since the Northern Wei and Tang eras, uniting Chan meditation with rigorous martial discipline ('Chan and Martial Arts as One') across hundreds of bare-hand and staff forms."
+      },
+      {
+        id: "ma-wudang",
+        nameVi: "Võ Đang Nội Gia",
+        nameEn: "Wudang Internal Martial Arts",
+        nameZh: "武当武术",
+        pinyin: "Wǔdāng Wǔshù",
+        originProvinceId: "prov-hubei",
+        philosophyVi: "Phát triển tại thánh địa Đạo giáo núi Võ Đang (Hồ Bắc), nhấn mạnh dưỡng khí, chuyển động vòng cung liên miên và tiết kiệm lực ('tứ lượng bát thiên cân'). Nội công và kiếm pháp Võ Đang thấm đẫm triết lý Đạo Đức Kinh.",
+        philosophyEn: "Nurtured in the Daoist mountain complexes of Wudang (Hubei), prioritizing internal breath cultivation, circular footwork, and minimal effort ('four ounces deflecting a thousand pounds') grounded in Daoist cosmology."
+      },
+      {
+        id: "ma-wingchun",
+        nameVi: "Vịnh Xuân Quyền",
+        nameEn: "Wing Chun",
+        nameZh: "咏春拳",
+        pinyin: "Yǒngchūn Quán",
+        originProvinceId: "prov-guangdong",
+        philosophyVi: "Trường phái Nam quyền hưng thịnh tại Phật Sơn (Quảng Đông) và Hồng Kông, nổi tiếng qua tông sư Diệp Vấn. Trọng nguyên tắc trục trung tâm, cự ly cận chiến, lực đoản kình và bài tập niêm thủ (Chi Sao) rèn phản xạ xúc giác.",
+        philosophyEn: "A southern boxing system perfected in Foshan (Guangdong) and Hong Kong, popularized globally by Master Ip Man. It centers on centerline economy, close-range short power, and sticky-hands (Chi Sao) tactile sensitivity."
+      },
+      {
+        id: "ma-baduanjin",
+        nameVi: "Bát Đoạn Cẩm",
+        nameEn: "Eight Brocades Qigong",
+        nameZh: "八段锦",
+        pinyin: "Bāduànjǐn",
+        originProvinceId: "prov-henan",
+        philosophyVi: "Bài công pháp dưỡng sinh cổ truyền ghi chép rõ từ thời Tống, gồm tám thức động tác mềm mại phối hợp hơi thở nhằm thư giãn gân cốt và điều hòa khí huyết. Trình bày như di sản rèn luyện thân tâm cổ điển, không thay thế điều trị y khoa.",
+        philosophyEn: "A classical eight-movement health exercise documented since the Song dynasty, pairing gentle stretching with regulated breathing to cultivate vitality. Presented as traditional wellness heritage rather than clinical medical therapy."
+      }
+    ],
+    silkEmbroideries: [
+      {
+        id: "silk-suzhou",
+        nameVi: "Tô Tú",
+        nameEn: "Suzhou Embroidery",
+        nameZh: "苏绣",
+        pinyin: "Sūxiù",
+        provinceId: "prov-jiangsu",
+        craftVi: "Nổi danh với kỹ thuật chẻ sợi tơ cực mảnh và nghệ thuật 'song diện tú' (thêu hai mặt hoàn chỉnh trên nền lụa mỏng, thậm chí khác màu và khác hình ở hai mặt), nổi bật qua đề tài mèo vờn hoa và sơn thủy Giang Nam.",
+        craftEn: "Celebrated for splitting silk threads to microscopic fineness and mastering double-sided embroidery on translucent gauze—at its zenith depicting different motifs and palettes on each face."
+      },
+      {
+        id: "silk-xiang",
+        nameVi: "Tương Tú",
+        nameEn: "Hunan Embroidery",
+        nameZh: "湘绣",
+        pinyin: "Xiāngxiù",
+        provinceId: "prov-hunan",
+        craftVi: "Xuất xứ vùng Trường Sa (Hồ Nam), áp dụng bút pháp quốc họa trực tiếp vào đường kim với mũi thêu 'Độn châm' đặc trưng tạo độ mịn và ánh lông sống động cho các đề tài mãnh hổ, sư tử và tùng hạc.",
+        craftEn: "Centered in Changsha (Hunan), translating Chinese ink-wash brushwork into thread through its signature 'blunt-needle' stitch, famed for lifelike tigers, lions, and cranes with velvety depth."
+      },
+      {
+        id: "silk-shu",
+        nameVi: "Thục Tú",
+        nameEn: "Sichuan Embroidery",
+        nameZh: "蜀绣",
+        pinyin: "Shǔxiù",
+        provinceId: "prov-sichuan",
+        craftVi: "Một trong những truyền thống thêu lâu đời nhất gắn liền với danh xưng 'Cẩm Quan Thành' của Thành Đô từ thời Hán–Tấn. Dùng lụa sa tanh mềm bóng và hơn 120 mũi kim tạo mảng màu sắc nét cho đề tài gấu trúc, cá chép và hoa phù dung.",
+        craftEn: "Among China's oldest lineages, rooted in Chengdu's ancient silk trade since the Han dynasty. Worked on lustrous satin with over 120 stitch varieties, it excels in crisp depictions of koi, hibiscus, and giant pandas."
+      },
+      {
+        id: "silk-yue",
+        nameVi: "Việt Tú",
+        nameEn: "Guangdong Embroidery",
+        nameZh: "粤绣",
+        pinyin: "Yuèxiù",
+        provinceId: "prov-guangdong",
+        craftVi: "Gồm hai nhánh Quảng Tú (Quảng Châu) và Triều Tú (Triều Châu), nổi bật nhờ bố cục rậm rạp rực rỡ, kỹ thuật độn bông tạo hiệu ứng phù điêu nổi và dùng chỉ kim tuyến vàng bạc, từng là mặt hàng xuất khẩu sang trọng thời Minh–Thanh.",
+        craftEn: "Comprising Guangzhou and Chaozhou schools, distinguished by opulent density, padded high-relief contours, and couched gold-and-silver threads long prized in Ming–Qing maritime export markets."
+      },
+      {
+        id: "silk-yunjin",
+        nameVi: "Nam Kinh Vân Cẩm",
+        nameEn: "Nanjing Yunjin Brocade",
+        nameZh: "南京云锦",
+        pinyin: "Nánjīng Yúnjǐn",
+        provinceId: "prov-jiangsu",
+        craftVi: "Đỉnh cao nghệ thuật dệt gấm cung đình các triều Nguyên–Minh–Thanh ('Thốn cẩm thốn kim'), dệt thủ công bằng khung cửi hoa lớn hai người phối hợp (kéo hoa trên cao và dệt thoi bên dưới) dùng sợi vàng và lông công. Di sản UNESCO năm 2009.",
+        craftEn: "The pinnacle of imperial brocade weaving across the Yuan, Ming, and Qing courts, woven on massive two-person drawlooms with gold thread and peacock-feather filaments. Inscribed by UNESCO in 2009."
+      }
+    ],
+    folkCrafts: [
+      {
+        id: "craft-papercut",
+        nameVi: "Cắt Giấy Thiểm Bắc",
+        nameEn: "Northern Shaanxi Paper-Cutting",
+        nameZh: "陕北剪纸",
+        pinyin: "Shǎnběi Jiǎnzhǐ",
+        provinceId: "prov-shaanxi",
+        heritageVi: "Nghệ thuật trang trí cửa sổ (song hoa) bằng kéo thủ công trên cao nguyên Hoàng Thổ, lưu giữ mô-típ cổ sơ về tín ngưỡng sinh sôi, con giáp và phong tục cưới hỏi với đường cắt mạnh mẽ, dứt khoát.",
+        heritageEn: "Scissors-cut window-grille motifs from the Loess Plateau preserving archaic fertility symbols, zodiac animals, and wedding folklore through bold, rhythmic silhouettes."
+      },
+      {
+        id: "craft-yangliuqing",
+        nameVi: "Tranh Tết Dương Liễu Thanh",
+        nameEn: "Yangliuqing Woodblock New Year Prints",
+        nameZh: "杨柳青年画",
+        pinyin: "Yángliǔqīng Niánhuà",
+        provinceId: "prov-tianjin",
+        heritageVi: "Phát tích tại trấn Dương Liễu Thanh (Thiên Tân) từ cuối Minh, kết hợp in khắc gỗ mộc bản với tô màu thủ công bằng bút lông, tạo nên phong cách nửa in nửa vẽ tinh mỹ qua hình tượng 'Liên niên hữu dư'.",
+        heritageEn: "Emerging near Tianjin in the late Ming, combining crisp woodblock keylines with hand-painted mineral pigments to produce refined auspicious prints such as 'Abundance Year After Year.'"
+      },
+      {
+        id: "craft-zigong",
+        nameVi: "Nghệ Thuật Đèn Lồng Tự Cống",
+        nameEn: "Zigong Lantern Craft",
+        nameZh: "自贡彩灯",
+        pinyin: "Zìgòng Cǎidēng",
+        provinceId: "prov-sichuan",
+        heritageVi: "Kế thừa lễ hội đèn đường phố từ thời Đường–Tống tại thành phố muối cổ Tự Cống (Tứ Xuyên). Nổi tiếng với các cụm đèn kiến trúc khổng lồ, kết cấu cơ khí chuyển động và chất liệu sáng tạo từ lụa, gốm sứ đến thủy tinh.",
+        heritageEn: "Heir to Tang–Song lantern festivals in the historic salt city of Zigong (Sichuan), renowned for monumental illuminated tableaux incorporating silk, porcelain bowls, and kinetic frameworks."
+      },
+      {
+        id: "craft-shadow",
+        nameVi: "Rối Bóng Hoa Huyện",
+        nameEn: "Huaxian Shadow Puppetry",
+        nameZh: "华县皮影",
+        pinyin: "Huàxiàn Píyǐng",
+        provinceId: "prov-shaanxi",
+        heritageVi: "Nghệ thuật chạm khắc da lừa mỏng trong suốt tại Hoa Châu (Vị Nam, Thiểm Tây), biểu diễn sau màn vải trắng cùng dàn nhạc Uyển Uyển Xoang và trống chũm chọe, được coi là một trong những hình thái cổ nhất của nghệ thuật kể chuyện bằng ánh sáng.",
+        heritageEn: "Intricately carved translucent donkey-hide puppets from Huazhou (Shaanxi), animated behind backlit screens to Wanwanqiang accompaniment, representing one of the earliest narrative shadow-projection arts."
+      },
+      {
+        id: "craft-yixing",
+        nameVi: "Gốm Tử Sa Nghi Hưng",
+        nameEn: "Yixing Zisha Clayware",
+        nameZh: "宜兴紫砂",
+        pinyin: "Yíxīng Zǐshā",
+        provinceId: "prov-jiangsu",
+        heritageVi: "Đất sét khoáng tự nhiên vùng Đinh Thục (Nghi Hưng, Giang Tô) có cấu trúc song khí khổng giúp giữ trọn hương trà mà không phủ men. Từ thời Minh với danh nghệ nhân Thời Đại Bân, ấm Tử Sa gắn liền với văn hóa thưởng trà và thư họa văn nhân.",
+        heritageEn: "Unglazed stoneware from Dingshu (Yixing, Jiangsu) prized for its double-porous mineral clay that seasons with tea aroma over decades. Elevated since Ming master Shi Dabin into a vessel uniting tea culture and literati inscription."
+      }
+    ],
+    mythologySymbols: [
+      {
+        id: "myth-dragon",
+        nameVi: "Long (Rồng)",
+        nameEn: "Long (Chinese Dragon)",
+        nameZh: "龙",
+        pinyin: "Lóng",
+        meaningVi: "Đứng đầu Tứ Linh, hình tượng tổng hòa từ nhiều vật tổ cổ đại, chủ quản mây mưa, nông nghiệp và khí dương vươn lên; từ thời Hán–Đường trở thành biểu trưng hoàng quyền và tinh thần tự cường.",
+        meaningEn: "Foremost of the Four Benevolent Creatures, a composite totem governing clouds, rainfall, and ascending yang vitality; historically adopted as an emblem of imperial authority and auspicious power."
+      },
+      {
+        id: "myth-qilin",
+        nameVi: "Kỳ Lân",
+        nameEn: "Qilin",
+        nameZh: "麒麟",
+        pinyin: "Qílín",
+        meaningVi: "Thánh thú nhân từ không giẫm lên cỏ tươi hay côn trùng sống, chỉ xuất hiện vào thời thái bình thịnh trị hoặc khi bậc thánh nhân ra đời, biểu trưng cho nhân đức và điềm lành.",
+        meaningEn: "A benevolent mythic beast said to tread so lightly that it spares living grass and insects, appearing only during eras of wise governance or the birth of sages."
+      },
+      {
+        id: "myth-tortoise",
+        nameVi: "Quy (Rùa Thiêng)",
+        nameEn: "Gui (Sacred Tortoise)",
+        nameZh: "龟",
+        pinyin: "Guī",
+        meaningVi: "Biểu tượng của trường thọ, ổn định và vũ trụ quan 'thiên viên địa phương' (mai tròn tựa trời, yếm phẳng tựa đất); gắn với văn tự giáp cốt thời Thương và thần thú Huyền Vũ phương Bắc.",
+        meaningEn: "An emblem of longevity, cosmic stability ('round heaven above, square earth below'), Shang oracle-bone divination, and Xuanwu, guardian of the north."
+      },
+      {
+        id: "myth-phoenix",
+        nameVi: "Phụng Hoàng",
+        nameEn: "Fenghuang (Chinese Phoenix)",
+        nameZh: "凤凰",
+        pinyin: "Fènghuáng",
+        meaningVi: "Vua của loài chim (Phụng là trống, Hoàng là mái), chỉ đậu cây ngô đồng và uống nước suối trong, đại diện cho hòa hợp Âm Dương, đức hạnh cao quý và điềm thái hòa.",
+        meaningEn: "Sovereign of birds (Feng male, Huang female), said to perch solely on paulownia trees and drink clear springs, embodying Yin-Yang harmony, noble virtue, and peaceful order."
+      },
+      {
+        id: "myth-pangu",
+        nameVi: "Bàn Cổ Khai Thiên",
+        nameEn: "Pangu Separating Heaven and Earth",
+        nameZh: "盘古开天",
+        pinyin: "Pángǔ Kāitiān",
+        meaningVi: "Thần thoại sáng thế ghi chép từ thời Tam Quốc ('Tam Ngũ Lịch Ký'): Bàn Cổ chẻ khối hỗn mang thành trời đất, khi hóa thân thì hơi thở thành gió mây, mắt thành nhật nguyệt và thân thể hóa thành núi sông muôn loài.",
+        meaningEn: "A creation myth recorded in the Three Kingdoms era: Pangu cleaves primordial chaos into heaven and earth, and upon his passing his breath becomes wind, his eyes sun and moon, and his body mountains and rivers."
+      },
+      {
+        id: "myth-nuwa",
+        nameVi: "Nữ Oa Luyện Thạch Bổ Thiên",
+        nameEn: "Nüwa Mending the Sky",
+        nameZh: "女娲补天",
+        pinyin: "Nǚwā Bǔtiān",
+        meaningVi: "Nữ thần tạo ra loài người từ đất hoàng thổ và luyện đá ngũ sắc vá vòm trời rạn nứt sau trận chiến Cộng Công – Chúc Dung, biểu trưng cho sức mạnh kiến tạo, bảo hộ và tinh thần vượt qua thiên tai.",
+        meaningEn: "Primordial goddess who fashioned humanity from yellow earth and smelted five-colored stones to seal the ruptured sky, symbolizing maternal creation, restoration, and resilience against calamity."
+      },
+      {
+        id: "myth-fuxi",
+        nameVi: "Phục Hy Hoạch Quái",
+        nameEn: "Fuxi Devising the Eight Trigrams",
+        nameZh: "伏羲画卦",
+        pinyin: "Fúxī Huàguà",
+        meaningVi: "Vị nhân văn thủy tổ trong truyền thuyết Tam Hoàng, tương truyền quan sát thiên văn địa lý mà vạch ra Tiên Thiên Bát Quái, dạy dân kết lưới đánh cá, thuần dưỡng gia súc và đặt lễ cưới hỏi.",
+        meaningEn: "Culture hero among the Three Sovereigns credited with observing cosmic patterns to formulate the Eight Trigrams (Bagua), alongside introducing fishing nets, animal husbandry, and marriage rites."
+      },
+      {
+        id: "myth-babao",
+        nameVi: "Bát Bảo (Tám Báu Vật Cát Tường)",
+        nameEn: "Eight Auspicious Treasures",
+        nameZh: "八宝",
+        pinyin: "Bābǎo",
+        meaningVi: "Hệ hoa văn cát tường phổ biến trên gốm sứ, kiến trúc và gấm vóc (gồm Bát Cát Tường Phật giáo như Pháp luân, Bảo cái, Hoa sen, Kết trường sinh và Bát Bảo dân gian như Châu báu, Tiền cổ, Khánh ngọc, Sừng tê), gửi gắm ước nguyện viên mãn.",
+        meaningEn: "Canonical decorative motifs across porcelain, textiles, and architecture—spanning Buddhist Eight Auspicious Symbols (Dharma wheel, lotus, endless knot) and secular Eight Treasures—expressing wishes for harmony and prosperity."
+      },
+      {
+        id: "myth-wufu",
+        nameVi: "Ngũ Phúc Lâm Môn",
+        nameEn: "Five Blessings",
+        nameZh: "五福",
+        pinyin: "Wǔfú",
+        meaningVi: "Xuất xứ từ thiên Hồng Phạm trong 'Thượng Thư', gồm năm phúc lớn của đời người: Thọ (sống lâu), Phú (giàu đủ), Khang Ninh (khỏe mạnh bình an), Du Hảo Đức (yêu chuộng đạo đức) và Khảo Chung Mệnh (ra đi thanh thản), thường hóa hình thành năm con dơi (bức đồng âm phúc).",
+        meaningEn: "Rooted in the Book of Documents ('Hongfan' chapter), defining five life blessings—longevity, wealth, health and peace, love of virtue, and a tranquil end—commonly visualised via five bats (homophonous with 'fu')."
+      },
+      {
+        id: "myth-sijunzi",
+        nameVi: "Tứ Quân Tử (Mai – Lan – Trúc – Cúc)",
+        nameEn: "Four Gentlemen (Plum, Orchid, Bamboo, Chrysanthemum)",
+        nameZh: "四君子",
+        pinyin: "Sì Jūnzǐ",
+        meaningVi: "Bốn loài thảo mộc tượng trưng cho phẩm tiết sĩ phu trong văn nhân họa: Mai nở giữa giá rét (ngạo sương), Lan tỏa hương nơi hang vắng (u nhã), Trúc rỗng ruột thẳng đốt (khiêm cung kiên trực) và Cúc nở muộn cuối thu (đạm bạc siêu thoát).",
+        meaningEn: "Four botanical emblems of literati character in ink painting: winter plum (fortitude), hidden orchid (quiet refinement), hollow straight bamboo (humility and integrity), and late-autumn chrysanthemum (serene detachment)."
+      }
+    ]
+  };
+})();
+// --- Backward-compatible Adapter for Literary Canons & Arts ---
+(function () {
+  "use strict";
+  var la = window.CCE_V4_LIT_ARTS || {};
+  var prev = window.CCE_LITERATURE_HSK_V4 || {};
+  var canons = (la.fourGreatNovels || []).map(function (n) {
     return {
-      id: "hsk-brief-" + (idx + 1),
-      hsk: r[0],
-      zh: r[1],
-      pinyin: r[2],
-      hanViet: r[3],
-      vi: r[4],
-      en: r[5]
+      id: n.id,
+      zh: n.titleZh ? ("《" + n.titleZh + "》" + (n.authorEra ? " · " + n.authorEra : "")) : "",
+      titleVi: n.titleVi + (n.authorEra ? " (" + n.authorEra + ")" : ""),
+      titleEn: n.titleEn || n.titleVi,
+      hskTag: n.authorEra || "HSK 5–9 Literary Canon",
+      coreThemeVi: n.coreThemesVi || "",
+      coreThemeEn: n.coreThemesEn || "",
+      hskVocabVi: n.realLocationsVi ? ("Địa danh thực tế: " + n.realLocationsVi) : (n.vietnamReceptionVi || "")
     };
   });
-
   window.CCE_LITERATURE_HSK_V4 = {
-    canons: CANONS,
-    hskBriefs: HSK_BRIEFS
+    canons: canons.length ? canons : (prev.canons || []),
+    hskBriefs: prev.hskBriefs || []
   };
 })();

@@ -1,15 +1,15 @@
 // ============================================================================
-// CHINESE CULTURE EXPLORER V4.0 — EU–China–Vietnam Trilingual Trade Studio
-// 1. Anti-English-Attrition ZH -> EN Bridge & 100 EU Logistics Terms
-// 2. 12 European Logistics Interviews + 8 Factory ZH <-> EU HQ EN Email Pairs
-// 3. Silk Road Historic-to-Modern Logistics Continuum + 4-Col SRS / Anki Push
+// CHINESE CULTURE EXPLORER — EU–China–Vietnam Trilingual Trade & Silk Road Studio
+// 1. Anti-English-Attrition ZH <-> EN Bridge & 100 EU Logistics Terms
+// 2. 12 Multi-Turn European Logistics Interviews + 8 Factory ZH <-> EU HQ EN Emails
+// 3. 10 Parallel Trilingual Articles (ZH | Pinyin | EN | VI) + Silk Road Continuum
 // ============================================================================
 
 (function () {
   "use strict";
 
   var trState = {
-    tab: "terms", // "terms" | "emails" | "interviews" | "silkroad"
+    tab: "terms", // "terms" | "emails" | "interviews" | "articles" | "silkroad"
     cat: "all",
     query: "",
     recallMode: "both" // "both" | "hide-en" | "hide-zh"
@@ -24,11 +24,46 @@
     return '<button type="button" class="tts-speak-btn" data-trst-speak="' + esc(txt) + '" data-trst-lang="' + esc(langCode || "zh-CN") + '" title="Listen ' + esc(langCode) + '"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>';
   }
 
+  var TRADE_IMGS = [
+    "assets/images/articles/hero-b2b-negotiation-table.jpg",
+    "assets/images/articles/hero-supply-chain-rcep.jpg",
+    "assets/images/editorial/infographic-co-forme-incoterms.svg",
+    "assets/images/articles/hero-huaqiangbei-tech.jpg",
+    "assets/images/articles/hero-vietnam-ai-decree13.jpg",
+    "assets/images/articles/hero-contemporary-china.jpg",
+    "assets/images/provinces/shanghai-bund-skyline.jpg",
+    "assets/images/provinces/guangdong-canton-tower.jpg"
+  ];
+
+  var SILK_IMGS = [
+    "assets/images/articles/hero-silk-road.jpg",
+    "assets/images/museum/tang-sancai-camel.jpg",
+    "assets/images/museum/zheng-he-chart.jpg",
+    "assets/images/editorial/map-silk-road-maritime-nodes.svg",
+    "assets/images/provinces/gansu-dunhuang-mogao.jpg",
+    "assets/images/provinces/fujian-tulou.jpg"
+  ];
+
+  function renderTrstThumb(src, caption) {
+    if (!src) return "";
+    var isSvg = /\.svg(\?|$)/i.test(src);
+    var fitStyle = isSvg
+      ? "width:100%;height:100%;object-fit:contain;padding:0.25rem;display:block;"
+      : "width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;";
+    return (
+      '<div class="img-skeleton-bg" style="aspect-ratio:16/10;max-height:145px;width:100%;overflow:hidden;border-radius:var(--radius);border:1px solid var(--hairline);margin-bottom:0.5rem;background:var(--bg-surface);cursor:pointer;" data-action="open-custom-image" data-src="' + esc(src) + '" data-caption="' + esc(caption || "") + '">' +
+      '  <img src="' + esc(src) + '" alt="' + esc(caption || "EU-China Trade") + '" loading="lazy" decoding="async" style="' + fitStyle + '" onerror="this.onerror=null;this.src=\'assets/images/articles/hero-supply-chain-rcep.jpg\';" />' +
+      '</div>'
+    );
+  }
+
   function renderStudio(enM) {
     var data = window.CCE_TRADE_TRILINGUAL_V4 || {};
+    var tbRaw = window.CCE_V4_TRADE_BRIDGE || {};
     var terms = data.terms || [];
     var emails = data.emailPairs || [];
     var dialogues = data.dialogues || [];
+    var parallelArticles = data.parallelArticles || tbRaw.parallelArticles10 || [];
     var silk = data.silkRoadLogisticsContinuum || [];
     if (!terms.length && !emails.length) return "";
 
@@ -37,6 +72,22 @@
       var catOk = trState.cat === "all" || t.category === trState.cat;
       var qOk = !q || (t.en + " " + t.zh + " " + t.pinyin + " " + t.vi).toLowerCase().indexOf(q) !== -1;
       return catOk && qOk;
+    });
+
+    var catDefs = [
+      { id: "all", lbl: "All (" + terms.length + " Terms)" },
+      { id: "incoterms", lbl: "Incoterms 2020" },
+      { id: "eu_compliance", lbl: "EU Compliance: CBAM/ICS2/EUDR" },
+      { id: "ocean_rail", lbl: "CR Express Rail & Ocean" },
+      { id: "customs_origin", lbl: "Customs, HS & EVFTA/RCEP" },
+      { id: "finance_risk", lbl: "L/C, QC & Risk Finance" }
+    ];
+    // Keep counts dynamic from loaded array
+    catDefs.forEach(function (c) {
+      if (c.id !== "all") {
+        var cnt = terms.filter(function (t) { return t.category === c.id; }).length;
+        if (cnt > 0) c.lbl += " (" + cnt + ")";
+      }
     });
 
     var body = "";
@@ -56,46 +107,68 @@
         '  </div>' +
         '</div>' +
         '<div class="filter-bar" style="margin-bottom:0.85rem;">' +
-        [
-          { id: "all", lbl: "All (" + terms.length + " Terms)" },
-          { id: "incoterms", lbl: "Incoterms 2020 (16)" },
-          { id: "eu", lbl: "EU Compliance: CBAM/ICS2/EUDR (23)" },
-          { id: "freight", lbl: "CR Express Rail & Ocean (36)" },
-          { id: "customs", lbl: "Customs, L/C & QC (25)" }
-        ].map(function (c) {
+        catDefs.filter(function (c) {
+          return c.id === "all" || terms.some(function (t) { return t.category === c.id; });
+        }).map(function (c) {
           return '<button type="button" class="filter-pill ' + (trState.cat === c.id ? "active" : "") + '" data-trst-act="cat" data-val="' + c.id + '">' + c.lbl + '</button>';
         }).join("") +
         '</div>' +
-        '<div class="academic-table-wrap" style="max-height:420px;overflow:auto;">' +
+        '<div class="academic-table-wrap" style="max-height:460px;overflow:auto;">' +
         '  <table class="academic-table"><thead><tr><th>European Corporate English</th><th>Chinese Factory / Carrier (中文)</th><th>Vietnamese &amp; Ops Scope</th><th>SM-2 SRS</th></tr></thead><tbody>' +
-        filteredTerms.slice(0, 60).map(function (t) {
+        filteredTerms.slice(0, 100).map(function (t) {
           var enCell = trState.recallMode === "hide-en"
             ? '<details><summary style="cursor:pointer;color:var(--jade-green);font-size:0.78rem;">Reveal English ▾</summary><strong>' + esc(t.en) + '</strong></details>'
             : '<strong>' + esc(t.en) + '</strong> ' + spkBtn(t.en, "en-US");
           var zhCell = trState.recallMode === "hide-zh"
             ? '<details><summary style="cursor:pointer;color:var(--imperial-red);font-size:0.78rem;">Reveal Chinese ▾</summary><span class="hanzi">' + esc(t.zh) + '</span> (' + esc(t.pinyin) + ')</details>'
             : '<strong class="hanzi" style="font-size:1rem;">' + esc(t.zh) + '</strong> ' + spkBtn(t.zh, "zh-CN") + '<br><span class="pinyin text-xs">' + esc(t.pinyin) + '</span>';
-          return '<tr><td>' + enCell + '</td><td>' + zhCell + '</td><td style="font-size:0.8rem;"><strong>' + esc(t.vi) + '</strong><br><span style="color:var(--text-muted);">' + esc(t.contextEn) + '</span></td><td><button type="button" class="btn btn-secondary btn-sm" data-trst-act="push-srs" data-zh="' + esc(t.zh) + '" data-py="' + esc(t.pinyin) + '" data-vi="' + esc(t.vi) + '" data-en="' + esc(t.en) + '">+ SRS</button></td></tr>';
+          var note = enM ? (t.contextEn || t.contextVi) : (t.contextVi || t.contextEn);
+          return '<tr><td>' + enCell + '</td><td>' + zhCell + '</td><td style="font-size:0.8rem;"><strong>' + esc(t.vi) + '</strong><br><span style="color:var(--text-muted);">' + esc(note) + '</span></td><td><button type="button" class="btn btn-secondary btn-sm" data-trst-act="push-srs" data-zh="' + esc(t.zh) + '" data-py="' + esc(t.pinyin) + '" data-vi="' + esc(t.vi) + '" data-en="' + esc(t.en) + '">+ SRS</button></td></tr>';
         }).join("") +
         '  </tbody></table>' +
         '</div>'
       );
     } else if (trState.tab === "emails") {
-      body = '<div style="display:grid;gap:0.85rem;">' + emails.map(function (em) {
+      body = '<div style="display:grid;gap:0.85rem;">' + emails.map(function (em, idx) {
         return (
           '<article class="flashcard-layer" style="padding:0.95rem 1.05rem;">' +
+          renderTrstThumb(TRADE_IMGS[idx % TRADE_IMGS.length], em.topic) +
           '  <strong style="color:var(--imperial-red);">' + esc(em.topic) + '</strong>' +
+          (em.viSummary ? '<p style="font-size:0.8rem;color:var(--text-secondary);margin:0.25rem 0 0;">' + esc(em.viSummary) + '</p>' : "") +
           '  <div class="grid grid-2" style="gap:0.85rem;margin-top:0.55rem;">' +
-          '    <div style="background:var(--bg-paper);padding:0.7rem;border:1px solid var(--hairline);font-size:0.82rem;white-space:pre-line;"><strong class="hanzi" style="color:var(--imperial-red);">Factory Side (中文邮件/微信) ' + spkBtn(em.factoryZh.slice(0, 120), "zh-CN") + '</strong><br>' + esc(em.factoryZh) + '</div>' +
-          '    <div style="background:var(--bg-paper);padding:0.7rem;border:1px solid var(--hairline);font-size:0.82rem;white-space:pre-line;"><strong style="color:var(--jade-green);">European HQ Side (Corporate EN) ' + spkBtn(em.euHqEn.slice(0, 140), "en-US") + '</strong><br>' + esc(em.euHqEn) + '</div>' +
+          '    <div style="background:var(--bg-paper);padding:0.7rem;border:1px solid var(--hairline);font-size:0.82rem;white-space:pre-line;"><strong class="hanzi" style="color:var(--imperial-red);">Factory Side (中文邮件/微信) ' + spkBtn((em.factoryZh || "").slice(0, 140), "zh-CN") + '</strong><br>' + esc(em.factoryZh) + (em.factoryPinyin ? '<div class="pinyin text-xs" style="margin-top:0.4rem;">' + esc(em.factoryPinyin) + '</div>' : "") + '</div>' +
+          '    <div style="background:var(--bg-paper);padding:0.7rem;border:1px solid var(--hairline);font-size:0.82rem;white-space:pre-line;"><strong style="color:var(--jade-green);">European HQ Side (Corporate EN) ' + spkBtn((em.euHqEn || "").slice(0, 150), "en-US") + '</strong><br>' + esc(em.euHqEn) + '</div>' +
           '  </div>' +
           '</article>'
         );
       }).join("") + '</div>';
     } else if (trState.tab === "interviews") {
-      body = '<div class="grid grid-2" style="gap:0.85rem;">' + dialogues.map(function (d) {
+      body = '<div style="display:grid;gap:0.85rem;max-height:540px;overflow:auto;">' + dialogues.map(function (d, idx) {
+        if (Array.isArray(d.turns)) {
+          return (
+            '<article class="flashcard-layer" style="font-size:0.82rem;padding:0.95rem 1.05rem;">' +
+            renderTrstThumb(TRADE_IMGS[idx % TRADE_IMGS.length], enM ? d.titleEn : d.titleVi) +
+            '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.45rem;">' +
+            '    <strong>' + esc(enM ? d.titleEn : d.titleVi) + '</strong>' +
+            '    <span class="badge badge-jade">' + esc(d.zhScenarioTag || d.mode || "Dialogue") + '</span>' +
+            '  </div>' +
+            '  <div style="display:grid;gap:0.45rem;">' +
+            d.turns.map(function (t) {
+              return '<div style="background:var(--bg-paper);padding:0.55rem 0.7rem;border:1px solid var(--hairline);">' +
+                '<div style="font-size:0.76rem;color:var(--imperial-red);font-weight:700;">' + esc(t.speakerEn) + ' · <span class="hanzi">' + esc(t.speakerZh) + '</span> ' + spkBtn(t.zh, "zh-CN") + ' ' + spkBtn(t.en, "en-US") + '</div>' +
+                '<div class="hanzi" style="font-size:0.92rem;margin:0.15rem 0;">' + esc(t.zh) + '</div>' +
+                '<div class="pinyin text-xs">' + esc(t.pinyin) + '</div>' +
+                '<div style="color:var(--jade-green);margin-top:0.2rem;"><strong>EN:</strong> ' + esc(t.en) + '</div>' +
+                '<div style="color:var(--text-secondary);"><strong>VI:</strong> ' + esc(t.vi) + '</div>' +
+              '</div>';
+            }).join("") +
+            '  </div>' +
+            '</article>'
+          );
+        }
         return (
           '<div class="flashcard-layer" style="font-size:0.82rem;">' +
+          renderTrstThumb(TRADE_IMGS[idx % TRADE_IMGS.length], d.role) +
           '  <span class="badge badge-jade" style="margin-bottom:0.3rem;">' + esc(d.role) + '</span><br>' +
           '  <div style="color:var(--text-muted);margin-bottom:0.35rem;">' + esc(d.contextVi) + '</div>' +
           (d.zhSource ? '<p style="margin:0 0 0.35rem;"><strong class="hanzi">ZH Prompt:</strong> ' + esc(d.zhSource) + '</p>' : "") +
@@ -106,6 +179,27 @@
           '</div>'
         );
       }).join("") + '</div>';
+    } else if (trState.tab === "articles") {
+      body = '<div style="display:grid;gap:0.95rem;max-height:560px;overflow:auto;">' + parallelArticles.map(function (pa, idx) {
+        return (
+          '<article class="card" style="padding:1rem 1.15rem;">' +
+          renderTrstThumb(TRADE_IMGS[idx % TRADE_IMGS.length], enM ? pa.titleEn : pa.titleVi) +
+          '  <span class="badge badge-gold">' + esc(pa.domain) + '</span>' +
+          '  <h4 style="margin:0.3rem 0;">' + esc(enM ? pa.titleEn : pa.titleVi) + ' — <span class="hanzi" style="color:var(--imperial-red);">' + esc(pa.titleZh) + '</span></h4>' +
+          (pa.paragraphs || []).map(function (pg) {
+            return (
+              '<div class="flashcard-layer" style="margin-bottom:0.5rem;font-size:0.82rem;">' +
+              '  <div style="display:flex;justify-content:space-between;gap:0.4rem;"><span class="hanzi" style="font-size:0.92rem;color:var(--ink-primary);">' + esc(pg.zh) + '</span>' + spkBtn(pg.zh, "zh-CN") + '</div>' +
+              '  <div class="pinyin text-xs" style="margin:0.2rem 0;">' + esc(pg.pinyin) + '</div>' +
+              '  <div style="color:var(--jade-green);margin-bottom:0.2rem;"><strong>EN:</strong> ' + esc(pg.en) + ' ' + spkBtn(pg.en, "en-US") + '</div>' +
+              '  <div style="color:var(--text-secondary);"><strong>VI:</strong> ' + esc(pg.vi) + '</div>' +
+              '</div>'
+            );
+          }).join("") +
+          (pa.drillPromptEn ? '<div style="font-size:0.78rem;color:var(--imperial-red);"><strong>Anti-Attrition Drill (EN):</strong> ' + esc(pa.drillPromptEn) + '<br><strong>ZH Drill:</strong> <span class="hanzi">' + esc(pa.drillPromptZh || "") + '</span></div>' : "") +
+          '</article>'
+        );
+      }).join("") + '</div>';
     } else {
       body = (
         '<div style="margin-bottom:0.85rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">' +
@@ -113,8 +207,8 @@
         '  <button type="button" class="btn btn-primary btn-sm" data-trst-act="open-3d-silk">' + (enM ? "Open 3-Mode Silk Road 3D Studio →" : "Mở Bản đồ 3D Tơ Lụa ↔ Trung–Âu →") + '</button>' +
         '</div>' +
         '<div class="grid grid-3" style="gap:0.85rem;">' +
-        silk.map(function (s) {
-          return '<div class="card"><strong style="color:var(--imperial-red);">' + esc(s.eraHub) + '</strong><p style="font-size:0.81rem;margin:0.4rem 0;"><strong>Cổ đại:</strong> ' + esc(s.ancientRoleVi) + '</p><p style="font-size:0.81rem;margin:0;color:var(--jade-green);"><strong>Hiện đại 2026:</strong> ' + esc(enM ? s.modernRoleEn : s.modernRoleVi) + '</p></div>';
+        silk.map(function (s, idx) {
+          return '<div class="card">' + renderTrstThumb(SILK_IMGS[idx % SILK_IMGS.length], s.eraHub) + '<strong style="color:var(--imperial-red);">' + esc(s.eraHub) + '</strong><p style="font-size:0.81rem;margin:0.4rem 0;"><strong>Cổ đại:</strong> ' + esc(s.ancientRoleVi) + '</p><p style="font-size:0.81rem;margin:0;color:var(--jade-green);"><strong>Hiện đại 2026:</strong> ' + esc(enM ? s.modernRoleEn : s.modernRoleVi) + '</p></div>';
         }).join("") +
         '</div>'
       );
@@ -125,10 +219,11 @@
       '  <div class="section-header" style="margin-bottom:0.75rem;"><div><div class="editorial-kicker" style="color:var(--jade-green);">' + (enM ? "EU–CHINA–VIETNAM TRILINGUAL LOGISTICS STUDIO · 中欧越三语国际物流工作台" : "Studio Xuất Nhập Khẩu &amp; Logistics Châu Âu – Trung Quốc (Tam ngữ Anh · Trung · Việt)") + '</div><h2 class="section-title" style="font-size:1.55rem;margin:0.15rem 0 0;">' + (enM ? "Keep Business English Sharp for European Firms + Negotiate Cleanly in Chinese" : "Làm việc Chuẩn Tiếng Anh tại Công ty Châu Âu + Giao tiếp Thẳng Với Xưởng Trung Quốc") + '</h2></div></div>' +
       '  <div class="tabs-bar" style="margin-bottom:1rem;">' +
       [
-        { id: "terms", lbl: (enM ? "100 Trilingual Logistics Terms (ZH ↔ EN)" : "100 Thuật ngữ Logistics Âu–Trung (Chống quên Tiếng Anh)") },
-        { id: "emails", lbl: (enM ? "8 Side-by-Side Email Pairs (Factory ZH | EU HQ EN)" : "8 Cặp Email Song hành Xưởng TQ ↔ Sếp Châu Âu") },
-        { id: "interviews", lbl: (enM ? "12 EU Forwarder Interview & Ops Dialogues" : "12 Tình huống Phỏng vấn Logistics Châu Âu & Xử lý Sự cố") },
-        { id: "silkroad", lbl: (enM ? "Silk Road Historic–Modern Continuum" : "Con Đường Tơ Lụa Cổ đại → Trung–Âu 2026") }
+        { id: "terms", lbl: (enM ? (terms.length + " Trilingual Terms (ZH ↔ EN)") : (terms.length + " Thuật ngữ Logistics (Chống quên Anh)")) },
+        { id: "emails", lbl: (enM ? (emails.length + " Email Pairs (Factory ZH | EU EN)") : (emails.length + " Cặp Email Xưởng TQ ↔ Sếp Âu")) },
+        { id: "interviews", lbl: (enM ? (dialogues.length + " EU Dialogues & Interviews") : (dialogues.length + " Tình huống Hội thoại Âu–Trung")) },
+        { id: "articles", lbl: (enM ? (parallelArticles.length + " Parallel Articles (ZH–EN–VI)") : (parallelArticles.length + " Bài Đọc Song hành Tam ngữ")) },
+        { id: "silkroad", lbl: (enM ? "Silk Road Historic–Modern 2026" : "Đường Tơ Lụa → Trung–Âu 2026") }
       ].map(function (t) {
         return '<button type="button" class="tab-btn ' + (trState.tab === t.id ? "active" : "") + '" data-trst-act="tab" data-val="' + t.id + '">' + t.lbl + '</button>';
       }).join("") +

@@ -185,6 +185,21 @@
       });
     }
 
+    var lzh = (window.CCE_V5_LAOZIHAO && window.CCE_V5_LAOZIHAO.brands) || [];
+    for (i = 0; i < lzh.length; i++) {
+      var br = lzh[i];
+      out.push({
+        type: "business",
+        id: br.id,
+        title: br.zh + " (" + br.hanViet + " · " + br.foundedYear + ")",
+        titleEn: br.nameEn + " · " + br.zh + " (Est. " + br.foundedYear + ")",
+        zh: br.zh || "",
+        sub: "Trung Hoa Lão Tự Hiệu · " + (br.cityVi || ""),
+        rawTitle: norm(br.zh + " " + br.pinyin + " " + br.hanViet + " " + br.nameEn),
+        body: norm((br.craftSecretVi || "") + " " + (br.b2bTradeVi || ""))
+      });
+    }
+
     _items = out;
     _dirty = false;
     return out;

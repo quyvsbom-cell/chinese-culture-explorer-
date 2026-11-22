@@ -79,16 +79,19 @@ def main() -> int:
     q4_m_rows = len(re.findall(r'^\s*M\("v4q-\d+"', q4_txt, re.M))
     q4_loop_m = re.search(r"for\s*\(\s*var\s+i\s*=\s*0\s*;\s*i\s*<\s*(\d+)\s*;", q4_txt)
     q4_loop_count = int(q4_loop_m.group(1)) if q4_loop_m else 0
-    q4_total = q4_m_rows + q4_loop_count
-    q4_has_en_sig = "questionEn: qEn" in q4_txt and "optionsEn: optsEn" in q4_txt
+    q4_obj_rows = len(re.findall(r'id:\s*"v4q-\d+"', q4_txt))
+    q4_total = max(q4_m_rows + q4_loop_count, q4_obj_rows)
+    q4_has_en_sig = ("questionEn:" in q4_txt) and ("optionsEn:" in q4_txt)
 
     tr_txt = (v4 / "tradeTrilingualBridgeV4.js").read_text(encoding="utf-8") if (v4 / "tradeTrilingualBridgeV4.js").is_file() else ""
     raw_block_m = re.search(r"var RAW_TERMS\s*=\s*\[(.*?)\n  \];", tr_txt, re.S)
     raw_block = raw_block_m.group(1) if raw_block_m else ""
     tr_raw_rows = len(re.findall(r'^\s*\["[a-z]+",\s*"[^"]+",\s*"[^"]+"', raw_block, re.M))
+    tr_lt_rows = len(re.findall(r'id:\s*"lt-\d+"', tr_txt))
+    tr_total_rows = max(tr_raw_rows, tr_lt_rows)
 
     disc_txt = (v4 / "politicsEconHskTcmStudyV4.js").read_text(encoding="utf-8") if (v4 / "politicsEconHskTcmStudyV4.js").is_file() else ""
-    disc_en_ok = "epistemicBannerEn:" in disc_txt and "studyAbroad" in disc_txt
+    disc_en_ok = ("epistemicBannerEn:" in disc_txt or "epistemologyBannerEn:" in disc_txt) and ("studyAbroad" in disc_txt or "studyAbroadRoadmap" in disc_txt)
 
     print(f"Core articles EN pack: {core_en_count}")
     print(f"V3 articles VI={len(v3_art_ids)} | EN={len(v3_art_en_ids)} | missing={len(missing_art_en)}")
@@ -98,7 +101,7 @@ def main() -> int:
     print(f"Concept pairs VI={pair_ids} | EN={pair_en_defs}")
     print(f"Quiz Arena V3 VI={quiz_vi} | EN={quiz_en}")
     print(f"False Friends VI={ff_vi} | EN={ff_en}")
-    print(f"V4 pack files missing={len(missing_v4_files)} | V4 Quiz={q4_total} (EN={q4_has_en_sig}) | Trilingual Terms={tr_raw_rows} | Disc EN={disc_en_ok}")
+    print(f"V4 pack files missing={len(missing_v4_files)} | V4 Quiz={q4_total} (EN={q4_has_en_sig}) | Trilingual Terms={tr_total_rows} | Disc EN={disc_en_ok}")
 
     ok = (
         len(missing_art_en) == 0
@@ -109,7 +112,7 @@ def main() -> int:
         and len(missing_v4_files) == 0
         and q4_total >= 90
         and q4_has_en_sig
-        and tr_raw_rows >= 100
+        and tr_total_rows >= 100
         and disc_en_ok
     )
     print("EN_PARITY_AUDIT:", "PASS" if ok else "FAIL")

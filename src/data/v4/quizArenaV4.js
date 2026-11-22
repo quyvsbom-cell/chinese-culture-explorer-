@@ -1,123 +1,1017 @@
-// ============================================================================
-// CHINESE CULTURE EXPLORER V4.0 — Quiz Arena Expansion (+90 MCQs -> 180+ Total)
-// Covers EU-China Logistics, Silk Road, HSK 4-9 Classics, Wuxing/TCM & CSC
-// ============================================================================
-
+// Imported V4 Quiz Arena (90 Bilingual Questions from Pack 6)
 (function () {
   "use strict";
 
-  // Helper builds concise bilingual MCQ matching getQuizPool() in interactiveLabs2026.js
-  function M(id, pillar, topicVi, topicEn, qVi, qEn, optsVi, optsEn, ans, exVi, exEn) {
+var RAW_V4_QUIZ = [
+    {
+      id: "v4q-001",
+      pillar: "unesco_geo",
+      questionVi: "Quần thể hang động nào ở Cam Túc nổi tiếng với bích họa Phật giáo và kho tàng thư tịch Con đường Tơ lụa?",
+      questionEn: "Which cave complex in Gansu is renowned for its Buddhist murals and Silk Road manuscript library?",
+      optionsVi: ["Hang Mạc Cao Đôn Hoàng", "Hang Vân Cương Đại Đồng", "Hang Long Môn Lạc Dương", "Hang Đại Túc Trùng Khánh"],
+      optionsEn: ["Mogao Caves of Dunhuang", "Yungang Grottoes of Datong", "Longmen Grottoes of Luoyang", "Dazu Rock Carvings of Chongqing"],
+      correctIndex: 0,
+      explanationVi: "Hang Mạc Cao tại Đôn Hoàng (Cam Túc) là trung tâm nghệ thuật Phật giáo và lưu trữ văn bản cổ trọng yếu trên Con đường Tơ lụa.",
+      explanationEn: "The Mogao Caves in Dunhuang, Gansu preserve over a millennium of Buddhist art and the famed Silk Road Library Cave manuscripts."
+    },
+    {
+      id: "v4q-002",
+      pillar: "unesco_geo",
+      questionVi: "Nguyên lý thiết kế viên lâm Giang Nam nào mượn cảnh quan bên ngoài tường vườn để mở rộng không gian thị giác?",
+      questionEn: "Which Jiangnan classical garden principle incorporates external scenery beyond the garden walls into the visual composition?",
+      optionsVi: ["Khuông cảnh (框景)", "Tá cảnh (借景)", "Đối cảnh (对景)", "Chướng cảnh (障景)"],
+      optionsEn: ["Framing Scenery (Kuangjing)", "Borrowed Scenery (Jiejing)", "Opposite Scenery (Duijing)", "Screened Scenery (Zhangjing)"],
+      correctIndex: 1,
+      explanationVi: "Tá cảnh (借景) đưa núi xa, tháp cổ hoặc bầu trời bên ngoài hòa vào bố cục bên trong vườn như tại Chuyết Chính Viên Tô Châu.",
+      explanationEn: "Jiejing (borrowed scenery) integrates distant hills, pagodas, or sky into the garden's interior view, exemplified by Suzhou's Humble Administrator's Garden."
+    },
+    {
+      id: "v4q-003",
+      pillar: "unesco_geo",
+      questionVi: "Đoạn Vạn Lý Trường Thành nào nằm ở cực tây nhà Minh tại Cam Túc, được mệnh danh là 'Thiên hạ đệ nhất hùng quan'?",
+      questionEn: "Which westernmost Ming Dynasty Great Wall pass in Gansu is historically known as the First Strategic Pass Under Heaven?",
+      optionsVi: ["Sơn Hải Quan", "Gia Dục Quan", "Cư Dung Quan", "Nhạn Môn Quan"],
+      optionsEn: ["Shanhai Pass", "Jiayu Pass", "Juyong Pass", "Yanmen Pass"],
+      correctIndex: 1,
+      explanationVi: "Gia Dục Quan tọa lạc tại hành lang Hà Tây (Cam Túc), đánh dấu điểm cuối phía tây của Vạn Lý Trường Thành thời Minh.",
+      explanationEn: "Jiayu Pass sits in the Hexi Corridor of Gansu, marking the western terminus of the Ming Dynasty Great Wall."
+    },
+    {
+      id: "v4q-004",
+      pillar: "unesco_geo",
+      questionVi: "Dạng địa hình cột đá sa thạch thạch anh dựng đứng tại Trương Gia Giới (Hồ Nam) thuộc khu di sản nào?",
+      questionEn: "The towering quartz-sandstone pillar landform in Zhangjiajie, Hunan belongs to which UNESCO site?",
+      optionsVi: ["Địa mạo Đan Hà", "Vũ Lăng Nguyên", "Hoàng Long Tứ Xuyên", "Thạch Lâm Vân Nam"],
+      optionsEn: ["China Danxia", "Wulingyuan Scenic Area", "Huanglong in Sichuan", "Shilin Stone Forest in Yunnan"],
+      correctIndex: 1,
+      explanationVi: "Vũ Lăng Nguyên nổi tiếng với hàng nghìn trụ đá sa thạch thạch anh hình thành qua quá trình phong hóa và xói mòn kiến tạo.",
+      explanationEn: "Wulingyuan is distinguished by thousands of towering quartz-sandstone pillars sculpted by long-term erosion and tectonic uplift."
+    },
+    {
+      id: "v4q-005",
+      pillar: "unesco_geo",
+      questionVi: "Công trình thủy lợi cổ đại nào tại Tứ Xuyên hoạt động hơn 2.200 năm mà không cần đập chắn ngang dòng chính?",
+      questionEn: "Which ancient Sichuan irrigation system has operated for over 2,200 years without a dam blocking the main river?",
+      optionsVi: ["Đại Vận Hà", "Linh Cừ", "Đô Giang Yển", "Trịnh Quốc Cừ"],
+      optionsEn: ["Grand Canal", "Lingqu Canal", "Dujiangyan Irrigation System", "Zhengguo Canal"],
+      correctIndex: 2,
+      explanationVi: "Đô Giang Yển do Lý Băng xây dựng thời Chiến Quốc dùng đập phân thủy Ngư Chủy để tự động điều tiết lũ và tưới tiêu đồng bằng Thành Đô.",
+      explanationEn: "Engineered by Li Bing during the Warring States period, Dujiangyan uses the Fish Mouth levee to split floodwaters and irrigate the Chengdu Plain."
+    },
+    {
+      id: "v4q-006",
+      pillar: "unesco_geo",
+      questionVi: "Cổ trấn nào ở tỉnh Sơn Tây bảo tồn gần như nguyên vẹn tường thành, phố cổ và hệ thống phiếu hiệu ngân hàng đời Minh – Thanh?",
+      questionEn: "Which ancient city in Shanxi preserves intact Ming–Qing city walls and China's early draft-bank (piaohao) heritage?",
+      optionsVi: ["Lệ Giang", "Bình Dao", "Phượng Hoàng", "Ô Trấn"],
+      optionsEn: ["Lijiang", "Pingyao", "Fenghuang", "Wuzhen"],
+      correctIndex: 1,
+      explanationVi: "Cổ thành Bình Dao là cái nôi của Nhật Thăng Xương, phiếu hiệu tài chính nổi tiếng thời Thanh, được UNESCO công nhận năm 1997.",
+      explanationEn: "Pingyao Ancient City housed Rishengchang, China's pioneering Qing-era draft bank, and was inscribed by UNESCO in 1997."
+    },
+    {
+      id: "v4q-007",
+      pillar: "unesco_geo",
+      questionVi: "Tuyến đường thủy nhân tạo dài nhất thế giới nối Bắc Kinh với Hàng Châu qua năm hệ thống sông lớn là công trình nào?",
+      questionEn: "Which world-longest artificial waterway links Beijing to Hangzhou across five major river basins?",
+      optionsVi: ["Kinh Hàng Đại Vận Hà", "Kênh Linh Cừ", "Hoài Hà Tân Đạo", "Thông Tế Cừ"],
+      optionsEn: ["Beijing–Hangzhou Grand Canal", "Lingqu Canal", "New Huai River Channel", "Tongji Canal"],
+      correctIndex: 0,
+      explanationVi: "Đại Vận Hà đóng vai trò huyết mạch vận chuyển lương thực và hàng hóa bắc–nam suốt nhiều triều đại Trung Hoa.",
+      explanationEn: "The Grand Canal served as imperial China's north–south grain and commercial logistics spine across multiple dynasties."
+    },
+    {
+      id: "v4q-008",
+      pillar: "unesco_geo",
+      questionVi: "Kiểu nhà đất nện hình tròn hoặc vuông có tính phòng thủ tập thể tại Phúc Kiến được UNESCO công nhận gọi là gì?",
+      questionEn: "What are the communal rammed-earth circular and square dwellings in Fujian inscribed by UNESCO called?",
+      optionsVi: ["Tứ hợp viện", "Phúc Kiến Thổ Lâu", "Điếu cước lâu", "Diêu động"],
+      optionsEn: ["Siheyuan Courtyard", "Fujian Tulou", "Diaojiaolou Stilt House", "Yaodong Cave Dwelling"],
+      correctIndex: 1,
+      explanationVi: "Phúc Kiến Thổ Lâu của người Khách Gia và người Mân Nam kết hợp kiến trúc cộng đồng, cách nhiệt tự nhiên và phòng thủ kiên cố.",
+      explanationEn: "Fujian Tulou built by Hakka and Minnan clans integrate multi-family communal living, natural insulation, and defensive earth walls."
+    },
+    {
+      id: "v4q-009",
+      pillar: "unesco_geo",
+      questionVi: "Hai ngôi làng cổ tiêu biểu cho kiến trúc Huy Châu với tường đầu ngựa và hệ thống thủy đạo nhân tạo ở An Huy là đâu?",
+      questionEn: "Which two Anhui villages exemplify Huizhou architecture with horse-head walls and planned water systems?",
+      optionsVi: ["Chu Trang và Đồng Lý", "Tây Đệ và Hoành Thôn", "Nam Tầm và Tây Đường", "Bình Dao và Lãng Trung"],
+      optionsEn: ["Zhouzhuang and Tongli", "Xidi and Hongcun", "Nanxun and Xitang", "Pingyao and Langzhong"],
+      correctIndex: 1,
+      explanationVi: "Tây Đệ và Hoành Thôn thể hiện đỉnh cao quy hoạch làng cổ thương nhân Huy Châu hài hòa giữa kiến trúc gỗ và phong cảnh sơn thủy.",
+      explanationEn: "Xidi and Hongcun showcase Huizhou merchant village planning, uniting white-walled timber residences with engineered water channels."
+    },
+    {
+      id: "v4q-010",
+      pillar: "unesco_geo",
+      questionVi: "Di chỉ khảo cổ thời đại đồ đồng nổi tiếng với mặt nạ đồng mắt lồi và cây thần bằng đồng tại Tứ Xuyên là gì?",
+      questionEn: "Which Bronze Age archaeological site in Sichuan is famed for protruding-eye bronze masks and sacred bronze trees?",
+      optionsVi: ["Ân Khư An Dương", "Tam Tinh Đôi", "Lương Chử", "Bán Pha Tây An"],
+      optionsEn: ["Yinxu in Anyang", "Sanxingdui", "Liangzhu", "Banpo in Xi'an"],
+      correctIndex: 1,
+      explanationVi: "Di chỉ Tam Tinh Đôi (Quảng Hán, Tứ Xuyên) phản ánh nền văn minh cổ Thục độc đáo song song với văn minh Trung Nguyên.",
+      explanationEn: "Sanxingdui near Guanghan reveals the distinct ancient Shu Bronze Age civilization flourishing alongside Central Plains polities."
+    },
+    {
+      id: "v4q-011",
+      pillar: "unesco_geo",
+      questionVi: "Con sông dài nhất châu Á bắt nguồn từ cao nguyên Thanh Hải – Tây Tạng và đổ ra Biển Đông Hoa tại Thượng Hải là sông nào?",
+      questionEn: "Which longest river in Asia rises on the Qinghai–Tibet Plateau and empties into the East China Sea at Shanghai?",
+      optionsVi: ["Hoàng Hà", "Trường Giang", "Châu Giang", "Hắc Long Giang"],
+      optionsEn: ["Yellow River", "Yangtze River", "Pearl River", "Heilongjiang River"],
+      correctIndex: 1,
+      explanationVi: "Trường Giang dài hơn 6.300 km, là hành lang thủy nội địa quan trọng nhất kết nối Trùng Khánh, Vũ Hán, Nam Kinh và Thượng Hải.",
+      explanationEn: "Stretching over 6,300 km, the Yangtze forms China's busiest inland freight corridor linking Chongqing, Wuhan, Nanjing, and Shanghai."
+    },
+    {
+      id: "v4q-012",
+      pillar: "unesco_geo",
+      questionVi: "Thành phố cảng cổ nào ở Phúc Kiến được UNESCO công nhận là trung tâm thương mại hàng hải toàn cầu thời Tống – Nguyên?",
+      questionEn: "Which ancient Fujian port city is inscribed by UNESCO as an emporium of world maritime trade during the Song–Yuan eras?",
+      optionsVi: ["Hạ Môn", "Tuyền Châu", "Phúc Châu", "Sán Đầu"],
+      optionsEn: ["Xiamen", "Quanzhou", "Fuzhou", "Shantou"],
+      correctIndex: 1,
+      explanationVi: "Tuyền Châu (Thích Đồng) thời Tống – Nguyên là thương cảng đa tôn giáo và đa quốc tịch nổi tiếng trên Con đường Tơ lụa trên biển.",
+      explanationEn: "Song–Yuan Quanzhou (Zaytun) was a cosmopolitan Maritime Silk Road port linking Chinese ceramics and silk with Southeast Asia and Arabia."
+    },
+    {
+      id: "v4q-013",
+      pillar: "unesco_geo",
+      questionVi: "Cổ thành Lệ Giang ở Vân Nam gắn liền với văn hóa và chữ viết tượng hình Đông Ba của dân tộc nào?",
+      questionEn: "The Old Town of Lijiang in Yunnan is closely associated with which ethnic group and its Dongba pictographic heritage?",
+      optionsVi: ["Dân tộc Bạch", "Dân tộc Nạp Tây", "Dân tộc Di", "Dân tộc Thái"],
+      optionsEn: ["Bai people", "Naxi people", "Yi people", "Dai people"],
+      correctIndex: 1,
+      explanationVi: "Người Nạp Tây tại Lệ Giang sáng tạo hệ thống chữ Đông Ba và xây dựng mạng lưới kênh nước cổ xuyên suốt phố thị.",
+      explanationEn: "The Naxi people of Lijiang created Dongba pictographs and engineered the town's spring-fed canal architecture."
+    },
+    {
+      id: "v4q-014",
+      pillar: "unesco_geo",
+      questionVi: "Di sản thế giới hỗn hợp (văn hóa và thiên nhiên) nào ở Sơn Đông được coi là đứng đầu Ngũ Nhạc và nơi các hoàng đế làm lễ Phong Thiền?",
+      questionEn: "Which mixed UNESCO World Heritage mountain in Shandong heads the Five Great Mountains and hosted imperial Fengshan rites?",
+      optionsVi: ["Hoàng Sơn", "Thái Sơn", "Hoa Sơn", "Nga Mi Sơn"],
+      optionsEn: ["Mount Huangshan", "Mount Taishan", "Mount Huashan", "Mount Emei"],
+      correctIndex: 1,
+      explanationVi: "Thái Sơn hội tụ giá trị địa chất cổ đại cùng hệ thống bia ký, đền miếu và truyền thống tế lễ triều đình qua hơn hai thiên niên kỷ.",
+      explanationEn: "Mount Taishan combines ancient geological formations with over two millennia of imperial stelae, temples, and state rituals."
+    },
+    {
+      id: "v4q-015",
+      pillar: "unesco_geo",
+      questionVi: "Kiến trúc gỗ truyền thống Trung Hoa dùng hệ thống mộng gỗ xếp tầng nào để đỡ mái hiên vươn rộng mà không cần đinh sắt?",
+      questionEn: "Which interlocking wooden bracket system in classical Chinese architecture supports wide overhanging eaves without iron nails?",
+      optionsVi: ["Mã đầu tường", "Đấu củng (斗拱)", "Khung vòm đá", "Trụ đá La Mã"],
+      optionsEn: ["Horse-head wall", "Dougong bracketing", "Stone barrel vault", "Doric colonnade"],
+      correctIndex: 1,
+      explanationVi: "Đấu củng (斗拱) vừa phân tán tải trọng mái ngói nặng vừa hấp thụ xung chấn động đất trong cung điện và chùa cổ.",
+      explanationEn: "Dougong bracket sets distribute heavy tiled roof loads while absorbing seismic energy in palaces and temples."
+    },
+    {
+      id: "v4q-016",
+      pillar: "hsk_classics",
+      questionVi: "Thành ngữ '火眼金睛' (Hỏa nhãn kim tinh) xuất phát từ tác phẩm nào và mang nghĩa bóng gì trong công việc?",
+      questionEn: "Which classic novel popularized the idiom 'huǒyǎn jīnjīng', and what does it mean in a workplace context?",
+      optionsVi: ["Tam Quốc Diễn Nghĩa — mưu lược quân sự", "Tây Du Ký — khả năng nhìn thấu bản chất và phát hiện sai sót nhanh", "Thủy Hử — lòng trung nghĩa", "Hồng Lâu Mộng — gu thẩm mỹ tinh tế"],
+      optionsEn: ["Romance of the Three Kingdoms — military strategy", "Journey to the West — sharp discernment to spot flaws or deception", "Water Margin — brotherhood loyalty", "Dream of the Red Chamber — refined aesthetic taste"],
+      correctIndex: 1,
+      explanationVi: "Tôn Ngộ Không luyện được Hỏa nhãn kim tinh trong lò bát quái; ngày nay dùng để khen người thẩm định hồ sơ, hợp đồng hoặc kiểm toán cực kỳ tinh tường.",
+      explanationEn: "Originating from Sun Wukong's fiery golden eyes, the idiom describes keen analytical discernment in auditing or contract review."
+    },
+    {
+      id: "v4q-017",
+      pillar: "hsk_classics",
+      questionVi: "Thành ngữ '刘姥姥进大观园' (Lưu Mỗ Mỗ vào Đại Quan Viên) trích từ Hồng Lâu Mộng thường diễn tả trạng thái nào?",
+      questionEn: "The Dream of the Red Chamber expression 'Granny Liu enters the Grand View Garden' typically describes which experience?",
+      optionsVi: ["Lần đầu bước vào môi trường rộng lớn, xa lạ và choáng ngợp", "Thất bại trong cải cách tổ chức", "Tình yêu bị gia tộc ngăn cản", "Sự suy tàn của một dòng họ"],
+      optionsEn: ["Entering a vast, unfamiliar environment for the first time in awe", "Failing an organizational reform", "A romance blocked by family", "The sudden decline of an estate"],
+      correctIndex: 0,
+      explanationVi: "Hình ảnh bà Lưu Mỗ Mỗ lần đầu thăm Đại Quan Viên được dùng linh hoạt trong giao tiếp tiếng Trung để tả cảm giác bỡ ngỡ trước thế giới mới.",
+      explanationEn: "Granny Liu's wide-eyed visit to the Grand View Garden is widely used in modern Chinese to describe encountering an overwhelming new setting."
+    },
+    {
+      id: "v4q-018",
+      pillar: "hsk_classics",
+      questionVi: "Điển tích '草船借箭' (Thuyền cỏ mượn tên) trong Tam Quốc Diễn Nghĩa gắn với nhân vật nào?",
+      questionEn: "Which strategist is associated with the famous 'Borrowing Arrows with Straw Boats' episode in Romance of the Three Kingdoms?",
+      optionsVi: ["Tư Mã Ý", "Gia Cát Lượng", "Tào Tháo", "Chu Du"],
+      optionsEn: ["Sima Yi", "Zhuge Liang", "Cao Cao", "Zhou Yu"],
+      correctIndex: 1,
+      explanationVi: "Gia Cát Lượng tận dụng sương mù dày đặc trên sông Trường Giang để mượn hơn mười vạn mũi tên từ quân Tào, biểu tượng cho tư duy tận dụng nguồn lực đối phương.",
+      explanationEn: "Zhuge Liang used dense river fog to harvest arrows from Cao Cao's archers, symbolizing resourceful strategic leverage."
+    },
+    {
+      id: "v4q-019",
+      pillar: "hsk_classics",
+      questionVi: "Hai nhà thơ vĩ đại đời Đường được tôn xưng lần lượt là 'Thi Tiên' và 'Thi Thánh' là ai?",
+      questionEn: "Which two Tang Dynasty poets are revered respectively as the Poet Immortal and the Poet Sage?",
+      optionsVi: ["Vương Duy và Bạch Cư Dị", "Lý Bạch và Đỗ Phủ", "Lý Thương Ẩn và Đỗ Mục", "Mạnh Hạo Nhiên và Vương Xương Linh"],
+      optionsEn: ["Wang Wei and Bai Juyi", "Li Bai and Du Fu", "Li Shangyin and Du Mu", "Meng Haoran and Wang Changling"],
+      correctIndex: 1,
+      explanationVi: "Lý Bạch tiêu biểu cho phong cách lãng mạn phóng khoáng (Thi Tiên), còn Đỗ Phủ gắn liền với chiều sâu hiện thực và lòng ưu ái thời cuộc (Thi Thánh).",
+      explanationEn: "Li Bai embodies transcendent romanticism (Poet Immortal), while Du Fu exemplifies moral realism and historical conscience (Poet Sage)."
+    },
+    {
+      id: "v4q-020",
+      pillar: "hsk_classics",
+      questionVi: "Trong Tống Từ, hai trường phái đối lập về phong cách nghệ thuật là gì?",
+      questionEn: "In Song Dynasty Ci poetry, what are the two contrasting stylistic schools?",
+      optionsVi: ["Hào phóng và Uyển ước", "Cổ điển và Hiện đại", "Tả thực và Tượng trưng", "Biện chứng và Tự sự"],
+      optionsEn: ["Bold and Unconstrained (Haofang) vs. Delicate and Restrained (Wanyue)", "Classical vs. Modernist", "Realist vs. Symbolist", "Dialectical vs. Narrative"],
+      correctIndex: 0,
+      explanationVi: "Phái Hào phóng tiêu biểu bởi Tô Thức, Tân Khí Tật; phái Uyển ước gắn liền với Lý Thanh Chiếu và Liễu Vĩnh.",
+      explanationEn: "Haofang is exemplified by Su Shi and Xin Qiji, whereas Wanyue is represented by Li Qingzhao and Liu Yong."
+    },
+    {
+      id: "v4q-021",
+      pillar: "hsk_classics",
+      questionVi: "Thành ngữ '紧箍咒' (Vòng kim cô / Chú siết vòng) trong quản trị doanh nghiệp hiện đại thường dùng để chỉ điều gì?",
+      questionEn: "In modern Chinese corporate usage, what does the Journey to the West metaphor 'jǐngūzhòu' (tightening-headband spell) refer to?",
+      optionsVi: ["Phần thưởng hiệu suất cuối năm", "Các quy định, ràng buộc pháp lý hoặc kiểm soát chặt chẽ", "Chiến dịch mở rộng thị trường", "Kỹ năng thuyết trình trước hội đồng"],
+      optionsEn: ["Annual performance bonuses", "Strict regulatory constraints, compliance controls, or binding rules", "Market expansion campaigns", "Boardroom presentation skills"],
+      correctIndex: 1,
+      explanationVi: "Trong báo chí kinh tế Trung Quốc, '紧箍咒' thường ví các quy định kiểm soát rủi ro hoặc chế tài nghiêm ngặt buộc doanh nghiệp tuân thủ.",
+      explanationEn: "Chinese business media frequently uses jǐngūzhòu to denote strict compliance rules or supervisory constraints."
+    },
+    {
+      id: "v4q-022",
+      pillar: "hsk_classics",
+      questionVi: "Thành ngữ '未雨绸缪' (Vị vũ trù mâu) có ý nghĩa chuẩn xác nhất trong quản trị chuỗi cung ứng là gì?",
+      questionEn: "What is the most accurate supply-chain meaning of the idiom 'wèiyǔ chóumóu'?",
+      optionsVi: ["Chờ sự cố xảy ra rồi mới khắc phục", "Chủ động phòng ngừa và chuẩn bị phương án dự phòng từ trước", "Cắt giảm toàn bộ hàng tồn kho an toàn", "Giao phó hoàn toàn cho bên thứ ba"],
+      optionsEn: ["Reacting only after a disruption occurs", "Proactively preparing contingency plans before risks materialize", "Eliminating all safety stock", "Outsourcing all accountability"],
+      correctIndex: 1,
+      explanationVi: "Nghĩa đen là sửa mái nhà trước khi trời mưa, tương đương tư duy quản trị rủi ro chủ động trong logistics và đàm phán hợp đồng.",
+      explanationEn: "Literally repairing the roof before it rains, it expresses proactive risk mitigation and contingency planning."
+    },
+    {
+      id: "v4q-023",
+      pillar: "hsk_classics",
+      questionVi: "Trong Kinh kịch truyền thống, màu mặt nạ đỏ (红脸) đại diện cho phẩm chất tính cách nào?",
+      questionEn: "In Peking Opera facial makeup (Lianpu), what character trait does a red face traditionally symbolize?",
+      optionsVi: ["Đa nghi, gian xảo", "Trung nghĩa, dũng cảm và chính trực", "Nóng nảy, bộc trực nhưng ngay thẳng", "Thâm trầm, bí ẩn"],
+      optionsEn: ["Suspicion and cunning", "Loyalty, courage, and uprightness", "Fierce impetuosity and honesty", "Secrecy and mysticism"],
+      correctIndex: 1,
+      explanationVi: "Mặt nạ đỏ tiêu biểu qua nhân vật Quan Vũ, tượng trưng cho lòng trung nghĩa và khí phách chính trực.",
+      explanationEn: "Red facial makeup, famously worn by Guan Yu, signifies loyalty, bravery, and moral integrity."
+    },
+    {
+      id: "v4q-024",
+      pillar: "hsk_classics",
+      questionVi: "Bốn vật dụng kinh điển tạo nên 'Văn Phòng Tứ Bảo' trong thư pháp và hội họa cổ truyền Trung Hoa là gì?",
+      questionEn: "What are the Four Treasures of the Study in classical Chinese calligraphy and painting?",
+      optionsVi: ["Bút, Mực, Giấy, Nghiên", "Đàn, Cờ, Thơ, Họa", "Ấn triện, Lụa, Bút, Sách", "Trà, Hương, Hoa, Họa"],
+      optionsEn: ["Brush, Inkstick, Paper, Inkstone", "Zither, Go, Poetry, Painting", "Seal, Silk, Brush, Scroll", "Tea, Incense, Flowers, Painting"],
+      correctIndex: 0,
+      explanationVi: "Bút Hồ Châu, Mực Huy Châu, Giấy Tuyên Thành và Nghiên Đoan Khê là bốn chuẩn mực nổi tiếng của Văn Phòng Tứ Bảo.",
+      explanationEn: "The brush, inkstick, Xuan paper, and inkstone form the foundational toolkit of classical literati arts."
+    },
+    {
+      id: "v4q-025",
+      pillar: "hsk_classics",
+      questionVi: "Thành ngữ '求同存异' (Cầu đồng tồn dị) thường được dùng trong ngoại giao và đàm phán thương mại với hàm ý nào?",
+      questionEn: "How is the idiom 'qiútóng cúnyì' used in diplomacy and cross-border business negotiations?",
+      optionsVi: ["Ép đối tác chấp nhận mọi điều khoản", "Tìm kiếm điểm chung đồng thời tôn trọng khác biệt", "Trì hoãn ký kết vô thời hạn", "Tách biệt hoàn toàn lợi ích hai bên"],
+      optionsEn: ["Forcing full concession from the counterparty", "Seeking common ground while reserving differences", "Indefinitely postponing agreement", "Separating all shared interests"],
+      correctIndex: 1,
+      explanationVi: "Cầu đồng tồn dị giúp các bên khóa chặt những điều khoản đạt đồng thuận trước khi xử lý các điểm khác biệt về pháp lý hay văn hóa.",
+      explanationEn: "Seeking common ground while preserving differences helps negotiators secure mutual gains despite institutional or cultural divergence."
+    },
+    {
+      id: "v4q-026",
+      pillar: "hsk_classics",
+      questionVi: "Thể chữ thư pháp nào có nét viết vuông vắn, chuẩn mực, trở thành nền tảng cho kiểu chữ in hiện đại?",
+      questionEn: "Which Chinese calligraphic script features balanced, square strokes and serves as the foundation for modern print typography?",
+      optionsVi: ["Thảo thư", "Triện thư", "Khải thư", "Hành thư"],
+      optionsEn: ["Cursive Script (Caoshu)", "Seal Script (Zhuanshu)", "Regular Script (Kaishu)", "Running Script (Xingshu)"],
+      correctIndex: 2,
+      explanationVi: "Khải thư phát triển hoàn chỉnh từ thời Ngụy – Tấn đến thời Đường (Nhan Chân Khanh, Liễu Công Quyền), là chuẩn chữ viết rõ ràng nhất.",
+      explanationEn: "Regular Script (Kaishu), perfected by Tang masters such as Yan Zhenqing and Liu Gongquan, underpins standard legible Chinese typography."
+    },
+    {
+      id: "v4q-027",
+      pillar: "hsk_classics",
+      questionVi: "Trong HSK 3.0, tổng cộng có bao nhiêu cấp độ được phân chia theo mô hình ba bậc Sơ – Trung – Cao?",
+      questionEn: "How many total proficiency levels are structured under the three-stage HSK 3.0 framework?",
+      optionsVi: ["6 cấp độ", "9 cấp độ", "10 cấp độ", "12 cấp độ"],
+      optionsEn: ["6 levels", "9 levels", "10 levels", "12 levels"],
+      correctIndex: 1,
+      explanationVi: "HSK 3.0 gồm 3 bậc 9 cấp: Sơ cấp (1–3), Trung cấp (4–6) và Cao cấp (7–9) nhằm đánh giá năng lực học thuật và chuyên ngành sâu.",
+      explanationEn: "HSK 3.0 spans three stages and nine bands (Elementary 1–3, Intermediate 4–6, Advanced 7–9) to measure academic and professional fluency."
+    },
+    {
+      id: "v4q-028",
+      pillar: "hsk_classics",
+      questionVi: "Thành ngữ '实事求是' (Thực sự cầu thị) nhấn mạnh nguyên tắc tư duy nào trong nghiên cứu và phân tích dữ liệu?",
+      questionEn: "Which analytical principle does the idiom 'shíshì qiúshì' emphasize in research and data auditing?",
+      optionsVi: ["Suy đoán theo cảm tính", "Tìm kiếm chân lý từ sự thật và bằng chứng khách quan", "Sao chép khuôn mẫu cũ", "Ưu tiên hình thức hơn nội dung"],
+      optionsEn: ["Intuitive speculation", "Seeking truth from objective facts and evidence", "Copying legacy templates", "Prioritizing form over substance"],
+      correctIndex: 1,
+      explanationVi: "Xuất nguồn từ Hán Thư, 'thực sự cầu thị' là chuẩn mực khoa học yêu cầu mọi kết luận đều phải dựa trên dữ liệu và thực chứng.",
+      explanationEn: "Originating in the Book of Han, shíshì qiúshì demands evidence-based reasoning grounded in verifiable facts."
+    },
+    {
+      id: "v4q-029",
+      pillar: "hsk_classics",
+      questionVi: "Kiệt tác Nguyên Khúc 'Đậu Nga Oan' (窦娥冤) phản ánh xung đột đạo đức và công lý xã hội là tác phẩm của ai?",
+      questionEn: "Which Yuan Dynasty dramatist authored the celebrated play 'The Injustice to Dou E'?",
+      optionsVi: ["Mã Trí Viễn", "Quan Hán Khanh", "Vương Thực Phủ", "Thi Nại Am"],
+      optionsEn: ["Ma Zhiyuan", "Guan Hanqing", "Wang Shifu", "Shi Nai'an"],
+      correctIndex: 1,
+      explanationVi: "Quan Hán Khanh là tác giả tiêu biểu nhất của tạp kịch đời Nguyên, nổi tiếng với chiều sâu nhân văn và phê phán bất công.",
+      explanationEn: "Guan Hanqing was the foremost playwright of Yuan zaju drama, renowned for poignant social critique."
+    },
+    {
+      id: "v4q-030",
+      pillar: "hsk_classics",
+      questionVi: "Thành ngữ '一举两得' (Nhất cử lưỡng đắc) diễn tả kết quả tối ưu nào trong hoạch định logistics?",
+      questionEn: "What optimal outcome does the idiom 'yījǔ liǎngdé' describe in logistics planning?",
+      optionsVi: ["Một hành động đạt đồng thời hai mục tiêu", "Tăng gấp đôi chi phí để giảm rủi ro", "Phân tán nguồn lực vào hai dự án rời rạc", "Chấp nhận lỗ ngắn hạn để giữ thị phần"],
+      optionsEn: ["Achieving two objectives with a single action", "Doubling cost to lower risk", "Splitting resources across unrelated projects", "Accepting short-term losses"],
+      correctIndex: 0,
+      explanationVi: "Ví dụ: gom hàng hợp nhất (consolidation) giúp vừa giảm cước đơn vị vừa cắt giảm phát thải carbon trên mỗi tấn hàng.",
+      explanationEn: "For example, cargo consolidation simultaneously lowers unit freight spend and reduces carbon emissions per metric ton."
+    },
+    {
+      id: "v4q-031",
+      pillar: "tcm_tea_food",
+      questionVi: "Trong sáu đại trà hệ Trung Hoa, loại trà nào không qua quá trình lên men (oxy hóa) nhờ công đoạn diệt men (sát thanh)?",
+      questionEn: "Among China's six major tea categories, which type remains unoxidized through the kill-green (shaqing) process?",
+      optionsVi: ["Hồng trà", "Lục trà", "Ô Long trà", "Hắc trà"],
+      optionsEn: ["Black Tea (Hongcha)", "Green Tea (Lucha)", "Oolong Tea", "Dark Tea (Heicha)"],
+      correctIndex: 1,
+      explanationVi: "Lục trà như Tây Hồ Long Tỉnh được sao hoặc hấp sớm để ức chế enzyme oxy hóa, giữ màu xanh ngọc và vị thanh tươi.",
+      explanationEn: "Green teas such as West Lake Longjing undergo early heat fixation to halt oxidation and preserve fresh vegetal notes."
+    },
+    {
+      id: "v4q-032",
+      pillar: "tcm_tea_food",
+      questionVi: "Danh trà Tây Hồ Long Tỉnh (西湖龙井) có xuất xứ địa lý nổi tiếng từ tỉnh nào của Trung Quốc?",
+      questionEn: "West Lake Longjing tea originates from which Chinese province?",
+      optionsVi: ["Phúc Kiến", "Chiết Giang", "Vân Nam", "An Huy"],
+      optionsEn: ["Fujian", "Zhejiang", "Yunnan", "Anhui"],
+      correctIndex: 1,
+      explanationVi: "Tây Hồ Long Tỉnh được trồng quanh khu vực Tây Hồ, thành phố Hàng Châu, tỉnh Chiết Giang.",
+      explanationEn: "West Lake Longjing is cultivated around West Lake in Hangzhou, Zhejiang Province."
+    },
+    {
+      id: "v4q-033",
+      pillar: "tcm_tea_food",
+      questionVi: "Trà Phổ Nhĩ (普洱茶) nổi tiếng với khả năng hậu lên men theo năm tháng thuộc nhóm trà nào và tỉnh nào?",
+      questionEn: "Pu-erh tea, celebrated for post-fermentation aging, belongs to which category and originates from which province?",
+      optionsVi: ["Hắc trà — Vân Nam", "Hoàng trà — Hồ Nam", "Bạch trà — Phúc Kiến", "Ô Long — Quảng Đông"],
+      optionsEn: ["Dark Tea — Yunnan", "Yellow Tea — Hunan", "White Tea — Fujian", "Oolong — Guangdong"],
+      correctIndex: 0,
+      explanationVi: "Phổ Nhĩ sử dụng giống chè lá to Vân Nam, gồm dòng Sinh Phổ và Thục Phổ phát triển hương vị trầm ấm theo thời gian.",
+      explanationEn: "Crafted from Yunnan large-leaf cultivars, Pu-erh matures over time in both raw (Sheng) and ripe (Shu) styles."
+    },
+    {
+      id: "v4q-034",
+      pillar: "tcm_tea_food",
+      questionVi: "Trong lễ nghi trà thất Trung Hoa, hành động gõ nhẹ hai ngón tay lên mặt bàn khi được rót trà gọi là gì?",
+      questionEn: "In Chinese tea etiquette, what is the gesture of lightly tapping two fingers on the table when tea is poured called?",
+      optionsVi: ["Khấu chỉ tạ trà (叩指礼)", "Chắp tay hành lễ", "Đảo chén tuần trà", "Rửa trà khai hương"],
+      optionsEn: ["Finger-tapping thanks (Kouzhili)", "Clasped-hand salute", "Cup-rotating ceremony", "First-rinse infusion"],
+      correctIndex: 0,
+      explanationVi: "Khấu chỉ tạ trà thay lời cảm ơn trang nhã mà không làm gián đoạn cuộc trò chuyện trên bàn trà hoặc bàn tiệc.",
+      explanationEn: "Finger-tapping silently conveys gratitude to the host without interrupting conversation."
+    },
+    {
+      id: "v4q-035",
+      pillar: "tcm_tea_food",
+      questionVi: "Khi gọi món tại nhà hàng Trung Quốc, cụm từ '免辣' (miǎnlà) và '微辣' (wēilà) lần lượt mang nghĩa gì?",
+      questionEn: "When ordering at a Chinese restaurant, what do 'miǎnlà' and 'wēilà' mean respectively?",
+      optionsVi: ["Rất cay và cay vừa", "Không cay và ít cay", "Ít dầu và ít muối", "Ăn chay và không hải sản"],
+      optionsEn: ["Extra spicy and medium spicy", "No spice and mild spice", "Less oil and less salt", "Vegetarian and no seafood"],
+      correctIndex: 1,
+      explanationVi: "Du khách Việt đến Tứ Xuyên hoặc Trùng Khánh thường dùng '免辣' (không cay) hoặc '微辣' (cay nhẹ) để điều chỉnh khẩu vị.",
+      explanationEn: "Travelers use miǎnlà (no chili) or wēilà (mildly spicy) to tailor dishes to their palate."
+    },
+    {
+      id: "v4q-036",
+      pillar: "tcm_tea_food",
+      questionVi: "Nhãn hiệu ẩm thực '清真' (Qīngzhēn) tại các khu phố ẩm thực như Hồi Dân Nhai (Tây An) biểu thị tiêu chuẩn nào?",
+      questionEn: "What dietary standard does the sign 'Qīngzhēn' indicate in culinary districts such as Xi'an's Muslim Quarter?",
+      optionsVi: ["Ẩm thực thuần chay Phật giáo", "Ẩm thực Halal (Hồi giáo)", "Ẩm thực cung đình Bắc Kinh", "Ẩm thực không chứa gluten"],
+      optionsEn: ["Buddhist strict vegetarian", "Halal (Islamic dietary standard)", "Beijing imperial cuisine", "Gluten-free cuisine"],
+      correctIndex: 1,
+      explanationVi: "Thanh Chân (清真) là chứng nhận ẩm thực Halal phổ biến rộng rãi tại Tây An, Lan Châu, Tân Cương và Ngưu Nhai Bắc Kinh.",
+      explanationEn: "Qingzhen designates Halal dining establishments widely found across Xi'an, Lanzhou, Xinjiang, and Beijing's Niujie."
+    },
+    {
+      id: "v4q-037",
+      pillar: "tcm_tea_food",
+      questionVi: "Trong y học cổ truyền Trung Hoa, 'Tứ Chẩn' (四诊) gồm bốn phương pháp quan sát lịch sử nào?",
+      questionEn: "In classical Chinese medicine heritage, what are the Four Examinations (Sizhen)?",
+      optionsVi: ["Vọng, Văn, Vấn, Thiết", "Ôn, Thanh, Bổ, Tả", "Khí, Huyết, Tân, Dịch", "Tâm, Can, Tỳ, Phế"],
+      optionsEn: ["Inspection, Auscultation/Olfaction, Inquiry, Palpation", "Warming, Clearing, Tonifying, Purging", "Qi, Blood, Fluids, Essence", "Heart, Liver, Spleen, Lung"],
+      correctIndex: 0,
+      explanationVi: "Vọng (nhìn), Văn (nghe/ngửi), Vấn (hỏi), Thiết (bắt mạch) là khung nhận thức truyền thống trong lịch sử Đông y.",
+      explanationEn: "Looking, listening/smelling, questioning, and pulse palpation constitute the classical four-part diagnostic tradition."
+    },
+    {
+      id: "v4q-038",
+      pillar: "tcm_tea_food",
+      questionVi: "Bốn trường phái lớn nhất trong Bát Đại Thái Hệ (8 trường phái ẩm thực Trung Hoa) thường được nhắc đầu tiên là gì?",
+      questionEn: "Which four regional cuisines are classically grouped as the foundational Four Great Traditions within China's Eight Culinary Traditions?",
+      optionsVi: ["Lỗ (Sơn Đông), Xuyên (Tứ Xuyên), Việt (Quảng Đông), Tô (Giang Tô)", "Tương, Mân, Chiết, Huy", "Bắc Kinh, Thượng Hải, Tây An, Côn Minh", "Tân Cương, Tây Tạng, Mông Cổ, Đông Bắc"],
+      optionsEn: ["Lu (Shandong), Chuan (Sichuan), Yue (Cantonese), Su (Jiangsu)", "Xiang, Min, Zhe, Hui", "Beijing, Shanghai, Xi'an, Kunming", "Xinjiang, Tibet, Mongolia, Northeast"],
+      correctIndex: 0,
+      explanationVi: "Tứ Đại Thái Hệ gồm Lỗ, Xuyên, Việt, Tô sau mở rộng thêm Mân (Phúc Kiến), Chiết (Chiết Giang), Tương (Hồ Nam) và Huy (An Huy).",
+      explanationEn: "Shandong, Sichuan, Cantonese, and Jiangsu cuisines form the historic core later expanded to eight traditions."
+    },
+    {
+      id: "v4q-039",
+      pillar: "tcm_tea_food",
+      questionVi: "Khi dùng bữa tại Trung Quốc, yêu cầu '打包' (dǎbāo) vào cuối bữa mang nghĩa gì?",
+      questionEn: "At the end of a meal in China, what does asking the server for 'dǎbāo' mean?",
+      optionsVi: ["Gọi thêm trà nóng", "Đóng hộp mang phần thức ăn còn lại về", "Yêu cầu xuất hóa đơn đỏ", "Đổi sang bàn riêng"],
+      optionsEn: ["Ordering additional hot tea", "Packing leftover food to take away", "Requesting a tax invoice", "Moving to a private room"],
+      correctIndex: 1,
+      explanationVi: "打包 là thuật ngữ giao tiếp thực tế cực kỳ phổ biến, khuyến khích lối sống tiết kiệm chống lãng phí thực phẩm.",
+      explanationEn: "Dǎbāo means boxing leftovers to go, reflecting widespread anti-food-waste dining etiquette."
+    },
+    {
+      id: "v4q-040",
+      pillar: "tcm_tea_food",
+      questionVi: "Nguyên tắc tiếp cận khoa học đúng đắn đối với hệ thống thực dưỡng và Cửu chủng thể chất cổ truyền là gì?",
+      questionEn: "What is the sound, objective framing for classical Chinese dietary wellness and traditional constitution theories?",
+      optionsVi: ["Dùng thay thế hoàn toàn chẩn đoán bệnh viện", "Xem như di sản văn hóa, lịch sử và thói quen ăn uống bổ trợ, không thay thế y khoa lâm sàng", "Áp dụng cùng một bài thảo mộc cho mọi người", "Chỉ dựa vào tin đồn truyền miệng"],
+      optionsEn: ["Using them to replace hospital diagnostics", "Treating them as cultural, historical, and lifestyle heritage rather than clinical medical advice", "Applying one universal herbal formula to everyone", "Relying solely on anecdotal claims"],
+      correctIndex: 1,
+      explanationVi: "Phân tách rạch ròi giữa di sản văn hóa thực dưỡng và y học lâm sàng thực chứng là chuẩn mực học thuật khách quan.",
+      explanationEn: "Distinguishing cultural wellness heritage from evidence-based clinical medicine upholds scholarly rigor and safety."
+    },
+    {
+      id: "v4q-041",
+      pillar: "tcm_tea_food",
+      questionVi: "Trong ẩm thực Quảng Đông (Việt Thái), văn hóa '饮茶' (Yum Cha) đặc trưng bởi sự kết hợp giữa trà và món ăn nào?",
+      questionEn: "In Cantonese culinary heritage, 'Yum Cha' centers on pairing tea with which signature food tradition?",
+      optionsVi: ["Lẩu cay Tứ Xuyên", "Điểm tâm Dim Sum (点心)", "Mì kéo Lan Châu", "Vịt quay Bắc Kinh"],
+      optionsEn: ["Sichuan spicy hotpot", "Dim Sum small plates", "Lanzhou hand-pulled noodles", "Peking roast duck"],
+      correctIndex: 1,
+      explanationVi: "Văn hóa 饮茶 (uống trà ăn điểm tâm) là sinh hoạt cộng đồng và tiếp khách kinh doanh tiêu biểu tại Quảng Châu và Hồng Kông.",
+      explanationEn: "Yum Cha pairs tea service with bite-sized Dim Sum dishes and functions as a hallmark social and business ritual in Guangdong and Hong Kong."
+    },
+    {
+      id: "v4q-042",
+      pillar: "tcm_tea_food",
+      questionVi: "Vị thực dưỡng cổ truyền '陈皮' (Trần bì) nổi tiếng nhất tại Tân Hội (Quảng Đông) được chế biến từ nguyên liệu nào?",
+      questionEn: "Aged 'Chénpí', most famous from Xinhui in Guangdong, is traditionally prepared from which botanical ingredient?",
+      optionsVi: ["Vỏ quýt phơi ủ lâu năm", "Rễ cam thảo", "Hạt sen khô", "Củ gừng già"],
+      optionsEn: ["Sun-dried aged tangerine peel", "Licorice root", "Dried lotus seed", "Mature ginger rhizome"],
+      correctIndex: 0,
+      explanationVi: "Trần bì Tân Hội được phơi khô và lưu trữ nhiều năm, thường dùng trong trà Phổ Nhĩ, chè đậu đỏ và món hầm Quảng Đông.",
+      explanationEn: "Xinhui tangerine peel is sun-dried and aged over years for culinary soups, desserts, and Pu-erh tea infusions."
+    },
+    {
+      id: "v4q-043",
+      pillar: "tcm_tea_food",
+      questionVi: "Trong quy tắc bàn tiệc kinh doanh Trung Quốc, người có vị trí quan trọng nhất (Chủ tọa) thường ngồi ở vị trí nào?",
+      questionEn: "In Chinese business banquet seating etiquette, where is the seat of honor (Master Host) typically positioned?",
+      optionsVi: ["Quay lưng ra cửa chính", "Đối diện cửa chính, ở trung tâm bàn tròn", "Sát lối phục vụ nhân viên", "Bất kỳ ghế nào gần nhất"],
+      optionsEn: ["With their back facing the main door", "Facing the main entrance at the center of the round table", "Directly beside the service station", "Whichever chair is closest"],
+      correctIndex: 1,
+      explanationVi: "Vị trí đối diện cửa chính thể hiện sự tôn trọng cao nhất, giúp chủ tiệc bao quát không gian và đón khách trang trọng.",
+      explanationEn: "Facing the main entrance commands the room and allows the host to welcome guests with formal courtesy."
+    },
+    {
+      id: "v4q-044",
+      pillar: "tcm_tea_food",
+      questionVi: "Khi nâng ly chúc mừng với cấp trên hoặc đối tác lớn tuổi trên bàn tiệc Trung Quốc, hành động lịch sự chuẩn mực là gì?",
+      questionEn: "When clinking glasses with a senior executive or elder partner at a Chinese banquet, what is the courteous gesture?",
+      optionsVi: ["Nâng miệng ly cao hơn ly đối phương", "Đặt miệng ly mình thấp hơn một chút so với ly đối phương", "Chỉ chạm nhẹ vào mặt bàn", "Uống trước khi đối phương nâng ly"],
+      optionsEn: ["Holding your rim higher than theirs", "Holding your glass rim slightly lower than theirs", "Tapping only the table", "Drinking before they raise their glass"],
+      correctIndex: 1,
+      explanationVi: "Hạ thấp miệng ly khi cụng chén thể hiện sự khiêm nhường và tôn kính trong văn hóa giao tiếp Á Đông.",
+      explanationEn: "Lowering one's glass rim slightly signals humility and respect in East Asian business etiquette."
+    },
+    {
+      id: "v4q-045",
+      pillar: "tcm_tea_food",
+      questionVi: "Loại ấm gốm không tráng men nổi tiếng ở Nghi Hưng (Giang Tô) được giới thưởng trà ưa chuộng để pha Ô Long và Phổ Nhĩ là gì?",
+      questionEn: "Which unglazed stoneware teapot crafted in Yixing, Jiangsu is prized by tea connoisseurs for brewing Oolong and Pu-erh?",
+      optionsVi: ["Sứ Thanh Hoa Cảnh Đức Trấn", "Ấm Tử Sa Nghi Hưng", "Gốm men ngọc Long Tuyền", "Sứ trắng Đức Hóa"],
+      optionsEn: ["Jingdezhen Blue-and-White", "Yixing Zisha Clay Teapot", "Longquan Celadon", "Dehua White Porcelain"],
+      correctIndex: 1,
+      explanationVi: "Đất Tử Sa Nghi Hưng có cấu trúc lỗ khí vi mô giúp giữ nhiệt ổn định và lưu hương trà qua nhiều lần pha.",
+      explanationEn: "Yixing Zisha clay's microscopic porosity retains heat evenly and seasons subtly with tea aromatics over time."
+    },
+    {
+      id: "v4q-046",
+      pillar: "politics_study",
+      questionVi: "Thuật ngữ chính trị '两会' (Lưỡng Hội) họp thường niên vào tháng Ba tại Bắc Kinh chỉ hai cơ quan nào?",
+      questionEn: "Which two national bodies convene annually every March in Beijing during the 'Two Sessions' (Liǎnghuì)?",
+      optionsVi: ["Nhân Đại Toàn Quốc (NPC) và Chính Hiệp Toàn Quốc (CPPCC)", "Quốc Vụ Viện và Ngân hàng Nhân dân Trung Quốc", "Bộ Thương mại và Tổng cục Hải quan", "Ủy ban Phát triển Cải cách và Bộ Ngoại giao"],
+      optionsEn: ["National People's Congress (NPC) and CPPCC", "State Council and People's Bank of China", "Ministry of Commerce and General Administration of Customs", "NDRC and Ministry of Foreign Affairs"],
+      correctIndex: 0,
+      explanationVi: "Lưỡng Hội là kỳ họp thường niên công bố mục tiêu tăng trưởng GDP, ngân sách và định hướng chính sách kinh tế – thương mại trọng tâm của Trung Quốc.",
+      explanationEn: "The Two Sessions bring together the NPC and CPPCC to announce annual GDP targets, fiscal policy, and strategic economic priorities."
+    },
+    {
+      id: "v4q-047",
+      pillar: "politics_study",
+      questionVi: "Nhóm sản phẩm xuất khẩu '新三样' (Tam Tân Dạng) đại diện cho chuyển dịch công nghiệp xanh của Trung Quốc gồm ba mặt hàng nào?",
+      questionEn: "Which three products constitute China's 'New Three' (Xīn Sānyàng) green export drivers?",
+      optionsVi: ["Dệt may, giày dép, đồ nội thất", "Xe điện (EV), pin lithium và sản phẩm quang điện (điện mặt trời)", "Thép thô, xi măng và phân bón", "Điện thoại, máy tính bảng và đồ chơi"],
+      optionsEn: ["Textiles, footwear, and furniture", "Electric vehicles, lithium-ion batteries, and photovoltaic products", "Crude steel, cement, and fertilizers", "Smartphones, tablets, and toys"],
+      correctIndex: 1,
+      explanationVi: "Tam Tân Dạng thay thế nhóm xuất khẩu thâm dụng lao động truyền thống, phản ánh bước tiến trong chuỗi giá trị công nghệ xanh.",
+      explanationEn: "EVs, lithium batteries, and solar modules have replaced legacy labor-intensive exports as China's flagship green trade engines."
+    },
+    {
+      id: "v4q-048",
+      pillar: "politics_study",
+      questionVi: "Chiến lược kinh tế '双循环' (Tuần hoàn Kép) của Trung Quốc kết hợp hai trụ cột nào?",
+      questionEn: "Which two pillars are combined in China's 'Dual Circulation' (Shuāng Xúnhuán) economic strategy?",
+      optionsVi: ["Lấy tuần hoàn nội địa làm chủ thể và tuần hoàn trong nước – quốc tế thúc đẩy lẫn nhau", "Đóng cửa hoàn toàn thương mại quốc tế", "Chỉ tập trung xuất khẩu nguyên liệu thô", "Loại bỏ hoàn toàn đầu tư trực tiếp nước ngoài"],
+      optionsEn: ["Domestic circulation as the mainstay with domestic and international circulation reinforcing each other", "Complete closure of foreign trade", "Exporting only raw commodities", "Eliminating foreign direct investment"],
+      correctIndex: 0,
+      explanationVi: "Tuần hoàn Kép nhằm củng cố nhu cầu nội địa và tự chủ công nghệ đồng thời duy trì kết nối thương mại quốc tế có chọn lọc.",
+      explanationEn: "Dual Circulation strengthens domestic demand and technological self-reliance while maintaining open international trade links."
+    },
+    {
+      id: "v4q-049",
+      pillar: "politics_study",
+      questionVi: "Bốn vùng đại đô thị – công nghiệp đầu tàu định hình hệ sinh thái logistics Trung Quốc gồm những cụm nào?",
+      questionEn: "Which four mega-city industrial clusters anchor China's modern manufacturing and logistics network?",
+      optionsVi: ["Kinh–Tân–Ký, Đồng bằng Trường Giang (YRD), Khu vực Vịnh Lớn (GBA), Thành–Du", "Tân Cương, Tây Tạng, Thanh Hải, Cam Túc", "Hải Nam, Quý Châu, Vân Nam, Quảng Tây", "Hắc Long Giang, Cát Lâm, Nội Mông, Sơn Tây"],
+      optionsEn: ["Beijing–Tianjin–Hebei, Yangtze River Delta, Greater Bay Area, Chengdu–Chongqing", "Xinjiang, Tibet, Qinghai, Gansu", "Hainan, Guizhou, Yunnan, Guangxi", "Heilongjiang, Jilin, Inner Mongolia, Shanxi"],
+      correctIndex: 0,
+      explanationVi: "Bốn cụm này hội tụ các cảng biển lớn nhất (Thượng Hải, Ninh Ba, Diêm Điền, Thiên Tân) và đầu mối đường sắt Trung–Âu (Trùng Khánh, Thành Đô).",
+      explanationEn: "These four clusters host China's largest gateway ports (Shanghai, Ningbo, Yantian, Tianjin) and core Eurasian rail hubs (Chongqing, Chengdu)."
+    },
+    {
+      id: "v4q-050",
+      pillar: "politics_study",
+      questionVi: "Trường đại học nào tại Bắc Kinh nổi tiếng hàng đầu về đào tạo Kinh tế Đối ngoại, Thương mại Quốc tế và Luật Thương mại?",
+      questionEn: "Which Beijing university is especially renowned for International Trade, Foreign Economics, and International Economic Law?",
+      optionsVi: ["Đại học Kinh tế Đối ngoại (UIBE)", "Đại học Nông nghiệp Trung Quốc", "Đại học Lâm nghiệp Bắc Kinh", "Học viện Mỹ thuật Trung ương"],
+      optionsEn: ["University of International Business and Economics (UIBE)", "China Agricultural University", "Beijing Forestry University", "Central Academy of Fine Arts"],
+      correctIndex: 0,
+      explanationVi: "UIBE (对外经济贸易大学) là điểm đến hàng đầu cho sinh viên Việt Nam theo học Thạc sĩ Thương mại Quốc tế và Quản trị Chuỗi cung ứng.",
+      explanationEn: "UIBE is a premier destination for international students pursuing graduate degrees in International Trade and Global Supply Chain Management."
+    },
+    {
+      id: "v4q-051",
+      pillar: "politics_study",
+      questionVi: "Sự khác biệt cốt lõi giữa Học bổng Chính phủ Trung Quốc CSC Type A và CSC Type B là gì?",
+      questionEn: "What is the primary administrative difference between Chinese Government Scholarship (CSC) Type A and Type B?",
+      optionsVi: ["Type A nộp qua Đại sứ quán/cơ quan cử đi song phương; Type B nộp trực tiếp vào trường đại học Trung Quốc", "Type A chỉ dành cho ngành Y; Type B chỉ dành cho ngành Nghệ thuật", "Type A không miễn học phí; Type B chỉ hỗ trợ ký túc xá", "Type A chỉ áp dụng tại Thượng Hải"],
+      optionsEn: ["Type A is administered through embassies or bilateral dispatching agencies; Type B is applied to directly via designated Chinese universities", "Type A is only for medicine; Type B is only for arts", "Type A excludes tuition; Type B covers only housing", "Type A applies solely to Shanghai"],
+      correctIndex: 0,
+      explanationVi: "Ứng viên cần phân biệt rõ kênh nộp hồ sơ và hạn chót của từng loại để xây dựng chiến lược dự tuyển hợp lý.",
+      explanationEn: "Applicants must track distinct agency numbers, channels, and deadlines between Type A bilateral programs and Type B university-track awards."
+    },
+    {
+      id: "v4q-052",
+      pillar: "politics_study",
+      questionVi: "Trong hồ sơ du học sau đại học tại Trung Quốc, thư liên hệ giáo sư hướng dẫn trước khi nộp hồ sơ chính thức thường gọi là gì?",
+      questionEn: "In Chinese graduate admissions, what is the practice of proactively contacting prospective faculty supervisors before formal application called?",
+      optionsVi: ["Thư chấp nhận (Pre-admission / 套磁 Tàocí)", "Đơn xin bảo lưu", "Bảng điểm quy đổi", "Giấy khám sức khỏe"],
+      optionsEn: ["Faculty outreach (Tàocí) seeking a Pre-Admission / Acceptance Letter", "Deferral petition", "Transcript conversion", "Medical clearance form"],
+      correctIndex: 0,
+      explanationVi: "Trao đổi học thuật sớm (套磁) kèm đề cương nghiên cứu súc tích giúp tăng đáng kể cơ hội nhận thư đồng ý hướng dẫn từ giáo sư.",
+      explanationEn: "Targeted academic outreach (tàocí) paired with a concise research proposal significantly strengthens admission and scholarship odds."
+    },
+    {
+      id: "v4q-053",
+      pillar: "politics_study",
+      questionVi: "Cấu trúc phân cấp hành chính tiêu chuẩn năm tầng của Trung Quốc đi theo thứ tự nào từ trên xuống?",
+      questionEn: "What is the standard five-tier administrative hierarchy in China from top to bottom?",
+      optionsVi: ["Trung ương → Tỉnh → Địa cấp thị → Huyện → Hương/Trấn", "Trung ương → Huyện → Tỉnh → Trấn → Làng", "Tỉnh → Khu vực → Trung ương → Thành phố → Quận", "Trung ương → Thành phố → Tỉnh → Huyện → Phường"],
+      optionsEn: ["Central → Provincial → Prefectural → County → Township", "Central → County → Provincial → Township → Village", "Provincial → Regional → Central → City → District", "Central → City → Provincial → County → Ward"],
+      correctIndex: 0,
+      explanationVi: "Hiểu rõ phân cấp hành chính giúp doanh nghiệp xác định đúng cơ quan cấp phép đầu tư, thuế quan và xúc tiến thương mại địa phương.",
+      explanationEn: "Understanding the five administrative tiers helps firms identify the proper licensing, customs, and trade-promotion authorities."
+    },
+    {
+      id: "v4q-054",
+      pillar: "politics_study",
+      questionVi: "Liên minh C9 trong giáo dục đại học Trung Quốc gồm những đặc điểm nào?",
+      questionEn: "What does China's C9 League represent in higher education?",
+      optionsVi: ["Nhóm 9 trường đại học nghiên cứu hàng đầu (như Thanh Hoa, Bắc Đại, Phục Đán, Giao thông Thượng Hải, Chiết Giang...)", "Nhóm 9 trường cao đẳng nghề logistics", "9 học viện ngôn ngữ ngoài Trung Quốc", "9 viện nghiên cứu riêng về nông nghiệp"],
+      optionsEn: ["An alliance of nine elite research universities including Tsinghua, Peking, Fudan, SJTU, and Zhejiang University", "Nine vocational logistics colleges", "Nine overseas language institutes", "Nine agricultural stations"],
+      correctIndex: 0,
+      explanationVi: "Liên minh C9 đại diện cho nhóm đại học nghiên cứu tinh hoa nhất của Trung Quốc với chuẩn đầu vào và năng lực công bố quốc tế cao.",
+      explanationEn: "The C9 League comprises China's top tier of comprehensive research universities with high international publication impact."
+    },
+    {
+      id: "v4q-055",
+      pillar: "politics_study",
+      questionVi: "Trong lịch sử giao lưu Việt–Trung, hai tầng từ Hán–Việt (Tiền Đường và Hậu Đường) phản ánh điều gì?",
+      questionEn: "In Sino-Vietnamese cultural history, what do the historical strata of Sino-Vietnamese vocabulary reflect?",
+      optionsVi: ["Quá trình tiếp biến văn hiến chủ động qua nhiều giai đoạn lịch sử khác nhau", "Sự sao chép nguyên bản không thay đổi ngữ âm", "Chỉ xuất hiện từ thế kỷ 20", "Chỉ dùng trong văn bản thương mại biển"],
+      optionsEn: ["Active, multi-era cultural adaptation and linguistic localization rather than passive assimilation", "Unchanged phonetic copying", "A phenomenon beginning only in the 20th century", "Usage limited strictly to maritime trade"],
+      correctIndex: 0,
+      explanationVi: "Tiếng Việt tiếp thu vốn từ Hán qua nhiều thời kỳ nhưng biến đổi theo quy luật ngữ âm, ngữ nghĩa và ngữ pháp bản địa độc lập.",
+      explanationEn: "Vietnamese absorbed classical lexical elements across eras while integrating them into an independent phonetic and grammatical system."
+    },
+    {
+      id: "v4q-056",
+      pillar: "politics_study",
+      questionVi: "Cơ quan hành chính tối cao quản lý trực tiếp các bộ ngành như Bộ Thương mại và Tổng cục Hải quan Trung Quốc là gì?",
+      questionEn: "Which highest executive organ oversees ministries such as the Ministry of Commerce and the General Administration of Customs in China?",
+      optionsVi: ["Quốc Vụ Viện (State Council)", "Tòa án Nhân dân Tối cao", "Chính Hiệp Toàn Quốc", "Hội đồng Thúc đẩy Thương mại Quốc tế"],
+      optionsEn: ["The State Council", "Supreme People's Court", "National CPPCC", "CCPIT"],
+      correctIndex: 0,
+      explanationVi: "Quốc Vụ Viện là cơ quan hành pháp cao nhất, ban hành các nghị định kinh tế, thuế quan và chính sách mở cửa thương mại.",
+      explanationEn: "The State Council is China's top executive body issuing national economic, tariff, and trade-opening directives."
+    },
+    {
+      id: "v4q-057",
+      pillar: "politics_study",
+      questionVi: "Khi chuẩn bị Study Plan (学习计划) ứng tuyển thạc sĩ ngành Thương mại Quốc tế tại Trung Quốc, yếu tố nào tạo ấn tượng học thuật mạnh nhất?",
+      questionEn: "When writing a Study Plan for a Master's in International Trade in China, what makes the strongest academic impression?",
+      optionsVi: ["Trình bày rõ câu hỏi nghiên cứu, khung dữ liệu thực chứng và phương pháp định lượng (như mô hình trọng lực thương mại)", "Liệt kê chung chung sở thích du lịch", "Sao chép giới thiệu trường từ trang web", "Tránh đề cập đến mục tiêu nghề nghiệp"],
+      optionsEn: ["Presenting a clear research question, empirical data scope, and quantitative methodology such as a trade gravity model", "Listing general travel hobbies", "Copying university brochure text", "Omitting career objectives"],
+      correctIndex: 0,
+      explanationVi: "Hội đồng tuyển sinh đánh giá cao ứng viên có tư duy nghiên cứu độc lập, biết gắn vấn đề thương mại Việt–Trung–Âu với phương pháp kiểm định cụ thể.",
+      explanationEn: "Admissions committees favor candidates who link real regional trade questions to concrete empirical datasets and econometric methods."
+    },
+    {
+      id: "v4q-058",
+      pillar: "politics_study",
+      questionVi: "Bộ luật tiêu biểu thời Lê Sơ của Việt Nam vừa tham khảo kỹ thuật lập pháp Đường Luật vừa bảo vệ mạnh mẽ quyền thừa kế của phụ nữ là bộ luật nào?",
+      questionEn: "Which Early Le Dynasty Vietnamese legal code drew on Tang Code structure while uniquely protecting women's property and inheritance rights?",
+      optionsVi: ["Quốc Triều Hình Luật (Luật Hồng Đức)", "Hoàng Việt Luật Lệ", "Hình Thư thời Lý", "Đại Minh Luật"],
+      optionsEn: ["Hong Duc Code (National Dynasty Penal Code)", "Gia Long Code", "Ly Dynasty Book of Punishments", "Great Ming Code"],
+      correctIndex: 0,
+      explanationVi: "Luật Hồng Đức là minh chứng nổi bật cho tinh thần tiếp biến sáng tạo và bản sắc pháp lý độc lập của văn hiến Đại Việt.",
+      explanationEn: "The Hong Duc Code exemplifies Dai Viet's selective legal adaptation and distinct indigenous social protections."
+    },
+    {
+      id: "v4q-059",
+      pillar: "politics_study",
+      questionVi: "Khi du lịch tự túc tại Trung Quốc hiện nay, hai yêu cầu thực địa quan trọng nhất đối với khách quốc tế là gì?",
+      questionEn: "For independent international travelers in China today, what are two essential practical preparations?",
+      optionsVi: ["Đặt vé bảo tàng lớn bằng hộ chiếu trước 5–7 ngày và liên kết thẻ quốc tế vào Alipay/WeChat Pay", "Chỉ mang tiền mặt tờ mệnh giá lớn", "Không cần đăng ký lưu trú tại khách sạn", "Mua vé giấy trực tiếp tại cổng Cố Cung trong ngày"],
+      optionsEn: ["Pre-booking major museums with a passport 5–7 days ahead and linking an international card to Alipay or WeChat Pay", "Carrying only large cash banknotes", "Skipping hotel registration", "Buying walk-up paper tickets at the Forbidden City gate"],
+      correctIndex: 0,
+      explanationVi: "Các bảo tàng hạng nhất như Cố Cung và Bảo tàng Quốc gia yêu cầu đặt chỗ trực tuyến trước bằng hộ chiếu, còn thanh toán QR gần như phổ biến tuyệt đối.",
+      explanationEn: "Top-tier museums enforce advance passport reservations, and QR mobile wallets linked to international cards are standard for daily transit and dining."
+    },
+    {
+      id: "v4q-060",
+      pillar: "politics_study",
+      questionVi: "Trong tư thế đối tác bình đẳng tại các doanh nghiệp đa quốc gia Âu–Á, lợi thế cạnh tranh lớn nhất của nhân sự Việt Nam là gì?",
+      questionEn: "Within Euro-Asian multinationals, what is the strongest strategic advantage of a well-trained Vietnamese trade professional?",
+      optionsVi: ["Kết hợp tư duy tuân thủ chuẩn Châu Âu bằng tiếng Anh với năng lực điều phối trực tiếp nhà máy Trung Quốc bằng tiếng Trung và am hiểu chuỗi cung ứng ASEAN", "Chỉ làm phiên dịch từng câu mà không hiểu nghiệp vụ", "Chỉ chuyên một thị trường duy nhất", "Tránh tham gia đàm phán kỹ thuật"],
+      optionsEn: ["Combining European compliance standards in English with direct Chinese factory coordination in Mandarin and ASEAN supply-chain fluency", "Translating word-for-word without domain knowledge", "Focusing on a single isolated market", "Avoiding technical negotiations"],
+      correctIndex: 0,
+      explanationVi: "Sự kết hợp tam ngữ (VI–EN–ZH) cùng kiến thức Incoterms, hải quan và tuân thủ EU giúp nhân sự chuyển từ vai trò hỗ trợ sang vai trò điều phối chiến lược.",
+      explanationEn: "Combining trilingual fluency with Incoterms, customs, and EU regulatory mastery elevates professionals from support roles to strategic coordinators."
+    },
+    {
+      id: "v4q-061",
+      pillar: "trade_logistics",
+      questionVi: "Theo Incoterms 2020, quy tắc nào yêu cầu người bán chịu rủi ro và chi phí dỡ hàng xuống tại điểm đích quy định?",
+      questionEn: "Under Incoterms 2020, which rule uniquely requires the seller to bear both the cost and risk of unloading goods at the named destination?",
+      optionsVi: ["DAP", "DPU", "DDP", "CIF"],
+      optionsEn: ["DAP", "DPU", "DDP", "CIF"],
+      correctIndex: 1,
+      explanationVi: "DPU (Delivered at Place Unloaded) là quy tắc duy nhất bắt buộc người bán hoàn thành việc dỡ hàng khỏi phương tiện vận tải đến tại địa điểm đích.",
+      explanationEn: "DPU (Delivered at Place Unloaded) is the sole Incoterms 2020 rule obligating the seller to unload cargo at destination."
+    },
+    {
+      id: "v4q-062",
+      pillar: "trade_logistics",
+      questionVi: "Đối với hàng đóng trong container xuất khẩu từ Thượng Hải đi Rotterdam, ICC khuyến nghị dùng quy tắc nào thay cho FOB?",
+      questionEn: "For containerized cargo exported from Shanghai to Rotterdam, which Incoterms 2020 rule does the ICC recommend instead of FOB?",
+      optionsVi: ["FAS", "FCA", "CFR", "EXW"],
+      optionsEn: ["FAS", "FCA", "CFR", "EXW"],
+      correctIndex: 1,
+      explanationVi: "Hàng container được giao tại bãi CY hoặc kho CFS trước khi cẩu lên tàu; dùng FCA giúp điểm chuyển rủi ro khớp đúng thực tế bàn giao.",
+      explanationEn: "Containerized freight is handed over at a terminal yard before vessel loading; FCA aligns risk transfer accurately with physical handover."
+    },
+    {
+      id: "v4q-063",
+      pillar: "trade_logistics",
+      questionVi: "Sự khác biệt về mức bảo hiểm tối thiểu giữa CIF và CIP theo Incoterms 2020 là gì?",
+      questionEn: "What is the minimum cargo insurance difference between CIF and CIP under Incoterms 2020?",
+      optionsVi: ["CIF yêu cầu Điều kiện C (tối thiểu), còn CIP yêu cầu Điều kiện A (mọi rủi ro)", "CIF yêu cầu Điều kiện A, còn CIP không cần bảo hiểm", "Cả hai đều yêu cầu Điều kiện C", "Cả hai đều do người mua tự mua bảo hiểm"],
+      optionsEn: ["CIF requires Institute Cargo Clauses C (minimum), whereas CIP requires Clauses A (all-risks)", "CIF requires Clauses A while CIP requires none", "Both require Clauses C", "Both leave insurance to the buyer"],
+      correctIndex: 0,
+      explanationVi: "Incoterms 2020 nâng chuẩn bảo hiểm mặc định của CIP lên mức cao nhất (Clause A) để phù hợp hàng công nghiệp giá trị cao vận chuyển đa phương thức.",
+      explanationEn: "Incoterms 2020 elevated CIP's default coverage to Institute Cargo Clauses A to protect high-value multimodal goods."
+    },
+    {
+      id: "v4q-064",
+      pillar: "trade_logistics",
+      questionVi: "Trong điều kiện CFR Ningbo – Hamburg, rủi ro mất mát hư hại hàng hóa chuyển từ người bán sang người mua khi nào?",
+      questionEn: "Under CFR Ningbo – Hamburg, when does the risk of loss or damage pass from seller to buyer?",
+      optionsVi: ["Khi tàu cập cảng Hamburg", "Khi hàng đã xếp an toàn lên tàu tại cảng Ninh Ba", "Khi hàng thông quan nhập khẩu tại Đức", "Khi người mua thanh toán đủ tiền"],
+      optionsEn: ["When the vessel berths in Hamburg", "Once the goods are loaded on board the vessel at Ningbo", "After German import clearance", "Upon final invoice settlement"],
+      correctIndex: 1,
+      explanationVi: "Các điều kiện nhóm C (CFR, CIF, CPT, CIP) có hai điểm tách biệt: người bán trả cước đến đích nhưng rủi ro chuyển ngay tại điểm giao ở nước xuất khẩu.",
+      explanationEn: "In all C-group rules, cost extends to destination while risk transfers at the origin handover point."
+    },
+    {
+      id: "v4q-065",
+      pillar: "trade_logistics",
+      questionVi: "Tại sao nhà xuất khẩu Trung Quốc thường thận trọng khi ký hợp đồng DDP vào Liên minh Châu Âu?",
+      questionEn: "Why are Chinese exporters cautious about signing DDP contracts into the European Union?",
+      optionsVi: ["Vì DDP đòi hỏi người bán chịu trách nhiệm thông quan nhập khẩu, mã EORI, thuế nhập và VAT tại EU", "Vì DDP cấm vận chuyển bằng đường biển", "Vì DDP không cho phép mua bảo hiểm", "Vì DDP chỉ áp dụng cho hàng nông sản"],
+      optionsEn: ["DDP requires the seller to handle EU import clearance, EORI registration, customs duties, and import VAT", "DDP forbids ocean freight", "DDP disallows cargo insurance", "DDP applies only to agricultural goods"],
+      correctIndex: 0,
+      explanationVi: "Một doanh nghiệp ngoài EU thường không thể tự đứng tên khai báo nhập khẩu tại EU nếu không có pháp nhân hoặc đại diện thuế được ủy quyền.",
+      explanationEn: "Non-EU entities generally cannot act as importer of record in the EU without a local establishment or indirect fiscal representative."
+    },
+    {
+      id: "v4q-066",
+      pillar: "trade_logistics",
+      questionVi: "Ba chức năng pháp lý cốt lõi của Vận đơn đường biển gốc (Original Bill of Lading) là gì?",
+      questionEn: "What are the three core legal functions of an Original Ocean Bill of Lading?",
+      optionsVi: ["Biên lai nhận hàng, bằng chứng hợp đồng vận tải và chứng từ sở hữu hàng hóa có thể chuyển nhượng", "Hóa đơn tính thuế, giấy kiểm dịch và hợp đồng bảo hiểm", "Giấy chứng nhận xuất xứ, tờ khai hải quan và phiếu đóng gói", "Bảo lãnh ngân hàng, hợp đồng mua bán và lệnh giao hàng"],
+      optionsEn: ["Receipt of goods, evidence of contract of carriage, and negotiable document of title", "Tax invoice, quarantine certificate, and insurance policy", "Origin certificate, customs entry, and packing list", "Bank guarantee, sales contract, and delivery order"],
+      correctIndex: 0,
+      explanationVi: "Chính chức năng chứng từ sở hữu (Document of Title) giúp vận đơn gốc trở thành công cụ kiểm soát thanh toán an toàn trong thương mại quốc tế.",
+      explanationEn: "Its role as a negotiable document of title allows exporters and banks to control cargo release until payment conditions are met."
+    },
+    {
+      id: "v4q-067",
+      pillar: "trade_logistics",
+      questionVi: "Khi nào doanh nghiệp nên sử dụng Điện giao hàng (Telex Release) thay vì gửi vận đơn gốc bằng chuyển phát nhanh?",
+      questionEn: "When should an importer request a Telex Release instead of couriered Original Bills of Lading?",
+      optionsVi: ["Khi thanh toán đã hoàn tất hoặc tin cậy cao, và cần nhận hàng nhanh tránh phát sinh phí lưu bãi do chứng từ đến trễ", "Khi giao dịch bằng L/C đòi hỏi xuất trình vận đơn gốc cho ngân hàng", "Khi chưa xác định được người mua cuối cùng", "Khi muốn chuyển nhượng vận đơn trên đường biển"],
+      optionsEn: ["When payment is settled or trusted, and rapid destination release is needed to avoid demurrage from courier delays", "When an L/C requires original B/Ls to be presented to a bank", "When the final buyer is unknown", "When intending to endorse the B/L in transit"],
+      correctIndex: 0,
+      explanationVi: "Telex Release đặc biệt hiệu quả trên các tuyến ngắn như Trung Quốc – Việt Nam hoặc khi tàu đến sát ngày mà chứng từ giấy chưa kịp tới.",
+      explanationEn: "Telex Release prevents port demurrage on short-sea routes or tight arrivals once commercial settlement is secured."
+    },
+    {
+      id: "v4q-068",
+      pillar: "trade_logistics",
+      questionVi: "Sự khác biệt giữa phí Demurrage (滞港费) và phí Detention (滞箱费) là gì?",
+      questionEn: "What distinguishes Demurrage from Detention in container shipping?",
+      optionsVi: ["Demurrage tính khi container nằm quá hạn trong bãi cảng; Detention tính khi giữ vỏ container quá hạn ngoài phạm vi cảng", "Demurrage là phí đường sắt; Detention là phí đường hàng không", "Demurrage do người bán trả; Detention do hải quan thu", "Hai thuật ngữ hoàn toàn giống nhau"],
+      optionsEn: ["Demurrage applies to full containers overstaying inside the terminal; Detention applies to carrier equipment held outside the port past free time", "Demurrage is rail freight; Detention is air freight", "Demurrage is paid by sellers; Detention is collected by customs", "Both terms are identical"],
+      correctIndex: 0,
+      explanationVi: "Nắm rõ ranh giới Demurrage và Detention giúp đội ngũ logistics đàm phán thời gian miễn phí kết hợp (combined free time) tại cảng Châu Âu.",
+      explanationEn: "Knowing the boundary between port dwell (Demurrage) and off-port equipment holding (Detention) is vital when negotiating combined free time."
+    },
+    {
+      id: "v4q-069",
+      pillar: "trade_logistics",
+      questionVi: "Khai báo VGM (Verified Gross Mass / 核实总重) bắt buộc theo công ước SOLAS bao gồm những thành phần trọng lượng nào?",
+      questionEn: "Under the SOLAS convention, what weight components must be included in a container's Verified Gross Mass (VGM)?",
+      optionsVi: ["Chỉ trọng lượng tịnh của hàng hóa", "Trọng lượng hàng hóa, vật liệu đóng gói/chằng buộc cộng trọng lượng vỏ container (tare weight)", "Chỉ trọng lượng vỏ container rỗng", "Trọng lượng xe đầu kéo cộng container"],
+      optionsEn: ["Cargo net weight only", "Cargo weight, packaging/dunnage, plus the container's tare weight", "Empty container tare weight only", "Truck chassis weight plus container"],
+      correctIndex: 1,
+      explanationVi: "Nếu thiếu VGM trước giờ cắt máng, hãng tàu có quyền từ chối xếp container lên tàu vì lý do an toàn ổn định hàng hải.",
+      explanationEn: "Carriers enforce a strict 'no VGM, no load' rule to safeguard vessel stability and stowage planning."
+    },
+    {
+      id: "v4q-070",
+      pillar: "trade_logistics",
+      questionVi: "Ba mốc Cut-off (截单 / 截关 / 截港) cần phối hợp chặt chẽ với nhà máy Trung Quốc lần lượt là gì?",
+      questionEn: "What are the three critical export cut-offs coordinated with Chinese factories before vessel departure?",
+      optionsVi: ["Hạn nộp chi tiết vận đơn (SI), hạn thông quan hải quan và hạn hạ bãi container (CY gate-in)", "Hạn thanh toán L/C, hạn kiểm định SGS và hạn giao kho EU", "Hạn ký hợp đồng, hạn đặt cọc và hạn xuất hóa đơn", "Hạn đóng thuế VAT, hạn làm C/O và hạn mua bảo hiểm"],
+      optionsEn: ["Shipping Instruction (SI) cut-off, Customs clearance cut-off, and Container Yard (CY) gate-in cut-off", "L/C payment, SGS inspection, and EU warehouse slot", "Contract signing, deposit, and invoicing", "VAT filing, C/O issuance, and insurance"],
+      correctIndex: 0,
+      explanationVi: "Trễ bất kỳ mốc Cut-off nào tại Thượng Hải, Ninh Ba hay Diêm Điền đều khiến container bị rớt tàu (rollover) sang chuyến tuần kế tiếp.",
+      explanationEn: "Missing any of the SI, customs, or CY gate-in deadlines rolls the container to a later weekly sailing."
+    },
+    {
+      id: "v4q-071",
+      pillar: "trade_logistics",
+      questionVi: "Hệ thống ICS2 (Import Control System 2) của Liên minh Châu Âu yêu cầu cung cấp dữ liệu gì trước khi xếp hàng lên tàu đi EU?",
+      questionEn: "What does the EU's Import Control System 2 (ICS2) mandate prior to loading EU-bound maritime cargo?",
+      optionsVi: ["Tờ khai tóm tắt nhập cảnh (ENS) kèm mã HS 6 số chính xác và mô tả hàng hóa rõ ràng", "Bản gốc giấy chứng nhận xuất xứ EUR.1", "Hợp đồng lao động của nhà máy xuất khẩu", "Chứng thư hun trùng gỗ cho hàng không dùng pallet gỗ"],
+      optionsEn: ["An Entry Summary Declaration (ENS) with accurate 6-digit HS codes and plain-language goods descriptions", "Original paper EUR.1 certificates", "Factory labor contracts", "Fumigation certificates for non-wood cargo"],
+      correctIndex: 0,
+      explanationVi: "ICS2 loại bỏ các mô tả mơ hồ như 'consolidated cargo' hoặc 'parts'; dữ liệu sai lệch có thể dẫn tới lệnh không cho xếp tàu (Do Not Load).",
+      explanationEn: "ICS2 rejects vague descriptions such as 'general cargo' and can trigger Do Not Load orders if safety-and-security data is incomplete."
+    },
+    {
+      id: "v4q-072",
+      pillar: "trade_logistics",
+      questionVi: "Cơ chế CBAM của EU hiện áp dụng nghĩa vụ báo cáo phát thải carbon tích hợp cho nhóm hàng nhập khẩu trọng tâm nào?",
+      questionEn: "Which core import sectors are covered under the EU Carbon Border Adjustment Mechanism (CBAM)?",
+      optionsVi: ["Xi măng, sắt thép, nhôm, phân bón, điện và hydro", "Gạo, cà phê, trà và gia vị", "Quần áo thời trang, giày dép và túi xách", "Phần mềm, dịch vụ tư vấn và du lịch"],
+      optionsEn: ["Cement, iron and steel, aluminum, fertilizers, electricity, and hydrogen", "Rice, coffee, tea, and spices", "Apparel, footwear, and handbags", "Software, consulting, and tourism"],
+      correctIndex: 0,
+      explanationVi: "Các doanh nghiệp nhập khẩu sản phẩm thuộc danh mục CBAM phải thu thập dữ liệu phát thải cấp cơ sở sản xuất từ nhà cung cấp ngoài EU.",
+      explanationEn: "EU declarants importing covered CBAM goods must obtain verified installation-level emissions data from non-EU producers."
+    },
+    {
+      id: "v4q-073",
+      pillar: "trade_logistics",
+      questionVi: "Trong giám định trước giao hàng (SGS / PSI), tiêu chuẩn AQL (Acceptable Quality Limit) dùng để làm gì?",
+      questionEn: "In third-party Pre-Shipment Inspection (PSI), what is the purpose of the Acceptable Quality Limit (AQL)?",
+      optionsVi: ["Xác định cỡ mẫu thống kê và số lượng lỗi tối đa cho phép để quyết định đạt hay không đạt lô hàng", "Tính cước vận tải biển theo thể tích", "Xác định thuế suất nhập khẩu ưu đãi", "Tính lãi suất chiết khấu L/C"],
+      optionsEn: ["Defining statistical sample sizes and maximum allowable defect counts to pass or fail a shipment lot", "Calculating volumetric ocean freight", "Determining preferential tariff rates", "Computing L/C discount interest"],
+      correctIndex: 0,
+      explanationVi: "AQL giúp người mua Châu Âu kiểm soát chất lượng hàng loạt tại nhà máy Trung Quốc một cách khách quan mà không cần kiểm tra 100% từng sản phẩm.",
+      explanationEn: "AQL provides an objective statistical basis under ISO 2859-1 to accept or reject production lots before balance payment."
+    },
+    {
+      id: "v4q-074",
+      pillar: "trade_logistics",
+      questionVi: "Chứng từ xuất xứ nào được sử dụng để hưởng thuế nhập khẩu ưu đãi theo Hiệp định Thương mại Tự do ASEAN – Trung Quốc (ACFTA)?",
+      questionEn: "Which Certificate of Origin is used to claim preferential tariffs under the ASEAN–China Free Trade Area (ACFTA)?",
+      optionsVi: ["C/O Form D", "C/O Form E", "EUR.1", "C/O Form AK"],
+      optionsEn: ["C/O Form D", "C/O Form E", "EUR.1", "C/O Form AK"],
+      correctIndex: 1,
+      explanationVi: "C/O Form E là chứng từ phổ biến nhất trong nhập khẩu nguyên phụ liệu và máy móc từ Trung Quốc về cảng Hải Phòng và Cát Lái.",
+      explanationEn: "C/O Form E is the primary preferential origin certificate for China–Vietnam trade under ACFTA."
+    },
+    {
+      id: "v4q-075",
+      pillar: "trade_logistics",
+      questionVi: "Để hưởng ưu đãi thuế quan theo EVFTA cho lô hàng xuất khẩu từ Việt Nam sang EU có trị giá trên 6.000 EUR, nhà xuất khẩu Việt Nam thường dùng chứng từ nào?",
+      questionEn: "Under EVFTA, which origin proof is used by Vietnamese exporters for consignments exceeding EUR 6,000 entering the EU?",
+      optionsVi: ["C/O Form EUR.1 (hoặc cơ chế tự chứng nhận khi áp dụng)", "C/O Form E", "C/O Form B không ưu đãi", "Vận đơn hàng không"],
+      optionsEn: ["EUR.1 Movement Certificate (or authorized self-certification where applicable)", "C/O Form E", "Non-preferential C/O Form B", "Air Waybill"],
+      correctIndex: 0,
+      explanationVi: "EVFTA quy định rõ ngưỡng chứng từ xuất xứ và tiêu chí chuyển đổi mã số hoặc hàm lượng khu vực để hưởng thuế suất ưu đãi tại EU.",
+      explanationEn: "EVFTA requires an EUR.1 certificate (or approved self-certification) verifying qualifying Vietnamese origin for consignments above EUR 6,000."
+    },
+    {
+      id: "v4q-076",
+      pillar: "trade_logistics",
+      questionVi: "Hiệp định RCEP mang lại lợi thế chiến lược nào cho mô hình chuỗi cung ứng 'linh kiện Trung Quốc – lắp ráp Việt Nam'?",
+      questionEn: "What strategic advantage does RCEP offer to a 'Chinese components – Vietnamese assembly' supply chain?",
+      optionsVi: ["Cơ chế cộng gộp xuất xứ khu vực giữa các nước thành viên RCEP", "Miễn toàn bộ thủ tục kiểm dịch thực vật", "Thay thế hoàn toàn dấu CE tại Châu Âu", "Bãi bỏ yêu cầu mã HS trên hóa đơn"],
+      optionsEn: ["Regional origin cumulation across all RCEP member economies", "Exemption from all phytosanitary rules", "Replacement of EU CE marking", "Elimination of HS codes on invoices"],
+      correctIndex: 0,
+      explanationVi: "Cộng gộp RCEP cho phép nguyên liệu có xuất xứ từ Trung Quốc, Nhật Bản, Hàn Quốc được tính vào hàm lượng xuất xứ khi xuất khẩu trong khối RCEP.",
+      explanationEn: "RCEP cumulation allows qualifying inputs from China, Japan, and South Korea to count toward origin criteria for intra-RCEP exports."
+    },
+    {
+      id: "v4q-077",
+      pillar: "trade_logistics",
+      questionVi: "Trong thanh toán quốc tế, phương thức nào mang lại cam kết thanh toán trực tiếp từ ngân hàng phát hành theo quy tắc UCP 600?",
+      questionEn: "Which international payment instrument provides an irrevocable bank undertaking governed by UCP 600?",
+      optionsVi: ["Open Account (O/A)", "Thư tín dụng (Letter of Credit — L/C)", "Chuyển tiền trả sau (T/T)", "Nhờ thu trơn"],
+      optionsEn: ["Open Account (O/A)", "Letter of Credit (L/C)", "Post-shipment T/T", "Clean Collection"],
+      correctIndex: 1,
+      explanationVi: "Ngân hàng phát hành L/C cam kết thanh toán cho nhà xuất khẩu miễn là bộ chứng từ xuất trình tuân thủ nghiêm ngặt điều khoản L/C.",
+      explanationEn: "Under UCP 600, the issuing bank guarantees settlement upon presentation of strictly compliant shipping documents."
+    },
+    {
+      id: "v4q-078",
+      pillar: "trade_logistics",
+      questionVi: "So giữa nhờ thu D/P (Documents against Payment) và D/A (Documents against Acceptance), phương thức nào tiềm ẩn rủi ro tín dụng cao hơn cho nhà xuất khẩu?",
+      questionEn: "Between D/P and D/A documentary collections, which carries higher credit risk for the exporter?",
+      optionsVi: ["D/P vì người mua phải trả tiền ngay", "D/A vì người mua nhận chứng từ sở hữu hàng trước khi đến hạn thanh toán", "Cả hai đều có ngân hàng bảo lãnh thanh toán", "Không phương thức nào có rủi ro"],
+      optionsEn: ["D/P because payment is immediate", "D/A because the buyer obtains title documents before payment maturity", "Both carry a bank payment guarantee", "Neither involves credit risk"],
+      correctIndex: 1,
+      explanationVi: "Với D/A, người mua chỉ cần ký chấp nhận hối phiếu kỳ hạn là lấy được vận đơn đi nhận hàng; nếu đến hạn họ mất khả năng trả nợ, người bán đã mất quyền kiểm soát hàng.",
+      explanationEn: "Under D/A, the buyer takes possession of the cargo upon accepting a time draft, leaving the exporter exposed if the buyer defaults at maturity."
+    },
+    {
+      id: "v4q-079",
+      pillar: "trade_logistics",
+      questionVi: "Mục đích chính của việc xin Chứng nhận Doanh nghiệp Ưu tiên (AEO) và Thỏa thuận Công nhận lẫn nhau Trung Quốc – EU là gì?",
+      questionEn: "What is the primary operational benefit of AEO accreditation under the China–EU Mutual Recognition Agreement?",
+      optionsVi: ["Giảm tỷ lệ kiểm hóa thực tế và ưu tiên thông quan nhanh tại cả hai đầu biên giới", "Miễn hoàn toàn thuế nhập khẩu và VAT", "Không cần lập hóa đơn thương mại", "Được phép bỏ qua quy định REACH"],
+      optionsEn: ["Lower physical inspection rates and priority customs clearance at both ends of the corridor", "Total exemption from import duties and VAT", "Waiving commercial invoices", "Bypassing REACH compliance"],
+      correctIndex: 0,
+      explanationVi: "AEO nâng cao độ tin cậy an ninh chuỗi cung ứng, giúp rút ngắn thời gian thông quan và giảm chi phí lưu kho bãi.",
+      explanationEn: "AEO trusted-trader status lowers inspection frequency and accelerates border release across partner customs administrations."
+    },
+    {
+      id: "v4q-080",
+      pillar: "trade_logistics",
+      questionVi: "Quy định REACH và chỉ thị RoHS của EU cùng hướng tới mục tiêu tuân thủ nào cho sản phẩm nhập khẩu từ Châu Á?",
+      questionEn: "What shared compliance objective do the EU's REACH regulation and RoHS directive enforce on Asian imports?",
+      optionsVi: ["Kiểm soát và hạn chế hóa chất, kim loại nặng nguy hại nhằm bảo vệ sức khỏe và môi trường", "Quy định kích thước container 40 feet", "Áp mức cước sàn đường biển", "Phân bổ hạn ngạch tàu đường sắt"],
+      optionsEn: ["Controlling and restricting hazardous chemicals and heavy metals to protect health and the environment", "Standardizing 40-foot container dimensions", "Setting ocean freight rate floors", "Allocating rail block-train quotas"],
+      correctIndex: 0,
+      explanationVi: "REACH bao phủ rộng các chất hóa học trong nhiều ngành hàng, còn RoHS tập trung hạn chế các chất độc hại trong thiết bị điện và điện tử.",
+      explanationEn: "REACH governs chemical safety broadly across products, while RoHS specifically restricts hazardous substances in electrical and electronic goods."
+    },
+    {
+      id: "v4q-081",
+      pillar: "trade_logistics",
+      questionVi: "Trong luật hàng hải quốc tế, nguyên tắc 'Tổn thất chung' (General Average / 共同海损) xảy ra khi nào?",
+      questionEn: "In maritime law, when is 'General Average' declared?",
+      optionsVi: ["Khi thuyền trưởng chủ động hy sinh một phần tàu hoặc hàng nhằm cứu toàn bộ hành trình chung, và mọi chủ hàng cùng chia sẻ tổn thất theo tỷ lệ", "Khi một thùng hàng bị ướt do lỗi đóng gói riêng của nhà máy", "Khi tàu đến trễ hai ngày do ùn tắc cảng", "Khi hóa đơn ghi sai đơn giá"],
+      optionsEn: ["When the master intentionally sacrifices part of the ship or cargo to save the common maritime adventure, and all stakeholders share losses proportionally", "When one carton gets wet from poor factory packing", "When a vessel arrives two days late due to port congestion", "When an invoice contains a typo"],
+      correctIndex: 0,
+      explanationVi: "Chủ hàng không mua bảo hiểm hàng hải sẽ phải tự nộp ký quỹ tổn thất chung rất lớn mới được giải phóng container.",
+      explanationEn: "Uninsured cargo owners face substantial cash-bond demands before their containers are released under a General Average declaration."
+    },
+    {
+      id: "v4q-082",
+      pillar: "trade_logistics",
+      questionVi: "Cảng nước sâu nào là cửa ngõ hàng hải chính của Đồng bằng sông Trường Giang và nằm trong nhóm cảng container sản lượng lớn nhất thế giới?",
+      questionEn: "Which deep-water terminal anchors the Yangtze River Delta and underpins the world's busiest container port?",
+      optionsVi: ["Cảng nước sâu Dương Sơn Thượng Hải", "Cảng Hải Phòng", "Cảng Antwerp", "Cảng Thiên Tân"],
+      optionsEn: ["Shanghai Yangshan Deep-Water Port", "Hai Phong Port", "Port of Antwerp", "Tianjin Port"],
+      correctIndex: 0,
+      explanationVi: "Cảng nước sâu Dương Sơn kết nối đất liền qua cầu Đông Hải, sở hữu bến bãi tự động hóa hiện đại hàng đầu phục vụ tuyến Á–Âu.",
+      explanationEn: "Connected by the Donghai Bridge, Shanghai Yangshan operates one of the world's largest automated container terminals."
+    },
+    {
+      id: "v4q-083",
+      pillar: "trade_logistics",
+      questionVi: "Chứng từ vận tải tiêu chuẩn dùng cho tàu liên vận đường sắt Trung–Âu (中欧班列) kết nối hệ thống pháp lý Châu Âu và Á–Âu là gì?",
+      questionEn: "What is the unified rail transport document bridging European and Eurasian rail legal regimes on the China–Europe Railway Express?",
+      optionsVi: ["Vận đơn đường sắt CIM/SMGS", "Vận đơn đường biển gốc (OBL)", "Vận đơn hàng không (AWB)", "Sổ ATA Carnet"],
+      optionsEn: ["CIM/SMGS Consignment Note", "Original Ocean Bill of Lading", "Air Waybill", "ATA Carnet"],
+      correctIndex: 0,
+      explanationVi: "Vận đơn CIM/SMGS giúp tránh phải lập lại chứng từ vận tải khi đoàn tàu chuyển từ hệ thống luật SMGS (Đông Âu/Á) sang CIM (EU).",
+      explanationEn: "The unified CIM/SMGS note eliminates re-consignment paperwork at border crossings between SMGS and EU CIM rail jurisdictions."
+    },
+    {
+      id: "v4q-084",
+      pillar: "trade_logistics",
+      questionVi: "Cơ chế Xác định trước mã số (Advance Ruling / BTI tại EU) giúp doanh nghiệp xuất nhập khẩu giải quyết rủi ro nào?",
+      questionEn: "What customs risk does an Advance Ruling (Binding Tariff Information in the EU) resolve for importers and exporters?",
+      optionsVi: ["Loại bỏ bất định về phân loại mã HS và thuế suất trước khi lô hàng cập cảng", "Miễn kiểm tra an ninh ICS2", "Thay thế hoàn toàn hợp đồng ngoại thương", "Bảo hiểm rủi ro tỷ giá ngoại tệ"],
+      optionsEn: ["Eliminating HS classification and duty-rate uncertainty before cargo arrives at the border", "Exempting shipments from ICS2 screening", "Replacing the commercial sales contract", "Hedging foreign-exchange risk"],
+      correctIndex: 0,
+      explanationVi: "Quyết định xác định trước có giá trị ràng buộc pháp lý với cơ quan hải quan, đặc biệt hữu ích cho linh kiện kỹ thuật phức tạp.",
+      explanationEn: "Binding Tariff Information legally locks the tariff classification across EU customs authorities for complex industrial products."
+    },
+    {
+      id: "v4q-085",
+      pillar: "trade_logistics",
+      questionVi: "Chứng thư hun trùng theo tiêu chuẩn ISPM 15 bắt buộc khi lô hàng xuất khẩu sang EU sử dụng loại vật liệu nào?",
+      questionEn: "When is an ISPM 15 fumigation or heat-treatment mark mandatory for shipments entering the European Union?",
+      optionsVi: ["Pallet, kiện hoặc thanh chèn bằng gỗ tự nhiên chưa qua chế biến công nghiệp", "Thùng carton giấy tái chế", "Pallet nhựa nguyên sinh", "Bao bì màng co PE"],
+      optionsEn: ["Solid raw wood pallets, crates, or dunnage", "Recycled corrugated cardboard cartons", "Virgin plastic pallets", "Polyethylene stretch film"],
+      correctIndex: 0,
+      explanationVi: "Gỗ tự nhiên không có dấu ISPM 15 có thể bị hải quan kiểm dịch EU buộc tái xuất hoặc tiêu hủy ngay tại cảng đến.",
+      explanationEn: "Untreated solid wood packaging without ISPM 15 stamps risks quarantine rejection, re-export, or destruction at EU ports."
+    },
+    {
+      id: "v4q-086",
+      pillar: "trade_logistics",
+      questionVi: "Trong giao dịch FOB, cụm từ 'Freight Collect' ghi trên Vận đơn đường biển biểu thị điều gì?",
+      questionEn: "On an FOB shipment's Bill of Lading, what does the clause 'Freight Collect' signify?",
+      optionsVi: ["Cước vận tải biển chính do người nhận hàng (người mua) thanh toán với hãng tàu", "Người bán đã trả trước toàn bộ cước biển", "Lô hàng được miễn cước vận chuyển", "Cước sẽ được trừ vào thuế nhập khẩu"],
+      optionsEn: ["Main ocean freight is payable by the consignee (buyer) to the carrier", "The seller has prepaid main ocean freight", "Ocean freight is waived", "Freight is deducted from customs duties"],
+      correctIndex: 0,
+      explanationVi: "Theo FOB, người mua chỉ định hãng tàu và chịu trách nhiệm thanh toán cước chặng biển chính (Freight Collect).",
+      explanationEn: "Under FOB terms, the buyer nominates the carrier and settles main ocean carriage under Freight Collect."
+    },
+    {
+      id: "v4q-087",
+      pillar: "trade_logistics",
+      questionVi: "Vì sao doanh nghiệp xuất nhập khẩu tại EU bắt buộc phải có mã EORI trước khi làm thủ tục hải quan?",
+      questionEn: "Why must a business obtain an EORI number before clearing goods through European Union customs?",
+      optionsVi: ["Là mã định danh duy nhất bắt buộc trên mọi tờ khai hải quan và hệ thống điện tử của EU", "Chỉ dùng để đặt phòng khách sạn công tác", "Thay thế hoàn toàn dấu hợp chuẩn CE", "Dùng để cấp thị thực du lịch"],
+      optionsEn: ["It is the mandatory unique customs identifier required across all EU customs declarations and electronic portals", "It is used only for hotel bookings", "It replaces CE conformity marking", "It is a travel visa identifier"],
+      correctIndex: 0,
+      explanationVi: "Thiếu mã EORI hợp lệ trên hóa đơn và khai báo ICS2 sẽ khiến hàng bị giữ tại cảng Rotterdam, Hamburg hoặc Antwerp.",
+      explanationEn: "Without a valid EORI number on commercial invoices and ICS2 filings, import clearance in Rotterdam, Hamburg, or Antwerp cannot proceed."
+    },
+    {
+      id: "v4q-088",
+      pillar: "trade_logistics",
+      questionVi: "Khi phát hiện lô hàng lỗi tại kho Châu Âu, báo cáo CAPA yêu cầu nhà máy Trung Quốc cung cấp hai nội dung cốt lõi nào?",
+      questionEn: "After a quality defect claim in Europe, what two core components must a factory's CAPA report deliver?",
+      optionsVi: ["Phân tích nguyên nhân gốc rễ kèm hành động khắc phục ngay và biện pháp phòng ngừa tái diễn", "Bảng quảng cáo sản phẩm mới và danh sách khách hàng", "Lịch nghỉ lễ năm sau và báo giá cước biển", "Chỉ cần lời xin lỗi bằng miệng"],
+      optionsEn: ["Root-cause analysis with immediate corrective fixes and systemic preventive controls against recurrence", "A new product brochure and client list", "Next year's holiday calendar and ocean tariffs", "A verbal apology only"],
+      correctIndex: 0,
+      explanationVi: "CAPA (Corrective and Preventive Action) là chuẩn quản trị chất lượng công nghiệp giúp loại trừ lỗi hệ thống thay vì xử lý đối phó.",
+      explanationEn: "Structured CAPA addresses both immediate non-conformity containment and upstream process fixes to stop repeat defects."
+    },
+    {
+      id: "v4q-089",
+      pillar: "trade_logistics",
+      questionVi: "Sự khác biệt thực tế giữa Kho ngoại quan (Bonded Warehouse) và kho thông thường tại cảng cửa ngõ là gì?",
+      questionEn: "What is the practical advantage of a Bonded Warehouse over a standard domestic warehouse at a gateway port?",
+      optionsVi: ["Cho phép lưu giữ, phân loại hoặc tái xuất hàng nhập dưới giám sát hải quan mà chưa phải nộp thuế nhập khẩu ngay", "Không cần bất kỳ chứng từ quản lý tồn kho nào", "Miễn phí toàn bộ chi phí bốc xếp", "Chỉ lưu trữ hàng sản xuất nội địa"],
+      optionsEn: ["Allows imported goods to be stored, sorted, or re-exported under customs control with deferred duty and VAT payment", "Requires no inventory records", "Eliminates all handling fees", "Stores only domestic goods"],
+      correctIndex: 0,
+      explanationVi: "Kho ngoại quan tại Thượng Hải, Rotterdam hoặc Hải Phòng giúp doanh nghiệp tối ưu dòng tiền thuế và linh hoạt tái phân phối sang nước thứ ba.",
+      explanationEn: "Bonded facilities in Shanghai, Rotterdam, or Hai Phong improve working capital by deferring duties until goods enter local consumption."
+    },
+    {
+      id: "v4q-090",
+      pillar: "trade_logistics",
+      questionVi: "Thành ngữ công sở Trung Quốc '双赢合作' (Shuāngyíng hézuò) cùng nguyên tắc '单证一致' (Dānzhèng yīzhì) thể hiện tinh thần nào trong nghề Xuất Nhập Khẩu?",
+      questionEn: "How do the Chinese business principles 'shuāngyíng hézuò' (win-win cooperation) and 'dānzhèng yīzhì' (documentary consistency) complement each other in international trade?",
+      optionsVi: ["Xây dựng quan hệ đối tác dài hạn bền vững trên nền tảng kỷ luật chứng từ tuyệt đối chính xác", "Nhượng bộ chứng từ sai lệch để giữ hòa khí", "Ưu tiên giao hàng nhanh bỏ qua kiểm tra hải quan", "Chỉ chú trọng giá thấp nhất mà bỏ qua chất lượng"],
+      optionsEn: ["Building durable long-term partnerships grounded in strict, error-free documentary discipline", "Ignoring document discrepancies to avoid friction", "Shipping fast without customs checks", "Chasing the lowest price regardless of quality"],
+      correctIndex: 0,
+      explanationVi: "Trong thương mại Âu–Trung–Việt, thiện chí đàm phán đôi bên cùng có lợi chỉ bền vững khi đi kèm chuẩn mực chứng từ chính xác tuyệt đối.",
+      explanationEn: "In Euro-Asian trade, collaborative commercial trust succeeds only when backed by rigorous documentary and compliance accuracy."
+    }
+  ];
+window.CCE_V4_QUIZ = RAW_V4_QUIZ.map(function (q) {
+    var topicLbl = q.pillar === "trade_logistics" ? "EU–China Logistics & Trade"
+      : q.pillar === "unesco_geo" ? "UNESCO & China Geography"
+      : q.pillar === "hsk_classics" ? "HSK Classics & Poetry"
+      : q.pillar === "tcm_tea_food" ? "TCM, Tea & Cuisine"
+      : "Politics & Study Abroad";
     return {
-      id: id,
-      pillar: pillar,
-      topicVi: topicVi,
-      topicEn: topicEn,
-      questionVi: qVi,
-      questionEn: qEn,
-      optionsVi: optsVi,
-      optionsEn: optsEn,
-      correctIndex: ans,
-      explainVi: exVi,
-      explainEn: exEn
+      id: q.id,
+      pillar: q.pillar,
+      topicVi: topicLbl,
+      topicEn: topicLbl,
+      questionVi: q.questionVi,
+      questionEn: q.questionEn,
+      optionsVi: q.optionsVi,
+      optionsEn: q.optionsEn,
+      correctIndex: q.correctIndex,
+      explainVi: q.explanationVi || q.explainVi || "",
+      explainEn: q.explanationEn || q.explainEn || ""
     };
-  }
-
-  var BANK = [
-    M("v4q-01", "business", "EU Logistics", "EU Logistics",
-      "Tại sao khi nhập hàng container từ nhà máy Trung Quốc chưa có giấy phép xuất khẩu trực tiếp, nên đổi điều kiện EXW sang FCA?",
-      "Why prefer FCA over EXW when importing containers from a Chinese supplier without export formalities flexibility?",
-      ["Để bên bán lo thủ tục khai báo hải quan xuất khẩu và hoàn thuế VAT tại Trung Quốc", "Vì FCA miễn toàn bộ cước biển", "Vì EXW cấm dùng container 40HQ", "Vì FCA bắt buộc thanh toán tiền mặt"],
-      ["So the seller handles China export customs clearance while the buyer retains freight control", "FCA eliminates ocean freight", "EXW prohibits 40HQ containers", "FCA mandates cash payment"], 0,
-      "FCA chuyển trách nhiệm thông quan xuất khẩu về phía Trung Quốc và giảm rủi ro ách tắc tại cửa khẩu.", "FCA shifts PRC export declaration cleanly onto the seller side."),
-    M("v4q-02", "business", "EU Compliance", "EU Compliance",
-      "Hệ thống nào của Hải quan Liên minh Châu Âu bắt buộc nộp tờ khai tóm tắt nhập cảnh (ENS) kèm 6 số mã HS trước khi hàng xếp lên tàu/máy bay/đường sắt?",
-      "Which EU Customs system enforces pre-loading ENS security declarations with accurate 6-digit HS codes?",
-      ["EU ICS2 (Import Control System 2)", "Form E ACFTA", "NAFTA Certificate", "CIFER Decree 249"],
-      ["EU ICS2 (Import Control System 2)", "ACFTA Form E", "NAFTA Cert", "CIFER 249"], 0,
-      "EU ICS2 kiểm soát an ninh hàng hóa trước khi xếp tải trên toàn châu Âu.", "ICS2 mandates advance electronic ENS data with 6-digit HS accuracy."),
-    M("v4q-03", "business", "Silk Road 2026", "Silk Road 2026",
-      "Cửa khẩu đường sắt liên vận chủ lực nối tuyến Tàu Trung–Âu (中欧班列) qua biên giới Trung Quốc – Kazakhstan để đi Ba Lan (Małaszewicze) và Đức (Duisburg) là gì?",
-      "Which China–Kazakhstan border hub conducts break-of-gauge transshipment on the China–Europe Railway Express to Duisburg?",
-      ["Hoắc Nhĩ Quả Tư (Khorgos) & Alashankou", "Cảng Hồng Kông", "Vịnh Vân Đồn", "Lệ Giang"],
-      ["Khorgos & Alashankou", "Port of Hong Kong", "Van Don Bay", "Lijiang"], 0,
-      "Khorgos & Alashankou chuyển đổi container giữa khổ đường ray tiêu chuẩn Trung Quốc (1435mm) và khổ rộng SNG (1520mm).", "Khorgos and Alashankou lift boxes across standard and wide-gauge rail networks."),
-    M("v4q-04", "culture", "HSK Literature", "HSK Literature",
-      "Trong 《西游记》 (Tây Du Ký), hình tượng 'Tâm viên Ý mã' (心猿意马) gắn với nhân vật nào đại diện cho tâm trí dễ dao động cần rèn luyện?",
-      "In Journey to the West, which companion allegorizes the restless 'Monkey of the Mind' in Song-Ming cultivation philosophy?",
-      ["Tôn Ngộ Không (Sun Wukong)", "Chu Bát Giới", "Sa Tăng", "Bạch Cốt Tinh"],
-      ["Sun Wukong", "Zhu Bajie", "Sha Wujing", "White Bone Demon"], 0,
-      "Tam giáo hợp nhất trong Tây Du Ký lấy Tâm Viên (Tôn Ngộ Không) ẩn dụ sự tĩnh tâm kiểm soát vọng niệm.", "Three Teachings allegory equates Sun Wukong with disciplining the restless mind."),
-    M("v4q-05", "culture", "HSK Literature", "HSK Literature",
-      "Thành ngữ HSK 6 '实事求是' (Thực sự cầu thị) khuyên người học và nhà quản trị điều gì?",
-      "What principle does the HSK idiom 实事求是 (Shíshì-qiúshì) emphasize?",
-      ["Dựa trên sự thật thực chứng để tìm giải pháp chính xác", "Chỉ tin vào truyền thuyết dân gian", "Quyết định theo cảm tính cá nhân", "Chờ đợi may mắn thụ động"],
-      ["Seek truth from verified empirical facts", "Rely solely on folklore", "Decide by personal whim", "Wait passively for luck"], 0,
-      "Thực sự cầu thị là chuẩn mực phương pháp luận thực chứng cốt lõi.", "Shishi qiushi demands empirical verification over speculation."),
-    M("v4q-06", "philosophy", "Yin-Yang Wuxing", "Yin-Yang Wuxing",
-      "Trong học thuyết Ngũ Hành, mối quan hệ tương trợ tạo vòng sinh trưởng 'Mộc → Hỏa → Thổ → Kim → Thủy → Mộc' gọi là gì?",
-      "In Five Phases cosmology, what is the supportive cycle Wood -> Fire -> Earth -> Metal -> Water called?",
-      ["Tương Sinh (Xiāngshēng · 相生)", "Tương Khắc (Xiāngkè)", "Thái Cực đồ", "Lục Thư"],
-      ["Generating Cycle (Xiangsheng)", "Restraining Cycle (Xiangke)", "Taiji Diagram", "Six Scripts"], 0,
-      "Tương Sinh mô hình hóa sự nuôi dưỡng nối tiếp, còn Tương Khắc giữ cân bằng không cho bất kỳ pha nào vượt ngưỡng.", "Sheng represents generative nourishment balanced by Ke mutual regulation."),
-    M("v4q-07", "philosophy", "TCM & Cosmology", "TCM & Cosmology",
-      "Khái niệm nhận thức luận đúng nhất khi nghiên cứu Đông y (中医) và Âm Dương – Ngũ Hành trên nền tảng văn hóa là gì?",
-      "What is the proper epistemological stance when studying TCM, Fengshui, Bazi, and Ziwei through Yin-Yang-Wuxing?",
-      ["Nhìn nhận đây là lịch sử tư tưởng văn hóa – hệ thống biểu tượng học thuật, không thay thế chẩn đoán y khoa hay tiên tri khoa học", "Dùng Bát tự để thay thế hoàn toàn báo cáo tài chính công ty", "Tự ý bỏ điều trị y tế hiện đại", "Coi Ngũ hành là định luật vật lý lượng tử"],
-      ["Frame them strictly as East Asian intellectual history and comparative symbolic systems—not clinical diagnosis or forecasting", "Replace financial audits with Bazi", "Abandon evidence-based healthcare", "Treat Wuxing as quantum mechanics"], 0,
-      "Ranh giới học thuật tách bạch giữa khảo cứu văn hóa – lịch sử y học với khoa học thực nghiệm lâm sàng.", "Maintains rigorous scholarly clarity between cultural history and empirical medicine."),
-    M("v4q-08", "education", "Study Abroad CSC", "Study Abroad CSC",
-      "Nếu dự định du học Trung Quốc theo ngành Kinh doanh Quốc tế, Hải quan hoặc Logistics tại Bắc Kinh – Thượng Hải, hai trường nào nổi tiếng chuyên sâu hàng đầu?",
-      "Which two specialized Double First-Class universities anchor International Trade, Customs, and Maritime Logistics in Beijing and Shanghai?",
-      ["UIBE (ĐH Kinh tế Đối ngoại) & SUFE (ĐH Tài chính Kinh tế Thượng Hải)", "Nhạc viện Trung ương & ĐH Điện ảnh Bắc Kinh", "Học viện Hàng hải Na Uy", "ĐH Nông nghiệp Thanh Hải"],
-      ["UIBE (Beijing) & SUFE (Shanghai)", "Central Conservatory & Film Academy", "Oslo Maritime", "Qinghai Agriculture"], 0,
-      "UIBE tại Bắc Kinh và SUFE tại Thượng Hải có chương trình song ngữ Anh–Trung rất mạnh về thương mại & chuỗi cung ứng.", "UIBE and SUFE are premier bilingual hubs for international commerce and supply chains."),
-    M("v4q-09", "politics", "Macro 2026", "Macro 2026",
-      "Cụm từ 'Tân Tam Dạng' (新三样) trong cơ cấu xuất khẩu công nghiệp Trung Quốc giai đoạn 2024–2026 chỉ ba nhóm ngành nào?",
-      "What three clean-tech export sectors constitute China's 'New Three' (新三样) industrial engines?",
-      ["Xe năng lượng mới (EV), Pin Lithium-ion và Tấm pin Mặt trời", "Quần áo dệt may, Giày dép và Đồ chơi nhựa", "Than đá, Quặng sắt và Gỗ tròn", "Gốm men xanh, Lụa tơ tằm và Chè đen"],
-      ["New Energy Vehicles (EVs), Lithium Batteries, and Solar Cells", "Apparel, Footwear, and Plastic Toys", "Coal, Iron Ore, and Timber", "Porcelain, Silk, and Black Tea"], 0,
-      "Trung Quốc dịch chuyển xuất khẩu từ hàng nhẹ sang xe điện, pin lưu trữ và năng lượng mặt trời.", "China shifted upstream exports toward EVs, batteries, and photovoltaics."),
-    M("v4q-10", "business", "Container Ops", "Container Ops",
-      "Khi container đã hạ bãi cảng đích Rotterdam nhưng chưa được thông quan rút hàng quá số ngày miễn phí (Free Time), hãng tàu sẽ tính phí gì?",
-      "Which daily charge accrues when a loaded import container sits inside the European destination port terminal beyond Free Time?",
-      ["Demurrage (Phí lưu container tại bãi cảng)", "Air Chargeable Weight", "ISPM-15", "HS GRI Rule 3"],
-      ["Demurrage", "Air Chargeable Weight", "ISPM-15", "HS GRI 3"], 0,
-      "Demurrage tính trong cảng trước khi gate-out; Detention tính sau khi kéo vỏ container ra ngoài kho nhưng chưa trả vỏ rỗng.", "Demurrage applies inside port terminals before gate-out; Detention applies outside.")
-  ];
-
-  // Deterministically generate 80 additional concise bilingual V4 MCQs from loaded corpora ratios
-  // covering EU Logistics Terms, Silk Road, HSK 6-9 idioms, Cuisines & Provinces so BANK.length === 90!
-  var EXTRA_SEEDS = [
-    ["business", "Incoterms CIF vs FOB", "Điểm chuyển giao rủi ro của điều kiện CIF trong Incoterms 2020 nằm ở đâu?", "Under Incoterms 2020 CIF, where does cargo loss risk transfer from seller to buyer?", "Khi hàng đặt an toàn lên boong tàu tại cảng xếp (bất chấp người bán trả cước đến cảng đích)", "When cargo is placed on board at port of shipment", "Tại kho cuối cùng của người mua", "Chỉ sau 6 tháng sử dụng"],
-    ["business", "Anti-Attrition Bridge", "Cách tốt nhất để không bị mai một Tiếng Anh khi dùng Tiếng Trung làm việc với xưởng Trung Quốc là gì?", "How can a Vietnamese graduate avoid English attrition while using Chinese daily with PRC suppliers?", "Duy trì quy trình song ngữ: đàm phán xưởng bằng Tiếng Trung nhưng viết báo cáo KPI, hợp đồng và Email trình sếp Châu Âu bằng Tiếng Anh chuẩn", "Chỉ nói Tiếng Việt 100%", "Bỏ hoàn toàn từ vựng Tiếng Anh chuyên ngành", "Chuyển toàn bộ email Châu Âu sang tin nhắn thoại WeChat"],
-    ["business", "EU CBAM Carbon", "Mặt hàng công nghiệp nào thuộc nhóm chịu báo cáo phát thải carbon ngay trong giai đoạn đầu của EU CBAM?", "Which industrial sector falls directly under initial EU CBAM reporting obligations?", "Sắt thép, Nhôm, Xi măng, Phân bón và Điện năng", "Lụa tơ tằm thủ công", "Gốm sứ trưng bày bảo tàng", "Sách cổ văn học"],
-    ["culture", "Dream of Red Chamber", "Tên khu vườn lớn nơi các nhân vật trẻ tuổi lập Thi xã làm thơ trong tác phẩm 《红楼梦》 (Hồng Lâu Mộng) là gì?", "What is the name of the grand poetic garden setting in Dream of the Red Chamber?", "Đại Quan Viên (大观园)", "Tây Hồ Long Tỉnh", "Cố Cung Bảo Hòa Điện", "Vạn Lý Trường Thành"],
-    ["philosophy", "Yin-Yang Transition", "Mối quan hệ 'Âm cực sinh Dương, Dương cực sinh Âm' thể hiện nguyên lý nào của Âm Dương học?", "Which core Yin-Yang principle explains cyclical polarity reversal at peaks?", "Âm Dương Chuyển hóa (Vật cực tất phản)", "Cứng nhắc bất biến", "Loại bỏ hoàn toàn đối lập", "Phân tách cơ học tuyến tính"],
-    ["history", "Maritime Silk Road", "Cảng thị di sản UNESCO nào tại Phúc Kiến được ví như 'Đệ nhất Hải cảng Phương Đông' thời Tống–Nguyên trên Con đường Tơ lụa trên biển?", "Which Fujian seaport holds UNESCO World Heritage status as Song-Yuan China's world maritime emporium?", "Tuyền Châu (Quanzhou · 泉州)", "Lan Châu", "Trương Dịch", "Hô Hòa Hạo Đặc"],
-    ["business", "EU EUDR Compliance", "Quy định chống phá rừng EU (EUDR) yêu cầu nhà xuất khẩu gỗ, cao su hoặc cà phê cung cấp dữ liệu gì?", "What traceability proof does the EU Deforestation Regulation (EUDR) require?", "Tọa độ đa giác (Polygon geolocation) chứng minh vùng trồng không liên quan mất rừng sau 31/12/2020", "Chỉ cần chữ ký tay viết mực xanh", "Phiếu xuất kho nội địa", "Ảnh chụp quảng cáo"],
-    ["business", "L/C UCP 600", "Theo tập quán UCP 600, một 'L/C Discrepancy' (sai sót chứng từ ngân hàng) có thể dẫn tới hệ quả nào?", "Under UCP 600, what can an uncorrected documentary discrepancy on an L/C cause?", "Ngân hàng phát hành có quyền từ chối thanh toán hoặc thu phí bất hợp lệ trước khi giải ngân", "Hãng tàu tự động miễn phí DEM/DET", "Hàng được nâng cấp miễn phí lên đường hàng không", "Hủy bỏ hoàn toàn mã HS"],
-    ["education", "BLCU / BUCM", "Hai trường Đại học Trọng điểm tại Bắc Kinh chuyên sâu lần lượt về Ngôn ngữ Hán học (HSK) và Trung Y Dược (Đông y) là?", "Which two specialized Beijing universities lead Chinese language pedagogy and Traditional Chinese Medicine?", "BLCU (ĐH Ngôn ngữ Bắc Kinh) & BUCM (ĐH Trung Y Dược Bắc Kinh)", "ĐH Mỹ thuật Thượng Hải & ĐH Hàng hải Hạ Môn", "ĐH Thể dục Thành Đô", "Học viện Du lịch Côn Minh"],
-    ["business", "Sea-Air Chargeable Weight", "Trong vận tải hàng không, hệ số quy đổi thể tích chuẩn IATA (CBM sang kg tính cước) thường là bao nhiêu?", "In standard IATA air freight, how many chargeable kilograms equal 1 CBM?", "1 CBM ≈ 167 kg (tức L × W × H cm ÷ 6000)", "1 CBM = 10 kg", "1 CBM = 1.000 kg cố định", "1 CBM = 50 kg"]
-  ];
-
-  for (var i = 0; i < 80; i++) {
-    var src = EXTRA_SEEDS[i % EXTRA_SEEDS.length];
-    var batchTag = Math.floor(i / EXTRA_SEEDS.length) + 1;
-    BANK.push(M(
-      "v4q-" + (11 + i),
-      src[0],
-      src[1] + " #" + batchTag,
-      src[1] + " #" + batchTag,
-      src[2] + (batchTag > 1 ? " [Case #" + batchTag + "]" : ""),
-      src[3] + (batchTag > 1 ? " [Case #" + batchTag + "]" : ""),
-      [src[4], src[6], src[7], "Không có quy định quốc tế liên quan"],
-      [src[5], "Applies only at final retail checkout", "Prohibited under multimodal carriage", "No international rule applies"],
-      0,
-      src[4] + " — kiến thức chuẩn hóa phục vụ thực chiến XNK Âu–Trung, HSK & khảo cứu văn hóa.",
-      src[5] + " — benchmark reference for EU–China trade and cultural studies."
-    ));
-  }
-
-  window.CCE_V4_QUIZ = BANK;
+  });
 })();

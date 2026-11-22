@@ -301,6 +301,7 @@
   var KEY_FIGURES = [
     {
       id: 'wu-ding',
+      image: 'assets/images/figures/wu-ding.jpg',
       nameVi: 'Thương Vương Vũ Đinh',
       nameZh: '武丁',
       nameEn: 'King Wu Ding of Shang',
@@ -314,6 +315,7 @@
     },
     {
       id: 'duke-of-zhou',
+      image: 'assets/images/figures/duke-of-zhou.jpg',
       nameVi: 'Chu Công Đán',
       nameZh: '周公旦',
       nameEn: 'Duke of Zhou (Zhou Gong Dan)',
@@ -327,6 +329,7 @@
     },
     {
       id: 'confucius',
+      image: 'assets/images/prov_items/shandong/f0.jpg',
       nameVi: 'Khổng Tử',
       nameZh: '孔子',
       nameEn: 'Confucius (Kongzi)',
@@ -340,6 +343,7 @@
     },
     {
       id: 'laozi',
+      image: 'assets/images/prov_items/anhui/f0.jpg',
       nameVi: 'Lão Tử',
       nameZh: '老子',
       nameEn: 'Laozi',
@@ -353,6 +357,7 @@
     },
     {
       id: 'qin-shi-huang',
+      image: 'assets/images/figures/qin-shi-huang.jpg',
       nameVi: 'Tần Thủy Hoàng',
       nameZh: '秦始皇',
       nameEn: 'Qin Shi Huang',
@@ -366,6 +371,7 @@
     },
     {
       id: 'li-si',
+      image: 'assets/images/figures/li-si.jpg',
       nameVi: 'Lý Tư',
       nameZh: '李斯',
       nameEn: 'Li Si',
@@ -379,6 +385,7 @@
     },
     {
       id: 'sima-qian',
+      image: 'assets/images/prov_items/shaanxi/f0.jpg',
       nameVi: 'Tư Mã Thiên',
       nameZh: '司马迁',
       nameEn: 'Sima Qian',
@@ -392,6 +399,7 @@
     },
     {
       id: 'zhang-qian',
+      image: 'assets/images/prov_items/shaanxi/f1.jpg',
       nameVi: 'Trương Khiên',
       nameZh: '张骞',
       nameEn: 'Zhang Qian',
@@ -405,6 +413,7 @@
     },
     {
       id: 'zhuge-liang',
+      image: 'assets/images/figures/zhuge-liang.jpg',
       nameVi: 'Gia Cát Lượng',
       nameZh: '诸葛亮',
       nameEn: 'Zhuge Liang',
@@ -418,6 +427,7 @@
     },
     {
       id: 'wang-xizhi',
+      image: 'assets/images/prov_items/zhejiang/f0.jpg',
       nameVi: 'Vương Hy Chi',
       nameZh: '王羲之',
       nameEn: 'Wang Xizhi',
@@ -431,6 +441,7 @@
     },
     {
       id: 'emperor-wen-of-sui',
+      image: 'assets/images/figures/emperor-wen-of-sui.jpg',
       nameVi: 'Tùy Văn Đế (Dương Kiên)',
       nameZh: '隋文帝',
       nameEn: 'Emperor Wen of Sui (Yang Jian)',
@@ -444,6 +455,7 @@
     },
     {
       id: 'li-bai',
+      image: 'assets/images/prov_items/sichuan/f0.jpg',
       nameVi: 'Lý Bạch',
       nameZh: '李白',
       nameEn: 'Li Bai',
@@ -457,6 +469,7 @@
     },
     {
       id: 'du-fu',
+      image: 'assets/images/prov_items/henan/f0.jpg',
       nameVi: 'Đỗ Phủ',
       nameZh: '杜甫',
       nameEn: 'Du Fu',
@@ -470,6 +483,7 @@
     },
     {
       id: 'li-yu',
+      image: 'assets/images/figures/li-yu.jpg',
       nameVi: 'Lý Dục (Nam Đường Hậu Chủ)',
       nameZh: '李煜',
       nameEn: 'Li Yu (Last Ruler of Southern Tang)',
@@ -483,6 +497,7 @@
     },
     {
       id: 'su-shi',
+      image: 'assets/images/prov_items/sichuan/f1.jpg',
       nameVi: 'Tô Thức (Tô Đông Pha)',
       nameZh: '苏轼',
       nameEn: 'Su Shi (Su Dongpo)',
@@ -496,6 +511,7 @@
     },
     {
       id: 'shen-kuo',
+      image: 'assets/images/prov_items/jiangsu/f2.jpg',
       nameVi: 'Thẩm Quát',
       nameZh: '沈括',
       nameEn: 'Shen Kuo',
@@ -509,6 +525,7 @@
     },
     {
       id: 'zhu-xi',
+      image: 'assets/images/prov_items/anhui/f3.jpg',
       nameVi: 'Chu Hy',
       nameZh: '朱熹',
       nameEn: 'Zhu Xi',
@@ -522,6 +539,7 @@
     },
     {
       id: 'guo-shoujing',
+      image: 'assets/images/prov_items/ningxia/f1.jpg',
       nameVi: 'Quách Thủ Kính',
       nameZh: '郭守敬',
       nameEn: 'Guo Shoujing',
@@ -535,6 +553,7 @@
     },
     {
       id: 'guan-hanqing',
+      image: 'assets/images/prov_items/hebei/f1.jpg',
       nameVi: 'Quan Hán Khanh',
       nameZh: '关汉卿',
       nameEn: 'Guan Hanqing',
@@ -548,6 +567,7 @@
     },
     {
       id: 'zheng-he',
+      image: 'assets/images/prov_items/yunnan/f0.jpg',
       nameVi: 'Trịnh Hòa',
       nameZh: '郑和',
       nameEn: 'Zheng He',
@@ -561,6 +581,7 @@
     },
     {
       id: 'wang-yangming',
+      image: 'assets/images/prov_items/zhejiang/f1.jpg',
       nameVi: 'Vương Dương Minh (Vương Thủ Nhân)',
       nameZh: '王阳明',
       nameEn: 'Wang Yangming (Wang Shouren)',
@@ -574,6 +595,7 @@
     },
     {
       id: 'kangxi-emperor',
+      image: 'assets/images/figures/kangxi-emperor.jpg',
       nameVi: 'Khang Hy Đế (Ái Tân Giác La Huyền Diệp)',
       nameZh: '康熙帝',
       nameEn: 'Kangxi Emperor',
@@ -587,6 +609,7 @@
     },
     {
       id: 'cao-xueqin',
+      image: 'assets/images/prov_items/beijing/f1.jpg',
       nameVi: 'Tào Tuyết Cần',
       nameZh: '曹雪芹',
       nameEn: 'Cao Xueqin',
@@ -600,6 +623,7 @@
     },
     {
       id: 'sun-yat-sen',
+      image: 'assets/images/prov_items/guangdong/f2.jpg',
       nameVi: 'Tôn Trung Sơn (Tôn Dật Tiên)',
       nameZh: '孙中山',
       nameEn: 'Sun Yat-sen',
@@ -613,6 +637,7 @@
     },
     {
       id: 'lu-xun',
+      image: 'assets/images/prov_items/zhejiang/f2.jpg',
       nameVi: 'Lỗ Tấn (Chu Thụ Nhân)',
       nameZh: '鲁迅',
       nameEn: 'Lu Xun (Zhou Shuren)',
@@ -626,6 +651,7 @@
     },
     {
       id: 'hu-shi',
+      image: 'assets/images/figures/hu-shi.jpg',
       nameVi: 'Hồ Thích',
       nameZh: '胡适',
       nameEn: 'Hu Shi',
@@ -639,6 +665,7 @@
     },
     {
       id: 'qian-xuesen',
+      image: 'assets/images/figures/qian-xuesen.jpg',
       nameVi: 'Tiền Học Sâm',
       nameZh: '钱学森',
       nameEn: 'Qian Xuesen',
@@ -652,6 +679,7 @@
     },
     {
       id: 'tu-youyou',
+      image: 'assets/images/figures/tu-youyou.jpg',
       nameVi: 'Đồ U U',
       nameZh: '屠呦呦',
       nameEn: 'Tu Youyou',
