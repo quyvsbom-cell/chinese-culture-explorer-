@@ -1,0 +1,144 @@
+/* ============================================================================
+ * CHINESE CULTURE EXPLORER — Full-Screen Curtain Wipe Page Transition
+ * Zero-build CSS layer: curtain wipe + 2-layer logo illumination + kinetic decode
+ * ============================================================================ */
+
+#cce-page-transition-curtain {
+  position: fixed;
+  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: #111111;
+  border-radius: 0;
+  pointer-events: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translate3d(0, 100%, 0);
+  will-change: transform;
+}
+
+#cce-page-transition-curtain.is-entering {
+  pointer-events: auto;
+  transform: translate3d(0, 0%, 0);
+  transition: transform 480ms cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+#cce-page-transition-curtain.is-holding {
+  pointer-events: auto;
+  transform: translate3d(0, 0%, 0);
+  transition: none;
+}
+
+#cce-page-transition-curtain.is-exiting {
+  pointer-events: none;
+  transform: translate3d(0, -100%, 0);
+  transition: transform 500ms cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+#cce-page-transition-curtain.is-resetting {
+  pointer-events: none;
+  transition: none !important;
+  transform: translate3d(0, 100%, 0);
+}
+
+.cce-pt-stage {
+  position: relative;
+  width: 220px;
+  height: 164px;
+  max-width: 78vw;
+  user-select: none;
+}
+
+.cce-pt-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cce-pt-logo-dim {
+  opacity: 0.18;
+  filter: grayscale(100%);
+}
+
+.cce-pt-logo-lit {
+  clip-path: inset(0 100% 0 0);
+  -webkit-clip-path: inset(0 100% 0 0);
+  transition:
+    clip-path 520ms cubic-bezier(0.65, 0, 0.35, 1),
+    -webkit-clip-path 520ms cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+#cce-page-transition-curtain.is-illuminated .cce-pt-logo-lit {
+  clip-path: inset(0 0% 0 0);
+  -webkit-clip-path: inset(0 0% 0 0);
+}
+
+.cce-pt-svg {
+  width: 170px;
+  height: 102px;
+  display: block;
+}
+
+.cce-pt-wordmark {
+  color: #FFFFFF;
+  font-family: var(--font-editorial, "Noto Serif SC", Georgia, serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-indent: 0.28em;
+  margin-top: 0.55rem;
+  text-align: center;
+  line-height: 1;
+}
+
+.cce-pt-footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.38rem;
+  text-align: center;
+  padding: 0 1.25rem;
+}
+
+.cce-pt-tagline {
+  color: #E5A93C;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-indent: 0.24em;
+  text-transform: uppercase;
+  min-height: 1.3em;
+}
+
+.cce-pt-route {
+  color: rgba(255, 255, 255, 0.58);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  max-width: 90vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #cce-page-transition-curtain {
+    display: none !important;
+  }
+}
