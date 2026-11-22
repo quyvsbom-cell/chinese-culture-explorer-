@@ -104,6 +104,22 @@ def ensure_verified_img(rel_path: str, fallback: str = "assets/images/museum/tai
     return fallback
 
 
+def resolve_prov_item_img(prov_id: str, group_prefix: str = "h", seed_idx: int = 0) -> str:
+    """Resolve a curated province sub-item photo from assets/images/prov_items/<slug>/."""
+    slug = str(prov_id or "").replace("prov-", "").strip().lower()
+    pdir = ROOT / "assets" / "images" / "prov_items" / slug
+    if pdir.is_dir():
+        grouped = sorted(
+            f for f in pdir.iterdir()
+            if f.is_file() and f.name.lower().startswith(group_prefix.lower())
+        )
+        pool = grouped or sorted(f for f in pdir.iterdir() if f.is_file())
+        if pool:
+            pick = pool[abs(int(seed_idx)) % len(pool)]
+            return pick.relative_to(ROOT).as_posix()
+    return ensure_verified_img(PROVINCE_IMAGES.get(slug, "assets/images/museum/taihe-dian.jpg"))
+
+
 def core_zh_key(zh: str) -> str:
     """Match runtime coreZhKey prefix normalization from laozihaoPavilionV5.js."""
     return BRAND_PREFIX_RX.sub("", str(zh or "")).strip()

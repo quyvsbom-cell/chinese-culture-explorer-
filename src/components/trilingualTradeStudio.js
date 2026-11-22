@@ -298,10 +298,10 @@
 
     return (
       '<section id="cce-trilingual-trade-studio" class="card mb-2" style="margin-top:2.5rem;border-top:3px solid var(--jade-green);">' +
-      '  <div class="section-header" style="margin-bottom:0.75rem;"><div><div class="editorial-kicker" style="color:var(--jade-green);">' + (enM ? "EU–CHINA–VIETNAM TRILINGUAL LOGISTICS STUDIO · 中欧越三语国际物流工作台" : "Studio Xuất Nhập Khẩu &amp; Logistics Châu Âu – Trung Quốc (Tam ngữ Anh · Trung · Việt)") + '</div><h2 class="section-title" style="font-size:1.55rem;margin:0.15rem 0 0;">' + (enM ? "Keep Business English Sharp for European Firms + Negotiate Cleanly in Chinese" : "Làm việc Chuẩn Tiếng Anh tại Công ty Châu Âu + Giao tiếp Thẳng Với Xưởng Trung Quốc") + '</h2></div></div>' +
+      '  <div class="section-header" style="margin-bottom:0.75rem;"><div><div class="editorial-kicker" style="color:var(--jade-green);">' + (enM ? "EU–CHINA–VIETNAM TRILINGUAL LOGISTICS STUDIO · 中欧越三语国际物流工作台" : "Xuất Nhập Khẩu &amp; Logistics Châu Âu – Trung Quốc (Tam ngữ Anh · Trung · Việt)") + '</div><h2 class="section-title" style="font-size:1.55rem;margin:0.15rem 0 0;">' + (enM ? "Business English Accuracy for European Headquarters &amp; Chinese Factory Fluency" : "Tiếng Anh Chuẩn Mực Cho Văn Phòng Châu Âu &amp; Tiếng Trung Thực Chiến Với Nhà Máy") + '</h2></div></div>' +
       '  <div class="tabs-bar" style="margin-bottom:1rem;">' +
       [
-        { id: "terms", lbl: (enM ? (terms.length + " Trilingual Terms (ZH ↔ EN)") : (terms.length + " Thuật ngữ Logistics (Chống quên Anh)")) },
+        { id: "terms", lbl: (enM ? (terms.length + " Trilingual Terms (ZH ↔ EN)") : (terms.length + " Thuật ngữ Logistics Tam ngữ")) },
         { id: "emails", lbl: (enM ? (emails.length + " Email Pairs (Factory ZH | EU EN)") : (emails.length + " Cặp Email Xưởng TQ ↔ Sếp Âu")) },
         { id: "interviews", lbl: (enM ? (dialogues.length + " EU Dialogues & Interviews") : (dialogues.length + " Tình huống Hội thoại Âu–Trung")) },
         { id: "articles", lbl: (enM ? (parallelArticles.length + " Parallel Articles (ZH–EN–VI)") : (parallelArticles.length + " Bài Đọc Song hành Tam ngữ")) },

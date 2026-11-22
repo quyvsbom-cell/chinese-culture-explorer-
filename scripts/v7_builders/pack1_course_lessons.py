@@ -615,7 +615,7 @@ def build_pack1() -> dict[str, Any]:
             "博学之，审问之，慎思之，明辨之，笃行之。",
             "Học rộng rãi, hỏi kỹ càng, suy xét cẩn thận, phân biện sáng suốt, thực hành bền bỉ (Trung Dung).",
             "Study broadly, inquire closely, reflect carefully, discern clearly, and practice earnestly (Doctrine of the Mean).",
-            "Bảng Tốt Nghiệp V7.0: Kiểm định kiến thức tại Đấu Trường 600 Câu và xuất Chứng Chỉ Học Viện 10 Học Phần bản PNG.",
+            "Bảng Tốt Nghiệp Học Viện: Kiểm định kiến thức tại Đấu Trường 600 Câu và xuất Chứng Chỉ Học Viện 10 Học Phần bản PNG.",
             "Graduation Dashboard leading straight into the 600-MCQ Challenge and high-DPI 10-Module Academy Certificate.",
             "Với người học Việt Nam, hiểu sâu văn hóa Trung Hoa không chỉ mở ra tri thức nhân loại mà còn làm sáng tỏ hơn bao giờ hết chiều sâu tự chủ ngàn năm của văn hiến Đại Việt – Việt Nam.",
             "For Vietnamese scholars, deep cultural literacy illuminates both a great neighbor civilization and Vietnam's own resilient millennium-old heritage.",

@@ -578,7 +578,7 @@
         <section class="card" id="quiz-arena-box" style="margin-bottom:1.75rem;padding:1.25rem 1.35rem;border-top:4px solid var(--imperial-red);background:var(--bg-paper);">
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;margin-bottom:0.65rem;">
             <div>
-              <div class="editorial-kicker" style="color:var(--imperial-red);margin-bottom:0.2rem;">${enMode ? "5-MINUTE FIELD & LIUSHU QUIZ ARENA" : "ĐẤU TRƯỜNG TRI THỨC 6 TRỤ CỘT · LỤC THƯ, SỬ HỌC & GIAO THƯƠNG"}</div>
+              <div class="editorial-kicker" style="color:var(--imperial-red);margin-bottom:0.2rem;">${enMode ? "PRACTICE &amp; VISUAL LITERACY QUIZ (600 QUESTIONS)" : "ÔN TẬP &amp; TRẮC NGHIỆM 6 CHỦ ĐỀ · LỤC THƯ, SỬ HỌC &amp; GIAO THƯƠNG"}</div>
               <h3 style="margin:0;font-family:var(--font-editorial);font-size:1.35rem;">${enMode ? `Question ${(this.state.quizIdx % total) + 1} / ${total}` : `Câu ${(this.state.quizIdx % total) + 1} / ${total} — ${q.topicVi}`}</h3>
             </div>
             <div style="display:flex;gap:0.5rem;align-items:center;">
@@ -596,7 +596,11 @@
             <div class="img-skeleton-bg" style="aspect-ratio:16/10;max-height:240px;width:100%;max-width:440px;overflow:hidden;border-radius:var(--radius);border:1px solid var(--hairline);margin-bottom:0.45rem;background:var(--bg-surface);cursor:pointer;" data-action="open-custom-image" data-src="${q.imagePath}" data-caption="${enMode ? q.topicEn : q.topicVi}">
               <img src="${q.imagePath}" alt="${enMode ? q.topicEn : q.topicVi}" loading="lazy" style="width:100%;height:100%;object-fit:${/\.svg$/i.test(q.imagePath) ? "contain" : "cover"};display:block;" onerror="this.onerror=null;this.src='assets/images/museum/forbidden-city-imperial-axis-gate.jpg';" />
             </div>
-            ${(enMode ? (q.visualInspectionGuideEn || q.visualInspectionGuideVi) : q.visualInspectionGuideVi) ? `<div style="font-size:0.78rem;color:var(--jade-green);margin-bottom:0.65rem;max-width:480px;">${enMode ? (q.visualInspectionGuideEn || q.visualInspectionGuideVi) : q.visualInspectionGuideVi}</div>` : ""}
+            ${(() => {
+              const rawCue = enMode ? (q.visualInspectionGuideEn || q.explainEn) : q.visualInspectionGuideVi;
+              const cue = rawCue && !/^Mẹo quan sát ảnh \[/.test(rawCue) ? rawCue : (enMode ? q.explainEn : q.explainVi);
+              return cue ? `<div style="font-size:0.78rem;color:var(--jade-green);margin-bottom:0.65rem;max-width:520px;">${cue}</div>` : "";
+            })()}
           ` : ""}
 
           <div style="display:flex;align-items:center;gap:0.65rem;flex-wrap:wrap;margin-bottom:0.65rem;">
@@ -624,13 +628,14 @@
 
           ${isAnswered ? `
             <div class="callout-editorial" style="margin:0.85rem 0 0;padding:0.75rem 1rem;border-left-color:${isCorrect ? "var(--jade-green)" : "var(--imperial-red)"};">
-              <strong style="color:${isCorrect ? "var(--jade-green)" : "var(--imperial-red)"};">${isCorrect ? (enMode ? "[VERIFIED]" : "[CHÍNH XÁC]") : (enMode ? "[REVIEW LOGIC]" : "[LƯU Ý THỰC CHIẾN]")}</strong>
+              <strong style="color:${isCorrect ? "var(--jade-green)" : "var(--imperial-red)"};">${isCorrect ? (enMode ? "Correct:" : "Chính xác:") : (enMode ? "Note:" : "Giải thích:")}</strong>
               ${enMode ? q.explainEn : q.explainVi}
             </div>
           ` : ""}
 
-          <div style="display:flex;justify-content:space-between;margin-top:0.85rem;">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-top:0.85rem;">
             <button type="button" class="btn btn-secondary btn-sm" data-action="arena-step" data-dir="-1">← ${enMode ? "Previous" : "Câu trước"}</button>
+            <span style="font-size:0.74rem;color:var(--text-muted);">${enMode ? "Keys 1–4 answer · ← / → step" : "Phím 1–4 chọn đáp án · ← / → chuyển câu"}</span>
             <button type="button" class="btn btn-primary btn-sm" data-action="arena-step" data-dir="1">${enMode ? "Next Question →" : "Câu tiếp theo →"}</button>
           </div>
         </section>
@@ -692,4 +697,25 @@
       `;
     }
   };
+
+  if (typeof document !== "undefined" && !window._cceQuizKeysBound) {
+    window._cceQuizKeysBound = true;
+    document.addEventListener("keydown", function (e) {
+      var box = document.getElementById("quiz-arena-box");
+      if (!box) return;
+      var tag = e.target && e.target.tagName ? e.target.tagName.toUpperCase() : "";
+      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || (e.target && e.target.isContentEditable)) return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.key >= "1" && e.key <= "4") {
+        var optBtn = box.querySelector('[data-action="arena-answer"][data-opt="' + (Number(e.key) - 1) + '"]');
+        if (optBtn) optBtn.click();
+      } else if (e.key === "ArrowRight") {
+        var nextBtn = box.querySelector('[data-action="arena-step"][data-dir="1"]');
+        if (nextBtn) nextBtn.click();
+      } else if (e.key === "ArrowLeft") {
+        var prevBtn = box.querySelector('[data-action="arena-step"][data-dir="-1"]');
+        if (prevBtn) prevBtn.click();
+      }
+    });
+  }
 })();

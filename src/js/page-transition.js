@@ -134,13 +134,52 @@
     return "vi";
   }
 
+  var ROUTE_LABELS_VI = {
+    "/": "TRANG CHỦ · 首页",
+    "/explore": "KHÁM PHÁ & HỌC VIỆN · 学术中心",
+    "/lich-su": "LỊCH SỬ & TRIỀU ĐẠI · 华夏历史",
+    "/triet-hoc": "TRIẾT HỌC & BÁCH GIA · 诸子百家",
+    "/van-hoa": "VĂN HÓA & LÃO TỰ HÀO · 传统文化",
+    "/quoc-hoa": "KIỆT TÁC QUỐC HỌA · 丹青名画",
+    "/bao-tang": "BẢO TÀNG SỐ 3D · 国家宝藏",
+    "/tinh-thanh": "34 TỈNH THÀNH · 九州方志",
+    "/trung-viet": "VĂN HIẾN TRUNG–VIỆT · 中越文明",
+    "/kinh-doanh": "THƯƠNG MẠI & LOGISTICS · 国际经贸",
+    "/thu-vien": "THƯ VIỆN TỨ KHỐ · 四库文献",
+    "/hoc-tap": "HỌC TẬP & TRẮC NGHIỆM · 研习测试",
+    "/gioi-thieu": "GIỚI THIỆU DỰ ÁN · 关于我们",
+    "/phap-ly": "PHÁP LÝ & TRÍCH DẪN · 学术规范"
+  };
+
+  var ROUTE_LABELS_EN = {
+    "/": "HOME STUDIO · 首页",
+    "/explore": "EXPLORE & ACADEMY · 学术中心",
+    "/lich-su": "HISTORY & DYNASTIES · 华夏历史",
+    "/triet-hoc": "CLASSICAL PHILOSOPHY · 诸子百家",
+    "/van-hoa": "CULTURE & HERITAGE BRANDS · 传统文化",
+    "/quoc-hoa": "CLASSICAL PAINTINGS · 丹青名画",
+    "/bao-tang": "3D DIGITAL MUSEUM · 国家宝藏",
+    "/tinh-thanh": "34 PROVINCES ATLAS · 九州方志",
+    "/trung-viet": "SINO–VIETNAM HERITAGE · 中越文明",
+    "/kinh-doanh": "TRADE & LOGISTICS · 国际经贸",
+    "/thu-vien": "ARCHIVAL LIBRARY · 四库文献",
+    "/hoc-tap": "LEARNING & QUIZ STUDIO · 研习测试",
+    "/gioi-thieu": "ABOUT THE PROJECT · 关于我们",
+    "/phap-ly": "CITATIONS & LEGAL · 学术规范"
+  };
+
   function formatRouteDisplay(routePath) {
-    var clean = String(routePath || "")
+    var raw = String(routePath || "/").split("?")[0].split("#")[0] || "/";
+    var lang = getActiveLang().toLowerCase();
+    var map = lang.indexOf("en") === 0 ? ROUTE_LABELS_EN : ROUTE_LABELS_VI;
+    if (map[raw]) return map[raw];
+    var clean = raw
       .replace(/^\/+|\/+$/g, "")
-      .replace(/\//g, " - ")
+      .replace(/\//g, " · ")
+      .replace(/-/g, " ")
       .trim()
       .toUpperCase();
-    return clean || "HOME";
+    return clean || map["/"];
   }
 
   function getTargetTagline() {

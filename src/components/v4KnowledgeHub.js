@@ -761,8 +761,7 @@
           '</div>' +
           (pillars10.length ? '<h4 style="margin:0 0 0.55rem;">10 Trụ cột Đối sánh Trung – Việt</h4><div class="grid grid-2" style="gap:0.7rem;max-height:360px;overflow:auto;">' + pillars10.map(function (pl, idx) {
             return '<div class="flashcard-layer" style="font-size:0.8rem;">' + renderV4Thumb(sinoVietImgs[idx % sinoVietImgs.length], enM ? pl.titleEn : pl.titleVi, true) + '<strong>' + esc(enM ? pl.titleEn : pl.titleVi) + '</strong> <span class="hanzi">' + esc(pl.hanziTheme || "") + '</span><p style="margin:0.25rem 0 0;color:var(--text-secondary);">' + esc(enM ? pl.synthesisEn : pl.synthesisVi) + '</p></div>';
-          }).join("") + '</div>' : "") +
-          (window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderSinoVietAndCscStudio ? window.CCE_V6_STUDIOS.renderSinoVietAndCscStudio(enM) : "");
+          }).join("") + '</div>' : "");
       }
       if (window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderWorldTourismAndMuseumStudio) {
         body += window.CCE_V6_STUDIOS.renderWorldTourismAndMuseumStudio(enM);

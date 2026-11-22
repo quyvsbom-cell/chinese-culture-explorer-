@@ -83,6 +83,28 @@ def build_pack5() -> dict[str, Any]:
         ("ASEAN-China Fast Track", "农产品绿色通道优先通关", "nóngchǎnpǐn lǜsè tōngdào", "Lục Sắc Thông Đạo", "Luồng xanh ưu tiên giải phóng xe container trái cây tươi trong ngày", "Hậu cần Biên giới"),
         ("Electronic Signature Trust", "跨境电子签章互认", "kuàjìng diànzǐ qiānzhāng hùrèn", "Điện Tử Thiêm Chương Hộ Nhận", "Công nhận giá trị chữ ký số hợp đồng B2B trên nền tảng số", "Kinh tế Số B2B"),
     ]
+    _CAT_EN_MAP = {
+        "Hải quan GACC": "GACC Customs & Registration",
+        "Kiểm dịch Thực vật": "Phytosanitary Quarantine",
+        "Xuất xứ ACFTA": "ACFTA / RCEP Origin Rules",
+        "Kho Ngoại Quan": "Bonded Warehouse Fulfillment",
+        "Hậu cần Biên giới": "Cross-Border Logistics",
+        "Thanh toán Tài chính": "Cross-Border Banking & Settlement",
+        "Pháp lý Thương mại": "B2B Contract Law & IP",
+        "Trọng tài Quốc tế": "International Arbitration",
+        "Tiêu chuẩn GB": "GB Labeling Compliance",
+        "Chuỗi Cung Ứng Xanh": "Green EV & Carbon Supply Chain",
+        "Vận tải Nguy hiểm": "Dangerous Goods Transport",
+        "Cảng Biển Vận Tải": "Deep-Water Maritime Freight",
+        "Kho Lạnh Nông Sản": "Cold-Chain Agro Logistics",
+        "Kinh tế Số B2B": "Digital E-Commerce & Signatures",
+        "Sở Hữu Trí Tuệ": "Customs IP Enforcement",
+        "Kiểm Định AQL": "AQL Quality Assurance",
+        "Thuế & Tài Chính": "VAT Export Rebate & Tax",
+        "Incoterms 2020": "Incoterms 2020 Risk Transfer",
+        "Vận tải Hàng không": "Air Freight Consolidation",
+    }
+
     trade_terms_50 = [
         {
             "id": f"b2b-v7-{idx:02d}",
@@ -92,9 +114,9 @@ def build_pack5() -> dict[str, Any]:
             "hanViet": hv,
             "vi": vi,
             "category": cat,
-            "v6Tag": "V7_B2B",
-            "contextVi": f"Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử {cat} Việt–Trung.",
-            "contextEn": f"Applied across formal Sino-Vietnamese {cat} customs and procurement operations.",
+            "v6Tag": "B2B_TRADE",
+            "contextVi": f"Dùng trong hồ sơ {cat.lower()} khi làm việc với đối tác và cơ quan hải quan.",
+            "contextEn": f"Used in {_CAT_EN_MAP.get(cat, 'cross-border')} documentation between importers, factories, and customs brokers.",
         }
         for idx, (en, zh, py, hv, vi, cat) in enumerate(term_rows, start=1)
     ]
@@ -206,6 +228,19 @@ def build_pack5() -> dict[str, Any]:
         ("v7-sc-49", "Cảnh Đức Trấn – Châu Âu (Gốm Sứ Dễ Vỡ)", "Giảm Tỷ Lệ Nứt Vỡ Xuống Dưới 0.2% Với Kiểm Định Rơi Thùng ISTA 3A", "Cutting Porcelain Breakage Below 0.2% via ISTA 3A Drop Validation", "易碎陶瓷国际包装跌落测试", "Đóng gói xốp thường làm vỡ 6% bát đĩa Thanh Hoa trong hành trình đường biển dài 35 ngày.", "Áp dụng thùng carton 5 lớp sóng đôi BC kết hợp khay giấy ép tổ ong định hình, chạy bài test thả rơi 10 góc chuẩn ISTA 3A trước xuất xưởng.", "FOB Ninh Ba + Bảo hiểm hàng dễ vỡ mở rộng + ảnh chằng buộc container.", "FOB Ningbo with drop-tested packaging specification.", ["ISTA 3A Video Log", "Double-Wall Box", "Moisture Bag", "Pre-Ship Photos"], "Thử nghiệm thả rơi thùng -> Bổ sung túi hút ẩm container -> Chằng dây đai chặt.", "Run 10-point drop test -> Place container desiccant -> Lash pallets securely.", "所有易碎瓷器须通过ISTA 3A跌落测试并放入集装箱干燥剂。", "Engineered honeycomb inner cradles cut shipping breakage near zero."),
         ("v7-sc-50", "Bắc Kinh – Hà Nội (Trọng tài B2B)", "Giải Quyết Tranh Chấp Lô Hàng Sai Thông Số Bằng Điều Khoản Trọng Tài Nhanh", "Resolving Spec Discrepancy Swiftly via Summary Arbitration Clauses", "商事仲裁与和解调解机制", "Lô thép hợp kim giao sai dung sai ±0.3mm khiến dây chuyền ép khuôn dừng chạy, nhà máy né tránh đền bù.", "Kích hoạt chứng thư giám định SGS tại chỗ làm chứng cứ không thể chối cãi, đề nghị thương lượng chiết khấu thay thế kèm thông báo nộp đơn CIETAC nếu quá hạn 14 ngày.", "Công ước New York 1958 + phụ lục dung sai đo lường định lượng bằng mm.", "1958 NY Convention + millimeter tolerance matrix.", ["SGS Defect Assay", "Purchase Order Spec", "14-Day Cure Notice", "Arbitration Draft"], "Lập biên bản SGS -> Gửi thông báo 14 ngày -> Đàm phán thay hàng hoặc trọng tài.", "Collect SGS measurement log -> Serve 14-day cure notice -> Settle or file arbitration.", "依据合同质量附表与SGS实测公差，请于14日内确认换货方案。", "Quantified tolerance tables plus independent SGS inspection speed amicable settlement."),
     ]
+    _SC_RISK_EN = {
+        "v7-sc-41": ("Perishable fruit loses cold-chain stability or risks mealybug quarantine hold in peak border queues.", "Stage 30% of volume onto Dongdang-Nanning cold rail, use smart pre-clearance slots, and run pre-packing pest screening."),
+        "v7-sc-42": ("Generic Western NDAs fail to bind Chinese subcontractors or protect custom mold tooling ownership.", "Switch to bilingual EN-ZH-VI NNN agreements with company red chop on every page and notarized tooling ownership."),
+        "v7-sc-43": ("Unilateral buyer acceptance clauses in SWIFT 47A freeze bank payment despite spotless factory shipment.", "Amend MT700 47A upfront to replace buyer signoff with neutral SGS/Intertek pre-shipment inspection certificates."),
+        "v7-sc-44": ("Garment exports lose 0% Form E/EUR.1 preferences when upstream yarn or silk fails origin cumulation rules.", "Verify yarn/fabric mill origin statements upfront and document >= 40% RCEP RVC or yarn-forward EVFTA BOM."),
+        "v7-sc-45": ("Missing kilojoule (kJ) nutrition panels, allergen declarations, or 18-digit CIFER codes trigger China port holds.", "Pre-audit GB 7718 Simplified Chinese packaging proofs and print CIFER registration numbers directly on retail cartons."),
+        "v7-sc-46": ("Unmarked recycled wood pallets lacking IPPC ISPM-15 HT stamps trigger costly forced border fumigation.", "Mandate certified HT-stamped timber or molded plastic pallets and archive 4-side container loading photos."),
+        "v7-sc-47": ("Maritime container rollovers delay critical EV component feeding lines by 12 days.", "Divert urgent high-value modules onto SMGS China-Vietnam rail-road intermodal trains with RFID customs seals."),
+        "v7-sc-48": ("Business Email Compromise scammers spoof supplier invoices directing wire transfers into private accounts.", "Enforce contract-locked corporate CIPS/SWIFT bank titles and require live legal-rep video verification for any change."),
+        "v7-sc-49": ("Standard loose foam packing suffers ~6% porcelain transit breakage on long ocean voyages.", "Specify double-wall BC cartons with molded honeycomb dividers tested to ISTA 3A 10-point drop standards."),
+        "v7-sc-50": ("Off-spec alloy tooling tolerances stall assembly lines while the vendor disputes verbal measurements.", "Attach quantified +/- mm tolerance matrices to the PO and enforce neutral SGS assay before CIETAC arbitration."),
+    }
+
     supply_cases_10 = [
         {
             "id": sid,
@@ -213,8 +248,9 @@ def build_pack5() -> dict[str, Any]:
             "titleVi": tvi,
             "titleEn": ten,
             "scenarioZh": szh,
-            "riskIdentifiedEn": rsk,
+            "riskIdentifiedEn": _SC_RISK_EN.get(sid, ("Cross-border trade operational risk.", ""))[0],
             "actionPlanVi": actvi,
+            "actionPlanEn": _SC_RISK_EN.get(sid, ("", actvi))[1],
             "incotermsAndLiabilityVi": incvi,
             "incotermsAndLiabilityEn": incen,
             "documentChecklist": docs,
@@ -359,6 +395,48 @@ def build_pack5() -> dict[str, Any]:
         ("v7-exp-15", "Cao Nguyên Tây Tạng", 7, "Tây Ninh – Lhasa (Tuyến Thanh–Tạng)", "Tháng 5–10 (Thích nghi độ cao)", "$1,380 – $2,100", "Đỉnh Nóc Nhà Thế Giới: Cung Điện Potala Lhasa, Đền Jokhang & Hồ Namtso", "Roof of the World: Potala Palace, Jokhang Temple & Sacred Lake Namtso (7D)", "青藏铁路拉萨布达拉宫7日朝圣", "Trải nghiệm chuyến tàu Thanh Hải–Tây Tạng áp suất oxy, ngắm kiến trúc gỗ–đá Cung Potala và văn hóa giao thoa Tạng–Hán từ thời Công chúa Văn Thành.", "Ascend gently via the Qinghai–Tibet oxygen-pressurized rail to Potala Palace and turquoise alpine lakes.", ["Hồ Thanh Hải", "Cung điện Potala Lhasa UNESCO", "Chùa Đại Chiêu Jokhang & Phố Bát Giác", "Hồ Thánh Namtso 4.718m"], ["Ngày 1-2: Đáp Tây Ninh nghỉ thích nghi, lên tàu Thanh–Tạng.", "Ngày 3-5: Cung Potala, Jokhang & Tu viện Sera.", "Ngày 6: Hồ Namtso hoặc Hồ Yamdrok.", "Ngày 7: Kết thúc hành trình cao nguyên."], "assets/images/provinces/tibet-potala-palace.jpg", "R29A0GyLYlE"),
         ("v7-exp-16", "Liên Vận Việt – Trung", 5, "Hà Nội – Đồng Đăng – Nam Ninh – Quế Lâm", "Quanh năm (Đẹp nhất Xuân – Thu)", "$490 – $790", "Hành Lang Hữu Nghị Xuyên Biên Giới: Hà Nội – Nam Ninh – Khâm Châu – Quế Lâm", "Vietnam–China Rail Friendship Corridor: Hanoi to Nanning & Guilin (5D)", "中越跨境铁路友谊走廊5日行", "Hành trình mẫu thiết kế riêng cho du khách & doanh nhân Việt Nam kết hợp tham quan Quảng Tây, khu Bảo thuế Bằng Tường và thắng cảnh Quế Lâm tiết kiệm chi phí nhất.", "Tailored cross-border overland expedition from Hanoi connecting Pingxiang smart gates, Nanning hubs, and Guilin rivers.", ["Cửa khẩu Hữu Nghị – Bằng Tường", "Bảo tàng Dân tộc Quảng Tây Nam Ninh", "Cảnh Đức Quế Lâm – Sông Ly", "Cảng Khâm Châu Đón Tàu ASEAN"], ["Ngày 1: Hà Nội – Hữu Nghị Quan – Nam Ninh.", "Ngày 2-3: Tàu cao tốc đi Quế Lâm & Dương Sóc.", "Ngày 4: Thăm trung tâm thương mại & văn hóa Nam Ninh.", "Ngày 5: Về lại cửa khẩu Hữu Nghị – Hà Nội."], "assets/images/articles/hero-sino-vietnam.jpg", "ROFmtJLCq1k"),
     ]
+    _SEASON_EN_MAP = {
+        "Thu vàng tháng 9–11 & Xuân 4–5": "Golden Autumn (Sep–Nov) & Spring (Apr–May)",
+        "Tháng 5–6 & Tháng 9–10": "May–Jun & Sep–Oct",
+        "Tháng 3–5 & Tháng 10–11": "Mar–May & Oct–Nov",
+        "Tháng 9–11 (Mùa lá đỏ)": "Sep–Nov (Crisp Autumn Foliage)",
+        "Tháng 4–6 & Tháng 10–11": "Apr–Jun & Oct–Nov",
+        "Tháng 4–10": "Apr–Oct (Clear Karst Season)",
+        "Tháng 5–10": "May–Oct",
+        "Tháng 4–6 & Tháng 9–11": "Apr–Jun & Sep–Nov",
+        "Tháng 3–5 & Tháng 9–12": "Mar–May & Sep–Dec",
+        "Tháng 4 (Hoa Mẫu Đơn) & Tháng 9–10": "April (Peony Season) & Sep–Oct",
+        "Tháng 10–3 (Mát mẻ)": "Oct–Mar (Cool Subtropical Dry Season)",
+        "Tháng 5–10 (Thích nghi độ cao)": "May–Oct (Mild Plateau Oxygen Window)",
+        "Quanh năm (Đẹp nhất Xuân – Thu)": "Year-Round (Peak Spring & Autumn)",
+    }
+
+    _EN_DAY_NOTES = [
+        ["Arrive & settle into historic city center evening stroll.", "Imperial Axis museums, timber hall acoustics & park overlook.", "Great Wall highland ridge hike along less crowded watchtowers.", "Temple grounds, artisan guild quarter & traditional tea session.", "Canal-side gardens & classical stage performance.", "Airport HSR connection and departure logistics."],
+        ["Arrive Xi'an Tang West Market & City Wall cycling.", "Terracotta Army Pit 1–3 excavation study.", "Big Wild Goose Pagoda & Silk Road manuscripts.", "High-speed rail west across Qilian foothills to Lanzhou.", "Zhangye Danxia mineral strata geological hike.", "Jiayuguan Fortress Ming western frontier gate.", "Arrive Dunhuang evening market & desert dunes.", "Mogao Caves mineral murals & Library Cave curatorial tour.", "Mingsha Sand Dunes & Crescent Lake hydrological study.", "Conclude Hexi corridor study & airport departure."],
+        ["Arrive Suzhou Humble Administrator's Garden morning calm.", "Suzhou Museum I.M. Pei geometry & Kunqu courtyard.", "Tongli granite footbridges & living canal alleyways.", "High-speed rail to Hangzhou West Lake willow causeways.", "Longjing green-tea valley plucking & National Tea Museum.", "Bullet train south to Jingdezhen Kaolin porcelain kilns.", "Taoxichuan brick-kiln studios & cobalt brushwork demo."],
+        ["Arrive Chengdu Jinli lane & teahouse folk staging.", "Sanxingdui Bronze Masks museum & Dujiangyan levee walk.", "Plateau railway ascent into Jiuzhaigou travertine valleys.", "Emerald alpine pools & calcified travertine waterfalls.", "Huanglong high-elevation mineral pools & valley descent.", "Return to Chengdu teahouse courtyard before departure."],
+        ["Arrive Hangzhou and transfer smoothly to Tunxi Old Street.", "Dongxi traditional Hui-style courtyard exploration.", "Ascend Huangshan granite ridges through pine valleys.", "High-mountain sunrise view & West Sea Grand Canyon.", "Hongcun Moon Pond & Xidi horse-head firewall architecture.", "Hu Kaiwen Workshop: inkstone & pine-soot rubbing.", "Jingxian Xuan paper mill vat dipping & departure."],
+        ["Cross Hanoi/Friendship Pass overland into Nanning.", "Guilin karst peak cruise along Li River limestone cliffs.", "Yangshuo bamboo-raft countryside & village bike path.", "Longji sculpted terraced paddies & ethnic timber homes.", "Wind-and-Rain Bridge joinery visit & Nanning rail return."],
+        ["Arrive Taiyuan Jin Temple ancient water springs & wooden halls.", "Pingyao Ming-Qing bank streets & intact city wall.", "Wang & Qiao merchant courtyard brick carving study.", "Hanging Monastery cliffside cantilevers & Yingxian Wooden Pagoda (1056).", "Yungang sandstone grottoes colossal carvings in Datong.", "Northern Shanxi rail transfer & departure."],
+        ["Arrive Xiamen & ferry to Gulangyu historical mansions.", "Yongding earth Tulou passive cooling courtyard stay.", "Nanjing Zhangzhou canal town & tea roasting huts.", "Quanzhou Kaiyuan Temple Twin Pagodas & maritime wharves.", "Luoyang tidal oyster bridge engineering study.", "Hefu HSR climb to Wuyi Mountains.", "Nine-Bend Bamboo Raft & Da Hong Pao cliff tea tasting."],
+        ["Arrive Kunming Stone Forest karst geology hike.", "Kunming Green Lake & Flower Market exploration.", "High-speed rail to Dali Erhai lakeside cycling.", "Chongsheng Three Pagodas & Bai tie-dye craft courtyard.", "Lijiang Old Town glacial canal & Three-Eye Well study.", "Jade Dragon Snow Mountain plateau flora excursion.", "Tiger Leaping Gorge canyon walk toward Shangri-La.", "Songzanlin Monastery valley study & departure."],
+        ["Arrive Changsha Yuelu Academy thousand-year lecture halls.", "Hunan Museum Mawangdui Han lacquerware & silk archive.", "High-speed rail to Fenghuang stilts over Tuo River.", "Xiangxi Miao silver stitching & indigo dyeing guilds.", "Zhangjiajie quartzite spires natural forest walks.", "Tianmen Mountain cliff walkway & airport departure."],
+        ["Arrive Zhengzhou Henan Museum early Yellow River bronzes.", "Anyang Yinxu Ruins oracle-bone pit & Museum.", "Luoyang Longmen Buddhist limestone caves along Yi River.", "Kaifeng Qingming Riverside living Song park & Jun glaze kilns.", "Central Plains rail connection & departure."],
+        ["Arrive Chongqing & ride Liziba monorail passing through cliff housing.", "Hongyadong multilevel stilt-house waterfront & river bridges.", "Dazu Baodingshan Song dynasty cliffside stone carvings (UNESCO).", "Board Yangtze cruiser through Qutang & Wu Gorges.", "Disembark at Yichang below Three Gorges lock complex."],
+        ["Arrive Guangzhou Shamian & Chen Clan brick carvings.", "Xiguan morning dim sum & Nanyue King jade burial archive.", "Shunde mud-dyed Xiangyunsha silk yard & canal kitchen.", "Kaiping fortified Diaolou countryside watchtowers (UNESCO).", "Pearl River evening architecture study & departure."],
+        ["Arrive Jinan spring-fed Baotu pools & Daming Lake.", "Qufu Three Kong sites: Temple, Mansion & Cemetery of Confucius.", "Tai'an Dai Temple & climb southern Heavenly Gate stone steps.", "Sunrise overlooking Yellow River Plains atop Mount Tai.", "Qingdao maritime harbor promenade & Badaguan timber villas.", "Craft beverage museum & historic German-era rail station."],
+        ["Arrive Xining high-altitude acclimatization & Kumbum Monastery.", "Board pressurized Qinghai-Tibet railway across Tanglha Pass.", "Lhasa Barkhor circuit walk & Jokhang sanctuary courtyard.", "Potala Palace white-and-ochre timber fortress halls.", "Sera Monastery debate courtyard & willow gardens.", "Day trip across turquoise alpine Lake Yamdrok / Namtso.", "Return down-valley rail or highland air departure."],
+        ["Overland Hanoi-Dong Dang-Pingxiang border rail crossing.", "Nanning Guangxi Ethnology Museum & bronze drum gallery.", "Fast rail to Guilin Li River karst bends & Yangshuo.", "Nanning modern ASEAN trade hall exploration.", "Return smoothly across Friendship Pass back into Hanoi."],
+    ]
+
+    def _clean_en_days(idx: int, title_en: str, n_days: int) -> list[str]:
+        preset = _EN_DAY_NOTES[idx] if idx < len(_EN_DAY_NOTES) else []
+        return [
+            (preset[i] if i < len(preset) else f"Day {i+1}: Field heritage immersion in {title_en.split(':')[0]}.")
+            for i in range(n_days)
+        ]
+
     heritage_expeditions_16 = [
         {
             "id": eid,
@@ -366,7 +444,7 @@ def build_pack5() -> dict[str, Any]:
             "daysCount": days,
             "hsrRef": hsr_ref,
             "bestSeasonVi": bsvi,
-            "bestSeasonEn": f"Best season: {bsvi}",
+            "bestSeasonEn": _SEASON_EN_MAP.get(bsvi, "Spring & Autumn"),
             "estimatedBudgetUsd": bud,
             "titleVi": tvi,
             "titleEn": ten,
@@ -375,11 +453,11 @@ def build_pack5() -> dict[str, Any]:
             "summaryEn": sen,
             "stops": stops,
             "dayByDayOutlineVi": dvi,
-            "dayByDayOutlineEn": [f"Day {i+1}: Cultural highlight along {ten}" for i in range(len(dvi))],
+            "dayByDayOutlineEn": _clean_en_days(exp_idx, ten, len(dvi)),
             "imagePath": ensure_verified_img(img),
             "youtubeId": ytid,
         }
-        for eid, reg, days, hsr_ref, bsvi, bud, tvi, ten, tzh, svi, sen, stops, dvi, img, ytid in exp_rows
+        for exp_idx, (eid, reg, days, hsr_ref, bsvi, bud, tvi, ten, tzh, svi, sen, stops, dvi, img, ytid) in enumerate(exp_rows)
     ]
 
     # 8 Smart 240h & Digital Concierge Guides
@@ -396,6 +474,7 @@ def build_pack5() -> dict[str, Any]:
             "emergencyPhraseZh": "你好，我申请240小时过境免签入境，这是我前往第三国的机票。",
             "emergencyPhrasePinyin": "Nǐhǎo, wǒ shēnqǐng èrbǎi sìshí xiǎoshí guòjìng miǎnqiān rùjìng.",
             "emergencyPhraseMeaningVi": "Xin chào, tôi xin làm thủ tục quá cảnh miễn thị thực 240 giờ, đây là vé đi nước thứ ba của tôi.",
+            "emergencyPhraseMeaningEn": "Hello, I am applying for the 240-hour visa-free transit; here is my confirmed ticket to a third country.",
         },
         {
             "id": "v7-concierge-02", "stepNum": 2,
@@ -409,6 +488,7 @@ def build_pack5() -> dict[str, Any]:
             "emergencyPhraseZh": "请问可以用支付宝或微信扫码付款吗？",
             "emergencyPhrasePinyin": "Qǐngwèn kěyǐ yòng Zhīfùbǎo huò Wēixìn sǎomǎ fùkuǎn ma?",
             "emergencyPhraseMeaningVi": "Xin hỏi tôi có thể quét mã thanh toán bằng Alipay hoặc WeChat được không?",
+            "emergencyPhraseMeaningEn": "Excuse me, may I pay by scanning an Alipay or WeChat QR code?",
         },
         {
             "id": "v7-concierge-03", "stepNum": 3,
@@ -422,6 +502,7 @@ def build_pack5() -> dict[str, Any]:
             "emergencyPhraseZh": "您好，我是用护照买的车票，请问从哪个检票口进站？",
             "emergencyPhrasePinyin": "Nínhǎo, wǒ shì yòng hùzhào mǎi de chēpiào, qǐngwèn cóng nǎge jiǎnpiàokǒu jìnzhàn?",
             "emergencyPhraseMeaningVi": "Xin chào, tôi mua vé bằng hộ chiếu, xin hỏi tôi đi vào từ cổng kiểm vé nào?",
+            "emergencyPhraseMeaningEn": "Hello, I booked my ticket with my passport; which boarding gate lane should I enter?",
         },
         {
             "id": "v7-concierge-04", "stepNum": 4,
@@ -435,6 +516,7 @@ def build_pack5() -> dict[str, Any]:
             "emergencyPhraseZh": "我已在网上用护照预约了今天上午的门票，请核对护照原件。",
             "emergencyPhrasePinyin": "Wǒ yǐ zài wǎngshàng yòng hùzhào yùyuē le jīntiān shàngwǔ de ménpiào.",
             "emergencyPhraseMeaningVi": "Tôi đã đặt vé buổi sáng hôm nay trực tuyến bằng hộ chiếu, xin kiểm tra hộ chiếu gốc.",
+            "emergencyPhraseMeaningEn": "I booked this morning's ticket online using my passport; please verify my original passport.",
         },
         {
             "id": "v7-concierge-05", "stepNum": 5,
@@ -448,6 +530,7 @@ def build_pack5() -> dict[str, Any]:
             "emergencyPhraseZh": "师傅，麻烦送我去这个地址，谢谢！",
             "emergencyPhrasePinyin": "Shīfu, máfan sòng wǒ qù zhège dìzhǐ, xièxie!",
             "emergencyPhraseMeaningVi": "Bác tài ơi, phiền bác chở giúp tôi tới địa chỉ trên màn hình này, xin cảm ơn!",
+            "emergencyPhraseMeaningEn": "Driver, please take me to the address shown on this screen, thank you!",
         },
         {
             "id": "v7-concierge-06", "stepNum": 6,
@@ -461,6 +544,7 @@ def build_pack5() -> dict[str, Any]:
             "emergencyPhraseZh": "请问菜单有带图片或英文的吗？麻烦微辣即可。",
             "emergencyPhrasePinyin": "Qǐngwèn càidān yǒu dài túpiàn huò Yīngwén de ma? Máfan wēilà jíkě.",
             "emergencyPhraseMeaningVi": "Xin hỏi thực đơn có hình ảnh hoặc bản tiếng Anh không? Xin làm cay nhẹ giúp tôi.",
+            "emergencyPhraseMeaningEn": "Do you have an illustrated or English menu? Please make it mildly spicy for me.",
         },
         {
             "id": "v7-concierge-07", "stepNum": 7,
@@ -474,6 +558,7 @@ def build_pack5() -> dict[str, Any]:
             "emergencyPhraseZh": "您好，请问这里可以开具离境退税申请单吗？",
             "emergencyPhrasePinyin": "Nínhǎo, qǐngwèn zhèlǐ kěyǐ kāijù líjìng tuìshuì shēnqǐngdān ma?",
             "emergencyPhraseMeaningVi": "Xin chào, xin hỏi cửa hàng có xuất giấy đề nghị hoàn thuế xuất cảnh không ạ?",
+            "emergencyPhraseMeaningEn": "Hello, does your store issue an overseas departure tax refund application form?",
         },
         {
             "id": "v7-concierge-08", "stepNum": 8,
@@ -487,6 +572,7 @@ def build_pack5() -> dict[str, Any]:
             "emergencyPhraseZh": "请帮我联系越南驻华使领馆，或拨打12301旅游热线。我的随身物品遗失了。",
             "emergencyPhrasePinyin": "Qǐng bāng wǒ liánxì Yuènán zhù Huá shǐlǐngguǎn, huò bōdǎ 12301 lǚyóu rèxiàn.",
             "emergencyPhraseMeaningVi": "Xin hãy giúp tôi liên hệ Đại sứ quán/Lãnh sự quán Việt Nam hoặc đường dây nóng du lịch 12301.",
+            "emergencyPhraseMeaningEn": "Please help me contact the Vietnamese Embassy/Consulate or the 12301 tourism hotline.",
         },
     ]
 

@@ -10607,6 +10607,28 @@
     }));
 
     if (ui.searchQuery && ui.searchQuery.trim() && (cat === "all" || cat === "terms" || cat === "articles")) {
+      const seenDeep = new Set(flatRows.map((r) => String(r.title || "")));
+      if (CceSearch && typeof CceSearch.search === "function") {
+        const deepOther = CceSearch.search(ui.searchQuery, 20).filter((h) => h.type !== "province_item");
+        deepOther.forEach((dh) => {
+          const ttl = enS ? (dh.titleEn || dh.title) : dh.title;
+          if (seenDeep.has(ttl)) return;
+          seenDeep.add(ttl);
+          const pageMap = { dict: "learning", traditional: "traditional", business: "business", "sino-vietnam": "sino-vietnam", museum: "museum", explore: "explore", article: "explore" };
+          const targetPage = pageMap[dh.type] || "explore";
+          const isRealArticle = dh.type === "article" && Articles.some((a) => a.id === dh.id);
+          flatRows.push({
+            badge: dh.sub ? String(dh.sub).slice(0, 26) : (enS ? "Archive" : "Chuyên mục"),
+            badgeClass: dh.type === "business" ? "badge-jade" : (dh.type === "museum" ? "badge-red" : "badge-gold"),
+            title: ttl,
+            sub: (dh.zh ? dh.zh + " · " : "") + (dh.body ? String(dh.body).slice(0, 95) : ""),
+            btnLabel: enS ? "Open Section" : "Mở Chuyên Mục",
+            action: isRealArticle ? "open-article" : "nav",
+            id: isRealArticle ? dh.id : "",
+            page: isRealArticle ? "" : targetPage
+          });
+        });
+      }
       const qv4 = normalizeText(ui.searchQuery);
       const tList = (window.CCE_TRADE_TRILINGUAL_V4 && window.CCE_TRADE_TRILINGUAL_V4.terms) || [];
       tList.filter((t) => normalizeText(`${t.en} ${t.zh} ${t.pinyin} ${t.vi}`).includes(qv4)).slice(0, 6).forEach((t) => {
@@ -10635,17 +10657,20 @@
     }
 
     const totalAllCategories =
-      (results.articles || []).length +
-      (results.terms || []).length +
-      (results.vocabNotebook || []).length +
-      (results.provinces || []).length +
-      (results.artifacts || []).length +
-      (results.periods || []).length +
-      (results.people || []).length +
-      (results.places || []).length +
-      (results.texts || []).length +
-      (results.paintings || []).length +
-      (results.research || []).length;
+      Math.max(
+        flatRows.length,
+        (results.articles || []).length +
+          (results.terms || []).length +
+          (results.vocabNotebook || []).length +
+          (results.provinces || []).length +
+          (results.artifacts || []).length +
+          (results.periods || []).length +
+          (results.people || []).length +
+          (results.places || []).length +
+          (results.texts || []).length +
+          (results.paintings || []).length +
+          (results.research || []).length
+      );
 
     const categoryTabs = [
       { id: "all", label: `${enS ? "All" : "Tất cả"} (${totalAllCategories})` },

@@ -1057,7 +1057,7 @@
       "primaryTextExcerptZh": "博学之，审问之，慎思之，明辨之，笃行之。",
       "primaryTextExcerptVi": "Học rộng rãi, hỏi kỹ càng, suy xét cẩn thận, phân biện sáng suốt, thực hành bền bỉ (Trung Dung).",
       "primaryTextExcerptEn": "Study broadly, inquire closely, reflect carefully, discern clearly, and practice earnestly (Doctrine of the Mean).",
-      "visualDiagramSpecVi": "Bảng Tốt Nghiệp V7.0: Kiểm định kiến thức tại Đấu Trường 600 Câu và xuất Chứng Chỉ Học Viện 10 Học Phần bản PNG.",
+      "visualDiagramSpecVi": "Bảng Tốt Nghiệp Học Viện: Kiểm định kiến thức tại Đấu Trường 600 Câu và xuất Chứng Chỉ Học Viện 10 Học Phần bản PNG.",
       "visualDiagramSpecEn": "Graduation Dashboard leading straight into the 600-MCQ Challenge and high-DPI 10-Module Academy Certificate.",
       "vietnamComparisonVi": "Với người học Việt Nam, hiểu sâu văn hóa Trung Hoa không chỉ mở ra tri thức nhân loại mà còn làm sáng tỏ hơn bao giờ hết chiều sâu tự chủ ngàn năm của văn hiến Đại Việt – Việt Nam.",
       "vietnamComparisonEn": "For Vietnamese scholars, deep cultural literacy illuminates both a great neighbor civilization and Vietnam's own resilient millennium-old heritage.",
@@ -1104,7 +1104,7 @@
     {
       "id": "v7-brand-101",
       "cat": "craft",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "龙泉沈广隆剑铺",
       "pinyin": "Lóngquán Shěn Guǎnglóng Jiànpù",
       "hanViet": "Long Tuyền Thẩm Quảng Long Kiếm Phố",
@@ -1114,33 +1114,37 @@
       "dynastyEn": "Guangxu Era (Qing)",
       "provinceId": "zhejiang",
       "cityVi": "Lệ Thủy, Chiết Giang",
+      "cityEn": "Lishui, Zhejiang",
       "signatureProductVi": "Thất Tinh Bảo Kiếm thép rèn gấp",
       "signatureProductEn": "Seven-Star Forged Sword",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Lệ Thủy, Chiết Giang). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Shen Guanglong Sword Forge). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Lệ Thủy, Chiết Giang, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Lệ Thủy, Chiết Giang.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Lệ Thủy, Chiết Giang (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Shen Guanglong Sword Forge (Lishui, Zhejiang). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Gìn giữ bí quyết chọn lọc vật liệu và gia công thủ công tinh xảo tại Lệ Thủy, Chiết Giang.",
+      "craftSecretEn": "Refined material selection and patient manual workmanship passed down in Lishui, Zhejiang.",
       "sensoryOrMaterialSpecVi": "Thất Tinh Bảo Kiếm thép rèn gấp",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "龙泉沈广隆剑铺历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Seven-Star Forged Sword",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Phù hợp làm quà tặng văn hóa cao cấp và mặt hàng thủ công mỹ nghệ xuất khẩu.",
+      "b2bTradeEn": "Well suited for curated museum gifts and boutique handicraft distribution.",
+      "vietnamAseanLessonVi": "Gợi ý thực tiễn cho Bát Tràng, Chu Đậu và Sơn mài Hạ Thái trong chuẩn hóa hộp đựng và hồ sơ nguồn gốc.",
+      "vietnamAseanLessonEn": "Practical reference for Vietnamese craft villages upgrading gift packaging and provenance notes.",
+      "flagshipAddressZh": "龙泉沈广隆剑铺老店",
       "imgHintSlug": "v7-brand-101",
       "imagePath": "assets/images/museum/goujian-sword.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Lệ Thủy, Chiết Giang kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Lệ Thủy, Chiết Giang.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Lishui, Zhejiang.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Lệ Thủy, Chiết Giang.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Chọn lọc nguyên liệu thô tại vùng Lệ Thủy, Chiết Giang.",
+        "Sơ chế làm sạch tạp chất theo phương pháp cổ truyền.",
+        "Gia công tạo hình, nung hoặc mài giũa thủ công.",
+        "Đóng triện nghệ nhân, kiểm tra độ bền và đóng hộp."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Lệ Thủy, Chiết Giang.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Source vetted raw minerals, timber, or silk around Lishui, Zhejiang.",
+        "Refine and age materials using non-accelerated preparation.",
+        "Shape, fire, forge, or hand-finish to workshop tolerances.",
+        "Impress artisan hallmark and pack with provenance card."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -1156,7 +1160,7 @@
     {
       "id": "v7-brand-102",
       "cat": "tea",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "开封王大昌茶庄",
       "pinyin": "Kāifēng Wáng Dàchāng Cházhuāng",
       "hanViet": "Khai Phong Vương Đại Xương Trà Trang",
@@ -1166,33 +1170,37 @@
       "dynastyEn": "Late Qing",
       "provinceId": "henan",
       "cityVi": "Khai Phong, Hà Nam",
+      "cityEn": "Kaifeng, Henan",
       "signatureProductVi": "Trà ướp hoa nhài Biện Kinh",
       "signatureProductEn": "Bianjing Double-Scented Jasmine Tea",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Khai Phong, Hà Nam). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Wang Dachang Tea House). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Khai Phong, Hà Nam, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Khai Phong, Hà Nam.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Khai Phong, Hà Nam (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Wang Dachang Tea House (Kaifeng, Henan). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Sao ướp thủ công và điều chỉnh thủy phần chuẩn vùng trà Khai Phong, Hà Nam.",
+      "craftSecretEn": "Traditional leaf withering, scenting, and panning calibrated in Kaifeng, Henan.",
       "sensoryOrMaterialSpecVi": "Trà ướp hoa nhài Biện Kinh",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "开封王大昌茶庄历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Bianjing Double-Scented Jasmine Tea",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Có tiềm năng phân phối vào kênh trà đặc sản, nhà hàng Á Đông và quà biếu lễ Tết.",
+      "b2bTradeEn": "Positioned strongly for specialty tea houses and East Asian gifting channels.",
+      "vietnamAseanLessonVi": "Tham chiếu hữu ích cho vùng chè Tân Cương, Shan Tuyết Hà Giang khi xây dựng phân hạng mùa vụ.",
+      "vietnamAseanLessonEn": "Useful harvest-grading reference for Vietnamese highland tea cooperatives.",
+      "flagshipAddressZh": "开封王大昌茶庄老店",
       "imgHintSlug": "v7-brand-102",
       "imagePath": "assets/images/articles/hero-six-teas-gongfu.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Khai Phong, Hà Nam kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Khai Phong, Hà Nam.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Kaifeng, Henan.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Khai Phong, Hà Nam.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Thu hái búp trà đúng tiết khí quanh Khai Phong, Hà Nam.",
+        "Làm héo và diệt men bằng nhiệt độ kiểm soát tay.",
+        "Vò định hình và ướp hương hoa tự nhiên nhiều lượt.",
+        "Đóng thiếc chắn ẩm và dán mã truy xuất mùa vụ."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Khai Phong, Hà Nam.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Pluck buds during seasonal harvest windows near Kaifeng, Henan.",
+        "Wither and pan-fix leaves under manual heat supervision.",
+        "Roll and perfume leaves naturally over resting cycles.",
+        "Seal in moisture-tight tins with harvest-batch labeling."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -1208,7 +1216,7 @@
     {
       "id": "v7-brand-103",
       "cat": "craft",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "耀州陈炉瓷窑",
       "pinyin": "Yàozhōu Chénlú Cíyáo",
       "hanViet": "Diêu Châu Trần Lư Từ Diêu",
@@ -1218,33 +1226,37 @@
       "dynastyEn": "Northern Song",
       "provinceId": "shaanxi",
       "cityVi": "Đồng Xuyên, Thiểm Tây",
+      "cityEn": "Tongchuan, Shaanxi",
       "signatureProductVi": "Bát thanh từ khắc chìm hoa mẫu đơn",
       "signatureProductEn": "Carved Celadon Peony Bowl",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Đồng Xuyên, Thiểm Tây). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Yaozhou Chenlu Celadon Kiln). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Đồng Xuyên, Thiểm Tây, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Đồng Xuyên, Thiểm Tây.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Đồng Xuyên, Thiểm Tây (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Yaozhou Chenlu Celadon Kiln (Tongchuan, Shaanxi). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Gìn giữ bí quyết chọn lọc vật liệu và gia công thủ công tinh xảo tại Đồng Xuyên, Thiểm Tây.",
+      "craftSecretEn": "Refined material selection and patient manual workmanship passed down in Tongchuan, Shaanxi.",
       "sensoryOrMaterialSpecVi": "Bát thanh từ khắc chìm hoa mẫu đơn",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "耀州陈炉瓷窑历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Carved Celadon Peony Bowl",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Phù hợp làm quà tặng văn hóa cao cấp và mặt hàng thủ công mỹ nghệ xuất khẩu.",
+      "b2bTradeEn": "Well suited for curated museum gifts and boutique handicraft distribution.",
+      "vietnamAseanLessonVi": "Gợi ý thực tiễn cho Bát Tràng, Chu Đậu và Sơn mài Hạ Thái trong chuẩn hóa hộp đựng và hồ sơ nguồn gốc.",
+      "vietnamAseanLessonEn": "Practical reference for Vietnamese craft villages upgrading gift packaging and provenance notes.",
+      "flagshipAddressZh": "耀州陈炉瓷窑老店",
       "imgHintSlug": "v7-brand-103",
       "imagePath": "assets/images/museum/longquan-celadon-vase.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Đồng Xuyên, Thiểm Tây kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Đồng Xuyên, Thiểm Tây.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Tongchuan, Shaanxi.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Đồng Xuyên, Thiểm Tây.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Chọn lọc nguyên liệu thô tại vùng Đồng Xuyên, Thiểm Tây.",
+        "Sơ chế làm sạch tạp chất theo phương pháp cổ truyền.",
+        "Gia công tạo hình, nung hoặc mài giũa thủ công.",
+        "Đóng triện nghệ nhân, kiểm tra độ bền và đóng hộp."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Đồng Xuyên, Thiểm Tây.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Source vetted raw minerals, timber, or silk around Tongchuan, Shaanxi.",
+        "Refine and age materials using non-accelerated preparation.",
+        "Shape, fire, forge, or hand-finish to workshop tolerances.",
+        "Impress artisan hallmark and pack with provenance card."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -1260,7 +1272,7 @@
     {
       "id": "v7-brand-104",
       "cat": "craft",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "威海锡镶堂",
       "pinyin": "Wēihǎi Xīxiāngtáng",
       "hanViet": "Uy Hải Tích Tương Đường",
@@ -1270,33 +1282,37 @@
       "dynastyEn": "Early Republic Era",
       "provinceId": "shandong",
       "cityVi": "Uy Hải, Sơn Đông",
+      "cityEn": "Weihai, Shandong",
       "signatureProductVi": "Ấm Tử Sa khảm thiếc Bát Bảo",
       "signatureProductEn": "Tin-Inlaid Yixing Teapot Craft",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Uy Hải, Sơn Đông). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Weihai Tin-Inlaid Porcelain Studio). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Uy Hải, Sơn Đông, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Uy Hải, Sơn Đông.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Uy Hải, Sơn Đông (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Weihai Tin-Inlaid Porcelain Studio (Weihai, Shandong). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Gìn giữ bí quyết chọn lọc vật liệu và gia công thủ công tinh xảo tại Uy Hải, Sơn Đông.",
+      "craftSecretEn": "Refined material selection and patient manual workmanship passed down in Weihai, Shandong.",
       "sensoryOrMaterialSpecVi": "Ấm Tử Sa khảm thiếc Bát Bảo",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "威海锡镶堂历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Tin-Inlaid Yixing Teapot Craft",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Phù hợp làm quà tặng văn hóa cao cấp và mặt hàng thủ công mỹ nghệ xuất khẩu.",
+      "b2bTradeEn": "Well suited for curated museum gifts and boutique handicraft distribution.",
+      "vietnamAseanLessonVi": "Gợi ý thực tiễn cho Bát Tràng, Chu Đậu và Sơn mài Hạ Thái trong chuẩn hóa hộp đựng và hồ sơ nguồn gốc.",
+      "vietnamAseanLessonEn": "Practical reference for Vietnamese craft villages upgrading gift packaging and provenance notes.",
+      "flagshipAddressZh": "威海锡镶堂老店",
       "imgHintSlug": "v7-brand-104",
       "imagePath": "assets/images/museum/quan-yao-vase.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Uy Hải, Sơn Đông kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Uy Hải, Sơn Đông.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Weihai, Shandong.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Uy Hải, Sơn Đông.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Chọn lọc nguyên liệu thô tại vùng Uy Hải, Sơn Đông.",
+        "Sơ chế làm sạch tạp chất theo phương pháp cổ truyền.",
+        "Gia công tạo hình, nung hoặc mài giũa thủ công.",
+        "Đóng triện nghệ nhân, kiểm tra độ bền và đóng hộp."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Uy Hải, Sơn Đông.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Source vetted raw minerals, timber, or silk around Weihai, Shandong.",
+        "Refine and age materials using non-accelerated preparation.",
+        "Shape, fire, forge, or hand-finish to workshop tolerances.",
+        "Impress artisan hallmark and pack with provenance card."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -1312,7 +1328,7 @@
     {
       "id": "v7-brand-105",
       "cat": "tcm",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "武汉叶开泰",
       "pinyin": "Wǔhàn Yè Kāitài",
       "hanViet": "Vũ Hán Diệp Khai Thái",
@@ -1322,33 +1338,37 @@
       "dynastyEn": "Late Ming",
       "provinceId": "hubei",
       "cityVi": "Vũ Hán, Hồ Bắc",
+      "cityEn": "Wuhan, Hubei",
       "signatureProductVi": "Tài liệu lịch sử bào chế dược thảo Giang Hán (phi lâm sàng)",
       "signatureProductEn": "Historic Herb Processing Tradition (Non-Clinical)",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Vũ Hán, Hồ Bắc). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Ye Kaitai Heritage Apothecary). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Vũ Hán, Hồ Bắc, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Vũ Hán, Hồ Bắc.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Vũ Hán, Hồ Bắc (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Ye Kaitai Heritage Apothecary (Wuhan, Hubei). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Lưu giữ tư liệu bào chế thảo mộc dân gian truyền thống tại Vũ Hán, Hồ Bắc (khảo cứu lịch sử, phi lâm sàng).",
+      "craftSecretEn": "Records regional botanical decoction and herbal pantry history in Wuhan, Hubei (non-clinical archive).",
       "sensoryOrMaterialSpecVi": "Tài liệu lịch sử bào chế dược thảo Giang Hán (phi lâm sàng)",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "武汉叶开泰历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Historic Herb Processing Tradition (Non-Clinical)",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Tập trung vào trà thảo mộc giải nhiệt, nguyên liệu hầm canh và đồ uống thực dưỡng đóng chai.",
+      "b2bTradeEn": "Focuses on botanical pantry teas and culinary infusions rather than prescription lines.",
+      "vietnamAseanLessonVi": "Tương đồng cách dùng thảo mộc quen thuộc như lá vối, sâm bông cúc trong ẩm thực Việt Nam.",
+      "vietnamAseanLessonEn": "Parallels everyday Vietnamese cooling botanical infusions and soup spices.",
+      "flagshipAddressZh": "武汉叶开泰老店",
       "imgHintSlug": "v7-brand-105",
-      "imagePath": "assets/images/provinces/hubei-yellow-crane-tower.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Vũ Hán, Hồ Bắc kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "imagePath": "assets/images/prov_items/hubei/h0.jpg",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Vũ Hán, Hồ Bắc.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Wuhan, Hubei.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Vũ Hán, Hồ Bắc.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Thu hái thảo mộc đúng mùa tại vùng Vũ Hán, Hồ Bắc.",
+        "Làm sạch, sao vàng hạ thổ hoặc phơi râm giữ hương.",
+        "Phối trộn tỷ lệ thảo mộc dùng trong ẩm thực gia đình.",
+        "Đóng gói chống ẩm kèm ghi chú rõ công dụng ẩm thực."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Vũ Hán, Hồ Bắc.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Gather regional botanicals around Wuhan, Hubei.",
+        "Clean and shade-dry leaves or roots without sulfur bleach.",
+        "Portion gentle culinary spice and herbal tea blends.",
+        "Moisture-seal pouches with clear non-clinical food labels."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -1364,7 +1384,7 @@
     {
       "id": "v7-brand-106",
       "cat": "tcm",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "广东星群夏桑菊",
       "pinyin": "Guǎngdōng Xīngqún Xiàsāngjú",
       "hanViet": "Quảng Đông Tinh Quần Hạ Tang Cúc",
@@ -1374,33 +1394,37 @@
       "dynastyEn": "Mid-20th Century",
       "provinceId": "guangdong",
       "cityVi": "Quảng Châu, Quảng Đông",
+      "cityEn": "Guangzhou, Guangdong",
       "signatureProductVi": "Trà thảo mộc Hạ Khô Thảo – Dâu – Cúc Ẩm thực Lĩnh Nam",
       "signatureProductEn": "Lingnan Summer Botanical Tea Infusion",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Quảng Châu, Quảng Đông). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Xingqun Herbal Botanical Beverage). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Quảng Châu, Quảng Đông, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Quảng Châu, Quảng Đông.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Quảng Châu, Quảng Đông (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Xingqun Herbal Botanical Beverage (Guangzhou, Guangdong). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Lưu giữ tư liệu bào chế thảo mộc dân gian truyền thống tại Quảng Châu, Quảng Đông (khảo cứu lịch sử, phi lâm sàng).",
+      "craftSecretEn": "Records regional botanical decoction and herbal pantry history in Guangzhou, Guangdong (non-clinical archive).",
       "sensoryOrMaterialSpecVi": "Trà thảo mộc Hạ Khô Thảo – Dâu – Cúc Ẩm thực Lĩnh Nam",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "广东星群夏桑菊历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Lingnan Summer Botanical Tea Infusion",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Tập trung vào trà thảo mộc giải nhiệt, nguyên liệu hầm canh và đồ uống thực dưỡng đóng chai.",
+      "b2bTradeEn": "Focuses on botanical pantry teas and culinary infusions rather than prescription lines.",
+      "vietnamAseanLessonVi": "Tương đồng cách dùng thảo mộc quen thuộc như lá vối, sâm bông cúc trong ẩm thực Việt Nam.",
+      "vietnamAseanLessonEn": "Parallels everyday Vietnamese cooling botanical infusions and soup spices.",
+      "flagshipAddressZh": "广东星群夏桑菊老店",
       "imgHintSlug": "v7-brand-106",
       "imagePath": "assets/images/articles/hero-tea-culture.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Quảng Châu, Quảng Đông kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Quảng Châu, Quảng Đông.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Guangzhou, Guangdong.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Quảng Châu, Quảng Đông.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Thu hái thảo mộc đúng mùa tại vùng Quảng Châu, Quảng Đông.",
+        "Làm sạch, sao vàng hạ thổ hoặc phơi râm giữ hương.",
+        "Phối trộn tỷ lệ thảo mộc dùng trong ẩm thực gia đình.",
+        "Đóng gói chống ẩm kèm ghi chú rõ công dụng ẩm thực."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Quảng Châu, Quảng Đông.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Gather regional botanicals around Guangzhou, Guangdong.",
+        "Clean and shade-dry leaves or roots without sulfur bleach.",
+        "Portion gentle culinary spice and herbal tea blends.",
+        "Moisture-seal pouches with clear non-clinical food labels."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -1416,7 +1440,7 @@
     {
       "id": "v7-brand-107",
       "cat": "craft",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "苏州绣娘丝绸",
       "pinyin": "Sūzhōu Xiùniáng Sīchóu",
       "hanViet": "Tô Châu Tú Nương Ti Trù",
@@ -1426,33 +1450,37 @@
       "dynastyEn": "Suzhou Silk Revival",
       "provinceId": "jiangsu",
       "cityVi": "Tô Châu, Giang Tô",
+      "cityEn": "Suzhou, Jiangsu",
       "signatureProductVi": "Khăn lụa thêu hai mặt Tô Tú",
       "signatureProductEn": "Double-Sided Suzhou Silk Embroidery",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Tô Châu, Giang Tô). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Xiuniang Suzhou Silk Atelier). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Tô Châu, Giang Tô, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Tô Châu, Giang Tô.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Tô Châu, Giang Tô (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Xiuniang Suzhou Silk Atelier (Suzhou, Jiangsu). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Gìn giữ bí quyết chọn lọc vật liệu và gia công thủ công tinh xảo tại Tô Châu, Giang Tô.",
+      "craftSecretEn": "Refined material selection and patient manual workmanship passed down in Suzhou, Jiangsu.",
       "sensoryOrMaterialSpecVi": "Khăn lụa thêu hai mặt Tô Tú",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "苏州绣娘丝绸历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Double-Sided Suzhou Silk Embroidery",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Phù hợp làm quà tặng văn hóa cao cấp và mặt hàng thủ công mỹ nghệ xuất khẩu.",
+      "b2bTradeEn": "Well suited for curated museum gifts and boutique handicraft distribution.",
+      "vietnamAseanLessonVi": "Gợi ý thực tiễn cho Bát Tràng, Chu Đậu và Sơn mài Hạ Thái trong chuẩn hóa hộp đựng và hồ sơ nguồn gốc.",
+      "vietnamAseanLessonEn": "Practical reference for Vietnamese craft villages upgrading gift packaging and provenance notes.",
+      "flagshipAddressZh": "苏州绣娘丝绸老店",
       "imgHintSlug": "v7-brand-107",
       "imagePath": "assets/images/articles/hero-silk-embroidery-hanfu.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Tô Châu, Giang Tô kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Tô Châu, Giang Tô.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Suzhou, Jiangsu.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Tô Châu, Giang Tô.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Chọn lọc nguyên liệu thô tại vùng Tô Châu, Giang Tô.",
+        "Sơ chế làm sạch tạp chất theo phương pháp cổ truyền.",
+        "Gia công tạo hình, nung hoặc mài giũa thủ công.",
+        "Đóng triện nghệ nhân, kiểm tra độ bền và đóng hộp."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Tô Châu, Giang Tô.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Source vetted raw minerals, timber, or silk around Suzhou, Jiangsu.",
+        "Refine and age materials using non-accelerated preparation.",
+        "Shape, fire, forge, or hand-finish to workshop tolerances.",
+        "Impress artisan hallmark and pack with provenance card."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -1468,7 +1496,7 @@
     {
       "id": "v7-brand-108",
       "cat": "culinary",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "南昌万寿宫糕饼",
       "pinyin": "Nánchāng Wànshòugōng Gāobǐng",
       "hanViet": "Nam Xương Vạn Thọ Cung Cao Bính",
@@ -1478,33 +1506,37 @@
       "dynastyEn": "Late Qing",
       "provinceId": "jiangxi",
       "cityVi": "Nam Xương, Giang Tây",
+      "cityEn": "Nanchang, Jiangxi",
       "signatureProductVi": "Bánh mè đường mạch nha Cống Đường Giang Tây",
       "signatureProductEn": "Nanchang Black-Sesame Crisp Pastry",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Nam Xương, Giang Tây). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Wanshougong Heritage Pastries). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Nam Xương, Giang Tây, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Nam Xương, Giang Tây.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Nam Xương, Giang Tây (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Wanshougong Heritage Pastries (Nanchang, Jiangxi). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Ủ lên men tự nhiên hoặc chế biến theo công thức gia truyền lâu năm ở Nam Xương, Giang Tây.",
+      "craftSecretEn": "Slow natural fermentation and regional culinary balance preserved in Nanchang, Jiangxi.",
       "sensoryOrMaterialSpecVi": "Bánh mè đường mạch nha Cống Đường Giang Tây",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "南昌万寿宫糕饼历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Nanchang Black-Sesame Crisp Pastry",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Có thể phát triển dòng gia vị hoặc bánh đặc sản đóng gói xuất khẩu đạt chuẩn CIFER.",
+      "b2bTradeEn": "Adaptable to retail specialty sauces and ambient pastry exports with full labeling.",
+      "vietnamAseanLessonVi": "Gợi mở cho ẩm thực truyền thống Việt Nam chuẩn hóa bảng thành phần dinh dưỡng khi xuất ngoại.",
+      "vietnamAseanLessonEn": "Model for packaging traditional Vietnamese specialties for overseas supermarkets.",
+      "flagshipAddressZh": "南昌万寿宫糕饼老店",
       "imgHintSlug": "v7-brand-108",
-      "imagePath": "assets/images/provinces/jiangxi-wuyuan-village.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Nam Xương, Giang Tây kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "imagePath": "assets/images/prov_items/jiangxi/d0.jpg",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Nam Xương, Giang Tây.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Nanchang, Jiangxi.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Nam Xương, Giang Tây.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Tuyển nguyên liệu nông sản tươi tại địa phương Nam Xương, Giang Tây.",
+        "Ướp muối, lên men tự nhiên hoặc nhào bột theo tỷ lệ chuẩn.",
+        "Hấp, nướng hoặc phơi nắng nhiều tháng để chín hương vị.",
+        "Kiểm tra vi sinh an toàn thực phẩm và niêm phong bao bì."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Nam Xương, Giang Tây.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Inspect fresh agricultural harvests from Nanchang, Jiangxi.",
+        "Blend brine, flour, or spice proportions cleanly.",
+        "Steam, bake, or sun-mature gradually for deep aroma.",
+        "Run food-safety batch assays and seal retail packs."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -1520,7 +1552,7 @@
     {
       "id": "v7-brand-109",
       "cat": "culinary",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "淮安文楼汤包",
       "pinyin": "Huáiān Wénlóu Tāngbāo",
       "hanViet": "Hoài An Văn Lâu Thang Bao",
@@ -1530,33 +1562,37 @@
       "dynastyEn": "Jiaqing Era (Qing)",
       "provinceId": "jiangsu",
       "cityVi": "Hoài An, Giang Tô",
+      "cityEn": "Huai'an, Jiangsu",
       "signatureProductVi": "Bánh bao súp gạch cua Huaiyang mỏng giấy",
       "signatureProductEn": "Paper-Thin Huaiyang Crab-Roe Tangbao",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Hoài An, Giang Tô). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Wenlou Crab-Roe Soup Dumpling). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Hoài An, Giang Tô, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Hoài An, Giang Tô.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Hoài An, Giang Tô (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Wenlou Crab-Roe Soup Dumpling (Huai'an, Jiangsu). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Ủ lên men tự nhiên hoặc chế biến theo công thức gia truyền lâu năm ở Hoài An, Giang Tô.",
+      "craftSecretEn": "Slow natural fermentation and regional culinary balance preserved in Huai'an, Jiangsu.",
       "sensoryOrMaterialSpecVi": "Bánh bao súp gạch cua Huaiyang mỏng giấy",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "淮安文楼汤包历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Paper-Thin Huaiyang Crab-Roe Tangbao",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Có thể phát triển dòng gia vị hoặc bánh đặc sản đóng gói xuất khẩu đạt chuẩn CIFER.",
+      "b2bTradeEn": "Adaptable to retail specialty sauces and ambient pastry exports with full labeling.",
+      "vietnamAseanLessonVi": "Gợi mở cho ẩm thực truyền thống Việt Nam chuẩn hóa bảng thành phần dinh dưỡng khi xuất ngoại.",
+      "vietnamAseanLessonEn": "Model for packaging traditional Vietnamese specialties for overseas supermarkets.",
+      "flagshipAddressZh": "淮安文楼汤包老店",
       "imgHintSlug": "v7-brand-109",
-      "imagePath": "assets/images/articles/hero-chinese-cuisines.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Hoài An, Giang Tô kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "imagePath": "assets/images/prov_items/jiangsu/d1.jpg",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Hoài An, Giang Tô.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Huai'an, Jiangsu.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Hoài An, Giang Tô.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Tuyển nguyên liệu nông sản tươi tại địa phương Hoài An, Giang Tô.",
+        "Ướp muối, lên men tự nhiên hoặc nhào bột theo tỷ lệ chuẩn.",
+        "Hấp, nướng hoặc phơi nắng nhiều tháng để chín hương vị.",
+        "Kiểm tra vi sinh an toàn thực phẩm và niêm phong bao bì."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Hoài An, Giang Tô.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Inspect fresh agricultural harvests from Huai'an, Jiangsu.",
+        "Blend brine, flour, or spice proportions cleanly.",
+        "Steam, bake, or sun-mature gradually for deep aroma.",
+        "Run food-safety batch assays and seal retail packs."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -1572,7 +1608,7 @@
     {
       "id": "v7-brand-110",
       "cat": "craft",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "禹州孔家钧窑",
       "pinyin": "Yǔzhōu Kǒngjiā Jūnyáo",
       "hanViet": "Vũ Châu Khổng Gia Quân Diêu",
@@ -1582,33 +1618,37 @@
       "dynastyEn": "Late Qing",
       "provinceId": "henan",
       "cityVi": "Hứa Xương, Hà Nam",
+      "cityEn": "Xuchang, Henan",
       "signatureProductVi": "Gốm men biến sắc Diêu Biến (Nhất sắc nhập diêu, vạn thải xuất diêu)",
       "signatureProductEn": "Kiln-Transmuted Iridescent Jun Ware",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Hứa Xương, Hà Nam). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Kong Family Jun Porcelain). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Hứa Xương, Hà Nam, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Hứa Xương, Hà Nam.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Hứa Xương, Hà Nam (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Kong Family Jun Porcelain (Xuchang, Henan). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Gìn giữ bí quyết chọn lọc vật liệu và gia công thủ công tinh xảo tại Hứa Xương, Hà Nam.",
+      "craftSecretEn": "Refined material selection and patient manual workmanship passed down in Xuchang, Henan.",
       "sensoryOrMaterialSpecVi": "Gốm men biến sắc Diêu Biến (Nhất sắc nhập diêu, vạn thải xuất diêu)",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "禹州孔家钧窑历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Kiln-Transmuted Iridescent Jun Ware",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Phù hợp làm quà tặng văn hóa cao cấp và mặt hàng thủ công mỹ nghệ xuất khẩu.",
+      "b2bTradeEn": "Well suited for curated museum gifts and boutique handicraft distribution.",
+      "vietnamAseanLessonVi": "Gợi ý thực tiễn cho Bát Tràng, Chu Đậu và Sơn mài Hạ Thái trong chuẩn hóa hộp đựng và hồ sơ nguồn gốc.",
+      "vietnamAseanLessonEn": "Practical reference for Vietnamese craft villages upgrading gift packaging and provenance notes.",
+      "flagshipAddressZh": "禹州孔家钧窑老店",
       "imgHintSlug": "v7-brand-110",
       "imagePath": "assets/images/museum/jun-yao-bowl.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Hứa Xương, Hà Nam kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Hứa Xương, Hà Nam.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Xuchang, Henan.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Hứa Xương, Hà Nam.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Chọn lọc nguyên liệu thô tại vùng Hứa Xương, Hà Nam.",
+        "Sơ chế làm sạch tạp chất theo phương pháp cổ truyền.",
+        "Gia công tạo hình, nung hoặc mài giũa thủ công.",
+        "Đóng triện nghệ nhân, kiểm tra độ bền và đóng hộp."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Hứa Xương, Hà Nam.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Source vetted raw minerals, timber, or silk around Xuchang, Henan.",
+        "Refine and age materials using non-accelerated preparation.",
+        "Shape, fire, forge, or hand-finish to workshop tolerances.",
+        "Impress artisan hallmark and pack with provenance card."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -1624,7 +1664,7 @@
     {
       "id": "v7-brand-111",
       "cat": "culinary",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "长春鼎丰真",
       "pinyin": "Chángchūn Dǐngfēngzhēn",
       "hanViet": "Trường Xuân Đỉnh Phong Chân",
@@ -1634,33 +1674,37 @@
       "dynastyEn": "Late Qing",
       "provinceId": "jilin",
       "cityVi": "Trường Xuân, Cát Lâm",
+      "cityEn": "Changchun, Jilin",
       "signatureProductVi": "Bánh Trung thu Tát Kỳ Mã và bánh đậu đỏ Đông Bắc",
       "signatureProductEn": "Northeastern Sachima & Royal Pastries",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Trường Xuân, Cát Lâm). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Dingfengzhen Manchurian Pastries). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Trường Xuân, Cát Lâm, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Trường Xuân, Cát Lâm.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Trường Xuân, Cát Lâm (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Dingfengzhen Manchurian Pastries (Changchun, Jilin). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Ủ lên men tự nhiên hoặc chế biến theo công thức gia truyền lâu năm ở Trường Xuân, Cát Lâm.",
+      "craftSecretEn": "Slow natural fermentation and regional culinary balance preserved in Changchun, Jilin.",
       "sensoryOrMaterialSpecVi": "Bánh Trung thu Tát Kỳ Mã và bánh đậu đỏ Đông Bắc",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "长春鼎丰真历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Northeastern Sachima & Royal Pastries",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Có thể phát triển dòng gia vị hoặc bánh đặc sản đóng gói xuất khẩu đạt chuẩn CIFER.",
+      "b2bTradeEn": "Adaptable to retail specialty sauces and ambient pastry exports with full labeling.",
+      "vietnamAseanLessonVi": "Gợi mở cho ẩm thực truyền thống Việt Nam chuẩn hóa bảng thành phần dinh dưỡng khi xuất ngoại.",
+      "vietnamAseanLessonEn": "Model for packaging traditional Vietnamese specialties for overseas supermarkets.",
+      "flagshipAddressZh": "长春鼎丰真老店",
       "imgHintSlug": "v7-brand-111",
-      "imagePath": "assets/images/provinces/jilin-changbai-tianchi.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Trường Xuân, Cát Lâm kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "imagePath": "assets/images/prov_items/jilin/d0.jpg",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Trường Xuân, Cát Lâm.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Changchun, Jilin.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Trường Xuân, Cát Lâm.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Tuyển nguyên liệu nông sản tươi tại địa phương Trường Xuân, Cát Lâm.",
+        "Ướp muối, lên men tự nhiên hoặc nhào bột theo tỷ lệ chuẩn.",
+        "Hấp, nướng hoặc phơi nắng nhiều tháng để chín hương vị.",
+        "Kiểm tra vi sinh an toàn thực phẩm và niêm phong bao bì."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Trường Xuân, Cát Lâm.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Inspect fresh agricultural harvests from Changchun, Jilin.",
+        "Blend brine, flour, or spice proportions cleanly.",
+        "Steam, bake, or sun-mature gradually for deep aroma.",
+        "Run food-safety batch assays and seal retail packs."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -1676,7 +1720,7 @@
     {
       "id": "v7-brand-112",
       "cat": "tcm",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "昆明福林堂",
       "pinyin": "Kūnmíng Fúlíntáng",
       "hanViet": "Côn Minh Phúc Lâm Đường",
@@ -1686,33 +1730,37 @@
       "dynastyEn": "Xianfeng Era (Qing)",
       "provinceId": "yunnan",
       "cityVi": "Côn Minh, Vân Nam",
+      "cityEn": "Kunming, Yunnan",
       "signatureProductVi": "Văn hóa trà hoa & thực liệu vùng cao nguyên Điền Việt (phi lâm sàng)",
       "signatureProductEn": "Highland Yunnan Culinary Herbarium (Non-Clinical)",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Côn Minh, Vân Nam). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Fulintang Yunnan Botanical Museum). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Côn Minh, Vân Nam, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Côn Minh, Vân Nam.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Côn Minh, Vân Nam (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Fulintang Yunnan Botanical Museum (Kunming, Yunnan). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Lưu giữ tư liệu bào chế thảo mộc dân gian truyền thống tại Côn Minh, Vân Nam (khảo cứu lịch sử, phi lâm sàng).",
+      "craftSecretEn": "Records regional botanical decoction and herbal pantry history in Kunming, Yunnan (non-clinical archive).",
       "sensoryOrMaterialSpecVi": "Văn hóa trà hoa & thực liệu vùng cao nguyên Điền Việt (phi lâm sàng)",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "昆明福林堂历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Highland Yunnan Culinary Herbarium (Non-Clinical)",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Tập trung vào trà thảo mộc giải nhiệt, nguyên liệu hầm canh và đồ uống thực dưỡng đóng chai.",
+      "b2bTradeEn": "Focuses on botanical pantry teas and culinary infusions rather than prescription lines.",
+      "vietnamAseanLessonVi": "Tương đồng cách dùng thảo mộc quen thuộc như lá vối, sâm bông cúc trong ẩm thực Việt Nam.",
+      "vietnamAseanLessonEn": "Parallels everyday Vietnamese cooling botanical infusions and soup spices.",
+      "flagshipAddressZh": "昆明福林堂老店",
       "imgHintSlug": "v7-brand-112",
-      "imagePath": "assets/images/provinces/yunnan-lijiang-old-town.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Côn Minh, Vân Nam kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "imagePath": "assets/images/prov_items/yunnan/f0.jpg",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Côn Minh, Vân Nam.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Kunming, Yunnan.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Côn Minh, Vân Nam.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Thu hái thảo mộc đúng mùa tại vùng Côn Minh, Vân Nam.",
+        "Làm sạch, sao vàng hạ thổ hoặc phơi râm giữ hương.",
+        "Phối trộn tỷ lệ thảo mộc dùng trong ẩm thực gia đình.",
+        "Đóng gói chống ẩm kèm ghi chú rõ công dụng ẩm thực."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Côn Minh, Vân Nam.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Gather regional botanicals around Kunming, Yunnan.",
+        "Clean and shade-dry leaves or roots without sulfur bleach.",
+        "Portion gentle culinary spice and herbal tea blends.",
+        "Moisture-seal pouches with clear non-clinical food labels."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -1728,7 +1776,7 @@
     {
       "id": "v7-brand-113",
       "cat": "culinary",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "合肥詹记桃酥",
       "pinyin": "Héféi Zhānjì Táosū",
       "hanViet": "Hợp Phì Chiêm Ký Đào Tô",
@@ -1738,33 +1786,37 @@
       "dynastyEn": "Mid-Century Anhui",
       "provinceId": "anhui",
       "cityVi": "Hợp Phì, An Huy",
+      "cityEn": "Hefei, Anhui",
       "signatureProductVi": "Bánh Đào Tô giòn tan nướng vỉ đá An Huy",
       "signatureProductEn": "Crispy Anhui Taosu Stone-Baked Biscuit",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Hợp Phì, An Huy). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Zhanji Anhui Walnut Cookie). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Hợp Phì, An Huy, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Hợp Phì, An Huy.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Hợp Phì, An Huy (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Zhanji Anhui Walnut Cookie (Hefei, Anhui). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Ủ lên men tự nhiên hoặc chế biến theo công thức gia truyền lâu năm ở Hợp Phì, An Huy.",
+      "craftSecretEn": "Slow natural fermentation and regional culinary balance preserved in Hefei, Anhui.",
       "sensoryOrMaterialSpecVi": "Bánh Đào Tô giòn tan nướng vỉ đá An Huy",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "合肥詹记桃酥历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Crispy Anhui Taosu Stone-Baked Biscuit",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Có thể phát triển dòng gia vị hoặc bánh đặc sản đóng gói xuất khẩu đạt chuẩn CIFER.",
+      "b2bTradeEn": "Adaptable to retail specialty sauces and ambient pastry exports with full labeling.",
+      "vietnamAseanLessonVi": "Gợi mở cho ẩm thực truyền thống Việt Nam chuẩn hóa bảng thành phần dinh dưỡng khi xuất ngoại.",
+      "vietnamAseanLessonEn": "Model for packaging traditional Vietnamese specialties for overseas supermarkets.",
+      "flagshipAddressZh": "合肥詹记桃酥老店",
       "imgHintSlug": "v7-brand-113",
-      "imagePath": "assets/images/provinces/anhui-hongcun-moonpond.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Hợp Phì, An Huy kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "imagePath": "assets/images/prov_items/anhui/d0.jpg",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Hợp Phì, An Huy.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Hefei, Anhui.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Hợp Phì, An Huy.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Tuyển nguyên liệu nông sản tươi tại địa phương Hợp Phì, An Huy.",
+        "Ướp muối, lên men tự nhiên hoặc nhào bột theo tỷ lệ chuẩn.",
+        "Hấp, nướng hoặc phơi nắng nhiều tháng để chín hương vị.",
+        "Kiểm tra vi sinh an toàn thực phẩm và niêm phong bao bì."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Hợp Phì, An Huy.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Inspect fresh agricultural harvests from Hefei, Anhui.",
+        "Blend brine, flour, or spice proportions cleanly.",
+        "Steam, bake, or sun-mature gradually for deep aroma.",
+        "Run food-safety batch assays and seal retail packs."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -1780,7 +1832,7 @@
     {
       "id": "v7-brand-114",
       "cat": "culinary",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "兰州马子禄牛肉面",
       "pinyin": "Lánzhōu Mǎzǐlù Niúròumiàn",
       "hanViet": "Lan Châu Mã Tử Lộc Ngưu Nhục Diện",
@@ -1790,33 +1842,37 @@
       "dynastyEn": "Mid-20th Century",
       "provinceId": "gansu",
       "cityVi": "Lan Châu, Cam Túc",
+      "cityEn": "Lanzhou, Gansu",
       "signatureProductVi": "Mì kéo tay 5 sắc Nhất Thanh Nhị Bạch Tam Hồng Tứ Lục Ngũ Hoàng",
       "signatureProductEn": "Five-Color Hand-Pulled Beef Noodles",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Lan Châu, Cam Túc). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Mazilu Lanzhou Hand-Pulled Noodles). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Lan Châu, Cam Túc, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Lan Châu, Cam Túc.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Lan Châu, Cam Túc (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Mazilu Lanzhou Hand-Pulled Noodles (Lanzhou, Gansu). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Ủ lên men tự nhiên hoặc chế biến theo công thức gia truyền lâu năm ở Lan Châu, Cam Túc.",
+      "craftSecretEn": "Slow natural fermentation and regional culinary balance preserved in Lanzhou, Gansu.",
       "sensoryOrMaterialSpecVi": "Mì kéo tay 5 sắc Nhất Thanh Nhị Bạch Tam Hồng Tứ Lục Ngũ Hoàng",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "兰州马子禄牛肉面历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Five-Color Hand-Pulled Beef Noodles",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Có thể phát triển dòng gia vị hoặc bánh đặc sản đóng gói xuất khẩu đạt chuẩn CIFER.",
+      "b2bTradeEn": "Adaptable to retail specialty sauces and ambient pastry exports with full labeling.",
+      "vietnamAseanLessonVi": "Gợi mở cho ẩm thực truyền thống Việt Nam chuẩn hóa bảng thành phần dinh dưỡng khi xuất ngoại.",
+      "vietnamAseanLessonEn": "Model for packaging traditional Vietnamese specialties for overseas supermarkets.",
+      "flagshipAddressZh": "兰州马子禄牛肉面老店",
       "imgHintSlug": "v7-brand-114",
-      "imagePath": "assets/images/provinces/gansu-dunhuang-mogao.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Lan Châu, Cam Túc kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "imagePath": "assets/images/prov_items/gansu/d0.jpg",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Lan Châu, Cam Túc.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Lanzhou, Gansu.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Lan Châu, Cam Túc.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Tuyển nguyên liệu nông sản tươi tại địa phương Lan Châu, Cam Túc.",
+        "Ướp muối, lên men tự nhiên hoặc nhào bột theo tỷ lệ chuẩn.",
+        "Hấp, nướng hoặc phơi nắng nhiều tháng để chín hương vị.",
+        "Kiểm tra vi sinh an toàn thực phẩm và niêm phong bao bì."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Lan Châu, Cam Túc.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Inspect fresh agricultural harvests from Lanzhou, Gansu.",
+        "Blend brine, flour, or spice proportions cleanly.",
+        "Steam, bake, or sun-mature gradually for deep aroma.",
+        "Run food-safety batch assays and seal retail packs."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -1832,7 +1888,7 @@
     {
       "id": "v7-brand-115",
       "cat": "craft",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "莆田方氏木雕",
       "pinyin": "Pútián Fāngshì Mùdiāo",
       "hanViet": "Phủ Điền Phương Thị Mộc Điêu",
@@ -1842,33 +1898,37 @@
       "dynastyEn": "Late Qing",
       "provinceId": "fujian",
       "cityVi": "Phủ Điền, Phúc Kiến",
+      "cityEn": "Putian, Fujian",
       "signatureProductVi": "Điêu khắc thấu tầng gỗ Long Nhãn & Trầm hương",
       "signatureProductEn": "Multi-Layer Pierced Longan Woodcarving",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Phủ Điền, Phúc Kiến). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Putian Fang Woodcarving). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Phủ Điền, Phúc Kiến, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Phủ Điền, Phúc Kiến.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Phủ Điền, Phúc Kiến (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Putian Fang Woodcarving (Putian, Fujian). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Gìn giữ bí quyết chọn lọc vật liệu và gia công thủ công tinh xảo tại Phủ Điền, Phúc Kiến.",
+      "craftSecretEn": "Refined material selection and patient manual workmanship passed down in Putian, Fujian.",
       "sensoryOrMaterialSpecVi": "Điêu khắc thấu tầng gỗ Long Nhãn & Trầm hương",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "莆田方氏木雕历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Multi-Layer Pierced Longan Woodcarving",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Phù hợp làm quà tặng văn hóa cao cấp và mặt hàng thủ công mỹ nghệ xuất khẩu.",
+      "b2bTradeEn": "Well suited for curated museum gifts and boutique handicraft distribution.",
+      "vietnamAseanLessonVi": "Gợi ý thực tiễn cho Bát Tràng, Chu Đậu và Sơn mài Hạ Thái trong chuẩn hóa hộp đựng và hồ sơ nguồn gốc.",
+      "vietnamAseanLessonEn": "Practical reference for Vietnamese craft villages upgrading gift packaging and provenance notes.",
+      "flagshipAddressZh": "莆田方氏木雕老店",
       "imgHintSlug": "v7-brand-115",
-      "imagePath": "assets/images/provinces/fujian-tulou.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Phủ Điền, Phúc Kiến kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "imagePath": "assets/images/prov_items/fujian/h1.jpg",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Phủ Điền, Phúc Kiến.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Putian, Fujian.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Phủ Điền, Phúc Kiến.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Chọn lọc nguyên liệu thô tại vùng Phủ Điền, Phúc Kiến.",
+        "Sơ chế làm sạch tạp chất theo phương pháp cổ truyền.",
+        "Gia công tạo hình, nung hoặc mài giũa thủ công.",
+        "Đóng triện nghệ nhân, kiểm tra độ bền và đóng hộp."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Phủ Điền, Phúc Kiến.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Source vetted raw minerals, timber, or silk around Putian, Fujian.",
+        "Refine and age materials using non-accelerated preparation.",
+        "Shape, fire, forge, or hand-finish to workshop tolerances.",
+        "Impress artisan hallmark and pack with provenance card."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -1884,7 +1944,7 @@
     {
       "id": "v7-brand-116",
       "cat": "culinary",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "自贡太源井",
       "pinyin": "Zìgòng Tàiyuánjǐng",
       "hanViet": "Tự Cống Thái Nguyên Tĩnh",
@@ -1894,33 +1954,37 @@
       "dynastyEn": "Daoguang Era (Qing)",
       "provinceId": "sichuan",
       "cityVi": "Tự Cống, Tứ Xuyên",
+      "cityEn": "Zigong, Sichuan",
       "signatureProductVi": "Xì dầu Sái Thố phơi sương & Muối giếng cổ 1000m",
       "signatureProductEn": "Ancient Deep-Well Salt & Sun-Fermented Soy",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Tự Cống, Tứ Xuyên). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Taiyuanjing Ancient Salt & Soy). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Tự Cống, Tứ Xuyên, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Tự Cống, Tứ Xuyên.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Tự Cống, Tứ Xuyên (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Taiyuanjing Ancient Salt & Soy (Zigong, Sichuan). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Ủ lên men tự nhiên hoặc chế biến theo công thức gia truyền lâu năm ở Tự Cống, Tứ Xuyên.",
+      "craftSecretEn": "Slow natural fermentation and regional culinary balance preserved in Zigong, Sichuan.",
       "sensoryOrMaterialSpecVi": "Xì dầu Sái Thố phơi sương & Muối giếng cổ 1000m",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "自贡太源井历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Ancient Deep-Well Salt & Sun-Fermented Soy",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Có thể phát triển dòng gia vị hoặc bánh đặc sản đóng gói xuất khẩu đạt chuẩn CIFER.",
+      "b2bTradeEn": "Adaptable to retail specialty sauces and ambient pastry exports with full labeling.",
+      "vietnamAseanLessonVi": "Gợi mở cho ẩm thực truyền thống Việt Nam chuẩn hóa bảng thành phần dinh dưỡng khi xuất ngoại.",
+      "vietnamAseanLessonEn": "Model for packaging traditional Vietnamese specialties for overseas supermarkets.",
+      "flagshipAddressZh": "自贡太源井老店",
       "imgHintSlug": "v7-brand-116",
-      "imagePath": "assets/images/provinces/sichuan-jiuzhaigou.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Tự Cống, Tứ Xuyên kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "imagePath": "assets/images/prov_items/sichuan/f1.jpg",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Tự Cống, Tứ Xuyên.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Zigong, Sichuan.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Tự Cống, Tứ Xuyên.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Tuyển nguyên liệu nông sản tươi tại địa phương Tự Cống, Tứ Xuyên.",
+        "Ướp muối, lên men tự nhiên hoặc nhào bột theo tỷ lệ chuẩn.",
+        "Hấp, nướng hoặc phơi nắng nhiều tháng để chín hương vị.",
+        "Kiểm tra vi sinh an toàn thực phẩm và niêm phong bao bì."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Tự Cống, Tứ Xuyên.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Inspect fresh agricultural harvests from Zigong, Sichuan.",
+        "Blend brine, flour, or spice proportions cleanly.",
+        "Steam, bake, or sun-mature gradually for deep aroma.",
+        "Run food-safety batch assays and seal retail packs."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -1936,7 +2000,7 @@
     {
       "id": "v7-brand-117",
       "cat": "craft",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "宜兴顾景舟紫砂",
       "pinyin": "Yíxīng Gù Jǐngzhōu Zǐshā",
       "hanViet": "Nghi Hưng Cố Cảnh Chu Tử Sa",
@@ -1946,33 +2010,37 @@
       "dynastyEn": "20th-Century Masterwork",
       "provinceId": "jiangsu",
       "cityVi": "Nghi Hưng, Giang Tô",
+      "cityEn": "Yixing, Jiangsu",
       "signatureProductVi": "Ấm đất Tử Sa không tráng men giữ trọn hương trà Ô Long",
       "signatureProductEn": "Unglazed Zisha Purple-Clay Teapot",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Nghi Hưng, Giang Tô). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Gu Jingzhou Yixing Zisha Lineage). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Nghi Hưng, Giang Tô, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Nghi Hưng, Giang Tô.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Nghi Hưng, Giang Tô (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Gu Jingzhou Yixing Zisha Lineage (Yixing, Jiangsu). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Gìn giữ bí quyết chọn lọc vật liệu và gia công thủ công tinh xảo tại Nghi Hưng, Giang Tô.",
+      "craftSecretEn": "Refined material selection and patient manual workmanship passed down in Yixing, Jiangsu.",
       "sensoryOrMaterialSpecVi": "Ấm đất Tử Sa không tráng men giữ trọn hương trà Ô Long",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "宜兴顾景舟紫砂历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Unglazed Zisha Purple-Clay Teapot",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Phù hợp làm quà tặng văn hóa cao cấp và mặt hàng thủ công mỹ nghệ xuất khẩu.",
+      "b2bTradeEn": "Well suited for curated museum gifts and boutique handicraft distribution.",
+      "vietnamAseanLessonVi": "Gợi ý thực tiễn cho Bát Tràng, Chu Đậu và Sơn mài Hạ Thái trong chuẩn hóa hộp đựng và hồ sơ nguồn gốc.",
+      "vietnamAseanLessonEn": "Practical reference for Vietnamese craft villages upgrading gift packaging and provenance notes.",
+      "flagshipAddressZh": "宜兴顾景舟紫砂老店",
       "imgHintSlug": "v7-brand-117",
-      "imagePath": "assets/images/academic/suzhou-garden.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Nghi Hưng, Giang Tô kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "imagePath": "assets/images/prov_items/jiangsu/h2.jpg",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Nghi Hưng, Giang Tô.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Yixing, Jiangsu.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Nghi Hưng, Giang Tô.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Chọn lọc nguyên liệu thô tại vùng Nghi Hưng, Giang Tô.",
+        "Sơ chế làm sạch tạp chất theo phương pháp cổ truyền.",
+        "Gia công tạo hình, nung hoặc mài giũa thủ công.",
+        "Đóng triện nghệ nhân, kiểm tra độ bền và đóng hộp."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Nghi Hưng, Giang Tô.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Source vetted raw minerals, timber, or silk around Yixing, Jiangsu.",
+        "Refine and age materials using non-accelerated preparation.",
+        "Shape, fire, forge, or hand-finish to workshop tolerances.",
+        "Impress artisan hallmark and pack with provenance card."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -1988,7 +2056,7 @@
     {
       "id": "v7-brand-118",
       "cat": "craft",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "湘西苗绣坊",
       "pinyin": "Xiāngxī Miáoxiùfāng",
       "hanViet": "Tương Tây Miêu Tú Phường",
@@ -1998,33 +2066,37 @@
       "dynastyEn": "Xiangxi Living Craft",
       "provinceId": "hunan",
       "cityVi": "Phượng Hoàng, Hồ Nam",
+      "cityEn": "Fenghuang, Hunan",
       "signatureProductVi": "Hoa văn thêu chỉ bạc & chỉ lụa nhuộm chàm Tương Tây",
       "signatureProductEn": "Indigo Silk & Silver Miao Embroidery",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Phượng Hoàng, Hồ Nam). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Xiangxi Miao Silver Embroidery Guild). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Phượng Hoàng, Hồ Nam, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Phượng Hoàng, Hồ Nam.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Phượng Hoàng, Hồ Nam (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Xiangxi Miao Silver Embroidery Guild (Fenghuang, Hunan). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Gìn giữ bí quyết chọn lọc vật liệu và gia công thủ công tinh xảo tại Phượng Hoàng, Hồ Nam.",
+      "craftSecretEn": "Refined material selection and patient manual workmanship passed down in Fenghuang, Hunan.",
       "sensoryOrMaterialSpecVi": "Hoa văn thêu chỉ bạc & chỉ lụa nhuộm chàm Tương Tây",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "湘西苗绣坊历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Indigo Silk & Silver Miao Embroidery",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Phù hợp làm quà tặng văn hóa cao cấp và mặt hàng thủ công mỹ nghệ xuất khẩu.",
+      "b2bTradeEn": "Well suited for curated museum gifts and boutique handicraft distribution.",
+      "vietnamAseanLessonVi": "Gợi ý thực tiễn cho Bát Tràng, Chu Đậu và Sơn mài Hạ Thái trong chuẩn hóa hộp đựng và hồ sơ nguồn gốc.",
+      "vietnamAseanLessonEn": "Practical reference for Vietnamese craft villages upgrading gift packaging and provenance notes.",
+      "flagshipAddressZh": "湘西苗绣坊老店",
       "imgHintSlug": "v7-brand-118",
-      "imagePath": "assets/images/provinces/hunan-zhangjiajie.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Phượng Hoàng, Hồ Nam kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "imagePath": "assets/images/prov_items/hunan/h1.jpg",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Phượng Hoàng, Hồ Nam.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Fenghuang, Hunan.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Phượng Hoàng, Hồ Nam.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Chọn lọc nguyên liệu thô tại vùng Phượng Hoàng, Hồ Nam.",
+        "Sơ chế làm sạch tạp chất theo phương pháp cổ truyền.",
+        "Gia công tạo hình, nung hoặc mài giũa thủ công.",
+        "Đóng triện nghệ nhân, kiểm tra độ bền và đóng hộp."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Phượng Hoàng, Hồ Nam.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Source vetted raw minerals, timber, or silk around Fenghuang, Hunan.",
+        "Refine and age materials using non-accelerated preparation.",
+        "Shape, fire, forge, or hand-finish to workshop tolerances.",
+        "Impress artisan hallmark and pack with provenance card."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -2040,7 +2112,7 @@
     {
       "id": "v7-brand-119",
       "cat": "craft",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "博山人立琉璃",
       "pinyin": "Bóshān Rénlì Liúlí",
       "hanViet": "Bác Sơn Nhân Lập Lưu Ly",
@@ -2050,33 +2122,37 @@
       "dynastyEn": "Late Qing Shandong",
       "provinceId": "shandong",
       "cityVi": "Tri Bác, Sơn Đông",
+      "cityEn": "Zibo, Shandong",
       "signatureProductVi": "Thủy tinh Lưu Ly thổi tay đa sắc hoa văn sơn thủy",
       "signatureProductEn": "Boshan Hand-Blown Polychrome Glass",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Tri Bác, Sơn Đông). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Boshan Renli Colored Glasswork). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Tri Bác, Sơn Đông, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Tri Bác, Sơn Đông.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Tri Bác, Sơn Đông (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Boshan Renli Colored Glasswork (Zibo, Shandong). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Gìn giữ bí quyết chọn lọc vật liệu và gia công thủ công tinh xảo tại Tri Bác, Sơn Đông.",
+      "craftSecretEn": "Refined material selection and patient manual workmanship passed down in Zibo, Shandong.",
       "sensoryOrMaterialSpecVi": "Thủy tinh Lưu Ly thổi tay đa sắc hoa văn sơn thủy",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "博山人立琉璃历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Boshan Hand-Blown Polychrome Glass",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Phù hợp làm quà tặng văn hóa cao cấp và mặt hàng thủ công mỹ nghệ xuất khẩu.",
+      "b2bTradeEn": "Well suited for curated museum gifts and boutique handicraft distribution.",
+      "vietnamAseanLessonVi": "Gợi ý thực tiễn cho Bát Tràng, Chu Đậu và Sơn mài Hạ Thái trong chuẩn hóa hộp đựng và hồ sơ nguồn gốc.",
+      "vietnamAseanLessonEn": "Practical reference for Vietnamese craft villages upgrading gift packaging and provenance notes.",
+      "flagshipAddressZh": "博山人立琉璃老店",
       "imgHintSlug": "v7-brand-119",
-      "imagePath": "assets/images/provinces/shandong-taishan.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Tri Bác, Sơn Đông kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "imagePath": "assets/images/prov_items/shandong/h2.jpg",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Tri Bác, Sơn Đông.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Zibo, Shandong.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Tri Bác, Sơn Đông.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Chọn lọc nguyên liệu thô tại vùng Tri Bác, Sơn Đông.",
+        "Sơ chế làm sạch tạp chất theo phương pháp cổ truyền.",
+        "Gia công tạo hình, nung hoặc mài giũa thủ công.",
+        "Đóng triện nghệ nhân, kiểm tra độ bền và đóng hộp."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Tri Bác, Sơn Đông.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Source vetted raw minerals, timber, or silk around Zibo, Shandong.",
+        "Refine and age materials using non-accelerated preparation.",
+        "Shape, fire, forge, or hand-finish to workshop tolerances.",
+        "Impress artisan hallmark and pack with provenance card."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -2092,7 +2168,7 @@
     {
       "id": "v7-brand-120",
       "cat": "craft",
-      "mofcomBatch": "Đợt Quốc gia V7",
+      "mofcomBatch": "Trung Hoa Lão Tự Hào",
       "zh": "徽州胡开文墨厂",
       "pinyin": "Huīzhōu Hú Kāiwén Mòchǎng",
       "hanViet": "Huy Châu Hồ Khai Văn Mặc Xưởng",
@@ -2102,33 +2178,37 @@
       "dynastyEn": "Qianlong Era (Qing)",
       "provinceId": "anhui",
       "cityVi": "Hoàng Sơn, An Huy",
+      "cityEn": "Huangshan, Anhui",
       "signatureProductVi": "Thỏi Mực Tùng Yên khắc vàng viết đại tự không phai",
       "signatureProductEn": "Imperial Gilded Pine-Soot Inkstick",
-      "qualityStandardVi": "Hồ sơ bảo hộ di sản phi vật thể & tiêu chuẩn xuất xứ địa phương (Hoàng Sơn, An Huy). Lưu ý: tư liệu lịch sử thủ công — KHÔNG chẩn đoán lâm sàng.",
-      "qualityStandardEn": "Registered provincial intangible heritage & geographical standard (Hu Kaiwen Imperial Pine-Soot Ink). Historical & craft reference only — NOT clinical.",
-      "craftSecretVi": "Kết tinh bí quyết chọn nguyên liệu bản địa Hoàng Sơn, An Huy, kiểm soát nhiệt độ hoặc thời gian ủ tự nhiên qua nhiều thế hệ nghệ nhân.",
-      "craftSecretEn": "Preserves multi-generation material sourcing, thermal calibration, and natural aging mastered in Hoàng Sơn, An Huy.",
+      "qualityStandardVi": "Bảo hộ di sản thủ công địa phương tại Hoàng Sơn, An Huy (tư liệu lịch sử–văn hóa, KHÔNG chẩn đoán lâm sàng).",
+      "qualityStandardEn": "Registered regional heritage standard for Hu Kaiwen Imperial Pine-Soot Ink (Huangshan, Anhui). Cultural archive only — NOT clinical.",
+      "craftSecretVi": "Gìn giữ bí quyết chọn lọc vật liệu và gia công thủ công tinh xảo tại Hoàng Sơn, An Huy.",
+      "craftSecretEn": "Refined material selection and patient manual workmanship passed down in Huangshan, Anhui.",
       "sensoryOrMaterialSpecVi": "Thỏi Mực Tùng Yên khắc vàng viết đại tự không phai",
-      "authenticVsCounterfeitVi": "Đối chiếu tem truy xuất Lão Tự Hào Bộ Thương mại, dấu triện nghệ nhân và bao bì xuất xứ địa danh.",
-      "b2bTradeVi": "Tiềm năng hợp tác phân phối đặc sản cao cấp, quà tặng văn hóa ASEAN & thương mại điện tử xuyên biên giới.",
-      "b2bTradeEn": "Strong ASEAN–EU positioning for high-craft culinary gifts and cross-border cultural retail.",
-      "vietnamAseanLessonVi": "Bài học nâng tầm thương hiệu làng nghề Việt Nam (Gốm Chu Đậu, Lụa Vạn Phúc, Trà Shan Tuyết) thông qua tiêu chuẩn hóa bao bì và kể chuyện di sản.",
-      "vietnamAseanLessonEn": "Benchmark for elevating Vietnamese heritage craft villages through standardized GI protection and museum-grade storytelling.",
-      "flagshipAddressZh": "徽州胡开文墨厂历史文化展示馆",
+      "sensoryOrMaterialSpecEn": "Imperial Gilded Pine-Soot Inkstick",
+      "authenticVsCounterfeitVi": "Nhận diện qua biển hiệu đồng Bộ Thương mại TQ, dấu triện nghệ nhân và bao bì có mã truy xuất.",
+      "authenticVsCounterfeitEn": "Confirm official Time-Honored Brand plaque, maker's chop impression, and batch traceability label.",
+      "b2bTradeVi": "Phù hợp làm quà tặng văn hóa cao cấp và mặt hàng thủ công mỹ nghệ xuất khẩu.",
+      "b2bTradeEn": "Well suited for curated museum gifts and boutique handicraft distribution.",
+      "vietnamAseanLessonVi": "Gợi ý thực tiễn cho Bát Tràng, Chu Đậu và Sơn mài Hạ Thái trong chuẩn hóa hộp đựng và hồ sơ nguồn gốc.",
+      "vietnamAseanLessonEn": "Practical reference for Vietnamese craft villages upgrading gift packaging and provenance notes.",
+      "flagshipAddressZh": "徽州胡开文墨厂老店",
       "imgHintSlug": "v7-brand-120",
-      "imagePath": "assets/images/provinces/anhui-huangshan-cloudsea.jpg",
-      "visitTipVi": "Có thể tham quan bảo tàng quy trình chế tác tại Hoàng Sơn, An Huy kết hợp tuyến Đường sắt Cao tốc vùng.",
+      "imagePath": "assets/images/prov_items/anhui/h1.jpg",
+      "visitTipVi": "Có thể ghé thăm cửa hàng trưng bày và xưởng nghề tại Hoàng Sơn, An Huy.",
+      "visitTipEn": "Visit the historic storefront and workshop archive in Huangshan, Anhui.",
       "craftProcessStepsVi": [
-        "Tuyển chọn nguyên liệu đặc hữu chuẩn vùng Hoàng Sơn, An Huy.",
-        "Sơ chế và tinh luyện theo gia phả nghệ nhân truyền đời.",
-        "Tạo hình / ủ men / kiểm nhiệt bằng kinh nghiệm thủ công chuẩn xác.",
-        "Đóng dấu triện bản quyền, kiểm định chất lượng và niêm phong xuất khẩu."
+        "Chọn lọc nguyên liệu thô tại vùng Hoàng Sơn, An Huy.",
+        "Sơ chế làm sạch tạp chất theo phương pháp cổ truyền.",
+        "Gia công tạo hình, nung hoặc mài giũa thủ công.",
+        "Đóng triện nghệ nhân, kiểm tra độ bền và đóng hộp."
       ],
       "craftProcessStepsEn": [
-        "Select provenance-certified raw materials from Hoàng Sơn, An Huy.",
-        "Execute multi-stage traditional preparation and purification.",
-        "Apply precision manual shaping, firing, or natural fermentation.",
-        "Stamp master seal, verify batch inspection, and seal packaging."
+        "Source vetted raw minerals, timber, or silk around Huangshan, Anhui.",
+        "Refine and age materials using non-accelerated preparation.",
+        "Shape, fire, forge, or hand-finish to workshop tolerances.",
+        "Impress artisan hallmark and pack with provenance card."
       ],
       "exportComplianceChecklistVi": [
         "Xác minh mã đăng ký nguồn gốc và nhãn thành phần song ngữ.",
@@ -2154,19 +2234,19 @@
       "provinceId": "guangdong",
       "euAgreementYear": 2012,
       "gbStandardCode": "GB/T 20356",
-      "protectionRuleVi": "Chứng nhận Chỉ dẫn Địa lý (GI) GB/T 20356: vùng sinh thái bắt buộc và kiểm định chất lượng đóng gói nguyên bản.",
-      "protectionRuleEn": "Protected Geographical Indication (GB/T 20356) enforcing delimited terroir and authentic packing rules.",
-      "vnEvftaCounterpartVi": "Đối sánh Chỉ dẫn Địa lý Việt Nam trong EVFTA: Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu, Gốm Bát Tràng, Chè Shan Tuyết Hà Giang.",
-      "vnEvftaCounterpartEn": "Counterpart to Vietnam GI icons under EVFTA: Thanh Ha lychee, Tan Chau Lanh My A silk, and Ha Giang tea.",
-      "euProtectionNoteVi": "Chuẩn bảo hộ song phương GI (2012): chống giả mạo tên vùng xuất xứ khi lưu thông bán lẻ.",
-      "euProtectionNoteEn": "Bilateral GI protection benchmark (2012) safeguarding regional appellation integrity.",
-      "vnEuComparisonVi": "Việt Nam và Trung Quốc đều sử dụng cơ chế bảo hộ vùng trồng gắn nhãn điện tử chống hàng nhái.",
-      "vnEuComparisonEn": "Both Vietnam and China pair delimited soil maps with QR anti-counterfeit seals.",
+      "protectionRuleVi": "Chỉ dẫn Địa lý chuẩn GB/T 20356: giới hạn vùng sinh thái bản địa và quy cách đóng gói gốc.",
+      "protectionRuleEn": "Geographical Indication (GB/T 20356): defines local terroir perimeter and authentic origin packing.",
+      "vnEvftaCounterpartVi": "Tương đồng cơ chế bảo hộ vùng trồng của Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu và Chè Shan Tuyết Hà Giang.",
+      "vnEvftaCounterpartEn": "Comparable to Vietnamese EVFTA protected appellations including Thanh Ha lychee and Ha Giang mountain tea.",
+      "euProtectionNoteVi": "Công nhận bảo hộ 2012 chống lạm dụng tên địa danh trên bao bì bán lẻ.",
+      "euProtectionNoteEn": "Registered (2012) to prevent unauthorized use of regional names on retail packs.",
+      "vnEuComparisonVi": "Cùng gắn mã truy xuất nguồn gốc và bản đồ thổ nhưỡng cho nông sản – thủ công.",
+      "vnEuComparisonEn": "Both pair delimited terroir maps with batch traceability labels.",
       "terroirAndCraftVi": "Cơm trắng giòn không chảy nước, đường viền xanh lục chạy dọc vỏ quả.",
       "terroirAndCraftEn": "Crisp translucent flesh framed by a signature green suture line.",
       "customsHsAndAuditVi": "Kiểm tra giấy chứng nhận xuất xứ Form E / REX và mã doanh nghiệp sản xuất hợp lệ.",
       "customsHsAndAuditEn": "Verify preferential Certificate of Origin (Form E) and approved producer codes.",
-      "imagePath": "assets/images/provinces/guangdong-canton-tower.jpg"
+      "imagePath": "assets/images/prov_items/guangdong/f0.jpg"
     },
     {
       "id": "gi-v7-02",
@@ -2179,19 +2259,19 @@
       "provinceId": "zhejiang",
       "euAgreementYear": 2006,
       "gbStandardCode": "GB/T 20469",
-      "protectionRuleVi": "Chứng nhận Chỉ dẫn Địa lý (GI) GB/T 20469: vùng sinh thái bắt buộc và kiểm định chất lượng đóng gói nguyên bản.",
-      "protectionRuleEn": "Protected Geographical Indication (GB/T 20469) enforcing delimited terroir and authentic packing rules.",
-      "vnEvftaCounterpartVi": "Đối sánh Chỉ dẫn Địa lý Việt Nam trong EVFTA: Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu, Gốm Bát Tràng, Chè Shan Tuyết Hà Giang.",
-      "vnEvftaCounterpartEn": "Counterpart to Vietnam GI icons under EVFTA: Thanh Ha lychee, Tan Chau Lanh My A silk, and Ha Giang tea.",
-      "euProtectionNoteVi": "Chuẩn bảo hộ song phương GI (2006): chống giả mạo tên vùng xuất xứ khi lưu thông bán lẻ.",
-      "euProtectionNoteEn": "Bilateral GI protection benchmark (2006) safeguarding regional appellation integrity.",
-      "vnEuComparisonVi": "Việt Nam và Trung Quốc đều sử dụng cơ chế bảo hộ vùng trồng gắn nhãn điện tử chống hàng nhái.",
-      "vnEuComparisonEn": "Both Vietnam and China pair delimited soil maps with QR anti-counterfeit seals.",
+      "protectionRuleVi": "Chỉ dẫn Địa lý chuẩn GB/T 20469: giới hạn vùng sinh thái bản địa và quy cách đóng gói gốc.",
+      "protectionRuleEn": "Geographical Indication (GB/T 20469): defines local terroir perimeter and authentic origin packing.",
+      "vnEvftaCounterpartVi": "Tương đồng cơ chế bảo hộ vùng trồng của Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu và Chè Shan Tuyết Hà Giang.",
+      "vnEvftaCounterpartEn": "Comparable to Vietnamese EVFTA protected appellations including Thanh Ha lychee and Ha Giang mountain tea.",
+      "euProtectionNoteVi": "Công nhận bảo hộ 2006 chống lạm dụng tên địa danh trên bao bì bán lẻ.",
+      "euProtectionNoteEn": "Registered (2006) to prevent unauthorized use of regional names on retail packs.",
+      "vnEuComparisonVi": "Cùng gắn mã truy xuất nguồn gốc và bản đồ thổ nhưỡng cho nông sản – thủ công.",
+      "vnEuComparisonEn": "Both pair delimited terroir maps with batch traceability labels.",
       "terroirAndCraftVi": "Đá pyrophyllite mềm mịn không làm mẻ lưỡi dao thép khi khắc triện.",
       "terroirAndCraftEn": "Fine pyrophyllite stone allowing crisp epigraphic knife cuts without chipping.",
       "customsHsAndAuditVi": "Kiểm tra giấy chứng nhận xuất xứ Form E / REX và mã doanh nghiệp sản xuất hợp lệ.",
       "customsHsAndAuditEn": "Verify preferential Certificate of Origin (Form E) and approved producer codes.",
-      "imagePath": "assets/images/provinces/zhejiang-hangzhou-westlake.jpg"
+      "imagePath": "assets/images/prov_items/zhejiang/f1.jpg"
     },
     {
       "id": "gi-v7-03",
@@ -2204,19 +2284,19 @@
       "provinceId": "jiangsu",
       "euAgreementYear": 2004,
       "gbStandardCode": "GB/T 20697",
-      "protectionRuleVi": "Chứng nhận Chỉ dẫn Địa lý (GI) GB/T 20697: vùng sinh thái bắt buộc và kiểm định chất lượng đóng gói nguyên bản.",
-      "protectionRuleEn": "Protected Geographical Indication (GB/T 20697) enforcing delimited terroir and authentic packing rules.",
-      "vnEvftaCounterpartVi": "Đối sánh Chỉ dẫn Địa lý Việt Nam trong EVFTA: Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu, Gốm Bát Tràng, Chè Shan Tuyết Hà Giang.",
-      "vnEvftaCounterpartEn": "Counterpart to Vietnam GI icons under EVFTA: Thanh Ha lychee, Tan Chau Lanh My A silk, and Ha Giang tea.",
-      "euProtectionNoteVi": "Chuẩn bảo hộ song phương GI (2004): chống giả mạo tên vùng xuất xứ khi lưu thông bán lẻ.",
-      "euProtectionNoteEn": "Bilateral GI protection benchmark (2004) safeguarding regional appellation integrity.",
-      "vnEuComparisonVi": "Việt Nam và Trung Quốc đều sử dụng cơ chế bảo hộ vùng trồng gắn nhãn điện tử chống hàng nhái.",
-      "vnEuComparisonEn": "Both Vietnam and China pair delimited soil maps with QR anti-counterfeit seals.",
+      "protectionRuleVi": "Chỉ dẫn Địa lý chuẩn GB/T 20697: giới hạn vùng sinh thái bản địa và quy cách đóng gói gốc.",
+      "protectionRuleEn": "Geographical Indication (GB/T 20697): defines local terroir perimeter and authentic origin packing.",
+      "vnEvftaCounterpartVi": "Tương đồng cơ chế bảo hộ vùng trồng của Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu và Chè Shan Tuyết Hà Giang.",
+      "vnEvftaCounterpartEn": "Comparable to Vietnamese EVFTA protected appellations including Thanh Ha lychee and Ha Giang mountain tea.",
+      "euProtectionNoteVi": "Công nhận bảo hộ 2004 chống lạm dụng tên địa danh trên bao bì bán lẻ.",
+      "euProtectionNoteEn": "Registered (2004) to prevent unauthorized use of regional names on retail packs.",
+      "vnEuComparisonVi": "Cùng gắn mã truy xuất nguồn gốc và bản đồ thổ nhưỡng cho nông sản – thủ công.",
+      "vnEuComparisonEn": "Both pair delimited terroir maps with batch traceability labels.",
       "terroirAndCraftVi": "Ủ bùn đất hoàng thổ đầm lầy giúp lòng đỏ tươm dầu cam rực rỡ.",
       "terroirAndCraftEn": "Canal-silt cured eggs famed for ruby-oil yolks documented since Wang Zengqi.",
       "customsHsAndAuditVi": "Kiểm tra giấy chứng nhận xuất xứ Form E / REX và mã doanh nghiệp sản xuất hợp lệ.",
       "customsHsAndAuditEn": "Verify preferential Certificate of Origin (Form E) and approved producer codes.",
-      "imagePath": "assets/images/provinces/jiangsu-suzhou-garden.jpg"
+      "imagePath": "assets/images/prov_items/jiangsu/f2.jpg"
     },
     {
       "id": "gi-v7-04",
@@ -2229,19 +2309,19 @@
       "provinceId": "fujian",
       "euAgreementYear": 2006,
       "gbStandardCode": "GB/T 21782",
-      "protectionRuleVi": "Chứng nhận Chỉ dẫn Địa lý (GI) GB/T 21782: vùng sinh thái bắt buộc và kiểm định chất lượng đóng gói nguyên bản.",
-      "protectionRuleEn": "Protected Geographical Indication (GB/T 21782) enforcing delimited terroir and authentic packing rules.",
-      "vnEvftaCounterpartVi": "Đối sánh Chỉ dẫn Địa lý Việt Nam trong EVFTA: Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu, Gốm Bát Tràng, Chè Shan Tuyết Hà Giang.",
-      "vnEvftaCounterpartEn": "Counterpart to Vietnam GI icons under EVFTA: Thanh Ha lychee, Tan Chau Lanh My A silk, and Ha Giang tea.",
-      "euProtectionNoteVi": "Chuẩn bảo hộ song phương GI (2006): chống giả mạo tên vùng xuất xứ khi lưu thông bán lẻ.",
-      "euProtectionNoteEn": "Bilateral GI protection benchmark (2006) safeguarding regional appellation integrity.",
-      "vnEuComparisonVi": "Việt Nam và Trung Quốc đều sử dụng cơ chế bảo hộ vùng trồng gắn nhãn điện tử chống hàng nhái.",
-      "vnEuComparisonEn": "Both Vietnam and China pair delimited soil maps with QR anti-counterfeit seals.",
+      "protectionRuleVi": "Chỉ dẫn Địa lý chuẩn GB/T 21782: giới hạn vùng sinh thái bản địa và quy cách đóng gói gốc.",
+      "protectionRuleEn": "Geographical Indication (GB/T 21782): defines local terroir perimeter and authentic origin packing.",
+      "vnEvftaCounterpartVi": "Tương đồng cơ chế bảo hộ vùng trồng của Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu và Chè Shan Tuyết Hà Giang.",
+      "vnEvftaCounterpartEn": "Comparable to Vietnamese EVFTA protected appellations including Thanh Ha lychee and Ha Giang mountain tea.",
+      "euProtectionNoteVi": "Công nhận bảo hộ 2006 chống lạm dụng tên địa danh trên bao bì bán lẻ.",
+      "euProtectionNoteEn": "Registered (2006) to prevent unauthorized use of regional names on retail packs.",
+      "vnEuComparisonVi": "Cùng gắn mã truy xuất nguồn gốc và bản đồ thổ nhưỡng cho nông sản – thủ công.",
+      "vnEuComparisonEn": "Both pair delimited terroir maps with batch traceability labels.",
       "terroirAndCraftVi": "Hàm lượng sắt cực thấp tạo sắc men trắng ngà ấm xuyên sáng như ngọc.",
       "terroirAndCraftEn": "Ultra-low iron kaolin creating translucent ivory glaze cherished in Europe.",
       "customsHsAndAuditVi": "Kiểm tra giấy chứng nhận xuất xứ Form E / REX và mã doanh nghiệp sản xuất hợp lệ.",
       "customsHsAndAuditEn": "Verify preferential Certificate of Origin (Form E) and approved producer codes.",
-      "imagePath": "assets/images/provinces/fujian-tulou.jpg"
+      "imagePath": "assets/images/prov_items/fujian/f3.jpg"
     },
     {
       "id": "gi-v7-05",
@@ -2254,19 +2334,19 @@
       "provinceId": "guangdong",
       "euAgreementYear": 2008,
       "gbStandardCode": "GB/T 22749",
-      "protectionRuleVi": "Chứng nhận Chỉ dẫn Địa lý (GI) GB/T 22749: vùng sinh thái bắt buộc và kiểm định chất lượng đóng gói nguyên bản.",
-      "protectionRuleEn": "Protected Geographical Indication (GB/T 22749) enforcing delimited terroir and authentic packing rules.",
-      "vnEvftaCounterpartVi": "Đối sánh Chỉ dẫn Địa lý Việt Nam trong EVFTA: Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu, Gốm Bát Tràng, Chè Shan Tuyết Hà Giang.",
-      "vnEvftaCounterpartEn": "Counterpart to Vietnam GI icons under EVFTA: Thanh Ha lychee, Tan Chau Lanh My A silk, and Ha Giang tea.",
-      "euProtectionNoteVi": "Chuẩn bảo hộ song phương GI (2008): chống giả mạo tên vùng xuất xứ khi lưu thông bán lẻ.",
-      "euProtectionNoteEn": "Bilateral GI protection benchmark (2008) safeguarding regional appellation integrity.",
-      "vnEuComparisonVi": "Việt Nam và Trung Quốc đều sử dụng cơ chế bảo hộ vùng trồng gắn nhãn điện tử chống hàng nhái.",
-      "vnEuComparisonEn": "Both Vietnam and China pair delimited soil maps with QR anti-counterfeit seals.",
+      "protectionRuleVi": "Chỉ dẫn Địa lý chuẩn GB/T 22749: giới hạn vùng sinh thái bản địa và quy cách đóng gói gốc.",
+      "protectionRuleEn": "Geographical Indication (GB/T 22749): defines local terroir perimeter and authentic origin packing.",
+      "vnEvftaCounterpartVi": "Tương đồng cơ chế bảo hộ vùng trồng của Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu và Chè Shan Tuyết Hà Giang.",
+      "vnEvftaCounterpartEn": "Comparable to Vietnamese EVFTA protected appellations including Thanh Ha lychee and Ha Giang mountain tea.",
+      "euProtectionNoteVi": "Công nhận bảo hộ 2008 chống lạm dụng tên địa danh trên bao bì bán lẻ.",
+      "euProtectionNoteEn": "Registered (2008) to prevent unauthorized use of regional names on retail packs.",
+      "vnEuComparisonVi": "Cùng gắn mã truy xuất nguồn gốc và bản đồ thổ nhưỡng cho nông sản – thủ công.",
+      "vnEuComparisonEn": "Both pair delimited terroir maps with batch traceability labels.",
       "terroirAndCraftVi": "Vỏ cam rực siêu mỏng bóc dễ, độ đường Brix cao tự nhiên.",
       "terroirAndCraftEn": "Thin crimson peel with high natural Brix sweetness.",
       "customsHsAndAuditVi": "Kiểm tra giấy chứng nhận xuất xứ Form E / REX và mã doanh nghiệp sản xuất hợp lệ.",
       "customsHsAndAuditEn": "Verify preferential Certificate of Origin (Form E) and approved producer codes.",
-      "imagePath": "assets/images/provinces/guangdong-canton-tower.jpg"
+      "imagePath": "assets/images/prov_items/guangdong/f0.jpg"
     },
     {
       "id": "gi-v7-06",
@@ -2279,19 +2359,19 @@
       "provinceId": "jilin",
       "euAgreementYear": 2010,
       "gbStandardCode": "GB/T 24614",
-      "protectionRuleVi": "Chứng nhận Chỉ dẫn Địa lý (GI) GB/T 24614: vùng sinh thái bắt buộc và kiểm định chất lượng đóng gói nguyên bản.",
-      "protectionRuleEn": "Protected Geographical Indication (GB/T 24614) enforcing delimited terroir and authentic packing rules.",
-      "vnEvftaCounterpartVi": "Đối sánh Chỉ dẫn Địa lý Việt Nam trong EVFTA: Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu, Gốm Bát Tràng, Chè Shan Tuyết Hà Giang.",
-      "vnEvftaCounterpartEn": "Counterpart to Vietnam GI icons under EVFTA: Thanh Ha lychee, Tan Chau Lanh My A silk, and Ha Giang tea.",
-      "euProtectionNoteVi": "Chuẩn bảo hộ song phương GI (2010): chống giả mạo tên vùng xuất xứ khi lưu thông bán lẻ.",
-      "euProtectionNoteEn": "Bilateral GI protection benchmark (2010) safeguarding regional appellation integrity.",
-      "vnEuComparisonVi": "Việt Nam và Trung Quốc đều sử dụng cơ chế bảo hộ vùng trồng gắn nhãn điện tử chống hàng nhái.",
-      "vnEuComparisonEn": "Both Vietnam and China pair delimited soil maps with QR anti-counterfeit seals.",
+      "protectionRuleVi": "Chỉ dẫn Địa lý chuẩn GB/T 24614: giới hạn vùng sinh thái bản địa và quy cách đóng gói gốc.",
+      "protectionRuleEn": "Geographical Indication (GB/T 24614): defines local terroir perimeter and authentic origin packing.",
+      "vnEvftaCounterpartVi": "Tương đồng cơ chế bảo hộ vùng trồng của Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu và Chè Shan Tuyết Hà Giang.",
+      "vnEvftaCounterpartEn": "Comparable to Vietnamese EVFTA protected appellations including Thanh Ha lychee and Ha Giang mountain tea.",
+      "euProtectionNoteVi": "Công nhận bảo hộ 2010 chống lạm dụng tên địa danh trên bao bì bán lẻ.",
+      "euProtectionNoteEn": "Registered (2010) to prevent unauthorized use of regional names on retail packs.",
+      "vnEuComparisonVi": "Cùng gắn mã truy xuất nguồn gốc và bản đồ thổ nhưỡng cho nông sản – thủ công.",
+      "vnEuComparisonEn": "Both pair delimited terroir maps with batch traceability labels.",
       "terroirAndCraftVi": "Mọc trên gỗ sồi vùng núi lạnh 800m, dùng hầm canh gà bổ dưỡng ẩm thực.",
       "terroirAndCraftEn": "High-elevation oak-grown culinary mushroom prized in savory broths (non-clinical).",
       "customsHsAndAuditVi": "Kiểm tra giấy chứng nhận xuất xứ Form E / REX và mã doanh nghiệp sản xuất hợp lệ.",
       "customsHsAndAuditEn": "Verify preferential Certificate of Origin (Form E) and approved producer codes.",
-      "imagePath": "assets/images/provinces/jilin-changbai-tianchi.jpg"
+      "imagePath": "assets/images/prov_items/jilin/f2.jpg"
     },
     {
       "id": "gi-v7-07",
@@ -2304,19 +2384,19 @@
       "provinceId": "sichuan",
       "euAgreementYear": 2007,
       "gbStandardCode": "GB/T 23462",
-      "protectionRuleVi": "Chứng nhận Chỉ dẫn Địa lý (GI) GB/T 23462: vùng sinh thái bắt buộc và kiểm định chất lượng đóng gói nguyên bản.",
-      "protectionRuleEn": "Protected Geographical Indication (GB/T 23462) enforcing delimited terroir and authentic packing rules.",
-      "vnEvftaCounterpartVi": "Đối sánh Chỉ dẫn Địa lý Việt Nam trong EVFTA: Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu, Gốm Bát Tràng, Chè Shan Tuyết Hà Giang.",
-      "vnEvftaCounterpartEn": "Counterpart to Vietnam GI icons under EVFTA: Thanh Ha lychee, Tan Chau Lanh My A silk, and Ha Giang tea.",
-      "euProtectionNoteVi": "Chuẩn bảo hộ song phương GI (2007): chống giả mạo tên vùng xuất xứ khi lưu thông bán lẻ.",
-      "euProtectionNoteEn": "Bilateral GI protection benchmark (2007) safeguarding regional appellation integrity.",
-      "vnEuComparisonVi": "Việt Nam và Trung Quốc đều sử dụng cơ chế bảo hộ vùng trồng gắn nhãn điện tử chống hàng nhái.",
-      "vnEuComparisonEn": "Both Vietnam and China pair delimited soil maps with QR anti-counterfeit seals.",
+      "protectionRuleVi": "Chỉ dẫn Địa lý chuẩn GB/T 23462: giới hạn vùng sinh thái bản địa và quy cách đóng gói gốc.",
+      "protectionRuleEn": "Geographical Indication (GB/T 23462): defines local terroir perimeter and authentic origin packing.",
+      "vnEvftaCounterpartVi": "Tương đồng cơ chế bảo hộ vùng trồng của Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu và Chè Shan Tuyết Hà Giang.",
+      "vnEvftaCounterpartEn": "Comparable to Vietnamese EVFTA protected appellations including Thanh Ha lychee and Ha Giang mountain tea.",
+      "euProtectionNoteVi": "Công nhận bảo hộ 2007 chống lạm dụng tên địa danh trên bao bì bán lẻ.",
+      "euProtectionNoteEn": "Registered (2007) to prevent unauthorized use of regional names on retail packs.",
+      "vnEuComparisonVi": "Cùng gắn mã truy xuất nguồn gốc và bản đồ thổ nhưỡng cho nông sản – thủ công.",
+      "vnEuComparisonEn": "Both pair delimited terroir maps with batch traceability labels.",
       "terroirAndCraftVi": "Sợi tơ bóng mượt, thoáng khí bậc nhất vùng bồn địa Tứ Xuyên.",
       "terroirAndCraftEn": "Lustrous mulberry silk reeled in the Sichuan basin since Han times.",
       "customsHsAndAuditVi": "Kiểm tra giấy chứng nhận xuất xứ Form E / REX và mã doanh nghiệp sản xuất hợp lệ.",
       "customsHsAndAuditEn": "Verify preferential Certificate of Origin (Form E) and approved producer codes.",
-      "imagePath": "assets/images/provinces/sichuan-jiuzhaigou.jpg"
+      "imagePath": "assets/images/prov_items/sichuan/f2.jpg"
     },
     {
       "id": "gi-v7-08",
@@ -2329,19 +2409,19 @@
       "provinceId": "jiangsu",
       "euAgreementYear": 2006,
       "gbStandardCode": "GB/T 21105",
-      "protectionRuleVi": "Chứng nhận Chỉ dẫn Địa lý (GI) GB/T 21105: vùng sinh thái bắt buộc và kiểm định chất lượng đóng gói nguyên bản.",
-      "protectionRuleEn": "Protected Geographical Indication (GB/T 21105) enforcing delimited terroir and authentic packing rules.",
-      "vnEvftaCounterpartVi": "Đối sánh Chỉ dẫn Địa lý Việt Nam trong EVFTA: Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu, Gốm Bát Tràng, Chè Shan Tuyết Hà Giang.",
-      "vnEvftaCounterpartEn": "Counterpart to Vietnam GI icons under EVFTA: Thanh Ha lychee, Tan Chau Lanh My A silk, and Ha Giang tea.",
-      "euProtectionNoteVi": "Chuẩn bảo hộ song phương GI (2006): chống giả mạo tên vùng xuất xứ khi lưu thông bán lẻ.",
-      "euProtectionNoteEn": "Bilateral GI protection benchmark (2006) safeguarding regional appellation integrity.",
-      "vnEuComparisonVi": "Việt Nam và Trung Quốc đều sử dụng cơ chế bảo hộ vùng trồng gắn nhãn điện tử chống hàng nhái.",
-      "vnEuComparisonEn": "Both Vietnam and China pair delimited soil maps with QR anti-counterfeit seals.",
+      "protectionRuleVi": "Chỉ dẫn Địa lý chuẩn GB/T 21105: giới hạn vùng sinh thái bản địa và quy cách đóng gói gốc.",
+      "protectionRuleEn": "Geographical Indication (GB/T 21105): defines local terroir perimeter and authentic origin packing.",
+      "vnEvftaCounterpartVi": "Tương đồng cơ chế bảo hộ vùng trồng của Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu và Chè Shan Tuyết Hà Giang.",
+      "vnEvftaCounterpartEn": "Comparable to Vietnamese EVFTA protected appellations including Thanh Ha lychee and Ha Giang mountain tea.",
+      "euProtectionNoteVi": "Công nhận bảo hộ 2006 chống lạm dụng tên địa danh trên bao bì bán lẻ.",
+      "euProtectionNoteEn": "Registered (2006) to prevent unauthorized use of regional names on retail packs.",
+      "vnEuComparisonVi": "Cùng gắn mã truy xuất nguồn gốc và bản đồ thổ nhưỡng cho nông sản – thủ công.",
+      "vnEuComparisonEn": "Both pair delimited terroir maps with batch traceability labels.",
       "terroirAndCraftVi": "Muối rang hồi quế ủ lạnh rồi luộc lửa nhỏ giúp thịt trắng hồng thơm thanh.",
       "terroirAndCraftEn": "Spiced brine and low-simmer poaching yield tender pale meat without grease.",
       "customsHsAndAuditVi": "Kiểm tra giấy chứng nhận xuất xứ Form E / REX và mã doanh nghiệp sản xuất hợp lệ.",
       "customsHsAndAuditEn": "Verify preferential Certificate of Origin (Form E) and approved producer codes.",
-      "imagePath": "assets/images/provinces/jiangsu-suzhou-garden.jpg"
+      "imagePath": "assets/images/prov_items/jiangsu/f3.jpg"
     },
     {
       "id": "gi-v7-09",
@@ -2354,19 +2434,19 @@
       "provinceId": "jiangxi",
       "euAgreementYear": 2009,
       "gbStandardCode": "GB/T 21107",
-      "protectionRuleVi": "Chứng nhận Chỉ dẫn Địa lý (GI) GB/T 21107: vùng sinh thái bắt buộc và kiểm định chất lượng đóng gói nguyên bản.",
-      "protectionRuleEn": "Protected Geographical Indication (GB/T 21107) enforcing delimited terroir and authentic packing rules.",
-      "vnEvftaCounterpartVi": "Đối sánh Chỉ dẫn Địa lý Việt Nam trong EVFTA: Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu, Gốm Bát Tràng, Chè Shan Tuyết Hà Giang.",
-      "vnEvftaCounterpartEn": "Counterpart to Vietnam GI icons under EVFTA: Thanh Ha lychee, Tan Chau Lanh My A silk, and Ha Giang tea.",
-      "euProtectionNoteVi": "Chuẩn bảo hộ song phương GI (2009): chống giả mạo tên vùng xuất xứ khi lưu thông bán lẻ.",
-      "euProtectionNoteEn": "Bilateral GI protection benchmark (2009) safeguarding regional appellation integrity.",
-      "vnEuComparisonVi": "Việt Nam và Trung Quốc đều sử dụng cơ chế bảo hộ vùng trồng gắn nhãn điện tử chống hàng nhái.",
-      "vnEuComparisonEn": "Both Vietnam and China pair delimited soil maps with QR anti-counterfeit seals.",
+      "protectionRuleVi": "Chỉ dẫn Địa lý chuẩn GB/T 21107: giới hạn vùng sinh thái bản địa và quy cách đóng gói gốc.",
+      "protectionRuleEn": "Geographical Indication (GB/T 21107): defines local terroir perimeter and authentic origin packing.",
+      "vnEvftaCounterpartVi": "Tương đồng cơ chế bảo hộ vùng trồng của Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu và Chè Shan Tuyết Hà Giang.",
+      "vnEvftaCounterpartEn": "Comparable to Vietnamese EVFTA protected appellations including Thanh Ha lychee and Ha Giang mountain tea.",
+      "euProtectionNoteVi": "Công nhận bảo hộ 2009 chống lạm dụng tên địa danh trên bao bì bán lẻ.",
+      "euProtectionNoteEn": "Registered (2009) to prevent unauthorized use of regional names on retail packs.",
+      "vnEuComparisonVi": "Cùng gắn mã truy xuất nguồn gốc và bản đồ thổ nhưỡng cho nông sản – thủ công.",
+      "vnEuComparisonEn": "Both pair delimited terroir maps with batch traceability labels.",
       "terroirAndCraftVi": "Thổ nhưỡng đất đỏ giàu khoáng vi lượng tạo hương cam cân bằng chua ngọt.",
       "terroirAndCraftEn": "Mineral-rich red laterite hills yield balanced fragrant navel oranges.",
       "customsHsAndAuditVi": "Kiểm tra giấy chứng nhận xuất xứ Form E / REX và mã doanh nghiệp sản xuất hợp lệ.",
       "customsHsAndAuditEn": "Verify preferential Certificate of Origin (Form E) and approved producer codes.",
-      "imagePath": "assets/images/provinces/jiangxi-wuyuan-village.jpg"
+      "imagePath": "assets/images/prov_items/jiangxi/f0.jpg"
     },
     {
       "id": "gi-v7-10",
@@ -2379,19 +2459,19 @@
       "provinceId": "guangxi",
       "euAgreementYear": 2011,
       "gbStandardCode": "GB/T 26520",
-      "protectionRuleVi": "Chứng nhận Chỉ dẫn Địa lý (GI) GB/T 26520: vùng sinh thái bắt buộc và kiểm định chất lượng đóng gói nguyên bản.",
-      "protectionRuleEn": "Protected Geographical Indication (GB/T 26520) enforcing delimited terroir and authentic packing rules.",
-      "vnEvftaCounterpartVi": "Đối sánh Chỉ dẫn Địa lý Việt Nam trong EVFTA: Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu, Gốm Bát Tràng, Chè Shan Tuyết Hà Giang.",
-      "vnEvftaCounterpartEn": "Counterpart to Vietnam GI icons under EVFTA: Thanh Ha lychee, Tan Chau Lanh My A silk, and Ha Giang tea.",
-      "euProtectionNoteVi": "Chuẩn bảo hộ song phương GI (2011): chống giả mạo tên vùng xuất xứ khi lưu thông bán lẻ.",
-      "euProtectionNoteEn": "Bilateral GI protection benchmark (2011) safeguarding regional appellation integrity.",
-      "vnEuComparisonVi": "Việt Nam và Trung Quốc đều sử dụng cơ chế bảo hộ vùng trồng gắn nhãn điện tử chống hàng nhái.",
-      "vnEuComparisonEn": "Both Vietnam and China pair delimited soil maps with QR anti-counterfeit seals.",
+      "protectionRuleVi": "Chỉ dẫn Địa lý chuẩn GB/T 26520: giới hạn vùng sinh thái bản địa và quy cách đóng gói gốc.",
+      "protectionRuleEn": "Geographical Indication (GB/T 26520): defines local terroir perimeter and authentic origin packing.",
+      "vnEvftaCounterpartVi": "Tương đồng cơ chế bảo hộ vùng trồng của Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu và Chè Shan Tuyết Hà Giang.",
+      "vnEvftaCounterpartEn": "Comparable to Vietnamese EVFTA protected appellations including Thanh Ha lychee and Ha Giang mountain tea.",
+      "euProtectionNoteVi": "Công nhận bảo hộ 2011 chống lạm dụng tên địa danh trên bao bì bán lẻ.",
+      "euProtectionNoteEn": "Registered (2011) to prevent unauthorized use of regional names on retail packs.",
+      "vnEuComparisonVi": "Cùng gắn mã truy xuất nguồn gốc và bản đồ thổ nhưỡng cho nông sản – thủ công.",
+      "vnEuComparisonEn": "Both pair delimited terroir maps with batch traceability labels.",
       "terroirAndCraftVi": "Loài hoa trà cánh vàng hiếm vùng biên giới Việt–Trung giàu polyphenol tự nhiên.",
       "terroirAndCraftEn": "Rare Sino-Vietnamese borderland golden camellia rich in floral polyphenols.",
       "customsHsAndAuditVi": "Kiểm tra giấy chứng nhận xuất xứ Form E / REX và mã doanh nghiệp sản xuất hợp lệ.",
       "customsHsAndAuditEn": "Verify preferential Certificate of Origin (Form E) and approved producer codes.",
-      "imagePath": "assets/images/provinces/guangxi-guilin-li-river.jpg"
+      "imagePath": "assets/images/prov_items/guangxi/f0.jpg"
     },
     {
       "id": "gi-v7-11",
@@ -2404,19 +2484,19 @@
       "provinceId": "guangdong",
       "euAgreementYear": 2011,
       "gbStandardCode": "GB/T 26152",
-      "protectionRuleVi": "Chứng nhận Chỉ dẫn Địa lý (GI) GB/T 26152: vùng sinh thái bắt buộc và kiểm định chất lượng đóng gói nguyên bản.",
-      "protectionRuleEn": "Protected Geographical Indication (GB/T 26152) enforcing delimited terroir and authentic packing rules.",
-      "vnEvftaCounterpartVi": "Đối sánh Chỉ dẫn Địa lý Việt Nam trong EVFTA: Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu, Gốm Bát Tràng, Chè Shan Tuyết Hà Giang.",
-      "vnEvftaCounterpartEn": "Counterpart to Vietnam GI icons under EVFTA: Thanh Ha lychee, Tan Chau Lanh My A silk, and Ha Giang tea.",
-      "euProtectionNoteVi": "Chuẩn bảo hộ song phương GI (2011): chống giả mạo tên vùng xuất xứ khi lưu thông bán lẻ.",
-      "euProtectionNoteEn": "Bilateral GI protection benchmark (2011) safeguarding regional appellation integrity.",
-      "vnEuComparisonVi": "Việt Nam và Trung Quốc đều sử dụng cơ chế bảo hộ vùng trồng gắn nhãn điện tử chống hàng nhái.",
-      "vnEuComparisonEn": "Both Vietnam and China pair delimited soil maps with QR anti-counterfeit seals.",
+      "protectionRuleVi": "Chỉ dẫn Địa lý chuẩn GB/T 26152: giới hạn vùng sinh thái bản địa và quy cách đóng gói gốc.",
+      "protectionRuleEn": "Geographical Indication (GB/T 26152): defines local terroir perimeter and authentic origin packing.",
+      "vnEvftaCounterpartVi": "Tương đồng cơ chế bảo hộ vùng trồng của Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu và Chè Shan Tuyết Hà Giang.",
+      "vnEvftaCounterpartEn": "Comparable to Vietnamese EVFTA protected appellations including Thanh Ha lychee and Ha Giang mountain tea.",
+      "euProtectionNoteVi": "Công nhận bảo hộ 2011 chống lạm dụng tên địa danh trên bao bì bán lẻ.",
+      "euProtectionNoteEn": "Registered (2011) to prevent unauthorized use of regional names on retail packs.",
+      "vnEuComparisonVi": "Cùng gắn mã truy xuất nguồn gốc và bản đồ thổ nhưỡng cho nông sản – thủ công.",
+      "vnEuComparisonEn": "Both pair delimited terroir maps with batch traceability labels.",
       "terroirAndCraftVi": "Nhuộm nhựa củ Nâu kết hợp bùn sông Châu Giang tạo chất lụa mát mượt không dính da.",
       "terroirAndCraftEn": "Plant-yam juice and river-mud dyeing create crisp waterproof silk analogous to Vietnam's Lanh My A.",
       "customsHsAndAuditVi": "Kiểm tra giấy chứng nhận xuất xứ Form E / REX và mã doanh nghiệp sản xuất hợp lệ.",
       "customsHsAndAuditEn": "Verify preferential Certificate of Origin (Form E) and approved producer codes.",
-      "imagePath": "assets/images/provinces/guangdong-canton-tower.jpg"
+      "imagePath": "assets/images/prov_items/guangdong/f2.jpg"
     },
     {
       "id": "gi-v7-12",
@@ -2429,19 +2509,19 @@
       "provinceId": "xinjiang",
       "euAgreementYear": 2005,
       "gbStandardCode": "GB/T 19586",
-      "protectionRuleVi": "Chứng nhận Chỉ dẫn Địa lý (GI) GB/T 19586: vùng sinh thái bắt buộc và kiểm định chất lượng đóng gói nguyên bản.",
-      "protectionRuleEn": "Protected Geographical Indication (GB/T 19586) enforcing delimited terroir and authentic packing rules.",
-      "vnEvftaCounterpartVi": "Đối sánh Chỉ dẫn Địa lý Việt Nam trong EVFTA: Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu, Gốm Bát Tràng, Chè Shan Tuyết Hà Giang.",
-      "vnEvftaCounterpartEn": "Counterpart to Vietnam GI icons under EVFTA: Thanh Ha lychee, Tan Chau Lanh My A silk, and Ha Giang tea.",
-      "euProtectionNoteVi": "Chuẩn bảo hộ song phương GI (2005): chống giả mạo tên vùng xuất xứ khi lưu thông bán lẻ.",
-      "euProtectionNoteEn": "Bilateral GI protection benchmark (2005) safeguarding regional appellation integrity.",
-      "vnEuComparisonVi": "Việt Nam và Trung Quốc đều sử dụng cơ chế bảo hộ vùng trồng gắn nhãn điện tử chống hàng nhái.",
-      "vnEuComparisonEn": "Both Vietnam and China pair delimited soil maps with QR anti-counterfeit seals.",
+      "protectionRuleVi": "Chỉ dẫn Địa lý chuẩn GB/T 19586: giới hạn vùng sinh thái bản địa và quy cách đóng gói gốc.",
+      "protectionRuleEn": "Geographical Indication (GB/T 19586): defines local terroir perimeter and authentic origin packing.",
+      "vnEvftaCounterpartVi": "Tương đồng cơ chế bảo hộ vùng trồng của Vải thiều Thanh Hà, Lãnh Mỹ A Tân Châu và Chè Shan Tuyết Hà Giang.",
+      "vnEvftaCounterpartEn": "Comparable to Vietnamese EVFTA protected appellations including Thanh Ha lychee and Ha Giang mountain tea.",
+      "euProtectionNoteVi": "Công nhận bảo hộ 2005 chống lạm dụng tên địa danh trên bao bì bán lẻ.",
+      "euProtectionNoteEn": "Registered (2005) to prevent unauthorized use of regional names on retail packs.",
+      "vnEuComparisonVi": "Cùng gắn mã truy xuất nguồn gốc và bản đồ thổ nhưỡng cho nông sản – thủ công.",
+      "vnEuComparisonEn": "Both pair delimited terroir maps with batch traceability labels.",
       "terroirAndCraftVi": "Phơi bằng gió nóng sa mạc trong nhà gạch lỗ giữ màu xanh ngọc ngát hương.",
       "terroirAndCraftEn": "Perforated adobe drying towers cure seedless grapes in hot desert airflow while retaining jade color.",
       "customsHsAndAuditVi": "Kiểm tra giấy chứng nhận xuất xứ Form E / REX và mã doanh nghiệp sản xuất hợp lệ.",
       "customsHsAndAuditEn": "Verify preferential Certificate of Origin (Form E) and approved producer codes.",
-      "imagePath": "assets/images/provinces/xinjiang-kanas-lake.jpg"
+      "imagePath": "assets/images/prov_items/xinjiang/f2.jpg"
     }
   ],
   "craftProcessFlowcharts6": [
@@ -7168,7 +7248,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 铁棍山药 ghi trong Bản Thảo Cương Mục.",
       "vietnamCulinaryParallelVi": "Củ mài rừng (Hoài Sơn) nấu canh sườn truyền thống Việt Nam.",
-      "image": "assets/images/provinces/henan-longmen-grottoes.jpg"
+      "image": "assets/images/prov_items/henan/f0.jpg"
     },
     {
       "id": "v7-herb-50",
@@ -7193,7 +7273,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 兰州百合 ghi trong Tề Dân Yếu Thuật.",
       "vietnamCulinaryParallelVi": "Hạt sen tươi hầm đường phèn trong ẩm thực cung đình Huế.",
-      "image": "assets/images/provinces/gansu-dunhuang-mogao.jpg"
+      "image": "assets/images/prov_items/gansu/f0.jpg"
     },
     {
       "id": "v7-herb-51",
@@ -7218,7 +7298,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 湘莲 ghi trong Nhĩ Nhã.",
       "vietnamCulinaryParallelVi": "Chè hạt sen long nhãn Hưng Yên và mứt sen Trần Tây Hồ.",
-      "image": "assets/images/provinces/hunan-zhangjiajie.jpg"
+      "image": "assets/images/prov_items/hunan/f0.jpg"
     },
     {
       "id": "v7-herb-52",
@@ -7243,7 +7323,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 新会陈皮 ghi trong Thần Nông Bản Thảo Kinh.",
       "vietnamCulinaryParallelVi": "Vỏ quýt khô kho thịt tàu và gia vị nấu nước lèo Việt Nam.",
-      "image": "assets/images/provinces/guangdong-canton-tower.jpg"
+      "image": "assets/images/prov_items/guangdong/f0.jpg"
     },
     {
       "id": "v7-herb-53",
@@ -7268,7 +7348,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 桂林罗汉果 ghi trong Quảng Tây Thực Vật Chí.",
       "vietnamCulinaryParallelVi": "Nước sâm la hán bông cúc phổ biến trên phố Sài Gòn – Chợ Lớn.",
-      "image": "assets/images/provinces/guangxi-guilin-li-river.jpg"
+      "image": "assets/images/prov_items/guangxi/f0.jpg"
     },
     {
       "id": "v7-herb-54",
@@ -7293,7 +7373,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 青州山楂 ghi trong Ẩm Thiện Chính Yếu.",
       "vietnamCulinaryParallelVi": "Quả táo mèo (Sơn Tra Tây Bắc) làm giấm táo hoặc ngâm mật ong.",
-      "image": "assets/images/provinces/shandong-taishan.jpg"
+      "image": "assets/images/prov_items/shandong/f0.jpg"
     },
     {
       "id": "v7-herb-55",
@@ -7318,7 +7398,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 天目笋干 ghi trong Sơn Gia Thanh Cung.",
       "vietnamCulinaryParallelVi": "Canh măng khô hầm chân giò ngày Tết cổ truyền miền Bắc.",
-      "image": "assets/images/provinces/zhejiang-hangzhou-westlake.jpg"
+      "image": "assets/images/prov_items/zhejiang/f0.jpg"
     },
     {
       "id": "v7-herb-56",
@@ -7343,7 +7423,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 岷县当归身 ghi trong Thiên Kim Thực Trị.",
       "vietnamCulinaryParallelVi": "Gà tần ngải cứu và lẩu gia vị thảo mộc vùng cao phía Bắc.",
-      "image": "assets/images/provinces/gansu-dunhuang-mogao.jpg"
+      "image": "assets/images/prov_items/gansu/f1.jpg"
     },
     {
       "id": "v7-herb-57",
@@ -7368,7 +7448,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 杭白菊 ghi trong Tuân Sinh Bát Tiên.",
       "vietnamCulinaryParallelVi": "Trà hoa cúc vàng cổ truyền Hà Nội và Huế.",
-      "image": "assets/images/provinces/zhejiang-hangzhou-westlake.jpg"
+      "image": "assets/images/prov_items/zhejiang/f1.jpg"
     },
     {
       "id": "v7-herb-58",
@@ -7393,7 +7473,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 南杏仁 ghi trong Thực Liệu Bản Thảo.",
       "vietnamCulinaryParallelVi": "Chè hạnh nhân khúc bạch thanh mát phổ biến khắp Việt Nam.",
-      "image": "assets/images/provinces/guangdong-canton-tower.jpg"
+      "image": "assets/images/prov_items/guangdong/f1.jpg"
     },
     {
       "id": "v7-herb-59",
@@ -7418,7 +7498,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 通江银耳 ghi trong Ngự Dược Viện Phương (Thực phổ).",
       "vietnamCulinaryParallelVi": "Chè tuyết nhĩ táo đỏ hạt chia giải nhiệt mùa nắng.",
-      "image": "assets/images/provinces/sichuan-jiuzhaigou.jpg"
+      "image": "assets/images/prov_items/sichuan/f0.jpg"
     },
     {
       "id": "v7-herb-60",
@@ -7443,7 +7523,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 云南茯苓饼 ghi trong Yên Kinh Tuế Thời Ký.",
       "vietnamCulinaryParallelVi": "Bánh khảo và bánh phục linh cốm truyền thống Hội An – Huế.",
-      "image": "assets/images/provinces/yunnan-lijiang-old-town.jpg"
+      "image": "assets/images/prov_items/yunnan/d1.jpg"
     }
   ],
   "microclimates6": [
@@ -7453,18 +7533,19 @@
       "titleEn": "Pingyao Thick-Wall Mud Brick Thermal Mass",
       "titleZh": "平遥古城厚墙保温体系",
       "climateChallengeVi": "Mùa đông cao nguyên Sơn Tây lạnh âm độ, chênh lệch nhiệt ngày đêm cực lớn.",
-      "climateChallengeEn": "Mùa đông cao nguyên Sơn Tây lạnh âm độ, chênh lệch nhiệt ngày đêm cực lớn.",
+      "climateChallengeEn": "Sub-zero Shanxi plateau winters paired with extreme diurnal temperature swings.",
       "architecturalMechanismVi": "Tường đất nện dày 40–60 cm hấp thụ nhiệt ban ngày và giữ ấm chậm suốt đêm không tốn củi.",
-      "architecturalMechanismEn": "Tường đất nện dày 40–60 cm hấp thụ nhiệt ban ngày và giữ ấm chậm suốt đêm không tốn củi.",
+      "architecturalMechanismEn": "Thick 40–60 cm rammed-earth walls store daytime warmth and release heat gradually through sub-zero nights.",
       "summerSunAngleDeg": 72.0,
       "winterSunAngleDeg": 27.5,
       "prevailingWindDirection": "Đông Nam (hè) / Tây Bắc (đông)",
       "modernPhysicsPrincipleVi": "Khối Nhiệt (Thermal Mass) + Tường Chắn Gió Phương Bắc.",
-      "modernPhysicsPrincipleEn": "Khối Nhiệt (Thermal Mass) + Tường Chắn Gió Phương Bắc.",
+      "modernPhysicsPrincipleEn": "High Thermal Mass Inertia + North-Facing Windbreak Courtyard Wall.",
       "challengeVi": "Mùa đông cao nguyên Sơn Tây lạnh âm độ, chênh lệch nhiệt ngày đêm cực lớn.",
       "mechanismVi": "Tường đất nện dày 40–60 cm hấp thụ nhiệt ban ngày và giữ ấm chậm suốt đêm không tốn củi.",
       "physicsVi": "Khối Nhiệt (Thermal Mass) + Tường Chắn Gió Phương Bắc. (Nắng hạ 72.0° / Nắng đông 27.5°)",
-      "vietnamArchitecturalComparisonVi": "Gần giống tường đất dày trình tường của nhà Trình Tường đồng bào Hà Nhì / Mông vùng núi Bắc Bộ."
+      "vietnamArchitecturalComparisonVi": "Gần giống tường đất dày trình tường của nhà Trình Tường đồng bào Hà Nhì / Mông vùng núi Bắc Bộ.",
+      "vietnamArchitecturalComparisonEn": "Directly echoes the thick compacted-earth Trinh Tuong homes built by highland ethnic groups in northern Vietnam."
     },
     {
       "id": "mc-arch-14",
@@ -7472,18 +7553,19 @@
       "titleEn": "Shaanbei Loess Plateau Cave Dwelling (Yaodong)",
       "titleZh": "陕北黄土窑洞冬暖夏凉",
       "climateChallengeVi": "Hoàng thổ khô nứt nắng gắt mùa hè 40°C và bão bụi rét buốt mùa đông.",
-      "climateChallengeEn": "Hoàng thổ khô nứt nắng gắt mùa hè 40°C và bão bụi rét buốt mùa đông.",
+      "climateChallengeEn": "Scorching 40°C summers and biting dust storms across the arid northern Shaanxi loess highlands.",
       "architecturalMechanismVi": "Khoét sâu 7–9 m vào vách đất hoàng thổ ổn định ở ngưỡng tự nhiên 14–18°C quanh năm.",
-      "architecturalMechanismEn": "Khoét sâu 7–9 m vào vách đất hoàng thổ ổn định ở ngưỡng tự nhiên 14–18°C quanh năm.",
+      "architecturalMechanismEn": "Vaulted dwellings carved 7–9 m deep into loess cliffs maintain steady 14–18°C indoor temperatures year-round.",
       "summerSunAngleDeg": 74.0,
       "winterSunAngleDeg": 26.0,
       "prevailingWindDirection": "Đông Nam (hè) / Tây Bắc (đông)",
       "modernPhysicsPrincipleVi": "Địa Nhiệt Ổn Định (Earth-Sheltered Thermal Equilibrium).",
-      "modernPhysicsPrincipleEn": "Địa Nhiệt Ổn Định (Earth-Sheltered Thermal Equilibrium).",
+      "modernPhysicsPrincipleEn": "Earth-Sheltered Geothermal Equilibrium + Zero-Fuel Passive Damping.",
       "challengeVi": "Hoàng thổ khô nứt nắng gắt mùa hè 40°C và bão bụi rét buốt mùa đông.",
       "mechanismVi": "Khoét sâu 7–9 m vào vách đất hoàng thổ ổn định ở ngưỡng tự nhiên 14–18°C quanh năm.",
       "physicsVi": "Địa Nhiệt Ổn Định (Earth-Sheltered Thermal Equilibrium). (Nắng hạ 74.0° / Nắng đông 26.0°)",
-      "vietnamArchitecturalComparisonVi": "Tương đồng tư duy tận dụng hang đá núi vôi làm nơi tránh nắng mát lành."
+      "vietnamArchitecturalComparisonVi": "Tương đồng tư duy tận dụng hang đá núi vôi làm nơi tránh nắng mát lành.",
+      "vietnamArchitecturalComparisonEn": "Comparable to limestone karst shelters adapted across northern highland Vietnam."
     },
     {
       "id": "mc-arch-15",
@@ -7491,18 +7573,19 @@
       "titleEn": "Suzhou Lingering Garden Evaporative Water Pavilion",
       "titleZh": "苏州留园临水风亭",
       "climateChallengeVi": "Mùa hạ Giang Nam oi bức kéo dài khi gió ẩm từ Thái Hồ ít chuyển động.",
-      "climateChallengeEn": "Mùa hạ Giang Nam oi bức kéo dài khi gió ẩm từ Thái Hồ ít chuyển động.",
+      "climateChallengeEn": "Prolonged humid Lower Yangtze summer heatwaves with stagnant lakeside air.",
       "architecturalMechanismVi": "Đặt sàn gỗ hở ngay trên mặt hồ râm mát, tận dụng bay hơi nước hút nhiệt gió lùa qua hành lang uốn lượn.",
-      "architecturalMechanismEn": "Đặt sàn gỗ hở ngay trên mặt hồ râm mát, tận dụng bay hơi nước hút nhiệt gió lùa qua hành lang uốn lượn.",
+      "architecturalMechanismEn": "Open timber floors cantilevered over shaded lotus ponds chill incoming breezes via evaporative heat extraction.",
       "summerSunAngleDeg": 70.5,
       "winterSunAngleDeg": 29.0,
       "prevailingWindDirection": "Đông Nam (hè) / Tây Bắc (đông)",
       "modernPhysicsPrincipleVi": "Làm Mát Bay Hơi (Evaporative Cooling) + Hiệu Ứng Venturi qua khe tường hoa.",
-      "modernPhysicsPrincipleEn": "Làm Mát Bay Hơi (Evaporative Cooling) + Hiệu Ứng Venturi qua khe tường hoa.",
+      "modernPhysicsPrincipleEn": "Evaporative Water Cooling + Venturi Breeze Acceleration Through Winding Corridors.",
       "challengeVi": "Mùa hạ Giang Nam oi bức kéo dài khi gió ẩm từ Thái Hồ ít chuyển động.",
       "mechanismVi": "Đặt sàn gỗ hở ngay trên mặt hồ râm mát, tận dụng bay hơi nước hút nhiệt gió lùa qua hành lang uốn lượn.",
       "physicsVi": "Làm Mát Bay Hơi (Evaporative Cooling) + Hiệu Ứng Venturi qua khe tường hoa. (Nắng hạ 70.5° / Nắng đông 29.0°)",
-      "vietnamArchitecturalComparisonVi": "Đồng điệu kiến trúc nhà Thủy Đình Chùa Thầy và thủy tạ cung đình Huế."
+      "vietnamArchitecturalComparisonVi": "Đồng điệu kiến trúc nhà Thủy Đình Chùa Thầy và thủy tạ cung đình Huế.",
+      "vietnamArchitecturalComparisonEn": "Parallels the lakeside Thuy Dinh water pavilion at Thay Pagoda and Hue Imperial City."
     },
     {
       "id": "mc-arch-16",
@@ -7510,18 +7593,19 @@
       "titleEn": "Lijiang Old Town Three-Eye Gravity Canal System",
       "titleZh": "丽江古城水系与三眼井",
       "climateChallengeVi": "Thị trấn trên cao 2.400m cần điều tiết nước tuyết tan sạch và chống hỏa hoạn nhà gỗ.",
-      "climateChallengeEn": "Thị trấn trên cao 2.400m cần điều tiết nước tuyết tan sạch và chống hỏa hoạn nhà gỗ.",
+      "climateChallengeEn": "A 2,400 m alpine timber town requiring clean glacial water partitioning and instant fire-suppression reach.",
       "architecturalMechanismVi": "Tách suối tự chảy qua mạng mương đá len giữa phố và bể Tam Nhãn (trên uống, giữa rửa rau, dưới giặt giũ).",
-      "architecturalMechanismEn": "Tách suối tự chảy qua mạng mương đá len giữa phố và bể Tam Nhãn (trên uống, giữa rửa rau, dưới giặt giũ).",
+      "architecturalMechanismEn": "Gravity-fed stone street canals route glacial springs sequentially through Three-Eye pools (drinking -> produce -> laundry).",
       "summerSunAngleDeg": 68.0,
       "winterSunAngleDeg": 31.0,
       "prevailingWindDirection": "Đông Nam (hè) / Tây Bắc (đông)",
       "modernPhysicsPrincipleVi": "Thủy Lực Trọng Lực Phân Tầng + Hạ Nhiệt Bề Mặt Phố Đá.",
-      "modernPhysicsPrincipleEn": "Thủy Lực Trọng Lực Phân Tầng + Hạ Nhiệt Bề Mặt Phố Đá.",
+      "modernPhysicsPrincipleEn": "Tiered Gravity Hydro-Cleanliness + Micro-Urban Pavement Evaporative Cooling.",
       "challengeVi": "Thị trấn trên cao 2.400m cần điều tiết nước tuyết tan sạch và chống hỏa hoạn nhà gỗ.",
       "mechanismVi": "Tách suối tự chảy qua mạng mương đá len giữa phố và bể Tam Nhãn (trên uống, giữa rửa rau, dưới giặt giũ).",
       "physicsVi": "Thủy Lực Trọng Lực Phân Tầng + Hạ Nhiệt Bề Mặt Phố Đá. (Nắng hạ 68.0° / Nắng đông 31.0°)",
-      "vietnamArchitecturalComparisonVi": "Gợi nhớ hệ thống mương dẫn nước suối vùng Mù Cang Chải – Sa Pa Tây Bắc."
+      "vietnamArchitecturalComparisonVi": "Gợi nhớ hệ thống mương dẫn nước suối vùng Mù Cang Chải – Sa Pa Tây Bắc.",
+      "vietnamArchitecturalComparisonEn": "Echoes gravity spring conduits supporting wooden villages across Mu Cang Chai and Sa Pa."
     },
     {
       "id": "mc-arch-17",
@@ -7529,18 +7613,19 @@
       "titleEn": "Lingnan Qilou Shophouse Arcade Colonnade",
       "titleZh": "岭南骑楼遮阳避雨廊",
       "climateChallengeVi": "Miền Nam Quảng Đông mưa rào nhiệt đới bất chợt và nắng gắt chiếu xiên.",
-      "climateChallengeEn": "Miền Nam Quảng Đông mưa rào nhiệt đới bất chợt và nắng gắt chiếu xiên.",
+      "climateChallengeEn": "Sudden tropical downpours and steep afternoon solar glare in subtropical Guangdong streets.",
       "architecturalMechanismVi": "Đẩy tầng 2 ra tạo hành lang mái che liên tục rộng 3 m dọc phố, giúp người đi bộ râm mát suốt mùa mưa nắng.",
-      "architecturalMechanismEn": "Đẩy tầng 2 ra tạo hành lang mái che liên tục rộng 3 m dọc phố, giúp người đi bộ râm mát suốt mùa mưa nắng.",
+      "architecturalMechanismEn": "Cantilevered upper stories form a 3 m continuous shaded colonnade shielding pedestrians from monsoon rain and sun.",
       "summerSunAngleDeg": 66.5,
       "winterSunAngleDeg": 33.5,
       "prevailingWindDirection": "Đông Nam (hè) / Tây Bắc (đông)",
       "modernPhysicsPrincipleVi": "Che Bóng Đường Phố Tích Hợp + Đệm Khí Đối Lưu Tầng Trệt.",
-      "modernPhysicsPrincipleEn": "Che Bóng Đường Phố Tích Hợp + Đệm Khí Đối Lưu Tầng Trệt.",
+      "modernPhysicsPrincipleEn": "Continuous Street Shading Envelope + Ground-Level Convective Air Buffer.",
       "challengeVi": "Miền Nam Quảng Đông mưa rào nhiệt đới bất chợt và nắng gắt chiếu xiên.",
       "mechanismVi": "Đẩy tầng 2 ra tạo hành lang mái che liên tục rộng 3 m dọc phố, giúp người đi bộ râm mát suốt mùa mưa nắng.",
       "physicsVi": "Che Bóng Đường Phố Tích Hợp + Đệm Khí Đối Lưu Tầng Trệt. (Nắng hạ 66.5° / Nắng đông 33.5°)",
-      "vietnamArchitecturalComparisonVi": "Trực tiếp song hành với dãy nhà phố cổ có hành lang vòm che mưa ở Chợ Lớn và Hội An."
+      "vietnamArchitecturalComparisonVi": "Trực tiếp song hành với dãy nhà phố cổ có hành lang vòm che mưa ở Chợ Lớn và Hội An.",
+      "vietnamArchitecturalComparisonEn": "Directly mirrored along shaded historic merchant arcades in Cho Lon and Hoi An."
     },
     {
       "id": "mc-arch-18",
@@ -7548,18 +7633,19 @@
       "titleEn": "Qinghai–Tibet Plateau Sun-Capture Stone Courtyard",
       "titleZh": "藏地石墙南向集热院落",
       "climateChallengeVi": "Bức xạ tia cực tím rất cao ở độ cao 3.600m nhưng không khí ngoài trời lạnh giá.",
-      "climateChallengeEn": "Bức xạ tia cực tím rất cao ở độ cao 3.600m nhưng không khí ngoài trời lạnh giá.",
+      "climateChallengeEn": "Intense high-altitude solar radiation paired with freezing ambient mountain winds above 3,600 m.",
       "architecturalMechanismVi": "Mở cửa sổ lớn khung gỗ đen sơn viền thu nắng hướng Nam trong khi vách đá thon nhỏ về đỉnh chống động đất.",
-      "architecturalMechanismEn": "Mở cửa sổ lớn khung gỗ đen sơn viền thu nắng hướng Nam trong khi vách đá thon nhỏ về đỉnh chống động đất.",
+      "architecturalMechanismEn": "Dark-trimmed south-facing timber glazing maximizes passive solar gain while battered stone walls brace seismic loads.",
       "summerSunAngleDeg": 65.0,
       "winterSunAngleDeg": 34.0,
       "prevailingWindDirection": "Đông Nam (hè) / Tây Bắc (đông)",
       "modernPhysicsPrincipleVi": "Hấp Thụ Bức Xạ Mặt Trời Trực Tiếp + Khung Gỗ Đàn Hồi.",
-      "modernPhysicsPrincipleEn": "Hấp Thụ Bức Xạ Mặt Trời Trực Tiếp + Khung Gỗ Đàn Hồi.",
+      "modernPhysicsPrincipleEn": "Direct Passive Solar Radiation Gain + Elastic Timber Post-and-Beam Frame.",
       "challengeVi": "Bức xạ tia cực tím rất cao ở độ cao 3.600m nhưng không khí ngoài trời lạnh giá.",
       "mechanismVi": "Mở cửa sổ lớn khung gỗ đen sơn viền thu nắng hướng Nam trong khi vách đá thon nhỏ về đỉnh chống động đất.",
       "physicsVi": "Hấp Thụ Bức Xạ Mặt Trời Trực Tiếp + Khung Gỗ Đàn Hồi. (Nắng hạ 65.0° / Nắng đông 34.0°)",
-      "vietnamArchitecturalComparisonVi": "Minh họa sự thích nghi đa dạng khí hậu trải khắp 3 bậc thang địa hình."
+      "vietnamArchitecturalComparisonVi": "Minh họa sự thích nghi đa dạng khí hậu trải khắp 3 bậc thang địa hình.",
+      "vietnamArchitecturalComparisonEn": "Demonstrates regional passive climate mastery across China's three topographic steps."
     }
   ],
   "cosmoCases8": [
@@ -7702,7 +7788,7 @@
       "historicalScientificMechanismVi": "Từ thủy lợi không đập Đô Giang Yển đến làng đá vôi rỗng nước sạch Lệ Giang, nguyên lý thuận theo địa hình và tái tạo tài nguyên đang truyền cảm hứng cho kiến trúc xanh hiện đại.",
       "historicalScientificMechanismEn": "From dam-free Dujiangyan to Lijiang gravity canals, classical ecological restraint inspires contemporary low-carbon heritage preservation.",
       "modernRelevanceVi": "Khung triết lý văn hóa – sinh thái hiện đại, khẳng định KHÔNG chẩn đoán hay thay thế khoa học y tế.",
-      "vietnamComparisonVi": "Kết nối trực tiếp với mục tiêu du lịch bền vững trên 16 Hành trình Di sản V7.0.",
+      "vietnamComparisonVi": "Kết nối trực tiếp với mục tiêu du lịch bền vững trên 16 Hành trình Di sản.",
       "image": "assets/images/museum/zheng-he-chart.jpg",
       "nonClinicalReminderVi": "Thông tin ẩm thực vùng miền & sử liệu khoa học thuần túy — KHÔNG chẩn đoán hay thay thế tư vấn y tế.",
       "nonClinicalReminderEn": "Regional culinary heritage & history of science reference only — NOT clinical diagnosis or medical advice."
@@ -9074,7 +9160,7 @@
       "passageZh": "研读港澳台古籍碑刻与百年商号招牌时，切忌机械一对一替换简化字，而应警惕签与籤、发与髮等分合差异。",
       "passagePinyin": "Yándú bēikè yǔ shānghào zhāopai shí, qièjì jīxiè yīduìyī tìhuàn jiǎnhuàzì.",
       "translationVi": "Khi đọc văn bản Hồng Kông, Đài Loan hay biển hiệu cổ tự, cần đặc biệt tránh gộp nhầm cặp chữ 'Phát–Tóc (发)', 'Mặt–Mì (面)', 'Ký–Nhãn (签)'.",
-      "translationEn": "Navigating archival signage across Hong Kong and Taipei requires watching split pairs like Phát/Tóc and Mặt/Mì.",
+      "translationEn": "Navigating archival signage across Hong Kong and Taipei requires watching one-to-many splits like 发 (Hair vs Issue) and 面 (Face vs Noodles).",
       "keyWords": [
         {
           "zh": "简繁转换",
@@ -9230,36 +9316,36 @@
       "topicZh": "工业遗产如何通过文创焕发新生？",
       "blocks": {
         "topic": {
-          "vi": "Mở đề trực diện vấn đề: Di sản công nghiệp và du lịch sáng tạo tại đô thị cổ.",
+          "vi": "Đặt vấn đề trọng tâm về di sản công nghiệp và du lịch sáng tạo tại đô thị cổ.",
           "zh": "围绕「工业遗产如何通过文创焕发新生？」展开跨文化实证分析。",
-          "en": "Frame core thesis around: Industrial Heritage Revitalization & Creative Craft Districts."
+          "en": "Establish the core question surrounding industrial heritage revitalization & creative craft districts."
         },
         "evidence": {
-          "vi": "Trích dẫn số liệu sử liệu, hồ sơ UNESCO hoặc quy trình GACC/RCEP.",
+          "vi": "Dẫn chứng tư liệu lịch sử, quy chuẩn UNESCO hoặc số liệu thực tế GACC/RCEP.",
           "zh": "结合历史文献、联合国遗产标准或实务数据进行论证。",
-          "en": "Cite archival documentation, UNESCO criteria, or bilateral trade compliance data."
+          "en": "Support claims with archival sources, UNESCO dossiers, or verified trade records."
         },
         "counterArgument": {
-          "vi": "Thừa nhận thách thức chi phí hoặc xung đột bảo tồn–thương mại hóa.",
+          "vi": "Xét kỹ trở ngại về chi phí đầu tư hoặc nguy cơ thương mại hóa làm phai bản sắc.",
           "zh": "诚然，实践过程中仍面临资金投入与文化失真风险等挑战。",
-          "en": "Acknowledge CapEx hurdles or risks of over-commercialization."
+          "en": "Weigh capital hurdles and the tension between conservation and commercialization."
         },
         "synthesis": {
-          "vi": "Kết hợp công nghệ số và chuẩn mực di sản bản địa để phát triển bền vững.",
+          "vi": "Cân bằng giữa chuẩn mực bảo tồn nguyên bản và tiện ích thực tế của đời sống hiện đại.",
           "zh": "综上所述，唯有兼顾创新与传统底蕴，方能行稳致远。",
-          "en": "Synthesize modern digital standards with authentic local craft preservation."
+          "en": "Balance authentic craft preservation with practical modern utility."
         }
       },
       "themeVi": "Di sản công nghiệp và du lịch sáng tạo tại đô thị cổ",
       "themeEn": "Industrial Heritage Revitalization & Creative Craft Districts",
       "structureZh": "工业遗产如何通过文创焕发新生？",
-      "pinyin": "HSK 7–9 · Khung Lập Luận Chuyên Sâu V7",
-      "parallelEn": "Structured C1–C2 argument template on Industrial Heritage Revitalization & Creative Craft Districts.",
+      "pinyin": "Khung Lập Luận HSK 7–9",
+      "parallelEn": "Academic C1–C2 analytical pattern for industrial heritage revitalization & creative craft districts.",
       "sampleParagraphZh": "关于「工业遗产如何通过文创焕发新生？」，学界与业界普遍认为既须立足历史根基，又应借力数字标准实现可持续跃升。",
-      "sampleParagraphEn": "Regarding Industrial Heritage Revitalization & Creative Craft Districts, durable excellence merges deep historical stewardship with verifiable digital standards.",
+      "sampleParagraphEn": "When evaluating industrial heritage revitalization & creative craft districts, lasting progress pairs historical stewardship with measurable technical standards.",
       "connectorToolkitZh": "诚然……然而……毋庸置疑……归根结底……",
-      "viNote": "Mở bài: Di sản công nghiệp và du lịch sáng tạo tại đô thị cổ — dẫn 2 chứng cứ cụ thể + 1 câu phản biện.",
-      "commonPitfallVi": "Tránh liệt kê cảm tính thiếu ví dụ lịch sử hoặc thiếu liên hệ Việt–Trung.",
+      "viNote": "Gợi ý triển khai: giới thiệu bối cảnh di sản công nghiệp và du lịch sáng tạo tại đô thị cổ, nêu hai dẫn chứng cụ thể rồi chuyển sang phản biện cân bằng.",
+      "commonPitfallVi": "Tránh viết khẩu hiệu chung chung thiếu dẫn chứng sử liệu hoặc thiếu liên hệ Việt–Trung.",
       "commonPitfallEn": "Avoid vague generalizations lacking concrete historical or regulatory citations."
     },
     {
@@ -9269,36 +9355,36 @@
       "topicZh": "高铁网络对区域文化旅游的深远影响",
       "blocks": {
         "topic": {
-          "vi": "Mở đề trực diện vấn đề: Tác động của Đường sắt Cao tốc 350 km/h đến văn hóa du lịch vùng.",
+          "vi": "Đặt vấn đề trọng tâm về tác động của đường sắt cao tốc 350 km/h đến văn hóa du lịch vùng.",
           "zh": "围绕「高铁网络对区域文化旅游的深远影响」展开跨文化实证分析。",
-          "en": "Frame core thesis around: Impact of 350 km/h High-Speed Rail on Regional Cultural Tourism."
+          "en": "Establish the core question surrounding impact of 350 km/h high-speed rail on regional cultural tourism."
         },
         "evidence": {
-          "vi": "Trích dẫn số liệu sử liệu, hồ sơ UNESCO hoặc quy trình GACC/RCEP.",
+          "vi": "Dẫn chứng tư liệu lịch sử, quy chuẩn UNESCO hoặc số liệu thực tế GACC/RCEP.",
           "zh": "结合历史文献、联合国遗产标准或实务数据进行论证。",
-          "en": "Cite archival documentation, UNESCO criteria, or bilateral trade compliance data."
+          "en": "Support claims with archival sources, UNESCO dossiers, or verified trade records."
         },
         "counterArgument": {
-          "vi": "Thừa nhận thách thức chi phí hoặc xung đột bảo tồn–thương mại hóa.",
+          "vi": "Xét kỹ trở ngại về chi phí đầu tư hoặc nguy cơ thương mại hóa làm phai bản sắc.",
           "zh": "诚然，实践过程中仍面临资金投入与文化失真风险等挑战。",
-          "en": "Acknowledge CapEx hurdles or risks of over-commercialization."
+          "en": "Weigh capital hurdles and the tension between conservation and commercialization."
         },
         "synthesis": {
-          "vi": "Kết hợp công nghệ số và chuẩn mực di sản bản địa để phát triển bền vững.",
+          "vi": "Cân bằng giữa chuẩn mực bảo tồn nguyên bản và tiện ích thực tế của đời sống hiện đại.",
           "zh": "综上所述，唯有兼顾创新与传统底蕴，方能行稳致远。",
-          "en": "Synthesize modern digital standards with authentic local craft preservation."
+          "en": "Balance authentic craft preservation with practical modern utility."
         }
       },
       "themeVi": "Tác động của Đường sắt Cao tốc 350 km/h đến văn hóa du lịch vùng",
       "themeEn": "Impact of 350 km/h High-Speed Rail on Regional Cultural Tourism",
       "structureZh": "高铁网络对区域文化旅游的深远影响",
-      "pinyin": "HSK 7–9 · Khung Lập Luận Chuyên Sâu V7",
-      "parallelEn": "Structured C1–C2 argument template on Impact of 350 km/h High-Speed Rail on Regional Cultural Tourism.",
+      "pinyin": "Khung Lập Luận HSK 7–9",
+      "parallelEn": "Academic C1–C2 analytical pattern for impact of 350 km/h high-speed rail on regional cultural tourism.",
       "sampleParagraphZh": "关于「高铁网络对区域文化旅游的深远影响」，学界与业界普遍认为既须立足历史根基，又应借力数字标准实现可持续跃升。",
-      "sampleParagraphEn": "Regarding Impact of 350 km/h High-Speed Rail on Regional Cultural Tourism, durable excellence merges deep historical stewardship with verifiable digital standards.",
+      "sampleParagraphEn": "When evaluating impact of 350 km/h high-speed rail on regional cultural tourism, lasting progress pairs historical stewardship with measurable technical standards.",
       "connectorToolkitZh": "诚然……然而……毋庸置疑……归根结底……",
-      "viNote": "Mở bài: Tác động của Đường sắt Cao tốc 350 km/h đến văn hóa du lịch vùng — dẫn 2 chứng cứ cụ thể + 1 câu phản biện.",
-      "commonPitfallVi": "Tránh liệt kê cảm tính thiếu ví dụ lịch sử hoặc thiếu liên hệ Việt–Trung.",
+      "viNote": "Gợi ý triển khai: giới thiệu bối cảnh tác động của đường sắt cao tốc 350 km/h đến văn hóa du lịch vùng, nêu hai dẫn chứng cụ thể rồi chuyển sang phản biện cân bằng.",
+      "commonPitfallVi": "Tránh viết khẩu hiệu chung chung thiếu dẫn chứng sử liệu hoặc thiếu liên hệ Việt–Trung.",
       "commonPitfallEn": "Avoid vague generalizations lacking concrete historical or regulatory citations."
     },
     {
@@ -9308,36 +9394,36 @@
       "topicZh": "数字时代书法与传统工艺的传承",
       "blocks": {
         "topic": {
-          "vi": "Mở đề trực diện vấn đề: Cân bằng giữa chuyển đổi số AI và bảo tồn chữ Hán – thư pháp.",
+          "vi": "Đặt vấn đề trọng tâm về cân bằng giữa chuyển đổi số ai và bảo tồn chữ hán – thư pháp.",
           "zh": "围绕「数字时代书法与传统工艺的传承」展开跨文化实证分析。",
-          "en": "Frame core thesis around: Balancing AI Digitization with Traditional Calligraphy Craft."
+          "en": "Establish the core question surrounding balancing ai digitization with traditional calligraphy craft."
         },
         "evidence": {
-          "vi": "Trích dẫn số liệu sử liệu, hồ sơ UNESCO hoặc quy trình GACC/RCEP.",
+          "vi": "Dẫn chứng tư liệu lịch sử, quy chuẩn UNESCO hoặc số liệu thực tế GACC/RCEP.",
           "zh": "结合历史文献、联合国遗产标准或实务数据进行论证。",
-          "en": "Cite archival documentation, UNESCO criteria, or bilateral trade compliance data."
+          "en": "Support claims with archival sources, UNESCO dossiers, or verified trade records."
         },
         "counterArgument": {
-          "vi": "Thừa nhận thách thức chi phí hoặc xung đột bảo tồn–thương mại hóa.",
+          "vi": "Xét kỹ trở ngại về chi phí đầu tư hoặc nguy cơ thương mại hóa làm phai bản sắc.",
           "zh": "诚然，实践过程中仍面临资金投入与文化失真风险等挑战。",
-          "en": "Acknowledge CapEx hurdles or risks of over-commercialization."
+          "en": "Weigh capital hurdles and the tension between conservation and commercialization."
         },
         "synthesis": {
-          "vi": "Kết hợp công nghệ số và chuẩn mực di sản bản địa để phát triển bền vững.",
+          "vi": "Cân bằng giữa chuẩn mực bảo tồn nguyên bản và tiện ích thực tế của đời sống hiện đại.",
           "zh": "综上所述，唯有兼顾创新与传统底蕴，方能行稳致远。",
-          "en": "Synthesize modern digital standards with authentic local craft preservation."
+          "en": "Balance authentic craft preservation with practical modern utility."
         }
       },
       "themeVi": "Cân bằng giữa chuyển đổi số AI và bảo tồn chữ Hán – thư pháp",
       "themeEn": "Balancing AI Digitization with Traditional Calligraphy Craft",
       "structureZh": "数字时代书法与传统工艺的传承",
-      "pinyin": "HSK 7–9 · Khung Lập Luận Chuyên Sâu V7",
-      "parallelEn": "Structured C1–C2 argument template on Balancing AI Digitization with Traditional Calligraphy Craft.",
+      "pinyin": "Khung Lập Luận HSK 7–9",
+      "parallelEn": "Academic C1–C2 analytical pattern for balancing ai digitization with traditional calligraphy craft.",
       "sampleParagraphZh": "关于「数字时代书法与传统工艺的传承」，学界与业界普遍认为既须立足历史根基，又应借力数字标准实现可持续跃升。",
-      "sampleParagraphEn": "Regarding Balancing AI Digitization with Traditional Calligraphy Craft, durable excellence merges deep historical stewardship with verifiable digital standards.",
+      "sampleParagraphEn": "When evaluating balancing ai digitization with traditional calligraphy craft, lasting progress pairs historical stewardship with measurable technical standards.",
       "connectorToolkitZh": "诚然……然而……毋庸置疑……归根结底……",
-      "viNote": "Mở bài: Cân bằng giữa chuyển đổi số AI và bảo tồn chữ Hán – thư pháp — dẫn 2 chứng cứ cụ thể + 1 câu phản biện.",
-      "commonPitfallVi": "Tránh liệt kê cảm tính thiếu ví dụ lịch sử hoặc thiếu liên hệ Việt–Trung.",
+      "viNote": "Gợi ý triển khai: giới thiệu bối cảnh cân bằng giữa chuyển đổi số ai và bảo tồn chữ hán – thư pháp, nêu hai dẫn chứng cụ thể rồi chuyển sang phản biện cân bằng.",
+      "commonPitfallVi": "Tránh viết khẩu hiệu chung chung thiếu dẫn chứng sử liệu hoặc thiếu liên hệ Việt–Trung.",
       "commonPitfallEn": "Avoid vague generalizations lacking concrete historical or regulatory citations."
     },
     {
@@ -9347,36 +9433,36 @@
       "topicZh": "海关合规如何赋能跨境农产品贸易？",
       "blocks": {
         "topic": {
-          "vi": "Mở đề trực diện vấn đề: Tiêu chuẩn hóa nông sản GACC và nâng cao giá trị xuất khẩu chính ngạch.",
+          "vi": "Đặt vấn đề trọng tâm về tiêu chuẩn hóa nông sản gacc và nâng cao giá trị xuất khẩu chính ngạch.",
           "zh": "围绕「海关合规如何赋能跨境农产品贸易？」展开跨文化实证分析。",
-          "en": "Frame core thesis around: GACC Traceability & Formalizing Southeast Asian Agro Trade."
+          "en": "Establish the core question surrounding gacc traceability & formalizing southeast asian agro trade."
         },
         "evidence": {
-          "vi": "Trích dẫn số liệu sử liệu, hồ sơ UNESCO hoặc quy trình GACC/RCEP.",
+          "vi": "Dẫn chứng tư liệu lịch sử, quy chuẩn UNESCO hoặc số liệu thực tế GACC/RCEP.",
           "zh": "结合历史文献、联合国遗产标准或实务数据进行论证。",
-          "en": "Cite archival documentation, UNESCO criteria, or bilateral trade compliance data."
+          "en": "Support claims with archival sources, UNESCO dossiers, or verified trade records."
         },
         "counterArgument": {
-          "vi": "Thừa nhận thách thức chi phí hoặc xung đột bảo tồn–thương mại hóa.",
+          "vi": "Xét kỹ trở ngại về chi phí đầu tư hoặc nguy cơ thương mại hóa làm phai bản sắc.",
           "zh": "诚然，实践过程中仍面临资金投入与文化失真风险等挑战。",
-          "en": "Acknowledge CapEx hurdles or risks of over-commercialization."
+          "en": "Weigh capital hurdles and the tension between conservation and commercialization."
         },
         "synthesis": {
-          "vi": "Kết hợp công nghệ số và chuẩn mực di sản bản địa để phát triển bền vững.",
+          "vi": "Cân bằng giữa chuẩn mực bảo tồn nguyên bản và tiện ích thực tế của đời sống hiện đại.",
           "zh": "综上所述，唯有兼顾创新与传统底蕴，方能行稳致远。",
-          "en": "Synthesize modern digital standards with authentic local craft preservation."
+          "en": "Balance authentic craft preservation with practical modern utility."
         }
       },
       "themeVi": "Tiêu chuẩn hóa nông sản GACC và nâng cao giá trị xuất khẩu chính ngạch",
       "themeEn": "GACC Traceability & Formalizing Southeast Asian Agro Trade",
       "structureZh": "海关合规如何赋能跨境农产品贸易？",
-      "pinyin": "HSK 7–9 · Khung Lập Luận Chuyên Sâu V7",
-      "parallelEn": "Structured C1–C2 argument template on GACC Traceability & Formalizing Southeast Asian Agro Trade.",
+      "pinyin": "Khung Lập Luận HSK 7–9",
+      "parallelEn": "Academic C1–C2 analytical pattern for gacc traceability & formalizing southeast asian agro trade.",
       "sampleParagraphZh": "关于「海关合规如何赋能跨境农产品贸易？」，学界与业界普遍认为既须立足历史根基，又应借力数字标准实现可持续跃升。",
-      "sampleParagraphEn": "Regarding GACC Traceability & Formalizing Southeast Asian Agro Trade, durable excellence merges deep historical stewardship with verifiable digital standards.",
+      "sampleParagraphEn": "When evaluating gacc traceability & formalizing southeast asian agro trade, lasting progress pairs historical stewardship with measurable technical standards.",
       "connectorToolkitZh": "诚然……然而……毋庸置疑……归根结底……",
-      "viNote": "Mở bài: Tiêu chuẩn hóa nông sản GACC và nâng cao giá trị xuất khẩu chính ngạch — dẫn 2 chứng cứ cụ thể + 1 câu phản biện.",
-      "commonPitfallVi": "Tránh liệt kê cảm tính thiếu ví dụ lịch sử hoặc thiếu liên hệ Việt–Trung.",
+      "viNote": "Gợi ý triển khai: giới thiệu bối cảnh tiêu chuẩn hóa nông sản gacc và nâng cao giá trị xuất khẩu chính ngạch, nêu hai dẫn chứng cụ thể rồi chuyển sang phản biện cân bằng.",
+      "commonPitfallVi": "Tránh viết khẩu hiệu chung chung thiếu dẫn chứng sử liệu hoặc thiếu liên hệ Việt–Trung.",
       "commonPitfallEn": "Avoid vague generalizations lacking concrete historical or regulatory citations."
     },
     {
@@ -9386,36 +9472,36 @@
       "topicZh": "顺势治水哲学对当代气候适应的启示",
       "blocks": {
         "topic": {
-          "vi": "Mở đề trực diện vấn đề: So sánh tư duy thủy lợi Đô Giang Yển và thích ứng biến đổi khí hậu.",
+          "vi": "Đặt vấn đề trọng tâm về so sánh tư duy thủy lợi đô giang yển và thích ứng biến đổi khí hậu.",
           "zh": "围绕「顺势治水哲学对当代气候适应的启示」展开跨文化实证分析。",
-          "en": "Frame core thesis around: Dujiangyan Hydraulic Philosophy Applied to Modern Climate Resilience."
+          "en": "Establish the core question surrounding dujiangyan hydraulic philosophy applied to modern climate resilience."
         },
         "evidence": {
-          "vi": "Trích dẫn số liệu sử liệu, hồ sơ UNESCO hoặc quy trình GACC/RCEP.",
+          "vi": "Dẫn chứng tư liệu lịch sử, quy chuẩn UNESCO hoặc số liệu thực tế GACC/RCEP.",
           "zh": "结合历史文献、联合国遗产标准或实务数据进行论证。",
-          "en": "Cite archival documentation, UNESCO criteria, or bilateral trade compliance data."
+          "en": "Support claims with archival sources, UNESCO dossiers, or verified trade records."
         },
         "counterArgument": {
-          "vi": "Thừa nhận thách thức chi phí hoặc xung đột bảo tồn–thương mại hóa.",
+          "vi": "Xét kỹ trở ngại về chi phí đầu tư hoặc nguy cơ thương mại hóa làm phai bản sắc.",
           "zh": "诚然，实践过程中仍面临资金投入与文化失真风险等挑战。",
-          "en": "Acknowledge CapEx hurdles or risks of over-commercialization."
+          "en": "Weigh capital hurdles and the tension between conservation and commercialization."
         },
         "synthesis": {
-          "vi": "Kết hợp công nghệ số và chuẩn mực di sản bản địa để phát triển bền vững.",
+          "vi": "Cân bằng giữa chuẩn mực bảo tồn nguyên bản và tiện ích thực tế của đời sống hiện đại.",
           "zh": "综上所述，唯有兼顾创新与传统底蕴，方能行稳致远。",
-          "en": "Synthesize modern digital standards with authentic local craft preservation."
+          "en": "Balance authentic craft preservation with practical modern utility."
         }
       },
       "themeVi": "So sánh tư duy thủy lợi Đô Giang Yển và thích ứng biến đổi khí hậu",
       "themeEn": "Dujiangyan Hydraulic Philosophy Applied to Modern Climate Resilience",
       "structureZh": "顺势治水哲学对当代气候适应的启示",
-      "pinyin": "HSK 7–9 · Khung Lập Luận Chuyên Sâu V7",
-      "parallelEn": "Structured C1–C2 argument template on Dujiangyan Hydraulic Philosophy Applied to Modern Climate Resilience.",
+      "pinyin": "Khung Lập Luận HSK 7–9",
+      "parallelEn": "Academic C1–C2 analytical pattern for dujiangyan hydraulic philosophy applied to modern climate resilience.",
       "sampleParagraphZh": "关于「顺势治水哲学对当代气候适应的启示」，学界与业界普遍认为既须立足历史根基，又应借力数字标准实现可持续跃升。",
-      "sampleParagraphEn": "Regarding Dujiangyan Hydraulic Philosophy Applied to Modern Climate Resilience, durable excellence merges deep historical stewardship with verifiable digital standards.",
+      "sampleParagraphEn": "When evaluating dujiangyan hydraulic philosophy applied to modern climate resilience, lasting progress pairs historical stewardship with measurable technical standards.",
       "connectorToolkitZh": "诚然……然而……毋庸置疑……归根结底……",
-      "viNote": "Mở bài: So sánh tư duy thủy lợi Đô Giang Yển và thích ứng biến đổi khí hậu — dẫn 2 chứng cứ cụ thể + 1 câu phản biện.",
-      "commonPitfallVi": "Tránh liệt kê cảm tính thiếu ví dụ lịch sử hoặc thiếu liên hệ Việt–Trung.",
+      "viNote": "Gợi ý triển khai: giới thiệu bối cảnh so sánh tư duy thủy lợi đô giang yển và thích ứng biến đổi khí hậu, nêu hai dẫn chứng cụ thể rồi chuyển sang phản biện cân bằng.",
+      "commonPitfallVi": "Tránh viết khẩu hiệu chung chung thiếu dẫn chứng sử liệu hoặc thiếu liên hệ Việt–Trung.",
       "commonPitfallEn": "Avoid vague generalizations lacking concrete historical or regulatory citations."
     },
     {
@@ -9425,36 +9511,36 @@
       "topicZh": "百年老字号在当代品牌建设中的价值",
       "blocks": {
         "topic": {
-          "vi": "Mở đề trực diện vấn đề: Vai trò của Lão Tự Hào trong xây dựng thương hiệu quốc gia bền vững.",
+          "vi": "Đặt vấn đề trọng tâm về vai trò của lão tự hào trong xây dựng thương hiệu quốc gia bền vững.",
           "zh": "围绕「百年老字号在当代品牌建设中的价值」展开跨文化实证分析。",
-          "en": "Frame core thesis around: Centuries-Old Heritage Brands in Modern National Brand Equity."
+          "en": "Establish the core question surrounding centuries-old heritage brands in modern national brand equity."
         },
         "evidence": {
-          "vi": "Trích dẫn số liệu sử liệu, hồ sơ UNESCO hoặc quy trình GACC/RCEP.",
+          "vi": "Dẫn chứng tư liệu lịch sử, quy chuẩn UNESCO hoặc số liệu thực tế GACC/RCEP.",
           "zh": "结合历史文献、联合国遗产标准或实务数据进行论证。",
-          "en": "Cite archival documentation, UNESCO criteria, or bilateral trade compliance data."
+          "en": "Support claims with archival sources, UNESCO dossiers, or verified trade records."
         },
         "counterArgument": {
-          "vi": "Thừa nhận thách thức chi phí hoặc xung đột bảo tồn–thương mại hóa.",
+          "vi": "Xét kỹ trở ngại về chi phí đầu tư hoặc nguy cơ thương mại hóa làm phai bản sắc.",
           "zh": "诚然，实践过程中仍面临资金投入与文化失真风险等挑战。",
-          "en": "Acknowledge CapEx hurdles or risks of over-commercialization."
+          "en": "Weigh capital hurdles and the tension between conservation and commercialization."
         },
         "synthesis": {
-          "vi": "Kết hợp công nghệ số và chuẩn mực di sản bản địa để phát triển bền vững.",
+          "vi": "Cân bằng giữa chuẩn mực bảo tồn nguyên bản và tiện ích thực tế của đời sống hiện đại.",
           "zh": "综上所述，唯有兼顾创新与传统底蕴，方能行稳致远。",
-          "en": "Synthesize modern digital standards with authentic local craft preservation."
+          "en": "Balance authentic craft preservation with practical modern utility."
         }
       },
       "themeVi": "Vai trò của Lão Tự Hào trong xây dựng thương hiệu quốc gia bền vững",
       "themeEn": "Centuries-Old Heritage Brands in Modern National Brand Equity",
       "structureZh": "百年老字号在当代品牌建设中的价值",
-      "pinyin": "HSK 7–9 · Khung Lập Luận Chuyên Sâu V7",
-      "parallelEn": "Structured C1–C2 argument template on Centuries-Old Heritage Brands in Modern National Brand Equity.",
+      "pinyin": "Khung Lập Luận HSK 7–9",
+      "parallelEn": "Academic C1–C2 analytical pattern for centuries-old heritage brands in modern national brand equity.",
       "sampleParagraphZh": "关于「百年老字号在当代品牌建设中的价值」，学界与业界普遍认为既须立足历史根基，又应借力数字标准实现可持续跃升。",
-      "sampleParagraphEn": "Regarding Centuries-Old Heritage Brands in Modern National Brand Equity, durable excellence merges deep historical stewardship with verifiable digital standards.",
+      "sampleParagraphEn": "When evaluating centuries-old heritage brands in modern national brand equity, lasting progress pairs historical stewardship with measurable technical standards.",
       "connectorToolkitZh": "诚然……然而……毋庸置疑……归根结底……",
-      "viNote": "Mở bài: Vai trò của Lão Tự Hào trong xây dựng thương hiệu quốc gia bền vững — dẫn 2 chứng cứ cụ thể + 1 câu phản biện.",
-      "commonPitfallVi": "Tránh liệt kê cảm tính thiếu ví dụ lịch sử hoặc thiếu liên hệ Việt–Trung.",
+      "viNote": "Gợi ý triển khai: giới thiệu bối cảnh vai trò của lão tự hào trong xây dựng thương hiệu quốc gia bền vững, nêu hai dẫn chứng cụ thể rồi chuyển sang phản biện cân bằng.",
+      "commonPitfallVi": "Tránh viết khẩu hiệu chung chung thiếu dẫn chứng sử liệu hoặc thiếu liên hệ Việt–Trung.",
       "commonPitfallEn": "Avoid vague generalizations lacking concrete historical or regulatory citations."
     },
     {
@@ -9464,36 +9550,36 @@
       "topicZh": "中越高校绿色工程科研合作前景",
       "blocks": {
         "topic": {
-          "vi": "Mở đề trực diện vấn đề: Hợp tác nghiên cứu giáo dục đại học Trung–Việt trong kỷ nguyên xanh.",
+          "vi": "Đặt vấn đề trọng tâm về hợp tác nghiên cứu giáo dục đại học trung–việt trong kỷ nguyên xanh.",
           "zh": "围绕「中越高校绿色工程科研合作前景」展开跨文化实证分析。",
-          "en": "Frame core thesis around: Sino-Vietnamese Higher Education Cooperation in Green Engineering."
+          "en": "Establish the core question surrounding sino-vietnamese higher education cooperation in green engineering."
         },
         "evidence": {
-          "vi": "Trích dẫn số liệu sử liệu, hồ sơ UNESCO hoặc quy trình GACC/RCEP.",
+          "vi": "Dẫn chứng tư liệu lịch sử, quy chuẩn UNESCO hoặc số liệu thực tế GACC/RCEP.",
           "zh": "结合历史文献、联合国遗产标准或实务数据进行论证。",
-          "en": "Cite archival documentation, UNESCO criteria, or bilateral trade compliance data."
+          "en": "Support claims with archival sources, UNESCO dossiers, or verified trade records."
         },
         "counterArgument": {
-          "vi": "Thừa nhận thách thức chi phí hoặc xung đột bảo tồn–thương mại hóa.",
+          "vi": "Xét kỹ trở ngại về chi phí đầu tư hoặc nguy cơ thương mại hóa làm phai bản sắc.",
           "zh": "诚然，实践过程中仍面临资金投入与文化失真风险等挑战。",
-          "en": "Acknowledge CapEx hurdles or risks of over-commercialization."
+          "en": "Weigh capital hurdles and the tension between conservation and commercialization."
         },
         "synthesis": {
-          "vi": "Kết hợp công nghệ số và chuẩn mực di sản bản địa để phát triển bền vững.",
+          "vi": "Cân bằng giữa chuẩn mực bảo tồn nguyên bản và tiện ích thực tế của đời sống hiện đại.",
           "zh": "综上所述，唯有兼顾创新与传统底蕴，方能行稳致远。",
-          "en": "Synthesize modern digital standards with authentic local craft preservation."
+          "en": "Balance authentic craft preservation with practical modern utility."
         }
       },
       "themeVi": "Hợp tác nghiên cứu giáo dục đại học Trung–Việt trong kỷ nguyên xanh",
       "themeEn": "Sino-Vietnamese Higher Education Cooperation in Green Engineering",
       "structureZh": "中越高校绿色工程科研合作前景",
-      "pinyin": "HSK 7–9 · Khung Lập Luận Chuyên Sâu V7",
-      "parallelEn": "Structured C1–C2 argument template on Sino-Vietnamese Higher Education Cooperation in Green Engineering.",
+      "pinyin": "Khung Lập Luận HSK 7–9",
+      "parallelEn": "Academic C1–C2 analytical pattern for sino-vietnamese higher education cooperation in green engineering.",
       "sampleParagraphZh": "关于「中越高校绿色工程科研合作前景」，学界与业界普遍认为既须立足历史根基，又应借力数字标准实现可持续跃升。",
-      "sampleParagraphEn": "Regarding Sino-Vietnamese Higher Education Cooperation in Green Engineering, durable excellence merges deep historical stewardship with verifiable digital standards.",
+      "sampleParagraphEn": "When evaluating sino-vietnamese higher education cooperation in green engineering, lasting progress pairs historical stewardship with measurable technical standards.",
       "connectorToolkitZh": "诚然……然而……毋庸置疑……归根结底……",
-      "viNote": "Mở bài: Hợp tác nghiên cứu giáo dục đại học Trung–Việt trong kỷ nguyên xanh — dẫn 2 chứng cứ cụ thể + 1 câu phản biện.",
-      "commonPitfallVi": "Tránh liệt kê cảm tính thiếu ví dụ lịch sử hoặc thiếu liên hệ Việt–Trung.",
+      "viNote": "Gợi ý triển khai: giới thiệu bối cảnh hợp tác nghiên cứu giáo dục đại học trung–việt trong kỷ nguyên xanh, nêu hai dẫn chứng cụ thể rồi chuyển sang phản biện cân bằng.",
+      "commonPitfallVi": "Tránh viết khẩu hiệu chung chung thiếu dẫn chứng sử liệu hoặc thiếu liên hệ Việt–Trung.",
       "commonPitfallEn": "Avoid vague generalizations lacking concrete historical or regulatory citations."
     },
     {
@@ -9503,36 +9589,36 @@
       "topicZh": "如何避免古镇旅游中的过度商业化？",
       "blocks": {
         "topic": {
-          "vi": "Mở đề trực diện vấn đề: Bảo tồn cổ trấn sống Giang Nam trước áp lực thương mại hóa quá mức.",
+          "vi": "Đặt vấn đề trọng tâm về bảo tồn cổ trấn sống giang nam trước áp lực thương mại hóa quá mức.",
           "zh": "围绕「如何避免古镇旅游中的过度商业化？」展开跨文化实证分析。",
-          "en": "Frame core thesis around: Defending Living Canal Town Heritage Against Over-Tourism."
+          "en": "Establish the core question surrounding defending living canal town heritage against over-tourism."
         },
         "evidence": {
-          "vi": "Trích dẫn số liệu sử liệu, hồ sơ UNESCO hoặc quy trình GACC/RCEP.",
+          "vi": "Dẫn chứng tư liệu lịch sử, quy chuẩn UNESCO hoặc số liệu thực tế GACC/RCEP.",
           "zh": "结合历史文献、联合国遗产标准或实务数据进行论证。",
-          "en": "Cite archival documentation, UNESCO criteria, or bilateral trade compliance data."
+          "en": "Support claims with archival sources, UNESCO dossiers, or verified trade records."
         },
         "counterArgument": {
-          "vi": "Thừa nhận thách thức chi phí hoặc xung đột bảo tồn–thương mại hóa.",
+          "vi": "Xét kỹ trở ngại về chi phí đầu tư hoặc nguy cơ thương mại hóa làm phai bản sắc.",
           "zh": "诚然，实践过程中仍面临资金投入与文化失真风险等挑战。",
-          "en": "Acknowledge CapEx hurdles or risks of over-commercialization."
+          "en": "Weigh capital hurdles and the tension between conservation and commercialization."
         },
         "synthesis": {
-          "vi": "Kết hợp công nghệ số và chuẩn mực di sản bản địa để phát triển bền vững.",
+          "vi": "Cân bằng giữa chuẩn mực bảo tồn nguyên bản và tiện ích thực tế của đời sống hiện đại.",
           "zh": "综上所述，唯有兼顾创新与传统底蕴，方能行稳致远。",
-          "en": "Synthesize modern digital standards with authentic local craft preservation."
+          "en": "Balance authentic craft preservation with practical modern utility."
         }
       },
       "themeVi": "Bảo tồn cổ trấn sống Giang Nam trước áp lực thương mại hóa quá mức",
       "themeEn": "Defending Living Canal Town Heritage Against Over-Tourism",
       "structureZh": "如何避免古镇旅游中的过度商业化？",
-      "pinyin": "HSK 7–9 · Khung Lập Luận Chuyên Sâu V7",
-      "parallelEn": "Structured C1–C2 argument template on Defending Living Canal Town Heritage Against Over-Tourism.",
+      "pinyin": "Khung Lập Luận HSK 7–9",
+      "parallelEn": "Academic C1–C2 analytical pattern for defending living canal town heritage against over-tourism.",
       "sampleParagraphZh": "关于「如何避免古镇旅游中的过度商业化？」，学界与业界普遍认为既须立足历史根基，又应借力数字标准实现可持续跃升。",
-      "sampleParagraphEn": "Regarding Defending Living Canal Town Heritage Against Over-Tourism, durable excellence merges deep historical stewardship with verifiable digital standards.",
+      "sampleParagraphEn": "When evaluating defending living canal town heritage against over-tourism, lasting progress pairs historical stewardship with measurable technical standards.",
       "connectorToolkitZh": "诚然……然而……毋庸置疑……归根结底……",
-      "viNote": "Mở bài: Bảo tồn cổ trấn sống Giang Nam trước áp lực thương mại hóa quá mức — dẫn 2 chứng cứ cụ thể + 1 câu phản biện.",
-      "commonPitfallVi": "Tránh liệt kê cảm tính thiếu ví dụ lịch sử hoặc thiếu liên hệ Việt–Trung.",
+      "viNote": "Gợi ý triển khai: giới thiệu bối cảnh bảo tồn cổ trấn sống giang nam trước áp lực thương mại hóa quá mức, nêu hai dẫn chứng cụ thể rồi chuyển sang phản biện cân bằng.",
+      "commonPitfallVi": "Tránh viết khẩu hiệu chung chung thiếu dẫn chứng sử liệu hoặc thiếu liên hệ Việt–Trung.",
       "commonPitfallEn": "Avoid vague generalizations lacking concrete historical or regulatory citations."
     },
     {
@@ -9542,36 +9628,36 @@
       "topicZh": "从敦煌星图看东方天文观测传统",
       "blocks": {
         "topic": {
-          "vi": "Mở đề trực diện vấn đề: Khoa học sử Đông Á: Từ Bản Đồ Sao Đôn Hoàng đến vệ tinh hiện đại.",
+          "vi": "Đặt vấn đề trọng tâm về khoa học sử đông á: từ bản đồ sao đôn hoàng đến vệ tinh hiện đại.",
           "zh": "围绕「从敦煌星图看东方天文观测传统」展开跨文化实证分析。",
-          "en": "Frame core thesis around: From the Dunhuang Star Chart to Contemporary Space Exploration."
+          "en": "Establish the core question surrounding from the dunhuang star chart to contemporary space exploration."
         },
         "evidence": {
-          "vi": "Trích dẫn số liệu sử liệu, hồ sơ UNESCO hoặc quy trình GACC/RCEP.",
+          "vi": "Dẫn chứng tư liệu lịch sử, quy chuẩn UNESCO hoặc số liệu thực tế GACC/RCEP.",
           "zh": "结合历史文献、联合国遗产标准或实务数据进行论证。",
-          "en": "Cite archival documentation, UNESCO criteria, or bilateral trade compliance data."
+          "en": "Support claims with archival sources, UNESCO dossiers, or verified trade records."
         },
         "counterArgument": {
-          "vi": "Thừa nhận thách thức chi phí hoặc xung đột bảo tồn–thương mại hóa.",
+          "vi": "Xét kỹ trở ngại về chi phí đầu tư hoặc nguy cơ thương mại hóa làm phai bản sắc.",
           "zh": "诚然，实践过程中仍面临资金投入与文化失真风险等挑战。",
-          "en": "Acknowledge CapEx hurdles or risks of over-commercialization."
+          "en": "Weigh capital hurdles and the tension between conservation and commercialization."
         },
         "synthesis": {
-          "vi": "Kết hợp công nghệ số và chuẩn mực di sản bản địa để phát triển bền vững.",
+          "vi": "Cân bằng giữa chuẩn mực bảo tồn nguyên bản và tiện ích thực tế của đời sống hiện đại.",
           "zh": "综上所述，唯有兼顾创新与传统底蕴，方能行稳致远。",
-          "en": "Synthesize modern digital standards with authentic local craft preservation."
+          "en": "Balance authentic craft preservation with practical modern utility."
         }
       },
       "themeVi": "Khoa học sử Đông Á: Từ Bản Đồ Sao Đôn Hoàng đến vệ tinh hiện đại",
       "themeEn": "From the Dunhuang Star Chart to Contemporary Space Exploration",
       "structureZh": "从敦煌星图看东方天文观测传统",
-      "pinyin": "HSK 7–9 · Khung Lập Luận Chuyên Sâu V7",
-      "parallelEn": "Structured C1–C2 argument template on From the Dunhuang Star Chart to Contemporary Space Exploration.",
+      "pinyin": "Khung Lập Luận HSK 7–9",
+      "parallelEn": "Academic C1–C2 analytical pattern for from the dunhuang star chart to contemporary space exploration.",
       "sampleParagraphZh": "关于「从敦煌星图看东方天文观测传统」，学界与业界普遍认为既须立足历史根基，又应借力数字标准实现可持续跃升。",
-      "sampleParagraphEn": "Regarding From the Dunhuang Star Chart to Contemporary Space Exploration, durable excellence merges deep historical stewardship with verifiable digital standards.",
+      "sampleParagraphEn": "When evaluating from the dunhuang star chart to contemporary space exploration, lasting progress pairs historical stewardship with measurable technical standards.",
       "connectorToolkitZh": "诚然……然而……毋庸置疑……归根结底……",
-      "viNote": "Mở bài: Khoa học sử Đông Á: Từ Bản Đồ Sao Đôn Hoàng đến vệ tinh hiện đại — dẫn 2 chứng cứ cụ thể + 1 câu phản biện.",
-      "commonPitfallVi": "Tránh liệt kê cảm tính thiếu ví dụ lịch sử hoặc thiếu liên hệ Việt–Trung.",
+      "viNote": "Gợi ý triển khai: giới thiệu bối cảnh khoa học sử đông á: từ bản đồ sao đôn hoàng đến vệ tinh hiện đại, nêu hai dẫn chứng cụ thể rồi chuyển sang phản biện cân bằng.",
+      "commonPitfallVi": "Tránh viết khẩu hiệu chung chung thiếu dẫn chứng sử liệu hoặc thiếu liên hệ Việt–Trung.",
       "commonPitfallEn": "Avoid vague generalizations lacking concrete historical or regulatory citations."
     },
     {
@@ -9581,36 +9667,36 @@
       "topicZh": "汉越同形异义词在跨文化商务中的警示",
       "blocks": {
         "topic": {
-          "vi": "Mở đề trực diện vấn đề: Từ vựng Hán Việt: Cầu nối văn hóa hay cái bẫy hiểu nhầm B2B?.",
+          "vi": "Đặt vấn đề trọng tâm về từ vựng hán việt: cầu nối văn hóa hay cái bẫy hiểu nhầm b2b?.",
           "zh": "围绕「汉越同形异义词在跨文化商务中的警示」展开跨文化实证分析。",
-          "en": "Frame core thesis around: Sino-Vietnamese Vocabulary: Cultural Bridge or Contractual Trap?."
+          "en": "Establish the core question surrounding sino-vietnamese vocabulary: cultural bridge or contractual trap?."
         },
         "evidence": {
-          "vi": "Trích dẫn số liệu sử liệu, hồ sơ UNESCO hoặc quy trình GACC/RCEP.",
+          "vi": "Dẫn chứng tư liệu lịch sử, quy chuẩn UNESCO hoặc số liệu thực tế GACC/RCEP.",
           "zh": "结合历史文献、联合国遗产标准或实务数据进行论证。",
-          "en": "Cite archival documentation, UNESCO criteria, or bilateral trade compliance data."
+          "en": "Support claims with archival sources, UNESCO dossiers, or verified trade records."
         },
         "counterArgument": {
-          "vi": "Thừa nhận thách thức chi phí hoặc xung đột bảo tồn–thương mại hóa.",
+          "vi": "Xét kỹ trở ngại về chi phí đầu tư hoặc nguy cơ thương mại hóa làm phai bản sắc.",
           "zh": "诚然，实践过程中仍面临资金投入与文化失真风险等挑战。",
-          "en": "Acknowledge CapEx hurdles or risks of over-commercialization."
+          "en": "Weigh capital hurdles and the tension between conservation and commercialization."
         },
         "synthesis": {
-          "vi": "Kết hợp công nghệ số và chuẩn mực di sản bản địa để phát triển bền vững.",
+          "vi": "Cân bằng giữa chuẩn mực bảo tồn nguyên bản và tiện ích thực tế của đời sống hiện đại.",
           "zh": "综上所述，唯有兼顾创新与传统底蕴，方能行稳致远。",
-          "en": "Synthesize modern digital standards with authentic local craft preservation."
+          "en": "Balance authentic craft preservation with practical modern utility."
         }
       },
       "themeVi": "Từ vựng Hán Việt: Cầu nối văn hóa hay cái bẫy hiểu nhầm B2B?",
       "themeEn": "Sino-Vietnamese Vocabulary: Cultural Bridge or Contractual Trap?",
       "structureZh": "汉越同形异义词在跨文化商务中的警示",
-      "pinyin": "HSK 7–9 · Khung Lập Luận Chuyên Sâu V7",
-      "parallelEn": "Structured C1–C2 argument template on Sino-Vietnamese Vocabulary: Cultural Bridge or Contractual Trap?.",
+      "pinyin": "Khung Lập Luận HSK 7–9",
+      "parallelEn": "Academic C1–C2 analytical pattern for sino-vietnamese vocabulary: cultural bridge or contractual trap?.",
       "sampleParagraphZh": "关于「汉越同形异义词在跨文化商务中的警示」，学界与业界普遍认为既须立足历史根基，又应借力数字标准实现可持续跃升。",
-      "sampleParagraphEn": "Regarding Sino-Vietnamese Vocabulary: Cultural Bridge or Contractual Trap?, durable excellence merges deep historical stewardship with verifiable digital standards.",
+      "sampleParagraphEn": "When evaluating sino-vietnamese vocabulary: cultural bridge or contractual trap?, lasting progress pairs historical stewardship with measurable technical standards.",
       "connectorToolkitZh": "诚然……然而……毋庸置疑……归根结底……",
-      "viNote": "Mở bài: Từ vựng Hán Việt: Cầu nối văn hóa hay cái bẫy hiểu nhầm B2B? — dẫn 2 chứng cứ cụ thể + 1 câu phản biện.",
-      "commonPitfallVi": "Tránh liệt kê cảm tính thiếu ví dụ lịch sử hoặc thiếu liên hệ Việt–Trung.",
+      "viNote": "Gợi ý triển khai: giới thiệu bối cảnh từ vựng hán việt: cầu nối văn hóa hay cái bẫy hiểu nhầm b2b?, nêu hai dẫn chứng cụ thể rồi chuyển sang phản biện cân bằng.",
+      "commonPitfallVi": "Tránh viết khẩu hiệu chung chung thiếu dẫn chứng sử liệu hoặc thiếu liên hệ Việt–Trung.",
       "commonPitfallEn": "Avoid vague generalizations lacking concrete historical or regulatory citations."
     },
     {
@@ -9620,36 +9706,36 @@
       "topicZh": "地理标志产品如何助力乡村经济？",
       "blocks": {
         "topic": {
-          "vi": "Mở đề trực diện vấn đề: Vai trò của Chỉ dẫn Địa lý (GI) trong bảo vệ sinh kế nông dân vùng núi.",
+          "vi": "Đặt vấn đề trọng tâm về vai trò của chỉ dẫn địa lý (gi) trong bảo vệ sinh kế nông dân vùng núi.",
           "zh": "围绕「地理标志产品如何助力乡村经济？」展开跨文化实证分析。",
-          "en": "Frame core thesis around: Geographical Indications and Upland Farming Livelihoods."
+          "en": "Establish the core question surrounding geographical indications and upland farming livelihoods."
         },
         "evidence": {
-          "vi": "Trích dẫn số liệu sử liệu, hồ sơ UNESCO hoặc quy trình GACC/RCEP.",
+          "vi": "Dẫn chứng tư liệu lịch sử, quy chuẩn UNESCO hoặc số liệu thực tế GACC/RCEP.",
           "zh": "结合历史文献、联合国遗产标准或实务数据进行论证。",
-          "en": "Cite archival documentation, UNESCO criteria, or bilateral trade compliance data."
+          "en": "Support claims with archival sources, UNESCO dossiers, or verified trade records."
         },
         "counterArgument": {
-          "vi": "Thừa nhận thách thức chi phí hoặc xung đột bảo tồn–thương mại hóa.",
+          "vi": "Xét kỹ trở ngại về chi phí đầu tư hoặc nguy cơ thương mại hóa làm phai bản sắc.",
           "zh": "诚然，实践过程中仍面临资金投入与文化失真风险等挑战。",
-          "en": "Acknowledge CapEx hurdles or risks of over-commercialization."
+          "en": "Weigh capital hurdles and the tension between conservation and commercialization."
         },
         "synthesis": {
-          "vi": "Kết hợp công nghệ số và chuẩn mực di sản bản địa để phát triển bền vững.",
+          "vi": "Cân bằng giữa chuẩn mực bảo tồn nguyên bản và tiện ích thực tế của đời sống hiện đại.",
           "zh": "综上所述，唯有兼顾创新与传统底蕴，方能行稳致远。",
-          "en": "Synthesize modern digital standards with authentic local craft preservation."
+          "en": "Balance authentic craft preservation with practical modern utility."
         }
       },
       "themeVi": "Vai trò của Chỉ dẫn Địa lý (GI) trong bảo vệ sinh kế nông dân vùng núi",
       "themeEn": "Geographical Indications and Upland Farming Livelihoods",
       "structureZh": "地理标志产品如何助力乡村经济？",
-      "pinyin": "HSK 7–9 · Khung Lập Luận Chuyên Sâu V7",
-      "parallelEn": "Structured C1–C2 argument template on Geographical Indications and Upland Farming Livelihoods.",
+      "pinyin": "Khung Lập Luận HSK 7–9",
+      "parallelEn": "Academic C1–C2 analytical pattern for geographical indications and upland farming livelihoods.",
       "sampleParagraphZh": "关于「地理标志产品如何助力乡村经济？」，学界与业界普遍认为既须立足历史根基，又应借力数字标准实现可持续跃升。",
-      "sampleParagraphEn": "Regarding Geographical Indications and Upland Farming Livelihoods, durable excellence merges deep historical stewardship with verifiable digital standards.",
+      "sampleParagraphEn": "When evaluating geographical indications and upland farming livelihoods, lasting progress pairs historical stewardship with measurable technical standards.",
       "connectorToolkitZh": "诚然……然而……毋庸置疑……归根结底……",
-      "viNote": "Mở bài: Vai trò của Chỉ dẫn Địa lý (GI) trong bảo vệ sinh kế nông dân vùng núi — dẫn 2 chứng cứ cụ thể + 1 câu phản biện.",
-      "commonPitfallVi": "Tránh liệt kê cảm tính thiếu ví dụ lịch sử hoặc thiếu liên hệ Việt–Trung.",
+      "viNote": "Gợi ý triển khai: giới thiệu bối cảnh vai trò của chỉ dẫn địa lý (gi) trong bảo vệ sinh kế nông dân vùng núi, nêu hai dẫn chứng cụ thể rồi chuyển sang phản biện cân bằng.",
+      "commonPitfallVi": "Tránh viết khẩu hiệu chung chung thiếu dẫn chứng sử liệu hoặc thiếu liên hệ Việt–Trung.",
       "commonPitfallEn": "Avoid vague generalizations lacking concrete historical or regulatory citations."
     },
     {
@@ -9659,36 +9745,36 @@
       "topicZh": "数字支付便利化如何提升国际旅游体验？",
       "blocks": {
         "topic": {
-          "vi": "Mở đề trực diện vấn đề: Du lịch không tiền mặt và rào cản công nghệ đối với du khách quốc tế.",
+          "vi": "Đặt vấn đề trọng tâm về du lịch không tiền mặt và rào cản công nghệ đối với du khách quốc tế.",
           "zh": "围绕「数字支付便利化如何提升国际旅游体验？」展开跨文化实证分析。",
-          "en": "Frame core thesis around: Cashless Travel Ecosystems and Friction-Free Visitor Onboarding."
+          "en": "Establish the core question surrounding cashless travel ecosystems and friction-free visitor onboarding."
         },
         "evidence": {
-          "vi": "Trích dẫn số liệu sử liệu, hồ sơ UNESCO hoặc quy trình GACC/RCEP.",
+          "vi": "Dẫn chứng tư liệu lịch sử, quy chuẩn UNESCO hoặc số liệu thực tế GACC/RCEP.",
           "zh": "结合历史文献、联合国遗产标准或实务数据进行论证。",
-          "en": "Cite archival documentation, UNESCO criteria, or bilateral trade compliance data."
+          "en": "Support claims with archival sources, UNESCO dossiers, or verified trade records."
         },
         "counterArgument": {
-          "vi": "Thừa nhận thách thức chi phí hoặc xung đột bảo tồn–thương mại hóa.",
+          "vi": "Xét kỹ trở ngại về chi phí đầu tư hoặc nguy cơ thương mại hóa làm phai bản sắc.",
           "zh": "诚然，实践过程中仍面临资金投入与文化失真风险等挑战。",
-          "en": "Acknowledge CapEx hurdles or risks of over-commercialization."
+          "en": "Weigh capital hurdles and the tension between conservation and commercialization."
         },
         "synthesis": {
-          "vi": "Kết hợp công nghệ số và chuẩn mực di sản bản địa để phát triển bền vững.",
+          "vi": "Cân bằng giữa chuẩn mực bảo tồn nguyên bản và tiện ích thực tế của đời sống hiện đại.",
           "zh": "综上所述，唯有兼顾创新与传统底蕴，方能行稳致远。",
-          "en": "Synthesize modern digital standards with authentic local craft preservation."
+          "en": "Balance authentic craft preservation with practical modern utility."
         }
       },
       "themeVi": "Du lịch không tiền mặt và rào cản công nghệ đối với du khách quốc tế",
       "themeEn": "Cashless Travel Ecosystems and Friction-Free Visitor Onboarding",
       "structureZh": "数字支付便利化如何提升国际旅游体验？",
-      "pinyin": "HSK 7–9 · Khung Lập Luận Chuyên Sâu V7",
-      "parallelEn": "Structured C1–C2 argument template on Cashless Travel Ecosystems and Friction-Free Visitor Onboarding.",
+      "pinyin": "Khung Lập Luận HSK 7–9",
+      "parallelEn": "Academic C1–C2 analytical pattern for cashless travel ecosystems and friction-free visitor onboarding.",
       "sampleParagraphZh": "关于「数字支付便利化如何提升国际旅游体验？」，学界与业界普遍认为既须立足历史根基，又应借力数字标准实现可持续跃升。",
-      "sampleParagraphEn": "Regarding Cashless Travel Ecosystems and Friction-Free Visitor Onboarding, durable excellence merges deep historical stewardship with verifiable digital standards.",
+      "sampleParagraphEn": "When evaluating cashless travel ecosystems and friction-free visitor onboarding, lasting progress pairs historical stewardship with measurable technical standards.",
       "connectorToolkitZh": "诚然……然而……毋庸置疑……归根结底……",
-      "viNote": "Mở bài: Du lịch không tiền mặt và rào cản công nghệ đối với du khách quốc tế — dẫn 2 chứng cứ cụ thể + 1 câu phản biện.",
-      "commonPitfallVi": "Tránh liệt kê cảm tính thiếu ví dụ lịch sử hoặc thiếu liên hệ Việt–Trung.",
+      "viNote": "Gợi ý triển khai: giới thiệu bối cảnh du lịch không tiền mặt và rào cản công nghệ đối với du khách quốc tế, nêu hai dẫn chứng cụ thể rồi chuyển sang phản biện cân bằng.",
+      "commonPitfallVi": "Tránh viết khẩu hiệu chung chung thiếu dẫn chứng sử liệu hoặc thiếu liên hệ Việt–Trung.",
       "commonPitfallEn": "Avoid vague generalizations lacking concrete historical or regulatory citations."
     },
     {
@@ -9698,36 +9784,36 @@
       "topicZh": "从《儒林外史》反思当代人才评价体系",
       "blocks": {
         "topic": {
-          "vi": "Mở đề trực diện vấn đề: Châm biếm khoa cử trong *Nho Lâm Ngoại Sử* dưới lăng kính nhân sự hiện đại.",
+          "vi": "Đặt vấn đề trọng tâm về châm biếm khoa cử trong *nho lâm ngoại sử* dưới lăng kính nhân sự hiện đại.",
           "zh": "围绕「从《儒林外史》反思当代人才评价体系」展开跨文化实证分析。",
-          "en": "Frame core thesis around: Imperial Exam Satire in Rulin Waishi vs Modern Talent Selection."
+          "en": "Establish the core question surrounding imperial exam satire in rulin waishi vs modern talent selection."
         },
         "evidence": {
-          "vi": "Trích dẫn số liệu sử liệu, hồ sơ UNESCO hoặc quy trình GACC/RCEP.",
+          "vi": "Dẫn chứng tư liệu lịch sử, quy chuẩn UNESCO hoặc số liệu thực tế GACC/RCEP.",
           "zh": "结合历史文献、联合国遗产标准或实务数据进行论证。",
-          "en": "Cite archival documentation, UNESCO criteria, or bilateral trade compliance data."
+          "en": "Support claims with archival sources, UNESCO dossiers, or verified trade records."
         },
         "counterArgument": {
-          "vi": "Thừa nhận thách thức chi phí hoặc xung đột bảo tồn–thương mại hóa.",
+          "vi": "Xét kỹ trở ngại về chi phí đầu tư hoặc nguy cơ thương mại hóa làm phai bản sắc.",
           "zh": "诚然，实践过程中仍面临资金投入与文化失真风险等挑战。",
-          "en": "Acknowledge CapEx hurdles or risks of over-commercialization."
+          "en": "Weigh capital hurdles and the tension between conservation and commercialization."
         },
         "synthesis": {
-          "vi": "Kết hợp công nghệ số và chuẩn mực di sản bản địa để phát triển bền vững.",
+          "vi": "Cân bằng giữa chuẩn mực bảo tồn nguyên bản và tiện ích thực tế của đời sống hiện đại.",
           "zh": "综上所述，唯有兼顾创新与传统底蕴，方能行稳致远。",
-          "en": "Synthesize modern digital standards with authentic local craft preservation."
+          "en": "Balance authentic craft preservation with practical modern utility."
         }
       },
       "themeVi": "Châm biếm khoa cử trong *Nho Lâm Ngoại Sử* dưới lăng kính nhân sự hiện đại",
       "themeEn": "Imperial Exam Satire in Rulin Waishi vs Modern Talent Selection",
       "structureZh": "从《儒林外史》反思当代人才评价体系",
-      "pinyin": "HSK 7–9 · Khung Lập Luận Chuyên Sâu V7",
-      "parallelEn": "Structured C1–C2 argument template on Imperial Exam Satire in Rulin Waishi vs Modern Talent Selection.",
+      "pinyin": "Khung Lập Luận HSK 7–9",
+      "parallelEn": "Academic C1–C2 analytical pattern for imperial exam satire in rulin waishi vs modern talent selection.",
       "sampleParagraphZh": "关于「从《儒林外史》反思当代人才评价体系」，学界与业界普遍认为既须立足历史根基，又应借力数字标准实现可持续跃升。",
-      "sampleParagraphEn": "Regarding Imperial Exam Satire in Rulin Waishi vs Modern Talent Selection, durable excellence merges deep historical stewardship with verifiable digital standards.",
+      "sampleParagraphEn": "When evaluating imperial exam satire in rulin waishi vs modern talent selection, lasting progress pairs historical stewardship with measurable technical standards.",
       "connectorToolkitZh": "诚然……然而……毋庸置疑……归根结底……",
-      "viNote": "Mở bài: Châm biếm khoa cử trong *Nho Lâm Ngoại Sử* dưới lăng kính nhân sự hiện đại — dẫn 2 chứng cứ cụ thể + 1 câu phản biện.",
-      "commonPitfallVi": "Tránh liệt kê cảm tính thiếu ví dụ lịch sử hoặc thiếu liên hệ Việt–Trung.",
+      "viNote": "Gợi ý triển khai: giới thiệu bối cảnh châm biếm khoa cử trong *nho lâm ngoại sử* dưới lăng kính nhân sự hiện đại, nêu hai dẫn chứng cụ thể rồi chuyển sang phản biện cân bằng.",
+      "commonPitfallVi": "Tránh viết khẩu hiệu chung chung thiếu dẫn chứng sử liệu hoặc thiếu liên hệ Việt–Trung.",
       "commonPitfallEn": "Avoid vague generalizations lacking concrete historical or regulatory citations."
     },
     {
@@ -9737,36 +9823,36 @@
       "topicZh": "会馆建筑中的跨海商业诚信文化",
       "blocks": {
         "topic": {
-          "vi": "Mở đề trực diện vấn đề: Giao thoa kiến trúc hội quán Hoa kiều tại Hội An và Chợ Lớn.",
+          "vi": "Đặt vấn đề trọng tâm về giao thoa kiến trúc hội quán hoa kiều tại hội an và chợ lớn.",
           "zh": "围绕「会馆建筑中的跨海商业诚信文化」展开跨文化实证分析。",
-          "en": "Frame core thesis around: Shared Guild Architecture Across Hoi An and Cho Lon Ports."
+          "en": "Establish the core question surrounding shared guild architecture across hoi an and cho lon ports."
         },
         "evidence": {
-          "vi": "Trích dẫn số liệu sử liệu, hồ sơ UNESCO hoặc quy trình GACC/RCEP.",
+          "vi": "Dẫn chứng tư liệu lịch sử, quy chuẩn UNESCO hoặc số liệu thực tế GACC/RCEP.",
           "zh": "结合历史文献、联合国遗产标准或实务数据进行论证。",
-          "en": "Cite archival documentation, UNESCO criteria, or bilateral trade compliance data."
+          "en": "Support claims with archival sources, UNESCO dossiers, or verified trade records."
         },
         "counterArgument": {
-          "vi": "Thừa nhận thách thức chi phí hoặc xung đột bảo tồn–thương mại hóa.",
+          "vi": "Xét kỹ trở ngại về chi phí đầu tư hoặc nguy cơ thương mại hóa làm phai bản sắc.",
           "zh": "诚然，实践过程中仍面临资金投入与文化失真风险等挑战。",
-          "en": "Acknowledge CapEx hurdles or risks of over-commercialization."
+          "en": "Weigh capital hurdles and the tension between conservation and commercialization."
         },
         "synthesis": {
-          "vi": "Kết hợp công nghệ số và chuẩn mực di sản bản địa để phát triển bền vững.",
+          "vi": "Cân bằng giữa chuẩn mực bảo tồn nguyên bản và tiện ích thực tế của đời sống hiện đại.",
           "zh": "综上所述，唯有兼顾创新与传统底蕴，方能行稳致远。",
-          "en": "Synthesize modern digital standards with authentic local craft preservation."
+          "en": "Balance authentic craft preservation with practical modern utility."
         }
       },
       "themeVi": "Giao thoa kiến trúc hội quán Hoa kiều tại Hội An và Chợ Lớn",
       "themeEn": "Shared Guild Architecture Across Hoi An and Cho Lon Ports",
       "structureZh": "会馆建筑中的跨海商业诚信文化",
-      "pinyin": "HSK 7–9 · Khung Lập Luận Chuyên Sâu V7",
-      "parallelEn": "Structured C1–C2 argument template on Shared Guild Architecture Across Hoi An and Cho Lon Ports.",
+      "pinyin": "Khung Lập Luận HSK 7–9",
+      "parallelEn": "Academic C1–C2 analytical pattern for shared guild architecture across hoi an and cho lon ports.",
       "sampleParagraphZh": "关于「会馆建筑中的跨海商业诚信文化」，学界与业界普遍认为既须立足历史根基，又应借力数字标准实现可持续跃升。",
-      "sampleParagraphEn": "Regarding Shared Guild Architecture Across Hoi An and Cho Lon Ports, durable excellence merges deep historical stewardship with verifiable digital standards.",
+      "sampleParagraphEn": "When evaluating shared guild architecture across hoi an and cho lon ports, lasting progress pairs historical stewardship with measurable technical standards.",
       "connectorToolkitZh": "诚然……然而……毋庸置疑……归根结底……",
-      "viNote": "Mở bài: Giao thoa kiến trúc hội quán Hoa kiều tại Hội An và Chợ Lớn — dẫn 2 chứng cứ cụ thể + 1 câu phản biện.",
-      "commonPitfallVi": "Tránh liệt kê cảm tính thiếu ví dụ lịch sử hoặc thiếu liên hệ Việt–Trung.",
+      "viNote": "Gợi ý triển khai: giới thiệu bối cảnh giao thoa kiến trúc hội quán hoa kiều tại hội an và chợ lớn, nêu hai dẫn chứng cụ thể rồi chuyển sang phản biện cân bằng.",
+      "commonPitfallVi": "Tránh viết khẩu hiệu chung chung thiếu dẫn chứng sử liệu hoặc thiếu liên hệ Việt–Trung.",
       "commonPitfallEn": "Avoid vague generalizations lacking concrete historical or regulatory citations."
     },
     {
@@ -9776,36 +9862,36 @@
       "topicZh": "传统矿物颜料在文物修复中的科学价值",
       "blocks": {
         "topic": {
-          "vi": "Mở đề trực diện vấn đề: Trách nhiệm minh bạch vật liệu khoáng tự nhiên trong phục chế bảo tàng.",
+          "vi": "Đặt vấn đề trọng tâm về trách nhiệm minh bạch vật liệu khoáng tự nhiên trong phục chế bảo tàng.",
           "zh": "围绕「传统矿物颜料在文物修复中的科学价值」展开跨文化实证分析。",
-          "en": "Frame core thesis around: Material Provenance and Ethics in Museum Mural Conservation."
+          "en": "Establish the core question surrounding material provenance and ethics in museum mural conservation."
         },
         "evidence": {
-          "vi": "Trích dẫn số liệu sử liệu, hồ sơ UNESCO hoặc quy trình GACC/RCEP.",
+          "vi": "Dẫn chứng tư liệu lịch sử, quy chuẩn UNESCO hoặc số liệu thực tế GACC/RCEP.",
           "zh": "结合历史文献、联合国遗产标准或实务数据进行论证。",
-          "en": "Cite archival documentation, UNESCO criteria, or bilateral trade compliance data."
+          "en": "Support claims with archival sources, UNESCO dossiers, or verified trade records."
         },
         "counterArgument": {
-          "vi": "Thừa nhận thách thức chi phí hoặc xung đột bảo tồn–thương mại hóa.",
+          "vi": "Xét kỹ trở ngại về chi phí đầu tư hoặc nguy cơ thương mại hóa làm phai bản sắc.",
           "zh": "诚然，实践过程中仍面临资金投入与文化失真风险等挑战。",
-          "en": "Acknowledge CapEx hurdles or risks of over-commercialization."
+          "en": "Weigh capital hurdles and the tension between conservation and commercialization."
         },
         "synthesis": {
-          "vi": "Kết hợp công nghệ số và chuẩn mực di sản bản địa để phát triển bền vững.",
+          "vi": "Cân bằng giữa chuẩn mực bảo tồn nguyên bản và tiện ích thực tế của đời sống hiện đại.",
           "zh": "综上所述，唯有兼顾创新与传统底蕴，方能行稳致远。",
-          "en": "Synthesize modern digital standards with authentic local craft preservation."
+          "en": "Balance authentic craft preservation with practical modern utility."
         }
       },
       "themeVi": "Trách nhiệm minh bạch vật liệu khoáng tự nhiên trong phục chế bảo tàng",
       "themeEn": "Material Provenance and Ethics in Museum Mural Conservation",
       "structureZh": "传统矿物颜料在文物修复中的科学价值",
-      "pinyin": "HSK 7–9 · Khung Lập Luận Chuyên Sâu V7",
-      "parallelEn": "Structured C1–C2 argument template on Material Provenance and Ethics in Museum Mural Conservation.",
+      "pinyin": "Khung Lập Luận HSK 7–9",
+      "parallelEn": "Academic C1–C2 analytical pattern for material provenance and ethics in museum mural conservation.",
       "sampleParagraphZh": "关于「传统矿物颜料在文物修复中的科学价值」，学界与业界普遍认为既须立足历史根基，又应借力数字标准实现可持续跃升。",
-      "sampleParagraphEn": "Regarding Material Provenance and Ethics in Museum Mural Conservation, durable excellence merges deep historical stewardship with verifiable digital standards.",
+      "sampleParagraphEn": "When evaluating material provenance and ethics in museum mural conservation, lasting progress pairs historical stewardship with measurable technical standards.",
       "connectorToolkitZh": "诚然……然而……毋庸置疑……归根结底……",
-      "viNote": "Mở bài: Trách nhiệm minh bạch vật liệu khoáng tự nhiên trong phục chế bảo tàng — dẫn 2 chứng cứ cụ thể + 1 câu phản biện.",
-      "commonPitfallVi": "Tránh liệt kê cảm tính thiếu ví dụ lịch sử hoặc thiếu liên hệ Việt–Trung.",
+      "viNote": "Gợi ý triển khai: giới thiệu bối cảnh trách nhiệm minh bạch vật liệu khoáng tự nhiên trong phục chế bảo tàng, nêu hai dẫn chứng cụ thể rồi chuyển sang phản biện cân bằng.",
+      "commonPitfallVi": "Tránh viết khẩu hiệu chung chung thiếu dẫn chứng sử liệu hoặc thiếu liên hệ Việt–Trung.",
       "commonPitfallEn": "Avoid vague generalizations lacking concrete historical or regulatory citations."
     },
     {
@@ -9815,36 +9901,36 @@
       "topicZh": "跨学科素养与东亚青年全球胜任力",
       "blocks": {
         "topic": {
-          "vi": "Mở đề trực diện vấn đề: Tư duy đa ngành giúp thế hệ trẻ làm chủ thương mại – văn hóa Á Đông.",
+          "vi": "Đặt vấn đề trọng tâm về tư duy đa ngành giúp thế hệ trẻ làm chủ thương mại – văn hóa á đông.",
           "zh": "围绕「跨学科素养与东亚青年全球胜任力」展开跨文化实证分析。",
-          "en": "Frame core thesis around: Interdisciplinary Literacy for Tomorrow's East Asian Leaders."
+          "en": "Establish the core question surrounding interdisciplinary literacy for tomorrow's east asian leaders."
         },
         "evidence": {
-          "vi": "Trích dẫn số liệu sử liệu, hồ sơ UNESCO hoặc quy trình GACC/RCEP.",
+          "vi": "Dẫn chứng tư liệu lịch sử, quy chuẩn UNESCO hoặc số liệu thực tế GACC/RCEP.",
           "zh": "结合历史文献、联合国遗产标准或实务数据进行论证。",
-          "en": "Cite archival documentation, UNESCO criteria, or bilateral trade compliance data."
+          "en": "Support claims with archival sources, UNESCO dossiers, or verified trade records."
         },
         "counterArgument": {
-          "vi": "Thừa nhận thách thức chi phí hoặc xung đột bảo tồn–thương mại hóa.",
+          "vi": "Xét kỹ trở ngại về chi phí đầu tư hoặc nguy cơ thương mại hóa làm phai bản sắc.",
           "zh": "诚然，实践过程中仍面临资金投入与文化失真风险等挑战。",
-          "en": "Acknowledge CapEx hurdles or risks of over-commercialization."
+          "en": "Weigh capital hurdles and the tension between conservation and commercialization."
         },
         "synthesis": {
-          "vi": "Kết hợp công nghệ số và chuẩn mực di sản bản địa để phát triển bền vững.",
+          "vi": "Cân bằng giữa chuẩn mực bảo tồn nguyên bản và tiện ích thực tế của đời sống hiện đại.",
           "zh": "综上所述，唯有兼顾创新与传统底蕴，方能行稳致远。",
-          "en": "Synthesize modern digital standards with authentic local craft preservation."
+          "en": "Balance authentic craft preservation with practical modern utility."
         }
       },
       "themeVi": "Tư duy đa ngành giúp thế hệ trẻ làm chủ thương mại – văn hóa Á Đông",
       "themeEn": "Interdisciplinary Literacy for Tomorrow's East Asian Leaders",
       "structureZh": "跨学科素养与东亚青年全球胜任力",
-      "pinyin": "HSK 7–9 · Khung Lập Luận Chuyên Sâu V7",
-      "parallelEn": "Structured C1–C2 argument template on Interdisciplinary Literacy for Tomorrow's East Asian Leaders.",
+      "pinyin": "Khung Lập Luận HSK 7–9",
+      "parallelEn": "Academic C1–C2 analytical pattern for interdisciplinary literacy for tomorrow's east asian leaders.",
       "sampleParagraphZh": "关于「跨学科素养与东亚青年全球胜任力」，学界与业界普遍认为既须立足历史根基，又应借力数字标准实现可持续跃升。",
-      "sampleParagraphEn": "Regarding Interdisciplinary Literacy for Tomorrow's East Asian Leaders, durable excellence merges deep historical stewardship with verifiable digital standards.",
+      "sampleParagraphEn": "When evaluating interdisciplinary literacy for tomorrow's east asian leaders, lasting progress pairs historical stewardship with measurable technical standards.",
       "connectorToolkitZh": "诚然……然而……毋庸置疑……归根结底……",
-      "viNote": "Mở bài: Tư duy đa ngành giúp thế hệ trẻ làm chủ thương mại – văn hóa Á Đông — dẫn 2 chứng cứ cụ thể + 1 câu phản biện.",
-      "commonPitfallVi": "Tránh liệt kê cảm tính thiếu ví dụ lịch sử hoặc thiếu liên hệ Việt–Trung.",
+      "viNote": "Gợi ý triển khai: giới thiệu bối cảnh tư duy đa ngành giúp thế hệ trẻ làm chủ thương mại – văn hóa á đông, nêu hai dẫn chứng cụ thể rồi chuyển sang phản biện cân bằng.",
+      "commonPitfallVi": "Tránh viết khẩu hiệu chung chung thiếu dẫn chứng sử liệu hoặc thiếu liên hệ Việt–Trung.",
       "commonPitfallEn": "Avoid vague generalizations lacking concrete historical or regulatory citations."
     }
   ],
@@ -9949,9 +10035,9 @@
       "hanViet": "Hải Quan Tổng Thự 248 Hiệu Lệnh",
       "vi": "Đăng ký cơ sở sản xuất thực phẩm xuất khẩu sang TQ (Lệnh 248)",
       "category": "Hải quan GACC",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Hải quan GACC Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Hải quan GACC customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ hải quan gacc khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in GACC Customs & Registration documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-02",
@@ -9961,9 +10047,9 @@
       "hanViet": "Hải Quan Tổng Thự 249 Hiệu Lệnh",
       "vi": "Quy định an toàn thực phẩm xuất nhập khẩu TQ (Lệnh 249)",
       "category": "Hải quan GACC",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Hải quan GACC Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Hải quan GACC customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ hải quan gacc khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in GACC Customs & Registration documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-03",
@@ -9973,9 +10059,9 @@
       "hanViet": "Đơn Nhất Song Khẩu",
       "vi": "Cổng Một cửa Đăng ký Doanh nghiệp Thực phẩm CIFER",
       "category": "Hải quan GACC",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Hải quan GACC Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Hải quan GACC customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ hải quan gacc khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in GACC Customs & Registration documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-04",
@@ -9985,9 +10071,9 @@
       "hanViet": "Chú Sách Quả Viên Biên Mã",
       "vi": "Mã vùng trồng nông sản xuất khẩu chính ngạch",
       "category": "Kiểm dịch Thực vật",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Kiểm dịch Thực vật Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Kiểm dịch Thực vật customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ kiểm dịch thực vật khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Phytosanitary Quarantine documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-05",
@@ -9997,9 +10083,9 @@
       "hanViet": "Chú Sách Bao Trang Xưởng",
       "vi": "Mã cơ sở đóng gói được GACC phê duyệt",
       "category": "Kiểm dịch Thực vật",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Kiểm dịch Thực vật Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Kiểm dịch Thực vật customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ kiểm dịch thực vật khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Phytosanitary Quarantine documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-06",
@@ -10009,9 +10095,9 @@
       "hanViet": "Điện Tử Nguyên Sản Địa Chứng",
       "vi": "Chứng nhận xuất xứ ACFTA bản điện tử quét QR",
       "category": "Xuất xứ ACFTA",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Xuất xứ ACFTA Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Xuất xứ ACFTA customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ xuất xứ acfta khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in ACFTA / RCEP Origin Rules documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-07",
@@ -10021,9 +10107,9 @@
       "hanViet": "Bằng Tường Tổng Hợp Bảo Thuế Khu",
       "vi": "Khu Bảo thuế Tổng hợp Bằng Tường (cửa khẩu Hữu Nghị)",
       "category": "Kho Ngoại Quan",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Kho Ngoại Quan Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Kho Ngoại Quan customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ kho ngoại quan khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Bonded Warehouse Fulfillment documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-08",
@@ -10033,9 +10119,9 @@
       "hanViet": "Hữu Nghị Quan Trí Tuệ Khẩu Ngạn",
       "vi": "Cửa khẩu Thông minh Hữu Nghị – Hữu Nghị Quan không người lái",
       "category": "Hậu cần Biên giới",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Hậu cần Biên giới Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Hậu cần Biên giới customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ hậu cần biên giới khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Cross-Border Logistics documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-09",
@@ -10045,9 +10131,9 @@
       "hanViet": "Hệ Thống Thanh Toán CIPS",
       "vi": "Hệ thống thanh toán bù trừ Nhân dân tệ xuyên biên giới",
       "category": "Thanh toán Tài chính",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Thanh toán Tài chính Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Thanh toán Tài chính customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ thanh toán tài chính khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Cross-Border Banking & Settlement documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-10",
@@ -10057,9 +10143,9 @@
       "hanViet": "Viễn Kỳ Tín Dụng Chứng",
       "vi": "Thư tín dụng L/C trả chậm 30–180 ngày",
       "category": "Thanh toán Tài chính",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Thanh toán Tài chính Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Thanh toán Tài chính customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ thanh toán tài chính khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Cross-Border Banking & Settlement documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-11",
@@ -10069,9 +10155,9 @@
       "hanViet": "Đại Công Sinh Sản Hợp Đồng",
       "vi": "Hợp đồng gia công sản xuất theo thiết kế gốc OEM",
       "category": "Pháp lý Thương mại",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Pháp lý Thương mại Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Pháp lý Thương mại customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ pháp lý thương mại khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in B2B Contract Law & IP documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-12",
@@ -10081,9 +10167,9 @@
       "hanViet": "Nguyên Thủy Thiết Kế Chế Tạo",
       "vi": "Thỏa thuận sản xuất kèm thiết kế ODM",
       "category": "Pháp lý Thương mại",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Pháp lý Thương mại Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Pháp lý Thương mại customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ pháp lý thương mại khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in B2B Contract Law & IP documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-13",
@@ -10093,9 +10179,9 @@
       "hanViet": "Tam Bất Bảo Mật Hiệp Nghị",
       "vi": "Thỏa thuận Không tiết lộ – Không sử dụng – Không luồn mặt",
       "category": "Pháp lý Thương mại",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Pháp lý Thương mại Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Pháp lý Thương mại customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ pháp lý thương mại khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in B2B Contract Law & IP documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-14",
@@ -10105,9 +10191,9 @@
       "hanViet": "Mô Cụ Sở Hữu Quyền",
       "vi": "Quyền sở hữu pháp lý đối với khuôn đúc đặt làm",
       "category": "Pháp lý Thương mại",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Pháp lý Thương mại Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Pháp lý Thương mại customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ pháp lý thương mại khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in B2B Contract Law & IP documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-15",
@@ -10117,9 +10203,9 @@
       "hanViet": "Mậu Trọng Ủy Trọng Tài",
       "vi": "Phán quyết trọng tài Ủy ban Trọng tài Kinh tế Quốc tế TQ",
       "category": "Trọng tài Quốc tế",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Trọng tài Quốc tế Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Trọng tài Quốc tế customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ trọng tài quốc tế khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in International Arbitration documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-16",
@@ -10129,9 +10215,9 @@
       "hanViet": "Nữu Ước Công Ước",
       "vi": "Công ước New York về công nhận phán quyết trọng tài nước ngoài",
       "category": "Trọng tài Quốc tế",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Trọng tài Quốc tế Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Trọng tài Quốc tế customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ trọng tài quốc tế khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in International Arbitration documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-17",
@@ -10141,9 +10227,9 @@
       "hanViet": "Ưu Tiên Giải Thích Ngôn Ngữ",
       "vi": "Điều khoản chọn ngôn ngữ ưu tiên khi bản dịch vênh nghĩa",
       "category": "Pháp lý Thương mại",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Pháp lý Thương mại Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Pháp lý Thương mại customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ pháp lý thương mại khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in B2B Contract Law & IP documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-18",
@@ -10153,9 +10239,9 @@
       "hanViet": "Quốc Tiêu Thực Phẩm Nhãn",
       "vi": "Chuẩn Quốc tiêu TQ bắt buộc về nhãn thực phẩm đóng gói",
       "category": "Tiêu chuẩn GB",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Tiêu chuẩn GB Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Tiêu chuẩn GB customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ tiêu chuẩn gb khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in GB Labeling Compliance documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-19",
@@ -10165,9 +10251,9 @@
       "hanViet": "Lân Toan Thiết Lý Điện Trì",
       "vi": "Cụm pin xe điện Lithium Sắt Phốt phát (NEV)",
       "category": "Chuỗi Cung Ứng Xanh",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Chuỗi Cung Ứng Xanh Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Chuỗi Cung Ứng Xanh customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ chuỗi cung ứng xanh khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Green EV & Carbon Supply Chain documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-20",
@@ -10177,9 +10263,9 @@
       "hanViet": "Lý Điện Trì Nhận Chứng",
       "vi": "Chứng nhận an toàn vận tải hàng không/biển cho pin Lithium",
       "category": "Vận tải Nguy hiểm",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Vận tải Nguy hiểm Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Vận tải Nguy hiểm customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ vận tải nguy hiểm khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Dangerous Goods Transport documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-21",
@@ -10189,9 +10275,9 @@
       "hanViet": "Hải Phòng Lịch Huyện Cảng",
       "vi": "Cảng nước sâu Lạch Huyện đón tàu mẹ đi thẳng",
       "category": "Cảng Biển Vận Tải",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Cảng Biển Vận Tải Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Cảng Biển Vận Tải customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ cảng biển vận tải khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Deep-Water Maritime Freight documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-22",
@@ -10201,9 +10287,9 @@
       "hanViet": "Khâm Châu Cảng Tự Động",
       "vi": "Bến cảng tự động Khâm Châu trên Hành lang Đất–Biển Tây",
       "category": "Cảng Biển Vận Tải",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Cảng Biển Vận Tải Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Cảng Biển Vận Tải customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ cảng biển vận tải khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Deep-Water Maritime Freight documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-23",
@@ -10213,9 +10299,9 @@
       "hanViet": "Toàn Trình Lãnh Liên",
       "vi": "Container lạnh kiểm soát nhiệt độ liên tục từ vườn tới chợ",
       "category": "Kho Lạnh Nông Sản",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Kho Lạnh Nông Sản Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Kho Lạnh Nông Sản customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ kho lạnh nông sản khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Cold-Chain Agro Logistics documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-24",
@@ -10225,9 +10311,9 @@
       "hanViet": "Kiểm Dịch Huân Chưng",
       "vi": "Chứng thư xử lý hun trùng gỗ pallet & trái cây xuất khẩu",
       "category": "Kiểm dịch Thực vật",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Kiểm dịch Thực vật Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Kiểm dịch Thực vật customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ kiểm dịch thực vật khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Phytosanitary Quarantine documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-25",
@@ -10237,9 +10323,9 @@
       "hanViet": "Khoái Cảnh Điện Thương Trực Bá",
       "vi": "Bán hàng trực tiếp qua nền tảng TMĐT xuyên biên giới",
       "category": "Kinh tế Số B2B",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Kinh tế Số B2B Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Kinh tế Số B2B customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ kinh tế số b2b khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Digital E-Commerce & Signatures documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-26",
@@ -10249,9 +10335,9 @@
       "hanViet": "Hải Quan Tri Thức Sản Quyền",
       "vi": "Đăng ký bảo hộ nhãn hiệu tại Tổng cục Hải quan chống hàng nhái",
       "category": "Sở Hữu Trí Tuệ",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Sở Hữu Trí Tuệ Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Sở Hữu Trí Tuệ customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ sở hữu trí tuệ khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Customs IP Enforcement documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-27",
@@ -10261,9 +10347,9 @@
       "hanViet": "Trang Quỹ Tiền Thị Tần Nghiệm",
       "vi": "Kiểm tra số lô, độ ẩm và tem nhãn qua video trước đóng công",
       "category": "Kiểm Định AQL",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Kiểm Định AQL Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Kiểm Định AQL customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ kiểm định aql khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in AQL Quality Assurance documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-28",
@@ -10273,9 +10359,9 @@
       "hanViet": "Thuế Tắc Hào Liệt",
       "vi": "Đối khớp mã HS 6–8 số giữa Việt Nam, ASEAN và GACC",
       "category": "Hải quan GACC",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Hải quan GACC Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Hải quan GACC customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ hải quan gacc khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in GACC Customs & Registration documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-29",
@@ -10285,9 +10371,9 @@
       "hanViet": "Trệ Tương Trệ Cảng Phí",
       "vi": "Thỏa thuận giới hạn ngày miễn lưu container và lưu bãi cảng",
       "category": "Hậu cần Biên giới",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Hậu cần Biên giới Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Hậu cần Biên giới customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ hậu cần biên giới khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Cross-Border Logistics documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-30",
@@ -10297,9 +10383,9 @@
       "hanViet": "Xuất Khẩu Thoái Thuế Đơn",
       "vi": "Hồ sơ hoàn thuế giá trị gia tăng hàng xuất khẩu",
       "category": "Thuế & Tài Chính",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Thuế & Tài Chính Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Thuế & Tài Chính customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ thuế & tài chính khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in VAT Export Rebate & Tax documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-31",
@@ -10309,9 +10395,9 @@
       "hanViet": "Tăng Trị Thuế Chuyên Dụng Phát Phiếu",
       "vi": "Hóa đơn GTGT đặc biệt cho giao dịch nội địa công ty TQ",
       "category": "Thuế & Tài Chính",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Thuế & Tài Chính Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Thuế & Tài Chính customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ thuế & tài chính khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in VAT Export Rebate & Tax documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-32",
@@ -10321,9 +10407,9 @@
       "hanViet": "Xuất Xưởng vs Đường Sắt Giao",
       "vi": "Phân biệt rủi ro giao hàng tại xưởng và tại ga liên vận",
       "category": "Incoterms 2020",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Incoterms 2020 Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Incoterms 2020 customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ incoterms 2020 khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Incoterms 2020 Risk Transfer documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-33",
@@ -10333,9 +10419,9 @@
       "hanViet": "Sản Phẩm Thán Túc Tích",
       "vi": "Khai báo dấu chân carbon sản phẩm dệt may, thép, pin xuất EU",
       "category": "Chuỗi Cung Ứng Xanh",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Chuỗi Cung Ứng Xanh Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Chuỗi Cung Ứng Xanh customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ chuỗi cung ứng xanh khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Green EV & Carbon Supply Chain documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-34",
@@ -10345,9 +10431,9 @@
       "hanViet": "Xã Hội Trách Nhiệm Nghiệm Xưởng",
       "vi": "Đánh giá tuân thủ lao động, môi trường BSCI / SA8000",
       "category": "Kiểm Định AQL",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Kiểm Định AQL Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Kiểm Định AQL customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ kiểm định aql khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in AQL Quality Assurance documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-35",
@@ -10357,9 +10443,9 @@
       "hanViet": "Bối Đối Bối Nguyên Sản Địa",
       "vi": "Cấp chứng nhận xuất xứ giáp lưng khi hàng trung chuyển RCEP",
       "category": "Xuất xứ ACFTA",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Xuất xứ ACFTA Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Xuất xứ ACFTA customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ xuất xứ acfta khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in ACFTA / RCEP Origin Rules documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-36",
@@ -10369,9 +10455,9 @@
       "hanViet": "Lũy Tích Xuất Xứ RCEP",
       "vi": "Cộng gộp hàm lượng nguyên liệu nội khối 15 nước RCEP",
       "category": "Xuất xứ ACFTA",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Xuất xứ ACFTA Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Xuất xứ ACFTA customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ xuất xứ acfta khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in ACFTA / RCEP Origin Rules documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-37",
@@ -10381,9 +10467,9 @@
       "hanViet": "Hàng Không Bính Bản",
       "vi": "Gom hàng mẫu công nghệ cao đi đường bay Shenzhen–Nội Bài",
       "category": "Vận tải Hàng không",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Vận tải Hàng không Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Vận tải Hàng không customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ vận tải hàng không khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Air Freight Consolidation documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-38",
@@ -10393,9 +10479,9 @@
       "hanViet": "Thiết Hải Liên Vận",
       "vi": "Kết nối đường sắt liên vận Tây Nam với cảng biển ASEAN",
       "category": "Cảng Biển Vận Tải",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Cảng Biển Vận Tải Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Cảng Biển Vận Tải customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ cảng biển vận tải khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Deep-Water Maritime Freight documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-39",
@@ -10405,9 +10491,9 @@
       "hanViet": "Bảo Thuế Triển Thị Giao Dịch",
       "vi": "Trưng bày hàng nhập khẩu mẫu trong khu bảo thuế chưa nộp thuế",
       "category": "Kho Ngoại Quan",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Kho Ngoại Quan Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Kho Ngoại Quan customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ kho ngoại quan khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Bonded Warehouse Fulfillment documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-40",
@@ -10417,9 +10503,9 @@
       "hanViet": "Đệ Tam Phương Kiểm Trắc COA",
       "vi": "Chứng thư phân tích hóa lý từ SGS / Intertek / TÜV",
       "category": "Kiểm Định AQL",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Kiểm Định AQL Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Kiểm Định AQL customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ kiểm định aql khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in AQL Quality Assurance documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-41",
@@ -10429,9 +10515,9 @@
       "hanViet": "Lãnh Xử Lý Quy Trình",
       "vi": "Xử lý hạ nhiệt sâu giữ lạnh liên tục diệt ấu trùng trái cây",
       "category": "Kiểm dịch Thực vật",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Kiểm dịch Thực vật Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Kiểm dịch Thực vật customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ kiểm dịch thực vật khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Phytosanitary Quarantine documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-42",
@@ -10441,9 +10527,9 @@
       "hanViet": "Điện Tử Trí Năng Duyên Phong",
       "vi": "Kẹp chì container gắn chip RFID định vị GPS xuyên biên giới",
       "category": "Hậu cần Biên giới",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Hậu cần Biên giới Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Hậu cần Biên giới customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ hậu cần biên giới khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Cross-Border Logistics documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-43",
@@ -10453,9 +10539,9 @@
       "hanViet": "Du Kỳ Vi Ước Kim",
       "vi": "Điều khoản phạt giao trễ theo tỷ lệ tuần và mức trần tối đa",
       "category": "Pháp lý Thương mại",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Pháp lý Thương mại Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Pháp lý Thương mại customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ pháp lý thương mại khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in B2B Contract Law & IP documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-44",
@@ -10465,9 +10551,9 @@
       "hanViet": "Bất Khả Kháng Lực Thông Tri",
       "vi": "Thông báo chính thức trường hợp bất khả kháng tại cửa khẩu",
       "category": "Pháp lý Thương mại",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Pháp lý Thương mại Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Pháp lý Thương mại customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ pháp lý thương mại khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in B2B Contract Law & IP documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-45",
@@ -10477,9 +10563,9 @@
       "hanViet": "Lưỡng Dụng Vật Hạng",
       "vi": "Kiểm soát giấy phép xuất khẩu linh kiện công nghệ lưỡng dụng",
       "category": "Hải quan GACC",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Hải quan GACC Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Hải quan GACC customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ hải quan gacc khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in GACC Customs & Registration documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-46",
@@ -10489,9 +10575,9 @@
       "hanViet": "Doanh Nghiệp Ưu Tiên AEO",
       "vi": "Chứng nhận doanh nghiệp ưu tiên được miễn giảm kiểm hóa",
       "category": "Hải quan GACC",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Hải quan GACC Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Hải quan GACC customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ hải quan gacc khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in GACC Customs & Registration documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-47",
@@ -10501,9 +10587,9 @@
       "hanViet": "Phong Dạng Thiêm Tự",
       "vi": "Lưu mẫu chuẩn ký giáp lai giữa bên đặt hàng và xưởng sản xuất",
       "category": "Kiểm Định AQL",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Kiểm Định AQL Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Kiểm Định AQL customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ kiểm định aql khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in AQL Quality Assurance documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-48",
@@ -10513,9 +10599,9 @@
       "hanViet": "Hóa Đại Phân Đề Đơn",
       "vi": "Vận đơn do đơn vị giao nhận phát hành cho hàng lẻ LCL",
       "category": "Cảng Biển Vận Tải",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Cảng Biển Vận Tải Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Cảng Biển Vận Tải customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ cảng biển vận tải khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Deep-Water Maritime Freight documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-49",
@@ -10525,9 +10611,9 @@
       "hanViet": "Lục Sắc Thông Đạo",
       "vi": "Luồng xanh ưu tiên giải phóng xe container trái cây tươi trong ngày",
       "category": "Hậu cần Biên giới",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Hậu cần Biên giới Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Hậu cần Biên giới customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ hậu cần biên giới khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Cross-Border Logistics documentation between importers, factories, and customs brokers."
     },
     {
       "id": "b2b-v7-50",
@@ -10537,9 +10623,9 @@
       "hanViet": "Điện Tử Thiêm Chương Hộ Nhận",
       "vi": "Công nhận giá trị chữ ký số hợp đồng B2B trên nền tảng số",
       "category": "Kinh tế Số B2B",
-      "v6Tag": "V7_B2B",
-      "contextVi": "Áp dụng thực tế trong quy trình xuất nhập khẩu & thương mại điện tử Kinh tế Số B2B Việt–Trung.",
-      "contextEn": "Applied across formal Sino-Vietnamese Kinh tế Số B2B customs and procurement operations."
+      "v6Tag": "B2B_TRADE",
+      "contextVi": "Dùng trong hồ sơ kinh tế số b2b khi làm việc với đối tác và cơ quan hải quan.",
+      "contextEn": "Used in Digital E-Commerce & Signatures documentation between importers, factories, and customs brokers."
     }
   ],
   "annotatedTradeDocs5": [
@@ -11016,8 +11102,9 @@
       "titleVi": "Xử Lý Nguy Cơ Ùn Tắc Sầu Riêng Tại Cửa Khẩu Hữu Nghị Mùa Cao Điểm",
       "titleEn": "Peak-Season Durian Border Queue Mitigation at Huu Nghi",
       "scenarioZh": "友谊关旺季榴莲冷链通关排期",
-      "riskIdentifiedEn": "Hàng tươi sống tụt độ lạnh hoặc phát hiện rệp sáp khi chờ kiểm dịch lâu.",
+      "riskIdentifiedEn": "Perishable fruit loses cold-chain stability or risks mealybug quarantine hold in peak border queues.",
       "actionPlanVi": "Áp dụng đặt lịch thông quan trước trên cổng Cửa khẩu Thông minh, chuyển 30% sản lượng sang đường sắt lạnh Đông Đăng–Nam Ninh và xét nghiệm rệp tại đóng gói.",
+      "actionPlanEn": "Stage 30% of volume onto Dongdang-Nanning cold rail, use smart pre-clearance slots, and run pre-packing pest screening.",
       "incotermsAndLiabilityVi": "FCA Lạng Sơn vs DAP Bằng Tường: phân định rõ rủi ro sau khi xe qua vạch phân giới.",
       "incotermsAndLiabilityEn": "FCA Border vs DAP Pingxiang risk transfer audit.",
       "documentChecklist": [
@@ -11051,8 +11138,9 @@
       "titleVi": "Ngăn Chặn Nhà Máy Tự Ý Sao Chép Bán Phá Giá Mẫu Thiết Kế Mới",
       "titleEn": "Enforcing NNN Clauses & Tooling Title on Custom Electronics OEM",
       "scenarioZh": "OEM定制模具防仿冒协议实务",
-      "riskIdentifiedEn": "Sử dụng NDA phương Tây quá chung chung, không ràng buộc quyền sở hữu khuôn mẫu.",
+      "riskIdentifiedEn": "Generic Western NDAs fail to bind Chinese subcontractors or protect custom mold tooling ownership.",
       "actionPlanVi": "Chuyển hợp đồng sang khuôn khổ NNN tiếng Trung–Việt–Anh hợp pháp, đóng dấu mộc công ty (Công chương) trên từng trang và giữ quyền sở hữu khuôn riêng.",
+      "actionPlanEn": "Switch to bilingual EN-ZH-VI NNN agreements with company red chop on every page and notarized tooling ownership.",
       "incotermsAndLiabilityVi": "EXW/FOB Thâm Quyến kèm phụ lục IP Tooling Ownership trị giá 100% giá khuôn.",
       "incotermsAndLiabilityEn": "FOB Shenzhen paired with legally notarized tooling escrow.",
       "documentChecklist": [
@@ -11086,8 +11174,9 @@
       "titleVi": "Phát Hiện Điều Khoản Mềm Trên L/C Nhập Khẩu Dây Chuyền Sản Xuất",
       "titleEn": "Neutralizing Soft Clauses in Machinery Usance L/C Letters",
       "scenarioZh": "信用证软条款识别与修改",
-      "riskIdentifiedEn": "Trường 47A cài điều kiện ngân hàng chỉ trả tiền khi có chữ ký nghiệm thu đơn phương của người mua.",
+      "riskIdentifiedEn": "Unilateral buyer acceptance clauses in SWIFT 47A freeze bank payment despite spotless factory shipment.",
       "actionPlanVi": "Đàm phán sửa SWIFT MT700: thay chữ ký đơn phương bằng Chứng thư kiểm định độc lập SGS/Intertek tại cảng xếp hàng trước khi tàu chạy.",
+      "actionPlanEn": "Amend MT700 47A upfront to replace buyer signoff with neutral SGS/Intertek pre-shipment inspection certificates.",
       "incotermsAndLiabilityVi": "CIF Hải Phòng / Usance L/C 90 ngày theo chuẩn UCP 600.",
       "incotermsAndLiabilityEn": "CIF Haiphong / 90-day UCP 600 compliant Usance L/C.",
       "documentChecklist": [
@@ -11121,8 +11210,9 @@
       "titleVi": "Sai Lệch Quy Tắc Cộng Gộp Xuất Xứ Khi Dùng Vải Lụa Nhập Nhiều Nguồn",
       "titleEn": "Correcting RCEP & EVFTA Fabric Cumulation Origin Calculation",
       "scenarioZh": "RCEP原产地累积计算合规",
-      "riskIdentifiedEn": "Tưởng hàng may tại VN tự động hưởng Form E/EUR.1 dù dùng sợi chưa đạt tiêu chuẩn xuất xứ.",
+      "riskIdentifiedEn": "Garment exports lose 0% Form E/EUR.1 preferences when upstream yarn or silk fails origin cumulation rules.",
       "actionPlanVi": "Áp dụng công thức cộng gộp RCEP (RVC >= 40%) hoặc quy tắc 'Từ sợi trở đi' (EVFTA) với bảng kê nguyên phụ liệu chứng minh rõ xuất xứ.",
+      "actionPlanEn": "Verify yarn/fabric mill origin statements upfront and document >= 40% RCEP RVC or yarn-forward EVFTA BOM.",
       "incotermsAndLiabilityVi": "FOB Hải Phòng / Cảng Cát Lái hưởng thuế suất ưu đãi 0% khi chuẩn nguồn sợi.",
       "incotermsAndLiabilityEn": "FOB Haiphong / Cat Lai enjoying 0% preferential tariff once fabric origin passes.",
       "documentChecklist": [
@@ -11156,8 +11246,9 @@
       "titleVi": "Hàng Thực Phẩm Chế Biến Bị Kẹt Tại Cảng Vì Thiếu Nhãn Dinh Dưỡng Chuẩn GB 7718",
       "titleEn": "Preventing Port Detention Caused by Non-Compliant GB 7718 Food Labels",
       "scenarioZh": "预包装食品中文标签整改",
-      "riskIdentifiedEn": "Nhãn tiếng Việt hoặc tiếng Anh dịch thiếu bảng năng lượng kJ và thành phần gây dị ứng theo chuẩn Trung Quốc.",
+      "riskIdentifiedEn": "Missing kilojoule (kJ) nutrition panels, allergen declarations, or 18-digit CIFER codes trigger China port holds.",
       "actionPlanVi": "Thiết kế tem nhãn phụ / in sẵn bao bì tiếng Trung Giản thể chuẩn font, đơn vị kilojoule (kJ), ngày sản xuất YYYY/MM/DD và mã CIFER 18 số.",
+      "actionPlanEn": "Pre-audit GB 7718 Simplified Chinese packaging proofs and print CIFER registration numbers directly on retail cartons.",
       "incotermsAndLiabilityVi": "DDP / DAP kèm kiểm duyệt nhãn dịch vụ trước thông quan.",
       "incotermsAndLiabilityEn": "DAP with pre-import label audit clearance.",
       "documentChecklist": [
@@ -11191,8 +11282,9 @@
       "titleVi": "Container Máy Móc Bị Phạt Kiểm Hóa Vì Pallet Gỗ Kê Hàng Thiếu Dấu Hun Trùng",
       "titleEn": "Eliminating Wood-Packaging Quarantine Holds with ISPM-15 Stamps",
       "scenarioZh": "木质托盘IPPC熏蒸标识校验",
-      "riskIdentifiedEn": "Dùng pallet gỗ tạp tái chế mất dấu IPPC dẫn tới lệnh hun trùng bắt buộc tốn $1,200 USD.",
+      "riskIdentifiedEn": "Unmarked recycled wood pallets lacking IPPC ISPM-15 HT stamps trigger costly forced border fumigation.",
       "actionPlanVi": "Yêu cầu nhà cung cấp chụp ảnh 4 mặt pallet gỗ dán nhựa hoặc pallet gỗ có đóng dấu nhiệt IPPC (HT) rõ nét trước khi kéo cửa container.",
+      "actionPlanEn": "Mandate certified HT-stamped timber or molded plastic pallets and archive 4-side container loading photos.",
       "incotermsAndLiabilityVi": "FOB / CIF — trách nhiệm chi phí đóng gói an toàn xuất khẩu thuộc bên bán theo Incoterms.",
       "incotermsAndLiabilityEn": "Seller bears fit-for-export packaging compliance under all Incoterms.",
       "documentChecklist": [
@@ -11226,8 +11318,9 @@
       "titleVi": "Vận Chuyển Linh Kiện Xe Điện Kịp Tiến Độ Bằng Đường Sắt Liên Vận Quốc Tế",
       "titleEn": "Synchronizing EV Component Transit via Rail-Road Multimodal Freight",
       "scenarioZh": "国际铁路联运应急替代方案",
-      "riskIdentifiedEn": "Tuyến biển chậm 12 ngày do thiếu vỏ container và tắc cảng trung chuyển.",
+      "riskIdentifiedEn": "Maritime container rollovers delay critical EV component feeding lines by 12 days.",
       "actionPlanVi": "Chuyển lô linh kiện gấp sang đoàn tàu container liên vận Đồng Đăng – Bằng Tường – Trùng Khánh – Tây An rút ngắn thời gian còn 5 ngày.",
+      "actionPlanEn": "Divert urgent high-value modules onto SMGS China-Vietnam rail-road intermodal trains with RFID customs seals.",
       "incotermsAndLiabilityVi": "CIP Ga Đồng Đăng / CIF với điều khoản bảo hiểm đa phương thức ICC (A).",
       "incotermsAndLiabilityEn": "CIP Rail Terminal under ICC (A) all-risk cargo cover.",
       "documentChecklist": [
@@ -11261,8 +11354,9 @@
       "titleVi": "Cảnh Báo Lừa Đảo Đổi Tài Khoản Ngân Hàng Qua Email Trước Ngày Thanh Toán",
       "titleEn": "Preventing BEC Wire Fraud with CIPS Corporate Verification",
       "scenarioZh": "涉外货款账号变更核验规程",
-      "riskIdentifiedEn": "Kẻ gian giả mạo email nhà máy thông báo đổi số tài khoản sang tài khoản tư nhân hoặc ngân hàng lạ ở Hồng Kông.",
+      "riskIdentifiedEn": "Business Email Compromise scammers spoof supplier invoices directing wire transfers into private accounts.",
       "actionPlanVi": "Thiết lập quy tắc bất di bất dịch: mọi thay đổi tài khoản BẮT BUỘC xác minh qua video call trực tiếp với Giám đốc Pháp nhân + đối chiếu mã CIPS công ty.",
+      "actionPlanEn": "Enforce contract-locked corporate CIPS/SWIFT bank titles and require live legal-rep video verification for any change.",
       "incotermsAndLiabilityVi": "Điều khoản Bảo mật Tài chính CIPS/SWIFT trong phụ lục hợp đồng thanh toán.",
       "incotermsAndLiabilityEn": "Dual-factor CIPS/SWIFT corporate account change protocol.",
       "documentChecklist": [
@@ -11296,8 +11390,9 @@
       "titleVi": "Giảm Tỷ Lệ Nứt Vỡ Xuống Dưới 0.2% Với Kiểm Định Rơi Thùng ISTA 3A",
       "titleEn": "Cutting Porcelain Breakage Below 0.2% via ISTA 3A Drop Validation",
       "scenarioZh": "易碎陶瓷国际包装跌落测试",
-      "riskIdentifiedEn": "Đóng gói xốp thường làm vỡ 6% bát đĩa Thanh Hoa trong hành trình đường biển dài 35 ngày.",
+      "riskIdentifiedEn": "Standard loose foam packing suffers ~6% porcelain transit breakage on long ocean voyages.",
       "actionPlanVi": "Áp dụng thùng carton 5 lớp sóng đôi BC kết hợp khay giấy ép tổ ong định hình, chạy bài test thả rơi 10 góc chuẩn ISTA 3A trước xuất xưởng.",
+      "actionPlanEn": "Specify double-wall BC cartons with molded honeycomb dividers tested to ISTA 3A 10-point drop standards.",
       "incotermsAndLiabilityVi": "FOB Ninh Ba + Bảo hiểm hàng dễ vỡ mở rộng + ảnh chằng buộc container.",
       "incotermsAndLiabilityEn": "FOB Ningbo with drop-tested packaging specification.",
       "documentChecklist": [
@@ -11331,8 +11426,9 @@
       "titleVi": "Giải Quyết Tranh Chấp Lô Hàng Sai Thông Số Bằng Điều Khoản Trọng Tài Nhanh",
       "titleEn": "Resolving Spec Discrepancy Swiftly via Summary Arbitration Clauses",
       "scenarioZh": "商事仲裁与和解调解机制",
-      "riskIdentifiedEn": "Lô thép hợp kim giao sai dung sai ±0.3mm khiến dây chuyền ép khuôn dừng chạy, nhà máy né tránh đền bù.",
+      "riskIdentifiedEn": "Off-spec alloy tooling tolerances stall assembly lines while the vendor disputes verbal measurements.",
       "actionPlanVi": "Kích hoạt chứng thư giám định SGS tại chỗ làm chứng cứ không thể chối cãi, đề nghị thương lượng chiết khấu thay thế kèm thông báo nộp đơn CIETAC nếu quá hạn 14 ngày.",
+      "actionPlanEn": "Attach quantified +/- mm tolerance matrices to the PO and enforce neutral SGS assay before CIETAC arbitration.",
       "incotermsAndLiabilityVi": "Công ước New York 1958 + phụ lục dung sai đo lường định lượng bằng mm.",
       "incotermsAndLiabilityEn": "1958 NY Convention + millimeter tolerance matrix.",
       "documentChecklist": [
@@ -11884,7 +11980,7 @@
       "daysCount": 6,
       "hsrRef": "Bắc Kinh – Thượng Hải",
       "bestSeasonVi": "Thu vàng tháng 9–11 & Xuân 4–5",
-      "bestSeasonEn": "Best season: Thu vàng tháng 9–11 & Xuân 4–5",
+      "bestSeasonEn": "Golden Autumn (Sep–Nov) & Spring (Apr–May)",
       "estimatedBudgetUsd": "$850 – $1,350",
       "titleVi": "Bắc Kinh Hoàng Thành, Trường Thành Mộ Điền Dụ & Đấu Củng Cố Cung",
       "titleEn": "Imperial Beijing, Mutianyu Great Wall & Forbidden City 6-Day Study",
@@ -11907,12 +12003,12 @@
         "Ngày 6: Hoàn tất thủ tục & tiễn sân bay."
       ],
       "dayByDayOutlineEn": [
-        "Day 1: Cultural highlight along Imperial Beijing, Mutianyu Great Wall & Forbidden City 6-Day Study",
-        "Day 2: Cultural highlight along Imperial Beijing, Mutianyu Great Wall & Forbidden City 6-Day Study",
-        "Day 3: Cultural highlight along Imperial Beijing, Mutianyu Great Wall & Forbidden City 6-Day Study",
-        "Day 4: Cultural highlight along Imperial Beijing, Mutianyu Great Wall & Forbidden City 6-Day Study",
-        "Day 5: Cultural highlight along Imperial Beijing, Mutianyu Great Wall & Forbidden City 6-Day Study",
-        "Day 6: Cultural highlight along Imperial Beijing, Mutianyu Great Wall & Forbidden City 6-Day Study"
+        "Arrive & settle into historic city center evening stroll.",
+        "Imperial Axis museums, timber hall acoustics & park overlook.",
+        "Great Wall highland ridge hike along less crowded watchtowers.",
+        "Temple grounds, artisan guild quarter & traditional tea session.",
+        "Canal-side gardens & classical stage performance.",
+        "Airport HSR connection and departure logistics."
       ],
       "imagePath": "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
       "youtubeId": "w78Yb_aotH0"
@@ -11923,7 +12019,7 @@
       "daysCount": 10,
       "hsrRef": "Tây An – Lan Châu – Đôn Hoàng",
       "bestSeasonVi": "Tháng 5–6 & Tháng 9–10",
-      "bestSeasonEn": "Best season: Tháng 5–6 & Tháng 9–10",
+      "bestSeasonEn": "May–Jun & Sep–Oct",
       "estimatedBudgetUsd": "$1,450 – $2,200",
       "titleVi": "Con Đường Tơ Lụa Huyền Thoại: Tây An – Trương Dịch Đan Hà – Đôn Hoàng",
       "titleEn": "Silk Road Hexi Corridor: Xi'an, Zhangye Rainbow Hills & Dunhuang (10D)",
@@ -11945,11 +12041,11 @@
         "Ngày 10: Kết thúc hành trình Hà Tây."
       ],
       "dayByDayOutlineEn": [
-        "Day 1: Cultural highlight along Silk Road Hexi Corridor: Xi'an, Zhangye Rainbow Hills & Dunhuang (10D)",
-        "Day 2: Cultural highlight along Silk Road Hexi Corridor: Xi'an, Zhangye Rainbow Hills & Dunhuang (10D)",
-        "Day 3: Cultural highlight along Silk Road Hexi Corridor: Xi'an, Zhangye Rainbow Hills & Dunhuang (10D)",
-        "Day 4: Cultural highlight along Silk Road Hexi Corridor: Xi'an, Zhangye Rainbow Hills & Dunhuang (10D)",
-        "Day 5: Cultural highlight along Silk Road Hexi Corridor: Xi'an, Zhangye Rainbow Hills & Dunhuang (10D)"
+        "Arrive Xi'an Tang West Market & City Wall cycling.",
+        "Terracotta Army Pit 1–3 excavation study.",
+        "Big Wild Goose Pagoda & Silk Road manuscripts.",
+        "High-speed rail west across Qilian foothills to Lanzhou.",
+        "Zhangye Danxia mineral strata geological hike."
       ],
       "imagePath": "assets/images/provinces/gansu-dunhuang-mogao.jpg",
       "youtubeId": "R29A0GyLYlE"
@@ -11960,7 +12056,7 @@
       "daysCount": 7,
       "hsrRef": "Hàng Châu – Cảnh Đức Trấn",
       "bestSeasonVi": "Tháng 3–5 & Tháng 10–11",
-      "bestSeasonEn": "Best season: Tháng 3–5 & Tháng 10–11",
+      "bestSeasonEn": "Mar–May & Oct–Nov",
       "estimatedBudgetUsd": "$950 – $1,480",
       "titleVi": "Thủy Hương Giang Nam Tô Châu – Tây Hồ & Thủ Phủ Sứ Cảnh Đức Trấn",
       "titleEn": "Jiangnan Water Towns, Suzhou Gardens & Jingdezhen Kiln Trails (7D)",
@@ -11981,10 +12077,10 @@
         "Ngày 6-7: Cao tốc tới Cảnh Đức Trấn chuốt gốm Thanh Hoa."
       ],
       "dayByDayOutlineEn": [
-        "Day 1: Cultural highlight along Jiangnan Water Towns, Suzhou Gardens & Jingdezhen Kiln Trails (7D)",
-        "Day 2: Cultural highlight along Jiangnan Water Towns, Suzhou Gardens & Jingdezhen Kiln Trails (7D)",
-        "Day 3: Cultural highlight along Jiangnan Water Towns, Suzhou Gardens & Jingdezhen Kiln Trails (7D)",
-        "Day 4: Cultural highlight along Jiangnan Water Towns, Suzhou Gardens & Jingdezhen Kiln Trails (7D)"
+        "Arrive Suzhou Humble Administrator's Garden morning calm.",
+        "Suzhou Museum I.M. Pei geometry & Kunqu courtyard.",
+        "Tongli granite footbridges & living canal alleyways.",
+        "High-speed rail to Hangzhou West Lake willow causeways."
       ],
       "imagePath": "assets/images/provinces/jiangsu-suzhou-garden.jpg",
       "youtubeId": "xsPOs-yCJ3g"
@@ -11995,7 +12091,7 @@
       "daysCount": 6,
       "hsrRef": "Thành Đô – Cửu Trại Câu",
       "bestSeasonVi": "Tháng 9–11 (Mùa lá đỏ)",
-      "bestSeasonEn": "Best season: Tháng 9–11 (Mùa lá đỏ)",
+      "bestSeasonEn": "Sep–Nov (Crisp Autumn Foliage)",
       "estimatedBudgetUsd": "$980 – $1,550",
       "titleVi": "Ba Thục Thủy Lợi Đô Giang Yển, Tam Tinh Đôi & Hồ Ngũ Sắc Cửu Trại Câu",
       "titleEn": "Sichuan Basin: Dujiangyan Hydraulics, Sanxingdui & Jiuzhaigou (6D)",
@@ -12016,10 +12112,10 @@
         "Ngày 6: Thưởng trà Xuyên Kịch Thành Đô & khởi hành."
       ],
       "dayByDayOutlineEn": [
-        "Day 1: Cultural highlight along Sichuan Basin: Dujiangyan Hydraulics, Sanxingdui & Jiuzhaigou (6D)",
-        "Day 2: Cultural highlight along Sichuan Basin: Dujiangyan Hydraulics, Sanxingdui & Jiuzhaigou (6D)",
-        "Day 3: Cultural highlight along Sichuan Basin: Dujiangyan Hydraulics, Sanxingdui & Jiuzhaigou (6D)",
-        "Day 4: Cultural highlight along Sichuan Basin: Dujiangyan Hydraulics, Sanxingdui & Jiuzhaigou (6D)"
+        "Arrive Chengdu Jinli lane & teahouse folk staging.",
+        "Sanxingdui Bronze Masks museum & Dujiangyan levee walk.",
+        "Plateau railway ascent into Jiuzhaigou travertine valleys.",
+        "Emerald alpine pools & calcified travertine waterfalls."
       ],
       "imagePath": "assets/images/provinces/sichuan-jiuzhaigou.jpg",
       "youtubeId": "arfV94Y9tkE"
@@ -12030,7 +12126,7 @@
       "daysCount": 7,
       "hsrRef": "Hàng Châu – Hoàng Sơn",
       "bestSeasonVi": "Tháng 4–6 & Tháng 10–11",
-      "bestSeasonEn": "Best season: Tháng 4–6 & Tháng 10–11",
+      "bestSeasonEn": "Apr–Jun & Oct–Nov",
       "estimatedBudgetUsd": "$890 – $1,420",
       "titleVi": "Biển Mây Hoàng Sơn, Thôn Cổ Hoành Thôn & Văn Phòng Tứ Bảo Huy Châu",
       "titleEn": "Yellow Mountain Cloud Sea, Hongcun & Huizhou Ink Craft (7D)",
@@ -12051,10 +12147,10 @@
         "Ngày 6-7: Tự làm giấy Tuyên & chế mực cổ Huy Châu."
       ],
       "dayByDayOutlineEn": [
-        "Day 1: Cultural highlight along Yellow Mountain Cloud Sea, Hongcun & Huizhou Ink Craft (7D)",
-        "Day 2: Cultural highlight along Yellow Mountain Cloud Sea, Hongcun & Huizhou Ink Craft (7D)",
-        "Day 3: Cultural highlight along Yellow Mountain Cloud Sea, Hongcun & Huizhou Ink Craft (7D)",
-        "Day 4: Cultural highlight along Yellow Mountain Cloud Sea, Hongcun & Huizhou Ink Craft (7D)"
+        "Arrive Hangzhou and transfer smoothly to Tunxi Old Street.",
+        "Dongxi traditional Hui-style courtyard exploration.",
+        "Ascend Huangshan granite ridges through pine valleys.",
+        "High-mountain sunrise view & West Sea Grand Canyon."
       ],
       "imagePath": "assets/images/provinces/anhui-hongcun-moonpond.jpg",
       "youtubeId": "GkLhHNTOP3Y"
@@ -12065,7 +12161,7 @@
       "daysCount": 5,
       "hsrRef": "Nam Ninh – Quế Lâm – Quý Dương",
       "bestSeasonVi": "Tháng 4–10",
-      "bestSeasonEn": "Best season: Tháng 4–10",
+      "bestSeasonEn": "Apr–Oct (Clear Karst Season)",
       "estimatedBudgetUsd": "$620 – $980",
       "titleVi": "Sơn Thủy Quế Lâm – Dương Sóc, Ruộng Bậc Thang Long Tích & Trình Dương",
       "titleEn": "Guilin Karst Peaks, Longji Terraces & Dong Covered Bridges (5D)",
@@ -12087,11 +12183,11 @@
         "Ngày 5: Trở về qua Nam Ninh."
       ],
       "dayByDayOutlineEn": [
-        "Day 1: Cultural highlight along Guilin Karst Peaks, Longji Terraces & Dong Covered Bridges (5D)",
-        "Day 2: Cultural highlight along Guilin Karst Peaks, Longji Terraces & Dong Covered Bridges (5D)",
-        "Day 3: Cultural highlight along Guilin Karst Peaks, Longji Terraces & Dong Covered Bridges (5D)",
-        "Day 4: Cultural highlight along Guilin Karst Peaks, Longji Terraces & Dong Covered Bridges (5D)",
-        "Day 5: Cultural highlight along Guilin Karst Peaks, Longji Terraces & Dong Covered Bridges (5D)"
+        "Cross Hanoi/Friendship Pass overland into Nanning.",
+        "Guilin karst peak cruise along Li River limestone cliffs.",
+        "Yangshuo bamboo-raft countryside & village bike path.",
+        "Longji sculpted terraced paddies & ethnic timber homes.",
+        "Wind-and-Rain Bridge joinery visit & Nanning rail return."
       ],
       "imagePath": "assets/images/provinces/guangxi-guilin-li-river.jpg",
       "youtubeId": "ROFmtJLCq1k"
@@ -12102,7 +12198,7 @@
       "daysCount": 6,
       "hsrRef": "Thái Nguyên – Bình Dao – Đại Đồng",
       "bestSeasonVi": "Tháng 5–10",
-      "bestSeasonEn": "Best season: Tháng 5–10",
+      "bestSeasonEn": "May–Oct",
       "estimatedBudgetUsd": "$840 – $1,290",
       "titleVi": "Kho Báu Kiến Trúc Gỗ Cổ: Bình Dao, Huyền Không Tự & Hang Vân Cương",
       "titleEn": "Shanxi Timber Pantheon: Pingyao, Hanging Temple & Yungang Caves (6D)",
@@ -12123,10 +12219,10 @@
         "Ngày 5-6: Hang đá Vân Cương Đại Đồng."
       ],
       "dayByDayOutlineEn": [
-        "Day 1: Cultural highlight along Shanxi Timber Pantheon: Pingyao, Hanging Temple & Yungang Caves (6D)",
-        "Day 2: Cultural highlight along Shanxi Timber Pantheon: Pingyao, Hanging Temple & Yungang Caves (6D)",
-        "Day 3: Cultural highlight along Shanxi Timber Pantheon: Pingyao, Hanging Temple & Yungang Caves (6D)",
-        "Day 4: Cultural highlight along Shanxi Timber Pantheon: Pingyao, Hanging Temple & Yungang Caves (6D)"
+        "Arrive Taiyuan Jin Temple ancient water springs & wooden halls.",
+        "Pingyao Ming-Qing bank streets & intact city wall.",
+        "Wang & Qiao merchant courtyard brick carving study.",
+        "Hanging Monastery cliffside cantilevers & Yingxian Wooden Pagoda (1056)."
       ],
       "imagePath": "assets/images/provinces/shanxi-hanging-temple.jpg",
       "youtubeId": "w78Yb_aotH0"
@@ -12137,7 +12233,7 @@
       "daysCount": 7,
       "hsrRef": "Hạ Môn – Vũ Di Sơn",
       "bestSeasonVi": "Tháng 4–6 & Tháng 9–11",
-      "bestSeasonEn": "Best season: Tháng 4–6 & Tháng 9–11",
+      "bestSeasonEn": "Apr–Jun & Sep–Nov",
       "estimatedBudgetUsd": "$890 – $1,390",
       "titleVi": "Cảng Biển Tuyền Châu, Thổ Lâu Đất Nện & Đỉnh Trà Nham Vũ Di Sơn",
       "titleEn": "Fujian Maritime UNESCO: Quanzhou Port, Earth Tulou & Wuyi Tea (7D)",
@@ -12157,10 +12253,10 @@
         "Ngày 6-7: Cao tốc lên Vũ Di Sơn thưởng Nham trà."
       ],
       "dayByDayOutlineEn": [
-        "Day 1: Cultural highlight along Fujian Maritime UNESCO: Quanzhou Port, Earth Tulou & Wuyi Tea (7D)",
-        "Day 2: Cultural highlight along Fujian Maritime UNESCO: Quanzhou Port, Earth Tulou & Wuyi Tea (7D)",
-        "Day 3: Cultural highlight along Fujian Maritime UNESCO: Quanzhou Port, Earth Tulou & Wuyi Tea (7D)",
-        "Day 4: Cultural highlight along Fujian Maritime UNESCO: Quanzhou Port, Earth Tulou & Wuyi Tea (7D)"
+        "Arrive Xiamen & ferry to Gulangyu historical mansions.",
+        "Yongding earth Tulou passive cooling courtyard stay.",
+        "Nanjing Zhangzhou canal town & tea roasting huts.",
+        "Quanzhou Kaiyuan Temple Twin Pagodas & maritime wharves."
       ],
       "imagePath": "assets/images/provinces/fujian-tulou.jpg",
       "youtubeId": "TcqR7ORAAEY"
@@ -12171,7 +12267,7 @@
       "daysCount": 8,
       "hsrRef": "Côn Minh – Đại Lý – Lệ Giang",
       "bestSeasonVi": "Tháng 3–5 & Tháng 9–12",
-      "bestSeasonEn": "Best season: Tháng 3–5 & Tháng 9–12",
+      "bestSeasonEn": "Mar–May & Sep–Dec",
       "estimatedBudgetUsd": "$990 – $1,580",
       "titleVi": "Trà Mã Cổ Đạo Vân Nam: Côn Minh – Đại Lý – Lệ Giang – Shangri-La",
       "titleEn": "Yunnan Ancient Tea-Horse Route: Dali, Lijiang & Shangri-La (8D)",
@@ -12191,10 +12287,10 @@
         "Ngày 7-8: Shangri-La Tu viện Tùng Tán Lâm."
       ],
       "dayByDayOutlineEn": [
-        "Day 1: Cultural highlight along Yunnan Ancient Tea-Horse Route: Dali, Lijiang & Shangri-La (8D)",
-        "Day 2: Cultural highlight along Yunnan Ancient Tea-Horse Route: Dali, Lijiang & Shangri-La (8D)",
-        "Day 3: Cultural highlight along Yunnan Ancient Tea-Horse Route: Dali, Lijiang & Shangri-La (8D)",
-        "Day 4: Cultural highlight along Yunnan Ancient Tea-Horse Route: Dali, Lijiang & Shangri-La (8D)"
+        "Arrive Kunming Stone Forest karst geology hike.",
+        "Kunming Green Lake & Flower Market exploration.",
+        "High-speed rail to Dali Erhai lakeside cycling.",
+        "Chongsheng Three Pagodas & Bai tie-dye craft courtyard."
       ],
       "imagePath": "assets/images/provinces/yunnan-lijiang-old-town.jpg",
       "youtubeId": "TcqR7ORAAEY"
@@ -12205,7 +12301,7 @@
       "daysCount": 6,
       "hsrRef": "Trường Sa – Trương Gia Giới",
       "bestSeasonVi": "Tháng 4–6 & Tháng 9–11",
-      "bestSeasonEn": "Best season: Tháng 4–6 & Tháng 9–11",
+      "bestSeasonEn": "Apr–Jun & Sep–Nov",
       "estimatedBudgetUsd": "$780 – $1,220",
       "titleVi": "Thư Viện Nhạc Lộc, Cổ Trấn Phượng Hoàng & Rừng Đá Sa Thạch Trương Gia Giới",
       "titleEn": "Hunan Scholar & Highland Loop: Yuelu Academy, Fenghuang & Zhangjiajie (6D)",
@@ -12224,9 +12320,9 @@
         "Ngày 5-6: Trương Gia Giới & Thiên Môn Sơn."
       ],
       "dayByDayOutlineEn": [
-        "Day 1: Cultural highlight along Hunan Scholar & Highland Loop: Yuelu Academy, Fenghuang & Zhangjiajie (6D)",
-        "Day 2: Cultural highlight along Hunan Scholar & Highland Loop: Yuelu Academy, Fenghuang & Zhangjiajie (6D)",
-        "Day 3: Cultural highlight along Hunan Scholar & Highland Loop: Yuelu Academy, Fenghuang & Zhangjiajie (6D)"
+        "Arrive Changsha Yuelu Academy thousand-year lecture halls.",
+        "Hunan Museum Mawangdui Han lacquerware & silk archive.",
+        "High-speed rail to Fenghuang stilts over Tuo River."
       ],
       "imagePath": "assets/images/provinces/hunan-zhangjiajie.jpg",
       "youtubeId": "9wJCltuawSs"
@@ -12237,7 +12333,7 @@
       "daysCount": 5,
       "hsrRef": "Trịnh Châu – Lạc Dương – Khai Phong",
       "bestSeasonVi": "Tháng 4 (Hoa Mẫu Đơn) & Tháng 9–10",
-      "bestSeasonEn": "Best season: Tháng 4 (Hoa Mẫu Đơn) & Tháng 9–10",
+      "bestSeasonEn": "April (Peony Season) & Sep–Oct",
       "estimatedBudgetUsd": "$680 – $1,080",
       "titleVi": "Cái Nôi Hoa Hạ: Ân Khư Giáp Cốt Văn, Hang Đá Long Môn & Biện Kinh Tống",
       "titleEn": "Central Plains Cradle: Yinxu Oracle Bones, Longmen & Song Kaifeng (5D)",
@@ -12259,11 +12355,11 @@
         "Ngày 5: Tiễn Trịnh Châu."
       ],
       "dayByDayOutlineEn": [
-        "Day 1: Cultural highlight along Central Plains Cradle: Yinxu Oracle Bones, Longmen & Song Kaifeng (5D)",
-        "Day 2: Cultural highlight along Central Plains Cradle: Yinxu Oracle Bones, Longmen & Song Kaifeng (5D)",
-        "Day 3: Cultural highlight along Central Plains Cradle: Yinxu Oracle Bones, Longmen & Song Kaifeng (5D)",
-        "Day 4: Cultural highlight along Central Plains Cradle: Yinxu Oracle Bones, Longmen & Song Kaifeng (5D)",
-        "Day 5: Cultural highlight along Central Plains Cradle: Yinxu Oracle Bones, Longmen & Song Kaifeng (5D)"
+        "Arrive Zhengzhou Henan Museum early Yellow River bronzes.",
+        "Anyang Yinxu Ruins oracle-bone pit & Museum.",
+        "Luoyang Longmen Buddhist limestone caves along Yi River.",
+        "Kaifeng Qingming Riverside living Song park & Jun glaze kilns.",
+        "Central Plains rail connection & departure."
       ],
       "imagePath": "assets/images/provinces/henan-longmen-grottoes.jpg",
       "youtubeId": "QfU7sU_iCQM"
@@ -12274,7 +12370,7 @@
       "daysCount": 5,
       "hsrRef": "Trùng Khánh – Nghi Xương",
       "bestSeasonVi": "Tháng 3–5 & Tháng 9–11",
-      "bestSeasonEn": "Best season: Tháng 3–5 & Tháng 9–11",
+      "bestSeasonEn": "Spring & Autumn",
       "estimatedBudgetUsd": "$740 – $1,190",
       "titleVi": "Đô Thị Núi 8D Trùng Khánh, Tượng Đá Đại Túc & Ký Ức Tam Hiệp Trường Giang",
       "titleEn": "Chongqing 8D Mountain Metropolis, Dazu Rock Carvings & Three Gorges (5D)",
@@ -12293,9 +12389,9 @@
         "Ngày 4-5: Du thuyền Tam Hiệp tới Nghi Xương."
       ],
       "dayByDayOutlineEn": [
-        "Day 1: Cultural highlight along Chongqing 8D Mountain Metropolis, Dazu Rock Carvings & Three Gorges (5D)",
-        "Day 2: Cultural highlight along Chongqing 8D Mountain Metropolis, Dazu Rock Carvings & Three Gorges (5D)",
-        "Day 3: Cultural highlight along Chongqing 8D Mountain Metropolis, Dazu Rock Carvings & Three Gorges (5D)"
+        "Arrive Chongqing & ride Liziba monorail passing through cliff housing.",
+        "Hongyadong multilevel stilt-house waterfront & river bridges.",
+        "Dazu Baodingshan Song dynasty cliffside stone carvings (UNESCO)."
       ],
       "imagePath": "assets/images/provinces/chongqing-hongyadong.jpg",
       "youtubeId": "9wJCltuawSs"
@@ -12306,7 +12402,7 @@
       "daysCount": 5,
       "hsrRef": "Quảng Châu – Thuận Đức – Khai Bình",
       "bestSeasonVi": "Tháng 10–3 (Mát mẻ)",
-      "bestSeasonEn": "Best season: Tháng 10–3 (Mát mẻ)",
+      "bestSeasonEn": "Oct–Mar (Cool Subtropical Dry Season)",
       "estimatedBudgetUsd": "$690 – $1,050",
       "titleVi": "Ẩm Thực Quảng Đông, Lụa Bùn Hương Vân Sa Thuận Đức & Điêu Lâu Khai Bình",
       "titleEn": "Lingnan Culinary & Craft Trail: Guangzhou, Shunde Silk & Kaiping Diaolou (5D)",
@@ -12325,9 +12421,9 @@
         "Ngày 4-5: Quần thể Điêu Lâu Khai Bình."
       ],
       "dayByDayOutlineEn": [
-        "Day 1: Cultural highlight along Lingnan Culinary & Craft Trail: Guangzhou, Shunde Silk & Kaiping Diaolou (5D)",
-        "Day 2: Cultural highlight along Lingnan Culinary & Craft Trail: Guangzhou, Shunde Silk & Kaiping Diaolou (5D)",
-        "Day 3: Cultural highlight along Lingnan Culinary & Craft Trail: Guangzhou, Shunde Silk & Kaiping Diaolou (5D)"
+        "Arrive Guangzhou Shamian & Chen Clan brick carvings.",
+        "Xiguan morning dim sum & Nanyue King jade burial archive.",
+        "Shunde mud-dyed Xiangyunsha silk yard & canal kitchen."
       ],
       "imagePath": "assets/images/provinces/guangdong-canton-tower.jpg",
       "youtubeId": "fdhAsUBn2x8"
@@ -12338,7 +12434,7 @@
       "daysCount": 6,
       "hsrRef": "Tế Nam – Khúc Phụ – Thanh Đảo",
       "bestSeasonVi": "Tháng 5–6 & Tháng 9–10",
-      "bestSeasonEn": "Best season: Tháng 5–6 & Tháng 9–10",
+      "bestSeasonEn": "May–Jun & Sep–Oct",
       "estimatedBudgetUsd": "$760 – $1,180",
       "titleVi": "Thái Sơn Ngũ Nhạc, Quê Hương Khổng Tử Khúc Phụ & Thành Phố Biển Thanh Đảo",
       "titleEn": "Confucian Heartland & Coast: Taishan, Qufu Three Kong Sites & Qingdao (6D)",
@@ -12357,9 +12453,9 @@
         "Ngày 5-6: Bảo tàng Hải dương & Phố cổ Thanh Đảo."
       ],
       "dayByDayOutlineEn": [
-        "Day 1: Cultural highlight along Confucian Heartland & Coast: Taishan, Qufu Three Kong Sites & Qingdao (6D)",
-        "Day 2: Cultural highlight along Confucian Heartland & Coast: Taishan, Qufu Three Kong Sites & Qingdao (6D)",
-        "Day 3: Cultural highlight along Confucian Heartland & Coast: Taishan, Qufu Three Kong Sites & Qingdao (6D)"
+        "Arrive Jinan spring-fed Baotu pools & Daming Lake.",
+        "Qufu Three Kong sites: Temple, Mansion & Cemetery of Confucius.",
+        "Tai'an Dai Temple & climb southern Heavenly Gate stone steps."
       ],
       "imagePath": "assets/images/provinces/shandong-taishan.jpg",
       "youtubeId": "qTrd010vMp8"
@@ -12370,7 +12466,7 @@
       "daysCount": 7,
       "hsrRef": "Tây Ninh – Lhasa (Tuyến Thanh–Tạng)",
       "bestSeasonVi": "Tháng 5–10 (Thích nghi độ cao)",
-      "bestSeasonEn": "Best season: Tháng 5–10 (Thích nghi độ cao)",
+      "bestSeasonEn": "May–Oct (Mild Plateau Oxygen Window)",
       "estimatedBudgetUsd": "$1,380 – $2,100",
       "titleVi": "Đỉnh Nóc Nhà Thế Giới: Cung Điện Potala Lhasa, Đền Jokhang & Hồ Namtso",
       "titleEn": "Roof of the World: Potala Palace, Jokhang Temple & Sacred Lake Namtso (7D)",
@@ -12390,10 +12486,10 @@
         "Ngày 7: Kết thúc hành trình cao nguyên."
       ],
       "dayByDayOutlineEn": [
-        "Day 1: Cultural highlight along Roof of the World: Potala Palace, Jokhang Temple & Sacred Lake Namtso (7D)",
-        "Day 2: Cultural highlight along Roof of the World: Potala Palace, Jokhang Temple & Sacred Lake Namtso (7D)",
-        "Day 3: Cultural highlight along Roof of the World: Potala Palace, Jokhang Temple & Sacred Lake Namtso (7D)",
-        "Day 4: Cultural highlight along Roof of the World: Potala Palace, Jokhang Temple & Sacred Lake Namtso (7D)"
+        "Arrive Xining high-altitude acclimatization & Kumbum Monastery.",
+        "Board pressurized Qinghai-Tibet railway across Tanglha Pass.",
+        "Lhasa Barkhor circuit walk & Jokhang sanctuary courtyard.",
+        "Potala Palace white-and-ochre timber fortress halls."
       ],
       "imagePath": "assets/images/provinces/tibet-potala-palace.jpg",
       "youtubeId": "R29A0GyLYlE"
@@ -12404,7 +12500,7 @@
       "daysCount": 5,
       "hsrRef": "Hà Nội – Đồng Đăng – Nam Ninh – Quế Lâm",
       "bestSeasonVi": "Quanh năm (Đẹp nhất Xuân – Thu)",
-      "bestSeasonEn": "Best season: Quanh năm (Đẹp nhất Xuân – Thu)",
+      "bestSeasonEn": "Year-Round (Peak Spring & Autumn)",
       "estimatedBudgetUsd": "$490 – $790",
       "titleVi": "Hành Lang Hữu Nghị Xuyên Biên Giới: Hà Nội – Nam Ninh – Khâm Châu – Quế Lâm",
       "titleEn": "Vietnam–China Rail Friendship Corridor: Hanoi to Nanning & Guilin (5D)",
@@ -12424,10 +12520,10 @@
         "Ngày 5: Về lại cửa khẩu Hữu Nghị – Hà Nội."
       ],
       "dayByDayOutlineEn": [
-        "Day 1: Cultural highlight along Vietnam–China Rail Friendship Corridor: Hanoi to Nanning & Guilin (5D)",
-        "Day 2: Cultural highlight along Vietnam–China Rail Friendship Corridor: Hanoi to Nanning & Guilin (5D)",
-        "Day 3: Cultural highlight along Vietnam–China Rail Friendship Corridor: Hanoi to Nanning & Guilin (5D)",
-        "Day 4: Cultural highlight along Vietnam–China Rail Friendship Corridor: Hanoi to Nanning & Guilin (5D)"
+        "Overland Hanoi-Dong Dang-Pingxiang border rail crossing.",
+        "Nanning Guangxi Ethnology Museum & bronze drum gallery.",
+        "Fast rail to Guilin Li River karst bends & Yangshuo.",
+        "Nanning modern ASEAN trade hall exploration."
       ],
       "imagePath": "assets/images/articles/hero-sino-vietnam.jpg",
       "youtubeId": "ROFmtJLCq1k"
@@ -12454,7 +12550,8 @@
       ],
       "emergencyPhraseZh": "你好，我申请240小时过境免签入境，这是我前往第三国的机票。",
       "emergencyPhrasePinyin": "Nǐhǎo, wǒ shēnqǐng èrbǎi sìshí xiǎoshí guòjìng miǎnqiān rùjìng.",
-      "emergencyPhraseMeaningVi": "Xin chào, tôi xin làm thủ tục quá cảnh miễn thị thực 240 giờ, đây là vé đi nước thứ ba của tôi."
+      "emergencyPhraseMeaningVi": "Xin chào, tôi xin làm thủ tục quá cảnh miễn thị thực 240 giờ, đây là vé đi nước thứ ba của tôi.",
+      "emergencyPhraseMeaningEn": "Hello, I am applying for the 240-hour visa-free transit; here is my confirmed ticket to a third country."
     },
     {
       "id": "v7-concierge-02",
@@ -12476,7 +12573,8 @@
       ],
       "emergencyPhraseZh": "请问可以用支付宝或微信扫码付款吗？",
       "emergencyPhrasePinyin": "Qǐngwèn kěyǐ yòng Zhīfùbǎo huò Wēixìn sǎomǎ fùkuǎn ma?",
-      "emergencyPhraseMeaningVi": "Xin hỏi tôi có thể quét mã thanh toán bằng Alipay hoặc WeChat được không?"
+      "emergencyPhraseMeaningVi": "Xin hỏi tôi có thể quét mã thanh toán bằng Alipay hoặc WeChat được không?",
+      "emergencyPhraseMeaningEn": "Excuse me, may I pay by scanning an Alipay or WeChat QR code?"
     },
     {
       "id": "v7-concierge-03",
@@ -12498,7 +12596,8 @@
       ],
       "emergencyPhraseZh": "您好，我是用护照买的车票，请问从哪个检票口进站？",
       "emergencyPhrasePinyin": "Nínhǎo, wǒ shì yòng hùzhào mǎi de chēpiào, qǐngwèn cóng nǎge jiǎnpiàokǒu jìnzhàn?",
-      "emergencyPhraseMeaningVi": "Xin chào, tôi mua vé bằng hộ chiếu, xin hỏi tôi đi vào từ cổng kiểm vé nào?"
+      "emergencyPhraseMeaningVi": "Xin chào, tôi mua vé bằng hộ chiếu, xin hỏi tôi đi vào từ cổng kiểm vé nào?",
+      "emergencyPhraseMeaningEn": "Hello, I booked my ticket with my passport; which boarding gate lane should I enter?"
     },
     {
       "id": "v7-concierge-04",
@@ -12520,7 +12619,8 @@
       ],
       "emergencyPhraseZh": "我已在网上用护照预约了今天上午的门票，请核对护照原件。",
       "emergencyPhrasePinyin": "Wǒ yǐ zài wǎngshàng yòng hùzhào yùyuē le jīntiān shàngwǔ de ménpiào.",
-      "emergencyPhraseMeaningVi": "Tôi đã đặt vé buổi sáng hôm nay trực tuyến bằng hộ chiếu, xin kiểm tra hộ chiếu gốc."
+      "emergencyPhraseMeaningVi": "Tôi đã đặt vé buổi sáng hôm nay trực tuyến bằng hộ chiếu, xin kiểm tra hộ chiếu gốc.",
+      "emergencyPhraseMeaningEn": "I booked this morning's ticket online using my passport; please verify my original passport."
     },
     {
       "id": "v7-concierge-05",
@@ -12542,7 +12642,8 @@
       ],
       "emergencyPhraseZh": "师傅，麻烦送我去这个地址，谢谢！",
       "emergencyPhrasePinyin": "Shīfu, máfan sòng wǒ qù zhège dìzhǐ, xièxie!",
-      "emergencyPhraseMeaningVi": "Bác tài ơi, phiền bác chở giúp tôi tới địa chỉ trên màn hình này, xin cảm ơn!"
+      "emergencyPhraseMeaningVi": "Bác tài ơi, phiền bác chở giúp tôi tới địa chỉ trên màn hình này, xin cảm ơn!",
+      "emergencyPhraseMeaningEn": "Driver, please take me to the address shown on this screen, thank you!"
     },
     {
       "id": "v7-concierge-06",
@@ -12564,7 +12665,8 @@
       ],
       "emergencyPhraseZh": "请问菜单有带图片或英文的吗？麻烦微辣即可。",
       "emergencyPhrasePinyin": "Qǐngwèn càidān yǒu dài túpiàn huò Yīngwén de ma? Máfan wēilà jíkě.",
-      "emergencyPhraseMeaningVi": "Xin hỏi thực đơn có hình ảnh hoặc bản tiếng Anh không? Xin làm cay nhẹ giúp tôi."
+      "emergencyPhraseMeaningVi": "Xin hỏi thực đơn có hình ảnh hoặc bản tiếng Anh không? Xin làm cay nhẹ giúp tôi.",
+      "emergencyPhraseMeaningEn": "Do you have an illustrated or English menu? Please make it mildly spicy for me."
     },
     {
       "id": "v7-concierge-07",
@@ -12586,7 +12688,8 @@
       ],
       "emergencyPhraseZh": "您好，请问这里可以开具离境退税申请单吗？",
       "emergencyPhrasePinyin": "Nínhǎo, qǐngwèn zhèlǐ kěyǐ kāijù líjìng tuìshuì shēnqǐngdān ma?",
-      "emergencyPhraseMeaningVi": "Xin chào, xin hỏi cửa hàng có xuất giấy đề nghị hoàn thuế xuất cảnh không ạ?"
+      "emergencyPhraseMeaningVi": "Xin chào, xin hỏi cửa hàng có xuất giấy đề nghị hoàn thuế xuất cảnh không ạ?",
+      "emergencyPhraseMeaningEn": "Hello, does your store issue an overseas departure tax refund application form?"
     },
     {
       "id": "v7-concierge-08",
@@ -12608,7 +12711,8 @@
       ],
       "emergencyPhraseZh": "请帮我联系越南驻华使领馆，或拨打12301旅游热线。我的随身物品遗失了。",
       "emergencyPhrasePinyin": "Qǐng bāng wǒ liánxì Yuènán zhù Huá shǐlǐngguǎn, huò bōdǎ 12301 lǚyóu rèxiàn.",
-      "emergencyPhraseMeaningVi": "Xin hãy giúp tôi liên hệ Đại sứ quán/Lãnh sự quán Việt Nam hoặc đường dây nóng du lịch 12301."
+      "emergencyPhraseMeaningVi": "Xin hãy giúp tôi liên hệ Đại sứ quán/Lãnh sự quán Việt Nam hoặc đường dây nóng du lịch 12301.",
+      "emergencyPhraseMeaningEn": "Please help me contact the Vietnamese Embassy/Consulate or the 12301 tourism hotline."
     }
   ],
   "globalPlatformBenchmarks6": [
@@ -13229,7 +13333,7 @@
       "topicVi": "Bạn Giả Hán–Việt",
       "topicEn": "False Friend",
       "questionVi": "Câu '他为人很老实，做事很可靠' khi đánh giá đối tác Trung Quốc có sắc thái ý nghĩa nào?",
-      "questionEn": "In modern Chinese business dialogue, what does praising someone as 'Lǎoshí' ('lão thật') primarily mean?",
+      "questionEn": "In modern Chinese business dialogue, what does praising someone as 'Lǎoshí' (honest/earnest) primarily mean?",
       "optionsVi": [
         "Người đó hay lừa dối quanh co",
         "Người đó chất phác, thật thà, đáng tin cậy",
@@ -13258,7 +13362,7 @@
       "topicVi": "Từ vựng Thơ–Giao tế",
       "topicEn": "Semantic Precision",
       "questionVi": "Chữ 'Cố nhân' trong câu thơ nổi tiếng 'Cố nhân tây từ Hoàng Hạc Lâu' của Lý Bạch chỉ ai?",
-      "questionEn": "Whom does the term 'Gùrén' (Cố nhân) refer to in Li Bai's Yellow Crane Tower farewell?",
+      "questionEn": "Whom does the term 'Gùrén' (cherished old acquaintance) refer to in Li Bai's Yellow Crane Tower farewell?",
       "optionsVi": [
         "Người đã khuất dưới mồ",
         "Bạn cũ thân thiết (còn sống) đang chuẩn bị lên đường đi Dương Châu",
@@ -13837,8 +13941,8 @@
       "hanzi": "长白山工艺菌菇",
       "topicVi": "Khớp Chuẩn Phi Lâm Sàng",
       "topicEn": "Culinary GI Note",
-      "questionVi": "Nấm Đầu Khỉ vùng núi lạnh Trường Bạch Sơn trong cơ sở dữ liệu GI V7 được giới thiệu dưới góc độ nào?",
-      "questionEn": "How does CCE V7 frame protected regional mushrooms and berries like Changbai Mountain Lion's Mane?",
+      "questionVi": "Nấm Đầu Khỉ vùng núi lạnh Trường Bạch Sơn trong cơ sở dữ liệu Chỉ dẫn Địa lý được giới thiệu dưới góc độ nào?",
+      "questionEn": "How does the archive frame protected regional mushrooms and berries like Changbai Mountain Lion's Mane?",
       "optionsVi": [
         "Tư vấn kê đơn thuốc chữa bệnh mạn tính",
         "Tư liệu đặc sản ẩm thực vùng miền & bảo hộ GI — KHÔNG chẩn đoán lâm sàng",
@@ -13852,7 +13956,7 @@
         "Industrial chemicals"
       ],
       "correctIndex": 1,
-      "explainVi": "Nguyên tắc khoa học nghiêm ngặt xuyên suốt toàn bộ V7.0.",
+      "explainVi": "Nguyên tắc khoa học nghiêm ngặt xuyên suốt toàn bộ hệ thống tư liệu.",
       "explainEn": "Rigid non-clinical editorial boundary enforced across all herbs & GIs.",
       "imagePath": "",
       "visualInspectionGuideVi": "",
@@ -14041,7 +14145,7 @@
       "topicVi": "Nguyên tắc Phi Lâm Sàng",
       "topicEn": "Epistemic Guardrail",
       "questionVi": "Khẩu hiệu bảo vệ tri thức chuẩn xác nhất trên Studio Thực Dưỡng 60 Vị Thảo Mộc & Đĩa 24 Tiết Khí là gì?",
-      "questionEn": "What strict epistemic framing governs all 60 culinary herbs and 36 cosmology case studies across CCE V7.0?",
+      "questionEn": "What strict epistemic framing governs all 60 culinary herbs and 36 cosmology case studies across the cultural archive?",
       "optionsVi": [
         "Cẩm nang bốc thuốc tự chữa trị tại nhà",
         "Tham khảo văn hóa ẩm thực & sử liệu khoa học — KHÔNG chẩn đoán hay thay thế tư vấn y tế",
@@ -14242,7 +14346,7 @@
       "visualSubjectTag": "",
       "hanzi": "萧何 · 韩信",
       "topicVi": "Sơ Đồ #6: Sử Ký",
-      "topicEn": "Shiji Tam Kiệt",
+      "topicEn": "Shiji Triumvirate",
       "questionVi": "Trong đồ thị *Sử Ký*, vị thừa tướng nào phi ngựa đuổi theo Hàn Tín dưới ánh trăng để tiến cử ông làm Đại tướng cho Lưu Bang?",
       "questionEn": "Which Han logistics minister chased Han Xin by moonlight to secure him as Supreme Commander for Liu Bang?",
       "optionsVi": [
@@ -14693,7 +14797,7 @@
         "IELTS band floor"
       ],
       "correctIndex": 1,
-      "explainVi": "Danh bạ V7.0 tổng hợp đầy đủ Mã trường và ngành mũi nhọn của 36 Đại học hàng đầu TQ.",
+      "explainVi": "Danh bạ học bổng tổng hợp đầy đủ Mã trường và ngành mũi nhọn của 36 Đại học hàng đầu TQ.",
       "explainEn": "Our 36-university atlas lists exact Agency IDs alongside alumni careers.",
       "imagePath": "",
       "visualInspectionGuideVi": "",
@@ -14820,11 +14924,11 @@
       "pillar": "sino",
       "isVisualQuestion": false,
       "visualSubjectTag": "",
-      "hanzi": "国学集大成 V7",
+      "hanzi": "国学集大成",
       "topicVi": "Tổng Kết Học Viện 10",
       "topicEn": "Capstone Synthesis",
-      "questionVi": "Hệ sinh thái nâng cấp **Chinese Culture Explorer V7.0** tích hợp trọn vẹn bao nhiêu Học phần, Phòng 3D WebGL và Câu hỏi Đấu Trường?",
-      "questionEn": "At completion, what landmark curriculum scale does Chinese Culture Explorer V7.0 deliver?",
+      "questionVi": "Hệ sinh thái học thuật **Chinese Culture Explorer** tích hợp trọn vẹn bao nhiêu Học phần, Phòng 3D WebGL và Câu hỏi Đấu Trường?",
+      "questionEn": "At completion, what landmark curriculum scale does Chinese Culture Explorer deliver?",
       "optionsVi": [
         "3 Học phần, 4 Phòng 3D, 100 Câu hỏi",
         "10 Học phần (60 Bài), 24 Studio 3D WebGL, 120 Lão Tự Hào, 16 Tour Di sản & 600 Câu hỏi (150 Visual ID)",
@@ -14838,8 +14942,8 @@
         "Beijing province only"
       ],
       "correctIndex": 1,
-      "explainVi": "Chuẩn hóa toàn diện học thuật – trực quan – du lịch theo các tập đoàn văn hóa thế giới.",
-      "explainEn": "World-class integration of cultural scholarship, 3D labs, and practical travel/trade.",
+      "explainVi": "Hệ thống tư liệu kết nối học thuật, mô hình 3D và thực hành du lịch, giao thương.",
+      "explainEn": "Cohesive integration of cultural scholarship, 3D labs, and practical travel/trade reference.",
       "imagePath": "",
       "visualInspectionGuideVi": "",
       "visualInspectionGuideEn": ""
@@ -15793,5 +15897,18 @@
     pushUnique(tc.cscUniversities24Atlas, V7_DATA.cscUniversities12, function (x) { return x && x.id; });
     pushUnique(tc.cscInterviewQuestions24, V7_DATA.cscInterviews12, function (x) { return x && x.id; });
     pushUnique(tc.hsrCorridors8x8, V7_DATA.hsrCorridors8, function (x) { return x && (x.from + "|" + x.to); });
+  }
+
+  // Humanize repetitive V6 visual quiz wrappers & backfill EN guides
+  if (Array.isArray(window.CCE_V6_QUIZ)) {
+    window.CCE_V6_QUIZ.forEach(function (q) {
+      if (!q || !q.isVisualQuestion) return;
+      if (q.visualInspectionGuideVi && q.visualInspectionGuideVi.indexOf("Mẹo quan sát ảnh [") === 0 && q.explainVi) {
+        q.visualInspectionGuideVi = q.explainVi;
+      }
+      if (!q.visualInspectionGuideEn) {
+        q.visualInspectionGuideEn = q.explainEn || ("Observe structural details and period characteristics of " + (q.topicEn || q.hanzi || "this item") + ".");
+      }
+    });
   }
 })();

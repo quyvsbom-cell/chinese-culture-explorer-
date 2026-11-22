@@ -238,6 +238,19 @@ def build_v7() -> pathlib.Path:
     pushUnique(tc.cscInterviewQuestions24, V7_DATA.cscInterviews12, function (x) {{ return x && x.id; }});
     pushUnique(tc.hsrCorridors8x8, V7_DATA.hsrCorridors8, function (x) {{ return x && (x.from + "|" + x.to); }});
   }}
+
+  // Humanize repetitive V6 visual quiz wrappers & backfill EN guides
+  if (Array.isArray(window.CCE_V6_QUIZ)) {{
+    window.CCE_V6_QUIZ.forEach(function (q) {{
+      if (!q || !q.isVisualQuestion) return;
+      if (q.visualInspectionGuideVi && q.visualInspectionGuideVi.indexOf("Mẹo quan sát ảnh [") === 0 && q.explainVi) {{
+        q.visualInspectionGuideVi = q.explainVi;
+      }}
+      if (!q.visualInspectionGuideEn) {{
+        q.visualInspectionGuideEn = q.explainEn || ("Observe structural details and period characteristics of " + (q.topicEn || q.hanzi || "this item") + ".");
+      }}
+    }});
+  }}
 }})();
 """
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)

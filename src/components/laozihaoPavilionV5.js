@@ -217,7 +217,7 @@
       ) : "") +
       (flows12.length ? (
         '  <div id="cce-v6-craft-flowcharts" style="margin-top:2rem;padding-top:1.35rem;border-top:2px solid var(--hairline);">' +
-        '    <div class="editorial-kicker" style="color:var(--imperial-red);">V7.0 HERITAGE PROCESS DIAGRAMS, NORTH–SOUTH COMPARE &amp; FIVE HISTORIC MERCHANT GUILDS</div>' +
+        '    <div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "HERITAGE PROCESS DIAGRAMS, NORTH–SOUTH COMPARE &amp; FIVE MERCHANT GUILDS" : "QUY TRÌNH THỦ CÔNG, ĐỐI SÁNH NAM–BẮC &amp; NGŨ ĐẠI THƯƠNG BANG") + '</div>' +
         '    <h3 style="font-family:var(--font-editorial);font-size:1.28rem;margin:0.2rem 0 0.75rem;">' + (enM ? (flows12.length + " Master Craft Step-by-Step Workflows, " + dualCompare10.length + " North–South Compare Matrices &amp; " + guilds5.length + " Guilds") : (flows12.length + " Quy trình Thủ công Kinh điển, " + dualCompare10.length + " Cặp Đối Sánh Nam–Bắc &amp; Ngũ Đại Thương Bang")) + '</h3>' +
         '    <div class="grid grid-2" style="gap:0.8rem;max-height:520px;overflow:auto;margin-bottom:1.15rem;">' +
         flows12.map(function (fl) {

@@ -247,8 +247,8 @@
       (window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderCourseMindMapSvg ? window.CCE_V6_STUDIOS.renderCourseMindMapSvg(enM) : "") +
       '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.6rem;margin-bottom:0.85rem;">' +
       '    <div>' +
-      '      <div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "STRUCTURED LEARNING PATHWAY · 循序渐进十大课程模块 (" + allLessons.length + " LESSONS)" : "LỘ TRÌNH HỌC TẬP TUẦN TỰ NHƯ MỘT KHÓA HỌC · " + mods.length + " HỌC PHẦN · " + allLessons.length + " BÀI HỌC") + '</div>' +
-      '      <h3 style="margin:0.15rem 0 0;font-size:1.25rem;">' + (enM ? mods.length + "-Module Progressive Curriculum &amp; " + allLessons.length + " Guided Sequential Lessons" : "Khóa Học " + mods.length + " Học Phần &amp; " + allLessons.length + " Bài Học Liên Kết Logic Từ Nhập Môn Đến Thực Chiến") + '</h3>' +
+      '      <div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "CURATED LEARNING PATHWAY · 十大主题课程 (" + allLessons.length + " LESSONS)" : "CHƯƠNG TRÌNH HỌC " + mods.length + " HỌC PHẦN · " + allLessons.length + " BÀI GIẢNG") + '</div>' +
+      '      <h3 style="margin:0.15rem 0 0;font-size:1.25rem;">' + (enM ? mods.length + "-Module Structured Curriculum &amp; " + allLessons.length + " Guided Lessons" : "Giáo Trình " + mods.length + " Học Phần &amp; " + allLessons.length + " Bài Học Liên Mạch") + '</h3>' +
       '    </div>' +
       '    <span class="badge badge-jade">' + completedCount + '/' + mods.length + ' (' + pct + '%)</span>' +
       '  </div>' +
@@ -288,13 +288,19 @@
       ) : "") +
       (courseYts.length && window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderYoutubeCard ? (
         '  <div style="margin-top:1.25rem;padding-top:0.9rem;border-top:1px dashed var(--hairline);">' +
-        '    <div class="editorial-kicker" style="color:var(--jade-green);">COURSE FOUNDATION DOCUMENTARIES · TƯ LIỆU YOUTUBE THỦY LỢI &amp; KIẾN TRÚC</div>' +
+        '    <div class="editorial-kicker" style="color:var(--jade-green);">' + (enM ? "FOUNDATIONAL DOCUMENTARIES · HYDROLOGY &amp; ARCHITECTURE" : "TƯ LIỆU PHIM NGẮN THỦY LỢI &amp; KIẾN TRÚC") + '</div>' +
         '    <div class="grid grid-2" style="gap:0.75rem;margin-top:0.45rem;">' +
         courseYts.map(function (vy) { return window.CCE_V6_STUDIOS.renderYoutubeCard(vy, enM); }).join("") +
         '    </div>' +
         '  </div>'
       ) : "") +
-      (window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderWorldTourismAndMuseumStudio ? window.CCE_V6_STUDIOS.renderWorldTourismAndMuseumStudio(enM) : "") +
+      '  <div style="margin-top:1.1rem;padding:0.85rem 1rem;background:var(--bg-paper);border:1px solid var(--hairline);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.65rem;">' +
+      '    <div>' +
+      '      <strong style="font-size:0.92rem;">' + (enM ? "World Heritage Expeditions (16 Routes), 240h Digital Guide &amp; Classical Pigments" : "16 Hành Trình Di Sản, Cẩm Nang Số 240h &amp; Sắc Tố Bảo Tàng") + '</strong>' +
+      '      <div style="font-size:0.78rem;color:var(--text-muted);">' + (enM ? "Open the dedicated Tourism &amp; Heritage Hub in Explore to keep the home curriculum focused." : "Mở trong mục Khám phá &amp; Học viện để giữ Trang chủ tinh gọn, tập trung bài học.") + '</div>' +
+      '    </div>' +
+      '    <button type="button" class="btn btn-secondary btn-sm" data-action="nav" data-page="explore">' + (enM ? "Open Heritage Hub →" : "Mở Kho Du Lịch &amp; Di Sản →") + '</button>' +
+      '  </div>' +
       '</section>'
     );
   }

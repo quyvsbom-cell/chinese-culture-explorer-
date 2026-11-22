@@ -142,7 +142,7 @@ def main() -> int:
     # Gate 5: lazyLoader.js & index.html Script Paths Exist on Disk
     missing_scripts: list[str] = []
     idx_txt = (ROOT / "index.html").read_text(encoding="utf-8")
-    for m in re.finditer(r'<script\s+src="([^"]+)"', idx_txt):
+    for m in re.finditer(r'<script\b[^>]*\bsrc="([^"]+)"', idx_txt):
         sp = m.group(1).lstrip("/")
         if not (ROOT / sp).is_file():
             missing_scripts.append(f"MISSING index.html script: {sp}")
@@ -524,6 +524,25 @@ def main() -> int:
         )
         if len(pool600) != 600 or len(set(pool600)) != 600:
             g14_issues.append(f"Expected 600 unique MCQs (Base+V3+V4+V5+V6+V7), got total={len(pool600)}, unique={len(set(pool600))}")
+
+        # Verify zero Vietnamese-only diacritics leak into any *En string field in V7_DATA
+        vi_only_rx = re.compile(r"[ăâđêôơưạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]", re.I)
+        def _scan_en_leaks(obj: object, trail: str) -> None:
+            if isinstance(obj, dict):
+                for ek, ev in obj.items():
+                    if ek.endswith("En"):
+                        if isinstance(ev, str) and vi_only_rx.search(ev):
+                            g14_issues.append(f"VI char in EN field {trail}.{ek}: {ev[:60]}")
+                        elif isinstance(ev, list):
+                            for li, lv in enumerate(ev):
+                                if isinstance(lv, str) and vi_only_rx.search(lv):
+                                    g14_issues.append(f"VI char in EN list {trail}.{ek}[{li}]: {lv[:60]}")
+                    else:
+                        _scan_en_leaks(ev, f"{trail}.{ek}")
+            elif isinstance(obj, list):
+                for idx_i, item_v in enumerate(obj):
+                    _scan_en_leaks(item_v, f"{trail}[{idx_i}]")
+        _scan_en_leaks(v7_bundle, "V7_DATA")
     print(f"[Gate 14] V7 All-Dataset Counts, 120 Brands & 600-MCQ / 150-Visual-ID Parity: {'PASS' if not g14_issues else 'FAIL'}")
     failures.extend(g14_issues[:10])
 
