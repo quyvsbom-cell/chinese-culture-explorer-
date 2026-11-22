@@ -131,7 +131,7 @@
       '    <div>' +
       '      <div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "CHINESE HONORED BRANDS ARCHIVE · 中华老字号与中欧地理标志" : "Chuyên mục Thương hiệu Di sản & Chỉ dẫn Địa lý · 中华老字号 (Trung Hoa Lão Tự Hiệu)") + '</div>' +
       '      <h2 class="section-title" style="font-size:1.55rem;margin:0.15rem 0 0;">' + (enM ? brands.length + " Chinese Time-Honored Brands &amp; " + giList.length + " EU–China Protected GIs" : brands.length + " Thương hiệu Lâu Đời Trăm Năm (中华老字号) &amp; " + giList.length + " Chỉ dẫn Địa lý Âu–Trung") + '</h2>' +
-      '      <p class="section-subtitle" style="margin-top:0.25rem;">' + (enM ? "Complete heritage dossiers spanning Imperial TCM Pharmacies, Culinary Houses, Tea Estates &amp; Scholar Studios—enriched with GB/T standards, EU-China 2021 GI protection, and Vietnam procurement takeaways." : "Tổng hợp từ Dược đường Đồng Nhân Đường (1669), Quảng Dự Viễn (1541) đến Toàn Tụ Đức, Mao Đài, Hồng Tinh Tuyên Chỉ &amp; 12 Chỉ dẫn Địa lý EU–Trung 2021 — kèm chuẩn chất lượng GB/T và bài học chuỗi cung ứng Việt Nam.") + '</p>' +
+      '      <p class="section-subtitle" style="margin-top:0.25rem;">' + (enM ? "Complete heritage dossiers spanning Imperial TCM Pharmacies, Culinary Houses, Tea Estates &amp; Scholar Studios—enriched with GB/T standards, EU-China 2021 GI protection, and Vietnam procurement takeaways." : "Tổng hợp từ Dược đường Đồng Nhân Đường (1669), Quảng Dự Viễn (1541) đến Toàn Tụ Đức, Mao Đài, Hồng Tinh Tuyên Chỉ &amp; " + giList.length + " Chỉ dẫn Địa lý EU–Trung 2021 — kèm chuẩn chất lượng GB/T và bài học chuỗi cung ứng Việt Nam.") + '</p>' +
       '    </div>' +
       '  </div>' +
       '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.65rem;margin-bottom:0.85rem;">' +
@@ -217,8 +217,8 @@
       ) : "") +
       (flows12.length ? (
         '  <div id="cce-v6-craft-flowcharts" style="margin-top:2rem;padding-top:1.35rem;border-top:2px solid var(--hairline);">' +
-        '    <div class="editorial-kicker" style="color:var(--imperial-red);">V6.0 HERITAGE PROCESS DIAGRAMS, NORTH–SOUTH COMPARE &amp; FIVE HISTORIC MERCHANT GUILDS</div>' +
-        '    <h3 style="font-family:var(--font-editorial);font-size:1.28rem;margin:0.2rem 0 0.75rem;">' + (enM ? "12 Master Craft Step-by-Step Workflows, 10 North–South Compare Matrices &amp; 5 Guilds" : "12 Quy trình Thủ công Kinh điển, 10 Cặp Đối Sánh Nam–Bắc &amp; Ngũ Đại Thương Bang") + '</h3>' +
+        '    <div class="editorial-kicker" style="color:var(--imperial-red);">V7.0 HERITAGE PROCESS DIAGRAMS, NORTH–SOUTH COMPARE &amp; FIVE HISTORIC MERCHANT GUILDS</div>' +
+        '    <h3 style="font-family:var(--font-editorial);font-size:1.28rem;margin:0.2rem 0 0.75rem;">' + (enM ? (flows12.length + " Master Craft Step-by-Step Workflows, " + dualCompare10.length + " North–South Compare Matrices &amp; " + guilds5.length + " Guilds") : (flows12.length + " Quy trình Thủ công Kinh điển, " + dualCompare10.length + " Cặp Đối Sánh Nam–Bắc &amp; Ngũ Đại Thương Bang")) + '</h3>' +
         '    <div class="grid grid-2" style="gap:0.8rem;max-height:520px;overflow:auto;margin-bottom:1.15rem;">' +
         flows12.map(function (fl) {
           var steps = fl.steps || [];
@@ -272,6 +272,19 @@
         ) : "") +
         '  </div>'
       ) : "") +
+      (function () {
+        var yts = (window.CCE_V7_ENCYCLOPEDIA && window.CCE_V7_ENCYCLOPEDIA.youtubeVideos12) || [];
+        var lzhYt = yts.filter(function (v) { return v.youtubeId === "fdhAsUBn2x8" || v.youtubeId === "TcqR7ORAAEY"; });
+        if (!lzhYt.length || !window.CCE_V6_STUDIOS || !window.CCE_V6_STUDIOS.renderYoutubeCard) return "";
+        return (
+          '<div style="margin-top:1.35rem;padding-top:1rem;border-top:2px solid var(--hairline);">' +
+          '  <div class="editorial-kicker" style="color:var(--imperial-red);">CRAFT &amp; TEA HERITAGE DOCUMENTARIES · CHẾ TÁC GỐM &amp; TRÀ ĐẠO CÔNG PHU</div>' +
+          '  <div class="grid grid-2" style="gap:0.75rem;margin-top:0.5rem;">' +
+          lzhYt.map(function (vy) { return window.CCE_V6_STUDIOS.renderYoutubeCard(vy, enM); }).join("") +
+          '  </div>' +
+          '</div>'
+        );
+      })() +
       '</section>'
     );
   }

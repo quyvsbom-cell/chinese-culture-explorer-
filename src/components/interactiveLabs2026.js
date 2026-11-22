@@ -501,13 +501,15 @@
         explainVi: x.explainVi || x.explanationVi || "",
         explainEn: x.explainEn || x.explanationEn || ""
       }));
-      const v6 = (Array.isArray(window.CCE_V6_QUIZ) ? window.CCE_V6_QUIZ : []).map((x) => ({
+      const mapV6V7 = (arr, defTag) => (Array.isArray(arr) ? arr : []).map((x) => ({
         id: x.id,
-        pillar: x.pillar || "v6",
+        pillar: x.pillar || defTag,
         isVisualQuestion: Boolean(x.isVisualQuestion),
         imagePath: x.imagePath || "",
-        topicVi: x.topicVi || "V6",
-        topicEn: x.topicEn || x.topicVi || "V6",
+        visualInspectionGuideVi: x.visualInspectionGuideVi || "",
+        visualInspectionGuideEn: x.visualInspectionGuideEn || x.visualInspectionGuideVi || "",
+        topicVi: x.topicVi || defTag.toUpperCase(),
+        topicEn: x.topicEn || x.topicVi || defTag.toUpperCase(),
         hanzi: x.hanzi || "",
         questionVi: x.questionVi,
         questionEn: x.questionEn || x.questionVi,
@@ -517,7 +519,11 @@
         explainVi: x.explainVi || "",
         explainEn: x.explainEn || x.explainVi || ""
       }));
-      const full = base.concat(v3, v4, v5, v6);
+      const v6 = mapV6V7(window.CCE_V6_QUIZ, "v6");
+      const v7 = mapV6V7(window.CCE_V7_QUIZ, "v7");
+      const full = base.concat(v3, v4, v5, v6, v7);
+      this._lastFullQuizCount = full.length;
+      this._lastVisualQuizCount = full.filter((q) => Boolean(q.imagePath)).length;
       const pFilter = this.state.quizPillarFilter || "all";
       if (pFilter === "all") return full;
       if (pFilter === "visual") {
@@ -557,9 +563,10 @@
         return qObj && ansMap[qid] === qObj.correctIndex;
       }).length;
       const activePillar = this.state.quizPillarFilter || "all";
+      const visTotal = this._lastVisualQuizCount || 150;
       const pillars = [
-        { id: "all", vi: "Tất cả", en: "All Pillars" },
-        { id: "visual", vi: "Nhận diện Hình ảnh (120)", en: "Visual ID (120)" },
+        { id: "all", vi: `Tất cả (${this._lastFullQuizCount || total})`, en: `All Pillars (${this._lastFullQuizCount || total})` },
+        { id: "visual", vi: `Nhận diện Hình ảnh (${visTotal})`, en: `Visual ID (${visTotal})` },
         { id: "history", vi: "Lịch sử", en: "History" },
         { id: "philosophy", vi: "Triết học", en: "Philosophy" },
         { id: "art", vi: "Nghệ thuật", en: "Arts" },
@@ -589,7 +596,7 @@
             <div class="img-skeleton-bg" style="aspect-ratio:16/10;max-height:240px;width:100%;max-width:440px;overflow:hidden;border-radius:var(--radius);border:1px solid var(--hairline);margin-bottom:0.45rem;background:var(--bg-surface);cursor:pointer;" data-action="open-custom-image" data-src="${q.imagePath}" data-caption="${enMode ? q.topicEn : q.topicVi}">
               <img src="${q.imagePath}" alt="${enMode ? q.topicEn : q.topicVi}" loading="lazy" style="width:100%;height:100%;object-fit:${/\.svg$/i.test(q.imagePath) ? "contain" : "cover"};display:block;" onerror="this.onerror=null;this.src='assets/images/museum/forbidden-city-imperial-axis-gate.jpg';" />
             </div>
-            ${q.visualInspectionGuideVi ? `<div style="font-size:0.78rem;color:var(--jade-green);margin-bottom:0.65rem;max-width:480px;">${q.visualInspectionGuideVi}</div>` : ""}
+            ${(enMode ? (q.visualInspectionGuideEn || q.visualInspectionGuideVi) : q.visualInspectionGuideVi) ? `<div style="font-size:0.78rem;color:var(--jade-green);margin-bottom:0.65rem;max-width:480px;">${enMode ? (q.visualInspectionGuideEn || q.visualInspectionGuideVi) : q.visualInspectionGuideVi}</div>` : ""}
           ` : ""}
 
           <div style="display:flex;align-items:center;gap:0.65rem;flex-wrap:wrap;margin-bottom:0.65rem;">

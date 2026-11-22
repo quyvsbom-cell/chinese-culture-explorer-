@@ -120,6 +120,13 @@
 
   var activeModNum = 1;
 
+  function getCurriculum() {
+    var v7Mods = (window.CCE_V7_COURSE_ADDON && Array.isArray(window.CCE_V7_COURSE_ADDON.modulesMeta3))
+      ? window.CCE_V7_COURSE_ADDON.modulesMeta3
+      : [];
+    return CURRICULUM.concat(v7Mods);
+  }
+
   var LESSON_IMGS = [
     "assets/images/provinces/sichuan-jiuzhaigou.jpg",
     "assets/images/academic/guilin-li-river.jpg",
@@ -176,7 +183,7 @@
       '<div class="grid grid-2" style="gap:0.85rem;margin-top:0.85rem;">' +
       list.map(function (ls, idx) {
         var globalIdx = ((Number(ls.moduleNum) || 1) - 1) * 6 + ((Number(ls.lessonNum) || (idx + 1)) - 1);
-        var imgSrc = LESSON_IMGS[Math.abs(globalIdx) % LESSON_IMGS.length];
+        var imgSrc = ls.imagePath || LESSON_IMGS[Math.abs(globalIdx) % LESSON_IMGS.length];
         var isSvg = /\.svg(\?|$)/i.test(imgSrc);
         var lTitle = enM ? (ls.titleEn || ls.titleVi) : ls.titleVi;
         var terms = Array.isArray(ls.keyTermsTrilingual) ? ls.keyTermsTrilingual : [];
@@ -226,32 +233,37 @@
   }
 
   function renderCourseTracker(enM) {
+    var mods = getCurriculum();
     var done = loadDone();
-    var completedCount = CURRICULUM.filter(function (m) { return Boolean(done[m.page]); }).length;
-    var pct = Math.round((completedCount / CURRICULUM.length) * 100);
+    var completedCount = mods.filter(function (m) { return Boolean(done[m.doneKey || m.page]); }).length;
+    var pct = Math.round((completedCount / mods.length) * 100);
     var allLessons = (window.CCE_V5_COURSE_LESSONS && window.CCE_V5_COURSE_LESSONS.lessons36) || [];
     var modLessons = activeModNum === 0 ? allLessons : allLessons.filter(function (l) { return Number(l.moduleNum) === activeModNum; });
+    var v7Yt = (window.CCE_V7_ENCYCLOPEDIA && window.CCE_V7_ENCYCLOPEDIA.youtubeVideos12) || [];
+    var courseYts = v7Yt.filter(function (x) { return x.youtubeId === "arfV94Y9tkE" || x.youtubeId === "w78Yb_aotH0"; });
 
     return (
       '<section id="cce-v5-course-academy" class="card mb-2" style="margin-top:1.5rem;border-top:3px solid var(--imperial-red);padding:1.15rem 1.25rem;">' +
       (window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderCourseMindMapSvg ? window.CCE_V6_STUDIOS.renderCourseMindMapSvg(enM) : "") +
+      (window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderOfficialPromoCard ? window.CCE_V6_STUDIOS.renderOfficialPromoCard(enM) : "") +
       '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.6rem;margin-bottom:0.85rem;">' +
       '    <div>' +
-      '      <div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "STRUCTURED LEARNING PATHWAY · 循序渐进七大课程模块 (" + allLessons.length + " LESSONS)" : "LỘ TRÌNH HỌC TẬP TUẦN TỰ NHƯ MỘT KHÓA HỌC · 7 HỌC PHẦN · " + allLessons.length + " BÀI HỌC") + '</div>' +
-      '      <h3 style="margin:0.15rem 0 0;font-size:1.25rem;">' + (enM ? "7-Module Progressive Curriculum &amp; " + allLessons.length + " Guided Sequential Lessons" : "Khóa Học 7 Học Phần &amp; " + allLessons.length + " Bài Học Liên Kết Logic Từ Nhập Môn Đến Thực Chiến") + '</h3>' +
+      '      <div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "STRUCTURED LEARNING PATHWAY · 循序渐进十大课程模块 (" + allLessons.length + " LESSONS)" : "LỘ TRÌNH HỌC TẬP TUẦN TỰ NHƯ MỘT KHÓA HỌC · " + mods.length + " HỌC PHẦN · " + allLessons.length + " BÀI HỌC") + '</div>' +
+      '      <h3 style="margin:0.15rem 0 0;font-size:1.25rem;">' + (enM ? mods.length + "-Module Progressive Curriculum &amp; " + allLessons.length + " Guided Sequential Lessons" : "Khóa Học " + mods.length + " Học Phần &amp; " + allLessons.length + " Bài Học Liên Kết Logic Từ Nhập Môn Đến Thực Chiến") + '</h3>' +
       '    </div>' +
-      '    <span class="badge badge-jade">' + completedCount + '/' + CURRICULUM.length + ' (' + pct + '%)</span>' +
+      '    <span class="badge badge-jade">' + completedCount + '/' + mods.length + ' (' + pct + '%)</span>' +
       '  </div>' +
       '  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.6rem;">' +
-      CURRICULUM.map(function (m) {
-        var isDone = Boolean(done[m.page]);
+      mods.map(function (m) {
+        var dk = m.doneKey || m.page;
+        var isDone = Boolean(done[dk]);
         var mTitle = enM ? m.titleEn : m.titleVi;
         return (
           '<div class="flashcard-layer" style="display:flex;flex-direction:column;gap:0.35rem;padding:0.7rem 0.8rem;' + (isDone ? "border-left:3px solid var(--jade-green);" : "") + '">' +
           (m.img ? '<div class="img-skeleton-bg" style="aspect-ratio:16/9;width:100%;overflow:hidden;border-radius:var(--radius);border:1px solid var(--hairline);background:var(--bg-surface);cursor:pointer;" data-action="open-custom-image" data-src="' + esc(m.img) + '" data-caption="' + esc(mTitle) + '"><img src="' + esc(m.img) + '" alt="' + esc(mTitle) + '" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;" onerror="this.onerror=null;this.src=\'assets/images/museum/taihe-dian.jpg\';" /></div>' : "") +
           '  <div style="display:flex;justify-content:space-between;align-items:center;gap:0.35rem;">' +
           '    <span class="badge ' + (isDone ? "badge-jade" : "badge-outline") + '">Module ' + m.num + '</span>' +
-          '    <button type="button" class="btn btn-ghost btn-sm" style="padding:0.05rem 0.35rem;font-size:0.72rem;" data-v5c-toggle="' + m.page + '">' + (isDone ? (enM ? "Done ✓" : "Đã xong ✓") : (enM ? "Mark" : "Đánh dấu")) + '</button>' +
+          '    <button type="button" class="btn btn-ghost btn-sm" style="padding:0.05rem 0.35rem;font-size:0.72rem;" data-v5c-toggle="' + dk + '">' + (isDone ? (enM ? "Done ✓" : "Đã xong ✓") : (enM ? "Mark" : "Đánh dấu")) + '</button>' +
           '  </div>' +
           '  <strong style="font-size:0.83rem;">' + esc(mTitle) + '</strong>' +
           '  <span class="hanzi text-xs" style="color:var(--text-muted);">' + esc(m.zh) + '</span>' +
@@ -265,7 +277,7 @@
         '    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.55rem;">' +
         '      <strong style="font-family:var(--font-editorial);font-size:1.1rem;">' + (enM ? "Sequential Lesson Reader (" + allLessons.length + " Lessons · Filter by Module):" : "Bài Giảng Tuần Tự Từng Chặng (" + allLessons.length + " Bài Học · Chọn Học phần):") + '</strong>' +
         '      <div class="filter-bar" style="margin:0;">' +
-        CURRICULUM.map(function (m, mIdx) {
+        mods.map(function (m, mIdx) {
           var mn = mIdx + 1;
           return '<button type="button" class="filter-pill ' + (activeModNum === mn ? "active" : "") + '" data-v5c-mod="' + mn + '" style="font-size:0.74rem;">HP ' + m.num + '</button>';
         }).join("") +
@@ -275,20 +287,31 @@
         renderLessonGrid(modLessons, enM) +
         '  </div>'
       ) : "") +
+      (courseYts.length && window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderYoutubeCard ? (
+        '  <div style="margin-top:1.25rem;padding-top:0.9rem;border-top:1px dashed var(--hairline);">' +
+        '    <div class="editorial-kicker" style="color:var(--jade-green);">COURSE FOUNDATION DOCUMENTARIES · TƯ LIỆU YOUTUBE THỦY LỢI &amp; KIẾN TRÚC</div>' +
+        '    <div class="grid grid-2" style="gap:0.75rem;margin-top:0.45rem;">' +
+        courseYts.map(function (vy) { return window.CCE_V6_STUDIOS.renderYoutubeCard(vy, enM); }).join("") +
+        '    </div>' +
+        '  </div>'
+      ) : "") +
+      (window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderWorldTourismAndMuseumStudio ? window.CCE_V6_STUDIOS.renderWorldTourismAndMuseumStudio(enM) : "") +
       '</section>'
     );
   }
 
   function renderNextStepBridge(activePage, enM) {
-    var mod = CURRICULUM.find(function (m) { return m.page === activePage; });
+    var mods = getCurriculum();
+    var mod = mods.find(function (m) { return m.page === activePage; });
     if (!mod) {
-      if (activePage === "sino-vietnam") mod = CURRICULUM[5];
-      else if (activePage === "paintings") mod = CURRICULUM[4];
-      else if (activePage === "library") mod = CURRICULUM[2];
+      if (activePage === "sino-vietnam") mod = mods[5];
+      else if (activePage === "paintings") mod = mods[4];
+      else if (activePage === "library") mod = mods[2];
       else return "";
     }
     var done = loadDone();
-    var isDone = Boolean(done[mod.page]);
+    var dk = mod.doneKey || mod.page;
+    var isDone = Boolean(done[dk]);
     var modNumber = Number(mod.num) || 1;
     var allLessons = (window.CCE_V5_COURSE_LESSONS && window.CCE_V5_COURSE_LESSONS.lessons36) || [];
     var modLessons = allLessons.filter(function (l) { return Number(l.moduleNum) === modNumber; });
@@ -303,7 +326,7 @@
       '      </div>' +
       '    </div>' +
       '    <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;">' +
-      '      <button type="button" class="btn btn-secondary btn-sm" data-v5c-toggle="' + mod.page + '">' + (isDone ? (enM ? "Completed ✓" : "Đã hoàn thành ✓") : (enM ? "Complete Module " + mod.num : "Hoàn thành Học phần " + mod.num)) + '</button>' +
+      '      <button type="button" class="btn btn-secondary btn-sm" data-v5c-toggle="' + dk + '">' + (isDone ? (enM ? "Completed ✓" : "Đã hoàn thành ✓") : (enM ? "Complete Module " + mod.num : "Hoàn thành Học phần " + mod.num)) + '</button>' +
       '      <button type="button" class="btn btn-primary btn-sm" data-action="nav" data-page="' + mod.nextPage + '">' + esc(enM ? mod.nextLabelEn : mod.nextLabelVi) + '</button>' +
       '    </div>' +
       '  </div>' +

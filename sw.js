@@ -1,15 +1,15 @@
-/* CHINESE CULTURE EXPLORER — Offline-First PWA Service Worker (cce-v6.0)
+/* CHINESE CULTURE EXPLORER — Offline-First PWA Service Worker (cce-v7.0)
  * Strategy:
  * - Never intercept /api/* or /.netlify/*
  * - Network-First for HTML navigations so users/bots always see latest deploy
  * - Stale-While-Revalidate for JS, CSS, GeoJSON, and fonts
- * - Bounded Cache-First for viewed images
+ * - Bounded Cache-First for viewed images & video
  */
 
-const CACHE_VERSION = "cce-v6.0";
+const CACHE_VERSION = "cce-v7.0";
 const SHELL_CACHE = CACHE_VERSION + "-shell";
 const MEDIA_CACHE = CACHE_VERSION + "-media";
-const MAX_MEDIA_ENTRIES = 240;
+const MAX_MEDIA_ENTRIES = 280;
 
 self.addEventListener("install", (event) => {
   event.waitUntil(

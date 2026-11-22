@@ -58,14 +58,14 @@ CATEGORY_RASTER_FALLBACKS = {
 STATIC_SECTION_META = {
     "/": (
         f"{SITE_BRAND} – " + ("中越经贸与全球供应链研究平台" if IS_GLOBAL_TRADE else "中国文化探索"),
-        "Khám phá văn minh Trung Hoa, nghiên cứu thương mại – hải quan – logistics Việt–Trung và bảo tàng văn hiến số Đông Á.",
+        "Khám phá văn minh Trung Hoa (V7.0): 10 Học phần, 24 Studio 3D WebGL, 120 Lão Tự Hào, 16 Hành trình Di sản 240h & Đấu trường 600 câu.",
         DEFAULT_RASTER_OG,
         "1.0",
         "weekly",
     ),
     "/explore": (
-        f"Chuyên luận & Mục lục Tri thức | {SITE_BRAND}",
-        "Hệ thống chuyên luận nghiên cứu lịch sử, triết học, kinh tế, thương mại Việt – Trung và văn hóa Đông Á.",
+        f"Chuyên luận & Học viện Tri thức | {SITE_BRAND}",
+        "Hệ thống chuyên luận lịch sử, triết học, HSK 4–9, kinh tế Việt–Trung, 16 Hành trình Di sản & Đấu trường 600 câu (150 Visual ID).",
         "assets/images/articles/hero-hundred-schools.jpg",
         "0.9",
         "weekly",
@@ -106,8 +106,8 @@ STATIC_SECTION_META = {
         "weekly",
     ),
     "/bao-tang": (
-        f"Bảo tàng Số Bảo vật Quốc gia | {SITE_BRAND}",
-        "Chiêm ngưỡng thanh đồng đỉnh, gốm Quan – Chu Đậu, cổ tịch Vĩnh Lạc Đại Điển và di sản Tử Cấm Thành.",
+        f"Bảo tàng Số & 24 Studio 3D WebGL | {SITE_BRAND}",
+        "Chiêm ngưỡng 80 bảo vật quốc gia, 8 sắc tố khoáng Đan Thanh, thanh đồng đỉnh, gốm Quan – Chu Đậu và 24 phòng 3D WebGL tương tác.",
         "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
         "0.9",
         "weekly",
@@ -162,8 +162,8 @@ STATIC_SECTION_META = {
         "monthly",
     ),
     "/hoc-tap": (
-        f"Từ điển Lục thư, Lộ trình Học tập & Phản biện | {SITE_BRAND}",
-        "Học chữ Hán qua Lục thư, so sánh âm Hán–Việt, 6 lộ trình học thuật và thẻ phản biện cấu trúc.",
+        f"Từ điển Lục thư, Lộ trình 60 Bài & 600 Câu Thi | {SITE_BRAND}",
+        "150 chữ Hán Lục thư trực quan, 60 bài học tuần tự 10 Học phần, hệ thống lặp ngắt quãng SM-2 và 600 câu hỏi (150 Visual ID).",
         "assets/images/articles/hero-calligraphy-five-scripts.jpg",
         "0.8",
         "weekly",

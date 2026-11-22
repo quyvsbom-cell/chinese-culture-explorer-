@@ -122,7 +122,7 @@ def main() -> int:
             "civilizationAtlas.js", "china3DMap.js", "dougongJoinery3D.js",
             "vernacular3DStudio.js", "euChinaLogistics3D.js", "hydraulic3DStudio.js",
             "armillary3DStudio.js", "artifacts3DExtra.js", "studioHub3D.js",
-            "v6HeritageStudios3D.js", "v6VisualAcademyStudios.js",
+            "v6HeritageStudios3D.js", "v7Masterpieces3D.js", "v6VisualAcademyStudios.js",
             "v4UXEnhancements.js", "travelUXHub.js", "v4KnowledgeHub.js",
             "trilingualTradeStudio.js", "laozihaoPavilionV5.js", "v5CourseAcademy.js",
             "srsEngine.js", "exporters.js", "lazyLoader.js", "page-transition.js"
@@ -191,6 +191,8 @@ def main() -> int:
                 seo_issues.append(f"Stale SEO shell missing V5 scripts: seo_pages/{shell_rel}")
             if "src/data/v6/v6EncyclopediaAndVisuals.js" not in sh_txt:
                 seo_issues.append(f"Stale SEO shell missing V6 scripts: seo_pages/{shell_rel}")
+            if "src/data/v7/v7CompleteEncyclopedia.js" not in sh_txt:
+                seo_issues.append(f"Stale SEO shell missing V7 scripts: seo_pages/{shell_rel}")
     print(f"[Gate 7] SEO & OG Shells Integrity: {'PASS' if not seo_issues else 'FAIL'}")
     failures.extend(seo_issues)
 
@@ -242,6 +244,7 @@ def main() -> int:
         "src/components/3d/armillary3DStudio.js",
         "src/components/3d/artifacts3DExtra.js",
         "src/components/3d/v6HeritageStudios3D.js",
+        "src/components/3d/v7Masterpieces3D.js",
     ]:
         mp = ROOT / mod
         if not mp.is_file():
@@ -257,18 +260,21 @@ def main() -> int:
         v6_epi_txt = v6_bundle_path.read_text(encoding="utf-8")
         if "KHÔNG chẩn đoán" not in v6_epi_txt or "NOT clinical" not in v6_epi_txt:
             g9_issues.append("V6 bundle missing strict non-clinical disclaimer ('KHÔNG chẩn đoán' / 'NOT clinical')")
-    print(f"[Gate 9] V4/V6 Data, Epistemology & WebGL Mgr: {'PASS' if not g9_issues else 'FAIL'}")
+    v7_epi_path = ROOT / "src" / "data" / "v7" / "v7CompleteEncyclopedia.js"
+    if not v7_epi_path.is_file():
+        g9_issues.append("MISSING V7 data bundle: src/data/v7/v7CompleteEncyclopedia.js")
+    else:
+        v7_epi_txt = v7_epi_path.read_text(encoding="utf-8")
+        if "KHÔNG chẩn đoán" not in v7_epi_txt or "NOT clinical" not in v7_epi_txt:
+            g9_issues.append("V7 bundle missing strict non-clinical disclaimer ('KHÔNG chẩn đoán' / 'NOT clinical')")
+    print(f"[Gate 9] V4/V6/V7 Data, Epistemology & WebGL Mgr: {'PASS' if not g9_issues else 'FAIL'}")
     failures.extend(g9_issues)
 
-    # Gate 10: PWA Cache Parity (cce-v6.0 / v5.0) & Zero Dev Jargon in UI Strings
+    # Gate 10: PWA Cache Parity (cce-v7.0) & Zero Dev Jargon in UI Strings
     g10_issues: list[str] = []
     sw_txt = (ROOT / "sw.js").read_text(encoding="utf-8") if (ROOT / "sw.js").is_file() else ""
-    if (
-        'CACHE_VERSION = "cce-v6.0"' not in sw_txt
-        and 'CACHE_VERSION = "cce-v5.0"' not in sw_txt
-        and 'CACHE_VERSION = "cce-v4.0"' not in sw_txt
-    ):
-        g10_issues.append('sw.js CACHE_VERSION is not "cce-v6.0"')
+    if 'CACHE_VERSION = "cce-v7.0"' not in sw_txt:
+        g10_issues.append('sw.js CACHE_VERSION is not "cce-v7.0"')
     ui_scan = [ROOT / "index.html"] + sorted((ROOT / "src" / "components").rglob("*.js"))
     for fp in ui_scan:
         for idx, line in enumerate(fp.read_text(encoding="utf-8", errors="ignore").splitlines(), 1):
@@ -375,12 +381,155 @@ def main() -> int:
     print(f"[Gate 12] V6 Dataset Counts, Visual Assets & 500-MCQ Dedupe: {'PASS' if not g12_issues else 'FAIL'}")
     failures.extend(g12_issues[:10])
 
+    # Gate 13: V7 10 Modules / 60 Lessons, 24 3D Studios, Expeditions, 240h Concierge, Pigments, Benchmarks & Videos
+    g13_issues: list[str] = []
+    v7_bundle_path = ROOT / "src" / "data" / "v7" / "v7CompleteEncyclopedia.js"
+    v7_bundle: dict = {}
+    if not v7_bundle_path.is_file():
+        g13_issues.append("MISSING V7 data bundle: src/data/v7/v7CompleteEncyclopedia.js")
+    else:
+        v7_raw = v7_bundle_path.read_text(encoding="utf-8")
+        try:
+            v7_idx = v7_raw.index("var V7_DATA = ") + len("var V7_DATA = ")
+            v7_bundle, _ = _json.JSONDecoder().raw_decode(v7_raw, v7_idx)
+        except Exception as exc:
+            g13_issues.append(f"Failed to parse V7_DATA JSON: {exc}")
+
+    hub3d_path = ROOT / "src" / "components" / "3d" / "studioHub3D.js"
+    v6_3d_path = ROOT / "src" / "components" / "3d" / "v6HeritageStudios3D.js"
+    v7_3d_path = ROOT / "src" / "components" / "3d" / "v7Masterpieces3D.js"
+    total_3d_ids: list[str] = []
+    for p3d in (hub3d_path, v6_3d_path, v7_3d_path):
+        if p3d.is_file():
+            total_3d_ids.extend(re.findall(r'\bid:\s*"([^"]+)"', p3d.read_text(encoding="utf-8")))
+        else:
+            g13_issues.append(f"Missing 3D studio module: {p3d.relative_to(ROOT).as_posix()}")
+    if len(total_3d_ids) < 24:
+        g13_issues.append(f"Expected >= 24 3D scene entries across studioHub3D/v6/v7, found {len(total_3d_ids)}")
+    if v7_3d_path.is_file():
+        v7_3d_ids = re.findall(r'\bid:\s*"([^"]+)"', v7_3d_path.read_text(encoding="utf-8"))
+        if len(v7_3d_ids) != 6:
+            g13_issues.append(f"Expected 6 new scenes in v7Masterpieces3D.js, found {len(v7_3d_ids)}")
+
+    promo_video = ROOT / "assets" / "videos" / "cce-v7-official-promo.mp4"
+    if not promo_video.is_file() or promo_video.stat().st_size < 100_000:
+        g13_issues.append("Missing or undersized promo video: assets/videos/cce-v7-official-promo.mp4")
+
+    if v7_bundle:
+        v7_core_checks = [
+            (len(v7_bundle.get("modulesMeta3", [])), 3, "V7 modulesMeta3 (+7=10)"),
+            (len(v7_bundle.get("lessons18", [])), 18, "V7 lessons18 (+42=60)"),
+            (len(v7_bundle.get("heritageExpeditions16", [])), 16, "heritageExpeditions16"),
+            (len(v7_bundle.get("digitalTravelConcierge8", [])), 8, "digitalTravelConcierge8"),
+            (len(v7_bundle.get("traditionalPigments8", [])), 8, "traditionalPigments8"),
+            (len(v7_bundle.get("globalPlatformBenchmarks6", [])), 6, "globalPlatformBenchmarks6"),
+            (len(v7_bundle.get("youtubeVideos12", [])), 12, "youtubeVideos12"),
+        ]
+        for actual_c, exp_c, lbl in v7_core_checks:
+            if actual_c != exp_c:
+                g13_issues.append(f"Expected {exp_c} {lbl}, got {actual_c}")
+        if not v7_bundle.get("officialPromoVideo", {}).get("videoPath"):
+            g13_issues.append("V7 officialPromoVideo missing videoPath")
+        for yt in v7_bundle.get("youtubeVideos12", []):
+            if not re.fullmatch(r"[A-Za-z0-9_-]{11}", str(yt.get("youtubeId", ""))):
+                g13_issues.append(f"Invalid YouTube ID: {yt.get('youtubeId')}")
+    print(f"[Gate 13] V7 10-Module Curriculum, 24 3D Scenes, Expeditions & Video Assets: {'PASS' if not g13_issues else 'FAIL'}")
+    failures.extend(g13_issues[:10])
+
+    # Gate 14: V7 All-Dataset Counts, 120 Unique Brands & 600-MCQ / 150-Visual-ID Parity
+    g14_issues: list[str] = []
+    if v7_bundle:
+        v7_counts = [
+            (len(v7_bundle.get("brandsAdditional20", [])), 20, "brandsAdditional20"),
+            (len(v7_bundle.get("giAdditional12", [])), 12, "giAdditional12"),
+            (len(v7_bundle.get("craftProcessFlowcharts6", [])), 6, "craftProcessFlowcharts6"),
+            (len(v7_bundle.get("liushu50", [])), 50, "liushu50"),
+            (len(v7_bundle.get("falseFriends15", [])), 15, "falseFriends15"),
+            (len(v7_bundle.get("simpTrad15", [])), 15, "simpTrad15"),
+            (len(v7_bundle.get("measureWords15", [])), 15, "measureWords15"),
+            (len(v7_bundle.get("chengyu14", [])), 14, "chengyu14"),
+            (len(v7_bundle.get("herbs12", [])), 12, "herbs12"),
+            (len(v7_bundle.get("microclimates6", [])), 6, "microclimates6"),
+            (len(v7_bundle.get("cosmoCases8", [])), 8, "cosmoCases8"),
+            (len(v7_bundle.get("novelGraphs2", [])), 2, "novelGraphs2"),
+            (len(v7_bundle.get("poemPaintings12", [])), 12, "poemPaintings12"),
+            (len(v7_bundle.get("wenyanTokens16", [])), 16, "wenyanTokens16"),
+            (len(v7_bundle.get("hskPassages20", [])), 20, "hskPassages20"),
+            (len(v7_bundle.get("hskEssays16", [])), 16, "hskEssays16"),
+            (len(v7_bundle.get("tangVietPoems9", [])), 9, "tangVietPoems9"),
+            (len(v7_bundle.get("b2bTerms50", [])), 50, "b2bTerms50"),
+            (len(v7_bundle.get("annotatedTradeDocs5", [])), 5, "annotatedTradeDocs5"),
+            (len(v7_bundle.get("extraSupplyCases10", [])), 10, "extraSupplyCases10"),
+            (len(v7_bundle.get("sinoVietWonders6", [])), 6, "sinoVietWonders6"),
+            (len(v7_bundle.get("cscUniversities12", [])), 12, "cscUniversities12"),
+            (len(v7_bundle.get("cscInterviews12", [])), 12, "cscInterviews12"),
+            (len(v7_bundle.get("hsrCorridors8", [])), 8, "hsrCorridors8"),
+            (len(v7_bundle.get("quiz100", [])), 100, "V7 quiz100"),
+        ]
+        for actual_c, exp_c, lbl in v7_counts:
+            if actual_c != exp_c:
+                g14_issues.append(f"Expected {exp_c} {lbl}, got {actual_c}")
+
+        # Verify 100 base+v5+v6 + 20 V7 = 120 unique Honored Brands via coreZhKey
+        pref_rx = re.compile(r"^(北京|杭州|广州|漳州|成都|宜宾|绍兴|苏州|太谷|东阿|长沙|武汉|上海|天津|济南|重庆|镇江|桂林|扬州|开封|福州|佛山|泸州|杏花村|青岛|烟台|黄山|安溪|勐海|凤翔|宿迁|泾县|湖州|安徽|景德镇|沈阳)")
+        def _ck(zh: str) -> str:
+            return re.sub(r"\s*\(.*?\)\s*", "", pref_rx.sub("", str(zh))).strip()
+
+        brand_keys: set[str] = set()
+        for bf in ["src/data/v5/laozihaoBrandsV5.js", "src/data/v5/laozihaoBrandsExpandedV5.js"]:
+            btxt = (ROOT / bf).read_text(encoding="utf-8")
+            if "giAppellations12" in btxt:
+                btxt = btxt[: btxt.find("giAppellations12")]
+            for zm in re.finditer(r'\bzh:\s*"([^"]+)"', btxt):
+                k = _ck(zm.group(1))
+                if k:
+                    brand_keys.add(k)
+        if v6_bundle_path.is_file() and bundles:
+            b6c = bundles.get("CCE_V6_BRANDS_CRAFT", {})
+            for bitem in b6c.get("brandsAdditional40", []) + b6c.get("brandsAdditional36", []):
+                k = _ck(bitem.get("zh", ""))
+                if k:
+                    brand_keys.add(k)
+        for vb in v7_bundle.get("brandsAdditional20", []):
+            k = _ck(vb.get("zh", ""))
+            if k in brand_keys:
+                g14_issues.append(f"Duplicate brand coreZhKey across V5/V6/V7: {vb.get('zh')} ({k})")
+            elif k:
+                brand_keys.add(k)
+        if len(brand_keys) != 120:
+            g14_issues.append(f"Expected 120 unique Honored Brands across V5+V6+V7, got {len(brand_keys)}")
+
+        # Verify 600 unique MCQs & 150 Visual IDs with verified disk images
+        v7_quiz = v7_bundle.get("quiz100", [])
+        v7_vis = [q for q in v7_quiz if q.get("isVisualQuestion")]
+        if len(v7_vis) != 30:
+            g14_issues.append(f"Expected 30 V7 Visual ID MCQs (+120 V6 = 150), got {len(v7_vis)}")
+        for q in v7_vis:
+            irel = str(q.get("imagePath", "")).lstrip("/")
+            if not irel or not (ROOT / irel).is_file():
+                g14_issues.append(f"V7 visual quiz {q.get('id')} missing image: {q.get('imagePath')}")
+
+        v3_quiz_ids = re.findall(r"q\(\s*['\"]([^'\"]+)['\"]", (ROOT / "src/data/v3/quizArenaBank2026.js").read_text(encoding="utf-8")) if (ROOT / "src/data/v3/quizArenaBank2026.js").is_file() else []
+        v7_qids = [str(q.get("id", "")) for q in v7_quiz]
+        pool600 = (
+            base_ids
+            + v3_quiz_ids
+            + re.findall(r'id:\s*"([^"]+)"', (ROOT / "src/data/v4/quizArenaV4.js").read_text(encoding="utf-8"))
+            + re.findall(r'id:\s*"([^"]+)"', (ROOT / "src/data/v5/quizMasteryV5.js").read_text(encoding="utf-8"))
+            + [str(q.get("id", "")) for q in (bundles.get("CCE_V6_QUIZ", []) if bundles else [])]
+            + v7_qids
+        )
+        if len(pool600) != 600 or len(set(pool600)) != 600:
+            g14_issues.append(f"Expected 600 unique MCQs (Base+V3+V4+V5+V6+V7), got total={len(pool600)}, unique={len(set(pool600))}")
+    print(f"[Gate 14] V7 All-Dataset Counts, 120 Brands & 600-MCQ / 150-Visual-ID Parity: {'PASS' if not g14_issues else 'FAIL'}")
+    failures.extend(g14_issues[:10])
+
     if failures:
         print("\nGATE FAILURES:")
         for f in failures:
             print(" -", f)
         return 1
-    print("\nALL 12 INTEGRITY GATES PASSED CLEANLY.")
+    print("\nALL 14 INTEGRITY GATES PASSED CLEANLY.")
     return 0
 
 

@@ -33,6 +33,8 @@
       "src/components/3d/hydraulic3DStudio.js",
       "src/components/3d/armillary3DStudio.js",
       "src/components/3d/artifacts3DExtra.js",
+      "src/components/3d/v6HeritageStudios3D.js",
+      "src/components/3d/v7Masterpieces3D.js",
       "src/components/3d/studioHub3D.js"
     ],
     "en-pack": [

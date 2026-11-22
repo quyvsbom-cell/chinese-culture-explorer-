@@ -224,7 +224,7 @@
     ];
     return (
       '<div id="cce-v5-hsk-essays-section" style="margin-top:1.35rem;padding-top:1rem;border-top:2px solid var(--hairline);">' +
-      '  <div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "WENYAN ↔ MODERN BAIHUA BRIDGE & HSK 6–9 ACADEMIC TEMPLATES · 文言文与议论文模板" : "NHỊP CẦU CỔ VĂN (VĂN NGÔN) ↔ BẠCH THOẠI & 15 KHUNG NGHỊ LUẬN HSK 6–9") + '</div>' +
+      '  <div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "WENYAN ↔ MODERN BAIHUA BRIDGE & HSK 6–9 ACADEMIC TEMPLATES · 文言文与议论文模板" : "NHỊP CẦU CỔ VĂN (VĂN NGÔN) ↔ BẠCH THOẠI & " + tpl15.length + " KHUNG NGHỊ LUẬN HSK 6–9") + '</div>' +
       '  <h4 style="margin:0.2rem 0 0.75rem;font-size:1.15rem;">' + (enM ? (pairs20.length + " Classical–Modern Sentence Pairs &amp; " + tpl15.length + " HSK Argument Templates") : (pairs20.length + " Danh ngôn Cổ văn – Hiện đại &amp; " + tpl15.length + " Khung Lập luận Luận văn / Phỏng vấn CSC")) + '</h4>' +
       (pairs20.length ? (
         '  <div class="grid grid-2" style="gap:0.75rem;max-height:540px;overflow:auto;margin-bottom:1.1rem;">' +
@@ -763,6 +763,9 @@
             return '<div class="flashcard-layer" style="font-size:0.8rem;">' + renderV4Thumb(sinoVietImgs[idx % sinoVietImgs.length], enM ? pl.titleEn : pl.titleVi, true) + '<strong>' + esc(enM ? pl.titleEn : pl.titleVi) + '</strong> <span class="hanzi">' + esc(pl.hanziTheme || "") + '</span><p style="margin:0.25rem 0 0;color:var(--text-secondary);">' + esc(enM ? pl.synthesisEn : pl.synthesisVi) + '</p></div>';
           }).join("") + '</div>' : "") +
           (window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderSinoVietAndCscStudio ? window.CCE_V6_STUDIOS.renderSinoVietAndCscStudio(enM) : "");
+      }
+      if (window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderWorldTourismAndMuseumStudio) {
+        body += window.CCE_V6_STUDIOS.renderWorldTourismAndMuseumStudio(enM);
       }
     }
 

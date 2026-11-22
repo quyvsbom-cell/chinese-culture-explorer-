@@ -23,8 +23,73 @@
     docBox: 1,
     svSub: "wonders", // wonders | csc_unis | csc_gantt | csc_int | hsr
     hsrIdx: 0,
+    worldTab: "expeditions", // expeditions | concierge | pigments | benchmarks | cinema
+    expRegion: "all",
+    pigmentIdx: 0,
+    ytActive: {},
     studentName: "Học viên Chinese Culture Explorer"
   };
+
+  function loadConciergeDone() {
+    try {
+      return JSON.parse(localStorage.getItem("cce_v7_concierge_done") || "{}") || {};
+    } catch (_e) {
+      return {};
+    }
+  }
+
+  function renderYoutubeCard(vObj, enM) {
+    if (!vObj || !vObj.youtubeId) return "";
+    var isPlaying = Boolean(st.ytActive[vObj.youtubeId]);
+    var title = enM ? (vObj.titleEn || vObj.titleVi) : vObj.titleVi;
+    var summary = enM ? (vObj.summaryEn || vObj.summaryVi) : vObj.summaryVi;
+    var ytWatch = "https://www.youtube.com/watch?v=" + esc(vObj.youtubeId);
+    var poster = vObj.posterImage || "assets/images/museum/taihe-dian.jpg";
+    return (
+      '<article class="card" style="padding:0.78rem 0.9rem;border-left:3px solid var(--imperial-red);display:flex;flex-direction:column;gap:0.45rem;">' +
+      '  <div style="display:flex;justify-content:space-between;align-items:center;gap:0.4rem;flex-wrap:wrap;">' +
+      '    <span class="badge badge-red">YouTube · ' + esc(vObj.author || "Documentary") + '</span>' +
+      '    <a href="' + ytWatch + '" target="_blank" rel="noopener" style="font-size:0.73rem;color:var(--imperial-red);font-weight:700;">' + (enM ? "Open YouTube ↗" : "Mở YouTube ↗") + '</a>' +
+      '  </div>' +
+      (isPlaying
+        ? '<div style="position:relative;aspect-ratio:16/9;width:100%;overflow:hidden;border-radius:var(--radius);border:1px solid var(--hairline);background:#111;"><iframe src="https://www.youtube-nocookie.com/embed/' + esc(vObj.youtubeId) + '?autoplay=1&rel=0" title="' + esc(title) + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;border:0;display:block;"></iframe></div>'
+        : '<div style="position:relative;aspect-ratio:16/9;width:100%;overflow:hidden;border-radius:var(--radius);border:1px solid var(--hairline);background:#111;cursor:pointer;" data-v6st-act="play-yt" data-val="' + esc(vObj.youtubeId) + '">' +
+          '  <img src="' + esc(poster) + '" alt="' + esc(title) + '" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;opacity:0.86;display:block;" />' +
+          '  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(17,17,17,0.12),rgba(17,17,17,0.68));">' +
+          '    <span style="padding:0.42rem 0.9rem;background:#8C2318;color:#FFFFFF;border:1px solid #E5A93C;border-radius:999px;font-size:0.78rem;font-weight:700;">▶ ' + (enM ? "Play YouTube Documentary" : "Phát Video Tài Liệu YouTube") + '</span>' +
+          '  </div>' +
+          '</div>'
+      ) +
+      '  <strong style="font-size:0.88rem;line-height:1.35;">' + esc(title) + '</strong>' +
+      '  <p style="margin:0;font-size:0.78rem;color:var(--text-secondary);">' + esc(summary) + '</p>' +
+      '</article>'
+    );
+  }
+
+  function renderOfficialPromoCard(enM) {
+    var v7 = window.CCE_V7_ENCYCLOPEDIA || {};
+    var promo = v7.officialPromoVideo || {
+      titleVi: "Video Quảng Cáo Chính Thức: Chinese Culture Explorer V7.0",
+      titleEn: "Official Website Promotional Trailer: Chinese Culture Explorer V7.0",
+      summaryVi: "Trailer 32.5 giây (1280×720 HD) kèm âm thanh ngũ cung giới thiệu trọn vẹn 10 Học phần, 24 Phòng 3D, 120 Lão Tự Hào, 16 Tour Di sản 240h & Đấu trường 600 câu.",
+      summaryEn: "Official 32.5s HD trailer introducing 10 Modules, 24 3D Labs, 120 Heritage Brands, 16 Expeditions & 600-MCQ Quiz Arena.",
+      videoPath: "assets/videos/cce-v7-official-promo.mp4",
+      posterImage: "assets/images/museum/forbidden-city-imperial-axis-gate.jpg"
+    };
+    return (
+      '<article class="card" id="cce-v7-promo-cinema-card" style="padding:1rem 1.15rem;border-top:3px solid #E5A93C;background:var(--bg-paper);">' +
+      '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.45rem;margin-bottom:0.55rem;">' +
+      '    <span class="badge badge-gold">OFFICIAL PROMO TRAILER V7.0 · H.264 HD</span>' +
+      '    <a href="' + esc(promo.videoPath) + '" download="chinese-culture-explorer-v7-promo.mp4" class="btn btn-secondary btn-sm">' + (enM ? "Download Promo .MP4 ↓" : "Tải Video Quảng Cáo .MP4 ↓") + '</a>' +
+      '  </div>' +
+      '  <h4 style="margin:0 0 0.35rem;font-size:1.05rem;">' + esc(enM ? promo.titleEn : promo.titleVi) + '</h4>' +
+      '  <p style="margin:0 0 0.65rem;font-size:0.81rem;color:var(--text-secondary);">' + esc(enM ? promo.summaryEn : promo.summaryVi) + '</p>' +
+      '  <video controls playsinline preload="metadata" poster="' + esc(promo.posterImage) + '" style="width:100%;max-height:420px;border-radius:var(--radius);border:1px solid var(--hairline);background:#111;display:block;">' +
+      '    <source src="' + esc(promo.videoPath) + '" type="video/mp4" />' +
+      '  </video>' +
+      '</article>'
+    );
+  }
 
   function esc(s) {
     return String(s == null ? "" : s)
@@ -65,28 +130,31 @@
   }
 
   // --------------------------------------------------------------------------
-  // 1. Course 7-Module Interactive SVG MindMap + PNG Certificate Generator
+  // 1. Course 10-Module Interactive SVG MindMap + PNG Certificate Generator
   // --------------------------------------------------------------------------
   function renderCourseMindMapSvg(enM) {
     var nodes = [
-      { n: 1, x: 105, y: 58, lbl: "HP 01 · Địa–Thủy", sub: "34 Tỉnh · Đô Giang Yển", col: "#8C2318" },
-      { n: 2, x: 255, y: 40, lbl: "HP 02 · Sử–Danh Nhân", sub: "14 Triều Đại · Cố Đô", col: "#8C2318" },
-      { n: 3, x: 410, y: 40, lbl: "HP 03 · Triết–3D", sub: "Đấu Củng · Thiên Đàn", col: "#1F6E5C" },
-      { n: 4, x: 560, y: 58, lbl: "HP 04 · Thi–Họa–HSK", sub: "100 Lục Thư · Quốc Họa", col: "#1F6E5C" },
-      { n: 5, x: 165, y: 178, lbl: "HP 05 · Lão Tự Hiệu", sub: "100 Brands · 30 GI", col: "#A88940" },
-      { n: 6, x: 335, y: 192, lbl: "HP 06 · Trung–Việt", sub: "10 Kỳ Quan · Du Học CSC", col: "#6E5423" },
-      { n: 7, x: 505, y: 178, lbl: "HP 07 · EU Trade Docs", sub: "Incoterms · CBAM · EUDR", col: "#223A52" }
+      { n: 1, x: 92, y: 46, lbl: "HP 01 · Địa–Thủy", sub: "34 Tỉnh · Đô Giang Yển", col: "#8C2318" },
+      { n: 2, x: 240, y: 40, lbl: "HP 02 · Sử–Danh Nhân", sub: "14 Triều · Cố Đô", col: "#8C2318" },
+      { n: 3, x: 390, y: 40, lbl: "HP 03 · Triết–3D", sub: "24 Phòng WebGL 3D", col: "#1F6E5C" },
+      { n: 4, x: 540, y: 40, lbl: "HP 04 · Thi–Họa–HSK", sub: "150 Lục Thư · 60 HSK", col: "#1F6E5C" },
+      { n: 5, x: 688, y: 46, lbl: "HP 05 · Lão Tự Hào", sub: "120 Brands · 42 GI", col: "#A88940" },
+      { n: 6, x: 92, y: 214, lbl: "HP 06 · Trung–Việt", sub: "16 Kỳ Quan · 36 CSC", col: "#6E5423" },
+      { n: 7, x: 240, y: 222, lbl: "HP 07 · Trade Docs", sub: "Incoterms · 15 Chứng Từ", col: "#223A52" },
+      { n: 8, x: 390, y: 222, lbl: "HP 08 · Mỹ Học 3D", sub: "8 Sắc Tố · Côn Khúc", col: "#8C2318" },
+      { n: 9, x: 540, y: 222, lbl: "HP 09 · Di Sản 240h", sub: "16 Tour · 16 Cao Tốc", col: "#1F6E5C" },
+      { n: 10, x: 688, y: 214, lbl: "HP 10 · GACC & Số", sub: "300 Thuật Ngữ · 600 MCQ", col: "#223A52" }
     ];
     var svgLinks = nodes.map(function (nd) {
-      return '<line x1="335" y1="115" x2="' + nd.x + '" y2="' + nd.y + '" stroke="' + (st.mindMod === nd.n ? nd.col : "#c9bfa9") + '" stroke-width="' + (st.mindMod === nd.n ? "3" : "1.5") + '" stroke-dasharray="' + (st.mindMod === nd.n ? "none" : "4 3") + '" />';
+      return '<line x1="390" y1="130" x2="' + nd.x + '" y2="' + nd.y + '" stroke="' + (st.mindMod === nd.n ? nd.col : "#c9bfa9") + '" stroke-width="' + (st.mindMod === nd.n ? "3" : "1.5") + '" stroke-dasharray="' + (st.mindMod === nd.n ? "none" : "4 3") + '" />';
     }).join("");
     var svgNodes = nodes.map(function (nd) {
       var active = st.mindMod === nd.n;
       return (
         '<g style="cursor:pointer;" data-v6st-act="mind-mod" data-val="' + nd.n + '">' +
-        '  <rect x="' + (nd.x - 64) + '" y="' + (nd.y - 24) + '" width="128" height="48" rx="8" fill="' + (active ? nd.col : "#FBF9F4") + '" stroke="' + nd.col + '" stroke-width="' + (active ? "2.5" : "1.5") + '" />' +
-        '  <text x="' + nd.x + '" y="' + (nd.y - 4) + '" text-anchor="middle" font-size="10.5" font-weight="700" fill="' + (active ? "#FFFFFF" : "#1D1B18") + '">' + esc(nd.lbl) + '</text>' +
-        '  <text x="' + nd.x + '" y="' + (nd.y + 12) + '" text-anchor="middle" font-size="8.5" fill="' + (active ? "#F5E7CE" : "#5F584D") + '">' + esc(nd.sub) + '</text>' +
+        '  <rect x="' + (nd.x - 66) + '" y="' + (nd.y - 23) + '" width="132" height="46" rx="8" fill="' + (active ? nd.col : "#FBF9F4") + '" stroke="' + nd.col + '" stroke-width="' + (active ? "2.5" : "1.5") + '" />' +
+        '  <text x="' + nd.x + '" y="' + (nd.y - 3) + '" text-anchor="middle" font-size="10.2" font-weight="700" fill="' + (active ? "#FFFFFF" : "#1D1B18") + '">' + esc(nd.lbl) + '</text>' +
+        '  <text x="' + nd.x + '" y="' + (nd.y + 12) + '" text-anchor="middle" font-size="8.2" fill="' + (active ? "#F5E7CE" : "#5F584D") + '">' + esc(nd.sub) + '</text>' +
         '</g>'
       );
     }).join("");
@@ -94,19 +162,19 @@
     return (
       '<section id="cce-v6-mindmap-cert" class="card mb-2" style="padding:1rem 1.2rem;background:var(--bg-paper);border-left:4px solid var(--antique-gold);">' +
       '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.65rem;">' +
-      '    <div><div class="editorial-kicker" style="color:var(--imperial-red);">V6.0 VISUAL COURSE CONCEPT MAP &amp; CERTIFICATE · 课程思维导图</div>' +
-      '    <h4 style="margin:0.1rem 0 0;font-size:1.08rem;">' + (enM ? "Interactive 7-Module Knowledge Graph (Click a Node to Filter)" : "Bản đồ Tư duy Tương tác 7 Học phần (Nhấp từng nút để lọc Bài học Khóa học)") + '</h4></div>' +
+      '    <div><div class="editorial-kicker" style="color:var(--imperial-red);">V7.0 VISUAL COURSE CONCEPT MAP &amp; CERTIFICATE · 十大学科思维导图</div>' +
+      '    <h4 style="margin:0.1rem 0 0;font-size:1.08rem;">' + (enM ? "Interactive 10-Module Knowledge Graph (Click a Node to Filter)" : "Bản đồ Tư duy Tương tác 10 Học phần / 60 Bài (Nhấp từng nút để lọc Bài học)") + '</h4></div>' +
       '    <div style="display:flex;gap:0.4rem;align-items:center;flex-wrap:wrap;">' +
       '      <input type="text" class="form-input" style="max-width:200px;font-size:0.78rem;padding:0.25rem 0.5rem;" value="' + esc(st.studentName) + '" data-v6st-act="cert-name" placeholder="Tên học viên..." />' +
-      '      <button type="button" id="cce-v6-export-cert-btn" class="btn btn-primary btn-sm" data-v6st-act="export-cert">' + (enM ? "Download V6.0 PNG Certificate" : "Xuất Chứng chỉ Hoàn thành V6.0 (.PNG)") + '</button>' +
+      '      <button type="button" id="cce-v6-export-cert-btn" class="btn btn-primary btn-sm" data-v6st-act="export-cert">' + (enM ? "Download V7.0 PNG Certificate" : "Xuất Chứng chỉ V7.0 (.PNG)") + '</button>' +
       '    </div>' +
       '  </div>' +
       '  <div style="overflow-x:auto;">' +
-      '    <svg viewBox="0 0 670 232" style="width:100%;max-width:740px;height:auto;display:block;margin:0 auto;" role="img" aria-label="Course 7-Module Visual MindMap">' +
+      '    <svg viewBox="0 0 780 264" style="width:100%;max-width:860px;height:auto;display:block;margin:0 auto;" role="img" aria-label="Course 10-Module Visual MindMap">' +
       svgLinks +
-      '      <ellipse cx="335" cy="115" rx="68" ry="28" fill="#8C2318" stroke="#E5A93C" stroke-width="2" />' +
-      '      <text x="335" y="112" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">CCE V6.0 CORE</text>' +
-      '      <text x="335" y="127" text-anchor="middle" font-size="8.5" fill="#F5E7CE">42+ Bài Hệ thống</text>' +
+      '      <ellipse cx="390" cy="130" rx="84" ry="30" fill="#8C2318" stroke="#E5A93C" stroke-width="2" />' +
+      '      <text x="390" y="126" text-anchor="middle" font-size="11.5" font-weight="700" fill="#FFFFFF">CCE V7.0 CORE</text>' +
+      '      <text x="390" y="142" text-anchor="middle" font-size="8.6" fill="#F5E7CE">10 Học Phần · 60 Bài · 24 3D</text>' +
       svgNodes +
       '    </svg>' +
       '  </div>' +
@@ -134,7 +202,7 @@
     ctx.fillStyle = "#8C2318";
     ctx.font = "bold 24px Georgia, serif";
     ctx.textAlign = "center";
-    ctx.fillText("CHINESE CULTURE EXPLORER · 中国文化探索 V6.0", 600, 130);
+    ctx.fillText("CHINESE CULTURE EXPLORER · 中国文化探索 V7.0", 600, 130);
 
     ctx.fillStyle = "#1D1B18";
     ctx.font = "bold 46px Georgia, serif";
@@ -142,7 +210,7 @@
 
     ctx.fillStyle = "#5F584D";
     ctx.font = "italic 22px Georgia, serif";
-    ctx.fillText("Awarded to Scholar / Practitioner", 600, 285);
+    ctx.fillText("Awarded to Scholar / Cultural Traveler", 600, 285);
 
     ctx.fillStyle = "#1F6E5C";
     ctx.font = "bold 42px Georgia, serif";
@@ -150,8 +218,8 @@
 
     ctx.fillStyle = "#3A352E";
     ctx.font = "20px sans-serif";
-    ctx.fillText("Completed 7 Curriculum Modules (42 Sequential Lessons), 100 Honored Brands,", 600, 435);
-    ctx.fillText("100 Liushu Etymology, Non-Clinical East Asian Thought, & EU–China–VN Supply Chain.", 600, 468);
+    ctx.fillText("Completed 10 Curriculum Modules (60 Sequential Lessons), 24 WebGL 3D Studios,", 600, 435);
+    ctx.fillText("120 Honored Brands, 150 Liushu Roots, 16 Heritage Expeditions & 600-MCQ Challenge.", 600, 468);
 
     ctx.fillStyle = "#8C2318";
     ctx.fillRect(910, 540, 115, 115);
@@ -163,10 +231,10 @@
     ctx.fillStyle = "#5F584D";
     ctx.textAlign = "left";
     ctx.font = "18px monospace";
-    ctx.fillText("RELEASE TAG: V6.0 VISUAL & ENCYCLOPEDIC EDITION · DATE: " + new Date().toISOString().slice(0, 10), 95, 650);
+    ctx.fillText("RELEASE TAG: V7.0 WORLD HERITAGE & ACADEMY · DATE: " + new Date().toISOString().slice(0, 10), 95, 650);
 
     var a = document.createElement("a");
-    a.download = "CCE-V6-Certificate.png";
+    a.download = "CCE-V7-Certificate.png";
     a.href = cv.toDataURL("image/png");
     a.click();
   }
@@ -199,7 +267,7 @@
     if (st50.length) subBar.push({ id: "st50", lbl: st50.length + " Giản–Phồn Bất Đối Xứng" });
     if (mw40.length) subBar.push({ id: "mw40", lbl: mw40.length + " Lượng Từ Hình Khối" });
     if (cy36.length) subBar.push({ id: "cy36", lbl: cy36.length + " Thành Ngữ 3 Khung" });
-    subBar.push({ id: "novels", lbl: novels.length + " Đồ Thị Tứ Đại Danh Tác" });
+    subBar.push({ id: "novels", lbl: novels.length + " Đồ Thị Đại Danh Tác" });
     subBar.push({ id: "poems", lbl: poems.length + " Thi Trung Hữu Họa" });
     subBar.push({ id: "wenyan", lbl: wenyan.length + " Hư Từ Văn Ngôn" });
     if (hsk40.length || hv15.length) subBar.push({ id: "hsk_vn", lbl: hsk40.length + " Bài Đọc HSK & " + hv15.length + " Thơ Đường–Việt" });
@@ -215,7 +283,16 @@
         { id: "zhuanzhu", lbl: "Chuyển Chú" },
         { id: "jiajie", lbl: "Giả Tá" }
       ];
-      var filteredChars = chars.filter(function (c) { return st.liushuCat === "all" || c.liushuType === st.liushuCat; });
+      var catAliases = {
+        xiangxing: "Tượng hình", zhishi: "Chỉ sự", huiyi: "Hội ý",
+        xingsheng: "Hình thanh", zhuanzhu: "Chuyển chú", jiajie: "Giả tá"
+      };
+      var filteredChars = chars.filter(function (c) {
+        if (st.liushuCat === "all") return true;
+        var lt = String(c.liushuType || "").toLowerCase();
+        var alias = String(catAliases[st.liushuCat] || "").toLowerCase();
+        return lt === st.liushuCat || (alias && lt === alias);
+      });
       content =
         '<div class="filter-bar" style="margin-bottom:0.75rem;">' +
         cats.map(function (c) {
@@ -449,15 +526,18 @@
         ) : "");
     }
 
+    var v7yt = (window.CCE_V7_ENCYCLOPEDIA && window.CCE_V7_ENCYCLOPEDIA.youtubeVideos12) || [];
+    var litYt = v7yt.find ? v7yt.find(function (x) { return x.youtubeId === "QfU7sU_iCQM"; }) : null;
     return (
       '<section id="cce-v6-liushu-studio" style="margin-top:1.35rem;padding-top:1rem;border-top:2px solid var(--hairline);">' +
-      '  <div class="editorial-kicker" style="color:var(--jade-green);">V6.0 PHÒNG CHIẾT TỰ 100 LỤC THƯ, BẠN GIẢ HÁN–VIỆT, GIẢN–PHỒN, LƯỢNG TỪ, ĐỒ THỊ DANH TÁC &amp; HSK 4–9</div>' +
+      '  <div class="editorial-kicker" style="color:var(--jade-green);">V7.0 PHÒNG CHIẾT TỰ ' + chars.length + ' LỤC THƯ, ' + ff30.length + ' BẠN GIẢ HÁN–VIỆT, ' + st50.length + ' GIẢN–PHỒN, ' + novels.length + ' ĐỒ THỊ DANH TÁC &amp; ' + hsk40.length + ' HSK 4–9</div>' +
       '  <div class="filter-bar" style="margin:0.5rem 0 0.85rem;">' +
       subBar.map(function (sb) {
         return '<button type="button" class="filter-pill ' + (st.liushuTab === sb.id ? "active" : "") + '" data-v6st-act="ltab" data-val="' + sb.id + '">' + sb.lbl + '</button>';
       }).join("") +
       '  </div>' +
       content +
+      (litYt ? '<div style="margin-top:0.85rem;max-width:460px;">' + renderYoutubeCard(litYt, enM) + '</div>' : "") +
       '</section>'
     );
   }
@@ -649,18 +729,21 @@
         '</div>';
     }
 
+    var v7ytCosmo = (window.CCE_V7_ENCYCLOPEDIA && window.CCE_V7_ENCYCLOPEDIA.youtubeVideos12) || [];
+    var cosmoYt = v7ytCosmo.find ? v7ytCosmo.find(function (x) { return x.youtubeId === "qTrd010vMp8"; }) : null;
     return (
       '<section id="cce-v6-cosmo-studio" style="margin-top:1.4rem;padding-top:1rem;border-top:2px solid var(--hairline);">' +
-      '  <div class="editorial-kicker" style="color:var(--jade-green);">V6.0 ĐĨA THIÊN VĂN 24 TIẾT KHÍ, 28 NHỊ THẬP BÁT TÚ, NGŨ HÀNH ĐỘNG, HERBARIUM 48 VỊ &amp; VI KHÍ HẬU</div>' +
+      '  <div class="editorial-kicker" style="color:var(--jade-green);">V7.0 ĐĨA THIÊN VĂN 24 TIẾT KHÍ, 28 NHỊ THẬP BÁT TÚ, NGŨ HÀNH ĐỘNG, HERBARIUM ' + herbs.length + ' VỊ &amp; ' + micros.length + ' VI KHÍ HẬU</div>' +
       '  <div class="epistemic-box critical" style="margin:0.45rem 0 0.75rem;font-size:0.79rem;">' + esc(notice) + '</div>' +
       '  <div class="filter-bar" style="margin-bottom:0.75rem;">' +
       '    <button type="button" class="filter-pill ' + (st.cosmoSub === "wheel" ? "active" : "") + '" data-v6st-act="csub" data-val="wheel">Đĩa 24 Tiết Khí &amp; Ngũ Hành SVG</button>' +
       '    <button type="button" class="filter-pill ' + (st.cosmoSub === "herbs" ? "active" : "") + '" data-v6st-act="csub" data-val="herbs">Herbarium ' + herbs.length + ' Vị Thực Dưỡng</button>' +
       '    <button type="button" class="filter-pill ' + (st.cosmoSub === "micro" ? "active" : "") + '" data-v6st-act="csub" data-val="micro">' + micros.length + ' Kiến Trúc Vi Khí Hậu Cổ</button>' +
       (stars28.length ? '<button type="button" class="filter-pill ' + (st.cosmoSub === "stars9" ? "active" : "") + '" data-v6st-act="csub" data-val="stars9">28 Nhị Thập Bát Tú &amp; 9 Thể Chất</button>' : "") +
-      (cases12.length ? '<button type="button" class="filter-pill ' + (st.cosmoSub === "cases12" ? "active" : "") + '" data-v6st-act="csub" data-val="cases12">12 Chuyên Đề Khoa Học Cổ</button>' : "") +
+      (cases12.length ? '<button type="button" class="filter-pill ' + (st.cosmoSub === "cases12" ? "active" : "") + '" data-v6st-act="csub" data-val="cases12">' + cases12.length + ' Chuyên Đề Khoa Học Cổ</button>' : "") +
       '  </div>' +
       body +
+      (cosmoYt ? '<div style="margin-top:0.85rem;max-width:460px;">' + renderYoutubeCard(cosmoYt, enM) + '</div>' : "") +
       '</section>'
     );
   }
@@ -738,7 +821,7 @@
       ) : "") +
       (curDoc ? (
         '<div id="cce-v6-annotated-docs-box" class="card" style="padding:1rem;border-top:3px solid var(--jade-green);">' +
-        '  <div class="editorial-kicker" style="color:var(--jade-green);">10 CHỨNG TỪ XUẤT NHẬP KHẨU ĐIỂM NÓNG (B/L · SMGS · ICS2 · FORM E · EUR.1 · CBAM · EUDR)</div>' +
+        '  <div class="editorial-kicker" style="color:var(--jade-green);">' + docs.length + ' CHỨNG TỪ XUẤT NHẬP KHẨU ĐIỂM NÓNG (B/L · SMGS · GACC · FORM E · CIPS · USANCE L/C)</div>' +
         '  <div class="filter-bar" style="margin:0.45rem 0 0.75rem;">' +
         docs.map(function (dc) {
           var dTitle = dc.nameEn || dc.titleEn || dc.nameVi;
@@ -884,15 +967,177 @@
         '</div>';
     }
 
+    var v7ytSv = (window.CCE_V7_ENCYCLOPEDIA && window.CCE_V7_ENCYCLOPEDIA.youtubeVideos12) || [];
+    var svYtList = v7ytSv.filter ? v7ytSv.filter(function (x) { return x.youtubeId === "9wJCltuawSs" || x.youtubeId === "ROFmtJLCq1k"; }) : [];
     return (
       '<section id="cce-v6-sinoviet-csc" style="margin-top:1.4rem;padding-top:1rem;border-top:2px solid var(--hairline);">' +
-      '  <div class="editorial-kicker" style="color:var(--imperial-red);">V6.0 ĐỐI SÁNH VĂN HIẾN TRUNG–VIỆT, BẢN ĐỒ HỌC BỔNG CSC 24 TRƯỜNG &amp; CAO TỐC 12306</div>' +
+      '  <div class="editorial-kicker" style="color:var(--imperial-red);">V7.0 ĐỐI SÁNH VĂN HIẾN TRUNG–VIỆT (' + wonders.length + '), BẢN ĐỒ HỌC BỔNG CSC ' + unis.length + ' TRƯỜNG &amp; ' + hsr.length + ' TUYẾN CAO TỐC 12306</div>' +
       '  <div class="filter-bar" style="margin:0.45rem 0 0.8rem;">' +
-      '    <button type="button" class="filter-pill ' + (st.svSub === "wonders" ? "active" : "") + '" data-v6st-act="svsub" data-val="wonders">10 Cặp Kỳ Quan Trung–Việt</button>' +
-      '    <button type="button" class="filter-pill ' + (st.svSub === "csc_unis" ? "active" : "") + '" data-v6st-act="svsub" data-val="csc_unis">24 Trường Học Bổng CSC</button>' +
+      '    <button type="button" class="filter-pill ' + (st.svSub === "wonders" ? "active" : "") + '" data-v6st-act="svsub" data-val="wonders">' + wonders.length + ' Cặp Kỳ Quan Trung–Việt</button>' +
+      '    <button type="button" class="filter-pill ' + (st.svSub === "csc_unis" ? "active" : "") + '" data-v6st-act="svsub" data-val="csc_unis">' + unis.length + ' Trường Học Bổng CSC</button>' +
       '    <button type="button" class="filter-pill ' + (st.svSub === "csc_gantt" ? "active" : "") + '" data-v6st-act="svsub" data-val="csc_gantt">Gantt 12 Tháng Hồ Sơ CSC</button>' +
-      '    <button type="button" class="filter-pill ' + (st.svSub === "csc_int" ? "active" : "") + '" data-v6st-act="svsub" data-val="csc_int">24 Câu Hỏi Phỏng Vấn CSC</button>' +
-      '    <button type="button" class="filter-pill ' + (st.svSub === "hsr" ? "active" : "") + '" data-v6st-act="svsub" data-val="hsr">Mạng Cao Tốc 12306 Bát Tung</button>' +
+      '    <button type="button" class="filter-pill ' + (st.svSub === "csc_int" ? "active" : "") + '" data-v6st-act="svsub" data-val="csc_int">' + ints.length + ' Câu Hỏi Phỏng Vấn CSC</button>' +
+      '    <button type="button" class="filter-pill ' + (st.svSub === "hsr" ? "active" : "") + '" data-v6st-act="svsub" data-val="hsr">' + hsr.length + ' Tuyến Cao Tốc 12306</button>' +
+      '  </div>' +
+      body +
+      (svYtList.length ? '<div class="grid grid-2" style="gap:0.75rem;margin-top:0.85rem;">' + svYtList.map(function (vy) { return renderYoutubeCard(vy, enM); }).join("") + '</div>' : "") +
+      '</section>'
+    );
+  }
+
+  // --------------------------------------------------------------------------
+  // 6. V7.0 World Cultural & Tourism Benchmark Studio:
+  //    16 Expeditions + 8 Concierge 240h + 8 Pigments + 6 Benchmarks + Cinema
+  // --------------------------------------------------------------------------
+  function renderWorldTourismAndMuseumStudio(enM) {
+    var v7 = window.CCE_V7_ENCYCLOPEDIA || {};
+    var exps = v7.heritageExpeditions16 || [];
+    var guides = v7.digitalTravelConcierge8 || [];
+    var pigments = v7.traditionalPigments8 || [];
+    var benches = v7.globalPlatformBenchmarks6 || [];
+    var yts = v7.youtubeVideos12 || [];
+    if (!exps.length && !guides.length && !pigments.length) return "";
+
+    var body = "";
+    if (st.worldTab === "expeditions") {
+      var regions = ["all"];
+      exps.forEach(function (ex) {
+        if (ex.regionGroup && regions.indexOf(ex.regionGroup) === -1) regions.push(ex.regionGroup);
+      });
+      var filtered = exps.filter(function (ex) {
+        return st.expRegion === "all" || ex.regionGroup === st.expRegion;
+      });
+      body =
+        '<div class="filter-bar" style="margin-bottom:0.75rem;">' +
+        regions.map(function (r) {
+          return '<button type="button" class="filter-pill ' + (st.expRegion === r ? "active" : "") + '" data-v6st-act="expflt" data-val="' + esc(r) + '" style="font-size:0.73rem;">' + (r === "all" ? (enM ? "All " + exps.length + " Routes" : "Tất cả (" + exps.length + ")") : esc(r)) + '</button>';
+        }).join("") +
+        '</div>' +
+        '<div class="grid grid-2" style="gap:0.85rem;max-height:660px;overflow:auto;">' +
+        filtered.map(function (ex) {
+          var stops = Array.isArray(ex.stops) ? ex.stops : [];
+          var svgStops =
+            '<svg viewBox="0 0 640 72" style="width:100%;height:auto;margin:0.35rem 0;" role="img" aria-label="Expedition Route">' +
+            '  <line x1="36" y1="26" x2="604" y2="26" stroke="#C59B40" stroke-width="2" stroke-dasharray="4 3" />' +
+            stops.slice(0, 5).map(function (stName, si) {
+              var sx = 54 + si * 130;
+              return (
+                '<circle cx="' + sx + '" cy="26" r="7" fill="#8C2318" stroke="#E5A93C" stroke-width="2" />' +
+                '<text x="' + sx + '" y="48" text-anchor="middle" font-size="9.5" fill="currentColor">' + esc(String(stName).slice(0, 18)) + '</text>'
+              );
+            }).join("") +
+            '</svg>';
+          return (
+            '<article class="flashcard-layer" style="display:flex;flex-direction:column;gap:0.4rem;font-size:0.8rem;">' +
+            '  <div class="img-skeleton-bg" style="aspect-ratio:16/9;max-height:140px;overflow:hidden;border-radius:var(--radius);border:1px solid var(--hairline);cursor:pointer;" data-action="open-custom-image" data-src="' + esc(ex.imagePath) + '" data-caption="' + esc(enM ? ex.titleEn : ex.titleVi) + '">' +
+            '    <img src="' + esc(ex.imagePath) + '" alt="' + esc(ex.titleVi) + '" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;" />' +
+            '  </div>' +
+            '  <div style="display:flex;justify-content:space-between;align-items:center;gap:0.4rem;flex-wrap:wrap;">' +
+            '    <span class="badge badge-red">' + esc(ex.daysCount) + (enM ? " Days" : " Ngày") + ' · ' + esc(ex.estimatedBudgetUsd) + '</span>' +
+            '    <span class="badge badge-jade">' + esc(ex.regionGroup) + '</span>' +
+            '  </div>' +
+            '  <h4 style="margin:0;font-size:0.96rem;">' + esc(enM ? ex.titleEn : ex.titleVi) + '</h4>' +
+            '  <div class="hanzi text-xs" style="color:var(--imperial-red);">' + esc(ex.titleZh) + ' · HSR: ' + esc(ex.hsrRef) + '</div>' +
+            svgStops +
+            '  <p style="margin:0;color:var(--text-secondary);">' + esc(enM ? ex.summaryEn : ex.summaryVi) + '</p>' +
+            '  <div style="font-size:0.74rem;color:var(--jade-green);"><strong>' + (enM ? "Best Season:" : "Mùa đẹp nhất:") + '</strong> ' + esc(enM ? ex.bestSeasonEn : ex.bestSeasonVi) + '</div>' +
+            (Array.isArray(ex.dayByDayOutlineVi) ? '<details class="ed-details" style="font-size:0.76rem;"><summary style="cursor:pointer;font-weight:700;color:var(--imperial-red);">' + (enM ? "Day-by-Day Itinerary →" : "Lịch trình từng ngày →") + '</summary><ul style="margin:0.35rem 0 0;padding-left:1.1rem;">' + (enM && Array.isArray(ex.dayByDayOutlineEn) ? ex.dayByDayOutlineEn : ex.dayByDayOutlineVi).map(function (d) { return '<li>' + esc(d) + '</li>'; }).join("") + '</ul></details>' : "") +
+            (ex.youtubeId ? '<div style="margin-top:auto;padding-top:0.35rem;"><a href="https://www.youtube.com/watch?v=' + esc(ex.youtubeId) + '" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">' + (enM ? "Watch YouTube Documentary ↗" : "Xem Phim Tài Liệu YouTube ↗") + '</a></div>' : "") +
+            '</article>'
+          );
+        }).join("") +
+        '</div>';
+    } else if (st.worldTab === "concierge") {
+      var conDone = loadConciergeDone();
+      body =
+        '<div class="grid grid-2" style="gap:0.75rem;max-height:640px;overflow:auto;">' +
+        guides.map(function (g) {
+          var list = (enM && Array.isArray(g.actionChecklistEn)) ? g.actionChecklistEn : (g.actionChecklistVi || []);
+          return (
+            '<article class="card" style="padding:0.85rem 1rem;border-left:4px solid var(--jade-green);font-size:0.8rem;">' +
+            '  <div style="display:flex;justify-content:space-between;align-items:center;gap:0.4rem;">' +
+            '    <span class="badge badge-gold">STEP ' + esc(g.stepNum) + ' · 240H &amp; DIGITAL CONCIERGE</span>' +
+            spk(g.emergencyPhraseZh) +
+            '  </div>' +
+            '  <h4 style="margin:0.3rem 0 0.2rem;font-size:0.95rem;">' + esc(enM ? g.titleEn : g.titleVi) + '</h4>' +
+            '  <div class="hanzi text-xs" style="color:var(--imperial-red);margin-bottom:0.3rem;">' + esc(g.titleZh) + '</div>' +
+            '  <p style="margin:0 0 0.45rem;color:var(--text-secondary);">' + esc(enM ? g.summaryEn : g.summaryVi) + '</p>' +
+            '  <div style="display:grid;gap:0.25rem;">' +
+            list.map(function (it, li) {
+              var ckKey = g.id + "_" + li;
+              var isChk = Boolean(conDone[ckKey]);
+              return '<label style="display:flex;gap:0.4rem;align-items:flex-start;cursor:pointer;"><input type="checkbox" ' + (isChk ? "checked" : "") + ' data-v6st-act="concheck" data-val="' + esc(ckKey) + '" style="margin-top:0.2rem;" /><span>' + esc(it) + '</span></label>';
+            }).join("") +
+            '  </div>' +
+            '  <div style="margin-top:0.5rem;padding:0.45rem 0.6rem;background:var(--bg-paper);border:1px solid var(--hairline);font-size:0.76rem;">' +
+            '    <strong>' + (enM ? "Field Mandarin:" : "Câu Thực Địa:") + '</strong> <span class="hanzi">' + esc(g.emergencyPhraseZh) + '</span> ' + spk(g.emergencyPhraseZh) +
+            '    <div class="pinyin">' + esc(g.emergencyPhrasePinyin) + '</div>' +
+            '    <div style="color:var(--text-muted);">' + esc(g.emergencyPhraseMeaningVi) + '</div>' +
+            '  </div>' +
+            '</article>'
+          );
+        }).join("") +
+        '</div>';
+    } else if (st.worldTab === "pigments") {
+      var curPig = pigments[st.pigmentIdx % Math.max(1, pigments.length)] || pigments[0];
+      body =
+        '<div style="display:flex;gap:0.65rem;flex-wrap:wrap;margin-bottom:0.85rem;">' +
+        pigments.map(function (pg, pi) {
+          var isAct = pi === (st.pigmentIdx % pigments.length);
+          return (
+            '<button type="button" data-v6st-act="pigment" data-val="' + pi + '" class="flashcard-layer" style="cursor:pointer;display:flex;align-items:center;gap:0.5rem;padding:0.45rem 0.75rem;border:2px solid ' + (isAct ? "#E5A93C" : "var(--hairline)") + ';">' +
+            '  <span style="width:22px;height:22px;border-radius:50%;background:' + esc(pg.hex) + ';border:1px solid #888;display:inline-block;flex-shrink:0;"></span>' +
+            '  <span style="font-size:0.78rem;font-weight:700;">' + esc(enM ? pg.nameEn : pg.nameVi) + '</span>' +
+            '</button>'
+          );
+        }).join("") +
+        '</div>' +
+        (curPig ? (
+          '<article class="card" style="padding:1rem 1.2rem;border-left:8px solid ' + esc(curPig.hex) + ';display:grid;gap:0.4rem;">' +
+          '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">' +
+          '    <span class="badge badge-gold">HEX ' + esc(curPig.hex) + ' · ' + esc(curPig.pinyin) + '</span>' +
+          spk(curPig.nameZh) +
+          '  </div>' +
+          '  <h4 style="margin:0;font-size:1.1rem;">' + esc(curPig.nameZh) + ' — ' + esc(enM ? curPig.nameEn : curPig.nameVi) + '</h4>' +
+          '  <div><strong>' + (enM ? "Mineral / Botanical Origin:" : "Nguồn Khoáng / Thực Vật:") + '</strong> ' + esc(enM ? curPig.mineralSourceEn : curPig.mineralSourceVi) + '</div>' +
+          '  <div><strong>' + (enM ? "Peak Dynasties:" : "Triều Đại Đỉnh Cao:") + '</strong> ' + esc(enM ? curPig.peakDynastyEn : curPig.peakDynastyVi) + '</div>' +
+          '  <div style="color:var(--jade-green);"><strong>' + (enM ? "Iconic Masterwork:" : "Kiệt Tác Bảo Tàng:") + '</strong> ' + esc(enM ? curPig.iconicMasterworkEn : curPig.iconicMasterworkVi) + '</div>' +
+          '</article>'
+        ) : "");
+    } else if (st.worldTab === "benchmarks") {
+      body =
+        '<div class="grid grid-2" style="gap:0.75rem;">' +
+        benches.map(function (b) {
+          return (
+            '<article class="flashcard-layer" style="font-size:0.8rem;border-left:4px solid var(--antique-gold);">' +
+            '  <span class="badge badge-gold">' + esc(b.countryOrScope) + '</span>' +
+            '  <h4 style="margin:0.35rem 0 0.25rem;color:var(--imperial-red);">' + esc(b.orgName) + '</h4>' +
+            '  <p style="margin:0.2rem 0;"><strong>' + (enM ? "Core Benchmark:" : "Tinh Hoa Học Hỏi:") + '</strong> ' + esc(enM ? b.coreBenchmarkFeatureEn : b.coreBenchmarkFeatureVi) + '</p>' +
+            '  <p style="margin:0.2rem 0;color:var(--jade-green);"><strong>' + (enM ? "CCE V7.0 Adoption:" : "Hiện Thực Hóa V7.0:") + '</strong> ' + esc(enM ? b.cceV7AdoptionEn : b.cceV7AdoptionVi) + '</p>' +
+            '  <div style="font-size:0.74rem;color:var(--text-muted);"><strong>' + (enM ? "V8.0 Loop:" : "Cải Tiến V8.0:") + '</strong> ' + esc(enM ? b.continuousLoopToV8En : b.continuousLoopToV8Vi) + '</div>' +
+            '</article>'
+          );
+        }).join("") +
+        '</div>';
+    } else {
+      body =
+        renderOfficialPromoCard(enM) +
+        '<h4 style="margin:1rem 0 0.6rem;font-size:1rem;">' + (enM ? yts.length + " Curated YouTube Documentaries (UNESCO, NatGeo, TED-Ed, DW)" : yts.length + " Video Tài Liệu YouTube Đính Kèm Theo Chuyên Mục") + '</h4>' +
+        '<div class="grid grid-2" style="gap:0.8rem;max-height:620px;overflow:auto;">' +
+        yts.map(function (vy) { return renderYoutubeCard(vy, enM); }).join("") +
+        '</div>';
+    }
+
+    return (
+      '<section id="cce-v7-world-tourism-studio" class="card mb-2" style="margin-top:1.5rem;padding:1.15rem 1.25rem;border-top:3px solid #E5A93C;">' +
+      '  <div class="editorial-kicker" style="color:var(--imperial-red);">V7.0 GLOBAL CULTURAL &amp; HERITAGE TOURISM HUB · 世界遗产远征、数字出行、矿物色谱与影视馆</div>' +
+      '  <h3 style="margin:0.15rem 0 0.55rem;font-size:1.22rem;">' + (enM ? "World Heritage Expeditions (16), Smart 240h Concierge (8), Mineral Pigments &amp; Cinema Hub" : "Studio Di Sản Thế Giới (" + exps.length + " Tour), Cẩm Nang Số 240h (" + guides.length + "), Sắc Tố Bảo Tàng &amp; Video Quảng Cáo Website") + '</h3>' +
+      '  <div class="filter-bar" style="margin-bottom:0.85rem;">' +
+      '    <button type="button" class="filter-pill ' + (st.worldTab === "expeditions" ? "active" : "") + '" data-v6st-act="wtab" data-val="expeditions">' + exps.length + ' Hành Trình Di Sản</button>' +
+      '    <button type="button" class="filter-pill ' + (st.worldTab === "concierge" ? "active" : "") + '" data-v6st-act="wtab" data-val="concierge">' + guides.length + ' Cẩm Nang 240h &amp; Alipay</button>' +
+      '    <button type="button" class="filter-pill ' + (st.worldTab === "pigments" ? "active" : "") + '" data-v6st-act="wtab" data-val="pigments">' + pigments.length + ' Sắc Tố Cổ Điển</button>' +
+      '    <button type="button" class="filter-pill ' + (st.worldTab === "benchmarks" ? "active" : "") + '" data-v6st-act="wtab" data-val="benchmarks">' + benches.length + ' Benchmark Tập Đoàn</button>' +
+      '    <button type="button" class="filter-pill ' + (st.worldTab === "cinema" ? "active" : "") + '" data-v6st-act="wtab" data-val="cinema">Video Quảng Cáo &amp; ' + yts.length + ' YouTube</button>' +
       '  </div>' +
       body +
       '</section>'
@@ -923,6 +1168,13 @@
       else if (act === "doc") { st.docId = val; st.docBox = 1; }
       else if (act === "dbox") st.docBox = Number(val) || 1;
       else if (act === "svsub") st.svSub = val;
+      else if (act === "wtab") st.worldTab = val;
+      else if (act === "expflt") st.expRegion = val || "all";
+      else if (act === "pigment") st.pigmentIdx = Number(val) || 0;
+      else if (act === "play-yt") {
+        if (!st.ytActive) st.ytActive = {};
+        if (val) st.ytActive[val] = true;
+      }
       else if (act === "export-cert") { exportCertificatePng(); return; }
       else if (act === "srs") {
         if (window.CCE_SRS && window.CCE_SRS.addCard) {
@@ -943,10 +1195,17 @@
     });
     document.addEventListener("change", function (e) {
       var el = e.target;
-      if (el && el.getAttribute && el.getAttribute("data-v6st-act") === "gantt") {
+      if (!el || !el.getAttribute) return;
+      var act = el.getAttribute("data-v6st-act");
+      if (act === "gantt") {
         var map = loadGanttDone();
         map[el.getAttribute("data-val")] = Boolean(el.checked);
         try { localStorage.setItem("cce_v6_csc_gantt", JSON.stringify(map)); } catch (_e) {}
+        if (typeof window.CCE_RENDER === "function") window.CCE_RENDER();
+      } else if (act === "concheck") {
+        var cmap = loadConciergeDone();
+        cmap[el.getAttribute("data-val")] = Boolean(el.checked);
+        try { localStorage.setItem("cce_v7_concierge_done", JSON.stringify(cmap)); } catch (_e) {}
         if (typeof window.CCE_RENDER === "function") window.CCE_RENDER();
       }
     });
@@ -965,6 +1224,9 @@
     renderCosmologyVisualWheel: renderCosmologyVisualWheel,
     renderTradeIncotermsAndDocs: renderTradeIncotermsAndDocs,
     renderSinoVietAndCscStudio: renderSinoVietAndCscStudio,
+    renderWorldTourismAndMuseumStudio: renderWorldTourismAndMuseumStudio,
+    renderYoutubeCard: renderYoutubeCard,
+    renderOfficialPromoCard: renderOfficialPromoCard,
     exportCertificatePng: exportCertificatePng
   };
 })();

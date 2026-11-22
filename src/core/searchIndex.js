@@ -434,6 +434,30 @@
     });
 
     var v6Lit = window.CCE_V6_LITERATURE_VISUAL || {};
+    (v6Lit.novelGraphs4 || []).forEach(function (ng) {
+      out.push({
+        type: "article",
+        id: "literature-classics",
+        title: "[Đồ thị Nhân vật] " + (ng.titleVi || ng.id) + " (" + (ng.titleZh || "") + ")",
+        titleEn: "[Character Network] " + (ng.titleEn || ng.titleVi || ng.id),
+        zh: ng.titleZh || "",
+        sub: (ng.authorVi || "") + " · " + (ng.era || ""),
+        rawTitle: norm((ng.titleVi || "") + " " + (ng.titleEn || "") + " " + (ng.titleZh || "") + " " + (ng.authorVi || "")),
+        body: norm((ng.summaryVi || "") + " " + (ng.nodes || []).map(function (n) { return (n.nameVi || "") + " " + (n.zh || ""); }).join(" "))
+      });
+    });
+    (v6Lit.wenyanSyntaxTokens30 || []).forEach(function (wt) {
+      out.push({
+        type: "dict",
+        id: "literature-classics",
+        title: "[Văn ngôn] " + (wt.tokenZh || wt.zh || "") + " (" + (wt.hanViet || "") + ")",
+        titleEn: "[Classical Syntax] " + (wt.tokenZh || wt.zh || "") + " (" + (wt.pinyin || "") + ")",
+        zh: wt.tokenZh || wt.zh || "",
+        sub: wt.partOfSpeechVi || "Classical Function Word",
+        rawTitle: norm((wt.tokenZh || wt.zh || "") + " " + (wt.hanViet || "") + " " + (wt.pinyin || "")),
+        body: norm((wt.exampleClassicalZh || "") + " " + (wt.translationVi || ""))
+      });
+    });
     (v6Lit.poemPaintingPairs24 || []).forEach(function (pp) {
       out.push({
         type: "article",
@@ -520,6 +544,80 @@
         sub: "Agency " + (cu.agencyNo || cu.agencyNumber) + " · " + cu.cityVi,
         rawTitle: norm(cu.zh + " " + cu.nameVi + " " + cu.cityVi + " " + (cu.agencyNo || cu.agencyNumber)),
         body: norm(cu.majorsVi || cu.strengthsVi || "")
+      });
+    });
+
+    var v7E = window.CCE_V7_ENCYCLOPEDIA || {};
+    (v7E.lessons18 || []).forEach(function (ls) {
+      out.push({
+        type: "explore",
+        id: ls.id || "explore",
+        title: "[Học phần " + ls.moduleNum + " · Bài " + ls.lessonNum + "] " + ls.titleVi,
+        titleEn: "[Module " + ls.moduleNum + " · L" + ls.lessonNum + "] " + ls.titleEn,
+        zh: ls.titleZh || "",
+        sub: ls.coreQuestionVi || "V7.0 Sequential Curriculum",
+        rawTitle: norm(ls.titleVi + " " + ls.titleEn + " " + (ls.titleZh || "")),
+        body: norm(ls.synthesisParagraphVi || "")
+      });
+    });
+    (v7E.heritageExpeditions16 || []).forEach(function (ex) {
+      out.push({
+        type: "explore",
+        id: ex.id,
+        title: "[Hành trình Di sản " + ex.daysCount + "N] " + ex.titleVi + " (" + ex.titleZh + ")",
+        titleEn: "[Expedition " + ex.daysCount + "D] " + ex.titleEn,
+        zh: ex.titleZh || "",
+        sub: ex.regionGroup + " · " + ex.hsrRef + " · " + ex.estimatedBudgetUsd,
+        rawTitle: norm(ex.titleVi + " " + ex.titleEn + " " + ex.titleZh + " " + ex.regionGroup + " " + (ex.stops || []).join(" ")),
+        body: norm(ex.summaryVi || "")
+      });
+    });
+    (v7E.digitalTravelConcierge8 || []).forEach(function (cg) {
+      out.push({
+        type: "explore",
+        id: cg.id,
+        title: "[Cẩm nang 240h #" + cg.stepNum + "] " + cg.titleVi,
+        titleEn: "[240h Concierge #" + cg.stepNum + "] " + cg.titleEn,
+        zh: cg.titleZh || "",
+        sub: cg.emergencyPhraseZh || "Alipay · 12306 · 240h Visa-Free",
+        rawTitle: norm(cg.titleVi + " " + cg.titleEn + " " + cg.titleZh + " " + (cg.emergencyPhraseZh || "")),
+        body: norm(cg.summaryVi || "")
+      });
+    });
+    (v7E.traditionalPigments8 || []).forEach(function (pg) {
+      out.push({
+        type: "museum",
+        id: pg.id,
+        title: "[Sắc tố Bảo tàng] " + pg.nameVi + " (" + pg.nameZh + " · " + pg.hex + ")",
+        titleEn: "[Classical Pigment] " + pg.nameEn + " (" + pg.nameZh + ")",
+        zh: pg.nameZh || "",
+        sub: pg.pinyin + " · " + pg.mineralSourceVi,
+        rawTitle: norm(pg.nameZh + " " + pg.pinyin + " " + pg.nameVi + " " + pg.nameEn + " " + pg.hex),
+        body: norm((pg.peakDynastyVi || "") + " " + (pg.iconicMasterworkVi || ""))
+      });
+    });
+    (v7E.globalPlatformBenchmarks6 || []).forEach(function (bm) {
+      out.push({
+        type: "explore",
+        id: bm.id,
+        title: "[Benchmark Tập đoàn] " + bm.orgName,
+        titleEn: "[Global Benchmark] " + bm.orgName,
+        zh: "",
+        sub: bm.countryOrScope || "",
+        rawTitle: norm(bm.orgName + " " + bm.countryOrScope + " " + (bm.coreBenchmarkFeatureVi || "")),
+        body: norm(bm.cceV7AdoptionVi || "")
+      });
+    });
+    (v7E.youtubeVideos12 || []).forEach(function (yv) {
+      out.push({
+        type: "explore",
+        id: yv.id,
+        title: "[Video YouTube] " + yv.titleVi + " (" + yv.author + ")",
+        titleEn: "[YouTube Documentary] " + yv.titleEn,
+        zh: "",
+        sub: yv.sectionTag + " · " + yv.author,
+        rawTitle: norm(yv.titleVi + " " + yv.titleEn + " " + yv.author + " " + yv.sectionTag),
+        body: norm(yv.summaryVi || "")
       });
     });
 

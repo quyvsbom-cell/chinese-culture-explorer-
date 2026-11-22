@@ -71,6 +71,7 @@
     var scV5 = (window.CCE_V5_SUPPLY_CASES && window.CCE_V5_SUPPLY_CASES.cases24) || [];
     var scV6 = (window.CCE_V6_TRADE_AND_CSC && window.CCE_V6_TRADE_AND_CSC.extraSupplyCases16) || [];
     var supplyCases = scV5.concat(scV6);
+    var docsCount = ((window.CCE_V6_TRADE_AND_CSC && window.CCE_V6_TRADE_AND_CSC.annotatedTradeDocs10) || []).length || 15;
     if (!terms.length && !emails.length) return "";
 
     var q = trState.query.trim().toLowerCase();
@@ -305,7 +306,7 @@
         { id: "interviews", lbl: (enM ? (dialogues.length + " EU Dialogues & Interviews") : (dialogues.length + " Tình huống Hội thoại Âu–Trung")) },
         { id: "articles", lbl: (enM ? (parallelArticles.length + " Parallel Articles (ZH–EN–VI)") : (parallelArticles.length + " Bài Đọc Song hành Tam ngữ")) },
         { id: "cases24", lbl: (enM ? (supplyCases.length + " EU–China Incident Cases") : (supplyCases.length + " Case Sự cố Logistics Âu–Trung")) },
-        { id: "docs10", lbl: (enM ? "Incoterms® 2020 &amp; 10 Trade Docs" : "Incoterms® 2020 &amp; 10 Chứng Từ XNK") },
+        { id: "docs10", lbl: (enM ? ("Incoterms® 2020 &amp; " + docsCount + " Trade Docs") : ("Incoterms® 2020 &amp; " + docsCount + " Chứng Từ XNK")) },
         { id: "silkroad", lbl: (enM ? "Silk Road Historic–Modern 2026" : "Đường Tơ Lụa → Trung–Âu 2026") }
       ].map(function (t) {
         return '<button type="button" class="tab-btn ' + (trState.tab === t.id ? "active" : "") + '" data-trst-act="tab" data-val="' + t.id + '">' + t.lbl + '</button>';
