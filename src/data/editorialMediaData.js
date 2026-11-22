@@ -1484,8 +1484,8 @@
     },
     "img-infographic-sinoviet-script": {
       id: "img-infographic-sinoviet-script",
-      src: "assets/images/articles/hero-calligraphy-five-scripts.jpg",
-      srcSet: "assets/images/articles/hero-calligraphy-five-scripts.jpg",
+      src: "assets/images/articles/hero-academy-shuyuan.jpg",
+      srcSet: "assets/images/articles/hero-ai-deepseek-lab.jpg",
       titleVi: "Hệ thống Văn tự Hán – Nôm & Đối chiếu Ngữ âm Lịch sử Trung – Việt",
       titleEn: "Classical Script & Sino-Vietnamese Phonological Correspondence Plate",
       authorOrCreator: "Tư liệu Thư pháp & Văn bản Cổ điển",
@@ -1740,7 +1740,7 @@
     },
     "img-diagram-yinyang-cosmology": {
       id: "img-diagram-yinyang-cosmology",
-      src: "assets/images/articles/hero-yinyang.jpg",
+      src: "assets/images/articles/hero-b2b-negotiation-table.jpg",
       titleVi: "Triết lý Bố cục Âm Dương · Kế Bạch Đương Hắc (计白当黑)",
       titleZh: "太极阴阳与书法留白美学图式",
       titleEn: "Yin-Yang Polarity & Blank-Space Aesthetics in Classical Chinese Calligraphy",
@@ -1761,7 +1761,7 @@
     },
     "img-diagram-confucian-circles": {
       id: "img-diagram-confucian-circles",
-      src: "assets/images/articles/hero-confucianism.jpg",
+      src: "assets/images/articles/hero-chinese-banquet.jpg",
       titleVi: "Cấu trúc Tư tưởng Nho gia · Tứ Thư Ngũ Kinh & Đạo Trị Quốc",
       titleZh: "儒家礼治秩序与四书五经科举体系",
       titleEn: "Confucian Institutional Order: Four Books, Five Classics & Scholarly Governance",

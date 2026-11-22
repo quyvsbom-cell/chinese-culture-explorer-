@@ -20,23 +20,36 @@
     return '<button type="button" class="tts-speak-btn" data-lzh-speak="' + esc(zh) + '" title="Listen zh-CN"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></button>';
   }
 
-  function resolveBrandThumb(b, idx) {
-    if (b && b.imagePath) return b.imagePath;
+  function resolveBrandThumb(b, idx, usedSet) {
+    if (b && b.imagePath) {
+      if (usedSet) usedSet[b.imagePath] = true;
+      return b.imagePath;
+    }
     var vis = (window.CCE_PROVINCE_ITEM_VISUALS && b && b.provinceId && window.CCE_PROVINCE_ITEM_VISUALS[b.provinceId]) || {};
     var dishes = Array.isArray(vis.dishes) ? vis.dishes : [];
     var heritage = Array.isArray(vis.heritage) ? vis.heritage : [];
+    var food = Array.isArray(vis.festivals) ? vis.festivals : [];
+    var cands = (b && b.cat === "culinary")
+      ? dishes.concat(food, heritage)
+      : heritage.concat(dishes, food);
+    var fallbacks = [
+      "assets/images/articles/hero-laozihao-craft.jpg",
+      "assets/images/articles/hero-six-teas-gongfu.jpg",
+      "assets/images/articles/hero-tea-culture.jpg",
+      "assets/images/articles/hero-chinese-cuisines.jpg",
+      "assets/images/articles/hero-chinese-banquet.jpg",
+      "assets/images/museum/acupuncture-bronze.jpg"
+    ];
+    cands = cands.concat(fallbacks);
     var i = Math.abs(Number(idx) || 0);
-    if (b && b.cat === "culinary") {
-      return (dishes.length && dishes[i % dishes.length]) || (heritage.length && heritage[i % heritage.length]) || "assets/images/articles/hero-chinese-cuisines.jpg";
+    for (var k = 0; k < cands.length; k++) {
+      var pick = cands[(i + k) % cands.length];
+      if (pick && (!usedSet || !usedSet[pick])) {
+        if (usedSet) usedSet[pick] = true;
+        return pick;
+      }
     }
-    if (b && b.cat === "tea_spirits") {
-      var teaFallback = ["assets/images/articles/hero-six-teas-gongfu.jpg", "assets/images/articles/hero-tea-culture.jpg", "assets/images/articles/hero-chinese-banquet.jpg"];
-      return (dishes.length && dishes[(i + 1) % dishes.length]) || (heritage.length && heritage[i % heritage.length]) || teaFallback[i % teaFallback.length];
-    }
-    if (b && b.cat === "tcm_pharmacy") {
-      return (heritage.length && heritage[i % heritage.length]) || "assets/images/museum/acupuncture-bronze.jpg";
-    }
-    return (heritage.length && heritage[(i + 1) % heritage.length]) || "assets/images/articles/hero-laozihao-craft.jpg";
+    return cands[0] || "assets/images/articles/hero-laozihao-craft.jpg";
   }
 
   function renderLzhThumb(src, title) {
@@ -144,9 +157,11 @@
       '  </div>' +
       (filtered.length ? (
         '  <div class="grid grid-3" style="gap:0.85rem;">' +
-        filtered.map(function (b, idx) {
-          var thumbSrc = resolveBrandThumb(b, idx);
-          var thumbCap = (enM ? b.nameEn : b.hanViet) + " (" + b.zh + " · Est. " + b.foundedYear + ")";
+        (function () {
+          var usedBrandThumbs = Object.create(null);
+          return filtered.map(function (b, idx) {
+            var thumbSrc = resolveBrandThumb(b, idx, usedBrandThumbs);
+            var thumbCap = (enM ? b.nameEn : b.hanViet) + " (" + b.zh + " · Est. " + b.foundedYear + ")";
           var hasDeep = Boolean(b.signatureProductVi || b.qualityStandardVi || b.vietnamAseanLessonVi || b.flagshipAddressZh || b.craftProcessStepsVi);
           return (
             '<article class="flashcard-layer" style="display:flex;flex-direction:column;gap:0.35rem;padding:0.95rem 1.05rem;">' +
@@ -184,7 +199,8 @@
             '  </div>' +
             '</article>'
           );
-        }).join("") +
+          }).join("");
+        })() +
         '  </div>'
       ) : "") +
       (filteredGi.length ? (
@@ -192,8 +208,11 @@
         '    <div class="editorial-kicker" style="color:var(--jade-green);">' + (enM ? "EU–CHINA GEOGRAPHICAL INDICATIONS AGREEMENT (2021) · 中欧地理标志协定" : "HIỆP ĐỊNH CHỈ DẪN ĐỊA LÝ ÂU – TRUNG QUỐC (中欧地理标志保护协定)") + '</div>' +
         '    <h3 style="font-family:var(--font-editorial);font-size:1.32rem;margin:0.2rem 0 0.85rem;">' + (enM ? (giList.length + " EU–China Protected Heritage GIs &amp; EVFTA Benchmarks") : (giList.length + " Sản vật Chỉ dẫn Địa lý Bảo hộ Song phương Âu–Trung &amp; Đối chiếu EVFTA Việt Nam")) + '</h3>' +
         '    <div class="grid grid-3" style="gap:0.85rem;">' +
-        filteredGi.map(function (g, idx) {
-          var gImg = g.imagePath || resolveBrandThumb({ provinceId: g.provinceId, cat: "tea_spirits" }, idx + 2);
+        (function () {
+          var usedGiThumbs = Object.create(null);
+          return filteredGi.map(function (g, idx) {
+            var gImg = g.imagePath || resolveBrandThumb({ provinceId: g.provinceId, cat: "tea_spirits" }, idx + 2, usedGiThumbs);
+            if (g.imagePath) usedGiThumbs[g.imagePath] = true;
           var gTitle = enM ? (g.en || g.nameEn) : (g.vi || g.nameVi);
           return (
             '<article class="flashcard-layer" style="display:flex;flex-direction:column;gap:0.35rem;padding:0.9rem 1rem;border-top:2px solid var(--jade-green);">' +
@@ -211,7 +230,8 @@
             '  <button type="button" class="btn btn-secondary btn-sm" style="margin-top:auto;align-self:flex-end;padding:0.15rem 0.45rem;font-size:0.72rem;" data-action="open-province-detail" data-id="' + esc(g.provinceId) + '">' + (enM ? "Province →" : "Tỉnh →") + '</button>' +
             '</article>'
           );
-        }).join("") +
+          }).join("");
+        })() +
         '    </div>' +
         '  </div>'
       ) : "") +

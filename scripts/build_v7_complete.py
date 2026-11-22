@@ -11,6 +11,7 @@ from v7_builders.pack_utils import (
     NON_CLINICAL_EN,
     NON_CLINICAL_VI,
     ROOT,
+    UniqueImageAllocator,
     core_zh_key,
     ensure_verified_img,
     sanitize_recursive,
@@ -82,6 +83,138 @@ def _verify_all_asset_strings(payload: Any) -> list[str]:
     return sorted(set(missing))
 
 
+def _dedupe_cross_version_images(
+    p1: dict[str, Any],
+    p2: dict[str, Any],
+    p4: dict[str, Any],
+    p5: dict[str, Any],
+    p6: dict[str, Any],
+) -> None:
+    """Guarantee ZERO duplicate image paths and ZERO duplicate MD5 hashes across V5+V6+V7 merged collections."""
+    v5_data: dict[str, Any] = {}
+    v5_path = ROOT / "src" / "data" / "v5" / "v5DeepEnrichmentLayer.js"
+    if v5_path.is_file():
+        v5_txt = v5_path.read_text(encoding="utf-8")
+        v5_data, _ = json.JSONDecoder().raw_decode(v5_txt, v5_txt.index("var DATA = ") + len("var DATA = "))
+
+    v6_txt = (ROOT / "src" / "data" / "v6" / "v6EncyclopediaAndVisuals.js").read_text(encoding="utf-8")
+    b6, _ = json.JSONDecoder().raw_decode(v6_txt, v6_txt.index("var BUNDLES = ") + len("var BUNDLES = "))
+
+    md5 = UniqueImageAllocator.md5_of
+    claim = UniqueImageAllocator.claim
+    prov_cands = UniqueImageAllocator.prov_item_candidates
+
+    # 1. Combined 120 Honored Brands (V5 + V6 + V7)
+    used_brands: set[str] = {
+        md5(obj["imagePath"])
+        for obj in (v5_data.get("brandEnrich") or {}).values()
+        if isinstance(obj, dict) and obj.get("imagePath")
+    }
+    for b in b6["CCE_V6_BRANDS_CRAFT"]["brandsAdditional40"] + b6["CCE_V6_BRANDS_CRAFT"]["brandsAdditional36"]:
+        if b.get("imagePath"):
+            used_brands.add(md5(b["imagePath"]))
+    for b in p2["brandsAdditional20"]:
+        pid = b.get("provinceId", "beijing")
+        cat = b.get("cat", "craft")
+        groups = ("d", "f", "h") if cat == "culinary" else ("h", "d", "f")
+        prefs = [b.get("imagePath", "")] + prov_cands(pid, groups)
+        b["imagePath"] = claim(used_brands, prefs, ("prov_items", "provinces", "museum", "articles", "academic"), allow_svg=False)
+
+    # 2. Combined 42 Geographical Indications (V5 + V6 + V7)
+    used_gi: set[str] = {
+        md5(obj["imagePath"])
+        for obj in (v5_data.get("giEnrich") or {}).values()
+        if isinstance(obj, dict) and obj.get("imagePath")
+    }
+    for g in b6["CCE_V6_BRANDS_CRAFT"]["giAdditional18"]:
+        if g.get("imagePath"):
+            used_gi.add(md5(g["imagePath"]))
+    for g in p2["giAdditional12"]:
+        pid = g.get("provinceId", "guangdong")
+        prefs = [g.get("imagePath", "")] + prov_cands(pid, ("f", "d", "h"))
+        g["imagePath"] = claim(used_gi, prefs, ("prov_items", "provinces", "articles", "museum"), allow_svg=False)
+
+    # 3. Combined 10 Modules + 60 Lessons
+    used_lessons: set[str] = {
+        md5(p)
+        for p in [
+            "assets/images/provinces/sichuan-jiuzhaigou.jpg",
+            "assets/images/academic/qin-terracotta.jpg",
+            "assets/images/articles/hero-confucianism.jpg",
+            "assets/images/articles/hero-laozihao-craft.jpg",
+            "assets/images/museum/taihe-dian.jpg",
+            "assets/images/articles/hero-keju-examinations.jpg",
+            "assets/images/articles/hero-silk-road.jpg",
+            "assets/images/provinces/gansu-dunhuang-mogao.jpg",
+            "assets/images/articles/hero-supply-chain-rcep.jpg",
+            "assets/images/great-wall-ink.jpg",
+            "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
+        ]
+    }
+    for m in p1["modulesMeta3"]:
+        m["img"] = claim(used_lessons, [m.get("img", "")], ("museum", "provinces", "articles"), allow_svg=False)
+    for obj in (v5_data.get("lessonEnrich") or {}).values():
+        if isinstance(obj, dict) and obj.get("imagePath"):
+            used_lessons.add(md5(obj["imagePath"]))
+    for m7 in v5_data.get("module7Lessons") or []:
+        if isinstance(m7, dict) and m7.get("imagePath"):
+            used_lessons.add(md5(m7["imagePath"]))
+    for ls in p1["lessons18"]:
+        ls["imagePath"] = claim(used_lessons, [ls.get("imagePath", "")], ("prov_items", "provinces", "museum", "articles", "academic", "paintings"), allow_svg=False)
+
+    # 4. Combined 60 Herbs (V6 + V7)
+    used_herbs = {md5(h["image"]) for h in b6["CCE_V6_COSMOLOGY_VISUAL"]["culinaryHerbs48"] if h.get("image")}
+    for h in p4["herbs12"]:
+        h["image"] = claim(used_herbs, [h.get("image", "")], ("prov_items", "provinces", "articles", "museum"), allow_svg=False)
+
+    # 5. Combined 20 Cosmo Cases (V6 12 + V7 8)
+    used_cosmo = {md5(c["imagePath"]) for c in b6["CCE_V6_COSMOLOGY_VISUAL"]["cosmoCasebookAdditional12V6"] if c.get("imagePath")}
+    for c in p4["cosmoCases8"]:
+        c["image"] = claim(used_cosmo, [c.get("image", "")], ("provinces", "museum", "academic", "articles", "prov_items"), allow_svg=False)
+
+    # 6. Combined 36 Poem-Paintings (V6 24 + V7 12)
+    used_poems = {md5(pm["image"]) for pm in b6["CCE_V6_LITERATURE_VISUAL"]["poemPaintingPairs24"] if pm.get("image")}
+    for pm in p4["poemPaintings12"]:
+        pm["image"] = claim(used_poems, [pm.get("image", "")], ("paintings",), allow_svg=False)
+
+    # 7. Combined 26 Supply Chain Cases (V6 16 + V7 10)
+    used_supply = {md5(sc["imagePath"]) for sc in b6["CCE_V6_TRADE_AND_CSC"]["extraSupplyCases16"] if sc.get("imagePath")}
+    for sc in p5["extraSupplyCases10"]:
+        sc["imagePath"] = claim(used_supply, [sc.get("imagePath", "")], ("provinces", "prov_items", "articles", "editorial", "museum"), allow_svg=True)
+
+    # 8. Combined 16 Sino-Viet Wonders (32 vnImg + chinaImg)
+    used_wonders: set[str] = set()
+    for w in b6["CCE_V6_TRADE_AND_CSC"]["sinoVietWonders10"]:
+        if w.get("vnImg"):
+            used_wonders.add(md5(w["vnImg"]))
+        if w.get("chinaImg"):
+            used_wonders.add(md5(w["chinaImg"]))
+    for w in p5["sinoVietWonders6"]:
+        w["vnImg"] = claim(used_wonders, [w.get("vnImg", "")], ("academic", "museum", "articles", "prov_items"), allow_svg=True)
+        w["chinaImg"] = claim(used_wonders, [w.get("chinaImg", "")], ("provinces", "museum", "academic", "prov_items"), allow_svg=False)
+
+    # 9. Combined 36 CSC Universities (V6 24 + V7 12)
+    used_csc = {md5(u["imagePath"]) for u in b6["CCE_V6_TRADE_AND_CSC"]["cscUniversities24Atlas"] if u.get("imagePath")}
+    for u in p5["cscUniversities12"]:
+        pid = u.get("provinceId", "prov-beijing")
+        prefs = [u.get("imagePath", "")] + prov_cands(pid, ("h", "d", "f"))
+        u["imagePath"] = claim(used_csc, prefs, ("prov_items", "provinces", "academic", "articles"), allow_svg=False)
+
+    # 10. Combined 150 Visual Quiz Questions (V6 120 + V7 30)
+    used_quiz = {md5(q["imagePath"]) for q in b6["CCE_V6_QUIZ"] if q.get("isVisualQuestion") and q.get("imagePath")}
+    for q in p6["quiz100"]:
+        if q.get("isVisualQuestion"):
+            q["imagePath"] = claim(used_quiz, [q.get("imagePath", "")], ("paintings", "museum", "provinces", "prov_items", "articles", "academic"), allow_svg=True)
+
+    # 11. V7 Expeditions (16) & YouTube Posters (12)
+    used_exp: set[str] = set()
+    for ex in p5["heritageExpeditions16"]:
+        ex["imagePath"] = claim(used_exp, [ex.get("imagePath", "")], ("provinces", "prov_items", "museum", "articles"), allow_svg=False)
+    used_yt: set[str] = set()
+    for yt in p6["youtubeVideos12"]:
+        yt["posterImage"] = claim(used_yt, [yt.get("posterImage", "")], ("provinces", "museum", "articles", "paintings"), allow_svg=False)
+
+
 def build_v7() -> pathlib.Path:
     p1 = build_pack1()
     p2 = build_pack2()
@@ -89,6 +222,8 @@ def build_v7() -> pathlib.Path:
     p4 = build_pack4()
     p5 = build_pack5()
     p6 = build_pack6()
+
+    _dedupe_cross_version_images(p1, p2, p4, p5, p6)
 
     # Check brand coreZhKey uniqueness
     existing_brand_keys = _collect_existing_brand_keys()

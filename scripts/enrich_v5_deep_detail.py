@@ -25,6 +25,13 @@ from __future__ import annotations
 import json
 import pathlib
 import re
+import sys
+
+ROOT_DIR = pathlib.Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+from scripts.v7_builders.pack_utils import UniqueImageAllocator, core_zh_key
 
 OUT_FILE = pathlib.Path("src/data/v5/v5DeepEnrichmentLayer.js")
 
@@ -333,14 +340,22 @@ HSK_PAIR_DEEP = [
 
 
 def main() -> int:
-    # 1. Read Brand Seed & Expanded IDs
+    # 1. Read Brand Seed & Expanded IDs and allocate 100% unique MD5 images per brand
     brand_enrich = {}
+    used_brand_hashes: set[str] = set()
+    assigned_by_ck: dict[str, str] = {}
     for p in ["src/data/v5/laozihaoBrandsV5.js", "src/data/v5/laozihaoBrandsExpandedV5.js"]:
         txt = pathlib.Path(p).read_text(encoding="utf-8")
-        for m in re.finditer(r'\{\s*\n\s*id:\s*"([^"]+)",\s*\n\s*cat:\s*"([^"]+)",\s*\n\s*zh:\s*"([^"]+)"', txt):
-            bid, cat, zh = m.group(1), m.group(2), m.group(3)
-            city_m = re.search(rf'id:\s*"{re.escape(bid)}".*?cityVi:\s*"([^"]+)"', txt, re.S)
-            city_vi = city_m.group(1) if city_m else ""
+        if "var BRANDS = " in txt:
+            brands_sec = txt.split("var BRANDS = ", 1)[1]
+        else:
+            brands_sec = txt.split("giAppellations12")[0]
+        pat = re.compile(
+            r'id:\s*"([^"]+)",\s*\n\s*cat:\s*"([^"]+)",\s*\n\s*zh:\s*"([^"]+)".*?provinceId:\s*"([^"]+)".*?cityVi:\s*"([^"]+)"',
+            re.S,
+        )
+        for m in pat.finditer(brands_sec):
+            bid, cat, zh, pid, city_vi = m.group(1), m.group(2), m.group(3), m.group(4), m.group(5)
             base = dict(BRAND_CAT_DEEP.get(cat, BRAND_CAT_DEEP["craft_studio"]))
             for k, (sig_v, qual_v) in BRAND_SPECIFIC.items():
                 if k in zh:
@@ -348,6 +363,26 @@ def main() -> int:
                     base["qualityStandardVi"] = qual_v
                     break
             base["flagshipAddressZh"] = f"{zh}总店 ({city_vi})"
+            ck = core_zh_key(zh)
+            if ck in assigned_by_ck:
+                img_path = assigned_by_ck[ck]
+            else:
+                groups = ("d", "f", "h") if cat == "culinary" else ("h", "d", "f")
+                prefs = UniqueImageAllocator.prov_item_candidates(pid, groups)
+                if cat == "tcm_pharmacy":
+                    prefs = prefs + ["assets/images/museum/acupuncture-bronze.jpg", "assets/images/articles/hero-tcm-solar.jpg"]
+                elif cat == "tea_spirits":
+                    prefs = prefs + ["assets/images/articles/hero-six-teas-gongfu.jpg", "assets/images/articles/hero-tea-culture.jpg"]
+                elif cat == "craft_studio":
+                    prefs = prefs + ["assets/images/articles/hero-laozihao-craft.jpg", "assets/images/museum/ge-yao-incense-burner.jpg"]
+                img_path = UniqueImageAllocator.claim(
+                    used_brand_hashes,
+                    prefs,
+                    fallback_buckets=("prov_items", "provinces", "museum", "articles", "academic"),
+                    allow_svg=False,
+                )
+                assigned_by_ck[ck] = img_path
+            base["imagePath"] = img_path
             brand_enrich[bid] = base
 
     # 2. Enrich GI 12
@@ -401,6 +436,10 @@ def main() -> int:
             "Useful reference for Luc Ngan lychee, Binh Thuan dragon fruit, and Cao Lanh mango orchards tightening MRL export monitoring.",
         ),
     }
+    gi_txt = pathlib.Path("src/data/v5/laozihaoBrandsExpandedV5.js").read_text(encoding="utf-8")
+    gi_sec = gi_txt.split("giAppellations12", 1)[1] if "giAppellations12" in gi_txt else ""
+    gi_prov_map = dict(re.findall(r'id:\s*"(gi-eu-\d+)".*?provinceId:\s*"([^"]+)"', gi_sec, re.S))
+    used_gi_hashes: set[str] = set()
     gi_enrich = {}
     for gid, (gb, craft, vncmp) in GI_DEEP_DATA.items():
         gb_code = re.split(r"\s*[(&/]", gb)[0].strip()
@@ -408,12 +447,21 @@ def main() -> int:
             f"Protected geographical terroir governed by Chinese national standard {gb_code} and EU–China GI traceability rules.",
             "Illustrates bilateral origin protection practices alongside Vietnamese EVFTA geographical indications.",
         ))
+        g_pid = gi_prov_map.get(gid, "prov-zhejiang")
+        g_prefs = UniqueImageAllocator.prov_item_candidates(g_pid, ("f", "d", "h"))
+        g_img = UniqueImageAllocator.claim(
+            used_gi_hashes,
+            g_prefs,
+            fallback_buckets=("prov_items", "provinces", "articles", "museum"),
+            allow_svg=False,
+        )
         gi_enrich[gid] = {
             "gbStandardCode": gb,
             "terroirAndCraftVi": craft,
             "terroirAndCraftEn": f"{craft_en} Governed under {gb_code} and bilateral EU–China GI origin controls.",
             "vnEuComparisonVi": vncmp,
             "vnEuComparisonEn": vncmp_en,
+            "imagePath": g_img,
         }
 
     # 3. Enrich Lesson 1-36 + append Module 7 (Lessons 37-42)
@@ -546,11 +594,98 @@ def main() -> int:
             "Mental Model: Trace cargo risk barriers across Origin Factory → Rail Gauge-Break / Ocean Canal → EU Customs ICS2 / CBAM / EUDR release."
         )
     }
+    # Reserve 10 Module cover images + Home hero/banner so zero lesson overlaps a Module card
+    used_lesson_hashes: set[str] = {
+        UniqueImageAllocator.md5_of(p)
+        for p in [
+            "assets/images/provinces/sichuan-jiuzhaigou.jpg",
+            "assets/images/academic/qin-terracotta.jpg",
+            "assets/images/articles/hero-confucianism.jpg",
+            "assets/images/articles/hero-laozihao-craft.jpg",
+            "assets/images/museum/taihe-dian.jpg",
+            "assets/images/articles/hero-keju-examinations.jpg",
+            "assets/images/articles/hero-silk-road.jpg",
+            "assets/images/museum/houmuwu-ding.jpg",
+            "assets/images/provinces/gansu-dunhuang-mogao.jpg",
+            "assets/images/articles/hero-supply-chain-rcep.jpg",
+            "assets/images/great-wall-ink.jpg",
+            "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
+        ]
+    }
+    LESSON_PREFS_BY_MOD = {
+        "1": [
+            "assets/images/academic/guilin-li-river.jpg",
+            "assets/images/provinces/yunnan-lijiang-old-town.jpg",
+            "assets/images/provinces/hubei-yellow-crane-tower.jpg",
+            "assets/images/paintings/22_qianli_jiangshan.jpg",
+            "assets/images/provinces/zhejiang-hangzhou-westlake.jpg",
+            "assets/images/provinces/qinghai-lake.jpg",
+        ],
+        "2": [
+            "assets/images/provinces/shaanxi-terracotta-army.jpg",
+            "assets/images/articles/hero-tang-dynasty.jpg",
+            "assets/images/museum/terracotta-general.jpg",
+            "assets/images/academic/tang-sancai-camel.jpg",
+            "assets/images/figures/qin-shi-huang.jpg",
+            "assets/images/academic/van-mieu-hanoi.jpg",
+        ],
+        "3": [
+            "assets/images/articles/hero-hundred-schools.jpg",
+            "assets/images/articles/hero-yinyang.jpg",
+            "assets/images/articles/hero-traditional-arch.jpg",
+            "assets/images/provinces/beijing-temple-of-heaven.jpg",
+            "assets/images/academic/suzhou-garden.jpg",
+            "assets/images/editorial/diagram-dougong-seismic.svg",
+        ],
+        "4": [
+            "assets/images/articles/hero-calligraphy-five-scripts.jpg",
+            "assets/images/paintings/28_libai_hangyin.jpg",
+            "assets/images/articles/hero-classical-books-scrolls.jpg",
+            "assets/images/museum/lantingji-xu.jpg",
+            "assets/images/articles/hero-academy-shuyuan.jpg",
+            "assets/images/museum/yongle-dadian.jpg",
+        ],
+        "5": [
+            "assets/images/articles/hero-chinese-cuisines.jpg",
+            "assets/images/articles/hero-six-teas-gongfu.jpg",
+            "assets/images/articles/hero-contemporary-china.jpg",
+            "assets/images/articles/hero-beijing-shanghai.jpg",
+            "assets/images/articles/hero-chinese-banquet.jpg",
+            "assets/images/provinces/chongqing-hongyadong.jpg",
+        ],
+        "6": [
+            "assets/images/articles/hero-b2b-negotiation-table.jpg",
+            "assets/images/articles/hero-sino-vietnam.jpg",
+            "assets/images/articles/hero-huaqiangbei-tech.jpg",
+            "assets/images/editorial/infographic-co-forme-incoterms.svg",
+            "assets/images/articles/hero-vietnam-ai-decree13.jpg",
+            "assets/images/provinces/shanghai-bund-skyline.jpg",
+        ],
+        "7": [
+            "assets/images/provinces/xinjiang-kanas-lake.jpg",
+            "assets/images/provinces/guangdong-canton-tower.jpg",
+            "assets/images/provinces/fujian-tulou.jpg",
+            "assets/images/editorial/map-silk-road-maritime-nodes.svg",
+            "assets/images/museum/zheng-he-chart.jpg",
+            "assets/images/academic/sunzi-bamboo-slips.jpg",
+        ],
+    }
     lesson_enrich = {}
+    lesson_idx_by_mod: dict[str, int] = {}
     for lid in lesson_ids:
         mod_num = lid.split("-m")[1].split("-")[0]
         r_page, r_vi, r_en, cite_vi, cite_en, vn_vi, vn_en = MODULE_ROUTE_MAP.get(mod_num, MODULE_ROUTE_MAP["1"])
         ex_zh, ex_vi, ex_en, vis_vi, vis_en = MODULE_VISUAL_PRIMARY.get(mod_num, MODULE_VISUAL_PRIMARY["1"])
+        li = lesson_idx_by_mod.get(mod_num, 0)
+        lesson_idx_by_mod[mod_num] = li + 1
+        prefs = LESSON_PREFS_BY_MOD.get(mod_num, [])
+        rotated = prefs[li:] + prefs[:li]
+        l_img = UniqueImageAllocator.claim(
+            used_lesson_hashes,
+            rotated,
+            fallback_buckets=("prov_items", "provinces", "museum", "articles", "academic", "paintings"),
+            allow_svg=False,
+        )
         lesson_enrich[lid] = {
             "historicalEvidenceVi": f"Nguồn khảo chứng & tài liệu đối chiếu gốc: {cite_vi} — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
             "historicalEvidenceEn": f"Archival reference: {cite_en} — verified against digitized museum collections and canonical textual sources.",
@@ -562,15 +697,24 @@ def main() -> int:
             "vietnamComparisonVi": vn_vi,
             "vietnamComparisonEn": vn_en,
             "keyTermsTrilingual": lesson_terms_by_mod.get(mod_num, lesson_terms_by_mod["1"]),
-            "readingLink": {"page": r_page, "labelVi": r_vi, "labelEn": r_en}
+            "readingLink": {"page": r_page, "labelVi": r_vi, "labelEn": r_en},
+            "imagePath": l_img,
         }
-    for m7 in MODULE7_LESSONS:
+    for m7_idx, m7 in enumerate(MODULE7_LESSONS):
         ex_zh, ex_vi, ex_en, vis_vi, vis_en = MODULE_VISUAL_PRIMARY["7"]
         m7["primaryTextExcerptZh"] = ex_zh
         m7["primaryTextExcerptVi"] = ex_vi
         m7["primaryTextExcerptEn"] = ex_en
         m7["visualDiagramSpecVi"] = vis_vi
         m7["visualDiagramSpecEn"] = vis_en
+        prefs7 = LESSON_PREFS_BY_MOD["7"]
+        rotated7 = prefs7[m7_idx:] + prefs7[:m7_idx]
+        m7["imagePath"] = UniqueImageAllocator.claim(
+            used_lesson_hashes,
+            rotated7,
+            fallback_buckets=("prov_items", "provinces", "articles", "museum"),
+            allow_svg=False,
+        )
 
     # 4. Enrich HSK Classical-Modern Pairs (20) & Templates (15)
     RHETORICAL_DEVICES = [

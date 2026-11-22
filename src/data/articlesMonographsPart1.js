@@ -302,7 +302,7 @@
       epistemicTag: "Sử liệu văn hiến & Phê bình học thuật (Bình dị – Bách gia – Chương hồi)",
       readMinutes: 18,
       heroImage: {
-        src: "assets/images/articles/hero-classical-books-scrolls.jpg",
+        src: "assets/images/academic/chengdu-jinli.jpg",
         caption: "Truyền thống Văn hiến & Thi ca Trung Hoa từ Kinh Thi đến Bạch thoại Minh – Thanh",
         credit: "The Palace Museum Public Domain Archive"
       },
@@ -446,7 +446,7 @@
   registerMonographPackage({
     heroImage: {
       id: "img-hero-monograph-cuisine",
-      src: "assets/images/articles/hero-chinese-cuisines.jpg",
+      src: "assets/images/academic/guilin-li-river.jpg",
       titleVi: "Bát Đại Thái Hệ Ẩm thực Trung Hoa & Văn hóa Trà Đạo Cổ điển",
       titleZh: "中国八大菜系与茶文化经典图谱",
       titleEn: "Eight Great Cuisines and Classical Tea Aesthetics",
@@ -485,7 +485,7 @@
       epistemicTag: "Địa văn hóa ẩm thực, Kỹ thuật Hỏa hầu & Sử liệu Lục Vũ Trà Kinh",
       readMinutes: 19,
       heroImage: {
-        src: "assets/images/articles/hero-chinese-cuisines.jpg",
+        src: "assets/images/academic/guqin-instrument.jpg",
         caption: "Nghệ thuật pha trà Công Phu Trà (工夫茶) và kết cấu ngũ vị điều hòa ẩm thực Trung Hoa",
         credit: "CCE Digital Museum Culinary Archive"
       },
@@ -627,7 +627,7 @@
   registerMonographPackage({
     heroImage: {
       id: "img-hero-monograph-attire",
-      src: "assets/images/articles/hero-silk-embroidery-hanfu.jpg",
+      src: "assets/images/academic/han-silk-banner.jpg",
       titleVi: "Lịch sử Y phục & Mỹ học Hán Phục từ Thâm Y đến Tề Hung Nhu Quần",
       titleZh: "中国传统服饰与汉服演进史图卷",
       titleEn: "Evolution of Chinese Traditional Attire and Hanfu Silk Aesthetics",
@@ -666,7 +666,7 @@
       epistemicTag: "Khảo cổ học Dệt may & Mỹ học Y quan Lễ chế",
       readMinutes: 17,
       heroImage: {
-        src: "assets/images/articles/hero-silk-embroidery-hanfu.jpg",
+        src: "assets/images/academic/lhasa-potala.jpg",
         caption: "Quý tộc phụ nữ thời Thịnh Đường mặc Tề Hung Nhu Quần trong danh tác 《Đảo Luyện Đồ》",
         credit: "Museum of Fine Arts, Boston (Public Domain)"
       },
@@ -808,7 +808,7 @@
   registerMonographPackage({
     heroImage: {
       id: "img-hero-monograph-ceramics-jade",
-      src: "assets/images/museum/david-vases.jpg",
+      src: "assets/images/academic/ming-forbidden-city.jpg",
       titleVi: "Lịch sử Gốm Sứ 'Ngũ Đại Danh Diêu', Sứ Thanh Hoa Cảnh Đức Trấn & Văn minh Ngọc Khí",
       titleZh: "中国五大名窑青花瓷与玉文化",
       titleEn: "Chinese Ceramics, Blue-and-White Porcelain and Neolithic Jade Culture",
@@ -847,7 +847,7 @@
       epistemicTag: "Vật liệu học Lịch sử, Khảo cổ Ngọc khí & Hải thương Toàn cầu hóa",
       readMinutes: 20,
       heroImage: {
-        src: "assets/images/museum/david-vases.jpg",
+        src: "assets/images/academic/qin-terracotta.jpg",
         caption: "Cặp bình Thanh Hoa David Vases năm 1351 tại Bảo tàng Anh Quốc",
         credit: "The British Museum Open Educational Archive"
       },

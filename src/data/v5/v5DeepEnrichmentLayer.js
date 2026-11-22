@@ -66,7 +66,8 @@
       "primaryTextExcerptVi": "Rủi ro và chi phí chuyển giao kể từ thời điểm hàng hóa được giao cho người vận tải tại điểm chỉ định (Incoterms® 2020 CIP/FCA & SMGS/B/L).",
       "primaryTextExcerptEn": "Risk and cost allocation shift upon delivery to the carrier at the named point under Incoterms® 2020 (CIP/FCA), governed alongside EU CBAM & EUDR 2023/1115.",
       "visualDiagramSpecVi": "Mạch tuyến Logistics: Ga TQ/Cảng Biển (FOB/FCA) → Biên giới Đổi khổ ray 1520mm/Biển Đỏ → Hải quan ICS2/CBAM/EUDR Rotterdam/Hamburg.",
-      "visualDiagramSpecEn": "Mental Model: Trace cargo risk barriers across Origin Factory → Rail Gauge-Break / Ocean Canal → EU Customs ICS2 / CBAM / EUDR release."
+      "visualDiagramSpecEn": "Mental Model: Trace cargo risk barriers across Origin Factory → Rail Gauge-Break / Ocean Canal → EU Customs ICS2 / CBAM / EUDR release.",
+      "imagePath": "assets/images/provinces/xinjiang-kanas-lake.jpg"
     },
     {
       "id": "v5-m7-l2",
@@ -123,7 +124,8 @@
       "primaryTextExcerptVi": "Rủi ro và chi phí chuyển giao kể từ thời điểm hàng hóa được giao cho người vận tải tại điểm chỉ định (Incoterms® 2020 CIP/FCA & SMGS/B/L).",
       "primaryTextExcerptEn": "Risk and cost allocation shift upon delivery to the carrier at the named point under Incoterms® 2020 (CIP/FCA), governed alongside EU CBAM & EUDR 2023/1115.",
       "visualDiagramSpecVi": "Mạch tuyến Logistics: Ga TQ/Cảng Biển (FOB/FCA) → Biên giới Đổi khổ ray 1520mm/Biển Đỏ → Hải quan ICS2/CBAM/EUDR Rotterdam/Hamburg.",
-      "visualDiagramSpecEn": "Mental Model: Trace cargo risk barriers across Origin Factory → Rail Gauge-Break / Ocean Canal → EU Customs ICS2 / CBAM / EUDR release."
+      "visualDiagramSpecEn": "Mental Model: Trace cargo risk barriers across Origin Factory → Rail Gauge-Break / Ocean Canal → EU Customs ICS2 / CBAM / EUDR release.",
+      "imagePath": "assets/images/provinces/guangdong-canton-tower.jpg"
     },
     {
       "id": "v5-m7-l3",
@@ -180,7 +182,8 @@
       "primaryTextExcerptVi": "Rủi ro và chi phí chuyển giao kể từ thời điểm hàng hóa được giao cho người vận tải tại điểm chỉ định (Incoterms® 2020 CIP/FCA & SMGS/B/L).",
       "primaryTextExcerptEn": "Risk and cost allocation shift upon delivery to the carrier at the named point under Incoterms® 2020 (CIP/FCA), governed alongside EU CBAM & EUDR 2023/1115.",
       "visualDiagramSpecVi": "Mạch tuyến Logistics: Ga TQ/Cảng Biển (FOB/FCA) → Biên giới Đổi khổ ray 1520mm/Biển Đỏ → Hải quan ICS2/CBAM/EUDR Rotterdam/Hamburg.",
-      "visualDiagramSpecEn": "Mental Model: Trace cargo risk barriers across Origin Factory → Rail Gauge-Break / Ocean Canal → EU Customs ICS2 / CBAM / EUDR release."
+      "visualDiagramSpecEn": "Mental Model: Trace cargo risk barriers across Origin Factory → Rail Gauge-Break / Ocean Canal → EU Customs ICS2 / CBAM / EUDR release.",
+      "imagePath": "assets/images/provinces/fujian-tulou.jpg"
     },
     {
       "id": "v5-m7-l4",
@@ -237,7 +240,8 @@
       "primaryTextExcerptVi": "Rủi ro và chi phí chuyển giao kể từ thời điểm hàng hóa được giao cho người vận tải tại điểm chỉ định (Incoterms® 2020 CIP/FCA & SMGS/B/L).",
       "primaryTextExcerptEn": "Risk and cost allocation shift upon delivery to the carrier at the named point under Incoterms® 2020 (CIP/FCA), governed alongside EU CBAM & EUDR 2023/1115.",
       "visualDiagramSpecVi": "Mạch tuyến Logistics: Ga TQ/Cảng Biển (FOB/FCA) → Biên giới Đổi khổ ray 1520mm/Biển Đỏ → Hải quan ICS2/CBAM/EUDR Rotterdam/Hamburg.",
-      "visualDiagramSpecEn": "Mental Model: Trace cargo risk barriers across Origin Factory → Rail Gauge-Break / Ocean Canal → EU Customs ICS2 / CBAM / EUDR release."
+      "visualDiagramSpecEn": "Mental Model: Trace cargo risk barriers across Origin Factory → Rail Gauge-Break / Ocean Canal → EU Customs ICS2 / CBAM / EUDR release.",
+      "imagePath": "assets/images/museum/zheng-he-chart.jpg"
     },
     {
       "id": "v5-m7-l5",
@@ -294,7 +298,8 @@
       "primaryTextExcerptVi": "Rủi ro và chi phí chuyển giao kể từ thời điểm hàng hóa được giao cho người vận tải tại điểm chỉ định (Incoterms® 2020 CIP/FCA & SMGS/B/L).",
       "primaryTextExcerptEn": "Risk and cost allocation shift upon delivery to the carrier at the named point under Incoterms® 2020 (CIP/FCA), governed alongside EU CBAM & EUDR 2023/1115.",
       "visualDiagramSpecVi": "Mạch tuyến Logistics: Ga TQ/Cảng Biển (FOB/FCA) → Biên giới Đổi khổ ray 1520mm/Biển Đỏ → Hải quan ICS2/CBAM/EUDR Rotterdam/Hamburg.",
-      "visualDiagramSpecEn": "Mental Model: Trace cargo risk barriers across Origin Factory → Rail Gauge-Break / Ocean Canal → EU Customs ICS2 / CBAM / EUDR release."
+      "visualDiagramSpecEn": "Mental Model: Trace cargo risk barriers across Origin Factory → Rail Gauge-Break / Ocean Canal → EU Customs ICS2 / CBAM / EUDR release.",
+      "imagePath": "assets/images/academic/sunzi-bamboo-slips.jpg"
     },
     {
       "id": "v5-m7-l6",
@@ -351,7 +356,8 @@
       "primaryTextExcerptVi": "Rủi ro và chi phí chuyển giao kể từ thời điểm hàng hóa được giao cho người vận tải tại điểm chỉ định (Incoterms® 2020 CIP/FCA & SMGS/B/L).",
       "primaryTextExcerptEn": "Risk and cost allocation shift upon delivery to the carrier at the named point under Incoterms® 2020 (CIP/FCA), governed alongside EU CBAM & EUDR 2023/1115.",
       "visualDiagramSpecVi": "Mạch tuyến Logistics: Ga TQ/Cảng Biển (FOB/FCA) → Biên giới Đổi khổ ray 1520mm/Biển Đỏ → Hải quan ICS2/CBAM/EUDR Rotterdam/Hamburg.",
-      "visualDiagramSpecEn": "Mental Model: Trace cargo risk barriers across Origin Factory → Rail Gauge-Break / Ocean Canal → EU Customs ICS2 / CBAM / EUDR release."
+      "visualDiagramSpecEn": "Mental Model: Trace cargo risk barriers across Origin Factory → Rail Gauge-Break / Ocean Canal → EU Customs ICS2 / CBAM / EUDR release.",
+      "imagePath": "assets/images/prov_items/anhui/d2.jpg"
     }
   ],
   "brandEnrich": {
@@ -368,7 +374,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "同仁堂总店 (Bắc Kinh (Đại Sách Lan))"
+      "flagshipAddressZh": "同仁堂总店 (Bắc Kinh (Đại Sách Lan))",
+      "imagePath": "assets/images/prov_items/beijing/h0.jpg"
     },
     "lzh-chenliji": {
       "signatureProductVi": "Viên hoàn bọc sáp ong niêm phong chống ẩm nhiệt đới (phát minh năm 1600).",
@@ -383,7 +390,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "陈李济总店 (Quảng Châu, Quảng Đông)"
+      "flagshipAddressZh": "陈李济总店 (Quảng Châu, Quảng Đông)",
+      "imagePath": "assets/images/prov_items/guangdong/h0.jpg"
     },
     "lzh-huqingyutang": {
       "signatureProductVi": "Cao dược liệu Giang Nam bào chế nồi đồng và thang dược thiện theo bài thuốc cổ.",
@@ -398,7 +406,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "胡庆余堂总店 (Hàng Châu, Chiết Giang)"
+      "flagshipAddressZh": "胡庆余堂总店 (Hàng Châu, Chiết Giang)",
+      "imagePath": "assets/images/prov_items/zhejiang/h0.jpg"
     },
     "lzh-pianzihuang": {
       "signatureProductVi": "Cao bản thảo cung đình Chương Châu triều Minh gắn với hành trình Hải thương Phúc Kiến.",
@@ -413,7 +422,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "片仔癀总店 (Chương Châu, Phúc Kiến)"
+      "flagshipAddressZh": "片仔癀总店 (Chương Châu, Phúc Kiến)",
+      "imagePath": "assets/images/prov_items/fujian/h0.jpg"
     },
     "lzh-yunnanbaiyao": {
       "signatureProductVi": "Bào chế cổ truyền (cao đơn hoàn tán mật ong/sáp ong) và dược liệu thực dưỡng tuyển chọn theo quy chuẩn 'Đạo địa dược tài' (道地药材).",
@@ -428,7 +438,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "云南白药总店 (Côn Minh, Vân Nam)"
+      "flagshipAddressZh": "云南白药总店 (Côn Minh, Vân Nam)",
+      "imagePath": "assets/images/prov_items/yunnan/h0.jpg"
     },
     "lzh-dongeejiao": {
       "signatureProductVi": "A giao nấu từ nước giếng A Tỉnh giàu khoáng Đông A (Sơn Đông) qua 99 bước luyện.",
@@ -443,7 +454,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "东阿阿胶总店 (Liêu Thành, Sơn Đông)"
+      "flagshipAddressZh": "东阿阿胶总店 (Liêu Thành, Sơn Đông)",
+      "imagePath": "assets/images/prov_items/shandong/h0.jpg"
     },
     "lzh-quanjude": {
       "signatureProductVi": "Vịt quay Bắc Kinh lò treo gỗ táo tàu (45 phút, 108 lát da giòn thịt mềm).",
@@ -458,7 +470,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "全聚德总店 (Bắc Kinh (Tiền Môn))"
+      "flagshipAddressZh": "全聚德总店 (Bắc Kinh (Tiền Môn))",
+      "imagePath": "assets/images/prov_items/beijing/d0.jpg"
     },
     "lzh-bianyifang": {
       "signatureProductVi": "Vịt quay lò gạch kín (Bế Lô) giữ trọn hơi nước từ thời Minh Vĩnh Lạc năm 1416.",
@@ -473,7 +486,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "便宜坊总店 (Bắc Kinh (Tiên Ngư Khẩu))"
+      "flagshipAddressZh": "便宜坊总店 (Bắc Kinh (Tiên Ngư Khẩu))",
+      "imagePath": "assets/images/prov_items/beijing/d1.jpg"
     },
     "lzh-donglaishun": {
       "signatureProductVi": "Lẩu Cừu Đồng Đun Than Bắc Kinh thịt thái mỏng 0,9 mm không rách nhúng nước dùng thanh.",
@@ -488,7 +502,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "东来顺总店 (Bắc Kinh (Đông An Thị Trường))"
+      "flagshipAddressZh": "东来顺总店 (Bắc Kinh (Đông An Thị Trường))",
+      "imagePath": "assets/images/prov_items/beijing/d2.jpg"
     },
     "lzh-louwailou": {
       "signatureProductVi": "Món đặc sản trấn điếm nấu theo hỏa hầu truyền thống (quay lò kín/lò treo, hầm thố, ủ lên men tự nhiên 6–12 tháng) gắn ký ức đô thị bản địa.",
@@ -503,7 +518,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "楼外楼总店 (Hàng Châu (Cố Sơn Tây Hồ))"
+      "flagshipAddressZh": "楼外楼总店 (Hàng Châu (Cố Sơn Tây Hồ))",
+      "imagePath": "assets/images/prov_items/zhejiang/d0.jpg"
     },
     "lzh-chenmapo": {
       "signatureProductVi": "Đậu phụ Ma Bà Tứ Xuyên 8 chuẩn vị: Ma – Lạt – Thang – Hương – Tô – Nộn – Tiên – Hoạt.",
@@ -518,7 +534,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "陈麻婆豆腐总店 (Thành Đô, Tứ Xuyên)"
+      "flagshipAddressZh": "陈麻婆豆腐总店 (Thành Đô, Tứ Xuyên)",
+      "imagePath": "assets/images/prov_items/sichuan/d0.jpg"
     },
     "lzh-taotaoju": {
       "signatureProductVi": "Món đặc sản trấn điếm nấu theo hỏa hầu truyền thống (quay lò kín/lò treo, hầm thố, ủ lên men tự nhiên 6–12 tháng) gắn ký ức đô thị bản địa.",
@@ -533,7 +550,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "陶陶居总店 (Quảng Châu (Đệ Thập Phủ Lộ))"
+      "flagshipAddressZh": "陶陶居总店 (Quảng Châu (Đệ Thập Phủ Lộ))",
+      "imagePath": "assets/images/prov_items/guangdong/d0.jpg"
     },
     "lzh-moutai": {
       "signatureProductVi": "Rượu Mao Đài Tương Hương (53% vol) chưng cất 9 lần, lên men 8 lần và ủ gốm 3–5 năm.",
@@ -548,7 +566,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "贵州茅台总店 (Trấn Mao Đài, Quý Châu)"
+      "flagshipAddressZh": "贵州茅台总店 (Trấn Mao Đài, Quý Châu)",
+      "imagePath": "assets/images/prov_items/guizhou/h0.jpg"
     },
     "lzh-wuliangye": {
       "signatureProductVi": "Bạch tửu Nồng Hương phối 5 loại ngũ cốc (cao lương, gạo nếp, gạo tẻ, ngô, lúa mì).",
@@ -563,7 +582,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "五粮液总店 (Nghi Tân, Tứ Xuyên)"
+      "flagshipAddressZh": "五粮液总店 (Nghi Tân, Tứ Xuyên)",
+      "imagePath": "assets/images/prov_items/sichuan/h0.jpg"
     },
     "lzh-guyuelongshan": {
       "signatureProductVi": "Hoàng tửu Thiệu Hưng (Trữ lâu năm bằng nước hồ Giám Hồ) chuẩn Nữ Nhi Hồng – Hoa Điêu.",
@@ -578,7 +598,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "古越龙山总店 (Thiệu Hưng, Chiết Giang)"
+      "flagshipAddressZh": "古越龙山总店 (Thiệu Hưng, Chiết Giang)",
+      "imagePath": "assets/images/prov_items/zhejiang/h1.jpg"
     },
     "lzh-wuyutai": {
       "signatureProductVi": "Trà hoa nhài Bắc Kinh ướp hoa nhài Hoành Châu qua 9 lượt ngậm hương – sấy gỗ.",
@@ -593,7 +614,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "吴裕泰总店 (Bắc Kinh (Vương Phủ Tỉnh & Tiền Môn))"
+      "flagshipAddressZh": "吴裕泰总店 (Bắc Kinh (Vương Phủ Tỉnh & Tiền Môn))",
+      "imagePath": "assets/images/prov_items/beijing/h1.jpg"
     },
     "lzh-zhangyiyuan": {
       "signatureProductVi": "Danh trà hái tay theo tiết khí Thanh Minh/Cốc Vũ và tửu phường ủ men hầm đất lâu năm (quán tửu gốm, lên men nhiều lượt Chuẩn Lão Diếu).",
@@ -608,7 +630,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "张一元总店 (Bắc Kinh (Đại Sách Lan))"
+      "flagshipAddressZh": "张一元总店 (Bắc Kinh (Đại Sách Lan))",
+      "imagePath": "assets/images/prov_items/beijing/h2.jpg"
     },
     "lzh-daoxiangcun": {
       "signatureProductVi": "Danh trà hái tay theo tiết khí Thanh Minh/Cốc Vũ và tửu phường ủ men hầm đất lâu năm (quán tửu gốm, lên men nhiều lượt Chuẩn Lão Diếu).",
@@ -623,7 +646,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "稻香村总店 (Tô Châu (và chi nhánh Kinh Thành 1895))"
+      "flagshipAddressZh": "稻香村总店 (Tô Châu (và chi nhánh Kinh Thành 1895))",
+      "imagePath": "assets/images/prov_items/jiangsu/h0.jpg"
     },
     "lzh-rongbaozhai": {
       "signatureProductVi": "Tranh in bản gỗ Mộc bản Thủy ấn tái hiện sắc độ bút mực như nguyên tác bảo tàng.",
@@ -638,7 +662,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "荣宝斋总店 (Bắc Kinh (Lưu Ly Xưởng Tây Nhai))"
+      "flagshipAddressZh": "荣宝斋总店 (Bắc Kinh (Lưu Ly Xưởng Tây Nhai))",
+      "imagePath": "assets/images/prov_items/beijing/h3.jpg"
     },
     "lzh-hukaiwen": {
       "signatureProductVi": "Thỏi Huy Mặc đốt nhựa tùng – dầu trẩu trộn xạ hương khắc vàng thủ công Huy Châu.",
@@ -653,7 +678,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "胡开文总店 (Đồn Khê / Tích Khê, Hoàng Sơn (An Huy))"
+      "flagshipAddressZh": "胡开文总店 (Đồn Khê / Tích Khê, Hoàng Sơn (An Huy))",
+      "imagePath": "assets/images/prov_items/anhui/h0.jpg"
     },
     "lzh-zhangxiaoquan": {
       "signatureProductVi": "Kéo rèn thép khảm (Cương khảm thiết) thủ công 72 công đoạn sắc bền hơn 390 năm.",
@@ -668,7 +694,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "张小泉总店 (Hàng Châu, Chiết Giang)"
+      "flagshipAddressZh": "张小泉总店 (Hàng Châu, Chiết Giang)",
+      "imagePath": "assets/images/prov_items/zhejiang/h2.jpg"
     },
     "lzh-ruifuxiang": {
       "signatureProductVi": "Tác phẩm thủ công Văn phòng Tứ bảo (Bút – Mực – Giấy – Nghiên), tơ lụa tơ tằm, sứ mỹ nghệ và tranh khắc bản gỗ qua hàng chục công đoạn thủ công.",
@@ -683,7 +710,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "瑞蚨祥总店 (Bắc Kinh & Tế Nam)"
+      "flagshipAddressZh": "瑞蚨祥总店 (Bắc Kinh & Tế Nam)",
+      "imagePath": "assets/images/prov_items/beijing/h4.jpg"
     },
     "lzh-neiliansheng": {
       "signatureProductVi": "Tác phẩm thủ công Văn phòng Tứ bảo (Bút – Mực – Giấy – Nghiên), tơ lụa tơ tằm, sứ mỹ nghệ và tranh khắc bản gỗ qua hàng chục công đoạn thủ công.",
@@ -698,7 +726,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "内联升总店 (Bắc Kinh (Tiền Môn))"
+      "flagshipAddressZh": "内联升总店 (Bắc Kinh (Tiền Môn))",
+      "imagePath": "assets/images/prov_items/beijing/h5.jpg"
     },
     "lzh-jingtailan": {
       "signatureProductVi": "Tác phẩm thủ công Văn phòng Tứ bảo (Bút – Mực – Giấy – Nghiên), tơ lụa tơ tằm, sứ mỹ nghệ và tranh khắc bản gỗ qua hàng chục công đoạn thủ công.",
@@ -713,7 +742,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "北京珐琅厂 (景泰蓝)总店 (Bắc Kinh (Đông Thành))"
+      "flagshipAddressZh": "北京珐琅厂 (景泰蓝)总店 (Bắc Kinh (Đông Thành))",
+      "imagePath": "assets/images/prov_items/beijing/d3.jpg"
     },
     "lzh-x-01": {
       "signatureProductVi": "An Cung Ngưu Hoàng Hoàn, Lục Vị Địa Hoàng Hoàn & gia huấn bào chế ngự dược triều Thanh (1669).",
@@ -728,7 +758,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "北京同仁堂总店 (Bắc Kinh)"
+      "flagshipAddressZh": "北京同仁堂总店 (Bắc Kinh)",
+      "imagePath": "assets/images/prov_items/beijing/h0.jpg"
     },
     "lzh-x-02": {
       "signatureProductVi": "Cao dược liệu Giang Nam bào chế nồi đồng và thang dược thiện theo bài thuốc cổ.",
@@ -743,7 +774,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "杭州胡庆余堂总店 (Hàng Châu)"
+      "flagshipAddressZh": "杭州胡庆余堂总店 (Hàng Châu)",
+      "imagePath": "assets/images/prov_items/zhejiang/h0.jpg"
     },
     "lzh-x-03": {
       "signatureProductVi": "Viên hoàn bọc sáp ong niêm phong chống ẩm nhiệt đới (phát minh năm 1600).",
@@ -758,7 +790,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "广州陈李济总店 (Quảng Châu)"
+      "flagshipAddressZh": "广州陈李济总店 (Quảng Châu)",
+      "imagePath": "assets/images/prov_items/guangdong/h0.jpg"
     },
     "lzh-x-04": {
       "signatureProductVi": "Cao bản thảo cung đình Chương Châu triều Minh gắn với hành trình Hải thương Phúc Kiến.",
@@ -773,7 +806,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "漳州片仔癀总店 (Chương Châu)"
+      "flagshipAddressZh": "漳州片仔癀总店 (Chương Châu)",
+      "imagePath": "assets/images/prov_items/fujian/h0.jpg"
     },
     "lzh-x-05": {
       "signatureProductVi": "Bào chế cổ truyền (cao đơn hoàn tán mật ong/sáp ong) và dược liệu thực dưỡng tuyển chọn theo quy chuẩn 'Đạo địa dược tài' (道地药材).",
@@ -788,7 +822,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "云南白药总店 (Côn Minh)"
+      "flagshipAddressZh": "云南白药总店 (Côn Minh)",
+      "imagePath": "assets/images/prov_items/yunnan/h0.jpg"
     },
     "lzh-x-06": {
       "signatureProductVi": "Định Khôn Đan và Quy Linh Tập bào chế theo kỹ nghệ cổ điển Sơn Tây hơn 480 năm.",
@@ -803,7 +838,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "太谷广誉远总店 (Tấn Trung (Thái Cốc))"
+      "flagshipAddressZh": "太谷广誉远总店 (Tấn Trung (Thái Cốc))",
+      "imagePath": "assets/images/prov_items/shanxi/h0.jpg"
     },
     "lzh-x-07": {
       "signatureProductVi": "A giao nấu từ nước giếng A Tỉnh giàu khoáng Đông A (Sơn Đông) qua 99 bước luyện.",
@@ -818,7 +854,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "东阿阿胶总店 (Liêu Thành (Đông A))"
+      "flagshipAddressZh": "东阿阿胶总店 (Liêu Thành (Đông A))",
+      "imagePath": "assets/images/prov_items/shandong/h0.jpg"
     },
     "lzh-x-08": {
       "signatureProductVi": "Bào chế cổ truyền (cao đơn hoàn tán mật ong/sáp ong) và dược liệu thực dưỡng tuyển chọn theo quy chuẩn 'Đạo địa dược tài' (道地药材).",
@@ -833,7 +870,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "长沙九芝堂总店 (Trường Sa)"
+      "flagshipAddressZh": "长沙九芝堂总店 (Trường Sa)",
+      "imagePath": "assets/images/prov_items/hunan/h0.jpg"
     },
     "lzh-x-09": {
       "signatureProductVi": "Bào chế cổ truyền (cao đơn hoàn tán mật ong/sáp ong) và dược liệu thực dưỡng tuyển chọn theo quy chuẩn 'Đạo địa dược tài' (道地药材).",
@@ -848,7 +886,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "武汉马应龙总店 (Vũ Hán)"
+      "flagshipAddressZh": "武汉马应龙总店 (Vũ Hán)",
+      "imagePath": "assets/images/prov_items/hubei/h0.jpg"
     },
     "lzh-x-10": {
       "signatureProductVi": "Bào chế cổ truyền (cao đơn hoàn tán mật ong/sáp ong) và dược liệu thực dưỡng tuyển chọn theo quy chuẩn 'Đạo địa dược tài' (道地药材).",
@@ -863,7 +902,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "苏州雷允上总店 (Tô Châu)"
+      "flagshipAddressZh": "苏州雷允上总店 (Tô Châu)",
+      "imagePath": "assets/images/prov_items/jiangsu/h1.jpg"
     },
     "lzh-x-11": {
       "signatureProductVi": "Bào chế cổ truyền (cao đơn hoàn tán mật ong/sáp ong) và dược liệu thực dưỡng tuyển chọn theo quy chuẩn 'Đạo địa dược tài' (道地药材).",
@@ -878,7 +918,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "上海童涵春堂总店 (Thượng Hải)"
+      "flagshipAddressZh": "上海童涵春堂总店 (Thượng Hải)",
+      "imagePath": "assets/images/prov_items/shanghai/h0.jpg"
     },
     "lzh-x-12": {
       "signatureProductVi": "Bào chế cổ truyền (cao đơn hoàn tán mật ong/sáp ong) và dược liệu thực dưỡng tuyển chọn theo quy chuẩn 'Đạo địa dược tài' (道地药材).",
@@ -893,7 +934,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "天津达仁堂总店 (Thiên Tân)"
+      "flagshipAddressZh": "天津达仁堂总店 (Thiên Tân)",
+      "imagePath": "assets/images/prov_items/tianjin/h0.jpg"
     },
     "lzh-x-13": {
       "signatureProductVi": "Bào chế cổ truyền (cao đơn hoàn tán mật ong/sáp ong) và dược liệu thực dưỡng tuyển chọn theo quy chuẩn 'Đạo địa dược tài' (道地药材).",
@@ -908,7 +950,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "济南宏济堂总店 (Tế Nam)"
+      "flagshipAddressZh": "济南宏济堂总店 (Tế Nam)",
+      "imagePath": "assets/images/prov_items/shandong/h1.jpg"
     },
     "lzh-x-14": {
       "signatureProductVi": "Bào chế cổ truyền (cao đơn hoàn tán mật ong/sáp ong) và dược liệu thực dưỡng tuyển chọn theo quy chuẩn 'Đạo địa dược tài' (道地药材).",
@@ -923,7 +966,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "重庆桐君阁总店 (Trùng Khánh)"
+      "flagshipAddressZh": "重庆桐君阁总店 (Trùng Khánh)",
+      "imagePath": "assets/images/prov_items/chongqing/h0.jpg"
     },
     "lzh-x-15": {
       "signatureProductVi": "Bào chế cổ truyền (cao đơn hoàn tán mật ong/sáp ong) và dược liệu thực dưỡng tuyển chọn theo quy chuẩn 'Đạo địa dược tài' (道地药材).",
@@ -938,7 +982,8 @@
       "qualityStandardEn": "Guided by Chinese Pharmacopoeia monographs, GAP botanical cultivation audits, GMP heavy-metal testing, and National Intangible Cultural Heritage craft registries.",
       "vietnamAseanLessonVi": "Gợi mở cho dược liệu Việt Nam (sâm Ngọc Linh, quế Trà My, hồi Lạng Sơn): muốn vào thị trường Đông Á/EU cần chuyển từ xuất thô sang chuẩn hóa truy xuất vùng trồng và đóng gói bảo quản chống ẩm.",
       "vietnamAseanLessonEn": "Signals for Vietnamese botanicals (Ngoc Linh ginseng, Tra My cinnamon, Lang Son star anise): standardize origin traceability and moisture-barrier packaging.",
-      "flagshipAddressZh": "广州王老吉总店 (Quảng Châu)"
+      "flagshipAddressZh": "广州王老吉总店 (Quảng Châu)",
+      "imagePath": "assets/images/prov_items/guangdong/h1.jpg"
     },
     "lzh-x-16": {
       "signatureProductVi": "Vịt quay Bắc Kinh lò treo gỗ táo tàu (45 phút, 108 lát da giòn thịt mềm).",
@@ -953,7 +998,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "北京全聚德总店 (Bắc Kinh)"
+      "flagshipAddressZh": "北京全聚德总店 (Bắc Kinh)",
+      "imagePath": "assets/images/prov_items/beijing/d0.jpg"
     },
     "lzh-x-17": {
       "signatureProductVi": "Vịt quay lò gạch kín (Bế Lô) giữ trọn hơi nước từ thời Minh Vĩnh Lạc năm 1416.",
@@ -968,7 +1014,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "北京便宜坊总店 (Bắc Kinh)"
+      "flagshipAddressZh": "北京便宜坊总店 (Bắc Kinh)",
+      "imagePath": "assets/images/prov_items/beijing/d1.jpg"
     },
     "lzh-x-18": {
       "signatureProductVi": "Món đặc sản trấn điếm nấu theo hỏa hầu truyền thống (quay lò kín/lò treo, hầm thố, ủ lên men tự nhiên 6–12 tháng) gắn ký ức đô thị bản địa.",
@@ -983,7 +1030,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "北京六必居总店 (Bắc Kinh)"
+      "flagshipAddressZh": "北京六必居总店 (Bắc Kinh)",
+      "imagePath": "assets/images/prov_items/beijing/d4.jpg"
     },
     "lzh-x-19": {
       "signatureProductVi": "Món đặc sản trấn điếm nấu theo hỏa hầu truyền thống (quay lò kín/lò treo, hầm thố, ủ lên men tự nhiên 6–12 tháng) gắn ký ức đô thị bản địa.",
@@ -998,7 +1046,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "杭州楼外楼总店 (Hàng Châu)"
+      "flagshipAddressZh": "杭州楼外楼总店 (Hàng Châu)",
+      "imagePath": "assets/images/prov_items/zhejiang/d0.jpg"
     },
     "lzh-x-20": {
       "signatureProductVi": "Món đặc sản trấn điếm nấu theo hỏa hầu truyền thống (quay lò kín/lò treo, hầm thố, ủ lên men tự nhiên 6–12 tháng) gắn ký ức đô thị bản địa.",
@@ -1013,7 +1062,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "广州陶陶居总店 (Quảng Châu)"
+      "flagshipAddressZh": "广州陶陶居总店 (Quảng Châu)",
+      "imagePath": "assets/images/prov_items/guangdong/d0.jpg"
     },
     "lzh-x-21": {
       "signatureProductVi": "Đậu phụ Ma Bà Tứ Xuyên 8 chuẩn vị: Ma – Lạt – Thang – Hương – Tô – Nộn – Tiên – Hoạt.",
@@ -1028,7 +1078,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "成都陈麻婆豆腐总店 (Thành Đô)"
+      "flagshipAddressZh": "成都陈麻婆豆腐总店 (Thành Đô)",
+      "imagePath": "assets/images/prov_items/sichuan/d0.jpg"
     },
     "lzh-x-22": {
       "signatureProductVi": "Món đặc sản trấn điếm nấu theo hỏa hầu truyền thống (quay lò kín/lò treo, hầm thố, ủ lên men tự nhiên 6–12 tháng) gắn ký ức đô thị bản địa.",
@@ -1043,7 +1094,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "天津狗不理总店 (Thiên Tân)"
+      "flagshipAddressZh": "天津狗不理总店 (Thiên Tân)",
+      "imagePath": "assets/images/prov_items/tianjin/d0.jpg"
     },
     "lzh-x-23": {
       "signatureProductVi": "Món đặc sản trấn điếm nấu theo hỏa hầu truyền thống (quay lò kín/lò treo, hầm thố, ủ lên men tự nhiên 6–12 tháng) gắn ký ức đô thị bản địa.",
@@ -1058,7 +1110,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "镇江恒顺总店 (Trấn Giang)"
+      "flagshipAddressZh": "镇江恒顺总店 (Trấn Giang)",
+      "imagePath": "assets/images/prov_items/jiangsu/d0.jpg"
     },
     "lzh-x-24": {
       "signatureProductVi": "Món đặc sản trấn điếm nấu theo hỏa hầu truyền thống (quay lò kín/lò treo, hầm thố, ủ lên men tự nhiên 6–12 tháng) gắn ký ức đô thị bản địa.",
@@ -1073,7 +1126,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "嘉兴五芳斋总店 (Gia Hưng)"
+      "flagshipAddressZh": "嘉兴五芳斋总店 (Gia Hưng)",
+      "imagePath": "assets/images/prov_items/zhejiang/d1.jpg"
     },
     "lzh-x-25": {
       "signatureProductVi": "Món đặc sản trấn điếm nấu theo hỏa hầu truyền thống (quay lò kín/lò treo, hầm thố, ủ lên men tự nhiên 6–12 tháng) gắn ký ức đô thị bản địa.",
@@ -1088,7 +1142,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "西安老孙家总店 (Tây An)"
+      "flagshipAddressZh": "西安老孙家总店 (Tây An)",
+      "imagePath": "assets/images/prov_items/shaanxi/d0.jpg"
     },
     "lzh-x-26": {
       "signatureProductVi": "Món đặc sản trấn điếm nấu theo hỏa hầu truyền thống (quay lò kín/lò treo, hầm thố, ủ lên men tự nhiên 6–12 tháng) gắn ký ức đô thị bản địa.",
@@ -1103,7 +1158,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "上海老饭店总店 (Thượng Hải)"
+      "flagshipAddressZh": "上海老饭店总店 (Thượng Hải)",
+      "imagePath": "assets/images/prov_items/shanghai/d0.jpg"
     },
     "lzh-x-27": {
       "signatureProductVi": "Món đặc sản trấn điếm nấu theo hỏa hầu truyền thống (quay lò kín/lò treo, hầm thố, ủ lên men tự nhiên 6–12 tháng) gắn ký ức đô thị bản địa.",
@@ -1118,7 +1174,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "苏州松鹤楼总店 (Tô Châu)"
+      "flagshipAddressZh": "苏州松鹤楼总店 (Tô Châu)",
+      "imagePath": "assets/images/prov_items/jiangsu/d1.jpg"
     },
     "lzh-x-28": {
       "signatureProductVi": "Món đặc sản trấn điếm nấu theo hỏa hầu truyền thống (quay lò kín/lò treo, hầm thố, ủ lên men tự nhiên 6–12 tháng) gắn ký ức đô thị bản địa.",
@@ -1133,7 +1190,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "福州聚春园总店 (Phúc Châu)"
+      "flagshipAddressZh": "福州聚春园总店 (Phúc Châu)",
+      "imagePath": "assets/images/prov_items/fujian/d0.jpg"
     },
     "lzh-x-29": {
       "signatureProductVi": "Món đặc sản trấn điếm nấu theo hỏa hầu truyền thống (quay lò kín/lò treo, hầm thố, ủ lên men tự nhiên 6–12 tháng) gắn ký ức đô thị bản địa.",
@@ -1148,7 +1206,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "长沙火宫殿总店 (Trường Sa)"
+      "flagshipAddressZh": "长沙火宫殿总店 (Trường Sa)",
+      "imagePath": "assets/images/prov_items/hunan/d0.jpg"
     },
     "lzh-x-30": {
       "signatureProductVi": "Món đặc sản trấn điếm nấu theo hỏa hầu truyền thống (quay lò kín/lò treo, hầm thố, ủ lên men tự nhiên 6–12 tháng) gắn ký ức đô thị bản địa.",
@@ -1163,7 +1222,8 @@
       "qualityStandardEn": "Compliant with China GB 14881 / HACCP hygiene frameworks, temperature-controlled farm traceability, and provincial Intangible Cultural Heritage culinary listings.",
       "vietnamAseanLessonVi": "Bài học F&B Việt Nam: chuẩn hóa nước dùng – gia vị đóng gói sẵn chuẩn quốc tế giúp nhà hàng di sản giữ đồng nhất vị khi nhượng quyền ra thị trường ngoại quốc.",
       "vietnamAseanLessonEn": "F&B Export Lesson: codifying soup bases and fermented sauces via retail-ready HACCP SKUs protects flavor consistency during overseas franchising.",
-      "flagshipAddressZh": "佛山海天总店 (Phật Sơn)"
+      "flagshipAddressZh": "佛山海天总店 (Phật Sơn)",
+      "imagePath": "assets/images/prov_items/guangdong/d1.jpg"
     },
     "lzh-x-31": {
       "signatureProductVi": "Rượu Mao Đài Tương Hương (53% vol) chưng cất 9 lần, lên men 8 lần và ủ gốm 3–5 năm.",
@@ -1178,7 +1238,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "贵州茅台总店 (Tuân Nghĩa (Trấn Mao Đài))"
+      "flagshipAddressZh": "贵州茅台总店 (Tuân Nghĩa (Trấn Mao Đài))",
+      "imagePath": "assets/images/prov_items/guizhou/h0.jpg"
     },
     "lzh-x-32": {
       "signatureProductVi": "Bạch tửu Nồng Hương phối 5 loại ngũ cốc (cao lương, gạo nếp, gạo tẻ, ngô, lúa mì).",
@@ -1193,7 +1254,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "宜宾五粮液总店 (Nghi Tân)"
+      "flagshipAddressZh": "宜宾五粮液总店 (Nghi Tân)",
+      "imagePath": "assets/images/prov_items/sichuan/h0.jpg"
     },
     "lzh-x-33": {
       "signatureProductVi": "Danh trà hái tay theo tiết khí Thanh Minh/Cốc Vũ và tửu phường ủ men hầm đất lâu năm (quán tửu gốm, lên men nhiều lượt Chuẩn Lão Diếu).",
@@ -1208,7 +1270,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "泸州老窖总店 (Lô Châu)"
+      "flagshipAddressZh": "泸州老窖总店 (Lô Châu)",
+      "imagePath": "assets/images/prov_items/sichuan/h1.jpg"
     },
     "lzh-x-34": {
       "signatureProductVi": "Danh trà hái tay theo tiết khí Thanh Minh/Cốc Vũ và tửu phường ủ men hầm đất lâu năm (quán tửu gốm, lên men nhiều lượt Chuẩn Lão Diếu).",
@@ -1223,7 +1286,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "杏花村汾酒总店 (Phần Dương)"
+      "flagshipAddressZh": "杏花村汾酒总店 (Phần Dương)",
+      "imagePath": "assets/images/prov_items/shanxi/h1.jpg"
     },
     "lzh-x-35": {
       "signatureProductVi": "Hoàng tửu Thiệu Hưng (Trữ lâu năm bằng nước hồ Giám Hồ) chuẩn Nữ Nhi Hồng – Hoa Điêu.",
@@ -1238,7 +1302,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "绍兴古越龙山总店 (Thiệu Hưng)"
+      "flagshipAddressZh": "绍兴古越龙山总店 (Thiệu Hưng)",
+      "imagePath": "assets/images/prov_items/zhejiang/h1.jpg"
     },
     "lzh-x-36": {
       "signatureProductVi": "Danh trà hái tay theo tiết khí Thanh Minh/Cốc Vũ và tửu phường ủ men hầm đất lâu năm (quán tửu gốm, lên men nhiều lượt Chuẩn Lão Diếu).",
@@ -1253,7 +1318,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "青岛啤酒总店 (Thanh Đảo)"
+      "flagshipAddressZh": "青岛啤酒总店 (Thanh Đảo)",
+      "imagePath": "assets/images/prov_items/shandong/h2.jpg"
     },
     "lzh-x-37": {
       "signatureProductVi": "Danh trà hái tay theo tiết khí Thanh Minh/Cốc Vũ và tửu phường ủ men hầm đất lâu năm (quán tửu gốm, lên men nhiều lượt Chuẩn Lão Diếu).",
@@ -1268,7 +1334,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "烟台张裕总店 (Yên Đài)"
+      "flagshipAddressZh": "烟台张裕总店 (Yên Đài)",
+      "imagePath": "assets/images/prov_items/shandong/h3.jpg"
     },
     "lzh-x-38": {
       "signatureProductVi": "Trà hoa nhài Bắc Kinh ướp hoa nhài Hoành Châu qua 9 lượt ngậm hương – sấy gỗ.",
@@ -1283,7 +1350,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "北京吴裕泰总店 (Bắc Kinh)"
+      "flagshipAddressZh": "北京吴裕泰总店 (Bắc Kinh)",
+      "imagePath": "assets/images/prov_items/beijing/h1.jpg"
     },
     "lzh-x-39": {
       "signatureProductVi": "Danh trà hái tay theo tiết khí Thanh Minh/Cốc Vũ và tửu phường ủ men hầm đất lâu năm (quán tửu gốm, lên men nhiều lượt Chuẩn Lão Diếu).",
@@ -1298,7 +1366,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "北京张一元总店 (Bắc Kinh)"
+      "flagshipAddressZh": "北京张一元总店 (Bắc Kinh)",
+      "imagePath": "assets/images/prov_items/beijing/h2.jpg"
     },
     "lzh-x-40": {
       "signatureProductVi": "Danh trà hái tay theo tiết khí Thanh Minh/Cốc Vũ và tửu phường ủ men hầm đất lâu năm (quán tửu gốm, lên men nhiều lượt Chuẩn Lão Diếu).",
@@ -1313,7 +1382,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "黄山谢裕大总店 (Hoàng Sơn)"
+      "flagshipAddressZh": "黄山谢裕大总店 (Hoàng Sơn)",
+      "imagePath": "assets/images/prov_items/anhui/h1.jpg"
     },
     "lzh-x-41": {
       "signatureProductVi": "Danh trà hái tay theo tiết khí Thanh Minh/Cốc Vũ và tửu phường ủ men hầm đất lâu năm (quán tửu gốm, lên men nhiều lượt Chuẩn Lão Diếu).",
@@ -1328,7 +1398,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "安溪八马茶业总店 (Tuyền Châu (An Khê))"
+      "flagshipAddressZh": "安溪八马茶业总店 (Tuyền Châu (An Khê))",
+      "imagePath": "assets/images/prov_items/fujian/h1.jpg"
     },
     "lzh-x-42": {
       "signatureProductVi": "Danh trà hái tay theo tiết khí Thanh Minh/Cốc Vũ và tửu phường ủ men hầm đất lâu năm (quán tửu gốm, lên men nhiều lượt Chuẩn Lão Diếu).",
@@ -1343,7 +1414,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "勐海大益茶总店 (Tây Song Bản Nạp (Mãnh Hải))"
+      "flagshipAddressZh": "勐海大益茶总店 (Tây Song Bản Nạp (Mãnh Hải))",
+      "imagePath": "assets/images/prov_items/yunnan/h1.jpg"
     },
     "lzh-x-43": {
       "signatureProductVi": "Danh trà hái tay theo tiết khí Thanh Minh/Cốc Vũ và tửu phường ủ men hầm đất lâu năm (quán tửu gốm, lên men nhiều lượt Chuẩn Lão Diếu).",
@@ -1358,7 +1430,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "凤翔西凤酒总店 (Bảo Kê (Phượng Tường))"
+      "flagshipAddressZh": "凤翔西凤酒总店 (Bảo Kê (Phượng Tường))",
+      "imagePath": "assets/images/prov_items/shaanxi/h0.jpg"
     },
     "lzh-x-44": {
       "signatureProductVi": "Danh trà hái tay theo tiết khí Thanh Minh/Cốc Vũ và tửu phường ủ men hầm đất lâu năm (quán tửu gốm, lên men nhiều lượt Chuẩn Lão Diếu).",
@@ -1373,7 +1446,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "桂林三花酒总店 (Quế Lâm)"
+      "flagshipAddressZh": "桂林三花酒总店 (Quế Lâm)",
+      "imagePath": "assets/images/prov_items/guangxi/h0.jpg"
     },
     "lzh-x-45": {
       "signatureProductVi": "Danh trà hái tay theo tiết khí Thanh Minh/Cốc Vũ và tửu phường ủ men hầm đất lâu năm (quán tửu gốm, lên men nhiều lượt Chuẩn Lão Diếu).",
@@ -1388,7 +1462,8 @@
       "qualityStandardEn": "National GB/T grading specifications, serialized anti-counterfeit packaging, and bilateral Geographical Indication origin controls.",
       "vietnamAseanLessonVi": "Liên hệ ngành chè Shan Tuyết Cổ thụ và cà phê đặc sản Việt Nam: xây dựng câu chuyện thổ nhưỡng (Terroir) kèm cấp độ GB/EU-GI giúp tăng giá trị xuất khẩu gấp nhiều lần.",
       "vietnamAseanLessonEn": "Takeaway for Vietnam's Shan Tuyet ancient tea and specialty coffee: pairing terroir narratives with protected GIs elevates export margins.",
-      "flagshipAddressZh": "宿迁洋河总店 (Túc Thiên)"
+      "flagshipAddressZh": "宿迁洋河总店 (Túc Thiên)",
+      "imagePath": "assets/images/prov_items/jiangsu/h2.jpg"
     },
     "lzh-x-46": {
       "signatureProductVi": "Tranh in bản gỗ Mộc bản Thủy ấn tái hiện sắc độ bút mực như nguyên tác bảo tàng.",
@@ -1403,7 +1478,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "北京荣宝斋总店 (Bắc Kinh)"
+      "flagshipAddressZh": "北京荣宝斋总店 (Bắc Kinh)",
+      "imagePath": "assets/images/prov_items/beijing/h3.jpg"
     },
     "lzh-x-47": {
       "signatureProductVi": "Tác phẩm thủ công Văn phòng Tứ bảo (Bút – Mực – Giấy – Nghiên), tơ lụa tơ tằm, sứ mỹ nghệ và tranh khắc bản gỗ qua hàng chục công đoạn thủ công.",
@@ -1418,7 +1494,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "北京瑞蚨祥总店 (Bắc Kinh)"
+      "flagshipAddressZh": "北京瑞蚨祥总店 (Bắc Kinh)",
+      "imagePath": "assets/images/prov_items/beijing/h4.jpg"
     },
     "lzh-x-48": {
       "signatureProductVi": "Tác phẩm thủ công Văn phòng Tứ bảo (Bút – Mực – Giấy – Nghiên), tơ lụa tơ tằm, sứ mỹ nghệ và tranh khắc bản gỗ qua hàng chục công đoạn thủ công.",
@@ -1433,7 +1510,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "北京内联升总店 (Bắc Kinh)"
+      "flagshipAddressZh": "北京内联升总店 (Bắc Kinh)",
+      "imagePath": "assets/images/prov_items/beijing/h5.jpg"
     },
     "lzh-x-49": {
       "signatureProductVi": "Kéo rèn thép khảm (Cương khảm thiết) thủ công 72 công đoạn sắc bền hơn 390 năm.",
@@ -1448,7 +1526,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "杭州张小泉总店 (Hàng Châu)"
+      "flagshipAddressZh": "杭州张小泉总店 (Hàng Châu)",
+      "imagePath": "assets/images/prov_items/zhejiang/h2.jpg"
     },
     "lzh-x-50": {
       "signatureProductVi": "Tác phẩm thủ công Văn phòng Tứ bảo (Bút – Mực – Giấy – Nghiên), tơ lụa tơ tằm, sứ mỹ nghệ và tranh khắc bản gỗ qua hàng chục công đoạn thủ công.",
@@ -1463,7 +1542,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "杭州王星记总店 (Hàng Châu)"
+      "flagshipAddressZh": "杭州王星记总店 (Hàng Châu)",
+      "imagePath": "assets/images/prov_items/zhejiang/h3.jpg"
     },
     "lzh-x-51": {
       "signatureProductVi": "Giấy Tuyên Chỉ Kính Huyện làm từ vỏ cây Thanh Đàn & rơm lúa nếp qua 108 bước trong 3 năm.",
@@ -1478,7 +1558,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "泾县红星宣纸总店 (Tuyên Thành (Kính Huyện))"
+      "flagshipAddressZh": "泾县红星宣纸总店 (Tuyên Thành (Kính Huyện))",
+      "imagePath": "assets/images/prov_items/anhui/h2.jpg"
     },
     "lzh-x-52": {
       "signatureProductVi": "Tác phẩm thủ công Văn phòng Tứ bảo (Bút – Mực – Giấy – Nghiên), tơ lụa tơ tằm, sứ mỹ nghệ và tranh khắc bản gỗ qua hàng chục công đoạn thủ công.",
@@ -1493,7 +1574,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "上海老凤祥总店 (Thượng Hải)"
+      "flagshipAddressZh": "上海老凤祥总店 (Thượng Hải)",
+      "imagePath": "assets/images/prov_items/shanghai/h1.jpg"
     },
     "lzh-x-53": {
       "signatureProductVi": "Tác phẩm thủ công Văn phòng Tứ bảo (Bút – Mực – Giấy – Nghiên), tơ lụa tơ tằm, sứ mỹ nghệ và tranh khắc bản gỗ qua hàng chục công đoạn thủ công.",
@@ -1508,7 +1590,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "上海英雄金笔总店 (Thượng Hải)"
+      "flagshipAddressZh": "上海英雄金笔总店 (Thượng Hải)",
+      "imagePath": "assets/images/prov_items/shanghai/h2.jpg"
     },
     "lzh-x-54": {
       "signatureProductVi": "Bút lông Hồ Bút chọn lông dê Sơn Dương – chồn tơ tinh tuyển qua 120 bước công phu.",
@@ -1523,7 +1606,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "湖州善琏湖笔总店 (Hồ Châu)"
+      "flagshipAddressZh": "湖州善琏湖笔总店 (Hồ Châu)",
+      "imagePath": "assets/images/prov_items/zhejiang/h4.jpg"
     },
     "lzh-x-55": {
       "signatureProductVi": "Thỏi Huy Mặc đốt nhựa tùng – dầu trẩu trộn xạ hương khắc vàng thủ công Huy Châu.",
@@ -1538,7 +1622,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "安徽胡开文墨总店 (Hoàng Sơn (Đồn Khê))"
+      "flagshipAddressZh": "安徽胡开文墨总店 (Hoàng Sơn (Đồn Khê))",
+      "imagePath": "assets/images/prov_items/anhui/h3.jpg"
     },
     "lzh-x-56": {
       "signatureProductVi": "Tác phẩm thủ công Văn phòng Tứ bảo (Bút – Mực – Giấy – Nghiên), tơ lụa tơ tằm, sứ mỹ nghệ và tranh khắc bản gỗ qua hàng chục công đoạn thủ công.",
@@ -1553,7 +1638,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "苏州宋锦总店 (Tô Châu)"
+      "flagshipAddressZh": "苏州宋锦总店 (Tô Châu)",
+      "imagePath": "assets/images/prov_items/jiangsu/h3.jpg"
     },
     "lzh-x-57": {
       "signatureProductVi": "Tác phẩm thủ công Văn phòng Tứ bảo (Bút – Mực – Giấy – Nghiên), tơ lụa tơ tằm, sứ mỹ nghệ và tranh khắc bản gỗ qua hàng chục công đoạn thủ công.",
@@ -1568,7 +1654,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "景德镇景德瓷厂总店 (Cảnh Đức Trấn)"
+      "flagshipAddressZh": "景德镇景德瓷厂总店 (Cảnh Đức Trấn)",
+      "imagePath": "assets/images/prov_items/jiangxi/h0.jpg"
     },
     "lzh-x-58": {
       "signatureProductVi": "Tác phẩm thủ công Văn phòng Tứ bảo (Bút – Mực – Giấy – Nghiên), tơ lụa tơ tằm, sứ mỹ nghệ và tranh khắc bản gỗ qua hàng chục công đoạn thủ công.",
@@ -1583,7 +1670,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "北京一得阁总店 (Bắc Kinh)"
+      "flagshipAddressZh": "北京一得阁总店 (Bắc Kinh)",
+      "imagePath": "assets/images/prov_items/beijing/f0.jpg"
     },
     "lzh-x-59": {
       "signatureProductVi": "Tác phẩm thủ công Văn phòng Tứ bảo (Bút – Mực – Giấy – Nghiên), tơ lụa tơ tằm, sứ mỹ nghệ và tranh khắc bản gỗ qua hàng chục công đoạn thủ công.",
@@ -1598,7 +1686,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "天津杨柳青年画总店 (Thiên Tân)"
+      "flagshipAddressZh": "天津杨柳青年画总店 (Thiên Tân)",
+      "imagePath": "assets/images/prov_items/tianjin/h1.jpg"
     },
     "lzh-x-60": {
       "signatureProductVi": "Tác phẩm thủ công Văn phòng Tứ bảo (Bút – Mực – Giấy – Nghiên), tơ lụa tơ tằm, sứ mỹ nghệ và tranh khắc bản gỗ qua hàng chục công đoạn thủ công.",
@@ -1613,7 +1702,8 @@
       "qualityStandardEn": "National/UNESCO ICH stewardship, archival permanence benchmarks (e.g., millennium-grade alkaline Xuan paper), and lawful art export clearance.",
       "vietnamAseanLessonVi": "Đối sánh gốm Chu Đậu, tranh Đông Hồ, lụa Vạn Phúc & sơn mài Hạ Thái: kết hợp nghệ nhân truyền đời với thiết kế ứng dụng đương đại để chinh phục bảo tàng và giới sưu tầm toàn cầu.",
       "vietnamAseanLessonEn": "Parallels Chu Dau ceramics, Dong Ho woodblocks, and Van Phuc silk: uniting hereditary masters with modern museum-grade design and storytelling.",
-      "flagshipAddressZh": "沈阳萃华金店总店 (Thẩm Dương)"
+      "flagshipAddressZh": "沈阳萃华金店总店 (Thẩm Dương)",
+      "imagePath": "assets/images/prov_items/liaoning/h0.jpg"
     }
   },
   "giEnrich": {
@@ -1622,84 +1712,96 @@
       "terroirAndCraftVi": "Thu hái búp non 1 tôm 1–2 lá vùng lõi Ngũ Đại Danh Khu quanh Tây Hồ, sao chảo gang phẳng dẹt nhiệt độ chuẩn để giữ sắc xanh và hương đậu rang.",
       "terroirAndCraftEn": "Hand-plucked one-bud-one-leaf shoots from West Lake's core Five Mountain sub-zones, flattened in heated iron pans for clean aroma and chestnut sweetness. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "So sánh với trà Shan Tuyết Tà Xùa/Suối Giàng của Việt Nam: kết hợp chứng nhận GI bảo vệ vùng lõi để chống hàng pha trộn trên Amazon/EU.",
-      "vnEuComparisonEn": "Compare with northern Vietnam's ancient Shan Tuyet teas in Ta Xua and Suoi Giang: binding GI zoning to harvest rules prevents adulteration in EU retail."
+      "vnEuComparisonEn": "Compare with northern Vietnam's ancient Shan Tuyet teas in Ta Xua and Suoi Giang: binding GI zoning to harvest rules prevents adulteration in EU retail.",
+      "imagePath": "assets/images/prov_items/zhejiang/f0.jpg"
     },
     "gi-eu-02": {
       "gbStandardCode": "GB/T 3532 & Quy chuẩn Sứ Cảnh Đức",
       "terroirAndCraftVi": "Nung bằng đất cao lanh tinh khiết vùng Dao Lý – Cảnh Đức Trấn ở nhiệt độ >1.300°C tạo độ thấu quang trắng trong như ngọc.",
       "terroirAndCraftEn": "Fired above 1,300C from pure Gaoling kaolin clay harvested around Yaoli and Jingdezhen, producing clear bell-like resonance and jade-like translucency. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Tương đồng với Gốm Chu Đậu (Hải Dương) và Bát Tràng (Hà Nội) trong việc đăng ký nhãn hiệu tập thể xuất khẩu sang thị trường Đức/Pháp.",
-      "vnEuComparisonEn": "Parallels Chu Dau (Hai Duong) and Bat Trang (Hanoi) porcelain lineages in registering collective geographic hallmarks across France and Germany."
+      "vnEuComparisonEn": "Parallels Chu Dau (Hai Duong) and Bat Trang (Hanoi) porcelain lineages in registering collective geographic hallmarks across France and Germany.",
+      "imagePath": "assets/images/prov_items/jiangxi/f0.jpg"
     },
     "gi-eu-03": {
       "gbStandardCode": "GB/T 15551 (Lụa tơ tằm Hàng Châu)",
       "terroirAndCraftVi": "Dệt từ sợi tơ dâu tằm đồng bằng Thái Hồ mềm mịn, thoáng khí và nhuộm sắc thực vật truyền thống Hàng Châu – Tô Châu.",
       "terroirAndCraftEn": "Woven from Taihu Plain white mulberry filaments and botanical dye baths perfected in Hangzhou and Suzhou silk ateliers. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Bài học trực tiếp cho Lụa Vạn Phúc (Hà Đông) và Tơ lụa Bảo Lộc trong chuyển đổi sang lụa hữu cơ đạt chứng chỉ OEKO-TEX tại Châu Âu.",
-      "vnEuComparisonEn": "Offers a direct roadmap for Van Phuc (Hanoi) and Bao Loc silk workshops transitioning to traceable OEKO-TEX certification for European buyers."
+      "vnEuComparisonEn": "Offers a direct roadmap for Van Phuc (Hanoi) and Bao Loc silk workshops transitioning to traceable OEKO-TEX certification for European buyers.",
+      "imagePath": "assets/images/prov_items/zhejiang/f1.jpg"
     },
     "gi-eu-04": {
       "gbStandardCode": "GB/T 17946 (Hoàng tửu Thiệu Hưng)",
       "terroirAndCraftVi": "Lên men tự nhiên gạo nếp đặc biệt và mạch khúc bằng nước khoáng tinh khiết hồ Giám Hồ trong chum sành niêm đất vàng.",
       "terroirAndCraftEn": "Slow clay-jar fermentation blending glutinous rice, wheat starter qu, and mineral-rich Jianhu Lake spring water sealed under yellow loam. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Chứng minh đồ uống lên men truyền thống châu Á hoàn toàn có thể đứng ngang hàng rượu vang/Champagne trong khung bảo hộ GI tại Brussels.",
-      "vnEuComparisonEn": "Demonstrates how traditional Asian fermented beverages attain legal GI parity alongside French Champagne in Brussels filings."
+      "vnEuComparisonEn": "Demonstrates how traditional Asian fermented beverages attain legal GI parity alongside French Champagne in Brussels filings.",
+      "imagePath": "assets/images/prov_items/zhejiang/f2.jpg"
     },
     "gi-eu-05": {
       "gbStandardCode": "GB/T 19598 (Trà Thiết Quan Âm An Khê)",
       "terroirAndCraftVi": "Trà Ô Long bán lên men chế biến qua công đoạn Sái thanh – Dao thanh tạo nốt hương hoa lan tự nhiên và hậu vị 'Âm vận'.",
       "terroirAndCraftEn": "Semi-oxidized Anxi Oolong shaped through solar withering and rhythmic bamboo tossing to unlock natural orchid fragrance ('Yin Rhyme'). Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Gợi ý quy chuẩn hóa quy trình lên men bán phần cho vùng Ô Long Lâm Đồng/Mộc Châu để đàm phán hợp đồng OEM với các hãng trà Đức–Anh.",
-      "vnEuComparisonEn": "Guides highland Oolong cooperatives in Lam Dong and Moc Chau on codifying oxidation logs for German and UK specialty tea contracts."
+      "vnEuComparisonEn": "Guides highland Oolong cooperatives in Lam Dong and Moc Chau on codifying oxidation logs for German and UK specialty tea contracts.",
+      "imagePath": "assets/images/prov_items/fujian/f0.jpg"
     },
     "gi-eu-06": {
       "gbStandardCode": "GB/T 22111 (Trà Phổ Nhĩ Vân Nam)",
       "terroirAndCraftVi": "Làm từ giống chè lá to Vân Nam phơi nắng (Sái thanh), ép bánh hoặc ủ chín (Thục trà) lưu trữ vi sinh biến đổi hương vị theo năm.",
       "terroirAndCraftEn": "Sun-dried Yunnan big-leaf Camellia sinensis compressed into cakes or post-fermented into dark Ripe Puerh with age-evolving microflora. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Đồng quy trình tương cận với trà cổ thụ bánh ép vùng Hà Giang – Lai Châu của Việt Nam trong phân khúc sưu tầm thưởng trà cao cấp.",
-      "vnEuComparisonEn": "Mirrors compressed ancient-tree cake production in Ha Giang and Lai Chau targeting global specialty tea collectors."
+      "vnEuComparisonEn": "Mirrors compressed ancient-tree cake production in Ha Giang and Lai Chau targeting global specialty tea collectors.",
+      "imagePath": "assets/images/prov_items/yunnan/f0.jpg"
     },
     "gi-eu-07": {
       "gbStandardCode": "GB/T 20560 (Tương đậu tằm Bì Huyện)",
       "terroirAndCraftVi": "Lên men tự nhiên hỗn hợp ớt đỏ Nhị Kinh Điều, đậu tằm và muối giếng suốt hàng trăm ngày 'phơi nắng ngày, ủ sương đêm'.",
       "terroirAndCraftEn": "Erjingtiao chilies, broad beans, and well salt slow-fermented in open earthenware vats for months under daytime sun and night dew. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "So sánh với quy chế bảo hộ Nước mắm Phú Quốc (Việt Nam PDO đầu tiên tại EU): bảo vệ tên vùng sản xuất gia vị bản địa trước hàng nhái công nghiệp.",
-      "vnEuComparisonEn": "Direct counterpart to Vietnam's Phu Quoc Fish Sauce (first ASEAN PDO in the EU), guarding artisanal condiment identity against bulk imitation."
+      "vnEuComparisonEn": "Direct counterpart to Vietnam's Phu Quoc Fish Sauce (first ASEAN PDO in the EU), guarding artisanal condiment identity against bulk imitation.",
+      "imagePath": "assets/images/prov_items/sichuan/f0.jpg"
     },
     "gi-eu-08": {
       "gbStandardCode": "GB/T 18623 (Giấm thơm Trấn Giang)",
       "terroirAndCraftVi": "Lên men thể rắn từng tầng từ gạo nếp, cám lúa mì và trấu qua công đoạn 'lăn muối phơi chum' suốt 1 năm.",
       "terroirAndCraftEn": "Solid-state tiered fermentation of glutinous rice, wheat bran, and husks rolled in salt-brined vats over a full year. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Tương đồng kỹ nghệ lên men truyền thống trong thùng gỗ bời lời/cẩm ở các cơ sở gia vị cổ truyền Việt Nam.",
-      "vnEuComparisonEn": "Shares bacterial-crust vinegar and seasoning aging discipline with heritage Vietnamese barrel-aged condiment houses."
+      "vnEuComparisonEn": "Shares bacterial-crust vinegar and seasoning aging discipline with heritage Vietnamese barrel-aged condiment houses.",
+      "imagePath": "assets/images/prov_items/jiangsu/f0.jpg"
     },
     "gi-eu-09": {
       "gbStandardCode": "GB/T 18739 (Giấy Tuyên Chỉ Kính Huyện)",
       "terroirAndCraftVi": "Pha trộn vỏ cây Thanh Đàn mọc trên đá vôi Kính Huyện với rơm lúa gạo vùng núi ẩm để tạo độ thấm mực 3 chiều không phai.",
       "terroirAndCraftEn": "Blends cliff-grown Qingtan wingceltis bark from Jingxian limestone slopes with wet mountain rice straw for ink diffusion lasting centuries. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Tham khảo bảo tồn giấy Dó truyền thống Đông Hồ/Yên Thái bằng quy trình định danh nguyên liệu địa phương.",
-      "vnEuComparisonEn": "Informs archival conservation of Dong Ho and Yen Thai Do bark paper through verifiable local raw-fiber sourcing."
+      "vnEuComparisonEn": "Informs archival conservation of Dong Ho and Yen Thai Do bark paper through verifiable local raw-fiber sourcing.",
+      "imagePath": "assets/images/prov_items/anhui/f0.jpg"
     },
     "gi-eu-10": {
       "gbStandardCode": "GB/T 18356 (Rượu Mao Đài Quý Châu)",
       "terroirAndCraftVi": "Sản xuất duy nhất tại lưu vực sông Xích Thủy có vi sinh vật khí hậu lòng chảo đặc thù không thể sao chép ở địa phương khác.",
       "terroirAndCraftEn": "Crafted solely in the Chishui River gorge basin where canyon heat, loess clay pits, and native microflora remain biologically irreplicable. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Bài học kinh điển về Terroir không thể di dời giúp bảo toàn biên lợi nhuận gộp >90% và giá trị thương hiệu quốc gia.",
-      "vnEuComparisonEn": "Classic benchmark of non-relocatable terroir sustaining high gross margins and state-level GI equity."
+      "vnEuComparisonEn": "Classic benchmark of non-relocatable terroir sustaining high gross margins and state-level GI equity.",
+      "imagePath": "assets/images/prov_items/guizhou/f0.jpg"
     },
     "gi-eu-11": {
       "gbStandardCode": "GB/T 18745 (Trà Nham Vũ Di)",
       "terroirAndCraftVi": "Trồng trong khe đá phong hóa núi Vũ Di tạo dư vị khoáng chất 'Nham cốt hoa hương' đặc trưng cho Đại Hồng Bào và Nhục Quế.",
       "terroirAndCraftEn": "Tea bushes rooted in weathered rock fissures of Mount Wuyi, yielding the unmistakable mineral floral finish ('Yan Bone Flower Aroma'). Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Gợi mở cho nông sản đặc sản vùng núi đá vôi Đồng Văn / Cao Bằng xây dựng thương hiệu gắn liền địa chất UNESCO Công viên Địa chất.",
-      "vnEuComparisonEn": "Highlights branding potential for rocky highland specialties from Dong Van and Cao Bang tied to UNESCO Geopark geology."
+      "vnEuComparisonEn": "Highlights branding potential for rocky highland specialties from Dong Van and Cao Bang tied to UNESCO Geopark geology.",
+      "imagePath": "assets/images/prov_items/fujian/f1.jpg"
     },
     "gi-eu-12": {
       "gbStandardCode": "GB/T 19557 / Quy chuẩn Táo Yên Đài",
       "terroirAndCraftVi": "Trồng tại bán đảo Giao Đông hưởng biên độ nhiệt ngày–đêm lớn giáp Hoàng Hải giúp táo giòn ngọt, truy xuất vườn đạt chuẩn xuất khẩu EU.",
       "terroirAndCraftEn": "Orchard apples grown on the Jiaodong Peninsula under crisp Yellow Sea day-night swings, tracked per plot for EU residue compliance. Governed under GB and bilateral EU–China GI origin controls.",
       "vnEuComparisonVi": "Đối chiếu trực tiếp Vải thiều Lục Ngạn, Thanh long Bình Thuận và Xoài Cao Lãnh trong kiểm soát MRL dư lượng xuất khẩu sang EU.",
-      "vnEuComparisonEn": "Useful reference for Luc Ngan lychee, Binh Thuan dragon fruit, and Cao Lanh mango orchards tightening MRL export monitoring."
+      "vnEuComparisonEn": "Useful reference for Luc Ngan lychee, Binh Thuan dragon fruit, and Cao Lanh mango orchards tightening MRL export monitoring.",
+      "imagePath": "assets/images/prov_items/shandong/f0.jpg"
     }
   },
   "lessonEnrich": {
@@ -1740,7 +1842,8 @@
         "page": "regions",
         "labelVi": "Mở Bản đồ 34 Tỉnh & Địa lý 3D",
         "labelEn": "Open 34-Province Atlas & 3D Map"
-      }
+      },
+      "imagePath": "assets/images/academic/guilin-li-river.jpg"
     },
     "v5-m1-l2": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《禹贡》 / Địa hình Bậc thang — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -1779,7 +1882,8 @@
         "page": "regions",
         "labelVi": "Mở Bản đồ 34 Tỉnh & Địa lý 3D",
         "labelEn": "Open 34-Province Atlas & 3D Map"
-      }
+      },
+      "imagePath": "assets/images/provinces/yunnan-lijiang-old-town.jpg"
     },
     "v5-m1-l3": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《禹贡》 / Địa hình Bậc thang — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -1818,7 +1922,8 @@
         "page": "regions",
         "labelVi": "Mở Bản đồ 34 Tỉnh & Địa lý 3D",
         "labelEn": "Open 34-Province Atlas & 3D Map"
-      }
+      },
+      "imagePath": "assets/images/provinces/hubei-yellow-crane-tower.jpg"
     },
     "v5-m1-l4": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《禹贡》 / Địa hình Bậc thang — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -1857,7 +1962,8 @@
         "page": "regions",
         "labelVi": "Mở Bản đồ 34 Tỉnh & Địa lý 3D",
         "labelEn": "Open 34-Province Atlas & 3D Map"
-      }
+      },
+      "imagePath": "assets/images/paintings/22_qianli_jiangshan.jpg"
     },
     "v5-m1-l5": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《禹贡》 / Địa hình Bậc thang — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -1896,7 +2002,8 @@
         "page": "regions",
         "labelVi": "Mở Bản đồ 34 Tỉnh & Địa lý 3D",
         "labelEn": "Open 34-Province Atlas & 3D Map"
-      }
+      },
+      "imagePath": "assets/images/provinces/zhejiang-hangzhou-westlake.jpg"
     },
     "v5-m1-l6": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《禹贡》 / Địa hình Bậc thang — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -1935,7 +2042,8 @@
         "page": "regions",
         "labelVi": "Mở Bản đồ 34 Tỉnh & Địa lý 3D",
         "labelEn": "Open 34-Province Atlas & 3D Map"
-      }
+      },
+      "imagePath": "assets/images/provinces/qinghai-lake.jpg"
     },
     "v5-m2-l1": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《史记》 · 《资治通鉴》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -1974,7 +2082,8 @@
         "page": "history",
         "labelVi": "Mở Dòng thời gian 14 Triều đại & Danh nhân",
         "labelEn": "Open 14 Dynasties & Portraits"
-      }
+      },
+      "imagePath": "assets/images/provinces/shaanxi-terracotta-army.jpg"
     },
     "v5-m2-l2": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《史记》 · 《资治通鉴》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2013,7 +2122,8 @@
         "page": "history",
         "labelVi": "Mở Dòng thời gian 14 Triều đại & Danh nhân",
         "labelEn": "Open 14 Dynasties & Portraits"
-      }
+      },
+      "imagePath": "assets/images/articles/hero-tang-dynasty.jpg"
     },
     "v5-m2-l3": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《史记》 · 《资治通鉴》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2052,7 +2162,8 @@
         "page": "history",
         "labelVi": "Mở Dòng thời gian 14 Triều đại & Danh nhân",
         "labelEn": "Open 14 Dynasties & Portraits"
-      }
+      },
+      "imagePath": "assets/images/museum/terracotta-general.jpg"
     },
     "v5-m2-l4": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《史记》 · 《资治通鉴》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2091,7 +2202,8 @@
         "page": "history",
         "labelVi": "Mở Dòng thời gian 14 Triều đại & Danh nhân",
         "labelEn": "Open 14 Dynasties & Portraits"
-      }
+      },
+      "imagePath": "assets/images/academic/tang-sancai-camel.jpg"
     },
     "v5-m2-l5": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《史记》 · 《资治通鉴》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2130,7 +2242,8 @@
         "page": "history",
         "labelVi": "Mở Dòng thời gian 14 Triều đại & Danh nhân",
         "labelEn": "Open 14 Dynasties & Portraits"
-      }
+      },
+      "imagePath": "assets/images/figures/qin-shi-huang.jpg"
     },
     "v5-m2-l6": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《史记》 · 《资治通鉴》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2169,7 +2282,8 @@
         "page": "history",
         "labelVi": "Mở Dòng thời gian 14 Triều đại & Danh nhân",
         "labelEn": "Open 14 Dynasties & Portraits"
-      }
+      },
+      "imagePath": "assets/images/academic/van-mieu-hanoi.jpg"
     },
     "v5-m3-l1": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《论语》 · 《道德经》 · 《营造法式》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2208,7 +2322,8 @@
         "page": "philosophy",
         "labelVi": "Mở Hệ thống Tư tưởng & Giải phẫu 3D",
         "labelEn": "Open Philosophy & 3D Labs"
-      }
+      },
+      "imagePath": "assets/images/articles/hero-hundred-schools.jpg"
     },
     "v5-m3-l2": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《论语》 · 《道德经》 · 《营造法式》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2247,7 +2362,8 @@
         "page": "philosophy",
         "labelVi": "Mở Hệ thống Tư tưởng & Giải phẫu 3D",
         "labelEn": "Open Philosophy & 3D Labs"
-      }
+      },
+      "imagePath": "assets/images/articles/hero-yinyang.jpg"
     },
     "v5-m3-l3": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《论语》 · 《道德经》 · 《营造法式》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2286,7 +2402,8 @@
         "page": "philosophy",
         "labelVi": "Mở Hệ thống Tư tưởng & Giải phẫu 3D",
         "labelEn": "Open Philosophy & 3D Labs"
-      }
+      },
+      "imagePath": "assets/images/articles/hero-traditional-arch.jpg"
     },
     "v5-m3-l4": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《论语》 · 《道德经》 · 《营造法式》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2325,7 +2442,8 @@
         "page": "philosophy",
         "labelVi": "Mở Hệ thống Tư tưởng & Giải phẫu 3D",
         "labelEn": "Open Philosophy & 3D Labs"
-      }
+      },
+      "imagePath": "assets/images/provinces/beijing-temple-of-heaven.jpg"
     },
     "v5-m3-l5": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《论语》 · 《道德经》 · 《营造法式》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2364,7 +2482,8 @@
         "page": "philosophy",
         "labelVi": "Mở Hệ thống Tư tưởng & Giải phẫu 3D",
         "labelEn": "Open Philosophy & 3D Labs"
-      }
+      },
+      "imagePath": "assets/images/academic/suzhou-garden.jpg"
     },
     "v5-m3-l6": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 《论语》 · 《道德经》 · 《营造法式》 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2403,7 +2522,8 @@
         "page": "philosophy",
         "labelVi": "Mở Hệ thống Tư tưởng & Giải phẫu 3D",
         "labelEn": "Open Philosophy & 3D Labs"
-      }
+      },
+      "imagePath": "assets/images/prov_items/anhui/d0.jpg"
     },
     "v5-m4-l1": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 六书《说文解字》 · HSK 7-9大纲 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2442,7 +2562,8 @@
         "page": "explore",
         "labelVi": "Mở Học viện HSK 4–9 & Văn ngôn",
         "labelEn": "Open HSK 4–9 & Classics Hub"
-      }
+      },
+      "imagePath": "assets/images/articles/hero-calligraphy-five-scripts.jpg"
     },
     "v5-m4-l2": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 六书《说文解字》 · HSK 7-9大纲 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2481,7 +2602,8 @@
         "page": "explore",
         "labelVi": "Mở Học viện HSK 4–9 & Văn ngôn",
         "labelEn": "Open HSK 4–9 & Classics Hub"
-      }
+      },
+      "imagePath": "assets/images/paintings/28_libai_hangyin.jpg"
     },
     "v5-m4-l3": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 六书《说文解字》 · HSK 7-9大纲 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2520,7 +2642,8 @@
         "page": "explore",
         "labelVi": "Mở Học viện HSK 4–9 & Văn ngôn",
         "labelEn": "Open HSK 4–9 & Classics Hub"
-      }
+      },
+      "imagePath": "assets/images/articles/hero-classical-books-scrolls.jpg"
     },
     "v5-m4-l4": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 六书《说文解字》 · HSK 7-9大纲 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2559,7 +2682,8 @@
         "page": "explore",
         "labelVi": "Mở Học viện HSK 4–9 & Văn ngôn",
         "labelEn": "Open HSK 4–9 & Classics Hub"
-      }
+      },
+      "imagePath": "assets/images/museum/lantingji-xu.jpg"
     },
     "v5-m4-l5": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 六书《说文解字》 · HSK 7-9大纲 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2598,7 +2722,8 @@
         "page": "explore",
         "labelVi": "Mở Học viện HSK 4–9 & Văn ngôn",
         "labelEn": "Open HSK 4–9 & Classics Hub"
-      }
+      },
+      "imagePath": "assets/images/articles/hero-academy-shuyuan.jpg"
     },
     "v5-m4-l6": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 六书《说文解字》 · HSK 7-9大纲 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2637,7 +2762,8 @@
         "page": "explore",
         "labelVi": "Mở Học viện HSK 4–9 & Văn ngôn",
         "labelEn": "Open HSK 4–9 & Classics Hub"
-      }
+      },
+      "imagePath": "assets/images/museum/yongle-dadian.jpg"
     },
     "v5-m5-l1": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 12306 · CSC奖学金 · 饮食文化 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2676,7 +2802,8 @@
         "page": "regions",
         "labelVi": "Mở Cẩm nang Du học CSC & Du lịch",
         "labelEn": "Open Travel & CSC Study Hub"
-      }
+      },
+      "imagePath": "assets/images/articles/hero-chinese-cuisines.jpg"
     },
     "v5-m5-l2": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 12306 · CSC奖学金 · 饮食文化 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2715,7 +2842,8 @@
         "page": "regions",
         "labelVi": "Mở Cẩm nang Du học CSC & Du lịch",
         "labelEn": "Open Travel & CSC Study Hub"
-      }
+      },
+      "imagePath": "assets/images/articles/hero-six-teas-gongfu.jpg"
     },
     "v5-m5-l3": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 12306 · CSC奖学金 · 饮食文化 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2754,7 +2882,8 @@
         "page": "regions",
         "labelVi": "Mở Cẩm nang Du học CSC & Du lịch",
         "labelEn": "Open Travel & CSC Study Hub"
-      }
+      },
+      "imagePath": "assets/images/articles/hero-contemporary-china.jpg"
     },
     "v5-m5-l4": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 12306 · CSC奖学金 · 饮食文化 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2793,7 +2922,8 @@
         "page": "regions",
         "labelVi": "Mở Cẩm nang Du học CSC & Du lịch",
         "labelEn": "Open Travel & CSC Study Hub"
-      }
+      },
+      "imagePath": "assets/images/articles/hero-beijing-shanghai.jpg"
     },
     "v5-m5-l5": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 12306 · CSC奖学金 · 饮食文化 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2832,7 +2962,8 @@
         "page": "regions",
         "labelVi": "Mở Cẩm nang Du học CSC & Du lịch",
         "labelEn": "Open Travel & CSC Study Hub"
-      }
+      },
+      "imagePath": "assets/images/articles/hero-chinese-banquet.jpg"
     },
     "v5-m5-l6": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 12306 · CSC奖学金 · 饮食文化 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2871,7 +3002,8 @@
         "page": "regions",
         "labelVi": "Mở Cẩm nang Du học CSC & Du lịch",
         "labelEn": "Open Travel & CSC Study Hub"
-      }
+      },
+      "imagePath": "assets/images/provinces/chongqing-hongyadong.jpg"
     },
     "v5-m6-l1": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 中欧班列 · CBAM · 中华老字号 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2910,7 +3042,8 @@
         "page": "business",
         "labelVi": "Mở Studio Logistics Âu–Trung & Lão Tự Hiệu",
         "labelEn": "Open EU–China Studio & Brands"
-      }
+      },
+      "imagePath": "assets/images/articles/hero-b2b-negotiation-table.jpg"
     },
     "v5-m6-l2": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 中欧班列 · CBAM · 中华老字号 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2949,7 +3082,8 @@
         "page": "business",
         "labelVi": "Mở Studio Logistics Âu–Trung & Lão Tự Hiệu",
         "labelEn": "Open EU–China Studio & Brands"
-      }
+      },
+      "imagePath": "assets/images/articles/hero-sino-vietnam.jpg"
     },
     "v5-m6-l3": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 中欧班列 · CBAM · 中华老字号 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -2988,7 +3122,8 @@
         "page": "business",
         "labelVi": "Mở Studio Logistics Âu–Trung & Lão Tự Hiệu",
         "labelEn": "Open EU–China Studio & Brands"
-      }
+      },
+      "imagePath": "assets/images/articles/hero-huaqiangbei-tech.jpg"
     },
     "v5-m6-l4": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 中欧班列 · CBAM · 中华老字号 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -3027,7 +3162,8 @@
         "page": "business",
         "labelVi": "Mở Studio Logistics Âu–Trung & Lão Tự Hiệu",
         "labelEn": "Open EU–China Studio & Brands"
-      }
+      },
+      "imagePath": "assets/images/articles/hero-vietnam-ai-decree13.jpg"
     },
     "v5-m6-l5": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 中欧班列 · CBAM · 中华老字号 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -3066,7 +3202,8 @@
         "page": "business",
         "labelVi": "Mở Studio Logistics Âu–Trung & Lão Tự Hiệu",
         "labelEn": "Open EU–China Studio & Brands"
-      }
+      },
+      "imagePath": "assets/images/provinces/shanghai-bund-skyline.jpg"
     },
     "v5-m6-l6": {
       "historicalEvidenceVi": "Nguồn khảo chứng & tài liệu đối chiếu gốc: 中欧班列 · CBAM · 中华老字号 — kiểm chứng trên Thư viện Kinh điển & Kho ảnh/3D nội bộ của CCE.",
@@ -3105,7 +3242,8 @@
         "page": "business",
         "labelVi": "Mở Studio Logistics Âu–Trung & Lão Tự Hiệu",
         "labelEn": "Open EU–China Studio & Brands"
-      }
+      },
+      "imagePath": "assets/images/prov_items/anhui/d1.jpg"
     }
   },
   "hskPairEnrich": {

@@ -1095,7 +1095,7 @@ textarea:focus-visible {
   background: linear-gradient(90deg, var(--bg-surface) 20%, var(--bg-elevated) 50%, var(--bg-surface) 80%);
   background-size: 200% 100%;
   border-bottom: 1px solid var(--hairline);
-  padding: 0.45rem;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1108,13 +1108,23 @@ textarea:focus-visible {
   background: #1B1917;
 }
 
+.painting-card-thumb-wrap.is-tall-scroll {
+  padding: 0.35rem;
+  background: var(--bg-surface);
+}
+
 .painting-card-thumb-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center;
+  object-fit: cover;
+  object-position: 50% 32%;
   display: block;
   transition: transform var(--transition-med);
+}
+
+.painting-card-thumb-wrap.is-tall-scroll img {
+  object-fit: contain;
+  object-position: center;
 }
 
 .painting-card-thumb-wrap.is-handscroll img {

@@ -84,6 +84,11 @@ button {
   -webkit-appearance: none;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .hanzi {
   font-family: var(--font-hanzi-serif);
   font-weight: 600;

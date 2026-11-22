@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import pathlib
 import re
@@ -392,3 +393,113 @@ def load_external_pack(pack_num: int) -> dict[str, Any]:
             else:
                 merged[k] = v
     return sanitize_recursive(merged)
+
+
+class UniqueImageAllocator:
+    """Deterministic verified-asset allocator preventing duplicate paths & MD5 bytes per collection."""
+
+    _HASH_CACHE: dict[str, str] | None = None
+    _POOLS_CACHE: dict[str, list[str]] | None = None
+
+    @classmethod
+    def _ensure_index(cls) -> tuple[dict[str, str], dict[str, list[str]]]:
+        if cls._HASH_CACHE is not None and cls._POOLS_CACHE is not None:
+            return cls._HASH_CACHE, cls._POOLS_CACHE
+        hmap: dict[str, str] = {}
+        pools: dict[str, list[str]] = {
+            "prov_items": [],
+            "provinces": [],
+            "museum": [],
+            "paintings": [],
+            "articles": [],
+            "academic": [],
+            "figures": [],
+            "editorial": [],
+            "monograph": [],
+            "all": [],
+        }
+        img_root = ROOT / "assets" / "images"
+        shadow_skip = {
+            "assets/images/jiangshan-ruci-duojiao.jpg",
+            "assets/images/museum/jiuzhaigou-five-flower-lake.jpg",
+            "assets/images/museum/qianli-jiangshan.jpg",
+            "assets/images/museum/qingming-scroll.jpg",
+        }
+        for p in sorted(img_root.rglob("*")):
+            if not p.is_file():
+                continue
+            if p.suffix.lower() not in {".jpg", ".jpeg", ".png", ".webp", ".svg"}:
+                continue
+            rel = p.relative_to(ROOT).as_posix()
+            if rel.startswith("assets/images/brand/"):
+                continue
+            hmap[rel] = hashlib.md5(p.read_bytes()).hexdigest()
+            if rel in shadow_skip:
+                continue
+            pools["all"].append(rel)
+            top = rel.split("/")[2] if len(rel.split("/")) > 3 else ""
+            if top in pools:
+                pools[top].append(rel)
+        cls._HASH_CACHE = hmap
+        cls._POOLS_CACHE = pools
+        return hmap, pools
+
+    @classmethod
+    def md5_of(cls, rel_path: str) -> str:
+        hmap, _ = cls._ensure_index()
+        clean = str(rel_path or "").strip().lstrip("/")
+        if clean in hmap:
+            return hmap[clean]
+        p = ROOT / clean
+        if p.is_file():
+            val = hashlib.md5(p.read_bytes()).hexdigest()
+            hmap[clean] = val
+            return val
+        return clean
+
+    @classmethod
+    def prov_item_candidates(cls, prov_id: str, groups: tuple[str, ...] = ("h", "d", "f")) -> list[str]:
+        slug = str(prov_id or "").replace("prov-", "").strip().lower()
+        pdir = ROOT / "assets" / "images" / "prov_items" / slug
+        cands: list[str] = []
+        if pdir.is_dir():
+            files = sorted(f for f in pdir.iterdir() if f.is_file())
+            for grp in groups:
+                for f in files:
+                    if f.name.lower().startswith(grp.lower()):
+                        cands.append(f.relative_to(ROOT).as_posix())
+            for f in files:
+                rel = f.relative_to(ROOT).as_posix()
+                if rel not in cands:
+                    cands.append(rel)
+        if slug in PROVINCE_IMAGES:
+            cands.append(PROVINCE_IMAGES[slug])
+        return cands
+
+    @classmethod
+    def claim(
+        cls,
+        used_hashes: set[str],
+        preferred: list[str] | tuple[str, ...] = (),
+        fallback_buckets: tuple[str, ...] = ("prov_items", "provinces", "museum", "articles", "academic", "paintings"),
+        allow_svg: bool = True,
+    ) -> str:
+        """Pick the first verified image from preferred -> buckets whose MD5 is not in used_hashes."""
+        _, pools = cls._ensure_index()
+        candidates: list[str] = []
+        for item in preferred:
+            c = str(item or "").strip().lstrip("/")
+            if c and (ROOT / c).is_file():
+                candidates.append(c)
+        for b in fallback_buckets:
+            candidates.extend(pools.get(b, []))
+        candidates.extend(pools.get("all", []))
+        for cand in candidates:
+            if not allow_svg and cand.lower().endswith(".svg"):
+                continue
+            digest = cls.md5_of(cand)
+            if digest not in used_hashes:
+                used_hashes.add(digest)
+                return cand
+        raise RuntimeError("Exhausted all verified unique images under assets/images/!")
+

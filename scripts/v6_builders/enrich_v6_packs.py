@@ -14,9 +14,9 @@ from .pack_cosmo_lit import ZIWU_HOURS_12
 from .pack_trade_csc import CSC_GANTT_12, HSR_CORRIDORS_8X8, INCOTERMS_11
 
 try:
-    from v7_builders.pack_utils import resolve_prov_item_img
+    from v7_builders.pack_utils import UniqueImageAllocator, resolve_prov_item_img
 except ImportError:
-    from scripts.v7_builders.pack_utils import resolve_prov_item_img
+    from scripts.v7_builders.pack_utils import UniqueImageAllocator, resolve_prov_item_img
 
 ROOT = pathlib.Path(".")
 FALLBACK_RASTER = "assets/images/museum/forbidden-city-imperial-axis-gate.jpg"
@@ -485,7 +485,45 @@ _V6_CAT_PROSE: dict[str, dict[str, str]] = {
 }
 
 
+def _load_v5_reserved_hashes() -> tuple[dict[str, str], set[str], set[str]]:
+    """Load V5 brand & GI image assignments from v5DeepEnrichmentLayer.js so V6 never collides."""
+    brand_by_ck: dict[str, str] = {}
+    used_brand_hashes: set[str] = set()
+    used_gi_hashes: set[str] = set()
+    v5_layer = ROOT / "src" / "data" / "v5" / "v5DeepEnrichmentLayer.js"
+    if not v5_layer.is_file():
+        return brand_by_ck, used_brand_hashes, used_gi_hashes
+    txt = v5_layer.read_text(encoding="utf-8")
+    try:
+        idx = txt.index("var DATA = ") + len("var DATA = ")
+        v5_data, _ = json.JSONDecoder().raw_decode(txt, idx)
+    except Exception:
+        return brand_by_ck, used_brand_hashes, used_gi_hashes
+
+    v5_id_to_ck: dict[str, str] = {}
+    for fp in ["src/data/v5/laozihaoBrandsV5.js", "src/data/v5/laozihaoBrandsExpandedV5.js"]:
+        b_txt = (ROOT / fp).read_text(encoding="utf-8")
+        sec = b_txt.split("var BRANDS = ", 1)[1] if "var BRANDS = " in b_txt else b_txt.split("giAppellations12")[0]
+        for m in re.finditer(r'id:\s*"([^"]+)".*?zh:\s*"([^"]+)"', sec, re.S):
+            v5_id_to_ck[m.group(1)] = core_zh_key(m.group(2))
+
+    for bid, obj in (v5_data.get("brandEnrich") or {}).items():
+        img = obj.get("imagePath") if isinstance(obj, dict) else ""
+        if img:
+            ck = v5_id_to_ck.get(bid, bid)
+            brand_by_ck[ck] = img
+            used_brand_hashes.add(UniqueImageAllocator.md5_of(img))
+
+    for _gid, obj in (v5_data.get("giEnrich") or {}).items():
+        img = obj.get("imagePath") if isinstance(obj, dict) else ""
+        if img:
+            used_gi_hashes.add(UniqueImageAllocator.md5_of(img))
+
+    return brand_by_ck, used_brand_hashes, used_gi_hashes
+
+
 def enrich_pack1(p1: dict, v5_brand_keys: set[str]) -> dict:
+    brand_by_ck, used_brand_hashes, used_gi_hashes = _load_v5_reserved_hashes()
     brands40 = []
     brands36 = []
     for idx, b in enumerate(p1.get("brandsAdditional40", [])):
@@ -494,9 +532,15 @@ def enrich_pack1(p1: dict, v5_brand_keys: set[str]) -> dict:
         prov_vi, prov_en = PROVINCE_LABELS.get(prov_id, ("Trung Quốc", "China"))
         zh = item.get("zh", "")
         cat = item.get("cat", "culinary")
-        grp = "d" if cat == "culinary" else "h"
-        prov_img = resolve_prov_item_img(prov_id, grp, seed_idx=idx)
-        item["imagePath"] = ensure_verified_img(prov_img)
+        groups = ("d", "f", "h") if cat == "culinary" else ("h", "d", "f")
+        ck = core_zh_key(zh)
+        if ck in brand_by_ck:
+            item["imagePath"] = brand_by_ck[ck]
+        else:
+            prefs = UniqueImageAllocator.prov_item_candidates(prov_id, groups) + [PROVINCE_IMAGES.get(prov_id, "")]
+            chosen = UniqueImageAllocator.claim(used_brand_hashes, prefs, fallback_buckets=("prov_items", "provinces", "museum", "articles", "academic"), allow_svg=False)
+            brand_by_ck[ck] = chosen
+            item["imagePath"] = chosen
         if not item.get("visitTipVi"):
             item["visitTipVi"] = f"Ghé hiệu chính thức {zh} tại {item.get('cityVi', prov_vi)} ({item.get('flagshipAddressZh', '')})."
         tpl = _V6_CAT_PROSE.get(cat, _V6_CAT_PROSE["culinary"])
@@ -525,7 +569,13 @@ def enrich_pack1(p1: dict, v5_brand_keys: set[str]) -> dict:
             tpl = _V6_CAT_PROSE.get(bcat, _V6_CAT_PROSE["culinary"])
             std_vi = "Trung Hoa Lão Tự Hào (中华老字号) & quy chuẩn vùng miền GB/T"
             std_en = "MOFCOM China Time-Honored Brand registry & Chinese GB/T standards"
-            sup_idx = len(brands36)
+            groups36 = ("d", "f", "h") if bcat == "culinary" else ("h", "d", "f")
+            if ckey in brand_by_ck:
+                img36 = brand_by_ck[ckey]
+            else:
+                prefs36 = UniqueImageAllocator.prov_item_candidates(bpid, groups36) + [PROVINCE_IMAGES.get(bpid, "")]
+                img36 = UniqueImageAllocator.claim(used_brand_hashes, prefs36, fallback_buckets=("prov_items", "provinces", "museum", "articles", "academic"), allow_svg=False)
+                brand_by_ck[ckey] = img36
             sup = {
                 "id": bid,
                 "cat": bcat,
@@ -557,7 +607,7 @@ def enrich_pack1(p1: dict, v5_brand_keys: set[str]) -> dict:
                 "exportComplianceChecklistVi": tpl["chkVi"].format(std=std_vi),
                 "exportComplianceChecklistEn": tpl["chkEn"].format(sten=std_en),
                 "visitTipVi": f"Tìm hiểu lịch sử cửa hiệu {bzh} tại {bcity}.",
-                "imagePath": ensure_verified_img(resolve_prov_item_img(bpid, "d" if bcat == "culinary" else "h", seed_idx=sup_idx + 2)),
+                "imagePath": img36,
             }
             brands36.append(sup)
 
@@ -609,8 +659,8 @@ def enrich_pack1(p1: dict, v5_brand_keys: set[str]) -> dict:
             ng["terroirAndCraftEn"] = f"{n_en} derives distinct sugar-acid balance and aroma from {prov_en}'s soil and diurnal range under bilateral GI protection."
             ng["customsHsAndAuditVi"] = "Kiểm tra mã vùng trồng, chứng thư kiểm dịch thực vật (Phytosanitary) và ngưỡng dư lượng MRL khi thông quan."
             ng["customsHsAndAuditEn"] = "Cross-check registered orchard origin codes, phytosanitary certificates, and EU/ASEAN MRL agricultural thresholds."
-        img_gi = resolve_prov_item_img(prov_id, "d" if idx % 2 == 0 else "h", seed_idx=idx) if idx % 3 != 0 else PROVINCE_IMAGES.get(prov_id, "assets/images/articles/hero-six-teas-gongfu.jpg")
-        ng["imagePath"] = ensure_verified_img(img_gi)
+        gi_prefs = UniqueImageAllocator.prov_item_candidates(prov_id, ("f", "d", "h")) + [PROVINCE_IMAGES.get(prov_id, "")]
+        ng["imagePath"] = UniqueImageAllocator.claim(used_gi_hashes, gi_prefs, fallback_buckets=("prov_items", "provinces", "articles", "museum"), allow_svg=False)
         gi18.append(ng)
 
     _comp_vi = [
@@ -812,6 +862,7 @@ def enrich_pack3(p3: dict) -> dict:
     _herb_vn_warm = "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh."
     _herb_vn_cool = "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam."
     _herb_vn_bal = "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt."
+    used_herb_hashes: set[str] = set()
     herbs48 = []
     for idx, h in enumerate(p3.get("culinaryHerbs48", [])):
         nh = dict(h)
@@ -833,8 +884,9 @@ def enrich_pack3(p3: dict) -> dict:
         nh["botanicalRegionAndGiVi"] = f"Thư tịch {nh.get('historicalSourceBook', '')} ghi nhận xuất xứ bản địa của {nh.get('zh', '')}."
         nh["nonClinicalReminderVi"] = _herb_nc_vi[idx % len(_herb_nc_vi)]
         nh["nonClinicalReminderEn"] = _herb_nc_en[idx % len(_herb_nc_en)]
-        herb_img = HERB_IMAGE_CYCLE[idx % len(HERB_IMAGE_CYCLE)] if idx % 3 == 0 else resolve_prov_item_img(prov_keys[(idx * 5) % len(prov_keys)], "f" if idx % 2 else "h", seed_idx=idx)
-        nh["image"] = ensure_verified_img(herb_img)
+        h_prov = prov_keys[(idx * 5) % len(prov_keys)]
+        h_prefs = UniqueImageAllocator.prov_item_candidates(h_prov, ("f", "d", "h")) + [HERB_IMAGE_CYCLE[idx % len(HERB_IMAGE_CYCLE)]]
+        nh["image"] = UniqueImageAllocator.claim(used_herb_hashes, h_prefs, fallback_buckets=("prov_items", "provinces", "articles", "museum"), allow_svg=False)
         herbs48.append(nh)
 
     _micro_cmp = [
@@ -993,6 +1045,7 @@ def enrich_pack4(p4: dict) -> dict:
         "Là tư liệu đối chiếu quen thuộc khi đọc thơ Đường – Tống cạnh cuộn tranh thủy mặc của {poet}.",
         "Minh họa cách đề thơ và triện đỏ hòa làm một phần bố cục hội họa quanh {poet}.",
     ]
+    used_poem_hashes: set[str] = set()
     poems24 = []
     for idx, p in enumerate(p4.get("poemPaintingPairs24", [])):
         np_item = dict(p)
@@ -1000,7 +1053,8 @@ def enrich_pack4(p4: dict) -> dict:
         ref_vi = PAINTING_REF_NAMES_VI.get(ref, "tác phẩm thủy mặc cổ điển")
         pz = np_item.get("pingZePattern", "")
         poet_name = np_item.get("poet", "")
-        np_item["image"] = ensure_verified_img(PAINTING_REF_IMAGES.get(ref, "assets/images/paintings/01_luoshenfu_tu.jpg"))
+        p_pref = PAINTING_REF_IMAGES.get(ref, "assets/images/paintings/01_luoshenfu_tu.jpg")
+        np_item["image"] = UniqueImageAllocator.claim(used_poem_hashes, [p_pref], fallback_buckets=("paintings",), allow_svg=False)
         np_item["title"] = f"{np_item.get('titleVi', '')} ({np_item.get('titleZh', '')})"
         np_item["authorVi"] = poet_name
         np_item["epithetVi"] = np_item.get("hanViet", "")
@@ -1093,11 +1147,18 @@ def enrich_pack5(p5: dict) -> dict:
         nd["hotspots"] = spots
         docs10.append(nd)
 
+    used_supply_hashes: set[str] = set()
     sc16 = []
     for sc in p5.get("extraSupplyCases16", []):
         nsc = dict(sc)
         lane = nsc.get("lane", "Yantian-Rotterdam Ocean")
-        nsc["imagePath"] = ensure_verified_img(SUPPLY_LANE_IMAGES.get(lane, "assets/images/articles/hero-supply-chain-rcep.jpg"))
+        lane_pref = SUPPLY_LANE_IMAGES.get(lane, "assets/images/articles/hero-supply-chain-rcep.jpg")
+        nsc["imagePath"] = UniqueImageAllocator.claim(
+            used_supply_hashes,
+            [lane_pref],
+            fallback_buckets=("provinces", "prov_items", "articles", "editorial", "museum"),
+            allow_svg=True,
+        )
         norm_terms = []
         for kt in nsc.get("keyTermsZhEn", []):
             if isinstance(kt, dict):
@@ -1179,13 +1240,14 @@ def enrich_pack5(p5: dict) -> dict:
         "Đối chiếu hoa văn trang trí, minh văn bia đá hoặc kỹ nghệ men gốm giữa hai nền văn hiến.",
         "Ghi chú sự thích ứng khí hậu địa phương qua cách bố trí sân, hiên và hướng gió.",
     ]
+    used_wonder_hashes: set[str] = set()
     wonders10 = []
     for idx, w in enumerate(p5.get("sinoVietWonders10", [])):
         nw = dict(w)
         wid = nw.get("id", "svw-01")
         vn_img, cn_img = WONDER_IMAGE_PAIRS.get(wid, ("assets/images/articles/hero-sino-vietnam.jpg", "assets/images/academic/ming-forbidden-city.jpg"))
-        nw["vnImg"] = ensure_verified_img(vn_img)
-        nw["chinaImg"] = ensure_verified_img(cn_img)
+        nw["vnImg"] = UniqueImageAllocator.claim(used_wonder_hashes, [vn_img], fallback_buckets=("academic", "museum", "articles", "prov_items"), allow_svg=True)
+        nw["chinaImg"] = UniqueImageAllocator.claim(used_wonder_hashes, [cn_img], fallback_buckets=("provinces", "museum", "academic", "prov_items"), allow_svg=False)
         nw["pairTitle"] = f"{nw.get('vietnamWonder', '')} <-> {nw.get('chinaWonder', '')}"
         nw["summaryVi"] = f"{nw.get('sharedHeritageVi', '')} · Nét riêng Việt Nam: {nw.get('distinctAdaptationVi', '')}"
         nw["historicalTimelineCompareVi"] = f"Đặt {nw.get('vietnamWonder', '')} song hành với {nw.get('chinaWonder', '')} trong dòng chảy giao lưu văn hóa Đông Á."
@@ -1193,6 +1255,7 @@ def enrich_pack5(p5: dict) -> dict:
         nw["fieldVisitGuideVi"] = _wonder_guides[idx % len(_wonder_guides)]
         wonders10.append(nw)
 
+    used_csc_hashes: set[str] = set()
     unis24 = []
     for idx, u in enumerate(p5.get("cscUniversities24Atlas", [])):
         nu = dict(u)
@@ -1204,7 +1267,8 @@ def enrich_pack5(p5: dict) -> dict:
         nu["agencyNo"] = ag
         nu["majorsVi"] = st
         nu["cityVi"] = prov_vi
-        nu["imagePath"] = ensure_verified_img(PROVINCE_IMAGES.get(prov_id, "assets/images/articles/hero-academy-shuyuan.jpg"))
+        csc_prefs = [PROVINCE_IMAGES.get(prov_id, "")] + UniqueImageAllocator.prov_item_candidates(prov_id, ("h", "d", "f")) + ["assets/images/articles/hero-academy-shuyuan.jpg"]
+        nu["imagePath"] = UniqueImageAllocator.claim(used_csc_hashes, csc_prefs, fallback_buckets=("prov_items", "provinces", "academic", "articles"), allow_svg=False)
         if "bắc kinh" in prov_vi.lower():
             nu["cscTypeA_vs_TypeB_NoteVi"] = f"Mã trường {ag} tại {prov_vi}: nộp trực tiếp qua cổng CSC Type B của trường trước hạn sơ tuyển tháng 2–3."
         elif "thượng hải" in prov_vi.lower():
@@ -1290,12 +1354,19 @@ def enrich_pack5(p5: dict) -> dict:
 
 
 def enrich_pack6(q_raw: list[dict]) -> list[dict]:
+    used_quiz_hashes: set[str] = set()
     out = []
     for q in q_raw:
         nq = dict(q)
         if nq.get("isVisualQuestion"):
             tag = nq.get("visualSubjectTag", "")
-            nq["imagePath"] = ensure_verified_img(VISUAL_QUIZ_TAG_MAP.get(tag, FALLBACK_RASTER))
+            pref = VISUAL_QUIZ_TAG_MAP.get(tag, FALLBACK_RASTER)
+            nq["imagePath"] = UniqueImageAllocator.claim(
+                used_quiz_hashes,
+                [pref],
+                fallback_buckets=("paintings", "museum", "provinces", "prov_items", "articles", "academic"),
+                allow_svg=True,
+            )
             nq["visualInspectionGuideVi"] = nq.get("explainVi") or f"Quan sát dấu hiệu đặc trưng của {nq.get('topicVi', '')}."
             nq["visualInspectionGuideEn"] = nq.get("explainEn") or f"Inspect visual traits of {nq.get('topicEn', '')}."
         out.append(nq)

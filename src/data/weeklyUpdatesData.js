@@ -1,17 +1,29 @@
 // ============================================================================
-// WEEKLY HOT-TOPIC PICKS, SITE CHANGELOG & 7-STEP GMAIL/EMAIL CHANGELOG STUDIO
+// WEEKLY HOT-TOPIC PICKS, SITE CHANGELOG & PLATFORM ANNOUNCEMENTS (PUBLIC 2.0)
 // Strictly distinguishes [Hot Article] / [New 3D Monograph] / [Website Feature & Data Update]
 // ============================================================================
 
 window.CCE_WEEKLY_UPDATES = (function () {
   const hotPicks = [
     {
+      id: "pick-v20-platform",
+      badgeVi: "[Phiên bản 2.0 · Phát hành Chính thức]",
+      badgeEn: "[Version 2.0 · Major Platform Release]",
+      kind: "changelog",
+      targetId: "changelog",
+      date: "2026-11-22",
+      titleVi: "Phiên bản 2.0: Học viện 10 Học phần Tuần tự, 24 Studio 3D WebGL & 120 Trung Hoa Lão Tự Hào",
+      titleEn: "Version 2.0: 10-Module Progressive Academy, 24 Interactive 3D Studios & 120 Chinese Honored Brands",
+      summaryVi: "Nâng cấp toàn diện giao diện và dữ liệu được ấp ủ từ trước 21/11: 60 bài giảng nối mạch logic, Đấu trường 600 câu hỏi (kèm 150 câu nhận diện hình ảnh), 16 Hành trình Di sản 240 giờ và kho văn hóa – thương mại tam ngữ.",
+      summaryEn: "Major platform overhaul built prior to Nov 21 and launched as Edition 2.0: 60 progressive lessons, 24 WebGL 3D architectural & relic studios, 600 Quiz Arena questions with 150 visual IDs, and 16 240-hour heritage itineraries."
+    },
+    {
       id: "pick-forbidden-city-3d",
-      badgeVi: "[Chuyên luận 3D Mới]",
-      badgeEn: "[New 3D Monograph]",
+      badgeVi: "[Chuyên luận 3D Nổi bật]",
+      badgeEn: "[Featured 3D Monograph]",
       kind: "article",
       targetId: "forbidden-city-3d-dissection",
-      date: "2026-11-18",
+      date: "2026-11-20",
       titleVi: "Giải phẫu 3D Tử Cấm Thành (紫禁城): Đấu Củng, Trục Trung tâm & Đối Sánh Cố Đô Huế",
       titleEn: "3D Dissection of the Forbidden City (紫禁城): Dougong Joinery & Hue Citadel Dialogue",
       summaryVi: "Mô hình Three.js dựng hình Phi Diềm, 3 tầng bệ Tu Di Tọa, nội thất Thái Hòa Điện X-Ray với 3 chế độ bóc tách trực quan & đối sánh Đại Nội Huế.",
@@ -23,109 +35,57 @@ window.CCE_WEEKLY_UPDATES = (function () {
       badgeEn: "[Hot Article · B2B Trade]",
       kind: "article",
       targetId: "sino-vietnamese-translation-business",
-      date: "2026-11-16",
+      date: "2026-11-18",
       titleVi: "Từ Hán–Việt Đồng hình Dị nghĩa & Pháp lý Ngoại thương: Bẫy Định Kim (定金) vs Đính Kim (订金)",
       titleEn: "Sino-Vietnamese False Friends & Trade Law: Statutory Deposit (定金) vs Prepayment (订金)",
       summaryVi: "Phân tích ranh giới pháp lý phạt cọc gấp đôi theo Bộ luật Dân sự và cách lưu thuật ngữ kèm câu trích nguồn vào Sổ tay Ngữ cảnh.",
       summaryEn: "Legal boundary analysis on double-deposit liability alongside live phrase capture directly into your Vocabulary & Reading Notebook."
-    },
-    {
-      id: "pick-v50-platform",
-      badgeVi: "[Nâng cấp Hệ thống & Dữ liệu · v5.0]",
-      badgeEn: "[Website Feature & Data Update · v5.0]",
-      kind: "changelog",
-      targetId: "changelog",
-      date: "2026-11-22",
-      titleVi: "Phát hành v5.0: Khóa học 7 Học phần Tuần tự, 24 Trung Hoa Lão Tự Hiệu & Trọn bộ 6 Gói Dữ liệu Tri thức",
-      titleEn: "Release v5.0: 7-Module Sequential Curriculum, 24 Chinese Honored Brands & Full 6-Pack Knowledge Ingestion",
-      summaryVi: "Sắp xếp tri thức như một khóa học nối mạch logic, ra mắt chuyên mục Thương hiệu Lâu đời (中华老字号) và nạp trọn 1.093 mục song ngữ – tam ngữ.",
-      summaryEn: "Structured progressive 7-module study flow, dedicated Chinese Honored Brands pavilion, 28 historical figure portraits & full 1,093-entry trilingual expansion."
     }
   ];
 
   const siteChangelog = [
     {
-      version: "v5.0.0",
+      version: "v2.0.0",
       date: "2026-11-22",
       type: "feature",
-      tagVi: "[Phát hành Lớn · Khóa học 7 Học phần Tuần tự & Thương hiệu Lão Tự Hiệu]",
-      tagEn: "[Major Release · 7-Module Sequential Curriculum & Honored Brands Pavilion]",
-      titleVi: "Phiên bản v5.0: Sắp xếp Khóa học 7 Học phần Mạch lạc, Chuyên mục 24 Trung Hoa Lão Tự Hiệu (中华老字号) & Nạp trọn 6 Gói Dữ liệu Tri thức",
-      titleEn: "Release v5.0: Sequential 7-Module Curriculum Architecture, 24 Chinese Honored Brands Pavilion & Full 6-Pack Encyclopedic Ingestion",
+      tagVi: "[Phiên bản 2.0 · Phát hành Lớn Toàn Nền Tảng]",
+      tagEn: "[Version 2.0 · Full Platform Major Release]",
+      titleVi: "Phiên bản 2.0: 10 Học phần Văn minh Tuần tự, 24 Studio 3D WebGL, 120 Lão Tự Hào & Hệ sinh thái Tri thức Tam ngữ",
+      titleEn: "Version 2.0: 10-Module Progressive Curriculum, 24 WebGL 3D Studios, 120 Honored Brands & Trilingual Knowledge Ecosystem",
       itemsVi: [
-        "Kiến trúc Khóa Học 7 Học phần Tuần tự (src/components/v5CourseAcademy.js): nối mạch Địa lý – Lịch sử – Tư tưởng – Âm Dương Ngũ Hành – 10 Studio 3D – HSK 4–9/Du học – Logistics Tam ngữ, kèm thanh 'Mạch Logic Khóa Học — Bước Tiếp Theo' ở cuối mọi chuyên trang.",
-        "Chuyên mục Riêng 24 Thương hiệu Trung Hoa Lão Tự Hiệu (src/components/laozihaoPavilionV5.js): Đồng Nhân Đường (1669), Trần Lý Tế (1600), Toàn Tụ Đức, Mao Đài, Ngô Dụ Thái, Vinh Bảo Trai...",
-        "Nạp toàn bộ 6 gói dữ liệu bách khoa (1.093 mục): 59 Di sản UNESCO, 24 Thơ Đường–Tống, 100 Thành ngữ Chengyu, 9 Thể chất Đông y, 12 Đại học Du học CSC/UIBE/BUCM + 45 câu phỏng vấn, 100 Thuật ngữ Logistics Tam ngữ, 10 Bài đọc Song hành & 90 Câu Quiz độc lập.",
-        "Tinh chỉnh UI/UX từ phản hồi thực tế: chuẩn hóa bản đồ 2D 34 tỉnh không chồng nhãn, lưới ngang 10 Biển hiệu Sinh tồn, ảnh chân dung toàn bộ 28 Danh nhân Lịch đại (và 115 Danh nhân Cố hương), cùng sắp xếp Chuyên luận mới nhất lên đầu."
+        "Kiến trúc Học viện 10 Học phần – 60 Bài giảng Tuần tự: dẫn dắt mạch lạc từ Địa lý 34 tỉnh thành, Lịch đại 3.600 năm, Bách gia Chư tử, Thư họa Quốc bảo đến Kinh tế – Thương mại Âu–Trung–Việt đương đại.",
+        "24 Studio Mô hình 3D WebGL Tương tác & Bảo tàng Số: Bản đồ Địa hình 34 tỉnh, Tử Cấm Thành, Thiên Đàn, Kết cấu Đấu Củng, Thủy lợi Đô Giang Yển, Hồn Thiên Nghi, Nhà Thổ Lâu – Tứ Hợp Viện – Huy Phái, Tuyến Vận tải Tơ lụa ↔ Trung–Âu & 14 Bảo vật Quốc gia.",
+        "Chuyên mục 120 Thương hiệu Trung Hoa Lão Tự Hào (中华老字号) & 42 Chỉ dẫn Địa lý (GI): Đồng Nhân Đường (1669), Trần Lý Tế (1600), Toàn Tụ Đức, Mao Đài, Cảnh Đức Trấn, Trà Long Tỉnh Tây Hồ…",
+        "Học liệu Tổng hợp Đa ngành: 59 Di sản UNESCO, 36 Cặp Thơ–Họa Đường Tống, 100 Thành ngữ Điển cố HSK 4–9, 60 Vị thuốc Đông y & 20 Ca Âm Dương–Ngũ Hành (kèm ranh giới phi lâm sàng), 36 Đại học Học bổng CSC + 45 mẫu câu phỏng vấn & Studio Ngoại thương Tam ngữ.",
+        "16 Hành trình Di sản Miễn thị thực Quá cảnh 240 Giờ, Bản đồ Văn minh Trung–Việt (16 Kỳ quan đối sánh) & Đấu trường 600 Câu hỏi (bao gồm 150 Câu Nhận diện Hình ảnh Thực tế).",
+        "Trải nghiệm Thị giác 2.0: Màn hình Chờ Triển lãm Cổ cung hiển thị tức thì ngay từ khung hình đầu tiên, tối ưu hóa toàn bộ khung ảnh chống cắt xén & loại bỏ hoàn toàn ảnh trùng lặp."
       ],
       itemsEn: [
-        "7-Module Progressive Curriculum (src/components/v5CourseAcademy.js) with persisted module completion and cross-page 'Next Connected Lesson' logic bridges.",
-        "Dedicated Chinese Time-Honored Brands Pavilion (中华老字号, src/components/laozihaoPavilionV5.js) showcasing 24 imperial-era pharmacies, culinary houses, tea/spirit estates, and studio crafters.",
-        "Full integration of all 6 bilingual/trilingual encyclopedic datasets (1,093 items): 59 UNESCO sites, 24 poems, 100 Chengyu, 9 TCM constitutions, 12 CSC universities + 45 expressions, 100 EU–China logistics terms, 10 parallel trilingual articles & 90 unique Quiz Arena MCQs.",
-        "User-driven UI polish: overlap-free 2D vector map with unified East China coloring, horizontal 10-sign survival Hanzi grid, historical portraits for all 28 era figures & 115 provincial luminaries, and newest-first article ordering."
+        "10-Module, 60-Lesson Progressive Curriculum connecting Chinese geography, 3,600 years of history, classical philosophy, fine arts, traditional cosmology, and modern EU–China–Vietnam trade.",
+        "24 Interactive WebGL 3D Studios covering 34-Province Relief Maps, the Forbidden City, Temple of Heaven, Dougong joinery, Dujiangyan hydraulics, Celestial Armillary Spheres, and Imperial Relics.",
+        "Dedicated Pavilion of 120 Chinese Time-Honored Brands (中华老字号) and 42 Protected Geographical Indications spanning imperial apothecaries, tea estates, culinary houses, and craft ateliers.",
+        "Expanded Multidisciplinary Vault: 59 UNESCO sites, 36 Poem-Painting pairs, 100 HSK 4–9 idioms, 60 TCM medicinal herbs & 20 non-clinical Wuxing cases, 36 CSC scholarship university dossiers, and EU–China–Vietnam Trilingual Trade Workbench.",
+        "16 Visa-Free 240-Hour Heritage Expeditions, 16 Sino–Vietnamese Cultural Landmark comparisons, and a 600-question Quiz Arena featuring 150 visual identification rounds.",
+        "Edition 2.0 Visual Refinements: Instant first-paint Palace Pavilion welcome curtain, unified non-destructive aspect framing across every card & zoom viewer, and 100% deduplicated archival imagery."
       ]
     },
     {
-      version: "v4.0.0",
-      date: "2026-11-22",
-      type: "feature",
-      tagVi: "[Phát hành Lớn · Hệ sinh thái 10 Studio 3D & Học thuật Liên ngành]",
-      tagEn: "[Major Release · 10 Interactive 3D Studios & Interdisciplinary Hub]",
-      titleVi: "Phiên bản v4.0: 10 Studio 3D WebGL, Giao diện Biên tập Toàn cầu, Kho HSK 4–9 / Đông y–Ngũ Hành / Du học & Logistics Trung–Âu–Việt",
-      titleEn: "Release v4.0: 10 WebGL 3D Studios, Global Editorial UX, HSK 4–9 / Yin–Yang–Wuxing / CSC Study & EU–China–Vietnam Logistics Studio",
-      itemsVi: [
-        "10 Mô hình Tương tác 3D WebGL đồng bộ 1 WebGL context duy nhất (CCE_WEBGL_MGR): Bản đồ Địa hình 3D 34 tỉnh + 12 tuyến HSR, Tử Cấm Thành, Thiên Đàn, 4 Bảo vật Quốc gia, Kết cấu Đấu Củng 4 tầng, Nhà Thổ Lâu/Tứ Hợp Viện/Huy Phái, Con đường Tơ lụa ↔ Trung–Âu 2026, Thủy lợi Đô Giang Yển, Hồn Thiên Nghi & Ngũ Hành, Biên Chung Nhạc Chuông – Thuyền Trịnh Hòa – Tượng Tần.",
-        "Giao diện Biên tập Toàn cầu (styles/v4-editorial.css): Thẻ định hướng theo 4 Mục tiêu, Kệ Đọc Gần Đây, Command Palette (Ctrl+K), Chế độ đọc Paper/Sepia/Night, Song ngữ Đối chiếu VI|EN, Bộ sưu tập & Sổ tay Tra nhanh.",
-        "Trung tâm Tri thức Chuyên sâu (/explore): Tứ đại Danh tác & 60 Điển cố HSK 4–9, Chuyên luận Ngữ pháp Gốc Âm Dương – Ngũ Hành kết nối Đông y / Phong thủy / Bát Tự / Tử Vi (đặt ranh giới phi lâm sàng), Hồ sơ Du học CSC/UIBE/SUFE/BLCU/BUCM, Chính trị – Kinh tế 2026 & 8 Thái hệ Ẩm thực + Góc nhìn Việt Nam.",
-        "Studio Thương mại Tam ngữ Âu–Trung–Việt & Con đường Tơ lụa (/kinh-doanh): 100 thuật ngữ Incoterms/CBAM/ICS2/EUDR, bài tập chống quên Tiếng Anh (Hide EN Recall), 8 cặp email Nhà máy TQ ↔ Trụ sở EU và 12 tình huống phỏng vấn Logistics Châu Âu.",
-        "Mở rộng Hầm Luyện Thi lên 180+ câu trắc nghiệm song ngữ và Cẩm nang Hành trang 34 tỉnh (Lịch 12 tháng, 8 Lịch trình, Thẻ Đưa Tài xế)."
-      ],
-      itemsEn: [
-        "Launched 10 Three.js Interactive 3D Studios under strict single-context coordination (CCE_WEBGL_MGR): 34-Province 3D Relief Map, Forbidden City, Temple of Heaven, 4 National Relics, 4-Tier Dougong Joinery, Tulou/Siheyuan/Huizhou Cutaways, Historic Silk Road <-> 2026 CR Express Corridor, Dujiangyan Damless Hydraulics, Celestial Armillary & Wuxing Disk, Bronze Chime Bells & Treasure Ship.",
-        "Global Editorial UX (styles/v4-editorial.css): 4 Goal Intent Cards, Recently Viewed Shelf, Ctrl+K Command Palette, Paper/Sepia/Night typography themes, Side-by-Side VI|EN Split-View, My Collection drawer, and QuickRef Pocket.",
-        "Interdisciplinary Knowledge Hub (/explore): Four Literary Canons + 60 HSK 4–9 idioms, Non-Clinical Yin–Yang–Five Phases Monograph synthesizing TCM/Fengshui/Bazi/Ziwei, CSC/UIBE/SUFE/BLCU/BUCM Study Abroad Dossiers, 2026 Politics & Macro, and Eight Cuisines.",
-        "EU–China–Vietnam Trilingual Trade & Silk Road Studio (/kinh-doanh): 100 Incoterms/CBAM/ICS2/EUDR terms, Hide-EN anti-attrition drills, 8 Factory ZH <-> EU HQ EN email pairs, 12 European Logistics interview scenarios, and Silk Road Historic-to-Modern Continuum.",
-        "Expanded Quiz Arena pool to 180+ bilingual MCQs alongside 34-Province Travel Hub (12-Month Calendar, 8 Itineraries, Bilingual Show-to-Driver Cards)."
-      ]
-    },
-    {
-      version: "v2.6.0",
+      version: "v1.0.0",
       date: "2026-11-18",
       type: "feature",
-      tagVi: "[Nâng cấp Hệ thống & Dữ liệu]",
-      tagEn: "[Website Feature & Data Update]",
-      titleVi: "Mô hình 3D Tử Cấm Thành Đa chi tiết, Mở khóa Đọc tự do & Toàn bộ 65 Chuyên luận Song ngữ VI/EN",
-      titleEn: "High-Detail 3D Forbidden City Dissection, 100% Open-Access Monographs & Full 65-Essay VI/EN Parity",
+      tagVi: "[Phiên bản 1.0 · Khởi tạo Nền tảng Khảo cứu]",
+      tagEn: "[Version 1.0 · Inaugural Platform Foundation]",
+      titleVi: "Phiên bản 1.0: Ra mắt Cổng Tri thức Văn minh Trung Hoa & Đối sánh Việt–Trung (Bắt đầu phát triển trước 21/11)",
+      titleEn: "Version 1.0: Launch of the Chinese Culture Explorer & Sino–Vietnamese Comparative Portal",
       itemsVi: [
-        "Giải phẫu 3D Tử Cấm Thành (src/components/forbiddenCity3D.js) với 4 hệ mái Phi Diềm cong, 10 Linh thú góc mái, 3 tầng Tu Di Tọa, 250 tấn Đan Bệ, Nội Kim Thủy Hà & Ngũ Long Kiều, Cửu Long Bích và nội thất Đấu củng X-Ray đối sánh Cố đô Huế.",
-        "Gỡ bỏ cổng chặn đăng nhập khi đọc bài viết: toàn văn 65 chuyên luận, sử liệu gốc 4 lớp và trích dẫn APA/BibTeX đều mở tự do cho độc giả & Google Search.",
-        "Bổ sung Sổ tay Từ vựng & Ghi chú Chuyên luận (Text-Selection Popover + xuất CSV/TSV) thay thế màn hình học thẻ độc lập.",
-        "Hỗ trợ đầy đủ Tiếng Việt và Tiếng Anh cho toàn bộ 65 chuyên luận lẫn khối Đọc tiếp Chuyên luận Liên quan.",
-        "Tích hợp Cẩm nang Ngọa Du -> Hành trang Thực địa 34 tỉnh (Alipay, Ga Cao tốc, 10 biển báo Hán tự) & Thơ Tứ tuyệt 3 ngữ của Nhà sáng lập."
+        "Công bố 65 Chuyên luận khảo cứu song ngữ Việt–Anh chuyên sâu mở khóa tự do toàn văn cùng 4 lớp sử liệu gốc và trích dẫn chuẩn APA/BibTeX.",
+        "Ra mắt Hồ sơ 34 Tỉnh/Thành phố trực thuộc, 54 Kiệt tác Quốc họa kèm kính lúp độ phân giải cao & Hotspot tương phản chuẩn AAA.",
+        "Xây dựng Giải phẫu 3D Tử Cấm Thành, Cẩm nang Hành trang 34 tỉnh & Sổ tay Từ vựng – Trích dẫn Ngữ cảnh (Ctrl+K Command Palette & xuất CSV/TSV)."
       ],
       itemsEn: [
-        "Launched high-detail Three.js Forbidden City architectural treatise with upturned Feiyan eaves, ridge beasts, 3-tier marble terraces, dragon ramp, Inner Golden Water River, Nine-Dragon Screen, X-Ray Dougong/Throne interior, and Hue Citadel comparisons.",
-        "Removed full-article Google sign-in gates: all 65 monographs, primary-source layers, and APA/BibTeX citations are 100% open read.",
-        "Replaced standalone flashcard UI with the Contextual Vocabulary & Reading Notebook (text selection capture + CSV/TSV export).",
-        "Delivered full Vietnamese & English parity across all 65 essays and all Related Articles cards.",
-        "Added 34-province Pre-Trip Travel Readiness dossiers, First-Time Survival Hanzi guide, Weekly Updates Bell, and Founder Trilingual Quatrain."
-      ]
-    },
-    {
-      version: "v2.5.4",
-      date: "2026-11-16",
-      type: "content",
-      tagVi: "[Bài viết & Nghệ thuật]",
-      tagEn: "[Monograph & Gallery Update]",
-      titleVi: "Hoàn thiện 54 Kiệt tác Quốc họa, Hotspots tương phản AAA & Bộ lọc Tìm kiếm Ctrl+K",
-      titleEn: "54 Master Paintings Registry, WCAG AAA Hotspot Inspector & Global Ctrl+K Search Hardening",
-      itemsVi: [
-        "Đồng bộ bộ đếm động 54 bức Quốc họa & hiệu chuẩn tọa độ Hotspot trên trường quyển.",
-        "Khắc phục triệt để độ tương phản Hotspot #1, độ đục nền Mega-Menu và đồng bộ đường dẫn sạch /phap-ly."
-      ],
-      itemsEn: [
-        "Synchronized dynamic 54-painting counts and curated scroll hotspot coordinates.",
-        "Fixed Hotspot #1 contrast inside dark museum frames, opaque Mega-Menu layering, and clean URL routing."
+        "Published 65 open-access bilingual scholarly monographs complete with 4-layer primary source citations and APA/BibTeX export.",
+        "Launched 34 provincial cultural profiles and a 54-masterwork Classical Paintings Registry with high-resolution magnification and WCAG AAA hotspots.",
+        "Introduced the Interactive 3D Forbidden City architectural treatise, Pre-Trip Travel Readiness dossiers, Global Ctrl+K Command Palette, and Contextual Vocabulary Notebook."
       ]
     }
   ];

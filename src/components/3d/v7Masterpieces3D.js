@@ -349,7 +349,7 @@
 
     var renderer;
     try { renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" }); }
-    catch (_e) { container.innerHTML = '<div class="epistemic-box">WebGL required for V7 3D Masterpiece Studio.</div>'; return; }
+    catch (_e) { container.innerHTML = '<div class="epistemic-box">WebGL required for 3D Masterpiece Studio.</div>'; return; }
     renderer.setSize(w, h, false);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.domElement.style.cssText = "width:100%;height:100%;display:block;touch-action:none;cursor:grab;";

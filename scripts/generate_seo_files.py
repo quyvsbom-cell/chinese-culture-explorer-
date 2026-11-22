@@ -58,7 +58,7 @@ CATEGORY_RASTER_FALLBACKS = {
 STATIC_SECTION_META = {
     "/": (
         f"{SITE_BRAND} – " + ("中越经贸与全球供应链研究平台" if IS_GLOBAL_TRADE else "中国文化探索"),
-        "Khám phá văn minh Trung Hoa (V7.0): 10 Học phần, 24 Studio 3D WebGL, 120 Lão Tự Hào, 16 Hành trình Di sản 240h & Đấu trường 600 câu.",
+        "Khám phá văn minh Trung Hoa (Phiên bản 2.0): 10 Học phần, 24 Studio 3D WebGL, 120 Lão Tự Hào, 16 Hành trình Di sản 240h & Đấu trường 600 câu.",
         DEFAULT_RASTER_OG,
         "1.0",
         "weekly",

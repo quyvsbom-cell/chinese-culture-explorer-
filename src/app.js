@@ -1185,8 +1185,8 @@
   }
 
   function isArtworkOrDocumentSrc(src = "", meta = "") {
-    return /\/(museum|paintings|monograph)\//i.test(src) ||
-      /lanting|hanshi|qianli|qingming|wang-yangming|silk-banner|zheng-he|tiangong|acupuncture|yongle|jinshi|david-vases|houmuwu|sanxingdui|zeng-hou|liangzhu|chenghua|chu-dau|han-shipan|great-wall-ink|jiangshan-ruci|calligraphy|chart|diagram|seal|figure-\d+/i.test(`${src} ${meta}`);
+    if (/\.svg(?:\?|$)/i.test(src) || /\/(monograph|brand|editorial)\//i.test(src)) return true;
+    return /lanting|hanshi|jizhi-wengao|kuaixue|pingfu-tie|jinshi-stele|zheng-he-chart|han-silk-banner|han-shipan|infographic|diagram|calligraphy|chart|seal|figure-\d+/i.test(`${src} ${meta}`);
   }
 
   function renderAcademicCardThumb(photo, badgeLabel = "") {
@@ -3325,9 +3325,16 @@
     const leadThumbId = leadEd && leadEd.thumbnailConfig ? leadEd.thumbnailConfig.imageId : null;
     const leadImgObj = leadThumbId ? getEditorialImage(leadThumbId) : null;
     const rawLeadHero = leadArt && (leadArt.heroImage || getAcademicPhotoForItem(leadArt.category, leadArt.id, 0));
-    const leadPhoto = (leadImgObj && (leadImgObj.url || leadImgObj.src))
+    const forbiddenHomeLeadImgs = new Set([
+      "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
+      activePlate && activePlate.src ? activePlate.src : ""
+    ]);
+    const resolvedLeadPhoto = (leadImgObj && (leadImgObj.url || leadImgObj.src))
       || (typeof rawLeadHero === "string" ? rawLeadHero : (rawLeadHero && (rawLeadHero.src || rawLeadHero.imageUrl)))
-      || "assets/images/museum/forbidden-city-imperial-axis-gate.jpg";
+      || "assets/images/academic/ming-forbidden-city.jpg";
+    const leadPhoto = forbiddenHomeLeadImgs.has(resolvedLeadPhoto)
+      ? "assets/images/academic/ming-forbidden-city.jpg"
+      : resolvedLeadPhoto;
     const leadExcerpt = (leadEd && leadEd.standfirst) || (leadArt && leadArt.introduction ? `${leadArt.introduction.slice(0, 175).trim()}…` : "");
 
     // ------------------------------------------------------------------
@@ -3376,14 +3383,15 @@
       museum: (homeEn ? (pt.museumEn || pt.museum) : pt.museum) || (homeEn ? "The Palace Museum" : "Bảo tàng Cố Cung")
     }));
 
-    const preferredArtifactIds = ["great-wall-scroll", "jiangshan-ruci-duojiao", "forbidden-city-axis-gate", "houmuwu-ding", "taihe-dian", "david-vases"];
+    const preferredArtifactIds = ["zeng-hou-yi-bianzhong", "ma-dap-phi-yen", "ru-yao-tianqing", "david-vases", "sanxingdui-bronze-mask", "changxin-palace-lamp"];
+    const excludedHomeArtifacts = new Set(["great-wall-scroll", "jiangshan-ruci-duojiao", "forbidden-city-axis-gate", "forbidden-city-imperial-axis-gate"]);
     const pickedArtifacts = [];
     preferredArtifactIds.forEach((aid) => {
       const found = (Museum && Museum.artifacts || []).find((a) => a.id === aid && a.imageUrl);
       if (found) pickedArtifacts.push(found);
     });
     (Museum && Museum.artifacts ? Museum.artifacts : []).forEach((a) => {
-      if (pickedArtifacts.length < 4 && a.imageUrl && !excludedHomeScrolls.has(a.id) && !pickedArtifacts.some((x) => x.id === a.id)) {
+      if (pickedArtifacts.length < 4 && a.imageUrl && !excludedHomeScrolls.has(a.id) && !excludedHomeArtifacts.has(a.id) && !pickedArtifacts.some((x) => x.id === a.id)) {
         pickedArtifacts.push(a);
       }
     });
@@ -3611,7 +3619,7 @@
             ${exhibitStrip.map((item) => `
               <article class="ed-exhibit-plate">
                 <button type="button" class="ed-exhibit-stage" data-action="${item.action}" data-id="${item.id}" style="display:flex;width:100%;border:0;cursor:pointer;" aria-label="${homeEn ? "Inspect" : "Xem"} ${escapeHtml(homeEn ? (item.titleEn || item.titleVi) : item.titleVi)}">
-                  <img decoding="async"  src="${escapeHtml(item.src)}" alt="${escapeHtml(homeEn ? (item.titleEn || item.titleVi) : item.titleVi)}" loading="lazy" />
+                  <img decoding="async"  src="${escapeHtml(item.src)}" alt="${escapeHtml(homeEn ? (item.titleEn || item.titleVi) : item.titleVi)}" loading="lazy" onload="if(this.naturalHeight / Math.max(1, this.naturalWidth) >= 1.55) { this.parentElement && this.parentElement.classList.add('is-tall-scroll'); }" />
                 </button>
                 <button type="button" class="ed-exhibit-title" data-action="${item.action}" data-id="${item.id}" style="background:none;border:0;padding:0;text-align:left;cursor:pointer;">
                   ${escapeHtml(homeEn ? (item.titleEn || item.titleVi) : item.titleVi)} <span class="hanzi" style="font-weight:400;color:var(--text-muted);">${escapeHtml(item.titleZh)}</span>
@@ -5346,7 +5354,7 @@
       return `
         <article class="painting-card ${isScroll ? "is-handscroll-card" : ""} fade-in-up" data-painting-id="${p.id}">
           <div class="painting-card-thumb-wrap ${isScroll ? "is-handscroll" : ""}" data-action="open-painting-detail" data-id="${p.id}" title="${enM ? "Click for 9-dimension curatorial analysis" : "Nhấn để xem phân tích học thuật 9 chiều kích"}">
-            <img decoding="async"  src="${p.image}" alt="${escapeHtml(pTitleMain)} - ${p.titleZh}" loading="lazy" onload="if(this.naturalWidth / Math.max(1, this.naturalHeight) >= 2.2) { this.parentElement && this.parentElement.classList.add('is-handscroll'); this.closest('.painting-card') && this.closest('.painting-card').classList.add('is-handscroll-card'); }" onerror="this.src='assets/images/museum/qianli-jiangshan.jpg'" />
+            <img decoding="async"  src="${p.image}" alt="${escapeHtml(pTitleMain)} - ${p.titleZh}" loading="lazy" onload="var r=this.naturalWidth/Math.max(1,this.naturalHeight);if(r>=2.2){this.parentElement&&this.parentElement.classList.add('is-handscroll');this.closest('.painting-card')&&this.closest('.painting-card').classList.add('is-handscroll-card');}else if(r<=0.64){this.parentElement&&this.parentElement.classList.add('is-tall-scroll');}" onerror="this.src='assets/images/museum/qianli-jiangshan.jpg'" />
           </div>
 
           <div class="painting-card-body">
@@ -10890,7 +10898,7 @@
     const hotPicks = (WeeklyUpdates && WeeklyUpdates.hotPicks) || [];
     const logs = [
       ...((state.changelogPublishedLog || []).map((c) => ({
-        version: c.version || "v2.6.x",
+        version: c.version || "v2.0.0",
         date: c.publishedAt || "",
         tagVi: "[Nhật ký Xuất bản]",
         tagEn: "[Release Dispatch]",
@@ -11225,6 +11233,10 @@
       <div id="cce-nav-root">${renderMobileNavDrawer()}${renderMobileBottomNav(state.activePage)}</div>
       <div id="cce-modal-root">${renderAllModalsHTML()}</div>
     `;
+
+    if (typeof window.CCE_DEDUPE_IMAGES === "function") {
+      window.CCE_DEDUPE_IMAGES(document.getElementById("main-content"));
+    }
 
     document.body.style.overflow = hasAnyOpenModalState() ? "hidden" : "";
 
@@ -13966,6 +13978,9 @@
     Auth.init();
   }
   render();
+  if (window.CCETransition && typeof window.CCETransition.finishInitialSplash === "function") {
+    window.CCETransition.finishInitialSplash();
+  }
   hydratePageBundles(Store.getState().activePage || "home", Store.getState().uiLang || "vi", {
     needs3d: ui.activeArticleId === "forbidden-city-3d-dissection"
   });

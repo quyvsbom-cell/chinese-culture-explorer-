@@ -14,7 +14,7 @@
   reg({
     heroImage: {
       id: "img-hero-monograph-religion",
-      src: "assets/images/academic/laozi-portrait.jpg",
+      src: "assets/images/academic/qing-summer-palace.jpg",
       titleVi: "Tam Giáo Hợp Nhất (Nho – Thích – Đạo) & Hệ Thống Thần Thoại – Tín Ngưỡng Dân Gian",
       titleZh: "三教合一与中华民间信仰神话体系",
       titleEn: "Three Teachings Syncretism, Ancestor Veneration and Folk Pantheon",
@@ -53,7 +53,7 @@
       epistemicTag: "Tôn giáo học So sánh & Sử liệu Khảo chứng (Tách rạch Truyền thuyết – Sử học)",
       readMinutes: 19,
       heroImage: {
-        src: "assets/images/academic/laozi-portrait.jpg",
+        src: "assets/images/academic/sunzi-bamboo-slips.jpg",
         caption: "Biểu tượng tư tưởng Đạo giáo trong cấu trúc Tam giáo Hợp nhất Trung Hoa",
         credit: "CCE Religious & Philosophical Visual Archive"
       },
@@ -195,7 +195,7 @@
   reg({
     heroImage: {
       id: "img-hero-monograph-ich",
-      src: "assets/images/academic/peking-opera.jpg",
+      src: "assets/images/academic/suzhou-garden.jpg",
       titleVi: "Di sản Văn hóa Phi vật thể UNESCO: Kinh Kịch, Côn Khúc, Cổ Cầm & Nghệ thuật Trình diễn",
       titleZh: "中国非物质文化遗产与京剧昆曲美学",
       titleEn: "China UNESCO Intangible Cultural Heritage: Kunqu, Peking Opera, Guqin & Shadow Puppetry",
@@ -234,7 +234,7 @@
       epistemicTag: "Di sản học & Mỹ học Trình diễn Ước lệ Phương Đông",
       readMinutes: 18,
       heroImage: {
-        src: "assets/images/academic/peking-opera.jpg",
+        src: "assets/images/academic/tang-sancai-camel.jpg",
         caption: "Mỹ học Sân khấu Ước lệ Kinh Kịch — Một trong 44 Di sản Văn hóa Phi vật thể UNESCO của Trung Quốc",
         credit: "CCE Digital Museum ICH Visual Repository"
       },
@@ -372,7 +372,7 @@
   reg({
     heroImage: {
       id: "img-hero-monograph-science-tech",
-      src: "assets/images/museum/tiangong-kaiwu.jpg",
+      src: "assets/images/academic/wang-yangming.jpg",
       titleVi: "Lịch sử Khoa học Kỹ thuật Trung Hoa: Từ Bách Khoa Thư 《Thiên Công Khai Vật》 đến Kỷ nguyên Công nghệ Đương đại",
       titleZh: "中国古代科学技术与现代创新生态",
       titleEn: "Chinese History of Science and Technology: From Tiangong Kaiwu to Contemporary Innovation",
@@ -411,7 +411,7 @@
       epistemicTag: "Khoa học Sử Thực chứng & Giải mã Bài toán Joseph Needham",
       readMinutes: 20,
       heroImage: {
-        src: "assets/images/museum/tiangong-kaiwu.jpg",
+        src: "assets/images/academic/west-lake-hangzhou.jpg",
         caption: "Khắc bản kỹ thuật nông–công nghiệp trong 《Thiên Công Khai Vật》 của Tống Ứng Tinh (1637)",
         credit: "National Library of China Public Domain Edition"
       },
@@ -589,7 +589,7 @@
       epistemicTag: "Giáo dục học So sánh & Cẩm nang Thực hành Du học Học bổng 2026",
       readMinutes: 19,
       heroImage: {
-        src: "assets/images/articles/hero-academy-shuyuan.jpg",
+        src: "assets/images/articles/hero-ai-deepseek-lab.jpg",
         caption: "Rừng bia Tiến sĩ tại Quốc Tử Giám Bắc Kinh — chứng tích lịch sử học vấn Đông Á",
         credit: "Beijing Guozijian Public Cultural Heritage"
       },

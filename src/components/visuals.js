@@ -986,6 +986,7 @@ window.CCE_VISUALS = {
             alt="${artifact.nameVi} (${artifact.nameZh})"
             class="museum-artwork-img"
             loading="lazy"
+            onload="var r=this.naturalWidth/Math.max(1,this.naturalHeight);if(r>=2.2){this.parentElement&&this.parentElement.classList.add('is-handscroll');}else if(r<=0.64){this.parentElement&&this.parentElement.classList.add('is-tall-scroll');}"
           />
           <span class="museum-artwork-seal">${(artifact.nameZh || "馆藏").slice(0, 4)}</span>
         </div>

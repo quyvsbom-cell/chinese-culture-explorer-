@@ -36,6 +36,14 @@
   var _bypassClick = false;
   var _timers = [];
   var _scrambleTimer = null;
+  var _initialDone = false;
+
+  function clearInitialBootTimer() {
+    if (typeof window !== "undefined" && window.__CCE_SPLASH_TIMER) {
+      clearTimeout(window.__CCE_SPLASH_TIMER);
+      window.__CCE_SPLASH_TIMER = null;
+    }
+  }
 
   function prefersReducedMotion() {
     if (typeof window === "undefined" || !window.matchMedia) return false;
@@ -225,6 +233,8 @@
 
     if (_busy) return;
     _busy = true;
+    _initialDone = true;
+    clearInitialBootTimer();
     clearTimers();
 
     var tagline = getTargetTagline();
@@ -344,8 +354,47 @@
   }
 
   function init() {
-    ensureCurtain();
+    var curtain = ensureCurtain();
+    if (curtain && curtain.classList.contains("is-initial-splash")) {
+      if (_taglineEl) _taglineEl.textContent = getTargetTagline();
+      if (_routeEl) _routeEl.textContent = formatRouteDisplay(window.location.pathname || "/");
+      if (!curtain.classList.contains("is-illuminated")) {
+        curtain.classList.add("is-illuminated");
+      }
+    }
     document.addEventListener("click", onDocumentClick, true);
+  }
+
+  function finishInitialSplash() {
+    if (_initialDone) return;
+    _initialDone = true;
+    clearInitialBootTimer();
+    var curtain = ensureCurtain();
+    if (!curtain) return;
+    if (prefersReducedMotion()) {
+      curtain.className = "is-resetting";
+      return;
+    }
+    if (!curtain.classList.contains("is-initial-splash")) {
+      return;
+    }
+    if (_taglineEl) _taglineEl.textContent = getTargetTagline();
+    if (_routeEl) _routeEl.textContent = formatRouteDisplay(window.location.pathname || "/");
+    curtain.classList.add("is-illuminated");
+
+    var startedAt = (typeof window !== "undefined" && window.__CCE_SPLASH_START) || Date.now();
+    var elapsed = Math.max(0, Date.now() - startedAt);
+    var holdRemaining = Math.max(80, 440 - elapsed);
+
+    _timers.push(setTimeout(function () {
+      if (_busy) return;
+      curtain.className = "is-exiting is-illuminated";
+      _timers.push(setTimeout(function () {
+        if (!_busy && curtain.classList.contains("is-exiting")) {
+          curtain.className = "is-resetting";
+        }
+      }, TIMING_EXIT_MS + 35));
+    }, holdRemaining));
   }
 
   if (document.readyState === "loading") {
@@ -356,6 +405,7 @@
 
   window.CCETransition = {
     navigate: runTransition,
+    finishInitialSplash: finishInitialSplash,
     isRunning: function () {
       return _busy;
     }

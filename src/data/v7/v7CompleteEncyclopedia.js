@@ -15,7 +15,7 @@
       "num": "08",
       "doneKey": "mod8",
       "page": "museum",
-      "img": "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
+      "img": "assets/images/museum/houmuwu-ding.jpg",
       "zh": "丹青雅韵 · 美学与三维馆",
       "titleVi": "Học phần 8: Mỹ Học Cố Cung, Kim Thạch Hý Kịch & 24 Studio 3D",
       "titleEn": "Module 8: Forbidden City Aesthetics, Epigraphy, Opera & 24 3D Studios",
@@ -29,7 +29,7 @@
       "num": "09",
       "doneKey": "mod9",
       "page": "regions",
-      "img": "assets/images/provinces/gansu-dunhuang-mogao.jpg",
+      "img": "assets/images/museum/acupuncture-bronze.jpg",
       "zh": "万里行旅 · 遗产与高铁指南",
       "titleVi": "Học phần 9: 16 Hành Trình Di Sản Quốc Tế, Cao Tốc 350km/h & Cẩm Nang 240h",
       "titleEn": "Module 9: 16 International Heritage Expeditions, 350km/h HSR & 240h Guide",
@@ -43,7 +43,7 @@
       "num": "10",
       "doneKey": "mod10",
       "page": "business",
-      "img": "assets/images/articles/hero-supply-chain-rcep.jpg",
+      "img": "assets/images/museum/boyuan-tie.jpg",
       "zh": "数字丝路 · 海关合规与留华",
       "titleVi": "Học phần 10: Kinh Tế Số B2B, Hải Quan GACC, AI & Học Bổng CSC Toàn Diện",
       "titleEn": "Module 10: B2B Digital Economy, GACC Customs, AI & Comprehensive CSC Scholarships",
@@ -111,7 +111,7 @@
         "ansVi": "Thạch Thanh (Azurite) và Thạch Lục (Malachite).",
         "ansEn": "Azurite (Shiqing) and Malachite (Shilu)."
       },
-      "imagePath": "assets/images/paintings/22_qianli_jiangshan.jpg"
+      "imagePath": "assets/images/prov_items/anhui/d3.jpg"
     },
     {
       "id": "v7-m8-l2",
@@ -285,7 +285,7 @@
         "ansVi": "Phạm Chú Pháp cho phép ghép nhiều mảnh khuôn gốm chịu lực lớn, tạo các đường gân sắc cạnh và đúc vật thể nặng hàng trăm kilôgam ổn định hơn.",
         "ansEn": "Ceramic piece-molds withstood the immense hydrostatic pressure of hundreds of kilograms of molten bronze while producing crisp relief lines and structural flanges."
       },
-      "imagePath": "assets/images/museum/houmuwu-ding.jpg"
+      "imagePath": "assets/images/prov_items/anhui/d4.jpg"
     },
     {
       "id": "v7-m8-l5",
@@ -459,7 +459,7 @@
         "ansVi": "Nguồn nước băng tuyết tan chảy từ dãy núi Kỳ Liên Sơn ở phía nam hành lang.",
         "ansEn": "Glacial meltwater flowing northward from the snowcapped Qilian Mountains."
       },
-      "imagePath": "assets/images/provinces/gansu-dunhuang-mogao.jpg"
+      "imagePath": "assets/images/prov_items/anhui/f0.jpg"
     },
     {
       "id": "v7-m9-l2",
@@ -517,7 +517,7 @@
         "ansVi": "Đại Vận Hà Kinh–Hàng (Kênh đào lớn nối Bắc Kinh và Hàng Châu).",
         "ansEn": "The Beijing-Hangzhou Grand Canal."
       },
-      "imagePath": "assets/images/provinces/sichuan-jiuzhaigou.jpg"
+      "imagePath": "assets/images/prov_items/anhui/f1.jpg"
     },
     {
       "id": "v7-m9-l3",
@@ -633,7 +633,7 @@
         "ansVi": "Rừng Trà Cổ Cảnh Mại Sơn thuộc thành phố Phổ Nhĩ, tỉnh Vân Nam.",
         "ansEn": "The Old Tea Forests of Jingmai Mountain in Pu'er, Yunnan Province."
       },
-      "imagePath": "assets/images/articles/hero-six-teas-gongfu.jpg"
+      "imagePath": "assets/images/prov_items/anhui/f2.jpg"
     },
     {
       "id": "v7-m9-l5",
@@ -749,7 +749,7 @@
         "ansVi": "Thiên Hậu Thánh Mẫu (Ma Tổ – 妈祖).",
         "ansEn": "Mazu, Empress of Heaven (Tianhou Shengmu)."
       },
-      "imagePath": "assets/images/articles/hero-sino-vietnam.jpg"
+      "imagePath": "assets/images/prov_items/anhui/f3.jpg"
     },
     {
       "id": "v7-m10-l1",
@@ -807,7 +807,7 @@
         "ansVi": "Bắt buộc in rõ ràng trên cả bao bì trong (bao bì tiếp xúc trực tiếp hoặc đơn vị bán lẻ) và bao bì ngoài (thùng carton vận chuyển).",
         "ansEn": "It must be clearly marked on both the inner packaging (retail or primary unit) and the outer transport packaging."
       },
-      "imagePath": "assets/images/editorial/infographic-co-forme-incoterms.svg"
+      "imagePath": "assets/images/prov_items/anhui/h0.jpg"
     },
     {
       "id": "v7-m10-l2",
@@ -865,7 +865,7 @@
         "ansVi": "Tiêu chuẩn IATF 16949 (Hệ thống quản lý chất lượng chuyên ngành công nghiệp ô tô).",
         "ansEn": "IATF 16949 (International Automotive Task Force quality management system standard)."
       },
-      "imagePath": "assets/images/articles/hero-huaqiangbei-tech.jpg"
+      "imagePath": "assets/images/prov_items/anhui/h1.jpg"
     },
     {
       "id": "v7-m10-l3",
@@ -923,7 +923,7 @@
         "ansVi": "Mô hình hàng hóa nhập khẩu lưu trữ trước tại kho ngoại quan / khu bảo thuế tổng hợp, sau khi người tiêu dùng đặt đơn mới thông quan giao nhanh.",
         "ansEn": "The bonded-warehouse fulfillment model, where bulk inventory is pre-positioned in a bonded zone and cleared per individual consumer order."
       },
-      "imagePath": "assets/images/articles/hero-b2b-negotiation-table.jpg"
+      "imagePath": "assets/images/prov_items/anhui/h2.jpg"
     },
     {
       "id": "v7-m10-l4",
@@ -981,7 +981,7 @@
         "ansVi": "Vì Trung Quốc áp dụng nguyên tắc nộp đơn trước (First-to-File); nếu đối tác hoặc bên thứ ba đăng ký trước, chính chủ thương hiệu có thể bị giữ hàng tại hải quan khi xuất khẩu.",
         "ansEn": "Because China enforces a strict First-to-File trademark regime; if a factory or squatter registers the mark first, the genuine brand owner risks customs seizure of its own exports."
       },
-      "imagePath": "assets/images/articles/hero-vietnam-ai-decree13.jpg"
+      "imagePath": "assets/images/prov_items/anhui/h3.jpg"
     },
     {
       "id": "v7-m10-l5",
@@ -1039,7 +1039,7 @@
         "ansVi": "Mã Cơ quan Tuyển sinh (Agency Number) riêng của từng trường đại học Trung Quốc (ví dụ: 10001 của ĐH Bắc Kinh, 10003 của ĐH Thanh Hoa, 10698 của ĐH Giao thông Tây An).",
         "ansEn": "The target university's dedicated 5-digit Agency Number (for example, 10001 for Peking University, 10003 for Tsinghua University, or 10698 for Xi'an Jiaotong University)."
       },
-      "imagePath": "assets/images/academic/van-mieu-hanoi.jpg"
+      "imagePath": "assets/images/prov_items/anhui/h4.jpg"
     },
     {
       "id": "v7-m10-l6",
@@ -1097,7 +1097,7 @@
         "ansVi": "Hợp tác bình đẳng, hiểu sâu quy chuẩn và văn hóa đối tác để cùng phát triển, đồng thời giữ vững bản sắc văn hóa và lợi ích độc lập của dân tộc mình.",
         "ansEn": "Pursuing equitable cooperation through deep understanding of a partner's culture and standards while preserving one's own distinct cultural identity and independent interests."
       },
-      "imagePath": "assets/images/museum/yongle-dadian.jpg"
+      "imagePath": "assets/images/prov_items/beijing/d0.jpg"
     }
   ],
   "brandsAdditional20": [
@@ -1355,7 +1355,7 @@
       "vietnamAseanLessonEn": "Historic herbal streets in Hanoi and Ho Chi Minh City can draw inspiration from its living-museum model combining botanical education with heritage retail",
       "flagshipAddressZh": "湖北省武汉市汉阳区鹦鹉大道叶开泰中医药文化园",
       "imgHintSlug": "v7-brand-105",
-      "imagePath": "assets/images/prov_items/hubei/h0.jpg",
+      "imagePath": "assets/images/prov_items/hubei/h2.jpg",
       "visitTipVi": "Tham quan Bảo tàng Lịch sử Diệp Khai Thái tại Hán Dương để xem bộ cân tiểu ly cổ, cối giã đồng và trải nghiệm tự làm túi thơm thảo mộc thủ công",
       "visitTipEn": "Visit the historic storefront and workshop archive in Wuhan, Hubei.",
       "craftProcessStepsVi": [
@@ -1579,7 +1579,7 @@
       "vietnamAseanLessonEn": "Vietnamese steamed specialties can adopt standardized broth-aspic preparation and IQF cold-chain protocols to scale consistently across hospitality chains",
       "flagshipAddressZh": "江苏省淮安市淮安区河下古镇花巷文楼总店",
       "imgHintSlug": "v7-brand-109",
-      "imagePath": "assets/images/prov_items/jiangsu/d1.jpg",
+      "imagePath": "assets/images/prov_items/jiangsu/d3.jpg",
       "visitTipVi": "Khi thưởng thức cần nhớ khẩu quyết nâng nhẹ, đặt chậm, mở lỗ nhỏ, thổi nguội trước khi hút nước súp kẻo bỏng lưỡi, đi kèm gừng sợi ngâm giấm Trấn Giang",
       "visitTipEn": "Visit the historic storefront and workshop archive in Huai'an, Jiangsu.",
       "craftProcessStepsVi": [
@@ -1915,7 +1915,7 @@
       "vietnamAseanLessonEn": "Vietnamese woodcarving hubs such as Dong Ky and Khanh Hoa agarwood artisans can adopt signed-artist provenance records and transparent timber legality documentation",
       "flagshipAddressZh": "福建省莆田市荔城区工艺美术城方氏木雕艺术馆",
       "imgHintSlug": "v7-brand-115",
-      "imagePath": "assets/images/prov_items/fujian/h1.jpg",
+      "imagePath": "assets/images/prov_items/fujian/h2.jpg",
       "visitTipVi": "Ghé Thành phố Mỹ nghệ Công nghệ Phủ Điền để xem trực tiếp nghệ nhân thao tác hàng chục mũi đục nhỏ và tham quan bảo tàng mộc điêu Phủ Điền",
       "visitTipEn": "Visit the historic storefront and workshop archive in Putian, Fujian.",
       "craftProcessStepsVi": [
@@ -2027,7 +2027,7 @@
       "vietnamAseanLessonEn": "Vietnamese unglazed teaware artisans in Bat Trang and Phu Lang can adopt rigorous geometric proportions, transparent clay-ore provenance, and pour-performance testing",
       "flagshipAddressZh": "江苏省无锡市宜兴市丁蜀镇顾景舟故居及紫砂艺术馆",
       "imgHintSlug": "v7-brand-117",
-      "imagePath": "assets/images/prov_items/jiangsu/h2.jpg",
+      "imagePath": "assets/images/prov_items/jiangsu/d4.jpg",
       "visitTipVi": "Nên đến trấn Đinh Thục (thủ phủ Tử Sa) tham quan Bảo tàng Gốm Sứ Nghi Hưng và Nhà lưu niệm Cố Cảnh Chu để học cách phân biệt ba dòng đất chính: Tử Nê, Chu Nê và Đoạn Nê",
       "visitTipEn": "Visit the historic storefront and workshop archive in Yixing, Jiangsu.",
       "craftProcessStepsVi": [
@@ -2139,7 +2139,7 @@
       "vietnamAseanLessonEn": "Vietnamese glassblowing and decorative craft studios can adopt lost-wax glass casting and mineral-color storytelling to move from utility glassware into high-margin art decor",
       "flagshipAddressZh": "山东省淄博市博山区颜山公园路人立琉璃艺术博物馆",
       "imgHintSlug": "v7-brand-119",
-      "imagePath": "assets/images/prov_items/shandong/h2.jpg",
+      "imagePath": "assets/images/prov_items/shandong/h4.jpg",
       "visitTipVi": "Nên ghé Bảo tàng Nghệ thuật Lưu Ly Nhân Lập tại Bác Sơn để xem bộ sưu tập bình Kê Du Hoàng cổ và xem nghệ nhân thổi tạo hình trực tiếp trước lò nung nóng",
       "visitTipEn": "Visit the historic storefront and workshop archive in Zibo, Shandong.",
       "craftProcessStepsVi": [
@@ -2195,7 +2195,7 @@
       "vietnamAseanLessonEn": "Vietnamese Han-Nom calligraphy circles and Do paper artisans can explore pine-soot ink compatibility on Do paper and develop museum-backed heritage stationery gift sets",
       "flagshipAddressZh": "安徽省黄山市屯溪区延安路徽州胡开文墨厂",
       "imgHintSlug": "v7-brand-120",
-      "imagePath": "assets/images/prov_items/anhui/h1.jpg",
+      "imagePath": "assets/images/prov_items/anhui/d1.jpg",
       "visitTipVi": "Nên tham quan trực tiếp xưởng sản xuất truyền thống tại Đồn Khê để xem công đoạn giã phôi mực, ép khuôn gỗ lê cổ và tô vàng thủ công lên hoa văn nổi",
       "visitTipEn": "Visit the historic storefront and workshop archive in Huangshan, Anhui.",
       "craftProcessStepsVi": [
@@ -2271,7 +2271,7 @@
       "terroirAndCraftEn": "Coastal mist humidity and slightly acidic soil (pH 5.5-6.5) concentrate natural citrus peel aromatics; local artisans shade-dry slices or candy them with rock sugar for traditional fruit teas and confectionery.",
       "customsHsAndAuditVi": "Mã HS 0805.90 (quả tươi họ cam quýt khác) hoặc 0813.40 (lát quả sấy khô thực phẩm). Cần tờ khai nguồn gốc thực vật, kiểm nghiệm kim loại nặng theo GB 2762 và ghi nhãn thực phẩm thông thường theo GB 7718.",
       "customsHsAndAuditEn": "HS Code 0805.90 (fresh specialty citrus) or 0813.40 (dried culinary fruit slices). Requires botanical origin declaration, heavy-metal screening under GB 2762, and standard food labeling under GB 7718.",
-      "imagePath": "assets/images/prov_items/zhejiang/f1.jpg"
+      "imagePath": "assets/images/prov_items/zhejiang/d1.jpg"
     },
     {
       "id": "gi-v7-03",
@@ -2321,7 +2321,7 @@
       "terroirAndCraftEn": "Local kaolin features ultra-low iron oxide (below 0.5%) and high potassium oxide; reduction firing at 1310-1350 C produces a warm ivory-white luster known in Europe as Blanc de Chine.",
       "customsHsAndAuditVi": "Mã HS 6911.10 (đồ bàn ăn bằng sứ) hoặc 6913.10 (tượng nghệ thuật bằng sứ). Kiểm tra hải quan tập trung vào giấy chứng nhận thôi nhiễm chì và cadimi đối với bộ đồ trà/ăn uống tiếp xúc thực phẩm (FDA/EU 1935/2004).",
       "customsHsAndAuditEn": "HS Code 6911.10 (porcelain tableware) or 6913.10 (porcelain statuettes). Customs audits emphasize lead and cadmium leach testing certificates for food-contact tea ware under EU 1935/2004 and FDA rules.",
-      "imagePath": "assets/images/prov_items/fujian/f3.jpg"
+      "imagePath": "assets/images/prov_items/fujian/d1.jpg"
     },
     {
       "id": "gi-v7-05",
@@ -2346,7 +2346,7 @@
       "terroirAndCraftEn": "Clear autumn diurnal temperature swings in the Suijiang River valley and well-drained sandy loam yield juicy, low-fiber segments with clean sweetness peaking just before Lunar New Year.",
       "customsHsAndAuditVi": "Mã HS 0805.21 (quýt tươi). Hàng xuất khẩu biên mậu và chính ngạch bắt buộc có chứng thư kiểm dịch thực vật không nhiễm rệp sáp, xử lý lạnh tiêu diệt ấu trùng và mã vùng trồng truy xuất QR.",
       "customsHsAndAuditEn": "HS Code 0805.21 (fresh mandarins). Formal cross-border shipments require phytosanitary certification free of scale insects, cold-treatment logs, and QR-linked orchard traceability.",
-      "imagePath": "assets/images/prov_items/guangdong/f0.jpg"
+      "imagePath": "assets/images/prov_items/guangdong/f1.jpg"
     },
     {
       "id": "gi-v7-06",
@@ -2446,7 +2446,7 @@
       "terroirAndCraftEn": "Red mountain soils naturally rich in trace minerals across southern Jiangxi combined with abundant sunshine yield large, deeply colored oranges with crisp, juicy flesh and a balanced sugar-to-acid ratio.",
       "customsHsAndAuditVi": "Mã HS 0805.10 (cam tươi). Kiểm toán hải quan yêu cầu giấy kiểm dịch thực vật không có bệnh loét cam quýt (Citrus canker), chứng thư xuất xứ C/O Form E (ACFTA) và kiểm tra dư lượng chất bảo quản vỏ quả.",
       "customsHsAndAuditEn": "HS Code 0805.10 (fresh oranges). Customs compliance mandates phytosanitary certification free of citrus canker, ACFTA Form E origin documentation, and post-harvest wax/fungicide residue checks.",
-      "imagePath": "assets/images/prov_items/jiangxi/f0.jpg"
+      "imagePath": "assets/images/prov_items/jiangxi/f2.jpg"
     },
     {
       "id": "gi-v7-10",
@@ -2471,7 +2471,7 @@
       "terroirAndCraftEn": "Sandstone-derived yellow forest soils near the Gulf of Tonkin receiving over 2,000 mm of annual rainfall produce thick bark rich in sweet-spicy cinnamaldehyde, harvested in spring and autumn and sun-cured into tight quills.",
       "customsHsAndAuditVi": "Mã HS 0906.11/0906.19 (quế chưa nghiền) và 3301.29 (tinh dầu quế). Kiểm tra hàm lượng coumarin theo quy định an toàn thực phẩm EU, độ ẩm dưới 14%, kiểm nghiệm aflatoxin và mã vùng nguyên liệu.",
       "customsHsAndAuditEn": "HS Code 0906.11/0906.19 (unground cassia bark) and 3301.29 (cassia essential oil). Audits verify EU coumarin limits, moisture below 14%, aflatoxin screening, and origin traceability.",
-      "imagePath": "assets/images/prov_items/guangxi/f0.jpg"
+      "imagePath": "assets/images/prov_items/guangxi/f1.jpg"
     },
     {
       "id": "gi-v7-11",
@@ -2521,7 +2521,7 @@
       "terroirAndCraftEn": "Irrigated by ancient Karez underground snowmelt channels from the Tianshan Mountains in a basin dipping 154 m below sea level, seedless grapes shade-dry in hot desert winds for 30-45 days to retain emerald-green color and concentrated sweetness.",
       "customsHsAndAuditVi": "Mã HS 0806.20 (nho khô). Kiểm tra hải quan tập trung vào giới hạn độc tố nấm mốc Ochratoxin A (theo quy chuẩn EU), độ ẩm 14-16%, không chứa chất tạo màu nhân tạo và kiểm dịch thực vật chống mọt kho.",
       "customsHsAndAuditEn": "HS Code 0806.20 (dried grapes/raisins). Customs audits focus on Ochratoxin A limits (EU food safety compliance), 14-16% moisture content, absence of artificial dyes, and phytosanitary storage-pest clearance.",
-      "imagePath": "assets/images/prov_items/xinjiang/f2.jpg"
+      "imagePath": "assets/images/prov_items/xinjiang/d0.jpg"
     }
   ],
   "craftProcessFlowcharts6": [
@@ -7608,7 +7608,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 铁棍山药 ghi trong Bản Thảo Cương Mục.",
       "vietnamCulinaryParallelVi": "Tương đồng với củ mài rừng Chùa Hương và củ mài nấu chè kho, canh xương hầm truyền thống tại đồng bằng Bắc Bộ Việt Nam.",
-      "image": "assets/images/prov_items/henan/f0.jpg",
+      "image": "assets/images/prov_items/anhui/d0.jpg",
       "vietnamCulinaryParallelEn": "Parallels wild Huong Pagoda forest yam used in northern Vietnamese sweet yam paste (che kho) and simmered bone soups.",
       "imagePath": "assets/images/prov_items/henan/f0.jpg"
     },
@@ -7635,7 +7635,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 兰州百合 ghi trong Tề Dân Yếu Thuật.",
       "vietnamCulinaryParallelVi": "Gần gũi với thói quen dùng củ bách hợp khô nấu chè sâm bổ lượng và chè dưỡng nhan thanh mát tại miền Nam và miền Trung Việt Nam.",
-      "image": "assets/images/prov_items/gansu/f0.jpg",
+      "image": "assets/images/prov_items/anhui/d1.jpg",
       "vietnamCulinaryParallelEn": "Mirrors the Vietnamese use of dried lily petals in cooling Sam Bo Luong sweet soups and festive dessert broths.",
       "imagePath": "assets/images/prov_items/gansu/f0.jpg"
     },
@@ -7662,7 +7662,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 湘莲 ghi trong Nhĩ Nhã.",
       "vietnamCulinaryParallelVi": "Song hành trực tiếp với hạt sen Hồ Tịnh Tâm (Huế) và sen Đồng Tháp Mười dùng làm chè sen long nhãn, mứt sen trần và cơm sen cung đình.",
-      "image": "assets/images/prov_items/hunan/f0.jpg",
+      "image": "assets/images/prov_items/anhui/d2.jpg",
       "vietnamCulinaryParallelEn": "Directly parallels Tinh Tam Lake lotus seeds in Hue and Dong Thap lotus used for longan-lotus sweet soup, candied seeds, and imperial lotus-leaf rice.",
       "imagePath": "assets/images/prov_items/hunan/f0.jpg"
     },
@@ -7689,7 +7689,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 新会陈皮 ghi trong Thần Nông Bản Thảo Kinh.",
       "vietnamCulinaryParallelVi": "Tương đồng với vỏ quýt khô làm gia vị khử mùi trong chả rươi Hà Nội, nước chấm mắm quýt và các món kho tàu hương thảo mộc cổ truyền.",
-      "image": "assets/images/prov_items/guangdong/f0.jpg",
+      "image": "assets/images/prov_items/anhui/d3.jpg",
       "vietnamCulinaryParallelEn": "Parallels dried tangerine peel used as an aromatic accent in Hanoi ragworm fritters (cha ruoi) and slow-braised heritage dishes.",
       "imagePath": "assets/images/prov_items/guangdong/f0.jpg"
     },
@@ -7716,7 +7716,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 桂林罗汉果 ghi trong Quảng Tây Thực Vật Chí.",
       "vietnamCulinaryParallelVi": "Rất phổ biến trong các xe nước sâm mía lau, trà bí đao la hán quả tại Sài Gòn – Chợ Lớn và đồ uống thanh mát mùa hè khắp Việt Nam.",
-      "image": "assets/images/prov_items/guangxi/f0.jpg",
+      "image": "assets/images/prov_items/anhui/d4.jpg",
       "vietnamCulinaryParallelEn": "Widely used in Vietnamese winter melon tea and Nuoc Sam herbal street infusions across Ho Chi Minh City and southern Vietnam.",
       "imagePath": "assets/images/prov_items/guangxi/f0.jpg"
     },
@@ -7743,7 +7743,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 青州山楂 ghi trong Ẩm Thiện Chính Yếu.",
       "vietnamCulinaryParallelVi": "Tương tự quả táo mèo (sơn tra Tây Bắc Việt Nam) được ngâm đường làm siro giải khát, làm mứt dẻo và chế biến nước chấm vùng cao Yên Bái – Sơn La.",
-      "image": "assets/images/prov_items/shandong/f0.jpg",
+      "image": "assets/images/prov_items/anhui/f2.jpg",
       "vietnamCulinaryParallelEn": "Parallels northwestern Vietnamese wild crabapple/hawthorn (tao meo) macerated with sugar for syrups and highland fruit preserves.",
       "imagePath": "assets/images/prov_items/shandong/f0.jpg"
     },
@@ -7770,7 +7770,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 天目笋干 ghi trong Sơn Gia Thanh Cung.",
       "vietnamCulinaryParallelVi": "Thường góp mặt trong các nồi lẩu nấm, gà ác tiềm ngũ quả, vịt tiềm thuốc bắc và chè dưỡng nhan phổ biến tại ẩm thực gia đình Việt Nam.",
-      "image": "assets/images/prov_items/zhejiang/f0.jpg",
+      "image": "assets/images/prov_items/anhui/f3.jpg",
       "vietnamCulinaryParallelEn": "Commonly featured in Vietnamese mushroom hotpots, herbal-style braised duck, and traditional sweet desserts.",
       "imagePath": "assets/images/prov_items/zhejiang/f0.jpg"
     },
@@ -7851,7 +7851,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 南杏仁 ghi trong Thực Liệu Bản Thảo.",
       "vietnamCulinaryParallelVi": "Tương đồng với món chè khúc bạch hạnh nhân lát rang và tàu hũ hạnh nhân mát lạnh rất được ưa chuộng trong ẩm thực tráng miệng đô thị Việt Nam.",
-      "image": "assets/images/prov_items/guangdong/f1.jpg",
+      "image": "assets/images/prov_items/anhui/h0.jpg",
       "vietnamCulinaryParallelEn": "Parallels Vietnamese Khuc Bach panna-cotta sweet soup topped with toasted almond flakes and chilled apricot-kernel puddings.",
       "imagePath": "assets/images/prov_items/guangdong/f1.jpg"
     },
@@ -7878,7 +7878,7 @@
       "seasonalSolarTermMatchVi": "Áp dụng trong ẩm thực văn hóa theo chu kỳ Giao mùa 24 Tiết khí (phi lâm sàng).",
       "botanicalRegionAndGiVi": "Tư liệu thực liệu cổ 通江银耳 ghi trong Ngự Dược Viện Phương (Thực phổ).",
       "vietnamCulinaryParallelVi": "Rất quen thuộc trong chè tuyết nhĩ hạt sen táo đỏ, súp cua nấm tuyết trong cỗ cưới Việt Nam và các món xào chay thanh đạm.",
-      "image": "assets/images/prov_items/sichuan/f0.jpg",
+      "image": "assets/images/prov_items/anhui/h1.jpg",
       "vietnamCulinaryParallelEn": "Widely used in Vietnamese lotus-seed snow fungus desserts, banquet crab-and-tremella soups, and refined vegetarian stir-fries.",
       "imagePath": "assets/images/prov_items/sichuan/f0.jpg"
     },
@@ -8215,7 +8215,7 @@
       "historicalScientificMechanismEn": "Dividing the 360-degree ecliptic into 24 equal 15-degree solar longitudes paired with 72 biological phenophases enabled meteorologist Zhu Kezhen to reconstruct a 5,000-year East Asian historical temperature curve from archival agricultural records.",
       "modernRelevanceVi": "Được UNESCO ghi danh Di sản Văn hóa Phi vật thể Nhân loại (2016) và ứng dụng trong khí hậu học lịch sử, nông nghiệp thích ứng biến đổi khí hậu và du lịch sinh thái theo mùa.",
       "vietnamComparisonVi": "Việt Nam cùng lưu giữ hệ tiết khí Lập Xuân, Thanh Minh, Hàn Thực, Đoan Ngọ quen thuộc.",
-      "image": "assets/images/articles/hero-tcm-solar.jpg",
+      "image": "assets/images/provinces/anhui-hongcun-moonpond.jpg",
       "nonClinicalReminderVi": "Thông tin ẩm thực vùng miền & sử liệu khoa học — KHÔNG chẩn đoán hay tư vấn y tế.",
       "nonClinicalReminderEn": "Regional culinary & history of science data only — NOT clinical advice.",
       "eraZh": "近代至现代（1930年代—21世纪）",
@@ -8885,7 +8885,7 @@
       "hanViet": "Không sơn bất kiến nhân, Đản văn nhân ngữ hưởng. Phản cảnh nhập thâm lâm, Phục chiếu thanh đài thượng.",
       "poemZh": "空山不见人，但闻人语响。返景入深林，复照青苔上。",
       "poemVi": "Núi vắng chẳng thấy người, Chỉ nghe tiếng người vọng. Nắng chiều rọi rừng sâu, Lại soi trên rêu biếc.",
-      "image": "assets/images/paintings/12_kuanglu_tu.jpg",
+      "image": "assets/images/paintings/03_ershiba_xiu.jpg",
       "title": "鹿柴 · Lộc Sài (Sơn thủy Đạm mặc)",
       "authorVi": "Vương Duy",
       "epithetVi": "Tranh Thủy mặc Rừng Tĩnh",
@@ -8954,7 +8954,7 @@
       "hanViet": "Nhật chiếu Hương Lô sinh tử yên, Dao khan bộc bố quải tiền xuyên. Phi lưu trực há tam thiên xích, Nghi thị Ngân Hà lạc cửu thiên.",
       "poemZh": "日照香炉生紫烟，遥看瀑布挂前川。飞流直下三千尺，疑是银河落九天。",
       "poemVi": "Nắng rọi Hương Lô khói tía bay, Xa trông dòng thác treo trước sông. Nước bay thẳng xuống ba nghìn thước, Ngỡ dải Ngân Hà tuột chín tầng.",
-      "image": "assets/images/paintings/36_lushan_gao.jpg",
+      "image": "assets/images/paintings/05_bunian_tu.jpg",
       "title": "望庐山瀑布 · Vọng Lư Sơn Bộc Bố",
       "authorVi": "Lý Bạch",
       "epithetVi": "Lư Sơn Cao Đồ",
@@ -8977,7 +8977,7 @@
       "hanViet": "Phú Xuân sơn thủy thanh thả u, Mực vận phi ma tả thu du. Trường quyển thất niên tâm thủ hợp, Ngư tiều ẩn hiện độ bình lưu.",
       "poemZh": "富春山水清且幽，披麻长皴写秋游。长卷七年心手合，渔樵隐现度平流。",
       "poemVi": "Nước non Phú Xuân thanh u vắng, Nét dài phi ma tả sắc thu. Trường quyển bảy năm tâm tay hợp, Ngư tiều ẩn hiện vượt dòng êm.",
-      "image": "assets/images/paintings/32_fuchun_shanju.jpg",
+      "image": "assets/images/paintings/06_lidai_diwang_tu.jpg",
       "title": "富春山居图题跋 · Phú Xuân Sơn Cư Đồ (Kỹ thuật Phi Ma Thuân)",
       "authorVi": "Hoàng Công Vọng",
       "epithetVi": "Sơn Thủy Nguyên Đại",
@@ -9046,7 +9046,7 @@
       "hanViet": "Sưu tận kỳ phong đả thảo cảo, Nhất họa khai thiên pháp tự sinh. Cổ nhân tu mi bất nhập ngã, Bút mặc đương tùy thời đại hành.",
       "poemZh": "搜尽奇峰打草稿，一画开天法自生。古人须眉不入我，笔墨当随时代行。",
       "poemVi": "Tìm khắp đỉnh kỳ làm bản thảo, Một nét khai thiên phép tự sinh. Râu mày người xưa không nhập ta, Bút mực nên theo thời đại đi.",
-      "image": "assets/images/paintings/04_youchun_tu.jpg",
+      "image": "assets/images/paintings/07_tianwang_songzi_tu.jpg",
       "title": "搜尽奇峰打草稿 · Thanh Tương Thư Họa (Nhất Họa Luận)",
       "authorVi": "Bạch Cư Dị",
       "epithetVi": "Tây Hồ Xuân Sắc",
@@ -9069,7 +9069,7 @@
       "hanViet": "Cô Sơn tự bắc Giả Đình tây, Thủy diện sơ bình vân cước đê. Kỷ xứ tảo oanh tranh noãn thụ, Thùy gia tân yến trác xuân nê. Loạn hoa tiệm dục mê nhân nhãn, Thiển thảo tài năng một mã đề. Tối ái hồ đông hành bất túc, Lục dương âm lý Bạch Sa Đê.",
       "poemZh": "孤山寺北贾亭西，水面初平云脚低。几处早莺争暖树，谁家新燕啄春泥。乱花渐欲迷人眼，浅草才能没马蹄。最爱湖东行不足，绿杨阴里白沙堤。",
       "poemVi": "Bắc chùa Cô Sơn, tây Giả Đình, Mặt hồ mới lặng chân mây thấp. Mấy chốn oanh sớm tranh cành ấm, Nhà ai én mới mổ bùn xuân. Hoa nở rộn ràng hoa mắt khách, Cỏ non vừa ngập vó ngựa đi. Yêu nhất đông hồ đi chẳng chán, Rợp bóng dương xanh dải Bạch Sa.",
-      "image": "assets/images/provinces/zhejiang-hangzhou-westlake.jpg",
+      "image": "assets/images/paintings/08_guoguo_furen.jpg",
       "title": "钱塘湖春行 · Tiền Đường Hồ Xuân Hành",
       "authorVi": "Liễu Tông Nguyên",
       "epithetVi": "Hàn Giang Độc Điếu",
@@ -9092,7 +9092,7 @@
       "hanViet": "Thiên sơn điểu phi tuyệt, Vạn kính nhân tung diệt. Cô chu thoa lạp ông, Độc điếu hàn giang tuyết.",
       "poemZh": "千山鸟飞绝，万径人踪灭。孤舟蓑笠翁，独钓寒江雪。",
       "poemVi": "Nghìn non chim bay bặt, Muôn lối dấu người tan. Thuyền lẻ ông áo tơi, Một mình câu tuyết sông lạnh.",
-      "image": "assets/images/paintings/59_hanjiang_dudiao_tu.jpg",
+      "image": "assets/images/paintings/09_daolian_tu.jpg",
       "title": "江雪 · Giang Tuyết",
       "authorVi": "Lý Thanh Chiếu",
       "epithetVi": "Hương Lư Cúc Vàng",
@@ -11598,7 +11598,7 @@
         "Áp dụng đặt lịch thông quan trước trên cổng Cửa khẩu Thông minh, chuyển 30% sản lượng sang đường sắt lạnh Đông Đăng–Nam Ninh và xét nghiệm rệp tại đóng gói.",
         "FCA Lạng Sơn vs DAP Bằng Tường: phân định rõ rủi ro sau khi xe qua vạch phân giới."
       ],
-      "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+      "imagePath": "assets/images/provinces/hebei-chengde-resort.jpg",
       "bilingualReplyTemplate": {
         "factoryZh": "您好，因新清—浦寨口岸榴莲高峰期排队拥堵，我司已为在途冷柜安排现场补油并实时监控箱温12.5度，同时将下一批货改道友谊关绿色通道以保障新鲜度与交期。",
         "euBossEn": "Peak durian volume has created a multi-day queue at Tan Thanh-Puzhai. We have secured mobile genset refueling with 12.5C telemetry monitoring for trucks in queue and rerouted upcoming dispatches via Youyiguan Green Channel to safeguard shelf life."
@@ -11637,7 +11637,7 @@
         "Chuyển hợp đồng sang khuôn khổ NNN tiếng Trung–Việt–Anh hợp pháp, đóng dấu mộc công ty (Công chương) trên từng trang và giữ quyền sở hữu khuôn riêng.",
         "EXW/FOB Thâm Quyến kèm phụ lục IP Tooling Ownership trị giá 100% giá khuôn."
       ],
-      "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+      "imagePath": "assets/images/provinces/heilongjiang-saint-sophia.jpg",
       "bilingualReplyTemplate": {
         "factoryZh": "您好，越南海关查验后认定该批胶合板/面料应归入新HS编码，与原RCEP产地证不符。烦请协助向贸促会申请更正重发原产地证，并附上产品材质成分说明，以便我司办理退税。",
         "euBossEn": "Vietnam Customs reclassified the plywood and blended fabric shipment under a different 6-digit HS code than stated on the RCEP C/O. We cleared cargo under MFN deposit to avoid demurrage and requested a reissued RCEP certificate from the supplier to recover the tariff difference."
@@ -11676,7 +11676,7 @@
         "Đàm phán sửa SWIFT MT700: thay chữ ký đơn phương bằng Chứng thư kiểm định độc lập SGS/Intertek tại cảng xếp hàng trước khi tàu chạy.",
         "CIF Hải Phòng / Usance L/C 90 ngày theo chuẩn UCP 600."
       ],
-      "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+      "imagePath": "assets/images/provinces/henan-longmen-grottoes.jpg",
       "bilingualReplyTemplate": {
         "factoryZh": "您好，该票电子Form E在开船超过3天后签发却未勾选Issued Retroactively，越南海关暂不予享受零关税。请立即向签证机构申请作废重出正确版本，并在签发前将草稿发我司复核。",
         "euBossEn": "Customs rejected the ACFTA duty exemption because the E-CO Form E was issued more than three days post-shipment without the Issued Retroactively box checked. We cleared the shipment on MFN deposit and instructed the factory to reissue a corrected certificate for duty recovery."
@@ -11715,7 +11715,7 @@
         "Áp dụng công thức cộng gộp RCEP (RVC >= 40%) hoặc quy tắc 'Từ sợi trở đi' (EVFTA) với bảng kê nguyên phụ liệu chứng minh rõ xuất xứ.",
         "FOB Hải Phòng / Cảng Cát Lái hưởng thuế suất ưu đãi 0% khi chuẩn nguồn sợi."
       ],
-      "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+      "imagePath": "assets/images/provinces/hongkong-victoria-harbour.jpg",
       "bilingualReplyTemplate": {
         "factoryZh": "您好，我司已根据上海海关整改通知完成符合GB 7718与GB 28050标准的简体中文营养标签与GACC编号设计，现委托保税仓团队完成加贴并提交复检，请协助跟进放行进度。",
         "euBossEn": "Shanghai Customs detained the retail coffee and dried fruit shipment due to missing Simplified Chinese GB 7718/28050 nutrition labels. We have approved compliant sticker artwork and authorized bonded-warehouse relabeling for re-inspection."
@@ -11754,7 +11754,7 @@
         "Thiết kế tem nhãn phụ / in sẵn bao bì tiếng Trung Giản thể chuẩn font, đơn vị kilojoule (kJ), ngày sản xuất YYYY/MM/DD và mã CIFER 18 số.",
         "DDP / DAP kèm kiểm duyệt nhãn dịch vụ trước thông quan."
       ],
-      "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+      "imagePath": "assets/images/provinces/hubei-yellow-crane-tower.jpg",
       "bilingualReplyTemplate": {
         "factoryZh": "贵司好，涉案注塑模具系我司全额出资并登记在册的资产。关于工程变更费用分歧，我司愿按合同争议条款协商或提存解决，但请贵司于72小时内放行已付款成品与模具，避免扩大违约损失。",
         "euBossEn": "The Dongguan supplier is withholding finished units and our paid injection molds over an engineering change fee dispute. Local counsel has issued a formal release notice while proposing an escrow settlement for the disputed fee so we can recover the tooling and protect launch timelines."
@@ -11793,7 +11793,7 @@
         "Yêu cầu nhà cung cấp chụp ảnh 4 mặt pallet gỗ dán nhựa hoặc pallet gỗ có đóng dấu nhiệt IPPC (HT) rõ nét trước khi kéo cửa container.",
         "FOB / CIF — trách nhiệm chi phí đóng gói an toàn xuất khẩu thuộc bên bán theo Incoterms."
       ],
-      "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+      "imagePath": "assets/images/provinces/hunan-zhangjiajie.jpg",
       "bilingualReplyTemplate": {
         "factoryZh": "您好，钦州港支线船因天气甩柜延误五天，海防装配线急需核心配件。请协助优先分拆15%紧缺物料改走陆运友谊关加急发运，其余85%按新船期装船。",
         "euBossEn": "A five-day typhoon rollover on the Qinzhou-Haiphong feeder threatens assembly line stockout. We are air/road-bridging the critical 15 percent SKU volume via express Youyiguan trucking within 24 hours while leaving the remaining 85 percent on the next vessel."
@@ -11832,7 +11832,7 @@
         "Chuyển lô linh kiện gấp sang đoàn tàu container liên vận Đồng Đăng – Bằng Tường – Trùng Khánh – Tây An rút ngắn thời gian còn 5 ngày.",
         "CIP Ga Đồng Đăng / CIF với điều khoản bảo hiểm đa phương thức ICC (A)."
       ],
-      "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+      "imagePath": "assets/images/provinces/inner-mongolia-hulunbuir.jpg",
       "bilingualReplyTemplate": {
         "factoryZh": "您好，该票货经香港中转赴胡志明市，海关要求补交联运提单及香港未再加工证明以核实直运规则。请协助联系船司开具封条完好中转说明并配合向香港中检申请相关确认书。",
         "euBossEn": "Cat Lai Customs questioned ACFTA eligibility due to Hong Kong transshipment lacking a Non-Manipulation Certificate. We have requested a carrier seal-integrity letter and CIC Hong Kong verification to defend the 0 percent tariff treatment."
@@ -11871,7 +11871,7 @@
         "Thiết lập quy tắc bất di bất dịch: mọi thay đổi tài khoản BẮT BUỘC xác minh qua video call trực tiếp với Giám đốc Pháp nhân + đối chiếu mã CIPS công ty.",
         "Điều khoản Bảo mật Tài chính CIPS/SWIFT trong phụ lục hợp đồng thanh toán."
       ],
-      "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+      "imagePath": "assets/images/provinces/jiangsu-suzhou-garden.jpg",
       "bilingualReplyTemplate": {
         "factoryZh": "您好，经核查原合作包装厂代码刚被GACC暂停，我司已第一时间叫停后续发运，并对在途两柜启动冷库应急转销预案，后续订单将切换至状态正常的白名单包装厂执行。",
         "euBossEn": "GACC suspended our partner packing house code while two dragon fruit reefers were in transit. We have halted further dispatches, diverted the two containers to cold storage for local value recovery, and transitioned upcoming orders to an audited backup GACC-active facility."
@@ -11910,7 +11910,7 @@
         "Áp dụng thùng carton 5 lớp sóng đôi BC kết hợp khay giấy ép tổ ong định hình, chạy bài test thả rơi 10 góc chuẩn ISTA 3A trước xuất xưởng.",
         "FOB Ninh Ba + Bảo hiểm hàng dễ vỡ mở rộng + ảnh chằng buộc container."
       ],
-      "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+      "imagePath": "assets/images/provinces/jiangxi-wuyuan-village.jpg",
       "bilingualReplyTemplate": {
         "factoryZh": "您好，近期离岸人民币汇率波动幅度较大，我司已通过银行锁定本批磷酸铁锂模组的CIPS远期结汇额度，同时建议下季度框架协议增设正负2%汇率共担条款以稳定长期合作。",
         "euBossEn": "A 3.8 percent surge in offshore CNH compressed margins on our LFP battery module imports. We have hedged 70 percent of upcoming CIPS payables via FX Forwards and proposed a +/- 2 percent FX risk-sharing clause for next quarter's framework agreement."
@@ -11949,7 +11949,7 @@
         "Kích hoạt chứng thư giám định SGS tại chỗ làm chứng cứ không thể chối cãi, đề nghị thương lượng chiết khấu thay thế kèm thông báo nộp đơn CIETAC nếu quá hạn 14 ngày.",
         "Công ước New York 1958 + phụ lục dung sai đo lường định lượng bằng mm."
       ],
-      "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+      "imagePath": "assets/images/provinces/jilin-changbai-tianchi.jpg",
       "bilingualReplyTemplate": {
         "factoryZh": "您好，该批带电源适配器的智能玩具属于中国CCC强制认证目录范围。若为研发测试样品，请协助提供技术说明书申办免办证明；若为商业销售，我司将安排退入保税区并启动CNCA指定实验室全项认证。",
         "euBossEn": "China Customs held the smart toy and power adapter shipment for lacking mandatory CCC certification. We are verifying eligibility for a fast-track R&D CCC exemption; for full commercial volume, we will shift the stock to bonded storage pending accredited lab testing and factory audit."
@@ -11967,7 +11967,7 @@
       "chinaWonder": "Tháp Lưu Ly Đại Báo Ân Tự (Nam Kinh) & Truyền thống Tháp Bát Giác Giang Nam",
       "sharedHeritageVi": "Cả hai công trình đều kế thừa mô hình bảo tháp Phật giáo nhiều tầng hình bát giác hướng sông lớn, gắn kết chặt chẽ giữa vương quyền, phong thủy trấn thủy và lòng hiếu thảo cầu quốc thái dân an.",
       "distinctAdaptationVi": "Trong khi Tháp Báo Ân Nam Kinh thời Minh cao 9 tầng ốp gạch lưu ly ngũ sắc mang khí thế đế đô rộng lớn, Tháp Phước Duyên (1844) thời vua Thiệu Trị chọn chiều cao 7 tầng cân đối 21 mét, dùng gạch mộc và ngói lưu ly xanh–vàng hòa vào sắc xanh đồi Hà Khê và dòng sông Hương trầm mặc.",
-      "vnImg": "assets/images/academic/van-mieu-hanoi.jpg",
+      "vnImg": "assets/images/academic/chengdu-jinli.jpg",
       "chinaImg": "assets/images/provinces/zhejiang-hangzhou-westlake.jpg",
       "pairTitle": "Chùa Thiên Mụ Huế & Tín Ngưỡng Tháp Phước Duyên – Tháp Báo Ân",
       "summaryVi": "Biểu tượng cố đô Huế thể hiện sự tiếp biến tinh tế kiến trúc bảo tháp Đông Á vào cảnh quan sông núi xứ Thuận Hóa.",
@@ -11982,8 +11982,8 @@
       "chinaWonder": "Tháp Chuyển Luân Tạng (Chùa Long Hưng Chính Định) & Kiến Trúc Tịnh Độ Tông",
       "sharedHeritageVi": "Cùng biểu đạt vũ trụ quan Tịnh Độ Tông qua cấu trúc tháp gỗ xoay tròn nhiều tầng (Chuyển Luân Tạng) giúp tín đồ quay tháp tụng niệm tích lũy công đức và tôn vinh nghệ thuật chạm khắc đá – gỗ đỉnh cao.",
       "distinctAdaptationVi": "Chùa Bút Tháp thế kỷ XVII kết hợp bố cục nội công ngoại quốc với Tháp Báo Nghiêm bằng đá xanh dáng ngòi bút vươn trời và tòa Cửu Phẩm Liên Hoa 9 tầng gỗ sơn son thếp vàng do Hoàng thái hậu Trịnh Thị Ngọc Trúc bảo trợ, giàu họa tiết rồng mây và hoa sen bản địa Việt Nam.",
-      "vnImg": "assets/images/academic/van-mieu-hanoi.jpg",
-      "chinaImg": "assets/images/provinces/shanxi-hanging-temple.jpg",
+      "vnImg": "assets/images/academic/guilin-li-river.jpg",
+      "chinaImg": "assets/images/provinces/anhui-hongcun-moonpond.jpg",
       "pairTitle": "Chùa Bút Tháp Bắc Ninh & Cây Hương Đá Cửu Phẩm Liên Hoa",
       "summaryVi": "Đỉnh cao nghệ thuật điêu khắc đá và kiến trúc gỗ Phật giáo thời Lê Trung Hưng mang dấu ấn giao lưu Thiền tông Việt–Trung.",
       "historicalTimelineCompareVi": "Chùa Bút Tháp được đại trùng tu quy mô lớn giai đoạn 1646–1647 gắn với Thiền sư Chuyết Chuyết (từ Phúc Kiến sang truyền pháp) và đệ tử Minh Hành; đối chiếu với Điện Chuyển Luân Tạng thời Bắc Tống tại chùa Long Hưng (Hà Bắc).",
@@ -11997,7 +11997,7 @@
       "chinaWonder": "Thương Cảng Tuyền Châu (Phúc Kiến) & Cổ Trấn Thương Buôn Minh–Thanh",
       "sharedHeritageVi": "Cùng vận hành theo mạng lưới thương cảng sông–biển Đông Á nơi các hội quán thương nhân (Phúc Kiến, Quảng Đông, Triều Châu), chùa miếu thờ Thiên Hậu Thánh Mẫu và hệ thống bến bãi kho tàng gắn chặt với dòng chảy gốm sứ, tơ lụa.",
       "distinctAdaptationVi": "Nằm trên hạ lưu sông Hồng với câu ca Thứ nhất Kinh Kỳ, thứ nhì Phố Hiến, thương cảng này từng hội tụ đồng thời thương điếm Hoa kiều, Nhật Bản, Hà Lan và Anh, tạo nên cụm di tích dung hợp độc đáo giữa Văn Miếu Xích Đằng, Chùa Chuông và Đông Đô Quảng Hội.",
-      "vnImg": "assets/images/articles/hero-sino-vietnam.jpg",
+      "vnImg": "assets/images/academic/guqin-instrument.jpg",
       "chinaImg": "assets/images/provinces/jiangsu-suzhou-garden.jpg",
       "pairTitle": "Đô Thị Cổ Phố Hiến Hưng Yên – Bến Giao Thương Đường–Thanh",
       "summaryVi": "Ký ức vàng son về thương cảng quốc tế thế kỷ XVI–XVII kết nối đồng bằng Bắc Bộ với mạng lưới hàng hải Hoa Nam.",
@@ -12027,7 +12027,7 @@
       "chinaWonder": "Hệ Thống Văn Miếu Phủ Học Giang Nam & Khổng Miếu Khúc Phụ",
       "sharedHeritageVi": "Cùng duy trì trục kiến trúc Khổng Miếu cổ điển gồm Nghi Môn, Khuê Văn Các, hồ nước tĩnh tâm, Nhà Bia Tiến Sĩ và Đại Thành Điện thờ Khổng Tử cùng các bậc tiên hiền nho học.",
       "distinctAdaptationVi": "Được Chúa Nguyễn Phúc Chu cho dựng năm 1715 – là Văn Miếu đầu tiên của vùng đất Nam Bộ – công trình không chỉ thờ Khổng Tử mà còn tôn vinh các danh nhân văn hóa Việt Nam như Chu Văn An, Nguyễn Trãi, Nguyễn Bỉnh Khiêm, Lê Quý Đôn và Võ Trường Toản, phản ánh tinh thần mở cõi gắn liền với trọng học.",
-      "vnImg": "assets/images/academic/van-mieu-hanoi.jpg",
+      "vnImg": "assets/images/academic/han-silk-banner.jpg",
       "chinaImg": "assets/images/articles/hero-academy-shuyuan.jpg",
       "pairTitle": "Văn Miếu Trấn Biên Đồng Nai & Truyền Thống Khổng Miếu Đông Á",
       "summaryVi": "Biểu tượng giáo dục và văn hiến lâu đời nhất phương Nam, kết nối truyền thống Nho học Đông Á với bản sắc khai phá Nam Bộ.",
@@ -12043,7 +12043,7 @@
       "sharedHeritageVi": "Cùng bắt nguồn từ truyền thống võ thuật Lĩnh Nam và nghệ thuật Nam Sư (醒狮 – Tỉnh Sư) với bộ trống – chiêng – chập chỏa dồn dập, động tác tấn pháp vững chãi và nghi thức khai quang điểm nhãn, hái lộc đầu xuân.",
       "distinctAdaptationVi": "Tại khu vực Chợ Lớn (Quận 5, Quận 6, Quận 11), cộng đồng người Việt và người Hoa (Quảng Đông, Triều Châu, Phúc Kiến, Hải Nam) đã phát triển hệ thống hàng trăm đoàn Lân Sư Rồng chuyên nghiệp, kết hợp kỹ thuật Mai Hoa Thung đỉnh cao với nghệ thuật chế tác đầu lân khung tre giấy bồi thủ công đậm sắc màu lễ hội Sài Gòn – TP.HCM.",
       "vnImg": "assets/images/articles/hero-spring-festival.jpg",
-      "chinaImg": "assets/images/provinces/guangdong-canton-tower.jpg",
+      "chinaImg": "assets/images/provinces/anhui-huangshan-cloudsea.jpg",
       "pairTitle": "Nghệ Thuật Múa Lân Sư Rồng Chợ Lớn TP.HCM & Nam Sư Lĩnh Nam",
       "summaryVi": "Di sản văn hóa phi vật thể sống động kết tinh võ đạo, thủ công mỹ nghệ làm đầu lân và tinh thần cộng đồng gắn kết tại Chợ Lớn.",
       "historicalTimelineCompareVi": "Theo chân cộng đồng Hoa thương đến vùng Sài Gòn – Gia Định từ thế kỷ XVII–XVIII và phát triển mạnh các võ đường – hội quán từ thế kỷ XIX đến nay; song hành với trường phái Nam Sư Phật Sơn và Hạc Sơn tại Quảng Đông.",
@@ -12065,7 +12065,7 @@
       "agencyNo": "10698",
       "majorsVi": "Thành viên Liên minh C9 hàng đầu Trung Quốc, thế mạnh vượt trội về kỹ thuật năng lượng, cơ khí chính xác, quản trị chuỗi cung ứng và quản trị kinh doanh chuẩn AACSB.",
       "cityVi": "Tây An (Thiểm Tây)",
-      "imagePath": "assets/images/provinces/shaanxi-terracotta-army.jpg",
+      "imagePath": "assets/images/prov_items/shaanxi/h0.jpg",
       "cscTypeA_vs_TypeB_NoteVi": "Type B nộp trực tiếp qua cổng XJTU International Student Portal, tỷ lệ cạnh tranh cao nhưng chỉ tiêu hệ Thạc sĩ – Tiến sĩ giảng dạy bằng tiếng Anh dồi dào; Type A phù hợp ứng viên có công văn cử đi từ Bộ GD&ĐT hoặc cơ quan nhà nước Việt Nam.",
       "vietnamAlumniCareerTrackVi": "Kỹ sư trưởng năng lượng tái tạo, chuyên gia vận hành nhà máy thông minh, quản lý chuỗi cung ứng tại các tập đoàn FDI công nghệ cao và giảng viên đại học kỹ thuật.",
       "recommendedHskAndIeltsVi": "Hệ tiếng Trung: HSK 5 (>=210 điểm) hoặc HSK 6; Hệ tiếng Anh: IELTS >= 6.5 hoặc TOEFL iBT >= 85."
@@ -12082,7 +12082,7 @@
       "agencyNo": "10056",
       "majorsVi": "Đại học hiện đại đầu tiên của Trung Quốc (1895), thuộc nhóm Song Nhất Lưu hạng A, đứng đầu cả nước về Kỹ thuật Hóa học, Kiến trúc di sản, Xây dựng và Quản trị Dự án.",
       "cityVi": "Thiên Tân",
-      "imagePath": "assets/images/provinces/tianjin-eye.jpg",
+      "imagePath": "assets/images/prov_items/tianjin/h1.jpg",
       "cscTypeA_vs_TypeB_NoteVi": "Type B qua cổng TJU thường mở sớm từ tháng 11 đến tháng 3, ưu tiên ứng viên có thư giới thiệu giáo sư (Pre-acceptance Letter); Type A có lợi thế ở học phí và hỗ trợ năm dự bị tiếng Trung.",
       "vietnamAlumniCareerTrackVi": "Kiến trúc sư trưởng, chuyên gia kỹ thuật hóa dầu – vật liệu xanh, quản lý dự án hạ tầng giao thông và giám đốc sản xuất khu công nghiệp.",
       "recommendedHskAndIeltsVi": "Hệ tiếng Trung: HSK 5 (>=195 điểm); Hệ tiếng Anh: IELTS >= 6.0 (không kỹ năng nào dưới 5.5) hoặc TOEFL >= 80."
@@ -12099,7 +12099,7 @@
       "agencyNo": "10558",
       "majorsVi": "Trường đại học tổng hợp trọng điểm số một vùng Lĩnh Nam và Vùng Vịnh Lớn (GBA), xuất sắc về Kinh tế – Tài chính, Quản trị Kinh doanh, Nghiên cứu Đông Nam Á và Khoa học Sự sống.",
       "cityVi": "Quảng Châu – Chu Hải – Thâm Quyến (Quảng Đông)",
-      "imagePath": "assets/images/provinces/guangdong-canton-tower.jpg",
+      "imagePath": "assets/images/prov_items/guangdong/h0.jpg",
       "cscTypeA_vs_TypeB_NoteVi": "Type B của SYSU xét duyệt rất chặt hồ sơ nghiên cứu và GPA đại học (>=3.3/4.0), có vòng phỏng vấn trực tuyến bắt buộc với hội đồng khoa; Type A giúp mở rộng cơ hội vào các ngành tiếng Trung cạnh tranh cao.",
       "vietnamAlumniCareerTrackVi": "Chuyên gia phát triển thị trường Việt – Trung tại Vùng Vịnh Lớn, nhà phân tích tài chính thương mại xuyên biên giới, quản lý mua hàng quốc tế và nghiên cứu viên chính sách.",
       "recommendedHskAndIeltsVi": "Hệ tiếng Trung: HSK 5 (>=210 điểm) hoặc HSK 6 cho khối Kinh tế – Nhân văn; Hệ tiếng Anh: IELTS >= 6.5."
@@ -12116,7 +12116,7 @@
       "agencyNo": "10269",
       "majorsVi": "Đại học trọng điểm Song Nhất Lưu tại Thượng Hải, đứng đầu về Giáo dục Hán ngữ Quốc tế, Địa lý học, Tâm lý học, Thống kê ứng dụng và Văn học Cổ điển.",
       "cityVi": "Thượng Hải",
-      "imagePath": "assets/images/provinces/shanghai-bund-skyline.jpg",
+      "imagePath": "assets/images/prov_items/shanghai/h3.jpg",
       "cscTypeA_vs_TypeB_NoteVi": "Type B tại ECNU rất mạnh về học bổng CSC kết hợp Học bổng Chính phủ Thượng Hải (SGS) làm phương án dự phòng; Type A thuận lợi cho giảng viên trẻ ngành Ngôn ngữ và Khoa học Xã hội.",
       "vietnamAlumniCareerTrackVi": "Giảng viên đại học ngành Ngôn ngữ Trung Quốc, chuyên gia thiết kế chương trình đào tạo song ngữ, nhà phân tích dữ liệu thị trường và tư vấn quy hoạch du lịch văn hóa.",
       "recommendedHskAndIeltsVi": "Hệ tiếng Trung: HSK 5 (>=210 điểm) và HSKK Trung cấp (>=60 điểm); Hệ tiếng Anh: IELTS >= 6.5 hoặc TOEFL >= 85."
@@ -12133,7 +12133,7 @@
       "agencyNo": "10006",
       "majorsVi": "Cơ sở đào tạo kỹ thuật hàng đầu Trung Quốc về Hàng không Vũ trụ, Tự động hóa, Khoa học Máy tính, Trí tuệ Nhân tạo và Kỹ thuật Hệ thống Vận tải.",
       "cityVi": "Bắc Kinh",
-      "imagePath": "assets/images/provinces/beijing-temple-of-heaven.jpg",
+      "imagePath": "assets/images/prov_items/beijing/h4.jpg",
       "cscTypeA_vs_TypeB_NoteVi": "Type B yêu cầu nộp phí thẩm định hồ sơ và trải qua kiểm tra năng lực chuyên môn từ viện đào tạo; các ngành kỹ thuật lõi ưu tiên ứng viên có bài báo khoa học hoặc dự án thực tế.",
       "vietnamAlumniCareerTrackVi": "Kỹ sư R&D phần mềm nhúng, chuyên gia AI và dữ liệu lớn, kỹ sư bảo dưỡng – vận hành hàng không và quản lý công nghệ tại các tập đoàn viễn thông – công nghiệp.",
       "recommendedHskAndIeltsVi": "Hệ tiếng Trung: HSK 5 (>=190 điểm); Hệ tiếng Anh: IELTS >= 6.0 hoặc TOEFL >= 80."
@@ -12150,7 +12150,7 @@
       "agencyNo": "10019",
       "majorsVi": "Trường số một Trung Quốc về Khoa học Nông nghiệp, An toàn Thực phẩm, Kinh tế Nông nghiệp, Công nghệ Sinh học và Tiêu chuẩn Kiểm dịch Nông sản.",
       "cityVi": "Bắc Kinh",
-      "imagePath": "assets/images/provinces/beijing-temple-of-heaven.jpg",
+      "imagePath": "assets/images/prov_items/beijing/h5.jpg",
       "cscTypeA_vs_TypeB_NoteVi": "Type B có nhiều suất học bổng chuyên biệt cho sinh viên ASEAN và các dự án hợp tác nông nghiệp vành đai xanh; Type A phù hợp cán bộ ngành nông nghiệp và kiểm dịch thực vật.",
       "vietnamAlumniCareerTrackVi": "Chuyên gia tuân thủ tiêu chuẩn GACC và kiểm dịch thực vật xuất khẩu nông sản sang Trung Quốc, quản lý chất lượng thực phẩm và chuyên gia phát triển nông nghiệp công nghệ cao.",
       "recommendedHskAndIeltsVi": "Hệ tiếng Trung: HSK 5 (>=180 điểm); Hệ tiếng Anh: IELTS >= 6.0 hoặc TOEFL >= 80."
@@ -12184,7 +12184,7 @@
       "agencyNo": "10213",
       "majorsVi": "Thành viên Liên minh C9 lừng danh về Kỹ thuật Cơ khí, Robot, Khoa học Vật liệu, Kỹ thuật Môi trường và Khoa học Máy tính (xếp hạng rất cao toàn cầu về Engineering).",
       "cityVi": "Cáp Nhĩ Tân (Hắc Long Giang) – Cơ sở Thâm Quyến – Uy Hải",
-      "imagePath": "assets/images/provinces/heilongjiang-saint-sophia.jpg",
+      "imagePath": "assets/images/prov_items/heilongjiang/h0.jpg",
       "cscTypeA_vs_TypeB_NoteVi": "Type B tại HIT cấp số lượng suất CSC lớn hàng đầu nhóm C9, quy trình minh bạch và khuyến khích liên hệ giáo sư hướng dẫn sớm trước tháng 1; lưu ý phân biệt rõ mã cơ sở Cáp Nhĩ Tân và Thâm Quyến.",
       "vietnamAlumniCareerTrackVi": "Kỹ sư tự động hóa và robot công nghiệp, chuyên gia hạ tầng – xử lý môi trường, kỹ sư kết cấu công trình lớn và nghiên cứu viên tiến sĩ quốc tế.",
       "recommendedHskAndIeltsVi": "Hệ tiếng Trung: HSK 4 (>=210 điểm) cho kỹ thuật hoặc HSK 5; Hệ tiếng Anh: IELTS >= 6.0 hoặc TOEFL >= 80."
@@ -12201,7 +12201,7 @@
       "agencyNo": "10611",
       "majorsVi": "Trường trọng điểm Song Nhất Lưu tại đầu mối Hành lang Thương mại Đất liền – Biển Mới (ILSTC) nối Tây Nam Trung Quốc với ASEAN, mạnh về Kiến trúc, Kỹ thuật Điện, Cơ khí và Kinh tế.",
       "cityVi": "Trùng Khánh",
-      "imagePath": "assets/images/provinces/chongqing-hongyadong.jpg",
+      "imagePath": "assets/images/prov_items/chongqing/h0.jpg",
       "cscTypeA_vs_TypeB_NoteVi": "Type B tại CQU có mức độ cạnh tranh vừa phải hơn nhóm Bắc Kinh – Thượng Hải trong khi chi phí sinh hoạt hợp lý; ngoài CSC còn có Học bổng Thị trưởng Trùng Khánh bổ trợ.",
       "vietnamAlumniCareerTrackVi": "Chuyên gia logistics đường sắt liên vận Trung – Việt – ASEAN, kỹ sư điện lực – xây dựng đô thị và quản lý chuỗi cung ứng khu vực Tây Nam.",
       "recommendedHskAndIeltsVi": "Hệ tiếng Trung: HSK 5 (>=180 điểm); Hệ tiếng Anh: IELTS >= 6.0 hoặc TOEFL >= 80."
@@ -12218,7 +12218,7 @@
       "agencyNo": "10053",
       "majorsVi": "Cơ sở đào tạo Luật học danh tiếng nhất Trung Quốc (hạng A+ toàn quốc), chuyên sâu về Luật Thương mại Quốc tế, Trọng tài Thương mại, Luật Sở hữu Trí tuệ và Quan hệ Quốc tế.",
       "cityVi": "Bắc Kinh",
-      "imagePath": "assets/images/provinces/beijing-temple-of-heaven.jpg",
+      "imagePath": "assets/images/prov_items/beijing/d0.jpg",
       "cscTypeA_vs_TypeB_NoteVi": "Type B của CUPL đòi hỏi năng lực viết học thuật và lập luận pháp lý sắc bén trong Study Plan; hệ Thạc sĩ Luật Trung Quốc dạy bằng tiếng Anh (LL.M.) thu hút nhiều luật sư trẻ ASEAN.",
       "vietnamAlumniCareerTrackVi": "Luật sư tư vấn đầu tư FDI Trung – Việt, chuyên viên pháp chế doanh nghiệp xuất nhập khẩu, chuyên gia xử lý tranh chấp hợp đồng OEM/ODM và trọng tài thương mại.",
       "recommendedHskAndIeltsVi": "Hệ tiếng Trung: HSK 5 (>=210 điểm) hoặc HSK 6 bắt buộc cho ngành Luật tiếng Trung; Hệ tiếng Anh: IELTS >= 6.5."
@@ -12235,7 +12235,7 @@
       "agencyNo": "10030",
       "majorsVi": "Cái nôi đào tạo ngoại giao, biên phiên dịch cấp cao, truyền thông quốc tế và kinh doanh đa văn hóa hàng đầu Trung Quốc với hơn 100 ngôn ngữ giảng dạy.",
       "cityVi": "Bắc Kinh",
-      "imagePath": "assets/images/provinces/beijing-temple-of-heaven.jpg",
+      "imagePath": "assets/images/prov_items/beijing/d1.jpg",
       "cscTypeA_vs_TypeB_NoteVi": "Type B tại BFSU đánh giá rất cao năng lực ngoại ngữ kép (Trung – Anh) và kinh nghiệm giao lưu văn hóa; học sinh chuyên ngữ và sinh viên kinh tế đối ngoại có lợi thế rõ rệt.",
       "vietnamAlumniCareerTrackVi": "Chuyên viên đối ngoại và truyền thông đa quốc gia, phiên dịch viên hội nghị cấp cao, quản lý thương hiệu xuyên biên giới và chuyên gia thương mại điện tử quốc tế.",
       "recommendedHskAndIeltsVi": "Hệ tiếng Trung: HSK 5 (>=210 điểm) hoặc HSK 6; Hệ tiếng Anh: IELTS >= 6.5 (khuyến nghị 7.0 cho khối Truyền thông & Kinh doanh Quốc tế)."
@@ -12252,7 +12252,7 @@
       "agencyNo": "10384",
       "majorsVi": "Đại học Song Nhất Lưu hàng đầu duyên hải Đông Nam, nổi tiếng toàn quốc về Kế toán, Tài chính, Kinh tế học (Viện WISE), Hóa học, Hải dương học và Nghiên cứu Nam Dương – Đông Nam Á.",
       "cityVi": "Hạ Môn (Phúc Kiến)",
-      "imagePath": "assets/images/provinces/fujian-tulou.jpg",
+      "imagePath": "assets/images/prov_items/fujian/h0.jpg",
       "cscTypeA_vs_TypeB_NoteVi": "Type B tại XMU xét song song CSC và Học bổng Tân Gia Ba / Học bổng Hạ Môn, hồ sơ cần thể hiện định hướng định lượng hoặc nghiên cứu thương mại hàng hải – ASEAN rõ nét.",
       "vietnamAlumniCareerTrackVi": "Chuyên viên phân tích tài chính – kiểm toán tại các hãng Big4 và ngân hàng quốc tế, quản lý thương mại điện tử và logistics cảng biển khu vực Đông Nam Á.",
       "recommendedHskAndIeltsVi": "Hệ tiếng Trung: HSK 5 (>=200 điểm); Hệ tiếng Anh: IELTS >= 6.5 hoặc TOEFL >= 85."
@@ -15608,7 +15608,7 @@
       "correctIndex": 0,
       "explainVi": "Hệ thống sản xuất mô-đun thời Tần cho phép đúc khuôn từng bộ phận thân, tay, chân rồi nặn tỉa riêng râu tóc, cấp bậc mũ giáp và ký tên thợ gốm lên tượng để kiểm soát chất lượng.",
       "explainEn": "Qin modular production combined standardized molded limbs and torsos with hand-sculpted faces, rank insignia, and artisan quality-control stamps.",
-      "imagePath": "assets/images/museum/terracotta-general.jpg",
+      "imagePath": "assets/images/paintings/33_dongting_yuyin.jpg",
       "visualInspectionGuideVi": "Quan sát độ sắc nét cá nhân hóa của từng khuôn mặt chiến binh, kiểu búi tóc lệch, áo giáp mảnh ghép hình chữ nhật và hàng ngũ chỉnh tề trong Hầm số 1.",
       "visualInspectionGuideEn": "Inspect individualized facial features, off-center topknots, articulated lamellar armor plates, and disciplined battle formations in Pit 1."
     },
@@ -15637,7 +15637,7 @@
       "correctIndex": 0,
       "explainVi": "Vương Hy Mạnh hoàn thành 'Thiên Lý Giang Sơn Đồ' bằng năm lớp vẽ chồng tinh xảo từ mực nền, son đất đến khoáng vật Thạch Thanh – Thạch Lục, hiện là quốc bảo hàng đầu của Bảo tàng Cố Cung Bắc Kinh.",
       "explainEn": "Wang Ximeng executed 'A Thousand Li of Rivers and Mountains' in five meticulous layers from ink underdrawing to azurite and malachite washes; it is a crown jewel of the Palace Museum.",
-      "imagePath": "assets/images/paintings/22_qianli_jiangshan.jpg",
+      "imagePath": "assets/images/paintings/34_liujunzi_tu.jpg",
       "visualInspectionGuideVi": "Quan sát dải lụa dài gần 12 mét với gam xanh lam Thạch Thanh và xanh lục Thạch Lục rực rỡ phủ trên nền núi đất son nâu ấm cùng cầu gỗ, làng chài li ti.",
       "visualInspectionGuideEn": "Observe the nearly 12-meter silk handscroll layered in vivid azurite blue and malachite green over warm ochre ridges, dotted with timber bridges and fishing hamlets."
     },
@@ -15666,7 +15666,7 @@
       "correctIndex": 0,
       "explainVi": "Trong lễ chế kiến trúc Minh–Thanh, số lượng Tẩu Thú biểu thị đẳng cấp công trình (thường là số lẻ 3, 5, 7, 9); duy nhất Điện Thái Hòa được bổ sung con thú thứ 10 là Hành Thập để tôn vinh ngôi vị tối thượng.",
       "explainEn": "Ming-Qing sumptuary codes restricted ridge beasts to odd numbers up to nine; only the Hall of Supreme Harmony carries a tenth beast (Hangshi), signifying supreme imperial rank.",
-      "imagePath": "assets/images/museum/taihe-dian.jpg",
+      "imagePath": "assets/images/paintings/35_qingbian_yinju.jpg",
       "visualInspectionGuideVi": "Đếm số lượng thú mái (Tẩu Thú) trên bờ dốc mái ngói lưu ly vàng, quan sát nền đá cẩm thạch trắng ba tầng (Tam Đài) và kiểu mái trùng diêm ủ đỉnh.",
       "visualInspectionGuideEn": "Count the glazed ridge beasts along the yellow hip-roof eaves, and examine the triple-tiered white marble terrace and double-eave Wu-dian roof."
     },
@@ -15695,7 +15695,7 @@
       "correctIndex": 0,
       "explainVi": "Đá Thái Hồ với hình dáng uốn lượn giàu lỗ trống (Tiêu chuẩn Sấu–Trứu–Lậu–Thấu) tạo nên hình tượng 'núi non thu nhỏ' ngay giữa lòng đô thị Giang Nam, tương phản tuyệt mỹ với tường trắng ngói xám.",
       "explainEn": "Taihu scholar rocks embody miniature mountains within urban Jiangnan gardens, contrasting organically against crisp whitewashed walls and dark tile roofs.",
-      "imagePath": "assets/images/academic/suzhou-garden.jpg",
+      "imagePath": "assets/images/paintings/36_lushan_gao.jpg",
       "visualInspectionGuideVi": "Nhìn các bức tường quét vôi trắng (Phấn Tường), ngói âm dương xám đen (Đại Ngõa), cửa hoa văn rỗng (Lậu Song), đá Thái Hồ nhiều hang lỗ và hành lang uốn khúc ven hồ.",
       "visualInspectionGuideEn": "Examine whitewashed perimeter walls, dark grey tiles, openwork lattice windows, perforated Taihu scholar rocks, and winding waterside corridors."
     },
@@ -15724,7 +15724,7 @@
       "correctIndex": 0,
       "explainVi": "Tường đất nện trộn chất kết dính tự nhiên và cốt tre giúp Thổ Lâu chống cháy, chống động đất, giữ ấm mùa đông – mát mùa hè và bảo vệ an toàn cho cả đại gia tộc hàng trăm người.",
       "explainEn": "Bamboo-reinforced rammed earth with organic binders gives Tulou exceptional fire resistance, seismic resilience, passive thermal comfort, and collective clan security.",
-      "imagePath": "assets/images/provinces/fujian-tulou.jpg",
+      "imagePath": "assets/images/paintings/37_gumu_youquan.jpg",
       "visualInspectionGuideVi": "Quan sát khối nhà tròn hoặc vuông nhiều tầng bằng tường đất nện dày tới 1–2 mét, tầng 1–2 hầu như không trổ cửa sổ, bên trong mở ra sân chung có từ đường trung tâm.",
       "visualInspectionGuideEn": "Note the monumental circular or square multi-story rammed-earth walls (1–2 m thick), windowless lower floors, and inward-facing wooden galleries surrounding a central ancestral hall."
     },
@@ -15753,7 +15753,7 @@
       "correctIndex": 0,
       "explainVi": "Kỳ Niên Điện không dùng bất kỳ đinh sắt hay xà ngang xuyên tâm nào, toàn bộ hệ cột gỗ Nam Mộc vừa chịu lực tuyệt đối vừa biểu đạt vũ trụ quan 'Thiên Viên Địa Phương' và lịch pháp nông nghiệp cổ đại.",
       "explainEn": "Built without iron nails, the Hall's 28 Phoebe zhennan columns translate the 'Round Heaven, Square Earth' cosmology and traditional agricultural calendar directly into timber engineering.",
-      "imagePath": "assets/images/provinces/beijing-temple-of-heaven.jpg",
+      "imagePath": "assets/images/paintings/38_shanlu_songsheng.jpg",
       "visualInspectionGuideVi": "Quan sát tòa điện hình tròn mái ba tầng lợp ngói lưu ly xanh lam đậm tượng trưng cho bầu trời, đứng trên nền đá cẩm thạch tròn ba cấp (Kỳ Cốc Đàn).",
       "visualInspectionGuideEn": "Inspect the circular triple-eave wooden pavilion crowned in deep cobalt-blue glazed tiles symbolizing Heaven, resting atop a three-tiered round marble altar."
     },
@@ -15782,7 +15782,7 @@
       "correctIndex": 0,
       "explainVi": "Bản gốc Lan Đình Tập Tự tương truyền được chôn theo Đường Thái Tông tại Chiêu Lăng; ngày nay hậu thế chiêm ngưỡng tinh thần bút pháp Vương Hy Chi qua các bản mô phỏng tinh tuyệt đời Đường như bản Thần Long của Phùng Thừa Tố.",
       "explainEn": "Though the original scroll was reportedly buried with Tang Emperor Taizong, Wang Xizhi's brushwork endures through Tang tracing copies such as Feng Chengsu's Shenlong version.",
-      "imagePath": "assets/images/museum/lantingji-xu.jpg",
+      "imagePath": "assets/images/paintings/39_hangong_chunxiao.jpg",
       "visualInspectionGuideVi": "Quan sát 28 dòng, 324 chữ Hành Thư bay bổng, phóng khoáng; đặc biệt chú ý hơn 20 chữ '之' (Chi) xuất hiện khắp bài nhưng không có hai chữ nào viết giống hệt nhau.",
       "visualInspectionGuideEn": "Examine the 28 columns (324 characters) of flowing Running Script, noting that over 20 occurrences of the character '之' (Zhi) each display a distinct calligraphic form."
     },
@@ -15811,7 +15811,7 @@
       "correctIndex": 0,
       "explainVi": "Hơn 800 nhân vật, 28 thuyền gỗ và cây cầu vòm đan thanh gỗ Hồng Kiều trong Thanh Minh Thượng Hà Đồ là tư liệu lịch sử đô thị và kinh tế thương mại vô giá của kinh đô Biện Kinh thế kỷ XII.",
       "explainEn": "Depicting over 800 figures, 28 boats, and the woven-beam Rainbow Bridge, the Qingming Scroll serves as an extraordinary visual archive of 12th-century Bianjing urban and commercial life.",
-      "imagePath": "assets/images/paintings/21_qingming_shanghe.jpg",
+      "imagePath": "assets/images/paintings/40_qiuxing_bajing.jpg",
       "visualInspectionGuideVi": "Tập trung vào cảnh cao trào trung tâm trường quyển: cây cầu gỗ vòm không trụ giữa dòng sông Biện Hà (Hồng Kiều) nơi chiếc thuyền buồm đang gấp rút hạ cột buồm để chui qua.",
       "visualInspectionGuideEn": "Focus on the dramatic centerpiece of the handscroll: the arch-beam Rainbow Bridge (Hongqiao) spanning the Bian River as boatmen frantically lower their mast to pass underneath."
     },
@@ -15840,7 +15840,7 @@
       "correctIndex": 0,
       "explainVi": "Hậu Mẫu Mậu Đỉnh được đúc để tế tự vị Vương hậu của vua Vũ Đinh nhà Thương, đòi hỏi phối hợp hàng chục lò nung rót đồng thời hơn 800 kg hợp kim đồng–thiếc–chì vào khuôn gốm ghép.",
       "explainEn": "Cast to honor a royal consort of Shang King Wu Ding, the Houmuwu Ding required coordinating dozens of crucibles pouring over 800 kg of molten bronze simultaneously into sectional clay molds.",
-      "imagePath": "assets/images/museum/houmuwu-ding.jpg",
+      "imagePath": "assets/images/paintings/41_mo_putao.jpg",
       "visualInspectionGuideVi": "Quan sát dáng vạc vuông 4 chân trụ lớn (Phương Đỉnh), hai quai đứng có hoa văn song hổ ngậm đầu người và mặt thân khắc nổi vân Thao Thiết – Vân Lôi.",
       "visualInspectionGuideEn": "Inspect the massive rectangular four-legged body (Fangding), twin upright handles decorated with tigers framing a human head, and perimeter bands of Taotie motifs."
     },
@@ -15869,7 +15869,7 @@
       "correctIndex": 0,
       "explainVi": "Đường Tam Thái là gốm nung nhiệt độ thấp dùng làm minh khí tùy táng tinh xảo, nổi bật với hình tượng lạc đà hai bướu chở dàn nhạc Hồ nhân — minh chứng sống động cho sự cởi mở quốc tế thời Đường.",
       "explainEn": "Tang Sancai low-fired burial ceramics—especially Bactrian camels carrying Central Asian musicians—vividly embody the cosmopolitan vitality of the Tang Silk Road.",
-      "imagePath": "assets/images/museum/tang-sancai-camel.jpg",
+      "imagePath": "assets/images/paintings/42_huishan_chahui.jpg",
       "visualInspectionGuideVi": "Nhận diện lớp men chì chảy loang bóng mượt với ba tông màu chủ đạo vàng hổ phách, xanh lục đồng và trắng ngà trên tượng lạc đà chở nhạc công Tây Vực hoặc tuấn mã.",
       "visualInspectionGuideEn": "Spot the lustrous lead-glazed drips blending amber-yellow, copper-green, and cream-white over dynamic figurines of Silk Road Bactrian camels and spirited steeds."
     },
@@ -15927,7 +15927,7 @@
       "correctIndex": 0,
       "explainVi": "Bộ tiền giấy Trung Quốc giới thiệu các biểu tượng di sản lớn: 1 NDT là Tam Đàm Ấn Nguyệt (Tây Hồ), 5 NDT là Thái Sơn, 10 NDT là Quỳ Môn (Tam Hiệp), 20 NDT là Sông Ly Quế Lâm và 50 NDT là Cung Potala.",
       "explainEn": "Renminbi banknotes showcase national landmarks: 1 RMB (West Lake), 5 RMB (Mount Tai), 10 RMB (Qutang Gorge), 20 RMB (Guilin Li River), and 50 RMB (Potala Palace).",
-      "imagePath": "assets/images/provinces/guangxi-guilin-li-river.jpg",
+      "imagePath": "assets/images/paintings/43_luomu_qiuse.jpg",
       "visualInspectionGuideVi": "Nhìn các cụm đỉnh núi đá vôi hình tháp dựng đứng nối tiếp nhau (Phong Lâm – Phong Tùng) soi bóng xuống mặt sông Ly uốn lượn cùng chiếc bè tre nhẹ.",
       "visualInspectionGuideEn": "Look for clustered steep limestone tower peaks (Fenglin and Fengcong) reflected in the meandering Li River alongside slim bamboo rafts."
     },
@@ -15956,7 +15956,7 @@
       "correctIndex": 0,
       "explainVi": "Khi trị thủy nạo vét bùn Tây Hồ, Tô Thức dùng bùn đắp nên Đê Tô nối hai bờ Nam–Bắc và cho dựng ba tháp đá đánh dấu vùng cấm trồng sen lấn lòng hồ, tạo nên kiệt tác cảnh quan văn hóa UNESCO.",
       "explainEn": "While dredging West Lake silt to construct the Su Causeway, Su Shi erected the three stone pagodas to mark deep-water boundaries prohibiting encroaching water-chestnut cultivation.",
-      "imagePath": "assets/images/provinces/zhejiang-hangzhou-westlake.jpg",
+      "imagePath": "assets/images/paintings/44_kangxi_nanxun.jpg",
       "visualInspectionGuideVi": "Quan sát ba ngọn tháp đá hình hồ lô có 5 lỗ tròn đặt nổi trên mặt hồ Tây Hồ, phía xa là đường đê xanh rợp bóng liễu và tháp Lôi Phong.",
       "visualInspectionGuideEn": "Spot the three gourd-shaped stone lanterns with five circular apertures rising from the lake surface, backed by willow-lined causeways and Leifeng Pagoda."
     },
@@ -15985,7 +15985,7 @@
       "correctIndex": 0,
       "explainVi": "Nhà địa lý học Từ Hà Khách đời Minh từng cảm thán 'Ngũ Nhạc quy lai bất khán sơn, Hoàng Sơn quy lai bất khán Nhạc', tôn vinh vẻ đẹp hội tụ kỳ tùng, quái thạch, vân hải và ôn tuyền của Hoàng Sơn.",
       "explainEn": "Ming geographer Xu Xiake famously remarked that after seeing Huangshan no other mountain need be seen, celebrating its pines, granite spires, cloud seas, and thermal springs.",
-      "imagePath": "assets/images/provinces/anhui-huangshan-cloudsea.jpg",
+      "imagePath": "assets/images/paintings/45_wanhe_songfeng_qing.jpg",
       "visualInspectionGuideVi": "Quan sát những đỉnh đá hoa cương dựng đứng cắt xẻ mạnh, biển mây trắng cuộn quanh chân núi và dáng cây thông cổ thụ vươn nhánh ngang từ kẽ đá (Thông Nghênh Khách).",
       "visualInspectionGuideEn": "Identify sheer serrated granite spires, billowing seas of clouds below the peaks, and gnarled pines rooted horizontally in rock crevices (Welcoming Pine)."
     },
@@ -16014,7 +16014,7 @@
       "correctIndex": 0,
       "explainVi": "Ngoại Than (bờ Tây) và Lục Gia Chủy (bờ Đông Phố Đông) tạo nên lát cắt trực quan sắc nét nhất về hành trình chuyển mình từ thương cảng thế kỷ XIX–XX đến trung tâm tài chính – công nghệ thế kỷ XXI.",
       "explainEn": "Facing each other across the Huangpu River, the Bund and Lujiazui visually encapsulate Shanghai's evolution from a treaty-port trading hub to a 21st-century financial metropolis.",
-      "imagePath": "assets/images/provinces/shanghai-bund-skyline.jpg",
+      "imagePath": "assets/images/paintings/46_huaiyang_jieqiu.jpg",
       "visualInspectionGuideVi": "Quan sát sự đối thoại kiến trúc hai bờ sông Hoàng Phố: một bên là dãy công trình cổ điển Art Deco – Tân Cổ điển đầu thế kỷ XX, bên kia là cụm cao ốc Lục Gia Chủy (Tháp Minh Châu Phương Đông, Tháp Thượng Hải).",
       "visualInspectionGuideEn": "Contrast both banks of the Huangpu River: early-20th-century Neoclassical and Art Deco heritage buildings along the Bund facing Lujiazui's futuristic towers across the water."
     },
@@ -16043,7 +16043,7 @@
       "correctIndex": 0,
       "explainVi": "82 tấm Bia Tiến sĩ (Di sản Tư liệu Thế giới UNESCO) đặt trên lưng rùa đá cùng Khuê Văn Các là minh chứng kiệt xuất cho truyền thống hiếu học và sự tiếp biến sáng tạo kiến trúc Nho học tại Việt Nam.",
       "explainEn": "Paired with 82 UNESCO-inscribed stone doctoral stelae resting on tortoises, Khue Van Cac and the Well of Heavenly Clarity express Vietnam's creative localization of East Asian scholarly heritage.",
-      "imagePath": "assets/images/academic/van-mieu-hanoi.jpg",
+      "imagePath": "assets/images/paintings/47_kongque_zhushi.jpg",
       "visualInspectionGuideVi": "Quan sát Khuê Văn Các hai tầng tám mái ngói đất nung với cửa sổ tròn mặt trời tỏa tia trên gác gỗ đỏ, phản chiếu xuống giếng Thiên Quang hình vuông và hai dãy Bia Tiến sĩ trên lưng rùa đá.",
       "visualInspectionGuideEn": "Observe the two-story, eight-roofed Khue Van Cac pavilion with circular sunburst windows overlooking the square Well of Heavenly Clarity and rows of doctoral stelae atop stone tortoises."
     },
@@ -16072,7 +16072,7 @@
       "correctIndex": 0,
       "explainVi": "Tiêu chuẩn hóa trong sách kiến trúc 'Doanh Tạo Pháp Thức' (1103) thời Bắc Tống, Đấu Củng giúp mái ngói nặng có thể đua rộng che mưa nắng mà không làm gãy xà ngang.",
       "explainEn": "Codified in the 1103 Northern Song manual 'Yingzao Fashi', Dougong brackets enable sweeping protective eaves to carry heavy ceramic roofs without snapping horizontal beams.",
-      "imagePath": "assets/images/editorial/diagram-dougong-seismic.svg",
+      "imagePath": "assets/images/paintings/48_zhushi_tu.jpg",
       "visualInspectionGuideVi": "Quan sát các khối gỗ hình đấu vuông (Đấu) đỡ các thanh gỗ cong vươn ngang (Củng) chồng nhiều lớp như bông hoa sen nở ngược ngay dưới diềm mái đua rộng.",
       "visualInspectionGuideEn": "Examine the square wooden bearing blocks (Dou) cradling curved horizontal bracket arms (Gong) stacked into inverted lotus-like clusters beneath deep overhanging eaves."
     },
@@ -16101,7 +16101,7 @@
       "correctIndex": 0,
       "explainVi": "Cổ Cầm đứng đầu 'Cầm–Kỳ–Thi–Họa' và được UNESCO ghi danh Di sản Văn hóa Phi vật thể (2003); âm thanh gồm ba sắc thái Tán âm (dây buông), Án âm (bấm dây) và Phiếm âm (chạm nhẹ tại 13 vị trí Huy).",
       "explainEn": "Foremost of the Four Literati Arts and inscribed by UNESCO (2003), the Guqin produces open, stopped, and ethereal harmonic tones precisely guided by the 13 Hui nodes.",
-      "imagePath": "assets/images/museum/guqin-jiuxiao-huanpei.jpg",
+      "imagePath": "assets/images/paintings/49_moxia_tu.jpg",
       "visualInspectionGuideVi": "Quan sát thân đàn thuôn dài không có phím nổi (chỉ có 13 điểm khảm vỏ trai gọi là Huy dọc cạnh đàn), 7 dây căng dọc thân sơn mài đen và đáy khoét hai lỗ cộng hưởng Long Trì – Phượng Chiểu.",
       "visualInspectionGuideEn": "Note the fretless lacquered body marked by 13 inlaid mother-of-pearl studs (Hui), seven lengthwise strings, and two underside soundholes (Dragon Pond and Phoenix Pool)."
     },
@@ -16130,7 +16130,7 @@
       "correctIndex": 0,
       "explainVi": "Kỹ thuật Thủy Mật Cách Thương của đóng tàu Phúc Kiến – Giang Tô (được UNESCO ghi danh di sản phi vật thể cần bảo vệ khẩn cấp) sau này đã trở thành chuẩn mực an toàn bắt buộc của ngành đóng tàu hiện đại toàn cầu.",
       "explainEn": "Watertight bulkhead construction—inscribed by UNESCO as Intangible Cultural Heritage—later became a universal safety standard across modern global shipbuilding.",
-      "imagePath": "assets/images/museum/zheng-he-chart.jpg",
+      "imagePath": "assets/images/paintings/50_benma_tu.jpg",
       "visualInspectionGuideVi": "Quan sát cánh buồm nan tre xòe hình quạt (batten lugsail) dễ thu gọn trước gió bão, bánh lái cân bằng đặt đuôi tàu và kết cấu vách ngăn kín nước (Thủy Mật Cách Thương).",
       "visualInspectionGuideEn": "Examine stiffened bamboo-batten lug sails adaptable to monsoon winds, a balanced sternpost rudder, and internal watertight bulkhead compartments."
     },
@@ -16159,7 +16159,7 @@
       "correctIndex": 0,
       "explainVi": "Làng cổ Hoành Thôn kết hợp tường ngăn cháy Mã Đầu Tường với hệ thống kênh dẫn nước hình con trâu (Thủy Quyến – Nguyệt Chiểu – Nam Hồ), vừa cấp nước sinh hoạt vừa sẵn sàng dập lửa và điều hòa vi khí hậu.",
       "explainEn": "Hongcun pairs firebreak Horse-Head Walls with its ingenious ox-shaped water-channel network (Moon Pond and South Lake) for firefighting, daily supply, and microclimate cooling.",
-      "imagePath": "assets/images/provinces/anhui-hongcun-moonpond.jpg",
+      "imagePath": "assets/images/paintings/51_lushan_tu_daqian.jpg",
       "visualInspectionGuideVi": "Quan sát dãy tường hồi bậc thang quét vôi trắng vươn cao hơn mái ngói đen (Tường Đầu Ngựa — Mã Đầu Tường) soi bóng xuống hồ bán nguyệt Nguyệt Chiểu.",
       "visualInspectionGuideEn": "Identify stepped whitewashed gable walls rising above dark tiled roofs (Horse-Head Walls) mirrored in the crescent-shaped Moon Pond (Yuezhao)."
     },
@@ -16188,7 +16188,7 @@
       "correctIndex": 0,
       "explainVi": "Tháp Quảng Châu kết hợp hai mặt cắt elip xoay 45 độ nối bằng hệ thanh thép thẳng tạo mặt cong hypebol, giúp triệt tiêu lực xoáy gió bão vùng Châu Giang và trở thành biểu tượng đô thị Vùng Vịnh Lớn.",
       "explainEn": "Rotating two ellipses connected by straight steel members creates a rigid hyperboloid diagrid that mitigates Pearl River typhoon wind loads while defining the Greater Bay Area skyline.",
-      "imagePath": "assets/images/provinces/guangdong-canton-tower.jpg",
+      "imagePath": "assets/images/paintings/52_shujiang_bishitu.jpg",
       "visualInspectionGuideVi": "Nhận diện dáng tháp cao 600 mét có eo thắt xoắn hình hypebol mềm mại ('Tiểu Man Yêu') tạo bởi lưới ống thép chéo ngoài bao quanh lõi bê tông trung tâm bên sông Châu Giang.",
       "visualInspectionGuideEn": "Spot the 600-meter twisting hyperboloid silhouette ('Slim Waist') formed by an open diagonal steel diagrid exoskeleton along the Pearl River."
     },
@@ -16217,7 +16217,7 @@
       "correctIndex": 0,
       "explainVi": "Ảnh hưởng sâu sắc từ mỹ học văn nhân và Lý học thời Tống, Ngũ Đại Danh Diêu coi sự tiết chế, chất cảm men mịn như mỡ ngọc và hình dáng cân đối là chuẩn mực tối thượng của nghệ thuật gốm sứ.",
       "explainEn": "Shaped by Song literati taste and Neo-Confucian restraint, the Five Great Kilns elevated monochrome glaze luminosity and harmonious form to the zenith of ceramic art.",
-      "imagePath": "assets/images/museum/ru-yao-tianqing.jpg",
+      "imagePath": "assets/images/paintings/53_jiangshan_duojiao.jpg",
       "visualInspectionGuideVi": "Quan sát chất men đơn sắc tinh giản như sắc xanh 'trời quang sau mưa' của Nhữ Diêu, vết rạn men 'Kim Ty Thiết Tuyến' của Ca Diêu, men trắng ngà khắc chìm Định Diêu và sắc tím lam biến ảo Quân Diêu.",
       "visualInspectionGuideEn": "Examine minimalist monochrome glazes: Ru ware's 'sky-after-rain' celadon, Ge ware's 'gold-thread and iron-wire' crackle, Ding ware's carved ivory white, and Jun ware's copper-transmuted blue-purple."
     },
@@ -16275,7 +16275,7 @@
       "correctIndex": 0,
       "explainVi": "Hệ thống ký hiệu ba màu kế thừa quy chuẩn tổng hợp tinh đồ của Trần Trác thời Tấn, cho phép các nhà thiên văn thời Đường vừa tra cứu chuẩn xác vị trí hơn 1.300 ngôi sao vừa bảo toàn nguồn gốc học phái cổ đại.",
       "explainEn": "Inheriting Chen Zhuo's Jin-era synthesis, the three-color coding allowed Tang astronomers to chart over 1,300 stars accurately while preserving provenance across China's three classical star catalogs.",
-      "imagePath": "assets/images/provinces/gansu-dunhuang-mogao.jpg",
+      "imagePath": "assets/images/paintings/54_wanshan_hongbian.jpg",
       "visualInspectionGuideVi": "Quan sát cuộn giấy vẽ các chòm sao nối bằng đường thẳng màu đen, đỏ và trắng chia theo 12 khung tháng xích đạo nối tiếp bằng vòng tròn cực Bắc (Tử Vi Viên) ở cuối cuộn.",
       "visualInspectionGuideEn": "Observe constellations linked by straight lines in black, red, and white ink across 12 sequential equatorial monthly panels culminating in a circular north-polar sky chart."
     },
@@ -16304,7 +16304,7 @@
       "correctIndex": 0,
       "explainVi": "Xét về lịch sử công nghệ và giáo dục, Thiên Thánh Đồng Nhân là thành tựu luyện kim chính xác thời Bắc Tống, lần đầu chuẩn hóa giáo cụ 3D tháo lắp để đào tạo và kiểm tra kiến thức trong Thái Y Cục lịch sử (thông tin thuần sử liệu khoa học, không mang tính tư vấn y tế).",
       "explainEn": "As a milestone in Northern Song precision bronze casting and pedagogy, the detachable hollow figure standardized 3D historical teaching and assessment models (purely history of science and metallurgy, not medical advice).",
-      "imagePath": "assets/images/museum/acupuncture-bronze.jpg",
+      "imagePath": "assets/images/paintings/55_wuniu_tu.jpg",
       "visualInspectionGuideVi": "Quan sát bức tượng đồng rỗng tỷ lệ người thật (đúc năm 1027 thời Tống Nhân Tông) có bề mặt khoan hàng trăm lỗ nhỏ khắc chữ Hán chuẩn xác cùng khớp ghép tháo rời hai nửa trước – sau. (Lưu ý: thuần túy sử liệu luyện kim & giáo cụ lịch sử, không phải nội dung lâm sàng).",
       "visualInspectionGuideEn": "Examine the life-size hollow cast-bronze figure (1027 CE, Northern Song) with precision-drilled engraved apertures and interlocking front-and-back cast halves. (Strictly history of metallurgy and educational artifacts, not clinical advice.)"
     },
@@ -16362,7 +16362,7 @@
       "correctIndex": 0,
       "explainVi": "Lạc Thần Phú Đồ (lưu truyền qua các bản mô phỏng tinh tuyệt thời Tống tại Cố Cung Bắc Kinh và Bảo tàng Liêu Ninh) đánh dấu bước ngoặt chuyển từ họa phù điêu sang hội họa trường quyển tự sự giàu chất thơ.",
       "explainEn": "Known through exquisite Song copies in Beijing and Liaoning, Gu Kaizhi's 'Nymph of the Luo River' pioneered poetic continuous-narrative handscroll painting in East Asia.",
-      "imagePath": "assets/images/paintings/01_luoshenfu_tu.jpg",
+      "imagePath": "assets/images/paintings/56_zhaoye_bai_tu.jpg",
       "visualInspectionGuideVi": "Quan sát lối vẽ nhân vật nét mảnh đều liên tục như sợi tơ tằm mùa xuân (Xuân Tàm Thổ Ty), bố cục tự sự liên hoàn (nhân vật Tào Thực và Lạc Thần lặp lại nhiều lần dọc trường quyển) cùng xe sáu rồng bay trên mây nước.",
       "visualInspectionGuideEn": "Examine continuous, gossamer-fine 'spring silkworm thread' contour lines, continuous narrative sequencing where Cao Zhi and the Nymph reappear along the scroll, and a six-dragon cloud chariot."
     },
@@ -16391,7 +16391,7 @@
       "correctIndex": 0,
       "explainVi": "Cuộc 'Lệ Biến' (chuyển từ Triện sang Lệ) là bước ngoặt lớn nhất trong lịch sử chữ Hán: phá bỏ tính vẽ hình cổ đại để tạo nên hệ thống nét bút gọn gàng, tốc độ cao và chuẩn hóa nét vuông cho Khải Thư sau này.",
       "explainEn": "The 'Clerical Transformation' (Libian) marks the pivotal leap in Chinese paleography, converting pictorial curves into efficient, standardized strokes that laid the foundation for Regular Script.",
-      "imagePath": "assets/images/articles/hero-calligraphy-five-scripts.jpg",
+      "imagePath": "assets/images/paintings/57_jiangxing_chuxue_tu.jpg",
       "visualInspectionGuideVi": "Phân biệt nhanh 5 tự thể: Triện (nét tròn đều đối xứng dọc), Lệ (dáng dẹt ngang, nét phẩy mác có 'đầu tằm đuôi én'), Khải (vuông vức chuẩn mực), Hành (nối nét uyển chuyển dễ đọc), Thảo (tỉnh lược phóng khoáng nối liền mạch).",
       "visualInspectionGuideEn": "Distinguish all five scripts at a glance: Seal (uniform rounded symmetry), Clerical (flattened proportions with 'silkworm-head, swallow-tail' flares), Regular (crisp square balance), Running (fluid semi-cursive), and Cursive (highly abbreviated continuous strokes)."
     },
@@ -16420,7 +16420,7 @@
       "correctIndex": 0,
       "explainVi": "Trong văn hóa kinh doanh Đông Á, danh thiếp đại diện cho thể diện (Mianzi) và vị thế pháp nhân của đối tác; việc nâng niu bằng hai tay và đặt ngay ngắn trên bàn giúp ghi nhớ đúng chức danh và khởi đầu đàm phán thuận lợi.",
       "explainEn": "In East Asian business culture, a business card represents the counterpart's professional dignity (Mianzi); receiving it with both hands and placing it neatly on the table signals attentiveness and respect.",
-      "imagePath": "assets/images/articles/hero-b2b-negotiation-table.jpg",
+      "imagePath": "assets/images/paintings/58_tingqin_tu.jpg",
       "visualInspectionGuideVi": "Quan sát cách bố trí vị trí ghế chủ tọa (hướng ra cửa chính), cử chỉ trao – nhận danh thiếp bằng cả hai tay hướng chữ về phía đối tác và tư thế nâng chén trà thấp hơn mép chén người lớn tuổi/chủ nhà.",
       "visualInspectionGuideEn": "Observe seating hierarchy facing the entrance, two-handed business card presentation with text oriented toward the recipient, and holding one's cup rim slightly lower during toasts."
     },
@@ -16449,7 +16449,7 @@
       "correctIndex": 0,
       "explainVi": "Hệ thống phân loại Lục Đại Trà Loại do giáo sư Trần Duyện chuẩn hóa thế kỷ XX dựa trên tiến trình chế biến: diệt men (Lục), phơi héo tự nhiên (Bạch), ủ vàng muộn hoàng (Hoàng), bán oxy hóa lắc lá (Ô Long), oxy hóa hoàn toàn (Hồng) và hậu lên men vi sinh ủ đống (Hắc trà/Phổ Nhĩ).",
       "explainEn": "Codified by tea scientist Chen Chuan, the six-tea taxonomy maps processing chemistry: fixation (Green), minimal withering (White), muffled yellowing (Yellow), semi-oxidation (Oolong), full oxidation (Black), and microbial wet-pile fermentation (Dark/Pu-erh).",
-      "imagePath": "assets/images/articles/hero-six-teas-gongfu.jpg",
+      "imagePath": "assets/images/paintings/60_jiulong_tu.jpg",
       "visualInspectionGuideVi": "Quan sát quang phổ 6 màu nước trà xếp theo mức độ oxy hóa tăng dần: Lục trà (xanh vàng trong), Bạch trà (vàng mơ nhạt nhiều lông tơ), Hoàng trà (vàng óng), Ô Long/Thanh trà (vàng hổ phách viền lá đỏ), Hồng trà (đỏ cam sáng), Hắc trà/Phổ Nhĩ chín (đỏ nâu trầm).",
       "visualInspectionGuideEn": "Observe the six-tier liquor spectrum ordered by rising oxidation and fermentation: Green (clear pale jade), White (silvery-bud apricot), Yellow (bright gold), Oolong (amber with red-edged leaves), Black/Hongcha (luminous crimson-amber), and Dark/Heicha (deep russet-red)."
     }

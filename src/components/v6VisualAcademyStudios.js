@@ -1163,7 +1163,7 @@
             hanViet: el.getAttribute("data-hv"),
             meaningVi: el.getAttribute("data-vi"),
             meaningEn: el.getAttribute("data-en"),
-            source: "V6 Visual Studio"
+            source: "Visual Studio"
           });
           el.textContent = "Saved!";
         }

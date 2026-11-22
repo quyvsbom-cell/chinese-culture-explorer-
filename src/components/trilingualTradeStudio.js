@@ -352,7 +352,7 @@
             hanViet: el.getAttribute("data-vi"),
             meaningVi: el.getAttribute("data-vi") + " [" + el.getAttribute("data-en") + "]",
             meaningEn: el.getAttribute("data-en"),
-            source: "EU-China Trade V4"
+            source: "EU-China Trade"
           });
           el.textContent = "Added";
         }

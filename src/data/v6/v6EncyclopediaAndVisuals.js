@@ -37,7 +37,7 @@
         "vietnamAseanLessonEn": "Demonstrates how Vietnamese heritage charcuterie and braised delicacies can standardize master-broth recipes for modern retail.",
         "flagshipAddressZh": "北京市西城区西直门内大街213号",
         "imgHintSlug": "beijing-braised-pork",
-        "imagePath": "assets/images/prov_items/beijing/d0.jpg",
+        "imagePath": "assets/images/prov_items/beijing/f1.jpg",
         "visitTipVi": "Ghé hiệu chính thức 天福号 tại Tây Thành, Bắc Kinh (北京市西城区西直门内大街213号).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Bắc Kinh → 2) Lên men / canh lửa truyền thống (Màu hổ phách đỏ óng, béo ngậy mà không ngán, hương thảo mộc thanh nhẹ, cắt lát mỏng vẫn giữ cấu trúc săn chắc.) → 3) Đóng gói chuẩn Di sản Văn hóa Phi vật thể Quốc gia (2008) & Chuẩn vệ sinh thực phẩm GB 2726 → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Beijing → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -71,7 +71,7 @@
         "vietnamAseanLessonEn": "Illustrates transforming legacy herbal houses into cultural museums paired with accessible botanical beverages.",
         "flagshipAddressZh": "天津市南开区鼓楼东街",
         "imgHintSlug": "tianjin-apothecary",
-        "imagePath": "assets/images/prov_items/tianjin/h1.jpg",
+        "imagePath": "assets/images/prov_items/tianjin/h0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 达仁堂 tại Nam Khai, Thiên Tân (天津市南开区鼓楼东街).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu đạo địa tại Thiên Tân → 2) Bào chế theo gia huấn (Viên hoàn mịn đều, bảo quản vỏ sáp tự nhiên giữ nguyên tinh dầu thảo mộc và hương thơm đặc trưng vùng nguyên liệu.) → 3) Kiểm định Trung Hoa Lão Tự Hiệu Đợt 1 & Chuẩn GMP dược liệu hiện đại → 4) Đóng sáp/bao bì chống ẩm và niêm phong truy xuất.",
         "craftProcessStepsEn": "1) Source Daodi botanicals in Tianjin → 2) Process to classical formulation (China Time-Honored Brand First Tier & Modern Botanical GMP Compliance) → 3) Audit under Chinese Pharmacopoeia / GMP → 4) Seal anti-counterfeit packaging.",
@@ -105,7 +105,7 @@
         "vietnamAseanLessonEn": "Blueprint for cold-chain logistics and flavor consistency in scaling traditional cooked-food retail chains.",
         "flagshipAddressZh": "山西省太原市迎泽区柳巷南路",
         "imgHintSlug": "shanxi-braised",
-        "imagePath": "assets/images/prov_items/shanxi/d2.jpg",
+        "imagePath": "assets/images/prov_items/shanxi/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 六味斋 tại Thái Nguyên, Sơn Tây (山西省太原市迎泽区柳巷南路).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Sơn Tây → 2) Lên men / canh lửa truyền thống (Thịt đỏ nâu bóng mịn, thơm vị đinh hương và hoa tiêu nhẹ, thịt nạc không khô xơ.) → 3) Đóng gói chuẩn Di sản Văn hóa Phi vật thể Quốc gia (2011) & Chứng nhận ISO 22000 → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Shanxi → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -139,7 +139,7 @@
         "vietnamAseanLessonEn": "Shows how Vietnamese fermented condiments like craft fish sauce and rice vinegar can adopt vintage age-grading.",
         "flagshipAddressZh": "山西省太原市迎泽区桥头街",
         "imgHintSlug": "shanxi-vinegar",
-        "imagePath": "assets/images/prov_items/shanxi/d3.jpg",
+        "imagePath": "assets/images/prov_items/shanxi/d1.jpg",
         "visitTipVi": "Ghé hiệu chính thức 宁化府益源庆 tại Thái Nguyên, Sơn Tây (山西省太原市迎泽区桥头街).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Sơn Tây → 2) Lên men / canh lửa truyền thống (Màu nâu đen ánh tím, độ chua thanh dịu hậu ngọt, rót ra bám thành bát, bảo quản tự nhiên lâu năm không biến chất.) → 3) Đóng gói chuẩn Chỉ dẫn Địa lý Quốc gia & Chuẩn GB/T 19777 Giấm già Sơn Tây → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Shanxi → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -173,7 +173,7 @@
         "vietnamAseanLessonEn": "Illustrates turning seasonal baked goods into year-round heritage tourism landmarks.",
         "flagshipAddressZh": "黑龙江省哈尔滨市道外区靖宇街392号",
         "imgHintSlug": "harbin-pastry",
-        "imagePath": "assets/images/prov_items/heilongjiang/d4.jpg",
+        "imagePath": "assets/images/prov_items/heilongjiang/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 老鼎丰 tại Đạo Ngoại, Cáp Nhĩ Tân, Hắc Long Giang (黑龙江省哈尔滨市道外区靖宇街392号).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Hắc Long Giang → 2) Lên men / canh lửa truyền thống (Vỏ bánh vàng rơm nhiều lớp mỏng, nhân ngũ nhân bùi thơm không gắt đường, giữ độ giòn tốt trong khí hậu lạnh.) → 3) Đóng gói chuẩn Trung Hoa Lão Tự Hiệu & Di sản Phi vật thể Tỉnh Hắc Long Giang → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Heilongjiang → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -241,7 +241,7 @@
         "vietnamAseanLessonEn": "Showcases scaling regional street-food pairings via central kitchens without losing artisanal identity.",
         "flagshipAddressZh": "辽宁省沈阳市沈河区中街正阳街",
         "imgHintSlug": "shenyang-smoked-pork",
-        "imagePath": "assets/images/prov_items/liaoning/d1.jpg",
+        "imagePath": "assets/images/prov_items/liaoning/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 李连贵熏肉大饼 tại Thẩm Dương, Liêu Ninh (辽宁省沈阳市沈河区中街正阳街).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Liêu Ninh → 2) Lên men / canh lửa truyền thống (Thịt màu đỏ nâu óng, thơm mùi khói dịu không đắng, ăn cùng bánh nướng giòn rụm, hành lá và tương ngọt.) → 3) Đóng gói chuẩn Trung Hoa Lão Tự Hiệu & Di sản Ẩm thực Phi vật thể Tỉnh Liêu Ninh → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Liaoning → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -275,7 +275,7 @@
         "vietnamAseanLessonEn": "Lesson for Vietnamese heritage soy pastes like Ban or Nam Dan sauce to enter standardized HORECA supply chains.",
         "flagshipAddressZh": "河北省保定市莲池区西大街",
         "imgHintSlug": "baoding-sauce",
-        "imagePath": "assets/images/prov_items/hebei/d2.jpg",
+        "imagePath": "assets/images/prov_items/hebei/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 保定槐茂酱园 tại Bảo Định, Hà Bắc (河北省保定市莲池区西大街).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Hà Bắc → 2) Lên men / canh lửa truyền thống (Tương sánh mịn màu nâu đỏ sáng, vị ngọt thanh quyện mặn dịu, rau củ muối giòn sần sật không gắt muối.) → 3) Đóng gói chuẩn Trung Hoa Lão Tự Hiệu Đợt 1 & Chuẩn gia vị lên men quốc gia → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Hebei → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -309,7 +309,7 @@
         "vietnamAseanLessonEn": "Inspires integrating highland Vietnamese ingredients like buckwheat and wild honey into regional heritage pastries.",
         "flagshipAddressZh": "内蒙古自治区呼和浩特市玉泉区大召前街",
         "imgHintSlug": "inner-mongolia-pastry",
-        "imagePath": "assets/images/prov_items/inner-mongolia/d3.jpg",
+        "imagePath": "assets/images/prov_items/inner-mongolia/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 麦香村 tại Hô Hòa Hạo Đặc, Nội Mông (内蒙古自治区呼和浩特市玉泉区大召前街).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Nội Mông → 2) Lên men / canh lửa truyền thống (Bánh xốp mịn, thơm ngậy vị sữa tự nhiên và hạt lanh rang, ăn cùng trà sữa mặn Mông Cổ rất hòa vị.) → 3) Đóng gói chuẩn Lão Tự Hiệu Khu Tự trị Nội Mông & Chuẩn an toàn thực phẩm bánh nướng GB 7099 → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Inner Mongolia → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -343,7 +343,7 @@
         "vietnamAseanLessonEn": "Demonstrates tying traditional grain spirits to regional agricultural heritage and water-source storytelling.",
         "flagshipAddressZh": "内蒙古自治区巴彦淖尔市杭锦后旗陕坝镇",
         "imgHintSlug": "hetao-baijiu",
-        "imagePath": "assets/images/prov_items/inner-mongolia/h4.jpg",
+        "imagePath": "assets/images/prov_items/inner-mongolia/h0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 河套酒业 tại Ba Ngạn Náo Nhĩ, Nội Mông (内蒙古自治区巴彦淖尔市杭锦后旗陕坝镇).",
         "craftProcessStepsVi": "1) Thu hái vụ xuân / ủ men cao lương tại Nội Mông → 2) Chế tác theo quy trình (Rượu trong suốt, hương ngũ cốc thanh thoát, uống êm không gắt cổ, hậu vị ngọt dịu.) → 3) Ủ chum sành / định cấp Trung Hoa Lão Tự Hiệu & Chỉ dẫn Địa lý Bạch tửu Hà Sáo → 4) Gắn tem truy xuất vùng lõi.",
         "craftProcessStepsEn": "1) Harvest single-origin leaves or grain in Inner Mongolia → 2) Panning or clay-cellar distillation → 3) Earthenware aging under GI spec → 4) Attach tamper-evident seals.",
@@ -377,7 +377,7 @@
         "vietnamAseanLessonEn": "Strategic model for heritage packaging and craft storytelling applicable to Vietnamese Do paper and lacquerware.",
         "flagshipAddressZh": "安徽省黄山市屯溪区老街",
         "imgHintSlug": "inkstone",
-        "imagePath": "assets/images/prov_items/anhui/h0.jpg",
+        "imagePath": "assets/images/prov_items/anhui/h4.jpg",
         "visitTipVi": "Ghé hiệu chính thức 胡开文墨庄 tại Tích Khê / Đồn Khê, Hoàng Sơn, An Huy (安徽省黄山市屯溪区老街).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu tự nhiên vùng An Huy → 2) Chế tác thủ công nhiều chặng (Mặt mực ánh tím xanh đen thẫm ('Nhược thạch nhược ngọc'), nét mài trơn không cặn, bền màu nghìn năm trên giấy Tuyên Chỉ.) → 3) Ký triện nghệ nhân & chuẩn Chuẩn Quốc gia QB/T 1746 & Di sản Văn hóa Phi vật thể Quốc gia (2006) → 4) Đóng hộp bảo quản chống ẩm.",
         "craftProcessStepsEn": "1) Prepare natural fibers, clay, timber, or ore in Anhui → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
@@ -411,7 +411,7 @@
         "vietnamAseanLessonEn": "Demonstrates elevating utilitarian craft items into high-value collectibles by preserving historical master molds.",
         "flagshipAddressZh": "上海市黄浦区福州路429号",
         "imgHintSlug": "shanghai-inkstick",
-        "imagePath": "assets/images/prov_items/shanghai/h1.jpg",
+        "imagePath": "assets/images/prov_items/shanghai/h3.jpg",
         "visitTipVi": "Ghé hiệu chính thức 曹素功墨庄 tại Hoàng Phố, Thượng Hải (上海市黄浦区福州路429号).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu tự nhiên vùng Thượng Hải → 2) Chế tác thủ công nhiều chặng (Mài ra năm sắc thái đậm nhạt (Mặc phân ngũ sắc), chạm khắc rồng phượng mạ vàng tinh xảo như tác phẩm điêu khắc thu nhỏ.) → 3) Ký triện nghệ nhân & chuẩn Di sản Văn hóa Phi vật thể Quốc gia (2011) & Chuẩn mực thư họa bảo tàng → 4) Đóng hộp bảo quản chống ẩm.",
         "craftProcessStepsEn": "1) Prepare natural fibers, clay, timber, or ore in Shanghai → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
@@ -479,7 +479,7 @@
         "vietnamAseanLessonEn": "Case study for elevating Vietnamese goldsmith villages like Chau Khe into modern design-led jewelry houses.",
         "flagshipAddressZh": "上海市黄浦区南京东路432号",
         "imgHintSlug": "shanghai-goldsmith",
-        "imagePath": "assets/images/prov_items/shanghai/h3.jpg",
+        "imagePath": "assets/images/prov_items/shanghai/h1.jpg",
         "visitTipVi": "Ghé hiệu chính thức 老凤祥 tại Hoàng Phố, Thượng Hải (上海市黄浦区南京东路432号).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu tự nhiên vùng Thượng Hải → 2) Chế tác thủ công nhiều chặng (Đường chạm sắc nét, bề mặt vàng mịn ánh mờ sang trọng (Cổ Pháp Hoàng Kim), họa tiết cát tường hài hòa.) → 3) Ký triện nghệ nhân & chuẩn Di sản Văn hóa Phi vật thể Quốc gia (2008) & Chuẩn kiểm định vàng quốc gia GB 11887 → 4) Đóng hộp bảo quản chống ẩm.",
         "craftProcessStepsEn": "1) Prepare natural fibers, clay, timber, or ore in Shanghai → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
@@ -513,7 +513,7 @@
         "vietnamAseanLessonEn": "Demonstrates how urban retro packaging preserves multi-generational appeal for everyday heritage snacks.",
         "flagshipAddressZh": "上海市黄浦区南京东路766号",
         "imgHintSlug": "shanghai-biscuit",
-        "imagePath": "assets/images/prov_items/shanghai/d4.jpg",
+        "imagePath": "assets/images/prov_items/shanghai/d1.jpg",
         "visitTipVi": "Ghé hiệu chính thức 泰康食品 tại Phố đi bộ Nam Kinh Đông, Thượng Hải (上海市黄浦区南京东路766号).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Thượng Hải → 2) Lên men / canh lửa truyền thống (Bánh mỏng giòn tan, hương hành phi dịu nhẹ hòa quyện vị bơ thanh, hộp thiếc phong cách Hải Phái thập niên 1930.) → 3) Đóng gói chuẩn Trung Hoa Lão Tự Hiệu & Chuẩn an toàn thực phẩm bánh quy GB/T 20980 → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Shanghai → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -547,7 +547,7 @@
         "vietnamAseanLessonEn": "Direct blueprint for scaling Vietnamese Banh Chung and Banh Tet into year-round exportable packaged foods.",
         "flagshipAddressZh": "浙江省嘉兴市南湖区建国南路286号",
         "imgHintSlug": "jiaxing-zongzi",
-        "imagePath": "assets/images/prov_items/zhejiang/d0.jpg",
+        "imagePath": "assets/images/prov_items/zhejiang/d2.jpg",
         "visitTipVi": "Ghé hiệu chính thức 五芳斋 tại Gia Hưng, Chiết Giang (浙江省嘉兴市南湖区建国南路286号).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Chiết Giang → 2) Lên men / canh lửa truyền thống (Bánh hình gối chéo sắc cạnh, hạt nếp dẻo bóng thơm mùi lá tre, nhân thịt ba chỉ tan mềm thấm tương.) → 3) Đóng gói chuẩn Di sản Văn hóa Phi vật thể Quốc gia (2011) & Chuẩn thực phẩm xuất khẩu HACCP → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Zhejiang → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -581,7 +581,7 @@
         "vietnamAseanLessonEn": "Shows how a 300-year-old craft shop can modernize into a high-precision technical retail chain.",
         "flagshipAddressZh": "上海市黄浦区南京东路622号",
         "imgHintSlug": "shanghai-optics",
-        "imagePath": "assets/images/prov_items/shanghai/h1.jpg",
+        "imagePath": "assets/images/prov_items/shanghai/h4.jpg",
         "visitTipVi": "Ghé hiệu chính thức 吴良材眼镜 tại Hoàng Phố, Thượng Hải (上海市黄浦区南京东路622号).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu tự nhiên vùng Thượng Hải → 2) Chế tác thủ công nhiều chặng (Tròng kính độ trong suốt cao, gọng cân bằng trọng tâm không ép sống mũi, thiết kế thanh lịch phong cách Thượng Hải cổ.) → 3) Ký triện nghệ nhân & chuẩn Trung Hoa Lão Tự Hiệu Đợt 1 & Chuẩn quang học quốc gia GB 13511 → 4) Đóng hộp bảo quản chống ẩm.",
         "craftProcessStepsEn": "1) Prepare natural fibers, clay, timber, or ore in Shanghai → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
@@ -615,7 +615,7 @@
         "vietnamAseanLessonEn": "Model for master-artisan certification and native clay protection applicable to Bat Trang and Phu Lang ceramics.",
         "flagshipAddressZh": "江苏省无锡市宜兴市丁蜀镇汤渡东路",
         "imgHintSlug": "yixing-zisha",
-        "imagePath": "assets/images/prov_items/jiangsu/h2.jpg",
+        "imagePath": "assets/images/prov_items/jiangsu/h4.jpg",
         "visitTipVi": "Ghé hiệu chính thức 宜兴紫砂工艺厂 tại Đinh Thục, Nghi Hưng, Giang Tô (江苏省无锡市宜兴市丁蜀镇汤渡东路).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu tự nhiên vùng Giang Tô → 2) Chế tác thủ công nhiều chặng (Giữ nhiệt lâu mà không làm chín lá trà, càng pha trà bề mặt ấm càng lên nước bóng mịn như ngọc (Bao Tương).) → 3) Ký triện nghệ nhân & chuẩn Di sản Văn hóa Phi vật thể Quốc gia (2006) & Chỉ dẫn Địa lý Gốm Tử Sa Nghi Hưng → 4) Đóng hộp bảo quản chống ẩm.",
         "craftProcessStepsEn": "1) Prepare natural fibers, clay, timber, or ore in Jiangsu → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
@@ -649,7 +649,7 @@
         "vietnamAseanLessonEn": "Shows how pairing a traditional sauce with a regional produce icon cements lasting culinary demand.",
         "flagshipAddressZh": "山东省济南市天桥区制锦市街",
         "imgHintSlug": "jinan-sauce",
-        "imagePath": "assets/images/prov_items/shandong/d3.jpg",
+        "imagePath": "assets/images/prov_items/shandong/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 德馨斋 tại Tế Nam, Sơn Đông (山东省济南市天桥区制锦市街).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Sơn Đông → 2) Lên men / canh lửa truyền thống (Sắc nâu đỏ óng, hương tương dậy mùi ngay khi mở nắp, vị ngọt đậm hậu mặn hài hòa.) → 3) Đóng gói chuẩn Trung Hoa Lão Tự Hiệu & Chuẩn sản xuất tương lên men tự nhiên Sơn Đông → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Shandong → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -683,7 +683,7 @@
         "vietnamAseanLessonEn": "IQF freezing standards offer a scalable export model for Vietnamese delicate steamed dumplings.",
         "flagshipAddressZh": "河南省开封市鼓楼区寺后街8号",
         "imgHintSlug": "kaifeng-dumpling",
-        "imagePath": "assets/images/prov_items/henan/d4.jpg",
+        "imagePath": "assets/images/prov_items/henan/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 开封第一楼 tại Khai Phong, Hà Nam (河南省开封市鼓楼区寺后街8号).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Hà Nam → 2) Lên men / canh lửa truyền thống (Nhấc lên như đèn lồng, đặt xuống như hoa cúc; nước súp bên trong đậm đà nóng hổi nhưng vỏ bánh không rách.) → 3) Đóng gói chuẩn Trung Hoa Lão Tự Hiệu & Di sản Ẩm thực Phi vật thể Tỉnh Hà Nam → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Henan → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -717,7 +717,7 @@
         "vietnamAseanLessonEn": "Dual retail model applicable to Vietnamese heritage pho and regional noodle houses.",
         "flagshipAddressZh": "湖南省长沙市天心区三兴街",
         "imgHintSlug": "changsha-noodles",
-        "imagePath": "assets/images/prov_items/hunan/d0.jpg",
+        "imagePath": "assets/images/prov_items/hunan/d1.jpg",
         "visitTipVi": "Ghé hiệu chính thức 杨裕兴 tại Trường Sa, Hồ Nam (湖南省长沙市天心区三兴街).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Hồ Nam → 2) Lên men / canh lửa truyền thống (Sợi mì vàng nhạt mềm mượt nhưng có độ bật, nước dùng trong ngọt thanh cân bằng vị cay ấm của ớt Hồ Nam.) → 3) Đóng gói chuẩn Trung Hoa Lão Tự Hiệu & Di sản Ẩm thực Phi vật thể Trường Sa → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Hunan → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -819,7 +819,7 @@
         "vietnamAseanLessonEn": "Highlights historic kiln links between Shiwan pottery and Southern Vietnam's Cay Mai ceramics for joint heritage curation.",
         "flagshipAddressZh": "广东省佛山市禅城区石湾镇太平街",
         "imgHintSlug": "shiwan-ceramics",
-        "imagePath": "assets/images/prov_items/guangdong/h3.jpg",
+        "imagePath": "assets/images/prov_items/guangdong/h2.jpg",
         "visitTipVi": "Ghé hiệu chính thức 陈太吉石湾陶艺 tại Thạch Loan, Phật Sơn, Quảng Đông (广东省佛山市禅城区石湾镇太平街).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu tự nhiên vùng Quảng Đông → 2) Chế tác thủ công nhiều chặng (Gốm men dày ánh xanh ngọc hoặc đỏ lưu ly, tượng gốm truyền thần sống động; rượu ủ chum trong thanh thơm dịu.) → 3) Ký triện nghệ nhân & chuẩn Di sản Văn hóa Phi vật thể Quốc gia (2006) & Trung Hoa Lão Tự Hiệu → 4) Đóng hộp bảo quản chống ẩm.",
         "craftProcessStepsEn": "1) Prepare natural fibers, clay, timber, or ore in Guangdong → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
@@ -853,7 +853,7 @@
         "vietnamAseanLessonEn": "Offers packaging and flavor-innovation lessons for Vietnamese Hai Duong mung bean cakes.",
         "flagshipAddressZh": "澳门特别行政区耶稣会纪念广场",
         "imgHintSlug": "macau-almond-cookie",
-        "imagePath": "assets/images/prov_items/macau/d4.jpg",
+        "imagePath": "assets/images/prov_items/macau/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 英记饼家 tại Bán đảo Ma Cao (澳门特别行政区耶稣会纪念广场).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Ma Cao → 2) Lên men / canh lửa truyền thống (Bánh tơi xốp tan ngay trên đầu lưỡi, dậy hương đậu xanh rang và hạnh nhân bùi ngọt thanh.) → 3) Đóng gói chuẩn Lão Tự Hiệu Ma Cao & Chuẩn vệ sinh thực phẩm đặc khu Ma Cao → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Macau SAR → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -887,7 +887,7 @@
         "vietnamAseanLessonEn": "Parallels 19th-century East-West culinary fusion stories in historic Hanoi and Saigon dining rooms.",
         "flagshipAddressZh": "广东省广州市越秀区北京路342号",
         "imgHintSlug": "guangzhou-taipingguan",
-        "imagePath": "assets/images/prov_items/guangdong/d0.jpg",
+        "imagePath": "assets/images/prov_items/guangdong/d3.jpg",
         "visitTipVi": "Ghé hiệu chính thức 太平馆 tại Việt Tú, Quảng Châu, Quảng Đông (广东省广州市越秀区北京路342号).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Quảng Đông → 2) Lên men / canh lửa truyền thống (Da chim quay giòn đỏ hổ phách, thịt mọng nước, sốt Thụy Sĩ ngọt đậm ánh nâu đen đặc trưng.) → 3) Đóng gói chuẩn Trung Hoa Lão Tự Hiệu & Di sản Ẩm thực Giao thoa Đông–Tây Quảng Châu → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Guangdong → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -921,7 +921,7 @@
         "vietnamAseanLessonEn": "Gold-standard case for lab-verified Vietnamese bird's nest and culinary herb retail expansion.",
         "flagshipAddressZh": "香港特别行政区中环皇后大道中152号",
         "imgHintSlug": "hongkong-botanical",
-        "imagePath": "assets/images/prov_items/hongkong/h1.jpg",
+        "imagePath": "assets/images/prov_items/hongkong/h0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 余仁生 tại Trung Hoàn, Hồng Kông (香港特别行政区中环皇后大道中152号).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu đạo địa tại Hồng Kông → 2) Bào chế theo gia huấn (Bao bì sạch chuẩn hóa, thảo mộc khô đều không ẩm mốc, định lượng rõ ràng tiện lợi cho gia đình đô thị.) → 3) Kiểm định Chuẩn kiểm định chất lượng Hồng Kông Q-Mark & GMP Quốc tế → 4) Đóng sáp/bao bì chống ẩm và niêm phong truy xuất.",
         "craftProcessStepsEn": "1) Source Daodi botanicals in Hong Kong SAR → 2) Process to classical formulation (Hong Kong Q-Mark Quality Standard & International GMP Certification) → 3) Audit under Chinese Pharmacopoeia / GMP → 4) Seal anti-counterfeit packaging.",
@@ -955,7 +955,7 @@
         "vietnamAseanLessonEn": "Direct parallel for CITES-compliant sustainable cultivation of Vietnamese Khanh Hoa and Quang Nam agarwood.",
         "flagshipAddressZh": "海南省海口市龙华区骑楼老街",
         "imgHintSlug": "hainan-agarwood",
-        "imagePath": "assets/images/prov_items/hainan/h2.jpg",
+        "imagePath": "assets/images/prov_items/hainan/h0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 海南沉香古坊 tại Hải Khẩu / Đồn Xương, Hải Nam (海南省海口市龙华区骑楼老街).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu tự nhiên vùng Hải Nam → 2) Chế tác thủ công nhiều chặng (Mùi hương thanh ngọt mát pha vị thảo mộc biển đảo, khói trắng mỏng nhẹ không cay mắt.) → 3) Ký triện nghệ nhân & chuẩn Chỉ dẫn Địa lý Trầm hương Hải Nam & Chuẩn hương thủ công không hóa chất → 4) Đóng hộp bảo quản chống ẩm.",
         "craftProcessStepsEn": "1) Prepare natural fibers, clay, timber, or ore in Hainan → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
@@ -989,7 +989,7 @@
         "vietnamAseanLessonEn": "Inspires karst-cave maturation for Northern Vietnamese traditional rice spirits to build premium provenance.",
         "flagshipAddressZh": "广西壮族自治区桂林市象山区上海路",
         "imgHintSlug": "guilin-sanhua",
-        "imagePath": "assets/images/prov_items/guangxi/h3.jpg",
+        "imagePath": "assets/images/prov_items/guangxi/h0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 桂林三花酒 tại Quế Lâm, Quảng Tây (广西壮族自治区桂林市象山区上海路).",
         "craftProcessStepsVi": "1) Thu hái vụ xuân / ủ men cao lương tại Quảng Tây → 2) Chế tác theo quy trình (Trong vắt như pha lê, lắc chai nổi ba lớp bọt hoa li ti lâu tan ('Tam Hoa'), thơm hương gạo ngọt và mật ong dịu.) → 3) Ủ chum sành / định cấp Chỉ dẫn Địa lý Quốc gia & Chuẩn Bạch tửu hương gạo GB/T 10781.3 → 4) Gắn tem truy xuất vùng lõi.",
         "craftProcessStepsEn": "1) Harvest single-origin leaves or grain in Guangxi → 2) Panning or clay-cellar distillation → 3) Earthenware aging under GI spec → 4) Attach tamper-evident seals.",
@@ -1023,7 +1023,7 @@
         "vietnamAseanLessonEn": "Shows how traditional fermented rice wine can be positioned alongside fine wines in upscale gastronomy.",
         "flagshipAddressZh": "浙江省绍兴市柯桥区湖塘街道",
         "imgHintSlug": "shaoxing-huangjiu",
-        "imagePath": "assets/images/prov_items/zhejiang/h4.jpg",
+        "imagePath": "assets/images/prov_items/zhejiang/d3.jpg",
         "visitTipVi": "Ghé hiệu chính thức 塔牌绍兴酒 tại Thiệu Hưng, Chiết Giang (浙江省绍兴市柯桥区湖塘街道).",
         "craftProcessStepsVi": "1) Thu hái vụ xuân / ủ men cao lương tại Chiết Giang → 2) Chế tác theo quy trình (Sắc hổ phách óng ánh, hương thơm phức hợp của quả khô và mạch nha, vị êm tròn hậu sâu.) → 3) Ủ chum sành / định cấp Chỉ dẫn Địa lý EU–China GI & Chuẩn Hoàng tửu GB/T 17946 → 4) Gắn tem truy xuất vùng lõi.",
         "craftProcessStepsEn": "1) Harvest single-origin leaves or grain in Zhejiang → 2) Panning or clay-cellar distillation → 3) Earthenware aging under GI spec → 4) Attach tamper-evident seals.",
@@ -1057,7 +1057,7 @@
         "vietnamAseanLessonEn": "Direct technical model for compressed aging and EU MRL compliance in Vietnamese ancient-tree teas.",
         "flagshipAddressZh": "云南省大理白族自治州大理市建设西路13号",
         "imgHintSlug": "yunnan-tuocha",
-        "imagePath": "assets/images/prov_items/yunnan/h0.jpg",
+        "imagePath": "assets/images/prov_items/yunnan/h2.jpg",
         "visitTipVi": "Ghé hiệu chính thức 下关沱茶 tại Đại Lý, Vân Nam (云南省大理白族自治州大理市建设西路13号).",
         "craftProcessStepsVi": "1) Thu hái vụ xuân / ủ men cao lương tại Vân Nam → 2) Chế tác theo quy trình (Nước trà vàng cam sáng trong, hương khói nhẹ đặc trưng và vị chát thanh chuyển ngọt hậu kéo dài.) → 3) Ủ chum sành / định cấp Di sản Văn hóa Phi vật thể Quốc gia (2011) & Chuẩn Trà Phổ Nhĩ GB/T 22111 → 4) Gắn tem truy xuất vùng lõi.",
         "craftProcessStepsEn": "1) Harvest single-origin leaves or grain in Yunnan → 2) Panning or clay-cellar distillation → 3) Earthenware aging under GI spec → 4) Attach tamper-evident seals.",
@@ -1125,7 +1125,7 @@
         "vietnamAseanLessonEn": "Demonstrates how living physical heritage sites create uncopiable brand moats.",
         "flagshipAddressZh": "四川省泸州市江阳区国窖广场",
         "imgHintSlug": "luzhou-baijiu",
-        "imagePath": "assets/images/prov_items/sichuan/h2.jpg",
+        "imagePath": "assets/images/prov_items/sichuan/h1.jpg",
         "visitTipVi": "Ghé hiệu chính thức 泸州老窖 tại Lô Châu, Tứ Xuyên (四川省泸州市江阳区国窖广场).",
         "craftProcessStepsVi": "1) Thu hái vụ xuân / ủ men cao lương tại Tứ Xuyên → 2) Chế tác theo quy trình (Hương thơm hầm ủ đặc trưng sâu lắng, vị rượu đầy đặn cân bằng, hậu vị kéo dài thanh sạch.) → 3) Ủ chum sành / định cấp Di tích Văn hóa Trọng điểm Quốc gia (1996) & Di sản Phi vật thể Quốc gia (2006) → 4) Gắn tem truy xuất vùng lõi.",
         "craftProcessStepsEn": "1) Harvest single-origin leaves or grain in Sichuan → 2) Panning or clay-cellar distillation → 3) Earthenware aging under GI spec → 4) Attach tamper-evident seals.",
@@ -1159,7 +1159,7 @@
         "vietnamAseanLessonEn": "Shows how ancient-town snacks can be packaged into iconic destination souvenirs.",
         "flagshipAddressZh": "重庆市沙坪坝区磁器口正街60号",
         "imgHintSlug": "chongqing-mahua",
-        "imagePath": "assets/images/prov_items/chongqing/d3.jpg",
+        "imagePath": "assets/images/prov_items/chongqing/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 陈昌银麻花 tại Cổ trấn Từ Khí Khẩu, Trùng Khánh (重庆市沙坪坝区磁器口正街60号).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Trùng Khánh → 2) Lên men / canh lửa truyền thống (Vàng ươm, giòn rụm không cứng, nổi bật vị béo bùi của mè rang và hương tê nhẹ của hoa tiêu Tứ Xuyên – Trùng Khánh.) → 3) Đóng gói chuẩn Lão Tự Hiệu Trùng Khánh & Di sản Ẩm thực Phi vật thể Trùng Khánh → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Chongqing → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -1193,7 +1193,7 @@
         "vietnamAseanLessonEn": "Demonstrates how indigenous natural aging vessels create a distinct, protected flavor category.",
         "flagshipAddressZh": "陕西省宝鸡市凤翔区柳林镇",
         "imgHintSlug": "shaanxi-xifeng",
-        "imagePath": "assets/images/prov_items/shaanxi/h4.jpg",
+        "imagePath": "assets/images/prov_items/shaanxi/h0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 西凤酒 tại Phượng Tường, Bảo Kê, Thiểm Tây (陕西省宝鸡市凤翔区柳林镇).",
         "craftProcessStepsVi": "1) Thu hái vụ xuân / ủ men cao lương tại Thiểm Tây → 2) Chế tác theo quy trình (Hội tụ độ thanh của Thanh Hương và độ đậm của Nồng Hương, có thoảng vị hạnh nhân ngọt và mùi gỗ mật ong dịu.) → 3) Ủ chum sành / định cấp Di sản Văn hóa Phi vật thể Quốc gia (2021) & Chuẩn GB/T 19508 → 4) Gắn tem truy xuất vùng lõi.",
         "craftProcessStepsEn": "1) Harvest single-origin leaves or grain in Shaanxi → 2) Panning or clay-cellar distillation → 3) Earthenware aging under GI spec → 4) Attach tamper-evident seals.",
@@ -1261,7 +1261,7 @@
         "vietnamAseanLessonEn": "Template for chemical-free Vietnamese cinnamon and star-anise incense targeting global wellness retail.",
         "flagshipAddressZh": "青海省西宁市湟中区金塔路",
         "imgHintSlug": "qinghai-incense",
-        "imagePath": "assets/images/prov_items/qinghai/h1.jpg",
+        "imagePath": "assets/images/prov_items/qinghai/h0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 塔尔寺藏香坊 tại Hoàng Trung, Tây Ninh, Thanh Hải (青海省西宁市湟中区金塔路).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu tự nhiên vùng Thanh Hải → 2) Chế tác thủ công nhiều chặng (Que hương không tăm tre, cháy đều tro sạch, tỏa mùi gỗ bách và thảo mộc cao nguyên trầm ấm thanh tịnh.) → 3) Ký triện nghệ nhân & chuẩn Di sản Văn hóa Phi vật thể Quốc gia & Chuẩn hương thảo mộc tự nhiên → 4) Đóng hộp bảo quản chống ẩm.",
         "craftProcessStepsEn": "1) Prepare natural fibers, clay, timber, or ore in Qinghai → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
@@ -1295,7 +1295,7 @@
         "vietnamAseanLessonEn": "Shows how niche regional produce can command premium export margins via EU Organic certification.",
         "flagshipAddressZh": "宁夏回族自治区中卫市中宁县滨河大道",
         "imgHintSlug": "ningxia-goji",
-        "imagePath": "assets/images/prov_items/ningxia/d2.jpg",
+        "imagePath": "assets/images/prov_items/ningxia/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 中宁枸杞老号 tại Trung Ninh, Trung Vệ, Ninh Hạ (宁夏回族自治区中卫市中宁县滨河大道).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Ninh Hạ → 2) Lên men / canh lửa truyền thống (Quả thon dài đầu cuống có chấm trắng đặc trưng, thả vào nước ấm nổi lâu không chìm ngay, vị ngọt thanh hậu hơi đắng nhẹ tự nhiên.) → 3) Đóng gói chuẩn Chỉ dẫn Địa lý EU–China GI & Chuẩn Quốc gia Kỷ tử GB/T 18672 → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Ningxia → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -1329,7 +1329,7 @@
         "vietnamAseanLessonEn": "Highlights independent gemological lab certification as essential for protecting Vietnamese Luc Yen gemstone crafts.",
         "flagshipAddressZh": "新疆维吾尔自治区和田地区和田市玉都大道",
         "imgHintSlug": "xinjiang-jade",
-        "imagePath": "assets/images/prov_items/xinjiang/h3.jpg",
+        "imagePath": "assets/images/prov_items/xinjiang/h0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 和田玉雕古坊 tại Hòa Điền, Tân Cương (新疆维吾尔自治区和田地区和田市玉都大道).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu tự nhiên vùng Tân Cương → 2) Chế tác thủ công nhiều chặng (Chất ngọc mịn dẻo ánh mỡ cừu ấm áp, đường chạm uyển chuyển không góc sắc, cầm chắc tay và giữ nhiệt dịu.) → 3) Ký triện nghệ nhân & chuẩn Chuẩn Quốc gia Kiểm định Ngọc Hòa Điền GB/T 38821 & Di sản Phi vật thể → 4) Đóng hộp bảo quản chống ẩm.",
         "craftProcessStepsEn": "1) Prepare natural fibers, clay, timber, or ore in Xinjiang → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
@@ -1363,7 +1363,7 @@
         "vietnamAseanLessonEn": "Showcases eco-friendly traditional water-power craft paired with highland cultural heritage tourism.",
         "flagshipAddressZh": "西藏自治区拉萨市尼木县吞巴镇",
         "imgHintSlug": "tibet-incense",
-        "imagePath": "assets/images/prov_items/tibet/h4.jpg",
+        "imagePath": "assets/images/prov_items/tibet/h0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 尼木吞巴藏香坊 tại Huyện Ni Mộc, Lhasa, Tây Tạng (西藏自治区拉萨市尼木县吞巴镇).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu tự nhiên vùng Tây Tạng → 2) Chế tác thủ công nhiều chặng (Hương thơm mộc mạc sâu lắng của rừng bách tuyết sơn và thảo mộc nguyên chất, không pha keo hóa học.) → 3) Ký triện nghệ nhân & chuẩn Di sản Văn hóa Phi vật thể Quốc gia (2008) & Chỉ dẫn Địa lý Tàng Hương Ni Mộc → 4) Đóng hộp bảo quản chống ẩm.",
         "craftProcessStepsEn": "1) Prepare natural fibers, clay, timber, or ore in Tibet → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
@@ -1399,7 +1399,7 @@
         "vietnamAseanLessonEn": "Demonstrates how Vietnamese heritage charcuterie and braised delicacies can standardize master-broth recipes for modern retail.",
         "flagshipAddressZh": "北京市西城区西直门内大街213号",
         "imgHintSlug": "beijing-braised-pork",
-        "imagePath": "assets/images/prov_items/beijing/d0.jpg",
+        "imagePath": "assets/images/prov_items/beijing/f1.jpg",
         "visitTipVi": "Ghé hiệu chính thức 天福号 tại Tây Thành, Bắc Kinh (北京市西城区西直门内大街213号).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Bắc Kinh → 2) Lên men / canh lửa truyền thống (Màu hổ phách đỏ óng, béo ngậy mà không ngán, hương thảo mộc thanh nhẹ, cắt lát mỏng vẫn giữ cấu trúc săn chắc.) → 3) Đóng gói chuẩn Di sản Văn hóa Phi vật thể Quốc gia (2008) & Chuẩn vệ sinh thực phẩm GB 2726 → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Beijing → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -1433,7 +1433,7 @@
         "vietnamAseanLessonEn": "Blueprint for cold-chain logistics and flavor consistency in scaling traditional cooked-food retail chains.",
         "flagshipAddressZh": "山西省太原市迎泽区柳巷南路",
         "imgHintSlug": "shanxi-braised",
-        "imagePath": "assets/images/prov_items/shanxi/d2.jpg",
+        "imagePath": "assets/images/prov_items/shanxi/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 六味斋 tại Thái Nguyên, Sơn Tây (山西省太原市迎泽区柳巷南路).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Sơn Tây → 2) Lên men / canh lửa truyền thống (Thịt đỏ nâu bóng mịn, thơm vị đinh hương và hoa tiêu nhẹ, thịt nạc không khô xơ.) → 3) Đóng gói chuẩn Di sản Văn hóa Phi vật thể Quốc gia (2011) & Chứng nhận ISO 22000 → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Shanxi → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -1467,7 +1467,7 @@
         "vietnamAseanLessonEn": "Shows how Vietnamese fermented condiments like craft fish sauce and rice vinegar can adopt vintage age-grading.",
         "flagshipAddressZh": "山西省太原市迎泽区桥头街",
         "imgHintSlug": "shanxi-vinegar",
-        "imagePath": "assets/images/prov_items/shanxi/d3.jpg",
+        "imagePath": "assets/images/prov_items/shanxi/d1.jpg",
         "visitTipVi": "Ghé hiệu chính thức 宁化府益源庆 tại Thái Nguyên, Sơn Tây (山西省太原市迎泽区桥头街).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Sơn Tây → 2) Lên men / canh lửa truyền thống (Màu nâu đen ánh tím, độ chua thanh dịu hậu ngọt, rót ra bám thành bát, bảo quản tự nhiên lâu năm không biến chất.) → 3) Đóng gói chuẩn Chỉ dẫn Địa lý Quốc gia & Chuẩn GB/T 19777 Giấm già Sơn Tây → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Shanxi → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -1501,7 +1501,7 @@
         "vietnamAseanLessonEn": "Illustrates turning seasonal baked goods into year-round heritage tourism landmarks.",
         "flagshipAddressZh": "黑龙江省哈尔滨市道外区靖宇街392号",
         "imgHintSlug": "harbin-pastry",
-        "imagePath": "assets/images/prov_items/heilongjiang/d4.jpg",
+        "imagePath": "assets/images/prov_items/heilongjiang/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 老鼎丰 tại Đạo Ngoại, Cáp Nhĩ Tân, Hắc Long Giang (黑龙江省哈尔滨市道外区靖宇街392号).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Hắc Long Giang → 2) Lên men / canh lửa truyền thống (Vỏ bánh vàng rơm nhiều lớp mỏng, nhân ngũ nhân bùi thơm không gắt đường, giữ độ giòn tốt trong khí hậu lạnh.) → 3) Đóng gói chuẩn Trung Hoa Lão Tự Hiệu & Di sản Phi vật thể Tỉnh Hắc Long Giang → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Heilongjiang → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -1569,7 +1569,7 @@
         "vietnamAseanLessonEn": "Showcases scaling regional street-food pairings via central kitchens without losing artisanal identity.",
         "flagshipAddressZh": "辽宁省沈阳市沈河区中街正阳街",
         "imgHintSlug": "shenyang-smoked-pork",
-        "imagePath": "assets/images/prov_items/liaoning/d1.jpg",
+        "imagePath": "assets/images/prov_items/liaoning/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 李连贵熏肉大饼 tại Thẩm Dương, Liêu Ninh (辽宁省沈阳市沈河区中街正阳街).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Liêu Ninh → 2) Lên men / canh lửa truyền thống (Thịt màu đỏ nâu óng, thơm mùi khói dịu không đắng, ăn cùng bánh nướng giòn rụm, hành lá và tương ngọt.) → 3) Đóng gói chuẩn Trung Hoa Lão Tự Hiệu & Di sản Ẩm thực Phi vật thể Tỉnh Liêu Ninh → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Liaoning → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -1603,7 +1603,7 @@
         "vietnamAseanLessonEn": "Lesson for Vietnamese heritage soy pastes like Ban or Nam Dan sauce to enter standardized HORECA supply chains.",
         "flagshipAddressZh": "河北省保定市莲池区西大街",
         "imgHintSlug": "baoding-sauce",
-        "imagePath": "assets/images/prov_items/hebei/d2.jpg",
+        "imagePath": "assets/images/prov_items/hebei/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 保定槐茂酱园 tại Bảo Định, Hà Bắc (河北省保定市莲池区西大街).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Hà Bắc → 2) Lên men / canh lửa truyền thống (Tương sánh mịn màu nâu đỏ sáng, vị ngọt thanh quyện mặn dịu, rau củ muối giòn sần sật không gắt muối.) → 3) Đóng gói chuẩn Trung Hoa Lão Tự Hiệu Đợt 1 & Chuẩn gia vị lên men quốc gia → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Hebei → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -1637,7 +1637,7 @@
         "vietnamAseanLessonEn": "Inspires integrating highland Vietnamese ingredients like buckwheat and wild honey into regional heritage pastries.",
         "flagshipAddressZh": "内蒙古自治区呼和浩特市玉泉区大召前街",
         "imgHintSlug": "inner-mongolia-pastry",
-        "imagePath": "assets/images/prov_items/inner-mongolia/d3.jpg",
+        "imagePath": "assets/images/prov_items/inner-mongolia/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 麦香村 tại Hô Hòa Hạo Đặc, Nội Mông (内蒙古自治区呼和浩特市玉泉区大召前街).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Nội Mông → 2) Lên men / canh lửa truyền thống (Bánh xốp mịn, thơm ngậy vị sữa tự nhiên và hạt lanh rang, ăn cùng trà sữa mặn Mông Cổ rất hòa vị.) → 3) Đóng gói chuẩn Lão Tự Hiệu Khu Tự trị Nội Mông & Chuẩn an toàn thực phẩm bánh nướng GB 7099 → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Inner Mongolia → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -1671,7 +1671,7 @@
         "vietnamAseanLessonEn": "Demonstrates tying traditional grain spirits to regional agricultural heritage and water-source storytelling.",
         "flagshipAddressZh": "内蒙古自治区巴彦淖尔市杭锦后旗陕坝镇",
         "imgHintSlug": "hetao-baijiu",
-        "imagePath": "assets/images/prov_items/inner-mongolia/h4.jpg",
+        "imagePath": "assets/images/prov_items/inner-mongolia/h0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 河套酒业 tại Ba Ngạn Náo Nhĩ, Nội Mông (内蒙古自治区巴彦淖尔市杭锦后旗陕坝镇).",
         "craftProcessStepsVi": "1) Thu hái vụ xuân / ủ men cao lương tại Nội Mông → 2) Chế tác theo quy trình (Rượu trong suốt, hương ngũ cốc thanh thoát, uống êm không gắt cổ, hậu vị ngọt dịu.) → 3) Ủ chum sành / định cấp Trung Hoa Lão Tự Hiệu & Chỉ dẫn Địa lý Bạch tửu Hà Sáo → 4) Gắn tem truy xuất vùng lõi.",
         "craftProcessStepsEn": "1) Harvest single-origin leaves or grain in Inner Mongolia → 2) Panning or clay-cellar distillation → 3) Earthenware aging under GI spec → 4) Attach tamper-evident seals.",
@@ -1705,7 +1705,7 @@
         "vietnamAseanLessonEn": "Strategic model for heritage packaging and craft storytelling applicable to Vietnamese Do paper and lacquerware.",
         "flagshipAddressZh": "安徽省黄山市屯溪区老街",
         "imgHintSlug": "inkstone",
-        "imagePath": "assets/images/prov_items/anhui/h0.jpg",
+        "imagePath": "assets/images/prov_items/anhui/h4.jpg",
         "visitTipVi": "Ghé hiệu chính thức 胡开文墨庄 tại Tích Khê / Đồn Khê, Hoàng Sơn, An Huy (安徽省黄山市屯溪区老街).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu tự nhiên vùng An Huy → 2) Chế tác thủ công nhiều chặng (Mặt mực ánh tím xanh đen thẫm ('Nhược thạch nhược ngọc'), nét mài trơn không cặn, bền màu nghìn năm trên giấy Tuyên Chỉ.) → 3) Ký triện nghệ nhân & chuẩn Chuẩn Quốc gia QB/T 1746 & Di sản Văn hóa Phi vật thể Quốc gia (2006) → 4) Đóng hộp bảo quản chống ẩm.",
         "craftProcessStepsEn": "1) Prepare natural fibers, clay, timber, or ore in Anhui → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
@@ -1739,7 +1739,7 @@
         "vietnamAseanLessonEn": "Demonstrates elevating utilitarian craft items into high-value collectibles by preserving historical master molds.",
         "flagshipAddressZh": "上海市黄浦区福州路429号",
         "imgHintSlug": "shanghai-inkstick",
-        "imagePath": "assets/images/prov_items/shanghai/h1.jpg",
+        "imagePath": "assets/images/prov_items/shanghai/h3.jpg",
         "visitTipVi": "Ghé hiệu chính thức 曹素功墨庄 tại Hoàng Phố, Thượng Hải (上海市黄浦区福州路429号).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu tự nhiên vùng Thượng Hải → 2) Chế tác thủ công nhiều chặng (Mài ra năm sắc thái đậm nhạt (Mặc phân ngũ sắc), chạm khắc rồng phượng mạ vàng tinh xảo như tác phẩm điêu khắc thu nhỏ.) → 3) Ký triện nghệ nhân & chuẩn Di sản Văn hóa Phi vật thể Quốc gia (2011) & Chuẩn mực thư họa bảo tàng → 4) Đóng hộp bảo quản chống ẩm.",
         "craftProcessStepsEn": "1) Prepare natural fibers, clay, timber, or ore in Shanghai → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
@@ -1807,7 +1807,7 @@
         "vietnamAseanLessonEn": "Demonstrates how urban retro packaging preserves multi-generational appeal for everyday heritage snacks.",
         "flagshipAddressZh": "上海市黄浦区南京东路766号",
         "imgHintSlug": "shanghai-biscuit",
-        "imagePath": "assets/images/prov_items/shanghai/d4.jpg",
+        "imagePath": "assets/images/prov_items/shanghai/d1.jpg",
         "visitTipVi": "Ghé hiệu chính thức 泰康食品 tại Phố đi bộ Nam Kinh Đông, Thượng Hải (上海市黄浦区南京东路766号).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Thượng Hải → 2) Lên men / canh lửa truyền thống (Bánh mỏng giòn tan, hương hành phi dịu nhẹ hòa quyện vị bơ thanh, hộp thiếc phong cách Hải Phái thập niên 1930.) → 3) Đóng gói chuẩn Trung Hoa Lão Tự Hiệu & Chuẩn an toàn thực phẩm bánh quy GB/T 20980 → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Shanghai → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -1841,7 +1841,7 @@
         "vietnamAseanLessonEn": "Direct blueprint for scaling Vietnamese Banh Chung and Banh Tet into year-round exportable packaged foods.",
         "flagshipAddressZh": "浙江省嘉兴市南湖区建国南路286号",
         "imgHintSlug": "jiaxing-zongzi",
-        "imagePath": "assets/images/prov_items/zhejiang/d0.jpg",
+        "imagePath": "assets/images/prov_items/zhejiang/d2.jpg",
         "visitTipVi": "Ghé hiệu chính thức 五芳斋 tại Gia Hưng, Chiết Giang (浙江省嘉兴市南湖区建国南路286号).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Chiết Giang → 2) Lên men / canh lửa truyền thống (Bánh hình gối chéo sắc cạnh, hạt nếp dẻo bóng thơm mùi lá tre, nhân thịt ba chỉ tan mềm thấm tương.) → 3) Đóng gói chuẩn Di sản Văn hóa Phi vật thể Quốc gia (2011) & Chuẩn thực phẩm xuất khẩu HACCP → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Zhejiang → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -1875,7 +1875,7 @@
         "vietnamAseanLessonEn": "Shows how a 300-year-old craft shop can modernize into a high-precision technical retail chain.",
         "flagshipAddressZh": "上海市黄浦区南京东路622号",
         "imgHintSlug": "shanghai-optics",
-        "imagePath": "assets/images/prov_items/shanghai/h1.jpg",
+        "imagePath": "assets/images/prov_items/shanghai/h4.jpg",
         "visitTipVi": "Ghé hiệu chính thức 吴良材眼镜 tại Hoàng Phố, Thượng Hải (上海市黄浦区南京东路622号).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu tự nhiên vùng Thượng Hải → 2) Chế tác thủ công nhiều chặng (Tròng kính độ trong suốt cao, gọng cân bằng trọng tâm không ép sống mũi, thiết kế thanh lịch phong cách Thượng Hải cổ.) → 3) Ký triện nghệ nhân & chuẩn Trung Hoa Lão Tự Hiệu Đợt 1 & Chuẩn quang học quốc gia GB 13511 → 4) Đóng hộp bảo quản chống ẩm.",
         "craftProcessStepsEn": "1) Prepare natural fibers, clay, timber, or ore in Shanghai → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
@@ -1909,7 +1909,7 @@
         "vietnamAseanLessonEn": "Model for master-artisan certification and native clay protection applicable to Bat Trang and Phu Lang ceramics.",
         "flagshipAddressZh": "江苏省无锡市宜兴市丁蜀镇汤渡东路",
         "imgHintSlug": "yixing-zisha",
-        "imagePath": "assets/images/prov_items/jiangsu/h2.jpg",
+        "imagePath": "assets/images/prov_items/jiangsu/h4.jpg",
         "visitTipVi": "Ghé hiệu chính thức 宜兴紫砂工艺厂 tại Đinh Thục, Nghi Hưng, Giang Tô (江苏省无锡市宜兴市丁蜀镇汤渡东路).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu tự nhiên vùng Giang Tô → 2) Chế tác thủ công nhiều chặng (Giữ nhiệt lâu mà không làm chín lá trà, càng pha trà bề mặt ấm càng lên nước bóng mịn như ngọc (Bao Tương).) → 3) Ký triện nghệ nhân & chuẩn Di sản Văn hóa Phi vật thể Quốc gia (2006) & Chỉ dẫn Địa lý Gốm Tử Sa Nghi Hưng → 4) Đóng hộp bảo quản chống ẩm.",
         "craftProcessStepsEn": "1) Prepare natural fibers, clay, timber, or ore in Jiangsu → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
@@ -1943,7 +1943,7 @@
         "vietnamAseanLessonEn": "Shows how pairing a traditional sauce with a regional produce icon cements lasting culinary demand.",
         "flagshipAddressZh": "山东省济南市天桥区制锦市街",
         "imgHintSlug": "jinan-sauce",
-        "imagePath": "assets/images/prov_items/shandong/d3.jpg",
+        "imagePath": "assets/images/prov_items/shandong/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 德馨斋 tại Tế Nam, Sơn Đông (山东省济南市天桥区制锦市街).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Sơn Đông → 2) Lên men / canh lửa truyền thống (Sắc nâu đỏ óng, hương tương dậy mùi ngay khi mở nắp, vị ngọt đậm hậu mặn hài hòa.) → 3) Đóng gói chuẩn Trung Hoa Lão Tự Hiệu & Chuẩn sản xuất tương lên men tự nhiên Sơn Đông → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Shandong → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -1977,7 +1977,7 @@
         "vietnamAseanLessonEn": "IQF freezing standards offer a scalable export model for Vietnamese delicate steamed dumplings.",
         "flagshipAddressZh": "河南省开封市鼓楼区寺后街8号",
         "imgHintSlug": "kaifeng-dumpling",
-        "imagePath": "assets/images/prov_items/henan/d4.jpg",
+        "imagePath": "assets/images/prov_items/henan/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 开封第一楼 tại Khai Phong, Hà Nam (河南省开封市鼓楼区寺后街8号).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Hà Nam → 2) Lên men / canh lửa truyền thống (Nhấc lên như đèn lồng, đặt xuống như hoa cúc; nước súp bên trong đậm đà nóng hổi nhưng vỏ bánh không rách.) → 3) Đóng gói chuẩn Trung Hoa Lão Tự Hiệu & Di sản Ẩm thực Phi vật thể Tỉnh Hà Nam → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Henan → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -2011,7 +2011,7 @@
         "vietnamAseanLessonEn": "Dual retail model applicable to Vietnamese heritage pho and regional noodle houses.",
         "flagshipAddressZh": "湖南省长沙市天心区三兴街",
         "imgHintSlug": "changsha-noodles",
-        "imagePath": "assets/images/prov_items/hunan/d0.jpg",
+        "imagePath": "assets/images/prov_items/hunan/d1.jpg",
         "visitTipVi": "Ghé hiệu chính thức 杨裕兴 tại Trường Sa, Hồ Nam (湖南省长沙市天心区三兴街).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Hồ Nam → 2) Lên men / canh lửa truyền thống (Sợi mì vàng nhạt mềm mượt nhưng có độ bật, nước dùng trong ngọt thanh cân bằng vị cay ấm của ớt Hồ Nam.) → 3) Đóng gói chuẩn Trung Hoa Lão Tự Hiệu & Di sản Ẩm thực Phi vật thể Trường Sa → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Hunan → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -2113,7 +2113,7 @@
         "vietnamAseanLessonEn": "Highlights historic kiln links between Shiwan pottery and Southern Vietnam's Cay Mai ceramics for joint heritage curation.",
         "flagshipAddressZh": "广东省佛山市禅城区石湾镇太平街",
         "imgHintSlug": "shiwan-ceramics",
-        "imagePath": "assets/images/prov_items/guangdong/h3.jpg",
+        "imagePath": "assets/images/prov_items/guangdong/h2.jpg",
         "visitTipVi": "Ghé hiệu chính thức 陈太吉石湾陶艺 tại Thạch Loan, Phật Sơn, Quảng Đông (广东省佛山市禅城区石湾镇太平街).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu tự nhiên vùng Quảng Đông → 2) Chế tác thủ công nhiều chặng (Gốm men dày ánh xanh ngọc hoặc đỏ lưu ly, tượng gốm truyền thần sống động; rượu ủ chum trong thanh thơm dịu.) → 3) Ký triện nghệ nhân & chuẩn Di sản Văn hóa Phi vật thể Quốc gia (2006) & Trung Hoa Lão Tự Hiệu → 4) Đóng hộp bảo quản chống ẩm.",
         "craftProcessStepsEn": "1) Prepare natural fibers, clay, timber, or ore in Guangdong → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
@@ -2147,7 +2147,7 @@
         "vietnamAseanLessonEn": "Offers packaging and flavor-innovation lessons for Vietnamese Hai Duong mung bean cakes.",
         "flagshipAddressZh": "澳门特别行政区耶稣会纪念广场",
         "imgHintSlug": "macau-almond-cookie",
-        "imagePath": "assets/images/prov_items/macau/d4.jpg",
+        "imagePath": "assets/images/prov_items/macau/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 英记饼家 tại Bán đảo Ma Cao (澳门特别行政区耶稣会纪念广场).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Ma Cao → 2) Lên men / canh lửa truyền thống (Bánh tơi xốp tan ngay trên đầu lưỡi, dậy hương đậu xanh rang và hạnh nhân bùi ngọt thanh.) → 3) Đóng gói chuẩn Lão Tự Hiệu Ma Cao & Chuẩn vệ sinh thực phẩm đặc khu Ma Cao → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Macau SAR → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -2181,7 +2181,7 @@
         "vietnamAseanLessonEn": "Parallels 19th-century East-West culinary fusion stories in historic Hanoi and Saigon dining rooms.",
         "flagshipAddressZh": "广东省广州市越秀区北京路342号",
         "imgHintSlug": "guangzhou-taipingguan",
-        "imagePath": "assets/images/prov_items/guangdong/d0.jpg",
+        "imagePath": "assets/images/prov_items/guangdong/d3.jpg",
         "visitTipVi": "Ghé hiệu chính thức 太平馆 tại Việt Tú, Quảng Châu, Quảng Đông (广东省广州市越秀区北京路342号).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Quảng Đông → 2) Lên men / canh lửa truyền thống (Da chim quay giòn đỏ hổ phách, thịt mọng nước, sốt Thụy Sĩ ngọt đậm ánh nâu đen đặc trưng.) → 3) Đóng gói chuẩn Trung Hoa Lão Tự Hiệu & Di sản Ẩm thực Giao thoa Đông–Tây Quảng Châu → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Guangdong → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -2215,7 +2215,7 @@
         "vietnamAseanLessonEn": "Gold-standard case for lab-verified Vietnamese bird's nest and culinary herb retail expansion.",
         "flagshipAddressZh": "香港特别行政区中环皇后大道中152号",
         "imgHintSlug": "hongkong-botanical",
-        "imagePath": "assets/images/prov_items/hongkong/h1.jpg",
+        "imagePath": "assets/images/prov_items/hongkong/h0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 余仁生 tại Trung Hoàn, Hồng Kông (香港特别行政区中环皇后大道中152号).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu đạo địa tại Hồng Kông → 2) Bào chế theo gia huấn (Bao bì sạch chuẩn hóa, thảo mộc khô đều không ẩm mốc, định lượng rõ ràng tiện lợi cho gia đình đô thị.) → 3) Kiểm định Chuẩn kiểm định chất lượng Hồng Kông Q-Mark & GMP Quốc tế → 4) Đóng sáp/bao bì chống ẩm và niêm phong truy xuất.",
         "craftProcessStepsEn": "1) Source Daodi botanicals in Hong Kong SAR → 2) Process to classical formulation (Hong Kong Q-Mark Quality Standard & International GMP Certification) → 3) Audit under Chinese Pharmacopoeia / GMP → 4) Seal anti-counterfeit packaging.",
@@ -2249,7 +2249,7 @@
         "vietnamAseanLessonEn": "Direct parallel for CITES-compliant sustainable cultivation of Vietnamese Khanh Hoa and Quang Nam agarwood.",
         "flagshipAddressZh": "海南省海口市龙华区骑楼老街",
         "imgHintSlug": "hainan-agarwood",
-        "imagePath": "assets/images/prov_items/hainan/h2.jpg",
+        "imagePath": "assets/images/prov_items/hainan/h0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 海南沉香古坊 tại Hải Khẩu / Đồn Xương, Hải Nam (海南省海口市龙华区骑楼老街).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu tự nhiên vùng Hải Nam → 2) Chế tác thủ công nhiều chặng (Mùi hương thanh ngọt mát pha vị thảo mộc biển đảo, khói trắng mỏng nhẹ không cay mắt.) → 3) Ký triện nghệ nhân & chuẩn Chỉ dẫn Địa lý Trầm hương Hải Nam & Chuẩn hương thủ công không hóa chất → 4) Đóng hộp bảo quản chống ẩm.",
         "craftProcessStepsEn": "1) Prepare natural fibers, clay, timber, or ore in Hainan → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
@@ -2283,7 +2283,7 @@
         "vietnamAseanLessonEn": "Shows how traditional fermented rice wine can be positioned alongside fine wines in upscale gastronomy.",
         "flagshipAddressZh": "浙江省绍兴市柯桥区湖塘街道",
         "imgHintSlug": "shaoxing-huangjiu",
-        "imagePath": "assets/images/prov_items/zhejiang/h4.jpg",
+        "imagePath": "assets/images/prov_items/zhejiang/d3.jpg",
         "visitTipVi": "Ghé hiệu chính thức 塔牌绍兴酒 tại Thiệu Hưng, Chiết Giang (浙江省绍兴市柯桥区湖塘街道).",
         "craftProcessStepsVi": "1) Thu hái vụ xuân / ủ men cao lương tại Chiết Giang → 2) Chế tác theo quy trình (Sắc hổ phách óng ánh, hương thơm phức hợp của quả khô và mạch nha, vị êm tròn hậu sâu.) → 3) Ủ chum sành / định cấp Chỉ dẫn Địa lý EU–China GI & Chuẩn Hoàng tửu GB/T 17946 → 4) Gắn tem truy xuất vùng lõi.",
         "craftProcessStepsEn": "1) Harvest single-origin leaves or grain in Zhejiang → 2) Panning or clay-cellar distillation → 3) Earthenware aging under GI spec → 4) Attach tamper-evident seals.",
@@ -2317,7 +2317,7 @@
         "vietnamAseanLessonEn": "Direct technical model for compressed aging and EU MRL compliance in Vietnamese ancient-tree teas.",
         "flagshipAddressZh": "云南省大理白族自治州大理市建设西路13号",
         "imgHintSlug": "yunnan-tuocha",
-        "imagePath": "assets/images/prov_items/yunnan/h0.jpg",
+        "imagePath": "assets/images/prov_items/yunnan/h2.jpg",
         "visitTipVi": "Ghé hiệu chính thức 下关沱茶 tại Đại Lý, Vân Nam (云南省大理白族自治州大理市建设西路13号).",
         "craftProcessStepsVi": "1) Thu hái vụ xuân / ủ men cao lương tại Vân Nam → 2) Chế tác theo quy trình (Nước trà vàng cam sáng trong, hương khói nhẹ đặc trưng và vị chát thanh chuyển ngọt hậu kéo dài.) → 3) Ủ chum sành / định cấp Di sản Văn hóa Phi vật thể Quốc gia (2011) & Chuẩn Trà Phổ Nhĩ GB/T 22111 → 4) Gắn tem truy xuất vùng lõi.",
         "craftProcessStepsEn": "1) Harvest single-origin leaves or grain in Yunnan → 2) Panning or clay-cellar distillation → 3) Earthenware aging under GI spec → 4) Attach tamper-evident seals.",
@@ -2385,7 +2385,7 @@
         "vietnamAseanLessonEn": "Shows how ancient-town snacks can be packaged into iconic destination souvenirs.",
         "flagshipAddressZh": "重庆市沙坪坝区磁器口正街60号",
         "imgHintSlug": "chongqing-mahua",
-        "imagePath": "assets/images/prov_items/chongqing/d3.jpg",
+        "imagePath": "assets/images/prov_items/chongqing/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 陈昌银麻花 tại Cổ trấn Từ Khí Khẩu, Trùng Khánh (重庆市沙坪坝区磁器口正街60号).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Trùng Khánh → 2) Lên men / canh lửa truyền thống (Vàng ươm, giòn rụm không cứng, nổi bật vị béo bùi của mè rang và hương tê nhẹ của hoa tiêu Tứ Xuyên – Trùng Khánh.) → 3) Đóng gói chuẩn Lão Tự Hiệu Trùng Khánh & Di sản Ẩm thực Phi vật thể Trùng Khánh → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Chongqing → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -2453,7 +2453,7 @@
         "vietnamAseanLessonEn": "Template for chemical-free Vietnamese cinnamon and star-anise incense targeting global wellness retail.",
         "flagshipAddressZh": "青海省西宁市湟中区金塔路",
         "imgHintSlug": "qinghai-incense",
-        "imagePath": "assets/images/prov_items/qinghai/h1.jpg",
+        "imagePath": "assets/images/prov_items/qinghai/h0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 塔尔寺藏香坊 tại Hoàng Trung, Tây Ninh, Thanh Hải (青海省西宁市湟中区金塔路).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu tự nhiên vùng Thanh Hải → 2) Chế tác thủ công nhiều chặng (Que hương không tăm tre, cháy đều tro sạch, tỏa mùi gỗ bách và thảo mộc cao nguyên trầm ấm thanh tịnh.) → 3) Ký triện nghệ nhân & chuẩn Di sản Văn hóa Phi vật thể Quốc gia & Chuẩn hương thảo mộc tự nhiên → 4) Đóng hộp bảo quản chống ẩm.",
         "craftProcessStepsEn": "1) Prepare natural fibers, clay, timber, or ore in Qinghai → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
@@ -2487,7 +2487,7 @@
         "vietnamAseanLessonEn": "Shows how niche regional produce can command premium export margins via EU Organic certification.",
         "flagshipAddressZh": "宁夏回族自治区中卫市中宁县滨河大道",
         "imgHintSlug": "ningxia-goji",
-        "imagePath": "assets/images/prov_items/ningxia/d2.jpg",
+        "imagePath": "assets/images/prov_items/ningxia/d0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 中宁枸杞老号 tại Trung Ninh, Trung Vệ, Ninh Hạ (宁夏回族自治区中卫市中宁县滨河大道).",
         "craftProcessStepsVi": "1) Chọn nguyên liệu theo mùa tại Ninh Hạ → 2) Lên men / canh lửa truyền thống (Quả thon dài đầu cuống có chấm trắng đặc trưng, thả vào nước ấm nổi lâu không chìm ngay, vị ngọt thanh hậu hơi đắng nhẹ tự nhiên.) → 3) Đóng gói chuẩn Chỉ dẫn Địa lý EU–China GI & Chuẩn Quốc gia Kỷ tử GB/T 18672 → 4) Kiểm tra hạn sử dụng và lô sản xuất.",
         "craftProcessStepsEn": "1) Grade seasonal ingredients in Ningxia → 2) Slow clay fermentation or hearth roasting → 3) Verify GB food safety grading → 4) Code lot timestamps.",
@@ -2521,7 +2521,7 @@
         "vietnamAseanLessonEn": "Highlights independent gemological lab certification as essential for protecting Vietnamese Luc Yen gemstone crafts.",
         "flagshipAddressZh": "新疆维吾尔自治区和田地区和田市玉都大道",
         "imgHintSlug": "xinjiang-jade",
-        "imagePath": "assets/images/prov_items/xinjiang/h3.jpg",
+        "imagePath": "assets/images/prov_items/xinjiang/h0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 和田玉雕古坊 tại Hòa Điền, Tân Cương (新疆维吾尔自治区和田地区和田市玉都大道).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu tự nhiên vùng Tân Cương → 2) Chế tác thủ công nhiều chặng (Chất ngọc mịn dẻo ánh mỡ cừu ấm áp, đường chạm uyển chuyển không góc sắc, cầm chắc tay và giữ nhiệt dịu.) → 3) Ký triện nghệ nhân & chuẩn Chuẩn Quốc gia Kiểm định Ngọc Hòa Điền GB/T 38821 & Di sản Phi vật thể → 4) Đóng hộp bảo quản chống ẩm.",
         "craftProcessStepsEn": "1) Prepare natural fibers, clay, timber, or ore in Xinjiang → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
@@ -2555,7 +2555,7 @@
         "vietnamAseanLessonEn": "Showcases eco-friendly traditional water-power craft paired with highland cultural heritage tourism.",
         "flagshipAddressZh": "西藏自治区拉萨市尼木县吞巴镇",
         "imgHintSlug": "tibet-incense",
-        "imagePath": "assets/images/prov_items/tibet/h4.jpg",
+        "imagePath": "assets/images/prov_items/tibet/h0.jpg",
         "visitTipVi": "Ghé hiệu chính thức 尼木吞巴藏香坊 tại Huyện Ni Mộc, Lhasa, Tây Tạng (西藏自治区拉萨市尼木县吞巴镇).",
         "craftProcessStepsVi": "1) Tuyển nguyên liệu tự nhiên vùng Tây Tạng → 2) Chế tác thủ công nhiều chặng (Hương thơm mộc mạc sâu lắng của rừng bách tuyết sơn và thảo mộc nguyên chất, không pha keo hóa học.) → 3) Ký triện nghệ nhân & chuẩn Di sản Văn hóa Phi vật thể Quốc gia (2008) & Chỉ dẫn Địa lý Tàng Hương Ni Mộc → 4) Đóng hộp bảo quản chống ẩm.",
         "craftProcessStepsEn": "1) Prepare natural fibers, clay, timber, or ore in Tibet → 2) Multi-stage hand finishing → 3) Stamp workshop seal → 4) Pack archival protective cases.",
@@ -2593,7 +2593,7 @@
         "exportComplianceChecklistVi": "Đối chiếu triện nghệ nhân, thông số kỹ thuật Trung Hoa Lão Tự Hào (中华老字号) & quy chuẩn vùng miền GB/T và chứng từ xuất khẩu hàng thủ công mỹ nghệ.",
         "exportComplianceChecklistEn": "Confirm master artisan hallmarked signature, archival grade specs (MOFCOM China Time-Honored Brand registry & Chinese GB/T standards), and lawful cultural export paperwork.",
         "visitTipVi": "Tìm hiểu lịch sử cửa hiệu 盛锡福 tại Vương Phủ Tỉnh, Bắc Kinh.",
-        "imagePath": "assets/images/prov_items/beijing/h1.jpg"
+        "imagePath": "assets/images/prov_items/beijing/f2.jpg"
       }
     ],
     "craftProcessFlowcharts12": [
@@ -3334,7 +3334,7 @@
         "terroirAndCraftEn": "Turpan Raisins GI (Xinjiang) derives distinct sugar-acid balance and aroma from Xinjiang's soil and diurnal range under bilateral GI protection.",
         "customsHsAndAuditVi": "Kiểm tra mã vùng trồng, chứng thư kiểm dịch thực vật (Phytosanitary) và ngưỡng dư lượng MRL khi thông quan.",
         "customsHsAndAuditEn": "Cross-check registered orchard origin codes, phytosanitary certificates, and EU/ASEAN MRL agricultural thresholds.",
-        "imagePath": "assets/images/provinces/xinjiang-kanas-lake.jpg"
+        "imagePath": "assets/images/prov_items/xinjiang/f0.jpg"
       },
       {
         "id": "gi-v6-02",
@@ -3359,7 +3359,7 @@
         "terroirAndCraftEn": "Luochuan Apples GI (Shaanxi) derives distinct sugar-acid balance and aroma from Shaanxi's soil and diurnal range under bilateral GI protection.",
         "customsHsAndAuditVi": "Kiểm tra mã vùng trồng, chứng thư kiểm dịch thực vật (Phytosanitary) và ngưỡng dư lượng MRL khi thông quan.",
         "customsHsAndAuditEn": "Cross-check registered orchard origin codes, phytosanitary certificates, and EU/ASEAN MRL agricultural thresholds.",
-        "imagePath": "assets/images/prov_items/shaanxi/h1.jpg"
+        "imagePath": "assets/images/prov_items/shaanxi/f0.jpg"
       },
       {
         "id": "gi-v6-03",
@@ -3384,7 +3384,7 @@
         "terroirAndCraftEn": "Wuchang Fragrant Rice GI (Heilongjiang) from Heilongjiang draws on regional fermentation, mineral water profiles, and codified GI storage rules.",
         "customsHsAndAuditVi": "Đối chiếu hồ sơ truy xuất cơ sở sản xuất vùng bảo hộ, nhãn phụ song ngữ và mã HS thực phẩm chế biến.",
         "customsHsAndAuditEn": "Confirm GI winery/pantry facility registration, EU/Vietnam allergen labeling, and TARIC HS classification.",
-        "imagePath": "assets/images/prov_items/heilongjiang/d2.jpg"
+        "imagePath": "assets/images/prov_items/heilongjiang/f0.jpg"
       },
       {
         "id": "gi-v6-04",
@@ -3409,7 +3409,7 @@
         "terroirAndCraftEn": "Laiwu Ginger GI (Shandong) derives distinct sugar-acid balance and aroma from Shandong's soil and diurnal range under bilateral GI protection.",
         "customsHsAndAuditVi": "Kiểm tra mã vùng trồng, chứng thư kiểm dịch thực vật (Phytosanitary) và ngưỡng dư lượng MRL khi thông quan.",
         "customsHsAndAuditEn": "Cross-check registered orchard origin codes, phytosanitary certificates, and EU/ASEAN MRL agricultural thresholds.",
-        "imagePath": "assets/images/provinces/shandong-taishan.jpg"
+        "imagePath": "assets/images/prov_items/shandong/f1.jpg"
       },
       {
         "id": "gi-v6-05",
@@ -3434,7 +3434,7 @@
         "terroirAndCraftEn": "Dongting Mountain Biluochun Tea GI (Jiangsu) grows on terraced microclimates in Jiangsu, where seasonal picking and panning steps are anchored in bilateral EU–China GI annexes.",
         "customsHsAndAuditVi": "Kiểm tra giấy chứng nhận vùng lõi trà GI, phân nhóm HS 0902 và báo cáo kiểm nghiệm dư lượng MRL.",
         "customsHsAndAuditEn": "Verify core tea-garden GI certificates, HS Chapter 0902 declarations, and European MRL pesticide residue reports.",
-        "imagePath": "assets/images/prov_items/jiangsu/d4.jpg"
+        "imagePath": "assets/images/prov_items/jiangsu/f1.jpg"
       },
       {
         "id": "gi-v6-06",
@@ -3459,7 +3459,7 @@
         "terroirAndCraftEn": "Dehua White Porcelain GI (Fujian) combines local Fujian mineral clay or mulberry fibers with regulated firing and loom finishing under GI protection.",
         "customsHsAndAuditVi": "Xác nhận chứng thư xuất xứ nghệ nhân vùng bảo hộ, tiêu chuẩn tiếp xúc thực phẩm/dệt may và đóng gói chống vỡ.",
         "customsHsAndAuditEn": "Audit protected origin hallmarking, porcelain lead-cadmium or textile dye limits, and export crating.",
-        "imagePath": "assets/images/prov_items/fujian/h0.jpg"
+        "imagePath": "assets/images/prov_items/fujian/f2.jpg"
       },
       {
         "id": "gi-v6-07",
@@ -3484,7 +3484,7 @@
         "terroirAndCraftEn": "Shaoxing Rice Wine GI (Zhejiang) from Zhejiang draws on regional fermentation, mineral water profiles, and codified GI storage rules.",
         "customsHsAndAuditVi": "Đối chiếu hồ sơ truy xuất cơ sở sản xuất vùng bảo hộ, nhãn phụ song ngữ và mã HS thực phẩm chế biến.",
         "customsHsAndAuditEn": "Confirm GI winery/pantry facility registration, EU/Vietnam allergen labeling, and TARIC HS classification.",
-        "imagePath": "assets/images/provinces/zhejiang-hangzhou-westlake.jpg"
+        "imagePath": "assets/images/prov_items/zhejiang/d0.jpg"
       },
       {
         "id": "gi-v6-08",
@@ -3509,7 +3509,7 @@
         "terroirAndCraftEn": "Ruoqiang Red Jujube GI (Xinjiang) derives distinct sugar-acid balance and aroma from Xinjiang's soil and diurnal range under bilateral GI protection.",
         "customsHsAndAuditVi": "Kiểm tra mã vùng trồng, chứng thư kiểm dịch thực vật (Phytosanitary) và ngưỡng dư lượng MRL khi thông quan.",
         "customsHsAndAuditEn": "Cross-check registered orchard origin codes, phytosanitary certificates, and EU/ASEAN MRL agricultural thresholds.",
-        "imagePath": "assets/images/prov_items/xinjiang/h2.jpg"
+        "imagePath": "assets/images/prov_items/xinjiang/f1.jpg"
       },
       {
         "id": "gi-v6-09",
@@ -3534,7 +3534,7 @@
         "terroirAndCraftEn": "Korla Fragrant Pear GI (Xinjiang) derives distinct sugar-acid balance and aroma from Xinjiang's soil and diurnal range under bilateral GI protection.",
         "customsHsAndAuditVi": "Kiểm tra mã vùng trồng, chứng thư kiểm dịch thực vật (Phytosanitary) và ngưỡng dư lượng MRL khi thông quan.",
         "customsHsAndAuditEn": "Cross-check registered orchard origin codes, phytosanitary certificates, and EU/ASEAN MRL agricultural thresholds.",
-        "imagePath": "assets/images/prov_items/xinjiang/d3.jpg"
+        "imagePath": "assets/images/prov_items/xinjiang/f2.jpg"
       },
       {
         "id": "gi-v6-10",
@@ -3559,7 +3559,7 @@
         "terroirAndCraftEn": "Fuding White Tea GI (Fujian) grows on terraced microclimates in Fujian, where seasonal picking and panning steps are anchored in bilateral EU–China GI annexes.",
         "customsHsAndAuditVi": "Kiểm tra giấy chứng nhận vùng lõi trà GI, phân nhóm HS 0902 và báo cáo kiểm nghiệm dư lượng MRL.",
         "customsHsAndAuditEn": "Verify core tea-garden GI certificates, HS Chapter 0902 declarations, and European MRL pesticide residue reports.",
-        "imagePath": "assets/images/provinces/fujian-tulou.jpg"
+        "imagePath": "assets/images/prov_items/fujian/f3.jpg"
       },
       {
         "id": "gi-v6-11",
@@ -3584,7 +3584,7 @@
         "terroirAndCraftEn": "Longkou Vermicelli GI (Shandong) from Shandong draws on regional fermentation, mineral water profiles, and codified GI storage rules.",
         "customsHsAndAuditVi": "Đối chiếu hồ sơ truy xuất cơ sở sản xuất vùng bảo hộ, nhãn phụ song ngữ và mã HS thực phẩm chế biến.",
         "customsHsAndAuditEn": "Confirm GI winery/pantry facility registration, EU/Vietnam allergen labeling, and TARIC HS classification.",
-        "imagePath": "assets/images/prov_items/shandong/d0.jpg"
+        "imagePath": "assets/images/prov_items/shandong/f2.jpg"
       },
       {
         "id": "gi-v6-12",
@@ -3609,7 +3609,7 @@
         "terroirAndCraftEn": "Gannan Navel Orange GI (Jiangxi) derives distinct sugar-acid balance and aroma from Jiangxi's soil and diurnal range under bilateral GI protection.",
         "customsHsAndAuditVi": "Kiểm tra mã vùng trồng, chứng thư kiểm dịch thực vật (Phytosanitary) và ngưỡng dư lượng MRL khi thông quan.",
         "customsHsAndAuditEn": "Cross-check registered orchard origin codes, phytosanitary certificates, and EU/ASEAN MRL agricultural thresholds.",
-        "imagePath": "assets/images/prov_items/jiangxi/h1.jpg"
+        "imagePath": "assets/images/prov_items/jiangxi/f1.jpg"
       },
       {
         "id": "gi-v6-13",
@@ -3634,7 +3634,7 @@
         "terroirAndCraftEn": "Xilin Botanical Ginger & Spice GI (Guangxi) derives distinct sugar-acid balance and aroma from Guangxi's soil and diurnal range under bilateral GI protection.",
         "customsHsAndAuditVi": "Kiểm tra mã vùng trồng, chứng thư kiểm dịch thực vật (Phytosanitary) và ngưỡng dư lượng MRL khi thông quan.",
         "customsHsAndAuditEn": "Cross-check registered orchard origin codes, phytosanitary certificates, and EU/ASEAN MRL agricultural thresholds.",
-        "imagePath": "assets/images/provinces/guangxi-guilin-li-river.jpg"
+        "imagePath": "assets/images/prov_items/guangxi/f0.jpg"
       },
       {
         "id": "gi-v6-14",
@@ -3659,7 +3659,7 @@
         "terroirAndCraftEn": "Dongning Black Fungus GI (Heilongjiang) from Heilongjiang draws on regional fermentation, mineral water profiles, and codified GI storage rules.",
         "customsHsAndAuditVi": "Đối chiếu hồ sơ truy xuất cơ sở sản xuất vùng bảo hộ, nhãn phụ song ngữ và mã HS thực phẩm chế biến.",
         "customsHsAndAuditEn": "Confirm GI winery/pantry facility registration, EU/Vietnam allergen labeling, and TARIC HS classification.",
-        "imagePath": "assets/images/prov_items/heilongjiang/h3.jpg"
+        "imagePath": "assets/images/prov_items/heilongjiang/f1.jpg"
       },
       {
         "id": "gi-v6-15",
@@ -3684,7 +3684,7 @@
         "terroirAndCraftEn": "Zhangqiu Giant Scallion GI (Shandong) derives distinct sugar-acid balance and aroma from Shandong's soil and diurnal range under bilateral GI protection.",
         "customsHsAndAuditVi": "Kiểm tra mã vùng trồng, chứng thư kiểm dịch thực vật (Phytosanitary) và ngưỡng dư lượng MRL khi thông quan.",
         "customsHsAndAuditEn": "Cross-check registered orchard origin codes, phytosanitary certificates, and EU/ASEAN MRL agricultural thresholds.",
-        "imagePath": "assets/images/prov_items/shandong/d4.jpg"
+        "imagePath": "assets/images/prov_items/shandong/f3.jpg"
       },
       {
         "id": "gi-v6-16",
@@ -3709,7 +3709,7 @@
         "terroirAndCraftEn": "Jinxiang Garlic GI (Shandong) derives distinct sugar-acid balance and aroma from Shandong's soil and diurnal range under bilateral GI protection.",
         "customsHsAndAuditVi": "Kiểm tra mã vùng trồng, chứng thư kiểm dịch thực vật (Phytosanitary) và ngưỡng dư lượng MRL khi thông quan.",
         "customsHsAndAuditEn": "Cross-check registered orchard origin codes, phytosanitary certificates, and EU/ASEAN MRL agricultural thresholds.",
-        "imagePath": "assets/images/provinces/shandong-taishan.jpg"
+        "imagePath": "assets/images/prov_items/shandong/d0.jpg"
       },
       {
         "id": "gi-v6-17",
@@ -3734,7 +3734,7 @@
         "terroirAndCraftEn": "Nanchong Silk GI (Sichuan) combines local Sichuan mineral clay or mulberry fibers with regulated firing and loom finishing under GI protection.",
         "customsHsAndAuditVi": "Xác nhận chứng thư xuất xứ nghệ nhân vùng bảo hộ, tiêu chuẩn tiếp xúc thực phẩm/dệt may và đóng gói chống vỡ.",
         "customsHsAndAuditEn": "Audit protected origin hallmarking, porcelain lead-cadmium or textile dye limits, and export crating.",
-        "imagePath": "assets/images/prov_items/sichuan/d1.jpg"
+        "imagePath": "assets/images/prov_items/sichuan/f1.jpg"
       },
       {
         "id": "gi-v6-18",
@@ -3759,7 +3759,7 @@
         "terroirAndCraftEn": "Jianning Coreless White Lotus Seed GI (Fujian) derives distinct sugar-acid balance and aroma from Fujian's soil and diurnal range under bilateral GI protection.",
         "customsHsAndAuditVi": "Kiểm tra mã vùng trồng, chứng thư kiểm dịch thực vật (Phytosanitary) và ngưỡng dư lượng MRL khi thông quan.",
         "customsHsAndAuditEn": "Cross-check registered orchard origin codes, phytosanitary certificates, and EU/ASEAN MRL agricultural thresholds.",
-        "imagePath": "assets/images/prov_items/fujian/h2.jpg"
+        "imagePath": "assets/images/prov_items/fujian/d0.jpg"
       }
     ],
     "lzhDualComparePairs10": [
@@ -12309,7 +12309,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh & Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 宁夏枸杞.",
-        "image": "assets/images/provinces/ningxia-western-xia-tombs.jpg"
+        "image": "assets/images/prov_items/anhui/f0.jpg"
       },
       {
         "id": "herb-v6-02",
@@ -12334,7 +12334,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh (Trung Phẩm) ghi nhận xuất xứ bản địa của 岷县当归.",
-        "image": "assets/images/prov_items/guangdong/f1.jpg"
+        "image": "assets/images/prov_items/guangdong/f0.jpg"
       },
       {
         "id": "herb-v6-03",
@@ -12359,7 +12359,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục (Lý Thời Trân) ghi nhận xuất xứ bản địa của 汉源花椒.",
-        "image": "assets/images/prov_items/heilongjiang/h2.jpg"
+        "image": "assets/images/prov_items/heilongjiang/f0.jpg"
       },
       {
         "id": "herb-v6-04",
@@ -12384,7 +12384,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Thương Hàn Luận (Khảo cứu lịch sử) ghi nhận xuất xứ bản địa của 广西桂枝.",
-        "image": "assets/images/provinces/guangxi-guilin-li-river.jpg"
+        "image": "assets/images/prov_items/inner-mongolia/f0.jpg"
       },
       {
         "id": "herb-v6-05",
@@ -12409,7 +12409,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 青州山楂.",
-        "image": "assets/images/prov_items/macau/h4.jpg"
+        "image": "assets/images/prov_items/macau/f0.jpg"
       },
       {
         "id": "herb-v6-06",
@@ -12434,7 +12434,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh (Thượng Phẩm) ghi nhận xuất xứ bản địa của 浑源黄芪.",
-        "image": "assets/images/prov_items/shanghai/f2.jpg"
+        "image": "assets/images/prov_items/shanghai/f0.jpg"
       },
       {
         "id": "herb-v6-07",
@@ -12459,7 +12459,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 兰州百合.",
-        "image": "assets/images/provinces/henan-longmen-grottoes.jpg"
+        "image": "assets/images/prov_items/tibet/f0.jpg"
       },
       {
         "id": "herb-v6-08",
@@ -12484,7 +12484,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 遵义杜仲.",
-        "image": "assets/images/prov_items/beijing/f3.jpg"
+        "image": "assets/images/prov_items/beijing/f0.jpg"
       },
       {
         "id": "herb-v6-09",
@@ -12509,7 +12509,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 杭白菊.",
-        "image": "assets/images/prov_items/guangxi/h3.jpg"
+        "image": "assets/images/prov_items/guangxi/f0.jpg"
       },
       {
         "id": "herb-v6-10",
@@ -12534,7 +12534,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Ẩm Thiện Chính Yếu (Nguyên triều) ghi nhận xuất xứ bản địa của 泰兴白果.",
-        "image": "assets/images/provinces/shandong-taishan.jpg"
+        "image": "assets/images/prov_items/henan/f0.jpg"
       },
       {
         "id": "herb-v6-11",
@@ -12559,7 +12559,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 怀庆熟地.",
-        "image": "assets/images/prov_items/jiangsu/h0.jpg"
+        "image": "assets/images/prov_items/jiangsu/f0.jpg"
       },
       {
         "id": "herb-v6-12",
@@ -12584,7 +12584,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 建宁莲子.",
-        "image": "assets/images/prov_items/ningxia/f2.jpg"
+        "image": "assets/images/prov_items/ningxia/f0.png"
       },
       {
         "id": "herb-v6-13",
@@ -12609,7 +12609,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 新会陈皮.",
-        "image": "assets/images/provinces/anhui-hongcun-moonpond.jpg"
+        "image": "assets/images/prov_items/shanxi/f0.jpg"
       },
       {
         "id": "herb-v6-14",
@@ -12634,7 +12634,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 贵州薏苡仁.",
-        "image": "assets/images/prov_items/xinjiang/f1.jpg"
+        "image": "assets/images/prov_items/xinjiang/f0.jpg"
       },
       {
         "id": "herb-v6-15",
@@ -12659,7 +12659,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 云南茯苓.",
-        "image": "assets/images/prov_items/chongqing/h4.jpg"
+        "image": "assets/images/prov_items/chongqing/f0.jpg"
       },
       {
         "id": "herb-v6-16",
@@ -12684,7 +12684,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 文山三七.",
-        "image": "assets/images/provinces/shanxi-hanging-temple.jpg"
+        "image": "assets/images/prov_items/guizhou/f0.jpg"
       },
       {
         "id": "herb-v6-17",
@@ -12709,7 +12709,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Quảng Tây Thực Dưỡng Chí ghi nhận xuất xứ bản địa của 永福罗汉果.",
-        "image": "assets/images/prov_items/hongkong/h1.jpg"
+        "image": "assets/images/prov_items/hongkong/f0.jpg"
       },
       {
         "id": "herb-v6-18",
@@ -12734,7 +12734,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 百色八角.",
-        "image": "assets/images/prov_items/jiangxi/f1.jpg"
+        "image": "assets/images/prov_items/jiangxi/f0.jpg"
       },
       {
         "id": "herb-v6-19",
@@ -12759,7 +12759,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Ẩm Thiện Chính Yếu ghi nhận xuất xứ bản địa của 云南草果.",
-        "image": "assets/images/articles/hero-six-teas-gongfu.jpg"
+        "image": "assets/images/prov_items/qinghai/f0.jpg"
       },
       {
         "id": "herb-v6-20",
@@ -12784,7 +12784,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Khai Bảo Bản Thảo (Tống triều) ghi nhận xuất xứ bản địa của 明绿豆.",
-        "image": "assets/images/prov_items/sichuan/f3.jpg"
+        "image": "assets/images/prov_items/sichuan/f0.jpg"
       },
       {
         "id": "herb-v6-21",
@@ -12809,7 +12809,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 东宁黑木耳.",
-        "image": "assets/images/prov_items/yunnan/h0.jpg"
+        "image": "assets/images/prov_items/yunnan/f0.jpg"
       },
       {
         "id": "herb-v6-22",
@@ -12834,7 +12834,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 庆元香菇.",
-        "image": "assets/images/museum/acupuncture-bronze.jpg"
+        "image": "assets/images/prov_items/fujian/f0.jpg"
       },
       {
         "id": "herb-v6-23",
@@ -12859,7 +12859,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Khai Bảo Bản Thảo ghi nhận xuất xứ bản địa của 阿克苏核桃.",
-        "image": "assets/images/prov_items/hainan/h2.jpg"
+        "image": "assets/images/prov_items/hainan/f0.jpg"
       },
       {
         "id": "herb-v6-24",
@@ -12884,7 +12884,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 若羌红枣.",
-        "image": "assets/images/prov_items/hubei/f3.jpg"
+        "image": "assets/images/prov_items/hubei/f0.jpg"
       },
       {
         "id": "herb-v6-25",
@@ -12909,7 +12909,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 怀山药.",
-        "image": "assets/images/provinces/ningxia-western-xia-tombs.jpg"
+        "image": "assets/images/prov_items/jilin/f0.jpg"
       },
       {
         "id": "herb-v6-26",
@@ -12934,7 +12934,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 肇庆芡实.",
-        "image": "assets/images/prov_items/shaanxi/f1.jpg"
+        "image": "assets/images/prov_items/shaanxi/f0.jpg"
       },
       {
         "id": "herb-v6-27",
@@ -12959,7 +12959,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Vấn Đáp ghi nhận xuất xứ bản địa của 通江银耳.",
-        "image": "assets/images/prov_items/taiwan/h1.jpg"
+        "image": "assets/images/prov_items/taiwan/f0.jpg"
       },
       {
         "id": "herb-v6-28",
@@ -12984,7 +12984,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 桂林桂花.",
-        "image": "assets/images/provinces/guangxi-guilin-li-river.jpg"
+        "image": "assets/images/prov_items/zhejiang/f0.jpg"
       },
       {
         "id": "herb-v6-29",
@@ -13009,7 +13009,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Danh Y Biệt Lục ghi nhận xuất xứ bản địa của 山东金银花.",
-        "image": "assets/images/prov_items/gansu/h3.jpg"
+        "image": "assets/images/prov_items/gansu/f0.jpg"
       },
       {
         "id": "herb-v6-30",
@@ -13034,7 +13034,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục Thập Di ghi nhận xuất xứ bản địa của 广东凉粉草.",
-        "image": "assets/images/prov_items/hebei/f2.jpg"
+        "image": "assets/images/prov_items/hebei/f0.jpg"
       },
       {
         "id": "herb-v6-31",
@@ -13059,7 +13059,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Tân Tu Bản Thảo (Đường triều) ghi nhận xuất xứ bản địa của 江苏薄荷.",
-        "image": "assets/images/provinces/henan-longmen-grottoes.jpg"
+        "image": "assets/images/prov_items/hunan/f0.jpg"
       },
       {
         "id": "herb-v6-32",
@@ -13084,7 +13084,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Danh Y Biệt Lục ghi nhận xuất xứ bản địa của 四川紫苏.",
-        "image": "assets/images/prov_items/liaoning/f1.jpg"
+        "image": "assets/images/prov_items/liaoning/f0.jpg"
       },
       {
         "id": "herb-v6-33",
@@ -13109,7 +13109,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 莱芜生姜.",
-        "image": "assets/images/prov_items/shandong/h2.jpg"
+        "image": "assets/images/prov_items/shandong/f0.jpg"
       },
       {
         "id": "herb-v6-34",
@@ -13134,7 +13134,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 安国白芷.",
-        "image": "assets/images/provinces/shandong-taishan.jpg"
+        "image": "assets/images/prov_items/tianjin/f0.jpg"
       },
       {
         "id": "herb-v6-35",
@@ -13159,7 +13159,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Dược Tính Luận (Đường triều) ghi nhận xuất xứ bản địa của 阳春砂仁.",
-        "image": "assets/images/prov_items/anhui/h4.jpg"
+        "image": "assets/images/prov_items/anhui/f1.jpg"
       },
       {
         "id": "herb-v6-36",
@@ -13184,7 +13184,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 浙江麦冬.",
-        "image": "assets/images/prov_items/guangdong/f3.jpg"
+        "image": "assets/images/prov_items/guangdong/f1.jpg"
       },
       {
         "id": "herb-v6-37",
@@ -13209,7 +13209,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 广西玉竹.",
-        "image": "assets/images/provinces/anhui-hongcun-moonpond.jpg"
+        "image": "assets/images/prov_items/heilongjiang/f1.jpg"
       },
       {
         "id": "herb-v6-38",
@@ -13259,7 +13259,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 江西黑芝麻.",
-        "image": "assets/images/prov_items/macau/h3.jpg"
+        "image": "assets/images/prov_items/macau/f1.jpg"
       },
       {
         "id": "herb-v6-40",
@@ -13284,7 +13284,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 东北赤小豆.",
-        "image": "assets/images/provinces/shanxi-hanging-temple.jpg"
+        "image": "assets/images/prov_items/shanghai/f1.jpg"
       },
       {
         "id": "herb-v6-41",
@@ -13309,7 +13309,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Danh Y Biệt Lục ghi nhận xuất xứ bản địa của 内蒙黄米.",
-        "image": "assets/images/prov_items/tibet/h0.jpg"
+        "image": "assets/images/prov_items/tibet/f1.jpg"
       },
       {
         "id": "herb-v6-42",
@@ -13359,7 +13359,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục Thập Di ghi nhận xuất xứ bản địa của 云南玫瑰花.",
-        "image": "assets/images/articles/hero-six-teas-gongfu.jpg"
+        "image": "assets/images/prov_items/guangxi/f1.jpg"
       },
       {
         "id": "herb-v6-44",
@@ -13384,7 +13384,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 大凉山苦荞.",
-        "image": "assets/images/prov_items/henan/f3.jpg"
+        "image": "assets/images/prov_items/henan/f1.jpg"
       },
       {
         "id": "herb-v6-45",
@@ -13409,7 +13409,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Tân Tu Bản Thảo ghi nhận xuất xứ bản địa của 浙江桑葚.",
-        "image": "assets/images/prov_items/jiangsu/h4.jpg"
+        "image": "assets/images/prov_items/jiangsu/f1.jpg"
       },
       {
         "id": "herb-v6-46",
@@ -13434,7 +13434,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 山东决明子.",
-        "image": "assets/images/museum/acupuncture-bronze.jpg"
+        "image": "assets/images/prov_items/ningxia/f1.jpg"
       },
       {
         "id": "herb-v6-47",
@@ -13459,7 +13459,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Dược Tính Luận ghi nhận xuất xứ bản địa của 四川丁香.",
-        "image": "assets/images/prov_items/shanxi/h1.jpg"
+        "image": "assets/images/prov_items/shanxi/f1.jpg"
       },
       {
         "id": "herb-v6-48",
@@ -13484,7 +13484,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Tân Tu Bản Thảo ghi nhận xuất xứ bản địa của 新疆小茴香.",
-        "image": "assets/images/prov_items/xinjiang/f2.jpg"
+        "image": "assets/images/prov_items/xinjiang/f1.jpg"
       }
     ],
     "herbarium24": [
@@ -13511,7 +13511,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh & Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 宁夏枸杞.",
-        "image": "assets/images/provinces/ningxia-western-xia-tombs.jpg"
+        "image": "assets/images/prov_items/anhui/f0.jpg"
       },
       {
         "id": "herb-v6-02",
@@ -13536,7 +13536,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh (Trung Phẩm) ghi nhận xuất xứ bản địa của 岷县当归.",
-        "image": "assets/images/prov_items/guangdong/f1.jpg"
+        "image": "assets/images/prov_items/guangdong/f0.jpg"
       },
       {
         "id": "herb-v6-03",
@@ -13561,7 +13561,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục (Lý Thời Trân) ghi nhận xuất xứ bản địa của 汉源花椒.",
-        "image": "assets/images/prov_items/heilongjiang/h2.jpg"
+        "image": "assets/images/prov_items/heilongjiang/f0.jpg"
       },
       {
         "id": "herb-v6-04",
@@ -13586,7 +13586,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Thương Hàn Luận (Khảo cứu lịch sử) ghi nhận xuất xứ bản địa của 广西桂枝.",
-        "image": "assets/images/provinces/guangxi-guilin-li-river.jpg"
+        "image": "assets/images/prov_items/inner-mongolia/f0.jpg"
       },
       {
         "id": "herb-v6-05",
@@ -13611,7 +13611,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 青州山楂.",
-        "image": "assets/images/prov_items/macau/h4.jpg"
+        "image": "assets/images/prov_items/macau/f0.jpg"
       },
       {
         "id": "herb-v6-06",
@@ -13636,7 +13636,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh (Thượng Phẩm) ghi nhận xuất xứ bản địa của 浑源黄芪.",
-        "image": "assets/images/prov_items/shanghai/f2.jpg"
+        "image": "assets/images/prov_items/shanghai/f0.jpg"
       },
       {
         "id": "herb-v6-07",
@@ -13661,7 +13661,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 兰州百合.",
-        "image": "assets/images/provinces/henan-longmen-grottoes.jpg"
+        "image": "assets/images/prov_items/tibet/f0.jpg"
       },
       {
         "id": "herb-v6-08",
@@ -13686,7 +13686,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 遵义杜仲.",
-        "image": "assets/images/prov_items/beijing/f3.jpg"
+        "image": "assets/images/prov_items/beijing/f0.jpg"
       },
       {
         "id": "herb-v6-09",
@@ -13711,7 +13711,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 杭白菊.",
-        "image": "assets/images/prov_items/guangxi/h3.jpg"
+        "image": "assets/images/prov_items/guangxi/f0.jpg"
       },
       {
         "id": "herb-v6-10",
@@ -13736,7 +13736,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Ẩm Thiện Chính Yếu (Nguyên triều) ghi nhận xuất xứ bản địa của 泰兴白果.",
-        "image": "assets/images/provinces/shandong-taishan.jpg"
+        "image": "assets/images/prov_items/henan/f0.jpg"
       },
       {
         "id": "herb-v6-11",
@@ -13761,7 +13761,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 怀庆熟地.",
-        "image": "assets/images/prov_items/jiangsu/h0.jpg"
+        "image": "assets/images/prov_items/jiangsu/f0.jpg"
       },
       {
         "id": "herb-v6-12",
@@ -13786,7 +13786,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 建宁莲子.",
-        "image": "assets/images/prov_items/ningxia/f2.jpg"
+        "image": "assets/images/prov_items/ningxia/f0.png"
       },
       {
         "id": "herb-v6-13",
@@ -13811,7 +13811,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 新会陈皮.",
-        "image": "assets/images/provinces/anhui-hongcun-moonpond.jpg"
+        "image": "assets/images/prov_items/shanxi/f0.jpg"
       },
       {
         "id": "herb-v6-14",
@@ -13836,7 +13836,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 贵州薏苡仁.",
-        "image": "assets/images/prov_items/xinjiang/f1.jpg"
+        "image": "assets/images/prov_items/xinjiang/f0.jpg"
       },
       {
         "id": "herb-v6-15",
@@ -13861,7 +13861,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 云南茯苓.",
-        "image": "assets/images/prov_items/chongqing/h4.jpg"
+        "image": "assets/images/prov_items/chongqing/f0.jpg"
       },
       {
         "id": "herb-v6-16",
@@ -13886,7 +13886,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 文山三七.",
-        "image": "assets/images/provinces/shanxi-hanging-temple.jpg"
+        "image": "assets/images/prov_items/guizhou/f0.jpg"
       },
       {
         "id": "herb-v6-17",
@@ -13911,7 +13911,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Quảng Tây Thực Dưỡng Chí ghi nhận xuất xứ bản địa của 永福罗汉果.",
-        "image": "assets/images/prov_items/hongkong/h1.jpg"
+        "image": "assets/images/prov_items/hongkong/f0.jpg"
       },
       {
         "id": "herb-v6-18",
@@ -13936,7 +13936,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 百色八角.",
-        "image": "assets/images/prov_items/jiangxi/f1.jpg"
+        "image": "assets/images/prov_items/jiangxi/f0.jpg"
       },
       {
         "id": "herb-v6-19",
@@ -13961,7 +13961,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Ẩm Thiện Chính Yếu ghi nhận xuất xứ bản địa của 云南草果.",
-        "image": "assets/images/articles/hero-six-teas-gongfu.jpg"
+        "image": "assets/images/prov_items/qinghai/f0.jpg"
       },
       {
         "id": "herb-v6-20",
@@ -13986,7 +13986,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Khai Bảo Bản Thảo (Tống triều) ghi nhận xuất xứ bản địa của 明绿豆.",
-        "image": "assets/images/prov_items/sichuan/f3.jpg"
+        "image": "assets/images/prov_items/sichuan/f0.jpg"
       },
       {
         "id": "herb-v6-21",
@@ -14011,7 +14011,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 东宁黑木耳.",
-        "image": "assets/images/prov_items/yunnan/h0.jpg"
+        "image": "assets/images/prov_items/yunnan/f0.jpg"
       },
       {
         "id": "herb-v6-22",
@@ -14036,7 +14036,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 庆元香菇.",
-        "image": "assets/images/museum/acupuncture-bronze.jpg"
+        "image": "assets/images/prov_items/fujian/f0.jpg"
       },
       {
         "id": "herb-v6-23",
@@ -14061,7 +14061,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Khai Bảo Bản Thảo ghi nhận xuất xứ bản địa của 阿克苏核桃.",
-        "image": "assets/images/prov_items/hainan/h2.jpg"
+        "image": "assets/images/prov_items/hainan/f0.jpg"
       },
       {
         "id": "herb-v6-24",
@@ -14086,7 +14086,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 若羌红枣.",
-        "image": "assets/images/prov_items/hubei/f3.jpg"
+        "image": "assets/images/prov_items/hubei/f0.jpg"
       },
       {
         "id": "herb-v6-25",
@@ -14111,7 +14111,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 怀山药.",
-        "image": "assets/images/provinces/ningxia-western-xia-tombs.jpg"
+        "image": "assets/images/prov_items/jilin/f0.jpg"
       },
       {
         "id": "herb-v6-26",
@@ -14136,7 +14136,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 肇庆芡实.",
-        "image": "assets/images/prov_items/shaanxi/f1.jpg"
+        "image": "assets/images/prov_items/shaanxi/f0.jpg"
       },
       {
         "id": "herb-v6-27",
@@ -14161,7 +14161,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Vấn Đáp ghi nhận xuất xứ bản địa của 通江银耳.",
-        "image": "assets/images/prov_items/taiwan/h1.jpg"
+        "image": "assets/images/prov_items/taiwan/f0.jpg"
       },
       {
         "id": "herb-v6-28",
@@ -14186,7 +14186,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 桂林桂花.",
-        "image": "assets/images/provinces/guangxi-guilin-li-river.jpg"
+        "image": "assets/images/prov_items/zhejiang/f0.jpg"
       },
       {
         "id": "herb-v6-29",
@@ -14211,7 +14211,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Danh Y Biệt Lục ghi nhận xuất xứ bản địa của 山东金银花.",
-        "image": "assets/images/prov_items/gansu/h3.jpg"
+        "image": "assets/images/prov_items/gansu/f0.jpg"
       },
       {
         "id": "herb-v6-30",
@@ -14236,7 +14236,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục Thập Di ghi nhận xuất xứ bản địa của 广东凉粉草.",
-        "image": "assets/images/prov_items/hebei/f2.jpg"
+        "image": "assets/images/prov_items/hebei/f0.jpg"
       },
       {
         "id": "herb-v6-31",
@@ -14261,7 +14261,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Tân Tu Bản Thảo (Đường triều) ghi nhận xuất xứ bản địa của 江苏薄荷.",
-        "image": "assets/images/provinces/henan-longmen-grottoes.jpg"
+        "image": "assets/images/prov_items/hunan/f0.jpg"
       },
       {
         "id": "herb-v6-32",
@@ -14286,7 +14286,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Danh Y Biệt Lục ghi nhận xuất xứ bản địa của 四川紫苏.",
-        "image": "assets/images/prov_items/liaoning/f1.jpg"
+        "image": "assets/images/prov_items/liaoning/f0.jpg"
       },
       {
         "id": "herb-v6-33",
@@ -14311,7 +14311,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 莱芜生姜.",
-        "image": "assets/images/prov_items/shandong/h2.jpg"
+        "image": "assets/images/prov_items/shandong/f0.jpg"
       },
       {
         "id": "herb-v6-34",
@@ -14336,7 +14336,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 安国白芷.",
-        "image": "assets/images/provinces/shandong-taishan.jpg"
+        "image": "assets/images/prov_items/tianjin/f0.jpg"
       },
       {
         "id": "herb-v6-35",
@@ -14361,7 +14361,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Dược Tính Luận (Đường triều) ghi nhận xuất xứ bản địa của 阳春砂仁.",
-        "image": "assets/images/prov_items/anhui/h4.jpg"
+        "image": "assets/images/prov_items/anhui/f1.jpg"
       },
       {
         "id": "herb-v6-36",
@@ -14386,7 +14386,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 浙江麦冬.",
-        "image": "assets/images/prov_items/guangdong/f3.jpg"
+        "image": "assets/images/prov_items/guangdong/f1.jpg"
       },
       {
         "id": "herb-v6-37",
@@ -14411,7 +14411,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 广西玉竹.",
-        "image": "assets/images/provinces/anhui-hongcun-moonpond.jpg"
+        "image": "assets/images/prov_items/heilongjiang/f1.jpg"
       },
       {
         "id": "herb-v6-38",
@@ -14461,7 +14461,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 江西黑芝麻.",
-        "image": "assets/images/prov_items/macau/h3.jpg"
+        "image": "assets/images/prov_items/macau/f1.jpg"
       },
       {
         "id": "herb-v6-40",
@@ -14486,7 +14486,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 东北赤小豆.",
-        "image": "assets/images/provinces/shanxi-hanging-temple.jpg"
+        "image": "assets/images/prov_items/shanghai/f1.jpg"
       },
       {
         "id": "herb-v6-41",
@@ -14511,7 +14511,7 @@
         "seasonalSolarTermMatchVi": "Tính bình ổn định, dùng quanh năm khi hầm canh hoặc hãm trà gia đình (phi lâm sàng).",
         "vietnamCulinaryParallelVi": "Gặp nhiều điểm tương đồng với món canh bồi bổ từ kỷ tử, táo tàu và đậu đỗ trong gia đình Việt.",
         "botanicalRegionAndGiVi": "Thư tịch Danh Y Biệt Lục ghi nhận xuất xứ bản địa của 内蒙黄米.",
-        "image": "assets/images/prov_items/tibet/h0.jpg"
+        "image": "assets/images/prov_items/tibet/f1.jpg"
       },
       {
         "id": "herb-v6-42",
@@ -14561,7 +14561,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục Thập Di ghi nhận xuất xứ bản địa của 云南玫瑰花.",
-        "image": "assets/images/articles/hero-six-teas-gongfu.jpg"
+        "image": "assets/images/prov_items/guangxi/f1.jpg"
       },
       {
         "id": "herb-v6-44",
@@ -14586,7 +14586,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Bản Thảo Cương Mục ghi nhận xuất xứ bản địa của 大凉山苦荞.",
-        "image": "assets/images/prov_items/henan/f3.jpg"
+        "image": "assets/images/prov_items/henan/f1.jpg"
       },
       {
         "id": "herb-v6-45",
@@ -14611,7 +14611,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Tân Tu Bản Thảo ghi nhận xuất xứ bản địa của 浙江桑葚.",
-        "image": "assets/images/prov_items/jiangsu/h4.jpg"
+        "image": "assets/images/prov_items/jiangsu/f1.jpg"
       },
       {
         "id": "herb-v6-46",
@@ -14636,7 +14636,7 @@
         "seasonalSolarTermMatchVi": "Thường góp mặt trong các món canh, trà thanh nhẹ vào tiết Hạ Chí đến Xử Thử.",
         "vietnamCulinaryParallelVi": "Tương cận thói quen dùng thảo mộc tính mát (cúc hoa, hạt sen, sắn dây) nấu nước uống giải nhiệt ở Việt Nam.",
         "botanicalRegionAndGiVi": "Thư tịch Thần Nông Bản Thảo Kinh ghi nhận xuất xứ bản địa của 山东决明子.",
-        "image": "assets/images/museum/acupuncture-bronze.jpg"
+        "image": "assets/images/prov_items/ningxia/f1.jpg"
       },
       {
         "id": "herb-v6-47",
@@ -14661,7 +14661,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Dược Tính Luận ghi nhận xuất xứ bản địa của 四川丁香.",
-        "image": "assets/images/prov_items/shanxi/h1.jpg"
+        "image": "assets/images/prov_items/shanxi/f1.jpg"
       },
       {
         "id": "herb-v6-48",
@@ -14686,7 +14686,7 @@
         "seasonalSolarTermMatchVi": "Hay dùng gia giảm món hầm ấm nóng từ tiết Sương Giáng qua Đông Chí.",
         "vietnamCulinaryParallelVi": "Trong bếp Việt cũng chuộng nhóm gia vị tính ấm (gừng, quế, hồi) cho món hầm và nước dùng mùa lạnh.",
         "botanicalRegionAndGiVi": "Thư tịch Tân Tu Bản Thảo ghi nhận xuất xứ bản địa của 新疆小茴香.",
-        "image": "assets/images/prov_items/xinjiang/f2.jpg"
+        "image": "assets/images/prov_items/xinjiang/f1.jpg"
       }
     ],
     "historicalMicroclimateCases12": [
@@ -19946,7 +19946,7 @@
         "hanViet": "Tiếp thiên liên diệp vô cùng bích, ánh nhật hà hoa biệt dạng hồng",
         "poemZh": "接天莲叶无穷碧，映日荷花别样红。",
         "poemVi": "Lá sen nối trời xanh biếc vô cùng, hoa sen đón nắng đỏ thắm diệu kỳ.",
-        "image": "assets/images/paintings/68_hehua_shuiqin_tu.jpg",
+        "image": "assets/images/paintings/01_luoshenfu_tu.jpg",
         "title": "Hiểu Xuất Tịnh Từ Tự (晓出净慈寺送林子方)",
         "authorVi": "Dương Vạn Lý (杨万里)",
         "epithetVi": "Tiếp thiên liên diệp vô cùng bích, ánh nhật hà hoa biệt dạng hồng",
@@ -19967,7 +19967,7 @@
         "hanViet": "Sơn trùng thủy phục nghi vô lộ, liễu ám hoa minh hựu nhất thôn",
         "poemZh": "山重水复疑无路，柳暗花明又一村。",
         "poemVi": "Núi chồng nước vòng ngỡ hết lối, liễu rậm hoa tươi lại hiện một làng.",
-        "image": "assets/images/paintings/19_zao_chun_tu.jpg",
+        "image": "assets/images/paintings/02_nvshi_zhentu.jpg",
         "title": "Du Sơn Tây Thôn (游山西村)",
         "authorVi": "Lục Du (陆游)",
         "epithetVi": "Sơn trùng thủy phục nghi vô lộ, liễu ám hoa minh hựu nhất thôn",
@@ -20452,7 +20452,7 @@
         "hanViet": "Tiếp thiên liên diệp vô cùng bích, ánh nhật hà hoa biệt dạng hồng",
         "poemZh": "接天莲叶无穷碧，映日荷花别样红。",
         "poemVi": "Lá sen nối trời xanh biếc vô cùng, hoa sen đón nắng đỏ thắm diệu kỳ.",
-        "image": "assets/images/paintings/68_hehua_shuiqin_tu.jpg",
+        "image": "assets/images/paintings/01_luoshenfu_tu.jpg",
         "title": "Hiểu Xuất Tịnh Từ Tự (晓出净慈寺送林子方)",
         "authorVi": "Dương Vạn Lý (杨万里)",
         "epithetVi": "Tiếp thiên liên diệp vô cùng bích, ánh nhật hà hoa biệt dạng hồng",
@@ -20473,7 +20473,7 @@
         "hanViet": "Sơn trùng thủy phục nghi vô lộ, liễu ám hoa minh hựu nhất thôn",
         "poemZh": "山重水复疑无路，柳暗花明又一村。",
         "poemVi": "Núi chồng nước vòng ngỡ hết lối, liễu rậm hoa tươi lại hiện một làng.",
-        "image": "assets/images/paintings/19_zao_chun_tu.jpg",
+        "image": "assets/images/paintings/02_nvshi_zhentu.jpg",
         "title": "Du Sơn Tây Thôn (游山西村)",
         "authorVi": "Lục Du (陆游)",
         "epithetVi": "Sơn trùng thủy phục nghi vô lộ, liễu ám hoa minh hựu nhất thôn",
@@ -25063,7 +25063,7 @@
             "noVi": "Bổ sung quy trình kiểm tra mã GACC trước mỗi lần đặt tàu"
           }
         ],
-        "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+        "imagePath": "assets/images/provinces/anhui-hongcun-moonpond.jpg",
         "bilingualReplyTemplate": {
           "toFactoryZh": "因248号令注册号过期，请立即配合主管部门通过CIFER提交加急续期，我司先安排货柜转入钦州保税仓避免退运。",
           "toEuHqEn": "Export facility GACC registration lapsed before arrival. We moved cargo into Qinzhou bonded storage while fast-tracking CIFER renewal."
@@ -25138,7 +25138,7 @@
             "noVi": "Mở khuôn mới kèm hợp đồng NNN chặt chẽ và lưu mã khắc tài sản lên thép khuôn"
           }
         ],
-        "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+        "imagePath": "assets/images/provinces/anhui-huangshan-cloudsea.jpg",
         "bilingualReplyTemplate": {
           "toFactoryZh": "该套注塑模具系我司全额出资定制，请依据付款凭证与图纸归属约定于十日内配合办理模具移交，避免进入知识产权仲裁。",
           "toEuHqEn": "We documented tooling payments, initiated CNIPA design registration, and issued a formal PRC legal notice to recover our molds."
@@ -25213,7 +25213,7 @@
             "noVi": "Đóng gói lại bằng thùng chuẩn UN tại kho chuyên dụng DG"
           }
         ],
-        "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+        "imagePath": "assets/images/provinces/beijing-temple-of-heaven.jpg",
         "bilingualReplyTemplate": {
           "toFactoryZh": "请务必于今日提供最新版UN38.3测试报告摘要、1.2米跌落报告及规范MSDS，严禁按普货隐瞒申报锂电池。",
           "toEuHqEn": "We halted non-compliant cargo before screening, secured complete UN38.3/MSDS dossiers, and re-booked under proper Class 9 DG protocols."
@@ -25288,7 +25288,7 @@
             "noVi": "Tái cấu trúc danh sách nhà cung cấp vải đạt quy tắc xuất xứ"
           }
         ],
-        "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+        "imagePath": "assets/images/provinces/chongqing-hongyadong.jpg",
         "bilingualReplyTemplate": {
           "toFactoryZh": "出口欧盟订单须严格执行从布料开始原产地规则，请确认面料来源为越南本土、欧盟或适用累积条款的韩国织造厂。",
           "toEuHqEn": "We compiled complete mill certificates and BOM trails for EU customs verification and transitioned future POs exclusively to compliant mills."
@@ -25363,7 +25363,7 @@
             "noVi": "Khẩn trương hoàn thiện hồ sơ trước ngày hết hạn"
           }
         ],
-        "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+        "imagePath": "assets/images/provinces/fujian-tulou.jpg",
         "bilingualReplyTemplate": {
           "toFactoryZh": "因发票由香港公司开具而FORM E漏勾第13栏，请立即向贸促会申请更正重签，并在第7栏准确标注香港开票方全称与地区。",
           "toEuHqEn": "We cleared cargo on deposit to stop port storage charges and arranged an amended Form E with proper Box 13/Box 7 TPI details for duty refund."
@@ -25438,7 +25438,7 @@
             "noVi": "Giữ tàu sắt nhưng khóa bộ chứng từ chuẩn hóa 72 giờ trước giờ chạy"
           }
         ],
-        "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+        "imagePath": "assets/images/provinces/gansu-dunhuang-mogao.jpg",
         "bilingualReplyTemplate": {
           "toFactoryZh": "马拉舍维奇换装场目前拥堵且缺少NHM编码，请立即补充精确8位HS与NHM对照表以便波兰代理办理T1过境放行。",
           "toEuHqEn": "We supplied missing NHM rail codes to clear T1 transit at Malaszewicze and diversified next week's dispatches to avoid the bottleneck."
@@ -25513,7 +25513,7 @@
             "noVi": "Chờ kết quả phòng lab đạt 100% mới cho phép xuất xưởng"
           }
         ],
-        "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+        "imagePath": "assets/images/provinces/guangdong-canton-tower.jpg",
         "bilingualReplyTemplate": {
           "toFactoryZh": "欧洲抽检显示塑壳邻苯与焊点铅超标，请立即追查二级塑料粒与焊锡供应商，严禁混用未检测回收料并重新送检TUV。",
           "toEuHqEn": "We traced the violation to an unauthorized tier-2 resin swap, initiated containment, and mandated pre-shipment SGS REACH/RoHS testing per lot."
@@ -25588,7 +25588,7 @@
             "noVi": "Theo dõi phản hồi trực tuyến từng giờ cho đến khi thông qua"
           }
         ],
-        "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+        "imagePath": "assets/images/provinces/guangxi-guilin-li-river.jpg",
         "bilingualReplyTemplate": {
           "toFactoryZh": "欧盟ICS2拒收“机械配件”笼统品名，请两小时内提供每一项零件的具体英文名称、材质及对应6位HS编码。",
           "toEuHqEn": "We resolved the ICS2 RFI by filing itemized 6-digit HS descriptions and verified EORI details, securing MRN clearance before vessel cutoff."
@@ -25663,7 +25663,7 @@
             "noVi": "Bắt buộc đổi mật khẩu, bật 2FA và quy ước mã xác nhận bằng lời"
           }
         ],
-        "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+        "imagePath": "assets/images/provinces/guizhou-huangguoshu.jpg",
         "bilingualReplyTemplate": {
           "toFactoryZh": "严正声明：我司收款银行账户从未变更！任何通过邮件通知更改账户的信息均属诈骗，请务必先电话视频核实。",
           "toEuHqEn": "Alert: A spoofed domain attempted to alter our bank details. Our contract IBAN/SWIFT is unchanged—please hold payment until our video callback."
@@ -25738,7 +25738,7 @@
             "noVi": "Sửa ngay phụ lục đóng gói của hợp đồng khung"
           }
         ],
-        "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+        "imagePath": "assets/images/provinces/hainan-sanya-guanyin.jpg",
         "bilingualReplyTemplate": {
           "toFactoryZh": "目的港查验发现木托盘无IPPC烙印且带树皮导致扣柜，请后续所有出口订单一律改用免熏蒸胶合板或塑料托盘。",
           "toEuHqEn": "We authorized supervised re-palletizing onto clean plastic pallets at port to release cargo quickly and switched all future POs to non-wood pallets."
@@ -27967,7 +27967,7 @@
         "agencyNo": "10001",
         "majorsVi": "Kinh tế học, Luật Quốc tế, Hán học, Quan hệ Quốc tế",
         "cityVi": "Bắc Kinh",
-        "imagePath": "assets/images/provinces/beijing-temple-of-heaven.jpg",
+        "imagePath": "assets/images/prov_items/beijing/h0.jpg",
         "cscTypeA_vs_TypeB_NoteVi": "Mã trường 10001 tại Bắc Kinh: nộp trực tiếp qua cổng CSC Type B của trường trước hạn sơ tuyển tháng 2–3.",
         "vietnamAlumniCareerTrackVi": "Hướng nghề sau tốt nghiệp: điều phối chuỗi cung ứng Á–Âu, pháp lý hải quan, tài chính thương mại.",
         "recommendedHskAndIeltsVi": "HSK 5–6 (>=210 điểm) cho chương trình Tiếng Trung hoặc IELTS 6.5–7.0 cho chương trình song ngữ."
@@ -27984,7 +27984,7 @@
         "agencyNo": "10036",
         "majorsVi": "Thương mại Quốc tế, Luật WTO, Hải quan & Logistics",
         "cityVi": "Bắc Kinh",
-        "imagePath": "assets/images/provinces/beijing-temple-of-heaven.jpg",
+        "imagePath": "assets/images/prov_items/beijing/h1.jpg",
         "cscTypeA_vs_TypeB_NoteVi": "Mã trường 10036 tại Bắc Kinh: nộp trực tiếp qua cổng CSC Type B của trường trước hạn sơ tuyển tháng 2–3.",
         "vietnamAlumniCareerTrackVi": "Hướng nghề sau tốt nghiệp: điều phối chuỗi cung ứng Á–Âu, pháp lý hải quan, tài chính thương mại.",
         "recommendedHskAndIeltsVi": "HSK 5–6 (>=210 điểm) cho chương trình Tiếng Trung hoặc IELTS 6.5–7.0 cho chương trình song ngữ."
@@ -28001,7 +28001,7 @@
         "agencyNo": "10002",
         "majorsVi": "Kinh tế ứng dụng, Tài chính, Luật Thương mại",
         "cityVi": "Bắc Kinh",
-        "imagePath": "assets/images/provinces/beijing-temple-of-heaven.jpg",
+        "imagePath": "assets/images/prov_items/beijing/h2.jpg",
         "cscTypeA_vs_TypeB_NoteVi": "Mã trường 10002 tại Bắc Kinh: nộp trực tiếp qua cổng CSC Type B của trường trước hạn sơ tuyển tháng 2–3.",
         "vietnamAlumniCareerTrackVi": "Hướng nghề sau tốt nghiệp: điều phối chuỗi cung ứng Á–Âu, pháp lý hải quan, tài chính thương mại.",
         "recommendedHskAndIeltsVi": "HSK 5–6 (>=210 điểm) cho chương trình Tiếng Trung hoặc IELTS 6.5–7.0 cho chương trình song ngữ."
@@ -28035,7 +28035,7 @@
         "agencyNo": "10248",
         "majorsVi": "Quản trị Chuỗi cung ứng, Kỹ thuật Hàng hải, Tài chính Antai",
         "cityVi": "Thượng Hải",
-        "imagePath": "assets/images/provinces/shanghai-bund-skyline.jpg",
+        "imagePath": "assets/images/prov_items/shanghai/h0.jpg",
         "cscTypeA_vs_TypeB_NoteVi": "Mã trường 10248: kết hợp CSC Type B và học bổng Chính quyền TP Thượng Hải (SGS) tăng tỷ lệ trúng tuyển.",
         "vietnamAlumniCareerTrackVi": "Hướng nghề sau tốt nghiệp tại Thượng Hải/VN: kỹ sư R&D, tự động hóa nhà máy và chuyển giao công nghệ.",
         "recommendedHskAndIeltsVi": "Hệ Tiếng Anh chuộng IELTS 6.5+ kèm đề cương nghiên cứu định lượng; hệ Tiếng Trung cần HSK 5 (>=195 điểm)."
@@ -28052,7 +28052,7 @@
         "agencyNo": "10272",
         "majorsVi": "Kinh tế lượng, Thương mại Quốc tế, Kế toán Tài chính",
         "cityVi": "Thượng Hải",
-        "imagePath": "assets/images/provinces/shanghai-bund-skyline.jpg",
+        "imagePath": "assets/images/prov_items/shanghai/h1.jpg",
         "cscTypeA_vs_TypeB_NoteVi": "Mã trường 10272: kết hợp CSC Type B và học bổng Chính quyền TP Thượng Hải (SGS) tăng tỷ lệ trúng tuyển.",
         "vietnamAlumniCareerTrackVi": "Hướng nghề sau tốt nghiệp: điều phối chuỗi cung ứng Á–Âu, pháp lý hải quan, tài chính thương mại.",
         "recommendedHskAndIeltsVi": "HSK 5–6 (>=210 điểm) cho chương trình Tiếng Trung hoặc IELTS 6.5–7.0 cho chương trình song ngữ."
@@ -28069,7 +28069,7 @@
         "agencyNo": "10254",
         "majorsVi": "Quản lý Cảng biển, Vận tải Biển, Luật Hàng hải",
         "cityVi": "Thượng Hải",
-        "imagePath": "assets/images/provinces/shanghai-bund-skyline.jpg",
+        "imagePath": "assets/images/prov_items/shanghai/h2.jpg",
         "cscTypeA_vs_TypeB_NoteVi": "Mã trường 10254: kết hợp CSC Type B và học bổng Chính quyền TP Thượng Hải (SGS) tăng tỷ lệ trúng tuyển.",
         "vietnamAlumniCareerTrackVi": "Hướng nghề sau tốt nghiệp tại Thượng Hải/VN: kỹ sư R&D, tự động hóa nhà máy và chuyển giao công nghệ.",
         "recommendedHskAndIeltsVi": "Hệ Tiếng Anh chuộng IELTS 6.5+ kèm đề cương nghiên cứu định lượng; hệ Tiếng Trung cần HSK 5 (>=195 điểm)."
@@ -28171,7 +28171,7 @@
         "agencyNo": "10487",
         "majorsVi": "Kỹ thuật Công nghiệp, Quản trị Chuỗi cung ứng, AI",
         "cityVi": "Hồ Bắc",
-        "imagePath": "assets/images/provinces/hubei-yellow-crane-tower.jpg",
+        "imagePath": "assets/images/prov_items/hubei/h0.jpg",
         "cscTypeA_vs_TypeB_NoteVi": "Mã trường 10487 (Hồ Bắc): theo dõi cả suất CSC Type B và học bổng tỉnh/trường đầu xuân.",
         "vietnamAlumniCareerTrackVi": "Hướng nghề sau tốt nghiệp tại Hồ Bắc/VN: kỹ sư R&D, tự động hóa nhà máy và chuyển giao công nghệ.",
         "recommendedHskAndIeltsVi": "Hệ Tiếng Anh chuộng IELTS 6.5+ kèm đề cương nghiên cứu định lượng; hệ Tiếng Trung cần HSK 5 (>=195 điểm)."
@@ -28205,7 +28205,7 @@
         "agencyNo": "10056",
         "majorsVi": "Kiến trúc Cổ điển, Quản trị Kỹ thuật, Năng lượng Mới",
         "cityVi": "Thiên Tân",
-        "imagePath": "assets/images/provinces/tianjin-eye.jpg",
+        "imagePath": "assets/images/prov_items/tianjin/h0.jpg",
         "cscTypeA_vs_TypeB_NoteVi": "Mã trường 10056 (Thiên Tân): theo dõi cả suất CSC Type B và học bổng tỉnh/trường đầu xuân.",
         "vietnamAlumniCareerTrackVi": "Hướng nghề sau tốt nghiệp tại Thiên Tân/VN: kỹ sư R&D, tự động hóa nhà máy và chuyển giao công nghệ.",
         "recommendedHskAndIeltsVi": "Hệ Tiếng Anh chuộng IELTS 6.5+ kèm đề cương nghiên cứu định lượng; hệ Tiếng Trung cần HSK 5 (>=195 điểm)."
@@ -28324,7 +28324,7 @@
         "agencyNo": "10032",
         "majorsVi": "Giáo dục Hán ngữ Quốc tế, Biên phiên dịch cao cấp",
         "cityVi": "Bắc Kinh",
-        "imagePath": "assets/images/provinces/beijing-temple-of-heaven.jpg",
+        "imagePath": "assets/images/prov_items/beijing/h3.jpg",
         "cscTypeA_vs_TypeB_NoteVi": "Mã trường 10032 tại Bắc Kinh: nộp trực tiếp qua cổng CSC Type B của trường trước hạn sơ tuyển tháng 2–3.",
         "vietnamAlumniCareerTrackVi": "Hướng nghề sau tốt nghiệp: giảng dạy, nghiên cứu Hán học – văn hóa, biên phiên dịch và hợp tác song phương.",
         "recommendedHskAndIeltsVi": "Ưu tiên HSK 5–6 kèm bài viết luận nghiên cứu học thuật rõ ràng bằng tiếng Trung hoặc tiếng Anh."
@@ -28377,7 +28377,7 @@
         "agencyNo": "10001",
         "majorsVi": "Kinh tế học, Luật Quốc tế, Hán học, Quan hệ Quốc tế",
         "cityVi": "Bắc Kinh",
-        "imagePath": "assets/images/provinces/beijing-temple-of-heaven.jpg",
+        "imagePath": "assets/images/prov_items/beijing/h0.jpg",
         "cscTypeA_vs_TypeB_NoteVi": "Mã trường 10001 tại Bắc Kinh: nộp trực tiếp qua cổng CSC Type B của trường trước hạn sơ tuyển tháng 2–3.",
         "vietnamAlumniCareerTrackVi": "Hướng nghề sau tốt nghiệp: điều phối chuỗi cung ứng Á–Âu, pháp lý hải quan, tài chính thương mại.",
         "recommendedHskAndIeltsVi": "HSK 5–6 (>=210 điểm) cho chương trình Tiếng Trung hoặc IELTS 6.5–7.0 cho chương trình song ngữ."
@@ -28394,7 +28394,7 @@
         "agencyNo": "10036",
         "majorsVi": "Thương mại Quốc tế, Luật WTO, Hải quan & Logistics",
         "cityVi": "Bắc Kinh",
-        "imagePath": "assets/images/provinces/beijing-temple-of-heaven.jpg",
+        "imagePath": "assets/images/prov_items/beijing/h1.jpg",
         "cscTypeA_vs_TypeB_NoteVi": "Mã trường 10036 tại Bắc Kinh: nộp trực tiếp qua cổng CSC Type B của trường trước hạn sơ tuyển tháng 2–3.",
         "vietnamAlumniCareerTrackVi": "Hướng nghề sau tốt nghiệp: điều phối chuỗi cung ứng Á–Âu, pháp lý hải quan, tài chính thương mại.",
         "recommendedHskAndIeltsVi": "HSK 5–6 (>=210 điểm) cho chương trình Tiếng Trung hoặc IELTS 6.5–7.0 cho chương trình song ngữ."
@@ -28411,7 +28411,7 @@
         "agencyNo": "10002",
         "majorsVi": "Kinh tế ứng dụng, Tài chính, Luật Thương mại",
         "cityVi": "Bắc Kinh",
-        "imagePath": "assets/images/provinces/beijing-temple-of-heaven.jpg",
+        "imagePath": "assets/images/prov_items/beijing/h2.jpg",
         "cscTypeA_vs_TypeB_NoteVi": "Mã trường 10002 tại Bắc Kinh: nộp trực tiếp qua cổng CSC Type B của trường trước hạn sơ tuyển tháng 2–3.",
         "vietnamAlumniCareerTrackVi": "Hướng nghề sau tốt nghiệp: điều phối chuỗi cung ứng Á–Âu, pháp lý hải quan, tài chính thương mại.",
         "recommendedHskAndIeltsVi": "HSK 5–6 (>=210 điểm) cho chương trình Tiếng Trung hoặc IELTS 6.5–7.0 cho chương trình song ngữ."
@@ -28445,7 +28445,7 @@
         "agencyNo": "10248",
         "majorsVi": "Quản trị Chuỗi cung ứng, Kỹ thuật Hàng hải, Tài chính Antai",
         "cityVi": "Thượng Hải",
-        "imagePath": "assets/images/provinces/shanghai-bund-skyline.jpg",
+        "imagePath": "assets/images/prov_items/shanghai/h0.jpg",
         "cscTypeA_vs_TypeB_NoteVi": "Mã trường 10248: kết hợp CSC Type B và học bổng Chính quyền TP Thượng Hải (SGS) tăng tỷ lệ trúng tuyển.",
         "vietnamAlumniCareerTrackVi": "Hướng nghề sau tốt nghiệp tại Thượng Hải/VN: kỹ sư R&D, tự động hóa nhà máy và chuyển giao công nghệ.",
         "recommendedHskAndIeltsVi": "Hệ Tiếng Anh chuộng IELTS 6.5+ kèm đề cương nghiên cứu định lượng; hệ Tiếng Trung cần HSK 5 (>=195 điểm)."
@@ -28462,7 +28462,7 @@
         "agencyNo": "10272",
         "majorsVi": "Kinh tế lượng, Thương mại Quốc tế, Kế toán Tài chính",
         "cityVi": "Thượng Hải",
-        "imagePath": "assets/images/provinces/shanghai-bund-skyline.jpg",
+        "imagePath": "assets/images/prov_items/shanghai/h1.jpg",
         "cscTypeA_vs_TypeB_NoteVi": "Mã trường 10272: kết hợp CSC Type B và học bổng Chính quyền TP Thượng Hải (SGS) tăng tỷ lệ trúng tuyển.",
         "vietnamAlumniCareerTrackVi": "Hướng nghề sau tốt nghiệp: điều phối chuỗi cung ứng Á–Âu, pháp lý hải quan, tài chính thương mại.",
         "recommendedHskAndIeltsVi": "HSK 5–6 (>=210 điểm) cho chương trình Tiếng Trung hoặc IELTS 6.5–7.0 cho chương trình song ngữ."
@@ -28479,7 +28479,7 @@
         "agencyNo": "10254",
         "majorsVi": "Quản lý Cảng biển, Vận tải Biển, Luật Hàng hải",
         "cityVi": "Thượng Hải",
-        "imagePath": "assets/images/provinces/shanghai-bund-skyline.jpg",
+        "imagePath": "assets/images/prov_items/shanghai/h2.jpg",
         "cscTypeA_vs_TypeB_NoteVi": "Mã trường 10254: kết hợp CSC Type B và học bổng Chính quyền TP Thượng Hải (SGS) tăng tỷ lệ trúng tuyển.",
         "vietnamAlumniCareerTrackVi": "Hướng nghề sau tốt nghiệp tại Thượng Hải/VN: kỹ sư R&D, tự động hóa nhà máy và chuyển giao công nghệ.",
         "recommendedHskAndIeltsVi": "Hệ Tiếng Anh chuộng IELTS 6.5+ kèm đề cương nghiên cứu định lượng; hệ Tiếng Trung cần HSK 5 (>=195 điểm)."
@@ -28581,7 +28581,7 @@
         "agencyNo": "10487",
         "majorsVi": "Kỹ thuật Công nghiệp, Quản trị Chuỗi cung ứng, AI",
         "cityVi": "Hồ Bắc",
-        "imagePath": "assets/images/provinces/hubei-yellow-crane-tower.jpg",
+        "imagePath": "assets/images/prov_items/hubei/h0.jpg",
         "cscTypeA_vs_TypeB_NoteVi": "Mã trường 10487 (Hồ Bắc): theo dõi cả suất CSC Type B và học bổng tỉnh/trường đầu xuân.",
         "vietnamAlumniCareerTrackVi": "Hướng nghề sau tốt nghiệp tại Hồ Bắc/VN: kỹ sư R&D, tự động hóa nhà máy và chuyển giao công nghệ.",
         "recommendedHskAndIeltsVi": "Hệ Tiếng Anh chuộng IELTS 6.5+ kèm đề cương nghiên cứu định lượng; hệ Tiếng Trung cần HSK 5 (>=195 điểm)."
@@ -28615,7 +28615,7 @@
         "agencyNo": "10056",
         "majorsVi": "Kiến trúc Cổ điển, Quản trị Kỹ thuật, Năng lượng Mới",
         "cityVi": "Thiên Tân",
-        "imagePath": "assets/images/provinces/tianjin-eye.jpg",
+        "imagePath": "assets/images/prov_items/tianjin/h0.jpg",
         "cscTypeA_vs_TypeB_NoteVi": "Mã trường 10056 (Thiên Tân): theo dõi cả suất CSC Type B và học bổng tỉnh/trường đầu xuân.",
         "vietnamAlumniCareerTrackVi": "Hướng nghề sau tốt nghiệp tại Thiên Tân/VN: kỹ sư R&D, tự động hóa nhà máy và chuyển giao công nghệ.",
         "recommendedHskAndIeltsVi": "Hệ Tiếng Anh chuộng IELTS 6.5+ kèm đề cương nghiên cứu định lượng; hệ Tiếng Trung cần HSK 5 (>=195 điểm)."
@@ -28734,7 +28734,7 @@
         "agencyNo": "10032",
         "majorsVi": "Giáo dục Hán ngữ Quốc tế, Biên phiên dịch cao cấp",
         "cityVi": "Bắc Kinh",
-        "imagePath": "assets/images/provinces/beijing-temple-of-heaven.jpg",
+        "imagePath": "assets/images/prov_items/beijing/h3.jpg",
         "cscTypeA_vs_TypeB_NoteVi": "Mã trường 10032 tại Bắc Kinh: nộp trực tiếp qua cổng CSC Type B của trường trước hạn sơ tuyển tháng 2–3.",
         "vietnamAlumniCareerTrackVi": "Hướng nghề sau tốt nghiệp: giảng dạy, nghiên cứu Hán học – văn hóa, biên phiên dịch và hợp tác song phương.",
         "recommendedHskAndIeltsVi": "Ưu tiên HSK 5–6 kèm bài viết luận nghiên cứu học thuật rõ ràng bằng tiếng Trung hoặc tiếng Anh."
@@ -30472,7 +30472,7 @@
       "correctIndex": 2,
       "explainVi": "Nhà sàn thích ứng địa hình núi dốc không cần san phẳng nền, đồng thời chống ẩm mốc và côn trùng hiệu quả.",
       "explainEn": "Stilts adapt to steep terrain without excavation while keeping living floors dry above misty soil.",
-      "imagePath": "assets/images/provinces/guizhou-huangguoshu.jpg",
+      "imagePath": "assets/images/paintings/01_luoshenfu_tu.jpg",
       "visualInspectionGuideVi": "Nhà sàn thích ứng địa hình núi dốc không cần san phẳng nền, đồng thời chống ẩm mốc và côn trùng hiệu quả.",
       "visualInspectionGuideEn": "Stilts adapt to steep terrain without excavation while keeping living floors dry above misty soil."
     },
@@ -30530,7 +30530,7 @@
       "correctIndex": 3,
       "explainVi": "Bề mặt gạch mài nhẵn với bán kính cong chuẩn tạo hiệu ứng phản xạ âm liên tục rất ít suy hao.",
       "explainEn": "Smooth curved masonry creates a classic whispering-gallery acoustic reflection path.",
-      "imagePath": "assets/images/provinces/beijing-temple-of-heaven.jpg",
+      "imagePath": "assets/images/paintings/02_nvshi_zhentu.jpg",
       "visualInspectionGuideVi": "Bề mặt gạch mài nhẵn với bán kính cong chuẩn tạo hiệu ứng phản xạ âm liên tục rất ít suy hao.",
       "visualInspectionGuideEn": "Smooth curved masonry creates a classic whispering-gallery acoustic reflection path."
     },
@@ -30617,7 +30617,7 @@
       "correctIndex": 3,
       "explainVi": "Khí hậu Sơn Tây khô hạn nên mái dốc vào sân gom nước mưa (dân gian ví là 'Phì thủy bất lưu ngoại nhân điền').",
       "explainEn": "Inward-pitched roofs harvest rainwater on the arid Shanxi plateau, symbolizing retaining prosperity.",
-      "imagePath": "assets/images/provinces/shanxi-hanging-temple.jpg",
+      "imagePath": "assets/images/paintings/03_ershiba_xiu.jpg",
       "visualInspectionGuideVi": "Khí hậu Sơn Tây khô hạn nên mái dốc vào sân gom nước mưa (dân gian ví là 'Phì thủy bất lưu ngoại nhân điền').",
       "visualInspectionGuideEn": "Inward-pitched roofs harvest rainwater on the arid Shanxi plateau, symbolizing retaining prosperity."
     },
@@ -30675,7 +30675,7 @@
       "correctIndex": 2,
       "explainVi": "Thiết kế hai mặt thoáng và giếng trời giúp lưu thông gió tự nhiên liên tục trong khí hậu nhiệt đới ẩm.",
       "explainEn": "Dual-facade openings and a mid-plan skywell drive continuous tropical cross-ventilation.",
-      "imagePath": "assets/images/articles/hero-sino-vietnam.jpg",
+      "imagePath": "assets/images/paintings/04_youchun_tu.jpg",
       "visualInspectionGuideVi": "Thiết kế hai mặt thoáng và giếng trời giúp lưu thông gió tự nhiên liên tục trong khí hậu nhiệt đới ẩm.",
       "visualInspectionGuideEn": "Dual-facade openings and a mid-plan skywell drive continuous tropical cross-ventilation."
     },
@@ -30791,7 +30791,7 @@
       "correctIndex": 0,
       "explainVi": "Đây là giáo cụ kiểm tra trực quan hóa tiêu chuẩn hóa sớm trong lịch sử khoa học kỹ thuật đời Tống.",
       "explainEn": "It served as a standardized anatomical teaching and examination model in the Song dynasty.",
-      "imagePath": "assets/images/museum/acupuncture-bronze.jpg",
+      "imagePath": "assets/images/paintings/05_bunian_tu.jpg",
       "visualInspectionGuideVi": "Đây là giáo cụ kiểm tra trực quan hóa tiêu chuẩn hóa sớm trong lịch sử khoa học kỹ thuật đời Tống.",
       "visualInspectionGuideEn": "It served as a standardized anatomical teaching and examination model in the Song dynasty."
     },
@@ -30965,7 +30965,7 @@
       "correctIndex": 0,
       "explainVi": "Giao Tử ra đời tại Thành Đô để thay thế tiền sắt nặng nề, mở ra kỷ nguyên tiền giấy toàn cầu.",
       "explainEn": "Jiaozi emerged in Sichuan to replace heavy iron coins, pioneering global paper currency.",
-      "imagePath": "assets/images/articles/hero-four-inventions.jpg",
+      "imagePath": "assets/images/paintings/06_lidai_diwang_tu.jpg",
       "visualInspectionGuideVi": "Giao Tử ra đời tại Thành Đô để thay thế tiền sắt nặng nề, mở ra kỷ nguyên tiền giấy toàn cầu.",
       "visualInspectionGuideEn": "Jiaozi emerged in Sichuan to replace heavy iron coins, pioneering global paper currency."
     },
@@ -30994,7 +30994,7 @@
       "correctIndex": 3,
       "explainVi": "Con tàu 13 khoang kín nước chứng minh quy mô thương mại hương liệu và gốm sứ khổng lồ đời Tống–Nguyên.",
       "explainEn": "Its 13 watertight compartments and spice cargo confirm Song–Yuan oceanic commerce.",
-      "imagePath": "assets/images/editorial/map-silk-road-maritime-nodes.svg",
+      "imagePath": "assets/images/paintings/07_tianwang_songzi_tu.jpg",
       "visualInspectionGuideVi": "Con tàu 13 khoang kín nước chứng minh quy mô thương mại hương liệu và gốm sứ khổng lồ đời Tống–Nguyên.",
       "visualInspectionGuideEn": "Its 13 watertight compartments and spice cargo confirm Song–Yuan oceanic commerce."
     },
@@ -31342,7 +31342,7 @@
       "correctIndex": 1,
       "explainVi": "Kỹ thuật ghép thanh gỗ đan chéo tạo vòm vượt nhịp rộng, giúp ghe thuyền thương mại Bắc Tống qua lại nhộn nhịp.",
       "explainEn": "Interlocking timber beams formed a wide pierless arch ideal for busy Northern Song barges.",
-      "imagePath": "assets/images/paintings/21_qingming_shanghe.jpg",
+      "imagePath": "assets/images/paintings/08_guoguo_furen.jpg",
       "visualInspectionGuideVi": "Kỹ thuật ghép thanh gỗ đan chéo tạo vòm vượt nhịp rộng, giúp ghe thuyền thương mại Bắc Tống qua lại nhộn nhịp.",
       "visualInspectionGuideEn": "Interlocking timber beams formed a wide pierless arch ideal for busy Northern Song barges."
     },
@@ -31574,7 +31574,7 @@
       "correctIndex": 0,
       "explainVi": "合同 trong luật Trung Quốc là Hợp đồng thương mại có hiệu lực pháp lý cưỡng chế.",
       "explainEn": "In PRC commerce, 合同 strictly means a legally binding contract.",
-      "imagePath": "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
+      "imagePath": "assets/images/paintings/09_daolian_tu.jpg",
       "visualInspectionGuideVi": "合同 trong luật Trung Quốc là Hợp đồng thương mại có hiệu lực pháp lý cưỡng chế.",
       "visualInspectionGuideEn": "In PRC commerce, 合同 strictly means a legally binding contract."
     },
@@ -31603,7 +31603,7 @@
       "correctIndex": 2,
       "explainVi": "Muốn khen phòng đầy đủ tiện nghi phải dùng 设施齐全 hoặc 舒适, tuyệt đối tránh nhầm 便宜.",
       "explainEn": "Use 设施齐全 or 舒适 for amenities; 便宜 (piányi) strictly means cheap.",
-      "imagePath": "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
+      "imagePath": "assets/images/paintings/10_zhanhua_shinv_tu.jpg",
       "visualInspectionGuideVi": "Muốn khen phòng đầy đủ tiện nghi phải dùng 设施齐全 hoặc 舒适, tuyệt đối tránh nhầm 便宜.",
       "visualInspectionGuideEn": "Use 设施齐全 or 舒适 for amenities; 便宜 (piányi) strictly means cheap."
     },
@@ -31632,7 +31632,7 @@
       "correctIndex": 3,
       "explainVi": "Giả (贾), Sử (史), Vương (王), Tiết (薛) là Tứ Đại Gia Tộc gắn vận mệnh thịnh suy chặt chẽ trong tác phẩm.",
       "explainEn": "The Jia, Shi, Wang, and Xue clans form the interconnected aristocratic network.",
-      "imagePath": "assets/images/paintings/10_zhanhua_shinv_tu.jpg",
+      "imagePath": "assets/images/paintings/11_huishan_shinv_tu.jpg",
       "visualInspectionGuideVi": "Giả (贾), Sử (史), Vương (王), Tiết (薛) là Tứ Đại Gia Tộc gắn vận mệnh thịnh suy chặt chẽ trong tác phẩm.",
       "visualInspectionGuideEn": "The Jia, Shi, Wang, and Xue clans form the interconnected aristocratic network."
     },
@@ -31893,7 +31893,7 @@
       "correctIndex": 0,
       "explainVi": "Gia Dục Quan là cửa ải phía Tây nổi tiếng ('Thiên hạ đệ nhất hùng quan'), đối xứng với Sơn Hải Quan phía Đông.",
       "explainEn": "Jiayuguan anchors the western end of the Ming Wall, paired with Shanhaiguan in the east.",
-      "imagePath": "assets/images/provinces/gansu-dunhuang-mogao.jpg",
+      "imagePath": "assets/images/paintings/12_kuanglu_tu.jpg",
       "visualInspectionGuideVi": "Gia Dục Quan là cửa ải phía Tây nổi tiếng ('Thiên hạ đệ nhất hùng quan'), đối xứng với Sơn Hải Quan phía Đông.",
       "visualInspectionGuideEn": "Jiayuguan anchors the western end of the Ming Wall, paired with Shanhaiguan in the east."
     },
@@ -31951,7 +31951,7 @@
       "correctIndex": 1,
       "explainVi": "Dương Sơn Giai đoạn 4 là một trong những bến cảng container tự động hóa quy mô lớn hàng đầu thế giới.",
       "explainEn": "Yangshan Phase 4 is one of the world's largest fully automated container terminals.",
-      "imagePath": "assets/images/provinces/shanghai-bund-skyline.jpg",
+      "imagePath": "assets/images/paintings/13_xiaoxiang_tu.jpg",
       "visualInspectionGuideVi": "Dương Sơn Giai đoạn 4 là một trong những bến cảng container tự động hóa quy mô lớn hàng đầu thế giới.",
       "visualInspectionGuideEn": "Yangshan Phase 4 is one of the world's largest fully automated container terminals."
     },
@@ -32125,7 +32125,7 @@
       "correctIndex": 1,
       "explainVi": "Hệ đảo tự nhiên chắn gió bão cùng độ sâu luồng tự nhiên giúp Ninh Ba–Chu Sơn đứng đầu thế giới về tổng sản lượng hàng hóa.",
       "explainEn": "Natural island breakwaters and deep silt-free channels make it the world's top cargo-tonnage port.",
-      "imagePath": "assets/images/provinces/zhejiang-hangzhou-westlake.jpg",
+      "imagePath": "assets/images/paintings/14_hanlin_chongting.jpg",
       "visualInspectionGuideVi": "Hệ đảo tự nhiên chắn gió bão cùng độ sâu luồng tự nhiên giúp Ninh Ba–Chu Sơn đứng đầu thế giới về tổng sản lượng hàng hóa.",
       "visualInspectionGuideEn": "Natural island breakwaters and deep silt-free channels make it the world's top cargo-tonnage port."
     },
@@ -32183,7 +32183,7 @@
       "correctIndex": 0,
       "explainVi": "Trồng rừng và làm ruộng bậc thang đã giúp giảm mạnh lượng bùn cát gây bồi lắng lòng sông treo ở hạ lưu Hoàng Hà.",
       "explainEn": "Terracing and reforestation have dramatically reduced siltation along the lower Yellow River.",
-      "imagePath": "assets/images/provinces/shanxi-hanging-temple.jpg",
+      "imagePath": "assets/images/paintings/15_qiushan_wendao.jpg",
       "visualInspectionGuideVi": "Trồng rừng và làm ruộng bậc thang đã giúp giảm mạnh lượng bùn cát gây bồi lắng lòng sông treo ở hạ lưu Hoàng Hà.",
       "visualInspectionGuideEn": "Terracing and reforestation have dramatically reduced siltation along the lower Yellow River."
     },
@@ -32241,7 +32241,7 @@
       "correctIndex": 2,
       "explainVi": "Trường Giang sở hữu hệ sinh thái công nghiệp hỗ trợ hoàn chỉnh cùng năng lực cảng biển hàng đầu thế giới.",
       "explainEn": "The Yangtze Delta pairs deep industrial clusters with the world's top container ports.",
-      "imagePath": "assets/images/academic/suzhou-garden.jpg",
+      "imagePath": "assets/images/paintings/16_hanxizai_yeyan.jpg",
       "visualInspectionGuideVi": "Trường Giang sở hữu hệ sinh thái công nghiệp hỗ trợ hoàn chỉnh cùng năng lực cảng biển hàng đầu thế giới.",
       "visualInspectionGuideEn": "The Yangtze Delta pairs deep industrial clusters with the world's top container ports."
     },
@@ -32270,7 +32270,7 @@
       "correctIndex": 1,
       "explainVi": "Đó là lý do khủng hoảng Biển Đỏ lập tức làm tăng mạnh cước biển và hấp thụ công suất đội tàu toàn cầu.",
       "explainEn": "That 10–14 day difference explains why Red Sea diversions rapidly tighten global vessel capacity.",
-      "imagePath": "assets/images/articles/hero-supply-chain-rcep.jpg",
+      "imagePath": "assets/images/paintings/17_xiesheng_zhenqin.jpg",
       "visualInspectionGuideVi": "Đó là lý do khủng hoảng Biển Đỏ lập tức làm tăng mạnh cước biển và hấp thụ công suất đội tàu toàn cầu.",
       "visualInspectionGuideEn": "That 10–14 day difference explains why Red Sea diversions rapidly tighten global vessel capacity."
     },
@@ -32299,7 +32299,7 @@
       "correctIndex": 3,
       "explainVi": "Kỹ thuật 'Thảo Phương Cách' của Trung Quốc là mô hình chống sa mạc hóa hiệu quả được nhiều nước châu Phi học hỏi.",
       "explainEn": "Straw-checkerboard barriers anchor shifting sand and enable desert greenbelts.",
-      "imagePath": "assets/images/provinces/xinjiang-kanas-lake.jpg",
+      "imagePath": "assets/images/paintings/20_wanhe_songfeng_litang.jpg",
       "visualInspectionGuideVi": "Kỹ thuật 'Thảo Phương Cách' của Trung Quốc là mô hình chống sa mạc hóa hiệu quả được nhiều nước châu Phi học hỏi.",
       "visualInspectionGuideEn": "Straw-checkerboard barriers anchor shifting sand and enable desert greenbelts."
     },
@@ -32415,7 +32415,7 @@
       "correctIndex": 1,
       "explainVi": "Thang máy nâng tàu rút ngắn thời gian vượt chênh lệch mực nước hơn 100m xuống còn khoảng 40 phút.",
       "explainEn": "The vertical ship lift cuts dam-crossing transit from 3–4 hours to roughly 40 minutes.",
-      "imagePath": "assets/images/provinces/hubei-yellow-crane-tower.jpg",
+      "imagePath": "assets/images/paintings/22_qianli_jiangshan.jpg",
       "visualInspectionGuideVi": "Thang máy nâng tàu rút ngắn thời gian vượt chênh lệch mực nước hơn 100m xuống còn khoảng 40 phút.",
       "visualInspectionGuideEn": "The vertical ship lift cuts dam-crossing transit from 3–4 hours to roughly 40 minutes."
     },
@@ -32502,7 +32502,7 @@
       "correctIndex": 0,
       "explainVi": "Nghi thức gõ ngón tay thay lời cảm ơn không làm gián đoạn câu chuyện trên bàn trà và bàn tiệc kinh doanh.",
       "explainEn": "Finger-tapping politely expresses thanks without interrupting table conversation.",
-      "imagePath": "assets/images/articles/hero-chinese-cuisines.jpg",
+      "imagePath": "assets/images/paintings/23_rui_he_tu.jpg",
       "visualInspectionGuideVi": "Nghi thức gõ ngón tay thay lời cảm ơn không làm gián đoạn câu chuyện trên bàn trà và bàn tiệc kinh doanh.",
       "visualInspectionGuideEn": "Finger-tapping politely expresses thanks without interrupting table conversation."
     },
@@ -32531,7 +32531,7 @@
       "correctIndex": 2,
       "explainVi": "Bộ chuẩn 5 sắc vị hài hòa khiến Mì bò Lan Châu trở thành biểu tượng ẩm thực Tây Bắc.",
       "explainEn": "This five-color harmony defines authentic Lanzhou beef noodle craft.",
-      "imagePath": "assets/images/provinces/gansu-dunhuang-mogao.jpg",
+      "imagePath": "assets/images/paintings/24_furong_jinji.jpg",
       "visualInspectionGuideVi": "Bộ chuẩn 5 sắc vị hài hòa khiến Mì bò Lan Châu trở thành biểu tượng ẩm thực Tây Bắc.",
       "visualInspectionGuideEn": "This five-color harmony defines authentic Lanzhou beef noodle craft."
     },
@@ -32560,7 +32560,7 @@
       "correctIndex": 3,
       "explainVi": "Hoài Dương Thái nổi tiếng với kỹ thuật dùng dao tinh xảo, vị thanh tao giữ nguyên hương vị tự nhiên của nguyên liệu.",
       "explainEn": "Huaiyang (Jiangsu) cuisine is famed for supreme knife skills and delicate, refined broths.",
-      "imagePath": "assets/images/articles/hero-chinese-cuisines.jpg",
+      "imagePath": "assets/images/paintings/25_wuma_tu.jpg",
       "visualInspectionGuideVi": "Hoài Dương Thái nổi tiếng với kỹ thuật dùng dao tinh xảo, vị thanh tao giữ nguyên hương vị tự nhiên của nguyên liệu.",
       "visualInspectionGuideEn": "Huaiyang (Jiangsu) cuisine is famed for supreme knife skills and delicate, refined broths."
     },
@@ -32647,7 +32647,7 @@
       "correctIndex": 0,
       "explainVi": "Mân Thái nổi tiếng với các món canh thanh ngọt tinh tế kết hợp hải sản ven biển và nấm rừng vùng núi.",
       "explainEn": "Fujian cuisine excels in refined soups uniting coastal seafood with mountain mushrooms.",
-      "imagePath": "assets/images/provinces/fujian-tulou.jpg",
+      "imagePath": "assets/images/paintings/26_chushan_ruiai.jpg",
       "visualInspectionGuideVi": "Mân Thái nổi tiếng với các món canh thanh ngọt tinh tế kết hợp hải sản ven biển và nấm rừng vùng núi.",
       "visualInspectionGuideEn": "Fujian cuisine excels in refined soups uniting coastal seafood with mountain mushrooms."
     },
@@ -32705,7 +32705,7 @@
       "correctIndex": 2,
       "explainVi": "Thương nhân Huy Châu ướp muối cá sông trong thùng gỗ chuyển qua núi tạo nên kỹ thuật lên men nhẹ độc đáo.",
       "explainEn": "Salt-fermenting river fish in wooden barrels for mountain transport birthed Anhui's signature dish.",
-      "imagePath": "assets/images/provinces/anhui-hongcun-moonpond.jpg",
+      "imagePath": "assets/images/paintings/27_kumu_guaishi.jpg",
       "visualInspectionGuideVi": "Thương nhân Huy Châu ướp muối cá sông trong thùng gỗ chuyển qua núi tạo nên kỹ thuật lên men nhẹ độc đáo.",
       "visualInspectionGuideEn": "Salt-fermenting river fish in wooden barrels for mountain transport birthed Anhui's signature dish."
     },
@@ -32879,7 +32879,7 @@
       "correctIndex": 1,
       "explainVi": "Chương trình trên 180 ngày bắt buộc xin Visa X1 và hoàn tất thủ tục chuyển sang Giấy phép Cư trú trong 30 ngày sau nhập cảnh.",
       "explainEn": "Programs over 180 days require an X1 visa, converted to a Residence Permit within 30 days of entry.",
-      "imagePath": "assets/images/articles/hero-consular-field-guide.jpg",
+      "imagePath": "assets/images/paintings/28_libai_hangyin.jpg",
       "visualInspectionGuideVi": "Chương trình trên 180 ngày bắt buộc xin Visa X1 và hoàn tất thủ tục chuyển sang Giấy phép Cư trú trong 30 ngày sau nhập cảnh.",
       "visualInspectionGuideEn": "Programs over 180 days require an X1 visa, converted to a Residence Permit within 30 days of entry."
     },
@@ -32908,7 +32908,7 @@
       "correctIndex": 1,
       "explainVi": "Áo Ngũ Thân lập lĩnh (cổ đứng) tôn nét thanh lịch Việt Nam, đối chiếu thú vị với Giao lĩnh hữu nhậm của Hán Phục.",
       "explainEn": "Ao Ngu Than's standing buttoned collar contrasts distinctly with Jiaoling Hanfu's wrapped Y-collar.",
-      "imagePath": "assets/images/articles/hero-silk-embroidery-hanfu.jpg",
+      "imagePath": "assets/images/paintings/29_dage_tu.jpg",
       "visualInspectionGuideVi": "Áo Ngũ Thân lập lĩnh (cổ đứng) tôn nét thanh lịch Việt Nam, đối chiếu thú vị với Giao lĩnh hữu nhậm của Hán Phục.",
       "visualInspectionGuideEn": "Ao Ngu Than's standing buttoned collar contrasts distinctly with Jiaoling Hanfu's wrapped Y-collar."
     },
@@ -32966,7 +32966,7 @@
       "correctIndex": 0,
       "explainVi": "Long Tỉnh nổi tiếng vị đậu non nguyên bản từ chảo gang, còn Trà Sen Tây Hồ đỉnh cao ở nghệ thuật ướp hương hoa sen Bách Diệp.",
       "explainEn": "Longjing shines in pure pan-fired green-tea aroma, whereas Hanoi Lotus Tea is famed for delicate multi-pass floral scenting.",
-      "imagePath": "assets/images/articles/hero-six-teas-gongfu.jpg",
+      "imagePath": "assets/images/paintings/30_quehua_qiuse.jpg",
       "visualInspectionGuideVi": "Long Tỉnh nổi tiếng vị đậu non nguyên bản từ chảo gang, còn Trà Sen Tây Hồ đỉnh cao ở nghệ thuật ướp hương hoa sen Bách Diệp.",
       "visualInspectionGuideEn": "Longjing shines in pure pan-fired green-tea aroma, whereas Hanoi Lotus Tea is famed for delicate multi-pass floral scenting."
     },
@@ -32995,7 +32995,7 @@
       "correctIndex": 2,
       "explainVi": "Kỹ thuật quét điệp thủ công trên giấy Dó tạo ánh ngọc trai tự nhiên không trộn lẫn của nghệ thuật dân gian Việt Nam.",
       "explainEn": "Crushed scallop-shell coating on Do paper gives Dong Ho prints an unmistakable natural pearlescent glow.",
-      "imagePath": "assets/images/articles/hero-spring-festival.jpg",
+      "imagePath": "assets/images/paintings/31_xiushi_shulin.jpg",
       "visualInspectionGuideVi": "Kỹ thuật quét điệp thủ công trên giấy Dó tạo ánh ngọc trai tự nhiên không trộn lẫn của nghệ thuật dân gian Việt Nam.",
       "visualInspectionGuideEn": "Crushed scallop-shell coating on Do paper gives Dong Ho prints an unmistakable natural pearlescent glow."
     },

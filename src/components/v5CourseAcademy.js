@@ -128,22 +128,22 @@
   }
 
   var LESSON_IMGS = [
-    "assets/images/provinces/sichuan-jiuzhaigou.jpg",
+    "assets/images/prov_items/sichuan/h0.jpg",
     "assets/images/academic/guilin-li-river.jpg",
     "assets/images/provinces/shaanxi-terracotta-army.jpg",
     "assets/images/paintings/22_qianli_jiangshan.jpg",
     "assets/images/provinces/zhejiang-hangzhou-westlake.jpg",
-    "assets/images/articles/hero-supply-chain-rcep.jpg",
-    "assets/images/museum/houmuwu-ding.jpg",
-    "assets/images/academic/qin-terracotta.jpg",
+    "assets/images/prov_items/hubei/h0.jpg",
+    "assets/images/prov_items/shaanxi/h0.jpg",
+    "assets/images/museum/terracotta-general.jpg",
     "assets/images/articles/hero-tang-dynasty.jpg",
     "assets/images/academic/tang-sancai-camel.jpg",
-    "assets/images/museum/taihe-dian.jpg",
+    "assets/images/figures/qin-shi-huang.jpg",
     "assets/images/academic/van-mieu-hanoi.jpg",
     "assets/images/articles/hero-hundred-schools.jpg",
     "assets/images/articles/hero-yinyang.jpg",
     "assets/images/articles/hero-traditional-arch.jpg",
-    "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
+    "assets/images/provinces/anhui-hongcun-moonpond.jpg",
     "assets/images/provinces/beijing-temple-of-heaven.jpg",
     "assets/images/academic/suzhou-garden.jpg",
     "assets/images/articles/hero-calligraphy-five-scripts.jpg",
@@ -156,10 +156,10 @@
     "assets/images/articles/hero-six-teas-gongfu.jpg",
     "assets/images/articles/hero-contemporary-china.jpg",
     "assets/images/articles/hero-beijing-shanghai.jpg",
-    "assets/images/articles/hero-keju-examinations.jpg",
+    "assets/images/articles/hero-chinese-banquet.jpg",
     "assets/images/articles/hero-b2b-negotiation-table.jpg",
-    "assets/images/articles/hero-silk-road.jpg",
-    "assets/images/articles/hero-laozihao-craft.jpg",
+    "assets/images/prov_items/yunnan/h0.jpg",
+    "assets/images/prov_items/zhejiang/h0.jpg",
     "assets/images/articles/hero-sino-vietnam.jpg",
     "assets/images/articles/hero-huaqiangbei-tech.jpg",
     "assets/images/editorial/infographic-co-forme-incoterms.svg",
@@ -364,7 +364,7 @@
           hanViet: sr.getAttribute("data-hv"),
           meaningVi: sr.getAttribute("data-vi"),
           meaningEn: sr.getAttribute("data-en"),
-          source: "V5 42-Lesson Course"
+          source: "42-Lesson Course"
         });
         sr.textContent = "Saved!";
         return;

@@ -79,7 +79,7 @@ def build_pack1() -> dict[str, Any]:
             "num": "08",
             "doneKey": "mod8",
             "page": "museum",
-            "img": ensure_verified_img("assets/images/museum/forbidden-city-imperial-axis-gate.jpg"),
+            "img": ensure_verified_img("assets/images/museum/houmuwu-ding.jpg"),
             "zh": "丹青雅韵 · 美学与三维馆",
             "titleVi": "Học phần 8: Mỹ Học Cố Cung, Kim Thạch Hý Kịch & 24 Phòng 3D WebGL",
             "titleEn": "Module 8: Forbidden City Aesthetics, Opera, Seals & 24 WebGL 3D Studios",

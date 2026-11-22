@@ -275,7 +275,12 @@ def main() -> int:
     sw_txt = (ROOT / "sw.js").read_text(encoding="utf-8") if (ROOT / "sw.js").is_file() else ""
     if 'CACHE_VERSION = "cce-v7.1"' not in sw_txt:
         g10_issues.append('sw.js CACHE_VERSION is not "cce-v7.1"')
-    ui_scan = [ROOT / "index.html", ROOT / "src" / "core" / "searchIndex.js"] + sorted((ROOT / "src" / "components").rglob("*.js"))
+    ui_scan = [
+        ROOT / "index.html",
+        ROOT / "manifest.json",
+        ROOT / "src" / "data" / "weeklyUpdatesData.js",
+        ROOT / "src" / "core" / "searchIndex.js",
+    ] + sorted((ROOT / "src" / "components").rglob("*.js"))
     for fp in ui_scan:
         if not fp.is_file():
             continue
@@ -283,8 +288,15 @@ def main() -> int:
             s = line.strip()
             if s.startswith("//") or s.startswith("/*") or s.startswith("*") or s.startswith("<!--"):
                 continue
-            cleaned = re.sub(r'\b(v[4567][A-Za-z0-9_]*|cce-[a-z0-9-]+|data-[a-z0-9-]+|v[4567]-)\b', '', line, flags=re.I)
-            if re.search(r"\bBatch\s+\d+\b|\bV[4567]\.0\b|Benchmark Tập đoàn", cleaned, re.I):
+            cleaned = re.sub(
+                r'(?:src|href|id|data-[a-z0-9-]+)=["\'][^"\']*["\']|CCE_V[0-9A-Za-z_]*|\b(?:v[3-7][A-Za-z0-9_]+|cce-[a-z0-9-]+|data-[a-z0-9-]+|DeepSeek-R1/V3)\b|Qwen\s*2\.[56]|pillar:\s*["\']v[3-7]["\']',
+                '',
+                line,
+            )
+            if re.search(
+                r"\bBatch\s+\d+\b|Benchmark Tập đoàn|\bV[3-7](?:\.[0-9]+)?\b|\bv[4-7]\.[0-9]+(?:\.[0-9]+)?\b|\bv2\.[56](?:\.[0-9x]+)?\b",
+                cleaned,
+            ):
                 g10_issues.append(f"Dev jargon / version hype in UI ({fp.as_posix()}:{idx}): {s[:80]}")
     print(f"[Gate 10] PWA Cache Parity & Clean UI Copy: {'PASS' if not g10_issues else 'FAIL'}")
     failures.extend(g10_issues[:10])
@@ -304,6 +316,10 @@ def main() -> int:
         for idx, m_svg in enumerate(re.finditer(r"<svg\b([^>]*)>", sp_txt, flags=re.DOTALL), 1):
             if "viewBox=" not in m_svg.group(1):
                 g11_issues.append(f"Inline <svg> #{idx} missing viewBox= in {svg_rel}")
+    for svg_scan_fp in sorted((ROOT / "src").rglob("*.js")) + [ROOT / "index.html"]:
+        s_txt = svg_scan_fp.read_text(encoding="utf-8", errors="ignore")
+        for m_auto in re.finditer(r"<svg\b[^>]*\b(?:width|height)\s*=\s*['\"]auto['\"][^>]*>", s_txt):
+            g11_issues.append(f"Invalid SVG width/height='auto' attribute in {svg_scan_fp.relative_to(ROOT).as_posix()}: {m_auto.group(0)[:70]}")
     print(f"[Gate 11] SVG Visual Studios & Curtain viewBox Sanity: {'PASS' if not g11_issues else 'FAIL'}")
     failures.extend(g11_issues[:10])
 
@@ -568,12 +584,194 @@ def main() -> int:
     print(f"[Gate 14] V7 All-Dataset Counts, 120 Brands & 600-MCQ / 150-Visual-ID Parity: {'PASS' if not g14_issues else 'FAIL'}")
     failures.extend(g14_issues[:10])
 
+    # Gate 15: Zero Duplicate Images (Paths, MD5 Hashes & Home Zones)
+    import hashlib as _hashlib
+    g15_issues: list[str] = []
+    _md5_cache: dict[str, str] = {}
+
+    def _g15_md5(rel_path: str) -> str:
+        rel_clean = str(rel_path or "").strip().lstrip("/")
+        if rel_clean not in _md5_cache:
+            fp_img = ROOT / rel_clean
+            _md5_cache[rel_clean] = _hashlib.md5(fp_img.read_bytes()).hexdigest() if fp_img.is_file() else "MISSING"
+        return _md5_cache[rel_clean]
+
+    def _g15_check(group_name: str, items: list[tuple[str, str]]) -> None:
+        seen_paths: dict[str, str] = {}
+        seen_hashes: dict[str, tuple[str, str]] = {}
+        for item_lbl, raw_p in items:
+            if not raw_p:
+                continue
+            rel_p = str(raw_p).strip().lstrip("/")
+            h_val = _g15_md5(rel_p)
+            if h_val == "MISSING":
+                g15_issues.append(f"[{group_name}] Missing image for {item_lbl}: {rel_p}")
+                continue
+            if rel_p in seen_paths:
+                g15_issues.append(f"[{group_name}] Duplicate image path {rel_p} ({item_lbl} vs {seen_paths[rel_p]})")
+            else:
+                seen_paths[rel_p] = item_lbl
+            if h_val in seen_hashes and seen_hashes[h_val][1] != rel_p:
+                g15_issues.append(f"[{group_name}] Duplicate MD5 {h_val[:8]}: {item_lbl}={rel_p} vs {seen_hashes[h_val][0]}={seen_hashes[h_val][1]}")
+            elif h_val not in seen_hashes:
+                seen_hashes[h_val] = (item_lbl, rel_p)
+
+    # 15.1 Disk portraits pool (including wu-ding.jpg & li-si.jpg)
+    fig_dir = ROOT / "assets" / "images" / "figures"
+    _g15_check("DiskPortraits", [(fp_f.name, fp_f.relative_to(ROOT).as_posix()) for fp_f in sorted(fig_dir.glob("*")) if fp_f.is_file()])
+
+    # 15.2 V5 + V6 + V7 merged collections
+    v5_enr_path = ROOT / "src" / "data" / "v5" / "v5DeepEnrichmentLayer.js"
+    v5_data_obj: dict = {}
+    if v5_enr_path.is_file():
+        v5_raw_txt = v5_enr_path.read_text(encoding="utf-8")
+        v5_idx_pos = v5_raw_txt.find("var DATA = ")
+        if v5_idx_pos >= 0:
+            v5_data_obj, _ = _json.JSONDecoder().raw_decode(v5_raw_txt, v5_idx_pos + len("var DATA = "))
+
+    if v5_data_obj and bundles and v7_bundle:
+        v6_brands = bundles.get("CCE_V6_BRANDS_CRAFT", {})
+        def _pav_core_zh(zh: str) -> str:
+            s_val = re.sub(
+                r"^(北京|杭州|广州|漳州|成都|宜宾|绍兴|苏州|太谷|东阿|长沙|武汉|上海|天津|济南|重庆|镇江|桂林|扬州|开封|福州|佛山|宜宾|泸州|杏花村|青岛|烟台|黄山|安溪|勐海|凤翔|宿迁|泾县|湖州|安徽|景德镇|沈阳)",
+                "",
+                str(zh or ""),
+            )
+            return re.sub(r"\s*\(.*?\)\s*", "", s_val).strip()
+
+        b5_src = (ROOT / "src" / "data" / "v5" / "laozihaoBrandsV5.js").read_text(encoding="utf-8")
+        b5x_src = (ROOT / "src" / "data" / "v5" / "laozihaoBrandsExpandedV5.js").read_text(encoding="utf-8")
+        v5_be = v5_data_obj.get("brandEnrich", {})
+        seen_brand_ck: set[str] = set()
+        merged_120_brands: list[tuple[str, str]] = []
+        for bid_val, zh_val in re.findall(r'id:\s*"(lzh-[^"]+)"[^}]*?zh:\s*"([^"]+)"', b5_src, re.S) + re.findall(r'id:\s*"(lzh-x-[^"]+)"[^}]*?zh:\s*"([^"]+)"', b5x_src, re.S):
+            ck_val = _pav_core_zh(zh_val) or zh_val
+            if ck_val not in seen_brand_ck:
+                seen_brand_ck.add(ck_val)
+                merged_120_brands.append((bid_val, (v5_be.get(bid_val) or {}).get("imagePath", "")))
+        for bx in (v6_brands.get("brandsAdditional40", []) + v6_brands.get("brandsAdditional36", []) + v7_bundle.get("brandsAdditional20", [])):
+            ck_val = _pav_core_zh(bx.get("zh", "")) or bx.get("zh", "")
+            if ck_val not in seen_brand_ck:
+                seen_brand_ck.add(ck_val)
+                merged_120_brands.append((str(bx.get("id", "")), str(bx.get("imagePath", ""))))
+        _g15_check("Brands_120", merged_120_brands)
+
+        gis_42 = (
+            [(f"v5:{k}", v.get("imagePath", "")) for k, v in v5_data_obj.get("giEnrich", {}).items()]
+            + [(f"v6:{x.get('id')}", x.get("imagePath", "")) for x in v6_brands.get("giAdditional18", [])]
+            + [(f"v7:{x.get('id')}", x.get("imagePath", "")) for x in v7_bundle.get("giAdditional12", [])]
+        )
+        _g15_check("GIs_42", gis_42)
+
+        v5_acad_txt = (ROOT / "src" / "components" / "v5CourseAcademy.js").read_text(encoding="utf-8")
+        course_imgs = (
+            [(f"v5mod:{i}", m) for i, m in enumerate(re.findall(r'img:\s*"(assets/images/[^"]+)"', v5_acad_txt), 1)]
+            + [(f"v7mod:{x.get('id')}", x.get("img", "")) for x in v7_bundle.get("modulesMeta3", [])]
+            + [(f"v5l:{k}", v.get("imagePath", "")) for k, v in v5_data_obj.get("lessonEnrich", {}).items()]
+            + [(f"v5m7:{x.get('id')}", x.get("imagePath", "")) for x in v5_data_obj.get("module7Lessons", [])]
+            + [(f"v7l:{x.get('id')}", x.get("imagePath", "")) for x in v7_bundle.get("lessons18", [])]
+        )
+        _g15_check("Courses_10Mod_60Lessons", course_imgs)
+
+        vis_150 = (
+            [(f"v6q:{q.get('id')}", q.get("imagePath", "")) for q in bundles.get("CCE_V6_QUIZ", []) if q.get("isVisualQuestion")]
+            + [(f"v7q:{q.get('id')}", q.get("imagePath", "")) for q in v7_bundle.get("quiz100", []) if q.get("isVisualQuestion")]
+        )
+        _g15_check("VisualQuiz_150", vis_150)
+
+        v6_cos = bundles.get("CCE_V6_COSMOLOGY_VISUAL", {})
+        v6_lit = bundles.get("CCE_V6_LITERATURE_VISUAL", {})
+        v6_tr = bundles.get("CCE_V6_TRADE_AND_CSC", {})
+        _g15_check("Herbs_60", [(f"v6:{x.get('id')}", x.get("imagePath", "")) for x in v6_cos.get("culinaryHerbs48", [])] + [(f"v7:{x.get('id')}", x.get("imagePath", "")) for x in v7_bundle.get("herbs12", [])])
+        _g15_check("CosmoCases_20", [(f"v6:{x.get('id')}", x.get("imagePath", "")) for x in v6_cos.get("cosmoCasebookAdditional12V6", [])] + [(f"v7:{x.get('id')}", x.get("imagePath", "")) for x in v7_bundle.get("cosmoCases8", [])])
+        _g15_check("Poems_36", [(f"v6:{x.get('id')}", x.get("imagePath", "")) for x in v6_lit.get("poemPaintingPairs24", [])] + [(f"v7:{x.get('id')}", x.get("imagePath", "")) for x in v7_bundle.get("poemPaintings12", [])])
+        _g15_check("SupplyCases_26", [(f"v6:{x.get('id')}", x.get("imagePath", "")) for x in v6_tr.get("extraSupplyCases16", [])] + [(f"v7:{x.get('id')}", x.get("imagePath", "")) for x in v7_bundle.get("extraSupplyCases10", [])])
+        _g15_check("CSC_36", [(f"v6:{x.get('id')}", x.get("imagePath", "")) for x in v6_tr.get("cscUniversities24Atlas", [])] + [(f"v7:{x.get('id')}", x.get("imagePath", "")) for x in v7_bundle.get("cscUniversities12", [])])
+
+        wonder_imgs: list[tuple[str, str]] = []
+        for tag_w, lst_w in [("v6", v6_tr.get("sinoVietWonders10", [])), ("v7", v7_bundle.get("sinoVietWonders6", []))]:
+            for wx_item in lst_w:
+                wonder_imgs.append((f"{tag_w}:{wx_item.get('id')}:vn", wx_item.get("vnImg", "")))
+                wonder_imgs.append((f"{tag_w}:{wx_item.get('id')}:cn", wx_item.get("chinaImg", "")))
+        _g15_check("SinoVietWonders_32imgs", wonder_imgs)
+        _g15_check("V7_Expeditions_16", [(str(x.get("id")), x.get("imagePath", "")) for x in v7_bundle.get("heritageExpeditions16", [])])
+        _g15_check("V7_YouTubePosters_12", [(str(x.get("id")), x.get("posterImg", "")) for x in v7_bundle.get("youtubeVideos12", [])])
+
+    # 15.3 Component & editorial data packs (strip onerror="..."/'...' fallbacks)
+    for comp_rel in [
+        "src/components/v4KnowledgeHub.js",
+        "src/components/travelUXHub.js",
+        "src/components/v3Wave5Modules.js",
+        "src/components/trilingualTradeStudio.js",
+        "src/data/destinationsDeepAtlas2026.js",
+        "src/data/editorialMediaData.js",
+    ]:
+        comp_txt = (ROOT / comp_rel).read_text(encoding="utf-8")
+        comp_stripped = re.sub(r'onerror\s*=\s*(?:"[^"]*"|\'[^\']*\')', '', comp_txt)
+        comp_imgs = [(f"#{i}", m) for i, m in enumerate(re.findall(r'assets/images/[A-Za-z0-9_./-]+\.(?:jpg|jpeg|png|webp)', comp_stripped), 1)]
+        _g15_check(comp_rel, comp_imgs)
+
+    emp_src_txt = (ROOT / "src" / "data" / "editorialMediaPack2026.js").read_text(encoding="utf-8")
+    _g15_check("editorialMediaPack2026.js", [(f"#{i}", m) for i, m in enumerate(re.findall(r'"src"\s*:\s*"(assets/images/[^"]+)"', emp_src_txt), 1)])
+    reg_txt = (ROOT / "src" / "data" / "regionsData.js").read_text(encoding="utf-8")
+    _g15_check("regionsData.js", [(f"#{i}", m) for i, m in enumerate(re.findall(r'assets/images/[A-Za-z0-9_./-]+\.(?:jpg|jpeg|png|webp)', reg_txt), 1)])
+    mus_txt = (ROOT / "src" / "data" / "museumData.js").read_text(encoding="utf-8")
+    _g15_check("museumData.js(imageUrl)", [(f"#{i}", m) for i, m in enumerate(re.findall(r'imageUrl:\s*"(assets/images/[^"]+)"', mus_txt), 1)])
+    pnt_txt = (ROOT / "src" / "data" / "paintingsData.js").read_text(encoding="utf-8")
+    pnt_all_imgs = re.findall(r'"image"\s*:\s*"(assets/images/[^"]+)"', pnt_txt)
+    if len(pnt_all_imgs) != 54:
+        g15_issues.append(f"Expected 54 painting image entries in paintingsData.js, found {len(pnt_all_imgs)}")
+    _g15_check("paintingsData.js(54)", [(f"#{i}", m) for i, m in enumerate(pnt_all_imgs, 1)])
+    v3_p1a_txt = (ROOT / "src" / "data" / "v3" / "articlesExpansionV3_Part1a.js").read_text(encoding="utf-8")
+    v3_hero_imgs = re.findall(r'"[^"]+"\s*:\s*"(assets/images/[^"]+)"', v3_p1a_txt.split("HERO_MAP", 1)[1].split("};", 1)[0]) if "HERO_MAP" in v3_p1a_txt else []
+    if len(v3_hero_imgs) != 43:
+        g15_issues.append(f"Expected 43 V3 HERO_MAP images in articlesExpansionV3_Part1a.js, found {len(v3_hero_imgs)}")
+    _g15_check("V3_HERO_MAP(43)", [(f"#{i}", m) for i, m in enumerate(v3_hero_imgs, 1)])
+
+    mon_imgs: list[tuple[str, str]] = []
+    for mon_rel in ["src/data/articlesMonographsPart1.js", "src/data/articlesMonographsPart2.js"]:
+        mon_txt = (ROOT / mon_rel).read_text(encoding="utf-8")
+        mon_imgs.extend([(f"{mon_rel}#{i}", m) for i, m in enumerate(re.findall(r'src:\s*"(assets/images/[^"]+)"', mon_txt), 1)])
+    _g15_check("articlesMonographsPart1_2", mon_imgs)
+
+    upool_path = ROOT / "src" / "data" / "uniqueImagePool.js"
+    if not upool_path.is_file():
+        g15_issues.append("Missing src/data/uniqueImagePool.js runtime deduplication pool")
+    else:
+        upool_txt = upool_path.read_text(encoding="utf-8")
+        up_marker = "window.CCE_UNIQUE_IMAGE_POOL = "
+        if up_marker not in upool_txt:
+            g15_issues.append("Invalid header in src/data/uniqueImagePool.js")
+        else:
+            up_obj, _ = _json.JSONDecoder().raw_decode(upool_txt, upool_txt.index(up_marker) + len(up_marker))
+            up_all = up_obj.get("all", [])
+            if len(up_all) < 400:
+                g15_issues.append(f"Expected >= 400 unique images in uniqueImagePool.js, got {len(up_all)}")
+            _g15_check("uniqueImagePool.all", [(f"#{i}", m) for i, m in enumerate(up_all, 1)])
+        if 'src="src/data/uniqueImagePool.js"' not in (ROOT / "index.html").read_text(encoding="utf-8"):
+            g15_issues.append("index.html missing <script defer src=\"src/data/uniqueImagePool.js\">")
+
+    # 15.4 Home Zone non-overlap check in src/app.js
+    app_txt_g15 = (ROOT / "src" / "app.js").read_text(encoding="utf-8")
+    for req_tok in [
+        "forbiddenHomeLeadImgs",
+        '"great-wall-scroll"',
+        '"jiangshan-ruci-duojiao"',
+        '"forbidden-city-axis-gate"',
+        '"forbidden-city-imperial-axis-gate"',
+    ]:
+        if req_tok not in app_txt_g15:
+            g15_issues.append(f"Home image deduplication guard missing {req_tok} in src/app.js")
+
+    print(f"[Gate 15] Zero Duplicate Images (Paths, MD5 Hashes & Home Zones): {'PASS' if not g15_issues else 'FAIL'}")
+    failures.extend(g15_issues[:10])
+
     if failures:
         print("\nGATE FAILURES:")
         for f in failures:
             print(" -", f)
         return 1
-    print("\nALL 14 INTEGRITY GATES PASSED CLEANLY.")
+    print("\nALL 15 INTEGRITY GATES PASSED CLEANLY.")
     return 0
 
 

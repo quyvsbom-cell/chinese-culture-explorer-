@@ -181,7 +181,7 @@
           var csName = cs.name || cs.company || cs.id;
           var csZhMatch = String(csName).match(/[\u4e00-\u9fff]+/);
           var csZh = csZhMatch ? csZhMatch[0] : "";
-          var csImg = resolveW5ProvThumb(cs.provinceId, idx + 1, "assets/images/articles/hero-supply-chain-rcep.jpg");
+          var csImg = resolveW5ProvThumb(cs.provinceId, idx + 1, "assets/images/prov_items/anhui/d0.jpg");
           return (
             '<article class="card" style="border-top:3px solid var(--antique-gold);">' +
             renderW5Thumb(csImg, csName, false) +
@@ -476,7 +476,7 @@
           history: ["assets/images/academic/qin-terracotta.jpg", "assets/images/articles/hero-keju-examinations.jpg", "assets/images/museum/yongle-dadian.jpg", "assets/images/academic/sunzi-bamboo-slips.jpg"],
           metaphysics: ["assets/images/articles/hero-yinyang.jpg", "assets/images/articles/hero-wuxing.jpg", "assets/images/articles/hero-iching.jpg", "assets/images/museum/acupuncture-bronze.jpg"],
           arts: ["assets/images/paintings/22_qianli_jiangshan.jpg", "assets/images/museum/lantingji-xu.jpg", "assets/images/academic/guqin-instrument.jpg", "assets/images/articles/hero-traditional-arch.jpg"],
-          business: ["assets/images/articles/hero-b2b-negotiation-table.jpg", "assets/images/articles/hero-supply-chain-rcep.jpg", "assets/images/articles/hero-guanxi.jpg", "assets/images/articles/hero-laozihao-craft.jpg"]
+          business: ["assets/images/articles/hero-b2b-negotiation-table.jpg", "assets/images/prov_items/anhui/d1.jpg", "assets/images/articles/hero-guanxi.jpg", "assets/images/articles/hero-laozihao-craft.jpg"]
         };
         return filtered.map(function (p, idx) {
           var pool = catPools[p.category] || catPools.philosophy;
@@ -515,7 +515,7 @@
       '  <div class="card">' +
       '    <div class="editorial-kicker">' + (enM ? "EPISTEMOLOGICAL HIERARCHY · TYPE A–E" : "Tháp Kiểm chứng Nguồn Tư liệu · TYPE A–E") + '</div>' +
       '    <h3 class="card-title" style="font-size:1.15rem;">' + (enM ? "5-Tier Primary vs Secondary Provenance Pyramid" : "Mô hình 5 Tầng Độ tin cậy Sử liệu (TYPE A → TYPE E)") + '</h3>' +
-      '    <svg viewBox="0 0 480 230" width="100%" height="auto" role="img" aria-label="TYPE A-E Provenance Pyramid">' +
+      '    <svg viewBox="0 0 480 230" style="width:100%;height:auto;display:block;" role="img" aria-label="TYPE A-E Provenance Pyramid">' +
       '      <polygon points="240,14 295,54 185,54" fill="#9E2A2B" opacity="0.92"/>' +
       '      <polygon points="182,58 298,58 332,96 148,96" fill="#B55233" opacity="0.9"/>' +
       '      <polygon points="145,100 335,100 368,138 112,138" fill="#1F6F5B" opacity="0.88"/>' +
@@ -531,7 +531,7 @@
       '  <div class="card">' +
       '    <div class="editorial-kicker">' + (enM ? "5-AXIS SUPPLY BENCHMARK" : "ĐỒ HỌA ĐỐI SÁNH 5 TRỤC CHUỖI CUNG ỨNG") + '</div>' +
       '    <h3 class="card-title" style="font-size:1.15rem;">' + (enM ? "South China Cluster vs Offshore Hub Readiness" : "Chỉ số Thực chiến: Hoa Nam vs Hành lang Xuyên biên giới") + '</h3>' +
-      '    <svg viewBox="0 0 480 230" width="100%" height="auto" role="img" aria-label="5-Axis Trade &amp; Supply Chain Chart">' +
+      '    <svg viewBox="0 0 480 230" style="width:100%;height:auto;display:block;" role="img" aria-label="5-Axis Trade &amp; Supply Chain Chart">' +
       '      <line x1="175" y1="20" x2="175" y2="210" stroke="#999" stroke-width="1"/>' +
       '      <g font-size="11" fill="currentColor">' +
       '        <text x="168" y="42" text-anchor="end">Prototyping Speed</text><rect x="175" y="30" width="265" height="16" fill="#9E2A2B"/><text x="446" y="42" font-size="10">95%</text>' +

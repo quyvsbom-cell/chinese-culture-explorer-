@@ -311,7 +311,7 @@
   },
   "img-pack26-vietnamese-field-legal-medical-protocols-f2": {
     "id": "img-pack26-vietnamese-field-legal-medical-protocols-f2",
-    "src": "assets/images/editorial/map-sino-vietnam-corridors.svg",
+    "src": "assets/images/editorial/diagram-confucian-chaxugeju.svg",
     "titleVi": "Hồ sơ Cư trú Tạm thời & Hệ thống Bệnh viện Tam Giáp — Sơ đồ & Tư liệu Đối chứng",
     "titleZh": "外国人住宿登记条例暨涉外医疗急诊（120 /",
     "titleEn": "Field Legal, Accommodation (Shewai), Grade 3A Medical & Border Protocols — Comparative Plate & Evidence",
@@ -380,7 +380,7 @@
   },
   "img-pack26-guilin-yangshuo-longji-karst-heritage-f2": {
     "id": "img-pack26-guilin-yangshuo-longji-karst-heritage-f2",
-    "src": "assets/images/provinces/guangxi-guilin-li-river.jpg",
+    "src": "assets/images/prov_items/anhui/d0.jpg",
     "titleVi": "Bia Ký Kênh Đào Linh Cừ (Linh Thủy Bi) — Sơ đồ & Tư liệu Đối chứng",
     "titleZh": "桂林山水甲天下，阳朔堪称甲桂林。",
     "titleEn": "Guilin, Yangshuo & Longji: Karst Topography, Ming Princely City & Ethnic Terraces — Comparative Plate & Evidence",
@@ -426,7 +426,7 @@
   },
   "img-pack26-china-240h-visa-free-transit-guilin-2026-hero": {
     "id": "img-pack26-china-240h-visa-free-transit-guilin-2026-hero",
-    "src": "assets/images/provinces/guangxi-guilin-li-river.jpg",
+    "src": "assets/images/prov_items/anhui/d1.jpg",
     "titleVi": "Thông cáo Quá cảnh Miễn thị thực 240 Giờ (10 Ngày) — Tư liệu Tổng quan",
     "titleZh": "国家移民管理局关于全面放宽优化过境免签政策（",
     "titleEn": "240-Hour Visa-Free Transit Policy (Aug 2026) & Guilin Travel Logistics for Vietnamese Citizens — Primary Archival Overview",
@@ -449,7 +449,7 @@
   },
   "img-pack26-china-240h-visa-free-transit-guilin-2026-f2": {
     "id": "img-pack26-china-240h-visa-free-transit-guilin-2026-f2",
-    "src": "assets/images/academic/guilin-li-river.jpg",
+    "src": "assets/images/prov_items/anhui/d2.jpg",
     "titleVi": "Thông cáo Quá cảnh Miễn thị thực 240 Giờ (10 Ngày) — Sơ đồ & Tư liệu Đối chứng",
     "titleZh": "国家移民管理局关于全面放宽优化过境免签政策（",
     "titleEn": "240-Hour Visa-Free Transit Policy (Aug 2026) & Guilin Travel Logistics for Vietnamese Citizens — Comparative Plate & Evidence",
@@ -541,7 +541,7 @@
   },
   "img-pack26-practical-chinese-field-phrasebook-f3": {
     "id": "img-pack26-practical-chinese-field-phrasebook-f3",
-    "src": "assets/images/provinces/beijing-temple-of-heaven.jpg",
+    "src": "assets/images/prov_items/anhui/d3.jpg",
     "titleVi": "Khung Giao tiếp 5 Tình huống Cốt lõi — Hiện vật & Không gian Di sản",
     "titleZh": "人工通道 · 扫描付款码 · 请勿加辣 · ",
     "titleEn": "Practical Field Chinese: 5 Essential Communication Modules for Travel & Trade — Contextual Heritage & Artifact",
@@ -633,7 +633,7 @@
   },
   "img-pack26-china-semiconductor-ascend-smic-cac-2026-hero": {
     "id": "img-pack26-china-semiconductor-ascend-smic-cac-2026-hero",
-    "src": "assets/images/monograph/figure-08.png",
+    "src": "assets/images/monograph/figure-01.png",
     "titleVi": "Quy chuẩn Pháp lý Thuật toán & Chuỗi Cung ứng Chip — Tư liệu Tổng quan",
     "titleZh": "生成式人工智能服务管理暂行办法（国家网信办）",
     "titleEn": "China's Semiconductor Autonomy: Huawei Ascend 910B/C, SMIC 7nm DUV & CAC AI Governance — Primary Archival Overview",
@@ -679,7 +679,7 @@
   },
   "img-pack26-china-semiconductor-ascend-smic-cac-2026-f3": {
     "id": "img-pack26-china-semiconductor-ascend-smic-cac-2026-f3",
-    "src": "assets/images/editorial/infographic-contemporary-digital.svg",
+    "src": "assets/images/editorial/diagram-dougong-seismic.svg",
     "titleVi": "Quy chuẩn Pháp lý Thuật toán & Chuỗi Cung ứng Chip — Hiện vật & Không gian Di sản",
     "titleZh": "生成式人工智能服务管理暂行办法（国家网信办）",
     "titleEn": "China's Semiconductor Autonomy: Huawei Ascend 910B/C, SMIC 7nm DUV & CAC AI Governance — Contextual Heritage & Artifact",
@@ -748,7 +748,7 @@
   },
   "img-pack26-vietnam-ai-adoption-playbook-decree-13-f3": {
     "id": "img-pack26-vietnam-ai-adoption-playbook-decree-13-f3",
-    "src": "assets/images/editorial/infographic-contemporary-digital.svg",
+    "src": "assets/images/editorial/diagram-ink-three-distances.svg",
     "titleVi": "Tuân thủ Dữ liệu Xuyên biên giới tại Việt Nam — Hiện vật & Không gian Di sản",
     "titleZh": "个人数据跨境传输合规评估与本地化部署框架。",
     "titleEn": "Vietnam Enterprise AI Playbook: Leveraging Open-Weight Models Under Decree 13/2023/ND-CP — Contextual Heritage & Artifact",
@@ -840,7 +840,7 @@
   },
   "img-pack26-china-b2b-7-stage-contract-necips-psi-hero": {
     "id": "img-pack26-china-b2b-7-stage-contract-necips-psi-hero",
-    "src": "assets/images/articles/hero-b2b-negotiation-table.jpg",
+    "src": "assets/images/prov_items/anhui/d4.jpg",
     "titleVi": "Luật Dấu Pháp nhân Công Chương (公章管理) — Tư liệu Tổng quan",
     "titleZh": "国家企业信用信息公示系统（NECIPS）核验",
     "titleEn": "7-Stage B2B Deal Anatomy: NECIPS Due Diligence, Company Chop, Tooling Ownership & PSI — Primary Archival Overview",
@@ -863,7 +863,7 @@
   },
   "img-pack26-china-b2b-7-stage-contract-necips-psi-f2": {
     "id": "img-pack26-china-b2b-7-stage-contract-necips-psi-f2",
-    "src": "assets/images/editorial/infographic-guanxi-empirical.svg",
+    "src": "assets/images/editorial/diagram-jingpai-haipai-architecture.svg",
     "titleVi": "Luật Dấu Pháp nhân Công Chương (公章管理) — Sơ đồ & Tư liệu Đối chứng",
     "titleZh": "国家企业信用信息公示系统（NECIPS）核验",
     "titleEn": "7-Stage B2B Deal Anatomy: NECIPS Due Diligence, Company Chop, Tooling Ownership & PSI — Comparative Plate & Evidence",
@@ -955,7 +955,7 @@
   },
   "img-pack26-china-industrial-clusters-vietnam-supply-chain-f3": {
     "id": "img-pack26-china-industrial-clusters-vietnam-supply-chain-f3",
-    "src": "assets/images/editorial/map-sino-vietnam-corridors.svg",
+    "src": "assets/images/editorial/diagram-yinyang-topography.svg",
     "titleVi": "Mô hình Cụm Công nghiệp Một Ngành Một Trấn — Hiện vật & Không gian Di sản",
     "titleZh": "一镇一品产业集群：柯桥轻纺、义乌小商品、东莞",
     "titleEn": "China's Industrial Clusters Map: Electronics Belt, Keqiao Textiles & the Bac Ninh Corridor — Contextual Heritage & Artifact",
@@ -978,7 +978,7 @@
   },
   "img-pack26-canton-system-to-huaqiangbei-7-day-cycle-hero": {
     "id": "img-pack26-canton-system-to-huaqiangbei-7-day-cycle-hero",
-    "src": "assets/images/articles/hero-huaqiangbei-tech.jpg",
+    "src": "assets/images/prov_items/anhui/f0.jpg",
     "titleVi": "Từ Quảng Châu Thập Tam Hàng tới Hoa Cường Bắc — Tư liệu Tổng quan",
     "titleZh": "一口通商十三行（1757）至深圳华强北七日快",
     "titleEn": "From the Canton System to 'Shenzhen Speed': The 7-Day Huaqiangbei Prototyping Cycle — Primary Archival Overview",
@@ -1070,7 +1070,7 @@
   },
   "img-pack26-guangdong-shenzhen-vs-vietnam-benchmark-f2": {
     "id": "img-pack26-guangdong-shenzhen-vs-vietnam-benchmark-f2",
-    "src": "assets/images/provinces/guangdong-canton-tower.jpg",
+    "src": "assets/images/prov_items/anhui/f1.jpg",
     "titleVi": "Đối chuẩn Vùng Vịnh Lớn (GBA) & R&D — Sơ đồ & Tư liệu Đối chứng",
     "titleZh": "粤港澳大湾区研发投入与高新技术制造业对标研究",
     "titleEn": "Benchmarking Guangdong & Shenzhen Against Vietnam's Five Regional Sub-Cultures — Comparative Plate & Evidence",
@@ -1185,7 +1185,7 @@
   },
   "img-pack26-chinese-banquet-gift-giving-etiquette-hero": {
     "id": "img-pack26-chinese-banquet-gift-giving-etiquette-hero",
-    "src": "assets/images/articles/hero-chinese-banquet.jpg",
+    "src": "assets/images/prov_items/anhui/f2.jpg",
     "titleVi": "Quy tắc Ngồi Chủ Tọa & Kính Rượu (Chủ tọa đối diện cửa) — Tư liệu Tổng quan",
     "titleZh": "座次以右为尊、以面向门为中心；敬酒杯缘低过长",
     "titleEn": "Chinese Banquet Etiquette, Gift-Giving Taboos & Workplace Communication Protocols — Primary Archival Overview",
@@ -1208,7 +1208,7 @@
   },
   "img-pack26-chinese-banquet-gift-giving-etiquette-f2": {
     "id": "img-pack26-chinese-banquet-gift-giving-etiquette-f2",
-    "src": "assets/images/editorial/diagram-confucian-chaxugeju.svg",
+    "src": "assets/images/editorial/diagram-ziwei-bazi-qimen.svg",
     "titleVi": "Quy tắc Ngồi Chủ Tọa & Kính Rượu (Chủ tọa đối diện cửa) — Sơ đồ & Tư liệu Đối chứng",
     "titleZh": "座次以右为尊、以面向门为中心；敬酒杯缘低过长",
     "titleEn": "Chinese Banquet Etiquette, Gift-Giving Taboos & Workplace Communication Protocols — Comparative Plate & Evidence",
@@ -1346,7 +1346,7 @@
   },
   "img-pack26-chinese-eight-cuisines-tea-culture-f2": {
     "id": "img-pack26-chinese-eight-cuisines-tea-culture-f2",
-    "src": "assets/images/articles/hero-six-teas-gongfu.jpg",
+    "src": "assets/images/prov_items/anhui/f3.jpg",
     "titleVi": "Bát Đại Thái Hệ & Y Thực Đồng Nguyên (Lỗ·Xuyên·Việt·Tô) — Sơ đồ & Tư liệu Đối chứng",
     "titleZh": "南甜、北咸、东辣、西酸；治大国若烹小鲜。",
     "titleEn": "Anatomy of the Eight Great Cuisines, Food-as-Medicine Cosmology, and Six Tea Categories of China — Comparative Plate & Evidence",
@@ -1714,7 +1714,7 @@
   },
   "img-pack26-chinese-science-technology-history-modern-f3": {
     "id": "img-pack26-chinese-science-technology-history-modern-f3",
-    "src": "assets/images/editorial/diagram-dougong-seismic.svg",
+    "src": "assets/images/editorial/doc-mawangdui-hexagrams.svg",
     "titleVi": "Bách khoa Kỹ nghệ Minh Triều & Bài toán Needham — Hiện vật & Không gian Di sản",
     "titleZh": "天工开物：乃粒、乃服、粹精、治铸。（宋应星 ",
     "titleEn": "History of Chinese Science and Technology (The Needham Question): From Ancient Metallurgy and Song Polygons to Modern Tech Ecosystems — Contextual Heritage & Artifact",
@@ -1829,7 +1829,7 @@
   },
   "img-pack26-merchant-ethics-xin-yi-li-f2": {
     "id": "img-pack26-merchant-ethics-xin-yi-li-f2",
-    "src": "assets/images/articles/hero-guanxi.jpg",
+    "src": "assets/images/prov_items/anhui/h0.jpg",
     "titleVi": "Cuộc Tranh biện Nghĩa – Lợi (见利思义) — Sơ đồ & Tư liệu Đối chứng",
     "titleZh": "君子喻于义，小人喻于利；人而无信，不知其可也",
     "titleEn": "Trust (Xin) and the Righteousness-vs-Profit Debate (Yi-Li) in Chinese Commercial Ethics — Comparative Plate & Evidence",
@@ -1852,7 +1852,7 @@
   },
   "img-pack26-merchant-ethics-xin-yi-li-f3": {
     "id": "img-pack26-merchant-ethics-xin-yi-li-f3",
-    "src": "assets/images/editorial/infographic-guanxi-empirical.svg",
+    "src": "assets/images/editorial/hero-contemporary-china.svg",
     "titleVi": "Cuộc Tranh biện Nghĩa – Lợi (见利思义) — Hiện vật & Không gian Di sản",
     "titleZh": "君子喻于义，小人喻于利；人而无信，不知其可也",
     "titleEn": "Trust (Xin) and the Righteousness-vs-Profit Debate (Yi-Li) in Chinese Commercial Ethics — Contextual Heritage & Artifact",
@@ -1898,7 +1898,7 @@
   },
   "img-pack26-ten-merchant-guilds-huizhou-shanxi-f2": {
     "id": "img-pack26-ten-merchant-guilds-huizhou-shanxi-f2",
-    "src": "assets/images/provinces/shanxi-hanging-temple.jpg",
+    "src": "assets/images/prov_items/anhui/h1.jpg",
     "titleVi": "Gia quy Huy Thương & Nhật Thăng Xương (1823) — Sơ đồ & Tư liệu Đối chứng",
     "titleZh": "贾而好儒（徽商） · 汇通天下（日升昌票号 ",
     "titleEn": "China's Ten Merchant Guilds: Huizhou Confucians and Shanxi Draft Banks (Piaohao) — Comparative Plate & Evidence",
@@ -1921,7 +1921,7 @@
   },
   "img-pack26-ten-merchant-guilds-huizhou-shanxi-f3": {
     "id": "img-pack26-ten-merchant-guilds-huizhou-shanxi-f3",
-    "src": "assets/images/editorial/diagram-confucian-chaxugeju.svg",
+    "src": "assets/images/editorial/hero-guanxi.svg",
     "titleVi": "Gia quy Huy Thương & Nhật Thăng Xương (1823) — Hiện vật & Không gian Di sản",
     "titleZh": "贾而好儒（徽商） · 汇通天下（日升昌票号 ",
     "titleEn": "China's Ten Merchant Guilds: Huizhou Confucians and Shanxi Draft Banks (Piaohao) — Contextual Heritage & Artifact",
@@ -1990,7 +1990,7 @@
   },
   "img-pack26-maritime-merchants-fujian-guangdong-f3": {
     "id": "img-pack26-maritime-merchants-fujian-guangdong-f3",
-    "src": "assets/images/provinces/guangdong-canton-tower.jpg",
+    "src": "assets/images/prov_items/anhui/h2.jpg",
     "titleVi": "Bia Cảng Tuyền Châu & Mạng lưới Thương cảng Phố Hiến–Hội An — Hiện vật & Không gian Di sản",
     "titleZh": "涨海声中万国商（宋代泉州刺桐港海贸盛况）。",
     "titleEn": "Maritime Merchants of Fujian & Guangdong (Minshang & Chaoshang) Across the South China Sea — Contextual Heritage & Artifact",
@@ -2059,7 +2059,7 @@
   },
   "img-pack26-artisan-kilns-to-industrial-clusters-f3": {
     "id": "img-pack26-artisan-kilns-to-industrial-clusters-f3",
-    "src": "assets/images/articles/hero-huaqiangbei-tech.jpg",
+    "src": "assets/images/prov_items/anhui/h3.jpg",
     "titleVi": "Chuyên môn hóa 72 Công đoạn Sứ Cảnh Đức Trấn — Hiện vật & Không gian Di sản",
     "titleZh": "共计一坯之力，过手七十二，方克成器。（《天工",
     "titleEn": "From Imperial Kilns & Silk Guilds to Modern Industrial Clusters (Jingdezhen to Shenzhen–Yiwu) — Contextual Heritage & Artifact",
@@ -2082,7 +2082,7 @@
   },
   "img-pack26-han-viet-phonology-middle-chinese-hero": {
     "id": "img-pack26-han-viet-phonology-middle-chinese-hero",
-    "src": "assets/images/museum/yongle-dadian.jpg",
+    "src": "assets/images/prov_items/anhui/h4.jpg",
     "titleVi": "Vận thư Thiết Vận (601) — Hóa thạch Âm Đọc Đường–Tống — Tư liệu Tổng quan",
     "titleZh": "切韵者，南北是非、古今通塞。（陆法言《切韵》",
     "titleEn": "Sino-Vietnamese Phonology as a Living Fossil of Tang–Song Middle Chinese (Qieyun / Guangyun) — Primary Archival Overview",
@@ -2174,7 +2174,7 @@
   },
   "img-pack26-envoy-poetry-bac-hanh-tap-luc-f2": {
     "id": "img-pack26-envoy-poetry-bac-hanh-tap-luc-f2",
-    "src": "assets/images/academic/van-mieu-hanoi.jpg",
+    "src": "assets/images/prov_items/beijing/d0.jpg",
     "titleVi": "Thi tập Bắc Hành Tạp Lục (131 Bài Thơ Sứ Trình) — Sơ đồ & Tư liệu Đối chứng",
     "titleZh": "不知三百余年后，天下何人泣素如？（阮攸《读小",
     "titleEn": "Envoy Literature (Su trinh thi): Nguyen Du's Beixing Zalu and Sino-Vietnamese Scholarly Dialogue — Comparative Plate & Evidence",
@@ -2197,7 +2197,7 @@
   },
   "img-pack26-envoy-poetry-bac-hanh-tap-luc-f3": {
     "id": "img-pack26-envoy-poetry-bac-hanh-tap-luc-f3",
-    "src": "assets/images/editorial/hero-sino-vietnam.svg",
+    "src": "assets/images/editorial/hero-hundred-schools.svg",
     "titleVi": "Thi tập Bắc Hành Tạp Lục (131 Bài Thơ Sứ Trình) — Hiện vật & Không gian Di sản",
     "titleZh": "不知三百余年后，天下何人泣素如？（阮攸《读小",
     "titleEn": "Envoy Literature (Su trinh thi): Nguyen Du's Beixing Zalu and Sino-Vietnamese Scholarly Dialogue — Contextual Heritage & Artifact",
@@ -2243,7 +2243,7 @@
   },
   "img-pack26-comparative-timber-architecture-dougong-f2": {
     "id": "img-pack26-comparative-timber-architecture-dougong-f2",
-    "src": "assets/images/editorial/diagram-dougong-seismic.svg",
+    "src": "assets/images/editorial/hero-iching.svg",
     "titleVi": "Kết cấu Đấu Củng Trung Hoa vs. Vì Kèo Kẻ Chuyền Bắc Bộ — Sơ đồ & Tư liệu Đối chứng",
     "titleZh": "凡构屋之制，皆以材为祖。（李诫《营造法式》1",
     "titleEn": "Timber Architecture Comparison: Chinese Dougong Brackets vs Vietnamese Village Communal House Joinery — Comparative Plate & Evidence",
@@ -2289,7 +2289,7 @@
   },
   "img-pack26-imperial-academies-temple-of-literature-hero": {
     "id": "img-pack26-imperial-academies-temple-of-literature-hero",
-    "src": "assets/images/academic/van-mieu-hanoi.jpg",
+    "src": "assets/images/prov_items/beijing/d1.jpg",
     "titleVi": "Minh văn Thân Nhân Trung (1484) — Nguyên khí Quốc gia — Tư liệu Tổng quan",
     "titleZh": "贤才乃国家之元气（Thân Nhân Tru",
     "titleEn": "Temples of Literature & Imperial Examinations Across East Asia: Qufu, Beijing & Thang Long Hanoi — Primary Archival Overview",
@@ -2450,7 +2450,7 @@
   },
   "img-pack26-ganzhi-calendar-bazi-system-f2": {
     "id": "img-pack26-ganzhi-calendar-bazi-system-f2",
-    "src": "assets/images/editorial/diagram-ziwei-bazi-qimen.svg",
+    "src": "assets/images/editorial/hero-metaphysics-systems.svg",
     "titleVi": "Chu kỳ Lục Thập Hoa Giáp (10 Thiên Can × 12 Địa Chi) — Sơ đồ & Tư liệu Đối chứng",
     "titleZh": "天干十，地支十二，相配六十为一周期，以象岁时",
     "titleEn": "The Sexagenary Ganzhi Calendar and Intellectual Structure of Bazi (Zi Ping Tradition) — Comparative Plate & Evidence",
@@ -2496,7 +2496,7 @@
   },
   "img-pack26-ziwei-doushu-star-architecture-hero": {
     "id": "img-pack26-ziwei-doushu-star-architecture-hero",
-    "src": "assets/images/museum/liangzhu-yucong.jpg",
+    "src": "assets/images/prov_items/beijing/d2.jpg",
     "titleVi": "Thiên Quan Thư (Tư Mã Thiên) — Trung Cung Bắc Đẩu — Tư liệu Tổng quan",
     "titleZh": "斗为帝车，运于中央，临制四乡。（司马迁《史记",
     "titleEn": "Celestial Architecture of Zi Wei Dou Shu: Ancient Star Catalogs, Southern Sanhe vs Northern Sihua — Primary Archival Overview",
@@ -2519,7 +2519,7 @@
   },
   "img-pack26-ziwei-doushu-star-architecture-f2": {
     "id": "img-pack26-ziwei-doushu-star-architecture-f2",
-    "src": "assets/images/editorial/diagram-ziwei-bazi-qimen.svg",
+    "src": "assets/images/editorial/hero-silk-road.svg",
     "titleVi": "Thiên Quan Thư (Tư Mã Thiên) — Trung Cung Bắc Đẩu — Sơ đồ & Tư liệu Đối chứng",
     "titleZh": "斗为帝车，运于中央，临制四乡。（司马迁《史记",
     "titleEn": "Celestial Architecture of Zi Wei Dou Shu: Ancient Star Catalogs, Southern Sanhe vs Northern Sihua — Comparative Plate & Evidence",
@@ -2542,7 +2542,7 @@
   },
   "img-pack26-ziwei-doushu-star-architecture-f3": {
     "id": "img-pack26-ziwei-doushu-star-architecture-f3",
-    "src": "assets/images/museum/han-shipan.jpg",
+    "src": "assets/images/prov_items/beijing/d3.jpg",
     "titleVi": "Thiên Quan Thư (Tư Mã Thiên) — Trung Cung Bắc Đẩu — Hiện vật & Không gian Di sản",
     "titleZh": "斗为帝车，运于中央，临制四乡。（司马迁《史记",
     "titleEn": "Celestial Architecture of Zi Wei Dou Shu: Ancient Star Catalogs, Southern Sanhe vs Northern Sihua — Contextual Heritage & Artifact",
@@ -2588,7 +2588,7 @@
   },
   "img-pack26-yijing-hexagrams-strategy-timing-f2": {
     "id": "img-pack26-yijing-hexagrams-strategy-timing-f2",
-    "src": "assets/images/editorial/doc-mawangdui-hexagrams.svg",
+    "src": "assets/images/editorial/hero-spring-festival.svg",
     "titleVi": "Nguyên lý 'Thời Vị' (Biện chứng Hào Vị 1–6) — Sơ đồ & Tư liệu Đối chứng",
     "titleZh": "穷则变，变则通，通则久。（《周易·系辞下》）",
     "titleEn": "The Book of Changes (Yijing): Hexagram Line Positions and Strategic Decision Theory (Shi & Wei) — Comparative Plate & Evidence",
@@ -2795,7 +2795,7 @@
   },
   "img-pack26-lu-yu-tea-classic-evolution-f2": {
     "id": "img-pack26-lu-yu-tea-classic-evolution-f2",
-    "src": "assets/images/articles/hero-tea-culture.jpg",
+    "src": "assets/images/prov_items/beijing/d4.jpg",
     "titleVi": "Trà Thánh Lục Vũ · Ngũ Canh Đun Nước & Ấm Tử Sa Nghi Hưng — Sơ đồ & Tư liệu Đối chứng",
     "titleZh": "其水，用山水上，江水中，井水下。（陆羽《茶经",
     "titleEn": "Lu Yu's Classic of Tea (Chajing) and the Three Epochs of Chinese Tea Ceremony — Comparative Plate & Evidence",
@@ -2818,7 +2818,7 @@
   },
   "img-pack26-lu-yu-tea-classic-evolution-f3": {
     "id": "img-pack26-lu-yu-tea-classic-evolution-f3",
-    "src": "assets/images/editorial/infographic-six-tea-oxidation.svg",
+    "src": "assets/images/editorial/hero-supply-chain-rcep.svg",
     "titleVi": "Trà Thánh Lục Vũ · Ngũ Canh Đun Nước & Ấm Tử Sa Nghi Hưng — Hiện vật & Không gian Di sản",
     "titleZh": "其水，用山水上，江水中，井水下。（陆羽《茶经",
     "titleEn": "Lu Yu's Classic of Tea (Chajing) and the Three Epochs of Chinese Tea Ceremony — Contextual Heritage & Artifact",
@@ -2841,7 +2841,7 @@
   },
   "img-pack26-guqin-zither-silent-sound-aesthetics-hero": {
     "id": "img-pack26-guqin-zither-silent-sound-aesthetics-hero",
-    "src": "assets/images/academic/guqin-instrument.jpg",
+    "src": "assets/images/prov_items/beijing/f0.jpg",
     "titleVi": "Giản Tự Phổ (减字谱) & Khúc Cao Sơn Lưu Thủy — Tư liệu Tổng quan",
     "titleZh": "大音希声；独坐幽篁里，弹琴复长啸。（王维 /",
     "titleEn": "The Seven-String Guqin and 'Great Sound Has Rare Notes': Jianzipu Tablature & Classic Repertoire — Primary Archival Overview",
@@ -2864,7 +2864,7 @@
   },
   "img-pack26-guqin-zither-silent-sound-aesthetics-f2": {
     "id": "img-pack26-guqin-zither-silent-sound-aesthetics-f2",
-    "src": "assets/images/museum/guqin-jiuxiao-huanpei.jpg",
+    "src": "assets/images/prov_items/beijing/f1.jpg",
     "titleVi": "Giản Tự Phổ (减字谱) & Khúc Cao Sơn Lưu Thủy — Sơ đồ & Tư liệu Đối chứng",
     "titleZh": "大音希声；独坐幽篁里，弹琴复长啸。（王维 /",
     "titleEn": "The Seven-String Guqin and 'Great Sound Has Rare Notes': Jianzipu Tablature & Classic Repertoire — Comparative Plate & Evidence",

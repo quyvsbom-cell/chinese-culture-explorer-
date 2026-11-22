@@ -473,6 +473,13 @@
   object-position: 28% center;
 }
 
+.museum-artwork-frame.is-tall-scroll .museum-artwork-img,
+.museum-artwork-frame.is-contain .museum-artwork-img {
+  padding: 0.45rem;
+  object-fit: contain !important;
+  object-position: center;
+}
+
 .museum-artwork-large.is-handscroll .museum-artwork-img,
 .museum-artwork-large .museum-artwork-img {
   padding: 0.6rem;
@@ -486,12 +493,18 @@
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 3;
-  object-fit: contain;
-  object-position: center;
+  object-fit: cover;
+  object-position: 50% 30%;
   background: var(--bg-surface);
-  padding: 0.5rem;
+  padding: 0;
   filter: sepia(0.06) contrast(1.03);
   transition: transform var(--transition-med), filter var(--transition-med);
+}
+
+.museum-artwork-svg {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.5rem;
 }
 
 .museum-artwork-large .museum-artwork-img,
