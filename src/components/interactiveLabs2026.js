@@ -485,10 +485,35 @@
         explainVi: x.explanationVi || x.explainVi || "",
         explainEn: x.explanationEn || x.explainEn || ""
       }));
-      const full = base.concat(v3, v4);
+      const v5 = (window.CCE_V5_QUIZ || []).map((x) => ({
+        id: x.id,
+        pillar: x.pillar || "v5",
+        topicVi: x.topicVi || (x.pillar ? String(x.pillar).replace(/_/g, " ").toUpperCase() : "V5"),
+        topicEn: x.topicEn || (x.pillar ? String(x.pillar).replace(/_/g, " ").toUpperCase() : "V5"),
+        hanzi: x.hanzi || "",
+        questionVi: x.questionVi,
+        questionEn: x.questionEn || x.questionVi,
+        optionsVi: x.optionsVi,
+        optionsEn: x.optionsEn || x.optionsVi,
+        correctIndex: x.correctIndex,
+        explainVi: x.explainVi || x.explanationVi || "",
+        explainEn: x.explainEn || x.explanationEn || ""
+      }));
+      const full = base.concat(v3, v4, v5);
       const pFilter = this.state.quizPillarFilter || "all";
       if (pFilter === "all") return full;
-      const scoped = full.filter((q) => (q.pillar || "").toLowerCase().includes(pFilter));
+      const pMatchMap = {
+        history: /history|dynast|geography/i,
+        philosophy: /philosophy|wuxing|tcm|architecture/i,
+        art: /art|literature|hsk|poetry/i,
+        trade: /trade|logistics|laozihao/i,
+        sino: /sino|cuisine|csc|viet/i
+      };
+      const rx = pMatchMap[pFilter];
+      const scoped = full.filter((q) => {
+        const p = (q.pillar || "").toLowerCase();
+        return rx ? rx.test(p) : p.includes(pFilter);
+      });
       return scoped.length ? scoped : full;
     },
 

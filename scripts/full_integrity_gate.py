@@ -180,6 +180,10 @@ def main() -> int:
             st = sp.read_text(encoding="utf-8")
             if "**" in re.search(r"<title>(.*?)</title>", st).group(1):
                 seo_issues.append(f"Raw markdown in <title>: {sp.as_posix()}")
+    for shell_rel in ["van-hoa.html", "explore.html", "kinh-doanh.html", "hoc-tap.html"]:
+        sp_path = ROOT / "seo_pages" / shell_rel
+        if not sp_path.is_file() or "src/data/v5/v5DeepEnrichmentLayer.js" not in sp_path.read_text(encoding="utf-8"):
+            seo_issues.append(f"Stale SEO shell missing V5 scripts: seo_pages/{shell_rel}")
     print(f"[Gate 7] SEO & OG Shells Integrity: {'PASS' if not seo_issues else 'FAIL'}")
     failures.extend(seo_issues)
 
@@ -209,6 +213,19 @@ def main() -> int:
         pe_txt = (v4_dir / "politicsEconHskTcmStudyV4.js").read_text(encoding="utf-8")
         if "KHÔNG phải y học" not in pe_txt or "epistemicBannerEn" not in pe_txt:
             g9_issues.append("Yin-Yang-Wuxing dataset missing non-clinical / non-predictive banner")
+    v5_dir = ROOT / "src" / "data" / "v5"
+    for fn in [
+        "laozihaoBrandsV5.js", "laozihaoBrandsExpandedV5.js",
+        "courseLessonsV5.js", "hskEssaysV5.js",
+        "wuxingCasebookV5.js", "supplyChainCasesV5.js",
+        "quizMasteryV5.js", "v5DeepEnrichmentLayer.js"
+    ]:
+        if not (v5_dir / fn).is_file():
+            g9_issues.append(f"MISSING V5 data file: src/data/v5/{fn}")
+    if (v5_dir / "wuxingCasebookV5.js").is_file():
+        wx_txt = (v5_dir / "wuxingCasebookV5.js").read_text(encoding="utf-8")
+        if "tuyệt đối KHÔNG" not in wx_txt or "NOT clinical" not in wx_txt:
+            g9_issues.append("V5 Wuxing casebook missing non-clinical / non-predictive disclaimer")
     for mod in [
         "src/components/china3DMap.js",
         "src/components/3d/dougongJoinery3D.js",

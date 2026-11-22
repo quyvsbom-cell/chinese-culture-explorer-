@@ -200,6 +200,97 @@
       });
     }
 
+    var lzhExp = window.CCE_V5_LAOZIHAO_EXPANDED || {};
+    var b60 = lzhExp.brands60 || [];
+    for (i = 0; i < b60.length; i++) {
+      var bx = b60[i];
+      out.push({
+        type: "business",
+        id: bx.id,
+        title: bx.zh + " (" + bx.hanViet + " · " + bx.foundedYear + ")",
+        titleEn: bx.nameEn + " · " + bx.zh + " (Est. " + bx.foundedYear + ")",
+        zh: bx.zh || "",
+        sub: "Lão Tự Hiệu · " + (bx.cityVi || ""),
+        rawTitle: norm(bx.zh + " " + bx.pinyin + " " + bx.hanViet + " " + bx.nameEn),
+        body: norm((bx.craftSecretVi || "") + " " + (bx.b2bTradeVi || "") + " " + (bx.signatureProductVi || ""))
+      });
+    }
+    var gis = lzhExp.giAppellations12 || [];
+    for (i = 0; i < gis.length; i++) {
+      var g = gis[i];
+      out.push({
+        type: "business",
+        id: g.id,
+        title: "[GI Âu–Trung] " + g.vi + " (" + g.zh + ")",
+        titleEn: "[EU–China GI] " + g.en + " (" + g.zh + ")",
+        zh: g.zh || "",
+        sub: g.gbStandardCode || "Chỉ dẫn Địa lý Bảo hộ",
+        rawTitle: norm(g.zh + " " + g.pinyin + " " + g.vi + " " + g.en),
+        body: norm((g.euProtectionNoteVi || "") + " " + (g.terroirAndCraftVi || ""))
+      });
+    }
+
+    var v5Lessons = (window.CCE_V5_COURSE_LESSONS && window.CCE_V5_COURSE_LESSONS.lessons36) || [];
+    for (i = 0; i < v5Lessons.length; i++) {
+      var ls = v5Lessons[i];
+      out.push({
+        type: "article",
+        id: (ls.moduleNum >= 6 ? "sino-vietnamese-translation-business" : (ls.moduleNum === 3 ? "temple-of-heaven-tiantan-cosmology-3d" : "forbidden-city-3d-dissection")),
+        title: "[HP " + ls.moduleNum + "." + ls.lessonNum + "] " + ls.titleVi,
+        titleEn: "[Module " + ls.moduleNum + "." + ls.lessonNum + "] " + (ls.titleEn || ls.titleVi),
+        zh: (ls.titleZh || "").split("·")[0].trim(),
+        sub: "Khóa học V5 · " + (ls.titleZh || ""),
+        rawTitle: norm((ls.titleVi || "") + " " + (ls.titleEn || "") + " " + (ls.titleZh || "")),
+        body: norm((ls.coreQuestionVi || "") + " " + (ls.synthesisParagraphVi || ""))
+      });
+    }
+
+    var hskV5 = window.CCE_V5_HSK_ESSAYS || {};
+    var cm20 = hskV5.classicalModernPairs20 || [];
+    for (i = 0; i < cm20.length; i++) {
+      var cm = cm20[i];
+      out.push({
+        type: "classic",
+        id: cm.id,
+        title: "[Cổ văn ↔ HSK] " + cm.classicalZh + " (" + cm.hanViet + ")",
+        titleEn: "[Classical ↔ Modern] " + cm.classicalZh + " — " + cm.en,
+        zh: cm.classicalZh || "",
+        sub: cm.sourceBook || "HSK 4–9 Văn ngôn",
+        rawTitle: norm(cm.classicalZh + " " + cm.modernZh + " " + cm.hanViet + " " + cm.pinyin),
+        body: norm((cm.vi || "") + " " + (cm.en || "") + " " + (cm.usageContextVi || ""))
+      });
+    }
+
+    var wxCases = (window.CCE_V5_WUXING_CASEBOOK && window.CCE_V5_WUXING_CASEBOOK.historicalCases16) || [];
+    for (i = 0; i < wxCases.length; i++) {
+      var wx = wxCases[i];
+      out.push({
+        type: "article",
+        id: "yinyang-origins",
+        title: "[Âm Dương Ngũ Hành] " + wx.titleVi,
+        titleEn: "[Wuxing Case] " + (wx.titleEn || wx.titleVi),
+        zh: (wx.titleZh || "").split("·")[0].trim(),
+        sub: wx.phaseFocus || "Lịch sử Tư tưởng",
+        rawTitle: norm(wx.titleVi + " " + (wx.titleEn || "") + " " + (wx.phaseFocus || "")),
+        body: norm((wx.historicalAnalysisVi || "") + " " + (wx.crossSystemLinkVi || ""))
+      });
+    }
+
+    var sc24 = (window.CCE_V5_SUPPLY_CASES && window.CCE_V5_SUPPLY_CASES.cases24) || [];
+    for (i = 0; i < sc24.length; i++) {
+      var sc = sc24[i];
+      out.push({
+        type: "business",
+        id: sc.id,
+        title: "[" + sc.lane + "] " + sc.titleVi,
+        titleEn: "[" + sc.lane + "] " + (sc.titleEn || sc.titleVi),
+        zh: "",
+        sub: sc.lane + " · Logistics Âu–Trung",
+        rawTitle: norm(sc.lane + " " + sc.titleVi + " " + (sc.titleEn || "")),
+        body: norm((sc.riskIdentifiedEn || "") + " " + (sc.actionPlanVi || ""))
+      });
+    }
+
     _items = out;
     _dirty = false;
     return out;

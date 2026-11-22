@@ -207,6 +207,134 @@
     );
   }
 
+  function renderV5HskEssays(enM) {
+    var hskData = window.CCE_V5_HSK_ESSAYS || {};
+    var pairs20 = hskData.classicalModernPairs20 || [];
+    var tpl15 = hskData.hskArgumentTemplates15 || [];
+    if (!pairs20.length && !tpl15.length) return "";
+    var pairImgs = [
+      "assets/images/articles/hero-confucianism.jpg",
+      "assets/images/academic/laozi-portrait.jpg",
+      "assets/images/academic/sunzi-bamboo-slips.jpg",
+      "assets/images/museum/lantingji-xu.jpg",
+      "assets/images/articles/hero-classical-books-scrolls.jpg",
+      "assets/images/articles/hero-academy-shuyuan.jpg"
+    ];
+    return (
+      '<div id="cce-v5-hsk-essays-section" style="margin-top:1.35rem;padding-top:1rem;border-top:2px solid var(--hairline);">' +
+      '  <div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "WENYAN ↔ MODERN BAIHUA BRIDGE & HSK 6–9 ACADEMIC TEMPLATES · 文言文与议论文模板" : "NHỊP CẦU CỔ VĂN (VĂN NGÔN) ↔ BẠCH THOẠI & 15 KHUNG NGHỊ LUẬN HSK 6–9") + '</div>' +
+      '  <h4 style="margin:0.2rem 0 0.75rem;font-size:1.15rem;">' + (enM ? (pairs20.length + " Classical–Modern Sentence Pairs &amp; " + tpl15.length + " HSK Argument Templates") : (pairs20.length + " Danh ngôn Cổ văn – Hiện đại &amp; " + tpl15.length + " Khung Lập luận Luận văn / Phỏng vấn CSC")) + '</h4>' +
+      (pairs20.length ? (
+        '  <div class="grid grid-2" style="gap:0.75rem;max-height:540px;overflow:auto;margin-bottom:1.1rem;">' +
+        pairs20.map(function (cm, idx) {
+          return (
+            '<article class="flashcard-layer" style="font-size:0.81rem;display:flex;flex-direction:column;gap:0.35rem;">' +
+            renderV4Thumb(pairImgs[idx % pairImgs.length], cm.sourceBook + " — " + cm.hanViet, true) +
+            '  <div style="display:flex;justify-content:space-between;align-items:center;gap:0.4rem;">' +
+            '    <span class="badge badge-gold">' + esc(cm.sourceBook) + '</span>' +
+            '    <span>' + spk(cm.classicalZh) + ' ' + srsBtn(cm.classicalZh, cm.pinyin, cm.hanViet, cm.vi, cm.en) + '</span>' +
+            '  </div>' +
+            '  <div class="hanzi" style="font-size:1.05rem;color:var(--imperial-red);font-weight:700;">' + esc(cm.classicalZh) + '</div>' +
+            '  <div class="hanzi" style="font-size:0.9rem;color:var(--jade-green);">→ ' + esc(cm.modernZh) + ' ' + spk(cm.modernZh) + '</div>' +
+            '  <div class="pinyin text-xs">' + esc(cm.pinyin) + ' · <strong>' + esc(cm.hanViet) + '</strong></div>' +
+            '  <div><strong>' + (enM ? "Meaning:" : "Nghĩa:") + '</strong> ' + esc(enM ? cm.en : cm.vi) + '</div>' +
+            '  <div style="font-size:0.77rem;color:var(--text-secondary);background:var(--bg-paper);padding:0.4rem 0.55rem;border:1px solid var(--hairline);"><strong>' + (enM ? "CSC / Essay Usage:" : "Ứng dụng viết HSK / CSC:") + '</strong> ' + esc(enM ? cm.usageContextEn : cm.usageContextVi) + '</div>' +
+            (cm.grammarBreakdownVi ? (
+              '  <details class="ed-details" style="font-size:0.77rem;">' +
+              '    <summary style="cursor:pointer;font-weight:700;color:var(--jade-green);">' + (enM ? "Grammar Breakdown &amp; Model Essay Paragraph →" : "Phân tích Hư tự Cổ – Kim &amp; Đoạn văn Mẫu HSK 7–9 →") + '</summary>' +
+              '    <div style="margin-top:0.35rem;display:grid;gap:0.3rem;padding:0.45rem 0.55rem;background:var(--bg-surface);border:1px solid var(--hairline);">' +
+              '      <div><strong>' + (enM ? "Philology:" : "Ngữ pháp Văn ngôn:") + '</strong> ' + esc(enM ? (cm.grammarBreakdownEn || cm.grammarBreakdownVi) : cm.grammarBreakdownVi) + '</div>' +
+              (cm.rhetoricalDeviceVi ? '<div><strong>' + (enM ? "Rhetorical Device:" : "Thủ pháp Tu từ &amp; Đối ngẫu:") + '</strong> ' + esc(enM ? (cm.rhetoricalDeviceEn || cm.rhetoricalDeviceVi) : cm.rhetoricalDeviceVi) + '</div>' : "") +
+              (cm.hskEssayApplicationZh ? '<div class="hanzi" style="color:var(--ink-primary);">' + esc(cm.hskEssayApplicationZh) + ' ' + spk(cm.hskEssayApplicationZh) + '</div>' : "") +
+              (cm.hskEssayApplicationVi ? '<div style="color:var(--jade-green);">' + esc(enM ? (cm.hskEssayApplicationEn || cm.hskEssayApplicationVi) : cm.hskEssayApplicationVi) + '</div>' : "") +
+              '    </div>' +
+              '  </details>'
+            ) : "") +
+            '</article>'
+          );
+        }).join("") +
+        '  </div>'
+      ) : "") +
+      (tpl15.length ? (
+        '  <h4 style="margin:0 0 0.55rem;">' + (enM ? (tpl15.length + " High-Register HSK 6–9 &amp; CSC Research Argument Templates") : (tpl15.length + " Khung Lập luận Học thuật HSK 6–9 &amp; Đề cương Thạc sĩ CSC")) + '</h4>' +
+        '  <div class="grid grid-2" style="gap:0.75rem;max-height:480px;overflow:auto;">' +
+        tpl15.map(function (tp, idx) {
+          return (
+            '<article class="card" style="padding:0.85rem 0.95rem;font-size:0.81rem;display:flex;flex-direction:column;gap:0.35rem;">' +
+            renderV4Thumb(HSK_BRIEF_POOL[idx % HSK_BRIEF_POOL.length], enM ? tp.themeEn : tp.themeVi, true) +
+            '  <div style="display:flex;justify-content:space-between;align-items:center;"><span class="badge badge-jade">' + esc(enM ? tp.themeEn : tp.themeVi) + '</span><span>' + spk(tp.sampleParagraphZh) + ' ' + srsBtn(tp.structureZh, tp.pinyin, tp.themeVi, tp.viNote, tp.parallelEn) + '</span></div>' +
+            '  <div class="hanzi" style="font-size:0.98rem;color:var(--imperial-red);font-weight:700;">' + esc(tp.structureZh) + '</div>' +
+            '  <div class="pinyin text-xs">' + esc(tp.pinyin) + '</div>' +
+            '  <div style="color:var(--jade-green);"><strong>Academic EN:</strong> ' + esc(tp.parallelEn) + '</div>' +
+            '  <div class="callout-editorial" style="margin:0.2rem 0;padding:0.45rem 0.6rem;">' +
+            '    <div class="hanzi" style="font-size:0.88rem;">' + esc(tp.sampleParagraphZh) + '</div>' +
+            '    <div style="font-size:0.77rem;color:var(--text-secondary);margin-top:0.2rem;">' + esc(tp.sampleParagraphEn) + '</div>' +
+            '  </div>' +
+            (tp.connectorToolkitZh ? '<div style="font-size:0.76rem;color:var(--imperial-red);"><strong>Toolkit:</strong> <span class="hanzi">' + esc(tp.connectorToolkitZh) + '</span></div>' : "") +
+            '  <div style="font-size:0.76rem;color:var(--text-muted);"><strong>' + (enM ? "Register Tip:" : "Lưu ý Văn phong:") + '</strong> ' + esc(enM ? (tp.commonPitfallEn || tp.viNote) : (tp.viNote + " " + (tp.commonPitfallVi || ""))) + '</div>' +
+            '</article>'
+          );
+        }).join("") +
+        '  </div>'
+      ) : "") +
+      '</div>'
+    );
+  }
+
+  function renderV5WuxingCasebook(enM) {
+    var cb = window.CCE_V5_WUXING_CASEBOOK || {};
+    var cases = cb.historicalCases16 || [];
+    if (!cases.length) return "";
+    var discObj = cb.epistemicDisclaimer || {};
+    var wxImgs = [
+      "assets/images/museum/acupuncture-bronze.jpg",
+      "assets/images/articles/hero-tcm-solar.jpg",
+      "assets/images/articles/hero-yinyang.jpg",
+      "assets/images/articles/hero-wuxing.jpg",
+      "assets/images/articles/hero-traditional-arch.jpg",
+      "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
+      "assets/images/provinces/beijing-temple-of-heaven.jpg",
+      "assets/images/museum/han-shipan.jpg"
+    ];
+    return (
+      '<div id="cce-v5-wuxing-casebook" style="margin-top:1.45rem;padding-top:1rem;border-top:2px solid var(--hairline);">' +
+      '  <div class="editorial-kicker" style="color:var(--jade-green);">' + (enM ? "HISTORICAL CASEBOOK: COSMOLOGY, ARCHITECTURE & CALENDRICAL SCIENCE · 阴阳五行思想史案例集" : "16 NGHIÊN CỨU ĐIỂN HÌNH LỊCH SỬ TƯ TƯỞNG ÂM DƯƠNG – NGŨ HÀNH (ĐÔNG Y · PHONG THỦY · LỊCH PHÁP · TỬ VI)") + '</div>' +
+      (discObj.vi ? '<div class="epistemic-box critical" style="margin:0.45rem 0 0.9rem;font-size:0.8rem;">' + esc(enM ? (discObj.en || discObj.vi) : discObj.vi) + '</div>' : "") +
+      '  <div class="grid grid-2" style="gap:0.85rem;max-height:580px;overflow:auto;">' +
+      cases.map(function (c, idx) {
+        var cTitle = enM ? (c.titleEn || c.titleVi) : c.titleVi;
+        return (
+          '<article class="card" style="padding:0.9rem 1rem;font-size:0.81rem;display:flex;flex-direction:column;gap:0.35rem;">' +
+          renderV4Thumb(wxImgs[idx % wxImgs.length], cTitle, false) +
+          '  <div style="display:flex;justify-content:space-between;align-items:center;gap:0.4rem;flex-wrap:wrap;">' +
+          '    <span class="badge badge-jade">' + esc(c.domain) + ' · ' + esc(c.phaseFocus) + '</span>' +
+          spk((c.primaryCitationZh || "").split("（")[0].slice(0, 60)) +
+          '  </div>' +
+          '  <h4 style="margin:0.15rem 0;font-size:0.98rem;">' + esc(cTitle) + '</h4>' +
+          '  <div class="hanzi text-xs" style="color:var(--imperial-red);">' + esc(c.titleZh) + '</div>' +
+          '  <div class="callout-editorial" style="margin:0.25rem 0;padding:0.45rem 0.65rem;">' +
+          '    <div class="hanzi" style="font-size:0.88rem;">' + esc(c.primaryCitationZh) + '</div>' +
+          (c.primaryCitationVi ? '<div style="font-size:0.77rem;color:var(--text-secondary);margin-top:0.2rem;">' + esc(enM ? c.primaryCitationEn : c.primaryCitationVi) + '</div>' : "") +
+          '  </div>' +
+          '  <p style="margin:0;color:var(--text-secondary);line-height:1.5;">' + esc(enM ? (c.historicalAnalysisEn || c.historicalAnalysisVi) : c.historicalAnalysisVi) + '</p>' +
+          (c.crossSystemLinkVi ? (
+            '  <details class="ed-details" style="font-size:0.78rem;margin-top:0.15rem;">' +
+            '    <summary style="cursor:pointer;font-weight:700;color:var(--imperial-red);">' + (enM ? "Correlative Mechanism &amp; Cross-Domain / VN Link →" : "Cơ chế Tương quan Sinh–Khắc &amp; Giao thoa Văn hóa Việt Nam →") + '</summary>' +
+            '    <div style="margin-top:0.35rem;display:grid;gap:0.3rem;padding:0.45rem 0.55rem;background:var(--bg-paper);border:1px solid var(--hairline);">' +
+            (c.correlativeMechanismVi ? '<div><strong>' + (enM ? "Structural Logic:" : "Cấu trúc Quy luật:") + '</strong> ' + esc(enM ? c.correlativeMechanismEn : c.correlativeMechanismVi) + '</div>' : "") +
+            (c.architecturalOrDailyManifestationVi ? '<div><strong>' + (enM ? "Architecture &amp; Cultural Expression (Non-Clinical):" : "Ứng dụng Kiến trúc &amp; Thực dưỡng Truyền thống (Phi lâm sàng):") + '</strong> ' + esc(enM ? (c.architecturalOrDailyManifestationEn || c.architecturalOrDailyManifestationVi) : c.architecturalOrDailyManifestationVi) + '</div>' : "") +
+            '<div style="color:var(--jade-green);"><strong>' + (enM ? "Cross-Domain &amp; VN Link:" : "Liên kết Liên ngành &amp; Việt Nam:") + '</strong> ' + esc(enM ? (c.crossSystemLinkEn || c.crossSystemLinkVi) : c.crossSystemLinkVi) + '</div>' +
+            '    </div>' +
+            '  </details>'
+          ) : "") +
+          '</article>'
+        );
+      }).join("") +
+      '  </div>' +
+      '</div>'
+    );
+  }
+
   function renderHub(enM) {
     var disc = window.CCE_V4_DISCIPLINES || {};
     var lit = window.CCE_LITERATURE_HSK_V4 || {};
@@ -245,13 +373,16 @@
 
       var subBar = subPillsBar("hskSub", st.hskSub, [
         { id: "classics", lbl: enM ? "Journey to the West & Red Chamber + Canons" : "Tây Du Ký, Hồng Lâu Mộng & Tứ đại Danh tác" },
+        { id: "essays-v5", lbl: enM ? "20 Classical–Modern Pairs & 15 HSK 6–9 Templates" : "20 Cặp Cổ văn ↔ Hiện đại & 15 Khung Nghị luận HSK 6–9" },
         { id: "briefs", lbl: enM ? ("60 HSK 4–9 Cultural Briefs (" + briefsAll.length + ")") : ("60 Đoạn đọc Văn hóa HSK 4–9 (" + briefsAll.length + ")") },
         { id: "poems", lbl: enM ? ("24 Tang–Song Poems (" + poems.length + ")") : ("24 Thi từ Đường–Tống (" + poems.length + ")") },
         { id: "chengyu", lbl: enM ? ("100 HSK Chengyu (" + chengyu.length + ")") : ("100 Thành ngữ Kinh điển (" + chengyu.length + ")") },
         { id: "phrases", lbl: enM ? ("60 Field Phrases & 5 Operas") : ("60 Mẫu câu Thực địa & Hý khúc") }
       ]);
 
-      if (st.hskSub === "briefs") {
+      if (st.hskSub === "essays-v5") {
+        body = subBar + renderV5HskEssays(enM);
+      } else if (st.hskSub === "briefs") {
         var filteredBriefs = briefsAll.filter(function (b) {
           var lv = String(b.hsk || b.level || "").replace("HSK ", "");
           return st.hskLevel === "all" || lv === String(st.hskLevel);
@@ -363,7 +494,8 @@
           canons.map(function (c, idx) {
             return '<article class="card">' + renderV4Thumb(canonImgs[idx % canonImgs.length], enM ? c.titleEn : c.titleVi, false) + '<span class="badge badge-gold">' + esc(c.hskTag) + '</span><div class="card-title-zh" style="margin-top:0.35rem;">' + esc(c.zh) + ' ' + spk(c.zh) + '</div><h4 style="margin:0.15rem 0 0.4rem;">' + esc(enM ? c.titleEn : c.titleVi) + '</h4><p style="font-size:0.82rem;margin:0 0 0.35rem;">' + esc(enM ? c.coreThemeEn : c.coreThemeVi) + '</p><div style="font-size:0.77rem;color:var(--jade-green);">' + esc(c.hskVocabVi) + '</div></article>';
           }).join("") +
-          '</div>';
+          '</div>' +
+          renderV5HskEssays(enM);
       }
 
     // =========================================================================
@@ -376,14 +508,17 @@
       var herbs = (sciRaw.tcmHeritageOverview && sciRaw.tcmHeritageOverview.culinaryHerbs12) || [];
 
       var wBar = subPillsBar("wuxingSub", st.wuxingSub, [
-        { id: "matrix", lbl: enM ? "Yin–Yang–Wuxing 5×4 Cross-Domain Matrix" : "Ngữ pháp Gốc & Ma trận 5×4 (Đông y·Phong thủy·Bát Tự·Tử Vi)" },
+        { id: "matrix", lbl: enM ? "Yin–Yang–Wuxing 5×4 Matrix & 16 Cases" : "Ngữ pháp Gốc, Ma trận 5×4 & 16 Case" },
+        { id: "casebook-v5", lbl: enM ? "16 Historical Yin–Yang–Wuxing Case Studies" : "16 Nghiên cứu Điển hình Âm Dương – Ngũ Hành" },
         { id: "constitutions", lbl: enM ? ("9 Constitutions & 12 Wellness Herbs") : ("9 Thể chất Đông y & 12 Vị Dược thiện") },
         { id: "ziwu", lbl: enM ? ("12 Ziwu Liuzhu Meridian Clock & 20 TCM Terms") : ("12 Canh giờ Tử Ngọ Lưu Chú & 20 Thuật ngữ Tam ngữ") }
       ]);
 
       var epistemicBox = '<div class="epistemic-box critical" style="margin-bottom:0.85rem;"><div class="epistemic-title">' + (enM ? "Strict Epistemological Boundary (Non-Clinical & Non-Predictive)" : "Khung Ranh giới Khoa học: Khảo cứu Văn hóa – Lịch sử (Không Lâm sàng & Không Tiên tri)") + '</div><p style="margin:0 0 0.35rem;font-size:0.84rem;">' + esc(enM ? yw.epistemicBannerEn : yw.epistemicBannerVi) + '</p><p style="margin:0;font-size:0.8rem;color:var(--text-secondary);">' + esc(enM ? tcm.disclaimerEn : tcm.disclaimerVi) + '</p></div>';
 
-      if (st.wuxingSub === "constitutions") {
+      if (st.wuxingSub === "casebook-v5") {
+        body = epistemicBox + wBar + renderV5WuxingCasebook(enM);
+      } else if (st.wuxingSub === "constitutions") {
         var const9 = tcmDeep.constitutions9 || [];
         body = epistemicBox + wBar +
           '<div class="grid grid-3" style="gap:0.75rem;margin-bottom:1.1rem;">' +
@@ -430,7 +565,8 @@
           (tcm.classics || []).map(function (cl, idx) {
             return '<div class="flashcard-layer">' + renderV4Thumb(tcmClassicImgs[idx % tcmClassicImgs.length], cl.zh, true) + '<strong class="hanzi">' + esc(cl.zh) + '</strong><br><strong>' + esc(enM ? cl.en : cl.vi) + '</strong><p style="font-size:0.8rem;margin:0.3rem 0 0;">' + esc(enM ? cl.noteEn : cl.noteVi) + '</p></div>';
           }).join("") +
-          '</div>';
+          '</div>' +
+          renderV5WuxingCasebook(enM);
       }
 
     // =========================================================================

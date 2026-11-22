@@ -9,8 +9,9 @@
   "use strict";
 
   var trState = {
-    tab: "terms", // "terms" | "emails" | "interviews" | "articles" | "silkroad"
+    tab: "terms", // "terms" | "emails" | "interviews" | "articles" | "silkroad" | "cases24"
     cat: "all",
+    caseLane: "all",
     query: "",
     recallMode: "both" // "both" | "hide-en" | "hide-zh"
   };
@@ -65,6 +66,7 @@
     var dialogues = data.dialogues || [];
     var parallelArticles = data.parallelArticles || tbRaw.parallelArticles10 || [];
     var silk = data.silkRoadLogisticsContinuum || [];
+    var supplyCases = (window.CCE_V5_SUPPLY_CASES && window.CCE_V5_SUPPLY_CASES.cases24) || [];
     if (!terms.length && !emails.length) return "";
 
     var q = trState.query.trim().toLowerCase();
@@ -200,6 +202,67 @@
           '</article>'
         );
       }).join("") + '</div>';
+    } else if (trState.tab === "cases24") {
+      var lanes = ["all", "CR Express Rail", "Yantian-Rotterdam Ocean", "Ningbo-Hamburg FCL", "Huunghi-Haiphong Hybrid", "EU CBAM Steel/Alu", "EUDR Traceability"];
+      var visCases = supplyCases.filter(function (sc) {
+        var laneOk = trState.caseLane === "all" || sc.lane === trState.caseLane;
+        var qOk = !q || (sc.titleVi + " " + sc.titleEn + " " + sc.scenarioZh + " " + sc.riskIdentifiedEn + " " + sc.actionPlanVi).toLowerCase().indexOf(q) !== -1;
+        return laneOk && qOk;
+      });
+      body = (
+        '<div class="filter-bar" style="margin-bottom:0.85rem;">' +
+        lanes.map(function (ln) {
+          var cnt = ln === "all" ? supplyCases.length : supplyCases.filter(function (x) { return x.lane === ln; }).length;
+          return '<button type="button" class="filter-pill ' + (trState.caseLane === ln ? "active" : "") + '" data-trst-act="case-lane" data-val="' + esc(ln) + '" style="font-size:0.74rem;">' + (ln === "all" ? (enM ? "All Lanes (" + cnt + ")" : "Tất cả Tuyến (" + cnt + ")") : esc(ln) + " (" + cnt + ")") + '</button>';
+        }).join("") +
+        '</div>' +
+        '<div style="display:grid;gap:0.95rem;max-height:640px;overflow:auto;">' +
+        visCases.map(function (sc, idx) {
+          var sTitle = enM ? sc.titleEn : sc.titleVi;
+          var docs = Array.isArray(sc.documentChecklist) ? sc.documentChecklist : [];
+          var kTerms = Array.isArray(sc.keyTermsZhEn) ? sc.keyTermsZhEn : [];
+          var rep = sc.bilingualReplyTemplate || null;
+          return (
+            '<article class="card" style="padding:1rem 1.15rem;border-top:2px solid var(--jade-green);">' +
+            renderTrstThumb(TRADE_IMGS[idx % TRADE_IMGS.length], sTitle) +
+            '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.3rem;">' +
+            '    <span class="badge badge-jade">' + esc(sc.lane) + '</span>' +
+            '    <span>' + spkBtn((sc.scenarioZh || "").split("(")[0].slice(0, 120), "zh-CN") + ' ' + spkBtn(sc.riskIdentifiedEn || "", "en-US") + '</span>' +
+            '  </div>' +
+            '  <h4 style="margin:0.15rem 0 0.4rem;">' + esc(sTitle) + '</h4>' +
+            '  <div class="callout-editorial" style="margin:0 0 0.45rem;padding:0.5rem 0.7rem;font-size:0.82rem;">' +
+            '    <strong class="hanzi" style="color:var(--imperial-red);">Factory / Terminal Dispatch:</strong> ' + esc(sc.scenarioZh) +
+            '  </div>' +
+            '  <p style="font-size:0.81rem;margin:0 0 0.35rem;color:var(--imperial-red);"><strong>' + (enM ? "Operational &amp; Cost Risk (EN):" : "Rủi ro Điều hành &amp; Chi phí (EU HQ English):") + '</strong> ' + esc(sc.riskIdentifiedEn) + '</p>' +
+            '  <p style="font-size:0.81rem;margin:0 0 0.4rem;"><strong>' + (enM ? "Action Plan (SOP):" : "Quy trình Xử lý Thực chiến:") + '</strong> ' + esc(sc.actionPlanVi) + '</p>' +
+            (sc.incotermsAndLiabilityVi ? '<div style="font-size:0.79rem;padding:0.45rem 0.6rem;background:var(--bg-paper);border:1px solid var(--hairline);margin-bottom:0.4rem;"><strong>Incoterms 2020 &amp; Liability:</strong> ' + esc(enM ? (sc.incotermsAndLiabilityEn || sc.incotermsAndLiabilityVi) : sc.incotermsAndLiabilityVi) + (sc.financialImpactRangeEur ? '<div style="margin-top:0.25rem;color:var(--imperial-red);"><strong>' + (enM ? "Exposure Benchmark:" : "Biên độ Rủi ro Chi phí:") + '</strong> ' + esc(sc.financialImpactRangeEur) + '</div>' : "") + '</div>' : "") +
+            (docs.length ? '<div style="display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:0.45rem;">' + docs.map(function (d) { return '<span class="badge badge-outline" style="font-size:0.71rem;">✓ ' + esc(d) + '</span>'; }).join("") + '</div>' : "") +
+            (kTerms.length ? '<div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.45rem;">' + kTerms.map(function (kt) {
+              var parts = String(kt.zh || "").split("(");
+              var zhPure = parts[0].trim();
+              var pyPure = parts[1] ? parts[1].replace(")", "").trim() : "";
+              return '<span style="display:inline-flex;align-items:center;gap:0.3rem;padding:0.2rem 0.45rem;background:var(--bg-accent-soft);border:1px solid var(--hairline);font-size:0.75rem;"><strong class="hanzi">' + esc(zhPure) + '</strong> · ' + esc(enM ? kt.en : kt.vi) + ' <button type="button" class="btn btn-ghost btn-sm" style="padding:0 0.25rem;font-size:0.68rem;" data-trst-act="push-srs" data-zh="' + esc(zhPure) + '" data-py="' + esc(pyPure) + '" data-vi="' + esc(kt.vi) + '" data-en="' + esc(kt.en) + '">+ SRS</button></span>';
+            }).join("") + '</div>' : "") +
+            (rep || sc.stepByStepSOPVi || sc.clauseDraftingTemplateEn ? (
+              '  <details class="ed-details" style="font-size:0.78rem;">' +
+              '    <summary style="cursor:pointer;font-weight:700;color:var(--jade-green);">' + (enM ? "24h-7d Action SOP, Contract Clause &amp; Reply Templates →" : "SOP Xử lý T+0h→7d, Điều khoản Hợp đồng &amp; Mẫu Phản hồi WeChat/Email →") + '</summary>' +
+              '    <div style="margin-top:0.45rem;display:grid;gap:0.45rem;">' +
+              (sc.stepByStepSOPVi ? '<div style="padding:0.45rem 0.6rem;background:var(--bg-surface);border:1px solid var(--hairline);"><strong>' + (enM ? "Timestamped Escalation SOP:" : "Chuỗi Phản ứng Từng Giờ (SOP):") + '</strong> ' + esc(enM ? (sc.stepByStepSOPEn || sc.stepByStepSOPVi) : sc.stepByStepSOPVi) + '</div>' : "") +
+              (sc.clauseDraftingTemplateEn ? '<div style="padding:0.45rem 0.6rem;background:var(--bg-paper);border-left:3px solid var(--imperial-red);"><strong>' + (enM ? "Contract Clause (EN / 中文):" : "Điều khoản Hợp đồng Mẫu (EN / 中文):") + '</strong> <div style="margin-top:0.2rem;">' + esc(sc.clauseDraftingTemplateEn) + '</div>' + (sc.clauseDraftingTemplateZh ? '<div class="hanzi" style="color:var(--imperial-red);margin-top:0.2rem;">' + esc(sc.clauseDraftingTemplateZh) + ' ' + spkBtn(sc.clauseDraftingTemplateZh, "zh-CN") + '</div>' : "") + '</div>' : "") +
+              (rep ? (
+                '      <div class="grid grid-2" style="gap:0.55rem;">' +
+                '        <div style="padding:0.45rem 0.6rem;background:var(--bg-paper);border:1px solid var(--hairline);"><strong style="color:var(--imperial-red);">To Factory (中文):</strong> ' + spkBtn(rep.toFactoryZh, "zh-CN") + '<div class="hanzi" style="margin-top:0.2rem;">' + esc(rep.toFactoryZh) + '</div></div>' +
+                '        <div style="padding:0.45rem 0.6rem;background:var(--bg-paper);border:1px solid var(--hairline);"><strong style="color:var(--jade-green);">To EU HQ (EN):</strong> ' + spkBtn(rep.toEuHqEn, "en-US") + '<div style="margin-top:0.2rem;">' + esc(rep.toEuHqEn) + '</div></div>' +
+                '      </div>'
+              ) : "") +
+              '    </div>' +
+              '  </details>'
+            ) : "") +
+            '</article>'
+          );
+        }).join("") +
+        '</div>'
+      );
     } else {
       body = (
         '<div style="margin-bottom:0.85rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">' +
@@ -223,6 +286,7 @@
         { id: "emails", lbl: (enM ? (emails.length + " Email Pairs (Factory ZH | EU EN)") : (emails.length + " Cặp Email Xưởng TQ ↔ Sếp Âu")) },
         { id: "interviews", lbl: (enM ? (dialogues.length + " EU Dialogues & Interviews") : (dialogues.length + " Tình huống Hội thoại Âu–Trung")) },
         { id: "articles", lbl: (enM ? (parallelArticles.length + " Parallel Articles (ZH–EN–VI)") : (parallelArticles.length + " Bài Đọc Song hành Tam ngữ")) },
+        { id: "cases24", lbl: (enM ? (supplyCases.length + " EU–China Incident Cases") : (supplyCases.length + " Case Sự cố Logistics Âu–Trung")) },
         { id: "silkroad", lbl: (enM ? "Silk Road Historic–Modern 2026" : "Đường Tơ Lụa → Trung–Âu 2026") }
       ].map(function (t) {
         return '<button type="button" class="tab-btn ' + (trState.tab === t.id ? "active" : "") + '" data-trst-act="tab" data-val="' + t.id + '">' + t.lbl + '</button>';
@@ -257,6 +321,7 @@
       var act = el.getAttribute("data-trst-act");
       if (act === "tab") trState.tab = el.getAttribute("data-val") || "terms";
       else if (act === "cat") trState.cat = el.getAttribute("data-val") || "all";
+      else if (act === "case-lane") trState.caseLane = el.getAttribute("data-val") || "all";
       else if (act === "recall") trState.recallMode = el.getAttribute("data-val") || "both";
       else if (act === "push-srs") {
         if (window.CCE_SRS && window.CCE_SRS.addCard) {

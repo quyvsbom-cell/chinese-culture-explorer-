@@ -12,8 +12,11 @@ from __future__ import annotations
 import argparse
 import pathlib
 import re
+import zipfile
 
 DEFAULT_CANDIDATES = [
+    pathlib.Path(r"C:/Users/admin/.gemini/antigravity/brain/563fc13b-fb97-4891-9990-9294dff2c297/.user_uploaded/media_1795306779162_c451c11a.zip"),
+    pathlib.Path(r"C:\Users\admin\Downloads\V5_All_6_Packs.zip"),
     pathlib.Path(r"C:\Users\admin\Downloads\V5_All_6_Packs"),
     pathlib.Path(r"C:\Users\admin\Downloads\Gửi antigravity V5"),
 ]
@@ -30,39 +33,57 @@ V5_MAPPING = {
 }
 
 
+def sanitize_js(raw: str) -> str:
+    raw = EMOJI_RE.sub("", raw)
+    return re.sub(r"\bseamlessly\b", "directly", raw, flags=re.I)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", default="")
     args = parser.parse_args()
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    src_dir = None
+    src_path = None
     if args.source:
         c = pathlib.Path(args.source)
         if c.exists():
-            src_dir = c
+            src_path = c
     else:
         for c in DEFAULT_CANDIDATES:
             if c.exists():
-                src_dir = c
+                src_path = c
                 break
 
-    if not src_dir:
-        print("[import_v5_bundles] Drop folder not present yet; built-in V5 Laozihao & Course modules ready.")
+    if not src_path:
+        print("[import_v5_bundles] Drop folder or archive not present yet; built-in V5 Laozihao & Course modules ready.")
         return 0
 
     count = 0
-    for fp in sorted(src_dir.glob("*.js")):
-        target_name = V5_MAPPING.get(fp.name, f"imported_{fp.stem}.js")
-        raw = EMOJI_RE.sub("", fp.read_text(encoding="utf-8-sig"))
-        raw = re.sub(r"\bseamlessly\b", "directly", raw, flags=re.I)
-        target = OUT_DIR / target_name
-        target.write_text(raw, encoding="utf-8")
-        print(f"Imported V5 pack {fp.name} -> {target.as_posix()} ({len(raw)} chars)")
-        count += 1
+    if src_path.is_file() and src_path.suffix.lower() == ".zip":
+        with zipfile.ZipFile(src_path, "r") as zf:
+            for info in sorted(zf.infolist(), key=lambda x: x.filename):
+                if info.is_dir() or not info.filename.lower().endswith(".js"):
+                    continue
+                base_name = pathlib.PurePosixPath(info.filename).name
+                target_name = V5_MAPPING.get(base_name, f"imported_{pathlib.Path(base_name).stem}.js")
+                raw = sanitize_js(zf.read(info.filename).decode("utf-8-sig", errors="replace"))
+                target = OUT_DIR / target_name
+                target.write_text(raw, encoding="utf-8")
+                print(f"Imported V5 zip entry {base_name} -> {target.as_posix()} ({len(raw)} chars)")
+                count += 1
+    else:
+        for fp in sorted(src_path.glob("*.js")):
+            target_name = V5_MAPPING.get(fp.name, f"imported_{fp.stem}.js")
+            raw = sanitize_js(fp.read_text(encoding="utf-8-sig"))
+            target = OUT_DIR / target_name
+            target.write_text(raw, encoding="utf-8")
+            print(f"Imported V5 pack {fp.name} -> {target.as_posix()} ({len(raw)} chars)")
+            count += 1
 
-    print(f"IMPORT_V5_COMPLETE: {count} files imported from {src_dir}.")
-    return 0
+    print(f"IMPORT_V5_COMPLETE: {count} files imported from {src_path}.")
+    import enrich_v5_deep_detail
+    return enrich_v5_deep_detail.main()
 
 
 if __name__ == "__main__":

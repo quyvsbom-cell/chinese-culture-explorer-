@@ -47,63 +47,157 @@
     );
   }
 
+  function coreZhKey(zh) {
+    return String(zh || "")
+      .replace(/^(北京|杭州|广州|漳州|成都|宜宾|绍兴|苏州|太谷|东阿|长沙|武汉|上海|天津|济南|重庆|镇江|桂林|扬州|开封|福州|佛山|宜宾|泸州|杏花村|青岛|烟台|黄山|安溪|勐海|凤翔|宿迁|泾县|湖州|安徽|景德镇|沈阳)/, "")
+      .replace(/\s*\(.*?\)\s*/g, "")
+      .trim();
+  }
+
+  function mergeBrands() {
+    var seed = (window.CCE_V5_LAOZIHAO && window.CCE_V5_LAOZIHAO.brands) || [];
+    var exp = (window.CCE_V5_LAOZIHAO_EXPANDED && window.CCE_V5_LAOZIHAO_EXPANDED.brands60) || [];
+    var seen = {};
+    var out = [];
+    seed.concat(exp).forEach(function (b) {
+      if (!b || !b.zh) return;
+      var key = coreZhKey(b.zh) || b.zh;
+      if (seen[key]) {
+        // Merge any longer/enriched fields into existing item
+        var prev = seen[key];
+        ["signatureProductVi", "signatureProductEn", "qualityStandardVi", "qualityStandardEn", "vietnamAseanLessonVi", "vietnamAseanLessonEn", "flagshipAddressZh", "craftProcessStepsVi", "craftProcessStepsEn", "sensoryOrMaterialSpecVi", "sensoryOrMaterialSpecEn", "authenticVsCounterfeitVi", "authenticVsCounterfeitEn"].forEach(function (k) {
+          if (!prev[k] && b[k]) prev[k] = b[k];
+        });
+        return;
+      }
+      seen[key] = b;
+      out.push(b);
+    });
+    return out;
+  }
+
   function renderPavilion(enM) {
-    var data = window.CCE_V5_LAOZIHAO || {};
-    var cats = data.categories || [];
-    var brands = data.brands || [];
+    var brands = mergeBrands();
+    var giList = (window.CCE_V5_LAOZIHAO_EXPANDED && window.CCE_V5_LAOZIHAO_EXPANDED.giAppellations12) || [];
     if (!brands.length) return "";
 
-    var q = st.query.trim().toLowerCase();
-    var filtered = brands.filter(function (b) {
-      var catOk = st.cat === "all" || b.cat === st.cat;
-      var qOk = !q || (b.zh + " " + b.pinyin + " " + b.hanViet + " " + b.nameEn + " " + b.cityVi + " " + b.craftSecretVi).toLowerCase().indexOf(q) !== -1;
-      return catOk && qOk;
+    var counts = { all: brands.length, tcm_pharmacy: 0, culinary: 0, tea_spirits: 0, craft_studio: 0 };
+    brands.forEach(function (b) {
+      if (Object.prototype.hasOwnProperty.call(counts, b.cat)) counts[b.cat] += 1;
     });
+
+    var cats = [
+      { id: "all", vi: "Tất cả (" + counts.all + " Thương hiệu)", en: "All " + counts.all + " Brands" },
+      { id: "tcm_pharmacy", vi: "Đông y & Dược cục (" + counts.tcm_pharmacy + ")", en: "TCM Pharmacies (" + counts.tcm_pharmacy + ")" },
+      { id: "culinary", vi: "Ẩm thực Danh điếm (" + counts.culinary + ")", en: "Culinary Houses (" + counts.culinary + ")" },
+      { id: "tea_spirits", vi: "Danh trà & Tửu phường (" + counts.tea_spirits + ")", en: "Tea & Spirits (" + counts.tea_spirits + ")" },
+      { id: "craft_studio", vi: "Văn phòng Tứ bảo & Thủ công (" + counts.craft_studio + ")", en: "Crafts & Studio (" + counts.craft_studio + ")" }
+    ];
+    if (giList.length) {
+      cats.push({ id: "gi_eu", vi: "12 Chỉ dẫn Địa lý Âu–Trung (中欧地理标志)", en: "12 EU–China GIs" });
+    }
+
+    var q = st.query.trim().toLowerCase();
+    var filtered = st.cat === "gi_eu" ? [] : brands.filter(function (b) {
+      var catOk = st.cat === "all" || b.cat === st.cat;
+      var hay = (b.zh + " " + b.pinyin + " " + b.hanViet + " " + b.nameEn + " " + (b.cityVi || "") + " " + (b.craftSecretVi || "") + " " + (b.signatureProductVi || "")).toLowerCase();
+      return catOk && (!q || hay.indexOf(q) !== -1);
+    });
+
+    var filteredGi = (st.cat === "all" || st.cat === "gi_eu") ? giList.filter(function (g) {
+      if (!q) return true;
+      var hay = (g.zh + " " + g.pinyin + " " + g.vi + " " + g.en + " " + (g.gbStandardCode || "") + " " + (g.euProtectionNoteVi || "")).toLowerCase();
+      return hay.indexOf(q) !== -1;
+    }) : [];
 
     return (
       '<section id="cce-laozihao-pavilion" class="card mb-2" style="margin-top:2rem;border-top:3px solid var(--antique-gold);">' +
       '  <div class="section-header" style="margin-bottom:0.85rem;">' +
       '    <div>' +
-      '      <div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "CHINESE HONORED BRANDS ARCHIVE · 中华老字号博物馆" : "Chuyên mục Thương hiệu Di sản · 中华老字号 (Trung Hoa Lão Tự Hiệu)") + '</div>' +
-      '      <h2 class="section-title" style="font-size:1.55rem;margin:0.15rem 0 0;">' + (enM ? "24 Chinese Time-Honored Brands: Centuries of Craft, Ethics &amp; Supply Chain Heritage" : "24 Thương hiệu Lâu Đời Trăm Năm (中华老字号): Bí quyết Thủ công &amp; Bài học Kinh doanh") + '</h2>' +
-      '      <p class="section-subtitle" style="margin-top:0.25rem;">' + (enM ? "Tracing Qing/Ming royal purveyors across TCM pharmacies, culinary masters, tea houses, and scholars' craft studios—and what their quality discipline teaches modern EU–Asia trade." : "Từ hiệu thuốc Đồng Nhân Đường (1669), Trần Lý Tế (1600) đến Toàn Tụ Đức, Mao Đài, Ngô Dụ Thái &amp; Vinh Bảo Trai — đúc kết chữ Tín thương trường và chuẩn hóa nguồn gốc.") + '</p>' +
+      '      <div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "CHINESE HONORED BRANDS ARCHIVE · 中华老字号与中欧地理标志" : "Chuyên mục Thương hiệu Di sản & Chỉ dẫn Địa lý · 中华老字号 (Trung Hoa Lão Tự Hiệu)") + '</div>' +
+      '      <h2 class="section-title" style="font-size:1.55rem;margin:0.15rem 0 0;">' + (enM ? brands.length + " Chinese Time-Honored Brands &amp; " + giList.length + " EU–China Protected GIs" : brands.length + " Thương hiệu Lâu Đời Trăm Năm (中华老字号) &amp; " + giList.length + " Chỉ dẫn Địa lý Âu–Trung") + '</h2>' +
+      '      <p class="section-subtitle" style="margin-top:0.25rem;">' + (enM ? "Complete heritage dossiers spanning Imperial TCM Pharmacies, Culinary Houses, Tea Estates &amp; Scholar Studios—enriched with GB/T standards, EU-China 2021 GI protection, and Vietnam procurement takeaways." : "Tổng hợp từ Dược đường Đồng Nhân Đường (1669), Quảng Dự Viễn (1541) đến Toàn Tụ Đức, Mao Đài, Hồng Tinh Tuyên Chỉ &amp; 12 Chỉ dẫn Địa lý EU–Trung 2021 — kèm chuẩn chất lượng GB/T và bài học chuỗi cung ứng Việt Nam.") + '</p>' +
       '    </div>' +
       '  </div>' +
       '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.65rem;margin-bottom:0.85rem;">' +
-      '    <input id="cce-lzh-search" type="text" class="form-input" style="max-width:340px;font-size:0.84rem;" value="' + esc(st.query) + '" placeholder="' + (enM ? "Search Tongrentang, Moutai, Bắc Kinh, Lụa..." : "Tìm Đồng Nhân Đường, Toàn Tụ Đức, Mao Đài, 荣宝斋...") + '" />' +
+      '    <input id="cce-lzh-search" type="text" class="form-input" style="max-width:340px;font-size:0.84rem;" value="' + esc(st.query) + '" placeholder="' + (enM ? "Search Tongrentang, Longjing, Moutai, GB/T..." : "Tìm Đồng Nhân Đường, Long Tỉnh, Mao Đài, Hồng Tinh...") + '" />' +
       '    <div class="filter-bar" style="margin:0;">' +
       cats.map(function (c) {
         return '<button type="button" class="filter-pill ' + (st.cat === c.id ? "active" : "") + '" data-lzh-act="cat" data-val="' + c.id + '">' + esc(enM ? c.en : c.vi) + '</button>';
       }).join("") +
       '    </div>' +
       '  </div>' +
-      '  <div class="grid grid-3" style="gap:0.85rem;">' +
-      filtered.map(function (b, idx) {
-        var thumbSrc = resolveBrandThumb(b, idx);
-        var thumbCap = (enM ? b.nameEn : b.hanViet) + " (" + b.zh + " · Est. " + b.foundedYear + ")";
-        return (
-          '<article class="flashcard-layer" style="display:flex;flex-direction:column;gap:0.35rem;padding:0.95rem 1.05rem;">' +
-          renderLzhThumb(thumbSrc, thumbCap) +
-          '  <div style="display:flex;justify-content:space-between;align-items:center;gap:0.4rem;">' +
-          '    <span class="badge badge-gold">Est. ' + esc(b.foundedYear) + ' · ' + esc(b.cityVi) + '</span>' +
-          '    <span>' + spk(b.zh) + ' <button type="button" class="btn btn-ghost btn-sm" style="padding:0.1rem 0.38rem;font-size:0.72rem;border:1px solid var(--hairline);" data-lzh-act="srs" data-zh="' + esc(b.zh) + '" data-py="' + esc(b.pinyin) + '" data-hv="' + esc(b.hanViet) + '" data-vi="' + esc(b.hanViet + " (" + b.foundedYear + ")") + '" data-en="' + esc(b.nameEn) + '">+ SRS</button></span>' +
-          '  </div>' +
-          '  <div style="display:flex;align-items:baseline;gap:0.45rem;flex-wrap:wrap;">' +
-          '    <strong class="hanzi" style="font-size:1.25rem;color:var(--imperial-red);">' + esc(b.zh) + '</strong>' +
-          '    <span class="pinyin text-xs">' + esc(b.pinyin) + '</span>' +
-          '  </div>' +
-          '  <strong>' + esc(enM ? b.nameEn : b.hanViet) + '</strong>' +
-          '  <div style="font-size:0.76rem;color:var(--text-muted);">' + esc(b.dynastyVi) + '</div>' +
-          '  <p style="font-size:0.81rem;margin:0.15rem 0;color:var(--text-secondary);">' + esc(enM ? b.craftSecretEn : b.craftSecretVi) + '</p>' +
-          '  <div style="font-size:0.77rem;color:var(--jade-green);border-top:1px dashed var(--hairline);padding-top:0.35rem;margin-top:auto;"><strong>' + (enM ? "Brand &amp; Supply Chain Lesson:" : "Góc nhìn Thương mại:") + '</strong> ' + esc(enM ? b.b2bTradeEn : b.b2bTradeVi) + '</div>' +
-          '  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.3rem;gap:0.4rem;">' +
-          '    <span style="font-size:0.73rem;color:var(--text-muted);">' + esc(b.visitTipVi) + '</span>' +
-          '    <button type="button" class="btn btn-secondary btn-sm" style="padding:0.15rem 0.45rem;font-size:0.72rem;flex-shrink:0;" data-action="open-province-detail" data-id="' + esc(b.provinceId) + '">' + (enM ? "Province →" : "Tỉnh →") + '</button>' +
-          '  </div>' +
-          '</article>'
-        );
-      }).join("") +
-      '  </div>' +
+      (filtered.length ? (
+        '  <div class="grid grid-3" style="gap:0.85rem;">' +
+        filtered.map(function (b, idx) {
+          var thumbSrc = resolveBrandThumb(b, idx);
+          var thumbCap = (enM ? b.nameEn : b.hanViet) + " (" + b.zh + " · Est. " + b.foundedYear + ")";
+          var hasDeep = Boolean(b.signatureProductVi || b.qualityStandardVi || b.vietnamAseanLessonVi || b.flagshipAddressZh || b.craftProcessStepsVi);
+          return (
+            '<article class="flashcard-layer" style="display:flex;flex-direction:column;gap:0.35rem;padding:0.95rem 1.05rem;">' +
+            renderLzhThumb(thumbSrc, thumbCap) +
+            '  <div style="display:flex;justify-content:space-between;align-items:center;gap:0.4rem;">' +
+            '    <span class="badge badge-gold">Est. ' + esc(b.foundedYear) + ' · ' + esc(b.cityVi) + '</span>' +
+            '    <span>' + spk(b.zh) + ' <button type="button" class="btn btn-ghost btn-sm" style="padding:0.1rem 0.38rem;font-size:0.72rem;border:1px solid var(--hairline);" data-lzh-act="srs" data-zh="' + esc(b.zh) + '" data-py="' + esc(b.pinyin) + '" data-hv="' + esc(b.hanViet) + '" data-vi="' + esc(b.hanViet + " (" + b.foundedYear + ")") + '" data-en="' + esc(b.nameEn) + '">+ SRS</button></span>' +
+            '  </div>' +
+            '  <div style="display:flex;align-items:baseline;gap:0.45rem;flex-wrap:wrap;">' +
+            '    <strong class="hanzi" style="font-size:1.22rem;color:var(--imperial-red);">' + esc(b.zh) + '</strong>' +
+            '    <span class="pinyin text-xs">' + esc(b.pinyin) + '</span>' +
+            '  </div>' +
+            '  <strong>' + esc(enM ? b.nameEn : b.hanViet) + '</strong>' +
+            '  <div style="font-size:0.76rem;color:var(--text-muted);">' + esc(b.dynastyVi) + '</div>' +
+            '  <p style="font-size:0.81rem;margin:0.15rem 0;color:var(--text-secondary);">' + esc(enM ? b.craftSecretEn : b.craftSecretVi) + '</p>' +
+            '  <div style="font-size:0.77rem;color:var(--jade-green);border-top:1px dashed var(--hairline);padding-top:0.35rem;"><strong>' + (enM ? "Brand &amp; Supply Chain Lesson:" : "Góc nhìn Thương mại:") + '</strong> ' + esc(enM ? b.b2bTradeEn : b.b2bTradeVi) + '</div>' +
+            (hasDeep ? (
+              '  <details class="ed-details" style="margin-top:0.2rem;font-size:0.78rem;">' +
+              '    <summary style="cursor:pointer;font-weight:700;color:var(--imperial-red);">' + (enM ? "Craft Spec, Auth Guide, GB/GMP &amp; VN Lesson →" : "Hồ sơ Kỹ nghệ, Quy trình 4 Bước, Thật–Giả &amp; Bài học VN →") + '</summary>' +
+              '    <div style="margin-top:0.45rem;display:grid;gap:0.35rem;padding:0.5rem 0.65rem;background:var(--bg-paper);border:1px solid var(--hairline);">' +
+              (b.signatureProductVi ? '<div><strong>' + (enM ? "Flagship Creation:" : "Sản phẩm trấn điếm:") + '</strong> ' + esc(enM ? (b.signatureProductEn || b.signatureProductVi) : b.signatureProductVi) + '</div>' : "") +
+              (b.craftProcessStepsVi ? '<div><strong>' + (enM ? "Craft Sequence (4 Stages):" : "Chuỗi Quy trình Chế tác (4 Chặng):") + '</strong> ' + esc(enM ? (b.craftProcessStepsEn || b.craftProcessStepsVi) : b.craftProcessStepsVi) + '</div>' : "") +
+              (b.sensoryOrMaterialSpecVi ? '<div><strong>' + (enM ? "Material &amp; Sensory Spec:" : "Định chuẩn Chất liệu &amp; Cảm quan:") + '</strong> ' + esc(enM ? (b.sensoryOrMaterialSpecEn || b.sensoryOrMaterialSpecVi) : b.sensoryOrMaterialSpecVi) + '</div>' : "") +
+              (b.authenticVsCounterfeitVi ? '<div style="color:var(--imperial-red);"><strong>' + (enM ? "Authentication &amp; Origin Mark:" : "Nhận diện Chính hãng vs Hàng giả:") + '</strong> ' + esc(enM ? (b.authenticVsCounterfeitEn || b.authenticVsCounterfeitVi) : b.authenticVsCounterfeitVi) + '</div>' : "") +
+              (b.qualityStandardVi ? '<div style="color:var(--jade-green);"><strong>' + (enM ? "Quality &amp; ICH Standard:" : "Tiêu chuẩn &amp; Di sản:") + '</strong> ' + esc(enM ? (b.qualityStandardEn || b.qualityStandardVi) : b.qualityStandardVi) + '</div>' : "") +
+              (b.vietnamAseanLessonVi ? '<div><strong>' + (enM ? "Vietnam/ASEAN Benchmark:" : "Đối chiếu Việt Nam/ASEAN:") + '</strong> ' + esc(enM ? (b.vietnamAseanLessonEn || b.vietnamAseanLessonVi) : b.vietnamAseanLessonVi) + '</div>' : "") +
+              (b.flagshipAddressZh ? '<div style="color:var(--text-muted);"><strong>' + (enM ? "Original Storefront:" : "Địa điểm gốc:") + '</strong> <span class="hanzi">' + esc(b.flagshipAddressZh) + '</span> ' + spk(b.flagshipAddressZh) + '</div>' : "") +
+              '    </div>' +
+              '  </details>'
+            ) : "") +
+            '  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:0.3rem;gap:0.4rem;">' +
+            '    <span style="font-size:0.73rem;color:var(--text-muted);">' + esc(b.visitTipVi) + '</span>' +
+            '    <button type="button" class="btn btn-secondary btn-sm" style="padding:0.15rem 0.45rem;font-size:0.72rem;flex-shrink:0;" data-action="open-province-detail" data-id="' + esc(b.provinceId) + '">' + (enM ? "Province →" : "Tỉnh →") + '</button>' +
+            '  </div>' +
+            '</article>'
+          );
+        }).join("") +
+        '  </div>'
+      ) : "") +
+      (filteredGi.length ? (
+        '  <div id="cce-gi-eu-china-grid" style="margin-top:' + (filtered.length ? "2rem" : "0") + ';padding-top:' + (filtered.length ? "1.35rem" : "0") + ';' + (filtered.length ? "border-top:2px solid var(--hairline);" : "") + '">' +
+        '    <div class="editorial-kicker" style="color:var(--jade-green);">' + (enM ? "EU–CHINA GEOGRAPHICAL INDICATIONS AGREEMENT (2021) · 中欧地理标志协定" : "HIỆP ĐỊNH CHỈ DẪN ĐỊA LÝ ÂU – TRUNG QUỐC (中欧地理标志保护协定)") + '</div>' +
+        '    <h3 style="font-family:var(--font-editorial);font-size:1.32rem;margin:0.2rem 0 0.85rem;">' + (enM ? "12 EU–China Protected Heritage GIs &amp; EVFTA Benchmarks" : "12 Sản vật Chỉ dẫn Địa lý Bảo hộ Song phương Âu–Trung &amp; Đối chiếu EVFTA Việt Nam") + '</h3>' +
+        '    <div class="grid grid-3" style="gap:0.85rem;">' +
+        filteredGi.map(function (g, idx) {
+          var gImg = resolveBrandThumb({ provinceId: g.provinceId, cat: "tea_spirits" }, idx + 2);
+          var gTitle = enM ? g.en : g.vi;
+          return (
+            '<article class="flashcard-layer" style="display:flex;flex-direction:column;gap:0.35rem;padding:0.9rem 1rem;border-top:2px solid var(--jade-green);">' +
+            renderLzhThumb(gImg, gTitle + " (" + g.zh + ")") +
+            '  <div style="display:flex;justify-content:space-between;align-items:center;gap:0.4rem;">' +
+            '    <span class="badge badge-jade">' + esc(g.gbStandardCode || "EU–China GI") + '</span>' +
+            '    <span>' + spk(g.zh) + ' <button type="button" class="btn btn-ghost btn-sm" style="padding:0.1rem 0.38rem;font-size:0.72rem;border:1px solid var(--hairline);" data-lzh-act="srs" data-zh="' + esc(g.zh) + '" data-py="' + esc(g.pinyin) + '" data-hv="' + esc(g.vi) + '" data-vi="' + esc(g.vi) + '" data-en="' + esc(g.en) + '">+ SRS</button></span>' +
+            '  </div>' +
+            '  <strong class="hanzi" style="font-size:1.15rem;color:var(--imperial-red);">' + esc(g.zh) + ' <span class="pinyin text-xs">' + esc(g.pinyin) + '</span></strong>' +
+            '  <strong>' + esc(gTitle) + '</strong>' +
+            '  <p style="font-size:0.8rem;margin:0.1rem 0;color:var(--text-secondary);">' + esc(enM ? g.euProtectionNoteEn : g.euProtectionNoteVi) + '</p>' +
+            (g.terroirAndCraftVi ? '<div style="font-size:0.78rem;background:var(--bg-paper);padding:0.45rem 0.55rem;border:1px solid var(--hairline);"><strong>' + (enM ? "Terroir &amp; Craft:" : "Thổ nhưỡng &amp; Kỹ nghệ:") + '</strong> ' + esc(enM ? g.terroirAndCraftEn : g.terroirAndCraftVi) + '</div>' : "") +
+            (g.vnEuComparisonVi ? '<div style="font-size:0.77rem;color:var(--jade-green);"><strong>' + (enM ? "EVFTA Parallel:" : "Đối chiếu EVFTA Việt Nam:") + '</strong> ' + esc(enM ? g.vnEuComparisonEn : g.vnEuComparisonVi) + '</div>' : "") +
+            '  <button type="button" class="btn btn-secondary btn-sm" style="margin-top:auto;align-self:flex-end;padding:0.15rem 0.45rem;font-size:0.72rem;" data-action="open-province-detail" data-id="' + esc(g.provinceId) + '">' + (enM ? "Province →" : "Tỉnh →") + '</button>' +
+            '</article>'
+          );
+        }).join("") +
+        '    </div>' +
+        '  </div>'
+      ) : "") +
       '</section>'
     );
   }
