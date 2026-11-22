@@ -16,7 +16,8 @@
     { id: "logistics", vi: "Tơ Lụa ↔ Trung–Âu 3D", en: "Silk Road ↔ EU–China 3D" },
     { id: "hydraulic", vi: "Đô Giang Yển 3D", en: "Dujiangyan Hydraulics" },
     { id: "armillary", vi: "Hồn Thiên Nghi & Âm Dương Ngũ Hành", en: "Armillary & Wuxing Disk" },
-    { id: "chimes", vi: "Biên Chung / Trịnh Hòa / Binh Mã Dũng", en: "Chime Bells & Treasure Ship" }
+    { id: "chimes", vi: "Biên Chung / Trịnh Hòa / Binh Mã Dũng", en: "Chime Bells & Treasure Ship" },
+    { id: "v6heritage", vi: "8 Studio Di sản V6 (#11–#18)", en: "8 V6 Heritage Labs (#11–#18)" }
   ];
 
   function renderUnifiedStudio(enM, uiLang) {
@@ -33,6 +34,8 @@
       inner = window.CCE_3D_ARMILLARY.renderPanel(enM);
     } else if (activeStudio === "chimes" && window.CCE_3D_ARTIFACTS_EXTRA) {
       inner = window.CCE_3D_ARTIFACTS_EXTRA.renderPanel(enM);
+    } else if (activeStudio === "v6heritage" && window.CCE_3D_V6_HERITAGE) {
+      inner = window.CCE_3D_V6_HERITAGE.renderPanel(enM);
     } else {
       return (window.CCE_ARTIFACTS_3D ? window.CCE_ARTIFACTS_3D.renderSection(enM, uiLang) : "") +
         renderLauncherBar(enM);
@@ -41,7 +44,7 @@
     return (
       '<section class="card mt-2 mb-2" id="museum-3d-studio-section" style="padding:1.2rem 1.35rem;border-top:3px solid var(--imperial-red);">' +
       '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.85rem;">' +
-      '    <div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "10-SCENE INTERACTIVE 3D STUDIO HUB · 十大三维数字实验室" : "Phòng Thí nghiệm Tương tác 10 Mô hình 3D · 十大三维数字实验室") + '</div>' +
+      '    <div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "18-SCENE INTERACTIVE 3D STUDIO HUB · 十八大三维数字实验室" : "Phòng Thí nghiệm Tương tác 18 Mô hình 3D · 十八大三维数字实验室") + '</div>' +
       '    <button type="button" class="btn btn-secondary btn-sm" data-s3d-act="open-china-map">' + (enM ? "Open 34-Province 3D Relief Map →" : "Mở Bản đồ Địa hình 3D 34 Tỉnh →") + '</button>' +
       '  </div>' +
       renderLauncherPills() +
@@ -81,6 +84,7 @@
     if (window.CCE_3D_HYDRAULIC) window.CCE_3D_HYDRAULIC.initMountedCanvasIfAny();
     if (window.CCE_3D_ARMILLARY) window.CCE_3D_ARMILLARY.initMountedCanvasIfAny();
     if (window.CCE_3D_ARTIFACTS_EXTRA) window.CCE_3D_ARTIFACTS_EXTRA.initMountedCanvasIfAny();
+    if (window.CCE_3D_V6_HERITAGE) window.CCE_3D_V6_HERITAGE.initMountedCanvasIfAny();
   }
 
   function hasAny3dCanvasInDom() {
@@ -93,7 +97,8 @@
       document.getElementById("cce-3d-logistics-canvas") ||
       document.getElementById("cce-3d-hydraulic-canvas") ||
       document.getElementById("cce-3d-armillary-canvas") ||
-      document.getElementById("cce-3d-extra-canvas")
+      document.getElementById("cce-3d-extra-canvas") ||
+      document.getElementById("cce-3d-v6-heritage-canvas")
     );
   }
 

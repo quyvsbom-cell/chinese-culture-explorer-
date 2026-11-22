@@ -122,6 +122,7 @@ def main() -> int:
             "civilizationAtlas.js", "china3DMap.js", "dougongJoinery3D.js",
             "vernacular3DStudio.js", "euChinaLogistics3D.js", "hydraulic3DStudio.js",
             "armillary3DStudio.js", "artifacts3DExtra.js", "studioHub3D.js",
+            "v6HeritageStudios3D.js", "v6VisualAcademyStudios.js",
             "v4UXEnhancements.js", "travelUXHub.js", "v4KnowledgeHub.js",
             "trilingualTradeStudio.js", "laozihaoPavilionV5.js", "v5CourseAcademy.js",
             "srsEngine.js", "exporters.js", "lazyLoader.js", "page-transition.js"
@@ -182,8 +183,14 @@ def main() -> int:
                 seo_issues.append(f"Raw markdown in <title>: {sp.as_posix()}")
     for shell_rel in ["van-hoa.html", "explore.html", "kinh-doanh.html", "hoc-tap.html"]:
         sp_path = ROOT / "seo_pages" / shell_rel
-        if not sp_path.is_file() or "src/data/v5/v5DeepEnrichmentLayer.js" not in sp_path.read_text(encoding="utf-8"):
-            seo_issues.append(f"Stale SEO shell missing V5 scripts: seo_pages/{shell_rel}")
+        if not sp_path.is_file():
+            seo_issues.append(f"Missing SEO shell: seo_pages/{shell_rel}")
+        else:
+            sh_txt = sp_path.read_text(encoding="utf-8")
+            if "src/data/v5/v5DeepEnrichmentLayer.js" not in sh_txt:
+                seo_issues.append(f"Stale SEO shell missing V5 scripts: seo_pages/{shell_rel}")
+            if "src/data/v6/v6EncyclopediaAndVisuals.js" not in sh_txt:
+                seo_issues.append(f"Stale SEO shell missing V6 scripts: seo_pages/{shell_rel}")
     print(f"[Gate 7] SEO & OG Shells Integrity: {'PASS' if not seo_issues else 'FAIL'}")
     failures.extend(seo_issues)
 
@@ -234,6 +241,7 @@ def main() -> int:
         "src/components/3d/hydraulic3DStudio.js",
         "src/components/3d/armillary3DStudio.js",
         "src/components/3d/artifacts3DExtra.js",
+        "src/components/3d/v6HeritageStudios3D.js",
     ]:
         mp = ROOT / mod
         if not mp.is_file():
@@ -242,14 +250,25 @@ def main() -> int:
             m_txt = mp.read_text(encoding="utf-8")
             if not re.search(r"(?:CCE_WEBGL_MGR|ensureMgr\(\)|ensureWebGLMgr\(\))\.register\(", m_txt):
                 g9_issues.append(f"3D studio lacks CCE_WEBGL_MGR.register(): {mod}")
-    print(f"[Gate 9] V4 Data, Epistemology & WebGL Mgr: {'PASS' if not g9_issues else 'FAIL'}")
+    v6_bundle_path = ROOT / "src" / "data" / "v6" / "v6EncyclopediaAndVisuals.js"
+    if not v6_bundle_path.is_file():
+        g9_issues.append("MISSING V6 data bundle: src/data/v6/v6EncyclopediaAndVisuals.js")
+    else:
+        v6_epi_txt = v6_bundle_path.read_text(encoding="utf-8")
+        if "KHÔNG chẩn đoán" not in v6_epi_txt or "NOT clinical" not in v6_epi_txt:
+            g9_issues.append("V6 bundle missing strict non-clinical disclaimer ('KHÔNG chẩn đoán' / 'NOT clinical')")
+    print(f"[Gate 9] V4/V6 Data, Epistemology & WebGL Mgr: {'PASS' if not g9_issues else 'FAIL'}")
     failures.extend(g9_issues)
 
-    # Gate 10: PWA Cache Parity (cce-v5.0) & Zero Dev Jargon in UI Strings
+    # Gate 10: PWA Cache Parity (cce-v6.0 / v5.0) & Zero Dev Jargon in UI Strings
     g10_issues: list[str] = []
     sw_txt = (ROOT / "sw.js").read_text(encoding="utf-8") if (ROOT / "sw.js").is_file() else ""
-    if 'CACHE_VERSION = "cce-v5.0"' not in sw_txt and 'CACHE_VERSION = "cce-v4.0"' not in sw_txt:
-        g10_issues.append('sw.js CACHE_VERSION is not "cce-v5.0"')
+    if (
+        'CACHE_VERSION = "cce-v6.0"' not in sw_txt
+        and 'CACHE_VERSION = "cce-v5.0"' not in sw_txt
+        and 'CACHE_VERSION = "cce-v4.0"' not in sw_txt
+    ):
+        g10_issues.append('sw.js CACHE_VERSION is not "cce-v6.0"')
     ui_scan = [ROOT / "index.html"] + sorted((ROOT / "src" / "components").rglob("*.js"))
     for fp in ui_scan:
         for idx, line in enumerate(fp.read_text(encoding="utf-8", errors="ignore").splitlines(), 1):
@@ -261,12 +280,83 @@ def main() -> int:
     print(f"[Gate 10] PWA Cache Parity & Clean UI Copy: {'PASS' if not g10_issues else 'FAIL'}")
     failures.extend(g10_issues[:10])
 
+    # Gate 11: SVG Visual Studios & Curtain viewBox Sanity
+    g11_issues: list[str] = []
+    for svg_rel in [
+        "src/components/v6VisualAcademyStudios.js",
+        "src/components/laozihaoPavilionV5.js",
+        "src/js/page-transition.js",
+    ]:
+        sp = ROOT / svg_rel
+        if not sp.is_file():
+            g11_issues.append(f"Missing SVG module: {svg_rel}")
+            continue
+        sp_txt = sp.read_text(encoding="utf-8")
+        for idx, m_svg in enumerate(re.finditer(r"<svg\b([^>]*)>", sp_txt, flags=re.DOTALL), 1):
+            if "viewBox=" not in m_svg.group(1):
+                g11_issues.append(f"Inline <svg> #{idx} missing viewBox= in {svg_rel}")
+    print(f"[Gate 11] SVG Visual Studios & Curtain viewBox Sanity: {'PASS' if not g11_issues else 'FAIL'}")
+    failures.extend(g11_issues[:10])
+
+    # Gate 12: V6 Dataset Counts, Visual Assets & 500-MCQ Dedupe Parity
+    import json as _json
+    g12_issues: list[str] = []
+    if v6_bundle_path.is_file():
+        v6_raw = v6_bundle_path.read_text(encoding="utf-8")
+        try:
+            b_idx = v6_raw.index("var BUNDLES = ") + len("var BUNDLES = ")
+            bundles, _ = _json.JSONDecoder().raw_decode(v6_raw, b_idx)
+        except Exception as exc:
+            g12_issues.append(f"Failed to parse V6 BUNDLES JSON: {exc}")
+            bundles = {}
+
+        if bundles:
+            brands_cfg = bundles.get("CCE_V6_BRANDS_CRAFT", {})
+            trade_cfg = bundles.get("CCE_V6_TRADE_AND_CSC", {})
+            v6_quiz = bundles.get("CCE_V6_QUIZ", [])
+            if len(brands_cfg.get("brandsAdditional36", [])) != 36:
+                g12_issues.append(f"Expected 36 brandsAdditional36, got {len(brands_cfg.get('brandsAdditional36', []))}")
+            if len(brands_cfg.get("giAdditional18", [])) != 18:
+                g12_issues.append(f"Expected 18 giAdditional18, got {len(brands_cfg.get('giAdditional18', []))}")
+            if len(trade_cfg.get("extraSupplyCases16", [])) != 16:
+                g12_issues.append(f"Expected 16 extraSupplyCases16, got {len(trade_cfg.get('extraSupplyCases16', []))}")
+            if len(v6_quiz) != 192:
+                g12_issues.append(f"Expected 192 V6 MCQs, got {len(v6_quiz)}")
+            vis_qs = [q for q in v6_quiz if q.get("isVisualQuestion")]
+            if len(vis_qs) != 120:
+                g12_issues.append(f"Expected 120 Visual ID MCQs, got {len(vis_qs)}")
+            for q in vis_qs:
+                img_rel = str(q.get("imagePath", "")).lstrip("/")
+                if not img_rel or not (ROOT / img_rel).is_file():
+                    g12_issues.append(f"Visual quiz {q.get('id')} missing image on disk: {q.get('imagePath')}")
+
+            v6_qids = [str(q.get("id", "")) for q in v6_quiz]
+            v5_mastery_ids = re.findall(r'id:\s*"([^"]+)"', (ROOT / "src/data/v5/quizMasteryV5.js").read_text(encoding="utf-8")) if (ROOT / "src/data/v5/quizMasteryV5.js").is_file() else []
+            v4_ids = re.findall(r'id:\s*"([^"]+)"', (ROOT / "src/data/v4/quizArenaV4.js").read_text(encoding="utf-8")) if (ROOT / "src/data/v4/quizArenaV4.js").is_file() else []
+            base_ids = re.findall(r'id:\s*"(qa-[^"]+)"', (ROOT / "src/components/interactiveLabs2026.js").read_text(encoding="utf-8")) if (ROOT / "src/components/interactiveLabs2026.js").is_file() else []
+            all_qids = base_ids + v4_ids + v5_mastery_ids + v6_qids
+            seen_qids: set[str] = set()
+            dup_qids: list[str] = []
+            for qid in all_qids:
+                if not qid:
+                    g12_issues.append("Empty quiz ID encountered")
+                elif qid in seen_qids:
+                    dup_qids.append(qid)
+                else:
+                    seen_qids.add(qid)
+            if dup_qids:
+                g12_issues.append(f"Duplicate quiz IDs across V4/V5/V6: {dup_qids[:8]}")
+    else:
+        g12_issues.append("Missing V6 bundle for Gate 12")
+    print(f"[Gate 12] V6 Dataset Counts, Visual Assets & 500-MCQ Dedupe: {'PASS' if not g12_issues else 'FAIL'}")
+    failures.extend(g12_issues[:10])
+
     if failures:
         print("\nGATE FAILURES:")
         for f in failures:
             print(" -", f)
         return 1
-    print("\nALL 10 INTEGRITY GATES PASSED CLEANLY.")
+    print("\nALL 12 INTEGRITY GATES PASSED CLEANLY.")
     return 0
 
 

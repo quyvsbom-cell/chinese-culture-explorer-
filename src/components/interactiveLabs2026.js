@@ -488,6 +488,8 @@
       const v5 = (window.CCE_V5_QUIZ || []).map((x) => ({
         id: x.id,
         pillar: x.pillar || "v5",
+        isVisualQuestion: false,
+        imagePath: "",
         topicVi: x.topicVi || (x.pillar ? String(x.pillar).replace(/_/g, " ").toUpperCase() : "V5"),
         topicEn: x.topicEn || (x.pillar ? String(x.pillar).replace(/_/g, " ").toUpperCase() : "V5"),
         hanzi: x.hanzi || "",
@@ -499,9 +501,29 @@
         explainVi: x.explainVi || x.explanationVi || "",
         explainEn: x.explainEn || x.explanationEn || ""
       }));
-      const full = base.concat(v3, v4, v5);
+      const v6 = (Array.isArray(window.CCE_V6_QUIZ) ? window.CCE_V6_QUIZ : []).map((x) => ({
+        id: x.id,
+        pillar: x.pillar || "v6",
+        isVisualQuestion: Boolean(x.isVisualQuestion),
+        imagePath: x.imagePath || "",
+        topicVi: x.topicVi || "V6",
+        topicEn: x.topicEn || x.topicVi || "V6",
+        hanzi: x.hanzi || "",
+        questionVi: x.questionVi,
+        questionEn: x.questionEn || x.questionVi,
+        optionsVi: x.optionsVi,
+        optionsEn: x.optionsEn || x.optionsVi,
+        correctIndex: x.correctIndex,
+        explainVi: x.explainVi || "",
+        explainEn: x.explainEn || x.explainVi || ""
+      }));
+      const full = base.concat(v3, v4, v5, v6);
       const pFilter = this.state.quizPillarFilter || "all";
       if (pFilter === "all") return full;
+      if (pFilter === "visual") {
+        const visList = full.filter((q) => Boolean(q.imagePath));
+        return visList.length ? visList : full;
+      }
       const pMatchMap = {
         history: /history|dynast|geography/i,
         philosophy: /philosophy|wuxing|tcm|architecture/i,
@@ -537,6 +559,7 @@
       const activePillar = this.state.quizPillarFilter || "all";
       const pillars = [
         { id: "all", vi: "Tất cả", en: "All Pillars" },
+        { id: "visual", vi: "Nhận diện Hình ảnh (120)", en: "Visual ID (120)" },
         { id: "history", vi: "Lịch sử", en: "History" },
         { id: "philosophy", vi: "Triết học", en: "Philosophy" },
         { id: "art", vi: "Nghệ thuật", en: "Arts" },
@@ -561,6 +584,12 @@
           <div style="display:flex;gap:0.35rem;flex-wrap:wrap;margin-bottom:0.75rem;">
             ${pillars.map((pl) => `<button type="button" class="filter-pill ${activePillar === pl.id ? "active" : ""}" data-action="v3-arena-pillar" data-pillar="${pl.id}" style="font-size:0.74rem;padding:0.2rem 0.55rem;">${enMode ? pl.en : pl.vi}</button>`).join("")}
           </div>
+
+          ${q.imagePath ? `
+            <div class="img-skeleton-bg" style="aspect-ratio:16/10;max-height:240px;width:100%;max-width:440px;overflow:hidden;border-radius:var(--radius);border:1px solid var(--hairline);margin-bottom:0.75rem;background:var(--bg-surface);cursor:pointer;" data-action="open-custom-image" data-src="${q.imagePath}" data-caption="${enMode ? q.topicEn : q.topicVi}">
+              <img src="${q.imagePath}" alt="${enMode ? q.topicEn : q.topicVi}" loading="lazy" style="width:100%;height:100%;object-fit:${/\.svg$/i.test(q.imagePath) ? "contain" : "cover"};display:block;" onerror="this.onerror=null;this.src='assets/images/museum/forbidden-city-imperial-axis-gate.jpg';" />
+            </div>
+          ` : ""}
 
           <div style="display:flex;align-items:center;gap:0.65rem;flex-wrap:wrap;margin-bottom:0.65rem;">
             ${q.hanzi ? `<span class="hanzi" style="font-size:1.65rem;font-weight:800;color:var(--imperial-red);">${q.hanzi}</span>` : ""}

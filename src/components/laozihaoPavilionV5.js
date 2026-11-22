@@ -57,9 +57,10 @@
   function mergeBrands() {
     var seed = (window.CCE_V5_LAOZIHAO && window.CCE_V5_LAOZIHAO.brands) || [];
     var exp = (window.CCE_V5_LAOZIHAO_EXPANDED && window.CCE_V5_LAOZIHAO_EXPANDED.brands60) || [];
+    var v6Add = (window.CCE_V6_BRANDS_CRAFT && window.CCE_V6_BRANDS_CRAFT.brandsAdditional36) || [];
     var seen = {};
     var out = [];
-    seed.concat(exp).forEach(function (b) {
+    seed.concat(exp, v6Add).forEach(function (b) {
       if (!b || !b.zh) return;
       var key = coreZhKey(b.zh) || b.zh;
       if (seen[key]) {
@@ -78,7 +79,11 @@
 
   function renderPavilion(enM) {
     var brands = mergeBrands();
-    var giList = (window.CCE_V5_LAOZIHAO_EXPANDED && window.CCE_V5_LAOZIHAO_EXPANDED.giAppellations12) || [];
+    var giBase = (window.CCE_V5_LAOZIHAO_EXPANDED && window.CCE_V5_LAOZIHAO_EXPANDED.giAppellations12) || [];
+    var giV6 = (window.CCE_V6_BRANDS_CRAFT && window.CCE_V6_BRANDS_CRAFT.giAdditional18) || [];
+    var giList = giBase.concat(giV6);
+    var flows12 = (window.CCE_V6_BRANDS_CRAFT && window.CCE_V6_BRANDS_CRAFT.craftProcessFlowcharts12) || [];
+    var guilds5 = (window.CCE_V6_BRANDS_CRAFT && window.CCE_V6_BRANDS_CRAFT.merchantGuilds5) || [];
     if (!brands.length) return "";
 
     var counts = { all: brands.length, tcm_pharmacy: 0, culinary: 0, tea_spirits: 0, craft_studio: 0 };
@@ -94,7 +99,7 @@
       { id: "craft_studio", vi: "Văn phòng Tứ bảo & Thủ công (" + counts.craft_studio + ")", en: "Crafts & Studio (" + counts.craft_studio + ")" }
     ];
     if (giList.length) {
-      cats.push({ id: "gi_eu", vi: "12 Chỉ dẫn Địa lý Âu–Trung (中欧地理标志)", en: "12 EU–China GIs" });
+      cats.push({ id: "gi_eu", vi: giList.length + " Chỉ dẫn Địa lý Âu–Trung (中欧地理标志)", en: giList.length + " EU–China GIs" });
     }
 
     var q = st.query.trim().toLowerCase();
@@ -174,7 +179,7 @@
       (filteredGi.length ? (
         '  <div id="cce-gi-eu-china-grid" style="margin-top:' + (filtered.length ? "2rem" : "0") + ';padding-top:' + (filtered.length ? "1.35rem" : "0") + ';' + (filtered.length ? "border-top:2px solid var(--hairline);" : "") + '">' +
         '    <div class="editorial-kicker" style="color:var(--jade-green);">' + (enM ? "EU–CHINA GEOGRAPHICAL INDICATIONS AGREEMENT (2021) · 中欧地理标志协定" : "HIỆP ĐỊNH CHỈ DẪN ĐỊA LÝ ÂU – TRUNG QUỐC (中欧地理标志保护协定)") + '</div>' +
-        '    <h3 style="font-family:var(--font-editorial);font-size:1.32rem;margin:0.2rem 0 0.85rem;">' + (enM ? "12 EU–China Protected Heritage GIs &amp; EVFTA Benchmarks" : "12 Sản vật Chỉ dẫn Địa lý Bảo hộ Song phương Âu–Trung &amp; Đối chiếu EVFTA Việt Nam") + '</h3>' +
+        '    <h3 style="font-family:var(--font-editorial);font-size:1.32rem;margin:0.2rem 0 0.85rem;">' + (enM ? (giList.length + " EU–China Protected Heritage GIs &amp; EVFTA Benchmarks") : (giList.length + " Sản vật Chỉ dẫn Địa lý Bảo hộ Song phương Âu–Trung &amp; Đối chiếu EVFTA Việt Nam")) + '</h3>' +
         '    <div class="grid grid-3" style="gap:0.85rem;">' +
         filteredGi.map(function (g, idx) {
           var gImg = resolveBrandThumb({ provinceId: g.provinceId, cat: "tea_spirits" }, idx + 2);
@@ -196,6 +201,34 @@
           );
         }).join("") +
         '    </div>' +
+        '  </div>'
+      ) : "") +
+      (flows12.length ? (
+        '  <div id="cce-v6-craft-flowcharts" style="margin-top:2rem;padding-top:1.35rem;border-top:2px solid var(--hairline);">' +
+        '    <div class="editorial-kicker" style="color:var(--imperial-red);">V6.0 HERITAGE PROCESS DIAGRAMS &amp; FIVE HISTORIC MERCHANT GUILDS · 传统工艺流程与五大商帮</div>' +
+        '    <h3 style="font-family:var(--font-editorial);font-size:1.28rem;margin:0.2rem 0 0.75rem;">' + (enM ? "12 Master Craft Step-by-Step Workflows &amp; 5 Merchant Guilds" : "12 Quy trình Thủ công Kinh điển &amp; Ngũ Đại Thương Bang Lịch sử") + '</h3>' +
+        '    <div class="grid grid-2" style="gap:0.8rem;max-height:480px;overflow:auto;margin-bottom:1rem;">' +
+        flows12.map(function (fl) {
+          return (
+            '<div class="card" style="padding:0.85rem 0.95rem;font-size:0.79rem;">' +
+            '  <div style="display:flex;justify-content:space-between;align-items:center;"><strong style="color:var(--imperial-red);">' + esc(enM ? fl.titleEn : fl.titleVi) + '</strong>' + spk(fl.brandZh) + '</div>' +
+            '  <div class="hanzi text-xs" style="color:var(--text-muted);margin-bottom:0.45rem;">' + esc(fl.titleZh) + '</div>' +
+            '  <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">' +
+            (fl.steps || []).map(function (step) {
+              return '<div style="flex:1 1 130px;padding:0.35rem 0.45rem;background:var(--bg-paper);border:1px solid var(--hairline);border-top:2px solid var(--antique-gold);font-size:0.73rem;"><strong>' + esc(step.stepNum + ". " + (enM ? step.labelEn : step.labelVi)) + '</strong><br><span class="hanzi" style="color:var(--imperial-red);">' + esc(step.labelZh) + '</span><br><span style="color:var(--text-muted);">' + esc(step.specNote) + '</span></div>';
+            }).join("") +
+            '  </div>' +
+            '</div>'
+          );
+        }).join("") +
+        '    </div>' +
+        (guilds5.length ? (
+          '    <div class="grid grid-3" style="gap:0.7rem;">' +
+          guilds5.map(function (gd) {
+            return '<div class="flashcard-layer" style="font-size:0.78rem;border-left:3px solid var(--jade-green);"><strong style="color:var(--imperial-red);">' + esc(enM ? gd.nameEn : gd.nameVi) + '</strong> <span class="hanzi">(' + esc(gd.zh) + ')</span><br><span class="badge badge-outline" style="margin:0.2rem 0;">' + esc(gd.era) + '</span><p style="margin:0.25rem 0 0;color:var(--text-secondary);">' + esc(enM ? gd.descEn : gd.descVi) + '</p></div>';
+          }).join("") +
+          '    </div>'
+        ) : "") +
         '  </div>'
       ) : "") +
       '</section>'

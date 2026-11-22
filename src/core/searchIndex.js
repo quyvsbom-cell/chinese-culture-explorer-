@@ -291,6 +291,110 @@
       });
     }
 
+    var v6B = window.CCE_V6_BRANDS_CRAFT || {};
+    (v6B.brandsAdditional36 || []).forEach(function (vb) {
+      out.push({
+        type: "traditional",
+        id: vb.id,
+        title: "[Lão Tự Hiệu] " + vb.hanViet + " (" + vb.zh + ")",
+        titleEn: "[Honored Brand] " + vb.nameEn + " (" + vb.zh + ")",
+        zh: vb.zh || "",
+        sub: "Est. " + vb.foundedYear + " · " + vb.cityVi,
+        rawTitle: norm(vb.zh + " " + vb.pinyin + " " + vb.hanViet + " " + vb.nameEn),
+        body: norm((vb.craftSecretVi || "") + " " + (vb.signatureProductVi || ""))
+      });
+    });
+    (v6B.giAdditional18 || []).forEach(function (vg) {
+      out.push({
+        type: "business",
+        id: vg.id,
+        title: "[GI Âu–Trung] " + vg.vi + " (" + vg.zh + ")",
+        titleEn: "[EU–China GI] " + vg.en + " (" + vg.zh + ")",
+        zh: vg.zh || "",
+        sub: vg.gbStandardCode || "Chỉ dẫn Địa lý V6",
+        rawTitle: norm(vg.zh + " " + vg.pinyin + " " + vg.vi + " " + vg.en),
+        body: norm((vg.euProtectionNoteVi || "") + " " + (vg.vnEvftaCounterpartVi || ""))
+      });
+    });
+
+    var v6L = window.CCE_V6_LIUSHU_VISUAL || {};
+    (v6L.visualCharacters36 || []).forEach(function (lc) {
+      out.push({
+        type: "dict",
+        id: lc.id,
+        title: "[Lục Thư] " + lc.zh + " · " + lc.hanViet + " (" + lc.meaningShort + ")",
+        titleEn: "[Liushu] " + lc.zh + " — " + lc.meaningEn,
+        zh: lc.zh || "",
+        sub: lc.liushuType + " · " + lc.pinyin,
+        rawTitle: norm(lc.zh + " " + lc.pinyin + " " + lc.hanViet + " " + lc.meaningShort),
+        body: norm((lc.evolution4Stages || "") + " " + (lc.meaningVi || ""))
+      });
+    });
+    (v6L.falseFriendsComic30 || []).forEach(function (ff) {
+      out.push({
+        type: "dict",
+        id: ff.id,
+        title: "[Bạn Giả Hán–Việt] " + ff.zh + " — " + ff.panelBTrueZh,
+        titleEn: "[False Friend] " + ff.zh + " — " + ff.meaningEn,
+        zh: ff.zh || "",
+        sub: ff.pinyin + " · Tránh hiểu nhầm",
+        rawTitle: norm(ff.zh + " " + ff.pinyin + " " + ff.panelAVietTrap + " " + ff.panelBTrueZh),
+        body: norm(ff.tipVi || "")
+      });
+    });
+
+    var v6C = window.CCE_V6_COSMOLOGY_VISUAL || {};
+    (v6C.solarTerms24 || []).forEach(function (st) {
+      out.push({
+        type: "article",
+        id: "yinyang-origins",
+        title: "[24 Tiết Khí] " + st.zh + " (" + st.vi + ")",
+        titleEn: "[Solar Term] " + st.zh + " (" + st.vi + ")",
+        zh: st.zh || "",
+        sub: st.dateApprox + " · " + st.deg + " deg",
+        rawTitle: norm(st.zh + " " + st.pinyin + " " + st.vi),
+        body: norm((st.tamHau || "") + " " + (st.descVi || ""))
+      });
+    });
+
+    var v6T = window.CCE_V6_TRADE_AND_CSC || {};
+    (v6T.annotatedTradeDocs10 || []).forEach(function (td) {
+      out.push({
+        type: "business",
+        id: td.id,
+        title: "[Chứng từ XNK] " + td.nameVi + " (" + td.nameEn + ")",
+        titleEn: "[Trade Doc] " + td.nameEn,
+        zh: td.nameZh || "",
+        sub: td.issuerVi || "Incoterms & Customs Doc",
+        rawTitle: norm(td.nameVi + " " + td.nameEn + " " + td.nameZh),
+        body: norm(td.issuerVi || "")
+      });
+    });
+    (v6T.extraSupplyCases16 || []).forEach(function (sc6) {
+      out.push({
+        type: "business",
+        id: sc6.id,
+        title: "[" + sc6.lane + "] " + sc6.titleVi,
+        titleEn: "[" + sc6.lane + "] " + sc6.titleEn,
+        zh: "",
+        sub: sc6.lane + " · Decision Tree V6",
+        rawTitle: norm(sc6.lane + " " + sc6.titleVi + " " + sc6.titleEn),
+        body: norm((sc6.riskIdentifiedEn || "") + " " + (sc6.actionPlanVi || ""))
+      });
+    });
+    (v6T.cscUniversities24 || []).forEach(function (cu) {
+      out.push({
+        type: "sino-vietnam",
+        id: cu.id,
+        title: "[Học bổng CSC] " + cu.nameVi + " (" + cu.zh + ")",
+        titleEn: "[CSC University] " + cu.nameVi + " (" + cu.zh + ")",
+        zh: cu.zh || "",
+        sub: "Agency " + cu.agencyNo + " · " + cu.cityVi,
+        rawTitle: norm(cu.zh + " " + cu.nameVi + " " + cu.cityVi + " " + cu.agencyNo),
+        body: norm(cu.majorsVi || "")
+      });
+    });
+
     _items = out;
     _dirty = false;
     return out;

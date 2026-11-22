@@ -66,7 +66,9 @@
     var dialogues = data.dialogues || [];
     var parallelArticles = data.parallelArticles || tbRaw.parallelArticles10 || [];
     var silk = data.silkRoadLogisticsContinuum || [];
-    var supplyCases = (window.CCE_V5_SUPPLY_CASES && window.CCE_V5_SUPPLY_CASES.cases24) || [];
+    var scV5 = (window.CCE_V5_SUPPLY_CASES && window.CCE_V5_SUPPLY_CASES.cases24) || [];
+    var scV6 = (window.CCE_V6_TRADE_AND_CSC && window.CCE_V6_TRADE_AND_CSC.extraSupplyCases16) || [];
+    var supplyCases = scV5.concat(scV6);
     if (!terms.length && !emails.length) return "";
 
     var q = trState.query.trim().toLowerCase();
@@ -224,7 +226,7 @@
           var rep = sc.bilingualReplyTemplate || null;
           return (
             '<article class="card" style="padding:1rem 1.15rem;border-top:2px solid var(--jade-green);">' +
-            renderTrstThumb(TRADE_IMGS[idx % TRADE_IMGS.length], sTitle) +
+            renderTrstThumb(sc.imagePath || TRADE_IMGS[idx % TRADE_IMGS.length], sTitle) +
             '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.3rem;">' +
             '    <span class="badge badge-jade">' + esc(sc.lane) + '</span>' +
             '    <span>' + spkBtn((sc.scenarioZh || "").split("(")[0].slice(0, 120), "zh-CN") + ' ' + spkBtn(sc.riskIdentifiedEn || "", "en-US") + '</span>' +
@@ -249,6 +251,13 @@
               '    <div style="margin-top:0.45rem;display:grid;gap:0.45rem;">' +
               (sc.stepByStepSOPVi ? '<div style="padding:0.45rem 0.6rem;background:var(--bg-surface);border:1px solid var(--hairline);"><strong>' + (enM ? "Timestamped Escalation SOP:" : "Chuỗi Phản ứng Từng Giờ (SOP):") + '</strong> ' + esc(enM ? (sc.stepByStepSOPEn || sc.stepByStepSOPVi) : sc.stepByStepSOPVi) + '</div>' : "") +
               (sc.clauseDraftingTemplateEn ? '<div style="padding:0.45rem 0.6rem;background:var(--bg-paper);border-left:3px solid var(--imperial-red);"><strong>' + (enM ? "Contract Clause (EN / 中文):" : "Điều khoản Hợp đồng Mẫu (EN / 中文):") + '</strong> <div style="margin-top:0.2rem;">' + esc(sc.clauseDraftingTemplateEn) + '</div>' + (sc.clauseDraftingTemplateZh ? '<div class="hanzi" style="color:var(--imperial-red);margin-top:0.2rem;">' + esc(sc.clauseDraftingTemplateZh) + ' ' + spkBtn(sc.clauseDraftingTemplateZh, "zh-CN") + '</div>' : "") + '</div>' : "") +
+              (Array.isArray(sc.decisionTreeSteps) && sc.decisionTreeSteps.length ? (
+                '<div style="padding:0.45rem 0.6rem;background:var(--bg-accent-soft);border:1px solid var(--hairline);"><strong>Cây Quyết Định Xử lý (Decision Tree):</strong><div style="display:grid;gap:0.3rem;margin-top:0.25rem;">' +
+                sc.decisionTreeSteps.map(function (dt) {
+                  return '<div style="font-size:0.75rem;"><strong>Q' + dt.stepNum + ': ' + esc(dt.qVi) + '</strong><br><span style="color:var(--jade-green);">Có → ' + esc(dt.yesVi) + '</span> | <span style="color:var(--imperial-red);">Không → ' + esc(dt.noVi) + '</span></div>';
+                }).join("") +
+                '</div></div>'
+              ) : "") +
               (rep ? (
                 '      <div class="grid grid-2" style="gap:0.55rem;">' +
                 '        <div style="padding:0.45rem 0.6rem;background:var(--bg-paper);border:1px solid var(--hairline);"><strong style="color:var(--imperial-red);">To Factory (中文):</strong> ' + spkBtn(rep.toFactoryZh, "zh-CN") + '<div class="hanzi" style="margin-top:0.2rem;">' + esc(rep.toFactoryZh) + '</div></div>' +
@@ -263,6 +272,10 @@
         }).join("") +
         '</div>'
       );
+    } else if (trState.tab === "docs10") {
+      body = (window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderTradeIncotermsAndDocs)
+        ? window.CCE_V6_STUDIOS.renderTradeIncotermsAndDocs(enM)
+        : "";
     } else {
       body = (
         '<div style="margin-bottom:0.85rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">' +
@@ -287,6 +300,7 @@
         { id: "interviews", lbl: (enM ? (dialogues.length + " EU Dialogues & Interviews") : (dialogues.length + " Tình huống Hội thoại Âu–Trung")) },
         { id: "articles", lbl: (enM ? (parallelArticles.length + " Parallel Articles (ZH–EN–VI)") : (parallelArticles.length + " Bài Đọc Song hành Tam ngữ")) },
         { id: "cases24", lbl: (enM ? (supplyCases.length + " EU–China Incident Cases") : (supplyCases.length + " Case Sự cố Logistics Âu–Trung")) },
+        { id: "docs10", lbl: (enM ? "Incoterms® 2020 &amp; 10 Trade Docs" : "Incoterms® 2020 &amp; 10 Chứng Từ XNK") },
         { id: "silkroad", lbl: (enM ? "Silk Road Historic–Modern 2026" : "Đường Tơ Lụa → Trung–Âu 2026") }
       ].map(function (t) {
         return '<button type="button" class="tab-btn ' + (trState.tab === t.id ? "active" : "") + '" data-trst-act="tab" data-val="' + t.id + '">' + t.lbl + '</button>';

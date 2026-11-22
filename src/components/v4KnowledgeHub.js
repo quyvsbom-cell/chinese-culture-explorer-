@@ -495,7 +495,8 @@
             return '<article class="card">' + renderV4Thumb(canonImgs[idx % canonImgs.length], enM ? c.titleEn : c.titleVi, false) + '<span class="badge badge-gold">' + esc(c.hskTag) + '</span><div class="card-title-zh" style="margin-top:0.35rem;">' + esc(c.zh) + ' ' + spk(c.zh) + '</div><h4 style="margin:0.15rem 0 0.4rem;">' + esc(enM ? c.titleEn : c.titleVi) + '</h4><p style="font-size:0.82rem;margin:0 0 0.35rem;">' + esc(enM ? c.coreThemeEn : c.coreThemeVi) + '</p><div style="font-size:0.77rem;color:var(--jade-green);">' + esc(c.hskVocabVi) + '</div></article>';
           }).join("") +
           '</div>' +
-          renderV5HskEssays(enM);
+          renderV5HskEssays(enM) +
+          (window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderLiushuAndLiteratureStudio ? window.CCE_V6_STUDIOS.renderLiushuAndLiteratureStudio(enM) : "");
       }
 
     // =========================================================================
@@ -517,7 +518,8 @@
       var epistemicBox = '<div class="epistemic-box critical" style="margin-bottom:0.85rem;"><div class="epistemic-title">' + (enM ? "Strict Epistemological Boundary (Non-Clinical & Non-Predictive)" : "Khung Ranh giới Khoa học: Khảo cứu Văn hóa – Lịch sử (Không Lâm sàng & Không Tiên tri)") + '</div><p style="margin:0 0 0.35rem;font-size:0.84rem;">' + esc(enM ? yw.epistemicBannerEn : yw.epistemicBannerVi) + '</p><p style="margin:0;font-size:0.8rem;color:var(--text-secondary);">' + esc(enM ? tcm.disclaimerEn : tcm.disclaimerVi) + '</p></div>';
 
       if (st.wuxingSub === "casebook-v5") {
-        body = epistemicBox + wBar + renderV5WuxingCasebook(enM);
+        body = epistemicBox + wBar + renderV5WuxingCasebook(enM) +
+          (window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderCosmologyVisualWheel ? window.CCE_V6_STUDIOS.renderCosmologyVisualWheel(enM) : "");
       } else if (st.wuxingSub === "constitutions") {
         var const9 = tcmDeep.constitutions9 || [];
         body = epistemicBox + wBar +
@@ -566,7 +568,8 @@
             return '<div class="flashcard-layer">' + renderV4Thumb(tcmClassicImgs[idx % tcmClassicImgs.length], cl.zh, true) + '<strong class="hanzi">' + esc(cl.zh) + '</strong><br><strong>' + esc(enM ? cl.en : cl.vi) + '</strong><p style="font-size:0.8rem;margin:0.3rem 0 0;">' + esc(enM ? cl.noteEn : cl.noteVi) + '</p></div>';
           }).join("") +
           '</div>' +
-          renderV5WuxingCasebook(enM);
+          renderV5WuxingCasebook(enM) +
+          (window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderCosmologyVisualWheel ? window.CCE_V6_STUDIOS.renderCosmologyVisualWheel(enM) : "");
       }
 
     // =========================================================================
@@ -616,7 +619,8 @@
           '</div>' +
           (timeline.length ? '<h4 style="margin:0 0 0.5rem;">' + (enM ? "12-Month Application Timeline (Sep → Sep)" : "Lộ trình 12 Tháng Chuẩn bị Hồ sơ (Tháng 9 Năm trước → Tháng 9 Nhập học)") + '</h4><div class="grid grid-3" style="gap:0.65rem;">' + timeline.map(function (m, idx) {
             return '<div class="flashcard-layer" style="font-size:0.8rem;">' + renderV4Thumb(STUDY_POOL[idx % STUDY_POOL.length], m.month, true) + '<span class="badge badge-gold">' + esc(m.month) + '</span><br><strong>' + esc(enM ? m.phaseEn : m.phaseVi) + '</strong><p style="margin:0.25rem 0 0;color:var(--text-secondary);">' + esc(enM ? m.tasksEn : m.tasksVi) + '</p></div>';
-          }).join("") + '</div>' : "");
+          }).join("") + '</div>' : "") +
+          (window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderSinoVietAndCscStudio ? window.CCE_V6_STUDIOS.renderSinoVietAndCscStudio(enM) : "");
       }
 
     // =========================================================================
@@ -751,7 +755,8 @@
           '</div>' +
           (pillars10.length ? '<h4 style="margin:0 0 0.55rem;">10 Trụ cột Đối sánh Trung – Việt</h4><div class="grid grid-2" style="gap:0.7rem;max-height:360px;overflow:auto;">' + pillars10.map(function (pl, idx) {
             return '<div class="flashcard-layer" style="font-size:0.8rem;">' + renderV4Thumb(sinoVietImgs[idx % sinoVietImgs.length], enM ? pl.titleEn : pl.titleVi, true) + '<strong>' + esc(enM ? pl.titleEn : pl.titleVi) + '</strong> <span class="hanzi">' + esc(pl.hanziTheme || "") + '</span><p style="margin:0.25rem 0 0;color:var(--text-secondary);">' + esc(enM ? pl.synthesisEn : pl.synthesisVi) + '</p></div>';
-          }).join("") + '</div>' : "");
+          }).join("") + '</div>' : "") +
+          (window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderSinoVietAndCscStudio ? window.CCE_V6_STUDIOS.renderSinoVietAndCscStudio(enM) : "");
       }
     }
 
