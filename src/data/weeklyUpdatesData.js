@@ -14,8 +14,8 @@ window.CCE_WEEKLY_UPDATES = (function () {
       date: "2026-11-22",
       titleVi: "Phiên bản 2.0: Học viện 10 Học phần Tuần tự, 24 Studio 3D WebGL & 120 Trung Hoa Lão Tự Hào",
       titleEn: "Version 2.0: 10-Module Progressive Academy, 24 Interactive 3D Studios & 120 Chinese Honored Brands",
-      summaryVi: "Nâng cấp toàn diện giao diện và dữ liệu được ấp ủ từ trước 21/11: 60 bài giảng nối mạch logic, Đấu trường 600 câu hỏi (kèm 150 câu nhận diện hình ảnh), 16 Hành trình Di sản 240 giờ và kho văn hóa – thương mại tam ngữ.",
-      summaryEn: "Major platform overhaul built prior to Nov 21 and launched as Edition 2.0: 60 progressive lessons, 24 WebGL 3D architectural & relic studios, 600 Quiz Arena questions with 150 visual IDs, and 16 240-hour heritage itineraries."
+      summaryVi: "Nâng cấp toàn diện giao diện và dữ liệu: 60 bài giảng nối mạch logic, Đấu trường 600 câu hỏi (kèm 150 câu nhận diện hình ảnh), 16 Hành trình Di sản 240 giờ và kho văn hóa – thương mại tam ngữ.",
+      summaryEn: "Major platform overhaul for Edition 2.0: 60 progressive lessons, 24 WebGL 3D architectural & relic studios, 600 Quiz Arena questions with 150 visual IDs, and 16 240-hour heritage itineraries."
     },
     {
       id: "pick-forbidden-city-3d",
@@ -75,7 +75,7 @@ window.CCE_WEEKLY_UPDATES = (function () {
       type: "feature",
       tagVi: "[Phiên bản 1.0 · Khởi tạo Nền tảng Khảo cứu]",
       tagEn: "[Version 1.0 · Inaugural Platform Foundation]",
-      titleVi: "Phiên bản 1.0: Ra mắt Cổng Tri thức Văn minh Trung Hoa & Đối sánh Việt–Trung (Bắt đầu phát triển trước 21/11)",
+      titleVi: "Phiên bản 1.0: Ra mắt Cổng Tri thức Văn minh Trung Hoa & Đối sánh Việt–Trung",
       titleEn: "Version 1.0: Launch of the Chinese Culture Explorer & Sino–Vietnamese Comparative Portal",
       itemsVi: [
         "Công bố 65 Chuyên luận khảo cứu song ngữ Việt–Anh chuyên sâu mở khóa tự do toàn văn cùng 4 lớp sử liệu gốc và trích dẫn chuẩn APA/BibTeX.",
