@@ -229,7 +229,7 @@
         "shuǐmò — Mixing five distinct shades of soot ink in landscape brushwork",
         "bāguà — Eight trigrams forming the basis of the Zhouyi"
       ],
-      explanationEn: "Liubai (留白) turns unpainted silk or paper into water, clouds, or calm breathing room embodying the Daoist interplay of Being and Non-Being."
+      explanationEn: "Liubai (留白) turns unpainted silk or paper into water, clouds, or calm breathing room embodying the Daoist dynamic between Being and Non-Being."
     },
     "q3": {
       categoryEn: "Cosmology & Calendar Epistemology",

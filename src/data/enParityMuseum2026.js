@@ -151,7 +151,7 @@
       originEn: "Jingdezhen kilns (Jiangxi), commissioned for a Daoist temple in Yushan",
       collectionEn: "The British Museum — Sir Percival David Collection (PDF B613 & B614)",
       attributionEn: "The British Museum (PDF B613 & B614) • Dated 1351 Jingdezhen Cobalt Blue-and-White Temple Vases",
-      culturalSignificanceEn: "Global chronological cornerstone ('Rosetta Stone') for dating Yuan Blue-and-White porcelain, revealing how Eurasian Mongol–Yuan trade carried Persian cobalt across Central Asia into Jingdezhen kilns, forever transforming global ceramics.",
+      culturalSignificanceEn: "Global chronological benchmark ('Rosetta Stone') for dating Yuan Blue-and-White porcelain, revealing how Eurasian Mongol–Yuan trade carried Persian cobalt across Central Asia into Jingdezhen kilns, forever transforming global ceramics.",
       historicalContextEn: "Directly illuminates maritime Southeast Asian ceramic exchange — prefiguring 15th-century Vietnamese Chu Dau blue-and-white export ware sharing cobalt underglaze craft.",
       hotspotsEn: [
         { categoryEn: "Chronological Epigraphy", titleEn: "62-Character Cobalt Dedicatory Inscription (1351)", detailEn: "Collar calligraphy names patron Zhang Wenjin presenting the altar pair to Xingshan Hall in the 4th month of Zhizheng 11 (1351)." },
@@ -441,7 +441,7 @@
       collectionEn: "National Palace Museum, Taipei (台北故宫博物院)",
       attributionEn: "National Palace Museum, Taipei • Late Western Zhou Mao Gong Ding (Longest Surviving Bronze Inscription)",
       culturalSignificanceEn: "Interior basin preserves **497 cast bronze characters** across 32 vertical columns — the longest surviving Western Zhou bronze inscription, rivaling a chapter of the 《Book of Documents》 in recording King Xuan's royal investiture mandate to his uncle Duke Mao.",
-      historicalContextEn: "Primary epigraphic cornerstone verifying Zhou 'Mandate of Heaven and Revering Virtue' political vocabulary prior to entering famous private and palace collections.",
+      historicalContextEn: "Primary epigraphic anchor verifying Zhou 'Mandate of Heaven and Revering Virtue' political vocabulary prior to entering famous private and palace collections.",
       hotspotsEn: [
         { categoryEn: "Primary Epigraphy", titleEn: "497-Graph Royal Investiture Inscription Inside Bowl", detailEn: "Records verbatim King Xuan's admonitions and ceremonial bestowals to Duke Mao Yin — unmatched primary historical proof." },
         { categoryEn: "Late Zhou Bronze Style", titleEn: "Erect Rim Handles & Geometric Overlapping Scales", detailEn: "Sober profile shifts away from Shang predatory beasts toward measured geometric rhythm reflecting Zhou ritual decorum." },

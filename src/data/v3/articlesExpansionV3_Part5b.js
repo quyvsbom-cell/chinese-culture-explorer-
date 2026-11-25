@@ -198,7 +198,7 @@
         'Thiên Môn Sơn nằm tách biệt phía nam thành phố lại mang cấu trúc địa chất karst đá vôi cổ đại với cổng vòm tự nhiên khổng lồ Thiên Môn Động (hình thành sau vụ sập vách đá được sử sách ghi nhận từ năm 263 CN thời Tam Quốc).',
         'Vùng Tương Tây là cái nôi của nhà sàn Điếu Cước Lâu (吊脚楼) bằng gỗ sam dựng trên sườn dốc không cần san phẳng đất, gắn với đời sống và điệu múa Bãi Thủ Vũ của người Thổ Gia và người Miêu.'
       ],
-      introduction: 'Những cột đá mảnh khảnh vươn thẳng giữa biển mây Vũ Lăng Nguyên không chỉ trở thành nguồn cảm hứng cho núi bay Hallelujah trong điện ảnh hiện đại mà còn từng hiện diện suốt nhiều thế kỷ trong tranh sơn thủy Trung Hoa. Đằng sau cảnh quan siêu thực ấy là hai hệ thống địa chất hoàn toàn khác nhau nằm kề bên nhau: rừng cột sa thạch thạch anh tại Vũ Lăng Nguyên và khối núi karst đá vôi Thiên Môn Sơn.',
+      introduction: 'Những cột đá mảnh khảnh vươn thẳng giữa biển mây Vũ Lăng Nguyên vừa trở thành nguồn cảm hứng cho núi bay Hallelujah trong điện ảnh hiện đại vừa từng hiện diện suốt nhiều thế kỷ trong tranh sơn thủy Trung Hoa. Đằng sau cảnh quan siêu thực ấy là hai hệ thống địa chất hoàn toàn khác nhau nằm kề bên nhau: rừng cột sa thạch thạch anh tại Vũ Lăng Nguyên và khối núi karst đá vôi Thiên Môn Sơn.',
       historicalBackground: 'Tên gọi "Trương Gia Giới" gắn với truyền thuyết Trương Lương (mưu sĩ khai quốc nhà Hán) ẩn cư tại Thanh Nham Sơn vùng Vũ Lăng thời Tây Hán. Năm 1982, Công viên Rừng Quốc gia Trương Gia Giới trở thành công viên rừng quốc gia đầu tiên của Trung Quốc. Năm 1992, quần thể Vũ Lăng Nguyên (gồm Công viên Rừng Trương Gia Giới, Thung lũng Sách Khê và Núi Thiên Tử) được UNESCO công nhận Di sản Thiên nhiên Thế giới; năm 2004 gia nhập mạng lưới Công viên Địa chất Toàn cầu UNESCO. Năm 2010, hội nghị địa mạo học quốc tế chính thức đặt thuật ngữ khoa học "Zhangjiajie Landform" (Địa mạo Trương Gia Giới) để chỉ kiểu rừng cột sa thạch thạch anh độc nhất vô nhị này.',
       mainContent: [
         {
@@ -232,7 +232,7 @@
       ],
       sinoVietnameseComparison: 'Nhà sàn Điếu Cước Lâu vùng Tương Tây có mối liên hệ gần gũi về triết lý thích nghi địa hình với nhà sàn của người Thái, Tày, Mường, Dao tại miền núi phía Bắc Việt Nam: đều tận dụng gỗ bản địa, nâng sàn khỏi mặt đất ẩm và tôn trọng độ dốc tự nhiên thay vì san phẳng núi đồi. Về địa chất, đối chiếu cột sa thạch thạch anh Vũ Lăng Nguyên với các tháp đá vôi karst Vịnh Hạ Long và Tràng An mang lại bài học trực quan sinh động về tác động của loại đá lên hình thái cảnh quan.',
       additionalReferences: 'UNESCO World Heritage Centre - Wulingyuan Scenic and Historic Interest Area (Ref. 640); Trương Gia Giới Global Geopark Scientific Monograph; Hồ Nam Tỉnh Chí - Dân tộc Thổ Gia & Miêu.',
-      conclusion: 'Khép lại hành trình 108 chuyên luận tại Trương Gia Giới – Vũ Lăng Nguyên, ta thấy rõ sợi chỉ đỏ xuyên suốt văn minh và tự nhiên Trung Hoa: từ những tầng đá sa thạch 380 triệu năm đến kiến trúc gỗ Điếu Cước Lâu trên sườn núi, thiên nhiên và con người luôn không ngừng đối thoại để tạo nên di sản trường tồn.'
+      conclusion: 'Khép lại hành trình 108 chuyên luận tại Trương Gia Giới – Vũ Lăng Nguyên, ta thấy rõ mạch xuyên suốt của văn minh và tự nhiên Trung Hoa: từ những tầng đá sa thạch 380 triệu năm đến kiến trúc gỗ Điếu Cước Lâu trên sườn núi, thiên nhiên và con người luôn đối thoại để tạo nên di sản trường tồn.'
     }
   ];
 
@@ -240,48 +240,48 @@
   var i;
   var HERO_MAP = {
     "xia-shang-zhou-oracle-bones-rituals": "assets/images/museum/houmuwu-ding.jpg",
-    "qin-institutional-standardization": "assets/images/provinces/shaanxi-terracotta-army.jpg",
+    "qin-institutional-standardization": "assets/images/articles_v8/qin-weights-measures.jpg",
     "song-dynasty-urban-science-renaissance": "assets/images/paintings/21_qingming_shanghe.jpg",
     "grand-canal-dujiangyan-hydraulic-empire": "assets/images/articles/hero-four-inventions.jpg",
     "modern-china-transformation-1840-1949": "assets/images/articles/hero-beijing-shanghai.jpg",
-    "sixteen-ancient-capitals-geopolitics": "assets/images/provinces/beijing-temple-of-heaven.jpg",
-    "tea-horse-road-southwest-corridor": "assets/images/provinces/yunnan-lijiang-old-town.jpg",
+    "sixteen-ancient-capitals-geopolitics": "assets/images/articles_v8/ancient-capitals-luoyang.jpg",
+    "tea-horse-road-southwest-corridor": "assets/images/articles_v8/tea-horse-caravan.jpg",
     "chinese-fermentation-spices-culinary-geography": "assets/images/articles/hero-chinese-cuisines.jpg",
     "chinese-liquor-culture-baijiu-huangjiu": "assets/images/articles/hero-chinese-banquet.jpg",
-    "five-sacred-mountains-buddhist-peaks": "assets/images/provinces/shandong-taishan.jpg",
-    "dunhuang-mogao-buddhist-grotto-art": "assets/images/provinces/gansu-dunhuang-mogao.jpg",
+    "five-sacred-mountains-buddhist-peaks": "assets/images/articles_v8/five-sacred-mountains.jpg",
+    "dunhuang-mogao-buddhist-grotto-art": "assets/images/articles_v8/dunhuang-nine-story.jpg",
     "xiqu-stagecraft-face-masks-tuong": "assets/images/articles/hero-spring-festival.jpg",
-    "five-vernacular-architecture-styles": "assets/images/provinces/fujian-tulou.jpg",
+    "five-vernacular-architecture-styles": "assets/images/articles_v8/vernacular-architecture-mix.jpg",
     "ming-qing-fiction-hongloumeng-anatomy": "assets/images/articles/hero-classical-books-scrolls.jpg",
     "lacquerware-silk-woodblock-new-year-prints": "assets/images/articles/hero-laozihao-craft.jpg",
     "pre-qin-legalism-xunzi-hanfeizi": "assets/images/articles/hero-hundred-schools.jpg",
     "song-ming-neo-confucianism-zhu-wang": "assets/images/articles/hero-confucianism.jpg",
-    "chinese-chan-buddhism-aesthetics": "assets/images/provinces/henan-longmen-grottoes.jpg",
-    "mohism-logic-optics-ethics": "assets/images/prov_items/anhui/d0.jpg",
-    "religious-daoism-quanzhen-zhengyi": "assets/images/provinces/shanxi-hanging-temple.jpg",
+    "chinese-chan-buddhism-aesthetics": "assets/images/articles_v8/chan-aesthetics-grotto.jpg",
+    "mohism-logic-optics-ethics": "assets/images/articles_v8/mohism-optical-treatise.jpg",
+    "religious-daoism-quanzhen-zhengyi": "assets/images/articles_v8/daoism-wudang-palace.jpg",
     "chu-nom-liushu-script-dialogue": "assets/images/articles/hero-sino-vietnam.jpg",
     "imperial-palace-axes-beijing-thanglong-hue": "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
-    "truc-lam-zen-song-yuan-dialogue": "assets/images/prov_items/anhui/d1.jpg",
-    "east-asian-historiography-shiji-toanthu": "assets/images/prov_items/anhui/d2.jpg",
+    "truc-lam-zen-song-yuan-dialogue": "assets/images/articles_v8/truc-lam-yen-tu.jpg",
+    "east-asian-historiography-shiji-toanthu": "assets/images/articles_v8/historiography-shiji.jpg",
     "bac-y-nam-duoc-comparative-medicine": "assets/images/articles/hero-tcm-solar.jpg",
     "china-hsr-megaprojects-urban-network": "assets/images/articles/hero-contemporary-china.jpg",
     "china-green-energy-ev-battery-ecosystem": "assets/images/articles/hero-huaqiangbei-tech.jpg",
-    "china-digital-payments-platform-economy": "assets/images/prov_items/anhui/d3.jpg",
+    "china-digital-payments-platform-economy": "assets/images/articles_v8/digital-payments-qr.jpg",
     "modern-chinese-archaeology-sanxingdui-liangzhu": "assets/images/museum/sanxingdui-mask.jpg",
-    "china-space-aerospace-tiangong-beidou": "assets/images/prov_items/anhui/d4.jpg",
+    "china-space-aerospace-tiangong-beidou": "assets/images/articles_v8/china-aerospace-station.jpg",
     "rcep-acfta-cumulation-rules-vietnam": "assets/images/articles/hero-supply-chain-rcep.jpg",
     "china-trade-fairs-canton-ciie-yiwu-guide": "assets/images/articles/hero-b2b-negotiation-table.jpg",
     "gacc-decree-248-249-vietnam-agri-export": "assets/images/articles/hero-consular-field-guide.jpg",
-    "chinese-enterprises-globalization-playbook": "assets/images/provinces/guangdong-canton-tower.jpg",
-    "cross-border-b2b-contracts-cietac-viac": "assets/images/prov_items/anhui/f0.jpg",
+    "chinese-enterprises-globalization-playbook": "assets/images/articles_v8/global-enterprises-cbd.jpg",
+    "cross-border-b2b-contracts-cietac-viac": "assets/images/articles_v8/b2b-legal-contracts.jpg",
     "tang-poetry-song-ci-poetics-geography": "assets/images/articles/hero-tang-dynasty.jpg",
     "chinese-aesthetic-concepts-qiyun-yijing": "assets/images/paintings/22_qianli_jiangshan.jpg",
     "calligraphy-masterpieces-three-rarities-lineage": "assets/images/articles/hero-calligraphy-five-scripts.jpg",
     "chinese-mythology-shanhaijing-kunlun-penglai": "assets/images/paintings/01_luoshenfu_tu.jpg",
     "east-asian-woodblock-printing-encyclopedias": "assets/images/museum/yongle-dadian.jpg",
-    "temple-of-heaven-tiantan-cosmology-3d": "assets/images/prov_items/anhui/f1.jpg",
+    "temple-of-heaven-tiantan-cosmology-3d": "assets/images/articles_v8/tiantan-hall-prayer.jpg",
     "jiuzhaigou-travertine-karst": "assets/images/museum/jiuzhaigou-five-flower-lake.jpg",
-    "zhangjiajie-wulingyuan-sandstone-pillars": "assets/images/provinces/hunan-zhangjiajie.jpg"
+    "zhangjiajie-wulingyuan-sandstone-pillars": "assets/images/articles_v8/zhangjiajie-tianzi.jpg"
   };
   var arrName = typeof ARTICLES_V3_PART1A !== "undefined" ? ARTICLES_V3_PART1A
     : typeof ARTICLES_V3_PART1B !== "undefined" ? ARTICLES_V3_PART1B

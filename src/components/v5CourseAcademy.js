@@ -10,6 +10,7 @@
   "use strict";
 
   var DONE_KEY = "cce_v5_course_done";
+  var activeAcademyTab = "mindmap"; // mindmap | modules | lessons | docs
 
   function loadDone() {
     try {
@@ -124,7 +125,10 @@
     var v7Mods = (window.CCE_V7_COURSE_ADDON && Array.isArray(window.CCE_V7_COURSE_ADDON.modulesMeta3))
       ? window.CCE_V7_COURSE_ADDON.modulesMeta3
       : [];
-    return CURRICULUM.concat(v7Mods);
+    var v8Mods = (window.CCE_V8_COURSE_ADDON && Array.isArray(window.CCE_V8_COURSE_ADDON.modulesMeta2))
+      ? window.CCE_V8_COURSE_ADDON.modulesMeta2
+      : [];
+    return CURRICULUM.concat(v7Mods, v8Mods);
   }
 
   var LESSON_IMGS = [
@@ -200,11 +204,13 @@
           '  <h4 style="margin:0.1rem 0;font-size:1rem;">' + esc(lTitle) + '</h4>' +
           '  <div class="hanzi text-xs" style="color:var(--imperial-red);">' + esc(ls.titleZh || "") + '</div>' +
           '  <div style="font-size:0.81rem;padding:0.45rem 0.6rem;background:var(--bg-paper);border-left:3px solid var(--antique-gold);"><strong>' + (enM ? "Core Question:" : "Câu hỏi Dẫn mạch:") + '</strong> ' + esc(enM ? (ls.coreQuestionEn || ls.coreQuestionVi) : ls.coreQuestionVi) + '</div>' +
+          (ls.mujiDigestVi ? '  <div style="font-size:0.79rem;padding:0.38rem 0.55rem;background:var(--bg-surface);border:1px solid var(--hairline);"><strong>' + (enM ? "Core Takeaway:" : "Ý Tóm Tắt:") + '</strong> ' + esc(enM ? (ls.mujiDigestEn || ls.mujiDigestVi) : ls.mujiDigestVi) + '</div>' : "") +
           '  <p style="font-size:0.82rem;margin:0;color:var(--text-secondary);line-height:1.5;">' + esc(enM ? (ls.synthesisParagraphEn || ls.synthesisParagraphVi) : ls.synthesisParagraphVi) + '</p>' +
-          (ls.historicalEvidenceVi || terms.length ? (
+          (ls.historicalEvidenceVi || terms.length || ls.prerequisiteConceptsVi ? (
             '  <details class="ed-details" style="font-size:0.79rem;">' +
             '    <summary style="cursor:pointer;font-weight:700;color:var(--jade-green);">' + (enM ? "Sources, Vietnam Parallel &amp; 3 Trilingual Terms →" : "Sử liệu, Đối chiếu Việt Nam &amp; 3 Thuật ngữ Tam ngữ →") + '</summary>' +
             '    <div style="margin-top:0.45rem;display:grid;gap:0.4rem;padding:0.55rem 0.65rem;background:var(--bg-paper);border:1px solid var(--hairline);">' +
+            (ls.prerequisiteConceptsVi ? '<div class="text-xs" style="color:var(--text-muted);"><strong>' + (enM ? "Concept Flow:" : "Mạch Kiến Thức:") + '</strong> ' + esc(enM ? (ls.prerequisiteConceptsEn || ls.prerequisiteConceptsVi) : ls.prerequisiteConceptsVi) + (ls.deepensIntoVi ? (' → ' + esc(enM ? (ls.deepensIntoEn || ls.deepensIntoVi) : ls.deepensIntoVi)) : '') + '</div>' : "") +
             (ls.historicalEvidenceVi ? '<div><strong>' + (enM ? "Evidence &amp; Source:" : "Khảo chứng &amp; Tư liệu:") + '</strong> ' + esc(enM ? (ls.historicalEvidenceEn || ls.historicalEvidenceVi) : ls.historicalEvidenceVi) + '</div>' : "") +
             (ls.primaryTextExcerptZh ? '<div style="padding:0.35rem 0.5rem;background:var(--bg-surface);border-left:2px solid var(--imperial-red);"><strong>' + (enM ? "Primary Excerpt:" : "Nguyên điển Trích dẫn:") + '</strong> <span class="hanzi">' + esc(ls.primaryTextExcerptZh) + '</span> ' + spkBtn(ls.primaryTextExcerptZh) + '<div class="text-xs" style="color:var(--text-secondary);margin-top:0.15rem;">' + esc(enM ? (ls.primaryTextExcerptEn || ls.primaryTextExcerptVi) : ls.primaryTextExcerptVi) + '</div></div>' : "") +
             (ls.visualDiagramSpecVi ? '<div style="padding:0.3rem 0.5rem;background:var(--bg-accent-soft);border:1px dashed var(--antique-gold);"><strong>' + (enM ? "Visual Mental Model:" : "Sơ đồ Tư duy Trực giác:") + '</strong> ' + esc(enM ? (ls.visualDiagramSpecEn || ls.visualDiagramSpecVi) : ls.visualDiagramSpecVi) + '</div>' : "") +
@@ -239,20 +245,24 @@
     var pct = Math.round((completedCount / mods.length) * 100);
     var allLessons = (window.CCE_V5_COURSE_LESSONS && window.CCE_V5_COURSE_LESSONS.lessons36) || [];
     var modLessons = activeModNum === 0 ? allLessons : allLessons.filter(function (l) { return Number(l.moduleNum) === activeModNum; });
+    var pagedLessonsObj = (window.CCE_V10_PAGINATOR && window.CCE_V10_PAGINATOR.paginate)
+      ? window.CCE_V10_PAGINATOR.paginate(modLessons, "v5-lessons", { filterSig: String(activeModNum), desktopPerPage: 6, mobilePerPage: 4 })
+      : { items: modLessons, renderControls: function () { return ""; } };
     var v7Yt = (window.CCE_V7_ENCYCLOPEDIA && window.CCE_V7_ENCYCLOPEDIA.youtubeVideos12) || [];
     var courseYts = v7Yt.filter(function (x) { return x.youtubeId === "arfV94Y9tkE" || x.youtubeId === "w78Yb_aotH0"; });
+    var tabDefs = [
+      { id: "mindmap", vi: "Sơ đồ 12 học phần", en: "12-Module Map" },
+      { id: "modules", vi: "12 thẻ tiến độ (" + completedCount + "/" + mods.length + ")", en: "12 Module Cards (" + completedCount + "/" + mods.length + ")" },
+      { id: "lessons", vi: allLessons.length + " bài giảng chi tiết", en: allLessons.length + " Guided Lessons" },
+      { id: "docs", vi: "Tư liệu phim và di sản", en: "Video Docs & Hub" }
+    ];
 
-    return (
-      '<section id="cce-v5-course-academy" class="card mb-2" style="margin-top:1.5rem;border-top:3px solid var(--imperial-red);padding:1.15rem 1.25rem;">' +
-      (window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderCourseMindMapSvg ? window.CCE_V6_STUDIOS.renderCourseMindMapSvg(enM) : "") +
-      '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.6rem;margin-bottom:0.85rem;">' +
-      '    <div>' +
-      '      <div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "CURATED LEARNING PATHWAY · 十大主题课程 (" + allLessons.length + " LESSONS)" : "CHƯƠNG TRÌNH HỌC " + mods.length + " HỌC PHẦN · " + allLessons.length + " BÀI GIẢNG") + '</div>' +
-      '      <h3 style="margin:0.15rem 0 0;font-size:1.25rem;">' + (enM ? mods.length + "-Module Structured Curriculum &amp; " + allLessons.length + " Guided Lessons" : "Giáo Trình " + mods.length + " Học Phần &amp; " + allLessons.length + " Bài Học Liên Mạch") + '</h3>' +
-      '    </div>' +
-      '    <span class="badge badge-jade">' + completedCount + '/' + mods.length + ' (' + pct + '%)</span>' +
-      '  </div>' +
-      '  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.6rem;">' +
+    var mindmapPaneHtml = (window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderCourseMindMapSvg)
+      ? window.CCE_V6_STUDIOS.renderCourseMindMapSvg(enM)
+      : "";
+
+    var modulesPaneHtml =
+      '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.6rem;">' +
       mods.map(function (m) {
         var dk = m.doneKey || m.page;
         var isDone = Boolean(done[dk]);
@@ -270,37 +280,64 @@
           '</div>'
         );
       }).join("") +
-      '  </div>' +
-      (allLessons.length ? (
-        '  <div id="cce-v5-42-lessons-explorer" style="margin-top:1.35rem;padding-top:1rem;border-top:2px solid var(--hairline);">' +
-        '    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.55rem;">' +
-        '      <strong style="font-family:var(--font-editorial);font-size:1.1rem;">' + (enM ? "Sequential Lesson Reader (" + allLessons.length + " Lessons · Filter by Module):" : "Bài Giảng Tuần Tự Từng Chặng (" + allLessons.length + " Bài Học · Chọn Học phần):") + '</strong>' +
-        '      <div class="filter-bar" style="margin:0;">' +
+      '</div>';
+
+    var lessonsPaneHtml = allLessons.length
+      ? '<div id="cce-v5-42-lessons-explorer">' +
+        '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.55rem;">' +
+        '    <strong style="font-family:var(--font-editorial);font-size:1.05rem;">' + (enM ? "Sequential Lesson Reader (" + allLessons.length + " Lessons · Filter by Module):" : "Bài giảng tuần tự từng chặng (" + allLessons.length + " bài học · Chọn học phần):") + '</strong>' +
+        '    <div class="filter-bar" style="margin:0;">' +
         mods.map(function (m, mIdx) {
           var mn = mIdx + 1;
           return '<button type="button" class="filter-pill ' + (activeModNum === mn ? "active" : "") + '" data-v5c-mod="' + mn + '" style="font-size:0.74rem;">HP ' + m.num + '</button>';
         }).join("") +
         '<button type="button" class="filter-pill ' + (activeModNum === 0 ? "active" : "") + '" data-v5c-mod="0" style="font-size:0.74rem;">' + (enM ? "All " + allLessons.length : "Tất cả " + allLessons.length) + '</button>' +
-        '      </div>' +
         '    </div>' +
-        renderLessonGrid(modLessons, enM) +
-        '  </div>'
-      ) : "") +
+        '  </div>' +
+        renderLessonGrid(pagedLessonsObj.items, enM) +
+        (pagedLessonsObj.renderControls ? pagedLessonsObj.renderControls(enM) : "") +
+        '</div>'
+      : "";
+
+    var docsPaneHtml =
       (courseYts.length && window.CCE_V6_STUDIOS && window.CCE_V6_STUDIOS.renderYoutubeCard ? (
-        '  <div style="margin-top:1.25rem;padding-top:0.9rem;border-top:1px dashed var(--hairline);">' +
-        '    <div class="editorial-kicker" style="color:var(--jade-green);">' + (enM ? "FOUNDATIONAL DOCUMENTARIES · HYDROLOGY &amp; ARCHITECTURE" : "TƯ LIỆU PHIM NGẮN THỦY LỢI &amp; KIẾN TRÚC") + '</div>' +
+        '  <div style="margin-bottom:0.95rem;">' +
+        '    <div class="editorial-kicker" style="color:var(--jade-green);">' + (enM ? "FOUNDATIONAL DOCUMENTARIES · HYDROLOGY &amp; ARCHITECTURE" : "TƯ LIỆU PHIM NGẮN THỦY LỢI VÀ KIẾN TRÚC") + '</div>' +
         '    <div class="grid grid-2" style="gap:0.75rem;margin-top:0.45rem;">' +
         courseYts.map(function (vy) { return window.CCE_V6_STUDIOS.renderYoutubeCard(vy, enM); }).join("") +
         '    </div>' +
         '  </div>'
       ) : "") +
-      '  <div style="margin-top:1.1rem;padding:0.85rem 1rem;background:var(--bg-paper);border:1px solid var(--hairline);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.65rem;">' +
+      '  <div style="padding:0.85rem 1rem;background:var(--bg-paper);border:1px solid var(--hairline);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.65rem;">' +
       '    <div>' +
-      '      <strong style="font-size:0.92rem;">' + (enM ? "World Heritage Expeditions (16 Routes), 240h Digital Guide &amp; Classical Pigments" : "16 Hành Trình Di Sản, Cẩm Nang Số 240h &amp; Sắc Tố Bảo Tàng") + '</strong>' +
-      '      <div style="font-size:0.78rem;color:var(--text-muted);">' + (enM ? "Open the dedicated Tourism &amp; Heritage Hub in Explore to keep the home curriculum focused." : "Mở trong mục Khám phá &amp; Học viện để giữ Trang chủ tinh gọn, tập trung bài học.") + '</div>' +
+      '      <strong style="font-size:0.92rem;">' + (enM ? "World Heritage Expeditions (16 Routes), 240h Digital Guide &amp; Classical Pigments" : "16 hành trình di sản, cẩm nang số 240h và sắc tố bảo tàng") + '</strong>' +
+      '      <div style="font-size:0.78rem;color:var(--text-muted);">' + (enM ? "Open the dedicated Tourism &amp; Heritage Hub in Explore to keep the home curriculum focused." : "Mở trong mục Khám phá để giữ Trang chủ tinh gọn, tập trung bài học.") + '</div>' +
       '    </div>' +
-      '    <button type="button" class="btn btn-secondary btn-sm" data-action="nav" data-page="explore">' + (enM ? "Open Heritage Hub →" : "Mở Kho Du Lịch &amp; Di Sản →") + '</button>' +
+      '    <button type="button" class="btn btn-secondary btn-sm" data-action="nav" data-page="explore">' + (enM ? "Open Heritage Hub →" : "Mở kho du lịch và di sản →") + '</button>' +
+      '  </div>';
+
+    var activeBodyHtml = activeAcademyTab === "modules"
+      ? modulesPaneHtml
+      : (activeAcademyTab === "lessons"
+          ? (lessonsPaneHtml || mindmapPaneHtml)
+          : (activeAcademyTab === "docs" ? docsPaneHtml : mindmapPaneHtml));
+
+    return (
+      '<section id="cce-v5-course-academy" class="card mb-2" style="margin-top:0.75rem;border-top:3px solid var(--imperial-red);padding:0.9rem 1.05rem;">' +
+      '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.55rem;margin-bottom:0.65rem;">' +
+      '    <div>' +
+      '      <div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "CURATED LEARNING PATHWAY · 十二大学科 (" + allLessons.length + " LESSONS)" : "CHƯƠNG TRÌNH HỌC " + mods.length + " HỌC PHẦN · " + allLessons.length + " BÀI GIẢNG") + '</div>' +
+      '      <h3 style="margin:0.1rem 0 0;font-size:1.14rem;">' + (enM ? mods.length + "-Module Structured Curriculum" : "Giáo trình " + mods.length + " học phần và " + allLessons.length + " bài giảng") + '</h3>' +
+      '    </div>' +
+      '    <div style="display:flex;align-items:center;gap:0.45rem;flex-wrap:wrap;">' +
+      tabDefs.map(function (tb) {
+        var on = activeAcademyTab === tb.id;
+        return '<button type="button" class="filter-pill ' + (on ? "active" : "") + '" data-v5c-tab="' + tb.id + '" style="font-size:0.75rem;">' + esc(enM ? tb.en : tb.vi) + '</button>';
+      }).join("") +
+      '      <span class="badge badge-jade">' + completedCount + '/' + mods.length + ' (' + pct + '%)</span>' +
+      '    </div>' +
       '  </div>' +
+      activeBodyHtml +
       '</section>'
     );
   }
@@ -369,6 +406,12 @@
         sr.textContent = "Saved!";
         return;
       }
+      var tabBtn = e.target && e.target.closest ? e.target.closest("[data-v5c-tab]") : null;
+      if (tabBtn) {
+        activeAcademyTab = tabBtn.getAttribute("data-v5c-tab") || "mindmap";
+        if (typeof window.CCE_RENDER === "function") window.CCE_RENDER();
+        return;
+      }
       var modBtn = e.target && e.target.closest ? e.target.closest("[data-v5c-mod]") : null;
       if (modBtn) {
         activeModNum = parseInt(modBtn.getAttribute("data-v5c-mod"), 10);
@@ -389,7 +432,12 @@
 
   window.CCE_V5_ACADEMY = {
     CURRICULUM: CURRICULUM,
+    getCurriculum: getCurriculum,
     setActiveModule: function (n) { activeModNum = Number(n) || 1; },
+    setAcademyTab: function (tb) {
+      activeAcademyTab = tb || "mindmap";
+      if (typeof window.CCE_RENDER === "function") window.CCE_RENDER();
+    },
     renderCourseTracker: renderCourseTracker,
     renderNextStepBridge: renderNextStepBridge
   };

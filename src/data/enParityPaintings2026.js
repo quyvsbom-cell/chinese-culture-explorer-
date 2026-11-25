@@ -512,7 +512,7 @@
       genreLabelEn: "Jiangnan Landscape • Bland Naturalness",
       materialEn: "Horizontal silk handscroll, ink & light washes (绢本水墨设色)",
       museumEn: "The Palace Museum, Beijing",
-      attributionEn: "Transmitted Scroll attributed to Dong Yuan — Dong Qichang's Southern Lineage cornerstone (Five Dynasties vs. early Song debated).",
+      attributionEn: "Transmitted Scroll attributed to Dong Yuan — Dong Qichang's Southern Lineage touchstone (Five Dynasties vs. early Song debated).",
       artistSchoolEn: "Patriarch of Jiangnan Ink Landscape",
       artistEraEn: "Five Dynasties Southern Tang",
       artistBioEn: "Nanjing court Assistant Commissioner of Northern Parks who co-founded gentle mist-wrapped Southern landscape and 'hemp-fiber' texture strokes.",
@@ -1000,7 +1000,7 @@
       },
       srEn: {
         scholarlyConsensus: "Landmark technical breakthrough abandoning contour outlines permanently.",
-        debatedIssues: "Museum scholars examine subtle interplay between Mi Fu's bold looseness and Mi Youren's refined studio polish.",
+        debatedIssues: "Museum scholars examine subtle contrast between Mi Fu's bold looseness and Mi Youren's refined studio polish.",
         comparativeContext: "Pioneered perceptual dot optics centuries prior to European Seurat or Monet.",
         academicCitations: ["James Cahill, *Mi Cloudy Mountains & Southern Song Ink*.", "Pan Yungao, *Song Painting Treatises*."]
       },

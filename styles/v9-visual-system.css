@@ -1,0 +1,902 @@
+/* ============================================================================
+ * CHINESE CULTURE EXPLORER V9.0 — VISUAL DESIGN SYSTEM & READER ARCHITECTURE
+ * Clean Xuan Paper typography, exhibition galleries, and reader layouts
+ * ============================================================================ */
+
+:root {
+  --v9-sp-1: 4px;
+  --v9-sp-2: 8px;
+  --v9-sp-3: 16px;
+  --v9-sp-4: 24px;
+  --v9-sp-5: 32px;
+  --v9-sp-6: 48px;
+  --v9-sp-8: 64px;
+  --v9-sp-10: 96px;
+
+  --v9-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --v9-dur-fast: 180ms;
+  --v9-dur-panel: 280ms;
+
+  --v9-fs-display: clamp(2.15rem, 3.8vw, 3.6rem);
+  --v9-fs-h2: clamp(1.5rem, 2.4vw, 2.25rem);
+  --v9-fs-h3: clamp(1.18rem, 1.5vw, 1.45rem);
+  --v9-fs-body: clamp(1.02rem, 1.08vw, 1.15rem);
+  --v9-fs-ui: 0.9375rem;
+  --v9-fs-micro: 0.78125rem;
+
+  --v9-radius-sm: 2px;
+  --v9-radius-md: 4px;
+
+  --v9-z-sticky-rail: 30;
+  --v9-z-header: 100;
+  --v9-z-tray: 220;
+  --v9-z-drawer: 400;
+  --v9-z-cinema: 700;
+  --v9-z-driver-card: 950;
+}
+
+/* 4 WCAG AAA Reading & Exhibition Palettes */
+body {
+  --v9-bg-canvas: var(--bg-paper, #FAF7F2);
+  --v9-bg-surface: var(--bg-surface, #F3EFE6);
+  --v9-bg-elevated: #FFFFFF;
+  --v9-ink-primary: var(--ink-primary, #1A1918);
+  --v9-ink-secondary: #4D4944;
+  --v9-ink-muted: #69645E;
+  --v9-accent-seal: var(--accent-cinnabar, #9E2A2B);
+  --v9-accent-jade: var(--accent-jade, #2D5A4C);
+  --v9-accent-gold: #876632;
+  --v9-border-hairline: rgba(26, 25, 24, 0.11);
+  --v9-scrim: rgba(20, 19, 17, 0.56);
+  --v9-shadow-popover: 0 4px 16px rgba(26, 25, 24, 0.08);
+  overflow-x: clip;
+}
+
+body.cce-read-sepia {
+  --v9-bg-canvas: #F4ECD8;
+  --v9-bg-surface: #EAE0C8;
+  --v9-bg-elevated: #FAF4E6;
+  --v9-ink-primary: #231E18;
+  --v9-ink-secondary: #534B42;
+  --v9-ink-muted: #6E655A;
+  --v9-accent-seal: #8E2425;
+  --v9-accent-jade: #264D41;
+  --v9-accent-gold: #7A5B2A;
+  --v9-border-hairline: rgba(35, 30, 24, 0.14);
+}
+
+[data-theme="dark"] body,
+body[data-theme="dark"],
+body.cce-read-night {
+  --v9-bg-canvas: #121211;
+  --v9-bg-surface: #1A1918;
+  --v9-bg-elevated: #242220;
+  --v9-ink-primary: #F2EFE9;
+  --v9-ink-secondary: #C9C3B8;
+  --v9-ink-muted: #9B958B;
+  --v9-accent-seal: #D65A52;
+  --v9-accent-jade: #5CA68F;
+  --v9-accent-gold: #D4AF6A;
+  --v9-border-hairline: rgba(242, 239, 233, 0.12);
+  --v9-scrim: rgba(0, 0, 0, 0.72);
+}
+
+.v9-exhibition-dark {
+  --v9-bg-canvas: #141311;
+  --v9-bg-surface: #1D1B18;
+  --v9-bg-elevated: #26231F;
+  --v9-ink-primary: #F3EFE6;
+  --v9-ink-secondary: #CCC5B8;
+  --v9-ink-muted: #9D968B;
+  --v9-accent-seal: #D85F57;
+  --v9-accent-jade: #65B099;
+  --v9-accent-gold: #E5A93C;
+  --v9-border-hairline: rgba(229, 169, 60, 0.24);
+  background-color: var(--v9-bg-canvas);
+  color: var(--v9-ink-primary);
+  border: 1px solid var(--v9-border-hairline);
+  border-radius: var(--v9-radius-md);
+  padding: var(--v9-sp-5);
+  margin: var(--v9-sp-5) 0;
+}
+
+/* Aspect-ratio museum plates (CLS = 0.00) */
+.v9-plate-cinema,
+.v9-plate-editorial,
+.v9-plate-portrait,
+.v9-plate-scroll {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--v9-bg-surface);
+  border: 1px solid var(--v9-border-hairline);
+  border-radius: var(--v9-radius-sm);
+}
+
+.v9-plate-cinema { aspect-ratio: 16 / 9; }
+.v9-plate-editorial { aspect-ratio: 4 / 3; }
+.v9-plate-portrait { aspect-ratio: 3 / 4; }
+.v9-plate-scroll { aspect-ratio: 21 / 9; }
+
+.v9-plate-cinema > img,
+.v9-plate-editorial > img,
+.v9-plate-portrait > img,
+.v9-plate-scroll > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--v9-dur-fast) var(--v9-ease), opacity 220ms var(--v9-ease);
+}
+
+.v9-plate-portrait > img {
+  object-position: 50% 20%;
+}
+
+.v9-lqip-box > img[data-src] {
+  opacity: 0;
+}
+
+.v9-lqip-box > img.is-loaded {
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  .v9-bento-card:hover .v9-plate-editorial > img,
+  .v9-bento-card:hover .v9-plate-cinema > img,
+  .v9-bento-card:hover .v9-plate-portrait > img {
+    transform: scale(1.025);
+  }
+}
+
+/* Shared minimalist section & controls */
+.v9-section-block {
+  padding: var(--v9-sp-6) 0;
+  border-top: 1px solid var(--v9-border-hairline);
+}
+
+.v9-kicker {
+  font-family: var(--font-mono, monospace);
+  font-size: var(--v9-fs-micro);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--v9-accent-seal);
+  margin-bottom: var(--v9-sp-2);
+}
+
+.v9-lead-heading {
+  font-family: var(--font-editorial, Georgia, serif);
+  font-size: var(--v9-fs-h2);
+  line-height: 1.22;
+  color: var(--v9-ink-primary);
+  margin: 0 0 var(--v9-sp-2);
+}
+
+.v9-muted-copy {
+  color: var(--v9-ink-secondary);
+  font-size: var(--v9-fs-ui);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.v9-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 14px;
+  font-family: var(--font-ui, sans-serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--v9-radius-sm);
+  border: 1px solid var(--v9-border-hairline);
+  background: var(--v9-bg-elevated);
+  color: var(--v9-ink-primary);
+  cursor: pointer;
+  transition: background-color var(--v9-dur-fast) var(--v9-ease), border-color var(--v9-dur-fast) var(--v9-ease);
+}
+
+.v9-btn:hover {
+  border-color: var(--v9-ink-primary);
+}
+
+.v9-btn.is-primary {
+  background: var(--v9-accent-seal);
+  border-color: var(--v9-accent-seal);
+  color: #FAF7F2;
+}
+
+.v9-btn.is-jade {
+  background: var(--v9-accent-jade);
+  border-color: var(--v9-accent-jade);
+  color: #FAF7F2;
+}
+
+.v9-btn-sm {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 11px;
+  font-size: 0.8rem;
+}
+
+.v9-exhibition-dark .v9-btn {
+  background: #24211D;
+  color: #F3EFE6;
+  border-color: rgba(229, 169, 60, 0.34);
+}
+
+.v9-exhibition-dark .v9-btn.is-primary {
+  background: #B83530;
+  border-color: #B83530;
+  color: #FAF7F2;
+}
+
+/* Spec 2: Continue Reading & Airbnb Sticky 10-Icon Rail + 6-Card Bento */
+.v9-continue-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--v9-sp-3);
+  padding: var(--v9-sp-3) var(--v9-sp-4);
+  margin-bottom: var(--v9-sp-4);
+  background: var(--v9-bg-surface);
+  border: 1px solid var(--v9-border-hairline);
+  border-left: 3px solid var(--v9-accent-seal);
+  border-radius: var(--v9-radius-sm);
+}
+
+.v9-sticky-rail {
+  position: sticky;
+  top: 64px;
+  z-index: var(--v9-z-sticky-rail);
+  background: var(--v9-bg-canvas);
+  border-top: 1px solid var(--v9-border-hairline);
+  border-bottom: 1px solid var(--v9-border-hairline);
+  margin-bottom: var(--v9-sp-4);
+}
+
+.v9-rail-track {
+  display: flex;
+  align-items: stretch;
+  gap: var(--v9-sp-2);
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 4px 2px;
+}
+
+.v9-rail-track::-webkit-scrollbar {
+  display: none;
+}
+
+.v9-rail-item {
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-width: 82px;
+  min-height: 52px;
+  padding: 6px 12px;
+  background: transparent;
+  color: var(--v9-ink-secondary);
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color var(--v9-dur-fast) var(--v9-ease), border-color var(--v9-dur-fast) var(--v9-ease);
+}
+
+.v9-rail-item:hover,
+.v9-rail-item.is-active {
+  color: var(--v9-ink-primary);
+  border-bottom-color: var(--v9-accent-seal);
+}
+
+.v9-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--v9-sp-3);
+}
+
+.v9-bento-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--v9-bg-elevated);
+  border: 1px solid var(--v9-border-hairline);
+  border-radius: var(--v9-radius-sm);
+  overflow: hidden;
+  text-align: left;
+  cursor: pointer;
+}
+
+.v9-bento-card.is-lead {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.v9-bento-body {
+  padding: var(--v9-sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.v9-bento-meta {
+  font-size: 0.74rem;
+  font-family: var(--font-mono, monospace);
+  color: var(--v9-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.v9-bento-title {
+  font-family: var(--font-editorial, Georgia, serif);
+  font-size: 1.08rem;
+  line-height: 1.32;
+  color: var(--v9-ink-primary);
+  margin: 0;
+}
+
+.v9-bento-card.is-lead .v9-bento-title {
+  font-size: clamp(1.28rem, 2vw, 1.65rem);
+}
+
+@media (max-width: 1023px) {
+  .v9-bento-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .v9-bento-card.is-lead {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .v9-bento-grid,
+  .v9-hscroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
+    gap: 12px;
+    padding-bottom: 8px;
+  }
+  .v9-bento-card,
+  .v9-hscroll > * {
+    flex: 0 0 calc(84vw - 16px);
+    scroll-snap-align: start;
+  }
+}
+
+/* Spec 3: Google Arts & Culture Pigment Bar, Era Scrubber & 3.2x Loupe */
+.v9-pigment-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: var(--v9-sp-3) 0;
+}
+
+.v9-pigment-dot {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  background: transparent;
+  border: 1px solid rgba(243, 239, 230, 0.22);
+  cursor: pointer;
+}
+
+.v9-pigment-dot::before {
+  content: "";
+  width: 26px;
+  height: 26px;
+  border-radius: 9999px;
+  background: var(--pigment-hex, #9E2A2B);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.v9-pigment-dot.is-active {
+  border: 2px solid #E5A93C;
+  box-shadow: 0 0 0 2px rgba(229, 169, 60, 0.28);
+}
+
+.v9-era-scrubber {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: var(--v9-sp-2);
+  border-top: 1px solid rgba(229, 169, 60, 0.16);
+}
+
+.v9-discovery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--v9-sp-3);
+  margin-top: var(--v9-sp-3);
+}
+
+@media (max-width: 1023px) {
+  .v9-discovery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 639px) {
+  .v9-discovery-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.v9-exhibit-card {
+  background: #1D1B18;
+  border: 1px solid rgba(229, 169, 60, 0.22);
+  border-radius: var(--v9-radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.v9-exhibit-placard {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.v9-loupe-overlay,
+.v9-cinema-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--v9-z-cinema);
+  background: rgba(12, 11, 10, 0.94);
+  color: #F3EFE6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--v9-sp-3);
+}
+
+.v9-loupe-stage {
+  position: relative;
+  width: min(1080px, 94vw);
+  height: min(74vh, 680px);
+  background: #0B0A09;
+  border: 1px solid rgba(229, 169, 60, 0.28);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: crosshair;
+}
+
+.v9-loupe-stage img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  user-select: none;
+}
+
+.v9-loupe-lens {
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  border-radius: 9999px;
+  border: 2px solid #E5A93C;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+}
+
+.v9-loupe-minimap {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 164px;
+  height: 92px;
+  border: 1px solid rgba(229, 169, 60, 0.45);
+  background: #141311;
+  overflow: hidden;
+}
+
+/* Spec 4: Right-to-Left Handscroll Unroller & The Met Wall Placard */
+.v9-handscroll-viewport {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-inline: 16px;
+  background: #0E0D0B;
+  border: 1px solid rgba(229, 169, 60, 0.24);
+  touch-action: pan-x pan-y;
+  cursor: grab;
+  user-select: none;
+}
+
+.v9-handscroll-viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.v9-handscroll-track {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  min-width: 100%;
+  height: clamp(240px, 42vh, 360px);
+}
+
+.v9-handscroll-track img {
+  height: 100%;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  display: block;
+}
+
+.v9-placard-split {
+  display: grid;
+  grid-template-columns: minmax(260px, 38%) minmax(0, 62%);
+  gap: var(--v9-sp-3);
+  margin-top: var(--v9-sp-2);
+  padding-top: var(--v9-sp-2);
+  border-top: 1px solid rgba(229, 169, 60, 0.2);
+}
+
+@media (max-width: 767px) {
+  .v9-placard-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Spec 5: Airbnb 50/50 Split Atlas + Japan-Guide Matrix + Compare Tray */
+.v9-split-atlas {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--v9-sp-4);
+  margin-top: var(--v9-sp-4);
+}
+
+@media (min-width: 1024px) {
+  .v9-split-atlas {
+    grid-template-columns: minmax(380px, 46%) minmax(0, 54%);
+    align-items: start;
+  }
+  .v9-split-map-sticky {
+    position: sticky;
+    top: 76px;
+    max-height: calc(100vh - 92px);
+    overflow-y: auto;
+    background: var(--v9-bg-surface);
+    border: 1px solid var(--v9-border-hairline);
+    border-radius: var(--v9-radius-sm);
+    padding: var(--v9-sp-3);
+  }
+}
+
+@media (max-width: 1023px) {
+  .v9-split-map-sticky {
+    position: sticky;
+    top: 58px;
+    z-index: 20;
+    background: var(--v9-bg-surface);
+    border: 1px solid var(--v9-border-hairline);
+    padding: var(--v9-sp-2);
+    max-height: 36vh;
+    overflow: hidden;
+  }
+}
+
+.v9-atlas-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--v9-sp-3);
+}
+
+@media (max-width: 639px) {
+  .v9-atlas-cards-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.v9-atlas-card {
+  background: var(--v9-bg-elevated);
+  border: 1px solid var(--v9-border-hairline);
+  border-radius: var(--v9-radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--v9-dur-fast) var(--v9-ease);
+}
+
+.v9-atlas-card.is-synced,
+.v9-atlas-card:hover {
+  border-color: var(--v9-accent-seal);
+}
+
+.v9-season-strip-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 2px;
+  margin: 8px 0;
+}
+
+.v9-season-cell {
+  font-size: 0.65rem;
+  text-align: center;
+  padding: 3px 0;
+  border-radius: 1px;
+  background: var(--v9-bg-surface);
+  color: var(--v9-ink-secondary);
+}
+
+.v9-season-cell.is-ideal {
+  background: var(--v9-accent-jade);
+  color: #FAF7F2;
+  font-weight: 700;
+}
+
+.v9-season-cell.is-peak {
+  background: #A6844E;
+  color: #FAF7F2;
+  font-weight: 700;
+}
+
+.v9-compare-tray {
+  position: fixed;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  z-index: var(--v9-z-tray);
+  width: min(760px, calc(100vw - 24px));
+  background: var(--v9-bg-elevated);
+  border: 1px solid var(--v9-ink-primary);
+  box-shadow: var(--v9-shadow-popover);
+  border-radius: var(--v9-radius-md);
+  padding: 10px 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* Spec 5b: Trip Planner Drawer, FAB, Show-to-Driver Card & Print Booklet */
+.v9-fab-trip {
+  position: fixed;
+  right: 18px;
+  bottom: 76px;
+  z-index: var(--v9-z-tray);
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 9999px;
+  background: var(--v9-ink-primary);
+  color: var(--v9-bg-canvas);
+  border: 1px solid var(--v9-border-hairline);
+  box-shadow: var(--v9-shadow-popover);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.v9-trip-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--v9-z-drawer);
+  background: var(--v9-scrim);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.v9-trip-drawer {
+  width: min(480px, 100vw);
+  height: 100%;
+  background: var(--v9-bg-canvas);
+  color: var(--v9-ink-primary);
+  border-left: 1px solid var(--v9-border-hairline);
+  display: flex;
+  flex-direction: column;
+  overscroll-behavior: contain;
+}
+
+@media (max-width: 767px) {
+  .v9-trip-drawer-backdrop,
+  .v9-bottom-sheet-backdrop {
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .v9-trip-drawer,
+  .v9-bottom-sheet {
+    width: 100%;
+    height: auto;
+    max-height: 82vh;
+    border-left: none;
+    border-top: 1px solid var(--v9-border-hairline);
+    border-radius: 10px 10px 0 0;
+    padding-bottom: env(safe-area-inset-bottom, 12px);
+  }
+}
+
+.v9-driver-card-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--v9-z-driver-card);
+  background: #FAF7F2;
+  color: #1A1918;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--v9-sp-5);
+}
+
+.v9-driver-hanzi-xl {
+  font-family: var(--font-zh, "Noto Serif SC", serif);
+  font-size: clamp(2rem, 6vw, 3.6rem);
+  line-height: 1.25;
+  font-weight: 700;
+  color: #1A1918;
+  margin: var(--v9-sp-3) 0 var(--v9-sp-2);
+}
+
+.v9-print-booklet {
+  display: none;
+}
+
+/* Spec 6: Scrollytelling Reader, Pullquotes, Popovers & Audio Dock */
+.v9-reader-modebar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px;
+  margin-bottom: var(--v9-sp-4);
+  background: var(--v9-bg-surface);
+  border: 1px solid var(--v9-border-hairline);
+  border-radius: var(--v9-radius-sm);
+}
+
+@media (min-width: 1024px) {
+  .v9-story-flow-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 44%) minmax(0, 52%);
+    gap: 4%;
+    align-items: start;
+  }
+  .v9-sticky-stage {
+    position: sticky;
+    top: 86px;
+    height: calc(100vh - 110px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.v9-zen-prose {
+  max-width: 65ch;
+  margin-inline: auto;
+  font-size: var(--v9-fs-body);
+  line-height: 1.82;
+}
+
+.v9-pullquote {
+  border-left: 2px solid var(--v9-accent-seal);
+  padding: 8px 0 8px 18px;
+  margin: var(--v9-sp-4) 0;
+  font-family: var(--font-editorial, Georgia, serif);
+  font-style: italic;
+  font-size: clamp(1.18rem, 1.8vw, 1.55rem);
+  line-height: 1.45;
+  color: var(--v9-ink-primary);
+}
+
+.v9-term-trigger {
+  background: transparent;
+  border: none;
+  border-bottom: 1px dotted var(--v9-accent-seal);
+  color: inherit;
+  font: inherit;
+  padding: 0 2px;
+  cursor: pointer;
+}
+
+.v9-inline-popover {
+  position: fixed;
+  z-index: var(--v9-z-drawer);
+  width: min(320px, calc(100vw - 24px));
+  background: var(--v9-bg-elevated);
+  color: var(--v9-ink-primary);
+  border: 1px solid var(--v9-ink-primary);
+  box-shadow: var(--v9-shadow-popover);
+  border-radius: var(--v9-radius-sm);
+  padding: 12px 14px;
+}
+
+.v9-audio-dock {
+  position: fixed;
+  left: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: var(--v9-z-tray);
+  background: var(--v9-bg-elevated);
+  color: var(--v9-ink-primary);
+  border: 1px solid var(--v9-ink-primary);
+  box-shadow: var(--v9-shadow-popover);
+  border-radius: var(--v9-radius-md);
+  padding: 6px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Spec 7: NYT / Pudding Data Stories & 3D Fullscreen Cinema Stage */
+.v9-data-story-shell {
+  background: var(--v9-bg-surface);
+  border: 1px solid var(--v9-border-hairline);
+  border-radius: var(--v9-radius-sm);
+  padding: var(--v9-sp-4);
+  margin: var(--v9-sp-4) 0;
+}
+
+.v9-cinema-frame {
+  width: min(92vw, 1360px);
+  height: min(82vh, 820px);
+  background: #141311;
+  border: 1px solid rgba(229, 169, 60, 0.28);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.v9-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Printable Pocket A4 Booklet */
+@media print {
+  .site-header, .site-footer, #cce-nav-root, .v9-sticky-rail, .v9-fab-trip,
+  .v9-audio-dock, .v9-trip-drawer-backdrop, .v9-compare-tray,
+  #cce-v8-read-progress, .v9-no-print {
+    display: none !important;
+  }
+  .v9-print-booklet {
+    display: block !important;
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    padding: 12mm;
+    font-family: var(--font-editorial, "Noto Serif", serif);
+  }
+  .v9-print-day-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid #888;
+    padding: 8mm;
+    margin-bottom: 6mm;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

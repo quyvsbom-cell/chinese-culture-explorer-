@@ -168,7 +168,7 @@
         routesEn: "Overland Silk Road through Gansu; early Maritime Silk Road out of Hepu and Xuwen across the Gulf of Tonkin."
       },
       primarySourcesEn: [
-        "Cornerstone foundational historiography authored by Sima Qian and Ban Gu.",
+        "Foundational historiography authored by Sima Qian and Ban Gu.",
         "Crucial primary fiscal debate contrasting state salt–iron monopolies against market deregulation."
       ]
     },
@@ -2161,7 +2161,7 @@
       },
       geoEn: {
         summaryEn: "Southwest frontier plunging dramatically from 6,740 m Tibetan–Yunnan Three Parallel Rivers glaciated peaks down across Kunming's 1,900 m eternal-spring plateau into steamy tropical Mekong and Red River valleys harboring seven climatic belts inside one province.",
-        causalityEn: "Deep north–south Hengduan river canyons isolated valleys preserving China's peak cultural tapestry (25 resident minorities — Yi, Bai, Hani, Dai, Naxi, Tibetan, Miao). Caravan passes climbing toward Tibet birthed Tea-Horse compressed Pu'er bricks while damp misty peaks breed over 250 gourmet wild mushroom species."
+        causalityEn: "Deep north–south Hengduan river canyons isolated valleys preserving China's peak cultural mosaic (25 resident minorities — Yi, Bai, Hani, Dai, Naxi, Tibetan, Miao). Caravan passes climbing toward Tibet birthed Tea-Horse compressed Pu'er bricks while damp misty peaks breed over 250 gourmet wild mushroom species."
       },
       historicalEvolutionEn: "1.7-million-year Yuanmou hominids; Bronze Dian kettle-drum artisans paralleling Vietnamese Dong Son culture; Tang–Song Kingdoms Nanzhao & Dali; Yuan provincial integration; Ming maritime explorer Zheng He & geographer Xu Xiake; and 1938–46 Wartime National Southwest Associated University citadel in Kunming.",
       culturalIdentityEn: "Unbounded multi-ethnic kaleidoscope slowing time harmoniously — Naxi Dongba living pictographs in Lijiang, poetic Dali Bai 'Wind–Flower–Snow–Moon', joyous Xishuangbanna Dai Water-Splashing, and millennial Pu'er mountain tea reverence.",
@@ -2381,7 +2381,7 @@
       bestSeasonEn: "October – December & March – May (crisp Alishan autumn maples & spring sakura mountain rails)",
       cuisineEn: "Taipei Braised Beef Noodle Soup (牛肉面), Savory Pork Belly Luroufan (卤肉饭), Original Pearl Boba Tea & Pineapple Cake",
       travelTipEn: "Load EasyCard or iPASS to breeze seamlessly across Taipei/Kaohsiung MRT subways, mountain buses & 7-Eleven shops.",
-      economyAndIndustryEn: "Cornerstone 'Silicon Shield' of modern electronics manufacturing >60% of global chips and >90% sub-5nm logic nodes centered around TSMC (Hsinchu–Taichung–Tainan Science Parks), MediaTek, Foxconn, ASUS, ASE OSAT & Giant Bicycles.",
+      economyAndIndustryEn: "Linchpin 'Silicon Shield' of modern electronics manufacturing >60% of global chips and >90% sub-5nm logic nodes centered around TSMC (Hsinchu–Taichung–Tainan Science Parks), MediaTek, Foxconn, ASUS, ASE OSAT & Giant Bicycles.",
       vietnamConnectivityEn: "Among top cumulative FDI investors into Vietnam's industrial belts (Foxconn/Pegatron electronics in Bac Giang–Hai Phong, footwear, Formosa steel/textiles) with >400,000 vibrant Vietnamese students, professionals, and families at NTU, NTHU, NYCU, and NCKU.",
       identityEn: {
         adminTypeFullEn: "Province (省 Shěng)",

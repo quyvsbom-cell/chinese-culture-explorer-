@@ -14,7 +14,7 @@ window.CCE_ARTICLES = [
     readMinutes: 9,
     epistemicTag: "Sử học Tư tưởng • Tư liệu Chính thống",
     introduction:
-      "Khái niệm 'Chư tử bách gia' (诸子百家) không chỉ là danh sách liệt kê các học giả thời Xuân Thu – Chiến Quốc (770–221 TCN), mà là cuộc bùng nổ tri thức giải quyết một khủng hoảng cấu trúc chưa từng có: khi trật tự lễ nhạc phong kiến Tây Chu tan rã, nền văn minh Trung Hoa phải tìm ra cơ sở đạo đức, pháp lý và vũ trụ luận mới để tái tổ chức xã hội.",
+      "Khái niệm 'Chư tử bách gia' (诸子百家) vượt xa một bảng liệt kê học giả thời Xuân Thu – Chiến Quốc (770–221 TCN), đánh dấu cuộc bùng nổ tri thức nhằm giải quyết khủng hoảng cấu trúc chưa từng có: khi trật tự lễ nhạc phong kiến Tây Chu tan rã, nền văn minh Trung Hoa phải tìm ra cơ sở đạo đức, pháp lý và vũ trụ luận mới để tái tổ chức xã hội.",
     historicalBackground:
       "Sử gia Ban Cố trong 《汉书·艺文志》 (kế thừa từ Lưu Hâm trong Thất Lược) phân loại các học phái thời kỳ này thành 'Cửu lưu thập gia' (Nho, Đạo, Âm Dương, Pháp, Danh, Mặc, Tung Hoành, Tạp, Nông, Tiểu thuyết). Trước đó, Tư Mã Đàm (cha Tư Mã Thiên) đã khái quát 'Lục gia yếu chỉ'. Điểm chuyển biến xã hội quyết định là sự xuất hiện của tầng lớp 'Sĩ' (士) – những trí thức không còn gắn cố định với lãnh địa thế tập mà di chuyển tự do giữa các chư hầu (như Học viện Tắc Hạ nước Tề) để hiến kế trị quốc.",
     mainContent: [
@@ -205,7 +205,7 @@ window.CCE_ARTICLES = [
     terminologyIds: ["wuxing", "tiangan", "dizhi"],
     examples: [
       "Bảng liên hệ dưỡng sinh mùa Xuân: Xuân thuộc Mộc (hướng Đông, màu xanh, tạng Can), nên điều hòa tinh thần tránh cáu giận uất kết để bảo vệ chức năng sơ tiết của Can.",
-      "Trong Bát Tự Tứ Trụ: người phân tích không chỉ đếm số lượng 5 hành mà xem sự lưu thông ('Thông quan') giữa các hành kìm kẹp nhau."
+      "Trong Bát Tự Tứ Trụ: người phân tích ngoài việc đếm số lượng 5 hành còn xét sự lưu thông ('Thông quan') giữa các hành kìm kẹp nhau."
     ],
     relatedTopics: ["Thuyết Âm Dương", "Bát Tự Tứ Trụ", "Thiên Can Địa Chi"],
     references: [
@@ -286,7 +286,7 @@ window.CCE_ARTICLES = [
     readMinutes: 8,
     epistemicTag: "Nhân học Văn hóa • Tập quán Xã hội",
     introduction:
-      "Tết Nguyên Đán — ngày nay tại Trung Quốc gọi chính thức là Xuân Tiết (春节) — không chỉ là kỳ nghỉ đón năm mới nông lịch mà là nghi thức tái khẳng định trật tự gia tộc, cộng đồng và nhịp điệu sinh thái – xã hội lớn nhất của văn hóa Hoa Hạ.",
+      "Tết Nguyên Đán — ngày nay tại Trung Quốc gọi chính thức là Xuân Tiết (春节) — vừa là kỳ nghỉ đón năm mới nông lịch vừa là nghi thức tái khẳng định trật tự gia tộc, cộng đồng và nhịp điệu sinh thái – xã hội lớn nhất của văn hóa Hoa Hạ.",
     historicalBackground:
       "Thời Tiên Tần chưa có tên 'Xuân Tiết'; các triều đại Hạ-Thương-Chu thậm chí chọn tháng giêng làm đầu năm khác nhau ('Tam chính'). Từ thời Hán Vũ Đế ban hành Lịch Thái Sơ (104 TCN), tháng Dần được ấn định cố định làm tháng Giêng (chính nguyệt). Năm 1914, chính phủ Dân Quốc áp dụng lịch Gregory gọi mùng 1/1 dương lịch là 'Nguyên Đán' và đặt tên lễ truyền thống mùng 1 tháng Giêng nông lịch là 'Xuân Tiết'. Tháng 12/2024, UNESCO chính thức ghi danh 'Xuân Tiết' là Di sản Văn hóa Phi vật thể của Nhân loại.",
     mainContent: [
@@ -552,7 +552,7 @@ window.CCE_ARTICLES = [
     introduction:
       "Việt Nam là quốc gia Đông Nam Á duy nhất nằm sâu trong Vòng văn hóa chữ Hán (Sinosphere) cùng với Trung Quốc, Nhật Bản và Triều Tiên. Nghiên cứu lịch sử giao lưu văn hóa Trung – Việt đòi hỏi cái nhìn khách quan: vừa nhận diện sự tương đồng sâu sắc về chữ viết, triết học và định chế, vừa làm rõ sức sống nội sinh giúp người Việt không bị đồng hóa mà kiến tạo bản sắc riêng biệt.",
     historicalBackground:
-      "Quan hệ giao lưu không chỉ giới hạn trong hơn 1.000 năm Bắc thuộc (111 TCN – 938 SCN), mà còn diễn ra mạnh mẽ và chủ động hơn trong gần 1.000 năm tự chủ (từ triều Lý, Trần, Lê đến Nguyễn). Thực tế, nhiều thiết chế Nho học chính quy (Văn Miếu, khoa cử Tiến sĩ, Bộ luật Hồng Đức, Tứ Thư) được các triều đại độc lập Việt Nam chủ động tiếp thu từ thời Tống – Minh nhằm xây dựng một nhà nước tập quyền đủ mạnh để bảo vệ chủ quyền trước chính các đế chế phương Bắc.",
+      "Quan hệ giao lưu diễn ra suốt hơn 1.000 năm Bắc thuộc (111 TCN – 938 SCN) rồi tiếp tục mở rộng mạnh mẽ và chủ động hơn trong gần 1.000 năm tự chủ (từ triều Lý, Trần, Lê đến Nguyễn). Thực tế, nhiều thiết chế Nho học chính quy (Văn Miếu, khoa cử Tiến sĩ, Bộ luật Hồng Đức, Tứ Thư) được các triều đại độc lập Việt Nam chủ động tiếp thu từ thời Tống – Minh nhằm xây dựng một nhà nước tập quyền đủ mạnh để bảo vệ chủ quyền trước chính các đế chế phương Bắc.",
     mainContent: [
       {
         heading: "1. Ngôn ngữ học lịch sử: Kho tàng Hán-Việt và Chữ Nôm",
@@ -572,7 +572,7 @@ window.CCE_ARTICLES = [
     ],
     terminologyIds: ["hannom", "sanjiao", "wenming"],
     examples: [
-      "Hiện tượng từ Hán-Việt 'Đồng hình dị nghĩa' cần lưu ý khi học tiếng Trung: 'Học sinh' (学生 là sinh viên đại học ở TQ, nhưng tiếng Việt chỉ phổ thông), 'Cẩn thận' (谨慎 trong tiếng Trung là thận trọng, không chỉ mang nghĩa dặn dò đi đường).",
+      "Hiện tượng từ Hán-Việt 'Đồng hình dị nghĩa' cần lưu ý khi học tiếng Trung: 'Học sinh' (学生 là sinh viên đại học ở TQ, nhưng tiếng Việt chỉ phổ thông), 'Cẩn thận' (谨慎 trong tiếng Trung là thận trọng nói chung, thay vì chỉ dặn dò khi đi đường).",
       "Phố cổ Hội An (Quảng Nam): nơi bảo tồn nguyên vẹn sự chung sống giữa nhà ống thương nhân Việt, Hội quán Phúc Kiến/Triều Châu/Quảng Đông của người Hoa Minh Hương và Chùa Cầu."
     ],
     relatedTopics: ["Chữ Hán & Chữ Nôm", "Tam giáo tại Việt Nam", "Thương mại Trung – Việt"],
@@ -781,7 +781,7 @@ window.CCE_ARTICLES = [
       {
         heading: "1. Trục Lục địa & Vai trò của Thương nhân Túc Đặc (Sogdia)",
         body:
-          "Từ Trường An đi qua Đôn Hoàng đến Samarkand và Antioch không phải hành trình của một thương nhân đơn lẻ mà là chuỗi tiếp sức qua từng thị trấn ốc đảo. Các sử liệu văn bản Đôn Hoàng và Thổ Lỗ Phồn cho thấy thương nhân gốc Túc Đặc (Trung Á) đóng vai trò môi giới đa ngữ, truyền tải không chỉ tơ lụa, giấy Tuyên mà cả kỹ thuật thủy lợi, thiên văn, âm nhạc và Phật giáo vào Trung Nguyên."
+          "Từ Trường An đi qua Đôn Hoàng đến Samarkand và Antioch không phải hành trình của một thương nhân đơn lẻ mà là chuỗi tiếp sức qua từng thị trấn ốc đảo. Các sử liệu văn bản Đôn Hoàng và Thổ Lỗ Phồn cho thấy thương nhân gốc Túc Đặc (Trung Á) đóng vai trò môi giới đa ngữ, truyền tải đồng thời tơ lụa, giấy Tuyên cùng kỹ thuật thủy lợi, thiên văn, âm nhạc và Phật giáo vào Trung Nguyên."
       },
       {
         heading: "2. Cách mạng Hải thương & Cơ quan Thuế quan Thị Bạc Tư (市舶司)",
@@ -1110,7 +1110,7 @@ window.CCE_ARTICLES = [
     readMinutes: 13,
     epistemicTag: "Mỹ học Văn nhân • Di sản UNESCO",
     introduction:
-      "Trong văn minh Trung Hoa, viết chữ không chỉ là phương tiện ghi chép ngôn ngữ mà được nâng lên thành nghệ thuật biểu đạt tâm tính tối cao: 'Thư như kỳ nhân' (Chữ viết phản chiếu con người). Cùng với nghệ thuật Triện khắc (khắc ấn đá) và tranh thủy mặc, Thư pháp ngũ thể tạo nên tổng thể mỹ học 'Thi – Thư – Họa – Ấn' (诗书画印) độc đáo bậc nhất phương Đông.",
+      "Trong văn minh Trung Hoa, viết chữ vượt lên trên phương tiện ghi chép ngôn ngữ để trở thành nghệ thuật biểu đạt tâm tính tối cao: 'Thư như kỳ nhân' (Chữ viết phản chiếu con người). Cùng với nghệ thuật Triện khắc (khắc ấn đá) và tranh thủy mặc, Thư pháp ngũ thể tạo nên tổng thể mỹ học 'Thi – Thư – Họa – Ấn' (诗书画印) độc đáo bậc nhất phương Đông.",
     historicalBackground:
       "Trải qua hơn 3.300 năm từ Giáp cốt văn đời Thương đến thời Ngụy – Tấn – Đường – Tống, chữ Hán kết tinh thành 5 thể chữ chuẩn mực ('Ngũ thể' 五体): Triện thư (篆书), Lệ thư (隶书), Khải thư (楷书), Hành thư (行书) và Thảo thư (草书). Năm 2009, cả Thư pháp Trung Quốc và Nghệ thuật Triện khắc Trung Quốc đều được UNESCO ghi danh là Di sản Văn hóa Phi vật thể Đại diện của Nhân loại.",
     mainContent: [

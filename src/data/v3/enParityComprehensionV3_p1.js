@@ -39,7 +39,7 @@
         Q('Which four implements constitute the classical "Four Treasures of the Study" (Wenfang Sibao)?', ['Brush, Inkstick, Paper, and Inkstone', 'Zither, Go, Poetry, and Painting', 'Tea, Incense, Flowers, and Lute', 'Seal, Ruler, Oil Lamp, and Censer'], 0, 'Hu brushes, Hui inksticks, Xuan paper, and Duan inkstones represent the canonical regional benchmarks.'),
         Q('What physical quality allows Xuan paper from Jingxian (Anhui) to preserve calligraphy and paintings for centuries?', ['Synthetic optical brighteners', 'Blended Pteroceltis bark fibers and rice straw offering high tensile durability, multi-tonal ink absorption, and insect resistance', 'A waterproof plastic sheen', 'Pure pine wood pulp'], 1, 'Known as "thousand-year paper," Xuan paper supports subtle five-tone ink gradations while resisting aging.')
       ],
-      feynman: F('Explain the physical interplay among brush, inkstick, Xuan paper, and inkstone in producing expressive calligraphy.', ['Describe how the inkstone\'s fine grain grinds and retains moisture.', 'Explain how Xuan paper absorbency responds instantaneously to brush speed and pressure.', 'Note the meditative discipline of grinding ink before writing.'])
+      feynman: F('Explain the physical interaction among brush, inkstick, Xuan paper, and inkstone in producing expressive calligraphy.', ['Describe how the inkstone\'s fine grain grinds and retains moisture.', 'Explain how Xuan paper absorbency responds instantaneously to brush speed and pressure.', 'Note the meditative discipline of grinding ink before writing.'])
     },
     'solar-terms-huangdi-neijing': {
       mcqs: [
@@ -116,7 +116,7 @@
         Q('Within traditional Confucian-merchant (Rushang) ethics, what principle governed sustainable profit-making?', ['Maximizing short-term gain at all costs', '"Seeing profit, think of righteousness" (Jian li si yi) and anchoring long-term trade on trustworthiness (Xin)', 'Banning commerce entirely', 'Conducting only single-day spot trades'], 1, 'Confucian merchants treated reputation and fairness as an enterprise\'s most durable intangible capital.'),
         Q('Before modern digital credit bureaus, how did historic Chinese merchant guilds enforce trust across distant provinces?', ['Guild halls, transparent ledgers, native-place guarantees, and collective reputational ostracism', 'Television advertising', 'Blockchain smart contracts', 'Cash-only unrecorded deals'], 0, 'Regional networks like Huishang and Jinshang turned clan and native-place honor into enforceable social collateral.')
       ],
-      feynman: F('Explain why the traditional triad of Trust (Xin), Righteousness (Yi), and Profit (Li) remains operationally relevant in modern supply chains and B2B negotiation.', ['Define the interplay among ethical boundaries (Yi), commitment (Xin), and commercial return (Li).', 'Describe how historic guilds lowered transaction costs via reputational governance.', 'Connect these principles to modern contract compliance and ESG stewardship.'])
+      feynman: F('Explain why the traditional triad of Trust (Xin), Righteousness (Yi), and Profit (Li) remains operationally relevant in modern supply chains and B2B negotiation.', ['Define the balance among ethical boundaries (Yi), commitment (Xin), and commercial return (Li).', 'Describe how historic guilds lowered transaction costs via reputational governance.', 'Connect these principles to modern contract compliance and ESG stewardship.'])
     },
     'han-viet-phonology-middle-chinese': {
       mcqs: [

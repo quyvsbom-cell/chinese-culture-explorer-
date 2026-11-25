@@ -521,7 +521,8 @@
       }));
       const v6 = mapV6V7(window.CCE_V6_QUIZ, "v6");
       const v7 = mapV6V7(window.CCE_V7_QUIZ, "v7");
-      const full = base.concat(v3, v4, v5, v6, v7);
+      const v8 = mapV6V7(window.CCE_V8_QUIZ, "v8");
+      const full = base.concat(v3, v4, v5, v6, v7, v8);
       this._lastFullQuizCount = full.length;
       this._lastVisualQuizCount = full.filter((q) => Boolean(q.imagePath)).length;
       const pFilter = this.state.quizPillarFilter || "all";
@@ -531,10 +532,10 @@
         return visList.length ? visList : full;
       }
       const pMatchMap = {
-        history: /history|dynast|geography/i,
-        philosophy: /philosophy|wuxing|tcm|architecture/i,
-        art: /art|literature|hsk|poetry/i,
-        trade: /trade|logistics|laozihao/i,
+        history: /history|dynast|geography|ethnic/i,
+        philosophy: /philosophy|wuxing|tcm|architecture|urban|sponge|green/i,
+        art: /art|literature|hsk|poetry|opera|music|guqin|kunqu/i,
+        trade: /trade|logistics|laozihao|cbam|eudr|esg|climate/i,
         sino: /sino|cuisine|csc|viet/i
       };
       const rx = pMatchMap[pFilter];

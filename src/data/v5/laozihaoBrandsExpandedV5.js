@@ -102,7 +102,7 @@
         craftSecretEn: "Artisanal processing heritage linked to Shanxi merchant guilds (Jinshang), known for nine-steam nine-sun-dry botanical preparation recorded in historical treatises.",
         b2bTradeVi: "Định vị phân khúc thực dưỡng cao cấp và du lịch văn hóa Tấn thương, mở rộng hợp tác triển lãm di sản phi vật thể quốc tế.",
         b2bTradeEn: "Positioned in premium traditional wellness and Jinshang cultural heritage tourism with international intangible-heritage showcases.",
-        visitTipVi: "Kết hợp tham quan Bảo tàng Quảng Dự Viễn tại huyện Thái Cốc cùng hành trình khám phá thành cổ Bình Dao."
+        visitTipVi: "Kết hợp tham quan Bảo tàng Quảng Dự Viễn tại huyện Thái Cốc trong chuyến khảo sát thành cổ Bình Dao."
       },
       {
         id: "lzh-x-07",

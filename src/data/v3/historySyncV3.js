@@ -329,7 +329,7 @@
     },
     {
       id: 'confucius',
-      image: 'assets/images/prov_items/shandong/f0.jpg',
+      image: 'assets/images/figures/confucius.jpg',
       nameVi: 'Khổng Tử',
       nameZh: '孔子',
       nameEn: 'Confucius (Kongzi)',
@@ -343,7 +343,7 @@
     },
     {
       id: 'laozi',
-      image: 'assets/images/prov_items/anhui/f0.jpg',
+      image: 'assets/images/figures/laozi.jpg',
       nameVi: 'Lão Tử',
       nameZh: '老子',
       nameEn: 'Laozi',
@@ -385,7 +385,7 @@
     },
     {
       id: 'sima-qian',
-      image: 'assets/images/prov_items/shaanxi/f0.jpg',
+      image: 'assets/images/figures/sima-qian.jpg',
       nameVi: 'Tư Mã Thiên',
       nameZh: '司马迁',
       nameEn: 'Sima Qian',
@@ -399,7 +399,7 @@
     },
     {
       id: 'zhang-qian',
-      image: 'assets/images/prov_items/shaanxi/f1.jpg',
+      image: 'assets/images/figures/zhang-qian.jpg',
       nameVi: 'Trương Khiên',
       nameZh: '张骞',
       nameEn: 'Zhang Qian',
@@ -427,7 +427,7 @@
     },
     {
       id: 'wang-xizhi',
-      image: 'assets/images/prov_items/zhejiang/f0.jpg',
+      image: 'assets/images/figures/wang-xizhi.jpg',
       nameVi: 'Vương Hy Chi',
       nameZh: '王羲之',
       nameEn: 'Wang Xizhi',
@@ -455,7 +455,7 @@
     },
     {
       id: 'li-bai',
-      image: 'assets/images/prov_items/sichuan/f0.jpg',
+      image: 'assets/images/figures/li-bai.jpg',
       nameVi: 'Lý Bạch',
       nameZh: '李白',
       nameEn: 'Li Bai',
@@ -469,7 +469,7 @@
     },
     {
       id: 'du-fu',
-      image: 'assets/images/prov_items/henan/f0.jpg',
+      image: 'assets/images/figures/du-fu.jpg',
       nameVi: 'Đỗ Phủ',
       nameZh: '杜甫',
       nameEn: 'Du Fu',
@@ -497,7 +497,7 @@
     },
     {
       id: 'su-shi',
-      image: 'assets/images/prov_items/sichuan/f1.jpg',
+      image: 'assets/images/figures/su-shi.jpg',
       nameVi: 'Tô Thức (Tô Đông Pha)',
       nameZh: '苏轼',
       nameEn: 'Su Shi (Su Dongpo)',
@@ -511,7 +511,7 @@
     },
     {
       id: 'shen-kuo',
-      image: 'assets/images/prov_items/jiangsu/f2.jpg',
+      image: 'assets/images/figures/shen-kuo.jpg',
       nameVi: 'Thẩm Quát',
       nameZh: '沈括',
       nameEn: 'Shen Kuo',
@@ -525,7 +525,7 @@
     },
     {
       id: 'zhu-xi',
-      image: 'assets/images/prov_items/anhui/f3.jpg',
+      image: 'assets/images/figures/zhu-xi.jpg',
       nameVi: 'Chu Hy',
       nameZh: '朱熹',
       nameEn: 'Zhu Xi',
@@ -539,7 +539,7 @@
     },
     {
       id: 'guo-shoujing',
-      image: 'assets/images/prov_items/ningxia/f1.jpg',
+      image: 'assets/images/figures/guo-shoujing.jpg',
       nameVi: 'Quách Thủ Kính',
       nameZh: '郭守敬',
       nameEn: 'Guo Shoujing',
@@ -553,7 +553,7 @@
     },
     {
       id: 'guan-hanqing',
-      image: 'assets/images/prov_items/hebei/f1.jpg',
+      image: 'assets/images/figures/guan-hanqing.jpg',
       nameVi: 'Quan Hán Khanh',
       nameZh: '关汉卿',
       nameEn: 'Guan Hanqing',
@@ -567,7 +567,7 @@
     },
     {
       id: 'zheng-he',
-      image: 'assets/images/prov_items/yunnan/f0.jpg',
+      image: 'assets/images/figures/zheng-he.jpg',
       nameVi: 'Trịnh Hòa',
       nameZh: '郑和',
       nameEn: 'Zheng He',
@@ -581,7 +581,7 @@
     },
     {
       id: 'wang-yangming',
-      image: 'assets/images/prov_items/zhejiang/f1.jpg',
+      image: 'assets/images/figures/wang-yangming.jpg',
       nameVi: 'Vương Dương Minh (Vương Thủ Nhân)',
       nameZh: '王阳明',
       nameEn: 'Wang Yangming (Wang Shouren)',
@@ -609,7 +609,7 @@
     },
     {
       id: 'cao-xueqin',
-      image: 'assets/images/prov_items/beijing/f1.jpg',
+      image: 'assets/images/figures/cao-xueqin.jpg',
       nameVi: 'Tào Tuyết Cần',
       nameZh: '曹雪芹',
       nameEn: 'Cao Xueqin',
@@ -623,7 +623,7 @@
     },
     {
       id: 'sun-yat-sen',
-      image: 'assets/images/prov_items/guangdong/f2.jpg',
+      image: 'assets/images/figures/sun-yat-sen.jpg',
       nameVi: 'Tôn Trung Sơn (Tôn Dật Tiên)',
       nameZh: '孙中山',
       nameEn: 'Sun Yat-sen',
@@ -637,7 +637,7 @@
     },
     {
       id: 'lu-xun',
-      image: 'assets/images/prov_items/zhejiang/f2.jpg',
+      image: 'assets/images/figures/lu-xun.jpg',
       nameVi: 'Lỗ Tấn (Chu Thụ Nhân)',
       nameZh: '鲁迅',
       nameEn: 'Lu Xun (Zhou Shuren)',

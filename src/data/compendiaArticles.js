@@ -567,7 +567,7 @@ window.CCE_COMPENDIA_ARTICLES = [
       "Cục Quản lý Không gian mạng Trung Quốc (CAC) áp dụng khung quản trị 'Song hành Kép' (Dual-Track): vừa siết chặt đăng ký thuật toán & dán nhãn nội dung AI, vừa nới lỏng thủ tục cho các mô hình ứng dụng công nghiệp B2B."
     ],
     introduction:
-      "Cuộc cạnh tranh AI thế kỷ 21 không chỉ diễn ra ở tầng thuật toán mà nằm ở 'tầng silicon' (chế tạo chip bán dẫn) và 'tầng thể chế' (luật quản trị dữ liệu). Trung Quốc là quốc gia đầu tiên trên thế giới ban hành khung pháp lý toàn diện cho AI tạo sinh song song với nỗ lực nội địa hóa chuỗi cung ứng bán dẫn.",
+      "Cuộc cạnh tranh AI thế kỷ 21 diễn ra đồng thời ở tầng thuật toán, 'tầng silicon' (chế tạo chip bán dẫn) và 'tầng thể chế' (luật quản trị dữ liệu). Trung Quốc là quốc gia đầu tiên trên thế giới ban hành khung pháp lý toàn diện cho AI tạo sinh song song với nỗ lực nội địa hóa chuỗi cung ứng bán dẫn.",
     historicalBackground:
       "Từ sau gói kiểm soát xuất khẩu bán dẫn của Mỹ (10/2022 và các bản siết chặt 2023–2025), Trung Quốc đẩy mạnh Quỹ Đầu tư Công nghiệp Mạch tích hợp Quốc gia ('Big Fund' Giai đoạn III với quy mô 344 tỷ RMB) để bù đắp nút thắt về máy quang khắc, bộ nhớ băng thông cao (HBM) và phần mềm thiết kế chip (EDA).",
     mainContent: [
@@ -753,7 +753,7 @@ window.CCE_COMPENDIA_ARTICLES = [
       {
         heading: "1. Thẩm định NECIPS (gsxt.gov.cn) & Phát hiện 'Công ty Ma / Thương mại'",
         body:
-          "Trước khi đặt cọc, yêu cầu đối tác gửi Giấy phép Kinh doanh (营业执照) và tra cứu trực tiếp trên gsxt.gov.cn hoặc Qichacha/Tianyancha: kiểm tra Vốn điều lệ thực góp vs. đăng ký, Phạm vi kinh doanh (经营范围 — nhà máy thật phải có từ 'sản xuất/chế tạo' 生产/制造 chứ không chỉ 'bán buôn' 批发/贸易), và lịch sử kiện tụng/nợ xấu (失信被执行人)."
+          "Trước khi đặt cọc, yêu cầu đối tác gửi Giấy phép Kinh doanh (营业执照) và tra cứu trực tiếp trên gsxt.gov.cn hoặc Qichacha/Tianyancha: kiểm tra Vốn điều lệ thực góp vs. đăng ký, Phạm vi kinh doanh (经营范围 — nhà máy thật phải ghi rõ cụm 'sản xuất/chế tạo' 生产/制造 thay vì đơn thuần 'bán buôn/thương mại' 批发/贸易), và lịch sử kiện tụng/nợ xấu (失信被执行人)."
       },
       {
         heading: "2. Quyền lực Tuyệt đối của Công chương (公章) & Ngôn ngữ Hợp đồng",
@@ -807,7 +807,7 @@ window.CCE_COMPENDIA_ARTICLES = [
       "Hợp Phì (An Huy) và Trùng Khánh nổi lên như hai 'hắc mã' công nghiệp nội địa mới về xe điện (NEV), pin năng lượng và máy tính xách tay."
     ],
     introduction:
-      "Muốn mua hàng tận gốc hoặc định vị vị thế của Việt Nam trong chuỗi giá trị khu vực, cần đọc bản đồ Trung Quốc không chỉ theo ranh giới hành chính 34 tỉnh, mà theo 'Bản đồ Cụm Công nghiệp' (产业带地图) — nơi hàng nghìn nhà cung cấp phụ trợ tập trung trong bán kính 30 km.",
+      "Muốn mua hàng tận gốc hoặc định vị vị thế của Việt Nam trong chuỗi giá trị khu vực, cần đọc bản đồ Trung Quốc ngoài ranh giới hành chính 34 tỉnh còn phải theo 'Bản đồ Cụm Công nghiệp' (产业带地图) — nơi hàng nghìn nhà cung cấp phụ trợ tập trung trong bán kính 30 km.",
     historicalBackground:
       "Từ thập niên 1980–1990, mô hình 'Kinh tế khối' (块状经济) ở Chiết Giang và mô hình 'Tam lai nhất bổ' (gia công xuất khẩu) ở Đồng bằng Châu Giang đã tạo nên các thị trấn công nghiệp siêu chuyên biệt, giúp giảm chi phí giao dịch và thời gian gom linh kiện xuống gần bằng không.",
     mainContent: [
@@ -1047,7 +1047,7 @@ window.CCE_COMPENDIA_ARTICLES = [
       "Tuyệt đối tránh các món quà kiêng kỵ đồng âm xui xẻo: đồng hồ (送钟 ~ 送终 đưa tang), ô/dù (伞 ~ 散 chia ly), lê (梨 ~ 离 ly biệt) và mũ xanh lá cây."
     ],
     introduction:
-      "Trong văn hóa xã hội và kinh doanh Trung Quốc, bàn tiệc (饭局 / 酒桌) không đơn thuần là nơi ăn uống mà là 'sân khấu' kiểm chứng nhân cách, sự tinh tế (情商 EQ) và mức độ tin cậy của đối tác. Một cử chỉ nhỏ đúng mực trên bàn tiệc có thể mở khóa cả một thương vụ bế tắc.",
+      "Trong văn hóa xã hội và kinh doanh Trung Quốc, bàn tiệc (饭局 / 酒桌) vượt xa ý nghĩa ăn uống thông thường để trở thành 'sân khấu' kiểm chứng nhân cách, sự tinh tế (情商 EQ) và mức độ tin cậy của đối tác. Một cử chỉ nhỏ đúng mực trên bàn tiệc có thể mở khóa cả một thương vụ bế tắc.",
     historicalBackground:
       "Bắt nguồn từ 'Lễ' (礼) của Nho gia về tôn ti trật tự ('Trưởng ấu hữu tự'), nghi thức bàn tiệc Trung Hoa hiện đại kết hợp quy tắc xếp chỗ truyền thống với văn hóa mời rượu (Kính tửu 敬酒) và tặng quà giữ thể diện (Mặt mũi 面子).",
     mainContent: [

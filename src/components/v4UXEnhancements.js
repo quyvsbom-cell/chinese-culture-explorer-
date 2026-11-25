@@ -82,7 +82,7 @@
       '<section class="cce-intent-strip" aria-label="' + (enM ? "Guided pathways" : "Khám phá theo mục tiêu") + '">' +
       '  <div class="container">' +
       '    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;flex-wrap:wrap;gap:0.5rem;">' +
-      '      <span class="editorial-kicker">' + (enM ? "CHOOSE YOUR EXPLORATION PATH · 专题探索入口" : "Chọn Hành trình Khám phá Của Bạn · 专题探索入口") + '</span>' +
+      '      <span class="editorial-kicker">' + (enM ? "CHOOSE YOUR EXPLORATION PATH · 专题探索入口" : "Chọn hướng tìm hiểu theo mục tiêu · 专题探索入口") + '</span>' +
       '      <button type="button" class="btn btn-secondary btn-sm" data-ux-act="open-collection">' + (enM ? "My Collection" : "Bộ sưu tập Của Tôi") + '</button>' +
       '    </div>' +
       '    <div class="cce-intent-grid">' +

@@ -14,7 +14,7 @@
         titleEn: "The Five-Phase Viscera Systems Model in Huangdi Neijing Suwen",
         titleZh: "《黄帝内经·素问》藏象五行模型 · Huángdì Nèijīng Sùwèn Zàngxiàng Wǔxíng Móxíng",
         primaryCitationZh: "《素问·阴阳应象大论》：东方生风，风生木，木生酸，酸生肝…… (Sùwèn, Yīnyáng Yìngxiàng Dàlùn)",
-        historicalAnalysisVi: "Biên soạn chủ yếu vào thời Chiến Quốc – Tây Hán, Hoàng Đế Nội Kinh đánh dấu bước ngoặt tách y học khỏi ma thuật vu sư để xây dựng một mô hình hệ thống tương quan giữa khí hậu bốn mùa, ngũ vị thực dưỡng và chức năng sinh lý cổ điển. Trong sử học khoa học, 'Tạng tượng' không chỉ cơ quan giải phẫu đơn thuần mà là khái niệm về mạng lưới chức năng liên kết nhau theo quy luật sinh – khắc.",
+        historicalAnalysisVi: "Biên soạn chủ yếu vào thời Chiến Quốc – Tây Hán, Hoàng Đế Nội Kinh đánh dấu bước ngoặt tách y học khỏi ma thuật vu sư để xây dựng một mô hình hệ thống tương quan giữa khí hậu bốn mùa, ngũ vị thực dưỡng và chức năng sinh lý cổ điển. Trong sử học khoa học, 'Tạng tượng' khác với cơ quan giải phẫu thuần túy ở chỗ biểu đạt khái niệm mạng lưới chức năng liên kết nhau theo quy luật sinh – khắc.",
         historicalAnalysisEn: "Compiled largely between the Warring States and Western Han periods, the Huangdi Neijing marked an epistemic shift away from shamanic healing toward a correlative systems model linking seasonal climates, five dietary flavors, and functional physiology. Historians of science note that 'zangxiang' denoted relational functional networks rather than purely anatomical organs."
       },
       {

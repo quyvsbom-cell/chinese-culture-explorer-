@@ -171,7 +171,7 @@ window.CCE_CUSTOMS_ART = {
       nameEn: "Qixi / Double Seventh Festival",
       nameZh: "七夕节（乞巧节）",
       origins: "Tối mùng 7 tháng 7 âm lịch, bắt nguồn từ quan sát thiên văn hai ngôi sao Ngưu Lang (Altair) và Chức Nữ (Vega) ngăn cách bởi dải Ngân Hà, kết hợp truyền thuyết dân gian hình thành từ thời Hán – Nam Bắc Triều và ghi chép trong 《Kinh Sở Tuế Thời Ký》.",
-      symbolism: "Truyền thống cổ điển không chỉ nói về tình yêu đôi lứa mà trọng tâm là lễ 'Khất xảo' (乞巧 – thiếu nữ dâng lễ dưới trăng, thi xâu kim lỗ nhỏ cầu xin Chức Nữ ban cho đôi tay thêu dệt khéo léo và trí tuệ).",
+      symbolism: "Truyền thống cổ điển vượt ra ngoài câu chuyện tình yêu đôi lứa, đặt trọng tâm vào lễ 'Khất xảo' (乞巧 – thiếu nữ dâng lễ dưới trăng, thi xâu kim lỗ nhỏ cầu xin Chức Nữ ban cho đôi tay thêu dệt khéo léo và trí tuệ).",
       regionalDiff: "Vùng Giang Nam làm bánh 'Xảo quả' (巧果) chiên giòn nhiều hình dáng; vùng Quảng Đông – Lĩnh Nam bày bàn 'Bái Thất Nương' với đồ thủ công tinh xảo; ở Việt Nam ngày 7/7 gắn với mưa Ngâu và ẩm thực chè đậu đỏ ở giới trẻ đương đại.",
       modernTransform: "Được định vị lại thành 'Ngày Lễ Tình nhân truyền thống Trung Quốc' với các chiến dịch quà tặng thương mại điện tử, du lịch văn hóa và biểu diễn Hán phục."
     },

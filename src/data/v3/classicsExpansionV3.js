@@ -358,7 +358,7 @@
           originalTrad: '實者，非徒採之於書，必親歷而驗之。',
           pinyin: 'Shízhě, fēitú cǎizhī yú shū, bì qīnlì ér yànzhī.',
           hanViet: 'Thực giả, phi đồ thái chi ư thư, tất thân lịch nhi nghiệm chi.',
-          meaningVi: 'Sự xác thực không chỉ thu nhặt từ sách vở cũ mà tất phải đích thân đi khảo sát và kiểm nghiệm thực tế.',
+          meaningVi: 'Sự xác thực ngoài thu nhặt từ sách vở cũ còn tất phải đích thân đi khảo sát và kiểm nghiệm thực tế.',
           meaningEn: 'True accuracy cannot be gleaned merely from books; one must personally travel, observe, and test it.',
           commentaryVi: 'Thể hiện tinh thần thực địa 27 năm đi khắp núi rừng khảo chứng mẫu vật của Lý Thời Trân.',
           commentaryEn: 'Reflects Li Shizhen\'s 27 years of field botany and clinical verification.'

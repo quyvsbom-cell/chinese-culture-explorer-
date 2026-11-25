@@ -89,80 +89,34 @@ window.CCE_UNIQUE_IMAGE_POOL = {"shadowCanonical":{"assets/images/jiangshan-ruci
     if (!root || !root.querySelectorAll) return 0;
 
     _deduping = true;
-    var replaced = 0;
     try {
       var imgs = root.querySelectorAll("img");
-      if (!imgs || !imgs.length) return 0;
-
-      var reservedSet = Object.create(null);
-      var i, img, rawSrc, norm;
-      for (i = 0; i < imgs.length; i++) {
-        img = imgs[i];
+      var seen = Object.create(null);
+      var dupes = [];
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
         if (img.closest && img.closest("#cce-modal-root")) continue;
-        rawSrc = img.getAttribute("src") || "";
-        norm = normalizeImgSrc(rawSrc);
-        if (norm) reservedSet[norm] = true;
-      }
-
-      var usedInDom = Object.create(null);
-      for (i = 0; i < imgs.length; i++) {
-        img = imgs[i];
-        if (img.closest && img.closest("#cce-modal-root")) continue;
-        if (img.getAttribute("data-keep-src") === "true") continue;
-        rawSrc = img.getAttribute("src") || "";
-        norm = normalizeImgSrc(rawSrc);
+        var norm = normalizeImgSrc(img.getAttribute("src") || "");
         if (!norm) continue;
-
-        if (!usedInDom[norm]) {
-          usedInDom[norm] = true;
-          continue;
-        }
-
-        var altText = img.getAttribute("alt") || "";
-        var replacement = pickReplacement(norm, altText, i, reservedSet, usedInDom);
-        if (replacement) {
-          var repNorm = normalizeImgSrc(replacement);
-          usedInDom[repNorm] = true;
-          reservedSet[repNorm] = true;
-          img.setAttribute("src", replacement);
-          var parentAction = img.closest ? img.closest("[data-src]") : null;
-          if (parentAction) {
-            var pSrc = normalizeImgSrc(parentAction.getAttribute("data-src") || "");
-            if (pSrc === norm) {
-              parentAction.setAttribute("data-src", replacement);
-            }
-          }
-          replaced += 1;
+        if (seen[norm]) {
+          dupes.push({ src: norm, alt: img.getAttribute("alt") || "" });
+        } else {
+          seen[norm] = true;
         }
       }
+      window.__CCE_IMAGE_DIAGNOSTICS = {
+        mode: "read-only-v8",
+        checkedAt: Date.now(),
+        totalImages: imgs.length,
+        duplicateCount: dupes.length,
+        duplicates: dupes.slice(0, 20)
+      };
     } finally {
       _deduping = false;
     }
-    return replaced;
+    return 0;
   }
 
+  // Runtime DOM src rewriting is disabled in V8.0 so subject-exact images are never swapped.
   window.CCE_DEDUPE_IMAGES = dedupeImagesInContainer;
-
-  function installObserver() {
-    var appEl = document.getElementById("app") || document.body;
-    if (!appEl || typeof MutationObserver !== "function") return;
-    var mo = new MutationObserver(function (mutations) {
-      if (_deduping) return;
-      for (var mi = 0; mi < mutations.length; mi++) {
-        var tgt = mutations[mi].target;
-        var mainEl = document.getElementById("main-content");
-        if (mainEl && tgt && (tgt === mainEl || mainEl.contains(tgt))) {
-          dedupeImagesInContainer(mainEl);
-          return;
-        }
-      }
-    });
-    mo.observe(appEl, { childList: true, subtree: true });
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", installObserver);
-  } else {
-    installObserver();
-  }
 })();

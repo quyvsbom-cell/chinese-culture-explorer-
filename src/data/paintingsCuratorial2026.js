@@ -83,14 +83,14 @@
     "kuanglu-tu": {
       rotationVi: "Kiệt tác Ngũ Đại thuộc Bảo tàng Cố Cung Đài Bắc — đánh dấu bước ngoặt khai sinh Sơn thủy hoành tráng Bắc phái ('Kinh Hạo').",
       rotationEn: "Monumental Five Dynasties hanging scroll at the National Palace Museum, Taipei — the founding manifesto of Northern Song landscape scale.",
-      firstLookVi: "Lần theo con đường mòn ngoằn ngoèo ở góc dưới bên trái đưa bạn bước vào hẻm núi đá dựng đứng ngút ngàn như một bản giao hưởng đá và sương của núi Lư Sơn.",
+      firstLookVi: "Lần theo con đường mòn ngoằn ngoèo ở góc dưới bên trái đưa bạn bước vào hẻm núi đá dựng đứng ngút ngàn như một tổng hòa đá và sương của núi Lư Sơn.",
       firstLookEn: "Enter through the winding footpath at bottom left and trace your gaze upward past mist-filled ravines up Lushan's towering limestone buttresses.",
       techniqueSummaryVi: "Kinh Hạo phối hợp đồng thời Bút (cấu trúc khung xương dứt khoát) và Mặc (độ ẩm không khí) như tuyên ngôn trong chuyên luận 'Bút Pháp Ký'.",
       techniqueSummaryEn: "Jing Hao's synthesis of 'Brush' (architectonic rock contours) and 'Ink' (atmospheric washes), embodying his famed 'Notes on Brushwork'."
     },
     "xiaoxiang-tu": {
       rotationVi: "Trưng bày luân phiên tại Bảo tàng Cố Cung Bắc Kinh — bức đặt nền móng trực tiếp cho trường phái Sơn thủy Giang Nam ('Đổng Cự').",
-      rotationEn: "Rotating exhibition treasure at the Palace Museum, Beijing — cornerstone of the Southern Jiangnan 'Dong–Ju' landscape lineage.",
+      rotationEn: "Rotating exhibition treasure at the Palace Museum, Beijing — foundational work of the Southern Jiangnan 'Dong–Ju' landscape lineage.",
       firstLookVi: "Soi sát vùng đầm lầy và triền đồi tròn trịa: Đổng Nguyên không kẻ viền cứng mà dùng hàng nghìn chấm ngắn tơi tả ('Phi ma thuẫn' và 'Điểm đài') tạo hơi nước ẩm ấm phương Nam.",
       firstLookEn: "Examine the soft, rounded riverbanks where hemp-fiber strokes and dappled ink dots dissolve hard outlines into humid Jiangnan river mist.",
       techniqueSummaryVi: "Bỏ hẳn nét viền góc cạnh phương Bắc, dùng 'Phi ma thuẫn' mềm mại pha lục nhẹ vẽ vùng sông Tương – Tiêu yên bình.",

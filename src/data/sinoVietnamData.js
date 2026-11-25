@@ -53,7 +53,7 @@ window.CCE_SINO_VIETNAM = {
       transmission:
         "Năm 1075 nhà Lý mở khoa thi Minh kinh bác học đầu tiên theo mô hình khoa cử Tống-Đường. Từ thời Lê-Nguyễn, sĩ tử Việt Nam đọc Tứ Thư, Ngũ Kinh, Sử ký, Đường thi với chuẩn mực văn thể Tám vế (Bát cổ văn) tương đồng với hệ thống thi Đình Trung Hoa.",
       adaptation:
-        "Tại Việt Nam, giáo dục làng xã rất phổ biến nhờ các thầy đồ dạy học tại nhà; bằng cấp không chỉ gắn với quyền lực trung ương mà gắn chặt với vị thế trong hương ước làng xã. Nhà Nguyễn thậm chí thay đổi nội dung đề thi để đưa quốc sử Đại Việt vào khảo hạch.",
+        "Tại Việt Nam, giáo dục làng xã rất phổ biến nhờ các thầy đồ dạy học tại nhà; bằng cấp vừa gắn với quyền lực trung ương vừa gắn chặt với vị thế trong hương ước làng xã. Nhà Nguyễn thậm chí thay đổi nội dung đề thi để đưa quốc sử Đại Việt vào khảo hạch.",
       indigenous:
         "Hệ thống trường tư hương học Việt Nam truyền bá chữ Nôm song song chữ Hán, tạo ra tầng lớp 'Nho sĩ bình dân' gắn bó chặt chẽ với nông dân hơn tầng lớp Sĩ đại phu địa chủ lớn ở Trung Quốc."
     },

@@ -11,6 +11,7 @@
 
   var st = {
     mindMod: 1,
+    mindLessonId: "",
     liushuTab: "chars", // chars | ff30 | rules12 | st50 | mw40 | cy36 | novels | poems | wenyan | hsk_vn
     liushuCat: "all",
     hskLvFilter: "all",
@@ -27,7 +28,7 @@
     expRegion: "all",
     pigmentIdx: 0,
     ytActive: {},
-    studentName: "Học viên Chinese Culture Explorer"
+    mindSvgOpen: true
   };
 
   function loadConciergeDone() {
@@ -109,113 +110,177 @@
   }
 
   // --------------------------------------------------------------------------
-  // 1. Course 10-Module Interactive SVG MindMap + PNG Certificate Generator
+  // 1. Course 12-Module Interactive SVG MindMap + Compact Inline Preview
   // --------------------------------------------------------------------------
+  function renderMindMapInlinePreview(enM, modNum) {
+    var mn = Number(modNum) || 1;
+    var mods = (window.CCE_V5_ACADEMY && window.CCE_V5_ACADEMY.getCurriculum)
+      ? window.CCE_V5_ACADEMY.getCurriculum()
+      : ((window.CCE_V5_ACADEMY && window.CCE_V5_ACADEMY.CURRICULUM) || []);
+    var modObj = null;
+    for (var mi = 0; mi < mods.length; mi++) {
+      if (Number(mods[mi].num) === mn) { modObj = mods[mi]; break; }
+    }
+    var allLessons = (window.CCE_V5_COURSE_LESSONS && window.CCE_V5_COURSE_LESSONS.lessons36) || [];
+    var modLessons = allLessons.filter(function (l) { return Number(l.moduleNum) === mn; });
+    var activeLesson = null;
+    if (modLessons.length) {
+      for (var li = 0; li < modLessons.length; li++) {
+        if (st.mindLessonId && modLessons[li].id === st.mindLessonId) { activeLesson = modLessons[li]; break; }
+      }
+      if (!activeLesson) activeLesson = modLessons[0];
+    }
+    var modTitle = modObj ? (enM ? (modObj.titleEn || modObj.titleVi) : modObj.titleVi) : ((enM ? "Module " : "Học phần ") + mn);
+    var modZh = modObj ? (modObj.zh || "") : "";
+    var modOverview = modObj ? (enM ? (modObj.whyNextEn || modObj.whyNextVi) : modObj.whyNextVi) : "";
+    var targetPage = (modObj && modObj.page) ? modObj.page : "explore";
+
+    var pillsHtml = modLessons.length
+      ? '<div class="v10-mind-pills" role="tablist" aria-label="' + (enM ? "Module lessons" : "Danh sách bài học trong học phần") + '">' +
+        modLessons.map(function (ls, idx) {
+          var isSel = activeLesson && activeLesson.id === ls.id;
+          var fullTitle = enM ? (ls.titleEn || ls.titleVi) : ls.titleVi;
+          var shortTitle = fullTitle.length > 26 ? fullTitle.slice(0, 23) + "..." : fullTitle;
+          var prefix = (enM ? "L" : "Bài ") + mn + "." + (ls.lessonNum || (idx + 1));
+          return (
+            '<button type="button" class="btn btn-sm ' + (isSel ? "btn-primary" : "btn-secondary") + ' v10-mind-pill" ' +
+            'title="' + esc(prefix + ": " + fullTitle) + '" ' +
+            'data-v6st-act="mind-lesson" data-val="' + esc(ls.id) + '" aria-pressed="' + (isSel ? "true" : "false") + '">' +
+            '<span>' + esc(prefix + ": " + shortTitle) + '</span>' +
+            '</button>'
+          );
+        }).join("") +
+        '</div>'
+      : '<p style="font-size:0.82rem;color:var(--text-muted);margin:0.5rem 0 0;">' + (enM ? "Lessons for this module are loading..." : "Đang nạp danh sách bài giảng cho học phần này...") + '</p>';
+
+    var detailHtml = "";
+    if (activeLesson) {
+      var lTitle = enM ? (activeLesson.titleEn || activeLesson.titleVi) : activeLesson.titleVi;
+      var coreQ = enM ? (activeLesson.coreQuestionEn || activeLesson.coreQuestionVi) : activeLesson.coreQuestionVi;
+      var digest = activeLesson.mujiDigestVi ? (enM ? (activeLesson.mujiDigestEn || activeLesson.mujiDigestVi) : activeLesson.mujiDigestVi) : "";
+      var synth = enM ? (activeLesson.synthesisParagraphEn || activeLesson.synthesisParagraphVi) : activeLesson.synthesisParagraphVi;
+      var vnCmp = enM ? (activeLesson.vietnamComparisonEn || activeLesson.vietnamComparisonVi) : activeLesson.vietnamComparisonVi;
+      var terms = Array.isArray(activeLesson.keyTermsTrilingual) ? activeLesson.keyTermsTrilingual.slice(0, 3) : [];
+      var cq = activeLesson.checkpointQuiz;
+      var flowTxt = activeLesson.prerequisiteConceptsVi
+        ? (enM ? (activeLesson.prerequisiteConceptsEn || activeLesson.prerequisiteConceptsVi) : activeLesson.prerequisiteConceptsVi) +
+          (activeLesson.deepensIntoVi ? (" → " + (enM ? (activeLesson.deepensIntoEn || activeLesson.deepensIntoVi) : activeLesson.deepensIntoVi)) : "")
+        : "";
+      detailHtml =
+        '<div class="v10-mind-grid">' +
+        '  <div class="v10-mind-media">' +
+        (activeLesson.imagePath
+          ? '    <div class="img-skeleton-bg v10-mind-thumb" data-action="open-custom-image" data-src="' + esc(activeLesson.imagePath) + '" data-caption="' + esc(lTitle) + '">' +
+            '      <img src="' + esc(activeLesson.imagePath) + '" alt="' + esc(lTitle) + '" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;" onerror="this.onerror=null;this.src=\'assets/images/museum/taihe-dian.jpg\';" />' +
+            '    </div>'
+          : "") +
+        (terms.length
+          ? '    <div class="v10-mind-terms">' +
+            terms.map(function (t) {
+              return '<span class="badge badge-outline" style="font-size:0.71rem;">' + esc(t.zh + " · " + (t.hanViet || "") + ": " + (enM ? (t.en || t.vi) : t.vi)) + '</span>';
+            }).join("") +
+            '    </div>'
+          : "") +
+        (cq ? '    <details class="v10-mind-quiz"><summary>' + (enM ? "Quick Check: " : "Kiểm tra nhanh: ") + esc(enM ? (cq.qEn || cq.qVi) : cq.qVi) + '</summary><div style="margin-top:0.25rem;color:var(--jade-green);">' + esc(enM ? (cq.ansEn || cq.ansVi) : cq.ansVi) + '</div></details>' : "") +
+        '  </div>' +
+        '  <div class="v10-mind-body">' +
+        '    <div style="display:flex;justify-content:space-between;align-items:center;gap:0.4rem;flex-wrap:wrap;">' +
+        '      <span class="badge badge-jade">' + (enM ? ("Module " + mn + " · Lesson " + (activeLesson.lessonNum || 1)) : ("Học phần " + mn + " · Bài " + (activeLesson.lessonNum || 1))) + '</span>' +
+        (activeLesson.titleZh ? '<span class="hanzi text-xs" style="color:var(--imperial-red);">' + esc(activeLesson.titleZh) + '</span>' : "") +
+        '    </div>' +
+        '    <h5 style="margin:0;font-size:0.98rem;line-height:1.3;">' + esc(lTitle) + '</h5>' +
+        ((coreQ || digest)
+          ? '<div class="v10-mind-facts">' +
+            (coreQ ? '<div class="v10-mind-fact-box"><strong>' + (enM ? "Core Question:" : "Câu hỏi cốt lõi:") + '</strong> ' + esc(coreQ) + '</div>' : "") +
+            (digest ? '<div class="v10-mind-fact-box is-surface"><strong>' + (enM ? "Core Digest:" : "Ý tóm tắt:") + '</strong> ' + esc(digest) + '</div>' : "") +
+            '</div>'
+          : "") +
+        (flowTxt ? '<div class="v10-mind-flow"><strong>' + (enM ? "Pathway Flow:" : "Liên thông tri thức:") + '</strong> ' + esc(flowTxt) + '</div>' : "") +
+        (synth ? '<p class="v10-mind-synth">' + esc(synth) + '</p>' : "") +
+        ((activeLesson.primaryTextExcerptZh || vnCmp)
+          ? '<div class="v10-mind-compare">' +
+            (activeLesson.primaryTextExcerptZh
+              ? '<div class="v10-mind-quote"><span class="hanzi">' + esc(activeLesson.primaryTextExcerptZh) + '</span> — ' + esc(enM ? (activeLesson.primaryTextExcerptEn || activeLesson.primaryTextExcerptVi || "") : (activeLesson.primaryTextExcerptVi || "")) + '</div>'
+              : "") +
+            (vnCmp ? '<div class="v10-mind-vn"><strong>' + (enM ? "Vietnam Parallel:" : "Đối chiếu Việt Nam:") + '</strong> ' + esc(vnCmp) + '</div>' : "") +
+            '</div>'
+          : "") +
+        '  </div>' +
+        '</div>';
+    }
+
+    return (
+      '<div id="cce-v8-mindmap-inline-preview" class="v10-mind-preview" role="region" aria-live="polite">' +
+      '  <div class="v10-mind-head">' +
+      '    <div style="flex:1;min-width:240px;">' +
+      '      <div style="display:flex;align-items:center;gap:0.45rem;flex-wrap:wrap;margin-bottom:0.15rem;">' +
+      '        <span class="badge badge-red">' + (enM ? ("Selected: Module " + mn + " / " + (mods.length || 12)) : ("Đang chọn: Học phần " + mn + " / " + (mods.length || 12))) + '</span>' +
+      (modZh ? '<span class="hanzi text-xs" style="color:var(--text-muted);">' + esc(modZh) + '</span>' : "") +
+      '      </div>' +
+      '      <h4 style="margin:0 0 0.12rem;font-size:1.02rem;line-height:1.3;">' + esc(modTitle) + '</h4>' +
+      (modOverview ? '<p style="margin:0;font-size:0.79rem;color:var(--text-secondary);line-height:1.4;">' + esc(modOverview) + '</p>' : "") +
+      '    </div>' +
+      '    <div style="display:flex;gap:0.4rem;flex-wrap:wrap;flex-shrink:0;">' +
+      '      <button type="button" class="btn btn-primary btn-sm" data-action="nav" data-page="' + esc(targetPage) + '">' + (enM ? ("Open Module " + mn + " Page →") : ("Vào trang Học phần " + mn + " →")) + '</button>' +
+      '      <button type="button" class="btn btn-secondary btn-sm" data-v6st-act="mind-scroll-lessons">' + (enM ? "Browse 72 Lessons ↓" : "Xem danh sách bài giảng ↓") + '</button>' +
+      '    </div>' +
+      '  </div>' +
+      pillsHtml +
+      detailHtml +
+      '</div>'
+    );
+  }
+
   function renderCourseMindMapSvg(enM) {
     var nodes = [
-      { n: 1, x: 92, y: 46, lbl: "HP 01 · Địa–Thủy", sub: "34 Tỉnh · Đô Giang Yển", col: "#8C2318" },
-      { n: 2, x: 240, y: 40, lbl: "HP 02 · Sử–Danh Nhân", sub: "14 Triều · Cố Đô", col: "#8C2318" },
-      { n: 3, x: 390, y: 40, lbl: "HP 03 · Triết–3D", sub: "24 Phòng WebGL 3D", col: "#1F6E5C" },
-      { n: 4, x: 540, y: 40, lbl: "HP 04 · Thi–Họa–HSK", sub: "150 Lục Thư · 60 HSK", col: "#1F6E5C" },
-      { n: 5, x: 688, y: 46, lbl: "HP 05 · Lão Tự Hào", sub: "120 Brands · 42 GI", col: "#A88940" },
-      { n: 6, x: 92, y: 214, lbl: "HP 06 · Trung–Việt", sub: "16 Kỳ Quan · 36 CSC", col: "#6E5423" },
-      { n: 7, x: 240, y: 222, lbl: "HP 07 · Trade Docs", sub: "Incoterms · 15 Chứng Từ", col: "#223A52" },
-      { n: 8, x: 390, y: 222, lbl: "HP 08 · Mỹ Học 3D", sub: "8 Sắc Tố · Côn Khúc", col: "#8C2318" },
-      { n: 9, x: 540, y: 222, lbl: "HP 09 · Di Sản 240h", sub: "16 Tour · 16 Cao Tốc", col: "#1F6E5C" },
-      { n: 10, x: 688, y: 214, lbl: "HP 10 · GACC & Số", sub: "300 Thuật Ngữ · 600 MCQ", col: "#223A52" }
+      { n: 1, x: 78, y: 34, lbl: "HP 01 · Địa–Thủy", sub: "34 Tỉnh · Đô Giang Yển", col: "#8C2318" },
+      { n: 2, x: 220, y: 32, lbl: "HP 02 · Sử–Nhân", sub: "14 Triều · 28 Danh Nhân", col: "#8C2318" },
+      { n: 3, x: 362, y: 32, lbl: "HP 03 · Triết–3D", sub: "28 Phòng WebGL 3D", col: "#1F6E5C" },
+      { n: 4, x: 504, y: 32, lbl: "HP 04 · Văn–Thư", sub: "150 Lục Thư · HSK 4–9", col: "#1F6E5C" },
+      { n: 5, x: 646, y: 32, lbl: "HP 05 · Lão Tự Hào", sub: "120 Brands · 42 GI", col: "#7A5D1F" },
+      { n: 6, x: 782, y: 34, lbl: "HP 06 · Trung–Việt", sub: "16 Kỳ Quan · 36 CSC", col: "#6E5423" },
+      { n: 7, x: 78, y: 192, lbl: "HP 07 · Trade B2B", sub: "Incoterms · 15 Chứng Từ", col: "#223A52" },
+      { n: 8, x: 220, y: 194, lbl: "HP 08 · Mỹ Học 3D", sub: "8 Sắc Tố · Quốc Họa", col: "#8C2318" },
+      { n: 9, x: 362, y: 194, lbl: "HP 09 · Di Sản 240h", sub: "16 Tour · 16 Cao Tốc", col: "#1F6E5C" },
+      { n: 10, x: 504, y: 194, lbl: "HP 10 · GACC & Số", sub: "300 Thuật Ngữ · Quiz", col: "#223A52" },
+      { n: 11, x: 646, y: 194, lbl: "HP 11 · Kịch–Cầm", sub: "Côn Khúc · Bát Âm 3D", col: "#8C2318" },
+      { n: 12, x: 782, y: 192, lbl: "HP 12 · Đô Thị Xanh", sub: "55 Dân Tộc · Văn Học", col: "#1F6E5C" }
     ];
     var svgLinks = nodes.map(function (nd) {
-      return '<line x1="390" y1="130" x2="' + nd.x + '" y2="' + nd.y + '" stroke="' + (st.mindMod === nd.n ? nd.col : "#c9bfa9") + '" stroke-width="' + (st.mindMod === nd.n ? "3" : "1.5") + '" stroke-dasharray="' + (st.mindMod === nd.n ? "none" : "4 3") + '" />';
+      return '<line x1="430" y1="113" x2="' + nd.x + '" y2="' + nd.y + '" stroke="' + (st.mindMod === nd.n ? nd.col : "#c9bfa9") + '" stroke-width="' + (st.mindMod === nd.n ? "3" : "1.5") + '" stroke-dasharray="' + (st.mindMod === nd.n ? "none" : "4 3") + '" />';
     }).join("");
     var svgNodes = nodes.map(function (nd) {
       var active = st.mindMod === nd.n;
       return (
-        '<g style="cursor:pointer;" data-v6st-act="mind-mod" data-val="' + nd.n + '">' +
-        '  <rect x="' + (nd.x - 66) + '" y="' + (nd.y - 23) + '" width="132" height="46" rx="8" fill="' + (active ? nd.col : "#FBF9F4") + '" stroke="' + nd.col + '" stroke-width="' + (active ? "2.5" : "1.5") + '" />' +
-        '  <text x="' + nd.x + '" y="' + (nd.y - 3) + '" text-anchor="middle" font-size="10.2" font-weight="700" fill="' + (active ? "#FFFFFF" : "#1D1B18") + '">' + esc(nd.lbl) + '</text>' +
-        '  <text x="' + nd.x + '" y="' + (nd.y + 12) + '" text-anchor="middle" font-size="8.2" fill="' + (active ? "#F5E7CE" : "#5F584D") + '">' + esc(nd.sub) + '</text>' +
+        '<g style="cursor:pointer;" role="button" tabindex="0" aria-pressed="' + (active ? "true" : "false") + '" aria-controls="cce-v8-mindmap-inline-preview" aria-label="' + esc(nd.lbl + " - " + nd.sub) + '" data-v6st-act="mind-mod" data-val="' + nd.n + '">' +
+        '  <rect x="' + (nd.x - 62) + '" y="' + (nd.y - 22) + '" width="124" height="44" rx="7" fill="' + (active ? nd.col : "#FBF9F4") + '" stroke="' + nd.col + '" stroke-width="' + (active ? "2.5" : "1.5") + '" />' +
+        '  <text x="' + nd.x + '" y="' + (nd.y - 3) + '" text-anchor="middle" font-size="9.6" font-weight="700" fill="' + (active ? "#FFFFFF" : "#1D1B18") + '">' + esc(nd.lbl) + '</text>' +
+        '  <text x="' + nd.x + '" y="' + (nd.y + 11) + '" text-anchor="middle" font-size="7.7" fill="' + (active ? "#F5E7CE" : "#5F584D") + '">' + esc(nd.sub) + '</text>' +
         '</g>'
       );
     }).join("");
 
     return (
-      '<section id="cce-v6-mindmap-cert" class="card mb-2" style="padding:1rem 1.2rem;background:var(--bg-paper);border-left:4px solid var(--antique-gold);">' +
-      '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.65rem;">' +
-      '    <div><div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "CURRICULUM CONCEPT MAP &amp; CERTIFICATE · 十大学科思维导图" : "SƠ ĐỒ 10 HỌC PHẦN &amp; CHỨNG CHỈ HOÀN THÀNH · 十大学科思维导图") + '</div>' +
-      '    <h4 style="margin:0.1rem 0 0;font-size:1.08rem;">' + (enM ? "10-Module Learning Map (Click a Node to Filter)" : "Sơ đồ 10 Học phần &amp; 60 Bài giảng (Chọn từng mục để lọc bài)") + '</h4></div>' +
-      '    <div style="display:flex;gap:0.4rem;align-items:center;flex-wrap:wrap;">' +
-      '      <input type="text" class="form-input" style="max-width:200px;font-size:0.78rem;padding:0.25rem 0.5rem;" value="' + esc(st.studentName) + '" data-v6st-act="cert-name" placeholder="' + (enM ? "Learner name..." : "Tên học viên...") + '" />' +
-      '      <button type="button" id="cce-v6-export-cert-btn" class="btn btn-primary btn-sm" data-v6st-act="export-cert">' + (enM ? "Download Certificate (.PNG)" : "Tải Chứng chỉ (.PNG)") + '</button>' +
-      '    </div>' +
+      '<section id="cce-v6-mindmap-panel" class="card mb-2" style="padding:0.78rem 0.95rem;background:var(--bg-paper);border-left:4px solid var(--antique-gold);">' +
+      '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.45rem;margin-bottom:0.4rem;">' +
+      '    <div><div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "12-MODULE CURRICULUM MINDMAP · 十二大学科思维导图" : "SƠ ĐỒ MẠCH TRI THỨC 12 HỌC PHẦN · 十二大学科思维导图") + '</div>' +
+      '    <h4 style="margin:0.05rem 0 0;font-size:1.02rem;">' + (enM ? "12-Module Learning Map &amp; 72 Guided Lessons (Click Any Node to Read Immediately)" : "Sơ đồ 12 học phần và 72 bài giảng (nhấp từng ô để đọc gọn trong một màn hình)") + '</h4></div>' +
+      '    <button type="button" class="btn btn-secondary btn-sm" data-v6st-act="toggle-mind-svg">' + (st.mindSvgOpen ? (enM ? "Hide Map" : "Thu gọn sơ đồ") : (enM ? "Show 12-Module Map" : "Hiện sơ đồ 12 học phần")) + '</button>' +
       '  </div>' +
-      '  <div style="overflow-x:auto;">' +
-      '    <svg viewBox="0 0 780 264" style="width:100%;max-width:860px;height:auto;display:block;margin:0 auto;" role="img" aria-label="Course 10-Module Visual MindMap">' +
-      svgLinks +
-      '      <ellipse cx="390" cy="130" rx="84" ry="30" fill="#8C2318" stroke="#E5A93C" stroke-width="2" />' +
-      '      <text x="390" y="126" text-anchor="middle" font-size="11.5" font-weight="700" fill="#FFFFFF">' + (enM ? "10 MODULES" : "CHƯƠNG TRÌNH") + '</text>' +
-      '      <text x="390" y="142" text-anchor="middle" font-size="8.6" fill="#F5E7CE">' + (enM ? "60 Lessons · 24 3D" : "10 Học Phần · 60 Bài") + '</text>' +
-      svgNodes +
-      '    </svg>' +
-      '  </div>' +
+      (st.mindSvgOpen
+        ? '  <div style="overflow-x:auto;">' +
+          '    <svg viewBox="0 0 860 226" style="width:100%;max-width:780px;max-height:155px;height:auto;display:block;margin:0 auto;" role="img" aria-label="Course 12-Module Visual MindMap">' +
+          svgLinks +
+          '      <ellipse cx="430" cy="113" rx="100" ry="28" fill="#8C2318" stroke="#E5A93C" stroke-width="2" />' +
+          '      <text x="430" y="109" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">' + (enM ? "12 MODULES" : "12 HỌC PHẦN") + '</text>' +
+          '      <text x="430" y="124" text-anchor="middle" font-size="8.2" fill="#F5E7CE">' + (enM ? "72 Lessons · 28 3D Studios" : "72 Bài · 28 Studio 3D") + '</text>' +
+          svgNodes +
+          '    </svg>' +
+          '  </div>'
+        : "") +
+      renderMindMapInlinePreview(enM, st.mindMod) +
       '</section>'
     );
-  }
-
-  function exportCertificatePng() {
-    if (typeof document === "undefined") return;
-    var cv = document.createElement("canvas");
-    cv.width = 1200;
-    cv.height = 800;
-    var ctx = cv.getContext("2d");
-    if (!ctx) return;
-
-    ctx.fillStyle = "#FBF9F4";
-    ctx.fillRect(0, 0, 1200, 800);
-    ctx.strokeStyle = "#8C2318";
-    ctx.lineWidth = 10;
-    ctx.strokeRect(28, 28, 1144, 744);
-    ctx.strokeStyle = "#C59B40";
-    ctx.lineWidth = 3;
-    ctx.strokeRect(46, 46, 1108, 708);
-
-    ctx.fillStyle = "#8C2318";
-    ctx.font = "bold 24px Georgia, serif";
-    ctx.textAlign = "center";
-    ctx.fillText("CHINESE CULTURE EXPLORER · 中国文化探索", 600, 130);
-
-    ctx.fillStyle = "#1D1B18";
-    ctx.font = "bold 46px Georgia, serif";
-    ctx.fillText("CERTIFICATE OF ENCYCLOPEDIC COMPLETION", 600, 210);
-
-    ctx.fillStyle = "#5F584D";
-    ctx.font = "italic 22px Georgia, serif";
-    ctx.fillText("Awarded to Scholar / Cultural Traveler", 600, 285);
-
-    ctx.fillStyle = "#1F6E5C";
-    ctx.font = "bold 42px Georgia, serif";
-    ctx.fillText(String(st.studentName || "Chinese Culture Explorer"), 600, 355);
-
-    ctx.fillStyle = "#3A352E";
-    ctx.font = "20px sans-serif";
-    ctx.fillText("Completed 10 Curriculum Modules (60 Sequential Lessons), 24 WebGL 3D Studios,", 600, 435);
-    ctx.fillText("120 Honored Brands, 150 Liushu Roots, 16 Heritage Expeditions & 600-MCQ Challenge.", 600, 468);
-
-    ctx.fillStyle = "#8C2318";
-    ctx.fillRect(910, 540, 115, 115);
-    ctx.fillStyle = "#FFFFFF";
-    ctx.font = "bold 24px Georgia, serif";
-    ctx.fillText("中国文化", 968, 590);
-    ctx.fillText("探索认证", 968, 625);
-
-    ctx.fillStyle = "#5F584D";
-    ctx.textAlign = "left";
-    ctx.font = "18px monospace";
-    ctx.fillText("CHINESE CULTURE EXPLORER · ARCHIVE EDITION · DATE: " + new Date().toISOString().slice(0, 10), 95, 650);
-
-    var a = document.createElement("a");
-    a.download = "CCE-Academy-Certificate.png";
-    a.href = cv.toDataURL("image/png");
-    a.click();
   }
 
   // --------------------------------------------------------------------------
@@ -1132,9 +1197,41 @@
       var val = el.getAttribute("data-val") || "";
       if (act === "mind-mod") {
         st.mindMod = Number(val) || 1;
+        st.mindLessonId = "";
         if (window.CCE_V5_COURSE && window.CCE_V5_COURSE.setActiveModule) {
           window.CCE_V5_COURSE.setActiveModule(st.mindMod);
         }
+        var prevScrollY = window.scrollY || 0;
+        if (typeof window.CCE_RENDER === "function") window.CCE_RENDER();
+        if (typeof window.requestAnimationFrame === "function") {
+          window.requestAnimationFrame(function () {
+            window.scrollTo(0, prevScrollY);
+            var previewEl = document.getElementById("cce-v8-mindmap-inline-preview");
+            if (previewEl) {
+              previewEl.style.boxShadow = "0 0 0 2px #8C2318";
+              setTimeout(function () { if (previewEl) previewEl.style.boxShadow = ""; }, 650);
+            }
+          });
+        }
+        return;
+      } else if (act === "mind-lesson") {
+        st.mindLessonId = val;
+        var prevLessonY = window.scrollY || 0;
+        if (typeof window.CCE_RENDER === "function") window.CCE_RENDER();
+        if (typeof window.requestAnimationFrame === "function") {
+          window.requestAnimationFrame(function () { window.scrollTo(0, prevLessonY); });
+        }
+        return;
+      } else if (act === "mind-scroll-lessons") {
+        if (window.CCE_V5_ACADEMY && window.CCE_V5_ACADEMY.setAcademyTab) {
+          window.CCE_V5_ACADEMY.setAcademyTab("lessons");
+        } else {
+          var expEl = document.getElementById("cce-v5-42-lessons-explorer");
+          if (expEl && expEl.scrollIntoView) expEl.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        return;
+      } else if (act === "toggle-mind-svg") {
+        st.mindSvgOpen = !st.mindSvgOpen;
       } else if (act === "ltab") st.liushuTab = val;
       else if (act === "lcat") st.liushuCat = val;
       else if (act === "hsklv") st.hskLvFilter = val;
@@ -1153,7 +1250,6 @@
         if (!st.ytActive) st.ytActive = {};
         if (val) st.ytActive[val] = true;
       }
-      else if (act === "export-cert") { exportCertificatePng(); return; }
       else if (act === "srs") {
         if (window.CCE_SRS && window.CCE_SRS.addCard) {
           window.CCE_SRS.addCard({
@@ -1187,11 +1283,12 @@
         if (typeof window.CCE_RENDER === "function") window.CCE_RENDER();
       }
     });
-    document.addEventListener("input", function (e) {
-      var el = e.target;
-      if (el && el.getAttribute && el.getAttribute("data-v6st-act") === "cert-name") {
-        st.studentName = el.value || "";
-      }
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      var el = e.target && e.target.closest ? e.target.closest("[data-v6st-act='mind-mod']") : null;
+      if (!el) return;
+      e.preventDefault();
+      el.click();
     });
   }
   bind();
@@ -1204,7 +1301,6 @@
     renderSinoVietAndCscStudio: renderSinoVietAndCscStudio,
     renderWorldTourismAndMuseumStudio: renderWorldTourismAndMuseumStudio,
     renderYoutubeCard: renderYoutubeCard,
-    renderOfficialPromoCard: renderOfficialPromoCard,
-    exportCertificatePng: exportCertificatePng
+    renderOfficialPromoCard: renderOfficialPromoCard
   };
 })();

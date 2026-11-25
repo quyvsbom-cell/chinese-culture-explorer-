@@ -123,7 +123,7 @@
         'Đàm Kỳ Tương (1982), Trung Quốc Lịch Sử Địa Đồ Tập (中国历史地图集), Trung Quốc Địa Đồ Xuất Bản Xã.',
         'Nancy Shatzman Steinhardt (1990), Chinese Imperial City Planning, University of Hawaii Press.'
       ],
-      conclusion: 'Bản đồ các cố đô Trung Hoa không chỉ là danh sách địa danh du lịch mà là biên niên sử bằng đá và địa hình về sức ép biên cương, thủy lợi và kinh tế vùng miền. Từ thế phòng thủ "tứ tắc" của Trường An đến trục Trung tâm Bắc Kinh nối với Đại Vận Hà, mỗi lần dời đô đều đánh dấu một cuộc tái cấu trúc không gian của cả nền văn minh.'
+      conclusion: 'Bản đồ các cố đô Trung Hoa là biên niên sử bằng đá và địa hình về sức ép biên cương, thủy lợi và kinh tế vùng miền chứ ít mang tính danh sách địa danh du lịch đơn lẻ. Từ thế phòng thủ "tứ tắc" của Trường An đến trục Trung tâm Bắc Kinh nối với Đại Vận Hà, mỗi lần dời đô đều đánh dấu một cuộc tái cấu trúc không gian của cả nền văn minh.'
     },
     {
       id: 'tea-horse-road-southwest-corridor',
@@ -228,7 +228,7 @@
         'Jeff Fuchs (2008), The Ancient Tea Horse Road: Travels with the Last of the Himalayan Muleteers, Viking Canada.',
         'Bin Yang (2009), Between Winds and Clouds: The Making of Yunnan (Second Century BCE to Twentieth Century CE), Columbia University Press.'
       ],
-      conclusion: 'Trà Mã Cổ Đạo cho thấy địa hình hiểm trở nhất hành tinh không ngăn cản được giao thương khi tồn tại sự bổ trợ sinh học và kinh tế sâu sắc. Qua hàng thế kỷ dấu chân ngựa thồ in hằn trên đá xanh Hoành Đoạn Sơn, tuyến đường này không chỉ trao đổi bánh trà và chiến mã mà còn dệt nên mạng lưới văn hóa đa tộc người bền vững ở Tây Nam Trung Quốc.'
+      conclusion: 'Trà Mã Cổ Đạo cho thấy địa hình hiểm trở nhất hành tinh không ngăn cản được giao thương khi tồn tại sự bổ trợ sinh học và kinh tế sâu sắc. Qua hàng thế kỷ dấu chân ngựa thồ in hằn trên đá xanh Hoành Đoạn Sơn, tuyến đường này vừa trao đổi bánh trà và chiến mã vừa dệt nên mạng lưới văn hóa đa tộc người bền vững ở Tây Nam Trung Quốc.'
     },
     {
       id: 'chinese-fermentation-spices-culinary-geography',
@@ -260,7 +260,7 @@
         },
         {
           heading: '3. Rượu Thiệu Hưng (Hoàng Tửu nấu ăn) và nghệ thuật khử tanh Giang Nam',
-          body: 'Tại vùng châu thổ Trường Giang giàu thủy sản nước ngọt, rượu gạo nếp Thiệu Hưng (Chiết Giang) — ủ từ gạo nếp tinh, lúa mì làm khúc và nguồn nước hồ Giám Hồ giàu khoáng vi lượng — không chỉ là thức uống mà còn là gia vị nền tảng (Liệu Tửu). Quá trình lên men tạo ra hơn 20 loại axit amin và hợp chất este thơm; khi cho vào chảo nóng, cồn bay hơi kéo theo các amin gây mùi tanh của cá, cua (phản ứng este hóa tạo hương thơm ngọt dịu). Chính sự phối hợp giữa rượu Thiệu Hưng, nước tương đậm ủ nắng tự nhiên và đường phèn đã tạo nên phổ vị "Nồng du xích tương" (sốt đỏ óng ánh, mặn ngọt hài hòa) đặc trưng của Thượng Hải, Chiết Giang và Giang Tô.'
+          body: 'Tại vùng châu thổ Trường Giang giàu thủy sản nước ngọt, rượu gạo nếp Thiệu Hưng (Chiết Giang) — ủ từ gạo nếp tinh, lúa mì làm khúc và nguồn nước hồ Giám Hồ giàu khoáng vi lượng — vừa là thức uống vừa giữ vai trò gia vị nền tảng (Liệu Tửu). Quá trình lên men tạo ra hơn 20 loại axit amin và hợp chất este thơm; khi cho vào chảo nóng, cồn bay hơi kéo theo các amin gây mùi tanh của cá, cua (phản ứng este hóa tạo hương thơm ngọt dịu). Chính sự phối hợp giữa rượu Thiệu Hưng, nước tương đậm ủ nắng tự nhiên và đường phèn đã tạo nên phổ vị "Nồng du xích tương" (sốt đỏ óng ánh, mặn ngọt hài hòa) đặc trưng của Thượng Hải, Chiết Giang và Giang Tô.'
         },
         {
           heading: '4. Hệ sinh thái Đậu phụ và phân tầng bản đồ vị giác địa lý',
@@ -438,7 +438,7 @@
         'Derek Sandhaus (2019), Drunk in China: Baijiu and the World\'s Oldest Drinking Culture, University of Nebraska Press.',
         'Lý Hoa & cộng sự (2018), Trung Quốc Tửu Văn Hóa Sử (中国酒文化史).'
       ],
-      conclusion: 'Từ những mảnh gốm lên men 9.000 năm tại Giả Hồ đến hệ thống 12 hương hình Bạch Tửu hiện đại, rượu Trung Hoa không chỉ là sản phẩm kỹ nghệ lên men mà còn là tấm gương phản chiếu nghi lễ tôn giáo, thẩm mỹ thi ca và cấu trúc quan hệ xã hội. Hiểu đúng bản chất Hoàng Tửu, Bạch Tửu và lễ tiết bàn tiệc giúp người học văn hóa lẫn người làm thương mại đọc vị sâu hơn ứng xử của người Trung Quốc.'
+      conclusion: 'Từ những mảnh gốm lên men 9.000 năm tại Giả Hồ đến hệ thống 12 hương hình Bạch Tửu hiện đại, rượu Trung Hoa vượt xa sản phẩm kỹ nghệ lên men để làm tấm gương phản chiếu nghi lễ tôn giáo, thẩm mỹ thi ca và cấu trúc quan hệ xã hội. Hiểu đúng bản chất Hoàng Tửu, Bạch Tửu và lễ tiết bàn tiệc giúp người học văn hóa lẫn người làm thương mại đọc vị sâu hơn ứng xử của người Trung Quốc.'
     },
     {
       id: 'five-sacred-mountains-buddhist-peaks',
@@ -455,9 +455,9 @@
       keyTakeaways: [
         'Hệ thống Ngũ Nhạc được định hình hoàn chỉnh từ thời Hán Vũ Đế theo khung vũ trụ luận Ngũ Phương – Ngũ Hành, trong đó Đông Nhạc Thái Sơn giữ vị trí "Ngũ Nhạc Độc Tôn" nhờ gắn với nghi lễ Phong Thiện của các bậc đế vương.',
         'Tứ Đại Phật Giáo Danh Sơn hình thành từ thời Đường–Tống đến Minh–Thanh, phân bố đạo tràng bốn vị đại Bồ Tát (Văn Thù – Trí tuệ, Phổ Hiền – Hạnh nguyện, Quan Âm – Từ bi, Địa Tạng – Đại nguyện), đánh dấu quá trình bản địa hóa hoàn toàn Phật giáo Ấn Độ vào cảnh quan núi non Trung Hoa.',
-        'Cả hai hệ thống núi thiêng không chỉ là trung tâm hành hương tôn giáo mà còn là bảo tàng sống về thư pháp khắc đá Ma Nhai, kiến trúc gỗ cổ (như Đông Đại Điện chùa Phật Quang tại Ngũ Đài Sơn) và văn học du ký (Từ Hà Khách).'
+        'Cả hai hệ thống núi thiêng vừa là trung tâm hành hương tôn giáo vừa là bảo tàng sống về thư pháp khắc đá Ma Nhai, kiến trúc gỗ cổ (như Đông Đại Điện chùa Phật Quang tại Ngũ Đài Sơn) và văn học du ký (Từ Hà Khách).'
       ],
-      introduction: 'Trong vũ trụ quan cổ đại Trung Hoa, núi cao không đơn thuần là thực thể địa chất mà là trục nối giữa đất và trời ("Thông thiên chi trụ"), nơi hội tụ linh khí, mây mưa và sinh mệnh quốc gia. Từ nền tảng tín ngưỡng thờ thần núi thời Tiên Tần, văn minh Trung Hoa đã kiến tạo hai hệ thống tọa độ linh thiêng song hành trên toàn lãnh thổ: hệ thống Ngũ Nhạc mang tính chính trị – vương quyền và Đạo giáo, cùng hệ thống Tứ Đại Phật Giáo Danh Sơn mang tính cứu độ và phổ cập đại chúng. Cùng nhau, chín ngọn danh sơn này vẽ nên một "bản đồ tâm linh" bao trùm từ Hoa Bắc, Quan Trung xuống Giang Nam, Tứ Xuyên và Đông Hải.',
+      introduction: 'Trong vũ trụ quan cổ đại Trung Hoa, núi cao vượt ra khỏi vai trò thực thể địa chất thông thường để làm trục nối giữa đất và trời ("Thông thiên chi trụ"), nơi hội tụ linh khí, mây mưa và sinh mệnh quốc gia. Từ nền tảng tín ngưỡng thờ thần núi thời Tiên Tần, văn minh Trung Hoa đã kiến tạo hai hệ thống tọa độ linh thiêng song hành trên toàn lãnh thổ: hệ thống Ngũ Nhạc mang tính chính trị – vương quyền và Đạo giáo, cùng hệ thống Tứ Đại Phật Giáo Danh Sơn mang tính cứu độ và phổ cập đại chúng. Cùng nhau, chín ngọn danh sơn này vẽ nên một "bản đồ tâm linh" bao trùm từ Hoa Bắc, Quan Trung xuống Giang Nam, Tứ Xuyên và Đông Hải.',
       historicalBackground: 'Khái niệm thờ bốn phương núi lớn ("Tứ Nhạc") đã xuất hiện trong "Thượng Thư" (thiên Thuấn Điển) và "Chu Lễ", phản ánh lễ tuần thú phương hướng của Thiên tử cổ đại. Khi học thuyết Âm Dương Ngũ Hành thịnh hành thời Chiến Quốc – Tây Hán, Hán Vũ Đế (trị vì 141–87 TCN) chính thức chuẩn hóa năm ngọn núi tương ứng năm phương Đông–Tây–Nam–Bắc–Trung gọi là "Ngũ Nhạc". Song song đó, sau khi Phật giáo truyền vào Trung Quốc từ thế kỷ I SCN và đạt độ chín thời Đường–Tống, các tín đồ kết hợp kinh điển Đại thừa (như "Kinh Hoa Nghiêm" chép núi Thanh Lương ở Đông Bắc là nơi Văn Thù Bồ Tát thuyết pháp) với địa lý thực tế Trung Quốc, dần hình thành bốn trung tâm hành hương Bồ Tát hoàn chỉnh vào thời Minh–Thanh.',
       mainContent: [
         {
@@ -477,7 +477,7 @@
           body: 'Việc tổ chức các tuyến đường bậc đá, trà quán, chùa chiền và văn bia trên Ngũ Nhạc cùng Tứ Đại Danh Sơn đã biến núi non hiểm trở thành không gian văn hóa mở cho cả sĩ đại phu lẫn bình dân. Nhà địa lý học thời Minh Từ Hà Khách (1587–1641) đã trực tiếp khảo sát thực địa cả Ngũ Nhạc lẫn nhiều danh sơn Tây Nam, đặt nền móng cho địa lý học karst thực nghiệm qua bộ "Từ Hà Khách Du Ký". Đồng thời, các hình thái vách đá Hoa Sơn, mây mù Nga Mi và rừng thông Tung Sơn đã nuôi dưỡng trực tiếp bút pháp thuân pháp trong hội họa Sơn Thủy Trung Hoa.'
         }
       ],
-      theoreticalFramework: 'Nhà sử học tôn giáo James Robson và Susan Naquin chỉ ra rằng khái niệm "Địa lý linh thiêng" (Sacred Geography) ở Trung Quốc vận hành theo cơ chế "cộng hưởng địa điểm – văn bản – nghi lễ": một ngọn núi trở nên thiêng không chỉ vì độ cao địa chất mà vì các lớp văn bia, truyền thuyết Bồ Tát/tiên nhân, thơ đề vịnh và nghi thức hành hương chồng xếp qua hàng thế kỷ. Đặc biệt, sự phân bố trải đều của Ngũ Nhạc và Tứ Đại Danh Sơn còn có chức năng địa – văn hóa gắn kết các vùng miền khác biệt vào một bản đồ biểu tượng chung.',
+      theoreticalFramework: 'Nhà sử học tôn giáo James Robson và Susan Naquin chỉ ra rằng khái niệm "Địa lý linh thiêng" (Sacred Geography) ở Trung Quốc vận hành theo cơ chế "cộng hưởng địa điểm – văn bản – nghi lễ": một ngọn núi trở nên thiêng bên cạnh độ cao địa chất còn nhờ các lớp văn bia, truyền thuyết Bồ Tát/tiên nhân, thơ đề vịnh và nghi thức hành hương chồng xếp qua hàng thế kỷ. Đặc biệt, sự phân bố trải đều của Ngũ Nhạc và Tứ Đại Danh Sơn còn có chức năng địa – văn hóa gắn kết các vùng miền khác biệt vào một bản đồ biểu tượng chung.',
       terminologyAndLiushu: [
         {
           hanzi: '岳',
@@ -552,48 +552,48 @@
   var i;
   var HERO_MAP = {
     "xia-shang-zhou-oracle-bones-rituals": "assets/images/museum/houmuwu-ding.jpg",
-    "qin-institutional-standardization": "assets/images/provinces/shaanxi-terracotta-army.jpg",
+    "qin-institutional-standardization": "assets/images/articles_v8/qin-weights-measures.jpg",
     "song-dynasty-urban-science-renaissance": "assets/images/paintings/21_qingming_shanghe.jpg",
     "grand-canal-dujiangyan-hydraulic-empire": "assets/images/articles/hero-four-inventions.jpg",
     "modern-china-transformation-1840-1949": "assets/images/articles/hero-beijing-shanghai.jpg",
-    "sixteen-ancient-capitals-geopolitics": "assets/images/provinces/beijing-temple-of-heaven.jpg",
-    "tea-horse-road-southwest-corridor": "assets/images/provinces/yunnan-lijiang-old-town.jpg",
+    "sixteen-ancient-capitals-geopolitics": "assets/images/articles_v8/ancient-capitals-luoyang.jpg",
+    "tea-horse-road-southwest-corridor": "assets/images/articles_v8/tea-horse-caravan.jpg",
     "chinese-fermentation-spices-culinary-geography": "assets/images/articles/hero-chinese-cuisines.jpg",
     "chinese-liquor-culture-baijiu-huangjiu": "assets/images/articles/hero-chinese-banquet.jpg",
-    "five-sacred-mountains-buddhist-peaks": "assets/images/provinces/shandong-taishan.jpg",
-    "dunhuang-mogao-buddhist-grotto-art": "assets/images/provinces/gansu-dunhuang-mogao.jpg",
+    "five-sacred-mountains-buddhist-peaks": "assets/images/articles_v8/five-sacred-mountains.jpg",
+    "dunhuang-mogao-buddhist-grotto-art": "assets/images/articles_v8/dunhuang-nine-story.jpg",
     "xiqu-stagecraft-face-masks-tuong": "assets/images/articles/hero-spring-festival.jpg",
-    "five-vernacular-architecture-styles": "assets/images/provinces/fujian-tulou.jpg",
+    "five-vernacular-architecture-styles": "assets/images/articles_v8/vernacular-architecture-mix.jpg",
     "ming-qing-fiction-hongloumeng-anatomy": "assets/images/articles/hero-classical-books-scrolls.jpg",
     "lacquerware-silk-woodblock-new-year-prints": "assets/images/articles/hero-laozihao-craft.jpg",
     "pre-qin-legalism-xunzi-hanfeizi": "assets/images/articles/hero-hundred-schools.jpg",
     "song-ming-neo-confucianism-zhu-wang": "assets/images/articles/hero-confucianism.jpg",
-    "chinese-chan-buddhism-aesthetics": "assets/images/provinces/henan-longmen-grottoes.jpg",
-    "mohism-logic-optics-ethics": "assets/images/prov_items/anhui/d0.jpg",
-    "religious-daoism-quanzhen-zhengyi": "assets/images/provinces/shanxi-hanging-temple.jpg",
+    "chinese-chan-buddhism-aesthetics": "assets/images/articles_v8/chan-aesthetics-grotto.jpg",
+    "mohism-logic-optics-ethics": "assets/images/articles_v8/mohism-optical-treatise.jpg",
+    "religious-daoism-quanzhen-zhengyi": "assets/images/articles_v8/daoism-wudang-palace.jpg",
     "chu-nom-liushu-script-dialogue": "assets/images/articles/hero-sino-vietnam.jpg",
     "imperial-palace-axes-beijing-thanglong-hue": "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
-    "truc-lam-zen-song-yuan-dialogue": "assets/images/prov_items/anhui/d1.jpg",
-    "east-asian-historiography-shiji-toanthu": "assets/images/prov_items/anhui/d2.jpg",
+    "truc-lam-zen-song-yuan-dialogue": "assets/images/articles_v8/truc-lam-yen-tu.jpg",
+    "east-asian-historiography-shiji-toanthu": "assets/images/articles_v8/historiography-shiji.jpg",
     "bac-y-nam-duoc-comparative-medicine": "assets/images/articles/hero-tcm-solar.jpg",
     "china-hsr-megaprojects-urban-network": "assets/images/articles/hero-contemporary-china.jpg",
     "china-green-energy-ev-battery-ecosystem": "assets/images/articles/hero-huaqiangbei-tech.jpg",
-    "china-digital-payments-platform-economy": "assets/images/prov_items/anhui/d3.jpg",
+    "china-digital-payments-platform-economy": "assets/images/articles_v8/digital-payments-qr.jpg",
     "modern-chinese-archaeology-sanxingdui-liangzhu": "assets/images/museum/sanxingdui-mask.jpg",
-    "china-space-aerospace-tiangong-beidou": "assets/images/prov_items/anhui/d4.jpg",
+    "china-space-aerospace-tiangong-beidou": "assets/images/articles_v8/china-aerospace-station.jpg",
     "rcep-acfta-cumulation-rules-vietnam": "assets/images/articles/hero-supply-chain-rcep.jpg",
     "china-trade-fairs-canton-ciie-yiwu-guide": "assets/images/articles/hero-b2b-negotiation-table.jpg",
     "gacc-decree-248-249-vietnam-agri-export": "assets/images/articles/hero-consular-field-guide.jpg",
-    "chinese-enterprises-globalization-playbook": "assets/images/provinces/guangdong-canton-tower.jpg",
-    "cross-border-b2b-contracts-cietac-viac": "assets/images/prov_items/anhui/f0.jpg",
+    "chinese-enterprises-globalization-playbook": "assets/images/articles_v8/global-enterprises-cbd.jpg",
+    "cross-border-b2b-contracts-cietac-viac": "assets/images/articles_v8/b2b-legal-contracts.jpg",
     "tang-poetry-song-ci-poetics-geography": "assets/images/articles/hero-tang-dynasty.jpg",
     "chinese-aesthetic-concepts-qiyun-yijing": "assets/images/paintings/22_qianli_jiangshan.jpg",
     "calligraphy-masterpieces-three-rarities-lineage": "assets/images/articles/hero-calligraphy-five-scripts.jpg",
     "chinese-mythology-shanhaijing-kunlun-penglai": "assets/images/paintings/01_luoshenfu_tu.jpg",
     "east-asian-woodblock-printing-encyclopedias": "assets/images/museum/yongle-dadian.jpg",
-    "temple-of-heaven-tiantan-cosmology-3d": "assets/images/prov_items/anhui/f1.jpg",
+    "temple-of-heaven-tiantan-cosmology-3d": "assets/images/articles_v8/tiantan-hall-prayer.jpg",
     "jiuzhaigou-travertine-karst": "assets/images/museum/jiuzhaigou-five-flower-lake.jpg",
-    "zhangjiajie-wulingyuan-sandstone-pillars": "assets/images/provinces/hunan-zhangjiajie.jpg"
+    "zhangjiajie-wulingyuan-sandstone-pillars": "assets/images/articles_v8/zhangjiajie-tianzi.jpg"
   };
   var arrName = typeof ARTICLES_V3_PART1A !== "undefined" ? ARTICLES_V3_PART1A
     : typeof ARTICLES_V3_PART1B !== "undefined" ? ARTICLES_V3_PART1B

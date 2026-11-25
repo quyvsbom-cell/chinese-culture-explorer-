@@ -149,7 +149,7 @@
           body: 'Rooted in Laozi\'s dialectic of Being and Non-Being and Chan Buddhist emptiness, Liubai ("leaving white") treats unpainted silk or paper as active compositional presence. In Southern Song masters Ma Yuan and Xia Gui ("One-Corner Ma, Half-Side Xia"), blank expanses become mist, water, sky, and meditative silence completed by the viewer\'s imagination.'
         }
       ],
-      theoreticalFramework: 'Comparative aestheticians (Li Zehou, Zong Baihua, François Jullien) highlight that Chinese aesthetics rests not on subject-object dualism, but on correlative unity between Heaven and humanity and the interplay of solid and void (Xu-Shi). Masterpieces intentionally remain open-ended ("meaning beyond words"), making reception a lifelong dialogue.',
+      theoreticalFramework: 'Comparative aestheticians (Li Zehou, Zong Baihua, François Jullien) highlight that Chinese aesthetics rests not on subject-object dualism, but on correlative unity between Heaven and humanity and the alternation of solid and void (Xu-Shi). Masterpieces intentionally remain open-ended ("meaning beyond words"), making reception a lifelong dialogue.',
       terminologyAndLiushu: [
         { hanzi: '气韵', pinyin: 'qìyùn', hanViet: 'Khí vận', liushu: 'Qi: Pictograph; Yun: Phono-semantic (sound radical)', gloss: 'Vital spirit and lingering harmonic resonance animating a work of art.' },
         { hanzi: '意境', pinyin: 'yìjìng', hanViet: 'Ý cảnh', liushu: 'Yi: Ideogrammic; Jing: Phono-semantic (earth radical)', gloss: 'Aesthetic realm fusing inner emotion and external landscape into evocative depth.' },

@@ -27,7 +27,7 @@
       readMinutes: 11,
       epistemicTag: "Tư tưởng Kinh tế • Nho thương (儒商)",
       heroImage: {
-        src: "assets/images/provinces/shanxi-hanging-temple.jpg",
+        src: "assets/images/articles_v8/b26-merchant-ethics.jpg",
         caption: "Kiến trúc cổ Sơn Tây — cái nôi của Tấn thương và khế ước chữ Tín suốt 500 năm Minh – Thanh.",
         credit: "CCE Historical Economics Archive"
       },
@@ -135,7 +135,7 @@
       readMinutes: 12,
       epistemicTag: "Lịch sử Kinh tế Minh – Thanh • Tổ chức Tài chính",
       heroImage: {
-        src: "assets/images/provinces/anhui-huangshan-cloudsea.jpg",
+        src: "assets/images/articles_v8/b26-ten-guilds.jpg",
         caption: "Núi non hiểm trở Hoàng Sơn – Huệ Châu (An Huy), nơi sản sinh thế hệ thương nhân 'Giả nhi hiếu nho' tỏa đi khắp Giang Nam.",
         credit: "CCE Cultural Geography Archive"
       },
@@ -235,7 +235,7 @@
       readMinutes: 11,
       epistemicTag: "Hải thương Đông Á • Kết nối Hội An – Tuyền Châu",
       heroImage: {
-        src: "assets/images/provinces/fujian-tulou.jpg",
+        src: "assets/images/articles_v8/b26-maritime-merchants.jpg",
         caption: "Kiến trúc Thổ Lâu phòng thủ gia tộc tại vùng núi Phúc Kiến — hậu phương vững chắc cho những đoàn thuyền Hải thương Mân Nam dong buồm ra Biển Đông.",
         credit: "CCE Maritime Cultural Heritage Archive"
       },
@@ -259,7 +259,7 @@
         {
           heading: "2. Tín ngưỡng Ma Tổ (妈祖 / 天后) — Cơ chế Hợp đồng Đạo đức Giữa Trùng Khơi",
           body:
-            "Trên biển khơi không có tường rào pháp lý triều đình, nhưng mọi thương thuyền Mân – Quảng đều thờ cùng một vị thần bảo hộ hàng hải: Thiên Hậu Thánh Mẫu (Ma Tổ – Lâm Mặc Nương quê Phủ Điền, Phúc Kiến). Tín ngưỡng Ma Tổ không chỉ là chỗ dựa tâm linh trước cuồng phong: các Thiên Hậu Cung và Hội quán dọc theo đường hàng hải (từ Tuyền Châu qua Hội An, Chợ Lớn, Bangkok tới Penang) vừa là nơi tế lễ vừa đóng vai trò sở giao dịch, ngân khố từ thiện, trạm thông tin giá cả và tòa trọng tài phân xử tranh chấp hàng hải giữa các tàu buôn."
+            "Trên biển khơi không có tường rào pháp lý triều đình, nhưng mọi thương thuyền Mân – Quảng đều thờ cùng một vị thần bảo hộ hàng hải: Thiên Hậu Thánh Mẫu (Ma Tổ – Lâm Mặc Nương quê Phủ Điền, Phúc Kiến). Tín ngưỡng Ma Tổ vừa là chỗ dựa tâm linh trước cuồng phong vừa kết nối mạng lưới Thiên Hậu Cung và Hội quán dọc hải trình (từ Tuyền Châu qua Hội An, Chợ Lớn, Bangkok tới Penang) thành sở giao dịch, ngân khố từ thiện, trạm thông tin giá cả và tòa trọng tài phân xử tranh chấp hàng hải giữa các tàu buôn."
         },
         {
           heading: "3. Trục Thương cảng: Tuyền Châu – Chương Châu – Quảng Châu Kết nối Vân Đồn – Hội An",
@@ -334,7 +334,7 @@
       readMinutes: 10,
       epistemicTag: "Địa lý Kinh tế • Chuỗi Cung ứng",
       heroImage: {
-        src: "assets/images/provinces/jiangxi-wuyuan-village.jpg",
+        src: "assets/images/articles_v8/b26-artisan-kilns.jpg",
         caption: "Cảnh quan làng cổ Giang Tây — vùng đất kết nối kinh đô gốm sứ Cảnh Đức Trấn với dòng sông Trường Giang suốt hơn một thiên niên kỷ.",
         credit: "CCE Industrial Geography Archive"
       },
@@ -527,7 +527,7 @@
       readMinutes: 11,
       epistemicTag: "Văn học So sánh • Đối thoại Đồng văn",
       heroImage: {
-        src: "assets/images/provinces/hubei-yellow-crane-tower.jpg",
+        src: "assets/images/articles_v8/b26-envoy-poetry.jpg",
         caption: "Hoàng Hạc Lâu (Vũ Hán, Hồ Bắc) bên bờ Trường Giang — điểm dừng chân khơi nguồn nhiều thi phẩm đặc sắc trong 《Bắc Hành Tạp Lục》 của Nguyễn Du.",
         credit: "Chinese Culture Explorer Literary Geography Archive"
       },
@@ -626,7 +626,7 @@
       readMinutes: 11,
       epistemicTag: "Kỹ nghệ Xây dựng Cổ • Kiến trúc Đông Á",
       heroImage: {
-        src: "assets/images/provinces/hebei-chengde-resort.jpg",
+        src: "assets/images/articles_v8/b26-timber-dougong.jpg",
         caption: "Hệ mái gỗ cổ truyền với dầm Đấu củng chồng tầng — giải pháp chịu lực và giảm chấn địa chấn hoàn toàn bằng gỗ không đinh sắt.",
         credit: "CCE Architectural History Archive"
       },
@@ -736,7 +736,7 @@
         {
           heading: "2. Bốn Điểm Bản Địa Hóa Nổi bật tại Văn Miếu Thăng Long",
           body:
-            "Thứ nhất, bia Tiến sĩ Đại Việt được đặt trân trọng trên lưng Rùa đá (biểu tượng trường tồn và trí tuệ Đông Á), mỗi tấm bia mang bài văn ký triết lý chính trị tự chủ đầy kiêu hãnh chứ không chỉ khắc khô khan tên – quê – hạng thi như hàng bia đứng Bắc Kinh. Thứ hai, từ năm 1247, Đại Việt lập tam khôi Trạng Nguyên (điều đặc biệt là các triều đại Minh–Thanh tại Việt Nam vẫn trân trọng danh hiệu 'Lưỡng quốc Trạng nguyên' như Mạc Đĩnh Chi, Nguyễn Trực). Thứ ba, Văn Miếu Hà Nội tôn thờ Tư nghiệp Chu Văn An — biểu tượng đạo đức nhà giáo bản địa dám dâng *Thất trảm sớ*. Thứ tư, bài thi Văn sách ở Quốc Tử Giám Việt Nam thường đòi hỏi sĩ tử vận dụng kinh sử để giải quyết chính biến nội trị, trị thủy sông Hồng và bang giao hòa bình cho chính đất nước Đại Việt."
+            "Thứ nhất, bia Tiến sĩ Đại Việt được đặt trân trọng trên lưng Rùa đá (biểu tượng trường tồn và trí tuệ Đông Á), mỗi tấm bia mang bài văn ký triết lý chính trị tự chủ đầy kiêu hãnh thay vì khắc khô khan tên – quê – hạng thi như hàng bia đứng Bắc Kinh. Thứ hai, từ năm 1247, Đại Việt lập tam khôi Trạng Nguyên (điều đặc biệt là các triều đại Minh–Thanh tại Việt Nam vẫn trân trọng danh hiệu 'Lưỡng quốc Trạng nguyên' như Mạc Đĩnh Chi, Nguyễn Trực). Thứ ba, Văn Miếu Hà Nội tôn thờ Tư nghiệp Chu Văn An — biểu tượng đạo đức nhà giáo bản địa dám dâng *Thất trảm sớ*. Thứ tư, bài thi Văn sách ở Quốc Tử Giám Việt Nam thường đòi hỏi sĩ tử vận dụng kinh sử để giải quyết chính biến nội trị, trị thủy sông Hồng và bang giao hòa bình cho chính đất nước Đại Việt."
         },
         {
           heading: "3. Lộ trình Kinh điển *Tu Thân – Tề Gia – Trị Quốc* & Bi kịch Đóng khung Bát Cổ",
@@ -813,7 +813,7 @@
         "*Hoàng Đế Nội Kinh* chia nhịp điệu sống con người theo bốn giai đoạn năng lượng tự nhiên: Xuân – Hạ nuôi khí Dương (*Xuân Hạ dưỡng Dương*), Thu – Đông giữ tinh Âm (*Thu Đông dưỡng Âm*)."
       ],
       introduction:
-        "Tại di chỉ Đào Tự (Sơn Tây) có niên đại khoảng 4.100 năm, các nhà khảo cổ tìm thấy 13 cây cột đá xếp theo hình bán nguyệt ngắm khe núi phía đông — đài quan sát mặt trời mọc sớm nhất vùng Đông Á nhằm bắt chính xác ngày *Đông Chí* (ngày đêm dài nhất năm) và *Hạ Chí*. Trải qua hơn hai thiên niên kỷ quan trắc và hoàn thiện trong sách *Hoài Nam Tử* (thế kỷ II TCN), hệ thống **24 Tiết khí** không chỉ giúp người nông dân biết ngày nào gieo mạ hay cày bừa chuẩn từng 15 ngày mà không lệch mùa vì năm nhuận, mà còn trở thành đồng hồ sinh học cốt lõi cho dưỡng sinh Đông y từ *Hoàng Đế Nội Kinh* tới tận đời sống hiện đại.",
+        "Tại di chỉ Đào Tự (Sơn Tây) có niên đại khoảng 4.100 năm, các nhà khảo cổ tìm thấy 13 cây cột đá xếp theo hình bán nguyệt ngắm khe núi phía đông — đài quan sát mặt trời mọc sớm nhất vùng Đông Á nhằm bắt chính xác ngày *Đông Chí* (ngày đêm dài nhất năm) và *Hạ Chí*. Trải qua hơn hai thiên niên kỷ quan trắc và hoàn thiện trong sách *Hoài Nam Tử* (thế kỷ II TCN), hệ thống **24 Tiết khí** vừa giúp người nông dân biết ngày nào gieo mạ hay cày bừa chuẩn từng 15 ngày mà không lệch mùa vì năm nhuận, vừa trở thành đồng hồ sinh học cốt lõi cho dưỡng sinh Đông y từ *Hoàng Đế Nội Kinh* tới tận đời sống hiện đại.",
       historicalContext:
         "Một năm theo chu kỳ 12 lần Trăng tròn (Âm lịch thuần túy) chỉ có khoảng 354,36 ngày — ngắn hơn năm Mặt Trời (365,24 ngày) gần 11 ngày. Nếu chỉ dùng lịch Mặt Trăng như Hồi lịch, chẳng bao lâu Tết Nguyên Đán sẽ rơi vào giữa mùa hè nóng bức! Để giải quyết, lịch pháp Trung Hoa kết hợp hai hệ thống thành **Âm–Dương hợp lịch (阴阳合历)**: lấy tuần Trăng làm ngày mùng 1 – rằm (điều tiết thủy triều và mùa vụ), đồng thời dùng phép đo Mặt Trời chia quỹ đạo 360° quanh Trái Đất thành 24 cung, mỗi cung đúng 15° góc chiếu nắng (tiết khí), và chêm 7 tháng nhuận trong chu kỳ 19 năm ('Thập cửu niên thất nhuận'). Trong thiên *Tố Vấn • Tứ Khí Điều Thần Đại Luận* (*Hoàng Đế Nội Kinh*), chu kỳ thiên văn này được chuyển hóa thành nghệ thuật dưỡng sinh toàn diện.",
       mainContent: [
@@ -981,7 +981,7 @@
         "Khảo cứu nền tảng thiên văn học cổ đại Trung Hoa đứng sau hệ thống **Tử Vi Đẩu Số** (紫微斗数 – Zǐwēi Dǒushù): khái niệm vòng *Tử Vi Viên* (sao Bắc Cực và các sao quanh cực) trong thiên quan thư *Sử ký*, hệ thống 14 Chính tinh (chùm Tử Vi và chùm Thiên Phủ) phân bổ trên Ma trận 12 Cung vị nhân sinh, và so sánh cấu trúc phương pháp giữa **Nam phái Tam Hợp** (trọng hình tượng – cung viên) và **Bắc phái Khâm Thiên Tứ Hóa / Phi Tinh** (trọng biến hóa năng lượng Hóa Lộc–Quyền–Khoa–Kỵ).",
       keyTakeaways: [
         "Tên gọi *Tử Vi* bắt nguồn từ **Tử Vi Viên** (紫微垣 — chòm sao quây quanh Bắc Cực tinh biểu trưng cho trục trung tâm bất biến trên bầu trời, cũng là nguồn gốc tên gọi *Tử Cấm Thành* Bắc Kinh).",
-        "Hệ 12 Cung vị không chỉ nói về cá nhân tách rời mà lập thành một bản đồ sinh thái quan hệ hoàn chỉnh: *Mệnh, Huynh Đệ, Phu Thê, Tử Tức, Tài Bạch, Tật Ách, Thiên Di, Nô Bộc (Giao Hữu), Quan Lộc, Điền Trạch, Phúc Đức, Phụ Mẫu*.",
+        "Hệ 12 Cung vị vượt ra ngoài phạm vi cá nhân tách rời để lập thành một bản đồ sinh thái quan hệ hoàn chỉnh: *Mệnh, Huynh Đệ, Phu Thê, Tử Tức, Tài Bạch, Tật Ách, Thiên Di, Nô Bộc (Giao Hữu), Quan Lộc, Điền Trạch, Phúc Đức, Phụ Mẫu*.",
         "Nghiên cứu học thuật cần tách bạch hai dòng tư duy lớn: **Nam phái Tam Hợp** (chú trọng tổ hợp Sao sáng tối & thế tam giác Tam Phương Tứ Chính) vs **Bắc phái Tứ Hóa / Phi Tinh** (dùng 10 Thiên Can phóng 4 vector biến hóa Lộc – Quyền – Khoa – Kỵ dọc các cung)."
       ],
       introduction:
@@ -1148,7 +1148,7 @@
       readMinutes: 11,
       epistemicTag: "Di sản UNESCO • Kiến trúc Cảnh quan",
       heroImage: {
-        src: "assets/images/provinces/jiangsu-suzhou-garden.jpg",
+        src: "assets/images/articles_v8/b26-suzhou-gardens.jpg",
         caption: "Thủy đình, hành lang uốn lượn và hồ sen tại Lâm viên Tô Châu (Giang Tô) — hiện thực hóa tinh thần 'tuy do nhân tác, uyển tự thiên khai'.",
         credit: "UNESCO Suzhou Gardens Visual Archive"
       },
@@ -1320,7 +1320,7 @@
       readMinutes: 11,
       epistemicTag: "Văn hóa Ẩm thực • Lục Vũ (733–804)",
       heroImage: {
-        src: "assets/images/provinces/zhejiang-hangzhou-westlake.jpg",
+        src: "assets/images/articles_v8/b26-lu-yu-tea.jpg",
         caption: "Đồi chè xanh ngát quanh Tây Hồ (Hàng Châu) — quê hương Lục trà Long Tỉnh và nơi Lục Vũ từng khảo cứu chất nước thanh khiết pha trà.",
         credit: "CCE Cultural & Culinary Archive"
       },
@@ -1367,7 +1367,7 @@
           pinyin: "Chá zhī wéi yòng, wèi zhì hán, wéi yǐn, zuì yí jīngxíng jiǎndé zhī rén.",
           hanViet: "Trà chi vi dụng, vị chí hàn, vi ẩm, tối nghi tinh hành kiệm đức chi nhân.",
           translationVi: "Công dụng của trà, vị mát thanh khiết, dùng làm thức uống rất hợp với những người giữ nết hạnh tinh khiết và đức tính tiết độ khiêm nhường.",
-          contextNote: "Khẳng định cốt cách văn hóa nhân văn chứ không đơn thuần là thức uống giải khát."
+          contextNote: "Khẳng định cốt cách văn hóa nhân văn chứ không phải thứ thức uống giải khát thông thường."
         }
       ],
       terminologyIds: ["cha"],
@@ -1435,7 +1435,7 @@
         {
           heading: "3. Tam Đại Danh Khúc & Cảnh Giới 'Tri Âm' Trong Lịch Sử",
           body:
-            "Kho tàng hơn 3.000 bản cổ cầm kết tinh tinh hoa qua ba tuyệt tác: ① **Cao Sơn Lưu Thủy** (高山流水): gắn với truyền kỳ Bá Nha – Chung Tử Kỳ thời Xuân Thu, khi Tử Kỳ qua đời Bá Nha đập vỡ cây cầm vì thế gian không còn người nghe hiểu tiếng lòng ('Tri âm' 知音); ② **Quảng Lăng Tán** (广陵散): khúc nhạc bi tráng đầy lửa phẫn nộ (đồng thời hiếm hoi dùng điệu thức giáng dây 2) gắn liền với Khí tiết Kê Khang Trúc Lâm Thất Hiền; ③ **Bình Sa Lạc Nhạn** (平沙落雁) và **Mai Hoa Tam Lộng**: dùng chuỗi âm Phiếm âm thanh tịnh miêu tả cánh nhạn bay lượn trên bãi cát chiều thu và hoa mai trắng nở giữa tuyết lạnh."
+            "Kho tàng hơn 3.000 bản cổ cầm hội tụ kỹ nghệ diễn tấu và thi học qua ba tuyệt tác: ① **Cao Sơn Lưu Thủy** (高山流水): gắn với truyền kỳ Bá Nha – Chung Tử Kỳ thời Xuân Thu, khi Tử Kỳ qua đời Bá Nha đập vỡ cây cầm vì thế gian không còn người nghe hiểu tiếng lòng ('Tri âm' 知音); ② **Quảng Lăng Tán** (广陵散): khúc nhạc bi tráng đầy lửa phẫn nộ (đồng thời hiếm hoi dùng điệu thức giáng dây 2) gắn liền với Khí tiết Kê Khang Trúc Lâm Thất Hiền; ③ **Bình Sa Lạc Nhạn** (平沙落雁) và **Mai Hoa Tam Lộng**: dùng chuỗi âm Phiếm âm thanh tịnh miêu tả cánh nhạn bay lượn trên bãi cát chiều thu và hoa mai trắng nở giữa tuyết lạnh."
         }
       ],
       theoreticalFramework: {

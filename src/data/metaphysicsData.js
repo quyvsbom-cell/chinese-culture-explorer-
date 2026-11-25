@@ -112,7 +112,7 @@ window.CCE_METAPHYSICS = {
         "Khởi nguồn từ thuật Nạp Âm xem năm sinh thời Đường (Lý Hư Trung dùng 3 trụ Năm-Tháng-Ngày), sau đó được Từ Tử Bình đầu thời Tống cải cách thành hệ 4 trụ (Năm-Tháng-Ngày-Giờ = 8 chữ Can Chi) lấy Thiên Can ngày sinh ('Nhật chủ') làm trung tâm đối chiếu.",
       classicalTexts: ["《渊海子平》", "《三命通会》 (Vạn Dân Anh đời Minh)", "《滴天髓》", "《子平真诠》 (Thẩm Hiếu Chiêm đời Thanh)"],
       structure:
-        "Quy đổi thời điểm sinh (theo Tiết khí thực tế chứ không chỉ ngày âm lịch) thành 4 cặp Can-Chi. Xét ngũ hành Nhật chủ đắc lệnh/đắc địa/đắc thế để tìm Dụng thần điều hòa (Điều hầu, Phù ức, Thông quan) và Thập Thần (Tài, Quan, Ấn, Thực Thương, Tỷ Kiếp) qua các Đại vận 10 năm.",
+        "Quy đổi thời điểm sinh (theo Tiết khí thực tế thay vì chỉ căn cứ ngày âm lịch) thành 4 cặp Can-Chi. Xét ngũ hành Nhật chủ đắc lệnh/đắc địa/đắc thế để tìm Dụng thần điều hòa (Điều hầu, Phù ức, Thông quan) và Thập Thần (Tài, Quan, Ấn, Thực Thương, Tỷ Kiếp) qua các Đại vận 10 năm.",
       schools: "Cổ pháp (lấy Nạp âm/Thần sát), Tử Bình Chính Tông (lấy Nguyệt lệnh Cách cục và Dụng thần), Điều Hầu phái (Cùng Thông Bảo Giám), Manh phái hiện đại.",
       epistemicNote: {
         historical: "Sự chuyển dịch từ xem năm (Đường) sang xem ngày và cách cục cá nhân (Tống) phản ánh quá trình cá nhân hóa xã hội thời Tống–Minh.",

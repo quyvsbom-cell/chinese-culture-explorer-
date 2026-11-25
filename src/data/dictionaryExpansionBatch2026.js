@@ -1012,7 +1012,7 @@
       examples: [
         { zh: "茶马古道自唐宋以来连接了云南普洱产区与青藏高原。", pinyin: "Chámǎ Gǔdào zì Táng-Sòng yǐlái liánjiē le Yúnnán Pǔ'ěr chǎnqū yǔ Qīng-Zàng Gāoyuán.", en: "Since Tang-Song times, the Tea-Horse Road linked Yunnan's Pu'er hills with the Tibetan Plateau.", vi: "Từ thời Đường–Tống, Trà Mã Cổ Đạo đã nối liền vùng trà Phổ Nhĩ Vân Nam với cao nguyên Thanh Tạng." },
         { zh: "丽江大研古城正是茶马古道上最重要的马帮集散枢纽。", pinyin: "Lìjiāng Dàyán Gǔchéng zhèng shì Chámǎ Gǔdào shàng zuì zhòngyào de mǎbāng jísàn shūniǔ.", en: "Lijiang Old Town served as the premier caravan hub along the Tea-Horse Road.", vi: "Cổ thành Lệ Giang chính là đầu mối tập kết đoàn ngựa thồ quan trọng bậc nhất trên Trà Mã Cổ Đạo." },
-        { zh: "以茶易马不仅是经济互补，更塑造了多元民族交融廊道。", pinyin: "Yǐ chá yì mǎ bùjǐn shì jīngjì hùbǔ, gèng sùzào le duōyuán mínzú jiāoróng lángdào.", en: "Tea-for-horse exchange created not only economic synergy but also a multi-ethnic cultural corridor.", vi: "Đổi trà lấy ngựa không chỉ là bổ khuyết kinh tế, mà còn kiến tạo hành lang giao lưu đa dân tộc." }
+        { zh: "以茶易马不仅是经济互补，更塑造了多元民族交融廊道。", pinyin: "Yǐ chá yì mǎ bùjǐn shì jīngjì hùbǔ, gèng sùzào le duōyuán mínzú jiāoróng lángdào.", en: "Tea-for-horse exchange created not only economic synergy but also a multi-ethnic cultural corridor.", vi: "Đổi trà lấy ngựa vừa bổ khuyết kinh tế vừa kiến tạo hành lang giao lưu đa dân tộc." }
       ]
     },
     {
@@ -1651,7 +1651,7 @@
       examples: [
         { zh: "明代计成《园冶》称“园林巧于因借”，借景乃中国造园最高妙法之一。", pinyin: "Míngdài Jì Chéng 《Yuányě》 chēng “yuánlín qiǎo yú yīnjiè”, jièjǐng nǎi Zhōngguó zàoyuán zuìgāo miàofǎ zhī yī.", en: "Ji Cheng's Craft of Gardens declared borrowing scenery one of Chinese landscape design's highest arts.", vi: "Sách Viên Dã của Kế Thành đời Minh viết 'Lâm viên khéo ở chỗ nhân tá', mượn cảnh là tuyệt kỹ làm vườn Trung Hoa." },
         { zh: "站在拙政园远望，城外北寺塔恰恰落入亭阁画框之中，即“远借”。", pinyin: "Zhànzài Zhuōzhèngyuán yuǎnwàng, chéngwài Běisìtǎ qiàqià luòrù tínggé huàkuàng zhīzhōng, jí “yuǎnjiè”.", en: "From Humble Administrator's Garden, the distant North Temple Pagoda frames neatly—classic 'distant borrowing.'", vi: "Đứng trong Chuyết Chính Viên nhìn xa, tháp Bắc Tự ngoài thành rơi khít vào khung đình chính là 'viễn tá'." },
-        { zh: "借景不仅节省空间，更教人突破院墙限制而与大千世界相连。", pinyin: "Jièjǐng bùjǐn jiéshěng kōngjiān, gèng jiào rén tūpò yuànqiáng xiànzhì ér yǔ dàqiān shìjiè xiānglián.", en: "Borrowed scenery transcends enclosing walls, connecting intimate courtyard space with the wider world.", vi: "Tá cảnh không chỉ mở rộng không gian thị giác mà còn giúp tâm hồn vượt khỏi tường bao hòa cùng thiên địa." }
+        { zh: "借景不仅节省空间，更教人突破院墙限制而与大千世界相连。", pinyin: "Jièjǐng bùjǐn jiéshěng kōngjiān, gèng jiào rén tūpò yuànqiáng xiànzhì ér yǔ dàqiān shìjiè xiānglián.", en: "Borrowed scenery transcends enclosing walls, connecting intimate courtyard space with the wider world.", vi: "Tá cảnh vừa mở rộng không gian thị giác vừa giúp tâm hồn vượt khỏi tường bao hòa cùng thiên địa." }
       ]
     },
     {
@@ -2435,7 +2435,7 @@
       english: "Guarding a tree stump waiting for rabbits; clinging blindly to a past fluke",
       vietnamese: "Thủ chu đãi thỏ (Ôm cây đợi thỏ); ỷ lại vào một lần may mắn ngẫu nhiên mà ngừng nỗ lực hoặc từ chối đổi mới",
       mnemonic: "Bỏ cuốc ngồi canh bên gốc cây cụt (守株) mong con thỏ thứ hai tự lao đầu vào (待兔).",
-      context: "Hàn Phi Tử kể ngụ ngôn này không chỉ khuyên người đừng lười biếng, mà còn để đả kích việc trị quốc giáo điều máy móc bê nguyên thể chế thời cổ áp vào thời đại mới!",
+      context: "Hàn Phi Tử kể ngụ ngôn này nhằm vừa khuyên người đừng lười biếng, vừa đả kích việc trị quốc giáo điều máy móc bê nguyên thể chế thời cổ áp vào thời đại mới!",
       examples: [
         { zh: "商业环境瞬息万变，抱持过时成功经验就像守株待兔，终将被市场淘汰。", pinyin: "Shāngyè huánjìng shùnxī wànbiàn, bàochí guòshí chénggōng jīngyàn jiùxiàng shǒuzhū dàitù, zhōngjiāng bèi shìchǎng táotài.", en: "In shifting markets, clinging to obsolete winning formulas like watching a stump invites disruption.", vi: "Thương trường biến đổi từng ngày, ôm mãi kinh nghiệm thành công cũ kỹ khác nào ôm cây đợi thỏ, sớm muộn cũng bị đào thải." },
         { zh: "《韩非子》原意借守株待兔批判法古不知变通的保守政治。", pinyin: "《Hánfēizǐ》 yuányì jiè shǒuzhū dàitù pīpàn fǎgǔ bùzhī biàntōng de bǎoshǒu zhèngzhì.", en: "Han Feizi originally used the fable to mock rulers rigidly copying antiquity without adaptation.", vi: "Nguyên ý Hàn Phi Tử mượn chuyện ôm cây đợi thỏ để phê phán lối trị quốc giáo điều không biết biến thông theo thời thế." },

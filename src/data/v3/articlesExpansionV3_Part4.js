@@ -37,9 +37,9 @@
       keyTakeaways: [
         'ACFTA vận hành trên khối 10 nước ASEAN và Trung Quốc với chứng nhận C/O Form E, trong khi RCEP mở rộng phạm vi cộng gộp nguyên liệu sang 15 thành viên (bao gồm thêm Nhật Bản, Hàn Quốc, Úc và New Zealand).',
         'Ba trụ cột xác định xuất xứ gồm Xuất xứ Thuần túy (WO), Hàm lượng Giá trị Khu vực (thường ngưỡng RVC 40% theo công thức trực tiếp hoặc gián tiếp) và Chuyển đổi Mã số Hàng hóa (CC, CTH, CTSH) quy định tại Danh mục Quy tắc Cụ thể Mặt hàng (PSR).',
-        'Lựa chọn giữa C/O Form E và C/O RCEP không chỉ phụ thuộc vào mức thuế ưu đãi tại từng thời điểm mà còn phải đối chiếu Quy tắc Khác biệt Thuế quan (Tariff Differentials) tại Điều 2.6 của RCEP và chi phí tuân thủ hồ sơ chứng minh xuất xứ.'
+        'Lựa chọn giữa C/O Form E và C/O RCEP phụ thuộc đồng thời vào mức thuế ưu đãi tại từng thời điểm, Quy tắc Khác biệt Thuế quan (Tariff Differentials) tại Điều 2.6 của RCEP và chi phí tuân thủ hồ sơ chứng minh xuất xứ.'
       ],
-      introduction: 'Trong chuỗi cung ứng công nghiệp Đông Á, một sản phẩm xuất khẩu từ Việt Nam sang Trung Quốc hoặc nhập khẩu theo chiều ngược lại hiếm khi sử dụng nguyên liệu từ duy nhất một quốc gia. Một lô linh kiện điện tử hay dệt may hoàn thiện tại Việt Nam có thể kết hợp sợi, hóa chất hoặc bo mạch từ Hàn Quốc, Nhật Bản và Trung Quốc. Trước thực tế sản xuất phân mảnh xuyên biên giới đó, Quy tắc Xuất xứ (Rules of Origin - ROO) đóng vai trò như tấm hộ chiếu pháp lý quyết định hàng hóa có được hưởng thuế suất ưu đãi đặc biệt hay không.',
+      introduction: 'Trong chuỗi cung ứng công nghiệp Đông Á, một sản phẩm xuất khẩu từ Việt Nam sang Trung Quốc hoặc nhập khẩu theo chiều ngược lại hiếm khi sử dụng nguyên liệu từ duy nhất một quốc gia. Một lô linh kiện điện tử hay dệt may hoàn thiện tại Việt Nam có thể kết hợp sợi, hóa chất hoặc bo mạch từ Hàn Quốc, Nhật Bản và Trung Quốc. Trước thực tế sản xuất phân mảnh xuyên biên giới đó, Quy tắc Xuất xứ (Rules of Origin - ROO) giữ vai trò tấm hộ chiếu pháp lý quyết định hàng hóa có được hưởng thuế suất ưu đãi đặc biệt hay không.',
       historicalBackground: 'Khu vực Thương mại Tự do ASEAN - Trung Quốc (ACFTA) khởi nguồn từ Hiệp định Khung ký kết tại Phnom Penh tháng 11/2002, tiếp nối bằng Hiệp định Thương mại Hàng hóa năm 2004 và Nghị định thư nâng cấp có hiệu lực từ năm 2019 (ACFTA 2.0). Đến tháng 10/2024 tại Hội nghị Cấp cao ASEAN - Trung Quốc lần thứ 27 ở Viêng Chăn, hai bên tuyên bố hoàn tất cơ bản đàm phán nâng cấp ACFTA 3.0, mở rộng sang kinh tế số, kinh tế xanh, kết nối chuỗi cung ứng và thuận lợi hóa thủ tục hải quan. Song song đó, Hiệp định Đối tác Kinh tế Toàn diện Khu vực (RCEP) ký ngày 15/11/2020 và chính thức có hiệu lực từ ngày 01/01/2022 đã thiết lập khu vực thương mại tự do lớn nhất thế giới về quy mô dân số và GDP, hợp nhất quy tắc xuất xứ giữa ASEAN với năm đối tác đối thoại gồm Trung Quốc, Nhật Bản, Hàn Quốc, Úc và New Zealand.',
       mainContent: [
         {
@@ -86,13 +86,13 @@
       titleEn: 'China Industrial Trade Fair Architecture: Canton Fair Three Phases, CIIE Shanghai, Yiwu Fair, and Factory Audit Protocol',
       readMinutes: 13,
       epistemicTag: 'Thực địa Thương mại · Chuỗi cung ứng',
-      abstract: 'Hệ thống hội chợ thương mại cấp quốc gia của Trung Quốc không chỉ là nơi trưng bày sản phẩm mà là hạ tầng kết nối trực tiếp giữa các cụm công nghiệp vùng miền với người mua toàn cầu. Chuyên luận này giải phẫu chức năng kinh tế khác biệt của ba đầu tàu hội chợ — Hội chợ Quảng Giao (Canton Fair) tại Quảng Châu, Hội chợ Nhập khẩu Quốc tế Trung Quốc (CIIE) tại Thượng Hải và Hội chợ Hàng tiêu dùng Nghĩa Ô (Yiwu Fair) tại Chiết Giang — đồng thời hệ thống hóa quy trình khảo sát thực địa nhà máy (Factory Audit) theo chuẩn quản trị rủi ro chuỗi cung ứng.',
+      abstract: 'Hệ thống hội chợ thương mại cấp quốc gia của Trung Quốc vừa là nơi trưng bày sản phẩm vừa là hạ tầng kết nối trực tiếp giữa các cụm công nghiệp vùng miền với người mua toàn cầu. Chuyên luận này giải phẫu chức năng kinh tế khác biệt của ba đầu tàu hội chợ — Hội chợ Quảng Giao (Canton Fair) tại Quảng Châu, Hội chợ Nhập khẩu Quốc tế Trung Quốc (CIIE) tại Thượng Hải và Hội chợ Hàng tiêu dùng Nghĩa Ô (Yiwu Fair) tại Chiết Giang — đồng thời hệ thống hóa quy trình khảo sát thực địa nhà máy (Factory Audit) theo chuẩn quản trị rủi ro chuỗi cung ứng.',
       keyTakeaways: [
         'Canton Fair (tổ chức từ năm 1957 tại Khu phức hợp Ba Châu, Quảng Châu) vận hành theo cấu trúc 3 pha chuyên ngành mỗi mùa Xuân và mùa Thu, phục vụ chủ yếu nhu cầu tìm nguồn cung xuất khẩu từ Trung Quốc.',
         'CIIE Thượng Hải (tổ chức thường niên từ năm 2018 tại Trung tâm Hội nghị và Triển lãm Quốc gia Thượng Hải) là hội chợ cấp quốc gia đầu tiên trên thế giới chuyên biệt về nhập khẩu, mở cửa trực tiếp cho hàng nông sản, thực phẩm và dịch vụ Việt Nam tiếp cận kênh phân phối nội địa Trung Quốc.',
         'Gian hàng hội chợ chỉ là điểm tiếp xúc ban đầu; thẩm định năng lực thực chất đòi hỏi quy trình khảo sát nhà máy độc lập gồm đối chiếu Giấy phép Kinh doanh (营业执照), dây chuyền sản xuất, hệ thống kiểm soát chất lượng IQC/OQC và phân biệt nhà máy gốc với công ty thương mại.'
       ],
-      introduction: 'Trong lịch sử thương mại hiện đại của Cộng hòa Nhân dân Trung Hoa, hội chợ triển lãm đóng vai trò như "phong vũ biểu" phản ánh sự chuyển dịch cơ cấu công nghiệp quốc gia. Từ những gian hàng thủ công mỹ nghệ và nông sản thô thập niên 1950 đến các khu trưng bày robot công nghiệp, lưu trữ năng lượng và linh kiện xe điện ngày nay, mỗi hội chợ lớn đại diện cho một chức năng riêng biệt trong dòng chảy thương mại hai chiều.',
+      introduction: 'Trong lịch sử thương mại hiện đại của Cộng hòa Nhân dân Trung Hoa, hội chợ triển lãm thường được ví như "phong vũ biểu" phản ánh sự chuyển dịch cơ cấu công nghiệp quốc gia. Từ những gian hàng thủ công mỹ nghệ và nông sản thô thập niên 1950 đến các khu trưng bày robot công nghiệp, lưu trữ năng lượng và linh kiện xe điện ngày nay, mỗi hội chợ lớn đại diện cho một chức năng riêng biệt trong dòng chảy thương mại hai chiều.',
       historicalBackground: 'Hội chợ Xuất nhập khẩu Trung Quốc — thường gọi là Hội chợ Quảng Giao (Canton Fair, 广交会) — khai mạc kỳ đầu tiên vào mùa xuân năm 1957 tại Quảng Châu, trở thành cửa sổ giao thương quốc tế duy nhất của Trung Quốc suốt nhiều thập kỷ trước thời kỳ Cải cách Mở cửa. Bước sang thế kỷ 21, cùng với sự trỗi dậy của mạng lưới cụm công nghiệp chuyên biệt, Chiết Giang phát triển mô hình chợ sỉ quanh năm kết hợp Hội chợ Quốc tế Hàng hóa Nhỏ Nghĩa Ô (Yiwu Fair, khởi đầu từ năm 1995). Đến tháng 11/2018, Trung Quốc khai trương Hội chợ Nhập khẩu Quốc tế Trung Quốc (CIIE, 进博会) tại Thượng Hải nhằm thúc đẩy chiến lược mở rộng tiêu dùng nội địa và cân bằng thương mại với các đối tác toàn cầu.',
       mainContent: [
         {
@@ -207,7 +207,7 @@
         },
         {
           heading: '2. Từ xuất khẩu thành phẩm sang xuất khẩu hệ sinh thái chuỗi cung ứng',
-          body: 'Trước biến động thuế quan toàn cầu, chi phí nhân công nội địa tăng và yêu cầu đáp ứng quy tắc xuất xứ tại các thị trường đích, các tập đoàn công nghiệp Trung Quốc không chỉ mở một nhà máy đơn lẻ ở nước ngoài mà di chuyển theo cụm vệ tinh. Khi một doanh nghiệp đầu tàu trong ngành điện tử, dệt may, năng lượng mặt trời hoặc phụ tùng ô tô đầu tư nhà máy tại miền Bắc Việt Nam hay Thái Lan, hàng loạt nhà cung cấp cấp 1 và cấp 2 về khuôn mẫu, ép nhựa, bao bì và linh kiện cơ khí cũng theo chân đặt xưởng lân cận nhằm duy trì tốc độ giao hàng tính bằng giờ.'
+          body: 'Trước biến động thuế quan toàn cầu, chi phí nhân công nội địa tăng và yêu cầu đáp ứng quy tắc xuất xứ tại các thị trường đích, các tập đoàn công nghiệp Trung Quốc thường di chuyển theo cụm vệ tinh thay vì mở một nhà máy đơn lẻ ở nước ngoài. Khi một doanh nghiệp đầu tàu trong ngành điện tử, dệt may, năng lượng mặt trời hoặc phụ tùng ô tô đầu tư nhà máy tại miền Bắc Việt Nam hay Thái Lan, hàng loạt nhà cung cấp cấp 1 và cấp 2 về khuôn mẫu, ép nhựa, bao bì và linh kiện cơ khí cũng theo chân đặt xưởng lân cận nhằm duy trì tốc độ giao hàng tính bằng giờ.'
         },
         {
           heading: '3. Chiến lược Bản địa hóa sâu ("In Local, For Local")',
@@ -245,7 +245,7 @@
       titleEn: 'Sino-Vietnamese Cross-Border B2B Contract Law: Corporate Chop Authority, Prevailing Language, QC Clauses, and CIETAC/VIAC Arbitration',
       readMinutes: 15,
       epistemicTag: 'Pháp chế Hợp đồng · Trọng tài Quốc tế',
-      abstract: 'Trong giao dịch mua bán hàng hóa quốc tế giữa doanh nghiệp Việt Nam và Trung Quốc, nhiều tranh chấp phát sinh không phải do thiếu thiện chí mà do khoảng trống trong thiết kế hợp đồng: ký kết không có dấu Công chương hợp lệ, không chỉ định ngôn ngữ ưu tiên khi bản tiếng Anh và tiếng Trung mâu thuẫn, thiếu tiêu chuẩn nghiệm thu kỹ thuật (QC) rõ ràng và lựa chọn sai cơ quan giải quyết tranh chấp dẫn đến phán quyết không thể thi hành xuyên biên giới. Chuyên luận khép lại mốc 100 bài này phân tích bốn trụ cột pháp lý then chốt của hợp đồng B2B Trung - Việt.',
+      abstract: 'Trong giao dịch mua bán hàng hóa quốc tế giữa doanh nghiệp Việt Nam và Trung Quốc, nhiều tranh chấp phát sinh không phải do thiếu thiện chí mà do khoảng trống trong thiết kế hợp đồng: ký kết không có dấu Công chương hợp lệ, chưa quy định rõ ngôn ngữ ưu tiên khi bản tiếng Anh và tiếng Trung mâu thuẫn, thiếu tiêu chuẩn nghiệm thu kỹ thuật (QC) rõ ràng và lựa chọn sai cơ quan giải quyết tranh chấp dẫn đến phán quyết không thể thi hành xuyên biên giới. Chuyên luận khép lại mốc 100 bài này phân tích bốn trụ cột pháp lý trọng yếu của hợp đồng B2B Trung - Việt.',
       keyTakeaways: [
         'Theo Bộ luật Dân sự và Luật Công ty Trung Quốc, dấu tròn pháp nhân — Công chương (公章) hoặc Dấu chuyên dụng hợp đồng (合同专用章) đã đăng ký công an — giữ vai trò chứng cứ quyết định hiệu lực ràng buộc của công ty, vượt lên trên chữ ký cá nhân thông thường của nhân viên kinh doanh.',
         'Hợp đồng song ngữ bắt buộc phải quy định rõ điều khoản Ngôn ngữ Ưu tiên (Prevailing Language), dẫn chiếu luật áp dụng (như Công ước Viên 1980 - CISG mà cả Việt Nam và Trung Quốc đều là thành viên) và tiêu chuẩn kiểm định chất lượng độc lập (AQL / Pre-shipment Inspection).',
@@ -293,48 +293,48 @@
   var i;
   var HERO_MAP = {
     "xia-shang-zhou-oracle-bones-rituals": "assets/images/museum/houmuwu-ding.jpg",
-    "qin-institutional-standardization": "assets/images/provinces/shaanxi-terracotta-army.jpg",
+    "qin-institutional-standardization": "assets/images/articles_v8/qin-weights-measures.jpg",
     "song-dynasty-urban-science-renaissance": "assets/images/paintings/21_qingming_shanghe.jpg",
     "grand-canal-dujiangyan-hydraulic-empire": "assets/images/articles/hero-four-inventions.jpg",
     "modern-china-transformation-1840-1949": "assets/images/articles/hero-beijing-shanghai.jpg",
-    "sixteen-ancient-capitals-geopolitics": "assets/images/provinces/beijing-temple-of-heaven.jpg",
-    "tea-horse-road-southwest-corridor": "assets/images/provinces/yunnan-lijiang-old-town.jpg",
+    "sixteen-ancient-capitals-geopolitics": "assets/images/articles_v8/ancient-capitals-luoyang.jpg",
+    "tea-horse-road-southwest-corridor": "assets/images/articles_v8/tea-horse-caravan.jpg",
     "chinese-fermentation-spices-culinary-geography": "assets/images/articles/hero-chinese-cuisines.jpg",
     "chinese-liquor-culture-baijiu-huangjiu": "assets/images/articles/hero-chinese-banquet.jpg",
-    "five-sacred-mountains-buddhist-peaks": "assets/images/provinces/shandong-taishan.jpg",
-    "dunhuang-mogao-buddhist-grotto-art": "assets/images/provinces/gansu-dunhuang-mogao.jpg",
+    "five-sacred-mountains-buddhist-peaks": "assets/images/articles_v8/five-sacred-mountains.jpg",
+    "dunhuang-mogao-buddhist-grotto-art": "assets/images/articles_v8/dunhuang-nine-story.jpg",
     "xiqu-stagecraft-face-masks-tuong": "assets/images/articles/hero-spring-festival.jpg",
-    "five-vernacular-architecture-styles": "assets/images/provinces/fujian-tulou.jpg",
+    "five-vernacular-architecture-styles": "assets/images/articles_v8/vernacular-architecture-mix.jpg",
     "ming-qing-fiction-hongloumeng-anatomy": "assets/images/articles/hero-classical-books-scrolls.jpg",
     "lacquerware-silk-woodblock-new-year-prints": "assets/images/articles/hero-laozihao-craft.jpg",
     "pre-qin-legalism-xunzi-hanfeizi": "assets/images/articles/hero-hundred-schools.jpg",
     "song-ming-neo-confucianism-zhu-wang": "assets/images/articles/hero-confucianism.jpg",
-    "chinese-chan-buddhism-aesthetics": "assets/images/provinces/henan-longmen-grottoes.jpg",
-    "mohism-logic-optics-ethics": "assets/images/prov_items/anhui/d0.jpg",
-    "religious-daoism-quanzhen-zhengyi": "assets/images/provinces/shanxi-hanging-temple.jpg",
+    "chinese-chan-buddhism-aesthetics": "assets/images/articles_v8/chan-aesthetics-grotto.jpg",
+    "mohism-logic-optics-ethics": "assets/images/articles_v8/mohism-optical-treatise.jpg",
+    "religious-daoism-quanzhen-zhengyi": "assets/images/articles_v8/daoism-wudang-palace.jpg",
     "chu-nom-liushu-script-dialogue": "assets/images/articles/hero-sino-vietnam.jpg",
     "imperial-palace-axes-beijing-thanglong-hue": "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
-    "truc-lam-zen-song-yuan-dialogue": "assets/images/prov_items/anhui/d1.jpg",
-    "east-asian-historiography-shiji-toanthu": "assets/images/prov_items/anhui/d2.jpg",
+    "truc-lam-zen-song-yuan-dialogue": "assets/images/articles_v8/truc-lam-yen-tu.jpg",
+    "east-asian-historiography-shiji-toanthu": "assets/images/articles_v8/historiography-shiji.jpg",
     "bac-y-nam-duoc-comparative-medicine": "assets/images/articles/hero-tcm-solar.jpg",
     "china-hsr-megaprojects-urban-network": "assets/images/articles/hero-contemporary-china.jpg",
     "china-green-energy-ev-battery-ecosystem": "assets/images/articles/hero-huaqiangbei-tech.jpg",
-    "china-digital-payments-platform-economy": "assets/images/prov_items/anhui/d3.jpg",
+    "china-digital-payments-platform-economy": "assets/images/articles_v8/digital-payments-qr.jpg",
     "modern-chinese-archaeology-sanxingdui-liangzhu": "assets/images/museum/sanxingdui-mask.jpg",
-    "china-space-aerospace-tiangong-beidou": "assets/images/prov_items/anhui/d4.jpg",
+    "china-space-aerospace-tiangong-beidou": "assets/images/articles_v8/china-aerospace-station.jpg",
     "rcep-acfta-cumulation-rules-vietnam": "assets/images/articles/hero-supply-chain-rcep.jpg",
     "china-trade-fairs-canton-ciie-yiwu-guide": "assets/images/articles/hero-b2b-negotiation-table.jpg",
     "gacc-decree-248-249-vietnam-agri-export": "assets/images/articles/hero-consular-field-guide.jpg",
-    "chinese-enterprises-globalization-playbook": "assets/images/provinces/guangdong-canton-tower.jpg",
-    "cross-border-b2b-contracts-cietac-viac": "assets/images/prov_items/anhui/f0.jpg",
+    "chinese-enterprises-globalization-playbook": "assets/images/articles_v8/global-enterprises-cbd.jpg",
+    "cross-border-b2b-contracts-cietac-viac": "assets/images/articles_v8/b2b-legal-contracts.jpg",
     "tang-poetry-song-ci-poetics-geography": "assets/images/articles/hero-tang-dynasty.jpg",
     "chinese-aesthetic-concepts-qiyun-yijing": "assets/images/paintings/22_qianli_jiangshan.jpg",
     "calligraphy-masterpieces-three-rarities-lineage": "assets/images/articles/hero-calligraphy-five-scripts.jpg",
     "chinese-mythology-shanhaijing-kunlun-penglai": "assets/images/paintings/01_luoshenfu_tu.jpg",
     "east-asian-woodblock-printing-encyclopedias": "assets/images/museum/yongle-dadian.jpg",
-    "temple-of-heaven-tiantan-cosmology-3d": "assets/images/prov_items/anhui/f1.jpg",
+    "temple-of-heaven-tiantan-cosmology-3d": "assets/images/articles_v8/tiantan-hall-prayer.jpg",
     "jiuzhaigou-travertine-karst": "assets/images/museum/jiuzhaigou-five-flower-lake.jpg",
-    "zhangjiajie-wulingyuan-sandstone-pillars": "assets/images/provinces/hunan-zhangjiajie.jpg"
+    "zhangjiajie-wulingyuan-sandstone-pillars": "assets/images/articles_v8/zhangjiajie-tianzi.jpg"
   };
   var arrName = typeof ARTICLES_V3_PART1A !== "undefined" ? ARTICLES_V3_PART1A
     : typeof ARTICLES_V3_PART1B !== "undefined" ? ARTICLES_V3_PART1B

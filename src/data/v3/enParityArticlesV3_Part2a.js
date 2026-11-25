@@ -206,7 +206,7 @@
           '填词之设，专为登场。',
           'Tiáncí zhī shè, zhuān wéi dēngchǎng.',
           'Điền từ chi thiết, chuyên vi đăng trường.',
-          'Việc sáng tác kịch bản hý khúc cốt yếu là để diễn sống động trên sân khấu (chứ không chỉ để đọc trên giấy).',
+          'Việc sáng tác kịch bản hý khúc cốt yếu là để diễn sống động trên sân khấu (chứ ít khi nhằm đọc trên giấy thuần túy).',
           'The writing of dramatic lyrics exists expressly for live performance upon the stage.'
         ),
         PQ(

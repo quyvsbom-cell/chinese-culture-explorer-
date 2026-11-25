@@ -882,7 +882,7 @@ window.CCE_MUSEUM = {
       comparativeAnalysis:
         "Nếu hội họa sơn dầu châu Âu thời Phục Hưng dùng phối cảnh tụ điểm cố định (single-point perspective) và kỹ thuật lấp đầy khung vải để mô phỏng quang học không gian ba chiều, thì thủy mặc sơn thủy Trung Hoa sử dụng 'Tán điểm thấu thị' (phối cảnh đa điểm di động) kết hợp Lưu bạch (khoảng trắng) để người xem đồng du hành qua từng lớp núi rừng trong bức cuộn dài.",
       conclusion:
-        "Tính triết học của thủy mặc nằm ở sự thống nhất 'Thi – Thư – Họa – Ấn': bức tranh không chỉ là vật phẩm trang trí mà là nhật ký tinh thần (Tâm cảnh) nơi mực đậm nhạt truyền tải khí vận (Khí vận sinh động) của người nghệ sĩ.",
+        "Tính triết học của thủy mặc nằm ở sự thống nhất 'Thi – Thư – Họa – Ấn': bức tranh vượt xa vật phẩm trang trí để trở thành nhật ký tinh thần (Tâm cảnh) nơi mực đậm nhạt truyền tải khí vận (Khí vận sinh động) của người nghệ sĩ.",
       relatedFigures: [
         { name: "Tạ Hách (谢赫)", dates: "Thế kỷ V–VI SCN", role: "Đề xuất 'Lục pháp' trong 《Cổ Họa Phẩm Lục》" },
         { name: "Quách Hy (郭熙)", dates: "Khoảng 1020–1090 SCN", role: "Hệ thống hóa phép 'Tam viễn' trong 《Lâm Tuyền Cao Trí》" },
@@ -1032,7 +1032,7 @@ window.CCE_MUSEUM = {
       comparativeAnalysis:
         "Từ thế kỷ II TCN đến thế kỷ XV SCN, Con đường Tơ lụa gồm hai mạch vận tải song hành: tuyến lục địa nối Trường An – Đôn Hoàng – Samarkand chở lụa, giấy, kỹ nghệ tưới tiêu; và Con đường Tơ lụa Trên biển (Quảng Châu – Tuyền Châu – Cù Lao Chàm – Malacca – Hormuz) do Thị Bạc Ty quản trị thuế quan 10–15% để trao đổi gốm hoa lam, gia vị, bạc trắng và hương liệu.",
       conclusion:
-        "Trong mạng lưới này, miền Trung và Bắc Việt Nam (Giao Châu, Chu Đậu, Vân Đồn, Cù Lao Chàm) không chỉ là trạm tiếp nhiên liệu mà trực tiếp đóng vai trò xưởng chế tác xuất khẩu gốm hoa lam cạnh tranh và bổ trợ cho Cảnh Đức Trấn.",
+        "Trong mạng lưới này, miền Trung và Bắc Việt Nam (Giao Châu, Chu Đậu, Vân Đồn, Cù Lao Chàm) ngoài vai trò trạm tiếp nhiên liệu còn trực tiếp giữ vị thế xưởng chế tác xuất khẩu gốm hoa lam cạnh tranh và bổ trợ cho Cảnh Đức Trấn.",
       relatedFigures: [
         { name: "Trương Khiên (张骞)", dates: "Khoảng 164–114 TCN", role: "Sứ giả Tây Hán mở tuyến thông thương Trường An – Tây Vực năm 138 TCN" },
         { name: "Trịnh Hòa (郑和)", dates: "1371–1433 SCN", role: "Đô đốc chỉ huy 7 chuyến hải trình Hạ Tây Dương đầu thời Minh" }

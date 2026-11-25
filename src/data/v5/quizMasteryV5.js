@@ -753,7 +753,7 @@
       optionsEn: ["Uses unpainted space to evoke mist, water, and infinite depth inviting viewer imagination", "Saves expensive ink", "Hides brushwork errors", "Reserves space for advertisements"],
       correctIndex: 0,
       explainVi: "'Kế bạch đương hắc' biến khoảng trống giấy Tuyên thành thành phần tạo hình sống động mang tinh thần Âm Dương hư thực.",
-      explainEn: "Treating white paper as active ink embodies the Yin–Yang interplay of void and form."
+      explainEn: "Treating white paper as active ink embodies the Yin–Yang alternation of void and form."
     },
     {
       id: "v5q-059",

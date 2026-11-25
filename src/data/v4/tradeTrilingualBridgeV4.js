@@ -1628,7 +1628,7 @@
             zh: "对中越两地出口企业而言，提前部署绿电采购、优化工艺排放并完成第三方核查，不仅能降低未来碳关税成本，更将在欧洲大客户长期招标中赢得显著的合规溢价。",
             pinyin: "Duì Zhōng-Yuè liǎngdì chūkǒu qǐyè éryán, tíqián bùshǔ lǜdiàn cǎigòu, yōuhuà gōngyì páifàng bìng wánchéng dìsānfāng héchá, bùjǐn néng jiàngdī wèilái tàn guānshuì chéngběn, gèng jiāng zài Ōuzhōu dà kèhù chángqī zhāobiāo zhōng yíngdé xiǎnzhù de héguī yìjià.",
             en: "For exporters across China and Vietnam, early adoption of renewable power, cleaner process engineering, and third-party verification lowers future carbon-border exposure while securing a clear compliance advantage in long-term European tenders.",
-            vi: "Với doanh nghiệp xuất khẩu tại Trung Quốc và Việt Nam, chủ động dùng điện sạch, tối ưu phát thải công nghệ và hoàn tất kiểm định độc lập không chỉ giảm chi phí thuế carbon tương lai mà còn tạo lợi thế tuân thủ rõ rệt trong các gói thầu dài hạn tại Châu Âu."
+            vi: "Với doanh nghiệp xuất khẩu tại Trung Quốc và Việt Nam, chủ động dùng điện sạch, tối ưu phát thải công nghệ và hoàn tất kiểm định độc lập giúp vừa giảm chi phí thuế carbon tương lai vừa tạo lợi thế tuân thủ rõ rệt trong các gói thầu dài hạn tại Châu Âu."
           }
         ],
         drillPromptEn: "Draft a brief three-point checklist in English for collecting verified CBAM data from an upstream aluminum supplier.",
@@ -1674,7 +1674,7 @@
             zh: "然而，海运提速不仅取决于航速，更取决于数字化单证协同。通过提前完成ICS2安全申报、电子提单流转与内陆驳船预约，货主可显著压缩集装箱滞港时间并降低目的港综合物流风险。",
             pinyin: "Rán'ér, hǎiyùn tísù bùjǐn qǔjuéyú hángsù, gèng qǔjuéyú shùzìhuà dānzhèng xiétóng. Tōngguò tíqián wánchéng ICS2 ānquán shēnbào, diànzǐ tídān liúzhuǎn yǔ nèilù bóchuán yùyuē, huòzhǔ kě xiǎnzhù yāsuō jízhuāngxiāng zhìgǎng shíjiān bìng jiàngdī mùdìgǎng zōnghé wùliú fēngxiǎn.",
             en: "Yet corridor speed depends as much on digital documentation as on vessel knots. Filing ICS2 pre-arrival data early, adopting electronic bills of lading, and pre-booking Rhine barges sharply cut terminal dwell time and destination demurrage exposure.",
-            vi: "Tuy nhiên, tốc độ hành lang không chỉ phụ thuộc tốc độ tàu mà còn ở đồng bộ chứng từ số. Khai báo an ninh ICS2 sớm, dùng vận đơn điện tử và đặt trước sà lan sông Rhine giúp rút ngắn đáng kể thời gian lưu bãi và giảm rủi ro phí phát sinh tại cảng đích."
+            vi: "Tuy nhiên, tốc độ hành lang phụ thuộc vào cả tốc độ tàu lẫn sự đồng bộ chứng từ số. Khai báo an ninh ICS2 sớm, dùng vận đơn điện tử và đặt trước sà lan sông Rhine giúp rút ngắn đáng kể thời gian lưu bãi và giảm rủi ro phí phát sinh tại cảng đích."
           }
         ],
         drillPromptEn: "Identify three operational bottlenecks between Yantian gate-in and Rotterdam inland delivery and propose one control for each.",
@@ -1760,7 +1760,7 @@
             zh: "《红楼梦》不仅是一部文学巨著，更细腻刻画了大型家族组织的兴衰逻辑。王熙凤执掌荣国府日常运作，魄力与统筹力俱佳，却因权责高度集中、缺乏透明审计与接班梯队，导致内部寻租与现金流失衡不断累积。",
             pinyin: "Hónglóumèng bùjǐn shì yībù wénxué jùzhù, gèng xìnì kèhuà le dàxíng jiāzú zǔzhī de xīngshuāi luójí. Wáng Xīfèng zhízhǎng Róngguófǔ rìcháng yùnzuò, pòlì yǔ tǒngchóulì jùjiā, què yīn quánzé gāodù jízhōng, quēfá tòumíng shěnjì yǔ jiēbān tīduì, dǎozhì nèibù xúnzū yǔ xiànjīnliú shīhéng bùduàn lěijī.",
             en: "Beyond its literary stature, Dream of the Red Chamber offers a sharp study of organizational decline. Wang Xifeng runs the Rongguo household with decisive energy, yet excessive centralization, weak audit transparency, and missing succession planning allow rent-seeking and cash-flow strain to compound.",
-            vi: "Không chỉ là kiệt tác văn học, Hồng Lâu Mộng còn khắc họa tinh tế quy luật hưng suy của một tổ chức quy mô lớn. Vương Hy Phượng điều hành phủ Vinh Quốc đầy quyết đoán, nhưng sự tập trung quyền lực quá mức, thiếu kiểm toán minh bạch và không có đội ngũ kế cận khiến thất thoát nội bộ và mất cân đối dòng tiền tích tụ."
+            vi: "Ngoài giá trị một kiệt tác văn học, Hồng Lâu Mộng còn khắc họa tinh tế quy luật hưng suy của một tổ chức quy mô lớn. Vương Hy Phượng điều hành phủ Vinh Quốc đầy quyết đoán, nhưng sự tập trung quyền lực quá mức, thiếu kiểm toán minh bạch và không có đội ngũ kế cận khiến thất thoát nội bộ và mất cân đối dòng tiền tích tụ."
           },
           {
             zh: "随后探春推行大观园承包改革，尝试以绩效激励与开源节流扭转颓势，虽因既有利益格局掣肘而未能彻底成功，却为现代企业内控与预算治理留下了深刻启示。",

@@ -1,20 +1,31 @@
-/* CHINESE CULTURE EXPLORER — Offline-First PWA Service Worker (cce-v7.1)
+/* CHINESE CULTURE EXPLORER — Offline-First PWA Service Worker (cce-v10.1)
  * Strategy:
  * - Never intercept /api/* or /.netlify/*
- * - Network-First for HTML navigations so users/bots always see latest deploy
- * - Stale-While-Revalidate for JS, CSS, GeoJSON, and fonts
+ * - Network-First for HTML, JS, CSS so users/bots always receive latest edits
+ * - Stale-While-Revalidate for GeoJSON & fonts
  * - Bounded Cache-First for viewed images & video
  */
 
-const CACHE_VERSION = "cce-v7.1";
+const CACHE_VERSION = "cce-v10.1";
 const SHELL_CACHE = CACHE_VERSION + "-shell";
 const MEDIA_CACHE = CACHE_VERSION + "-media";
-const MAX_MEDIA_ENTRIES = 280;
+const MAX_MEDIA_ENTRIES = 240;
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(SHELL_CACHE).then((cache) =>
-      cache.addAll(["/", "/manifest.json", "/assets/images/brand/favicon.svg"]).catch(() => {})
+      cache.addAll([
+        "/",
+        "/manifest.json",
+        "/assets/images/brand/favicon.svg",
+        "/styles/v9-visual-system.css",
+        "/styles/v10-paginated-deck.css",
+        "/src/utils/v9LazyLoader.js",
+        "/src/core/v10SubpageDeck.js",
+        "/src/components/v10CollectionPaginator.js",
+        "/src/components/v10PaginatedArticleReader.js",
+        "/src/components/v10ContextualDrawer.js"
+      ]).catch(() => {})
     )
   );
   self.skipWaiting();
@@ -89,7 +100,23 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // JS, CSS, JSON -> Stale-While-Revalidate
+  // App JS & CSS -> Network-First (never lock stale scripts/styles across updates)
+  if (url.pathname.startsWith("/src/") || url.pathname.startsWith("/styles/")) {
+    event.respondWith(
+      fetch(req)
+        .then((res) => {
+          if (res && res.status === 200) {
+            const copy = res.clone();
+            caches.open(SHELL_CACHE).then((c) => c.put(req, copy)).catch(() => {});
+          }
+          return res;
+        })
+        .catch(() => caches.match(req))
+    );
+    return;
+  }
+
+  // Other assets (manifest, fonts, json) -> Stale-While-Revalidate
   event.respondWith(
     caches.open(SHELL_CACHE).then((cache) =>
       cache.match(req).then((cached) => {

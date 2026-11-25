@@ -140,7 +140,7 @@
       keyTakeaways: [
         'Quận Huyện chế và hệ thống Tam Công Cửu Khanh thay thế hoàn toàn chế độ phân phong quý tộc thế tập bằng bộ máy quan lại bổ nhiệm theo năng lực và chịu trách nhiệm trực tiếp trước Hoàng đế.',
         'Các chuẩn hóa Thư Đồng Văn (Tiểu Triện), Xa Đồng Quỹ, tiền Bán Lượng và đo lường (Độ–Lượng–Hành) giảm chi phí giao dịch hành chính và tạo nền tảng thị trường thống nhất liên vùng.',
-        'Thụy Hổ Địa Tần giản (Hồ Bắc) và Lý Gia Tần giản (Hồ Nam) chứng minh pháp luật nhà Tần vận hành bằng quy trình hồ sơ cực kỳ chi tiết về thuế khóa, kho tàng và giám định tư pháp, chứ không chỉ là hình phạt tàn bạo như hình ảnh đơn giản hóa trong sử liệu đời sau.'
+        'Thụy Hổ Địa Tần giản (Hồ Bắc) và Lý Gia Tần giản (Hồ Nam) chứng minh pháp luật nhà Tần vận hành bằng quy trình hồ sơ cực kỳ chi tiết về thuế khóa, kho tàng và giám định tư pháp, thay vì hình phạt tàn bạo một chiều như hình ảnh đơn giản hóa trong sử liệu đời sau.'
       ],
       introduction: 'Trong lịch sử chính trị Trung Hoa, năm 221 TCN đánh dấu ranh giới giữa hai kỷ nguyên: từ trật tự phong kiến phân tán kéo dài tám thế kỷ của nhà Chu sang nhà nước đế quốc tập quyền thống nhất. Dù triều Tần chỉ tồn tại 15 năm (221–206 TCN), mô hình quản trị do Doanh Chính (Tần Thủy Hoàng) và thừa tướng Lý Tư thiết lập — bắt nguồn từ cuộc biến pháp Thương Ưởng năm 356 TCN — đã quy định kiến trúc hành chính của các đế quốc Trung Hoa suốt hơn hai nghìn năm, đúng như nhận xét nổi tiếng của Đàm Tự Đồng cuối đời Thanh: "Hai nghìn năm chính trị đều là chính trị nhà Tần" (Nhị thiên niên lai chi chính, Tần chính dã).',
       historicalBackground: 'Xuất phát là một chư hầu vùng biên viễn phía Tây (Quan Trung), nước Tần từ giữa thế kỷ IV TCN đã triệt để thực thi tư tưởng Pháp gia qua hai đợt biến pháp của Thương Ưởng (356 TCN và 350 TCN): bãi bỏ chế độ tỉnh điền, thưởng quân công theo 20 bậc tước vị, lập hệ thống hộ khẩu liên đới (Thập ngũ liên tọa) và xây dựng nền kinh tế canh chiến. Nhờ nguồn lực nông nghiệp ổn định từ đồng bằng Quan Trung (với kênh Trịnh Quốc) và bồn địa Tứ Xuyên (với Đô Giang Yển), nước Tần lần lượt chinh phục sáu nước Hàn (230 TCN), Triệu (228 TCN), Ngụy (225 TCN), Sở (223 TCN), Yên (222 TCN) và Tề (221 TCN). Ngay sau khi thống nhất, cuộc tranh luận lịch sử tại triều đình Hàm Dương giữa thừa tướng Vương Quán (chủ trương phân phong hoàng tử ở các vùng xa như Yên, Tề, Sở) và đình úy Lý Tư (chủ trương áp dụng Quận Huyện chế trên toàn quốc) đã quyết định vận mệnh thể chế đế quốc.',
@@ -228,7 +228,7 @@
         'Đoàn Nghiệp / A. F. P. Hulsewé (1985), Remnants of Ch\'in Law, E. J. Brill.',
         'Hồ Nam Tỉnh Văn Vật Khảo Cổ Nghiên Cứu Sở (2012), Lý Gia Tần Giản (里耶秦简), Văn Vật Xuất Bản Xã.'
       ],
-      conclusion: 'Cách mạng thể chế thời Tần chứng tỏ sự thống nhất của một đế quốc rộng lớn không chỉ dựa vào vũ lực mà phụ thuộc vào hạ tầng chuẩn hóa hành chính, văn tự và đo lường. Sự kết hợp giữa tài liệu chính sử và hàng vạn thẻ tre khai quật tại Thụy Hổ Địa và Lý Gia cho phép nhìn nhận nhà Tần như kiến trúc sư của bộ máy quản trị quan liêu Đông Á, đồng thời là bài học lịch sử kinh điển về giới hạn của cai trị thuần cưỡng chế.'
+      conclusion: 'Cách mạng thể chế thời Tần chứng tỏ sự thống nhất của một đế quốc rộng lớn bên cạnh vũ lực còn phụ thuộc vào hạ tầng chuẩn hóa hành chính, văn tự và đo lường. Sự kết hợp giữa tài liệu chính sử và hàng vạn thẻ tre khai quật tại Thụy Hổ Địa và Lý Gia cho phép nhìn nhận nhà Tần như kiến trúc sư của bộ máy quản trị quan liêu Đông Á, đồng thời là bài học lịch sử kinh điển về giới hạn của cai trị thuần cưỡng chế.'
     },
     {
       id: 'song-dynasty-urban-science-renaissance',
@@ -552,48 +552,48 @@
   var i;
   var HERO_MAP = {
     "xia-shang-zhou-oracle-bones-rituals": "assets/images/museum/houmuwu-ding.jpg",
-    "qin-institutional-standardization": "assets/images/provinces/shaanxi-terracotta-army.jpg",
+    "qin-institutional-standardization": "assets/images/articles_v8/qin-weights-measures.jpg",
     "song-dynasty-urban-science-renaissance": "assets/images/paintings/21_qingming_shanghe.jpg",
     "grand-canal-dujiangyan-hydraulic-empire": "assets/images/articles/hero-four-inventions.jpg",
     "modern-china-transformation-1840-1949": "assets/images/articles/hero-beijing-shanghai.jpg",
-    "sixteen-ancient-capitals-geopolitics": "assets/images/provinces/beijing-temple-of-heaven.jpg",
-    "tea-horse-road-southwest-corridor": "assets/images/provinces/yunnan-lijiang-old-town.jpg",
+    "sixteen-ancient-capitals-geopolitics": "assets/images/articles_v8/ancient-capitals-luoyang.jpg",
+    "tea-horse-road-southwest-corridor": "assets/images/articles_v8/tea-horse-caravan.jpg",
     "chinese-fermentation-spices-culinary-geography": "assets/images/articles/hero-chinese-cuisines.jpg",
     "chinese-liquor-culture-baijiu-huangjiu": "assets/images/articles/hero-chinese-banquet.jpg",
-    "five-sacred-mountains-buddhist-peaks": "assets/images/provinces/shandong-taishan.jpg",
-    "dunhuang-mogao-buddhist-grotto-art": "assets/images/provinces/gansu-dunhuang-mogao.jpg",
+    "five-sacred-mountains-buddhist-peaks": "assets/images/articles_v8/five-sacred-mountains.jpg",
+    "dunhuang-mogao-buddhist-grotto-art": "assets/images/articles_v8/dunhuang-nine-story.jpg",
     "xiqu-stagecraft-face-masks-tuong": "assets/images/articles/hero-spring-festival.jpg",
-    "five-vernacular-architecture-styles": "assets/images/provinces/fujian-tulou.jpg",
+    "five-vernacular-architecture-styles": "assets/images/articles_v8/vernacular-architecture-mix.jpg",
     "ming-qing-fiction-hongloumeng-anatomy": "assets/images/articles/hero-classical-books-scrolls.jpg",
     "lacquerware-silk-woodblock-new-year-prints": "assets/images/articles/hero-laozihao-craft.jpg",
     "pre-qin-legalism-xunzi-hanfeizi": "assets/images/articles/hero-hundred-schools.jpg",
     "song-ming-neo-confucianism-zhu-wang": "assets/images/articles/hero-confucianism.jpg",
-    "chinese-chan-buddhism-aesthetics": "assets/images/provinces/henan-longmen-grottoes.jpg",
-    "mohism-logic-optics-ethics": "assets/images/prov_items/anhui/d0.jpg",
-    "religious-daoism-quanzhen-zhengyi": "assets/images/provinces/shanxi-hanging-temple.jpg",
+    "chinese-chan-buddhism-aesthetics": "assets/images/articles_v8/chan-aesthetics-grotto.jpg",
+    "mohism-logic-optics-ethics": "assets/images/articles_v8/mohism-optical-treatise.jpg",
+    "religious-daoism-quanzhen-zhengyi": "assets/images/articles_v8/daoism-wudang-palace.jpg",
     "chu-nom-liushu-script-dialogue": "assets/images/articles/hero-sino-vietnam.jpg",
     "imperial-palace-axes-beijing-thanglong-hue": "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
-    "truc-lam-zen-song-yuan-dialogue": "assets/images/prov_items/anhui/d1.jpg",
-    "east-asian-historiography-shiji-toanthu": "assets/images/prov_items/anhui/d2.jpg",
+    "truc-lam-zen-song-yuan-dialogue": "assets/images/articles_v8/truc-lam-yen-tu.jpg",
+    "east-asian-historiography-shiji-toanthu": "assets/images/articles_v8/historiography-shiji.jpg",
     "bac-y-nam-duoc-comparative-medicine": "assets/images/articles/hero-tcm-solar.jpg",
     "china-hsr-megaprojects-urban-network": "assets/images/articles/hero-contemporary-china.jpg",
     "china-green-energy-ev-battery-ecosystem": "assets/images/articles/hero-huaqiangbei-tech.jpg",
-    "china-digital-payments-platform-economy": "assets/images/prov_items/anhui/d3.jpg",
+    "china-digital-payments-platform-economy": "assets/images/articles_v8/digital-payments-qr.jpg",
     "modern-chinese-archaeology-sanxingdui-liangzhu": "assets/images/museum/sanxingdui-mask.jpg",
-    "china-space-aerospace-tiangong-beidou": "assets/images/prov_items/anhui/d4.jpg",
+    "china-space-aerospace-tiangong-beidou": "assets/images/articles_v8/china-aerospace-station.jpg",
     "rcep-acfta-cumulation-rules-vietnam": "assets/images/articles/hero-supply-chain-rcep.jpg",
     "china-trade-fairs-canton-ciie-yiwu-guide": "assets/images/articles/hero-b2b-negotiation-table.jpg",
     "gacc-decree-248-249-vietnam-agri-export": "assets/images/articles/hero-consular-field-guide.jpg",
-    "chinese-enterprises-globalization-playbook": "assets/images/provinces/guangdong-canton-tower.jpg",
-    "cross-border-b2b-contracts-cietac-viac": "assets/images/prov_items/anhui/f0.jpg",
+    "chinese-enterprises-globalization-playbook": "assets/images/articles_v8/global-enterprises-cbd.jpg",
+    "cross-border-b2b-contracts-cietac-viac": "assets/images/articles_v8/b2b-legal-contracts.jpg",
     "tang-poetry-song-ci-poetics-geography": "assets/images/articles/hero-tang-dynasty.jpg",
     "chinese-aesthetic-concepts-qiyun-yijing": "assets/images/paintings/22_qianli_jiangshan.jpg",
     "calligraphy-masterpieces-three-rarities-lineage": "assets/images/articles/hero-calligraphy-five-scripts.jpg",
     "chinese-mythology-shanhaijing-kunlun-penglai": "assets/images/paintings/01_luoshenfu_tu.jpg",
     "east-asian-woodblock-printing-encyclopedias": "assets/images/museum/yongle-dadian.jpg",
-    "temple-of-heaven-tiantan-cosmology-3d": "assets/images/prov_items/anhui/f1.jpg",
+    "temple-of-heaven-tiantan-cosmology-3d": "assets/images/articles_v8/tiantan-hall-prayer.jpg",
     "jiuzhaigou-travertine-karst": "assets/images/museum/jiuzhaigou-five-flower-lake.jpg",
-    "zhangjiajie-wulingyuan-sandstone-pillars": "assets/images/provinces/hunan-zhangjiajie.jpg"
+    "zhangjiajie-wulingyuan-sandstone-pillars": "assets/images/articles_v8/zhangjiajie-tianzi.jpg"
   };
   var arrName = typeof ARTICLES_V3_PART1A !== "undefined" ? ARTICLES_V3_PART1A
     : typeof ARTICLES_V3_PART1B !== "undefined" ? ARTICLES_V3_PART1B

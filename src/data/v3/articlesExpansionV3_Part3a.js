@@ -46,7 +46,7 @@
         },
         {
           heading: '2. Bước ngoặt "Quốc Âm Thi Tập" của Nguyễn Trãi (thế kỷ XV)',
-          body: 'Với 254 bài thơ thất ngôn xen lục ngôn, "Quốc Âm Thi Tập" là tập thơ Nôm cổ nhất còn lưu giữ trọn vẹn của Việt Nam. Nguyễn Trãi không chỉ dùng chữ Nôm để Việt hóa thể thơ Đường luật (đưa câu 6 chữ xen kẽ câu 7 chữ tạo tiết tấu tiếng Việt tự nhiên) mà còn đưa hàng loạt hình ảnh đời sống dân dã (bến đò, rau muống, bè muống, hoa sen, tiếng quốc) vào thơ bác học, chứng minh tiếng Việt có đủ năng lực biểu đạt mọi cung bậc triết lý và cảm xúc.'
+          body: 'Với 254 bài thơ thất ngôn xen lục ngôn, "Quốc Âm Thi Tập" là tập thơ Nôm cổ nhất còn lưu giữ trọn vẹn của Việt Nam. Nguyễn Trãi vừa dùng chữ Nôm để Việt hóa thể thơ Đường luật (đưa câu 6 chữ xen kẽ câu 7 chữ tạo tiết tấu tiếng Việt tự nhiên) vừa đưa hàng loạt hình ảnh đời sống dân dã (bến đò, rau muống, bè muống, hoa sen, tiếng quốc) vào thơ bác học, chứng minh tiếng Việt có đủ năng lực biểu đạt mọi cung bậc triết lý và cảm xúc.'
         },
         {
           heading: '3. Đỉnh cao nghệ thuật ngôn từ Nôm trong "Truyện Kiều" của Nguyễn Du',
@@ -112,7 +112,7 @@
         'Khai quật khu di tích 18 Hoàng Diệu (từ năm 2002) chứng minh Hoàng Thành Thăng Long có địa tầng văn hóa liên tục 1.300 năm (Đại La – Lý – Trần – Lê – Nguyễn) với hệ thống móng trụ sỏi chống lún vùng châu thổ độc đáo.',
         'Kinh Thành Huế thời Nguyễn (1804–1832) kết hợp độc đáo quy hoạch Tử Cấm Thành phương Đông ở bên trong với pháo đài phòng thủ kiểu Vauban phương Tây ở vòng thành ngoài và sông Hương – núi Ngự Bình làm bình phong phong thủy.'
       ],
-      introduction: 'Trong lịch sử quy hoạch đô thị Đông Á, hoàng cung không chỉ là nơi ở và làm việc của triều đình mà là bản đồ thu nhỏ của vũ trụ chính trị ("Thiên nhân hợp nhất"). Đặt ba Di sản Thế giới UNESCO — Tử Cấm Thành Bắc Kinh (công nhận 1987), Quần thể Di tích Cố đô Huế (1993) và Khu trung tâm Hoàng Thành Thăng Long (2010) — cạnh nhau cho phép nhận diện rõ vừa mẫu số chung của nền văn hiến đồng văn, vừa bản lĩnh sáng tạo kiến trúc riêng biệt của Việt Nam qua hơn một thiên niên kỷ.',
+      introduction: 'Trong lịch sử quy hoạch đô thị Đông Á, hoàng cung vượt lên trên nơi ở và làm việc của triều đình để giữ vai trò bản đồ thu nhỏ của vũ trụ chính trị ("Thiên nhân hợp nhất"). Đặt ba Di sản Thế giới UNESCO — Tử Cấm Thành Bắc Kinh (công nhận 1987), Quần thể Di tích Cố đô Huế (1993) và Khu trung tâm Hoàng Thành Thăng Long (2010) — cạnh nhau cho phép nhận diện rõ vừa mẫu số chung của nền văn hiến đồng văn, vừa bản lĩnh sáng tạo kiến trúc riêng biệt của Việt Nam qua hơn một thiên niên kỷ.',
       historicalBackground: 'Khuôn mẫu quy hoạch đô thành đế quốc Đông Á bắt nguồn từ thiên "Khảo Công Ký" trong "Chu Lễ" (thành vuông chín dặm, mỗi mặt ba cổng, chín đường dọc chín đường ngang, trước là triều đình sau là chợ, bên trái là Thái Miếu bên phải là Xã Tắc). Năm 1010, Lý Công Uẩn dời đô từ Hoa Lư ra Đại La (đổi tên Thăng Long), xây dựng cấu trúc Tam trùng thành quách (La Thành – Hoàng Thành – Cấm Thành) bên sông Nhị Hà. Đầu thế kỷ XV (1406–1420), Minh Thành Tổ xây Tử Cấm Thành Bắc Kinh với sự đóng góp đặc biệt của tổng công trình sư gốc Việt Nguyễn An (người bị nhà Minh đưa sang Bắc Kinh thời Minh thuộc và được giao chủ trì quy hoạch cung điện, hệ thống cầu cống kinh thành). Đến đầu thế kỷ XIX (1804), vua Gia Long và Minh Mạng kiến thiết Kinh Thành Huế bên dòng sông Hương.',
       mainContent: [
         {
@@ -196,7 +196,7 @@
         },
         {
           heading: '2. Tổ chức giáo hội thống nhất và Tam Tổ Trúc Lâm',
-          body: 'Năm 1299, Trần Nhân Tông lập Thiền phái Trúc Lâm trên núi Yên Tử, không chỉ tu tập mà còn đi khắp làng quê dạy dân bỏ mê tín, thực hành Thập thiện và thuyết giảng đạo lý. Đệ nhị tổ Pháp Loa (1284–1330) hoàn thiện quy mô tổ chức giáo hội toàn quốc: lập sổ tăng tịch, xây hơn 800 ngôi chùa–am, khắc in bộ "Đại Tạng Kinh" đầu tiên của Đại Việt (1319–1329) và đào tạo hàng vạn tăng ni. Đệ tam tổ Huyền Quang (1254–1334, nguyên Trạng nguyên Lý Đạo Tái) bồi đắp chiều sâu văn chương và trụ trì chùa Côn Sơn – Thanh Mai.'
+          body: 'Năm 1299, Trần Nhân Tông lập Thiền phái Trúc Lâm trên núi Yên Tử, vừa chuyên tâm tu tập vừa đi khắp làng quê dạy dân bỏ mê tín, thực hành Thập thiện và thuyết giảng đạo lý. Đệ nhị tổ Pháp Loa (1284–1330) hoàn thiện quy mô tổ chức giáo hội toàn quốc: lập sổ tăng tịch, xây hơn 800 ngôi chùa–am, khắc in bộ "Đại Tạng Kinh" đầu tiên của Đại Việt (1319–1329) và đào tạo hàng vạn tăng ni. Đệ tam tổ Huyền Quang (1254–1334, nguyên Trạng nguyên Lý Đạo Tái) bồi đắp chiều sâu văn chương và trụ trì chùa Côn Sơn – Thanh Mai.'
         },
         {
           heading: '3. Đối thoại với Thiền Tông Tống–Nguyên: Tương đồng và Bản sắc riêng',
@@ -299,7 +299,7 @@
           'Jiū tiānrén zhī jì, tōng gǔjīn zhī biàn, chéng yījiā zhī yán.',
           'Cứu thiên nhân chi tế, thông cổ kim chi biến, thành nhất gia chi ngôn.',
           'Khảo cứu mối giao hòa giữa Trời và Người, thông suốt quy luật biến đổi từ xưa đến nay, tạo thành một học thuyết sử học độc lập.',
-          'To examine the interplay between Heaven and Humanity, penetrate the transformations of past and present, and establish an independent school of thought.'
+          'To examine the dynamic between Heaven and Humanity, penetrate the transformations of past and present, and establish an independent school of thought.'
         ),
         PQ(
           '《大越史记全书·外纪卷一》（吴士连，1479）',
@@ -318,7 +318,7 @@
         'Ngô Sĩ Liên và các sử thần nhà Lê, Đại Việt Sử Ký Toàn Thư (Viện Khoa học Xã hội Việt Nam dịch, 4 tập).',
         'Grant Hardy (1999), Worlds of Bronze and Bamboo: Sima Qian\'s Conquest of History, Columbia University Press.'
       ],
-      conclusion: 'Đặt "Sử Ký" cạnh "Đại Việt Sử Ký Toàn Thư" giúp người học hiểu sâu không chỉ hai thể tài Kỷ truyện và Biên niên, mà cả bản lĩnh học thuật độc lập của các sử gia Đông Á trong việc bảo vệ ký ức cộng đồng trước sự biến thiên của quyền lực.'
+      conclusion: 'Đặt "Sử Ký" cạnh "Đại Việt Sử Ký Toàn Thư" giúp người học hiểu sâu đồng thời hai thể tài Kỷ truyện và Biên niên lẫn bản lĩnh học thuật độc lập của các sử gia Đông Á trong việc bảo vệ ký ức cộng đồng trước sự biến thiên của quyền lực.'
     },
     {
       id: 'bac-y-nam-duoc-comparative-medicine',
@@ -402,48 +402,48 @@
   var i;
   var HERO_MAP = {
     "xia-shang-zhou-oracle-bones-rituals": "assets/images/museum/houmuwu-ding.jpg",
-    "qin-institutional-standardization": "assets/images/provinces/shaanxi-terracotta-army.jpg",
+    "qin-institutional-standardization": "assets/images/articles_v8/qin-weights-measures.jpg",
     "song-dynasty-urban-science-renaissance": "assets/images/paintings/21_qingming_shanghe.jpg",
     "grand-canal-dujiangyan-hydraulic-empire": "assets/images/articles/hero-four-inventions.jpg",
     "modern-china-transformation-1840-1949": "assets/images/articles/hero-beijing-shanghai.jpg",
-    "sixteen-ancient-capitals-geopolitics": "assets/images/provinces/beijing-temple-of-heaven.jpg",
-    "tea-horse-road-southwest-corridor": "assets/images/provinces/yunnan-lijiang-old-town.jpg",
+    "sixteen-ancient-capitals-geopolitics": "assets/images/articles_v8/ancient-capitals-luoyang.jpg",
+    "tea-horse-road-southwest-corridor": "assets/images/articles_v8/tea-horse-caravan.jpg",
     "chinese-fermentation-spices-culinary-geography": "assets/images/articles/hero-chinese-cuisines.jpg",
     "chinese-liquor-culture-baijiu-huangjiu": "assets/images/articles/hero-chinese-banquet.jpg",
-    "five-sacred-mountains-buddhist-peaks": "assets/images/provinces/shandong-taishan.jpg",
-    "dunhuang-mogao-buddhist-grotto-art": "assets/images/provinces/gansu-dunhuang-mogao.jpg",
+    "five-sacred-mountains-buddhist-peaks": "assets/images/articles_v8/five-sacred-mountains.jpg",
+    "dunhuang-mogao-buddhist-grotto-art": "assets/images/articles_v8/dunhuang-nine-story.jpg",
     "xiqu-stagecraft-face-masks-tuong": "assets/images/articles/hero-spring-festival.jpg",
-    "five-vernacular-architecture-styles": "assets/images/provinces/fujian-tulou.jpg",
+    "five-vernacular-architecture-styles": "assets/images/articles_v8/vernacular-architecture-mix.jpg",
     "ming-qing-fiction-hongloumeng-anatomy": "assets/images/articles/hero-classical-books-scrolls.jpg",
     "lacquerware-silk-woodblock-new-year-prints": "assets/images/articles/hero-laozihao-craft.jpg",
     "pre-qin-legalism-xunzi-hanfeizi": "assets/images/articles/hero-hundred-schools.jpg",
     "song-ming-neo-confucianism-zhu-wang": "assets/images/articles/hero-confucianism.jpg",
-    "chinese-chan-buddhism-aesthetics": "assets/images/provinces/henan-longmen-grottoes.jpg",
-    "mohism-logic-optics-ethics": "assets/images/prov_items/anhui/d0.jpg",
-    "religious-daoism-quanzhen-zhengyi": "assets/images/provinces/shanxi-hanging-temple.jpg",
+    "chinese-chan-buddhism-aesthetics": "assets/images/articles_v8/chan-aesthetics-grotto.jpg",
+    "mohism-logic-optics-ethics": "assets/images/articles_v8/mohism-optical-treatise.jpg",
+    "religious-daoism-quanzhen-zhengyi": "assets/images/articles_v8/daoism-wudang-palace.jpg",
     "chu-nom-liushu-script-dialogue": "assets/images/articles/hero-sino-vietnam.jpg",
     "imperial-palace-axes-beijing-thanglong-hue": "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
-    "truc-lam-zen-song-yuan-dialogue": "assets/images/prov_items/anhui/d1.jpg",
-    "east-asian-historiography-shiji-toanthu": "assets/images/prov_items/anhui/d2.jpg",
+    "truc-lam-zen-song-yuan-dialogue": "assets/images/articles_v8/truc-lam-yen-tu.jpg",
+    "east-asian-historiography-shiji-toanthu": "assets/images/articles_v8/historiography-shiji.jpg",
     "bac-y-nam-duoc-comparative-medicine": "assets/images/articles/hero-tcm-solar.jpg",
     "china-hsr-megaprojects-urban-network": "assets/images/articles/hero-contemporary-china.jpg",
     "china-green-energy-ev-battery-ecosystem": "assets/images/articles/hero-huaqiangbei-tech.jpg",
-    "china-digital-payments-platform-economy": "assets/images/prov_items/anhui/d3.jpg",
+    "china-digital-payments-platform-economy": "assets/images/articles_v8/digital-payments-qr.jpg",
     "modern-chinese-archaeology-sanxingdui-liangzhu": "assets/images/museum/sanxingdui-mask.jpg",
-    "china-space-aerospace-tiangong-beidou": "assets/images/prov_items/anhui/d4.jpg",
+    "china-space-aerospace-tiangong-beidou": "assets/images/articles_v8/china-aerospace-station.jpg",
     "rcep-acfta-cumulation-rules-vietnam": "assets/images/articles/hero-supply-chain-rcep.jpg",
     "china-trade-fairs-canton-ciie-yiwu-guide": "assets/images/articles/hero-b2b-negotiation-table.jpg",
     "gacc-decree-248-249-vietnam-agri-export": "assets/images/articles/hero-consular-field-guide.jpg",
-    "chinese-enterprises-globalization-playbook": "assets/images/provinces/guangdong-canton-tower.jpg",
-    "cross-border-b2b-contracts-cietac-viac": "assets/images/prov_items/anhui/f0.jpg",
+    "chinese-enterprises-globalization-playbook": "assets/images/articles_v8/global-enterprises-cbd.jpg",
+    "cross-border-b2b-contracts-cietac-viac": "assets/images/articles_v8/b2b-legal-contracts.jpg",
     "tang-poetry-song-ci-poetics-geography": "assets/images/articles/hero-tang-dynasty.jpg",
     "chinese-aesthetic-concepts-qiyun-yijing": "assets/images/paintings/22_qianli_jiangshan.jpg",
     "calligraphy-masterpieces-three-rarities-lineage": "assets/images/articles/hero-calligraphy-five-scripts.jpg",
     "chinese-mythology-shanhaijing-kunlun-penglai": "assets/images/paintings/01_luoshenfu_tu.jpg",
     "east-asian-woodblock-printing-encyclopedias": "assets/images/museum/yongle-dadian.jpg",
-    "temple-of-heaven-tiantan-cosmology-3d": "assets/images/prov_items/anhui/f1.jpg",
+    "temple-of-heaven-tiantan-cosmology-3d": "assets/images/articles_v8/tiantan-hall-prayer.jpg",
     "jiuzhaigou-travertine-karst": "assets/images/museum/jiuzhaigou-five-flower-lake.jpg",
-    "zhangjiajie-wulingyuan-sandstone-pillars": "assets/images/provinces/hunan-zhangjiajie.jpg"
+    "zhangjiajie-wulingyuan-sandstone-pillars": "assets/images/articles_v8/zhangjiajie-tianzi.jpg"
   };
   var arrName = typeof ARTICLES_V3_PART1A !== "undefined" ? ARTICLES_V3_PART1A
     : typeof ARTICLES_V3_PART1B !== "undefined" ? ARTICLES_V3_PART1B

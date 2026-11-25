@@ -93,7 +93,7 @@
         'National Development and Reform Commission (NDRC, 2016), Mid-to-Long-Term Railway Network Plan.',
         'China State Railway Group (CR) Annual Statistical Bulletins.'
       ],
-      conclusion: 'Mạng lưới "Bát Tung Bát Hoành" không chỉ là thành tựu kỹ thuật cơ khí – xây dựng mà là cuộc tái định hình địa kinh tế quy mô lục địa, biến các tỉnh thành xa xôi thành một thị trường thống nhất liên thông trong ngày.'
+      conclusion: 'Mạng lưới "Bát Tung Bát Hoành" vừa là thành tựu kỹ thuật cơ khí – xây dựng vừa là cuộc tái định hình địa kinh tế quy mô lục địa, biến các tỉnh thành xa xôi thành một thị trường thống nhất liên thông trong ngày.'
     },
     {
       id: 'china-green-energy-ev-battery-ecosystem',
@@ -132,7 +132,7 @@
           body: 'Tốc độ mở rộng công suất nhanh đã kéo theo cuộc chiến giá khốc liệt trong nước và rào cản thuế quan tại Mỹ và EU. Đáp lại, các nhà sản xuất xe điện và pin Trung Quốc đẩy mạnh đầu tư nhà máy sản xuất trực tiếp tại Đông Nam Á (Thái Lan, Indonesia, Malaysia), châu Âu (Hungary) và Mỹ Latinh, tạo ra làn sóng tái cấu trúc chuỗi cung ứng ô tô khu vực.'
         }
       ],
-      theoreticalFramework: 'Kinh tế học đổi mới (như khái niệm "Chuỗi cung ứng tích hợp quy mô lớn" và "Đường cong học tập công nghệ" — Wright\'s Law) chỉ ra rằng lợi thế của Trung Quốc trong công nghệ xanh không chỉ nằm ở trợ cấp ban đầu mà ở tốc độ lặp lại kỹ thuật sản xuất hàng loạt (manufacturing learning-by-doing), nơi mỗi lần nhân đôi sản lượng lại kéo giảm mạnh chi phí đơn vị.',
+      theoreticalFramework: 'Kinh tế học đổi mới (như khái niệm "Chuỗi cung ứng tích hợp quy mô lớn" và "Đường cong học tập công nghệ" — Wright\'s Law) chỉ ra rằng lợi thế của Trung Quốc trong công nghệ xanh bắt nguồn từ tốc độ lặp lại kỹ thuật sản xuất hàng loạt (manufacturing learning-by-doing) song hành cùng trợ cấp ban đầu, nơi mỗi lần nhân đôi sản lượng lại kéo giảm mạnh chi phí đơn vị.',
       terminologyAndLiushu: [
         { hanzi: '电', pinyin: 'diàn', hanViet: 'Điện', liushu: 'Tượng hình', gloss: 'Dạng phồn thể 電 gồm bộ Vũ (雨: mưa) và tia chớp (申); nay chỉ điện năng, xe điện ("Điện động xa").' },
         { hanzi: '锂', pinyin: 'lǐ', hanViet: 'Lý (Lithium)', liushu: 'Hình thanh', gloss: 'Chữ hóa học hiện đại gồm bộ Kim (钅: kim loại) và chữ Lý (里) phiên âm nguyên tố Lithium trong pin xe điện.' },
@@ -187,7 +187,7 @@
         'Mô hình "Siêu ứng dụng" (Super-App) tích hợp Mini-Program (Tiểu chương trình) biến WeChat và Alipay thành hệ điều hành đời sống: gọi xe Didi, đặt vé tàu 12306, quét thực đơn nhà hàng, mua vé bảo tàng và đi tàu điện ngầm.',
         'Từ năm 2023–2024, cả Alipay và WeChat Pay đã mở khóa liên kết trực tiếp thẻ Visa/Mastercard quốc tế giúp du khách nước ngoài thanh toán dễ dàng mà không cần tài khoản ngân hàng nội địa Trung Quốc.'
       ],
-      introduction: 'Một trong những cú sốc văn hóa đầu tiên với du khách nước ngoài đặt chân đến Trung Quốc ngày nay là một xã hội gần như không dùng tiền mặt: từ trung tâm thương mại lớn, tàu điện ngầm đến sạp bán khoai nướng ven đường đều giao dịch tức thời qua hai tấm bảng mã QR màu xanh lam (Alipay) và xanh lục (WeChat Pay). Sự phổ cập sâu rộng của thanh toán số không chỉ là thay đổi công cụ trả tiền, mà là nền móng cho cả nền kinh tế nền tảng, giao hàng siêu tốc (Meituan, Ele.me) và thương mại livestream quy mô lớn nhất thế giới.',
+      introduction: 'Một trong những cú sốc văn hóa đầu tiên với du khách nước ngoài đặt chân đến Trung Quốc ngày nay là một xã hội gần như không dùng tiền mặt: từ trung tâm thương mại lớn, tàu điện ngầm đến sạp bán khoai nướng ven đường đều giao dịch tức thời qua hai tấm bảng mã QR màu xanh lam (Alipay) và xanh lục (WeChat Pay). Sự phổ cập sâu rộng của thanh toán số vượt qua giới hạn thay đổi công cụ trả tiền, tạo thành nền móng cho cả nền kinh tế nền tảng, giao hàng siêu tốc (Meituan, Ele.me) và thương mại livestream quy mô lớn nhất thế giới.',
       historicalBackground: 'Đầu thập niên 2000, rào cản lớn nhất của thương mại điện tử sơ khai (Taobao, thành lập năm 2003) là sự thiếu tin tưởng giữa người mua và người bán xa lạ trong bối cảnh tỷ lệ sở hữu thẻ tín dụng cực thấp. Năm 2004, Alibaba ra mắt Alipay với cơ chế ký quỹ trung gian (Escrow): tiền chỉ chuyển cho người bán sau khi người mua xác nhận nhận hàng đúng chất lượng. Bước ngoặt thứ hai diễn ra vào dịp Tết Nguyên Đán năm 2014, khi Tencent tung tính năng "Hồng bao WeChat" (Lì xì số) kết hợp chương trình Xuân Vãn CCTV, thu hút hàng trăm triệu người dùng liên kết tài khoản ngân hàng chỉ trong vài tuần, biến thanh toán mã QR thành chuẩn mực toàn dân.',
       mainContent: [
         {
@@ -337,7 +337,7 @@
         'Hệ thống định vị vệ tinh Bắc Đẩu-3 hoàn thiện phủ sóng toàn cầu tháng 7/2020, trở thành một trong bốn hệ thống GNSS toàn cầu (cùng GPS, GLONASS, Galileo) và bổ sung tính năng nhắn tin ngắn qua vệ tinh.',
         'Năm 2022, Trạm vũ trụ Thiên Cung hoàn thành cấu hình chữ T ba mô-đun (Thiên Hòa, Vấn Thiên, Mộng Thiên); tháng 6/2024, tàu Hằng Nga 6 hoàn thành lần đầu tiên trong lịch sử nhân loại mang 1.935,3 g mẫu đất đá từ nửa tối (mặt khuất) của Mặt Trăng về Trái Đất.'
       ],
-      introduction: 'Trong khi nhiều quốc gia đặt tên các sứ mệnh không gian bằng mã số kỹ thuật hoặc thần thoại Hy Lạp–La Mã, Trung Quốc đã biến toàn bộ chương trình hàng không vũ trụ hiện đại thành một bản giao hưởng của văn hiến cổ điển: tàu có người lái mang tên "Thần Châu" (con thuyền thần), trạm không gian là "Thiên Cung" (cung trời), sứ mệnh sao Hỏa mang tên bài thơ "Thiên Vấn" của Khuất Nguyên, và vệ tinh tiếp âm Mặt Trăng mang tên "Thước Kiều" (cầu Ô Thước). Đằng sau chất thơ ấy là một trong những lộ trình công nghệ dài hạn kỷ luật nhất thế giới.',
+      introduction: 'Trong khi nhiều quốc gia đặt tên các sứ mệnh không gian bằng mã số kỹ thuật hoặc thần thoại Hy Lạp–La Mã, Trung Quốc đã gắn toàn bộ chương trình hàng không vũ trụ hiện đại với hệ biểu tượng văn hiến cổ điển: tàu có người lái mang tên "Thần Châu" (con thuyền thần), trạm không gian là "Thiên Cung" (cung trời), sứ mệnh sao Hỏa mang tên bài thơ "Thiên Vấn" của Khuất Nguyên, và vệ tinh tiếp âm Mặt Trăng mang tên "Thước Kiều" (cầu Ô Thước). Đằng sau chất thơ ấy là một trong những lộ trình công nghệ dài hạn kỷ luật nhất thế giới.',
       historicalBackground: 'Khởi đầu trong bối cảnh khó khăn thập niên 1950–1960 dưới sự dẫn dắt kỹ thuật của Tiền Học Sâm và các nhà khoa học "Lưỡng Đạn Nhất Tinh", Trung Quốc phóng thành công vệ tinh đầu tiên Đông Phương Hồng 1 bằng tên lửa Trường Chinh 1 ngày 24/4/1970 (nay là Ngày Hàng không Vũ trụ Trung Quốc). Năm 1992, Dự án 921 (Chương trình vũ trụ có người lái "Tam bộ tẩu": phóng tàu có người lái → phòng thí nghiệm không gian → trạm vũ trụ thường trực) được phê duyệt. Ngày 15/10/2003, phi hành gia Dương Lợi Vĩ trên tàu Thần Châu 5 đưa Trung Quốc trở thành quốc gia thứ ba trên thế giới tự đưa người lên quỹ đạo.',
       mainContent: [
         {
@@ -402,48 +402,48 @@
   var i;
   var HERO_MAP = {
     "xia-shang-zhou-oracle-bones-rituals": "assets/images/museum/houmuwu-ding.jpg",
-    "qin-institutional-standardization": "assets/images/provinces/shaanxi-terracotta-army.jpg",
+    "qin-institutional-standardization": "assets/images/articles_v8/qin-weights-measures.jpg",
     "song-dynasty-urban-science-renaissance": "assets/images/paintings/21_qingming_shanghe.jpg",
     "grand-canal-dujiangyan-hydraulic-empire": "assets/images/articles/hero-four-inventions.jpg",
     "modern-china-transformation-1840-1949": "assets/images/articles/hero-beijing-shanghai.jpg",
-    "sixteen-ancient-capitals-geopolitics": "assets/images/provinces/beijing-temple-of-heaven.jpg",
-    "tea-horse-road-southwest-corridor": "assets/images/provinces/yunnan-lijiang-old-town.jpg",
+    "sixteen-ancient-capitals-geopolitics": "assets/images/articles_v8/ancient-capitals-luoyang.jpg",
+    "tea-horse-road-southwest-corridor": "assets/images/articles_v8/tea-horse-caravan.jpg",
     "chinese-fermentation-spices-culinary-geography": "assets/images/articles/hero-chinese-cuisines.jpg",
     "chinese-liquor-culture-baijiu-huangjiu": "assets/images/articles/hero-chinese-banquet.jpg",
-    "five-sacred-mountains-buddhist-peaks": "assets/images/provinces/shandong-taishan.jpg",
-    "dunhuang-mogao-buddhist-grotto-art": "assets/images/provinces/gansu-dunhuang-mogao.jpg",
+    "five-sacred-mountains-buddhist-peaks": "assets/images/articles_v8/five-sacred-mountains.jpg",
+    "dunhuang-mogao-buddhist-grotto-art": "assets/images/articles_v8/dunhuang-nine-story.jpg",
     "xiqu-stagecraft-face-masks-tuong": "assets/images/articles/hero-spring-festival.jpg",
-    "five-vernacular-architecture-styles": "assets/images/provinces/fujian-tulou.jpg",
+    "five-vernacular-architecture-styles": "assets/images/articles_v8/vernacular-architecture-mix.jpg",
     "ming-qing-fiction-hongloumeng-anatomy": "assets/images/articles/hero-classical-books-scrolls.jpg",
     "lacquerware-silk-woodblock-new-year-prints": "assets/images/articles/hero-laozihao-craft.jpg",
     "pre-qin-legalism-xunzi-hanfeizi": "assets/images/articles/hero-hundred-schools.jpg",
     "song-ming-neo-confucianism-zhu-wang": "assets/images/articles/hero-confucianism.jpg",
-    "chinese-chan-buddhism-aesthetics": "assets/images/provinces/henan-longmen-grottoes.jpg",
-    "mohism-logic-optics-ethics": "assets/images/prov_items/anhui/d0.jpg",
-    "religious-daoism-quanzhen-zhengyi": "assets/images/provinces/shanxi-hanging-temple.jpg",
+    "chinese-chan-buddhism-aesthetics": "assets/images/articles_v8/chan-aesthetics-grotto.jpg",
+    "mohism-logic-optics-ethics": "assets/images/articles_v8/mohism-optical-treatise.jpg",
+    "religious-daoism-quanzhen-zhengyi": "assets/images/articles_v8/daoism-wudang-palace.jpg",
     "chu-nom-liushu-script-dialogue": "assets/images/articles/hero-sino-vietnam.jpg",
     "imperial-palace-axes-beijing-thanglong-hue": "assets/images/museum/forbidden-city-imperial-axis-gate.jpg",
-    "truc-lam-zen-song-yuan-dialogue": "assets/images/prov_items/anhui/d1.jpg",
-    "east-asian-historiography-shiji-toanthu": "assets/images/prov_items/anhui/d2.jpg",
+    "truc-lam-zen-song-yuan-dialogue": "assets/images/articles_v8/truc-lam-yen-tu.jpg",
+    "east-asian-historiography-shiji-toanthu": "assets/images/articles_v8/historiography-shiji.jpg",
     "bac-y-nam-duoc-comparative-medicine": "assets/images/articles/hero-tcm-solar.jpg",
     "china-hsr-megaprojects-urban-network": "assets/images/articles/hero-contemporary-china.jpg",
     "china-green-energy-ev-battery-ecosystem": "assets/images/articles/hero-huaqiangbei-tech.jpg",
-    "china-digital-payments-platform-economy": "assets/images/prov_items/anhui/d3.jpg",
+    "china-digital-payments-platform-economy": "assets/images/articles_v8/digital-payments-qr.jpg",
     "modern-chinese-archaeology-sanxingdui-liangzhu": "assets/images/museum/sanxingdui-mask.jpg",
-    "china-space-aerospace-tiangong-beidou": "assets/images/prov_items/anhui/d4.jpg",
+    "china-space-aerospace-tiangong-beidou": "assets/images/articles_v8/china-aerospace-station.jpg",
     "rcep-acfta-cumulation-rules-vietnam": "assets/images/articles/hero-supply-chain-rcep.jpg",
     "china-trade-fairs-canton-ciie-yiwu-guide": "assets/images/articles/hero-b2b-negotiation-table.jpg",
     "gacc-decree-248-249-vietnam-agri-export": "assets/images/articles/hero-consular-field-guide.jpg",
-    "chinese-enterprises-globalization-playbook": "assets/images/provinces/guangdong-canton-tower.jpg",
-    "cross-border-b2b-contracts-cietac-viac": "assets/images/prov_items/anhui/f0.jpg",
+    "chinese-enterprises-globalization-playbook": "assets/images/articles_v8/global-enterprises-cbd.jpg",
+    "cross-border-b2b-contracts-cietac-viac": "assets/images/articles_v8/b2b-legal-contracts.jpg",
     "tang-poetry-song-ci-poetics-geography": "assets/images/articles/hero-tang-dynasty.jpg",
     "chinese-aesthetic-concepts-qiyun-yijing": "assets/images/paintings/22_qianli_jiangshan.jpg",
     "calligraphy-masterpieces-three-rarities-lineage": "assets/images/articles/hero-calligraphy-five-scripts.jpg",
     "chinese-mythology-shanhaijing-kunlun-penglai": "assets/images/paintings/01_luoshenfu_tu.jpg",
     "east-asian-woodblock-printing-encyclopedias": "assets/images/museum/yongle-dadian.jpg",
-    "temple-of-heaven-tiantan-cosmology-3d": "assets/images/prov_items/anhui/f1.jpg",
+    "temple-of-heaven-tiantan-cosmology-3d": "assets/images/articles_v8/tiantan-hall-prayer.jpg",
     "jiuzhaigou-travertine-karst": "assets/images/museum/jiuzhaigou-five-flower-lake.jpg",
-    "zhangjiajie-wulingyuan-sandstone-pillars": "assets/images/provinces/hunan-zhangjiajie.jpg"
+    "zhangjiajie-wulingyuan-sandstone-pillars": "assets/images/articles_v8/zhangjiajie-tianzi.jpg"
   };
   var arrName = typeof ARTICLES_V3_PART1A !== "undefined" ? ARTICLES_V3_PART1A
     : typeof ARTICLES_V3_PART1B !== "undefined" ? ARTICLES_V3_PART1B

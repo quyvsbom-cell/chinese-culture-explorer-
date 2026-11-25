@@ -272,7 +272,7 @@ window.CCE_PAINTINGS = {
         "brushwork": "Đỉnh cao của bút pháp 'Cao cổ du ty miêu' (高古游丝描): sợi tơ thanh thoát, nhịp điệu dồn dập nhưng chuẩn xác cao độ, nếp áo buông rủ bay lượn tạo cảm giác nhân vật như đang nhẹ bước giữa thinh không.",
         "inkAndColor": "Sắc điệu nhã nhặn, phối hợp hài hòa giữa màu đất son, đen tuyền và trắng phấn. Mực đen của mái tóc và lông mày làm nổi bật làn da ngọc ngà của các mệnh phụ quý tộc.",
         "spatialPerspective": "Các nhân vật được đặt trong không gian đa điểm, phối hợp đồ nội thất như sập gụ, gương soi tròn và rèm che để tạo chiều sâu ước lệ mà không cần quy luật tụ điểm cơ học.",
-        "symbolism": "Cảnh phụ nữ ngồi trước gương soi: tấm gương không chỉ phản chiếu dung nhan thể xác mà biểu trưng cho tấm gương đạo đức tâm linh răn mình mỗi ngày.",
+        "symbolism": "Cảnh phụ nữ ngồi trước gương soi: tấm gương vừa phản chiếu dung nhan thể xác vừa biểu trưng cho tấm gương đạo đức tâm linh răn mình mỗi ngày.",
         "philosophicalMeaning": "Sự kết hợp mẫu mực giữa luân lý chính danh Nho gia và cốt cách phong lưu 'Thanh đàm' Đạo gia của giới sĩ đại phu Giang Nam thời kỳ di cư sang phương Nam sau biến loạn Vĩnh Gia.",
         "artisticLegacy": "Được xếp vào hàng bảo vật hội họa cổ nhất thế giới còn tồn tại. Năm 1900 bị liên quân tám nước cướp khỏi Di Hòa Viên Bắc Kinh, hiện là tiêu điểm nghiên cứu mỹ thuật Trung Hoa tại phương Tây."
       },
@@ -1366,7 +1366,7 @@ window.CCE_PAINTINGS = {
       "scholarlyResearch": {
         "scholarlyConsensus": "Là tác phẩm sơn thủy hoàn hảo nhất về mặt lý luận kết hợp thực hành còn nguyên vẹn niên đại và lạc khoản chính xác của tác giả trong lịch sử mỹ thuật Trung Hoa.",
         "debatedIssues": "Cuộc thảo luận về mối liên hệ mật thiết giữa tư tưởng chính trị biến pháp của Vương An Thạch và cảm thức không gian đổi mới tràn trề sinh lực của bức tranh.",
-        "comparativeContext": "So với 'Khê Sơn Hành Lữ Đồ' trầm mặc bất động của Phạm Khoan, 'Tảo Xuân Đồ' là một bản giao hưởng chuyển động không ngừng của Khí.",
+        "comparativeContext": "So với 'Khê Sơn Hành Lữ Đồ' trầm mặc bất động của Phạm Khoan, 'Tảo Xuân Đồ' là một tổng hòa chuyển động không ngừng của Khí.",
         "academicCitations": [
           "Quách Tư (郭思), 'Lâm Tuyền Cao Trí Tập' (林泉高致集).",
           "Bảo tàng Cố Cung Đài Bắc, 'Quách Hy Tảo Xuân Đồ Triển Lãm Đồ Lục'."
@@ -2069,7 +2069,7 @@ window.CCE_PAINTINGS = {
       },
       "scholarlyResearch": {
         "scholarlyConsensus": "Bảo tàng Cố Cung Đài Bắc định danh là bảo vật tối cao. Trên tranh có chi chít hơn 40 con dấu ngự lãm và thơ đề của hoàng đế Càn Long, người vô cùng sùng kính bức họa này.",
-        "debatedIssues": "Vị trí địa lý thực tế của hai ngọn núi Tước Sơn và Hoa Bất Chú Sơn ở Tế Nam ngày nay có góc nhìn khác với bức tranh, chứng minh Triệu Mạnh Phủ vẽ bằng 'tâm tượng' chứ không đơn thuần sao chép quang học.",
+        "debatedIssues": "Vị trí địa lý thực tế của hai ngọn núi Tước Sơn và Hoa Bất Chú Sơn ở Tế Nam ngày nay có góc nhìn khác với bức tranh, chứng minh Triệu Mạnh Phủ vẽ bằng 'tâm tượng' thay vì sao chép quang học đơn giản.",
         "comparativeContext": "So với 'Thiên Lý Giang Sơn Đồ' (phú quý lộng lẫy), bức này đại diện cho sự chuyển mình triệt để sang vẻ đẹp thanh nhã, tao nhã mộc mạc của trí thức.",
         "academicCitations": [
           "Bảo tàng Cố Cung Đài Bắc, 'Triệu Mạnh Phủ Thư Họa Đặc Triển Đồ Lục'.",

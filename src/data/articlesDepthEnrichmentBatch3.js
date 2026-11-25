@@ -75,7 +75,7 @@
       additionalSections: [
         {
           heading: "Lớp 2 · Ma trận Tiến hóa Thể tài Văn học qua các Triều đại",
-          content: "Mỗi triều đại lớn không chỉ lặp lại di sản cũ mà mở một thể văn mới gắn với tầng lớp sáng tạo (Tư sĩ, Hàn lâm, Thị dân). Sự chuyển từ Văn ngôn cô đọng sang Bạch thoại đại chúng đã đặt nền cho tiếng Hoa hiện đại sau Ngũ Tứ 1919."
+          content: "Mỗi triều đại lớn bên cạnh kế thừa di sản cũ đều khai mở một thể văn mới gắn với tầng lớp sáng tạo (Tư sĩ, Hàn lâm, Thị dân). Sự chuyển từ Văn ngôn cô đọng sang Bạch thoại đại chúng đã đặt nền cho tiếng Hoa hiện đại sau Ngũ Tứ 1919."
         }
       ],
       sinoVietnameseComparison: "Việt Nam tiếp nhận niêm luật Thất ngôn Bát cú Đường luật rồi Việt hóa thành Hàn luật – Đường luật Chữ Nôm (Nguyễn Trãi, Hồ Xuân Hương, Bà Huyện Thanh Quan), đồng thời sáng tạo thể Lục bát 6–8 thuần Việt nâng tầm nghệ thuật tự sự nhân bản.",
@@ -853,7 +853,7 @@
     },
     "confucianism-society": {
       keyTakeaways: [
-        "Cấu trúc 'Ngũ Luân' (Vua–Tôi, Cha–Con, Chồng–Vợ, Anh–Em, Bạn bè) định hình trật tự xã hội dựa trên nghĩa vụ đạo đức song phương chứ không đơn thuần ép buộc một chiều.",
+        "Cấu trúc 'Ngũ Luân' (Vua–Tôi, Cha–Con, Chồng–Vợ, Anh–Em, Bạn bè) định hình trật tự xã hội dựa trên nghĩa vụ đạo đức song phương thay vì áp đặt cưỡng bức một chiều.",
         "Học thuyết 'Tu thân → Tề gia → Trị quốc → Bình thiên hạ' trong sách Đại Học đặt nền tảng giáo dục nhân cách công dân Á Đông.",
         "Chính sách 'Sai tự cách cục' (Phí Hiếu Thông) lý giải vòng tròn ưu tiên tin cậy trong gia tộc và mạng lưới doanh nghiệp Á Đông."
       ],

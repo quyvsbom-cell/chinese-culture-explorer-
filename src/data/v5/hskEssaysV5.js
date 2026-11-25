@@ -154,7 +154,7 @@
         pinyin: "Jiū tiānrén zhī jì, tōng gǔjīn zhī biàn.",
         hanViet: "Cứu thiên nhân chi tế, thông cổ kim chi biến.",
         vi: "Khảo cứu mối liên hệ giữa tự nhiên và con người, thấu hiểu quy luật biến thiên xưa nay.",
-        en: "To investigate the interplay between nature and humanity, and trace the currents of historical change.",
+        en: "To investigate the relation between nature and humanity, and trace the currents of historical change.",
         usageContextVi: "Đặt vấn đề cho bài luận liên ngành về lịch sử kinh tế, địa lý nhân văn hoặc biến đổi khí hậu.",
         usageContextEn: "Strong framing for interdisciplinary papers on economic history, human geography, or climate transitions."
       },

@@ -295,7 +295,7 @@
           'Jiū tiānrén zhī jì, tōng gǔjīn zhī biàn, chéng yījiā zhī yán.',
           'Cứu thiên nhân chi tế, thông cổ kim chi biến, thành nhất gia chi ngôn.',
           'Khảo cứu mối giao hòa giữa Trời và Người, thông suốt quy luật biến đổi từ xưa đến nay, tạo thành một học thuyết sử học độc lập.',
-          'To examine the interplay between Heaven and Humanity, penetrate the transformations of past and present, and establish an independent school of thought.'
+          'To examine the dynamic between Heaven and Humanity, penetrate the transformations of past and present, and establish an independent school of thought.'
         ),
         PQ(
           '《大越史记全书·外纪卷一》（吴士连，1479）',

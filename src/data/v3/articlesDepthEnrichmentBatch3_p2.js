@@ -74,7 +74,7 @@
       additionalSections: [
         {
           heading: '1. Con mắt nhân đạo của Nguyễn Du trong "Bắc Hành Tạp Lục" (1813–1814)',
-          body: 'Đi qua Hồ Nam, Hồ Bắc, Hà Nam, Sơn Đông lên Bắc Kinh, Nguyễn Du không chỉ đối thoại với cổ nhân (Khuất Nguyên, Đỗ Phủ, Nhạc Phi, Dương Quý Phi) mà còn dành nhiều bài thơ day dứt nhất cho số phận người nghèo trên đất Trung Quốc như "Thái Bình mại ca giả" (Ông già hát rong đất Thái Bình) và "Sở kiến hành" (mẹ con người ăn xin giữa năm mất mùa).'
+          body: 'Đi qua Hồ Nam, Hồ Bắc, Hà Nam, Sơn Đông lên Bắc Kinh, Nguyễn Du vừa đối thoại với cổ nhân (Khuất Nguyên, Đỗ Phủ, Nhạc Phi, Dương Quý Phi) vừa dành nhiều bài thơ day dứt nhất cho số phận người nghèo trên đất Trung Quốc như "Thái Bình mại ca giả" (Ông già hát rong đất Thái Bình) và "Sở kiến hành" (mẹ con người ăn xin giữa năm mất mùa).'
         },
         {
           heading: '2. Bút đàm sứ thần Đại Việt – Triều Tiên tại Yên Kinh',
@@ -188,7 +188,7 @@
         },
         {
           heading: '2. Nguyên lý "Mái cong phi thiềm" và Ánh sáng khuếch tán',
-          body: 'Độ cong vút lên ở bốn góc mái ("Cử chiết" thời Tống, "Cử giá" thời Thanh) không chỉ tạo dáng bay bổng nhẹ nhõm mà còn giúp ánh nắng mùa đông chiếu sâu vào phòng, che nắng gắt mùa hè và hất nước mưa văng xa khỏi chân cột gỗ.'
+          body: 'Độ cong vút lên ở bốn góc mái ("Cử chiết" thời Tống, "Cử giá" thời Thanh) vừa tạo dáng bay bổng nhẹ nhõm vừa giúp ánh nắng mùa đông chiếu sâu vào phòng, che nắng gắt mùa hè và hất nước mưa văng xa khỏi chân cột gỗ.'
         }
       ],
       terminologyAndLiushu: [

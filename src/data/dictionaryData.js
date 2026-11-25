@@ -238,7 +238,7 @@ window.CCE_DICTIONARY = [
     vietnamese: "Kinh tế (Hán-Việt: Kinh tế)",
     radical: "纟 (mịch) + 氵 (thủy)",
     components: "Rút gọn từ cổ ngữ 'Kinh thế tế dân' (经世济民): 经 (dệt khung cửi / quản trị đường lối) + 济 (bộ Thủy 氵: vượt sông cứu giúp dân chúng).",
-    context: "Trong văn ngôn cổ (như Tấn thư, Văn Trung Tử), 'Kinh tế' nghĩa là tài năng trị quốc giúp dân, không chỉ là hoạt động tài chính thị trường; ý nghĩa kinh tế học hiện đại hình thành cuối thế kỷ XIX.",
+    context: "Trong văn ngôn cổ (như Tấn thư, Văn Trung Tử), 'Kinh tế' nghĩa là tài năng trị quốc giúp dân, khác với nghĩa hoạt động tài chính thị trường đơn thuần; ý nghĩa kinh tế học hiện đại hình thành cuối thế kỷ XIX.",
     related: ["数字经济 (kinh tế số)", "实体经济 (kinh tế thực)", "经济增长 (tăng trưởng kinh tế)"],
     mnemonic: "Dựng khung giềng mối (经) và vượt dòng nước cứu giúp dân (济) là gốc nghĩa của Kinh tế.",
     examples: [
@@ -662,7 +662,7 @@ window.CCE_DICTIONARY = [
     related: ["海上丝绸之路 (Con đường Tơ lụa trên biển)", "张骞通西域 (Trương Khiên đi sứ Tây Vực)", "敦煌莫高窟 (Hang Mạc Cao Đôn Hoàng)"],
     mnemonic: "Những sợi tơ (纟) lụa óng ả dệt nên con đường bước chân (⻊) kết nối Á–Âu.",
     examples: [
-      { zh: "丝绸之路不仅运送商品，也促进了宗教与科学传播。", pinyin: "Sīchóu Zhī Lù bùjǐn yùnsòng shāngpǐn, yě cùjìn le zōngjiào yǔ kēxué chuánbō.", en: "The Silk Road transported not only goods, but also facilitated the spread of religion and science.", vi: "Con đường Tơ lụa không chỉ vận chuyển hàng hóa mà còn thúc đẩy truyền bá tôn giáo và khoa học." },
+      { zh: "丝绸之路不仅运送商品，也促进了宗教与科学传播。", pinyin: "Sīchóu Zhī Lù bùjǐn yùnsòng shāngpǐn, yě cùjìn le zōngjiào yǔ kēxué chuánbō.", en: "The Silk Road transported not only goods, but also facilitated the spread of religion and science.", vi: "Con đường Tơ lụa vừa vận chuyển hàng hóa vừa thúc đẩy truyền bá tôn giáo và khoa học." },
       { zh: "西安是陆上丝绸之路的东端起点。", pinyin: "Xī'ān shì lùshàng Sīchóu Zhī Lù de dōngduān qǐdiǎn.", en: "Xi'an was the eastern starting point of the overland Silk Road.", vi: "Tây An là điểm khởi đầu phía Đông của Con đường Tơ lụa trên bộ." },
       { zh: "古代越南港口也曾融入海上丝绸之路的贸易网络。", pinyin: "Gǔdài Yuènán gǎngkǒu yě céng róngrù Hǎishàng Sīchóu Zhī Lù de màoyì wǎngluò.", en: "Ancient Vietnamese ports also integrated into the trade networks of the Maritime Silk Road.", vi: "Các thương cảng cổ Việt Nam cũng từng hòa nhập vào mạng lưới thương mại của Con đường Tơ lụa trên biển." }
     ]
@@ -684,7 +684,7 @@ window.CCE_DICTIONARY = [
     examples: [
       { zh: "中国水墨画讲究“墨分五色”的层次变化。", pinyin: "Zhōngguó shuǐmòhuà jiǎngjiu 'mò fēn wǔ sè' de céngcì biànhuà.", en: "Chinese ink-wash painting emphasizes tonal gradations known as 'five shades of ink'.", vi: "Tranh thủy mặc Trung Quốc chú trọng biến hóa sắc độ 'mực chia năm màu'." },
       { zh: "宋代山水画将水墨画艺术推向高峰。", pinyin: "Sòngdài shānshuǐhuà jiāng shuǐmòhuà yìshù tuīxiàng gāofēng.", en: "Song-dynasty landscape painting pushed ink-wash art to a peak.", vi: "Tranh sơn thủy đời Tống đã đưa nghệ thuật thủy mặc lên đỉnh cao." },
-      { zh: "欣赏水墨画不仅要看笔墨，还要体味留白的意境。", pinyin: "Xīnshǎng shuǐmòhuà bùjǐn yào kàn bǐmò, hái yào tǐwèi liúbái de yìjìng.", en: "Appreciating ink-wash painting requires savoring both brushwork and the mood of empty space.", vi: "Thưởng thức tranh thủy mặc không chỉ nhìn bút mực mà còn phải cảm nhận ý cảnh của khoảng trống." }
+      { zh: "欣赏水墨画不仅要看笔墨，还要体味留白的意境。", pinyin: "Xīnshǎng shuǐmòhuà bùjǐn yào kàn bǐmò, hái yào tǐwèi liúbái de yìjìng.", en: "Appreciating ink-wash painting requires savoring both brushwork and the mood of empty space.", vi: "Thưởng thức tranh thủy mặc cần quan sát cả bút mực lẫn ý cảnh của khoảng trống." }
     ]
   },
   {
@@ -922,7 +922,7 @@ window.CCE_DICTIONARY = [
     related: ["信用卡 (thẻ tín dụng)", "商业信誉 (uy tín thương mại)", "诚信 (thành tín)"],
     mnemonic: "Lời nói (言) của một con người (亻) giữ đúng cam kết mới có giá trị sử dụng lâu dài (用).",
     examples: [
-      { zh: "在国际贸易中，信用是长期合作的基石。", pinyin: "Zài guójì màoyì zhōng, xìnyòng shì chángqī hézuò de jīshí.", en: "In international trade, trustworthiness/credit is the cornerstone of long-term cooperation.", vi: "Trong thương mại quốc tế, chữ tín là viên đá tảng của hợp tác lâu dài." },
+      { zh: "在国际贸易中，信用是长期合作的基石。", pinyin: "Zài guójì màoyì zhōng, xìnyòng shì chángqī hézuò de jīshí.", en: "In international trade, trustworthiness/credit is the foundation of long-term cooperation.", vi: "Trong thương mại quốc tế, chữ tín là viên đá tảng của hợp tác lâu dài." },
       { zh: "银行根据企业的历史交易记录评估其信用等级。", pinyin: "Yínháng gēnjù qǐyè de lìshǐ jiāoyì jìlù pínggū qí xìnyòng děngjí.", en: "Banks evaluate an enterprise's credit rating based on its historical transaction records.", vi: "Ngân hàng đánh giá xếp hạng tín dụng của doanh nghiệp dựa trên lịch sử giao dịch." },
       { zh: "古代晋商依靠严密的“信用”体系发展出遍布全国的票号。", pinyin: "Gǔdài Jìnshāng yīkào yánmì de 'xìnyòng' tǐxì fāzhǎn chū biànbù quánguó de piàohào.", en: "Historical Shanxi merchants built nationwide remittance banks relying on strict trustworthiness systems.", vi: "Tấn thương cổ đại dựa vào hệ thống chữ tín chặt chẽ để phát triển mạng lưới ngân phiếu toàn quốc." }
     ]
@@ -998,7 +998,7 @@ window.CCE_DICTIONARY = [
     vietnamese: "Trà đạo (triết lý sống và nghệ thuật thưởng trà)",
     radical: "艹 + 辶",
     components: "茶 (lá trà) + 道 (con đường / triết lý sống).",
-    context: "Không chỉ là kỹ thuật pha nước ngon ('Trà nghệ' 茶艺) mà là sự tu tâm thông qua uống trà, kết hợp tĩnh tâm của Thiền và thuận tự nhiên của Đạo gia.",
+    context: "Vượt lên kỹ thuật pha nước ngon ('Trà nghệ' 茶艺), đây là sự tu tâm thông qua uống trà, kết hợp tĩnh tâm của Thiền và thuận tự nhiên của Đạo gia.",
     related: ["茶艺 (Trà nghệ)", "茶经 (Trà Kinh – Lục Vũ)", "紫砂壶 (Ấm Tử Sa)"],
     mnemonic: "Thông qua tách trà mộc mạc (茶) để chiêm nghiệm con đường đạo lý tự nhiên (道).",
     examples: [
@@ -1480,7 +1480,7 @@ window.CCE_DICTIONARY = [
     components: "用 (sử dụng để điều tiết) + 神 (công năng tinh thần/tác dụng cốt lõi của lá số).",
     context: "Gồm 3 phép lớn: Phù ức (bổ yếu hãm mạnh), Điều hầu (điều hòa hàn–táo mùa Đông/Hè trong 《Cùng Thông Bảo Giám》), và Thông quan (hòa giải hai hành xung khắc).",
     related: ["调候用神 (Điều hầu Dụng thần)", "扶抑 (Phù ức)", "通关 (Thông quan)"],
-    mnemonic: "Chữ (神) đóng vai trò then chốt nhất được dùng (用) để cân bằng toàn cục Bát Tự.",
+    mnemonic: "Chữ (神) giữ vị trí quyết định được dùng (用) để cân bằng toàn cục Bát Tự.",
     examples: [
       { zh: "冬季出生的八字往往寒冷，子平调候派常取丙火作为调候用神。", pinyin: "Dōngjì chūshēng de Bāzì wǎngwǎng hánlěng, Zǐpíng tiáohòupài cháng qǔ Bǐnghuǒ zuòwéi tiáohòu yòngshén.", en: "Winter-born Bazi charts are often cold, so the climate-balancing school frequently selects Yang Fire (Bing) as the Useful Element.", vi: "Lá số Bát Tự sinh mùa đông thường hàn lạnh nên phái Điều Hầu hay chọn Bính Hỏa làm Dụng thần sưởi ấm." },
       { zh: "古籍常借自然气候比喻用神原则：“冬水得火而融，夏木得水而荣”。", pinyin: "Gǔjí cháng jiè zìrán qìhòu bǐyù yòngshén yuánzé: 'dōng shuǐ dé huǒ ér róng, xià mù dé shuǐ ér róng'.", en: "Classical texts often use seasonal metaphors for the balancing element: winter water melts with warmth, summer wood thrives with rain.", vi: "Cổ thư hay mượn ví von thời tiết cho nguyên tắc Dụng thần: nước mùa đông gặp ấm mà tan, cây mùa hạ gặp nước mà xanh tươi." },
@@ -1664,7 +1664,7 @@ window.CCE_DICTIONARY = [
     examples: [
       { zh: "笔、墨、纸、砚被称为“文房四宝”，是中国传统书画艺术不可或缺的工具。", pinyin: "Bǐ, mò, zhǐ, yàn bèi chēngwéi 'Wénfáng Sìbǎo', shì Zhōngguó chuántǒng shūhuà yìshù bùkě huòquē de gōngjù.", en: "Brush, inkstick, paper, and inkstone are called the Four Treasures of the Study, indispensable tools of traditional Chinese calligraphy and painting.", vi: "Bút, Mực, Giấy, Nghiên được gọi là 'Văn phòng tứ bảo', công cụ không thể thiếu của nghệ thuật thư họa truyền thống." },
       { zh: "安徽宣纸以青檀皮制成，具有“千年寿纸”的美誉，润墨性极佳。", pinyin: "Ānhuī Xuānzhǐ yǐ qīngtánpí zhìchéng, jùyǒu 'qiānnián shòuzhǐ' de měiyù, rùnmòxìng jí jiā.", en: "Anhui Xuan paper, crafted from wingceltis bark, enjoys the reputation of 'thousand-year longevity paper' with superb ink absorption.", vi: "Giấy Tuyên An Huy làm từ vỏ cây thanh đàn, nổi danh 'giấy thọ ngàn năm' với độ thấm loang mực tuyệt hảo." },
-      { zh: "文人雅士不仅使用文房四宝书写，更将端砚与印章视为案头清玩。", pinyin: "Wénrén yǎshì bùjǐn shǐyòng Wénfáng Sìbǎo shūxiě, gèng jiāng Duānyàn yǔ yìnzhāng shìwéi àntóu qīngwán.", en: "Literati not only wrote with the Four Treasures but also prized Duan inkstones and seals as refined desk objects.", vi: "Văn nhân tao nhã không chỉ dùng Văn phòng tứ bảo để viết mà còn xem nghiên Đoan và ấn chương là vật thưởng ngoạn nơi bàn sách." }
+      { zh: "文人雅士不仅使用文房四宝书写，更将端砚与印章视为案头清玩。", pinyin: "Wénrén yǎshì bùjǐn shǐyòng Wénfáng Sìbǎo shūxiě, gèng jiāng Duānyàn yǔ yìnzhāng shìwéi àntóu qīngwán.", en: "Literati not only wrote with the Four Treasures but also prized Duan inkstones and seals as refined desk objects.", vi: "Văn nhân tao nhã vừa dùng Văn phòng tứ bảo để viết vừa xem nghiên Đoan và ấn chương là vật thưởng ngoạn nơi bàn sách." }
     ]
   },
   {
@@ -1980,7 +1980,7 @@ window.CCE_DICTIONARY = [
     components: "非物质 (phi vật chất, sống động qua con người và kỹ nghệ) + 文化遗产 (di sản văn hóa truyền thừa qua các thế hệ). Thường viết tắt là 非遗 (Fēiyí).",
     context: "Trung Quốc hiện đứng đầu thế giới về số lượng Di sản Văn hóa Phi vật thể được UNESCO ghi danh (44 di sản tính đến cuối 2024, bao gồm Tết Nguyên Đán, Trà đạo, Thư pháp, Triện khắc, Côn khúc, Kinh kịch, 24 Tiết khí, Châm cứu Đông y).",
     related: ["非遗传承人 (Nghệ nhân truyền thừa di sản)", "二十四节气 (24 Tiết khí)", "工匠精神 (Tinh thần nghệ nhân)"],
-    mnemonic: "Di sản văn hóa (文化遗产) lưu truyền qua tri thức và bàn tay con người chứ không chỉ là vật thể hữu hình (非物质).",
+    mnemonic: "Di sản văn hóa (文化遗产) lưu truyền qua tri thức và bàn tay con người bên cạnh các vật thể hữu hình (非物质).",
     examples: [
       { zh: "中国是世界上拥有联合国教科文组织“非物质文化遗产”名录项目最多的国家。", pinyin: "Zhōngguó shì shìjiè shàng yōngyǒu Liánhéguó Jiàokēwén Zǔzhī 'Fēiwùzhì Wénhuà Yíchǎn' mínglù xiàngmù zuì duō de guójiā.", en: "China holds the world's largest number of items inscribed on UNESCO's Intangible Cultural Heritage lists.", vi: "Trung Quốc là quốc gia có số lượng hạng mục trong danh sách Di sản Văn hóa Phi vật thể UNESCO nhiều nhất thế giới." },
       { zh: "“春节——中国人庆祝传统新年的社会实践”于2024年成功列入人类非遗代表作名录。", pinyin: "'Chūnjié — Zhōngguórén qìngzhù chuántǒng xīnnián de shèhuì shíjiàn' yú 2024 nián chénggōng lièrù Rénlèi Fēiyí Dàibiǎozuò Mínglù.", en: "'Spring Festival, social practices of the Chinese people in celebration of the traditional new year' was inscribed on UNESCO's Representative List in 2024.", vi: "'Tết Nguyên Đán – thực hành xã hội mừng năm mới truyền thống' đã được ghi danh vào Danh sách Di sản Phi vật thể Đại diện Nhân loại năm 2024." },
@@ -2982,7 +2982,7 @@ window.CCE_DICTIONARY = [
     "radicalAnalysis": "自 (Mũi -> Tự mình) + 然 (Đốt thịt -> Vậy)",
     "etymologyAndRadicals": "象形 · 会意 — Bộ thủ: 自 (Mũi -> Tự mình) + 然 (Đốt thịt -> Vậy). Tự mình (自) vốn như thế ấy (然) mà không bị ngoại lực nhân tạo cưỡng ép.",
     "components": "Tự mình (自) vốn như thế ấy (然) mà không bị ngoại lực nhân tạo cưỡng ép.",
-    "context": "Trong Đạo gia, Tự nhiên không chỉ là cây cỏ núi sông mà là trạng thái vận hành không giả tạo.",
+    "context": "Trong Đạo gia, Tự nhiên bao hàm trạng thái vận hành không giả tạo chứ không giới hạn ở cây cỏ núi sông.",
     "related": [
       "顺其自然",
       "自然界",
@@ -3233,7 +3233,7 @@ window.CCE_DICTIONARY = [
       {
         "zh": "良好的营商环境犹如现代经济领域的“仁政”基石。",
         "pinyin": "Liánghǎo de yíngshāng huánjìng yóurú xiàndài jīngjì lǐngyù de 'rénzhèng' jīshí.",
-        "en": "A fair business environment serves as the modern cornerstone of benevolent governance.",
+        "en": "A fair business environment serves as the modern foundation of benevolent governance.",
         "vi": "Môi trường kinh doanh minh bạch tựa nền tảng 'Nhân chính' trong quản trị kinh tế hiện đại."
       }
     ]
@@ -5451,7 +5451,7 @@ window.CCE_DICTIONARY = [
         "zh": "十二生肖不仅是纪年符号，更寄托着人们对勤劳、机敏与吉祥的期盼。",
         "pinyin": "Shí'èr shēngxiào bùjǐn shì jìnián fúhào, gèng jìtuō zhe rénmen duì qínláo, jīmǐn yǔ jíxiáng de qīpàn.",
         "en": "The twelve zodiac signs represent not only years but hopes for diligence, wit, and luck.",
-        "vi": "12 Con Giáp không chỉ đếm năm mà gửi gắm kỳ vọng cần cù, lanh lợi và cát tường."
+        "vi": "12 Con Giáp vừa dùng để đếm năm vừa gửi gắm kỳ vọng cần cù, lanh lợi và cát tường."
       },
       {
         "zh": "春节期间的生肖邮票与文创设计已成为文化消费市场的年度热点。",

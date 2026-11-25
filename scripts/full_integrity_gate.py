@@ -125,7 +125,9 @@ def main() -> int:
             "v6HeritageStudios3D.js", "v7Masterpieces3D.js", "v6VisualAcademyStudios.js",
             "v4UXEnhancements.js", "travelUXHub.js", "v4KnowledgeHub.js",
             "trilingualTradeStudio.js", "laozihaoPavilionV5.js", "v5CourseAcademy.js",
-            "srsEngine.js", "exporters.js", "lazyLoader.js", "page-transition.js"
+            "srsEngine.js", "exporters.js", "lazyLoader.js", "page-transition.js",
+            "v10SubpageDeck.js", "v10CollectionPaginator.js", "v10PaginatedArticleReader.js",
+            "v10ContextualDrawer.js"
         }
     ]
     delim_issues = check_js_delimiters(v3_components)
@@ -143,7 +145,7 @@ def main() -> int:
     missing_scripts: list[str] = []
     idx_txt = (ROOT / "index.html").read_text(encoding="utf-8")
     for m in re.finditer(r'<script\b[^>]*\bsrc="([^"]+)"', idx_txt):
-        sp = m.group(1).lstrip("/")
+        sp = m.group(1).split("?", 1)[0].lstrip("/")
         if not (ROOT / sp).is_file():
             missing_scripts.append(f"MISSING index.html script: {sp}")
     lazy_txt = (ROOT / "src" / "core" / "lazyLoader.js").read_text(encoding="utf-8")
@@ -193,6 +195,8 @@ def main() -> int:
                 seo_issues.append(f"Stale SEO shell missing V6 scripts: seo_pages/{shell_rel}")
             if "src/data/v7/v7CompleteEncyclopedia.js" not in sh_txt:
                 seo_issues.append(f"Stale SEO shell missing V7 scripts: seo_pages/{shell_rel}")
+            if "src/data/v8/v8MasterBridge.js" not in sh_txt:
+                seo_issues.append(f"Stale SEO shell missing V8 bridge script: seo_pages/{shell_rel}")
     print(f"[Gate 7] SEO & OG Shells Integrity: {'PASS' if not seo_issues else 'FAIL'}")
     failures.extend(seo_issues)
 
@@ -270,11 +274,11 @@ def main() -> int:
     print(f"[Gate 9] V4/V6/V7 Data, Epistemology & WebGL Mgr: {'PASS' if not g9_issues else 'FAIL'}")
     failures.extend(g9_issues)
 
-    # Gate 10: PWA Cache Parity (cce-v7.1) & Zero Dev Jargon / Version Hype in UI Strings
+    # Gate 10: PWA Cache Parity (cce-v10.1) & Zero Dev Jargon / Version Hype in UI Strings
     g10_issues: list[str] = []
     sw_txt = (ROOT / "sw.js").read_text(encoding="utf-8") if (ROOT / "sw.js").is_file() else ""
-    if 'CACHE_VERSION = "cce-v7.1"' not in sw_txt:
-        g10_issues.append('sw.js CACHE_VERSION is not "cce-v7.1"')
+    if 'CACHE_VERSION = "cce-v10.1"' not in sw_txt:
+        g10_issues.append('sw.js CACHE_VERSION is not "cce-v10.1"')
     ui_scan = [
         ROOT / "index.html",
         ROOT / "manifest.json",
@@ -289,7 +293,7 @@ def main() -> int:
             if s.startswith("//") or s.startswith("/*") or s.startswith("*") or s.startswith("<!--"):
                 continue
             cleaned = re.sub(
-                r'(?:src|href|id|data-[a-z0-9-]+)=["\'][^"\']*["\']|CCE_V[0-9A-Za-z_]*|\b(?:v[3-7][A-Za-z0-9_]+|cce-[a-z0-9-]+|data-[a-z0-9-]+|DeepSeek-R1/V3)\b|Qwen\s*2\.[56]|pillar:\s*["\']v[3-7]["\']',
+                r'(?:src|href|id|data-[a-z0-9-]+)=["\'][^"\']*["\']|CCE_V[0-9A-Za-z_]*|\b(?:v[3-9][A-Za-z0-9_]+|v10[A-Za-z0-9_]+|cce-[a-z0-9-]+|data-[a-z0-9-]+|DeepSeek-R1/V3)\b|Qwen\s*2\.[56]|pillar:\s*["\']v[3-7]["\']',
                 '',
                 line,
             )
@@ -751,6 +755,35 @@ def main() -> int:
         if 'src="src/data/uniqueImagePool.js"' not in (ROOT / "index.html").read_text(encoding="utf-8"):
             g15_issues.append("index.html missing <script defer src=\"src/data/uniqueImagePool.js\">")
 
+    # 15.5 V8 Pack Collections MD5 & Path Dedupe
+    v8_node_dump = subprocess.run(
+        [
+            "node",
+            "-e",
+            "const fs=require('fs'),vm=require('vm');const sb={window:{CCE_V5_COURSE_LESSONS:{lessons36:[]}}};sb.globalThis=sb.window;vm.createContext(sb);for(let i=1;i<=8;i++)vm.runInContext(fs.readFileSync('src/data/v8/V8_Pack'+i+'.js','utf8'),sb);vm.runInContext(fs.readFileSync('src/data/v8/v8MasterBridge.js','utf8'),sb);console.log(JSON.stringify({D:sb.window.CCE_V8_DATA,Q:sb.window.CCE_V8_QUIZ,C:sb.window.CCE_V8_COURSE_ADDON}));",
+        ],
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+    )
+    v8_parsed: dict = {}
+    if v8_node_dump.returncode != 0:
+        g15_issues.append(f"Failed loading V8 packs via node: {v8_node_dump.stderr[:200]}")
+    else:
+        v8_parsed = _json.loads(v8_node_dump.stdout)
+        v8_d = v8_parsed.get("D", {})
+        v8_q = v8_parsed.get("Q", [])
+        v8_c = v8_parsed.get("C", {})
+        _g15_check("V8_Lessons_12", [(str(x.get("id")), x.get("imagePath", "")) for x in v8_c.get("lessons12", [])])
+        _g15_check(
+            "V8_Opera_Instruments_42",
+            [(str(x.get("id")), x.get("imagePath", "")) for x in (v8_d.get("instruments16", []) + v8_d.get("operaAndPieces24", []) + [m for m in v8_d.get("masks12", []) if m.get("imagePath")])],
+        )
+        _g15_check("V8_Ethnic_24", [(str(x.get("id")), x.get("imagePath", "")) for x in v8_d.get("ethnic24", [])])
+        _g15_check("V8_Literature_36", [(str(x.get("id")), x.get("imagePath", "")) for x in (v8_d.get("modernWorks20", []) + v8_d.get("modernAuthors16", []))])
+        _g15_check("V8_Urban_16", [(str(x.get("id")), x.get("imagePath", "")) for x in v8_d.get("urbanGreenCases16", [])])
+        _g15_check("V8_QuizVisual_50", [(str(x.get("id")), x.get("imagePath", "")) for x in v8_q if x.get("isVisualQuestion")])
+
     # 15.4 Home Zone non-overlap check in src/app.js
     app_txt_g15 = (ROOT / "src" / "app.js").read_text(encoding="utf-8")
     for req_tok in [
@@ -766,12 +799,279 @@ def main() -> int:
     print(f"[Gate 15] Zero Duplicate Images (Paths, MD5 Hashes & Home Zones): {'PASS' if not g15_issues else 'FAIL'}")
     failures.extend(g15_issues[:10])
 
+    # Gate 16: Semantic Authentic Images & Anti-Swapper Guard
+    g16_issues: list[str] = []
+    if upool_path.is_file():
+        up_raw = upool_path.read_text(encoding="utf-8")
+        if 'img.setAttribute("src", replacement)' in up_raw or "installObserver(" in up_raw:
+            g16_issues.append("uniqueImagePool.js still contains runtime DOM image-swapping mutation")
+
+    prov_path = ROOT / "src" / "data" / "imageProvenanceV8.json"
+    if not prov_path.is_file():
+        g16_issues.append("Missing src/data/imageProvenanceV8.json provenance registry")
+    else:
+        prov_obj = _json.loads(prov_path.read_text(encoding="utf-8"))
+        for eid, meta in prov_obj.items():
+            if not isinstance(meta, dict):
+                continue
+            rel_t = str(meta.get("targetFile") or "").strip().lstrip("/")
+            fp_t = ROOT / rel_t
+            if not fp_t.is_file() or fp_t.stat().st_size <= 5000:
+                g16_issues.append(f"Provenance asset missing/too small for {eid}: {rel_t}")
+
+    forbidden_prefixes = ("assets/images/prov_items/", "assets/images/provinces/")
+    if v5_data_obj and bundles and v7_bundle:
+        g16_sets = [
+            ("Brands_120", merged_120_brands),
+            ("GIs_42", gis_42),
+            ("CSC_36", [(f"v6:{x.get('id')}", x.get("imagePath", "")) for x in v6_tr.get("cscUniversities24Atlas", [])] + [(f"v7:{x.get('id')}", x.get("imagePath", "")) for x in v7_bundle.get("cscUniversities12", [])]),
+            ("Herbs_60", [(f"v6:{x.get('id')}", x.get("imagePath", "")) for x in v6_cos.get("culinaryHerbs48", [])] + [(f"v7:{x.get('id')}", x.get("imagePath", "")) for x in v7_bundle.get("herbs12", [])]),
+            ("SupplyCases_26", [(f"v6:{x.get('id')}", x.get("imagePath", "")) for x in v6_tr.get("extraSupplyCases16", [])] + [(f"v7:{x.get('id')}", x.get("imagePath", "")) for x in v7_bundle.get("extraSupplyCases10", [])]),
+            ("V7_Expeditions_16", [(str(x.get("id")), x.get("imagePath", "")) for x in v7_bundle.get("heritageExpeditions16", [])]),
+            ("SinoVietWonders_32imgs", wonder_imgs),
+            ("Lessons_60", [(f"v5l:{k}", v.get("imagePath", "")) for k, v in v5_data_obj.get("lessonEnrich", {}).items()] + [(f"v5m7:{x.get('id')}", x.get("imagePath", "")) for x in v5_data_obj.get("module7Lessons", [])] + [(f"v7l:{x.get('id')}", x.get("imagePath", "")) for x in v7_bundle.get("lessons18", [])]),
+        ]
+        for gname, gitems in g16_sets:
+            for lbl, pval in gitems:
+                if any(str(pval).startswith(pref) for pref in forbidden_prefixes):
+                    g16_issues.append(f"[{gname}] Fallback image remains on {lbl}: {pval}")
+    for lbl, pval in enumerate(v3_hero_imgs, 1):
+        if any(str(pval).startswith(pref) for pref in forbidden_prefixes):
+            g16_issues.append(f"[V3_HERO_MAP] Fallback image remains on #{lbl}: {pval}")
+    for m_ed_src in re.findall(r'"src"\s*:\s*"(assets/images/[^"]+)"', emp_src_txt):
+        if any(str(m_ed_src).startswith(pref) for pref in forbidden_prefixes):
+            g16_issues.append(f"[editorialMediaPack2026] Fallback image remains: {m_ed_src}")
+
+    # V8 Pack dataset counts, verified local image paths & provenance audit
+    if v8_parsed:
+        v8_d = v8_parsed.get("D", {})
+        v8_q = v8_parsed.get("Q", [])
+        v8_c = v8_parsed.get("C", {})
+        expected_v8_counts = [
+            ("V8 modulesMeta2", len(v8_c.get("modulesMeta2", [])), 2),
+            ("V8 lessons12", len(v8_c.get("lessons12", [])), 12),
+            ("V8 quiz total", len(v8_q), 200),
+            ("V8 quiz visual", len([q for q in v8_q if q.get("isVisualQuestion")]), 50),
+            ("V8 operaAndPieces24", len(v8_d.get("operaAndPieces24", [])), 24),
+            ("V8 instruments16", len(v8_d.get("instruments16", [])), 16),
+            ("V8 masks12", len(v8_d.get("masks12", [])), 12),
+            ("V8 ethnic24", len(v8_d.get("ethnic24", [])), 24),
+            ("V8 modernWorks20", len(v8_d.get("modernWorks20", [])), 20),
+            ("V8 modernAuthors16", len(v8_d.get("modernAuthors16", [])), 16),
+            ("V8 urbanGreenCases16", len(v8_d.get("urbanGreenCases16", [])), 16),
+            ("V8 hskPassagesV8_12", len(v8_d.get("hskPassagesV8_12", [])), 12),
+            ("V8 greenTradeCasesV8_12", len(v8_d.get("greenTradeCasesV8_12", [])), 12),
+            ("V8 craftAndNightFieldGuides12", len(v8_d.get("craftAndNightFieldGuides12", [])), 12),
+            ("V8 studio3dHotspots4", len(v8_d.get("studio3dHotspots4", [])), 4),
+        ]
+        for lbl_c, actual_c, want_c in expected_v8_counts:
+            if actual_c != want_c:
+                g16_issues.append(f"[{lbl_c}] Expected {want_c}, got {actual_c}")
+        prov_files = set(str(v.get("targetFile") or "").strip().lstrip("/") for v in prov_obj.values() if isinstance(v, dict)) if prov_path.is_file() else set()
+        v8_visual_groups = [
+            ("V8_lessons12", v8_c.get("lessons12", [])),
+            ("V8_instruments16", v8_d.get("instruments16", [])),
+            ("V8_opera24", v8_d.get("operaAndPieces24", [])),
+            ("V8_ethnic24", v8_d.get("ethnic24", [])),
+            ("V8_works20", v8_d.get("modernWorks20", [])),
+            ("V8_authors16", v8_d.get("modernAuthors16", [])),
+            ("V8_urban16", v8_d.get("urbanGreenCases16", [])),
+            ("V8_quizVisual50", [q for q in v8_q if q.get("isVisualQuestion")]),
+        ]
+        for vg_name, vg_list in v8_visual_groups:
+            for item in vg_list:
+                iid = str(item.get("id") or "")
+                ip = str(item.get("imagePath") or "").strip().lstrip("/")
+                if not ip:
+                    g16_issues.append(f"[{vg_name}] Missing imagePath on {iid}")
+                    continue
+                if any(ip.startswith(pref) for pref in forbidden_prefixes):
+                    g16_issues.append(f"[{vg_name}] Forbidden fallback image on {iid}: {ip}")
+                fp_ip = ROOT / ip
+                if not fp_ip.is_file() or fp_ip.stat().st_size <= 5000:
+                    g16_issues.append(f"[{vg_name}] Missing/small local file for {iid}: {ip}")
+                if ip not in prov_files:
+                    g16_issues.append(f"[{vg_name}] Unregistered image in provenance for {iid}: {ip}")
+
+    g16_status = "PASS" if not g16_issues else f"FAIL ({len(g16_issues)})"
+    print(f"[Gate 16] Semantic Authentic Images & Anti-Swapper Guard: {g16_status}")
+    failures.extend(g16_issues[:15])
+
+    # Gate 17: V9 Visual Design System, WCAG AAA Contrast & 8 UX Modules
+    g17_issues: list[str] = []
+    v9_css = ROOT / "styles" / "v9-visual-system.css"
+    if not v9_css.is_file():
+        g17_issues.append("Missing styles/v9-visual-system.css")
+    else:
+        css_txt = v9_css.read_text(encoding="utf-8")
+        for req_tok in (
+            "--v9-sp-1", "--v9-sp-4", "--v9-ease", ".v9-plate-cinema",
+            ".v9-plate-portrait", ".v9-exhibition-dark", ".v9-split-atlas",
+            ".v9-story-flow-shell", ".v9-print-booklet", "prefers-reduced-motion"
+        ):
+            if req_tok not in css_txt:
+                g17_issues.append(f"Missing V9 CSS token/class: {req_tok}")
+
+    v9_modules = [
+        ROOT / "src" / "utils" / "v9LazyLoader.js",
+        ROOT / "src" / "components" / "v9HomeExperience.js",
+        ROOT / "src" / "components" / "v9VisualDiscovery.js",
+        ROOT / "src" / "components" / "v9HandscrollViewer.js",
+        ROOT / "src" / "components" / "v9SplitAtlas.js",
+        ROOT / "src" / "components" / "v9TripPlanner.js",
+        ROOT / "src" / "components" / "v9ScrollytellingReader.js",
+        ROOT / "src" / "components" / "v9DataStories.js",
+    ]
+    emoji_rx_v9 = re.compile(r"[\U0001F300-\U0001FAFF]")
+    for mp in v9_modules:
+        if not mp.is_file():
+            g17_issues.append(f"Missing V9 JS module: {mp.relative_to(ROOT).as_posix()}")
+        elif emoji_rx_v9.search(mp.read_text(encoding="utf-8")):
+            g17_issues.append(f"UI emoji detected inside {mp.name}")
+
+    idx_html_txt = (ROOT / "index.html").read_text(encoding="utf-8")
+    if 'styles/v9-visual-system.css' not in idx_html_txt:
+        g17_issues.append("index.html missing styles/v9-visual-system.css link")
+    if 'CACHE_VERSION = "cce-v10.1"' not in (ROOT / "sw.js").read_text(encoding="utf-8"):
+        g17_issues.append("sw.js CACHE_VERSION is not cce-v10.1")
+
+    def _rel_lum(hex_c: str) -> float:
+        hx = hex_c.lstrip("#")
+        vals = []
+        for idx_c in (0, 2, 4):
+            s = int(hx[idx_c:idx_c+2], 16) / 255.0
+            vals.append(s / 12.92 if s <= 0.03928 else ((s + 0.055) / 1.055) ** 2.4)
+        return 0.2126 * vals[0] + 0.7152 * vals[1] + 0.0722 * vals[2]
+
+    for lbl_p, fg_h, bg_h in (
+        ("Xuan Light", "#1A1918", "#FAF7F2"),
+        ("Sepia Linen", "#231E18", "#F4ECD8"),
+        ("Dark Inkstone", "#F2EFE9", "#121211"),
+        ("Exhibition Dark", "#F3EFE6", "#141311"),
+    ):
+        l1, l2 = _rel_lum(fg_h), _rel_lum(bg_h)
+        cr = (max(l1, l2) + 0.05) / (min(l1, l2) + 0.05)
+        if cr < 7.0:
+            g17_issues.append(f"WCAG AAA <7.0 contrast on {lbl_p}: {cr:.2f}")
+
+    g17_status = "PASS" if not g17_issues else f"FAIL ({len(g17_issues)})"
+    print(f"[Gate 17] V9 Visual Design System, WCAG AAA & 8 UX Modules: {g17_status}")
+    failures.extend(g17_issues[:15])
+
+    # Gate 18: V10 Sub-Page Deck, Paginated Collections, Unified Reader & Drawer
+    g18_issues: list[str] = []
+    v10_assets = [
+        "styles/v10-paginated-deck.css",
+        "src/core/v10SubpageDeck.js",
+        "src/components/v10CollectionPaginator.js",
+        "src/components/v10PaginatedArticleReader.js",
+        "src/components/v10ContextualDrawer.js",
+    ]
+    for rel_a in v10_assets:
+        fp_a = ROOT / rel_a
+        if not fp_a.is_file() or fp_a.stat().st_size < 100:
+            g18_issues.append(f"Missing or empty V10 asset: {rel_a}")
+        if rel_a not in idx_html_txt:
+            g18_issues.append(f"index.html missing V10 asset reference: {rel_a}")
+        if rel_a not in sw_txt:
+            g18_issues.append(f"sw.js SHELL_CACHE missing V10 asset: {rel_a}")
+
+    app_txt = (ROOT / "src" / "app.js").read_text(encoding="utf-8")
+    for req_hook in (
+        "CCE_V10_DECK.renderDeck",
+        "CCE_V10_PAGINATOR.paginate",
+        "CCE_V10_READER.renderUnifiedToolbar",
+        "CCE_V10_READER.renderChapters",
+        "CCE_V10_DRAWER.renderHost",
+    ):
+        if req_hook not in app_txt:
+            g18_issues.append(f"src/app.js missing V10 hook: {req_hook}")
+
+    for lbl_p, fg_h, bg_h in (
+        ("V10 Active Tab Light", "#821C1C", "#F7F4ED"),
+        ("V10 Active Tab Dark", "#E5A93C", "#121316"),
+    ):
+        l1, l2 = _rel_lum(fg_h), _rel_lum(bg_h)
+        cr = (max(l1, l2) + 0.05) / (min(l1, l2) + 0.05)
+        if cr < 7.0:
+            g18_issues.append(f"WCAG AAA <7.0 contrast on {lbl_p}: {cr:.2f}")
+
+    print(f"[Gate 18] V10 Sub-Page Deck, Paginated Collections, Unified Reader & Drawer: {'PASS' if not g18_issues else f'FAIL ({len(g18_issues)})'}")
+    failures.extend(g18_issues[:15])
+
+    # Gate 19: V10 De-AI Editorial Prose, Zero MUJI & Clean Sentence-Case Titles
+    g19_issues: list[str] = []
+    ai_ese_patterns = [
+        ("không chỉ", re.compile(r"\bkhông chỉ\b", re.IGNORECASE)),
+        ("không đơn thuần", re.compile(r"\bkhông đơn thuần\b", re.IGNORECASE)),
+        ("bản giao hưởng", re.compile(r"\bbản giao hưởng\b", re.IGNORECASE)),
+        ("minh chứng sống động", re.compile(r"\bminh chứng sống động\b", re.IGNORECASE)),
+        ("bức tranh toàn cảnh", re.compile(r"\bbức tranh toàn cảnh\b", re.IGNORECASE)),
+        ("nền tảng vững chắc", re.compile(r"\bnền tảng vững chắc\b", re.IGNORECASE)),
+        ("sợi chỉ đỏ", re.compile(r"\bsợi chỉ đỏ\b", re.IGNORECASE)),
+        ("kết tinh tinh hoa", re.compile(r"\bkết tinh tinh hoa\b", re.IGNORECASE)),
+        ("vai trò then chốt", re.compile(r"\bvai trò then chốt\b", re.IGNORECASE)),
+        ("đóng vai trò như", re.compile(r"\bđóng vai trò như\b", re.IGNORECASE)),
+        ("một cách sâu sắc", re.compile(r"\bmột cách sâu sắc\b", re.IGNORECASE)),
+        ("hành trình khám phá", re.compile(r"\bhành trình khám phá\b", re.IGNORECASE)),
+        ("kho tàng vô giá", re.compile(r"\bkho tàng vô giá\b", re.IGNORECASE)),
+        ("tapestry", re.compile(r"\btapestry\b", re.IGNORECASE)),
+        ("testament to", re.compile(r"\btestament to\b", re.IGNORECASE)),
+        ("not merely", re.compile(r"\bnot merely\b", re.IGNORECASE)),
+        ("underscores", re.compile(r"\bunderscores\b", re.IGNORECASE)),
+        ("interplay", re.compile(r"\binterplay\b", re.IGNORECASE)),
+        ("cornerstone", re.compile(r"\bcornerstone\b", re.IGNORECASE)),
+        ("beacon of", re.compile(r"\bbeacon of\b", re.IGNORECASE)),
+        ("rich heritage", re.compile(r"\brich heritage\b", re.IGNORECASE)),
+    ]
+    textile_rx = re.compile(r"(?:slit[- ]tapestry|kesi\s+tapestry|silk\s+tapestry)", re.IGNORECASE)
+    for jp in sorted((ROOT / "src").rglob("*.js")):
+        rel_j = jp.relative_to(ROOT).as_posix()
+        if rel_j == "src/data/brandIdentityData.js":
+            continue
+        for ln_no, ln_txt in enumerate(jp.read_text(encoding="utf-8").splitlines(), 1):
+            for label_p, rx_p in ai_ese_patterns:
+                for m_p in rx_p.finditer(ln_txt):
+                    if label_p == "tapestry":
+                        ctx_t = ln_txt[max(0, m_p.start() - 25):min(len(ln_txt), m_p.end() + 25)]
+                        if textile_rx.search(ctx_t):
+                            continue
+                    g19_issues.append(f"AI-ese '{label_p}' in {rel_j}:{ln_no}")
+
+    muji_rx = re.compile(r"\bmuji\b", re.IGNORECASE)
+    for chk_dir in (ROOT / "src", ROOT / "styles"):
+        for fp_m in chk_dir.rglob("*"):
+            if fp_m.suffix in {".js", ".css"} and muji_rx.search(fp_m.read_text(encoding="utf-8", errors="ignore")):
+                g19_issues.append(f"Banned MUJI token in {fp_m.relative_to(ROOT).as_posix()}")
+    if muji_rx.search(idx_html_txt):
+        g19_issues.append("Banned MUJI token in index.html")
+
+    seo_py = (ROOT / "scripts" / "generate_seo_files.py").read_text(encoding="utf-8")
+    meta_blk = re.search(r"STATIC_SECTION_META\s*=\s*\{(.*?)\n\}", seo_py, re.S)
+    if meta_blk:
+        for title_ln in re.findall(r'f"([^"]+\{SITE_BRAND\}[^"]*)"', meta_blk.group(1)):
+            if "&" in title_ln or "Phiên bản 2.0" in title_ln or "Giám định Zoom" in title_ln or "MODULE" in title_ln:
+                g19_issues.append(f"Unclean SEO title: {title_ln}")
+
+    for h1_m in re.finditer(r"<h1[^>]*>(.*?)</h1>", app_txt, re.S):
+        h1_inner = h1_m.group(1)
+        if "&amp;" in h1_inner or "Phiên bản 2.0" in h1_inner or "Giám định Zoom" in h1_inner or re.search(r"\bMODULE\b", h1_inner):
+            g19_issues.append(f"Unclean route <h1> in src/app.js: {h1_inner[:80]}")
+
+    cert_rx = re.compile(r"CHỨNG CHỈ HOÀN THÀNH|Xuất Chứng Chỉ|exportCertificatePng|cce-v6-certificate-studio|nhận chứng chỉ|Completion Certificate|Claim Certificate", re.IGNORECASE)
+    for cp in sorted((ROOT / "src").rglob("*.js")):
+        if cert_rx.search(cp.read_text(encoding="utf-8", errors="ignore")):
+            g19_issues.append(f"Removed certificate UI still present in {cp.relative_to(ROOT).as_posix()}")
+
+    print(f"[Gate 19] V10 De-AI Editorial Prose, Zero MUJI & Clean Titles: {'PASS' if not g19_issues else f'FAIL ({len(g19_issues)})'}")
+    failures.extend(g19_issues[:20])
+
     if failures:
         print("\nGATE FAILURES:")
         for f in failures:
             print(" -", f)
         return 1
-    print("\nALL 15 INTEGRITY GATES PASSED CLEANLY.")
+    print("\nALL 19 INTEGRITY GATES PASSED CLEANLY.")
     return 0
 
 

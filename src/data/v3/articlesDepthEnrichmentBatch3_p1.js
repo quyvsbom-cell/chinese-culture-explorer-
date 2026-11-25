@@ -198,7 +198,7 @@
         { hanzi: '妈', pinyin: 'mā', hanViet: 'Ma (trong Ma Tổ)', liushu: 'Hình thanh', gloss: 'Trong tín ngưỡng "Ma Tổ" (Lâm Mặc Nương quê Phủ Điền, Phúc Kiến) — vị nữ thần bảo hộ tàu biển của thương nhân Mân–Quảng.' },
         { hanzi: '侨', pinyin: 'qiáo', hanViet: 'Kiều', liushu: 'Hình thanh', gloss: 'Gồm bộ Nhân (亻) và chữ Kiều (乔); chỉ cư dân sinh sống, lập nghiệp lâu dài ở nước ngoài ("Hoa kiều").' }
       ],
-      conclusion: 'Mạng lưới hải thương Phúc Kiến – Quảng Đông chứng minh lịch sử kinh tế Trung Hoa không chỉ đóng khung trong lục địa nông nghiệp, mà còn từng là mắt xích sống động kết nối Đông Nam Á, Việt Nam và thị trường hàng hải toàn cầu.'
+      conclusion: 'Mạng lưới hải thương Phúc Kiến – Quảng Đông chứng minh lịch sử kinh tế Trung Hoa vượt ra ngoài khuôn khổ lục địa nông nghiệp, từng là mắt xích sống động kết nối Đông Nam Á, Việt Nam và thị trường hàng hải toàn cầu.'
     }
   };
 

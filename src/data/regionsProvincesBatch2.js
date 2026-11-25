@@ -469,7 +469,7 @@
       ],
       intangibleHeritage: "Nghệ thuật Biến Diện và Phun lửa Xuyên kịch (川剧变脸 Chuānjù biànliǎn – bí thuật đổi mặt nạ lụa chớp mắt trong tích tắc); Thêu Thục Tú (蜀绣 – một trong Tứ đại Danh tú từ thời Hán); Gấm Thục Cẩm (蜀锦); Nghệ thuật đan tre và sơn mài Thành Đô; và văn hóa Trà quán Cổ (Cái Oản Trà 盖碗茶).",
       culinaryCulture: {
-        styleOverview: "Xuyên Thái (川菜 Chuāncài) có phạm vi ảnh hưởng phổ biến nhất Trung Quốc nhờ nguyên lý 'Bách thái bách vị' (trăm món trăm vị) không chỉ đơn thuần cay xé mà phối hợp tới 24 hương vị phức tạp: Ngư hương, Ma lạt, Quái vị, Hồng du, Gia thường dùng Đậu biện tương Bì Huyện và Hoa tiêu Hán Nguyên.",
+        styleOverview: "Xuyên Thái (川菜 Chuāncài) có phạm vi ảnh hưởng phổ biến nhất Trung Quốc nhờ nguyên lý 'Bách thái bách vị' (trăm món trăm vị), vượt qua vị cay đơn sắc để phối hợp tới 24 hương vị phức tạp: Ngư hương, Ma lạt, Quái vị, Hồng du, Gia thường dùng Đậu biện tương Bì Huyện và Hoa tiêu Hán Nguyên.",
         signatureDishes: [
           { hanzi: "麻婆豆腐", pinyin: "Mápó dòufu", hanViet: "Ma Bà đậu hủ", description: "Kiệt tác 8 tiêu chuẩn 'Ma, Lạt, Thang, Hương, Tô, Nộn, Tiên, Hoạt' của bà chủ quán mặt rỗ (Trần Ma Bà, 1862): đậu phụ non vuông vắn không vỡ ngập trong xốt bò băm Đậu Biện Bì Huyện rắc bột hoa tiêu Hán Nguyên." },
           { hanzi: "回锅肉", pinyin: "Huíguōròu", hanViet: "Hồi oa nhục (Thịt ba chỉ hai lần chảo)", description: "Vua của cơm nhà Tứ Xuyên: thịt mông ba chỉ luộc rồi thái lát mỏng áp chảo xèo mỡ ('Đăng trản oa' cong tròn) đảo cùng Đậu Biện tương, đậu xị và lá tỏi xanh." },

@@ -621,6 +621,129 @@
       });
     });
 
+    var v8D = window.CCE_V8_DATA || {};
+    var v8C = window.CCE_V8_COURSE_ADDON || {};
+    (v8C.lessons12 || []).forEach(function (ls) {
+      out.push({
+        type: "explore",
+        id: ls.id || "explore",
+        title: "[Học phần " + ls.moduleNum + " · Bài " + ls.lessonNum + "] " + ls.titleVi,
+        titleEn: "[Module " + ls.moduleNum + " · L" + ls.lessonNum + "] " + ls.titleEn,
+        zh: ls.titleZh || "",
+        sub: ls.coreQuestionVi || "Structured Curriculum",
+        rawTitle: norm(ls.titleVi + " " + ls.titleEn + " " + (ls.titleZh || "")),
+        body: norm(ls.synthesisParagraphVi || "")
+      });
+    });
+    (v8D.operaAndPieces24 || []).forEach(function (op) {
+      out.push({
+        type: "traditional",
+        id: op.id,
+        title: "[Kịch – Cổ cầm] " + op.titleVi + " (" + op.titleZh + ")",
+        titleEn: "[Stage & Guqin] " + op.titleEn,
+        zh: op.titleZh || "",
+        sub: (op.type || "") + " · " + (op.eraVi || ""),
+        rawTitle: norm(op.titleVi + " " + op.titleEn + " " + (op.titleZh || "") + " " + (op.pinyin || "")),
+        body: norm((op.mujiDigestVi || "") + " " + (op.synopsisVi || ""))
+      });
+    });
+    (v8D.instruments16 || []).forEach(function (ins) {
+      out.push({
+        type: "traditional",
+        id: ins.id,
+        title: "[Nhạc khí Bát Âm] " + ins.nameVi + " (" + ins.zh + ")",
+        titleEn: "[Eight-Tone Instrument] " + ins.nameEn + " (" + ins.zh + ")",
+        zh: ins.zh || "",
+        sub: (ins.categoryBaYin || "") + " · " + (ins.pinyin || ""),
+        rawTitle: norm(ins.zh + " " + ins.pinyin + " " + ins.nameVi + " " + ins.nameEn),
+        body: norm((ins.acousticsVi || "") + " " + (ins.vietnamParallelVi || ""))
+      });
+    });
+    (v8D.ethnic24 || []).forEach(function (et) {
+      out.push({
+        type: "regions",
+        id: et.id,
+        title: "[Dân tộc Vùng biên] " + et.nameVi + " (" + et.zh + ")",
+        titleEn: "[Borderland Community] " + et.nameEn + " (" + et.zh + ")",
+        zh: et.zh || "",
+        sub: (et.languageFamilyVi || "") + " · " + (et.regionFocusVi || ""),
+        rawTitle: norm(et.zh + " " + et.pinyin + " " + et.nameVi + " " + et.nameEn + " " + (et.regionFocusVi || "")),
+        body: norm((et.mujiDigestVi || "") + " " + (et.vietnamEthnicLinkVi || ""))
+      });
+    });
+    (v8D.modernWorks20 || []).forEach(function (mw) {
+      out.push({
+        type: "library",
+        id: mw.id,
+        title: "[Văn học 1918–2026] " + mw.titleVi + " (" + mw.authorVi + ")",
+        titleEn: "[Modern Literature] " + mw.titleEn + " (" + mw.authorEn + ")",
+        zh: mw.titleZh || "",
+        sub: (mw.year || "") + " · " + (mw.authorVi || ""),
+        rawTitle: norm(mw.titleVi + " " + mw.titleEn + " " + (mw.titleZh || "") + " " + (mw.authorVi || "")),
+        body: norm((mw.mujiDigestVi || "") + " " + (mw.historicalSignificanceVi || ""))
+      });
+    });
+    (v8D.modernAuthors16 || []).forEach(function (au) {
+      out.push({
+        type: "library",
+        id: au.id,
+        title: "[Tác gia] " + au.nameVi + " (" + au.nameZh + ")",
+        titleEn: "[Author] " + au.nameEn + " (" + au.nameZh + ")",
+        zh: au.nameZh || "",
+        sub: (au.lifeSpan || "") + " · " + (au.movementVi || ""),
+        rawTitle: norm(au.nameVi + " " + au.nameEn + " " + (au.nameZh || "") + " " + (au.pinyin || "")),
+        body: norm(au.styleSignatureVi || "")
+      });
+    });
+    (v8D.urbanGreenCases16 || []).forEach(function (uc) {
+      out.push({
+        type: "explore",
+        id: uc.id,
+        title: "[Đô thị Xanh] " + uc.titleVi + " (" + uc.cityVi + ")",
+        titleEn: "[Green Urbanism] " + uc.titleEn,
+        zh: uc.titleZh || "",
+        sub: (uc.domain || "") + " · " + (uc.cityVi || ""),
+        rawTitle: norm(uc.titleVi + " " + uc.titleEn + " " + (uc.titleZh || "") + " " + (uc.cityVi || "")),
+        body: norm((uc.mujiDigestVi || "") + " " + (uc.engineeringMechanicsVi || ""))
+      });
+    });
+    (v8D.greenTradeCasesV8_12 || []).forEach(function (gt) {
+      out.push({
+        type: "business",
+        id: gt.id,
+        title: "[Thương mại Xanh] " + gt.titleVi,
+        titleEn: "[Green Trade] " + gt.titleEn,
+        zh: gt.titleZh || "",
+        sub: (gt.domain || "") + " · " + (gt.regulationRef || ""),
+        rawTitle: norm(gt.titleVi + " " + gt.titleEn + " " + (gt.titleZh || "") + " " + (gt.regulationRef || "")),
+        body: norm((gt.scenarioVi || "") + " " + (gt.riskAnalysisVi || ""))
+      });
+    });
+    (v8D.craftAndNightFieldGuides12 || []).forEach(function (fg) {
+      out.push({
+        type: "regions",
+        id: fg.id,
+        title: "[Làng nghề & Bảo tàng Đêm] " + fg.titleVi,
+        titleEn: "[Craft & Night Guide] " + fg.titleEn,
+        zh: fg.cityZh || "",
+        sub: (fg.cityZh || "") + " · " + (fg.hsrStationZh || ""),
+        rawTitle: norm(fg.titleVi + " " + fg.titleEn + " " + (fg.cityZh || "")),
+        body: norm(fg.routeHighlightsVi || "")
+      });
+    });
+    (v8D.hskPassagesV8_12 || []).forEach(function (hp) {
+      out.push({
+        type: "learning",
+        id: hp.id,
+        title: "[HSK 7–9] " + hp.titleVi + " (" + hp.titleZh + ")",
+        titleEn: "[HSK 7–9] " + hp.titleEn,
+        zh: hp.titleZh || "",
+        sub: hp.topicTag || "HSK 7–9",
+        rawTitle: norm(hp.titleVi + " " + hp.titleEn + " " + (hp.titleZh || "")),
+        body: norm(hp.transVi || "")
+      });
+    });
+
     _items = out;
     _dirty = false;
     return out;

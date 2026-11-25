@@ -124,7 +124,7 @@
       philosophicalConceptsEn: [
         "Know Yourself and Know Your Adversary (知彼知己，百战不殆): Information symmetry and realistic self-audit.",
         "Warfare Relies on Deception/Asymmetry (兵者，诡道也): Strategic unpredictability and feints.",
-        "Orthodox & Extraordinary Interplay (奇正相生): Seamless coordination of direct force (Zheng) and unexpected maneuver (Qi).",
+        "Orthodox & Extraordinary Balance (奇正相生): Seamless coordination of direct force (Zheng) and unexpected maneuver (Qi).",
         "Complete Victory (全胜): Securing strategic advantage with minimal human and material devastation."
       ],
       historicalInfluenceEn: "Profoundly shaped East Asian military statecraft — including Vietnamese strategists such as Tran Hung Dao and Nguyen Trai — and remains a global classic in strategic studies.",
@@ -254,7 +254,7 @@
       summaryEn: "Thirteen chapters systematizing grand strategy: pre-war calculation, logistics, offensive economy, disposition, emptiness vs. fullness, and intelligence operations — textually corroborated by Han bamboo slips excavated at Yinqueshan.",
       whyItMattersEn: "Definitive treatise on strategic economy ('subduing the enemy whole without battle'), widely studied from defense academies to commercial negotiations.",
       excerptsEn: [
-        { passageTitleEn: "Attack by Stratagem — Complete Victory Without Fighting", commentaryEn: "Cornerstone principle of negotiation preserving resources rather than mutually destructive attrition." },
+        { passageTitleEn: "Attack by Stratagem — Complete Victory Without Fighting", commentaryEn: "Foundational principle of negotiation preserving resources rather than mutually destructive attrition." },
         { passageTitleEn: "Attack by Stratagem — Two-Way Strategic Intelligence", commentaryEn: "Enduring maxim for partner due diligence and candid self-assessment prior to commitment." },
         { passageTitleEn: "Weak Points and Strong — Fluid Adaptability Like Water", commentaryEn: "Deep synthesis of Daoist natural fluidity into agile field strategy." }
       ]
@@ -356,7 +356,7 @@
       authorEn: "Wang Yangming (王阳明, 1472–1529 — recorded by Xu Ai & disciples)",
       schoolEn: "Yangming School of Mind (Confucianism)",
       summaryEn: "Recorded dialogues and philosophical letters of Wang Shouren (Wang Yangming), advancing revolutionary theses: 'Mind is Principle', 'Unity of Knowledge and Action', and 'Extending Innate Moral Knowing', liberating moral agency from dry bookish scholasticism.",
-      whyItMattersEn: "Cornerstone of Ming Mind Learning championing autonomous moral conscience and inseparable unity of knowing and doing.",
+      whyItMattersEn: "Core pillar of Ming Mind Learning championing autonomous moral conscience and inseparable unity of knowing and doing.",
       excerptsEn: [
         { passageTitleEn: "Part I — Unity of Knowledge and Action", commentaryEn: "Dismantles late-Ming divorce between sterile academic theory and ethical practice." },
         { passageTitleEn: "Letters — Harder to Subdue the Thief Within", commentaryEn: "Wang Yangming's candid field observation written to disciples during southern military pacification." }
@@ -578,7 +578,7 @@
       whyItMattersEn: "Great Vietnamese National Poet Nguyen Du's 131-poem Hanzi collection embodying autonomous Vietnamese conscience and universal humanitarian sympathy.",
       excerptsEn: [
         { passageTitleEn: "Counter-Summons of the Soul — Dialogue with Qu Yuan", commentaryEn: "Philosophically daring Hanzi poem composed along the Xiang River by Vietnam's Chief Envoy." },
-        { passageTitleEn: "The Blind Singing Beggar at Taiping — Universal Compassion", commentaryEn: "Luminous testament to the moral breadth of Vietnamese diplomatic literature." },
+        { passageTitleEn: "The Blind Singing Beggar at Taiping — Universal Compassion", commentaryEn: "Canonical example of the moral breadth in Vietnamese diplomatic literature." },
         { passageTitleEn: "Tomb of Qin Hui — Verdict of Historical Justice", commentaryEn: "Cutting historical reflection composed in Hangzhou by Dai Viet's envoy." }
       ]
     }

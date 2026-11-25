@@ -496,7 +496,7 @@
         meaningEn: "Shimmering lake waters paired with verdant mountain slopes.",
         originVi: "Thi phẩm của Ngô Dung (đời Đường) và Tô Thức (đời Tống) vịnh Tây Hồ Hàng Châu.",
         usageExampleZh: "清晨漫步杭州西湖，湖光山色令人沉醉。",
-        usageExampleEn: "Strolling along Hangzhou's West Lake at dawn, the interplay of lake light and mountain hues is captivating."
+        usageExampleEn: "Strolling along Hangzhou's West Lake at dawn, the shimmer of lake light against mountain hues is captivating."
       },
       {
         id: "cy-t03",
@@ -1038,7 +1038,7 @@
         pinyin: "wěn zhā wěn dǎ",
         hanViet: "Ổn trát ổn đả",
         literalVi: "Đóng trại vững vàng, tiến đánh chắc chắn",
-        meaningVi: "Chiến lược tăng trưởng thận trọng, củng cố nền tảng vững chắc trước khi mở rộng quy mô.",
+        meaningVi: "Chiến lược tăng trưởng thận trọng, củng cố nội lực trước khi mở rộng quy mô.",
         meaningEn: "Advancing steadily and methodically; prioritizing solid foundations over reckless speed.",
         originVi: "Binh pháp cổ điển về hành quân lập doanh trại chắc chắn từng chặng.",
         usageExampleZh: "新设海外仓坚持稳扎稳打，先确保履约准确率再扩充品类。",
