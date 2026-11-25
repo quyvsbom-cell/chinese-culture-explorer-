@@ -188,7 +188,7 @@
     var need = [];
 
     if (pageId === "home") {
-      need.push("regions-deep-pack", "museum-classics-v3-pack");
+      need.push("regions-deep-pack", "museum-classics-v3-pack", "3d-pack");
     } else if (pageId === "explore" || pageId === "article") {
       need.push("articles-v3-pack", "dictionary-pack", "v4-knowledge-pack");
       if (extraFlags && extraFlags.needs3d) need.push("3d-pack");
@@ -219,7 +219,7 @@
 
   function hasUnloaded(pageId, uiLang, extraFlags) {
     var need = [];
-    if (pageId === "home") need.push("regions-deep-pack", "museum-classics-v3-pack");
+    if (pageId === "home") need.push("regions-deep-pack", "museum-classics-v3-pack", "3d-pack");
     else if (pageId === "explore" || pageId === "article") {
       need.push("articles-v3-pack", "dictionary-pack", "v4-knowledge-pack");
       if (extraFlags && extraFlags.needs3d) need.push("3d-pack");

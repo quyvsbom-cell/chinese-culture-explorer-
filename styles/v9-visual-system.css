@@ -711,6 +711,13 @@ body.cce-read-night {
 }
 
 @media (max-width: 767px) {
+  .v9-fab-trip {
+    bottom: 124px;
+    right: 0.65rem;
+    min-height: 38px;
+    padding: 0 12px;
+    font-size: 0.76rem;
+  }
   .v9-trip-drawer-backdrop,
   .v9-bottom-sheet-backdrop {
     align-items: flex-end;

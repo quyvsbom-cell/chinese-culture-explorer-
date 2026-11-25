@@ -3,6 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    (function () {
+      try {
+        var m = document.cookie.match(/(?:^|;\s*)cce_prefs=([^;]*)/);
+        if (m && m[1]) {
+          var raw = decodeURIComponent(m[1]);
+          var p = {};
+          if (raw.charAt(0) === "{") {
+            p = JSON.parse(raw) || {};
+          } else {
+            raw.split("|").forEach(function (part) {
+              var idx = part.indexOf("=");
+              if (idx > 0) p[part.slice(0, idx)] = part.slice(idx + 1);
+            });
+          }
+          if (p.theme === "dark" || p.theme === "light" || p.theme === "sepia") {
+            document.documentElement.setAttribute("data-theme", p.theme);
+          }
+          if (p.lang) {
+            document.documentElement.setAttribute("lang", p.lang);
+          }
+          if (p.font) {
+            document.documentElement.setAttribute("data-font-size", p.font);
+          }
+        }
+      } catch (e) {}
+    })();
+  </script>
   <base href="/" />
   <title>CHINESE CULTURE EXPLORER – 中国文化探索</title>
   <meta name="description" content="Khám phá văn minh Trung Hoa qua 12 học phần, 28 mô hình 3D, 120 thương hiệu Lão tự hào, 108 chuyên luận khảo cứu, 54 quốc họa, 34 tỉnh thành và kho 800 câu hỏi." />
@@ -56,9 +84,10 @@
   <link rel="stylesheet" href="styles/regions-atlas.css" />
   <link rel="stylesheet" href="styles/learning-labs.css" />
   <link rel="stylesheet" href="styles/print.css" />
-  <link rel="stylesheet" href="styles/v4-editorial.css?v=10.1" />
-  <link rel="stylesheet" href="styles/v9-visual-system.css?v=10.2" />
-  <link rel="stylesheet" href="styles/v10-paginated-deck.css?v=10.2" />
+  <link rel="stylesheet" href="styles/v4-editorial.css?v=10.3" />
+  <link rel="stylesheet" href="styles/v9-visual-system.css?v=10.3" />
+  <link rel="stylesheet" href="styles/v10-paginated-deck.css?v=10.3" />
+  <link rel="stylesheet" href="styles/v10-gac-discovery.css?v=10.3" />
   <style id="cce-initial-splash-css">
     #cce-page-transition-curtain{position:fixed;inset:0;width:100vw;height:100vh;z-index:999999;background:#111111;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;visibility:visible;transform:translate3d(0,100%,0);will-change:transform;pointer-events:none;box-shadow:0 -18px 48px rgba(0,0,0,0.45)}
     #cce-page-transition-curtain.is-entering{pointer-events:auto;visibility:visible;transform:translate3d(0,0%,0);transition:transform 320ms cubic-bezier(0.76,0,0.24,1)}
@@ -166,6 +195,16 @@
     <input type="text" name="topics" />
     <input type="text" name="lang" />
   </form>
+  <form name="cce-feedback" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="bot-field" />
+    <input type="text" name="category" />
+    <input type="text" name="page" />
+    <input type="text" name="entity" />
+    <input type="text" name="severity" />
+    <textarea name="message"></textarea>
+    <input type="email" name="contact" />
+    <input type="text" name="lang" />
+  </form>
   <div id="cce-v8-read-progress" aria-hidden="true"></div>
   <div id="app"></div>
   <div id="toast-container" class="toast-container" aria-live="polite"></div>
@@ -254,22 +293,23 @@
   <script defer src="src/data/v5/wuxingCasebookV5.js"></script>
   <script defer src="src/data/v5/supplyChainCasesV5.js"></script>
   <script defer src="src/data/v5/quizMasteryV5.js"></script>
-  <script defer src="src/data/v5/v5DeepEnrichmentLayer.js"></script>
-  <script defer src="src/components/laozihaoPavilionV5.js"></script>
-  <script defer src="src/components/v5CourseAcademy.js?v=10.1"></script>
+  <script defer src="src/data/v5/v5DeepEnrichmentLayer.js?v=10.3"></script>
+  <script defer src="src/components/laozihaoPavilionV5.js?v=10.3"></script>
+  <script defer src="src/components/v5CourseAcademy.js?v=10.3"></script>
   <script defer src="src/data/v6/v6EncyclopediaAndVisuals.js"></script>
   <script defer src="src/data/v7/v7CompleteEncyclopedia.js"></script>
   <script defer src="src/components/3d/v6HeritageStudios3D.js"></script>
   <script defer src="src/components/3d/v7Masterpieces3D.js"></script>
   <script defer src="src/data/v8/V8_Pack1.js"></script>
-  <script defer src="src/data/v8/V8_Pack2.js"></script>
+  <script defer src="src/data/v8/V8_Pack2.js?v=10.3"></script>
   <script defer src="src/data/v8/V8_Pack3.js"></script>
   <script defer src="src/data/v8/V8_Pack4.js"></script>
   <script defer src="src/data/v8/V8_Pack5.js"></script>
   <script defer src="src/data/v8/V8_Pack6.js"></script>
   <script defer src="src/data/v8/V8_Pack7.js"></script>
   <script defer src="src/data/v8/V8_Pack8.js"></script>
-  <script defer src="src/data/v8/v8MasterBridge.js"></script>
+  <script defer src="src/data/v8/v8MasterBridge.js?v=10.3"></script>
+  <script defer src="src/data/v10/v10PacksData.js?v=10.3"></script>
   <script defer src="src/components/3d/v8InteractiveStudios3D.js"></script>
   <script defer src="src/components/v6VisualAcademyStudios.js?v=10.1"></script>
   <script defer src="src/components/v8EncyclopediaStudios.js"></script>
@@ -277,17 +317,20 @@
   <script defer src="src/js/page-transition.js"></script>
   <script defer src="src/data/uniqueImagePool.js"></script>
   <script defer src="src/utils/v9LazyLoader.js"></script>
-  <script defer src="src/components/v9HomeExperience.js"></script>
+  <script defer src="src/core/v10CookieManager.js?v=10.3"></script>
+  <script defer src="src/components/v9HomeExperience.js?v=10.3"></script>
   <script defer src="src/components/v9VisualDiscovery.js"></script>
-  <script defer src="src/components/v9HandscrollViewer.js?v=10.1"></script>
+  <script defer src="src/components/v9HandscrollViewer.js?v=10.3"></script>
   <script defer src="src/components/v9SplitAtlas.js"></script>
   <script defer src="src/components/v9TripPlanner.js"></script>
   <script defer src="src/components/v9ScrollytellingReader.js"></script>
   <script defer src="src/components/v9DataStories.js"></script>
-  <script defer src="src/core/v10SubpageDeck.js?v=10.1"></script>
-  <script defer src="src/components/v10CollectionPaginator.js?v=10.1"></script>
-  <script defer src="src/components/v10PaginatedArticleReader.js?v=10.1"></script>
-  <script defer src="src/components/v10ContextualDrawer.js?v=10.1"></script>
-  <script defer src="src/app.js?v=10.1"></script>
+  <script defer src="src/core/v10SubpageDeck.js?v=10.3"></script>
+  <script defer src="src/components/v10CollectionPaginator.js?v=10.3"></script>
+  <script defer src="src/components/v10PaginatedArticleReader.js?v=10.3"></script>
+  <script defer src="src/components/v10ContextualDrawer.js?v=10.3"></script>
+  <script defer src="src/components/v10GacDiscoverySuite.js?v=10.3"></script>
+  <script defer src="src/components/v10FeedbackModal.js?v=10.3"></script>
+  <script defer src="src/app.js?v=10.3"></script>
 </body>
 </html>

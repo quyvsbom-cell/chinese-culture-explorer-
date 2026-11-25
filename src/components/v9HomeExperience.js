@@ -129,15 +129,60 @@
     }
 
     if (cat === "studios3d" || cat === "all") {
-      (v8.urbanGreenCases16 || []).slice(0, 6).forEach(function (u) {
+      var webgl3dCards = [
+        {
+          id: "relics",
+          kicker: enM ? "WebGL 3D · 6 Scenes" : "Mô hình 3D · WebGL Tương tác",
+          title: enM ? "Sanxingdui Sacred Bronze Tree & Relics 3D" : "Bảo vật Quốc bảo Tam Tinh Đôi & Đỉnh Hậu Mẫu Mậu 3D",
+          zh: "三维国宝文物互动馆",
+          img: "assets/images/museum/sanxingdui-bronze-tree.jpg"
+        },
+        {
+          id: "tiantan",
+          kicker: enM ? "WebGL 3D · Temple of Heaven" : "Mô hình 3D · Thiên Đàn Bắc Kinh",
+          title: enM ? "Hall of Prayer for Good Harvests 3D" : "Kỳ Niên Điện Thiên Đàn — Tam trùng diêm 3D",
+          zh: "天坛祈年殿三维结构",
+          img: "assets/images/museum/taihe-dian.jpg"
+        },
+        {
+          id: "dougong",
+          kicker: enM ? "WebGL 3D · Yingzao Fashi" : "Mô hình 3D · Đấu củng Doanh tạo pháp thức",
+          title: enM ? "Interlocking Timber Dougong Brackets" : "Khớp mộng Đấu củng — Đỉnh cao kiến trúc gỗ",
+          zh: "营造法式斗拱榫卯",
+          img: "assets/images/museum/yongle-great-bell.jpg"
+        },
+        {
+          id: "hydraulic",
+          kicker: enM ? "WebGL 3D · Ancient Engineering" : "Mô hình 3D · Thủy lợi Đô Giang Yển",
+          title: enM ? "Dujiangyan Fish-Mouth Weir Simulator" : "Công trình thủy lợi Ngư Chủy Đô Giang Yển 3D",
+          zh: "都江堰鱼嘴分水工程",
+          img: "assets/images/museum/liangzhu-yucong.jpg"
+        },
+        {
+          id: "armillary",
+          kicker: enM ? "WebGL 3D · Astronomy" : "Mô hình 3D · Hỗn thiên nghi Trương Hành",
+          title: enM ? "Equatorial Armillary Sphere Observatory" : "Hỗn thiên nghi Quan tinh đài Cổ đại 3D",
+          zh: "张衡浑天仪三维天象",
+          img: "assets/images/museum/han-shipan.jpg"
+        },
+        {
+          id: "logistics",
+          kicker: enM ? "WebGL 3D · Trade Corridors" : "Mô hình 3D · Hành lang Hàng hải & Tơ lụa",
+          title: enM ? "Maritime Silk Road & Beibu Gulf 3D" : "Tuyến đường tơ lụa trên biển & Vịnh Bắc Bộ 3D",
+          zh: "海陆丝路三维走廊",
+          img: "assets/images/museum/zheng-he-chart.jpg"
+        }
+      ];
+      webgl3dCards.forEach(function (u) {
         push({
-          kicker: enM ? "3D Studio & Urban Lab" : "Studio 3D & Đô Thị Xanh",
-          title: enM ? (u.titleEn || u.titleVi) : u.titleVi,
-          zh: u.zh || "",
-          img: u.imagePath || "",
+          id: u.id,
+          kicker: u.kicker,
+          title: u.title,
+          zh: u.zh,
+          img: u.img,
           ratio: "editorial",
-          action: "nav-page",
-          page: "museum"
+          action: "open-3d-studio",
+          studio: u.id
         });
       });
     }
@@ -247,6 +292,8 @@
         ? 'data-action="open-painting-detail" data-id="' + esc(c.id) + '"'
         : c.action === "open-artifact"
         ? 'data-action="open-artifact" data-id="' + esc(c.id) + '"'
+        : c.action === "open-3d-studio"
+        ? 'data-action="open-3d-studio" data-id="' + esc(c.studio || c.id) + '"'
         : c.action === "open-province"
         ? 'data-action="nav" data-page="regions"'
         : c.action === "open-article"

@@ -165,6 +165,13 @@
     if (range) range.value = String(pct);
     if (badge) badge.textContent = pct + "% R→L · " + physCm;
     if (comm) comm.textContent = pickCommentary(item, pct, enM);
+    if (pct >= 5 && item && window.CCE_COOKIES && typeof window.CCE_COOKIES.setResume === "function") {
+      var now = Date.now();
+      if (!syncUiFromScroll._lastSave || now - syncUiFromScroll._lastSave > 900) {
+        syncUiFromScroll._lastSave = now;
+        window.CCE_COOKIES.setResume({ kind: "handscroll", id: item.id, title: item.titleVi || item.titleEn || item.id, pct: pct });
+      }
+    }
   }
 
   function stopDrift() {

@@ -25,14 +25,8 @@
       if (usedSet) usedSet[b.imagePath] = true;
       return b.imagePath;
     }
-    var vis = (window.CCE_PROVINCE_ITEM_VISUALS && b && b.provinceId && window.CCE_PROVINCE_ITEM_VISUALS[b.provinceId]) || {};
-    var dishes = Array.isArray(vis.dishes) ? vis.dishes : [];
-    var heritage = Array.isArray(vis.heritage) ? vis.heritage : [];
-    var food = Array.isArray(vis.festivals) ? vis.festivals : [];
-    var cands = (b && b.cat === "culinary")
-      ? dishes.concat(food, heritage)
-      : heritage.concat(dishes, food);
-    var fallbacks = [
+    // Strict entity/craft fallbacks only — never substitute regional scenery (Forbidden City / West Lake / Diaolou)
+    var cands = [
       "assets/images/articles/hero-laozihao-craft.jpg",
       "assets/images/articles/hero-six-teas-gongfu.jpg",
       "assets/images/articles/hero-tea-culture.jpg",
@@ -40,7 +34,6 @@
       "assets/images/articles/hero-chinese-banquet.jpg",
       "assets/images/museum/acupuncture-bronze.jpg"
     ];
-    cands = cands.concat(fallbacks);
     var i = Math.abs(Number(idx) || 0);
     for (var k = 0; k < cands.length; k++) {
       var pick = cands[(i + k) % cands.length];
@@ -49,14 +42,15 @@
         return pick;
       }
     }
-    return cands[0] || "assets/images/articles/hero-laozihao-craft.jpg";
+    return cands[0];
   }
 
   function renderLzhThumb(src, title) {
     if (!src) return "";
+    var vSrc = src.indexOf("?") >= 0 ? src : (src + "?v=10.3");
     return (
-      '<div class="img-skeleton-bg" style="position:relative;aspect-ratio:16/10;width:100%;overflow:hidden;border-radius:var(--radius);border:1px solid var(--hairline);margin-bottom:0.45rem;background:var(--bg-surface);cursor:pointer;" data-action="open-custom-image" data-src="' + esc(src) + '" data-caption="' + esc(title) + '">' +
-      '  <img src="' + esc(src) + '" alt="' + esc(title) + '" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;" onerror="this.onerror=null;this.src=\'assets/images/articles/hero-laozihao-craft.jpg\';" />' +
+      '<div class="img-skeleton-bg" style="position:relative;aspect-ratio:16/10;width:100%;overflow:hidden;border-radius:var(--radius);border:1px solid var(--hairline);margin-bottom:0.45rem;background:var(--bg-surface);cursor:pointer;" data-action="open-custom-image" data-src="' + esc(vSrc) + '" data-caption="' + esc(title) + '">' +
+      '  <img src="' + esc(vSrc) + '" alt="' + esc(title) + '" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;" onerror="this.onerror=null;this.src=\'assets/images/articles/hero-laozihao-craft.jpg?v=10.3\';" />' +
       '</div>'
     );
   }
@@ -193,9 +187,12 @@
               '    </div>' +
               '  </details>'
             ) : "") +
-            '  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:0.3rem;gap:0.4rem;">' +
-            '    <span style="font-size:0.73rem;color:var(--text-muted);">' + esc(b.visitTipVi) + '</span>' +
-            '    <button type="button" class="btn btn-secondary btn-sm" style="padding:0.15rem 0.45rem;font-size:0.72rem;flex-shrink:0;" data-action="open-province-detail" data-id="' + esc(b.provinceId) + '">' + (enM ? "Province →" : "Tỉnh →") + '</button>' +
+            '  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:0.3rem;gap:0.4rem;flex-wrap:wrap;">' +
+            '    <span style="font-size:0.73rem;color:var(--text-muted);flex:1;min-width:120px;">' + esc(b.visitTipVi) + '</span>' +
+            '    <div style="display:flex;gap:0.35rem;flex-shrink:0;">' +
+            '      <button type="button" class="btn btn-secondary btn-sm" style="padding:0.15rem 0.45rem;font-size:0.72rem;" data-v10-feedback-open="1" data-v10-feedback-cat="content_errata" data-v10-feedback-entity="' + esc((b.nameVi || b.zh || "") + " [" + (b.zh || "") + "]") + '">' + (enM ? "Feedback" : "Góp ý") + '</button>' +
+            '      <button type="button" class="btn btn-secondary btn-sm" style="padding:0.15rem 0.45rem;font-size:0.72rem;" data-action="open-province-detail" data-id="' + esc(b.provinceId) + '">' + (enM ? "Province →" : "Tỉnh →") + '</button>' +
+            '    </div>' +
             '  </div>' +
             '</article>'
           );

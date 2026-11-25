@@ -74,6 +74,19 @@
     var clamped = Math.max(0, Math.min(Math.max(0, list.length - 1), Number(idx || 0)));
     chapByArt[artId] = clamped;
     modeByArt[artId] = "paged";
+    if (window.CCE_COOKIES && typeof window.CCE_COOKIES.setResume === "function") {
+      var prevR = window.CCE_COOKIES.getResume && window.CCE_COOKIES.getResume();
+      var artTitle = (prevR && prevR.id === artId && prevR.title && prevR.title !== artId) ? prevR.title : "";
+      if (!artTitle && window.CCE_ARTICLES && Array.isArray(window.CCE_ARTICLES.articles)) {
+        for (var ai = 0; ai < window.CCE_ARTICLES.articles.length; ai++) {
+          if (window.CCE_ARTICLES.articles[ai].id === artId) {
+            artTitle = window.CCE_ARTICLES.articles[ai].titleVi || window.CCE_ARTICLES.articles[ai].titleEn || "";
+            break;
+          }
+        }
+      }
+      window.CCE_COOKIES.setResume({ kind: "article", id: artId, title: artTitle || artId, chap: clamped + 1 });
+    }
     try {
       if (window.location.protocol === "http:" || window.location.protocol === "https:") {
         var u = new URL(window.location.href);

@@ -3168,6 +3168,7 @@
                 <li><button type="button" data-action="open-about-section" data-section="about-sec-methodology">${escapeHtml(lp.fEditorialStd)}</button></li>
                 <li><button type="button" data-action="open-about-section" data-section="about-sec-sources">${escapeHtml(lp.fSourcePolicy)}</button></li>
                 <li><button type="button" data-action="open-about-section" data-section="about-sec-contact">${escapeHtml(lp.fContact)}</button></li>
+                <li><button type="button" data-v10-feedback-open="1" data-v10-feedback-cat="ui_ux">${escapeHtml(lp.fFeedback || (isEnglishUi() ? "Send Feedback" : "Đóng góp ý kiến"))}</button></li>
               </ul>
             </div>
 
@@ -3421,6 +3422,7 @@
     const sinoTheme = (SinoVN && SinoVN.themes && SinoVN.themes[0]) || null;
 
     const homeOverviewHtml = () => `
+      ${window.CCE_V10_DISCOVERY ? window.CCE_V10_DISCOVERY.renderHomeSuite(homeEn) : ""}
       ${window.CCE_V4_UX ? window.CCE_V4_UX.renderHeroIntentAndRecent(homeEn) : ""}
       ${window.CCE_V9_HOME ? window.CCE_V9_HOME.renderSection(homeEn) : ""}
 
@@ -3481,7 +3483,7 @@
       ${window.CCE_V5_ACADEMY ? `<div class="container">${window.CCE_V5_ACADEMY.renderCourseTracker(homeEn)}</div>` : ""}
 
       <!-- SECTION 01B: FORBIDDEN CITY 3D ARCHITECTURAL EMBLEM & DISSECTION -->
-      ${getForbiddenCity3D() ? getForbiddenCity3D().renderHomeSection(state.uiLang) : `
+      ${getForbiddenCity3D() ? getForbiddenCity3D().renderHomeSection(state.uiLang) : (() => { if (Lazy && !window._cceV10Fc3dBooted) { window._cceV10Fc3dBooted = true; Lazy.ensureBundle("3d-pack").then(() => patchMainOnly()); } return `
         <section class="ed-section" style="padding:1.65rem 0;border-bottom:1px solid var(--hairline);background:var(--bg-surface);">
           <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:1.25rem;flex-wrap:wrap;">
             <div>
@@ -3489,10 +3491,10 @@
               <h2 class="ed-h2" style="margin:0.2rem 0 0.35rem;font-size:1.35rem;">${homeEn ? "Interactive 3D Forbidden City Dissection and Dougong Joinery Studio" : "Phòng Giải phẫu 3D Tử Cấm Thành: Mộng Đấu Củng và Trục Cố đô Huế"}</h2>
               <p style="margin:0;color:var(--text-secondary);font-size:0.88rem;max-width:68ch;">${homeEn ? "Inspect interlocking bracket joinery, imperial rooftop guardians, and Three-Tier White Marble terraces in 3D." : "Tải mô hình 3D tương tác để bóc tách kết cấu Đấu Củng không đinh và trục Thần Đạo Bắc – Nam."}</p>
             </div>
-            <button type="button" class="ed-btn-primary" data-action="open-article" data-id="forbidden-city-3d-dissection">${homeEn ? "Launch 3D Studio →" : "Mở Phòng Giải phẫu 3D →"}</button>
+            <button type="button" class="ed-btn-primary" data-action="open-3d-studio" data-id="relics">${homeEn ? "Launch 3D Studio →" : "Mở Phòng Mô hình 3D →"}</button>
           </div>
         </section>
-      `}
+      `; })()}
     `;
 
     const homeAtlasHtml = () => `
@@ -3796,16 +3798,16 @@
         <div class="container">
           <div class="ed-hero-grid">
             <div>
-              <h1 class="ed-hero-title">${escapeHtml(lp.heroHeadlineVi || "Khám phá chiều sâu văn minh Trung Hoa")}</h1>
-              <div class="ed-hero-sub-en">${escapeHtml(lp.heroHeadlineEn)} · <span class="hanzi">${escapeHtml(lp.heroHeadlineZh)}</span></div>
+              <h1 class="ed-hero-title">${escapeHtml((state.uiLang === "en" && window.CCE_V10_DATA && window.CCE_V10_DATA.hero && window.CCE_V10_DATA.hero.heroHeadlineEn) || (window.CCE_V10_DATA && window.CCE_V10_DATA.hero && window.CCE_V10_DATA.hero.heroHeadlineVi) || lp.heroHeadlineVi || "Lưu trữ văn minh và mỹ thuật Trung Hoa")}</h1>
+              <div class="ed-hero-sub-en">${escapeHtml((window.CCE_V10_DATA && window.CCE_V10_DATA.hero && window.CCE_V10_DATA.hero.heroHeadlineEn) || lp.heroHeadlineEn)} · <span class="hanzi">${escapeHtml(lp.heroHeadlineZh)}</span></div>
               <p class="ed-hero-lead">
                 ${state.uiLang === "en"
-                  ? `An independent multilingual archive uniting <strong>${Articles.length} academic essays</strong>, <strong>${PaintingsList.length} master paintings</strong>, <strong>${(Museum.artifacts || []).length} museum relics</strong>, and comprehensive dossiers for <strong>${allProvinces.length} provincial divisions</strong>.`
+                  ? escapeHtml((window.CCE_V10_DATA && window.CCE_V10_DATA.hero && window.CCE_V10_DATA.hero.heroLeadEn) || `An independent multilingual archive uniting ${Articles.length} academic essays, ${PaintingsList.length} master paintings, ${(Museum.artifacts || []).length} museum relics, and ${allProvinces.length} provincial dossiers.`)
                   : state.uiLang === "zh-CN"
                   ? `独立东亚文献百科与数字博物馆，汇集 <strong>${Articles.length} 篇深度专论</strong>、<strong>${PaintingsList.length} 幅传世国画</strong>、<strong>${(Museum.artifacts || []).length} 件馆藏文物</strong>与 <strong>${allProvinces.length} 个省级行政区</strong>地理人文档案。`
                   : state.uiLang === "zh-TW"
                   ? `獨立東亞文獻百科與數位博物館，匯集 <strong>${Articles.length} 篇深度專論</strong>、<strong>${PaintingsList.length} 幅傳世國畫</strong>、<strong>${(Museum.artifacts || []).length} 件館藏文物</strong>與 <strong>${allProvinces.length} 個省級行政區</strong>地理人文檔案。`
-                  : `Hệ thống tri thức song ngữ Hán – Việt độc lập hội tụ <strong>${Articles.length} chuyên luận</strong> khảo cứu chuyên sâu, <strong>${PaintingsList.length} kiệt tác quốc họa</strong>, <strong>${(Museum.artifacts || []).length} bảo vật bảo tàng</strong> và hồ sơ địa văn hóa <strong>${allProvinces.length} đơn vị hành chính cấp tỉnh</strong>.`}
+                  : escapeHtml((window.CCE_V10_DATA && window.CCE_V10_DATA.hero && window.CCE_V10_DATA.hero.heroLeadVi) || `Hệ thống tri thức song ngữ Hán – Việt độc lập hội tụ ${Articles.length} chuyên luận khảo cứu chuyên sâu, ${PaintingsList.length} kiệt tác quốc họa, ${(Museum.artifacts || []).length} bảo vật bảo tàng và hồ sơ địa văn hóa ${allProvinces.length} đơn vị hành chính cấp tỉnh.`)}
               </p>
               <div class="ed-hero-ctas" style="gap:1.5rem;margin-bottom:0.25rem;">
                 <button type="button" class="ed-btn-primary" data-action="nav" data-page="explore">${escapeHtml(lp.heroExploreCta)}</button>
@@ -5300,6 +5302,7 @@
       : (window.CCE_ARTIFACTS_3D ? window.CCE_ARTIFACTS_3D.renderSection(enM, Store.getState().uiLang) : ""));
 
     const museumDiscoveryHtml = () => `
+      ${window.CCE_V10_DISCOVERY ? window.CCE_V10_DISCOVERY.renderPigmentsReference(enM) : ""}
       ${window.CCE_V9_HANDSCROLL ? window.CCE_V9_HANDSCROLL.renderExhibitionHallBanner(enM) : ""}
       ${window.CCE_V9_DISCOVERY ? window.CCE_V9_DISCOVERY.renderSection("museum", enM) : ""}
     `;
@@ -6457,6 +6460,7 @@
     const Pager = window.CCE_V10_PAGINATOR;
 
     const historyDynastiesHtml = () => `
+          ${window.CCE_V10_DISCOVERY ? window.CCE_V10_DISCOVERY.renderSynchronyTimeline(enM) : ""}
           ${window.CCE_LABS_EXT ? window.CCE_LABS_EXT.renderSyncedDynastyTimeline(History.periods, activePeriod.id, enM) : ""}
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;margin-bottom:0.75rem;">
             <h2 style="font-size:1.45rem;margin:0;">${enM ? "1. Select Historical Era" : "1. Chọn thời kỳ lịch sử"}</h2>
@@ -6841,6 +6845,7 @@
             </div>
           </div>
           ${cPaged.renderControls(enM)}
+          ${window.CCE_V10_DISCOVERY ? window.CCE_V10_DISCOVERY.renderClassicalGrammarDeck(enM) : ""}
           <div class="grid grid-2">
             ${cPaged.slice.map((txt, tIdx) => {
               const quotes = Array.isArray(txt.quotes) ? txt.quotes : [];
@@ -7613,6 +7618,7 @@
                   <p style="font-size:0.9rem;margin-bottom:0;"><strong>${enM ? "8. Landmark Sites:" : "8. Địa danh trọng yếu:"}</strong> ${escapeHtml(enVal(activeCity, "landmarks"))}</p>
                 </div>
               </div>
+              ${window.CCE_V10_DISCOVERY ? window.CCE_V10_DISCOVERY.renderCities16FieldCompanion(activeCity.id, enM) : ""}
             </div>
           </div>
     `;
@@ -7779,6 +7785,7 @@
     `;
 
     const svPhonologyHtml = () => `
+          ${window.CCE_V10_DISCOVERY ? window.CCE_V10_DISCOVERY.renderHanNomAndFalseFriends(enSV) : ""}
           ${window.CCE_V9_DATA_STORIES ? window.CCE_V9_DATA_STORIES.renderForPage("sino-vietnam", enSV) : ""}
           ${window.CCE_LABS_EXT ? window.CCE_LABS_EXT.renderChuNomParallelReader(enSV) : ""}
     `;
@@ -7938,7 +7945,10 @@
           ${window.CCE_V8_STUDIOS ? window.CCE_V8_STUDIOS.renderGreenTradeCasebookStudio(enB) : ""}
     `;
 
-    const bizCustomsHtml = () => (window.CCE_TRILINGUAL_STUDIO ? window.CCE_TRILINGUAL_STUDIO.renderStudio(enB) : "");
+    const bizCustomsHtml = () => `
+      ${window.CCE_TRILINGUAL_STUDIO ? window.CCE_TRILINGUAL_STUDIO.renderStudio(enB) : ""}
+      ${window.CCE_V10_DISCOVERY ? window.CCE_V10_DISCOVERY.renderHsk79AndTradeCases("trade", enB) : ""}
+    `;
 
     const bizSubpages = [
       { id: "b2b", labelVi: "Văn hóa kinh doanh và B2B", labelEn: "B2B Culture & Cases", count: Business.themes.length + Business.caseStudies.length, render: bizB2bHtml },
@@ -8854,6 +8864,7 @@
     const learnNotebookHtml = () => renderVocabularyNotebookTab();
     const learnQuizHtml = () => renderQuizTab();
     const learnAcademicHtml = () => `
+      ${window.CCE_V10_DISCOVERY ? window.CCE_V10_DISCOVERY.renderHsk79AndTradeCases("hsk", enL) : ""}
       ${window.CCE_V8_STUDIOS ? window.CCE_V8_STUDIOS.renderHsk79PassagesStudio(enL) : ""}
       <div style="margin-top:2rem;">
         ${renderJournalTab()}
@@ -12341,6 +12352,9 @@
           ui.articleMobileContextOpen = false;
           ui.editorialQaOpen = false;
           Store.recordReading("article", art.id, art.titleVi);
+          if (window.CCE_COOKIES && typeof window.CCE_COOKIES.setResume === "function") {
+            window.CCE_COOKIES.setResume({ kind: "article", id: art.id, title: art.titleVi, chap: 1 });
+          }
           Store.setPage("article");
           syncHashFromState(`article=${id}`);
           window.scrollTo({ top: 0, behavior: "instant" });
@@ -12418,6 +12432,24 @@
         ui.museumPeriodFilter = target.getAttribute("data-period") || "all";
         patchMainOnly();
         break;
+
+      case "open-3d-studio": {
+        const stId = (target.getAttribute("data-studio") || id || "relics");
+        if (window.CCE_3D_HUB && typeof window.CCE_3D_HUB.setStudio === "function") {
+          window.CCE_3D_HUB.setStudio(stId);
+        }
+        if (stId === "tiantan" && window.CCE_ARTIFACTS_3D && !window.CCE_ARTIFACTS_3D.isTiantanOpen()) {
+          window.CCE_ARTIFACTS_3D.toggleTiantan();
+        }
+        Store.setPage("museum");
+        syncHashFromState("museum");
+        if (window.CCE_V10_DECK && typeof window.CCE_V10_DECK.setSubpage === "function") {
+          window.CCE_V10_DECK.setSubpage("museum", "studio3d", { rerender: false, scroll: false });
+        }
+        window.scrollTo({ top: 0, behavior: "instant" });
+        hydratePageBundles("museum", Store.getState().uiLang);
+        break;
+      }
 
       case "v3-toggle-classic-col":
         if (window.CCE_GALLERY_V3) window.CCE_GALLERY_V3.toggleClassicCol(target.getAttribute("data-col"));

@@ -1,0 +1,619 @@
+/* ============================================================================
+ * CHINESE CULTURE EXPLORER — Google Arts & Culture Discovery Suite & Benchmarks
+ * Strict editorial borders, WCAG AAA contrast, 0px mobile horizontal overflow
+ * ============================================================================ */
+
+/* 1. Resume Cookie Pill Bar (cce_resume) */
+.v10-resume-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.9rem;
+  max-width: 100%;
+}
+
+.v10-resume-pill {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 38px;
+  padding: 0.38rem 0.85rem;
+  background: var(--bg-surface, #F2EDE4);
+  color: var(--ink-primary, #1A1918);
+  border: 1px solid var(--hairline, rgba(26, 25, 24, 0.2));
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  max-width: calc(100vw - 80px);
+  text-align: left;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.v10-resume-pill span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.v10-resume-pill:hover {
+  border-color: #821C1C;
+  color: #821C1C;
+}
+
+.v10-resume-dismiss {
+  appearance: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid var(--hairline, rgba(26, 25, 24, 0.2));
+  background: transparent;
+  color: var(--text-muted, #686259);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.v10-resume-dismiss:hover {
+  color: #821C1C;
+  border-color: #821C1C;
+}
+
+[data-theme="dark"] .v10-resume-pill {
+  background: #1C1B18;
+  color: #F2EFE9;
+  border-color: rgba(242, 239, 233, 0.22);
+}
+
+[data-theme="dark"] .v10-resume-pill:hover {
+  border-color: #E5A93C;
+  color: #E5A93C;
+}
+
+/* 2. Expandable 5-Panel Horizontal Accordion ("Today's Top Picks") */
+.v10-gac-section {
+  padding: 1.55rem 0;
+  border-bottom: 1px solid var(--hairline, rgba(26, 25, 24, 0.12));
+}
+
+.v10-gac-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.95rem;
+}
+
+.v10-gac-title {
+  font-family: var(--font-editorial, "Newsreader", Georgia, serif);
+  font-size: clamp(1.22rem, 2.2vw, 1.55rem);
+  font-weight: 700;
+  margin: 0.15rem 0 0;
+  color: var(--ink-primary, #1A1918);
+}
+
+[data-theme="dark"] .v10-gac-title {
+  color: #F2EFE9;
+}
+
+.v10-gac-accordion {
+  display: flex;
+  gap: 10px;
+  height: clamp(330px, 42vh, 410px);
+  width: 100%;
+}
+
+.v10-acc-panel {
+  position: relative;
+  flex: 1 1 0%;
+  min-width: 58px;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid rgba(26, 25, 24, 0.18);
+  background: #141311;
+  color: #FAF7F2;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  transition: flex 420ms cubic-bezier(0.22, 1, 0.36, 1), border-color 180ms ease;
+}
+
+.v10-acc-panel.is-expanded {
+  flex: 3.6 1 0%;
+  border-color: #E5A93C;
+}
+
+.v10-acc-panel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 35%;
+  display: block;
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1), filter 300ms ease;
+  filter: brightness(0.76);
+}
+
+.v10-acc-panel.is-expanded img {
+  filter: brightness(0.9);
+  transform: scale(1.02);
+}
+
+.v10-acc-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16, 15, 13, 0.1) 20%, rgba(14, 13, 11, 0.88) 100%);
+  pointer-events: none;
+}
+
+.v10-acc-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0.95rem 1.05rem;
+}
+
+.v10-acc-kicker {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #E5A93C;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.v10-acc-heading {
+  font-family: var(--font-editorial, "Newsreader", Georgia, serif);
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #FFFFFF;
+  margin: 0.25rem 0 0;
+}
+
+.v10-acc-desc {
+  font-size: 0.81rem;
+  line-height: 1.45;
+  color: rgba(250, 247, 242, 0.9);
+  margin: 0.38rem 0 0;
+  max-width: 48ch;
+  display: none;
+}
+
+.v10-acc-panel.is-expanded .v10-acc-desc {
+  display: block;
+}
+
+.v10-acc-panel:not(.is-expanded) .v10-acc-heading {
+  font-size: 0.86rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 3. Dark Museum Object Spotlight with +/- 4-Step Zoom & Drag-to-Pan */
+.v10-gac-spotlight {
+  background: #121211;
+  color: #F2EFE9;
+  border-radius: 4px;
+  border: 1px solid rgba(229, 169, 60, 0.26);
+  display: grid;
+  grid-template-columns: minmax(260px, 0.95fr) minmax(0, 1.35fr);
+  gap: 1.25rem;
+  padding: 1.25rem;
+  align-items: stretch;
+}
+
+.v10-spot-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.v10-spot-tombstone {
+  display: grid;
+  gap: 0.28rem;
+  padding: 0.65rem 0.78rem;
+  background: #1A1917;
+  border-left: 3px solid #E5A93C;
+  font-size: 0.79rem;
+  color: #DCD6CA;
+}
+
+.v10-spot-step-box {
+  padding: 0.62rem 0.78rem;
+  background: #181715;
+  border: 1px solid rgba(242, 239, 233, 0.14);
+  font-size: 0.8rem;
+  line-height: 1.48;
+  color: #EDE8DE;
+}
+
+.v10-spot-stage {
+  position: relative;
+  min-height: 330px;
+  height: clamp(320px, 42vh, 420px);
+  background: #0A0A09;
+  border: 1px solid rgba(242, 239, 233, 0.16);
+  border-radius: 3px;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+}
+
+.v10-spot-canvas-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.v10-spot-canvas-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+
+.v10-spot-pin {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
+  border-radius: 50%;
+  border: 2px solid #FAF7F2;
+  background: #821C1C;
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.v10-spot-pin.is-active {
+  background: #E5A93C;
+  color: #121211;
+  border-color: #121211;
+}
+
+.v10-spot-zoom-ctrl {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(18, 18, 17, 0.92);
+  border: 1px solid rgba(229, 169, 60, 0.45);
+  border-radius: 999px;
+}
+
+.v10-spot-zbtn {
+  appearance: none;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 0.5rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #FAF7F2;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.v10-spot-zbtn:hover {
+  background: rgba(229, 169, 60, 0.22);
+  color: #E5A93C;
+}
+
+/* 4. Asymmetric Bento Mosaic (Circular Fan 团扇 + Vertical Scroll 立轴 + Wide) */
+.v10-bento-mosaic {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.v10-bento-item {
+  background: var(--bg-card, #FFFFFF);
+  border: 1px solid var(--hairline, rgba(26, 25, 24, 0.14));
+  border-radius: 3px;
+  padding: 0.78rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.v10-bento-item:hover {
+  border-color: #821C1C;
+  transform: translateY(-2px);
+}
+
+.v10-bento-item.is-wide {
+  grid-column: span 2;
+}
+
+.v10-frame-fan {
+  width: min(210px, 78%);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-inline: auto;
+  border: 2px solid rgba(138, 106, 40, 0.45);
+  background: #141311;
+}
+
+.v10-frame-scroll-v {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #141311;
+}
+
+.v10-frame-scroll-h {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #141311;
+}
+
+.v10-bento-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 25%;
+  display: block;
+}
+
+.v10-bento-item.is-wide img {
+  object-fit: contain;
+}
+
+[data-theme="dark"] .v10-bento-item {
+  background: #1B1A17;
+  border-color: rgba(242, 239, 233, 0.14);
+}
+
+/* 5. Conversational Branching Pills */
+.v10-branch-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.v10-branch-pill {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 40px;
+  padding: 0.42rem 0.95rem;
+  border-radius: 999px;
+  background: var(--bg-surface, #F2EDE4);
+  color: var(--ink-primary, #1A1918);
+  border: 1px solid var(--hairline, rgba(26, 25, 24, 0.22));
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.v10-branch-pill:hover {
+  border-color: #821C1C;
+  color: #821C1C;
+}
+
+[data-theme="dark"] .v10-branch-pill {
+  background: #201E1B;
+  color: #F2EFE9;
+  border-color: rgba(242, 239, 233, 0.22);
+}
+
+[data-theme="dark"] .v10-branch-pill:hover {
+  border-color: #E5A93C;
+  color: #E5A93C;
+}
+
+/* 6. Today in History & 24 Solar Terms Split Collage (40% / 60%) */
+.v10-almanac-split {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.25fr);
+  gap: 1.15rem;
+  padding: 1.15rem;
+  background: var(--bg-card, #FFFFFF);
+  border: 1px solid var(--hairline, rgba(26, 25, 24, 0.14));
+  border-radius: 4px;
+}
+
+[data-theme="dark"] .v10-almanac-split {
+  background: #1B1A17;
+  border-color: rgba(242, 239, 233, 0.14);
+}
+
+.v10-almanac-collage {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.v10-almanac-mini {
+  position: relative;
+  background: var(--bg-paper, #FAF7F2);
+  border: 1px solid var(--hairline, rgba(26, 25, 24, 0.14));
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+[data-theme="dark"] .v10-almanac-mini {
+  background: #141311;
+  border-color: rgba(242, 239, 233, 0.14);
+}
+
+.v10-almanac-mini-img {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: #141311;
+  cursor: pointer;
+}
+
+.v10-almanac-mini-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.v10-mini-actions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 6px;
+}
+
+.v10-icon-circle {
+  appearance: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(18, 18, 17, 0.82);
+  color: #FAF7F2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.v10-icon-circle.is-saved {
+  background: #821C1C;
+  border-color: #FAF7F2;
+}
+
+/* 7. Synchrony Timeline & At-a-Glance City Strip */
+.v10-sync-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.v10-city-16-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+/* 8. Feedback Modal (Strict Feedback-Only, Zero Developer Q&A) */
+.v10-feedback-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 980;
+  background: rgba(16, 15, 13, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.v10-feedback-dialog {
+  width: min(540px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--bg-paper, #FAF7F2);
+  color: var(--ink-primary, #1A1918);
+  border: 1px solid var(--hairline, rgba(26, 25, 24, 0.22));
+  border-top: 4px solid #821C1C;
+  border-radius: 4px;
+  padding: 1.25rem;
+}
+
+[data-theme="dark"] .v10-feedback-dialog {
+  background: #1A1917;
+  color: #F2EFE9;
+  border-color: rgba(242, 239, 233, 0.2);
+}
+
+@media (max-width: 860px) {
+  .v10-gac-spotlight,
+  .v10-almanac-split,
+  .v10-sync-grid,
+  .v10-city-16-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .v10-bento-mosaic {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .v10-bento-item.is-wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .v10-gac-accordion {
+    height: auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .v10-acc-panel,
+  .v10-acc-panel.is-expanded {
+    flex: 0 0 78vw;
+    min-width: 78vw;
+    height: 290px;
+    scroll-snap-align: start;
+  }
+
+  .v10-acc-panel .v10-acc-desc {
+    display: block;
+  }
+
+  .v10-bento-mosaic,
+  .v10-almanac-collage {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .v10-bento-item.is-wide {
+    grid-column: span 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v10-acc-panel,
+  .v10-acc-panel img,
+  .v10-spot-canvas-wrap,
+  .v10-bento-item {
+    transition: none;
+  }
+}

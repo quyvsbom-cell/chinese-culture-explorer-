@@ -200,6 +200,9 @@ window.CCE_STORE = (function () {
     mutator(state);
     state.updatedAt = Date.now();
     saveLocal();
+    if (window.CCE_COOKIES && typeof window.CCE_COOKIES.syncPrefsFromState === "function") {
+      window.CCE_COOKIES.syncPrefsFromState(state);
+    }
     pushToServer();
     notify(reason);
   }
@@ -217,6 +220,18 @@ window.CCE_STORE = (function () {
       return () => listeners.delete(fn);
     },
     init() {
+      if (window.CCE_COOKIES && typeof window.CCE_COOKIES.readPrefs === "function") {
+        var p = window.CCE_COOKIES.readPrefs();
+        if (p) {
+          if (p.theme === "dark" || p.theme === "light") state.theme = p.theme;
+          if (p.lang) {
+            state.uiLang = p.lang;
+            if (p.lang === "zh-TW") state.scriptMode = "both";
+          }
+          if (p.script === "both" || p.script === "simplified") state.scriptMode = p.script;
+          if (p.font) state.articleFontSize = p.font;
+        }
+      }
       document.documentElement.setAttribute("data-theme", state.theme);
       document.documentElement.setAttribute("lang", state.uiLang || "vi");
       syncFromServer();

@@ -331,7 +331,12 @@
         var bBtn = document.querySelector('[data-action="nav"][data-page="business"]');
         if (bBtn) bBtn.click();
       } else if (act === "go-armillary") {
-        if (window.CCE_3D_HUB) window.CCE_3D_HUB.setStudio("armillary");
+        if (window.CCE_3D_HUB && typeof window.CCE_3D_HUB.setStudio === "function") {
+          window.CCE_3D_HUB.setStudio("armillary");
+        }
+        if (window.CCE_V10_DECK && typeof window.CCE_V10_DECK.setSubpage === "function") {
+          window.CCE_V10_DECK.setSubpage("museum", "studio3d", { rerender: false, scroll: false });
+        }
         var mBtn = document.querySelector('[data-action="nav"][data-page="museum"]');
         if (mBtn) mBtn.click();
       }

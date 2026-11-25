@@ -274,11 +274,11 @@ def main() -> int:
     print(f"[Gate 9] V4/V6/V7 Data, Epistemology & WebGL Mgr: {'PASS' if not g9_issues else 'FAIL'}")
     failures.extend(g9_issues)
 
-    # Gate 10: PWA Cache Parity (cce-v10.2) & Zero Dev Jargon / Version Hype in UI Strings
+    # Gate 10: PWA Cache Parity (cce-v10.3) & Zero Dev Jargon / Version Hype in UI Strings
     g10_issues: list[str] = []
     sw_txt = (ROOT / "sw.js").read_text(encoding="utf-8") if (ROOT / "sw.js").is_file() else ""
-    if 'CACHE_VERSION = "cce-v10.2"' not in sw_txt:
-        g10_issues.append('sw.js CACHE_VERSION is not "cce-v10.2"')
+    if 'CACHE_VERSION = "cce-v10.3"' not in sw_txt:
+        g10_issues.append('sw.js CACHE_VERSION is not "cce-v10.3"')
     ui_scan = [
         ROOT / "index.html",
         ROOT / "manifest.json",
@@ -932,8 +932,8 @@ def main() -> int:
     idx_html_txt = (ROOT / "index.html").read_text(encoding="utf-8")
     if 'styles/v9-visual-system.css' not in idx_html_txt:
         g17_issues.append("index.html missing styles/v9-visual-system.css link")
-    if 'CACHE_VERSION = "cce-v10.2"' not in (ROOT / "sw.js").read_text(encoding="utf-8"):
-        g17_issues.append("sw.js CACHE_VERSION is not cce-v10.2")
+    if 'CACHE_VERSION = "cce-v10.3"' not in (ROOT / "sw.js").read_text(encoding="utf-8"):
+        g17_issues.append("sw.js CACHE_VERSION is not cce-v10.3")
 
     def _rel_lum(hex_c: str) -> float:
         hx = hex_c.lstrip("#")
@@ -1066,12 +1066,75 @@ def main() -> int:
     print(f"[Gate 19] V10 De-AI Editorial Prose, Zero MUJI & Clean Titles: {'PASS' if not g19_issues else f'FAIL ({len(g19_issues)})'}")
     failures.extend(g19_issues[:20])
 
+    # Gate 20: V10.3 Discovery Suite, Cookie Manager, Packs Bundle & Zero Emoji / MUJI
+    g20_issues: list[str] = []
+    v10_new_assets = [
+        ROOT / "styles" / "v10-gac-discovery.css",
+        ROOT / "src" / "core" / "v10CookieManager.js",
+        ROOT / "src" / "data" / "v10" / "v10PacksData.js",
+        ROOT / "src" / "components" / "v10GacDiscoverySuite.js",
+        ROOT / "src" / "components" / "v10FeedbackModal.js",
+    ]
+    for vp in v10_new_assets:
+        if not vp.is_file():
+            g20_issues.append(f"Missing V10.3 asset: {vp.relative_to(ROOT).as_posix()}")
+        else:
+            vtxt = vp.read_text(encoding="utf-8", errors="ignore")
+            if emoji_rx_v9.search(vtxt):
+                g20_issues.append(f"UI emoji detected inside {vp.name}")
+            if vp.suffix == ".js" and re.search(r"\bmuji\b", vtxt, re.IGNORECASE):
+                g20_issues.append(f"Banned MUJI term in {vp.name}")
+    print(f"[Gate 20] V10.3 Discovery Suite & Cookie Assets: {'PASS' if not g20_issues else f'FAIL ({len(g20_issues)})'}")
+    failures.extend(g20_issues[:20])
+
+    # Gate 21: Zero-FOUC Inline cce_prefs Bootstrap & Static Subnav Rail
+    g21_issues: list[str] = []
+    if "cce_prefs" not in idx_html_txt or "document.documentElement.setAttribute" not in idx_html_txt:
+        g21_issues.append("index.html missing inline Zero-FOUC cce_prefs bootstrap")
+    if "v10-gac-discovery.css" not in idx_html_txt:
+        g21_issues.append("index.html missing styles/v10-gac-discovery.css link")
+    deck_css = (ROOT / "styles" / "v10-paginated-deck.css").read_text(encoding="utf-8")
+    v9_css = (ROOT / "styles" / "v9-visual-system.css").read_text(encoding="utf-8")
+    if not re.search(r"\.v10-subnav-wrap\s*\{[^}]*position:\s*static\s*;", deck_css, re.S):
+        g21_issues.append(".v10-subnav-wrap is not position: static")
+    if not re.search(r"\.v9-sticky-rail\s*\{[^}]*position:\s*static\s*;", v9_css, re.S):
+        g21_issues.append(".v9-sticky-rail is not position: static")
+    print(f"[Gate 21] Zero-FOUC Cookie Bootstrap & Static Subnav: {'PASS' if not g21_issues else f'FAIL ({len(g21_issues)})'}")
+    failures.extend(g21_issues[:20])
+
+    # Gate 22: Strict 1-to-1 Laozihao Entity Image Binding (Zero Heritage Scenery Fallback)
+    g22_issues: list[str] = []
+    lzh_js = (ROOT / "src" / "components" / "laozihaoPavilionV5.js").read_text(encoding="utf-8")
+    bridge_js = (ROOT / "src" / "data" / "v8" / "v8MasterBridge.js").read_text(encoding="utf-8")
+    if "CCE_PROVINCE_ITEM_VISUALS" in lzh_js:
+        g22_issues.append("laozihaoPavilionV5.js still falls back to CCE_PROVINCE_ITEM_VISUALS landscape scenery")
+    if "propagateLaozihaoAndGiImages" not in bridge_js:
+        g22_issues.append("v8MasterBridge.js missing propagateLaozihaoAndGiImages")
+    for req_brand in ("assets/images/brands/tongrentang.jpg", "assets/images/brands/chenliji.jpg", "assets/images/brands/huqingyutang.jpg"):
+        bp = ROOT / req_brand
+        if not bp.is_file() or bp.stat().st_size < 10000:
+            g22_issues.append(f"Missing or invalid Laozihao brand image: {req_brand}")
+    print(f"[Gate 22] Strict 1-to-1 Laozihao Entity Image Binding: {'PASS' if not g22_issues else f'FAIL ({len(g22_issues)})'}")
+    failures.extend(g22_issues[:20])
+
+    # Gate 23: Feedback-Only Modal & Form Parity (Zero Developer Q&A)
+    g23_issues: list[str] = []
+    if 'form name="cce-feedback"' not in idx_html_txt:
+        g23_issues.append("index.html missing hidden Netlify form cce-feedback")
+    fb_js = (ROOT / "src" / "components" / "v10FeedbackModal.js").read_text(encoding="utf-8")
+    if re.search(r"đặt câu hỏi|ask developer|Q&amp;A", fb_js, re.IGNORECASE):
+        g23_issues.append("v10FeedbackModal.js must be feedback-only (detected Q&A wording)")
+    if "cce_v10_feedback_log" not in fb_js:
+        g23_issues.append("v10FeedbackModal.js missing cce_v10_feedback_log storage")
+    print(f"[Gate 23] Feedback-Only Modal Parity (Zero Dev Q&A): {'PASS' if not g23_issues else f'FAIL ({len(g23_issues)})'}")
+    failures.extend(g23_issues[:20])
+
     if failures:
         print("\nGATE FAILURES:")
         for f in failures:
             print(" -", f)
         return 1
-    print("\nALL 19 INTEGRITY GATES PASSED CLEANLY.")
+    print("\nALL 23 INTEGRITY GATES PASSED CLEANLY.")
     return 0
 
 

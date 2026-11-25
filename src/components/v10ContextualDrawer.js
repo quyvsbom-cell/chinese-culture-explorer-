@@ -125,6 +125,17 @@
       relatedArtsHtml +
       (bridgeHtml ? '<div class="v10-drawer-card">' + bridgeHtml + "</div>" : "") +
       noteHtml +
+      '<div class="v10-drawer-card">' +
+      '  <div class="editorial-kicker" style="margin:0;">' + (enM ? "READER FEEDBACK" : "GÓP Ý BỔ SUNG") + "</div>" +
+      '  <p style="font-size:0.8rem;color:var(--text-muted);margin:0.35rem 0 0.55rem;">' +
+           esc(enM ? "Spot a typo, mismatched photo, or layout issue? Send a quick note for this entry." : "Phát hiện lỗi chính tả, ảnh chưa khớp hoặc điểm cần cải thiện? Gửi góp ý nhanh cho mục đang xem.") +
+      "  </p>" +
+      '  <button type="button" class="btn btn-secondary btn-sm" style="width:100%;" data-v10-feedback-open="1" data-v10-feedback-cat="content_errata" data-v10-feedback-entity="' +
+           esc((activeArt && (activeArt.titleVi || activeArt.id)) || activeContext.pageId || "general") +
+           '" data-v10-drawer-close="1">' +
+           (enM ? "Send Feedback / Report Issue" : "Đóng góp ý kiến / Báo lỗi mục này") +
+      "  </button>" +
+      "</div>" +
       "    </div>" +
       "  </aside>" +
       "</div>"

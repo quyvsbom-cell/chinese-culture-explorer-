@@ -15,6 +15,58 @@
   var p7 = window.CCE_V8_PACK7 || {};
   var p8 = window.CCE_V8_PACK8 || {};
 
+  // V10.3: Enforce 1-to-1 entity photography from Pack 2 (brandsA, brandsB, gis42)
+  (function propagateLaozihaoAndGiImages() {
+    function normZh(z) {
+      return String(z || "")
+        .replace(/^(北京|杭州|广州|漳州|成都|宜宾|绍兴|苏州|太谷|东阿|长沙|武汉|上海|天津|济南|重庆|镇江|桂林|扬州|开封|福州|佛山|泸州|杏花村|青岛|烟台|黄山|安溪|勐海|凤翔|宿迁|泾县|湖州|安徽|景德镇|沈阳)/, "")
+        .replace(/\s*\(.*?\)\s*/g, "")
+        .trim();
+    }
+    var byId = {};
+    var byZh = {};
+    var byCoreZh = {};
+    function indexPool(arr) {
+      if (!Array.isArray(arr)) return;
+      for (var i = 0; i < arr.length; i++) {
+        var r = arr[i];
+        if (!r || !r.targetFile) continue;
+        if (r.id) byId[String(r.id)] = r.targetFile;
+        if (r.zh) {
+          byZh[String(r.zh).trim()] = r.targetFile;
+          var cz = normZh(r.zh);
+          if (cz) byCoreZh[cz] = r.targetFile;
+        }
+      }
+    }
+    indexPool(p2.brandsA);
+    indexPool(p2.brandsB);
+    indexPool(p2.gis42);
+
+    function applyTo(list) {
+      if (!Array.isArray(list)) return;
+      for (var i = 0; i < list.length; i++) {
+        var item = list[i];
+        if (!item) continue;
+        var matched = (item.id && byId[String(item.id)]) ||
+          (item.zh && byZh[String(item.zh).trim()]) ||
+          (item.zh && byCoreZh[normZh(item.zh)]) ||
+          "";
+        if (matched) item.imagePath = matched;
+      }
+    }
+    if (window.CCE_V5_LAOZIHAO) applyTo(window.CCE_V5_LAOZIHAO.brands);
+    if (window.CCE_V5_LAOZIHAO_EXPANDED) {
+      applyTo(window.CCE_V5_LAOZIHAO_EXPANDED.brands60);
+      applyTo(window.CCE_V5_LAOZIHAO_EXPANDED.giAppellations12);
+    }
+    if (window.CCE_V6_BRANDS_CRAFT) {
+      applyTo(window.CCE_V6_BRANDS_CRAFT.brandsAdditional40);
+      applyTo(window.CCE_V6_BRANDS_CRAFT.brandsAdditional36);
+      applyTo(window.CCE_V6_BRANDS_CRAFT.giAdditional18);
+    }
+  })();
+
   var UNIFIED_ERAS_7 = [
     {
       id: "era-1",

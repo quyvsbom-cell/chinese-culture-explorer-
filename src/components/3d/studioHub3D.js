@@ -24,29 +24,31 @@
     { id: "v8studios", vi: "4 Studio Đương Đại (#25–#28)", en: "4 New Studios (#25–#28)" }
   ];
 
+  var _threeHydrating = false;
+
   function renderUnifiedStudio(enM, uiLang) {
+    var needs3dEngine = (typeof window.THREE === "undefined");
     var inner = "";
-    if (activeStudio === "dougong" && window.CCE_3D_DOUGONG) {
+    if (!needs3dEngine && activeStudio === "dougong" && window.CCE_3D_DOUGONG) {
       inner = window.CCE_3D_DOUGONG.renderPanel(enM);
-    } else if (activeStudio === "vernacular" && window.CCE_3D_VERNACULAR) {
+    } else if (!needs3dEngine && activeStudio === "vernacular" && window.CCE_3D_VERNACULAR) {
       inner = window.CCE_3D_VERNACULAR.renderPanel(enM);
-    } else if (activeStudio === "logistics" && window.CCE_3D_LOGISTICS) {
+    } else if (!needs3dEngine && activeStudio === "logistics" && window.CCE_3D_LOGISTICS) {
       inner = window.CCE_3D_LOGISTICS.renderPanel(enM);
-    } else if (activeStudio === "hydraulic" && window.CCE_3D_HYDRAULIC) {
+    } else if (!needs3dEngine && activeStudio === "hydraulic" && window.CCE_3D_HYDRAULIC) {
       inner = window.CCE_3D_HYDRAULIC.renderPanel(enM);
-    } else if (activeStudio === "armillary" && window.CCE_3D_ARMILLARY) {
+    } else if (!needs3dEngine && activeStudio === "armillary" && window.CCE_3D_ARMILLARY) {
       inner = window.CCE_3D_ARMILLARY.renderPanel(enM);
-    } else if (activeStudio === "chimes" && window.CCE_3D_ARTIFACTS_EXTRA) {
+    } else if (!needs3dEngine && activeStudio === "chimes" && window.CCE_3D_ARTIFACTS_EXTRA) {
       inner = window.CCE_3D_ARTIFACTS_EXTRA.renderPanel(enM);
-    } else if (activeStudio === "v6heritage" && window.CCE_3D_V6_HERITAGE) {
+    } else if (!needs3dEngine && activeStudio === "v6heritage" && window.CCE_3D_V6_HERITAGE) {
       inner = window.CCE_3D_V6_HERITAGE.renderPanel(enM);
-    } else if (activeStudio === "v7masterpieces" && window.CCE_3D_V7_MASTERPIECES) {
+    } else if (!needs3dEngine && activeStudio === "v7masterpieces" && window.CCE_3D_V7_MASTERPIECES) {
       inner = window.CCE_3D_V7_MASTERPIECES.renderPanel(enM);
-    } else if (activeStudio === "v8studios" && window.CCE_3D_V8_STUDIOS) {
+    } else if (!needs3dEngine && activeStudio === "v8studios" && window.CCE_3D_V8_STUDIOS) {
       inner = window.CCE_3D_V8_STUDIOS.renderPanel(enM);
-    } else {
-      var baseHtml = (window.CCE_ARTIFACTS_3D ? window.CCE_ARTIFACTS_3D.renderSection(enM, uiLang) : "") +
-        renderLauncherBar(enM);
+    } else if (!needs3dEngine && (activeStudio === "relics" || activeStudio === "tiantan") && window.CCE_ARTIFACTS_3D) {
+      var baseHtml = window.CCE_ARTIFACTS_3D.renderSection(enM, uiLang) + renderLauncherBar(enM);
       if (!cinemaOpen) return baseHtml;
       return (
         '<div class="v9-cinema-overlay" role="dialog" aria-modal="true">' +
@@ -58,6 +60,27 @@
         baseHtml +
         '  </div>' +
         '</div>'
+      );
+    } else {
+      if (window.CCE_LAZY && !_threeHydrating) {
+        _threeHydrating = true;
+        window.CCE_LAZY.ensureMany(["3d-pack", "3d-studio-ext-pack"]).then(function () {
+          _threeHydrating = false;
+          if (typeof window.CCE_RENDER === "function") window.CCE_RENDER();
+        }).catch(function () {
+          _threeHydrating = false;
+        });
+      }
+      return (
+        '<section class="card mt-2 mb-2" id="museum-3d-studio-section" style="padding:1.35rem;border-top:3px solid var(--imperial-red);">' +
+        '  <div class="editorial-kicker" style="color:var(--imperial-red);">' + (enM ? "INTERACTIVE 3D STUDIO · LOADING WEBGL" : "PHÒNG THÍ NGHIỆM 3D · ĐANG KHỞI TẠO WEBGL") + '</div>' +
+        '  <h3 style="margin:0.35rem 0 0.5rem;">' + (enM ? "Initializing 3D geometry & interactive controls..." : "Đang tải mô-đun dựng hình WebGL Three.js và điều khiển 3D...") + '</h3>' +
+        '  <p style="font-size:0.86rem;color:var(--text-muted);margin:0 0 0.85rem;">' +
+             (enM ? "The interactive 3D canvas will appear automatically once the WebGL bundle finishes hydrating." : "Khung dựng hình 3D tương tác sẽ tự động hiển thị ngay khi gói WebGL hoàn tất tải.") +
+        '  </p>' +
+        renderLauncherPills() +
+        '  <div style="margin-top:0.85rem;"><button type="button" class="btn btn-primary btn-sm" data-s3d-act="pick" data-val="' + activeStudio + '">' + (enM ? "Reload 3D Studio" : "Tải lại Studio 3D") + '</button></div>' +
+        '</section>'
       );
     }
 
