@@ -248,9 +248,7 @@ body.cce-read-night {
 }
 
 .v9-sticky-rail {
-  position: sticky;
-  top: 64px;
-  z-index: var(--v9-z-sticky-rail);
+  position: static;
   background: var(--v9-bg-canvas);
   border-top: 1px solid var(--v9-border-hairline);
   border-bottom: 1px solid var(--v9-border-hairline);

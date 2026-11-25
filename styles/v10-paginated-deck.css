@@ -12,11 +12,9 @@
   padding: 1.55rem 0 1.35rem;
 }
 
-/* Sticky Sub-Page Navigation Bar */
+/* Static Sub-Page Navigation Bar (anchored in document flow, never chases scroll) */
 .v10-subnav-wrap {
-  position: sticky;
-  top: 64px;
-  z-index: 45;
+  position: static;
   background: var(--bg-paper, #FAF7F2);
   border-top: 1px solid var(--hairline, rgba(26, 25, 24, 0.12));
   border-bottom: 1px solid var(--hairline, rgba(26, 25, 24, 0.12));
@@ -465,10 +463,6 @@
 }
 
 @media (max-width: 767px) {
-  .v10-subnav-wrap {
-    top: 56px;
-  }
-
   .v9-compare-tray {
     z-index: 95;
     bottom: calc(118px + env(safe-area-inset-bottom, 0px)) !important;

@@ -274,11 +274,11 @@ def main() -> int:
     print(f"[Gate 9] V4/V6/V7 Data, Epistemology & WebGL Mgr: {'PASS' if not g9_issues else 'FAIL'}")
     failures.extend(g9_issues)
 
-    # Gate 10: PWA Cache Parity (cce-v10.1) & Zero Dev Jargon / Version Hype in UI Strings
+    # Gate 10: PWA Cache Parity (cce-v10.2) & Zero Dev Jargon / Version Hype in UI Strings
     g10_issues: list[str] = []
     sw_txt = (ROOT / "sw.js").read_text(encoding="utf-8") if (ROOT / "sw.js").is_file() else ""
-    if 'CACHE_VERSION = "cce-v10.1"' not in sw_txt:
-        g10_issues.append('sw.js CACHE_VERSION is not "cce-v10.1"')
+    if 'CACHE_VERSION = "cce-v10.2"' not in sw_txt:
+        g10_issues.append('sw.js CACHE_VERSION is not "cce-v10.2"')
     ui_scan = [
         ROOT / "index.html",
         ROOT / "manifest.json",
@@ -932,8 +932,8 @@ def main() -> int:
     idx_html_txt = (ROOT / "index.html").read_text(encoding="utf-8")
     if 'styles/v9-visual-system.css' not in idx_html_txt:
         g17_issues.append("index.html missing styles/v9-visual-system.css link")
-    if 'CACHE_VERSION = "cce-v10.1"' not in (ROOT / "sw.js").read_text(encoding="utf-8"):
-        g17_issues.append("sw.js CACHE_VERSION is not cce-v10.1")
+    if 'CACHE_VERSION = "cce-v10.2"' not in (ROOT / "sw.js").read_text(encoding="utf-8"):
+        g17_issues.append("sw.js CACHE_VERSION is not cce-v10.2")
 
     def _rel_lum(hex_c: str) -> float:
         hx = hex_c.lstrip("#")
