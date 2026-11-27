@@ -853,6 +853,25 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     const roofGroup = new THREE.Group();
     roofGroup.position.y = yBase;
 
+    if (typeof window !== "undefined" && window.CCE_3D_ARCH && typeof window.CCE_3D_ARCH.createCurvedRoof === "function") {
+      const styleMap = roofType === "pyramid" ? "cuanjian" : roofType === "gable" ? "gable" : "wudian";
+      const curvedMesh = window.CCE_3D_ARCH.createCurvedRoof(THREE, {
+        style: styleMap,
+        w: w * 1.12,
+        d: d * 1.12,
+        radius: Math.max(w, d) * 0.65,
+        sides: 4,
+        h: h * 0.96,
+        tileKind: tileColor === 0x265299 || tileColor === 0x1a3c74 ? "cobaltTile" : "tile",
+        eaveOver: Math.min(w, d) * 0.14,
+        feiyanLift: Math.min(h * 0.28, 1.4),
+        beastCount: Math.min(5, Math.max(2, Math.floor(beastCount / 2)))
+      });
+      roofGroup.add(curvedMesh);
+      regFn(zoneId, roofGroup, "roof", isShiftTarget, explodeMult);
+      return roofGroup;
+    }
+
     const roofMat = new THREE.MeshStandardMaterial({
       map: texLib.imperialRoof,
       color: tileColor,
@@ -1229,51 +1248,98 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
   function createCourtyardArtifact(type, x, y, z, zoneId, regFn) {
     const group = new THREE.Group();
     group.position.set(x, y, z);
-    const bronzeMat = new THREE.MeshStandardMaterial({ color: 0xb8860b, metalness: 0.75, roughness: 0.28 });
-    const marbleMat = new THREE.MeshStandardMaterial({ color: 0xf2efe9, roughness: 0.5 });
+    const PBR = window.CCE_3D_PBR;
+    const MatMetal = THREE.MeshPhysicalMaterial || THREE.MeshStandardMaterial;
+    const bronzeMat = new MatMetal({
+      color: 0xc49526,
+      metalness: 0.86,
+      roughness: 0.24,
+      clearcoat: 0.16
+    });
+    const patinaBronzeMat = new THREE.MeshStandardMaterial({
+      color: 0x5c6654,
+      metalness: 0.72,
+      roughness: 0.36
+    });
+    const marbleMat = new THREE.MeshStandardMaterial({
+      color: 0xf4f0e8,
+      map: PBR ? PBR.getTexture(THREE, "marble") : null,
+      roughness: 0.42,
+      metalness: 0.04
+    });
 
     if (type === "censer") {
-      const ped = new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.65, 0.7, 8), marbleMat);
-      ped.position.y = 0.35;
-      const bowl = new THREE.Mesh(new THREE.SphereGeometry(0.55, 10, 10), bronzeMat);
-      bowl.position.y = 0.95;
-      const lid = new THREE.Mesh(new THREE.ConeGeometry(0.45, 0.6, 8), bronzeMat);
-      lid.position.y = 1.5;
-      group.add(ped, bowl, lid);
+      const ped = new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.68, 0.72, 16), marbleMat);
+      ped.position.y = 0.36;
+      const bowl = new THREE.Mesh(new THREE.LatheGeometry([
+        new THREE.Vector2(0.28, 0.72),
+        new THREE.Vector2(0.52, 0.94),
+        new THREE.Vector2(0.58, 1.15),
+        new THREE.Vector2(0.46, 1.26)
+      ], 24), bronzeMat);
+      const lid = new THREE.Mesh(new THREE.ConeGeometry(0.48, 0.62, 16), bronzeMat);
+      lid.position.y = 1.56;
+      const finial = new THREE.Mesh(new THREE.SphereGeometry(0.11, 10, 8), bronzeMat);
+      finial.position.y = 1.92;
+      group.add(ped, bowl, lid, finial);
     } else if (type === "vat") {
-      const ped = new THREE.Mesh(new THREE.CylinderGeometry(0.65, 0.7, 0.35, 10), marbleMat);
+      const ped = new THREE.Mesh(new THREE.CylinderGeometry(0.68, 0.76, 0.36, 16), marbleMat);
       ped.position.y = 0.18;
-      const vat = new THREE.Mesh(new THREE.CylinderGeometry(0.75, 0.55, 0.95, 12), bronzeMat);
-      vat.position.y = 0.82;
-      group.add(ped, vat);
+      const vat = new THREE.Mesh(new THREE.LatheGeometry([
+        new THREE.Vector2(0.48, 0.36),
+        new THREE.Vector2(0.78, 0.68),
+        new THREE.Vector2(0.84, 1.04),
+        new THREE.Vector2(0.66, 1.24),
+        new THREE.Vector2(0.54, 1.22)
+      ], 28), bronzeMat);
+      const lugL = new THREE.Mesh(new THREE.TorusGeometry(0.14, 0.04, 8, 16), bronzeMat);
+      lugL.position.set(-0.82, 0.92, 0);
+      const lugR = new THREE.Mesh(new THREE.TorusGeometry(0.14, 0.04, 8, 16), bronzeMat);
+      lugR.position.set(0.82, 0.92, 0);
+      group.add(ped, vat, lugL, lugR);
     } else if (type === "lion") {
-      const ped = new THREE.Mesh(new THREE.BoxGeometry(1.4, 1.4, 1.8), marbleMat);
-      ped.position.y = 0.7;
-      const body = new THREE.Mesh(new THREE.BoxGeometry(1.0, 1.3, 1.2), bronzeMat);
-      body.position.y = 2.0;
-      const head = new THREE.Mesh(new THREE.SphereGeometry(0.65, 10, 10), bronzeMat);
-      head.position.set(0, 2.75, 0.25);
-      group.add(ped, body, head);
+      const ped = new THREE.Mesh(new THREE.BoxGeometry(1.45, 1.38, 1.85), marbleMat);
+      ped.position.y = 0.69;
+      const plinthCap = new THREE.Mesh(new THREE.BoxGeometry(1.56, 0.14, 1.96), marbleMat);
+      plinthCap.position.y = 1.44;
+      const body = new THREE.Mesh(new THREE.SphereGeometry(0.68, 16, 12), bronzeMat);
+      body.scale.set(0.85, 1.05, 1.15);
+      body.position.set(0, 2.02, -0.05);
+      const chest = new THREE.Mesh(new THREE.SphereGeometry(0.54, 14, 10), bronzeMat);
+      chest.position.set(0, 2.38, 0.32);
+      const head = new THREE.Mesh(new THREE.SphereGeometry(0.48, 16, 12), bronzeMat);
+      head.position.set(0, 2.86, 0.42);
+      const orb = new THREE.Mesh(new THREE.SphereGeometry(0.24, 12, 10), bronzeMat);
+      orb.position.set(0.32, 1.72, 0.62);
+      group.add(ped, plinthCap, body, chest, head, orb);
     } else if (type === "sundial") {
-      const ped = new THREE.Mesh(new THREE.BoxGeometry(1.1, 1.4, 1.1), marbleMat);
-      ped.position.y = 0.7;
-      const disk = new THREE.Mesh(new THREE.CylinderGeometry(0.85, 0.85, 0.2, 16), marbleMat);
-      disk.position.y = 1.65;
+      const ped = new THREE.Mesh(new THREE.BoxGeometry(1.12, 1.38, 1.12), marbleMat);
+      ped.position.y = 0.69;
+      const disk = new THREE.Mesh(new THREE.CylinderGeometry(0.88, 0.88, 0.16, 28), marbleMat);
+      disk.position.y = 1.66;
       disk.rotation.x = 0.72;
-      group.add(ped, disk);
+      const gnomon = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 1.05, 8), patinaBronzeMat);
+      gnomon.position.y = 1.66;
+      gnomon.rotation.x = 0.72 + Math.PI / 2;
+      group.add(ped, disk, gnomon);
     }
+    group.traverse((o) => {
+      if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; }
+    });
     regFn(zoneId, group, "foundation", false, 0);
     return group;
   }
 
   function buildForbiddenCity3D(root, texLib, regFn) {
     // 1. Moat & Courtyard Floor
-    const moatOuter = new THREE.Mesh(new THREE.BoxGeometry(156, 1.0, 192), new THREE.MeshStandardMaterial({ color: 0xd8d4ca, roughness: 0.7 }));
+    const moatOuter = new THREE.Mesh(new THREE.BoxGeometry(156, 1.0, 192), new THREE.MeshStandardMaterial({ color: 0xd8d4ca, map: texLib.whiteMarble, roughness: 0.7 }));
     moatOuter.position.set(0, -0.6, 0);
     root.add(moatOuter);
 
-    const moatWater = new THREE.Mesh(new THREE.BoxGeometry(148, 0.9, 184), new THREE.MeshStandardMaterial({ color: 0x164e63, roughness: 0.15, metalness: 0.35 }));
+    const WaterMat = THREE.MeshPhysicalMaterial || THREE.MeshStandardMaterial;
+    const moatWater = new THREE.Mesh(new THREE.BoxGeometry(148, 0.9, 184), new WaterMat({ color: 0x164e63, roughness: 0.10, metalness: 0.38, clearcoat: 0.85, clearcoatRoughness: 0.08 }));
     moatWater.position.set(0, -0.35, 0);
+    root.userData.moatWater = moatWater;
     root.add(moatWater);
 
     const citadelBase = new THREE.Mesh(new THREE.BoxGeometry(126, 1.4, 162), new THREE.MeshStandardMaterial({ color: 0x383632, roughness: 0.85 }));
@@ -1630,44 +1696,48 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
 
   function applyLightingPreset() {
     if (!rt) return;
-    const { scene, ambientLight, hemiLight, sunLight, gridHelper } = rt;
+    const { scene, renderer, ambientLight, hemiLight, sunLight, gridHelper } = rt;
     const isDarkSite = document.documentElement.getAttribute("data-theme") === "dark";
+    const PBR = window.CCE_3D_PBR;
     if (ui3d.lightingPreset === 0) {
+      if (PBR) PBR.applyStudioEnvironment(THREE, renderer, scene, isDarkSite ? "imperial" : "daylight");
       const studioBg = isDarkSite ? 0x111317 : 0xF6F3EC;
       scene.background.setHex(studioBg);
       scene.fog.color.setHex(studioBg);
       ambientLight.color.setHex(isDarkSite ? 0xfff8eb : 0xffffff);
-      ambientLight.intensity = isDarkSite ? 0.72 : 0.86;
+      ambientLight.intensity = isDarkSite ? 0.68 : 0.82;
       if (hemiLight) {
         hemiLight.color.setHex(isDarkSite ? 0xffebc8 : 0xfffcf5);
         hemiLight.groundColor.setHex(isDarkSite ? 0x1f242d : 0xd9d2c5);
         hemiLight.intensity = isDarkSite ? 0.45 : 0.56;
       }
       sunLight.color.setHex(isDarkSite ? 0xfff0d4 : 0xfff5df);
-      sunLight.intensity = isDarkSite ? 1.15 : 1.06;
+      sunLight.intensity = isDarkSite ? 1.24 : 1.12;
       sunLight.position.set(95, 145, 110);
       if (gridHelper && gridHelper.material) {
         gridHelper.material.transparent = true;
         gridHelper.material.opacity = isDarkSite ? 0.45 : 0.22;
       }
     } else if (ui3d.lightingPreset === 1) {
+      if (PBR) PBR.applyStudioEnvironment(THREE, renderer, scene, "warm");
       scene.background.setHex(0x1f1414);
       scene.fog.color.setHex(0x1f1414);
       ambientLight.color.setHex(0xffd1a6);
-      ambientLight.intensity = 0.64;
+      ambientLight.intensity = 0.62;
       if (hemiLight) hemiLight.intensity = 0.42;
       sunLight.color.setHex(0xff8c42);
-      sunLight.intensity = 1.45;
+      sunLight.intensity = 1.52;
       sunLight.position.set(-130, 65, 85);
       if (gridHelper && gridHelper.material) gridHelper.material.opacity = 0.35;
     } else {
+      if (PBR) PBR.applyStudioEnvironment(THREE, renderer, scene, "nocturne");
       scene.background.setHex(0x090c12);
       scene.fog.color.setHex(0x090c12);
       ambientLight.color.setHex(0x90cdf4);
-      ambientLight.intensity = 0.60;
+      ambientLight.intensity = 0.58;
       if (hemiLight) hemiLight.intensity = 0.40;
       sunLight.color.setHex(0xe2e8f0);
-      sunLight.intensity = 0.95;
+      sunLight.intensity = 1.04;
       sunLight.position.set(60, 160, 40);
       if (gridHelper && gridHelper.material) gridHelper.material.opacity = 0.35;
     }
@@ -1837,6 +1907,7 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
         if (rt.ro) rt.ro.disconnect();
         if (rt.io) rt.io.disconnect();
         if (rt.jumpIo) rt.jumpIo.disconnect();
+        if (window.CCE_3D_PBR && rt.scene) window.CCE_3D_PBR.disposeScene(rt.scene, rt.renderer);
         if (rt.renderer) {
           if (rt.renderer.forceContextLoss) rt.renderer.forceContextLoss();
           rt.renderer.dispose();
@@ -1874,9 +1945,15 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       renderSvgIsometricFallback(container, isEnPin);
       return;
     }
+    const PBR = window.CCE_3D_PBR;
+    if (PBR) {
+      PBR.configureRenderer(THREE, renderer, { exposure: 1.08 });
+      PBR.applyStudioEnvironment(THREE, renderer, scene, "imperial");
+    } else {
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      renderer.shadowMap.enabled = true;
+    }
     renderer.setSize(w, h, false);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    renderer.shadowMap.enabled = true;
     renderer.domElement.addEventListener("webglcontextlost", (ev) => {
       ev.preventDefault();
       renderSvgIsometricFallback(container, isEnPin);
@@ -1885,9 +1962,19 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
 
     const ambientLight = new THREE.AmbientLight(0xfff8eb, 0.72);
     const hemiLight = new THREE.HemisphereLight(0xffebc8, 0x1f242d, 0.45);
-    const sunLight = new THREE.DirectionalLight(0xfff0d4, 1.15);
+    const sunLight = new THREE.DirectionalLight(0xfff0d4, 1.22);
     sunLight.position.set(95, 145, 110);
-    const rimLight = new THREE.DirectionalLight(0x7fb3d5, 0.42);
+    sunLight.castShadow = true;
+    sunLight.shadow.mapSize.width = 1024;
+    sunLight.shadow.mapSize.height = 1024;
+    sunLight.shadow.camera.near = 20;
+    sunLight.shadow.camera.far = 360;
+    sunLight.shadow.camera.left = -110;
+    sunLight.shadow.camera.right = 110;
+    sunLight.shadow.camera.top = 110;
+    sunLight.shadow.camera.bottom = -110;
+    sunLight.shadow.bias = -0.0005;
+    const rimLight = new THREE.DirectionalLight(0x7fb3d5, 0.45);
     rimLight.position.set(-95, 75, -110);
     scene.add(ambientLight, hemiLight, sunLight, rimLight);
 
@@ -1902,6 +1989,19 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
     const regFn = (zId, m, l, s, e) => registerZoneMesh(zoneMeshMap, explodableMeshes, stats, zId, m, l, s, e);
 
     buildForbiddenCity3D(fcRootGroup, texLib, regFn);
+    const tileBumpTex = PBR ? PBR.getTexture(THREE, "tileBump") : null;
+    fcRootGroup.traverse((obj) => {
+      if (obj.isMesh) {
+        obj.castShadow = true;
+        obj.receiveShadow = true;
+        if (tileBumpTex && obj.material && obj.material.map === texLib.imperialRoof) {
+          obj.material.bumpMap = tileBumpTex;
+          obj.material.bumpScale = 0.045;
+          obj.material.roughness = 0.22;
+          obj.material.metalness = 0.25;
+        }
+      }
+    });
     scene.add(fcRootGroup);
 
     // 3D Floating Callout Pins inside dedicated overlay container
@@ -2051,9 +2151,14 @@ window.CCE_FORBIDDEN_CITY_3D = (function () {
       rt.lookTargetPos.copy(rt.lookCurrentPos);
     }
 
+    let waterPhase = 0;
     function animate() {
       if (!rt || !container.isConnected) return;
       rt.rafId = requestAnimationFrame(animate);
+      waterPhase += 0.025;
+      if (rt.fcRootGroup && rt.fcRootGroup.userData && rt.fcRootGroup.userData.moatWater && rt.fcRootGroup.userData.moatWater.material) {
+        rt.fcRootGroup.userData.moatWater.material.roughness = 0.09 + Math.sin(waterPhase) * 0.025;
+      }
       if (ui3d.autoOrbit && !isDragging) {
         rt.sphericalTheta += 0.002;
         rt.camTargetPos.x = rt.lookTargetPos.x + rt.orbitRadius * Math.sin(rt.sphericalPhi) * Math.sin(rt.sphericalTheta);

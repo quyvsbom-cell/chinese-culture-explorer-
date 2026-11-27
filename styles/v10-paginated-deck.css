@@ -62,12 +62,12 @@
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 0.42rem;
+  gap: 0.36rem;
   font-family: inherit;
-  font-size: 0.875rem;
+  font-size: 0.82rem;
   font-weight: 600;
   min-height: 44px;
-  padding: 0.45rem 0.82rem;
+  padding: 0.42rem 0.56rem;
   white-space: nowrap;
   scroll-snap-align: start;
   transition: color 140ms ease, border-color 140ms ease, background-color 140ms ease;
@@ -329,6 +329,24 @@
 [data-theme="dark"] .v10-unified-reader-bar {
   background: #1B1A17;
   border-color: rgba(242, 239, 233, 0.16);
+}
+
+[data-theme="dark"] #v9-reader-modebar .v9-btn:not(.is-primary):not(.is-jade),
+[data-theme="dark"] #v9-reader-modebar .btn-secondary,
+[data-theme="dark"] #v9-reader-modebar .toolbar-btn:not(.btn-primary):not(.btn-jade),
+[data-theme="dark"] #v9-reader-modebar .font-step-btn:not(.active) {
+  background: #22201D !important;
+  color: #F2EFE9 !important;
+  border-color: rgba(242, 239, 233, 0.24) !important;
+}
+
+[data-theme="dark"] #v9-reader-modebar .v9-btn:not(.is-primary):not(.is-jade):hover,
+[data-theme="dark"] #v9-reader-modebar .btn-secondary:hover,
+[data-theme="dark"] #v9-reader-modebar .toolbar-btn:not(.btn-primary):not(.btn-jade):hover,
+[data-theme="dark"] #v9-reader-modebar .font-step-btn:not(.active):hover {
+  background: #2C2925 !important;
+  border-color: #E5A93C !important;
+  color: #FAF7F2 !important;
 }
 
 .v10-reader-bar-group {

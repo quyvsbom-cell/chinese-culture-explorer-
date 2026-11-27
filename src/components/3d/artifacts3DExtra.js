@@ -39,6 +39,9 @@
     if (rt.rafId) cancelAnimationFrame(rt.rafId);
     if (rt.cleanup) rt.cleanup();
     if (rt.ro) rt.ro.disconnect();
+    if (window.CCE_3D_PBR && rt.scene) {
+      try { window.CCE_3D_PBR.disposeScene(rt.scene, rt.renderer); } catch (_e) {}
+    }
     if (rt.renderer) try { rt.renderer.dispose(); } catch (_e) {}
     rt = null;
   }
@@ -47,6 +50,7 @@
     var container = document.getElementById(containerId);
     if (!container || typeof window.THREE === "undefined") return;
     var THREE = window.THREE;
+    var PBR = window.CCE_3D_PBR;
     if (window.CCE_WEBGL_MGR) window.CCE_WEBGL_MGR.register("artifacts-extra-3d", dispose);
     dispose();
     if (window.CCE_WEBGL_MGR) window.CCE_WEBGL_MGR.register("artifacts-extra-3d", dispose);
@@ -60,61 +64,148 @@
     var renderer;
     try { renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" }); }
     catch (_err) { container.innerHTML = '<div class="epistemic-box">WebGL unavailable.</div>'; return; }
-    renderer.setSize(w, h, false); renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    if (PBR) {
+      PBR.configureRenderer(THREE, renderer, { exposure: 1.14 });
+      PBR.applyStudioEnvironment(THREE, renderer, scene, "warm");
+    } else {
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    }
+    renderer.setSize(w, h, false);
     renderer.domElement.style.cssText = "width:100%;height:100%;display:block;touch-action:none;cursor:pointer;";
     container.appendChild(renderer.domElement);
 
-    scene.add(new THREE.AmbientLight(0xffffff, 0.65));
-    var l = new THREE.DirectionalLight(0xffdfb0, 1.1); l.position.set(4, 7, 5); scene.add(l);
+    scene.add(new THREE.HemisphereLight(0xffeacc, 0x1e1a18, 0.6));
+    var l = new THREE.DirectionalLight(0xffdfb0, 1.32); l.position.set(4.5, 7.5, 5.2); l.castShadow = true; scene.add(l);
+    var rim = new THREE.DirectionalLight(0x7ca3b8, 0.45); rim.position.set(-4.5, 3, -4); scene.add(rim);
 
     var root = new THREE.Group(); scene.add(root);
     var bells = [];
-    var bronzeMat = new THREE.MeshStandardMaterial({ color: 0x628070, metalness: 0.6, roughness: 0.35 });
-    var lacquerMat = new THREE.MeshStandardMaterial({ color: 0x8a1e1a, roughness: 0.5 });
+    var bronzeTex = PBR ? PBR.getTexture(THREE, "bronze") : null;
+    var bumpTex = PBR ? PBR.getTexture(THREE, "bronzeBump") : null;
+    var woodTex = PBR ? PBR.getTexture(THREE, "wood") : null;
+    var MatMetal = THREE.MeshPhysicalMaterial || THREE.MeshStandardMaterial;
+    var bronzeMat = new MatMetal({ color: 0x6b8c79, map: bronzeTex, bumpMap: bumpTex, bumpScale: 0.02, metalness: 0.78, roughness: 0.30, clearcoat: 0.18 });
+    var goldBoss = new THREE.MeshStandardMaterial({ color: 0xd6ae54, metalness: 0.88, roughness: 0.22 });
+    var lacquerMat = new MatMetal({ color: 0x8f1f1a, roughness: 0.36, clearcoat: 0.45, clearcoatRoughness: 0.25 });
 
     if (activeExhibit === "chime-bells") {
-      // L-shaped lacquer beam rack + 8 playable bells
-      [-1.7, 1.7].forEach(function (x) {
-        var col = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.13, 2.4, 12), lacquerMat);
-        col.position.set(x, 0.2, 0);
-        root.add(col);
+      if (window.CCE_3D_ARCH && window.CCE_3D_ARCH.createCourtyardStage) {
+        var cPed = window.CCE_3D_ARCH.createCourtyardStage(THREE, { radius: 2.45 });
+        cPed.position.y = -1.16;
+        root.add(cPed);
+      } else if (PBR) {
+        var cPed2 = PBR.createMuseumPedestal(THREE, 2.35, 0.22);
+        cPed2.position.y = -1.16;
+        root.add(cPed2);
+      }
+      // Bronze-Warrior Caryatids & Lacquer Columns + Beams supporting 8 Playable Almond-Shaped Bells
+      [-1.72, 1.72].forEach(function (x) {
+        var warTorso = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.19, 0.62, 12), bronzeMat);
+        warTorso.position.set(x, -0.78, 0);
+        var warHead = new THREE.Mesh(new THREE.SphereGeometry(0.11, 10, 10), bronzeMat);
+        warHead.position.set(x, -0.38, 0);
+        var col = new THREE.Mesh(new THREE.CylinderGeometry(0.095, 0.11, 2.15, 16), lacquerMat);
+        col.position.set(x, 0.34, 0);
+        var cap = new THREE.Mesh(new THREE.SphereGeometry(0.15, 12, 10), goldBoss);
+        cap.position.set(x, 1.44, 0);
+        root.add(warTorso, warHead, col, cap);
       });
-      var topBeam = new THREE.Mesh(new THREE.BoxGeometry(3.8, 0.14, 0.2), lacquerMat); topBeam.position.y = 1.25;
-      var midBeam = new THREE.Mesh(new THREE.BoxGeometry(3.8, 0.14, 0.2), lacquerMat); midBeam.position.y = 0.25;
+      var topBeam = new THREE.Mesh(new THREE.BoxGeometry(3.9, 0.15, 0.22), lacquerMat); topBeam.position.y = 1.25;
+      var midBeam = new THREE.Mesh(new THREE.BoxGeometry(3.9, 0.15, 0.22), lacquerMat); midBeam.position.y = 0.25;
       root.add(topBeam, midBeam);
       for (var i = 0; i < 8; i++) {
         var scale = 0.65 + (7 - i) * 0.08;
-        var bell = new THREE.Mesh(new THREE.CylinderGeometry(0.11 * scale, 0.16 * scale, 0.45 * scale, 16), bronzeMat.clone());
+        var bellPts = [
+          new THREE.Vector2(0.05 * scale, 0.26 * scale),
+          new THREE.Vector2(0.10 * scale, 0.22 * scale),
+          new THREE.Vector2(0.14 * scale, 0.0),
+          new THREE.Vector2(0.18 * scale, -0.24 * scale)
+        ];
+        var bell = new THREE.Mesh(new THREE.LatheGeometry(bellPts, 24), bronzeMat.clone());
+        bell.scale.z = 0.74;
         bell.position.set(-1.35 + i * 0.38, i < 4 ? 0.92 : -0.1, 0);
         bell.userData = { bellIdx: i, swing: 0 };
-        root.add(bell);
+        var hook = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.025, 0.24, 8), goldBoss);
+        hook.position.set(-1.35 + i * 0.38, (i < 4 ? 1.15 : 0.13), 0);
+        root.add(bell, hook);
         bells.push(bell);
       }
     } else if (activeExhibit === "zhenghe-ship") {
-      var hull = new THREE.Mesh(new THREE.BoxGeometry(3.8, 0.55, 1.25), new THREE.MeshStandardMaterial({ color: 0x6b4328, roughness: 0.72 }));
+      if (window.CCE_3D_ARCH && window.CCE_3D_ARCH.createCourtyardStage) {
+        var sPed = window.CCE_3D_ARCH.createCourtyardStage(THREE, { radius: 2.55 });
+        sPed.position.y = -0.82;
+        root.add(sPed);
+      } else if (PBR) {
+        var sPed2 = PBR.createMuseumPedestal(THREE, 2.45, 0.22);
+        sPed2.position.y = -0.82;
+        root.add(sPed2);
+      }
+      var woodMat = new THREE.MeshStandardMaterial({ color: 0x6b4328, map: woodTex, roughness: 0.60 });
+      var hullPts = [
+        new THREE.Vector2(0.05, -2.05),
+        new THREE.Vector2(0.58, -1.65),
+        new THREE.Vector2(0.76, -0.55),
+        new THREE.Vector2(0.78, 0.65),
+        new THREE.Vector2(0.45, 1.75),
+        new THREE.Vector2(0.06, 2.25)
+      ];
+      var hull = new THREE.Mesh(new THREE.LatheGeometry(hullPts, 16), woodMat);
+      hull.rotation.z = -Math.PI / 2;
+      hull.scale.set(0.55, 1.0, 0.92);
       hull.position.y = 0.1;
-      var bow = new THREE.Mesh(new THREE.ConeGeometry(0.75, 1.1, 4), new THREE.MeshStandardMaterial({ color: 0x5c361f }));
-      bow.rotation.z = -Math.PI / 2; bow.position.set(2.3, 0.2, 0);
-      root.add(hull, bow);
-      var sailMat = new THREE.MeshStandardMaterial({ color: 0xa4332a, side: THREE.DoubleSide, roughness: 0.8 });
-      [-1.3, -0.45, 0.45, 1.3].forEach(function (x, mIdx) {
-        var mast = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.05, 1.7 + (mIdx === 1 ? 0.4 : 0), 8), lacquerMat);
-        mast.position.set(x, 1.15, 0);
-        var sail = new THREE.Mesh(new THREE.PlaneGeometry(0.75, 1.15), sailMat);
-        sail.position.set(x, 1.35, 0.06);
-        sail.rotation.y = 0.35;
+      root.add(hull);
+      if (window.CCE_3D_ARCH && window.CCE_3D_ARCH.createPalaceHall) {
+        var sPav = window.CCE_3D_ARCH.createPalaceHall(THREE, { w: 0.78, d: 0.72, baseH: 0.16, bodyH: 0.32, roofH: 0.26, baysX: 3, baysZ: 2, tileKind: "slateTile", marbleBase: false });
+        sPav.rotation.y = Math.PI / 2;
+        sPav.position.set(-1.38, 0.36, 0);
+        root.add(sPav);
+      }
+      var sailMat = new THREE.MeshStandardMaterial({ color: 0xa4332a, side: THREE.DoubleSide, roughness: 0.72 });
+      [-1.15, -0.55, 0.12, 0.85, 1.48].forEach(function (x, mIdx) {
+        var mH = 1.65 + (mIdx === 2 ? 0.50 : (mIdx === 1 || mIdx === 3 ? 0.25 : 0));
+        var mast = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.052, mH, 10), lacquerMat);
+        mast.position.set(x, 0.38 + mH * 0.5, 0);
+        var sail = new THREE.Mesh(new THREE.PlaneGeometry(0.68, mH * 0.62), sailMat);
+        sail.position.set(x, 0.56 + mH * 0.5, 0.05);
+        sail.rotation.y = 0.32;
         root.add(mast, sail);
       });
     } else {
-      var clay = new THREE.MeshStandardMaterial({ color: 0x9b8e7e, roughness: 0.85 });
-      var armor = new THREE.MeshStandardMaterial({ color: 0x5e544a, roughness: 0.65 });
-      var plinth = new THREE.Mesh(new THREE.BoxGeometry(1.4, 0.2, 1.4), clay); plinth.position.y = -1.1;
-      var legs = new THREE.Mesh(new THREE.CylinderGeometry(0.32, 0.38, 1.0, 14), clay); legs.position.y = -0.5;
-      var torso = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.36, 1.15, 16), armor); torso.position.y = 0.48;
-      var head = new THREE.Mesh(new THREE.SphereGeometry(0.24, 16, 16), clay); head.position.y = 1.28;
-      var cap = new THREE.Mesh(new THREE.BoxGeometry(0.32, 0.16, 0.28), armor); cap.position.set(0, 1.5, -0.02);
-      root.add(plinth, legs, torso, head, cap);
+      if (window.CCE_3D_ARCH && window.CCE_3D_ARCH.createCourtyardStage) {
+        var tPed = window.CCE_3D_ARCH.createCourtyardStage(THREE, { radius: 1.75 });
+        tPed.position.y = -1.24;
+        root.add(tPed);
+      } else if (PBR) {
+        var tPed2 = PBR.createMuseumPedestal(THREE, 1.6, 0.22);
+        tPed2.position.y = -1.24;
+        root.add(tPed2);
+      }
+      var clay = new THREE.MeshStandardMaterial({ color: 0x9b8e7e, map: PBR ? PBR.getTexture(THREE, "rammedEarth") : bronzeTex, roughness: 0.80 });
+      var armor = new THREE.MeshStandardMaterial({ color: 0x524940, bumpMap: bumpTex, bumpScale: 0.025, roughness: 0.55 });
+      var plinth = new THREE.Mesh(new THREE.BoxGeometry(1.42, 0.22, 1.42), clay); plinth.position.y = -1.08;
+      var legL = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.17, 1.0, 12), clay); legL.position.set(-0.22, -0.5, 0);
+      var legR = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.17, 1.0, 12), clay); legR.position.set(0.22, -0.5, 0);
+      var torsoPts = [
+        new THREE.Vector2(0.46, -0.58),
+        new THREE.Vector2(0.42, -0.05),
+        new THREE.Vector2(0.48, 0.36),
+        new THREE.Vector2(0.24, 0.58)
+      ];
+      var torso = new THREE.Mesh(new THREE.LatheGeometry(torsoPts, 24), armor); torso.position.y = 0.48;
+      [-0.48, 0.48].forEach(function (sx) {
+        var arm = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.09, 0.82, 10), armor);
+        arm.rotation.z = sx > 0 ? 0.28 : -0.28;
+        arm.position.set(sx, 0.44, 0);
+        root.add(arm);
+      });
+      var head = new THREE.Mesh(new THREE.SphereGeometry(0.24, 20, 18), clay); head.position.y = 1.28;
+      var cap = new THREE.Mesh(new THREE.BoxGeometry(0.32, 0.16, 0.28), lacquerMat); cap.position.set(0, 1.5, -0.02);
+      var tassel = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.22, 10), goldBoss); tassel.position.set(0, 1.58, -0.02);
+      root.add(plinth, legL, legR, torso, head, cap, tassel);
     }
+    root.traverse(function (o) {
+      if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; }
+    });
 
     var dragging = false, downX = 0, downY = 0, px = 0, py = 0, ry = 0.25, rx = 0.1;
     function onDown(ev) { dragging = true; downX = px = ev.clientX; downY = py = ev.clientY; }
@@ -159,7 +250,7 @@
     tick();
 
     rt = {
-      renderer: renderer, rafId: rafId, ro: ro,
+      scene: scene, renderer: renderer, rafId: rafId, ro: ro,
       cleanup: function () {
         dom.removeEventListener("pointerdown", onDown); window.removeEventListener("pointermove", onMove);
         window.removeEventListener("pointerup", onUp); dom.removeEventListener("wheel", onWheel);

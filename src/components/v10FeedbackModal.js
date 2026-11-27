@@ -80,14 +80,16 @@
     host.innerHTML =
       '<div class="v10-feedback-backdrop" data-v10-fb-act="backdrop" role="dialog" aria-modal="true" aria-labelledby="v10-fb-title">' +
       '  <div class="v10-feedback-dialog">' +
-      '    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.75rem;margin-bottom:0.75rem;">' +
-      '      <div>' +
-      '        <div class="editorial-kicker" style="color:#821C1C;">' + (enM ? "READER FEEDBACK" : "ĐÓNG GÓP Ý KIẾN") + '</div>' +
-      '        <h2 id="v10-fb-title" style="margin:0.15rem 0 0;font-size:1.22rem;font-family:var(--font-editorial);">' + (enM ? "Send feedback or report a visual error" : "Góp ý cải thiện hoặc báo lỗi hiển thị") + '</h2>' +
-      '      </div>' +
-      '      <button type="button" class="btn btn-ghost btn-sm" data-v10-fb-act="close" aria-label="' + (enM ? "Close feedback form" : "Đóng hộp góp ý") + '">' +
-      '        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
-      '      </button>' +
+      '    <span class="v10-filigree-corner is-tl"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 22V2h20M7 18V7h11"/></svg></span>' +
+      '    <span class="v10-filigree-corner is-tr"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 22V2h20M7 18V7h11"/></svg></span>' +
+      '    <span class="v10-filigree-corner is-bl"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 22V2h20M7 18V7h11"/></svg></span>' +
+      '    <span class="v10-filigree-corner is-br"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 22V2h20M7 18V7h11"/></svg></span>' +
+      '    <button type="button" class="v10-fb-close-orb" data-v10-fb-act="close" aria-label="' + (enM ? "Close feedback form" : "Đóng hộp góp ý") + '">' +
+      '      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
+      '    </button>' +
+      '    <div style="margin-bottom:0.75rem;">' +
+      '      <div class="editorial-kicker" style="color:#821C1C;">' + (enM ? "READER FEEDBACK" : "ĐÓNG GÓP Ý KIẾN") + '</div>' +
+      '      <h2 id="v10-fb-title" style="margin:0.15rem 0 0;font-size:1.22rem;font-family:var(--font-editorial);">' + (enM ? "Send feedback or report a visual error" : "Góp ý cải thiện hoặc báo lỗi hiển thị") + '</h2>' +
       '    </div>' +
       (st.submittedReceipt ? (
         '    <div class="epistemic-box" style="border-left:4px solid var(--jade-green);">' +
@@ -176,6 +178,18 @@
     try {
       var isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
       if (!isLocal && window.location.protocol.indexOf("http") === 0) {
+        fetch("/api/feedback", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            receipt: receipt,
+            category: cat,
+            context: st.contextLabel,
+            url: urlCtx,
+            message: msg,
+            contact: cnt
+          })
+        }).catch(function () {});
         var fd = new URLSearchParams();
         fd.append("form-name", "cce-feedback");
         fd.append("category", cat);
@@ -202,7 +216,7 @@
       if (openBtn) {
         e.preventDefault();
         open({
-          context: openBtn.getAttribute("data-v10-feedback-context") || "",
+          context: openBtn.getAttribute("data-v10-feedback-context") || openBtn.getAttribute("data-v10-feedback-entity") || "",
           category: openBtn.getAttribute("data-v10-feedback-cat") || "image_3d"
         });
         return;

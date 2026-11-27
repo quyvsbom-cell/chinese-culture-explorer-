@@ -21,7 +21,9 @@
     { id: "chimes", vi: "Biên Chung / Trịnh Hòa / Binh Mã Dũng", en: "Chime Bells & Treasure Ship" },
     { id: "v6heritage", vi: "8 Studio Di sản (#11–#18)", en: "8 Heritage Studios (#11–#18)" },
     { id: "v7masterpieces", vi: "6 Kiệt Tác 3D (#19–#24)", en: "6 3D Masterpieces (#19–#24)" },
-    { id: "v8studios", vi: "4 Studio Đương Đại (#25–#28)", en: "4 New Studios (#25–#28)" }
+    { id: "v8studios", vi: "4 Studio Đương Đại (#25–#28)", en: "4 New Studios (#25–#28)" },
+    { id: "v104pbr72", vi: "72 Mô hình Di sản PBR", en: "72 PBR Heritage Models" },
+    { id: "v12explode10", vi: "10 Giải Phẫu Tách Lớp 3D", en: "10 Exploded 3D Cutaways" }
   ];
 
   var _threeHydrating = false;
@@ -47,6 +49,10 @@
       inner = window.CCE_3D_V7_MASTERPIECES.renderPanel(enM);
     } else if (!needs3dEngine && activeStudio === "v8studios" && window.CCE_3D_V8_STUDIOS) {
       inner = window.CCE_3D_V8_STUDIOS.renderPanel(enM);
+    } else if (!needs3dEngine && activeStudio === "v104pbr72" && window.CCE_3D_V9_V20_STUDIOS) {
+      inner = window.CCE_3D_V9_V20_STUDIOS.renderPanel(enM);
+    } else if (!needs3dEngine && activeStudio === "v12explode10" && window.CCE_3D_V12_EXPLODE && window.CCE_V12_3D_SPECS) {
+      inner = window.CCE_3D_V12_EXPLODE.renderPanel(enM);
     } else if (!needs3dEngine && (activeStudio === "relics" || activeStudio === "tiantan") && window.CCE_ARTIFACTS_3D) {
       var baseHtml = window.CCE_ARTIFACTS_3D.renderSection(enM, uiLang) + renderLauncherBar(enM);
       if (!cinemaOpen) return baseHtml;
@@ -64,7 +70,7 @@
     } else {
       if (window.CCE_LAZY && !_threeHydrating) {
         _threeHydrating = true;
-        window.CCE_LAZY.ensureMany(["3d-pack", "3d-studio-ext-pack"]).then(function () {
+        window.CCE_LAZY.ensureMany(["3d-pack", "3d-studio-ext-pack", "v12-3d-explode-pack"]).then(function () {
           _threeHydrating = false;
           if (typeof window.CCE_RENDER === "function") window.CCE_RENDER();
         }).catch(function () {
@@ -139,6 +145,8 @@
     if (window.CCE_3D_V6_HERITAGE) window.CCE_3D_V6_HERITAGE.initMountedCanvasIfAny();
     if (window.CCE_3D_V7_MASTERPIECES) window.CCE_3D_V7_MASTERPIECES.initMountedCanvasIfAny();
     if (window.CCE_3D_V8_STUDIOS) window.CCE_3D_V8_STUDIOS.initMountedCanvasIfAny();
+    if (window.CCE_3D_V9_V20_STUDIOS) window.CCE_3D_V9_V20_STUDIOS.initMountedCanvasIfAny();
+    if (window.CCE_3D_V12_EXPLODE) window.CCE_3D_V12_EXPLODE.initMountedCanvasIfAny();
   }
 
   function hasAny3dCanvasInDom() {
@@ -154,7 +162,9 @@
       document.getElementById("cce-3d-extra-canvas") ||
       document.getElementById("cce-3d-v6-heritage-canvas") ||
       document.getElementById("cce-3d-v7-masterpieces-canvas") ||
-      document.getElementById("cce-3d-v8-studios-canvas")
+      document.getElementById("cce-3d-v8-studios-canvas") ||
+      document.getElementById("cce-3d-v9-v19-canvas") ||
+      document.getElementById("cce-v12-explode-3d-canvas")
     );
   }
 
@@ -167,6 +177,12 @@
       var act = el.getAttribute("data-s3d-act");
       if (act === "pick") {
         activeStudio = el.getAttribute("data-val") || "relics";
+        if (activeStudio !== "v104pbr72" && window.CCE_3D_V9_V20_STUDIOS && window.CCE_3D_V9_V20_STUDIOS.dispose) {
+          window.CCE_3D_V9_V20_STUDIOS.dispose();
+        }
+        if (activeStudio !== "v12explode10" && window.CCE_3D_V12_EXPLODE && window.CCE_3D_V12_EXPLODE.dispose) {
+          window.CCE_3D_V12_EXPLODE.dispose();
+        }
         if (activeStudio === "tiantan" && window.CCE_ARTIFACTS_3D) {
           if (!window.CCE_ARTIFACTS_3D.isTiantanOpen()) window.CCE_ARTIFACTS_3D.toggleTiantan();
         } else if (activeStudio === "relics" && window.CCE_ARTIFACTS_3D && window.CCE_ARTIFACTS_3D.isTiantanOpen()) {
@@ -174,7 +190,8 @@
         }
         var loadProm = window.CCE_LAZY ? Promise.all([
           window.CCE_LAZY.ensureBundle("3d-pack"),
-          window.CCE_LAZY.ensureBundle("3d-studio-ext-pack")
+          window.CCE_LAZY.ensureBundle("3d-studio-ext-pack"),
+          window.CCE_LAZY.ensureBundle("v12-3d-explode-pack")
         ]) : Promise.resolve();
         loadProm.then(function () {
           if (typeof window.CCE_RENDER === "function") window.CCE_RENDER();

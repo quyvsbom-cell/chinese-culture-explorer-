@@ -25,7 +25,8 @@
         if (supMap[art.id]) supMap[art.id].conclusion = enr.conclusion;
       }
       if (Array.isArray(enr.additionalSections) && enr.additionalSections.length) {
-        const existingHeadings = new Set((art.mainContent || []).map((s) => s.heading));
+        if (!Array.isArray(art.mainContent)) art.mainContent = [];
+        const existingHeadings = new Set(art.mainContent.map((s) => s.heading));
         enr.additionalSections.forEach((sec) => {
           if (!existingHeadings.has(sec.heading)) {
             art.mainContent.push(sec);
@@ -33,7 +34,8 @@
         });
       }
       if (Array.isArray(enr.additionalReferences) && enr.additionalReferences.length) {
-        const existingTitles = new Set((art.references || []).map((r) => r.title));
+        if (!Array.isArray(art.references)) art.references = [];
+        const existingTitles = new Set(art.references.map((r) => r.title));
         enr.additionalReferences.forEach((ref) => {
           if (!existingTitles.has(ref.title)) {
             art.references.push(ref);

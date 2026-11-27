@@ -67,11 +67,12 @@
     else if (typeof window.CCE_RENDER === "function") window.CCE_RENDER();
     requestAnimationFrame(function () {
       try {
-        var anchor = document.querySelector('[data-v10-pager-anchor="' + stateKey + '"]');
-        if (anchor) {
-          var top = anchor.getBoundingClientRect().top;
-          if (top < 60) {
-            window.scrollTo({ top: Math.max(0, window.scrollY + top - 125), behavior: "smooth" });
+        var pager = document.querySelector('[data-v10-pager-anchor="' + stateKey + '"]');
+        var target = (pager && (pager.closest("#paintings-grid-slot, #explore-results-slot, #provinces-grid-slot") || pager.previousElementSibling)) || pager;
+        if (target) {
+          var top = target.getBoundingClientRect().top;
+          if (top < 60 || top > window.innerHeight * 0.65) {
+            window.scrollTo({ top: Math.max(0, window.scrollY + top - 96), behavior: "smooth" });
           }
         }
       } catch (e) {}

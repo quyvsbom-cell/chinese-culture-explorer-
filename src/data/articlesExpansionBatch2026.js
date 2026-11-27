@@ -1490,6 +1490,11 @@
     if (!EXISTING_IDS.has(art.id)) {
       window.CCE_ARTICLES.push(art);
       EXISTING_IDS.add(art.id);
+    } else {
+      const sIdx = window.CCE_ARTICLES.findIndex((x) => x && x.id === art.id);
+      if (sIdx >= 0 && (window.CCE_ARTICLES[sIdx]._v23Stub || window.CCE_ARTICLES[sIdx]._v104Stub)) {
+        window.CCE_ARTICLES[sIdx] = art;
+      }
     }
   });
 })();

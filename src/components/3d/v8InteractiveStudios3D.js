@@ -122,7 +122,9 @@
     if (rt.rafId) cancelAnimationFrame(rt.rafId);
     if (rt.cleanup) rt.cleanup();
     if (rt.ro) rt.ro.disconnect();
-    if (rt.scene && typeof rt.scene.traverse === "function") {
+    if (window.CCE_3D_PBR && rt.scene) {
+      try { window.CCE_3D_PBR.disposeScene(rt.scene, rt.renderer); } catch (_e) {}
+    } else if (rt.scene && typeof rt.scene.traverse === "function") {
       rt.scene.traverse(function (obj) {
         if (obj.geometry && obj.geometry.dispose) try { obj.geometry.dispose(); } catch (_e) {}
         if (obj.material) {
@@ -139,30 +141,48 @@
   }
 
   function buildSubScene(THREE, root) {
-    var mLacquer = new THREE.MeshStandardMaterial({ color: 0x221712, roughness: 0.34, metalness: 0.14 });
-    var mVermilion = new THREE.MeshStandardMaterial({ color: 0x8c2318, roughness: 0.52 });
-    var mTimber = new THREE.MeshStandardMaterial({ color: 0x5c3e29, roughness: 0.72 });
-    var mGold = new THREE.MeshStandardMaterial({ color: 0xc9963b, metalness: 0.42, roughness: 0.32 });
-    var mPearl = new THREE.MeshStandardMaterial({ color: 0xf7f3ea, metalness: 0.2, roughness: 0.25 });
-    var mStone = new THREE.MeshStandardMaterial({ color: 0x8f887d, roughness: 0.88 });
-    var mSlate = new THREE.MeshStandardMaterial({ color: 0x353d42, roughness: 0.68 });
-    var mWater = new THREE.MeshStandardMaterial({ color: 0x227866, roughness: 0.18, metalness: 0.15, transparent: true, opacity: 0.84 });
+    var PBR = window.CCE_3D_PBR;
+    var ARCH = window.CCE_3D_ARCH;
+    var woodTex = PBR ? PBR.getTexture(THREE, "wood") : null;
+    var woodBump = PBR ? PBR.getTexture(THREE, "woodBump") : null;
+    var marbleTex = PBR ? PBR.getTexture(THREE, "marble") : null;
+    var rammedTex = PBR ? PBR.getTexture(THREE, "rammedEarth") : null;
+    var MatPhys = THREE.MeshPhysicalMaterial || THREE.MeshStandardMaterial;
+
+    var mLacquer = new MatPhys({ color: 0x241610, map: woodTex, roughness: 0.22, metalness: 0.14, clearcoat: 0.85, clearcoatRoughness: 0.12 });
+    var mVermilion = new MatPhys({ color: 0x8f221b, map: woodTex, roughness: 0.44, clearcoat: 0.22 });
+    var mTimber = new THREE.MeshStandardMaterial({ color: 0x5c3e29, map: woodTex, bumpMap: woodBump, bumpScale: 0.02, roughness: 0.64 });
+    var mGold = new MatPhys({ color: 0xd4a042, metalness: 0.78, roughness: 0.24, clearcoat: 0.2 });
+    var mPearl = new MatPhys({ color: 0xf7f3ea, metalness: 0.2, roughness: 0.16, clearcoat: 0.9 });
+    var mStone = new THREE.MeshStandardMaterial({ color: 0x9b9488, map: marbleTex, roughness: 0.75 });
+    var mWater = new MatPhys({ color: 0x227866, roughness: 0.10, metalness: 0.35, clearcoat: 0.85, transparent: true, opacity: 0.86 });
     var mGrass = new THREE.MeshStandardMaterial({ color: 0x3f6e49, roughness: 0.84 });
-    var mSoil = new THREE.MeshStandardMaterial({ color: 0x6b5642, roughness: 0.92 });
-    var mSilk = new THREE.MeshStandardMaterial({ color: 0xf4efe4, roughness: 0.75, transparent: true, opacity: 0.9 });
+    var mSoil = new THREE.MeshStandardMaterial({ color: 0x735b44, map: rammedTex, roughness: 0.92 });
+    var mSilk = new THREE.MeshStandardMaterial({ color: 0xf4efe4, roughness: 0.72, transparent: true, opacity: 0.9 });
+
+    if (ARCH && typeof ARCH.createCourtyardStage === "function") {
+      var stg8 = ARCH.createCourtyardStage(THREE, { radius: 2.95 });
+      stg8.position.y = -0.92;
+      root.add(stg8);
+    } else if (PBR) {
+      var ped = PBR.createMuseumPedestal(THREE, 2.8, 0.22);
+      ped.position.y = -0.92;
+      root.add(ped);
+    }
 
     var anim = { strings: [], curtains: [], rainDrops: null, cisternMesh: null, roofLiftGroup: null, bridgeWater: null };
 
     if (activeSubId === "guqin") {
-      // Tapered Wutong soundboard + lacquer base
-      var bodyMain = new THREE.Mesh(new THREE.BoxGeometry(4.4, 0.22, 1.05), mLacquer);
+      var qTable = new THREE.Mesh(new THREE.BoxGeometry(4.8, 0.12, 1.35), mTimber);
+      qTable.position.set(0, -0.34, 0);
+      root.add(qTable);
+      var bodyMain = new THREE.Mesh(new THREE.BoxGeometry(4.3, 0.20, 0.96), mLacquer);
       bodyMain.position.set(0, -0.05, 0);
-      var shoulderNeck = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.2, 0.74), mVermilion);
+      var shoulderNeck = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.18, 0.70), mVermilion);
       shoulderNeck.position.set(-1.75, -0.05, 0);
       root.add(bodyMain, shoulderNeck);
 
-      // Bridge (Yueshan) on the right + Longyin tail
-      var yueshan = new THREE.Mesh(new THREE.BoxGeometry(0.11, 0.12, 0.96), mTimber);
+      var yueshan = new THREE.Mesh(new THREE.BoxGeometry(0.11, 0.12, 0.92), mTimber);
       yueshan.position.set(1.85, 0.1, 0);
       var yanzu = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.06, 0.22, 10), mGold);
       yanzu.position.set(-1.3, -0.22, 0.22);
@@ -170,16 +190,14 @@
       yanzu2.position.set(-1.3, -0.22, -0.22);
       root.add(yueshan, yanzu, yanzu2);
 
-      // 13 Hui mother-of-pearl harmonic markers along outer side
       var huiFrac = [0.125, 0.167, 0.2, 0.25, 0.333, 0.4, 0.5, 0.6, 0.667, 0.75, 0.8, 0.833, 0.875];
       for (var hi = 0; hi < huiFrac.length; hi++) {
         var dotR = (hi === 6) ? 0.036 : (hi === 3 || hi === 9 ? 0.028 : 0.021);
         var hui = new THREE.Mesh(new THREE.SphereGeometry(dotR, 10, 10), mPearl);
-        hui.position.set(1.85 - huiFrac[hi] * 3.6, 0.07, 0.42);
+        hui.position.set(1.85 - huiFrac[hi] * 3.6, 0.07, 0.40);
         root.add(hui);
       }
 
-      // 7 Gold-wound silk strings
       for (var s = 0; s < 7; s++) {
         var zPos = -0.3 + s * 0.1;
         var radius = 0.011 - s * 0.0008;
@@ -191,54 +209,53 @@
         anim.strings.push({ mesh: stMesh, baseZ: zPos, baseY: 0.12 });
       }
     } else if (activeSubId === "chengyang") {
-      // River Linxi base + 5 hexagonal stone piers
       var river = new THREE.Mesh(new THREE.BoxGeometry(5.6, 0.14, 2.2), mWater);
       river.position.set(0, -0.78, 0);
       root.add(river);
       anim.bridgeWater = river;
 
       for (var p = -2; p <= 2; p++) {
-        var pier = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.3, 0.82, 6), mStone);
+        var pier = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.32, 0.82, 6), mStone);
         pier.position.set(p * 1.12, -0.45, 0);
         root.add(pier);
       }
 
-      // Interlocking nail-free timber truss beam deck
-      var deck = new THREE.Mesh(new THREE.BoxGeometry(5.2, 0.14, 0.72), mTimber);
+      var deck = new THREE.Mesh(new THREE.BoxGeometry(5.2, 0.14, 0.76), mTimber);
       deck.position.set(0, -0.02, 0);
       root.add(deck);
       for (var bi = -4; bi <= 4; bi++) {
-        var truss = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.24, 0.8), mVermilion);
+        var truss = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.24, 0.84), mVermilion);
         truss.position.set(bi * 0.56, -0.14, 0);
         root.add(truss);
       }
 
-      // Roof & 5 Dong drum-style pagoda towers (liftable when Explode Roof is ON)
       var roofGrp = new THREE.Group();
-      var longRoof = new THREE.Mesh(new THREE.BoxGeometry(4.9, 0.16, 0.86), mSlate);
-      longRoof.position.set(0, 0.56, 0);
-      roofGrp.add(longRoof);
+      if (ARCH) {
+        var corridorRoof = ARCH.createCurvedRoof(THREE, { style: "gable", w: 0.82, d: 5.05, h: 0.24, tileKind: "slateTile", feiyanLift: 0.08, noRafters: true });
+        corridorRoof.rotation.y = Math.PI / 2;
+        corridorRoof.position.set(0, 0.52, 0);
+        roofGrp.add(corridorRoof);
 
-      for (var ti = -2; ti <= 2; ti++) {
-        var hScale = ti === 0 ? 1.35 : (Math.abs(ti) === 1 ? 1.05 : 0.85);
-        var tx = ti * 1.12;
-        var colBox = new THREE.Mesh(new THREE.BoxGeometry(0.56, 0.52, 0.56), mTimber);
-        colBox.position.set(tx, 0.28, 0);
-        roofGrp.add(colBox);
-        for (var e = 0; e < 3; e++) {
-          var eave = new THREE.Mesh(new THREE.ConeGeometry((0.58 - e * 0.11) * hScale, 0.22, 6), mSlate);
-          eave.position.set(tx, 0.72 + e * 0.22, 0);
-          roofGrp.add(eave);
+        for (var ti = -2; ti <= 2; ti++) {
+          var hScale = ti === 0 ? 1.25 : (Math.abs(ti) === 1 ? 1.02 : 0.85);
+          var tx = ti * 1.12;
+          var colBox = new THREE.Mesh(new THREE.BoxGeometry(0.54, 0.48, 0.54), mTimber);
+          colBox.position.set(tx, 0.26, 0);
+          roofGrp.add(colBox);
+          for (var e = 0; e < 3; e++) {
+            var eaveD = ARCH.createCurvedRoof(THREE, {
+              style: "cuanjian", sides: 6, radius: (0.52 - e * 0.10) * hScale, h: 0.22,
+              tileKind: "slateTile", feiyanLift: 0.08, noFinial: e < 2
+            });
+            eaveD.position.set(tx, 0.64 + e * 0.21, 0);
+            roofGrp.add(eaveD);
+          }
         }
-        var spire = new THREE.Mesh(new THREE.SphereGeometry(0.06, 8, 8), mGold);
-        spire.position.set(tx, 1.32, 0);
-        roofGrp.add(spire);
       }
       if (explodeRoof) roofGrp.position.y = 0.75;
       root.add(roofGrp);
       anim.roofLiftGroup = roofGrp;
     } else if (activeSubId === "sponge") {
-      // Layer 3: Subterranean Concrete Cistern & Dynamic Water Level
       var cisternShell = new THREE.Mesh(
         new THREE.BoxGeometry(3.8, 0.65, 2.2),
         new THREE.MeshStandardMaterial({ color: 0x3f4347, transparent: true, opacity: 0.35, roughness: 0.6 })
@@ -253,19 +270,16 @@
       root.add(cisternWater);
       anim.cisternMesh = cisternWater;
 
-      // Layer 2: Crushed gravel & bio-retention soil bed
       var soilBed = new THREE.Mesh(new THREE.BoxGeometry(3.8, 0.36, 2.2), mSoil);
       soilBed.position.set(0, -0.25, 0);
       root.add(soilBed);
 
-      // Layer 1: Surface Permeable Pavers + Sunken Bioswale Park
       var paverZone = new THREE.Mesh(new THREE.BoxGeometry(1.75, 0.14, 2.2), mStone);
       paverZone.position.set(-0.98, 0.02, 0);
       var parkZone = new THREE.Mesh(new THREE.BoxGeometry(1.85, 0.1, 2.2), mGrass);
       parkZone.position.set(0.95, -0.02, 0);
       root.add(paverZone, parkZone);
 
-      // Wetland reeds/trees
       for (var tr = -1; tr <= 1; tr++) {
         var trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.05, 0.42, 8), mTimber);
         trunk.position.set(0.65 + tr * 0.38, 0.22, tr * 0.48);
@@ -274,7 +288,6 @@
         root.add(trunk, canopy);
       }
 
-      // Dynamic Rain Particles scaled by rainRate
       var count = Math.round(rainRate * 2.2);
       var positions = new Float32Array(count * 3);
       for (var ri = 0; ri < count; ri++) {
@@ -289,31 +302,25 @@
       root.add(rainPts);
       anim.rainDrops = rainPts;
     } else {
-      // #28 Kunqu Lakeside Water Pavilion (Shui Xie Opera Stage)
       var lake = new THREE.Mesh(new THREE.BoxGeometry(5.4, 0.12, 3.4), mWater);
       lake.position.set(0, -0.78, 0);
       root.add(lake);
-
-      // Cantilever stone jetty over water
       var jetty = new THREE.Mesh(new THREE.BoxGeometry(2.6, 0.24, 2.2), mStone);
       jetty.position.set(0, -0.58, 0);
       root.add(jetty);
 
-      // 4 Vermilion timber columns
       [[-1.05, -0.85], [1.05, -0.85], [-1.05, 0.85], [1.05, 0.85]].forEach(function (pt) {
         var col = new THREE.Mesh(new THREE.CylinderGeometry(0.055, 0.06, 1.15, 10), mVermilion);
         col.position.set(pt[0], 0.1, pt[1]);
         root.add(col);
       });
 
-      // Carved Pine-Crane Wooden Stage Screen at back
       var screen = new THREE.Mesh(new THREE.BoxGeometry(1.9, 0.85, 0.08), mTimber);
       screen.position.set(0, 0.0, -0.78);
       var plaque = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.22, 0.06), mGold);
       plaque.position.set(0, 0.55, 0.85);
       root.add(screen, plaque);
 
-      // Gently swaying ivory silk curtains
       [-0.78, 0.78].forEach(function (cx) {
         var curMesh = new THREE.Mesh(new THREE.BoxGeometry(0.32, 0.92, 0.04), mSilk);
         curMesh.position.set(cx, 0.12, 0.78);
@@ -321,15 +328,19 @@
         anim.curtains.push(curMesh);
       });
 
-      // Curved flying-eave roof + lantern spheres
-      var roof = new THREE.Mesh(new THREE.ConeGeometry(1.95, 0.75, 4), mSlate);
-      roof.rotation.y = Math.PI / 4;
-      roof.position.set(0, 1.02, 0);
-      var l1 = new THREE.Mesh(new THREE.SphereGeometry(0.11, 10, 10), mVermilion);
+      if (ARCH) {
+        var kBal = ARCH.createMarbleBalustrade(THREE, { w: 2.45, d: 2.05, railH: 0.20, gapFront: 1.3 });
+        kBal.position.set(0, -0.46, 0);
+        var kFrieze = ARCH.createDougongFrieze(THREE, { w: 2.2, d: 1.8 });
+        kFrieze.position.set(0, 0.68, 0);
+        var kRoof = ARCH.createCurvedRoof(THREE, { style: "xieshan", w: 2.35, d: 1.95, h: 0.72, tileKind: "slateTile", feiyanLift: 0.24 });
+        kRoof.position.set(0, 0.74, 0);
+        root.add(kBal, kFrieze, kRoof);
+      }
+      var l1 = new THREE.Mesh(new THREE.SphereGeometry(0.10, 10, 10), mVermilion);
       l1.position.set(-0.92, 0.45, 0.95);
-      var l2 = l1.clone();
-      l2.position.set(0.92, 0.45, 0.95);
-      root.add(roof, l1, l2);
+      var l2 = l1.clone(); l2.position.x = 0.92;
+      root.add(l1, l2);
     }
 
     return anim;
@@ -357,22 +368,32 @@
     var renderer;
     try { renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" }); }
     catch (_e) { container.innerHTML = '<div class="epistemic-box">WebGL required for 3D Studio.</div>'; return; }
+    var PBR = window.CCE_3D_PBR;
+    if (PBR) {
+      PBR.configureRenderer(THREE, renderer, { exposure: 1.12 });
+      PBR.applyStudioEnvironment(THREE, renderer, scene, "warm");
+    } else {
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    }
     renderer.setSize(w, h, false);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.domElement.style.cssText = "width:100%;height:100%;display:block;touch-action:none;cursor:grab;";
     container.appendChild(renderer.domElement);
 
-    scene.add(new THREE.AmbientLight(0xfff4e0, 0.7));
-    var keyLight = new THREE.DirectionalLight(0xffe7c2, 1.15);
-    keyLight.position.set(3, 6, 4.5);
+    scene.add(new THREE.HemisphereLight(0xffeacc, 0x1d1a16, 0.62));
+    var keyLight = new THREE.DirectionalLight(0xffe7c2, 1.30);
+    keyLight.position.set(3.5, 6.8, 4.8);
+    if (PBR && PBR.tuneShadowLight) PBR.tuneShadowLight(keyLight, 5.2); else keyLight.castShadow = true;
     scene.add(keyLight);
-    var fillLight = new THREE.DirectionalLight(0x78b2a4, 0.42);
-    fillLight.position.set(-4, 2, -4);
+    var fillLight = new THREE.DirectionalLight(0x78b2a4, 0.48);
+    fillLight.position.set(-4, 2.5, -4);
     scene.add(fillLight);
 
     var root = new THREE.Group();
     scene.add(root);
     var anim = buildSubScene(THREE, root);
+    root.traverse(function (o) {
+      if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; }
+    });
 
     var drag = false, px = 0, py = 0, ry = 0.26, rx = 0.22;
     var el = renderer.domElement;
@@ -387,6 +408,9 @@
     el.addEventListener("pointerdown", onDown);
     window.addEventListener("pointermove", onMove);
     window.addEventListener("pointerup", onUp);
+    var unbindZoom8 = (window.CCE_3D_ARCH && window.CCE_3D_ARCH.bindOrbitZoom)
+      ? window.CCE_3D_ARCH.bindOrbitZoom(el, camera, null, { minDist: 2.8, maxDist: 11.5 })
+      : null;
 
     var t0 = performance.now();
     function tick() {
@@ -440,6 +464,7 @@
         el.removeEventListener("pointerdown", onDown);
         window.removeEventListener("pointermove", onMove);
         window.removeEventListener("pointerup", onUp);
+        if (unbindZoom8) unbindZoom8();
       }
     };
     tick();

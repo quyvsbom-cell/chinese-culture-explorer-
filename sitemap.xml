@@ -2,1705 +2,3037 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/explore</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/kham-pha</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/lich-su</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/triet-hoc</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/van-hoa</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/trung-viet</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/kinh-doanh</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/thu-vien</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/hoc-tap</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/gioi-thieu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/phap-ly</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/forbidden-city-3d-dissection</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/hundred-schools</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/confucianism-society</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/yinyang-origins</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/five-elements</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/iching-development</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/spring-festival-significance</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/tang-golden-age</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/ink-wash-painting</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/guanxi-business</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/tea-culture</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/sino-vietnam-history</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/beijing-shanghai-culture</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/traditional-architecture-gardens</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/contemporary-china-digital</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/silk-road-maritime-trade</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/tcm-solar-terms-yangsheng</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-metaphysics-systems</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-vietnam-supply-chain-rcep</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/imperial-examination-keju</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/four-great-inventions-science</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-calligraphy-seal-aesthetics</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/sino-vietnamese-translation-business</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/vn-cn-mirror-gap-trade-anatomy</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/vn-cn-cbec-rail-antidumping-2026</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/six-tea-categories-brewing-etiquette</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-laozihao-guochao-brands</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/vietnamese-field-legal-medical-protocols</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/guilin-yangshuo-longji-karst-heritage</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-240h-visa-free-transit-guilin-2026</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/practical-chinese-field-phrasebook</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-ai-revolution-deepseek-qwen-2026</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-semiconductor-ascend-smic-cac-2026</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/vietnam-ai-adoption-playbook-decree-13</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-regional-negotiation-styles</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-b2b-7-stage-contract-necips-psi</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-industrial-clusters-vietnam-supply-chain</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/canton-system-to-huaqiangbei-7-day-cycle</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/guangdong-shenzhen-vs-vietnam-benchmark</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-34-provincial-units-megalopolis-structure</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-banquet-gift-giving-etiquette</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-classical-vernacular-literature</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-eight-cuisines-tea-culture</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-hanfu-qipao-attire-history</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-ceramics-porcelain-jade-heritage</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-folk-religion-syncretism-mythology</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-unesco-intangible-heritage-opera</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-science-technology-history-modern</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-education-academy-study-abroad</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/merchant-ethics-xin-yi-li</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/ten-merchant-guilds-huizhou-shanxi</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/maritime-merchants-fujian-guangdong</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/artisan-kilns-to-industrial-clusters</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/han-viet-phonology-middle-chinese</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/envoy-poetry-bac-hanh-tap-luc</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/comparative-timber-architecture-dougong</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/imperial-academies-temple-of-literature</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/solar-terms-huangdi-neijing</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/ganzhi-calendar-bazi-system</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/ziwei-doushu-star-architecture</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/yijing-hexagrams-strategy-timing</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/suzhou-classical-gardens-aesthetics</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/four-treasures-of-the-scholar-study</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/lu-yu-tea-classic-evolution</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/guqin-zither-silent-sound-aesthetics</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/xia-shang-zhou-oracle-bones-rituals</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/qin-institutional-standardization</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/song-dynasty-urban-science-renaissance</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/grand-canal-dujiangyan-hydraulic-empire</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/modern-china-transformation-1840-1949</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/sixteen-ancient-capitals-geopolitics</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/tea-horse-road-southwest-corridor</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-fermentation-spices-culinary-geography</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-liquor-culture-baijiu-huangjiu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/five-sacred-mountains-buddhist-peaks</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/dunhuang-mogao-buddhist-grotto-art</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/xiqu-stagecraft-face-masks-tuong</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/five-vernacular-architecture-styles</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/ming-qing-fiction-hongloumeng-anatomy</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/lacquerware-silk-woodblock-new-year-prints</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/pre-qin-legalism-xunzi-hanfeizi</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/song-ming-neo-confucianism-zhu-wang</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-chan-buddhism-aesthetics</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/mohism-logic-optics-ethics</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/religious-daoism-quanzhen-zhengyi</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chu-nom-liushu-script-dialogue</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/imperial-palace-axes-beijing-thanglong-hue</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/truc-lam-zen-song-yuan-dialogue</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/east-asian-historiography-shiji-toanthu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/bac-y-nam-duoc-comparative-medicine</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-hsr-megaprojects-urban-network</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-green-energy-ev-battery-ecosystem</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-digital-payments-platform-economy</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/modern-chinese-archaeology-sanxingdui-liangzhu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-space-aerospace-tiangong-beidou</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/rcep-acfta-cumulation-rules-vietnam</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-trade-fairs-canton-ciie-yiwu-guide</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/gacc-decree-248-249-vietnam-agri-export</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-enterprises-globalization-playbook</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/cross-border-b2b-contracts-cietac-viac</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/tang-poetry-song-ci-poetics-geography</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-aesthetic-concepts-qiyun-yijing</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/calligraphy-masterpieces-three-rarities-lineage</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-mythology-shanhaijing-kunlun-penglai</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/east-asian-woodblock-printing-encyclopedias</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/temple-of-heaven-tiantan-cosmology-3d</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/jiuzhaigou-travertine-karst</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/zhangjiajie-wulingyuan-sandstone-pillars</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/tang-code-imperial-law-hong-duc</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/three-departments-six-ministries-governance</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/sun-tzu-art-of-war-wujing-qishu</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-martial-arts-wushu-taiji-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/ancient-chinese-astronomy-28-mansions-calendar</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/classical-chinese-mathematics-jiuzhang-abacus</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/zheng-he-voyages-watertight-bulkhead-nautical</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/mazu-maritime-belief-oceanic-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-cinema-fifth-generation-hk-taiwan-scifi</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-donghua-cultural-gaming-wukong-renaissance</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/four-life-rites-guan-hun-sang-ji</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-lineage-ancestral-halls-family-precepts</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-national-museums-field-guide-vietnamese</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-digital-survival-hsr-routes-vietnamese-travelers</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/ming-style-furniture-mortise-tenon-aesthetics</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-incense-floral-arts-song-four-elegances</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/han-dynasty-civilizational-foundation</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/ming-qing-global-silver-high-qing-order</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/shang-zhou-bronze-ritual-vessels-jinwen</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/terracotta-army-qin-mausoleum-engineering</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/yungang-longmen-grottoes-buddhist-sculpture</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/maijishan-dazu-rock-carvings-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/great-wall-engineering-passes-jiayuguan-shanhaiguan</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/song-five-great-kilns-porcelain-aesthetics</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/four-great-chinese-embroideries-su-xiang-yue-shu</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-ancient-pagodas-timber-brick-evolution</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/four-great-academies-yuelu-bailudong-education</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-book-collecting-tianyi-pavilion-libraries</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/weiqi-go-philosophy-four-arts-strategy</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/xiangqi-chinese-chess-chu-han-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/dragon-boat-festival-unesco-qingming-rituals</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/mid-autumn-qixi-double-ninth-festivals</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/sichuan-chongqing-bashu-heritage-field-guide</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-jade-civilization-hongshan-liangzhu-bi-cong</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/cloisonne-jingtai-blue-carved-lacquer-imperial-crafts</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-shadow-puppetry-paper-cutting-unesco</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/lingqu-canal-karez-turpan-hydraulic-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/beijing-central-axis-unesco-2024-kaogongji</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/kaifeng-bianliang-hangzhou-linan-song-urbanism</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/imperial-dragon-robes-twelve-ornaments-rank-badges</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-hairpins-dian-cui-miao-silver-jewelry</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-chengyu-idioms-classical-fables-vietnamese</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-couplets-duilian-lantern-riddles-literary-games</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-pipa-erhu-silk-road-musical-dialogue</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/yayue-court-music-vietnamese-nha-nhac-hue</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-pritzker-architecture-wang-shu-liu-jiakun</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-modern-libraries-cultural-landmarks-architecture</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/northwest-silk-road-gansu-qinghai-xinjiang-guide</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-four-seasons-cultural-travel-calendar-vietnamese</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/ming-qing-imperial-tombs-unesco-fengshui-sacred-way</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/tang-qianling-zhaoling-imperial-mausoleums-shaanxi</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/honghe-hani-rice-terraces-unesco-ecological-cycle</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-agricultural-classics-qimin-yaoshu-tiangong-kaiwu</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/cantonese-yum-cha-dim-sum-social-ritual</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-noodle-dumpling-geography-lanzhou-shanxi-jiaozi</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/shanghai-coffee-capital-new-chinese-tea-culture</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-night-economy-cultural-creative-museums-wenchuang</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-postal-relay-yizhan-pigeon-correspondence</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/xu-xiake-travel-diaries-classical-chinese-geography</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/ancient-chinese-cartography-peixiu-yuji-tu-kangxi-atlas</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/naxi-dongba-pictographs-memory-of-the-world-lijiang</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/tibetan-thangka-butter-sculpture-monastic-arts</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/hoi-an-chinese-assembly-halls-maritime-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/sino-vietnamese-classical-tales-jiandeng-xinhua-truyen-ky-man-luc</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/east-china-jiangnan-golden-loop-travel-guide-vietnamese</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/kaiping-diaolou-gulangyu-unesco-east-west-architecture</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/shanghai-bund-shikumen-wukang-modern-urban-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/yixing-zisha-clay-teapots-craftsmanship-aesthetics</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/yongle-great-bell-chinese-metallurgy-casting-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-dragon-phoenix-qilin-mythic-iconography</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/pangu-nuwa-fuxi-shennong-creation-mythology</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/lion-dragon-dance-lingnan-northern-folk-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/xiangsheng-crosstalk-pingshu-storytelling-oral-arts</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/wei-jin-xuanxue-seven-sages-bamboo-grove-aesthetics</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/school-of-names-mingjia-gongsun-long-logic-debate</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/sichuan-giant-panda-sanctuaries-national-parks-unesco</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-danxia-karst-wulingyuan-geological-wonders-unesco</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/bencao-gangmu-li-shizhen-history-of-natural-history</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/cholon-lantern-festival-sino-vietnamese-urban-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-inscriptions-hue-imperial-citadel-literature-temple</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/north-china-central-plains-heritage-loop-vietnamese</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/practical-chinese-cultural-etiquette-travel-scenarios-vietnamese</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/shijing-chuci-book-of-songs-poetry-foundations</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/han-fu-yuefu-ballads-jianan-poetry-evolution</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/zizhi-tongjian-sima-guang-chronicle-historiography</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/wenxin-diaolong-liu-xie-chinese-literary-theory</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/tiantai-huayan-pure-land-chinese-buddhist-schools</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/xuanzang-kumarajiva-sutra-translation-methodology</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/northern-southern-dynasties-ethnic-fusion-sui-reunification</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/liao-jin-yuan-multiethnic-eurasian-synthesis</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/four-masters-yuan-dynasty-literati-painting-revolution</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/blue-green-shanshui-wang-ximeng-yongle-palace-murals</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/shuowen-jiezi-xu-shen-kangxi-dictionary-lexicography</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-major-dialect-groups-mandarin-cantonese-wu-min</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/mengxi-bitan-shen-kuo-song-polymath-science</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/su-song-astronomical-clock-tower-escapement-1088</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/yuan-zaju-guan-hanqing-romance-western-chamber</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/ming-qing-chuanqi-drama-tang-xianzu-peony-pavilion</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/sinosphere-east-asian-cultural-sphere-comparative-civilization</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/qianjia-evidential-scholarship-gu-yanwu-dai-zhen</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/four-great-chinese-brocades-yun-shu-song-zhuang</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-guardian-lions-shishi-architectural-symbolism</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-scholars-rocks-gongshi-taihu-lingbi-aesthetics</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/may-fourth-movement-1919-vernacular-baihua-modernity</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/republican-era-sinology-liang-qichao-wang-guowei-chen-yinke</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/neolithic-china-yangshao-hemudu-longshan-origins</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/erlitou-culture-bronze-age-early-state-formation</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-seal-carving-zhuanke-unesco-xiling-society</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/wild-cursive-calligraphy-zhang-xu-huaisu-wei-stele</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/quanzhou-emporium-of-the-world-song-yuan-unesco-2021</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/canton-thirteen-factories-global-tea-porcelain-trade</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-tofu-soy-sauce-shanxi-aged-vinegar-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/han-viet-toponymy-placenames-dynastic-titles-vietnam</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/sino-vietnamese-buddhist-architecture-wooden-temples</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-visa-entry-esim-connectivity-guide-vietnamese</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-hotels-trip-budget-packing-emergency-vietnamese</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/yingzao-fashi-song-dynasty-timber-dougong-brackets</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/imperial-gardens-summer-palace-chengde-mountain-resort</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/kunqu-opera-unesco-2001-water-sleeves-elegance</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/peking-opera-jingju-unesco-2010-lianpu-roles</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/wujing-zongyao-gunpowder-rocketry-early-pyrotechnics</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/luopan-magnetic-compass-zheng-he-star-navigation</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/weifang-kites-zigong-lantern-festival-craftsmanship</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/uyghur-twelve-muqam-unesco-turpan-silk-road-oasis</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/mongolian-morin-khuur-urtiin-duu-grassland-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-baijiu-solid-state-fermentation-qu-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chu-dau-porcelain-ming-ban-maritime-ceramic-route</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-high-speed-rail-12306-luggage-seat-classes-guide</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-museum-reservation-wechat-miniprogram-etiquette-guide</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/modern-chinese-ink-painting-qi-baishi-xu-beihong-lin-fengmian</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/ancient-chinese-cast-iron-blast-furnace-steelmaking-history</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chengdu-teahouse-culture-beijing-hutong-siheyuan-urban-life</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/dai-water-splashing-songkran-yi-torch-festival-yunnan</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/tibet-barkhor-circuit-lhasa-monasteries-cultural-etiquette</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/peking-roast-duck-quanjude-imperial-banquet-history</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/wuyi-rock-tea-tieguanyin-oolong-gongfu-cha-ceremony</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/confucian-temples-qufu-kongmiao-van-mieu-quoc-tu-giam</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-digital-apps-alipay-wechat-didi-amap-meituan-guide</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-cross-border-rail-bus-hanoi-nanning-kunming-logistics</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chang-an-tang-dynasty-lifang-grid-urban-planning</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/jingdezhen-imperial-kilns-blue-and-white-famille-rose-porcelain</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/warring-states-han-chu-lacquerware-mawangdui-preservation</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/cai-lun-papermaking-woodblock-printing-bookbinding-evolution</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/zhang-heng-seismoscope-132ce-armillary-sphere-han-science</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/sichuan-opera-bian-lian-face-changing-cantonese-opera-unesco</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/dong-ethnic-drum-towers-grand-song-unesco-2009-guizhou</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/hakka-walled-villages-fujian-tulou-culture-migration-history</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/west-lake-longjing-green-tea-huangshan-maofeng-pan-firing</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/lanzhou-hand-pulled-noodles-xian-biangbiang-wheat-belt-cuisine</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/nguyen-du-truyen-kieu-qingxin-cairen-jin-yun-qiao-comparative</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-domestic-flights-airport-transfers-luggage-guide-vietnamese</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-family-elderly-solo-travel-safety-health-packing-guide</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/huizhou-architecture-xidi-hongcun-unesco-matouqiang</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/lingnan-qilou-arcade-architecture-guangzhou-haikou-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/ming-qing-woodblock-book-illustration-huizhou-jianning</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/shen-bao-shanghai-modern-press-dianshizhai-pictorial</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/taijiquan-chen-yang-schools-unesco-2020-yin-yang-philosophy</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/tianjin-clay-figurine-zhang-foshan-shiwan-ceramics</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/guo-shoujing-gaocheng-observatory-1276-shoushi-gnomon</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-ancient-waterwheels-longguche-curved-plow-agrotech</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/shanxi-piaohao-rishengchang-pingyao-early-chinese-banking</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-huiguan-guild-halls-merchant-networks-domestic-diaspora</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/qiang-ethnic-stone-watchtowers-diaolou-sichuan-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/bai-ethnic-three-course-tea-dali-erhai-courtyard-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chaoshan-beef-hotpot-marinated-goose-lingnan-culinary-craft</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/shaoxing-huangjiu-rice-wine-nu-er-hong-fermentation-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/guzheng-dan-tranh-silk-bamboo-east-asian-zither-comparison</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/thanh-lieu-woodblock-carving-village-sino-vietnamese-printing</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-scenic-area-tickets-cable-cars-shuttle-buses-guide</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-cultural-shopping-markets-shipping-liquids-tea-customs</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/wudang-mountains-ancient-building-complex-unesco-1994-taoist-architecture</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/fujian-zhejiang-wooden-arch-lounge-bridges-langqiao-unesco-craft</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/four-great-classical-novels-sanguo-shuihu-xiyou-honglou-structure</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/shaolin-monastery-dengfeng-unesco-2010-chan-martial-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/nine-chapters-mathematical-art-jiuzhang-suanshu-zu-chongzhi-pi</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/zhaozhou-anji-bridge-605ce-li-chun-open-spandrel-stone-arch</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/macau-historic-centre-unesco-2005-maritime-canton-galleon-trade</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/ancient-chinese-coinage-banliang-wuzhu-jiaozi-paper-money-song</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/four-sacred-buddhist-mountains-wutai-emei-putuo-jiuhua-pilgrimage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/miao-ethnic-silver-ornaments-guizhou-batik-indigo-craft-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/yunnan-puerh-tea-ancient-tea-horse-road-fermentation-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/shandong-lu-cuisine-confucius-mansion-banquet-kongfu-cai-culinary</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/bat-trang-jingdezhen-ceramics-kiln-glaze-comparative-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/pho-hien-hung-yen-chinese-merchant-guilds-seventeenth-century-trade</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-overnight-sleeper-trains-luggage-storage-left-luggage-guide</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-travel-esim-vpn-roaming-photography-drone-regulations-guide</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/su-song-water-powered-astronomical-clock-tower-1088</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/tiangong-kaiwu-song-yingxing-1637-technology</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/zheng-he-nautical-charts-wubeizhi-celestial-navigation</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/yongle-great-bell-beijing-bronze-casting-metallurgy</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/siku-quanshu-1773-1782-four-part-bibliography</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/zhaozhou-anji-bridge-li-chun-605-open-spandrel-arch</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/loess-plateau-yaodong-cave-dwellings-thermal-microclimate</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/fujian-tulou-yongding-nanjing-hakka-defensive-clan-architecture</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/pingyao-ancient-city-rishengchang-piaohao-1823-banking</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/beijing-siheyuan-courtyard-feng-shui-spatial-hierarchy</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/xidi-hongcun-huizhou-ox-intestine-water-system</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/zhouzhuang-wuzhen-jiangnan-water-towns-taihu-silk-economy</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/guqin-seven-string-zither-jianzipu-literati-aesthetics</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chinese-seal-engraving-xiling-society-tianhuang-shoushan-stone</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/peking-opera-four-roles-lianpu-facial-makeup-grammar</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/kunqu-opera-peony-pavilion-tang-xianzu-suzhou-heritage</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/guo-xi-linquan-gaozhi-three-distances-landscape-painting</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/yixing-zisha-purple-clay-teapots-zhuni-duanni-kiln-craft</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/dai-viet-su-ky-toan-thu-tu-tri-thong-giam-bien-nien-chinh-thong</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/phap-lam-cung-dinh-hue-canh-thai-lan-bac-kinh-men-dong-the-ky-19</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chu-nom-khai-hoan-truyen-kieu-chinh-phu-ngam-gia-ta-hinh-thanh</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/hoi-quan-phuc-kien-trieu-chau-quang-dong-hoi-an-cho-lon-thien-hau</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/kinh-thanh-hue-1805-nam-kinh-minh-co-cung-thuy-dao-phao-dai</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/tranh-dong-ho-hang-trong-moc-ban-nien-hoa-duong-lieu-thanh</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-high-speed-rail-fuxing-cr400-12306-hubs</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-cashless-payment-ecosystem-2026-alipay-wechat-ecny</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/chongqing-3d-multilevel-urbanism-hongyadong-liziba-huangjuewan</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/shanghai-urban-heritage-conservation-shikumen-the-bund</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/china-national-parks-system-2026-jiuzhaigou-zhangjiajie-xishuangbanna</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/vietnam-china-border-gates-cross-border-railways-2026</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/quang-dong-chiet-giang-mua-hang-kiem-dinh-nha-may-canton-fair-hoa-cuong-bac-nghia-o</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/tieu-chuan-dang-ky-doanh-nghiep-thuc-pham-gacc-lenh-248-249-280-nong-san-viet-nam</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/hoa-don-thue-gtgt-dien-tu-fapiao-doi-soat-thanh-toan-bien-mau-cny-vnd</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/thuc-thi-ban-quyen-nhan-hieu-toa-an-so-huu-tri-tue-bac-kinh-thuong-hai-quang-chau</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/quy-tac-xuat-xu-cong-gop-rcep-nghi-dinh-thu-acfta-3-0-det-may-dien-tu</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chinese-culture-explorer.netlify.app/chuyen-luan/ky-nghe-nang-luong-xanh-pin-lfp-catl-duong-sat-dien-khi-hoa-dong-nam-a</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-beijing</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-tianjin</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-shanghai</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-chongqing</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-hebei</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-shanxi</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-liaoning</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-jilin</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-heilongjiang</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-jiangsu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-zhejiang</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-anhui</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-fujian</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-jiangxi</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-shandong</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-henan</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-hubei</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-hunan</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-guangdong</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-hainan</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-sichuan</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-guizhou</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-yunnan</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-shaanxi</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-gansu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-qinghai</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-taiwan</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-inner-mongolia</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-guangxi</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-tibet</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-ningxia</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-xinjiang</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-hongkong</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/tinh-thanh/prov-macau</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/luoshenfu-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/nvshi-zhentu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/ershiba-xiu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/you-chun-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/bu-nian-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/lidai-diwang-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/tianwang-songzi-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/guoguo-furen-youchun</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/daolian-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/zhanhua-shinv-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/huishan-shinv-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/kuanglu-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/xiaoxiang-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/hanlin-chongting</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/qiushan-wendao</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/hanxizai-yeyan</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/xiesheng-zhenqin</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/xishan-xinglv</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/zao-chun-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/wanhe-songfeng-litang</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/qingming-shanghe</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/qianli-jiangshan</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/rui-he-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/furong-jinji</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/wuma-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/chushan-ruiai</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/kumu-guaishi</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/libai-hangyin</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/dage-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/quehua-qiuse</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/xiushi-shulin</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/fuchun-shanju</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/dongting-yuyin</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/liujunzi-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/qingbian-yinju</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/lushan-gao</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/gumu-youquan</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/shanlu-songsheng</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/hangong-chunxiao</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/qiuxing-bajing</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/mo-putao</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/huishan-chahui</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/luomu-qiuse</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/kangxi-nanxun</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/wanhe-songfeng-qing</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/huaiyang-jieqiu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/kongque-zhushi</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/zhushi-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/moxia-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/benma-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/lushan-tu-daqian</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/shujiang-bishitu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/jiangshan-duojiao-1959</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/wanshan-hongbian</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/wuniu-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/zhaoye-bai-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/jiangxing-chuxue-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/tingqin-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/hanjiang-dudiao-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/jiulong-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/xishan-qingyuan-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/molan-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/qiujiao-yinma-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/yufu-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/momei-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/taohuayuan-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/songyin-fangyou-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/hehua-shuiqin-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/zhushi-zhengbanqiao</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/huangshan-tu-meiqing</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/bajun-tu-langshining</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/quoc-hoa/gusu-fanhua-tu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/jiangshan-ruci-duojiao</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/qianli-jiangshan</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/qingming-scroll</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/great-wall-scroll</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/lantingji-xu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/hanshi-tie</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/david-vases</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/chenghua-cup</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/yongle-dadian</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/daming-hunyitu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/taihe-dian</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/forbidden-city-axis-gate</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/houmuwu-ding</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/liangzhu-yucong</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/zheng-he-navigation-chart</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/acupuncture-bronze-figure</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/han-shipan-astrolabe</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/chu-dau-blue-white-ceramic</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/sanxingdui-bronze-mask</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/zeng-hou-yi-bianzhong</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/tiangong-kaiwu-woodblock</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/jinshi-doctoral-stele</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/ma-dap-phi-yen</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/mao-gong-ding</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/ru-yao-tianqing</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/quan-yao-vase</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/ge-yao-incense-burner</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/ding-yao-bowl</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/jun-yao-bowl</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/siyang-fangzun</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/jinlv-yuyi</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/pingfu-tie</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/zhongqiu-tie</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/boyuan-tie</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/daxiguan-ding</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/zhaoqing-duanyan-inkstone</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/guqin-jiuxiao-huanpei</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/goujian-sword</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/sanxingdui-bronze-tree</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/fuhao-owl-zun</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/lianhe-fanghu</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/yongle-great-bell</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/terracotta-general</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/changxin-palace-lamp</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/mawangdui-silk-gown</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/hejiacun-agate-cup</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/tang-sancai-camel</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/jian-yao-yaobian-tenmoku</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/longquan-celadon-vase</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/xuande-blue-white-meiping</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/kuaixue-shiqing-tie</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/jizhi-wengao-yan-zhenqing</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/song-printed-shiji</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/ngoc-lu-bronze-drum</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://chinese-culture-explorer.netlify.app/bao-tang/ly-tran-celadon-lotus-jar</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>

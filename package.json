@@ -4,6 +4,7 @@
   "private": true,
   "description": "Chinese Culture Explorer (Lê Hưng Thịnh) - Bilingual Sinological & Sino-Vietnamese Cultural Platform",
   "dependencies": {
+    "@netlify/blobs": "^11.1.11",
     "@netlify/functions": "^3.1.0",
     "@netlify/identity": "^1.0.1"
   }

@@ -239,7 +239,7 @@
 
         '<!-- 1. Iconic Image -->' +
         '<div style="aspect-ratio:16/10;background:var(--bg-surface);border:1px solid var(--hairline);overflow:hidden;margin-bottom:0.65rem;">' +
-          '<img src="' + esc(pr.image || "") + '" alt="' + esc(pName) + '" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;" />' +
+          '<img src="' + esc(pr.image || "assets/images/articles/hero-traditional-arch.jpg") + '" alt="' + esc(pName) + '" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;" />' +
         '</div>' +
         '<div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.45rem;">' +
           '<span class="badge badge-gold">' + esc(pType) + '</span>' +

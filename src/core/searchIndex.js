@@ -38,9 +38,20 @@
 
   function buildIndex() {
     var out = [];
-    var arts = window.CCE_ARTICLES || [];
+    var arts = (window.CCE_ARTICLES || []).slice();
+    var seenArt = Object.create(null);
+    var manifestStubs = (window.CCE_V104_MANIFEST && window.CCE_V104_MANIFEST.monographsStub) || [];
+    for (var mIdx = 0; mIdx < manifestStubs.length; mIdx++) {
+      arts.push(manifestStubs[mIdx]);
+    }
     for (var i = 0; i < arts.length; i++) {
       var a = arts[i];
+      if (!a || !a.id) continue;
+      if (seenArt[a.id]) continue;
+      seenArt[a.id] = true;
+      var absTxt = typeof a.abstract === "string"
+        ? a.abstract
+        : ((a.abstract && (a.abstract.vi || a.abstract.text || a.abstract.en)) || "");
       out.push({
         type: "article",
         id: a.id,
@@ -49,7 +60,7 @@
         zh: a.titleZh || "",
         sub: a.categoryLabel || "Chuyên luận",
         rawTitle: norm((a.titleVi || "") + " " + (a.titleEn || "") + " " + (a.titleZh || "")),
-        body: norm((a.abstract || "") + " " + (a.introduction || "") + " " + (a.categoryLabel || ""))
+        body: norm((a.standfirst || "") + " " + absTxt + " " + (a.introduction || "") + " " + (a.categoryLabel || ""))
       });
     }
 

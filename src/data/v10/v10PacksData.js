@@ -3437,11 +3437,15 @@
         "branchPills": [
           {
             "labelVi": "Xem tranh mùa xuân trong kho quốc họa",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "you-chun-tu"
           },
           {
             "labelVi": "Đọc chuyên luận nông lịch cổ đại",
-            "targetRoute": "/chuyen-luan"
+            "targetRoute": "/chuyen-luan",
+            "targetAction": "open-article",
+            "targetId": "tcm-solar-terms-yangsheng"
           }
         ]
       },
@@ -3458,11 +3462,15 @@
         "branchPills": [
           {
             "labelVi": "Ngắm sơn thủy đầu xuân trong quốc họa",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "zao-chun-tu"
           },
           {
             "labelVi": "Tìm hiểu khí hậu vùng Giang Nam",
-            "targetRoute": "/tinh-thanh"
+            "targetRoute": "/tinh-thanh",
+            "targetAction": "open-article",
+            "targetId": "east-china-jiangnan-golden-loop-travel-guide-vietnamese"
           }
         ]
       },
@@ -3479,11 +3487,15 @@
         "branchPills": [
           {
             "labelVi": "Xem tranh hoa điểu trong kho quốc họa",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "xiesheng-zhenqin"
           },
           {
             "labelVi": "Đọc chuyên luận lễ tục dân gian",
-            "targetRoute": "/chuyen-luan"
+            "targetRoute": "/chuyen-luan",
+            "targetAction": "open-article",
+            "targetId": "spring-festival-significance"
           }
         ]
       },
@@ -3500,11 +3512,15 @@
         "branchPills": [
           {
             "labelVi": "Xem tranh du xuân đời Đường",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "guoguo-furen-youchun"
           },
           {
             "labelVi": "Khám phá bảo vật lịch pháp cổ đại",
-            "targetRoute": "/bao-tang"
+            "targetRoute": "/bao-tang",
+            "targetAction": "open-artifact",
+            "targetId": "han-shipan-astrolabe"
           }
         ]
       },
@@ -3521,11 +3537,15 @@
         "branchPills": [
           {
             "labelVi": "Cuộn trường quyển Thanh Minh Thượng Hà Đồ",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "qingming-shanghe"
           },
           {
             "labelVi": "Khám phá Hàng Châu và trà Long Tỉnh",
-            "targetRoute": "/tinh-thanh"
+            "targetRoute": "/tinh-thanh",
+            "targetAction": "open-article",
+            "targetId": "west-lake-longjing-green-tea-huangshan-maofeng-pan-firing"
           }
         ]
       },
@@ -3542,11 +3562,15 @@
         "branchPills": [
           {
             "labelVi": "Xem trường quyển Phú Xuân Sơn Cư Đồ",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "fuchun-shanju"
           },
           {
             "labelVi": "Tìm hiểu chuỗi cung ứng trà truyền thống",
-            "targetRoute": "/kinh-doanh"
+            "targetRoute": "/kinh-doanh",
+            "targetAction": "open-article",
+            "targetId": "tea-culture"
           }
         ]
       },
@@ -3563,11 +3587,15 @@
         "branchPills": [
           {
             "labelVi": "Xem tranh sơn thủy đời Tống",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "xishan-xinglv"
           },
           {
             "labelVi": "Đọc chuyên luận ẩm thực theo mùa",
-            "targetRoute": "/chuyen-luan"
+            "targetRoute": "/chuyen-luan",
+            "targetAction": "open-article",
+            "targetId": "solar-terms-huangdi-neijing"
           }
         ]
       },
@@ -3584,11 +3612,15 @@
         "branchPills": [
           {
             "labelVi": "Xem tranh nghề tằm tơ đời Đường",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "daolian-tu"
           },
           {
             "labelVi": "Tìm hiểu vùng tơ lụa Giang Tô",
-            "targetRoute": "/tinh-thanh"
+            "targetRoute": "/tinh-thanh",
+            "targetAction": "open-province-detail",
+            "targetId": "prov-jiangsu"
           }
         ]
       },
@@ -3605,11 +3637,15 @@
         "branchPills": [
           {
             "labelVi": "Xem bức Ngũ Ngưu Đồ của Hàn Hoảng",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "wuniu-tu"
           },
           {
             "labelVi": "Đọc chuyên luận nông nghiệp lúa nước",
-            "targetRoute": "/chuyen-luan"
+            "targetRoute": "/chuyen-luan",
+            "targetAction": "open-article",
+            "targetId": "chinese-agricultural-classics-qimin-yaoshu-tiangong-kaiwu"
           }
         ]
       },
@@ -3626,11 +3662,15 @@
         "branchPills": [
           {
             "labelVi": "Xem trường quyển Thiên Lý Giang Sơn Đồ",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "qianli-jiangshan"
           },
           {
             "labelVi": "Khám phá dụng cụ thiên văn cổ đại",
-            "targetRoute": "/bao-tang"
+            "targetRoute": "/bao-tang",
+            "targetAction": "open-artifact",
+            "targetId": "v14-art-09"
           }
         ]
       },
@@ -3647,11 +3687,15 @@
         "branchPills": [
           {
             "labelVi": "Xem tranh hoa sen cổ điển",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "hehua-shuiqin-tu"
           },
           {
             "labelVi": "Khám phá ẩm thực mùa hè Hồ Nam",
-            "targetRoute": "/tinh-thanh"
+            "targetRoute": "/tinh-thanh",
+            "targetAction": "open-province-detail",
+            "targetId": "prov-hunan"
           }
         ]
       },
@@ -3668,11 +3712,15 @@
         "branchPills": [
           {
             "labelVi": "Xem tranh núi cao suối mát đời Tống",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "lushan-gao"
           },
           {
             "labelVi": "Tìm hiểu vùng trà và gốm Phúc Kiến",
-            "targetRoute": "/tinh-thanh"
+            "targetRoute": "/tinh-thanh",
+            "targetAction": "open-province-detail",
+            "targetId": "prov-fujian"
           }
         ]
       },
@@ -3689,11 +3737,15 @@
         "branchPills": [
           {
             "labelVi": "Xem tranh Thước Hoa Thu Sắc Đồ",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "quehua-qiuse"
           },
           {
             "labelVi": "Khám phá Tế Nam và tỉnh Sơn Đông",
-            "targetRoute": "/tinh-thanh"
+            "targetRoute": "/tinh-thanh",
+            "targetAction": "open-province-detail",
+            "targetId": "prov-shandong"
           }
         ]
       },
@@ -3710,11 +3762,15 @@
         "branchPills": [
           {
             "labelVi": "Xem tranh cảnh thu trong kho quốc họa",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "qiuxing-bajing"
           },
           {
             "labelVi": "Tìm hiểu cố đô Nam Kinh",
-            "targetRoute": "/tinh-thanh"
+            "targetRoute": "/tinh-thanh",
+            "targetAction": "open-province-detail",
+            "targetId": "prov-jiangsu"
           }
         ]
       },
@@ -3731,11 +3787,15 @@
         "branchPills": [
           {
             "labelVi": "Xem trường quyển Lạc Thần Phú Đồ",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "luoshenfu-tu"
           },
           {
             "labelVi": "Đọc chuyên luận thi ca Đường Tống",
-            "targetRoute": "/chuyen-luan"
+            "targetRoute": "/chuyen-luan",
+            "targetAction": "open-article",
+            "targetId": "tang-poetry-song-ci-poetics-geography"
           }
         ]
       },
@@ -3752,11 +3812,15 @@
         "branchPills": [
           {
             "labelVi": "Xem tranh công bút triều Bắc Tống",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "furong-jinji"
           },
           {
             "labelVi": "Tìm hiểu thương hiệu ẩm thực Tô Châu",
-            "targetRoute": "/kinh-doanh"
+            "targetRoute": "/kinh-doanh",
+            "targetAction": "open-article",
+            "targetId": "chinese-laozihao-guochao-brands"
           }
         ]
       },
@@ -3773,11 +3837,15 @@
         "branchPills": [
           {
             "labelVi": "Xem trường quyển Hàn Hy Tái Dạ Yến Đồ",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "hanxizai-yeyan"
           },
           {
             "labelVi": "Khám phá trà cụ gốm sứ cổ",
-            "targetRoute": "/bao-tang"
+            "targetRoute": "/bao-tang",
+            "targetAction": "open-artifact",
+            "targetId": "ru-yao-tianqing"
           }
         ]
       },
@@ -3794,11 +3862,15 @@
         "branchPills": [
           {
             "labelVi": "Xem bức Thụy Hạc Đồ thời Bắc Tống",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "rui-he-tu"
           },
           {
             "labelVi": "Đọc chuyên luận mỹ học văn nhân",
-            "targetRoute": "/chuyen-luan"
+            "targetRoute": "/chuyen-luan",
+            "targetAction": "open-article",
+            "targetId": "chinese-aesthetic-concepts-qiyun-yijing"
           }
         ]
       },
@@ -3815,11 +3887,15 @@
         "branchPills": [
           {
             "labelVi": "Xem tranh tuyết đầu mùa thời Ngũ Đại",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "jiangxing-chuxue-tu"
           },
           {
             "labelVi": "Tìm hiểu văn hóa ẩm thực Bắc Kinh",
-            "targetRoute": "/tinh-thanh"
+            "targetRoute": "/tinh-thanh",
+            "targetAction": "open-article",
+            "targetId": "peking-roast-duck-quanjude-imperial-banquet-history"
           }
         ]
       },
@@ -3836,11 +3912,15 @@
         "branchPills": [
           {
             "labelVi": "Xem tranh trúc tuyết trong kho quốc họa",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "zhushi-tu"
           },
           {
             "labelVi": "Tìm hiểu trà cổ thụ tỉnh Vân Nam",
-            "targetRoute": "/tinh-thanh"
+            "targetRoute": "/tinh-thanh",
+            "targetAction": "open-article",
+            "targetId": "yunnan-puerh-tea-ancient-tea-horse-road-fermentation-heritage"
           }
         ]
       },
@@ -3857,11 +3937,15 @@
         "branchPills": [
           {
             "labelVi": "Xem bức Hàn Giang Độc Điếu Đồ",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "hanjiang-dudiao-tu"
           },
           {
             "labelVi": "Khám phá gốm men tối đời Tống",
-            "targetRoute": "/bao-tang"
+            "targetRoute": "/bao-tang",
+            "targetAction": "open-artifact",
+            "targetId": "jian-yao-yaobian-tenmoku"
           }
         ]
       },
@@ -3878,11 +3962,15 @@
         "branchPills": [
           {
             "labelVi": "Xem kiệt tác Bộ Liễn Đồ đời Đường",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "bu-nian-tu"
           },
           {
             "labelVi": "Đọc chuyên luận lễ tế Thiên Đàn",
-            "targetRoute": "/chuyen-luan"
+            "targetRoute": "/chuyen-luan",
+            "targetAction": "open-article",
+            "targetId": "temple-of-heaven-tiantan-cosmology-3d"
           }
         ]
       },
@@ -3899,11 +3987,15 @@
         "branchPills": [
           {
             "labelVi": "Xem tranh sơn thủy mùa đông",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "kumu-guaishi"
           },
           {
             "labelVi": "Tìm hiểu đặc sản mùa đông Quảng Đông",
-            "targetRoute": "/kinh-doanh"
+            "targetRoute": "/kinh-doanh",
+            "targetAction": "open-article",
+            "targetId": "cantonese-yum-cha-dim-sum-social-ritual"
           }
         ]
       },
@@ -3920,11 +4012,15 @@
         "branchPills": [
           {
             "labelVi": "Xem tranh mai tuyết trong kho quốc họa",
-            "targetRoute": "/quoc-hoa"
+            "targetRoute": "/quoc-hoa",
+            "targetAction": "open-painting-detail",
+            "targetId": "momei-tu"
           },
           {
             "labelVi": "Khám phá bảo vật nghi lễ năm mới",
-            "targetRoute": "/bao-tang"
+            "targetRoute": "/bao-tang",
+            "targetAction": "open-artifact",
+            "targetId": "houmuwu-ding"
           }
         ]
       }

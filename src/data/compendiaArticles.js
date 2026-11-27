@@ -1087,10 +1087,15 @@ window.CCE_COMPENDIA_ARTICLES = [
 ];
 
 if (Array.isArray(window.CCE_ARTICLES)) {
-  const existingIds = new Set(window.CCE_ARTICLES.map((a) => a.id));
+  const existingIdx = new Map();
+  window.CCE_ARTICLES.forEach((a, idx) => { if (a && a.id && !existingIdx.has(a.id)) existingIdx.set(a.id, idx); });
   window.CCE_COMPENDIA_ARTICLES.forEach((art) => {
-    if (!existingIds.has(art.id)) {
+    if (!existingIdx.has(art.id)) {
+      existingIdx.set(art.id, window.CCE_ARTICLES.length);
       window.CCE_ARTICLES.push(art);
+    } else {
+      const ex = window.CCE_ARTICLES[existingIdx.get(art.id)];
+      if (ex && (ex._v23Stub || ex._v104Stub)) window.CCE_ARTICLES[existingIdx.get(art.id)] = art;
     }
   });
 }

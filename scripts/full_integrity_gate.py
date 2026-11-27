@@ -183,20 +183,28 @@ def main() -> int:
             st = sp.read_text(encoding="utf-8")
             if "**" in re.search(r"<title>(.*?)</title>", st).group(1):
                 seo_issues.append(f"Raw markdown in <title>: {sp.as_posix()}")
+    lazy_src_txt = (ROOT / "src" / "core" / "lazyLoader.js").read_text(encoding="utf-8") if (ROOT / "src" / "core" / "lazyLoader.js").is_file() else ""
+    for req_lazy_mod in (
+        "src/data/v5/v5DeepEnrichmentLayer.js",
+        "src/data/v6/v6EncyclopediaAndVisuals.js",
+        "src/data/v7/v7CompleteEncyclopedia.js",
+        "src/data/v8/v8MasterBridge.js",
+    ):
+        if req_lazy_mod not in lazy_src_txt:
+            seo_issues.append(f"lazyLoader.js missing deferred bundle entry: {req_lazy_mod}")
     for shell_rel in ["van-hoa.html", "explore.html", "kinh-doanh.html", "hoc-tap.html"]:
         sp_path = ROOT / "seo_pages" / shell_rel
         if not sp_path.is_file():
             seo_issues.append(f"Missing SEO shell: seo_pages/{shell_rel}")
         else:
             sh_txt = sp_path.read_text(encoding="utf-8")
-            if "src/data/v5/v5DeepEnrichmentLayer.js" not in sh_txt:
-                seo_issues.append(f"Stale SEO shell missing V5 scripts: seo_pages/{shell_rel}")
-            if "src/data/v6/v6EncyclopediaAndVisuals.js" not in sh_txt:
-                seo_issues.append(f"Stale SEO shell missing V6 scripts: seo_pages/{shell_rel}")
-            if "src/data/v7/v7CompleteEncyclopedia.js" not in sh_txt:
-                seo_issues.append(f"Stale SEO shell missing V7 scripts: seo_pages/{shell_rel}")
-            if "src/data/v8/v8MasterBridge.js" not in sh_txt:
-                seo_issues.append(f"Stale SEO shell missing V8 bridge script: seo_pages/{shell_rel}")
+            for req_boot_ref in (
+                "src/core/lazyLoader.js",
+                "src/data/cce_v10_upgrade/cceV10SearchManifest.js",
+                "src/views/v104ViewsBridge.js",
+            ):
+                if req_boot_ref not in sh_txt:
+                    seo_issues.append(f"Stale SEO shell missing {req_boot_ref}: seo_pages/{shell_rel}")
     print(f"[Gate 7] SEO & OG Shells Integrity: {'PASS' if not seo_issues else 'FAIL'}")
     failures.extend(seo_issues)
 
@@ -274,11 +282,11 @@ def main() -> int:
     print(f"[Gate 9] V4/V6/V7 Data, Epistemology & WebGL Mgr: {'PASS' if not g9_issues else 'FAIL'}")
     failures.extend(g9_issues)
 
-    # Gate 10: PWA Cache Parity (cce-v10.3) & Zero Dev Jargon / Version Hype in UI Strings
+    # Gate 10: PWA Cache Parity (cce-v10.4) & Zero Dev Jargon / Version Hype in UI Strings
     g10_issues: list[str] = []
     sw_txt = (ROOT / "sw.js").read_text(encoding="utf-8") if (ROOT / "sw.js").is_file() else ""
-    if 'CACHE_VERSION = "cce-v10.3"' not in sw_txt:
-        g10_issues.append('sw.js CACHE_VERSION is not "cce-v10.3"')
+    if 'CACHE_VERSION = "cce-v10.4"' not in sw_txt:
+        g10_issues.append('sw.js CACHE_VERSION is not "cce-v10.4"')
     ui_scan = [
         ROOT / "index.html",
         ROOT / "manifest.json",
@@ -932,8 +940,8 @@ def main() -> int:
     idx_html_txt = (ROOT / "index.html").read_text(encoding="utf-8")
     if 'styles/v9-visual-system.css' not in idx_html_txt:
         g17_issues.append("index.html missing styles/v9-visual-system.css link")
-    if 'CACHE_VERSION = "cce-v10.3"' not in (ROOT / "sw.js").read_text(encoding="utf-8"):
-        g17_issues.append("sw.js CACHE_VERSION is not cce-v10.3")
+    if 'CACHE_VERSION = "cce-v10.4"' not in (ROOT / "sw.js").read_text(encoding="utf-8"):
+        g17_issues.append("sw.js CACHE_VERSION is not cce-v10.4")
 
     def _rel_lum(hex_c: str) -> float:
         hx = hex_c.lstrip("#")
@@ -1129,12 +1137,103 @@ def main() -> int:
     print(f"[Gate 23] Feedback-Only Modal Parity (Zero Dev Q&A): {'PASS' if not g23_issues else f'FAIL ({len(g23_issues)})'}")
     failures.extend(g23_issues[:20])
 
+    # Gate 24: Static SEO Shells Parity & 294-Essay Sitemap Coverage
+    g24_issues: list[str] = []
+    essay_shells = list((ROOT / "seo_pages" / "chuyen-luan").glob("*.html")) if (ROOT / "seo_pages" / "chuyen-luan").is_dir() else []
+    if len(essay_shells) < 294:
+        g24_issues.append(f"Expected >= 294 static essay HTML shells, found {len(essay_shells)}")
+    sm_path = ROOT / "sitemap.xml"
+    sm_txt = sm_path.read_text(encoding="utf-8") if sm_path.is_file() else ""
+    if sm_txt.count("<url>") < 465:
+        g24_issues.append(f"Expected >= 465 URLs in sitemap.xml, found {sm_txt.count('<url>')}")
+    idx_srcs = re.findall(r'<script[^>]+src="([^"]+)"', idx_html_txt)
+    for sample_shell in ("explore.html", "kinh-doanh.html", "chuyen-luan/tang-code-imperial-law-hong-duc.html"):
+        sp = ROOT / "seo_pages" / sample_shell
+        if not sp.is_file():
+            g24_issues.append(f"Missing expected SEO shell: seo_pages/{sample_shell}")
+            continue
+        sh_srcs = [s.lstrip("/") for s in re.findall(r'<script[^>]+src="([^"]+)"', sp.read_text(encoding="utf-8"))]
+        if sh_srcs != [s.lstrip("/") for s in idx_srcs]:
+            g24_issues.append(f"Script list drift between index.html ({len(idx_srcs)}) and seo_pages/{sample_shell} ({len(sh_srcs)})")
+    print(f"[Gate 24] 294-Essay SEO Shells & Sitemap Parity: {'PASS' if not g24_issues else f'FAIL ({len(g24_issues)})'}")
+    failures.extend(g24_issues[:20])
+
+    # Gate 25: Synchronous JS Boot Budget (< 4.0 MB) & Fast Splash Curtain
+    g25_issues: list[str] = []
+    sync_bytes = 0
+    for s_src in idx_srcs:
+        fp_s = ROOT / s_src.split("?")[0].lstrip("/")
+        if fp_s.is_file():
+            sync_bytes += fp_s.stat().st_size
+        else:
+            g25_issues.append(f"Missing index.html script: {s_src}")
+    if sync_bytes >= 4_000_000:
+        g25_issues.append(f"Synchronous JS boot payload exceeds 4.0 MB: {sync_bytes} bytes")
+    m_timer = re.search(r"__CCE_SPLASH_TIMER\s*=\s*setTimeout\s*\(.*?,\s*(\d+)\s*\)", idx_html_txt, re.S)
+    if not m_timer or int(m_timer.group(1)) > 500:
+        g25_issues.append("Splash curtain fallback timer must be <= 500ms in index.html")
+    print(f"[Gate 25] Sync JS Budget (<4.0 MB = {sync_bytes/1024/1024:.2f} MB) & Fast Curtain: {'PASS' if not g25_issues else f'FAIL ({len(g25_issues)})'}")
+    failures.extend(g25_issues[:20])
+
+    # Gate 26: V10.4 Bundles, Theme-Safe Rich Blocks & Zero Missing Images
+    g26_issues: list[str] = []
+    req_v104 = [
+        "src/data/cce_v10_upgrade/cceV10Monographs294Bundle.js",
+        "src/data/cce_v10_upgrade/cceV10SearchManifest.js",
+        "src/data/cce_v10_upgrade/cceV10Museum199Bundle.js",
+        "src/data/cce_v10_upgrade/cceV10QuocHoa72Bundle.js",
+        "src/data/cce_v10_upgrade/cceV10Provinces34AtlasBundle.js",
+        "src/data/cce_v10_upgrade/cceV10Quiz830AndIndexesBundle.js",
+        "src/components/cceV10RichBlocksRenderer.js",
+        "src/components/3d/cceV10Unified3DStudio72.js",
+        "src/views/v104ViewsBridge.js",
+    ]
+    for r104 in req_v104:
+        p104 = ROOT / r104
+        if not p104.is_file() or p104.stat().st_size < 500:
+            g26_issues.append(f"Missing or empty V10.4 file: {r104}")
+    rb_txt = (ROOT / "src/components/cceV10RichBlocksRenderer.js").read_text(encoding="utf-8") if (ROOT / "src/components/cceV10RichBlocksRenderer.js").is_file() else ""
+    if re.search(r"background\s*:\s*#(?:fff(?:fff)?|f8f9fa)\b", rb_txt, re.IGNORECASE):
+        g26_issues.append("cceV10RichBlocksRenderer.js contains hardcoded light-only background hex")
+    for bun_chk in (
+        ROOT / "src/data/cce_v10_upgrade/cceV10Monographs294Bundle.js",
+        ROOT / "src/data/cce_v10_upgrade/cceV10Museum199Bundle.js",
+    ):
+        if bun_chk.is_file():
+            for img_rel in set(re.findall(r'assets/images/[a-zA-Z0-9_./-]+', bun_chk.read_text(encoding="utf-8"))):
+                if not (ROOT / img_rel).is_file():
+                    g26_issues.append(f"Missing disk image in {bun_chk.name}: {img_rel}")
+    print(f"[Gate 26] V10.4 Bundles, Dark-Mode Rich Blocks & Disk Assets: {'PASS' if not g26_issues else f'FAIL ({len(g26_issues)})'}")
+    failures.extend(g26_issues[:20])
+
+    # Gate 27: Netlify Blobs Serverless Functions & 7-Beat Heritage Home Architecture
+    g27_issues: list[str] = []
+    for nf in ("netlify/functions/state.mts", "netlify/functions/feedback.mts"):
+        if not (ROOT / nf).is_file():
+            g27_issues.append(f"Missing serverless function: {nf}")
+    gac_suite = (ROOT / "src/components/v10GacDiscoverySuite.js").read_text(encoding="utf-8") if (ROOT / "src/components/v10GacDiscoverySuite.js").is_file() else ""
+    for fn_tok in (
+        "renderPeekStoryCarousel",
+        "renderObjectSpotlight",
+        "renderTopPicksAccordion",
+        "renderScrollAtlasPreview",
+        "renderAlmanacSplit",
+        "renderPalaceArchCta",
+        "syncRightEdgeDock",
+    ):
+        if fn_tok not in gac_suite:
+            g27_issues.append(f"v10GacDiscoverySuite.js missing 7-beat builder: {fn_tok}")
+    if "renderHomeSuite" not in app_txt or "syncRightEdgeDock" not in app_txt:
+        g27_issues.append("src/app.js missing 7-beat renderHomeSuite or syncRightEdgeDock hook")
+    print(f"[Gate 27] Netlify Blobs Endpoints & 7-Beat Heritage Suite: {'PASS' if not g27_issues else f'FAIL ({len(g27_issues)})'}")
+    failures.extend(g27_issues[:20])
+
     if failures:
         print("\nGATE FAILURES:")
         for f in failures:
             print(" -", f)
         return 1
-    print("\nALL 23 INTEGRITY GATES PASSED CLEANLY.")
+    print("\nALL 27 INTEGRITY GATES PASSED CLEANLY.")
     return 0
 
 

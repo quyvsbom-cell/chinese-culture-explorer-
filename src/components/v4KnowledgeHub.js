@@ -100,19 +100,19 @@
     "assets/images/articles/hero-beijing-shanghai.jpg",
     "assets/images/articles/hero-b2b-negotiation-table.jpg",
     "assets/images/academic/chengdu-jinli.jpg",
-    "assets/images/prov_items/anhui/d0.jpg"
+    "assets/images/editorial_v8/field-rail-transit.jpg"
   ];
 
   var OPERA_SCRIPT_RELICS = [
-    "assets/images/prov_items/anhui/d1.jpg",
+    "assets/images/opera/op-01.jpg",
     "assets/images/provinces/sichuan-jiuzhaigou.jpg",
     "assets/images/provinces/jiangsu-suzhou-garden.jpg",
     "assets/images/provinces/guangdong-canton-tower.jpg",
     "assets/images/provinces/anhui-huangshan-cloudsea.jpg",
     "assets/images/museum/mao-gong-ding.jpg",
-    "assets/images/prov_items/anhui/d2.jpg",
+    "assets/images/opera/op-08.jpg",
     "assets/images/museum/jizhi-wengao-yan-zhenqing.jpg",
-    "assets/images/prov_items/anhui/d3.jpg",
+    "assets/images/opera/inst-01.jpg",
     "assets/images/museum/pingfu-tie.jpg"
   ];
 
@@ -120,7 +120,7 @@
     "assets/images/articles/hero-tcm-solar.jpg",
     "assets/images/museum/acupuncture-bronze.jpg",
     "assets/images/articles/hero-tea-culture.jpg",
-    "assets/images/prov_items/anhui/d4.jpg",
+    "assets/images/herbs/herb-astragalus.jpg",
     "assets/images/editorial/infographic-tcm-meridian-clock.svg",
     "assets/images/editorial/infographic-wuxing-correlative.svg",
     "assets/images/articles/hero-yinyang.jpg",
@@ -129,8 +129,8 @@
 
   var STUDY_POOL = [
     "assets/images/articles/hero-academy-shuyuan.jpg",
-    "assets/images/prov_items/anhui/f0.jpg",
-    "assets/images/prov_items/anhui/f1.jpg",
+    "assets/images/universities/csc-01.jpg",
+    "assets/images/universities/csc-02.jpg",
     "assets/images/academic/van-mieu-hanoi.jpg",
     "assets/images/provinces/beijing-temple-of-heaven.jpg",
     "assets/images/provinces/shanghai-bund-skyline.jpg"
@@ -143,27 +143,27 @@
   ];
 
   var POLITICS_POOL = [
-    "assets/images/prov_items/anhui/f2.jpg",
-    "assets/images/prov_items/anhui/f3.jpg",
+    "assets/images/urban/urban-08.jpg",
+    "assets/images/urban/urban-06.jpg",
     "assets/images/articles/hero-ai-deepseek-lab.jpg",
     "assets/images/articles/hero-huaqiangbei-tech.jpg",
     "assets/images/articles/hero-supply-chain-rcep.jpg",
-    "assets/images/prov_items/anhui/h0.jpg"
+    "assets/images/urban/urban-11.jpg"
   ];
 
   var PROVINCE_COVER_MAP = {
-    "prov-beijing": "assets/images/prov_items/anhui/h1.jpg",
-    "prov-shanghai": "assets/images/prov_items/anhui/h2.jpg",
-    "prov-guangdong": "assets/images/prov_items/anhui/h3.jpg",
-    "prov-sichuan": "assets/images/prov_items/anhui/h4.jpg",
+    "prov-beijing": "assets/images/museum/forbidden-city-autumn-ginkgo-moat.jpg",
+    "prov-shanghai": "assets/images/prov_items/shanghai/h0.jpg",
+    "prov-guangdong": "assets/images/prov_items/guangdong/h0.jpg",
+    "prov-sichuan": "assets/images/prov_items/sichuan/h0.jpg",
     "prov-zhejiang": "assets/images/provinces/zhejiang-hangzhou-westlake.jpg",
-    "prov-jiangsu": "assets/images/prov_items/beijing/d0.jpg",
+    "prov-jiangsu": "assets/images/prov_items/jiangsu/h0.jpg",
     "prov-fujian": "assets/images/provinces/fujian-tulou.jpg",
     "prov-gansu": "assets/images/provinces/gansu-dunhuang-mogao.jpg",
     "prov-shaanxi": "assets/images/provinces/shaanxi-terracotta-army.jpg",
     "prov-henan": "assets/images/provinces/henan-longmen-grottoes.jpg",
     "prov-shandong": "assets/images/provinces/shandong-taishan.jpg",
-    "prov-anhui": "assets/images/prov_items/beijing/d1.jpg",
+    "prov-anhui": "assets/images/expeditions/v7-exp-05.jpg",
     "prov-yunnan": "assets/images/provinces/yunnan-lijiang-old-town.jpg",
     "prov-hunan": "assets/images/provinces/hunan-zhangjiajie.jpg",
     "prov-hubei": "assets/images/provinces/hubei-yellow-crane-tower.jpg",
@@ -188,7 +188,7 @@
     var arr = Array.isArray(vis[bucket]) ? vis[bucket] : [];
     if (arr.length) return arr[i % arr.length];
     if (PROVINCE_COVER_MAP[pid]) return PROVINCE_COVER_MAP[pid];
-    return fallback || "assets/images/prov_items/beijing/d2.jpg";
+    return fallback || "assets/images/editorial_v8/guozijian-imperial-academy.jpg";
   }
 
   function renderV4Thumb(src, caption, compact) {
@@ -215,12 +215,12 @@
     var tpl15 = baseTpl.concat(v6Essays);
     if (!pairs20.length && !tpl15.length) return "";
     var pairImgs = [
-      "assets/images/prov_items/beijing/d3.jpg",
+      "assets/images/museum/song-printed-shiji.jpg",
       "assets/images/academic/laozi-portrait.jpg",
-      "assets/images/prov_items/beijing/d4.jpg",
-      "assets/images/prov_items/beijing/f0.jpg",
-      "assets/images/prov_items/beijing/f1.jpg",
-      "assets/images/prov_items/beijing/f2.jpg"
+      "assets/images/museum/kuaixue-shiqing-tie.jpg",
+      "assets/images/literature/lit-mod-01.jpg",
+      "assets/images/literature/lit-mod-06.jpg",
+      "assets/images/figures/confucius.jpg"
     ];
     return (
       '<div id="cce-v5-hsk-essays-section" style="margin-top:1.35rem;padding-top:1rem;border-top:2px solid var(--hairline);">' +
@@ -291,7 +291,7 @@
     if (!cases.length) return "";
     var discObj = cb.epistemicDisclaimer || {};
     var wxImgs = [
-      "assets/images/prov_items/beijing/f3.jpg",
+      "assets/images/figures/sima-qian.jpg",
       "assets/images/prov_items/beijing/h0.jpg",
       "assets/images/prov_items/beijing/h1.jpg",
       "assets/images/prov_items/beijing/h2.jpg",
@@ -473,8 +473,8 @@
         var jttw = mastery.journeyToTheWest || {};
         var dorc = mastery.dreamOfRedChamber || {};
         var canons = lit.canons || [];
-        var canonImgs = ["assets/images/prov_items/beijing/h5.jpg", "assets/images/prov_items/chongqing/d0.jpg", "assets/images/prov_items/chongqing/d1.jpg", "assets/images/paintings/10_zhanhua_shinv_tu.jpg"];
-        var novelIdiomImgs = ["assets/images/prov_items/chongqing/d2.jpg", "assets/images/prov_items/chongqing/d3.jpg", "assets/images/prov_items/chongqing/d4.jpg", "assets/images/prov_items/chongqing/f0.jpg", "assets/images/prov_items/chongqing/f1.jpg", "assets/images/prov_items/chongqing/f2.jpg"];
+        var canonImgs = ["assets/images/literature/lit-mod-03.jpg", "assets/images/literature/lit-mod-04.jpg", "assets/images/literature/lit-mod-07.jpg", "assets/images/paintings/10_zhanhua_shinv_tu.jpg"];
+        var novelIdiomImgs = ["assets/images/literature/lit-mod-05.jpg", "assets/images/literature/lit-mod-08.jpg", "assets/images/literature/lit-mod-09.jpg", "assets/images/literature/lit-mod-14.jpg", "assets/images/literature/lit-mod-16.jpg", "assets/images/figures/cao-xueqin.jpg"];
         var extraHtml = "";
         if (jttw.idioms12 || dorc.idioms12) {
           var cards24 = []
@@ -482,8 +482,8 @@
             .concat((dorc.idioms12 || []).map(function (x) { x._src = "Hồng Lâu Mộng"; return x; }));
           extraHtml = (
             '<div class="grid grid-2" style="gap:0.85rem;margin-bottom:1rem;">' +
-            '  <article class="card">' + renderV4Thumb("assets/images/prov_items/chongqing/h0.jpg", "Tây Du Ký · 西游记", false) + '<span class="badge badge-red">Tây Du Ký · 西游记</span><h4 style="margin:0.3rem 0;">' + esc(enM ? "Pilgrimage, Mind Cultivation & Three Teachings" : "Ẩn dụ Tu tâm Tam Giáo & Quản trị Đội ngũ") + '</h4><p style="font-size:0.82rem;margin:0 0 0.35rem;">' + esc(enM ? jttw.overviewEn : jttw.overviewVi) + '</p><p style="font-size:0.79rem;color:var(--text-secondary);margin:0;">' + esc(enM ? jttw.threeTeachingsSynthesisEn : jttw.threeTeachingsSynthesisVi) + '</p></article>' +
-            '  <article class="card">' + renderV4Thumb("assets/images/prov_items/chongqing/h1.jpg", "Hồng Lâu Mộng · 红楼梦", false) + '<span class="badge badge-gold">Hồng Lâu Mộng · 红楼梦</span><h4 style="margin:0.3rem 0;">' + esc(enM ? "Lineage Economics & Tragic Aesthetics" : "Tứ đại Gia tộc, Kinh tế Trang viên & Mỹ học") + '</h4><p style="font-size:0.82rem;margin:0 0 0.35rem;">' + esc(enM ? dorc.overviewEn : dorc.overviewVi) + '</p><p style="font-size:0.79rem;color:var(--text-secondary);margin:0;">' + esc(enM ? dorc.fourClansArchitectureEn : dorc.fourClansArchitectureVi) + '</p></article>' +
+            '  <article class="card">' + renderV4Thumb("assets/images/editorial_v8/envoy-poetry-scroll.jpg", "Tây Du Ký · 西游记", false) + '<span class="badge badge-red">Tây Du Ký · 西游记</span><h4 style="margin:0.3rem 0;">' + esc(enM ? "Pilgrimage, Mind Cultivation & Three Teachings" : "Ẩn dụ Tu tâm Tam Giáo & Quản trị Đội ngũ") + '</h4><p style="font-size:0.82rem;margin:0 0 0.35rem;">' + esc(enM ? jttw.overviewEn : jttw.overviewVi) + '</p><p style="font-size:0.79rem;color:var(--text-secondary);margin:0;">' + esc(enM ? jttw.threeTeachingsSynthesisEn : jttw.threeTeachingsSynthesisVi) + '</p></article>' +
+            '  <article class="card">' + renderV4Thumb("assets/images/literature/lit-mod-10.jpg", "Hồng Lâu Mộng · 红楼梦", false) + '<span class="badge badge-gold">Hồng Lâu Mộng · 红楼梦</span><h4 style="margin:0.3rem 0;">' + esc(enM ? "Lineage Economics & Tragic Aesthetics" : "Tứ đại Gia tộc, Kinh tế Trang viên & Mỹ học") + '</h4><p style="font-size:0.82rem;margin:0 0 0.35rem;">' + esc(enM ? dorc.overviewEn : dorc.overviewVi) + '</p><p style="font-size:0.79rem;color:var(--text-secondary);margin:0;">' + esc(enM ? dorc.fourClansArchitectureEn : dorc.fourClansArchitectureVi) + '</p></article>' +
             '</div>' +
             '<h4 style="margin:0 0 0.55rem;">' + (enM ? "24 Exam-Ready Literary Idioms & Phrases (With Context Examples)" : "24 Điển cố Từ vựng Văn học HSK 4–9 Trích từ Tây Du Ký & Hồng Lâu Mộng") + '</h4>' +
             '<div class="grid grid-3" style="gap:0.6rem;margin-bottom:1rem;max-height:380px;overflow:auto;">' +
@@ -535,7 +535,7 @@
           }).join("") +
           '</div>' +
           (herbs.length ? '<h4 style="margin:0 0 0.55rem;">' + (enM ? "12 Culinary Herbs & Food–Medicine Continuity (药食同源)" : "12 Thảo mộc Dược thiện Cổ truyền (Dược Thực Đồng Nguyên)") + '</h4><div class="grid grid-4" style="gap:0.65rem;">' + herbs.map(function (h, idx) {
-            var hImg = provVisual(h.provinceId || null, "dishes", idx, "assets/images/prov_items/chongqing/h2.jpg");
+            var hImg = provVisual(h.provinceId || null, "dishes", idx, "assets/images/herbs/v7-herb-49.jpg");
             return '<div class="flashcard-layer" style="font-size:0.79rem;">' + renderV4Thumb(hImg, h.zh + " · " + (enM ? h.en : h.vi), true) + '<strong class="hanzi">' + esc(h.zh) + '</strong> ' + spk(h.zh) + ' <span class="pinyin">' + esc(h.pinyin) + '</span><br><strong>' + esc(enM ? h.en : h.vi) + '</strong><p style="margin:0.25rem 0 0;color:var(--text-secondary);">' + esc(enM ? h.effectEn : h.effectVi) + '</p></div>';
           }).join("") + '</div>' : "");
       } else if (st.wuxingSub === "ziwu") {
@@ -555,8 +555,8 @@
           }).join("") +
           '</div>';
       } else {
-        var monoImgs = ["assets/images/prov_items/chongqing/h3.jpg", "assets/images/prov_items/chongqing/h4.jpg", "assets/images/prov_items/fujian/d0.jpg", "assets/images/articles/hero-metaphysics-systems.jpg"];
-        var tcmClassicImgs = ["assets/images/prov_items/fujian/d1.jpg", "assets/images/prov_items/fujian/d2.jpg", "assets/images/museum/tiangong-kaiwu.jpg"];
+        var monoImgs = ["assets/images/editorial_v8/dunhuang-star-chart.jpg", "assets/images/editorial_v8/ancient-observatory-armillary.jpg", "assets/images/articles_v8/daoism-wudang-palace.jpg", "assets/images/articles/hero-metaphysics-systems.jpg"];
+        var tcmClassicImgs = ["assets/images/herbs/v7-herb-51.jpg", "assets/images/herbs/v7-herb-55.jpg", "assets/images/museum/tiangong-kaiwu.jpg"];
         body = epistemicBox + wBar +
           '<div style="margin-bottom:0.9rem;display:flex;justify-content:flex-end;"><button type="button" class="btn btn-primary btn-sm" data-v4h-act="open-armillary-3d">' + (enM ? "Launch Interactive 3D Brass Armillary & Wuxing Disk →" : "Mở Mô hình 3D Hồn Thiên Nghi & Đĩa Âm Dương – Ngũ Hành →") + '</button></div>' +
           '<div class="grid grid-2" style="gap:0.75rem;margin-bottom:1.15rem;">' +
@@ -644,10 +644,10 @@
 
       if (st.polSub === "glossary") {
         var clusterImgs = [
-          "assets/images/prov_items/fujian/d3.jpg",
-          "assets/images/prov_items/fujian/d4.jpg",
-          "assets/images/prov_items/fujian/f0.jpg",
-          "assets/images/prov_items/fujian/f1.jpg"
+          "assets/images/urban/urban-07.jpg",
+          "assets/images/urban/urban-13.jpg",
+          "assets/images/urban/urban-12.jpg",
+          "assets/images/urban/urban-10.jpg"
         ];
         body = pBar +
           '<h4 style="margin:0 0 0.5rem;">' + (enM ? "4 Industrial Megaclusters (2026)" : "4 Đại Cụm Đô thị – Công nghiệp 2026") + '</h4>' +
@@ -698,13 +698,13 @@
           '<div class="grid grid-2" style="gap:0.85rem;">' +
           '  <div><h4 style="margin:0 0 0.5rem;">12 Phố Ẩm thực Đêm Nổi bật</h4><div style="display:grid;gap:0.55rem;max-height:340px;overflow:auto;">' +
           nm12.map(function (n, idx) {
-            var nmImg = provVisual(n.provinceId || null, "dishes", idx, "assets/images/prov_items/fujian/f2.jpg");
+            var nmImg = provVisual(n.provinceId || null, "dishes", idx, "assets/images/editorial_v8/chinese-banquet-table.jpg");
             return '<div class="flashcard-layer" style="font-size:0.8rem;">' + renderV4Thumb(nmImg, enM ? n.nameEn : n.nameVi, true) + '<strong>' + esc(enM ? n.nameEn : n.nameVi) + ' (<span class="hanzi">' + esc(n.nameZh) + '</span>)</strong><br>' + esc(enM ? n.signatureFoodsEn : n.signatureFoodsVi) + '</div>';
           }).join("") +
           '  </div></div>' +
           '  <div><h4 style="margin:0 0 0.5rem;">Thập Đại Danh Trà (十大名茶)</h4><div style="display:grid;gap:0.55rem;max-height:340px;overflow:auto;">' +
           teas10.map(function (t, idx) {
-            var tImg = t.provinceId ? provVisual(t.provinceId, "heritage", idx, "assets/images/prov_items/fujian/f3.jpg") : provVisual(teaProvs[idx % teaProvs.length], "heritage", idx, "assets/images/prov_items/fujian/h0.jpg");
+            var tImg = t.provinceId ? provVisual(t.provinceId, "heritage", idx, "assets/images/gis/gi-eu-01.jpg") : provVisual(teaProvs[idx % teaProvs.length], "heritage", idx, "assets/images/gis/gi-eu-11.jpg");
             return '<div class="flashcard-layer" style="font-size:0.8rem;">' + renderV4Thumb(tImg, enM ? t.nameEn : t.nameVi, true) + '<strong style="color:var(--jade-green);">' + esc(enM ? t.nameEn : t.nameVi) + ' (<span class="hanzi">' + esc(t.nameZh) + '</span>)</strong> · ' + esc(t.category) + '<br>' + esc(t.originVi || "") + '</div>';
           }).join("") +
           '  </div></div>' +
@@ -715,7 +715,7 @@
           '<h4 style="margin:0 0 0.55rem;">' + (enM ? (unesco.length + " UNESCO World Heritage Sites in China") : (unesco.length + " Di sản Thế giới UNESCO tại Trung Quốc")) + '</h4>' +
           '<div class="grid grid-3" style="gap:0.65rem;max-height:420px;overflow:auto;margin-bottom:1.1rem;">' +
           unesco.map(function (u, idx) {
-            var uImg = provVisual(u.provinceId || null, "heritage", idx, "assets/images/prov_items/fujian/h1.jpg");
+            var uImg = provVisual(u.provinceId || null, "heritage", idx, "assets/images/expeditions/v7-exp-04.jpg");
             return '<div class="flashcard-layer" style="font-size:0.79rem;">' + renderV4Thumb(uImg, enM ? u.en : u.vi, true) + '<span class="badge badge-outline">' + u.year + ' · ' + esc(u.kind) + '</span> <strong>' + esc(enM ? u.en : u.vi) + '</strong> (<span class="hanzi">' + esc(u.zh) + '</span>)<p style="margin:0.25rem 0 0;color:var(--text-secondary);">' + esc(enM ? u.noteEn : u.noteVi) + '</p></div>';
           }).join("") +
           '</div>' +
@@ -731,7 +731,7 @@
         body = vBar +
           '<div class="grid grid-2" style="gap:0.85rem;margin-bottom:1rem;">' +
           geo.concat(grot).map(function (it, idx) {
-            var gImg = provVisual(it.provinceId || null, "heritage", idx, "assets/images/prov_items/fujian/h2.jpg");
+            var gImg = provVisual(it.provinceId || null, "heritage", idx, "assets/images/expeditions/v7-exp-08.jpg");
             return '<div class="card" style="padding:0.8rem;font-size:0.8rem;">' + renderV4Thumb(gImg, enM ? (it.titleEn || it.nameEn) : (it.titleVi || it.nameVi), false) + '<strong>' + esc(enM ? (it.titleEn || it.nameEn) : (it.titleVi || it.nameVi)) + ' (<span class="hanzi">' + esc(it.titleZh || it.nameZh) + '</span>)</strong><p style="margin:0.3rem 0 0;color:var(--text-secondary);">' + esc(enM ? (it.originEn || it.dynastyStyleEn) : (it.originVi || it.dynastyStyleVi)) + '</p></div>';
           }).join("") +
           '</div>' +
@@ -745,12 +745,12 @@
         var persAll = pcRaw.vietnamPerspectiveOnChina || vn.perspectives || [];
         var pillars10 = svRaw.sinoViet10Pillars || [];
         var sinoVietImgs = [
-          "assets/images/prov_items/fujian/h3.jpg",
-          "assets/images/prov_items/fujian/h4.jpg",
+          "assets/images/lessons/v7-m9-l6.jpg",
+          "assets/images/lessons/v5-m6-l6.jpg",
           "assets/images/museum/chu-dau-ceramic.jpg",
           "assets/images/museum/ngoc-lu-bronze-drum.jpg",
           "assets/images/museum/ly-tran-celadon-lotus-jar.jpg",
-          "assets/images/prov_items/gansu/d0.jpg"
+          "assets/images/museum/daming-hunyitu.jpg"
         ];
         body = vBar +
           '<h4 style="margin:0 0 0.55rem;">' + (enM ? "Vietnamese Analytical Perspectives on China" : "Góc nhìn Phân tích Từ Việt Nam Về Trung Quốc") + '</h4>' +

@@ -68,6 +68,17 @@
 
   function hydrateImages(rootEl) {
     var root = rootEl || document;
+    var allImgs = root.querySelectorAll("img");
+    allImgs.forEach(function (img) {
+      var sAttr = img.getAttribute("src");
+      var dAttr = img.getAttribute("data-src");
+      if ((!sAttr || !sAttr.trim()) && dAttr && dAttr.trim()) {
+        img.setAttribute("src", dAttr.trim());
+        img.removeAttribute("data-src");
+      } else if (!sAttr || !sAttr.trim()) {
+        img.setAttribute("src", "assets/images/brand/favicon.svg");
+      }
+    });
     var imgs = root.querySelectorAll("img[data-src], .v9-lqip-box img");
     if (!imgs.length) return;
     if (!("IntersectionObserver" in window)) {

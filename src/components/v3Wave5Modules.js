@@ -181,7 +181,7 @@
           var csName = cs.name || cs.company || cs.id;
           var csZhMatch = String(csName).match(/[\u4e00-\u9fff]+/);
           var csZh = csZhMatch ? csZhMatch[0] : "";
-          var csImg = resolveW5ProvThumb(cs.provinceId, idx + 1, "assets/images/prov_items/anhui/d0.jpg");
+          var csImg = resolveW5ProvThumb(cs.provinceId, idx + 1, "assets/images/editorial_v8/china-trade-dialogue.jpg");
           return (
             '<article class="card" style="border-top:3px solid var(--antique-gold);">' +
             renderW5Thumb(csImg, csName, false) +
@@ -476,7 +476,7 @@
           history: ["assets/images/academic/qin-terracotta.jpg", "assets/images/articles/hero-keju-examinations.jpg", "assets/images/museum/yongle-dadian.jpg", "assets/images/academic/sunzi-bamboo-slips.jpg"],
           metaphysics: ["assets/images/articles/hero-yinyang.jpg", "assets/images/articles/hero-wuxing.jpg", "assets/images/articles/hero-iching.jpg", "assets/images/museum/acupuncture-bronze.jpg"],
           arts: ["assets/images/paintings/22_qianli_jiangshan.jpg", "assets/images/museum/lantingji-xu.jpg", "assets/images/academic/guqin-instrument.jpg", "assets/images/articles/hero-traditional-arch.jpg"],
-          business: ["assets/images/articles/hero-b2b-negotiation-table.jpg", "assets/images/prov_items/anhui/d1.jpg", "assets/images/articles/hero-guanxi.jpg", "assets/images/articles/hero-laozihao-craft.jpg"]
+          business: ["assets/images/articles/hero-b2b-negotiation-table.jpg", "assets/images/editorial_v8/b2b-inspection-qc.jpg", "assets/images/articles/hero-guanxi.jpg", "assets/images/articles/hero-laozihao-craft.jpg"]
         };
         return filtered.map(function (p, idx) {
           var pool = catPools[p.category] || catPools.philosophy;

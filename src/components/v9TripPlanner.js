@@ -81,6 +81,10 @@
     var Safe = window.CCE_V9_LOADER && window.CCE_V9_LOADER.SafeStorage;
     if (Safe) Safe.setJSON(KEY, plan);
     updateFabBadge(plan);
+    if (window.CCE_V10_DISCOVERY && typeof window.CCE_V10_DISCOVERY.syncRightEdgeDock === "function") {
+      var enNow = Boolean(window.CCE_STORE && window.CCE_STORE.getState().uiLang === "en");
+      window.CCE_V10_DISCOVERY.syncRightEdgeDock(enNow);
+    }
   }
 
   function totalStopsCount(plan) {
@@ -375,13 +379,21 @@
     updateFabBadge(loadPlan());
   }
 
+  if (typeof document !== "undefined") {
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && (drawerOpen || driverStopId)) closeOverlays();
+    });
+  }
+
   window.CCE_V9_TRIP_PLANNER = {
     openDrawer: openDrawer,
     addStop: addStop,
+    getCount: function () { return totalStopsCount(loadPlan()); },
     printBooklet: printBooklet,
     closeOverlays: closeOverlays,
     hasOpenOverlay: function () { return Boolean(drawerOpen || driverStopId); },
     renderFieldConciergeStrip: renderFieldConciergeStrip,
     mountGlobal: mountGlobal
   };
+  window.CCE_V9_TRIP = window.CCE_V9_TRIP_PLANNER;
 })();

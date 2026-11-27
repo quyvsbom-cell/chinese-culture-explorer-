@@ -1,4 +1,4 @@
-/* CHINESE CULTURE EXPLORER — Offline-First PWA Service Worker (cce-v10.3)
+/* CHINESE CULTURE EXPLORER — Offline-First PWA Service Worker (cce-v10.4)
  * Strategy:
  * - Never intercept /api/* or /.netlify/*
  * - Network-First for HTML, JS, CSS so users/bots always receive latest edits
@@ -6,7 +6,7 @@
  * - Bounded Cache-First for viewed images & video
  */
 
-const CACHE_VERSION = "cce-v10.3";
+const CACHE_VERSION = "cce-v10.4";
 const SHELL_CACHE = CACHE_VERSION + "-shell";
 const MEDIA_CACHE = CACHE_VERSION + "-media";
 const MAX_MEDIA_ENTRIES = 240;
@@ -29,7 +29,9 @@ self.addEventListener("install", (event) => {
         "/src/components/v10PaginatedArticleReader.js",
         "/src/components/v10ContextualDrawer.js",
         "/src/components/v10GacDiscoverySuite.js",
-        "/src/components/v10FeedbackModal.js"
+        "/src/components/v10FeedbackModal.js",
+        "/src/components/cceV10RichBlocksRenderer.js",
+        "/src/views/v104ViewsBridge.js"
       ]).catch(() => {})
     )
   );
@@ -68,6 +70,7 @@ self.addEventListener("fetch", (event) => {
 
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
+  if (url.hostname === "localhost" || url.hostname === "127.0.0.1") return;
   if (url.pathname.startsWith("/api/") || url.pathname.startsWith("/.netlify/")) return;
 
   // HTML / SPA navigation -> Network-First (never lock stale index.html)

@@ -28,19 +28,22 @@
     if (rt.rafId) cancelAnimationFrame(rt.rafId);
     if (rt.cleanup) rt.cleanup();
     if (rt.ro) rt.ro.disconnect();
+    if (window.CCE_3D_PBR && rt.scene) {
+      try { window.CCE_3D_PBR.disposeScene(rt.scene, rt.renderer); } catch (_e) {}
+    }
     if (rt.renderer) try { rt.renderer.dispose(); } catch (_e) {}
     rt = null;
   }
 
   function addArc(THREE, group, a, b, color, yBoost) {
     var curve = new THREE.QuadraticBezierCurve3(
-      new THREE.Vector3(a.x, 0.14, a.z),
-      new THREE.Vector3((a.x + b.x) / 2, yBoost || 0.75, (a.z + b.z) / 2),
-      new THREE.Vector3(b.x, 0.14, b.z)
+      new THREE.Vector3(a.x, 0.16, a.z),
+      new THREE.Vector3((a.x + b.x) / 2, yBoost || 0.78, (a.z + b.z) / 2),
+      new THREE.Vector3(b.x, 0.16, b.z)
     );
     var tube = new THREE.Mesh(
-      new THREE.TubeGeometry(curve, 24, 0.032, 6, false),
-      new THREE.MeshBasicMaterial({ color: color })
+      new THREE.TubeGeometry(curve, 32, 0.036, 8, false),
+      new THREE.MeshStandardMaterial({ color: color, emissive: color, emissiveIntensity: 0.32, roughness: 0.28, metalness: 0.35 })
     );
     group.add(tube);
     return curve;
@@ -50,44 +53,67 @@
     var container = document.getElementById(containerId);
     if (!container || typeof window.THREE === "undefined") return;
     var THREE = window.THREE;
+    var PBR = window.CCE_3D_PBR;
     if (window.CCE_WEBGL_MGR) window.CCE_WEBGL_MGR.register("logistics-3d", dispose);
     dispose();
     if (window.CCE_WEBGL_MGR) window.CCE_WEBGL_MGR.register("logistics-3d", dispose);
 
     container.innerHTML = "";
     var w = Math.max(300, container.clientWidth || 560), h = Math.max(300, container.clientHeight || 360);
-    var scene = new THREE.Scene(); scene.background = new THREE.Color(0x111519);
+    var scene = new THREE.Scene(); scene.background = new THREE.Color(0x0f141a);
     var camera = new THREE.PerspectiveCamera(40, w / h, 0.1, 100);
     camera.position.set(0, 5.2, 6.2); camera.lookAt(-0.5, 0.1, 0);
 
     var renderer;
     try { renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" }); }
     catch (_err) { container.innerHTML = '<div class="epistemic-box">WebGL unavailable.</div>'; return; }
-    renderer.setSize(w, h, false); renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    if (PBR) {
+      PBR.configureRenderer(THREE, renderer, { exposure: 1.12 });
+      PBR.applyStudioEnvironment(THREE, renderer, scene, "daylight");
+    } else {
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    }
+    renderer.setSize(w, h, false);
     renderer.domElement.style.cssText = "width:100%;height:100%;display:block;touch-action:none;cursor:grab;";
     container.appendChild(renderer.domElement);
 
-    scene.add(new THREE.AmbientLight(0xffffff, 0.75));
-    var l = new THREE.DirectionalLight(0xffe9c4, 0.9); l.position.set(4, 9, 4); scene.add(l);
+    scene.add(new THREE.HemisphereLight(0xdceaff, 0x161b22, 0.65));
+    var l = new THREE.DirectionalLight(0xffe9c4, 1.15); l.position.set(4.5, 9.5, 4.5); l.castShadow = true; scene.add(l);
 
     var root = new THREE.Group(); scene.add(root);
-    // Stylized Eurasia + Maritime Basin relief board
+    // Textured Eurasian Continental Deck + Brass Framing Collar
     var board = new THREE.Mesh(
-      new THREE.BoxGeometry(10.5, 0.16, 6.4),
-      new THREE.MeshStandardMaterial({ color: 0x1e262e, roughness: 0.9 })
+      new THREE.BoxGeometry(10.6, 0.18, 6.5),
+      new THREE.MeshStandardMaterial({
+        color: 0x1b232c,
+        map: PBR ? PBR.getTexture(THREE, "granite") : null,
+        roughness: 0.72,
+        metalness: 0.18
+      })
     );
-    board.position.set(-0.4, -0.05, 0.4);
-    root.add(board);
+    board.position.set(-0.4, -0.06, 0.4);
+    board.receiveShadow = true;
+    var latGrid = new THREE.GridHelper(10.4, 16, 0x2f4354, 0x1f2b36);
+    latGrid.position.set(-0.4, 0.035, 0.4);
+    root.add(board, latGrid);
 
     var byId = {};
     NODES.forEach(function (n) {
       byId[n.id] = n;
+      var colHex = n.id === "haiphong" ? 0x2ec492 : 0xe0b254;
       var marker = new THREE.Mesh(
-        new THREE.CylinderGeometry(0.08, 0.08, 0.22, 12),
-        new THREE.MeshStandardMaterial({ color: n.id === "haiphong" ? 0x2ec492 : 0xd9a84e, emissive: 0x332200 })
+        new THREE.CylinderGeometry(0.09, 0.11, 0.24, 16),
+        new THREE.MeshStandardMaterial({ color: colHex, emissive: colHex, emissiveIntensity: 0.25, roughness: 0.28, metalness: 0.65 })
       );
-      marker.position.set(n.x, 0.12, n.z);
-      root.add(marker);
+      marker.position.set(n.x, 0.14, n.z);
+      marker.castShadow = true;
+      var halo = new THREE.Mesh(
+        new THREE.TorusGeometry(0.16, 0.018, 8, 24),
+        new THREE.MeshStandardMaterial({ color: colHex, roughness: 0.3, metalness: 0.8 })
+      );
+      halo.rotation.x = Math.PI / 2;
+      halo.position.set(n.x, 0.045, n.z);
+      root.add(marker, halo);
     });
 
     var movers = [];
@@ -142,7 +168,7 @@
     tick();
 
     rt = {
-      renderer: renderer, rafId: rafId, ro: ro,
+      scene: scene, renderer: renderer, rafId: rafId, ro: ro,
       cleanup: function () {
         dom.removeEventListener("pointerdown", onDown); window.removeEventListener("pointermove", onMove);
         window.removeEventListener("pointerup", onUp); dom.removeEventListener("wheel", onWheel);

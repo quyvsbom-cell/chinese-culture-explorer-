@@ -3,6 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    (function () {
+      try {
+        var m = document.cookie.match(/(?:^|;\s*)cce_prefs=([^;]*)/);
+        if (m && m[1]) {
+          var raw = decodeURIComponent(m[1]);
+          var p = {};
+          if (raw.charAt(0) === "{") {
+            p = JSON.parse(raw) || {};
+          } else {
+            raw.split("|").forEach(function (part) {
+              var idx = part.indexOf("=");
+              if (idx > 0) p[part.slice(0, idx)] = part.slice(idx + 1);
+            });
+          }
+          if (p.theme === "dark" || p.theme === "light" || p.theme === "sepia") {
+            document.documentElement.setAttribute("data-theme", p.theme);
+          }
+          if (p.lang) {
+            document.documentElement.setAttribute("lang", p.lang);
+          }
+          if (p.font) {
+            document.documentElement.setAttribute("data-font-size", p.font);
+          }
+        }
+      } catch (e) {}
+    })();
+  </script>
   <base href="/" />
   <title>Từ Công xưởng Cổ truyền (Cảnh Đức Trấn · Tô Hàng) đến Cụm Công nghiệp Hiện đại (Nghĩa Ô · Thâm Quyến) – CHINESE CULTURE EXPLORER</title>
   <meta name="description" content="Truy nguyên tính liên tục lịch sử trong năng lực sản xuất chuyên môn hóa sâu (Division of Labor &amp; Modularity) của Trung Quốc: từ dây chuyền &#x27;Nhất khí thất th…" />
@@ -53,12 +81,14 @@
   <link rel="stylesheet" href="styles/base-layout.css" />
   <link rel="stylesheet" href="styles/components.css" />
   <link rel="stylesheet" href="styles/museum-paintings.css" />
-  <link rel="stylesheet" href="styles/regions-atlas.css" />
+  <link rel="stylesheet" href="styles/regions-atlas.css?v=10.8" />
   <link rel="stylesheet" href="styles/learning-labs.css" />
   <link rel="stylesheet" href="styles/print.css" />
-  <link rel="stylesheet" href="styles/v4-editorial.css?v=10.1" />
-  <link rel="stylesheet" href="styles/v9-visual-system.css?v=10.1" />
-  <link rel="stylesheet" href="styles/v10-paginated-deck.css?v=10.1" />
+  <link rel="stylesheet" href="styles/v4-editorial.css?v=10.3" />
+  <link rel="stylesheet" href="styles/v9-visual-system.css?v=10.3" />
+  <link rel="stylesheet" href="styles/v10-paginated-deck.css?v=10.6" />
+  <link rel="stylesheet" href="styles/v10-gac-discovery.css?v=11.4" />
+  <link rel="stylesheet" href="styles/v11-interactive-hub.css?v=11.4" />
   <style id="cce-initial-splash-css">
     #cce-page-transition-curtain{position:fixed;inset:0;width:100vw;height:100vh;z-index:999999;background:#111111;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;visibility:visible;transform:translate3d(0,100%,0);will-change:transform;pointer-events:none;box-shadow:0 -18px 48px rgba(0,0,0,0.45)}
     #cce-page-transition-curtain.is-entering{pointer-events:auto;visibility:visible;transform:translate3d(0,0%,0);transition:transform 320ms cubic-bezier(0.76,0,0.24,1)}
@@ -156,7 +186,7 @@
           c.className = "is-exiting is-illuminated";
           setTimeout(function () { if (c.classList.contains("is-exiting")) c.className = "is-resetting"; }, 370);
         }
-      }, 2600);
+      }, 320);
     })();
   </script>
   <form name="cce-subscribers" netlify netlify-honeypot="bot-field" hidden>
@@ -166,11 +196,25 @@
     <input type="text" name="topics" />
     <input type="text" name="lang" />
   </form>
+  <form name="cce-feedback" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="bot-field" />
+    <input type="text" name="category" />
+    <input type="text" name="page" />
+    <input type="text" name="entity" />
+    <input type="text" name="severity" />
+    <textarea name="message"></textarea>
+    <input type="email" name="contact" />
+    <input type="text" name="lang" />
+  </form>
   <div id="cce-v8-read-progress" aria-hidden="true"></div>
   <div id="app"></div>
   <div id="toast-container" class="toast-container" aria-live="polite"></div>
 
-  <!-- Structured Cultural & Research Data Modules -->
+  <!-- Core Lazy Pre-Seeder & Boot Bundle (< 4.0 MB Synchronous JS Budget) -->
+  <script defer src="src/core/utils.js"></script>
+  <script defer src="src/core/lazyLoader.js?v=12.0"></script>
+
+  <!-- Core Cultural & Research Boot Modules -->
   <script defer src="src/data/historyData.js"></script>
   <script defer src="src/data/philosophyData.js"></script>
   <script defer src="src/data/metaphysicsData.js"></script>
@@ -179,115 +223,44 @@
   <script defer src="src/data/sinoVietnamData.js"></script>
   <script defer src="src/data/businessData.js"></script>
   <script defer src="src/data/articlesData.js"></script>
-<script defer src="src/data/compendiaArticles.js"></script>
-  <script defer src="src/data/dictionaryData.js"></script>
   <script defer src="src/data/learningAndResearchData.js"></script>
   <script defer src="src/data/museumData.js"></script>
   <script defer src="src/data/paintingsData.js"></script>
   <script defer src="src/data/imageAssetRegistry.js"></script>
   <script defer src="src/data/editorialMediaData.js"></script>
   <script defer src="src/data/brandIdentityData.js"></script>
-  <script defer src="src/data/intelligenceAuditData.js"></script>
-  <script defer src="src/data/compendiaData.js"></script>
+  <script defer src="src/data/china34GeoPaths.js"></script>
+  <script defer src="src/data/travelReadinessData.js"></script>
+  <script defer src="src/data/weeklyUpdatesData.js"></script>
+  <script defer src="src/data/uniqueImagePool.js"></script>
+  <script defer src="src/data/v10/v10PacksData.js?v=11.0"></script>
+  <script defer src="src/data/cce_v10_upgrade/cceV10SearchManifest.js?v=12.0"></script>
 
-  <!-- Full-System Depth Expansion Packs (34 Provinces, 8 Monographs, 40 Enrichments, 75 Hotspots) -->
-  <script defer src="src/data/regionsProvincesBatch1.js"></script>
-  <script defer src="src/data/regionsProvincesBatch2.js"></script>
-  <script defer src="src/data/regionsProvincesBatch3.js"></script>
-  <script defer src="src/data/destinationsDeepAtlas2026.js"></script>
-  <script defer src="src/data/articlesMonographsPart1.js"></script>
-  <script defer src="src/data/articlesMonographsPart2.js"></script>
-  <script defer src="src/data/articlesDepthEnrichmentBatch1.js"></script>
-  <script defer src="src/data/articlesDepthEnrichmentBatch2.js"></script>
-  <script defer src="src/data/hotspotsAndMetadataUpgradeBatch1.js"></script>
-  <script defer src="src/data/hotspotsAndMetadataUpgradeBatch2.js"></script>
-
-  <!-- Knowledge Expansion Master Modules 2026 (65 Essays, 30 Classics, 37 Treasures, 34x2 Regions, 527+ Liushu Words / 6 Survival Packs) -->
-  <script defer src="src/data/articlesExpansionBatch2026.js"></script>
-  <script defer src="src/data/classicsExpansionBatch2026.js"></script>
-  <script defer src="src/data/museumExpansionBatch2026.js"></script>
-  <script defer src="src/data/regionsExpansionBatch2026.js"></script>
-  <script defer src="src/data/dictionaryExpansionBatch2026.js"></script>
-
-  <!-- Core Modular Infrastructure, State, Auth, GeoJSON & Lazy Pack Orchestrator -->
-  <script defer src="src/core/utils.js"></script>
-  <script defer src="src/core/lazyLoader.js"></script>
+  <!-- Core Infrastructure, State, Auth & 7-Beat Discovery UI -->
   <script defer src="src/core/speech.js"></script>
   <script defer src="src/core/router.js"></script>
   <script defer src="src/core/i18n.js"></script>
   <script defer src="src/core/srsEngine.js"></script>
   <script defer src="src/core/exporters.js"></script>
-  <script defer src="src/data/china34GeoPaths.js"></script>
-  <script defer src="src/auth/netlifyAuth.js"></script>
-  <script defer src="src/state/store.js"></script>
-  <script defer src="src/components/visuals.js"></script>
-  <script defer src="src/data/travelReadinessData.js"></script>
-  <script defer src="src/data/provincesReadiness2026.js"></script>
-  <script defer src="src/data/provincesVisualsMap2026.js"></script>
-  <script defer src="src/data/curatorialAndMatrices2026.js"></script>
-  <script defer src="src/data/paintingsCuratorial2026.js"></script>
-  <script defer src="src/data/articlesDepthEnrichmentBatch3.js"></script>
-  <script defer src="src/data/uniformDepthAndEn2026.js"></script>
-  <script defer src="src/data/weeklyUpdatesData.js"></script>
-  <script defer src="src/data/editorialMediaPack2026.js"></script>
-  <script defer src="src/components/interactiveLabs2026.js"></script>
-  <script defer src="src/components/labsExpansionPart2_2026.js"></script>
-  <script defer src="src/components/v3WaveModules.js"></script>
-  <script defer src="src/components/galleryReaderV3.js"></script>
-  <script defer src="src/components/hanziStrokePad.js"></script>
-  <script defer src="src/components/learningLabV3.js"></script>
-  <script defer src="src/components/v3Wave5Modules.js"></script>
-  <script defer src="src/components/pentatonicStudio.js"></script>
-  <script defer src="src/components/presentationMode.js"></script>
   <script defer src="src/core/localQaEngine.js"></script>
-  <script defer src="src/components/civilizationAtlas.js"></script>
-  <script defer src="src/components/china3DMap.js"></script>
-  <script defer src="src/components/3d/studioHub3D.js"></script>
-  <script defer src="src/components/v4UXEnhancements.js"></script>
-  <script defer src="src/components/travelUXHub.js"></script>
-  <script defer src="src/components/v4KnowledgeHub.js"></script>
-  <script defer src="src/components/trilingualTradeStudio.js"></script>
-  <script defer src="src/data/v5/laozihaoBrandsV5.js"></script>
-  <script defer src="src/data/v5/laozihaoBrandsExpandedV5.js"></script>
-  <script defer src="src/data/v5/courseLessonsV5.js"></script>
-  <script defer src="src/data/v5/hskEssaysV5.js"></script>
-  <script defer src="src/data/v5/wuxingCasebookV5.js"></script>
-  <script defer src="src/data/v5/supplyChainCasesV5.js"></script>
-  <script defer src="src/data/v5/quizMasteryV5.js"></script>
-  <script defer src="src/data/v5/v5DeepEnrichmentLayer.js"></script>
-  <script defer src="src/components/laozihaoPavilionV5.js"></script>
-  <script defer src="src/components/v5CourseAcademy.js?v=10.1"></script>
-  <script defer src="src/data/v6/v6EncyclopediaAndVisuals.js"></script>
-  <script defer src="src/data/v7/v7CompleteEncyclopedia.js"></script>
-  <script defer src="src/components/3d/v6HeritageStudios3D.js"></script>
-  <script defer src="src/components/3d/v7Masterpieces3D.js"></script>
-  <script defer src="src/data/v8/V8_Pack1.js"></script>
-  <script defer src="src/data/v8/V8_Pack2.js"></script>
-  <script defer src="src/data/v8/V8_Pack3.js"></script>
-  <script defer src="src/data/v8/V8_Pack4.js"></script>
-  <script defer src="src/data/v8/V8_Pack5.js"></script>
-  <script defer src="src/data/v8/V8_Pack6.js"></script>
-  <script defer src="src/data/v8/V8_Pack7.js"></script>
-  <script defer src="src/data/v8/V8_Pack8.js"></script>
-  <script defer src="src/data/v8/v8MasterBridge.js"></script>
-  <script defer src="src/components/3d/v8InteractiveStudios3D.js"></script>
-  <script defer src="src/components/v6VisualAcademyStudios.js?v=10.1"></script>
-  <script defer src="src/components/v8EncyclopediaStudios.js"></script>
-  <script defer src="src/core/searchIndex.js"></script>
+  <script defer src="src/core/searchIndex.js?v=10.4"></script>
+  <script defer src="src/auth/netlifyAuth.js"></script>
+  <script defer src="src/state/store.js?v=10.4"></script>
   <script defer src="src/js/page-transition.js"></script>
-  <script defer src="src/data/uniqueImagePool.js"></script>
-  <script defer src="src/utils/v9LazyLoader.js"></script>
-  <script defer src="src/components/v9HomeExperience.js"></script>
-  <script defer src="src/components/v9VisualDiscovery.js"></script>
-  <script defer src="src/components/v9HandscrollViewer.js?v=10.1"></script>
-  <script defer src="src/components/v9SplitAtlas.js"></script>
-  <script defer src="src/components/v9TripPlanner.js"></script>
-  <script defer src="src/components/v9ScrollytellingReader.js"></script>
-  <script defer src="src/components/v9DataStories.js"></script>
-  <script defer src="src/core/v10SubpageDeck.js?v=10.1"></script>
-  <script defer src="src/components/v10CollectionPaginator.js?v=10.1"></script>
-  <script defer src="src/components/v10PaginatedArticleReader.js?v=10.1"></script>
-  <script defer src="src/components/v10ContextualDrawer.js?v=10.1"></script>
-  <script defer src="src/app.js?v=10.1"></script>
+  <script defer src="src/utils/v9LazyLoader.js?v=10.6"></script>
+  <script defer src="src/core/v10CookieManager.js?v=10.3"></script>
+  <script defer src="src/core/v10SubpageDeck.js?v=10.3"></script>
+  <script defer src="src/components/visuals.js"></script>
+  <script defer src="src/components/v9TripPlanner.js?v=11.3"></script>
+  <script defer src="src/components/v10CollectionPaginator.js?v=11.3"></script>
+  <script defer src="src/components/v10PaginatedArticleReader.js?v=10.3"></script>
+  <script defer src="src/components/v10ContextualDrawer.js?v=10.3"></script>
+  <script defer src="src/components/v10GacDiscoverySuite.js?v=12.0"></script>
+  <script defer src="src/components/v10FeedbackModal.js?v=11.3"></script>
+  <script defer src="src/components/cceV10RichBlocksRenderer.js?v=10.4"></script>
+  <script defer src="src/components/v11InteractiveGuideHub.js?v=12.0"></script>
+  <script defer src="src/views/v104ViewsBridge.js?v=12.0"></script>
+  <script defer src="src/views/v12MasterViews.js?v=12.0"></script>
+  <script defer src="src/app.js?v=12.0"></script>
 </body>
 </html>

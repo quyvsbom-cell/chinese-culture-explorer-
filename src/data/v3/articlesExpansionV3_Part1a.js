@@ -562,7 +562,7 @@
     "chinese-liquor-culture-baijiu-huangjiu": "assets/images/articles/hero-chinese-banquet.jpg",
     "five-sacred-mountains-buddhist-peaks": "assets/images/articles_v8/five-sacred-mountains.jpg",
     "dunhuang-mogao-buddhist-grotto-art": "assets/images/articles_v8/dunhuang-nine-story.jpg",
-    "xiqu-stagecraft-face-masks-tuong": "assets/images/articles/hero-spring-festival.jpg",
+    "xiqu-stagecraft-face-masks-tuong": "assets/images/opera/op-16.jpg",
     "five-vernacular-architecture-styles": "assets/images/articles_v8/vernacular-architecture-mix.jpg",
     "ming-qing-fiction-hongloumeng-anatomy": "assets/images/articles/hero-classical-books-scrolls.jpg",
     "lacquerware-silk-woodblock-new-year-prints": "assets/images/articles/hero-laozihao-craft.jpg",
@@ -649,15 +649,21 @@
       }
     }
   }
+  var existingIdxById = {};
   for (i = 0; i < window.CCE_ARTICLES.length; i++) {
     if (window.CCE_ARTICLES[i] && window.CCE_ARTICLES[i].id) {
       existingIds[window.CCE_ARTICLES[i].id] = true;
+      existingIdxById[window.CCE_ARTICLES[i].id] = i;
     }
   }
   for (i = 0; i < ARTICLES_V3_PART1A.length; i++) {
-    if (!existingIds[ARTICLES_V3_PART1A[i].id]) {
-      window.CCE_ARTICLES.push(ARTICLES_V3_PART1A[i]);
-      existingIds[ARTICLES_V3_PART1A[i].id] = true;
+    var na = ARTICLES_V3_PART1A[i];
+    if (!existingIds[na.id]) {
+      window.CCE_ARTICLES.push(na);
+      existingIds[na.id] = true;
+      existingIdxById[na.id] = window.CCE_ARTICLES.length - 1;
+    } else if (window.CCE_ARTICLES[existingIdxById[na.id]] && (window.CCE_ARTICLES[existingIdxById[na.id]]._v23Stub || window.CCE_ARTICLES[existingIdxById[na.id]]._v104Stub)) {
+      window.CCE_ARTICLES[existingIdxById[na.id]] = na;
     }
   }
 })();

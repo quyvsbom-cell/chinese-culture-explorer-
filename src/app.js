@@ -27,6 +27,40 @@
   const Business = window.CCE_BUSINESS;
   const Articles = window.CCE_ARTICLES || [];
   const Dictionary = window.CCE_DICTIONARY;
+  function syncArticlesRef() {
+    if (Array.isArray(window.CCE_ARTICLES) && window.CCE_ARTICLES !== Articles) {
+      var byId = Object.create(null);
+      for (var i = 0; i < Articles.length; i++) {
+        if (Articles[i] && Articles[i].id) byId[Articles[i].id] = i;
+      }
+      for (var j = 0; j < window.CCE_ARTICLES.length; j++) {
+        var wa = window.CCE_ARTICLES[j];
+        if (!wa || !wa.id) continue;
+        var hasMain = Array.isArray(wa.mainContent) && wa.mainContent.length > 0 && !wa._v104Stub && !wa._v23Stub;
+        if (Object.prototype.hasOwnProperty.call(byId, wa.id)) {
+          var prev = Articles[byId[wa.id]];
+          var prevStub = Boolean(!prev || prev._v104Stub || prev._v23Stub || !Array.isArray(prev.mainContent) || prev.mainContent.length === 0);
+          if (prevStub && hasMain) Articles[byId[wa.id]] = wa;
+        } else {
+          byId[wa.id] = Articles.length;
+          Articles.push(wa);
+        }
+      }
+    }
+    if (Array.isArray(window.CCE_DICTIONARY) && Array.isArray(Dictionary) && window.CCE_DICTIONARY !== Dictionary) {
+      var dSeen = Object.create(null);
+      for (var di = 0; di < Dictionary.length; di++) {
+        if (Dictionary[di] && Dictionary[di].id) dSeen[Dictionary[di].id] = true;
+      }
+      for (var dj = 0; dj < window.CCE_DICTIONARY.length; dj++) {
+        var wd = window.CCE_DICTIONARY[dj];
+        if (wd && wd.id && !dSeen[wd.id]) {
+          dSeen[wd.id] = true;
+          Dictionary.push(wd);
+        }
+      }
+    }
+  }
   const LearningResearch = window.CCE_LEARNING_RESEARCH;
   const Museum = window.CCE_MUSEUM;
   const Paintings = window.CCE_PAINTINGS || { masterpieces: [], eras: [], genres: [], comparisons: [], museums: [] };
@@ -45,6 +79,7 @@
     if (!Lazy || typeof Lazy.ensureForState !== "function") return Promise.resolve();
     const hadUnloaded = typeof Lazy.hasUnloaded === "function" ? Lazy.hasUnloaded(pageId, uiLang, extraFlags) : false;
     return Lazy.ensureForState(pageId, uiLang, extraFlags).then(() => {
+      syncArticlesRef();
       if (hadUnloaded) {
         if (CceSearch && typeof CceSearch.markDirty === "function") CceSearch.markDirty();
         render();
@@ -926,28 +961,40 @@
     const en = enMode ? getArticleEnPack(art.id) : null;
     const rawTitle = enMode ? ((en && en.title) || art.titleEn || art.titleVi) : (art.titleVi || art.titleEn);
     const rawSubTitle = enMode ? "" : (art.titleEn || "");
-    const rawCat = (en && en.categoryLabel) || art.categoryLabel;
+    const rawCat = (en && en.categoryLabel) || (enMode && art.categoryLabelEn) || art.categoryLabel;
     const rawEpistemic = (en && en.epistemicTag) || art.epistemicTag;
-    const rawStandfirst = (en && en.standfirst) || (ed && ed.standfirst) || "";
+    const rawStandfirst = (en && en.standfirst) || (enMode && art.standfirstEn) || art.standfirst || (ed && ed.standfirst) || "";
     const rawAbstract = (en && en.abstract)
+      || (enMode && art.abstractEn)
       || (typeof art.abstract === "string" ? art.abstract : (art.abstract && (art.abstract.vi || art.abstract.text)) || "");
     const rawTakeaways = (en && Array.isArray(en.keyTakeaways) && en.keyTakeaways.length)
       ? en.keyTakeaways
-      : ((ed && ed.keyTakeaways && ed.keyTakeaways.length) ? ed.keyTakeaways : (art.keyTakeaways || []));
-    const rawIntro = (en && en.introduction) || art.introduction || "";
-    const rawHist = (en && (en.historicalContext || en.historicalBackground)) || art.historicalContext || art.historicalBackground || "";
+      : ((enMode && Array.isArray(art.keyTakeawaysEn) && art.keyTakeawaysEn.length)
+        ? art.keyTakeawaysEn
+        : ((ed && ed.keyTakeaways && ed.keyTakeaways.length) ? ed.keyTakeaways : (art.keyTakeaways || [])));
+    const rawIntro = (en && en.introduction) || (enMode && art.introductionEn) || art.introduction || "";
+    const rawHist = (en && (en.historicalContext || en.historicalBackground))
+      || (enMode && (art.historicalContextEn || art.historicalBackgroundEn))
+      || art.historicalContext || art.historicalBackground || "";
     const rawSections = (en && Array.isArray(en.mainContent) && en.mainContent.length)
       ? en.mainContent
-      : (art.mainContent || []);
+      : (enMode
+        ? (art.mainContent || []).map((s) => ({
+            heading: s.headingEn || s.heading,
+            body: s.bodyEn || s.body
+          }))
+        : (art.mainContent || []));
     const rawTheory = (en && en.theoreticalFramework) ? en.theoreticalFramework : art.theoreticalFramework;
     const rawPrimarySources = (en && Array.isArray(en.primarySources) && en.primarySources.length)
       ? en.primarySources
       : (art.primarySources || []);
-    const rawSinoVn = (en && en.sinoVietnameseComparison) ? en.sinoVietnameseComparison : art.sinoVietnameseComparison;
+    const rawSinoVn = (en && en.sinoVietnameseComparison) ? en.sinoVietnameseComparison : (art.sinoVietnameseComparison || art.sinoVietnamLink);
     const rawExamples = (en && Array.isArray(en.examples) && en.examples.length)
       ? en.examples
       : (art.examples || []);
-    const rawConclusion = (en && en.conclusion) || (art.conclusion || (sup && sup.conclusion) || "");
+    const rawConclusion = (en && en.conclusion)
+      || (enMode && (art.conclusionEn || art.conclusion))
+      || (art.conclusion || art.modernRelevance || (sup && sup.conclusion) || "");
     const rawRefs = (en && Array.isArray(en.references) && en.references.length)
       ? en.references
       : (art.references || []);
@@ -961,7 +1008,7 @@
     const rawRelatedTexts = (en && Array.isArray(en.relatedTexts) && en.relatedTexts.length)
       ? en.relatedTexts
       : ((sup && sup.relatedTexts) || []);
-    const rawHeroCaption = (en && en.heroCaption) || (art.heroImage && art.heroImage.caption) || rawTitle;
+    const rawHeroCaption = (en && en.heroCaption) || (enMode && art.heroImage && art.heroImage.captionEn) || (art.heroImage && art.heroImage.caption) || rawTitle;
     const rawHeroCredit = (en && en.heroCredit) || (art.heroImage && art.heroImage.credit) || "Chinese Culture Explorer Archive";
     const rawTermsEn = (en && Array.isArray(en.terminologyAndLiushu)) ? en.terminologyAndLiushu : [];
     const rawEditorialAuthor = (en && en.editorialAuthor) || getEditorialAuthorName(ed);
@@ -1134,7 +1181,7 @@
     { src: "assets/images/articles/hero-chinese-banquet.jpg", caption: "Nghi thức trà lễ và tặng quà ngoại giao trên bàn tiệc", credit: "Etiquette Archive" }
   ];
 
-  function getAcademicPhotoForItem(domain, itemId, indexFallback = 0) {
+  function getAcademicPhotoForItem(domain, itemId, indexFallback = 0, titleHint = "") {
     const visuals = (Intelligence && Intelligence.academicVisuals) || {};
     let entry = null;
     if (domain === "section" || domain === "sectionBanners" || domain === "sectionHeaders") {
@@ -1171,8 +1218,31 @@
         return { src: img.src, caption: img.captionVi || img.titleVi, captionEn: img.captionEn || img.titleEn, credit: img.sourceCredit };
       }
     }
+    const hint = `${itemId || ""} ${titleHint || ""} ${domain || ""}`.toLowerCase();
+    const topicRules = [
+      { rx: /\b(tiantan|heaven|thiên đàn|kỳ niên)\b/i, src: "assets/images/articles_v8/tiantan-hall-prayer.jpg" },
+      { rx: /\b(forbidden|tử cấm|palace|cố cung|dougong|đấu củng|arch)\b/i, src: "assets/images/museum/forbidden-city-imperial-axis-gate.jpg" },
+      { rx: /\b(tea|trà|puerh|longjing|oolong|wuyi)\b/i, src: "assets/images/articles_v8/tea-horse-caravan.jpg" },
+      { rx: /\b(ceramic|porcelain|gốm|sứ|kiln|celadon|jade|ngọc)\b/i, src: "assets/images/editorial_v8/jingdezhen-imperial-kiln.jpg" },
+      { rx: /\b(tang|đường luật|tang-code|hồng đức|law|legal)\b/i, src: "assets/images/museum/song-printed-shiji.jpg" },
+      { rx: /\b(calligraphy|thư pháp|stele|bia|printing|mộc bản|in)\b/i, src: "assets/images/articles/hero-calligraphy-five-scripts.jpg" },
+      { rx: /\b(poetry|thi ca|literature|novel|tiểu thuyết|truyện kiều)\b/i, src: "assets/images/articles/hero-classical-books-scrolls.jpg" },
+      { rx: /\b(b2b|contract|rcep|acfta|gacc|trade|fair|canton|hải quan|thương)\b/i, src: "assets/images/articles/hero-b2b-negotiation-table.jpg" },
+      { rx: /\b(rail|train|hsr|12306|esim|flight|airport|visa|travel|cao tốc|tàu)\b/i, src: "assets/images/lessons/v7-m9-l2.jpg" },
+      { rx: /\b(opera|music|guqin|guzheng|pipa|kịch|nhạc)\b/i, src: "assets/images/opera/op-16.jpg" },
+      { rx: /\b(tcm|medicine|y học|dược|herb|neijing|solar)\b/i, src: "assets/images/articles/hero-tcm-solar.jpg" },
+      { rx: /\b(confucian|nho|academy|shuyuan|thư viện|philos|triết)\b/i, src: "assets/images/articles/hero-hundred-schools.jpg" },
+      { rx: /\b(cuisine|ẩm thực|duck|noodle|banquet|baijiu|huangjiu)\b/i, src: "assets/images/articles/hero-chinese-cuisines.jpg" },
+      { rx: /\b(astronomy|thiên văn|observatory|seismoscope|cartography|bản đồ)\b/i, src: "assets/images/editorial_v8/ancient-observatory-armillary.jpg" },
+    ];
+    for (let ti = 0; ti < topicRules.length; ti++) {
+      if (topicRules[ti].rx.test(hint)) {
+        const hit = ACADEMIC_FALLBACK_POOL.find((p) => p.src === topicRules[ti].src);
+        return hit || { src: topicRules[ti].src, caption: "", credit: "Museum & Academic Archive", _isFallbackPool: true };
+      }
+    }
     const idx = Math.abs(Number(indexFallback) || 0) % ACADEMIC_FALLBACK_POOL.length;
-    return ACADEMIC_FALLBACK_POOL[idx];
+    return Object.assign({}, ACADEMIC_FALLBACK_POOL[idx], { _isFallbackPool: true });
   }
 
   function getEditorialAuthorName(ed) {
@@ -2412,6 +2482,8 @@
         </section>
       ` : ""}
 
+      ${window.CCE_V104_VIEWS ? window.CCE_V104_VIEWS.renderProvinceMasterAtlas(prov, enPr) : ""}
+
       ${(prov.id === "prov-beijing" || prov.id === "prov-sichuan") ? (() => {
         const enG = isEnglishUi();
         const extraPhotos = prov.id === "prov-beijing"
@@ -2456,7 +2528,7 @@
         { label: enMm ? `Essays & Monographs (${Articles.length})` : `Mục lục Chuyên luận (${Articles.length} Bài)`, zh: "学术长文", action: "nav", page: "explore" },
         { label: enMm ? `Historical Timeline (${History.periods.length} Periods)` : `Niên biểu Lịch sử (${History.periods.length} Thời kỳ)`, zh: "历史编年", action: "nav", page: "history" },
         { label: enMm ? "Imperial Examination (Keju) & Bureaucracy" : "Chế độ Khoa cử & Học thuật (科举)", zh: "科举制度", action: "open-article", id: "imperial-examination-keju" },
-        { label: enMm ? "Silk Road & Maritime Trade Routes" : "Con đường Tơ lụa & Hải thương", zh: "丝绸之路", action: "open-article", id: "silk-road-and-maritime-trade" }
+        { label: enMm ? "Silk Road & Maritime Trade Routes" : "Con đường Tơ lụa & Hải thương", zh: "丝绸之路", action: "open-article", id: "silk-road-maritime-trade" }
       ];
       const eras = [
         { label: enMm ? "Pre-Qin & Warring States" : "Thượng cổ & Xuân Thu – Chiến Quốc", sub: enMm ? "Liangzhu · Shang · Zhou · Hundred Schools" : "Lương Chử · Thương · Chu · Bách gia Chư tử", id: "spring-autumn-warring" },
@@ -2561,7 +2633,7 @@
                     <span><strong>${enMm ? "24 Solar Terms &amp; Neijing" : "24 Tiết khí &amp; Nội Kinh"}</strong></span>
                     <span class="hanzi" style="font-size:0.78rem;color:var(--accent-cinnabar);">节气</span>
                   </button>
-                  <button type="button" class="mega-link-btn" data-action="open-article" data-id="literati-garden-aesthetics">
+                  <button type="button" class="mega-link-btn" data-action="open-article" data-id="suzhou-classical-gardens-aesthetics">
                     <span><strong>${enMm ? "Scholar Garden Aesthetics" : "Mỹ học Văn nhân Đương đại"}</strong></span>
                     <span class="hanzi" style="font-size:0.78rem;color:var(--accent-cinnabar);">园林</span>
                   </button>
@@ -2630,7 +2702,7 @@
                     <div><strong>${enMm ? "Along the River During the Qingming Festival" : "Thanh Minh Thượng Hà Đồ (Trương Trạch Đoan)"}</strong><span class="mega-link-sub">${enMm ? "Northern Song urban scroll · 3 high-res inspection pins" : "Kiệt tác đô thị Bắc Tống · Kèm 3 điểm soi cận cảnh"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">清明</span>
                   </button>
-                  <button type="button" class="mega-link-btn" data-action="open-artifact" data-id="sanxingdui-gold-mask">
+                  <button type="button" class="mega-link-btn" data-action="open-artifact" data-id="sanxingdui-bronze-mask">
                     <div><strong>${enMm ? "Sanxingdui Gold Mask &amp; Ancient Shu Culture" : "Mặt nạ Vàng Tam Tinh Đôi &amp; Văn hóa Ba Thục"}</strong><span class="mega-link-sub">${enMm ? "Shang–Shu Bronze Civilization (Sichuan)" : "Thanh đồng Thương – Thục (Tứ Xuyên)"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">三星堆</span>
                   </button>
@@ -2743,7 +2815,7 @@
                     <div><strong>${enMm ? `Contemporary Society &amp; Innovation (${CustomsArt.contemporary.length})` : `Xã hội &amp; Đổi mới Trung Quốc Đương đại (${CustomsArt.contemporary.length})`}</strong><span class="mega-link-sub">${enMm ? "Digital Economy · HSR Grid · GBA Supply Chains &amp; Guochao" : "Kinh tế số · Hạ tầng Cao tốc · Bán dẫn Vùng Vịnh Lớn &amp; Guochao"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">当代</span>
                   </button>
-                  <button type="button" class="mega-link-btn" data-action="open-article" data-id="vietnam-china-trade-corridor">
+                  <button type="button" class="mega-link-btn" data-action="open-article" data-id="china-vietnam-supply-chain-rcep">
                     <div><strong>${enMm ? "Lang Son – Pingxiang – RCEP Trade Corridor" : "Hành lang Thương mại Lạng Sơn – Bằng Tường – RCEP"}</strong><span class="mega-link-sub">${enMm ? "Border Gate Logistics · ACFTA Form E &amp; Regional Value Chains" : "Logistics cửa khẩu · ACFTA Form E &amp; chuỗi cung ứng khu vực"}</span></div>
                     <span style="color:var(--accent-cinnabar);font-weight:700;">→</span>
                   </button>
@@ -2759,11 +2831,11 @@
                     <div><strong>${enMm ? "Chinese Business Culture Playbook" : "Cẩm nang Văn hóa Kinh doanh Trung Hoa"}</strong><span class="mega-link-sub">${enMm ? "Guanxi · Mianzi · Banquet Protocol · WeCom Workflows" : "Guanxi (Quan hệ) · Mianzi (Thể diện) · Nghi thức Bàn tiệc &amp; WeCom"}</span></div>
                     <span class="hanzi" style="color:var(--accent-cinnabar);">商贸</span>
                   </button>
-                  <button type="button" class="mega-link-btn" data-action="open-article" data-id="chinese-business-negotiation-etiquette">
+                  <button type="button" class="mega-link-btn" data-action="open-article" data-id="cross-border-b2b-contracts-cietac-viac">
                     <div><strong>${enMm ? "B2B Contract Negotiation &amp; Legal Due Diligence" : "Chiến lược Đàm phán Hợp đồng B2B &amp; Pháp lý"}</strong><span class="mega-link-sub">${enMm ? "Bilingual contracts · Factory vetting &amp; Commercial Arbitration" : "Soạn thảo song ngữ · Thẩm định nhà máy &amp; Trọng tài Thương mại"}</span></div>
                     <span style="color:var(--accent-cinnabar);font-weight:700;">→</span>
                   </button>
-                  <button type="button" class="mega-link-btn" data-action="open-article" data-id="guangdong-shenzhen-bay-area-ecosystem">
+                  <button type="button" class="mega-link-btn" data-action="open-article" data-id="canton-system-to-huaqiangbei-7-day-cycle">
                     <div><strong>${enMm ? "Guangdong – Shenzhen GBA Manufacturing Hub" : "Hệ sinh thái Sản xuất Quảng Đông – Thâm Quyến"}</strong><span class="mega-link-sub">${enMm ? "Huaqiangbei · Foshan – Dongguan Industrial Clusters" : "Hoa Cường Bắc · Cụm công nghiệp Phật Sơn – Đông Hoản"}</span></div>
                     <span style="color:var(--accent-cinnabar);font-weight:700;">→</span>
                   </button>
@@ -2919,10 +2991,7 @@
             </div>
 
             <div class="nav-utility-controls">
-              <button type="button" class="nav-util-btn" data-action="open-local-qa" aria-label="${enHdr ? "Local Q&A" : "Hỏi đáp Tư liệu"}" title="${enHdr ? "Offline Cited Knowledge Q&A" : "Hỏi đáp Trích nguồn Cục bộ"}" style="font-size:0.74rem;font-weight:700;padding:0.28rem 0.5rem;">
-                Q&amp;A
-              </button>
-              <button type="button" class="nav-util-btn" data-action="open-search" aria-label="${enHdr ? "Search (Ctrl+K)" : "Tìm kiếm (Ctrl+K)"}" title="${escapeHtml(lp.searchPlaceholder)} (Ctrl+K)">
+              <button type="button" class="nav-util-btn" data-action="open-search" aria-label="${enHdr ? "Search & Q&A (Ctrl+K)" : "Tìm kiếm & Hỏi đáp (Ctrl+K)"}" title="${escapeHtml(lp.searchPlaceholder)} (Ctrl+K)">
                 ${ICONS.search}
               </button>
               <select class="nav-util-select" data-action="ui-lang-select" aria-label="${enHdr ? "Select interface language" : "Chọn ngôn ngữ giao diện"}">
@@ -2948,11 +3017,19 @@
                 const signOutLbl = curL === "zh-CN" ? "退出" : curL === "zh-TW" ? "登出" : (enM ? "Exit" : "Thoát");
                 const signInLbl = curL === "zh-CN" ? "登录" : curL === "zh-TW" ? "登入" : (enM ? "Sign In" : "Đăng nhập");
                 if (authSt.authenticated && authSt.user) {
-                  const shortName = String(authSt.user.fullName || authSt.user.email || "Google").split(/\s+/).slice(-2).join(" ");
+                  const rawIdentity = String(authSt.user.fullName || authSt.user.email || "Google")
+                    .split("@")[0]
+                    .replace(/[()[\]{}]/g, " ")
+                    .replace(/\s+/g, " ")
+                    .trim();
+                  const nameTokens = rawIdentity ? rawIdentity.split(" ") : ["Google"];
+                  const shortName = nameTokens[nameTokens.length - 1] || "Google";
                   return `
-                    <button type="button" class="nav-util-btn nav-auth-btn is-authed" data-action="auth-signout" title="Google Account (${escapeHtml(authSt.user.email || authSt.user.fullName)}) — Click to Sign Out">
+                    <button type="button" class="nav-util-btn nav-auth-btn is-authed" data-action="auth-signout" title="Google Account (${escapeHtml(authSt.user.email || authSt.user.fullName)}) — ${enM ? "Click to Sign Out" : "Nhấn để đăng xuất"}">
                       ${ICONS.user}
-                      <span>${escapeHtml(shortName)} · ${signOutLbl}</span>
+                      <span class="nav-auth-name">${escapeHtml(shortName)}</span>
+                      <span class="nav-auth-sep" aria-hidden="true">·</span>
+                      <span class="nav-auth-exit">${signOutLbl}</span>
                     </button>
                   `;
                 }
@@ -2973,6 +3050,7 @@
           </div>
           ${renderMegaMenuPanel()}
         </nav>
+        ${window.CCE_V11_HUB ? window.CCE_V11_HUB.renderStickyContextBar(activePage, enHdr) : ""}
       </header>
     `;
   }
@@ -3186,6 +3264,8 @@
             </div>
           </div>
 
+          ${window.CCE_V11_HUB ? window.CCE_V11_HUB.renderFooterQuickPills(isEnglishUi()) : ""}
+
           <div class="footer-bottom">
             <span>${Brand.copyrightNoticeFull} • ${Brand.projectFullTitle}.</span>
             <span>${Brand.foundedByStatement} • Beyond Knowledge. Toward Understanding. Across Cultures.</span>
@@ -3237,6 +3317,7 @@
   }
 
   function renderHomePage() {
+    syncArticlesRef();
     const state = Store.getState();
     const lp = getLangPack();
     const dailyList = (LearningResearch && LearningResearch.dailyDiscoveries) || [];
@@ -3421,13 +3502,9 @@
     const bridgeArticles = Articles.filter((a) => a.category === "sino-vietnam" || a.category === "business").slice(0, 3);
     const sinoTheme = (SinoVN && SinoVN.themes && SinoVN.themes[0]) || null;
 
-    const homeOverviewHtml = () => `
-      ${window.CCE_V10_DISCOVERY ? window.CCE_V10_DISCOVERY.renderHomeSuite(homeEn) : ""}
-      ${window.CCE_V4_UX ? window.CCE_V4_UX.renderHeroIntentAndRecent(homeEn) : ""}
-      ${window.CCE_V9_HOME ? window.CCE_V9_HOME.renderSection(homeEn) : ""}
-
+    const homeReadingHtml = () => `
       <!-- CURATED READING ROOM (Asymmetric 7:5 Hairline Grid) -->
-      <section class="ed-section" aria-label="Thư phòng chuyên luận">
+      <section id="ed-home-reading-sec" class="ed-section" aria-label="Thư phòng chuyên luận">
         <div class="container">
           <div class="ed-section-head">
             <div>
@@ -3479,8 +3556,18 @@
       </section>
     `;
 
+    const homeOverviewHtml = () => homeReadingHtml();
+
     const homeCurriculumHtml = () => `
-      ${window.CCE_V5_ACADEMY ? `<div class="container">${window.CCE_V5_ACADEMY.renderCourseTracker(homeEn)}</div>` : ""}
+      ${window.CCE_V5_ACADEMY
+        ? `<div class="container">${window.CCE_V5_ACADEMY.renderCourseTracker(homeEn)}</div>`
+        : (() => {
+            if (Lazy && !window._cceV10AcademyBooted) {
+              window._cceV10AcademyBooted = true;
+              Lazy.ensureBundle("v5-v8-core-pack").then(() => patchMainOnly());
+            }
+            return "";
+          })()}
 
       <!-- SECTION 01B: FORBIDDEN CITY 3D ARCHITECTURAL EMBLEM & DISSECTION -->
       ${getForbiddenCity3D() ? getForbiddenCity3D().renderHomeSection(state.uiLang) : (() => { if (Lazy && !window._cceV10Fc3dBooted) { window._cceV10Fc3dBooted = true; Lazy.ensureBundle("3d-pack").then(() => patchMainOnly()); } return `
@@ -3499,13 +3586,16 @@
 
     const homeAtlasHtml = () => `
       <!-- 34-PROVINCE CULTURAL ATLAS -->
-      <section class="ed-section ed-section--surface" aria-label="Bản đồ địa văn hóa 34 tỉnh thành">
+      <section id="ed-home-atlas-sec" class="ed-section ed-section--surface" aria-label="Bản đồ địa văn hóa 34 tỉnh thành">
         <div class="container">
           <div class="ed-section-head">
             <div>
               <h2 class="ed-h2">${escapeHtml(lp.z3Title)}</h2>
             </div>
-            <button type="button" class="ed-link-action" data-action="open-regions-directory">${escapeHtml(lp.z3ViewAll)}</button>
+            <div style="display:flex;gap:0.85rem;align-items:center;flex-wrap:wrap;">
+              <button type="button" class="btn btn-primary btn-sm" data-v11-act="jump-prov-3d" data-prov="${activeProv ? activeProv.id : "prov-beijing"}">${homeEn ? "Split 3D Atlas ↗" : "Bản đồ 3D Chia Đôi ↗"}</button>
+              <button type="button" class="ed-link-action" data-action="open-regions-directory">${escapeHtml(lp.z3ViewAll)}</button>
+            </div>
           </div>
 
           <div class="ed-atlas-filter-bar" role="tablist" aria-label="Lọc theo cấp hành chính">
@@ -3732,34 +3822,13 @@
           </section>
         `;
       })() : ""}
-
-      <!-- QUIET HOMEPAGE EDITORIAL COLOPHON (PRE-FOOTER) -->
-      ${(() => {
-        const col = Brand.founderColophon || {};
-        const kicker = state.uiLang === "en" ? col.kickerEn : (state.uiLang === "zh-CN" || state.uiLang === "zh-TW") ? col.kickerZh : col.kickerVi;
-        const prose = state.uiLang === "en" ? col.en : (state.uiLang === "zh-CN" || state.uiLang === "zh-TW") ? col.zh : col.vi;
-        const cta = state.uiLang === "en" ? col.ctaEn : (state.uiLang === "zh-CN" || state.uiLang === "zh-TW") ? col.ctaZh : col.ctaVi;
-        if (!prose) return "";
-        return `
-          <section class="ed-colophon-section" aria-label="Lời ngỏ người sáng lập">
-            <div class="container">
-              <div class="ed-colophon-inner">
-                <div class="ed-colophon-seal" aria-hidden="true">${escapeHtml(col.sealChars || "興盛")}</div>
-                ${kicker ? `<div class="ed-meta-line">${escapeHtml(kicker)}</div>` : ""}
-                <p class="ed-colophon-prose">${escapeHtml(prose)}</p>
-                <button type="button" class="ed-colophon-cta" data-action="open-founder-message">${escapeHtml(cta || "Đọc toàn văn thông điệp người sáng lập →")}</button>
-              </div>
-            </div>
-          </section>
-        `;
-      })()}
     `;
 
     const homeDeckSubpages = [
       {
         id: "overview",
-        labelVi: "Tiêu điểm và khám phá",
-        labelEn: "Highlights & Reading",
+        labelVi: "Thư phòng chuyên luận",
+        labelEn: "Curated Reading Room",
         descVi: "Tìm hiểu theo chủ đề, góc đọc tiếp và tuyển tập chuyên luận mới.",
         descEn: "Structured thematic entry points and curated flagship monographs.",
         render: homeOverviewHtml
@@ -3792,50 +3861,35 @@
       }
     ];
 
-    return `
-      <!-- ZONE 01: MONUMENTAL EDITORIAL OPENING -->
-      <section class="ed-hero fade-in-up" aria-label="Giới thiệu nền tảng">
-        <div class="container">
-          <div class="ed-hero-grid">
-            <div>
-              <h1 class="ed-hero-title">${escapeHtml((state.uiLang === "en" && window.CCE_V10_DATA && window.CCE_V10_DATA.hero && window.CCE_V10_DATA.hero.heroHeadlineEn) || (window.CCE_V10_DATA && window.CCE_V10_DATA.hero && window.CCE_V10_DATA.hero.heroHeadlineVi) || lp.heroHeadlineVi || "Lưu trữ văn minh và mỹ thuật Trung Hoa")}</h1>
-              <div class="ed-hero-sub-en">${escapeHtml((window.CCE_V10_DATA && window.CCE_V10_DATA.hero && window.CCE_V10_DATA.hero.heroHeadlineEn) || lp.heroHeadlineEn)} · <span class="hanzi">${escapeHtml(lp.heroHeadlineZh)}</span></div>
-              <p class="ed-hero-lead">
-                ${state.uiLang === "en"
-                  ? escapeHtml((window.CCE_V10_DATA && window.CCE_V10_DATA.hero && window.CCE_V10_DATA.hero.heroLeadEn) || `An independent multilingual archive uniting ${Articles.length} academic essays, ${PaintingsList.length} master paintings, ${(Museum.artifacts || []).length} museum relics, and ${allProvinces.length} provincial dossiers.`)
-                  : state.uiLang === "zh-CN"
-                  ? `独立东亚文献百科与数字博物馆，汇集 <strong>${Articles.length} 篇深度专论</strong>、<strong>${PaintingsList.length} 幅传世国画</strong>、<strong>${(Museum.artifacts || []).length} 件馆藏文物</strong>与 <strong>${allProvinces.length} 个省级行政区</strong>地理人文档案。`
-                  : state.uiLang === "zh-TW"
-                  ? `獨立東亞文獻百科與數位博物館，匯集 <strong>${Articles.length} 篇深度專論</strong>、<strong>${PaintingsList.length} 幅傳世國畫</strong>、<strong>${(Museum.artifacts || []).length} 件館藏文物</strong>與 <strong>${allProvinces.length} 個省級行政區</strong>地理人文檔案。`
-                  : escapeHtml((window.CCE_V10_DATA && window.CCE_V10_DATA.hero && window.CCE_V10_DATA.hero.heroLeadVi) || `Hệ thống tri thức song ngữ Hán – Việt độc lập hội tụ ${Articles.length} chuyên luận khảo cứu chuyên sâu, ${PaintingsList.length} kiệt tác quốc họa, ${(Museum.artifacts || []).length} bảo vật bảo tàng và hồ sơ địa văn hóa ${allProvinces.length} đơn vị hành chính cấp tỉnh.`)}
-              </p>
-              <div class="ed-hero-ctas" style="gap:1.5rem;margin-bottom:0.25rem;">
-                <button type="button" class="ed-btn-primary" data-action="nav" data-page="explore">${escapeHtml(lp.heroExploreCta)}</button>
-                <button type="button" class="ed-link-action" data-action="open-founder-message">${escapeHtml(lp.heroFounderCta)}</button>
-              </div>
-            </div>
-
-            <div class="ed-hero-plate-wrap">
-              ${activePlate ? `
-                <button type="button" class="ed-hero-plate-stage" data-action="${activePlate.action}" data-id="${activePlate.id}" style="width:100%;" title="${escapeHtml(lp.plateZoomHint)}">
-                  <img decoding="async"  src="${activePlate.src}" alt="${escapeHtml(state.uiLang === "en" ? (activePlate.titleEn || activePlate.titleVi) : activePlate.titleVi)}" loading="eager" />
-                </button>
-                <div class="ed-museum-plaque">
-                  <div class="ed-plaque-meta">${escapeHtml(activePlate.dynastyLabel)} · ${escapeHtml(activePlate.dimensions)}</div>
-                  <div class="ed-plaque-title">${escapeHtml(state.uiLang === "en" ? (activePlate.titleEn || activePlate.titleVi) : activePlate.titleVi)} · <span class="hanzi">${escapeHtml(activePlate.titleZh)}</span></div>
-                  <div class="ed-plaque-sub">${escapeHtml(activePlate.artistLabel)} · ${escapeHtml(activePlate.museum)}</div>
-                </div>
-              ` : ""}
-              <div class="ed-plate-switcher" role="tablist" aria-label="${state.uiLang === "en" ? "Select hero artwork" : "Chọn tác phẩm trưng bày chính"}">
-                <button type="button" class="ed-plate-tab ${ui.heroArtworkMode === "great-wall-masterpiece" ? "active" : ""}" data-action="set-hero-artwork" data-mode="great-wall-masterpiece">${escapeHtml(lp.plateGreatWall)}</button>
-                <button type="button" class="ed-plate-tab ${ui.heroArtworkMode === "jiangshan-masterpiece" ? "active" : ""}" data-action="set-hero-artwork" data-mode="jiangshan-masterpiece">${escapeHtml(lp.plateJiangshan)}</button>
-                <button type="button" class="ed-plate-tab ${ui.heroArtworkMode === "qianli-masterpiece" ? "active" : ""}" data-action="set-hero-artwork" data-mode="qianli-masterpiece">${escapeHtml(lp.plateQianli)}</button>
-              </div>
+    const colophonFooterHtml = (() => {
+      const col = Brand.founderColophon || {};
+      const kicker = state.uiLang === "en" ? col.kickerEn : (state.uiLang === "zh-CN" || state.uiLang === "zh-TW") ? col.kickerZh : col.kickerVi;
+      const prose = state.uiLang === "en" ? col.en : (state.uiLang === "zh-CN" || state.uiLang === "zh-TW") ? col.zh : col.vi;
+      const cta = state.uiLang === "en" ? col.ctaEn : (state.uiLang === "zh-CN" || state.uiLang === "zh-TW") ? col.ctaZh : col.ctaVi;
+      if (!prose) return "";
+      return `
+        <section class="ed-colophon-section" aria-label="Lời ngỏ người sáng lập">
+          <div class="container">
+            <div class="ed-colophon-inner">
+              <div class="ed-colophon-seal" aria-hidden="true">${escapeHtml(col.sealChars || "興盛")}</div>
+              ${kicker ? `<div class="ed-meta-line">${escapeHtml(kicker)}</div>` : ""}
+              <p class="ed-colophon-prose">${escapeHtml(prose)}</p>
+              <button type="button" class="ed-colophon-cta" data-action="open-founder-message">${escapeHtml(cta || "Đọc toàn văn thông điệp người sáng lập →")}</button>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      `;
+    })();
+
+    return `
+      ${window.CCE_V10_DISCOVERY ? window.CCE_V10_DISCOVERY.renderHomeSuite(homeEn) : ""}
+      ${window.CCE_V11_HUB ? window.CCE_V11_HUB.renderFieldModeQuickHub(homeEn) : ""}
+      ${window.CCE_V11_HUB ? window.CCE_V11_HUB.renderGuidedJourneySection(homeEn) : ""}
       ${window.CCE_V10_DECK ? window.CCE_V10_DECK.renderDeck("home", homeDeckSubpages, { enM: homeEn, showDrawer: false }) : (homeOverviewHtml() + homeCurriculumHtml() + homeAtlasHtml() + homeBridgeHtml())}
+      ${window.CCE_V11_HUB ? window.CCE_V11_HUB.renderBrandAndCulinaryExplorer(homeEn) : ""}
+      ${window.CCE_V10_DISCOVERY ? window.CCE_V10_DISCOVERY.renderPalaceArchCta(homeEn) : ""}
+      ${window.CCE_V11_HUB ? window.CCE_V11_HUB.renderScholarlyFieldFaq(homeEn) : ""}
+      ${colophonFooterHtml}
     `;
   }
 
@@ -3844,6 +3898,7 @@
   // Supports 8 Filter Facets, Sorting, Grid/List View Toggle, Pagination
   // ==========================================================================
   function renderExploreResultsContent() {
+    syncArticlesRef();
     const categories = [
       { id: "all", label: `Tất cả (${Articles.length})` },
       { id: "history", label: "Lịch sử" },
@@ -3982,7 +4037,6 @@
           targetField: "explore",
           suggestions: enEx ? ["Confucianism", "Sichuan", "Keju", "Tea", "RCEP"] : ["Nho gia", "Tứ Xuyên", "Khoa cử", "Trà đạo", "RCEP"]
         }) : `
-          ${artPaged.renderControls(enEx)}
           ${ui.exploreViewMode === "list" ? `
           <div class="explore-list-view" style="margin-bottom:1.5rem;">
             ${visibleArticles.map((art) => {
@@ -4246,8 +4300,7 @@
           <input id="explore-treasures-input" type="text" class="form-input" data-action="explore-query-input" value="${escapeHtml(ui.exploreQuery)}" placeholder="${enEx ? "Enter relic or classic title..." : "Nhập tên bảo vật, bảo tàng hoặc kinh điển..."}" />
         </div>
         <h2 style="font-size:1.35rem;margin-bottom:0.75rem;">${enEx ? `Digital Museum Treasures (${mArts.length})` : `Bảo vật Bảo tàng số (${mArts.length})`}</h2>
-        ${mPaged.renderControls(enEx)}
-        <div class="grid grid-3" style="margin-bottom:1.75rem;">
+        <div class="grid grid-3" style="margin-bottom:0.9rem;">
           ${mPaged.slice.map((art) => `
             <article class="card interactive">
               ${Visuals.renderArtifactVisualHTML(art, false)}
@@ -4258,8 +4311,8 @@
             </article>
           `).join("")}
         </div>
+        <div style="margin-bottom:1.5rem;">${mPaged.renderControls(enEx)}</div>
         <h2 style="font-size:1.35rem;margin:1.5rem 0 0.75rem;">${enEx ? `Primary Philosophical Classics (${cTexts.length})` : `Kinh điển triết học nguyên bản (${cTexts.length})`}</h2>
-        ${cPaged.renderControls(enEx)}
         <div class="grid grid-2">
           ${cPaged.slice.map((txt) => `
             <article class="card">
@@ -4270,6 +4323,7 @@
             </article>
           `).join("")}
         </div>
+        ${cPaged.renderControls(enEx)}
       `;
     };
 
@@ -4283,7 +4337,6 @@
           <label for="explore-lexicon-input" style="font-size:0.78rem;font-weight:700;text-transform:uppercase;color:var(--text-muted);display:block;margin-bottom:0.3rem;">${enEx ? "Search Liushu Cultural Lexicon" : "Tra cứu từ điển văn hóa Lục thư"}</label>
           <input id="explore-lexicon-input" type="text" class="form-input" data-action="explore-query-input" value="${escapeHtml(ui.exploreQuery)}" placeholder="${enEx ? "Enter Hanzi, Pinyin, or meaning..." : "Nhập chữ Hán, Pinyin, âm Hán – Việt hoặc nghĩa..."}" />
         </div>
-        ${tPaged.renderControls(enEx)}
         <div class="grid grid-3">
           ${tPaged.slice.map((t) => `
             <article class="card interactive">
@@ -4441,6 +4494,7 @@
         </div>
       </section>
       ${window.CCE_V10_DECK ? window.CCE_V10_DECK.renderDeck("explore", exploreSubpages, { enM: enEx }) : `<section class="page-section"><div class="container">${exploreMonographsHtml()}${explorePathwaysHtml()}</div></section>`}
+      ${window.CCE_V11_HUB ? `<div class="container">${window.CCE_V11_HUB.renderCrossPageKnowledgeStrip("explore", enEx)}</div>` : ""}
     `;
   }
 
@@ -4453,7 +4507,10 @@
     const thumbId = ed && ed.thumbnailConfig ? ed.thumbnailConfig.imageId : null;
     const thumbRatio = ed && ed.thumbnailConfig ? ed.thumbnailConfig.aspectRatio : "16:10";
     const thumbImg = thumbId ? getEditorialImage(thumbId) : null;
-    const fallbackThumb = !thumbId ? (art.heroImage || getAcademicPhotoForItem(art.category, art.id, art.number || 0)) : null;
+    const rawFallbackThumb = !thumbId ? (art.heroImage || getAcademicPhotoForItem(art.category, art.id, art.number || 0, v.title || art.titleVi || "")) : null;
+    const fallbackThumb = rawFallbackThumb && rawFallbackThumb._isFallbackPool
+      ? Object.assign({}, rawFallbackThumb, { caption: v.title || "", captionEn: v.title || "" })
+      : rawFallbackThumb;
     const excerptRaw = v.standfirst || (v.introduction ? slicePlainPreview(v.introduction, 132) : "");
     return `
       <article class="card interactive" style="display:flex;flex-direction:column;justify-content:space-between;">
@@ -4621,7 +4678,76 @@
   // Right Sidebar: Terminology, Figures, Related Articles, Texts, Quick Note
   // ==========================================================================
   function renderArticlePage() {
+    syncArticlesRef();
     const art = Articles.find((a) => a.id === ui.activeArticleId) || Articles[0];
+    window._cceHydratedArtIds = window._cceHydratedArtIds || Object.create(null);
+    const hydState = art ? window._cceHydratedArtIds[art.id] : "";
+    const needsHydration = Boolean(art && (art._v104Stub || art._v23Stub || !Array.isArray(art.mainContent) || art.mainContent.length === 0));
+    if (needsHydration && Lazy && hydState !== "done") {
+      if (hydState !== "loading") {
+        window._cceHydratedArtIds[art.id] = "loading";
+        const fastPacks = (art._v104Stub && art._v104Shard)
+          ? [art._v104Shard]
+          : (art._v104Stub
+            ? ["v104-mono-shard-1", "v104-mono-shard-2", "v104-mono-shard-3", "v104-mono-shard-4", "v104-mono-shard-5"]
+            : ["compendia-intel-pack", "articles-deep-batches-pack", "articles-v3-pack", "v104-monographs-pack", "v104-live108-patches"]);
+        Lazy.ensureMany(fastPacks).then(() => {
+          syncArticlesRef();
+          let refreshed = Articles.find((a) => a.id === art.id);
+          const stillEmpty = !refreshed || !Array.isArray(refreshed.mainContent) || refreshed.mainContent.length === 0;
+          if (stillEmpty) {
+            return Lazy.ensureMany(["v104-monographs-pack", "v104-live108-patches"]).then(() => {
+              syncArticlesRef();
+              return Articles.find((a) => a.id === art.id);
+            });
+          }
+          return refreshed;
+        }).then((refreshed) => {
+          window._cceHydratedArtIds[art.id] = "done";
+          window._cceLive108Patched = true;
+          if (window.CCE_V104_BRIDGE && typeof window.CCE_V104_BRIDGE.syncAll === "function") {
+            window.CCE_V104_BRIDGE.syncAll();
+          }
+          syncArticlesRef();
+          refreshed = refreshed || Articles.find((a) => a.id === art.id);
+          if (refreshed && Array.isArray(refreshed.mainContent) && refreshed.mainContent.length > 0) {
+            delete refreshed._v104Stub;
+            delete refreshed._v23Stub;
+          }
+          ensureNewestArticlesOrder();
+          patchMainOnly();
+          updateDocumentSeoMeta();
+        }).catch(() => {
+          window._cceHydratedArtIds[art.id] = "done";
+        });
+      }
+      const enLoad = isEnglishUi();
+      return `
+        <section class="page-hero" style="padding:2rem 0;">
+          <div class="container">
+            <button type="button" class="btn btn-secondary btn-sm" data-action="close-article">${enLoad ? "← Back to Directory" : "← Quay lại danh mục"}</button>
+            <h1 style="margin-top:1rem;">${escapeHtml((enLoad && art.titleEn) ? art.titleEn : art.titleVi)}</h1>
+            ${art.titleZh ? `<div class="card-title-zh">${escapeHtml(art.titleZh)}</div>` : ""}
+            <div class="card mt-2" style="padding:1.25rem;border-top:3px solid var(--imperial-red);">
+              <div class="editorial-kicker">${enLoad ? "LOADING MONOGRAPH ARCHIVE" : "ĐANG TẢI TOÀN VĂN CHUYÊN LUẬN"}</div>
+              <p style="margin:0.45rem 0 0;color:var(--text-secondary);">${escapeHtml(art.standfirst || (enLoad ? "Fetching full text, bilingual terminology, historical chronology, and evidence matrices..." : "Đang nạp nội dung chuyên sâu, niên biểu, thuật ngữ đối chiếu và ma trận chứng cứ..."))}</p>
+            </div>
+          </div>
+        </section>
+      `;
+    }
+    if (art && !art._v104Stub && !art._v23Stub && Number(art.number || 0) <= 108 && !window._cceLive108Patched && Lazy && !window._cceLive108Loading) {
+      window._cceLive108Loading = true;
+      Lazy.ensureBundle("v104-live108-patches").then(() => {
+        syncArticlesRef();
+        window._cceLive108Loading = false;
+        window._cceLive108Patched = true;
+        patchMainOnly();
+      }).catch(() => {
+        window._cceLive108Loading = false;
+        window._cceLive108Patched = true;
+      });
+    }
     const sup = getArticleSupplement(art.id) || {};
     const ed = getArticleEditorial(art.id) || {};
     const v = getLocalizedArticleView(art, sup, ed);
@@ -4776,38 +4902,6 @@
             <article class="editorial-article-main article-center-column">
               ${window.CCE_V4_UX ? window.CCE_V4_UX.renderBilingualSplitView(art) : ""}
               ${window.CCE_V8_STUDIOS ? window.CCE_V8_STUDIOS.renderArticlePrimerBox(art, enM) : ""}
-
-              ${ed.heroImageId ? `
-                <div id="sec-hero" style="margin-bottom:1.5rem;">
-                  ${renderEditorialImageFigure(ed.heroImageId, { isHero: true, ratio: "16:9", loading: "eager", showZoom: true })}
-                </div>
-              ` : (() => {
-                const fbHero = art.heroImage || getAcademicPhotoForItem(art.category, art.id, art.number || 0);
-                const heroContain = fbHero && isArtworkOrDocumentSrc(fbHero.src, art.titleVi);
-                const heroStyle = heroContain ? "object-fit:contain;object-position:center;padding:0.65rem;background:var(--bg-surface);" : "object-fit:cover;object-position:50% 30%;";
-                return fbHero ? `
-                  <figure id="sec-hero" class="editorial-figure editorial-figure--clean" style="margin:0 0 1.5rem;">
-                    <div class="editorial-figure-frame" style="aspect-ratio:16/9;position:relative;overflow:hidden;border-radius:var(--radius-md);background:var(--bg-surface);border:1px solid var(--hairline);">
-                      <img decoding="async"  src="${escapeHtml(fbHero.src)}" alt="${escapeHtml(v.title)}" loading="eager" style="width:100%;height:100%;${heroStyle}display:block;" />
-                      <button type="button" class="editorial-img-zoom-pill" data-action="open-custom-image" data-src="${escapeHtml(fbHero.src)}" data-caption="${escapeHtml(v.heroCaption)}" data-credit="">${enM ? "⤢ Zoom" : "⤢ Phóng to"}</button>
-                    </div>
-                    ${v.heroCaption ? `
-                      <figcaption class="editorial-caption-clean">
-                        <div class="editorial-caption-text"><strong>${escapeHtml(v.heroCaption)}</strong></div>
-                      </figcaption>
-                    ` : ""}
-                  </figure>
-                ` : "";
-              })()}
-
-              ${v.keyTakeaways.length ? `
-                <div id="sec-takeaways" class="editorial-key-takeaways">
-                  <div class="editorial-kicker" style="color:var(--imperial-red);">${enM ? "Key Takeaways" : "Điểm cốt lõi"}</div>
-                  <ul>
-                    ${v.keyTakeaways.map((kt) => `<li>${formatInlineMd(kt, true)}</li>`).join("")}
-                  </ul>
-                </div>
-              ` : ""}
 
               <div class="article-prose text-size-${fontSize}" data-vocab-capture-zone="${escapeHtml(art.id)}" data-vocab-article-title="${escapeHtml(v.title)}">
                 ${(() => {
@@ -5032,6 +5126,7 @@
                       <h3 id="sec-conclusion">${enM ? (isAcademic ? "Academic Conclusion" : "Concluding Synthesis") : "Tổng kết và luận giải"}</h3>
                       <p>${formatInlineMd(v.conclusion, false)}</p>
                     ` : ""}
+                    ${window.CCE_V10_RICH_BLOCKS ? window.CCE_V10_RICH_BLOCKS.renderForArticle(art, enM) : ""}
                     ${window.CCE_V3_W5 ? window.CCE_V3_W5.renderArticleComprehension(art, enM, Dictionary) : ""}
                     ${renderCategorizedReferencesSection(v.references || [], enM, art)}
                   `;
@@ -5164,7 +5259,6 @@
           ? `<button type="button" class="btn btn-secondary btn-sm" data-action="clear-museum-filters">${ICONS.close} ${enM ? "Clear Filters" : "Xóa bộ lọc bảo tàng"}</button>`
           : ""}
       </div>
-      ${filtered.length ? mPaged.renderControls(enM) : ""}
 
       ${filtered.length === 0
         ? renderSmartEmptyState({
@@ -5299,7 +5393,7 @@
 
     const museum3dHtml = () => (window.CCE_3D_HUB
       ? window.CCE_3D_HUB.renderUnifiedStudio(enM, Store.getState().uiLang)
-      : (window.CCE_ARTIFACTS_3D ? window.CCE_ARTIFACTS_3D.renderSection(enM, Store.getState().uiLang) : ""));
+      : (window.CCE_ARTIFACTS_3D ? window.CCE_ARTIFACTS_3D.renderSection(enM, Store.getState().uiLang) : `<section class="card mt-2 mb-2" style="padding:1.35rem;border-top:3px solid var(--imperial-red);"><div class="editorial-kicker" style="color:var(--imperial-red);">${enM ? "INTERACTIVE 3D STUDIO · LOADING WEBGL" : "PHÒNG MÔ HÌNH 3D · ĐANG NẠP WEBGL"}</div><h3 style="margin:0.35rem 0 0;">${enM ? "Initializing 110 interactive Three.js PBR models..." : "Đang nạp 110 mô hình 3D Three.js PBR tương tác..."}</h3></section>`));
 
     const museumDiscoveryHtml = () => `
       ${window.CCE_V10_DISCOVERY ? window.CCE_V10_DISCOVERY.renderPigmentsReference(enM) : ""}
@@ -5313,7 +5407,7 @@
 
     const museumSubpages = [
       { id: "catalog", labelVi: "Danh mục bảo vật", labelEn: "Artifact Catalog", count: Museum.artifacts.length, render: museumCatalogHtml },
-      { id: "studio3d", labelVi: "Phòng mô hình 3D tương tác", labelEn: "Interactive 3D Studio", count: 28, render: museum3dHtml },
+      { id: "studio3d", labelVi: "Phòng mô hình 3D tương tác", labelEn: "Interactive 3D Studio", count: 100, render: museum3dHtml },
       { id: "discovery", labelVi: "Sắc tố khoáng và trưng bày", labelEn: "Pigments & Exhibition", render: museumDiscoveryHtml },
       { id: "timeline", labelVi: "Tiến trình chế tác 4.000 năm", labelEn: "4,000-Year Craft Timeline", render: museumTimelineHtml }
     ];
@@ -5331,6 +5425,7 @@
         </div>
       </section>
       ${window.CCE_V10_DECK ? window.CCE_V10_DECK.renderDeck("museum", museumSubpages, { enM }) : `<section class="page-section fade-in-up"><div class="container">${museumCatalogHtml()}${museum3dHtml()}</div></section>`}
+      ${window.CCE_V11_HUB ? `<div class="container">${window.CCE_V11_HUB.renderCrossPageKnowledgeStrip("museum", enM)}</div>` : ""}
     `;
   }
 
@@ -5405,6 +5500,8 @@
                 <div><strong>${enM ? "What to Look For First:" : "Điểm Cần Quan Sát Đầu Tiên:"}</strong> ${formatInlineMd(enM ? (art.visitorNote.whatToLookForFirstEn || enVal(art, "culturalSignificance") || "") : (art.visitorNote.whatToLookForFirst || ""), true)}</div>
               </div>
             </div>` : ""}
+
+          ${window.CCE_V104_VIEWS ? window.CCE_V104_VIEWS.renderArtifactDeepDossier(art, enM) : ""}
 
           ${related.length
             ? `<div>
@@ -5510,8 +5607,8 @@
           ${renderSmartEmptyState({
             query: ui.paintingsQuery,
             resetAction: "clear-paintings-filters",
-            resetLabel: enM ? "Clear filters and view all 54 paintings" : "Xóa bộ lọc và xem đủ 54 kiệt tác",
-            scopeLabel: enM ? "54 Masterpieces of Chinese Painting" : "Kho 54 kiệt tác Quốc họa",
+            resetLabel: enM ? `Clear filters and view all ${PaintingsList.length} paintings` : `Xóa bộ lọc và xem đủ ${PaintingsList.length} kiệt tác`,
+            scopeLabel: enM ? `${PaintingsList.length} Masterpieces of Chinese Painting` : `Kho ${PaintingsList.length} kiệt tác Quốc họa`,
             targetField: "paintings",
             suggestions: ["Lạc Thần", "Thanh Minh Thượng Hà Đồ", "Thiên Lý Giang Sơn Đồ", "Khê Sơn Hành Lữ Đồ", "Phú Xuân Sơn Cư Đồ"]
           })}
@@ -5529,7 +5626,6 @@
 
     if (ui.paintingsViewMode === "list") {
       return `
-        ${pagerHtml}
         <div style="grid-column:1/-1;display:flex;flex-direction:column;gap:0.75rem;">
           ${visiblePaintings.map((p) => {
             const fav = Store.isBookmarked("painting", p.id);
@@ -5569,7 +5665,7 @@
       `;
     }
 
-    return pagerHtml + visiblePaintings.map((p) => {
+    return visiblePaintings.map((p) => {
       const fav = Store.isBookmarked("painting", p.id);
       const isScroll = isHandscrollArtwork(p);
       const pTitleMain = enM ? (p.titleEn || p.titleVi) : p.titleVi;
@@ -5815,7 +5911,7 @@
     `;
 
     const paintingsSubpages = [
-      { id: "gallery", labelVi: "Bộ sưu tập 54 kiệt tác", labelEn: "54 Masterpieces", count: PaintingsList.length, render: paintingsGalleryHtml },
+      { id: "gallery", labelVi: "Bộ sưu tập kiệt tác", labelEn: "Masterpiece Gallery", count: PaintingsList.length, render: paintingsGalleryHtml },
       { id: "handscroll", labelVi: "Trường quyển ngắm chậm", labelEn: "Handscroll Stage", render: paintingsHandscrollHtml },
       { id: "pigments", labelVi: "Sắc tố khoáng và 7 kỷ nguyên", labelEn: "Pigments & 7 Eras", count: eras.length || 7, render: paintingsPigmentsHtml },
       { id: "compare", labelVi: "Đối chiếu và quy thuộc", labelEn: "Compare & Provenance", count: museums.length || 10, render: paintingsCompareHtml }
@@ -6155,6 +6251,7 @@
                   </div>
                 `}
               </div>
+              ${window.CCE_V104_VIEWS ? window.CCE_V104_VIEWS.renderPaintingDeepDossier(p, enM) : ""}
             </div>
           </div>
         </div>
@@ -6614,7 +6711,6 @@
           <div class="filter-bar">
             ${eventFilters.map((f) => `<button type="button" class="filter-pill ${ui.timelineFilter === f.id ? "active" : ""}" data-action="filter-timeline" data-type="${f.id}">${f.label}</button>`).join("")}
           </div>
-          ${evPaged.renderControls(enM)}
           <div class="grid grid-2">
             ${evPaged.slice.map((ev, evIdx) => {
               const evTypeLabel = (help.eventTypeEn && help.eventTypeEn(ev.type, enM)) || ev.type;
@@ -6705,7 +6801,6 @@
                   <button type="button" class="filter-pill ${ui.historyFigureMode === "prov115" ? "active" : ""}" data-action="set-history-figure-mode" data-mode="prov115">${enM ? "All 34 Provinces (115)" : "Toàn bộ 34 tỉnh thành (115)"}</button>
                 </div>
               </div>
-              ${figPaged.renderControls(enM)}
               <div class="history-figures-grid">
                 ${figPaged.slice.map((fig) => {
                   const fTitle = enM ? (fig.nameEn || fig.nameVi) : fig.nameVi;
@@ -6832,19 +6927,22 @@
           </div>
     `;
 
-    const philYijingHtml = () => (window.CCE_LABS_EXT ? window.CCE_LABS_EXT.renderYijingHexagramLab(enM) : "");
+    const philYijingHtml = () => `
+      ${window.CCE_LABS_EXT ? window.CCE_LABS_EXT.renderYijingHexagramLab(enM) : ""}
+      ${window.CCE_V12_VIEWS ? window.CCE_V12_VIEWS.renderYijing64Lab(enM) : ""}
+    `;
 
     const philClassicsHtml = () => {
       const Pager = window.CCE_V10_PAGINATOR;
       const cPaged = Pager ? Pager.paginate(Philosophy.classicalTexts, "philosophy-classics", { desktopPerPage: 6, mobilePerPage: 4 }) : { slice: Philosophy.classicalTexts, renderControls: () => "" };
       return `
+          ${window.CCE_V12_VIEWS ? window.CCE_V12_VIEWS.renderSikuAndParticlesStudio(enM, "philosophy") : ""}
           <div class="section-header">
             <div>
               <div class="editorial-kicker">${enM ? "Original Classics · 传世经典原典" : "Kinh điển nguyên bản • 传世经典原典"}</div>
               <h2 class="section-title" style="font-size:1.65rem;">${enM ? `${Philosophy.classicalTexts.length} Foundational Chinese Classics` : `${Philosophy.classicalTexts.length} bộ kinh điển trọng yếu`}</h2>
             </div>
           </div>
-          ${cPaged.renderControls(enM)}
           ${window.CCE_V10_DISCOVERY ? window.CCE_V10_DISCOVERY.renderClassicalGrammarDeck(enM) : ""}
           <div class="grid grid-2">
             ${cPaged.slice.map((txt, tIdx) => {
@@ -6976,12 +7074,18 @@
   // ==========================================================================
   function renderTraditionalPage() {
     const enM = isEnglishUi();
-    const tradCustomsHtml = () => renderCustomsTab();
+    const tradCustomsHtml = () => `
+      ${renderCustomsTab()}
+      ${window.CCE_V12_VIEWS ? window.CCE_V12_VIEWS.renderIchComparative43(enM) : ""}
+    `;
     const tradStageHtml = () => `
       ${renderArtsTab()}
       ${window.CCE_V8_STUDIOS ? window.CCE_V8_STUDIOS.renderOperaAndMusicStudio(enM) : ""}
     `;
-    const tradCosmologyHtml = () => renderMetaphysicsTab();
+    const tradCosmologyHtml = () => `
+      ${renderMetaphysicsTab()}
+      ${window.CCE_V12_VIEWS ? window.CCE_V12_VIEWS.renderCosmologySuite(enM) : ""}
+    `;
     const tradContemporaryHtml = () => `
       ${renderContemporaryTab()}
       ${window.CCE_LAOZIHAO_PAVILION ? window.CCE_LAOZIHAO_PAVILION.renderPavilion(enM) : ""}
@@ -7241,7 +7345,6 @@
           ? `<button type="button" class="btn btn-secondary btn-sm" data-action="clear-province-filters">${ICONS.close} ${enM ? "Clear Filters" : "Xóa bộ lọc tỉnh thành"}</button>`
           : ""}
       </div>
-      ${filteredProvinces.length ? prPaged.renderControls(enM) : ""}
       ${filteredProvinces.length === 0 ? renderSmartEmptyState({
         query: ui.provinceQuery,
         resetAction: "clear-province-filters",
@@ -7652,6 +7755,7 @@
 
     const regionsReadinessHtml = () => `
           ${window.CCE_TRAVEL_HUB ? window.CCE_TRAVEL_HUB.renderHub(enM, Regions) : ""}
+          ${window.CCE_V12_VIEWS ? window.CCE_V12_VIEWS.renderFieldAtlas34Directory(enM) : ""}
           ${TravelReadiness ? (() => {
             const enR = isEnglishUi();
             const guideList = enR ? (TravelReadiness.guideSectionsEn || []) : (TravelReadiness.guideSectionsVi || []);
@@ -7725,6 +7829,7 @@
         </div>
       </section>
       ${window.CCE_V10_DECK ? window.CCE_V10_DECK.renderDeck("regions", regionsSubpages, { enM }) : `<section class="page-section"><div class="container">${regionsAtlasHtml()}</div></section>`}
+      ${window.CCE_V11_HUB ? `<div class="container">${window.CCE_V11_HUB.renderCrossPageKnowledgeStrip("regions", enM)}</div>` : ""}
     `;
   }
 
@@ -7786,6 +7891,8 @@
 
     const svPhonologyHtml = () => `
           ${window.CCE_V10_DISCOVERY ? window.CCE_V10_DISCOVERY.renderHanNomAndFalseFriends(enSV) : ""}
+          ${window.CCE_V12_VIEWS ? window.CCE_V12_VIEWS.renderHanNom24Corpus(enSV) : ""}
+          ${window.CCE_V12_VIEWS ? window.CCE_V12_VIEWS.renderFalseFriends50(enSV) : ""}
           ${window.CCE_V9_DATA_STORIES ? window.CCE_V9_DATA_STORIES.renderForPage("sino-vietnam", enSV) : ""}
           ${window.CCE_LABS_EXT ? window.CCE_LABS_EXT.renderChuNomParallelReader(enSV) : ""}
     `;
@@ -7826,6 +7933,7 @@
               </div>
             </div>
           ` : ""}
+          ${window.CCE_V12_VIEWS ? window.CCE_V12_VIEWS.renderIchComparative43(enSV) : ""}
           ${window.CCE_LABS_EXT ? window.CCE_LABS_EXT.renderTriangulationLedger("sino-vietnam", enSV) : ""}
           <div style="margin-top:2rem;">
             <div class="section-header">
@@ -7876,6 +7984,7 @@
         </div>
       </section>
       ${window.CCE_V10_DECK ? window.CCE_V10_DECK.renderDeck("sino-vietnam", svSubpages, { enM: enSV }) : `<section class="page-section"><div class="container">${svExchangeHtml()}${svMatricesHtml()}</div></section>`}
+      ${window.CCE_V11_HUB ? `<div class="container">${window.CCE_V11_HUB.renderCrossPageKnowledgeStrip("sino-vietnam", enSV)}</div>` : ""}
     `;
   }
 
@@ -7935,9 +8044,13 @@
             </div>
           </div>
           ${window.CCE_V3_W5 ? window.CCE_V3_W5.renderB2BExpansion(enB) : ""}
+          ${window.CCE_V12_VIEWS ? window.CCE_V12_VIEWS.renderB2BClauses20(enB) : ""}
     `;
 
-    const bizLaozihaoHtml = () => (window.CCE_LAOZIHAO_PAVILION ? window.CCE_LAOZIHAO_PAVILION.renderPavilion(enB) : "");
+    const bizLaozihaoHtml = () => `
+      ${window.CCE_LAOZIHAO_PAVILION ? window.CCE_LAOZIHAO_PAVILION.renderPavilion(enB) : ""}
+      ${window.CCE_V12_VIEWS ? window.CCE_V12_VIEWS.renderLaozihao90Directory(enB) : ""}
+    `;
 
     const bizCorridorsHtml = () => `
           ${window.CCE_V9_DATA_STORIES ? window.CCE_V9_DATA_STORIES.renderForPage("business", enB) : ""}
@@ -7970,6 +8083,7 @@
         </div>
       </section>
       ${window.CCE_V10_DECK ? window.CCE_V10_DECK.renderDeck("business", bizSubpages, { enM: enB }) : `<section class="page-section"><div class="container">${bizB2bHtml()}</div></section>`}
+      ${window.CCE_V11_HUB ? `<div class="container">${window.CCE_V11_HUB.renderCrossPageKnowledgeStrip("business", enB)}</div>` : ""}
     `;
   }
 
@@ -8047,7 +8161,6 @@
             const Pager = window.CCE_V10_PAGINATOR;
             const cPaged = Pager ? Pager.paginate(filtered, "library-classics", { filterSig: `${activeCat}|${cq}`, desktopPerPage: 6, mobilePerPage: 4 }) : { slice: filtered, renderControls: () => "" };
             return `
-            ${cPaged.renderControls(enM)}
             <div class="grid grid-2" style="gap:1.35rem;">
               ${cPaged.slice.map((txt, idx) => {
                 const excerpts = Array.isArray(txt.excerpts) && txt.excerpts.length ? txt.excerpts : [];
@@ -8150,7 +8263,10 @@
     const sched = (Intelligence && Intelligence.monitoringSchedule) || {};
     const classicsCount = (Philosophy && Philosophy.classicalTexts ? Philosophy.classicalTexts.length : 30);
 
-    const libClassicsHtml = () => renderClassicsLibrarySubTab();
+    const libClassicsHtml = () => `
+      ${renderClassicsLibrarySubTab()}
+      ${window.CCE_V12_VIEWS ? window.CCE_V12_VIEWS.renderSikuAndParticlesStudio(enLib, "library") : ""}
+    `;
     const libLiteratureHtml = () => (window.CCE_V8_STUDIOS ? window.CCE_V8_STUDIOS.renderModernLiteratureStudio(enLib) : "");
     const libMonographHtml = () => renderMonographSubTab(mono);
     const libCompendiaHtml = () => renderCompendiaSubTab();
@@ -8441,7 +8557,7 @@
         ${(() => {
           const Pager = window.CCE_V10_PAGINATOR;
           const slPaged = Pager ? Pager.paginate(slicedArticles, "library-compendia-sliced", { desktopPerPage: 9, mobilePerPage: 6 }) : { slice: slicedArticles, renderControls: () => "" };
-          return `<div style="grid-column:1/-1;">${slPaged.renderControls(isEnglishUi())}</div>` + slPaged.slice.map((art) => renderArticleCard(art)).join("") + `<div style="grid-column:1/-1;">${slPaged.renderControls(isEnglishUi())}</div>`;
+          return slPaged.slice.map((art) => renderArticleCard(art)).join("") + `<div style="grid-column:1/-1;">${slPaged.renderControls(isEnglishUi())}</div>`;
         })()}
       </div>
 
@@ -8824,9 +8940,11 @@
   // Page 10: MY LEARNING SYSTEM (Dashboard, Dictionary, Flashcards, K-Map, Quiz, Journal)
   // ==========================================================================
   function renderLearningPage() {
+    syncArticlesRef();
     const enL = isEnglishUi();
     const state = Store.getState();
     const notebookCount = (state.vocabNotebook || []).length;
+    const totalQuizCnt = Math.max(1000, Array.isArray(window.CCE_MASTER_QUIZ_830) && window.CCE_MASTER_QUIZ_830.length >= 1000 ? window.CCE_MASTER_QUIZ_830.length : 1000);
 
     const learnDashboardHtml = () => `
           ${renderAcademicSectionBanner("learning", `
@@ -8857,7 +8975,7 @@
           <button type="button" class="tab-btn ${subMode === "dict" ? "active" : ""}" data-action="set-lexicon-submode" data-mode="dict">${enL ? `Liushu Cultural Lexicon (${Dictionary.length})` : `Từ điển Lục thư (${Dictionary.length} mục từ)`}</button>
           <button type="button" class="tab-btn ${subMode === "survival" ? "active" : ""}" data-action="set-lexicon-submode" data-mode="survival">${enL ? "10 Survival Hanzi Packs" : "10 bộ chữ Hán sinh tồn"}</button>
         </div>
-        ${subMode === "survival" ? renderSurvivalHanziTab() : renderDictionaryTab()}
+        ${subMode === "survival" ? renderSurvivalHanziTab() : `${renderDictionaryTab()}${window.CCE_V12_VIEWS ? window.CCE_V12_VIEWS.renderLexicon120Evolution(enL) : ""}`}
       `;
     };
 
@@ -8866,18 +8984,19 @@
     const learnAcademicHtml = () => `
       ${window.CCE_V10_DISCOVERY ? window.CCE_V10_DISCOVERY.renderHsk79AndTradeCases("hsk", enL) : ""}
       ${window.CCE_V8_STUDIOS ? window.CCE_V8_STUDIOS.renderHsk79PassagesStudio(enL) : ""}
+      ${window.CCE_V12_VIEWS ? window.CCE_V12_VIEWS.renderAcademy985AndHsk50(enL) : ""}
       <div style="margin-top:2rem;">
         ${renderJournalTab()}
       </div>
     `;
 
     const learningSubpages = [
-      { id: "dashboard", labelVi: "Bảng điều khiển và lộ trình", labelEn: "Dashboard & Pathways", render: learnDashboardHtml },
+      { id: "dashboard", labelVi: "Lộ trình học tập", labelEn: "Dashboard & Pathways", render: learnDashboardHtml },
       { id: "kmap", labelVi: "Bản đồ tri thức", labelEn: "Knowledge Map", render: learnKmapHtml },
-      { id: "lexicon", labelVi: "Từ điển Lục thư và sinh tồn", labelEn: "Lexicon & Survival Hanzi", count: Dictionary.length, render: learnLexiconHtml },
-      { id: "notebook", labelVi: "Sổ tay từ vựng và SM-2", labelEn: "Notebook & SM-2 Review", count: notebookCount, render: learnNotebookHtml },
-      { id: "quiz", labelVi: "Đấu trường trắc nghiệm", labelEn: "Quiz & Feynman Arena", count: 800, render: learnQuizHtml },
-      { id: "academic", labelVi: "Đọc hiểu HSK 7–9 và nhật ký", labelEn: "HSK 7–9, CSC & Journal", render: learnAcademicHtml }
+      { id: "lexicon", labelVi: "Từ điển Lục thư", labelEn: "Lexicon & Survival Hanzi", count: Dictionary.length, render: learnLexiconHtml },
+      { id: "notebook", labelVi: "Sổ tay SM-2", labelEn: "Notebook & SM-2 Review", count: notebookCount, render: learnNotebookHtml },
+      { id: "quiz", labelVi: "Trắc nghiệm", labelEn: "Quiz & Feynman Arena", count: totalQuizCnt, render: learnQuizHtml },
+      { id: "academic", labelVi: "Đọc hiểu HSK 7–9", labelEn: "HSK 7–9, CSC & Journal", render: learnAcademicHtml }
     ];
 
     return `
@@ -8887,12 +9006,13 @@
           <h1>${enL ? "Interactive learning hub and vocabulary reading notebook" : "Hệ thống học tập tương tác và sổ tay từ vựng"}</h1>
           <p class="section-subtitle">
             ${enL
-              ? `Highlight phrases directly inside monographs, study ${Dictionary.length} Liushu entries, practice 800 quiz questions, and organize your personal reading notes.`
-              : `Tích hợp từ điển Lục thư ${Dictionary.length} mục từ, sổ tay từ vựng ngữ cảnh, đấu trường 800 câu hỏi và nhật ký học tập lưu trực tiếp trên trình duyệt.`}
+              ? `Highlight phrases directly inside monographs, study ${Dictionary.length} Liushu entries, practice ${totalQuizCnt} quiz questions, and organize your personal reading notes.`
+              : `Tích hợp từ điển Lục thư ${Dictionary.length} mục từ, sổ tay từ vựng ngữ cảnh, đấu trường ${totalQuizCnt} câu hỏi và nhật ký học tập lưu trực tiếp trên trình duyệt.`}
           </p>
         </div>
       </section>
       ${window.CCE_V10_DECK ? window.CCE_V10_DECK.renderDeck("learning", learningSubpages, { enM: enL }) : `<section class="page-section"><div class="container">${learnDashboardHtml()}</div></section>`}
+      ${window.CCE_V11_HUB ? `<div class="container">${window.CCE_V11_HUB.renderCrossPageKnowledgeStrip("learning", enL)}</div>` : ""}
     `;
   }
 
@@ -9106,6 +9226,8 @@
           .join("")}
       </div>
 
+      ${window.CCE_V104_VIEWS ? window.CCE_V104_VIEWS.renderStudyPaths12(enL) : ""}
+
       <div class="grid grid-2">
         <div class="card">
           <h4 style="margin-bottom:0.75rem;">${enL ? "Recommended Next Monographs" : "Đề xuất Bài học Tiếp theo"}</h4>
@@ -9200,7 +9322,6 @@
           ? `<button type="button" class="btn btn-secondary btn-sm" data-action="clear-dict-filters">${ICONS.close} ${enD ? "Clear dictionary filters" : "Xóa bộ lọc từ điển"}</button>`
           : ""}
       </div>
-      ${filtered.length ? dPaged.renderControls(enD) : ""}
       ${filtered.length === 0 ? renderSmartEmptyState({
         query: ui.dictQuery,
         resetAction: "clear-dict-filters",
@@ -9588,6 +9709,7 @@
     }
 
     return `
+      ${window.CCE_V104_VIEWS ? window.CCE_V104_VIEWS.renderMasterQuiz830Arena(enQ) : ""}
       ${window.CCE_LABS ? window.CCE_LABS.renderPracticeQuizArena(enQ) : ""}
       <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;">
         <div>
@@ -9612,7 +9734,7 @@
           const Pager = window.CCE_V10_PAGINATOR;
           const qPaged = Pager ? Pager.paginate(questions, "learning-quiz", { desktopPerPage: 8, mobilePerPage: 6 }) : { slice: questions, startIdx: 0, renderControls: () => "" };
           const qControls = qPaged.renderControls(enQ);
-          return qControls + qPaged.slice
+          return qPaged.slice
           .map((q, sliceIdx) => {
             const idx = (qPaged.startIdx || 0) + sliceIdx;
             if (q.type === "short-answer") {
@@ -10522,7 +10644,7 @@
         </div>
 
         <div style="aspect-ratio:16/10;background:var(--bg-surface);border:1px solid var(--hairline);border-radius:var(--radius-md);overflow:hidden;margin-bottom:0.85rem;">
-          <img decoding="async"  src="${escapeHtml(pr.image || "")}" alt="${escapeHtml(pName)}" style="width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;" />
+          <img decoding="async"  src="${escapeHtml(pr.image || "assets/images/articles/hero-traditional-arch.jpg")}" alt="${escapeHtml(pName)}" style="width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;" />
         </div>
 
         <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.5rem;">
@@ -10968,7 +11090,12 @@
       <div class="modal-backdrop open" data-action="close-modal-backdrop">
         <div class="modal-panel" style="max-width:920px;" role="dialog" aria-modal="true" aria-label="${escapeHtml(lp.searchModalTitle)}">
           <button type="button" class="modal-close-btn" data-action="close-search" aria-label="Đóng tìm kiếm">${ICONS.close}</button>
-          <h3 class="card-title" style="margin-bottom:0.75rem;">${escapeHtml(lp.searchModalTitle)}</h3>
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;padding-right:2.5rem;margin-bottom:0.75rem;">
+            <h3 class="card-title" style="margin:0;">${escapeHtml(lp.searchModalTitle)}</h3>
+            <button type="button" class="btn btn-secondary btn-sm" data-action="open-local-qa" style="font-size:0.78rem;">
+              ${isEnglishUi() ? "Source-Cited Q&amp;A Engine →" : "Hỏi đáp Trích nguồn Tư liệu →"}
+            </button>
+          </div>
           <input
             type="text"
             id="global-search-input"
@@ -11367,6 +11494,12 @@
     if (window.CCE_V9_LOADER && typeof window.CCE_V9_LOADER.afterRender === "function") {
       window.CCE_V9_LOADER.afterRender(state.activePage, isEnglishUi());
     }
+    if (window.CCE_V10_DISCOVERY && typeof window.CCE_V10_DISCOVERY.syncRightEdgeDock === "function") {
+      window.CCE_V10_DISCOVERY.syncRightEdgeDock(isEnglishUi());
+    }
+    if (window.CCE_V11_HUB && typeof window.CCE_V11_HUB.syncScrollAndObservers === "function") {
+      window.CCE_V11_HUB.syncScrollAndObservers();
+    }
   }
 
   function patchSlot(slotId, rendererFn) {
@@ -11461,6 +11594,12 @@
     if (window.CCE_V9_LOADER && typeof window.CCE_V9_LOADER.afterRender === "function") {
       window.CCE_V9_LOADER.afterRender(state.activePage, isEnglishUi());
     }
+    if (window.CCE_V10_DISCOVERY && typeof window.CCE_V10_DISCOVERY.syncRightEdgeDock === "function") {
+      window.CCE_V10_DISCOVERY.syncRightEdgeDock(isEnglishUi());
+    }
+    if (window.CCE_V11_HUB && typeof window.CCE_V11_HUB.syncScrollAndObservers === "function") {
+      window.CCE_V11_HUB.syncScrollAndObservers();
+    }
   }
 
   document.addEventListener("click", (e) => {
@@ -11509,6 +11648,11 @@
     }
 
     switch (action) {
+      case "open-local-qa":
+        ui.searchModalOpen = false;
+        renderModalsOnly();
+        break;
+
       case "auth-signin-google": {
         e.preventDefault();
         ui.mobileNavOpen = false;
@@ -11537,6 +11681,7 @@
         break;
       }
 
+      case "navigate":
       case "nav": {
         e.preventDefault();
         if (CceRouter) CceRouter.saveScroll();
@@ -11712,7 +11857,14 @@
         ui.activeHotspotIdx = 0;
         ui.searchModalOpen = false;
         ui.heroAutocompleteOpen = false;
+        if (ui.activeMegaMenu) { ui.activeMegaMenu = null; patchHeaderOnly(); }
         syncHashFromState(`artifact=${id}`);
+        if (Lazy && !Museum.artifacts.some((m) => m && m.id === id)) {
+          Lazy.ensureMany(["museum-classics-v3-pack", "v104-museum-pack"]).then(() => {
+            if (window.CCE_V104_BRIDGE && typeof window.CCE_V104_BRIDGE.syncAll === "function") window.CCE_V104_BRIDGE.syncAll();
+            renderModalsOnly();
+          });
+        }
         renderModalsOnly();
         break;
 
@@ -11729,13 +11881,21 @@
         renderModalsOnly();
         break;
 
+      case "open-painting":
       case "open-painting-detail":
         ui.activePaintingId = id;
         ui.activeHotspotIdx = 0;
         ui.searchModalOpen = false;
         ui.heroAutocompleteOpen = false;
         ui.paintingZoomScale = 1;
+        if (ui.activeMegaMenu) { ui.activeMegaMenu = null; patchHeaderOnly(); }
         syncHashFromState(`painting=${id}`);
+        if (Lazy && (!Paintings.masterpieces || !Paintings.masterpieces.some((p) => p && p.id === id) || !window.CCE_QUOCHOA_72_DEEP_DOSSIERS || !Object.keys(window.CCE_QUOCHOA_72_DEEP_DOSSIERS).length)) {
+          Lazy.ensureMany(["paintings-pack", "v104-paintings-pack"]).then(() => {
+            if (window.CCE_V104_BRIDGE && typeof window.CCE_V104_BRIDGE.syncAll === "function") window.CCE_V104_BRIDGE.syncAll();
+            renderModalsOnly();
+          });
+        }
         renderModalsOnly();
         break;
 
@@ -12339,11 +12499,10 @@
         break;
 
       case "open-article": {
-        const art = Articles.find((a) => a.id === id);
-        if (art) {
+        const openFoundArticle = (foundArt) => {
           const curPage = Store.getState().activePage;
           if (curPage && curPage !== "article") ui.previousPage = curPage;
-          ui.activeArticleId = id;
+          ui.activeArticleId = foundArt.id;
           ui.activeTocId = "sec-hero";
           ui.searchModalOpen = false;
           ui.heroAutocompleteOpen = false;
@@ -12351,13 +12510,27 @@
           ui.articleMobileTocOpen = false;
           ui.articleMobileContextOpen = false;
           ui.editorialQaOpen = false;
-          Store.recordReading("article", art.id, art.titleVi);
+          Store.recordReading("article", foundArt.id, foundArt.titleVi);
           if (window.CCE_COOKIES && typeof window.CCE_COOKIES.setResume === "function") {
-            window.CCE_COOKIES.setResume({ kind: "article", id: art.id, title: art.titleVi, chap: 1 });
+            window.CCE_COOKIES.setResume({ kind: "article", id: foundArt.id, title: foundArt.titleVi, chap: 1 });
           }
           Store.setPage("article");
-          syncHashFromState(`article=${id}`);
+          syncHashFromState(`article=${foundArt.id}`);
           window.scrollTo({ top: 0, behavior: "instant" });
+        };
+        syncArticlesRef();
+        const art = Articles.find((a) => a.id === id);
+        if (art) {
+          openFoundArticle(art);
+        } else if (Lazy && id) {
+          Lazy.ensureMany(["articles-v3-pack", "v104-mono-shard-5", "v104-monographs-pack", "v104-live108-patches"]).then(() => {
+            if (window.CCE_V104_BRIDGE && typeof window.CCE_V104_BRIDGE.syncAll === "function") {
+              window.CCE_V104_BRIDGE.syncAll();
+            }
+            syncArticlesRef();
+            const lazyArt = Articles.find((a) => a.id === id);
+            if (lazyArt) openFoundArticle(lazyArt);
+          });
         }
         break;
       }
@@ -13069,6 +13242,20 @@
         speakChinese(target.getAttribute("data-zh") || "");
         break;
 
+      case "speak-en":
+        e.stopPropagation();
+        try {
+          const enTxt = target.getAttribute("data-en") || "";
+          if (window.speechSynthesis && enTxt) {
+            window.speechSynthesis.cancel();
+            const uEn = new SpeechSynthesisUtterance(enTxt);
+            uEn.lang = "en-US";
+            uEn.rate = 0.94;
+            window.speechSynthesis.speak(uEn);
+          }
+        } catch {}
+        break;
+
       case "dismiss-onboarding":
         ui.onboardingDismissed = true;
         patchMainOnly();
@@ -13111,10 +13298,17 @@
         break;
       }
 
+      case "open-province":
       case "open-province-detail":
         ui.selectedMapProvinceId = id;
         ui.activeProvinceId = id;
         syncHashFromState(`province=${id}`);
+        if (Lazy && (!Regions.provincesDirectory || !Regions.provincesDirectory.some((pr) => pr && pr.id === id) || !window.CCE_PROVINCES_34_MASTER_ATLAS || !Object.keys(window.CCE_PROVINCES_34_MASTER_ATLAS).length)) {
+          Lazy.ensureMany(["regions-batches-pack", "v104-provinces-pack"]).then(() => {
+            if (window.CCE_V104_BRIDGE && typeof window.CCE_V104_BRIDGE.syncAll === "function") window.CCE_V104_BRIDGE.syncAll();
+            renderModalsOnly();
+          });
+        }
         renderModalsOnly();
         break;
 
@@ -13479,9 +13673,11 @@
       ui.quizShortAnswers[e.target.getAttribute("data-qid")] = e.target.value;
     } else if (action === "explore-query-input") {
       ui.exploreQuery = e.target.value;
-      scheduleSlotInput("explore-q", () => {
-        patchSlot("explore-results-slot", renderExploreResultsContent);
-      }, 95);
+      if (_inputTimers.has("explore-q")) {
+        clearTimeout(_inputTimers.get("explore-q"));
+        _inputTimers.delete("explore-q");
+      }
+      patchSlot("explore-results-slot", renderExploreResultsContent);
     } else if (action === "province-query-input") {
       ui.provinceQuery = e.target.value;
       scheduleSlotInput("prov-q", () => {
@@ -13993,8 +14189,8 @@
       if (pt) {
         canonicalPath = `/quoc-hoa/${encodeURIComponent(pt.id)}`;
         title = enSeo
-          ? `${pt.titleEn || pt.titleVi} (${pt.titleZh || ""}) – 54 Masterpieces of Chinese Painting | CCE`
-          : `${pt.titleVi} (${pt.titleZh || ""}) – 54 Kiệt tác Quốc họa | CCE`;
+          ? `${pt.titleEn || pt.titleVi} (${pt.titleZh || ""}) – ${PaintingsList.length} Masterpieces of Chinese Painting | CCE`
+          : `${pt.titleVi} (${pt.titleZh || ""}) – ${PaintingsList.length} Kiệt tác Quốc họa | CCE`;
         const pAnalysis = (enSeo && pt.analysisEn) || pt.analysis;
         description = String((pAnalysis && (pAnalysis.artisticLegacy || pAnalysis.historicalBackground)) || enVal(pt, "significance") || enVal(pt, "composition") || enVal(pt, "overview") || description).replace(/<[^>]+>/g, "").slice(0, 158);
         ogImageSrc = pickFirstRaster(pt.imageUrl, pt.image, pt.src, ogImageSrc);
@@ -14186,8 +14382,11 @@
       }
     }
 
-    const rawPath = (window.location.pathname || "/").replace(/\/+$/, "") || "/";
-    if (rawPath === "/" || rawPath === "/index.html") {
+    const rawPath = ((window.location.pathname || "/")
+      .replace(/^\/seo_pages(?=\/|$)/i, "")
+      .replace(/\.html$/i, "")
+      .replace(/\/+$/, "")) || "/";
+    if (rawPath === "/" || rawPath === "/index") {
       isApplyingHashRoute = true;
       ui.activeArticleId = null;
       ui.activeProvinceId = null;
@@ -14243,7 +14442,7 @@
   });
 
   // Initialize Auth, Store, Clean Path Routing, and Render
-  Store.subscribe((_nextState, reason) => {
+  Store.subscribe((nextState, reason) => {
     if (reason === "theme") {
       patchHeaderThemeOnly();
       return;
@@ -14269,6 +14468,11 @@
       return;
     }
     render();
+    if (nextState && nextState.activePage) {
+      hydratePageBundles(nextState.activePage, nextState.uiLang || "vi", {
+        needs3d: ui.activeArticleId === "forbidden-city-3d-dissection"
+      });
+    }
   });
   Auth.subscribe(render);
   Store.init();

@@ -246,6 +246,12 @@
     art.terminologyIds = Array.from(new Set([...(art.terminologyIds || []), ...termIds]));
     if (!existingIds.has(art.id)) {
       window.CCE_ARTICLES.push(art);
+      existingIds.add(art.id);
+    } else {
+      const sIdx = window.CCE_ARTICLES.findIndex((x) => x && x.id === art.id);
+      if (sIdx >= 0 && (window.CCE_ARTICLES[sIdx]._v23Stub || window.CCE_ARTICLES[sIdx]._v104Stub)) {
+        window.CCE_ARTICLES[sIdx] = art;
+      }
     }
     window.CCE_MUSEUM.articleSupplements[art.id] = spec.supplement;
     if (spec.heroImage) {

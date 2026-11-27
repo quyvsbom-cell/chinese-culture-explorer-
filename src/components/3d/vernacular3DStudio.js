@@ -45,88 +45,151 @@
     rt = null;
   }
 
+  function dispose() {
+    if (!rt) return;
+    if (rt.rafId) cancelAnimationFrame(rt.rafId);
+    if (rt.cleanup) rt.cleanup();
+    if (rt.ro) rt.ro.disconnect();
+    if (window.CCE_3D_PBR && rt.scene) {
+      try { window.CCE_3D_PBR.disposeScene(rt.scene, rt.renderer); } catch (_e) {}
+    }
+    if (rt.renderer) try { rt.renderer.dispose(); } catch (_e) {}
+    rt = null;
+  }
+
   function buildGeometry(THREE, root) {
-    var earth = new THREE.MeshStandardMaterial({ color: 0xc29e6c, roughness: 0.85 });
-    var roof = new THREE.MeshStandardMaterial({ color: 0x3b4046, roughness: 0.65 });
-    var wood = new THREE.MeshStandardMaterial({ color: 0x7d3a24, roughness: 0.6 });
-    var wallWhite = new THREE.MeshStandardMaterial({ color: 0xeee9df, roughness: 0.78 });
+    var PBR = window.CCE_3D_PBR;
+    var ARCH = window.CCE_3D_ARCH;
+    var woodTex = PBR ? PBR.getTexture(THREE, "wood") : null;
+    var woodBump = PBR ? PBR.getTexture(THREE, "woodBump") : null;
+    var tileTex = PBR ? PBR.getTexture(THREE, "slateTile") : null;
+    var tileBump = PBR ? PBR.getTexture(THREE, "tileBump") : null;
+    var marbleTex = PBR ? PBR.getTexture(THREE, "marble") : null;
+    var graniteTex = PBR ? PBR.getTexture(THREE, "granite") : null;
+    var rammedTex = PBR ? PBR.repeatTex(THREE, "rammedEarth", 3, 1) : woodTex;
+
+    var earth = new THREE.MeshStandardMaterial({ color: 0xc29e6c, map: rammedTex, roughness: 0.88 });
+    var roof = new THREE.MeshStandardMaterial({ color: 0x3b4046, map: tileTex, bumpMap: tileBump, bumpScale: 0.03, roughness: 0.58, metalness: 0.08 });
+    var wood = new THREE.MeshStandardMaterial({ color: 0x7d3a24, map: woodTex, bumpMap: woodBump, bumpScale: 0.015, roughness: 0.54 });
+    var redLacquer = new THREE.MeshStandardMaterial({ color: 0x8e2420, roughness: 0.40, metalness: 0.06 });
+    var wallWhite = new THREE.MeshStandardMaterial({ color: 0xf1ece1, map: marbleTex, roughness: 0.74 });
+    var stoneBase = new THREE.MeshStandardMaterial({ color: 0x45494e, map: graniteTex, roughness: 0.78 });
 
     if (activeModel === "tulou") {
-      // Outer 270 deg rammed earth cylinder wall (90 deg cutaway!)
-      var outerWall = new THREE.Mesh(new THREE.CylinderGeometry(2.3, 2.4, 1.65, 36, 1, true, Math.PI * 0.5, Math.PI * 1.5), earth);
+      // Stone damp-proof foundation ring + 270 deg rammed-earth cylinder cutaway
+      var footRing = new THREE.Mesh(new THREE.CylinderGeometry(2.44, 2.48, 0.22, 48, 1, false, Math.PI * 0.5, Math.PI * 1.5), stoneBase);
+      footRing.position.y = 0.11;
+      var outerWall = new THREE.Mesh(new THREE.CylinderGeometry(2.3, 2.4, 1.62, 48, 1, true, Math.PI * 0.5, Math.PI * 1.5), earth);
       outerWall.material.side = THREE.DoubleSide;
-      outerWall.position.y = 0.82;
-      var tulouRoof = new THREE.Mesh(new THREE.CylinderGeometry(2.5, 1.75, 0.45, 36, 1, true, Math.PI * 0.5, Math.PI * 1.5), roof);
+      outerWall.position.y = 1.02;
+      var innerWall = new THREE.Mesh(new THREE.CylinderGeometry(2.08, 2.12, 1.56, 48, 1, true, Math.PI * 0.5, Math.PI * 1.5), earth);
+      innerWall.material.side = THREE.DoubleSide;
+      innerWall.position.y = 1.00;
+      var tulouRoof = new THREE.Mesh(new THREE.CylinderGeometry(2.58, 1.72, 0.48, 48, 1, true, Math.PI * 0.5, Math.PI * 1.5), roof);
       tulouRoof.material.side = THREE.DoubleSide;
-      tulouRoof.position.y = 1.85;
-      // Interior timber ring galleries (visible in cutaway!)
-      [0.42, 0.84, 1.26].forEach(function (y) {
-        var deck = new THREE.Mesh(new THREE.RingGeometry(1.42, 2.25, 32, 1, Math.PI * 0.5, Math.PI * 1.5), wood);
+      tulouRoof.position.y = 2.02;
+      var courtyard = new THREE.Mesh(new THREE.CylinderGeometry(2.05, 2.05, 0.08, 48), stoneBase);
+      courtyard.position.y = 0.04;
+      [0.46, 0.88, 1.30, 1.72].forEach(function (y) {
+        var deck = new THREE.Mesh(new THREE.RingGeometry(1.42, 2.26, 40, 1, Math.PI * 0.5, Math.PI * 1.5), wood);
         deck.rotation.x = -Math.PI / 2;
         deck.rotation.z = Math.PI * 0.5;
         deck.material.side = THREE.DoubleSide;
         deck.position.y = y;
         root.add(deck);
       });
-      // Central Ancestral Hall
-      var hall = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.65, 0.8), earth);
-      hall.position.y = 0.33;
-      var hallRoof = new THREE.Mesh(new THREE.ConeGeometry(0.75, 0.4, 4), roof);
-      hallRoof.rotation.y = Math.PI / 4;
-      hallRoof.position.y = 0.85;
-      root.add(outerWall, tulouRoof, hall, hallRoof);
+      for (var pi = 0; pi < 9; pi++) {
+        var ang = Math.PI * 0.58 + (pi / 8) * Math.PI * 1.34;
+        var post = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.04, 1.72, 8), redLacquer);
+        post.position.set(Math.sin(ang) * 1.46, 0.90, Math.cos(ang) * 1.46);
+        root.add(post);
+      }
+      var hall = new THREE.Mesh(new THREE.BoxGeometry(0.84, 0.65, 0.84), wallWhite);
+      hall.position.y = 0.38;
+      var hallRoof = ARCH ? ARCH.createCurvedRoof(THREE, { style: "cuanjian", sides: 4, radius: 0.72, h: 0.42, tileKind: "slateTile", feiyanLift: 0.14 }) : new THREE.Mesh(new THREE.ConeGeometry(0.78, 0.42, 4), roof);
+      hallRoof.position.y = 0.72;
+      root.add(footRing, outerWall, innerWall, tulouRoof, courtyard, hall, hallRoof);
     } else if (activeModel === "siheyuan") {
-      var ground = new THREE.Mesh(new THREE.BoxGeometry(4.4, 0.1, 4.4), new THREE.MeshStandardMaterial({ color: 0x5c5b55, roughness: 0.9 }));
+      var ground = new THREE.Mesh(new THREE.BoxGeometry(4.6, 0.12, 4.6), stoneBase);
       root.add(ground);
-      function makePavilion(w, h, d, x, z) {
+      var paver = new THREE.Mesh(new THREE.BoxGeometry(2.2, 0.04, 2.2), new THREE.MeshStandardMaterial({ color: 0x7b7870, roughness: 0.78 }));
+      paver.position.y = 0.07;
+      root.add(paver);
+      function makePavilion(w, h, d, x, z, hasRedCols) {
         var g = new THREE.Group();
         var body = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), wallWhite);
         body.position.y = h / 2;
-        var cap = new THREE.Mesh(new THREE.ConeGeometry(Math.max(w, d) * 0.72, h * 0.65, 4), roof);
-        cap.rotation.y = Math.PI / 4;
-        cap.scale.set(w / Math.max(w, d), 1, d / Math.max(w, d));
-        cap.position.y = h + h * 0.32;
+        var cap = ARCH
+          ? ARCH.createCurvedRoof(THREE, { style: "xieshan", w: w, d: d, h: h * 0.64, tileKind: "slateTile", eaveOver: 0.14, feiyanLift: 0.12, noRafters: true })
+          : new THREE.Mesh(new THREE.ConeGeometry(Math.max(w, d) * 0.74, h * 0.65, 4), roof);
+        cap.position.y = h;
         g.add(body, cap);
-        g.position.set(x, 0.05, z);
+        if (hasRedCols) {
+          [-w * 0.35, 0, w * 0.35].forEach(function (cx) {
+            var p = new THREE.Mesh(new THREE.CylinderGeometry(0.032, 0.035, h * 0.92, 8), redLacquer);
+            p.position.set(cx, h * 0.46, d * 0.54);
+            g.add(p);
+          });
+        }
+        g.position.set(x, 0.06, z);
         root.add(g);
       }
-      makePavilion(2.8, 0.85, 0.9, 0, -1.5); // Zhengfang (Main North)
-      makePavilion(0.75, 0.65, 1.9, -1.65, 0); // West Xiangfang
-      makePavilion(0.75, 0.65, 1.9, 1.65, 0); // East Xiangfang
-      makePavilion(2.6, 0.55, 0.6, 0, 1.65); // Daozuo South wing
+      makePavilion(2.8, 0.88, 0.92, 0, -1.52, true);
+      makePavilion(0.78, 0.66, 1.92, -1.65, 0, false);
+      makePavilion(0.78, 0.66, 1.92, 1.65, 0, false);
+      makePavilion(2.6, 0.56, 0.62, 0, 1.68, false);
+      var spiritWall = new THREE.Mesh(new THREE.BoxGeometry(0.92, 0.62, 0.1), redLacquer);
+      spiritWall.position.set(0, 0.37, 1.12);
+      var gateArch = new THREE.Mesh(new THREE.BoxGeometry(0.56, 0.72, 0.34), redLacquer);
+      gateArch.position.set(0, 0.42, 0.72);
+      var treeTrunk = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.07, 0.55, 8), wood);
+      treeTrunk.position.set(-0.55, 0.34, -0.2);
+      var treeFoliage = new THREE.Mesh(new THREE.SphereGeometry(0.32, 12, 10), new THREE.MeshStandardMaterial({ color: 0x3f6b3e, roughness: 0.85 }));
+      treeFoliage.position.set(-0.55, 0.72, -0.2);
+      root.add(spiritWall, gateArch, treeTrunk, treeFoliage);
     } else {
-      var hBase = new THREE.Mesh(new THREE.BoxGeometry(4.2, 0.12, 4.2), new THREE.MeshStandardMaterial({ color: 0x61605b, roughness: 0.9 }));
+      var hBase = new THREE.Mesh(new THREE.BoxGeometry(4.4, 0.14, 4.4), stoneBase);
       root.add(hBase);
-      // Stepped Matouqiang fire-break gables on left and right
-      [-1.7, 1.7].forEach(function (x) {
+      [-1.72, 1.72].forEach(function (x) {
         [
-          { z: -0.9, h: 1.8, d: 1.2 },
-          { z: 0.1, h: 1.5, d: 1.0 },
-          { z: 1.0, h: 1.2, d: 0.9 }
+          { z: -0.92, h: 1.88, d: 1.24 },
+          { z: 0.12, h: 1.54, d: 1.04 },
+          { z: 1.04, h: 1.22, d: 0.92 }
         ].forEach(function (st) {
           var wBlock = new THREE.Mesh(new THREE.BoxGeometry(0.18, st.h, st.d), wallWhite);
-          wBlock.position.set(x, st.h / 2 + 0.06, st.z);
-          var cap = new THREE.Mesh(new THREE.BoxGeometry(0.28, 0.09, st.d + 0.08), roof);
-          cap.position.set(x, st.h + 0.08, st.z);
+          wBlock.position.set(x, st.h / 2 + 0.07, st.z);
+          var cap = new THREE.Mesh(new THREE.BoxGeometry(0.30, 0.10, st.d + 0.10), roof);
+          cap.position.set(x, st.h + 0.10, st.z);
           root.add(wBlock, cap);
         });
       });
-      var backHall = new THREE.Mesh(new THREE.BoxGeometry(3.1, 1.1, 1.0), wood);
-      backHall.position.set(0, 0.6, -1.1);
-      var backRoof = new THREE.Mesh(new THREE.BoxGeometry(3.25, 0.25, 1.2), roof);
-      backRoof.position.set(0, 1.25, -1.1);
-      // Central Tianjing water pool
-      var pool = new THREE.Mesh(new THREE.PlaneGeometry(1.2, 0.9), new THREE.MeshStandardMaterial({ color: 0x2f6b75, roughness: 0.25 }));
+      var backHall = new THREE.Mesh(new THREE.BoxGeometry(3.15, 1.12, 1.02), wood);
+      backHall.position.set(0, 0.62, -1.1);
+      var backRoof = ARCH ? ARCH.createCurvedRoof(THREE, { style: "gable", w: 3.2, d: 1.15, h: 0.46, tileKind: "slateTile", feiyanLift: 0.08 }) : new THREE.Mesh(new THREE.BoxGeometry(3.32, 0.28, 1.26), roof);
+      backRoof.position.set(0, 1.18, -1.1);
+      [-1.24, 1.24].forEach(function (gx) {
+        var wing = new THREE.Mesh(new THREE.BoxGeometry(0.55, 0.88, 2.0), wood);
+        wing.position.set(gx, 0.50, 0.42);
+        var wRoof = new THREE.Mesh(new THREE.BoxGeometry(0.68, 0.16, 2.1), roof);
+        wRoof.position.set(gx, 1.00, 0.42);
+        root.add(wing, wRoof);
+      });
+      var PoolMat = THREE.MeshPhysicalMaterial || THREE.MeshStandardMaterial;
+      var pool = new THREE.Mesh(new THREE.PlaneGeometry(1.24, 0.92), new PoolMat({ color: 0x2a6d7a, roughness: 0.10, metalness: 0.35, clearcoat: 0.85 }));
       pool.rotation.x = -Math.PI / 2;
-      pool.position.set(0, 0.07, 0.45);
+      pool.position.set(0, 0.08, 0.45);
       root.add(backHall, backRoof, pool);
     }
+    root.traverse(function (o) {
+      if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; }
+    });
   }
 
   function mount(containerId) {
     var container = document.getElementById(containerId);
     if (!container || typeof window.THREE === "undefined") return;
     var THREE = window.THREE;
+    var PBR = window.CCE_3D_PBR;
     if (window.CCE_WEBGL_MGR) window.CCE_WEBGL_MGR.register("vernacular-3d", dispose);
     dispose();
     if (window.CCE_WEBGL_MGR) window.CCE_WEBGL_MGR.register("vernacular-3d", dispose);
@@ -140,13 +203,27 @@
     var renderer;
     try { renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" }); }
     catch (_err) { container.innerHTML = '<div class="epistemic-box">WebGL unavailable.</div>'; return; }
-    renderer.setSize(w, h, false); renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    if (PBR) {
+      PBR.configureRenderer(THREE, renderer, { exposure: 1.12 });
+      PBR.applyStudioEnvironment(THREE, renderer, scene, "warm");
+    } else {
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    }
+    renderer.setSize(w, h, false);
     renderer.domElement.style.cssText = "width:100%;height:100%;display:block;touch-action:none;cursor:grab;";
     container.appendChild(renderer.domElement);
 
-    scene.add(new THREE.AmbientLight(0xffffff, 0.72));
-    var l = new THREE.DirectionalLight(0xfff4df, 0.98); l.position.set(5, 8, 6); scene.add(l);
+    scene.add(new THREE.HemisphereLight(0xffeacc, 0x22201d, 0.65));
+    var l = new THREE.DirectionalLight(0xfff4df, 1.25); l.position.set(5.5, 9, 6.5); l.castShadow = true;
+    l.shadow.mapSize.width = 1024; l.shadow.mapSize.height = 1024;
+    scene.add(l);
+    var rim = new THREE.DirectionalLight(0x88b3c8, 0.42); rim.position.set(-5, 3, -5); scene.add(rim);
     var root = new THREE.Group(); scene.add(root);
+    if (PBR) {
+      var plinth = PBR.createMuseumPedestal(THREE, 2.55, 0.24);
+      plinth.position.y = -0.08;
+      root.add(plinth);
+    }
     buildGeometry(THREE, root);
 
     var dragging = false, px = 0, py = 0, ry = 0.5, rx = 0.1;
@@ -172,7 +249,7 @@
     tick();
 
     rt = {
-      renderer: renderer, rafId: rafId, ro: ro,
+      scene: scene, renderer: renderer, rafId: rafId, ro: ro,
       cleanup: function () {
         dom.removeEventListener("pointerdown", onDown); window.removeEventListener("pointermove", onMove);
         window.removeEventListener("pointerup", onUp); dom.removeEventListener("wheel", onWheel);

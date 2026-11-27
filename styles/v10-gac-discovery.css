@@ -1,14 +1,21 @@
 /* ============================================================================
- * CHINESE CULTURE EXPLORER — Google Arts & Culture Discovery Suite & Benchmarks
- * Strict editorial borders, WCAG AAA contrast, 0px mobile horizontal overflow
+ * CHINESE CULTURE EXPLORER — Cinematic 6-Scene Discovery & Brocade Reveal CSS
+ * Scene 1: Scroll-Scrubbed Bilateral Silk-Brocade Curtain Reveal ("Up Mo")
+ * Scene 2: Warm Sunlit Amber-Gold Canvas, 3-Col Peek Filigree & Cloud-Sea Band
+ * Scene 3: Gold-Rail Antique 34-Province Scroll Map + Compass Rose
+ * Scene 4: Wide Filigree Stage + 6 Circular Gold Medallions & 3.2x Zoom
+ * Scene 5: Edge-to-Edge 01..08 Accordion ABOVE Monumental Display Lockup
+ * Scene 6: Carved Imperial Archway + 6 Heritage Wing Emblems
+ * + Right-Edge Vertical Dock & Filigree Feedback Dialog
+ * Strict WCAG AAA contrast, 0px mobile overflow, zero !important layout clutter.
  * ============================================================================ */
 
-/* 1. Resume Cookie Pill Bar (cce_resume) */
+/* Resume Pill Bar (cce_resume) */
 .v10-resume-bar {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  margin-bottom: 0.9rem;
+  margin-bottom: 1rem;
   max-width: 100%;
 }
 
@@ -18,10 +25,10 @@
   align-items: center;
   gap: 0.5rem;
   min-height: 38px;
-  padding: 0.38rem 0.85rem;
-  background: var(--bg-surface, #F2EDE4);
-  color: var(--ink-primary, #1A1918);
-  border: 1px solid var(--hairline, rgba(26, 25, 24, 0.2));
+  padding: 0.38rem 0.9rem;
+  background: rgba(255, 250, 240, 0.88);
+  color: #1A1918;
+  border: 1px solid rgba(130, 28, 28, 0.25);
   border-radius: 999px;
   font-family: inherit;
   font-size: 0.8rem;
@@ -47,9 +54,9 @@
   width: 34px;
   height: 34px;
   border-radius: 999px;
-  border: 1px solid var(--hairline, rgba(26, 25, 24, 0.2));
-  background: transparent;
-  color: var(--text-muted, #686259);
+  border: 1px solid rgba(130, 28, 28, 0.22);
+  background: rgba(255, 250, 240, 0.72);
+  color: #4A443C;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -57,26 +64,396 @@
   flex-shrink: 0;
 }
 
-.v10-resume-dismiss:hover {
-  color: #821C1C;
-  border-color: #821C1C;
-}
-
 [data-theme="dark"] .v10-resume-pill {
-  background: #1C1B18;
+  background: #1E1C19;
   color: #F2EFE9;
-  border-color: rgba(242, 239, 233, 0.22);
+  border-color: rgba(229, 169, 60, 0.32);
 }
 
-[data-theme="dark"] .v10-resume-pill:hover {
-  border-color: #E5A93C;
+[data-theme="dark"] .v10-resume-dismiss {
+  background: #1E1C19;
+  color: #DCD6CA;
+  border-color: rgba(229, 169, 60, 0.32);
+}
+
+/* ==========================================================================
+ * SCENE 1: Scroll-Scrubbed Bilateral Silk-Brocade Parting Curtain ("Up Mo")
+ * ========================================================================== */
+.v10-curtain-runway {
+  position: relative;
+  height: 225vh;
+  background: #1D0B09;
+  --curtain-p: 0;
+  --curtain-open: 0;
+}
+
+.v10-curtain-sticky-stage {
+  position: sticky;
+  top: 0;
+  height: calc(100vh - 60px);
+  min-height: 560px;
+  max-height: 920px;
+  width: 100%;
+  overflow: hidden;
+  background: #180907;
+}
+
+.v10-curtain-panorama {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.v10-curtain-panorama img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 46%;
+  display: block;
+  transform: scale(calc(1.12 - 0.12 * var(--curtain-open)));
+  filter: brightness(calc(0.76 + 0.24 * var(--curtain-open))) contrast(1.03);
+  will-change: transform;
+}
+
+.v10-curtain-panorama-atmos {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 34%, rgba(255, 224, 152, 0.16) 0%, transparent 56%),
+    linear-gradient(180deg, rgba(28, 10, 8, 0.24) 0%, rgba(44, 14, 10, 0.12) 48%, rgba(46, 12, 8, 0.92) 96%);
+  pointer-events: none;
+}
+
+.v10-curtain-reveal-lockup {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 2;
+  padding: 2.2rem 1.25rem 2.35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #FFFDF7;
+  opacity: clamp(0, calc((var(--curtain-p) - 0.44) * 2.4), 1);
+  transform: translate3d(0, calc((1 - clamp(0, calc((var(--curtain-p) - 0.44) * 2.4), 1)) * 28px), 0);
+  pointer-events: none;
+}
+
+.v10-curtain-kicker {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #F4C971;
+  margin-bottom: 0.55rem;
+}
+
+.v10-curtain-title {
+  font-family: var(--font-editorial, "Newsreader", Georgia, serif);
+  font-size: clamp(2.1rem, 5.4vw, 4.15rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.06;
+  margin: 0;
+  color: #FFFDF7;
+  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.55);
+}
+
+.v10-curtain-lead {
+  max-width: 62ch;
+  margin: 0.85rem auto 1.2rem;
+  font-size: clamp(0.92rem, 1.35vw, 1.04rem);
+  line-height: 1.62;
+  color: rgba(255, 251, 240, 0.94);
+}
+
+.v10-curtain-cta-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.v10-curtain-cta-primary {
+  appearance: none;
+  border: 1px solid #F4C971;
+  background: #821C1C;
+  color: #FFFDF7;
+  padding: 0.68rem 1.35rem;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.v10-curtain-cta-primary:hover {
+  background: #9E2424;
+  transform: translateY(-2px);
+}
+
+.v10-curtain-cta-ghost {
+  appearance: none;
+  border: 1px solid rgba(255, 250, 238, 0.58);
+  background: rgba(20, 12, 10, 0.55);
+  color: #FFFDF7;
+  padding: 0.68rem 1.25rem;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.v10-curtain-cta-ghost:hover {
+  border-color: #F4C971;
+  color: #F4C971;
+}
+
+/* Outer Hanging Brocade Side Valances (frame 9-10% edges as curtains part) */
+.v10-curtain-valance {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(36px, 8.2vw, 118px);
+  z-index: 3;
+  background-image:
+    linear-gradient(180deg, rgba(35, 8, 6, 0.38) 0%, transparent 18%, transparent 82%, rgba(28, 6, 4, 0.55) 100%),
+    url("../assets/images/brand/imperial-yun-brocade.jpg");
+  background-size: auto, cover;
+  background-position: center;
+  box-shadow: 0 0 38px rgba(0, 0, 0, 0.65);
+  pointer-events: none;
+}
+
+.v10-curtain-valance.is-left {
+  left: 0;
+  border-right: 2px solid #D4A24C;
+  transform: translate3d(calc(-100% * clamp(0, calc((var(--curtain-p) - 0.82) * 5.5), 1)), 0, 0);
+}
+
+.v10-curtain-valance.is-right {
+  right: 0;
+  border-left: 2px solid #D4A24C;
+  transform: translate3d(calc(100% * clamp(0, calc((var(--curtain-p) - 0.82) * 5.5), 1)), 0, 0);
+}
+
+/* Bilateral Parting Inner Silk-Brocade Leaves */
+.v10-curtain-leaf {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50.6%;
+  z-index: 4;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(22, 4, 3, 0.42) 0px, transparent 28px, rgba(255, 224, 150, 0.08) 54px, rgba(22, 4, 3, 0.38) 82px),
+    url("../assets/images/brand/imperial-yun-brocade.jpg");
+  background-size: auto, cover;
+  background-position: center;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.v10-curtain-leaf.is-left {
+  left: 0;
+  box-shadow: inset -12px 0 32px rgba(0, 0, 0, 0.55), 8px 0 36px rgba(0, 0, 0, 0.55);
+  transform: translate3d(calc(-106% * var(--curtain-open)), 0, 0);
+}
+
+.v10-curtain-leaf.is-right {
+  right: 0;
+  box-shadow: inset 12px 0 32px rgba(0, 0, 0, 0.55), -8px 0 36px rgba(0, 0, 0, 0.55);
+  transform: translate3d(calc(106% * var(--curtain-open)), 0, 0);
+}
+
+.v10-curtain-hem {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  background: linear-gradient(90deg, #9C7029, #EED08B, #9C7029);
+}
+
+.v10-curtain-leaf.is-left .v10-curtain-hem { right: 0; }
+.v10-curtain-leaf.is-right .v10-curtain-hem { left: 0; }
+
+/* Centered Closed-Curtain Invitation Overlay */
+.v10-curtain-closed-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: clamp(0, calc(1 - var(--curtain-open) * 3.1), 1);
+  pointer-events: none;
+  transform: scale(calc(1 - 0.05 * var(--curtain-open)));
+}
+
+.v10-curtain-seal-card {
+  max-width: 560px;
+  padding: 2rem 1.85rem;
+  pointer-events: auto;
+  text-align: center;
+  border-radius: 6px;
+  border: 1.5px solid rgba(244, 201, 113, 0.65);
+  background: radial-gradient(circle at 50% 35%, rgba(68, 16, 12, 0.9) 0%, rgba(36, 9, 7, 0.94) 100%);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.62);
+  color: #FFFDF7;
+}
+
+.v10-curtain-seal-mark {
+  display: inline-block;
+  padding: 0.35rem 0.72rem;
+  border: 1.5px solid #F4C971;
+  color: #F4C971;
+  font-family: "Noto Serif SC", Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  margin-bottom: 0.8rem;
+}
+
+.v10-curtain-seal-brand {
+  font-family: var(--font-editorial, "Newsreader", Georgia, serif);
+  font-size: clamp(1.35rem, 2.5vw, 1.95rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #FFFDF7;
+}
+
+.v10-curtain-seal-poetic {
+  margin: 0.75rem 0 1.3rem;
+  font-size: 0.95rem;
+  line-height: 1.62;
+  color: rgba(255, 248, 232, 0.92);
+}
+
+.v10-curtain-open-btn {
+  appearance: none;
+  border: 1.5px solid #F4C971;
+  background: linear-gradient(180deg, #9C2424 0%, #761717 100%);
+  color: #FFFDF7;
+  padding: 0.72rem 1.55rem;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.45);
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.v10-curtain-open-btn:hover {
+  transform: translateY(-2px);
+  background: #B02B2B;
+}
+
+.v10-curtain-runway.is-curtain-open .v10-curtain-closed-overlay,
+.v10-curtain-runway.is-curtain-open .v10-curtain-seal-card {
+  pointer-events: none !important;
+  visibility: hidden;
+}
+
+.v10-curtain-runway.is-curtain-open .v10-curtain-reveal-lockup {
+  z-index: 6;
+  pointer-events: auto;
+}
+
+/* Scene 2 Peek Story Subtle Hanzi Subtitle */
+.v10-peek-zh-line {
+  font-family: "Noto Serif SC", Georgia, serif;
+  font-size: 0.84rem;
+  color: #821C1C;
+  letter-spacing: 0.04em;
+  margin: -0.15rem 0 0.1rem;
+}
+
+[data-theme="dark"] .v10-peek-zh-line {
   color: #E5A93C;
 }
 
-/* 2. Expandable 5-Panel Horizontal Accordion ("Today's Top Picks") */
+/* ==========================================================================
+ * SUNLIT GOLDEN-AMBER ATMOSPHERIC CANVAS (Scenes 2 through 5)
+ * ========================================================================== */
+.v10-sunlit-flow {
+  background: linear-gradient(180deg, #E8B566 0%, #F3D59C 14%, #FAF0D8 34%, #FCF8EE 64%, #FAF5EA 100%);
+  color: #1A1714;
+}
+
+[data-theme="dark"] .v10-sunlit-flow {
+  background: linear-gradient(180deg, #1E160F 0%, #241B12 14%, #171512 38%, #131210 72%, #121211 100%);
+  color: #F2EFE9;
+}
+
 .v10-gac-section {
-  padding: 1.55rem 0;
-  border-bottom: 1px solid var(--hairline, rgba(26, 25, 24, 0.12));
+  padding: 2.35rem 0;
+  border-bottom: 1px solid rgba(130, 28, 28, 0.12);
+}
+
+[data-theme="dark"] .v10-gac-section {
+  border-color: rgba(229, 169, 60, 0.14);
+}
+
+.v10-centered-display-head {
+  text-align: center;
+  margin-bottom: 1.55rem;
+}
+
+.v10-tracked-kicker {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #7D1B1B;
+  text-align: center;
+  margin-bottom: 0.35rem;
+}
+
+[data-theme="dark"] .v10-tracked-kicker {
+  color: #E5A93C;
+}
+
+.v10-editorial-italic-title {
+  font-family: var(--font-editorial, "Newsreader", Georgia, serif);
+  font-style: italic;
+  font-size: clamp(2rem, 4.2vw, 3.35rem);
+  font-weight: 500;
+  line-height: 1.08;
+  margin: 0;
+  color: #1A1714;
+}
+
+.v10-editorial-roman-title {
+  font-family: var(--font-editorial, "Newsreader", Georgia, serif);
+  font-size: clamp(1.65rem, 3.1vw, 2.55rem);
+  font-weight: 700;
+  line-height: 1.14;
+  margin: 0;
+  color: #1A1714;
+}
+
+[data-theme="dark"] .v10-editorial-italic-title,
+[data-theme="dark"] .v10-editorial-roman-title {
+  color: #F5EFE4;
+}
+
+.v10-centered-sub {
+  margin: 0.45rem auto 0;
+  max-width: 58ch;
+  font-size: 0.9rem;
+  color: #4A4035;
+}
+
+[data-theme="dark"] .v10-centered-sub {
+  color: #CFC7B8;
 }
 
 .v10-gac-head {
@@ -85,12 +462,12 @@
   align-items: flex-end;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-bottom: 0.95rem;
+  margin-bottom: 1rem;
 }
 
 .v10-gac-title {
   font-family: var(--font-editorial, "Newsreader", Georgia, serif);
-  font-size: clamp(1.22rem, 2.2vw, 1.55rem);
+  font-size: clamp(1.25rem, 2.3vw, 1.65rem);
   font-weight: 700;
   margin: 0.15rem 0 0;
   color: var(--ink-primary, #1A1918);
@@ -100,120 +477,396 @@
   color: #F2EFE9;
 }
 
-.v10-gac-accordion {
-  display: flex;
-  gap: 10px;
-  height: clamp(330px, 42vh, 410px);
-  width: 100%;
-}
-
-.v10-acc-panel {
-  position: relative;
-  flex: 1 1 0%;
-  min-width: 58px;
-  overflow: hidden;
-  border-radius: 4px;
-  border: 1px solid rgba(26, 25, 24, 0.18);
-  background: #141311;
-  color: #FAF7F2;
-  cursor: pointer;
-  padding: 0;
-  text-align: left;
-  transition: flex 420ms cubic-bezier(0.22, 1, 0.36, 1), border-color 180ms ease;
-}
-
-.v10-acc-panel.is-expanded {
-  flex: 3.6 1 0%;
-  border-color: #E5A93C;
-}
-
-.v10-acc-panel img {
+/* Triangular Crimson-Gold Brocade Corner Filigree Brackets */
+.v10-filigree-corner {
   position: absolute;
-  inset: 0;
+  width: 30px;
+  height: 30px;
+  color: #B47B2C;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.v10-filigree-corner.is-tl { top: 8px; left: 8px; }
+.v10-filigree-corner.is-tr { top: 8px; right: 8px; transform: scaleX(-1); }
+.v10-filigree-corner.is-bl { bottom: 8px; left: 8px; transform: scaleY(-1); }
+.v10-filigree-corner.is-br { bottom: 8px; right: 8px; transform: scale(-1); }
+
+/* ==========================================================================
+ * SCENE 2: 3-Column Peek Filigree Carousel + Dual-Serif Manifesto + Cloud-Sea
+ * ========================================================================== */
+.v10-sunlit-stage {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.v10-peek-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.68fr) minmax(0, 1.72fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.v10-peek-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding-top: 0;
+}
+
+.v10-peek-heading {
+  font-family: var(--font-editorial, "Newsreader", Georgia, serif);
+  font-size: clamp(1.28rem, 2.15vw, 1.72rem);
+  line-height: 1.24;
+  margin: 0;
+  color: #1A1714;
+}
+
+.v10-peek-prose {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.62;
+  color: #3E352B;
+}
+
+[data-theme="dark"] .v10-peek-heading { color: #F5EFE4; }
+[data-theme="dark"] .v10-peek-prose { color: #D4CDC0; }
+
+.v10-crimson-link-btn {
+  appearance: none;
+  background: none;
+  border: 0;
+  border-bottom: 1.5px solid #821C1C;
+  padding: 0.2rem 0;
+  color: #821C1C;
+  font-family: inherit;
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+[data-theme="dark"] .v10-crimson-link-btn {
+  color: #F0BE62;
+  border-bottom-color: #F0BE62;
+}
+
+.v10-peek-track {
+  display: grid;
+  grid-template-columns: minmax(0, 3.55fr) minmax(92px, 1.05fr);
+  gap: 0.9rem;
+  align-items: start;
+}
+
+.v10-peek-main-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.v10-peek-main {
+  position: relative;
+  width: 100%;
+  height: clamp(290px, 42vh, 390px);
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid #C68D3E;
+  background: #141311;
+  box-shadow: 0 18px 40px rgba(68, 38, 12, 0.18);
+}
+
+.v10-peek-main img,
+.v10-peek-next img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 35%;
+  object-position: 50% 32%;
   display: block;
-  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1), filter 300ms ease;
-  filter: brightness(0.76);
 }
 
-.v10-acc-panel.is-expanded img {
-  filter: brightness(0.9);
-  transform: scale(1.02);
-}
-
-.v10-acc-scrim {
+.v10-peek-main-caption {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(16, 15, 13, 0.1) 20%, rgba(14, 13, 11, 0.88) 100%);
+  inset: auto 0 0 0;
+  padding: 1.35rem 2.45rem 0.9rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(16, 12, 10, 0.88) 70%);
+  color: #FAF7F2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
   pointer-events: none;
 }
 
-.v10-acc-content {
+.v10-peek-next {
   position: relative;
-  z-index: 2;
-  height: 100%;
+  height: clamp(290px, 42vh, 390px);
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1.5px solid rgba(180, 123, 44, 0.65);
+  background: #141311;
+  cursor: pointer;
+  padding: 0;
+}
+
+.v10-peek-next img {
+  filter: brightness(0.74);
+  transition: filter 220ms ease, transform 320ms ease;
+}
+
+.v10-peek-next:hover img {
+  filter: brightness(0.95);
+  transform: scale(1.03);
+}
+
+.v10-peek-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 250, 238, 0.78);
+  background: rgba(24, 18, 14, 0.74);
+  color: #FFFDF7;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 6;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.v10-peek-arrow:hover {
+  background: #821C1C;
+  border-color: #F4C971;
+}
+
+.v10-peek-arrow.is-prev { left: 12px; }
+.v10-peek-arrow.is-next { right: 12px; }
+
+.v10-peek-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.85rem;
+}
+
+.v10-peek-dot {
+  appearance: none;
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border-radius: 999px;
+  border: 1.5px solid #821C1C;
+  background: transparent;
+  cursor: pointer;
+  transition: width 180ms ease, background-color 180ms ease;
+}
+
+.v10-peek-dot.is-active {
+  width: 26px;
+  background: #821C1C;
+}
+
+[data-theme="dark"] .v10-peek-dot { border-color: #E5A93C; }
+[data-theme="dark"] .v10-peek-dot.is-active { background: #E5A93C; }
+
+/* Dual-Serif Manifesto & Cloud-Sea Mist Horizon */
+.v10-manifesto-band {
+  text-align: center;
+  padding: 3rem 0 1.65rem;
+}
+
+.v10-dual-serif-display {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 0.95rem 1.05rem;
-}
-
-.v10-acc-kicker {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #E5A93C;
-  font-weight: 700;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.v10-acc-heading {
+  align-items: center;
+  gap: 0.1rem;
   font-family: var(--font-editorial, "Newsreader", Georgia, serif);
-  font-size: 1.08rem;
+  font-size: clamp(2rem, 4.4vw, 3.6rem);
   font-weight: 700;
-  line-height: 1.25;
-  color: #FFFFFF;
-  margin: 0.25rem 0 0;
+  line-height: 1.08;
+  letter-spacing: 0.02em;
+  margin: 0;
+  color: #1A1714;
 }
 
-.v10-acc-desc {
-  font-size: 0.81rem;
-  line-height: 1.45;
-  color: rgba(250, 247, 242, 0.9);
-  margin: 0.38rem 0 0;
-  max-width: 48ch;
-  display: none;
+.v10-dual-serif-display em {
+  font-style: italic;
+  font-weight: 400;
+  color: #821C1C;
 }
 
-.v10-acc-panel.is-expanded .v10-acc-desc {
+.v10-dual-serif-display span.is-crimson {
+  color: #821C1C;
+}
+
+[data-theme="dark"] .v10-dual-serif-display {
+  color: #F5EFE4;
+}
+
+[data-theme="dark"] .v10-dual-serif-display em,
+[data-theme="dark"] .v10-dual-serif-display span.is-crimson {
+  color: #F0BE62;
+}
+
+.v10-manifesto-prose {
+  max-width: 62ch;
+  margin: 1rem auto 0;
+  font-size: 0.94rem;
+  line-height: 1.66;
+  color: #3D3329;
+}
+
+[data-theme="dark"] .v10-manifesto-prose {
+  color: #D6CEC0;
+}
+
+.v10-cloudsea-horizon {
+  position: relative;
+  width: 100%;
+  height: clamp(190px, 28vh, 290px);
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.v10-cloudsea-horizon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 44%;
   display: block;
 }
 
-.v10-acc-panel:not(.is-expanded) .v10-acc-heading {
-  font-size: 0.86rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+.v10-cloudsea-mask-top {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 46%;
+  background: linear-gradient(180deg, #FBF2DD 0%, rgba(251, 242, 221, 0) 100%);
+  pointer-events: none;
 }
 
-/* 3. Dark Museum Object Spotlight with +/- 4-Step Zoom & Drag-to-Pan */
-.v10-gac-spotlight {
-  background: #121211;
+.v10-cloudsea-mask-bottom {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 44%;
+  background: linear-gradient(0deg, #FBF5E6 0%, rgba(251, 245, 230, 0) 100%);
+  pointer-events: none;
+}
+
+[data-theme="dark"] .v10-cloudsea-mask-top {
+  background: linear-gradient(180deg, #171512 0%, rgba(23, 21, 18, 0) 100%);
+}
+
+[data-theme="dark"] .v10-cloudsea-mask-bottom {
+  background: linear-gradient(0deg, #141311 0%, rgba(20, 19, 17, 0) 100%);
+}
+
+/* ==========================================================================
+ * SCENE 3: Gold-Rail Antique Scroll Map + Compass Rose + 2-Col Highlights
+ * ========================================================================== */
+.v10-scroll-rail-stage {
+  position: relative;
+  border-radius: 6px;
+}
+
+.v10-scroll-rod {
+  height: 14px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #E8CA83 0%, #A9772E 52%, #6D4917 100%);
+  border: 1px solid #59390F;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+}
+
+.v10-scroll-parchment-canvas {
+  position: relative;
+  margin-inline: 12px;
+  padding: 1.15rem 1.4rem;
+  border-left: 2px solid #A9772E;
+  border-right: 2px solid #A9772E;
+  background: radial-gradient(circle at 42% 38%, #F6E9C8 0%, #E7CE99 68%, #D9B778 100%);
+  color: #2B1F14;
+}
+
+[data-theme="dark"] .v10-scroll-parchment-canvas {
+  background: radial-gradient(circle at 42% 38%, #242018 0%, #191610 100%);
   color: #F2EFE9;
-  border-radius: 4px;
-  border: 1px solid rgba(229, 169, 60, 0.26);
+  border-color: rgba(229, 169, 60, 0.42);
+}
+
+.v10-scroll-geo-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 410px;
+}
+
+.v10-compass-rose {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  width: 64px;
+  height: 64px;
+  color: #821C1C;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 4;
+}
+
+[data-theme="dark"] .v10-compass-rose {
+  color: #E5A93C;
+}
+
+.v10-atlas-two-col {
   display: grid;
-  grid-template-columns: minmax(260px, 0.95fr) minmax(0, 1.35fr);
-  gap: 1.25rem;
-  padding: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem 2rem;
+  margin-top: 1.35rem;
+  padding: 1.25rem 1.35rem;
+  border-radius: 6px;
+  background: rgba(255, 250, 238, 0.72);
+  border: 1px solid rgba(166, 132, 78, 0.34);
+}
+
+[data-theme="dark"] .v10-atlas-two-col {
+  background: rgba(24, 22, 19, 0.85);
+  border-color: rgba(229, 169, 60, 0.25);
+}
+
+.v10-atlas-col-title {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-editorial, "Newsreader", Georgia, serif);
+  font-size: 1.38rem;
+}
+
+.v10-atlas-bullets {
+  margin: 0;
+  padding-left: 1.15rem;
+  display: grid;
+  gap: 0.42rem;
+  font-size: 0.88rem;
+  line-height: 1.52;
+}
+
+/* ==========================================================================
+ * SCENE 4: Wide Filigree Museum Stage + 6 Circular Gold Medallions
+ * ========================================================================== */
+.v10-spot-showcase {
+  position: relative;
+}
+
+.v10-gac-spotlight {
+  position: relative;
+  background: #12110F;
+  color: #F2EFE9;
+  border-radius: 8px;
+  border: 1.5px solid rgba(229, 169, 60, 0.52);
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(250px, 0.85fr);
+  gap: 1.15rem;
+  padding: 1.25rem 1.25rem 2.9rem;
   align-items: stretch;
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.22);
 }
 
 .v10-spot-meta {
@@ -242,13 +895,25 @@
   color: #EDE8DE;
 }
 
+.v10-gac-spotlight .btn-secondary {
+  background: #24211D;
+  color: #FAF7F2;
+  border: 1px solid rgba(229, 169, 60, 0.52);
+}
+
+.v10-gac-spotlight .btn-secondary:hover {
+  background: #332E27;
+  border-color: #F4C971;
+  color: #FFFDF7;
+}
+
 .v10-spot-stage {
   position: relative;
-  min-height: 330px;
-  height: clamp(320px, 42vh, 420px);
+  min-height: 360px;
+  height: clamp(340px, 46vh, 460px);
   background: #0A0A09;
   border: 1px solid rgba(242, 239, 233, 0.16);
-  border-radius: 3px;
+  border-radius: 4px;
   overflow: hidden;
   touch-action: none;
   user-select: none;
@@ -301,7 +966,7 @@
   z-index: 6;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
   padding: 4px;
   background: rgba(18, 18, 17, 0.92);
   border: 1px solid rgba(229, 169, 60, 0.45);
@@ -310,14 +975,14 @@
 
 .v10-spot-zbtn {
   appearance: none;
-  min-width: 34px;
-  height: 34px;
-  padding: 0 0.5rem;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 0.45rem;
   border: 0;
   border-radius: 999px;
   background: transparent;
   color: #FAF7F2;
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   font-weight: 700;
   cursor: pointer;
 }
@@ -327,7 +992,216 @@
   color: #E5A93C;
 }
 
-/* 4. Asymmetric Bento Mosaic (Circular Fan 团扇 + Vertical Scroll 立轴 + Wide) */
+.v10-spot-medallions {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.05rem;
+  flex-wrap: wrap;
+  margin-top: -36px;
+  position: relative;
+  z-index: 7;
+  padding: 0 0.75rem;
+}
+
+.v10-medallion-btn {
+  appearance: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.32rem;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: #1A1714;
+  font-family: inherit;
+}
+
+.v10-medallion-ring {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #D4A24C;
+  background: #2C2620;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.34);
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.v10-medallion-btn.is-active .v10-medallion-ring,
+.v10-medallion-btn:hover .v10-medallion-ring {
+  border-color: #821C1C;
+  transform: translateY(-4px) scale(1.07);
+}
+
+[data-theme="dark"] .v10-medallion-btn {
+  color: #F2EFE9;
+}
+
+[data-theme="dark"] .v10-medallion-btn.is-active .v10-medallion-ring {
+  border-color: #F2C166;
+}
+
+.v10-medallion-ring img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(1.22) contrast(1.08);
+}
+
+.v10-medallion-lbl {
+  font-size: 0.74rem;
+  font-weight: 700;
+  max-width: 104px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==========================================================================
+ * SCENE 5: Edge-to-Edge 01..08 Accordion ABOVE Monumental Display Lockup
+ * ========================================================================== */
+.v10-acc-fullwrap {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.v10-gac-accordion {
+  display: flex;
+  gap: 8px;
+  height: clamp(360px, 47vh, 460px);
+  width: 100%;
+}
+
+.v10-acc-panel {
+  position: relative;
+  flex: 1 1 0%;
+  min-width: 56px;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid rgba(166, 132, 78, 0.35);
+  background: #141311;
+  color: #FAF7F2;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  transition: flex 420ms cubic-bezier(0.22, 1, 0.36, 1), border-color 180ms ease;
+}
+
+.v10-acc-panel.is-expanded {
+  flex: 4.35 1 0%;
+  border-color: #E5A93C;
+}
+
+.v10-acc-panel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 34%;
+  display: block;
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1), filter 300ms ease;
+  filter: brightness(0.66);
+}
+
+.v10-acc-panel.is-expanded img {
+  filter: brightness(0.88);
+  transform: scale(1.02);
+}
+
+.v10-acc-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16, 14, 12, 0.14) 0%, rgba(16, 14, 12, 0.45) 45%, rgba(14, 12, 10, 0.92) 100%);
+  pointer-events: none;
+}
+
+.v10-acc-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem 0.85rem;
+}
+
+.v10-acc-panel.is-expanded .v10-acc-content {
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  padding-top: 2.2rem;
+}
+
+.v10-acc-topcopy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.32rem;
+}
+
+.v10-acc-panel.is-expanded .v10-acc-topcopy {
+  margin-top: auto;
+  margin-bottom: auto;
+  max-width: 44ch;
+  align-items: center;
+}
+
+.v10-acc-num {
+  font-family: var(--font-editorial, "Newsreader", Georgia, serif);
+  font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+  font-weight: 700;
+  color: rgba(244, 201, 113, 0.96);
+  line-height: 1;
+}
+
+.v10-acc-kicker {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #F4C971;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.v10-acc-heading {
+  font-family: var(--font-editorial, "Newsreader", Georgia, serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.22;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.v10-acc-desc {
+  font-size: 0.84rem;
+  line-height: 1.48;
+  color: rgba(250, 247, 242, 0.92);
+  margin: 0.25rem 0 0;
+  display: none;
+}
+
+.v10-acc-panel.is-expanded .v10-acc-desc {
+  display: block;
+}
+
+.v10-acc-panel:not(.is-expanded) .v10-acc-topcopy {
+  display: none;
+}
+
+.v10-acc-below-lockup {
+  text-align: center;
+  margin-top: 1.75rem;
+}
+
+/* Asymmetric Bento Mosaic */
 .v10-bento-mosaic {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -337,7 +1211,7 @@
 .v10-bento-item {
   background: var(--bg-card, #FFFFFF);
   border: 1px solid var(--hairline, rgba(26, 25, 24, 0.14));
-  border-radius: 3px;
+  border-radius: 4px;
   padding: 0.78rem;
   display: flex;
   flex-direction: column;
@@ -399,7 +1273,7 @@
   border-color: rgba(242, 239, 233, 0.14);
 }
 
-/* 5. Conversational Branching Pills */
+/* Conversational Branching Pills */
 .v10-branch-pills {
   display: flex;
   flex-wrap: wrap;
@@ -440,7 +1314,7 @@
   color: #E5A93C;
 }
 
-/* 6. Today in History & 24 Solar Terms Split Collage (40% / 60%) */
+/* Almanac Split */
 .v10-almanac-split {
   display: grid;
   grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.25fr);
@@ -518,7 +1392,224 @@
   border-color: #FAF7F2;
 }
 
-/* 7. Synchrony Timeline & At-a-Glance City Strip */
+/* ==========================================================================
+ * SCENE 6: Carved Imperial Palace Archway + 6 Clickable Heritage Wing Emblems
+ * ========================================================================== */
+.v10-arch-section {
+  padding: 0;
+  border-bottom: 0;
+  overflow: hidden;
+}
+
+.v10-arch-sky-backdrop {
+  position: relative;
+  background: #FAF3E2;
+  min-height: 450px;
+}
+
+[data-theme="dark"] .v10-arch-sky-backdrop {
+  background: #151411;
+}
+
+.v10-arch-pillar-frame {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 1.25rem 2.75rem;
+  background: linear-gradient(180deg, #E8B566 0%, #D98E47 45%, #821C1C 100%);
+}
+
+[data-theme="dark"] .v10-arch-pillar-frame {
+  background: linear-gradient(180deg, #543218 0%, #4E2216 52%, #24100D 100%);
+}
+
+.v10-arch-portal-content .btn-secondary {
+  background: rgba(34, 12, 10, 0.88);
+  color: #FFFDF7;
+  border: 1px solid rgba(244, 201, 113, 0.65);
+}
+
+.v10-arch-portal-content .btn-secondary:hover {
+  background: #821C1C;
+  border-color: #F4C971;
+}
+
+.v10-arch-outline-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: #FAF3E2;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .v10-arch-outline-svg {
+  color: #151411;
+}
+
+.v10-arch-portal-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 640px;
+  width: 100%;
+}
+
+.v10-arch-title {
+  font-family: var(--font-editorial, "Newsreader", Georgia, serif);
+  font-size: clamp(1.55rem, 2.8vw, 2.25rem);
+  font-weight: 700;
+  color: #FFFDF7;
+  margin: 0.25rem 0 1.25rem;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+}
+
+.v10-arch-wing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.72rem;
+}
+
+.v10-arch-wing-btn {
+  appearance: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.18rem;
+  padding: 0.72rem 0.5rem;
+  border-radius: 6px;
+  border: 1.5px solid rgba(244, 201, 113, 0.72);
+  background: rgba(34, 12, 10, 0.74);
+  color: #FFFDF7;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.v10-arch-wing-btn:hover {
+  transform: translateY(-3px);
+  background: #821C1C;
+  border-color: #F4C971;
+}
+
+.v10-arch-wing-seal {
+  font-family: "Noto Serif SC", Georgia, serif;
+  font-size: 0.75rem;
+  color: #F4C971;
+  letter-spacing: 0.08em;
+}
+
+.v10-arch-wing-num {
+  font-family: var(--font-editorial, "Newsreader", Georgia, serif);
+  font-size: 1.32rem;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.v10-arch-wing-lbl {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 249, 236, 0.92);
+}
+
+/* ==========================================================================
+ * COMPACT BOTTOM-RIGHT UTILITY DOCK
+ * ========================================================================== */
+#v10-right-edge-dock {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  top: auto;
+  transform: none;
+  z-index: 860;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(22, 20, 18, 0.9);
+  border: 1px solid rgba(229, 169, 60, 0.38);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.32);
+}
+
+.v10-dock-pill {
+  appearance: none;
+  writing-mode: horizontal-tb;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 0.72rem;
+  border-radius: 999px;
+  border: 1px solid rgba(229, 169, 60, 0.24);
+  background: #1E1B18;
+  color: #F2EFE9;
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.v10-dock-pill:hover {
+  background: #821C1C;
+  border-color: #E5A93C;
+  color: #FFFDF7;
+}
+
+.v10-dock-orb {
+  position: relative;
+  appearance: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(229, 169, 60, 0.28);
+  background: #1E1B18;
+  color: #E5A93C;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.v10-dock-orb:hover {
+  background: #821C1C;
+  border-color: #E5A93C;
+  color: #FFFDF7;
+}
+
+.v10-dock-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #E5A93C;
+  color: #1A1714;
+  font-size: 0.65rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cce-quickref-fab,
+.v9-fab-trip {
+  display: none !important;
+}
+
+/* Synchrony Timeline & At-a-Glance City Strip */
 .v10-sync-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -531,34 +1622,68 @@
   gap: 0.9rem;
 }
 
-/* 8. Feedback Modal (Strict Feedback-Only, Zero Developer Q&A) */
+/* Filigree Feedback Modal + Overlapping Circular Rose-Gold Close Button */
 .v10-feedback-backdrop {
   position: fixed;
   inset: 0;
   z-index: 980;
-  background: rgba(16, 15, 13, 0.65);
+  background: rgba(16, 15, 13, 0.68);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 1.25rem;
 }
 
 .v10-feedback-dialog {
+  position: relative;
   width: min(540px, 100%);
   max-height: 90vh;
-  overflow-y: auto;
-  background: var(--bg-paper, #FAF7F2);
-  color: var(--ink-primary, #1A1918);
-  border: 1px solid var(--hairline, rgba(26, 25, 24, 0.22));
+  overflow: visible;
+  background: #FAF5EA;
+  color: #1A1918;
+  border: 1.5px solid #C68D3E;
   border-top: 4px solid #821C1C;
-  border-radius: 4px;
-  padding: 1.25rem;
+  border-radius: 8px;
+  padding: 1.6rem 1.45rem 1.4rem;
+  box-shadow: 0 26px 64px rgba(0, 0, 0, 0.38);
 }
 
 [data-theme="dark"] .v10-feedback-dialog {
   background: #1A1917;
   color: #F2EFE9;
-  border-color: rgba(242, 239, 233, 0.2);
+  border-color: rgba(229, 169, 60, 0.48);
+}
+
+.v10-fb-close-orb {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #FAF5EA;
+  background: #9B3636;
+  color: #FFFDF7;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 8;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.32);
+}
+
+.v10-fb-close-orb:hover {
+  background: #821C1C;
+}
+
+/* ==========================================================================
+ * RESPONSIVE BREAKPOINTS (0px Horizontal Overflow Through 375px)
+ * ========================================================================== */
+@media (max-width: 960px) {
+  .v10-peek-grid,
+  .v10-atlas-two-col {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 @media (max-width: 860px) {
@@ -579,6 +1704,27 @@
 }
 
 @media (max-width: 767px) {
+  .v10-curtain-runway {
+    height: 175vh;
+  }
+
+  .v10-curtain-sticky-stage {
+    min-height: 490px;
+  }
+
+  .v10-peek-track {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .v10-peek-next {
+    display: none;
+  }
+
+  .v10-scroll-parchment-canvas {
+    margin-inline: 0;
+    padding: 0.75rem;
+  }
+
   .v10-gac-accordion {
     height: auto;
     overflow-x: auto;
@@ -591,12 +1737,21 @@
   .v10-acc-panel.is-expanded {
     flex: 0 0 78vw;
     min-width: 78vw;
-    height: 290px;
+    height: 300px;
     scroll-snap-align: start;
   }
 
-  .v10-acc-panel .v10-acc-desc {
+  .v10-acc-panel .v10-acc-topcopy {
+    display: flex;
+  }
+
+  .v10-acc-panel .v10-acc-desc,
+  .v10-acc-panel .v10-acc-kicker {
     display: block;
+  }
+
+  .v10-arch-wing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .v10-bento-mosaic,
@@ -607,13 +1762,83 @@
   .v10-bento-item.is-wide {
     grid-column: span 1;
   }
+
+  #v10-right-edge-dock {
+    top: auto;
+    bottom: 68px;
+    right: 8px;
+    transform: none;
+    flex-direction: row;
+    gap: 6px;
+  }
+
+  .v10-dock-pill {
+    writing-mode: horizontal-tb;
+    padding: 0.45rem 0.75rem;
+    letter-spacing: 0.04em;
+  }
+}
+
+@media print {
+  #v10-right-edge-dock {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .v10-curtain-runway {
+    height: auto;
+    --curtain-p: 1;
+    --curtain-open: 1;
+  }
+
+  .v10-curtain-sticky-stage {
+    position: relative;
+    height: 540px;
+  }
+
   .v10-acc-panel,
   .v10-acc-panel img,
   .v10-spot-canvas-wrap,
-  .v10-bento-item {
+  .v10-bento-item,
+  .v10-medallion-ring,
+  .v10-peek-next img {
     transition: none;
   }
+}
+
+/* Theme-reactive V10.4 Rich Monograph Blocks (Light Xuan Paper & Dark Inkstone) */
+#cce-v104-rich-blocks .cce-v10-block {
+  background: #F3EFE6 !important;
+  color: #1A1918 !important;
+  border-color: rgba(26, 25, 24, 0.14) !important;
+}
+
+#cce-v104-rich-blocks .cce-v10-block > div[style*="margin-bottom:0.5rem"],
+#cce-v104-rich-blocks .cce-v10-block details {
+  background: #FAF7F2 !important;
+  color: #1A1918 !important;
+}
+
+[data-theme="dark"] #cce-v104-rich-blocks .cce-v10-block {
+  background: #1B1917 !important;
+  color: #F2EFE9 !important;
+  border-color: rgba(242, 239, 233, 0.16) !important;
+}
+
+[data-theme="dark"] #cce-v104-rich-blocks .cce-v10-block > div[style*="margin-bottom:0.5rem"],
+[data-theme="dark"] #cce-v104-rich-blocks .cce-v10-block details {
+  background: #22201D !important;
+  color: #F2EFE9 !important;
+  border-color: rgba(242, 239, 233, 0.16) !important;
+}
+
+[data-theme="dark"] #cce-v104-rich-blocks th {
+  background: #282521 !important;
+  color: #FAF7F2 !important;
+}
+
+[data-theme="dark"] #cce-v104-rich-blocks td {
+  color: #E2DDD3 !important;
+  border-color: rgba(242, 239, 233, 0.16) !important;
 }

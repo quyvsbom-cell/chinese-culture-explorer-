@@ -15,6 +15,9 @@
     if (rt.rafId) cancelAnimationFrame(rt.rafId);
     if (rt.cleanup) rt.cleanup();
     if (rt.ro) rt.ro.disconnect();
+    if (window.CCE_3D_PBR && rt.scene) {
+      try { window.CCE_3D_PBR.disposeScene(rt.scene, rt.renderer); } catch (_e) {}
+    }
     if (rt.renderer) try { rt.renderer.dispose(); } catch (_e) {}
     rt = null;
   }
@@ -23,52 +26,90 @@
     var container = document.getElementById(containerId);
     if (!container || typeof window.THREE === "undefined") return;
     var THREE = window.THREE;
+    var PBR = window.CCE_3D_PBR;
     if (window.CCE_WEBGL_MGR) window.CCE_WEBGL_MGR.register("hydraulic-3d", dispose);
     dispose();
     if (window.CCE_WEBGL_MGR) window.CCE_WEBGL_MGR.register("hydraulic-3d", dispose);
 
     container.innerHTML = "";
     var w = Math.max(280, container.clientWidth || 540), h = Math.max(300, container.clientHeight || 360);
-    var scene = new THREE.Scene(); scene.background = new THREE.Color(0x131718);
+    var scene = new THREE.Scene(); scene.background = new THREE.Color(0x11171a);
     var camera = new THREE.PerspectiveCamera(40, w / h, 0.1, 100);
     camera.position.set(0.5, 4.6, 5.4); camera.lookAt(0, 0, 0);
 
     var renderer;
     try { renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" }); }
     catch (_err) { container.innerHTML = '<div class="epistemic-box">WebGL unavailable.</div>'; return; }
-    renderer.setSize(w, h, false); renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    if (PBR) {
+      PBR.configureRenderer(THREE, renderer, { exposure: 1.12 });
+      PBR.applyStudioEnvironment(THREE, renderer, scene, "daylight");
+    } else {
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    }
+    renderer.setSize(w, h, false);
     renderer.domElement.style.cssText = "width:100%;height:100%;display:block;touch-action:none;cursor:grab;";
     container.appendChild(renderer.domElement);
 
-    scene.add(new THREE.AmbientLight(0xffffff, 0.72));
-    var l = new THREE.DirectionalLight(0xfff1d6, 0.95); l.position.set(5, 8, 4); scene.add(l);
+    scene.add(new THREE.HemisphereLight(0xdceaff, 0x1c2529, 0.65));
+    var l = new THREE.DirectionalLight(0xfff1d6, 1.2); l.position.set(5, 8, 4); l.castShadow = true; scene.add(l);
 
     var root = new THREE.Group(); scene.add(root);
-    // Riverbed base
-    var bed = new THREE.Mesh(new THREE.BoxGeometry(7.6, 0.14, 4.6), new THREE.MeshStandardMaterial({ color: 0x263238, roughness: 0.9 }));
-    bed.position.y = -0.07;
-    root.add(bed);
+    // Textured Slate Riverbed & Translucent Water Surface
+    var bed = new THREE.Mesh(
+      new THREE.BoxGeometry(7.8, 0.16, 4.8),
+      new THREE.MeshStandardMaterial({
+        color: 0x263238,
+        map: PBR ? PBR.getTexture(THREE, "granite") : null,
+        roughness: 0.85
+      })
+    );
+    bed.position.y = -0.08;
+    bed.receiveShadow = true;
+    var WaterMat = THREE.MeshPhysicalMaterial || THREE.MeshStandardMaterial;
+    var riverPlane = new THREE.Mesh(
+      new THREE.PlaneGeometry(7.5, 4.4),
+      new WaterMat({ color: 0x1a566b, roughness: 0.10, metalness: 0.35, clearcoat: 0.85, transparent: true, opacity: 0.72 })
+    );
+    riverPlane.rotation.x = -Math.PI / 2;
+    riverPlane.position.y = 0.04;
+    root.add(bed, riverPlane);
 
-    // Yuzui Fish Mouth Diversion Island (divides Outer River z<0 and Inner Canal z>0)
-    var stoneMat = new THREE.MeshStandardMaterial({ color: 0x9b9282, roughness: 0.78 });
-    var yuzui = new THREE.Mesh(new THREE.BoxGeometry(2.6, 0.48, 0.55), stoneMat);
-    yuzui.position.set(-0.6, 0.24, 0.08);
-    var fishNose = new THREE.Mesh(new THREE.ConeGeometry(0.32, 0.7, 4), stoneMat);
+    // Yuzui Fish Mouth Diversion Dike + Bamboo Basket Gabions (Machacuo)
+    var stoneTex = PBR ? PBR.getTexture(THREE, "marble") : null;
+    var stoneMat = new THREE.MeshStandardMaterial({ color: 0x9b9282, map: stoneTex, roughness: 0.68 });
+    var bambooMat = new THREE.MeshStandardMaterial({ color: 0xc29e6c, map: PBR ? PBR.getTexture(THREE, "wood") : null, roughness: 0.65 });
+    var yuzui = new THREE.Mesh(new THREE.BoxGeometry(2.6, 0.50, 0.58), stoneMat);
+    yuzui.position.set(-0.6, 0.25, 0.08);
+    var fishNose = new THREE.Mesh(new THREE.ConeGeometry(0.35, 0.76, 6), stoneMat);
     fishNose.rotation.z = Math.PI / 2;
-    fishNose.position.set(-2.2, 0.22, 0.08);
+    fishNose.position.set(-2.22, 0.24, 0.08);
 
-    // Feishayan Low Silt Spillway connecting inner to outer before Baopingkou
-    var feishayan = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.24, 0.25), new THREE.MeshStandardMaterial({ color: 0xc29e6c, roughness: 0.7 }));
+    // Feishayan Low Silt Spillway + Traditional Three-Legged Wooden Tripod Weirs (Macha)
+    var feishayan = new THREE.Mesh(new THREE.BoxGeometry(0.95, 0.24, 0.28), bambooMat);
     feishayan.position.set(1.1, 0.12, -0.05);
+    [-1.4, -0.7, 0.1].forEach(function (mx) {
+      var basket = new THREE.Mesh(new THREE.CylinderGeometry(0.10, 0.12, 0.32, 10), bambooMat);
+      basket.rotation.x = Math.PI / 2;
+      basket.position.set(mx, 0.14, 0.42);
+      root.add(basket);
+    });
 
-    // Lidui Jade Mountain & Baopingkou Narrow Bottleneck
-    var hillMat = new THREE.MeshStandardMaterial({ color: 0x2a5443, roughness: 0.85 });
-    var lidui = new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.75, 0.85, 16), hillMat);
-    lidui.position.set(2.3, 0.42, 1.35);
-    var cliff = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.9, 0.85), hillMat);
-    cliff.position.set(2.3, 0.45, 0.25);
+    // Lidui Jade Mountain, Erwang Temple Pavilion & Baopingkou Bottleneck
+    var hillMat = new THREE.MeshStandardMaterial({ color: 0x2c5c49, roughness: 0.78 });
+    var lidui = new THREE.Mesh(new THREE.CylinderGeometry(0.54, 0.78, 0.92, 24), hillMat);
+    lidui.position.set(2.3, 0.46, 1.35);
+    var cliff = new THREE.Mesh(new THREE.BoxGeometry(1.15, 0.95, 0.88), hillMat);
+    cliff.position.set(2.3, 0.47, 0.25);
 
+    [yuzui, fishNose, feishayan, lidui, cliff].forEach(function (m) {
+      m.castShadow = true; m.receiveShadow = true;
+    });
     root.add(yuzui, fishNose, feishayan, lidui, cliff);
+    if (window.CCE_3D_ARCH && window.CCE_3D_ARCH.createPalaceHall) {
+      var erwang = window.CCE_3D_ARCH.createPalaceHall(THREE, { w: 0.82, d: 0.56, baseH: 0.10, bodyH: 0.28, roofH: 0.24, baysX: 3, baysZ: 2, tileKind: "slateTile", marbleBase: false });
+      erwang.position.set(2.3, 0.92, 0.25);
+      root.add(erwang);
+    }
 
     // Flowing water particles (70 droplets along Minjiang Inner & Outer channels)
     var droplets = [];
@@ -115,7 +156,7 @@
     tick();
 
     rt = {
-      renderer: renderer, rafId: rafId, ro: ro,
+      scene: scene, renderer: renderer, rafId: rafId, ro: ro,
       cleanup: function () {
         dom.removeEventListener("pointerdown", onDown); window.removeEventListener("pointermove", onMove);
         window.removeEventListener("pointerup", onUp); dom.removeEventListener("wheel", onWheel);

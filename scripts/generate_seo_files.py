@@ -369,6 +369,47 @@ def parse_articles(
                     "category": cat or "culture",
                 }
             )
+
+    # Also parse V10.4 clean monographs (#109-#294) + V12 Shard 5 (#295-#330)
+    for extra_path, marker in [
+        ("src/data/cce_v10_upgrade/cceV10Monographs294Bundle.js", "var NEW_MONOGRAPHS = "),
+        ("src/data/cce_v10_upgrade/cceV10MonographsShard5.js", "var SHARD_MONOS = "),
+    ]:
+        v104_bundle = pathlib.Path(extra_path)
+        if v104_bundle.is_file():
+            b_txt = v104_bundle.read_text(encoding="utf-8")
+            pos = b_txt.find(marker)
+            if pos >= 0:
+                import json as _json
+                monos, _ = _json.JSONDecoder().raw_decode(b_txt, pos + len(marker))
+                for item in monos:
+                    aid = str(item.get("id") or "").strip()
+                    if not aid or aid in seen:
+                        continue
+                    seen.add(aid)
+                    title_vi = item.get("titleVi") or item.get("titleEn") or aid
+                    desc_raw = item.get("standfirst") or (
+                        item.get("abstract") if isinstance(item.get("abstract"), str) else ""
+                    ) or item.get("introduction") or title_vi
+                    cat = str(item.get("category") or "culture")
+                    hero_src = ""
+                    if isinstance(item.get("heroImage"), dict):
+                        cand = str(item["heroImage"].get("src") or "")
+                        if is_raster_exists(cand):
+                            hero_src = cand
+                    if not is_raster_exists(hero_src):
+                        cat_cand = CATEGORY_RASTER_FALLBACKS.get(cat, "")
+                        hero_src = cat_cand if is_raster_exists(cat_cand) else DEFAULT_RASTER_OG
+                    results.append(
+                        {
+                            "id": aid,
+                            "title": f"{clean_text(title_vi, 110)} – {SITE_BRAND}",
+                            "description": clean_text(desc_raw, 158),
+                            "image": hero_src,
+                            "category": cat,
+                        }
+                    )
+
     return results
 
 

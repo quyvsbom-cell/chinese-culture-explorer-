@@ -1397,8 +1397,44 @@
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.08;
+  renderer.toneMappingExposure = 1.1;
+  if (typeof THREE.sRGBEncoding !== 'undefined') renderer.outputEncoding = THREE.sRGBEncoding;
   container.appendChild(renderer.domElement);
+
+  // Procedural Sky & Gold Studio PMREM Environment IBL for glazed cobalt roofs & gilt spires
+  if (typeof THREE.PMREMGenerator === 'function') {
+    try {
+      const pmrem = new THREE.PMREMGenerator(renderer);
+      const envScene = new THREE.Scene();
+      const dome = new THREE.Mesh(
+        new THREE.SphereGeometry(40, 16, 12),
+        new THREE.MeshBasicMaterial({ color: 0x3b4d37, side: THREE.BackSide })
+      );
+      const skyCap = new THREE.Mesh(
+        new THREE.PlaneGeometry(36, 36),
+        new THREE.MeshBasicMaterial({ color: 0xdbe8f8, side: THREE.DoubleSide })
+      );
+      skyCap.position.y = 18; skyCap.rotation.x = Math.PI / 2;
+      const sunCard = new THREE.Mesh(
+        new THREE.PlaneGeometry(18, 12),
+        new THREE.MeshBasicMaterial({ color: 0xfff0cc, side: THREE.DoubleSide })
+      );
+      sunCard.position.set(14, 12, 10); sunCard.lookAt(0, 0, 0);
+      const rimCard = new THREE.Mesh(
+        new THREE.PlaneGeometry(20, 10),
+        new THREE.MeshBasicMaterial({ color: 0x89b4e8, side: THREE.DoubleSide })
+      );
+      rimCard.position.set(-14, 8, -14); rimCard.lookAt(0, 0, 0);
+      envScene.add(dome, skyCap, sunCard, rimCard);
+      const envRT = pmrem.fromScene(envScene, 0.04);
+      scene.environment = envRT.texture;
+      pmrem.dispose();
+      envScene.traverse((o) => {
+        if (o.geometry) o.geometry.dispose();
+        if (o.material) o.material.dispose();
+      });
+    } catch (_envErr) {}
+  }
 
   const skyUniforms = {
     topColor: { value: new THREE.Color(0x28568f) },
@@ -1439,28 +1475,29 @@
 
   const texTileBump = makeTileBumpTexture();
   const texMarbleShared = makeMarbleTexture();
+  const GlazeMat = THREE.MeshPhysicalMaterial || THREE.MeshStandardMaterial;
   const MAT = {
-    blueRoof: new THREE.MeshStandardMaterial({ map: makeGlazedTileTexture('#163c78', '#091d40', '#447dd1'), bumpMap: texTileBump, bumpScale: 0.22, roughness: 0.22, metalness: 0.18, side: THREE.DoubleSide }),
-    yellowRoof: new THREE.MeshStandardMaterial({ map: makeGlazedTileTexture('#c79424', '#855c0e', '#f5d46e'), bumpMap: texTileBump, bumpScale: 0.22, roughness: 0.23, metalness: 0.20, side: THREE.DoubleSide }),
-    greenRoof: new THREE.MeshStandardMaterial({ map: makeGlazedTileTexture('#1f6142', '#0f3624', '#48a176'), bumpMap: texTileBump, bumpScale: 0.22, roughness: 0.26, metalness: 0.15, side: THREE.DoubleSide }),
-    greyRoof: new THREE.MeshStandardMaterial({ map: makeGlazedTileTexture('#5e646e', '#3c4047', '#848b96'), bumpMap: texTileBump, bumpScale: 0.16, roughness: 0.65, metalness: 0.05, side: THREE.DoubleSide }),
-    marble: new THREE.MeshStandardMaterial({ map: texMarbleShared, bumpMap: texMarbleShared, bumpScale: 0.05, color: 0xf6f2e8, roughness: 0.40, metalness: 0.04 }),
-    marbleBright: new THREE.MeshStandardMaterial({ color: 0xf9f6ef, roughness: 0.34, metalness: 0.05 }),
-    dragonRamp: new THREE.MeshStandardMaterial({ map: makeDragonRampTexture(), bumpMap: makeDragonRampTexture(), bumpScale: 0.18, roughness: 0.42, metalness: 0.05 }),
-    moundTopQing: new THREE.MeshStandardMaterial({ map: makeCircularMoundPavingTexture(false), roughness: 0.42, metalness: 0.04 }),
-    moundTopMing: new THREE.MeshStandardMaterial({ map: makeCircularMoundPavingTexture(true), roughness: 0.28, metalness: 0.16 }),
-    redWall: new THREE.MeshStandardMaterial({ color: 0x8e241f, roughness: 0.66, metalness: 0.03 }),
-    latticeDoor: new THREE.MeshStandardMaterial({ map: makeLatticeDoorTexture(), roughness: 0.45, metalness: 0.10, side: THREE.DoubleSide }),
-    redWood: new THREE.MeshStandardMaterial({ color: 0x7c1c17, roughness: 0.36, metalness: 0.08 }),
-    dragonPillar: new THREE.MeshStandardMaterial({ map: makeDragonColumnTexture(), roughness: 0.30, metalness: 0.42 }),
-    gold: new THREE.MeshStandardMaterial({ color: 0xdcb34e, roughness: 0.22, metalness: 0.86 }),
-    bronze: new THREE.MeshStandardMaterial({ color: 0x4b4232, roughness: 0.36, metalness: 0.78 }),
-    polychrome: new THREE.MeshStandardMaterial({ map: makePolychromeBeamTexture(), roughness: 0.44, metalness: 0.14 }),
+    blueRoof: new GlazeMat({ map: makeGlazedTileTexture('#163c78', '#091d40', '#447dd1'), bumpMap: texTileBump, bumpScale: 0.24, roughness: 0.18, metalness: 0.12, clearcoat: 0.92, clearcoatRoughness: 0.12, side: THREE.DoubleSide }),
+    yellowRoof: new GlazeMat({ map: makeGlazedTileTexture('#c79424', '#855c0e', '#f5d46e'), bumpMap: texTileBump, bumpScale: 0.24, roughness: 0.20, metalness: 0.14, clearcoat: 0.88, clearcoatRoughness: 0.14, side: THREE.DoubleSide }),
+    greenRoof: new GlazeMat({ map: makeGlazedTileTexture('#1f6142', '#0f3624', '#48a176'), bumpMap: texTileBump, bumpScale: 0.24, roughness: 0.22, metalness: 0.12, clearcoat: 0.85, clearcoatRoughness: 0.15, side: THREE.DoubleSide }),
+    greyRoof: new THREE.MeshStandardMaterial({ map: makeGlazedTileTexture('#5e646e', '#3c4047', '#848b96'), bumpMap: texTileBump, bumpScale: 0.18, roughness: 0.65, metalness: 0.05, side: THREE.DoubleSide }),
+    marble: new THREE.MeshStandardMaterial({ map: texMarbleShared, bumpMap: texMarbleShared, bumpScale: 0.06, color: 0xf6f2e8, roughness: 0.36, metalness: 0.04 }),
+    marbleBright: new THREE.MeshStandardMaterial({ color: 0xf9f6ef, roughness: 0.30, metalness: 0.05 }),
+    dragonRamp: new THREE.MeshStandardMaterial({ map: makeDragonRampTexture(), bumpMap: makeDragonRampTexture(), bumpScale: 0.20, roughness: 0.38, metalness: 0.06 }),
+    moundTopQing: new THREE.MeshStandardMaterial({ map: makeCircularMoundPavingTexture(false), roughness: 0.40, metalness: 0.05 }),
+    moundTopMing: new THREE.MeshStandardMaterial({ map: makeCircularMoundPavingTexture(true), roughness: 0.26, metalness: 0.18 }),
+    redWall: new THREE.MeshStandardMaterial({ color: 0x8e241f, roughness: 0.62, metalness: 0.03 }),
+    latticeDoor: new THREE.MeshStandardMaterial({ map: makeLatticeDoorTexture(), roughness: 0.42, metalness: 0.12, side: THREE.DoubleSide }),
+    redWood: new GlazeMat({ color: 0x7c1c17, roughness: 0.32, metalness: 0.06, clearcoat: 0.45, clearcoatRoughness: 0.24 }),
+    dragonPillar: new THREE.MeshStandardMaterial({ map: makeDragonColumnTexture(), roughness: 0.28, metalness: 0.48 }),
+    gold: new THREE.MeshStandardMaterial({ color: 0xe3b952, roughness: 0.20, metalness: 0.90 }),
+    bronze: new THREE.MeshStandardMaterial({ color: 0x4e4636, roughness: 0.34, metalness: 0.80 }),
+    polychrome: new THREE.MeshStandardMaterial({ map: makePolychromeBeamTexture(), roughness: 0.40, metalness: 0.16 }),
     greyBrick: new THREE.MeshStandardMaterial({ map: makeGreyBrickTexture(), roughness: 0.78, metalness: 0.04 }),
-    danbiPave: new THREE.MeshStandardMaterial({ map: makeDanbiPavingTexture(), roughness: 0.70, metalness: 0.03 }),
-    courtyardStone: new THREE.MeshStandardMaterial({ map: texMarbleShared, color: 0xcbc4b5, roughness: 0.76, metalness: 0.02 }),
+    danbiPave: new THREE.MeshStandardMaterial({ map: makeDanbiPavingTexture(), roughness: 0.68, metalness: 0.03 }),
+    courtyardStone: new THREE.MeshStandardMaterial({ map: texMarbleShared, color: 0xcbc4b5, roughness: 0.74, metalness: 0.02 }),
     ground: new THREE.MeshStandardMaterial({ color: 0x3b4d37, roughness: 0.94, metalness: 0.0 }),
-    water: new THREE.MeshStandardMaterial({ color: 0x1e4359, roughness: 0.14, metalness: 0.36 }),
+    water: new GlazeMat({ color: 0x1e4860, roughness: 0.10, metalness: 0.38, clearcoat: 0.8, clearcoatRoughness: 0.08 }),
     stoneRock: new THREE.MeshStandardMaterial({ color: 0x78746c, roughness: 0.88, metalness: 0.04 }),
     fireGlow: new THREE.MeshBasicMaterial({ color: 0xff9a2e }),
     lanternGlow: new THREE.MeshBasicMaterial({ color: 0xffc75f })
@@ -2966,7 +3003,7 @@
   const _initParam = new URLSearchParams(window.location.search).get('lang') || 'vi';
   const _normLang = _initParam.startsWith('zh') ? 'zh' : (_initParam === 'en' ? 'en' : 'vi');
   window.addEventListener('message', (ev) => {
-    if (ev && ev.data && ev.data.type === 'cce-lang') {
+    if (ev && ev.data && (ev.data.type === 'cce-lang' || ev.data.type === 'cce-set-lang')) {
       const l = String(ev.data.lang || 'vi');
       applyLanguage(l.startsWith('zh') ? 'zh' : (l === 'en' ? 'en' : 'vi'));
     }

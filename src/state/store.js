@@ -130,7 +130,7 @@ window.CCE_STORE = (function () {
 
   let backendApiAvailable =
     window.location.protocol !== "file:" &&
-    (window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost");
+    window.location.port !== "8123";
 
   async function syncFromServer() {
     if (!backendApiAvailable) return;
